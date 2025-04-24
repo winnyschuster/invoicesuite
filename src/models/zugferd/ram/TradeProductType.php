@@ -563,7 +563,7 @@ class TradeProductType
      * @return self
      */
     public function addToApplicableProductCharacteristic(
-        ProductCharacteristicType $applicableProductCharacteristic,
+        ProductCharacteristicType $applicableProductCharacteristic
     ): self {
         $this->applicableProductCharacteristic[] = $applicableProductCharacteristic;
 
