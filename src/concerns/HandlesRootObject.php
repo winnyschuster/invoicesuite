@@ -27,11 +27,11 @@ trait HandlesRootObject
      *
      * @return self
      */
-    public function initRootObjectByFormatProvider(InvoiceSuiteAbstractFormatProvider $invoiceSuiteAbstractFormatProvider): self
+    public function createAndInitRootObjectByFormatProvider(InvoiceSuiteAbstractFormatProvider $invoiceSuiteAbstractFormatProvider): self
     {
         $className = $invoiceSuiteAbstractFormatProvider->getRootClassName();
 
-        return $this->setRootObject(new $className());
+        return $this->setRootObject(new $className())->initRootObject();
     }
 
     /**
@@ -54,6 +54,16 @@ trait HandlesRootObject
     {
         $this->rootObject = $rootObject;
 
+        return $this;
+    }
+
+    /**
+     * Initialize the root object
+     *
+     * @return self
+     */
+    public function initRootObject(): self
+    {
         return $this;
     }
 }

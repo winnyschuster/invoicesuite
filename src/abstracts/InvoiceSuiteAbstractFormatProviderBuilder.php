@@ -31,8 +31,8 @@ abstract class InvoiceSuiteAbstractFormatProviderBuilder
     public function __construct(InvoiceSuiteAbstractFormatProvider $invoiceSuiteAbstractFormatProvider)
     {
         $this->setCurrentFormatProvider($invoiceSuiteAbstractFormatProvider);
-        $this->initSerializerByFormatProvider($this->getCurrentFormatProvider());
-        $this->initRootObjectByFormatProvider($this->getCurrentFormatProvider());
+        $this->createAndInitSerializerByFormatProvider($this->getCurrentFormatProvider());
+        $this->createAndInitRootObjectByFormatProvider($this->getCurrentFormatProvider());
     }
 
     /**

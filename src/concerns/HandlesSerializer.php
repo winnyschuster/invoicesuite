@@ -39,7 +39,7 @@ trait HandlesSerializer
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-    public function initSerializerByFormatProvider(InvoiceSuiteAbstractFormatProvider $invoiceSuiteAbstractFormatProvider): void
+    public function createAndInitSerializerByFormatProvider(InvoiceSuiteAbstractFormatProvider $invoiceSuiteAbstractFormatProvider): void
     {
         $this->serializerBuilder = SerializerBuilder::create();
 
