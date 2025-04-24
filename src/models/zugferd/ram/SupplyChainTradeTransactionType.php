@@ -85,7 +85,7 @@ class SupplyChainTradeTransactionType
      * @return self
      */
     public function addToIncludedSupplyChainTradeLineItem(
-        SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem,
+        SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem
     ): self {
         $this->includedSupplyChainTradeLineItem[] = $includedSupplyChainTradeLineItem;
 
@@ -183,7 +183,7 @@ class SupplyChainTradeTransactionType
      * @return self
      */
     public function setApplicableHeaderTradeSettlement(
-        HeaderTradeSettlementType $applicableHeaderTradeSettlement,
+        HeaderTradeSettlementType $applicableHeaderTradeSettlement
     ): self {
         $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
 

@@ -184,7 +184,7 @@ class TradeContactType
      * @return self
      */
     public function setTelephoneUniversalCommunication(
-        UniversalCommunicationType $telephoneUniversalCommunication,
+        UniversalCommunicationType $telephoneUniversalCommunication
     ): self {
         $this->telephoneUniversalCommunication = $telephoneUniversalCommunication;
 
@@ -243,7 +243,7 @@ class TradeContactType
      * @return self
      */
     public function setEmailURIUniversalCommunication(
-        UniversalCommunicationType $emailURIUniversalCommunication,
+        UniversalCommunicationType $emailURIUniversalCommunication
     ): self {
         $this->emailURIUniversalCommunication = $emailURIUniversalCommunication;
 

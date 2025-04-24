@@ -521,7 +521,7 @@ class HeaderTradeSettlementType
      * @return self
      */
     public function setTaxApplicableTradeCurrencyExchange(
-        TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange,
+        TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange
     ): self {
         $this->taxApplicableTradeCurrencyExchange = $taxApplicableTradeCurrencyExchange;
 
@@ -562,7 +562,7 @@ class HeaderTradeSettlementType
      * @return self
      */
     public function addToSpecifiedTradeSettlementPaymentMeans(
-        TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans,
+        TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
     ): self {
         $this->specifiedTradeSettlementPaymentMeans[] = $specifiedTradeSettlementPaymentMeans;
 
@@ -742,7 +742,7 @@ class HeaderTradeSettlementType
      * @return self
      */
     public function addToSpecifiedLogisticsServiceCharge(
-        LogisticsServiceChargeType $specifiedLogisticsServiceCharge,
+        LogisticsServiceChargeType $specifiedLogisticsServiceCharge
     ): self {
         $this->specifiedLogisticsServiceCharge[] = $specifiedLogisticsServiceCharge;
 
@@ -832,7 +832,7 @@ class HeaderTradeSettlementType
      * @return self
      */
     public function setSpecifiedTradeSettlementHeaderMonetarySummation(
-        TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation,
+        TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
     ): self {
         $this->specifiedTradeSettlementHeaderMonetarySummation = $specifiedTradeSettlementHeaderMonetarySummation;
 
@@ -902,7 +902,7 @@ class HeaderTradeSettlementType
      * @return self
      */
     public function setReceivableSpecifiedTradeAccountingAccount(
-        array $receivableSpecifiedTradeAccountingAccount,
+        array $receivableSpecifiedTradeAccountingAccount
     ): self {
         $this->receivableSpecifiedTradeAccountingAccount = $receivableSpecifiedTradeAccountingAccount;
 
@@ -924,7 +924,7 @@ class HeaderTradeSettlementType
      * @return self
      */
     public function addToReceivableSpecifiedTradeAccountingAccount(
-        TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount,
+        TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
     ): self {
         $this->receivableSpecifiedTradeAccountingAccount[] = $receivableSpecifiedTradeAccountingAccount;
 

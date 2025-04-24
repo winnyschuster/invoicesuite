@@ -614,7 +614,7 @@ class TradeProductType
      * @return self
      */
     public function addToDesignatedProductClassification(
-        ProductClassificationType $designatedProductClassification,
+        ProductClassificationType $designatedProductClassification
     ): self {
         $this->designatedProductClassification[] = $designatedProductClassification;
 
@@ -665,7 +665,7 @@ class TradeProductType
      * @return self
      */
     public function addToIndividualTradeProductInstance(
-        TradeProductInstanceType $individualTradeProductInstance,
+        TradeProductInstanceType $individualTradeProductInstance
     ): self {
         $this->individualTradeProductInstance[] = $individualTradeProductInstance;
 

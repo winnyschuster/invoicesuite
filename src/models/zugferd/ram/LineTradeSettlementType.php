@@ -238,7 +238,7 @@ class LineTradeSettlementType
      * @return self
      */
     public function setSpecifiedTradeSettlementLineMonetarySummation(
-        TradeSettlementLineMonetarySummationType $specifiedTradeSettlementLineMonetarySummation,
+        TradeSettlementLineMonetarySummationType $specifiedTradeSettlementLineMonetarySummation
     ): self {
         $this->specifiedTradeSettlementLineMonetarySummation = $specifiedTradeSettlementLineMonetarySummation;
 
@@ -347,7 +347,7 @@ class LineTradeSettlementType
      * @return self
      */
     public function setReceivableSpecifiedTradeAccountingAccount(
-        TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount,
+        TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
     ): self {
         $this->receivableSpecifiedTradeAccountingAccount = $receivableSpecifiedTradeAccountingAccount;
 

@@ -303,7 +303,7 @@ class LineTradeDeliveryType
      * @return self
      */
     public function setDespatchAdviceReferencedDocument(
-        ReferencedDocumentType $despatchAdviceReferencedDocument,
+        ReferencedDocumentType $despatchAdviceReferencedDocument
     ): self {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
 
@@ -333,7 +333,7 @@ class LineTradeDeliveryType
      * @return self
      */
     public function setReceivingAdviceReferencedDocument(
-        ReferencedDocumentType $receivingAdviceReferencedDocument,
+        ReferencedDocumentType $receivingAdviceReferencedDocument
     ): self {
         $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
 

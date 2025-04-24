@@ -52,7 +52,7 @@ class SupplyChainConsignmentType
      * @return self
      */
     public function addToSpecifiedLogisticsTransportMovement(
-        LogisticsTransportMovementType $specifiedLogisticsTransportMovement,
+        LogisticsTransportMovementType $specifiedLogisticsTransportMovement
     ): self {
         $this->specifiedLogisticsTransportMovement[] = $specifiedLogisticsTransportMovement;
 

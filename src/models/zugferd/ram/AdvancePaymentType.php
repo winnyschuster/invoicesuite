@@ -184,7 +184,7 @@ class AdvancePaymentType
      * @return self
      */
     public function setInvoiceSpecifiedReferencedDocument(
-        ReferencedDocumentType $invoiceSpecifiedReferencedDocument,
+        ReferencedDocumentType $invoiceSpecifiedReferencedDocument
     ): self {
         $this->invoiceSpecifiedReferencedDocument = $invoiceSpecifiedReferencedDocument;
 

@@ -92,7 +92,7 @@ class ExchangedDocumentContextType
      * @return self
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
-        DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter,
+        DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
     ): self {
         $this->businessProcessSpecifiedDocumentContextParameter = $businessProcessSpecifiedDocumentContextParameter;
 
@@ -122,7 +122,7 @@ class ExchangedDocumentContextType
      * @return self
      */
     public function setGuidelineSpecifiedDocumentContextParameter(
-        DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter,
+        DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
     ): self {
         $this->guidelineSpecifiedDocumentContextParameter = $guidelineSpecifiedDocumentContextParameter;
 

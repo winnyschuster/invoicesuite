@@ -129,7 +129,7 @@ class HeaderTradeDeliveryType
      * @return self
      */
     public function addToRelatedSupplyChainConsignment(
-        LogisticsTransportMovementType $relatedSupplyChainConsignment,
+        LogisticsTransportMovementType $relatedSupplyChainConsignment
     ): self {
         $this->relatedSupplyChainConsignment[] = $relatedSupplyChainConsignment;
 
@@ -285,7 +285,7 @@ class HeaderTradeDeliveryType
      * @return self
      */
     public function setDespatchAdviceReferencedDocument(
-        ReferencedDocumentType $despatchAdviceReferencedDocument,
+        ReferencedDocumentType $despatchAdviceReferencedDocument
     ): self {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
 
@@ -315,7 +315,7 @@ class HeaderTradeDeliveryType
      * @return self
      */
     public function setReceivingAdviceReferencedDocument(
-        ReferencedDocumentType $receivingAdviceReferencedDocument,
+        ReferencedDocumentType $receivingAdviceReferencedDocument
     ): self {
         $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
 

@@ -226,7 +226,7 @@ class TradePaymentTermsType
      * @return self
      */
     public function setApplicableTradePaymentPenaltyTerms(
-        TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms,
+        TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms
     ): self {
         $this->applicableTradePaymentPenaltyTerms = $applicableTradePaymentPenaltyTerms;
 
@@ -256,7 +256,7 @@ class TradePaymentTermsType
      * @return self
      */
     public function setApplicableTradePaymentDiscountTerms(
-        TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms,
+        TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms
     ): self {
         $this->applicableTradePaymentDiscountTerms = $applicableTradePaymentDiscountTerms;
 

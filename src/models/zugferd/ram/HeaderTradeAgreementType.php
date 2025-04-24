@@ -675,7 +675,7 @@ class HeaderTradeAgreementType
      * @return self
      */
     public function addToUltimateCustomerOrderReferencedDocument(
-        ReferencedDocumentType $ultimateCustomerOrderReferencedDocument,
+        ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
     ): self {
         $this->ultimateCustomerOrderReferencedDocument[] = $ultimateCustomerOrderReferencedDocument;
 

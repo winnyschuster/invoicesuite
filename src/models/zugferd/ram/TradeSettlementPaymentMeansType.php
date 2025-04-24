@@ -155,7 +155,7 @@ class TradeSettlementPaymentMeansType
      * @return self
      */
     public function setApplicableTradeSettlementFinancialCard(
-        TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard,
+        TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard
     ): self {
         $this->applicableTradeSettlementFinancialCard = $applicableTradeSettlementFinancialCard;
 
@@ -185,7 +185,7 @@ class TradeSettlementPaymentMeansType
      * @return self
      */
     public function setPayerPartyDebtorFinancialAccount(
-        DebtorFinancialAccountType $payerPartyDebtorFinancialAccount,
+        DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
     ): self {
         $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
 
@@ -215,7 +215,7 @@ class TradeSettlementPaymentMeansType
      * @return self
      */
     public function setPayeePartyCreditorFinancialAccount(
-        CreditorFinancialAccountType $payeePartyCreditorFinancialAccount,
+        CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
     ): self {
         $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
 
@@ -245,7 +245,7 @@ class TradeSettlementPaymentMeansType
      * @return self
      */
     public function setPayeeSpecifiedCreditorFinancialInstitution(
-        CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution,
+        CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution
     ): self {
         $this->payeeSpecifiedCreditorFinancialInstitution = $payeeSpecifiedCreditorFinancialInstitution;
 
