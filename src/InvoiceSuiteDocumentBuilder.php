@@ -2,13 +2,14 @@
 
 namespace horstoeko\invoicesuite;
 
+use DateTimeInterface;
+use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\InvalidArgumentException;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\contracts\InvoiceSuiteBuilderContract;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\RuntimeException;
 
 /**
  * Class representing the document builder
@@ -112,6 +113,56 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
     public function setDocumentNo(string $newDocumentNo): self
     {
         $this->getCurrentFormatProvider()->getBuilder()->setDocumentNo($newDocumentNo);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentType(string $newDocumentType): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentType($newDocumentType);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentDescription(string $newDocumentDescription): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentDescription($newDocumentDescription);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentDate(DateTimeInterface $newDocumentDate): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentDate($newDocumentDate);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentCompleteDate(DateTimeInterface $newCompleteDate): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentCompleteDate($newCompleteDate);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentCurrency(string $newDocumentCurrency): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentCurrency($newDocumentCurrency);
 
         return $this;
     }

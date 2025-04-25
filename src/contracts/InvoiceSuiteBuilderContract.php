@@ -9,6 +9,8 @@
 
 namespace horstoeko\invoicesuite\contracts;
 
+use DateTimeInterface;
+
 /**
  * Interface representing the required methods for a builder
  *
@@ -27,4 +29,44 @@ interface InvoiceSuiteBuilderContract
      * @return static
      */
     public function setDocumentNo(string $newDocumentNo): self;
+
+    /**
+     * Sets the new document type code
+     *
+     * @param string $newDocumentType
+     * @return static
+     */
+    public function setDocumentType(string $newDocumentType): self;
+
+    /**
+     * Sets the new document description
+     *
+     * @param string $newDocumentDescription
+     * @return self
+     */
+    public function setDocumentDescription(string $newDocumentDescription): self;
+
+    /**
+     * Sets the new document date (e.g. invoice date)
+     *
+     * @param DateTimeInterface $newDocumentDate
+     * @return InvoiceSuiteBuilderContract
+     */
+    public function setDocumentDate(DateTimeInterface $newDocumentDate): self;
+
+    /**
+     * Sets the new document period
+     *
+     * @param DateTimeInterface $newCompleteDate
+     * @return InvoiceSuiteBuilderContract
+     */
+    public function setDocumentCompleteDate(DateTimeInterface $newCompleteDate): self;
+
+    /**
+     * Sets the new document currency
+     *
+     * @param string $newDocumentCurrency
+     * @return self
+     */
+    public function setDocumentCurrency(string $newDocumentCurrency): self;
 }

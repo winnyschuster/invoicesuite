@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\providers\zffx;
 
+use DateTimeInterface;
 use horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType;
 use horstoeko\invoicesuite\models\zffx\rsm\CrossIndustryInvoiceType;
 use horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType;
@@ -61,10 +62,102 @@ class InvoiceSuiteZugferdFacturXProviderBuilder extends InvoiceSuiteAbstractForm
 
     /**
      * @inheritDoc
+     *
+     * @param string $newDocumentNo __BT-1, From MINIMUM__ The document no issued by the seller
      */
     public function setDocumentNo(string $newDocumentNo): self
     {
-        $this->getCrossIndustryRootObject()->getExchangedDocument()->getIDWithCreate()->setValue($newDocumentNo);
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocumentWithCreate()
+            ->getIDWithCreate()
+            ->setValue($newDocumentNo);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param string $newDocumentType __BT-3, From MINIMUM__ The type of the document
+     */
+    public function setDocumentType(string $newDocumentType): self
+    {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocumentWithCreate()
+            ->getTypeCodeWithCreate()
+            ->setValue($newDocumentType);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param string $newDocumentDescription__BT-X-2, From EXTENDED__ Document Type. The documenttype (free text)
+     */
+    public function setDocumentDescription(string $newDocumentDescription): self
+    {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocumentWithCreate()
+            ->getNameWithCreate()
+            ->setValue($newDocumentDescription);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param DateTimeInterface $newDocumentDate __BT-2, From MINIMUM__ Date of invoice. The date when the document was issued by the seller
+     */
+    public function setDocumentDate(DateTimeInterface $newDocumentDate): self
+    {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocumentWithCreate()
+            ->getIssueDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newDocumentDate->format("Ymd"))
+            ->setFormat('102');
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param DateTimeInterface $newCompleteDate __BT-X-6-000, From EXTENDED__ The contractual due date of the invoice
+     */
+    public function setDocumentCompleteDate(DateTimeInterface $newCompleteDate): self
+    {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocumentWithCreate()
+            ->getEffectiveSpecifiedPeriodWithCreate()
+            ->getCompleteDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newCompleteDate->format("Ymd"))
+            ->setFormat("102");
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param string $newDocumentCurrency __BT-5, From MINIMUM__ Code for the invoice currency
+     */
+    public function setDocumentCurrency(string $newDocumentCurrency): self
+    {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeSettlementWithCreate()
+            ->getInvoiceCurrencyCodeWithCreate()
+            ->setValue($newDocumentCurrency);
 
         return $this;
     }
