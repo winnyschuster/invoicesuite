@@ -12,14 +12,14 @@ abstract class TestCase extends PhpUnitTestCase
     /**
      * Registered files that should be deleted in test case teardown
      *
-     * @var array
+     * @var array<string>
      */
     protected static $registeredTestCaseFiles = [];
 
     /**
      * Registered files that should be deleted in test teardown
      *
-     * @var array
+     * @var array<string>
      */
     protected $registeredTestFiles = [];
 

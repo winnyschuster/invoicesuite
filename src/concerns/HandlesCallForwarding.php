@@ -20,9 +20,9 @@ trait HandlesCallForwarding
     /**
      * Forward a method call to the given object.
      *
-     * @param  mixed  $object
-     * @param  string $method
-     * @param  array  $parameters
+     * @param  mixed        $object
+     * @param  string       $method
+     * @param  array<mixed> $parameters
      * @return mixed
      *
      * @throws \BadMethodCallException
@@ -52,9 +52,9 @@ trait HandlesCallForwarding
     /**
      * Forward a method call to the given object. The existance of the method is checked
      *
-     * @param  mixed  $object
-     * @param  string $method
-     * @param  array  $parameters
+     * @param  mixed        $object
+     * @param  string       $method
+     * @param  array<mixed> $parameters
      * @return mixed
      *
      * @throws \BadMethodCallException

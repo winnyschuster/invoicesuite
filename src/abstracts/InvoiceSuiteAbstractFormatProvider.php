@@ -81,7 +81,7 @@ abstract class InvoiceSuiteAbstractFormatProvider
     /**
      * Returns true if the content matches the requirements for this format provider, otherwise false
      *
-     * @param string $content
+     * @param  string $content
      * @return boolean
      */
     abstract public function isSatisfiableBy(string $content): bool;

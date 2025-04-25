@@ -73,7 +73,7 @@ abstract class InvoiceSuiteAbstractFormatProviderBuilder implements InvoiceSuite
     /**
      * Save the XML content to a file
      *
-     * @param string $tofile
+     * @param  string $tofile
      * @return void
      */
     public function saveAsXmlFile(string $tofile): void
@@ -84,7 +84,7 @@ abstract class InvoiceSuiteAbstractFormatProviderBuilder implements InvoiceSuite
     /**
      * Save the JSON content to a file
      *
-     * @param string $tofile
+     * @param  string $tofile
      * @return void
      */
     public function saveAsJsonFile(string $tofile): void

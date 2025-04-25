@@ -59,7 +59,7 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
      * Dynamically pass missing methods to the builder provided by format provider
      *
      * @param  string $method
-     * @param  array  $parameters
+     * @param  array<mixed> $parameters
      * @return mixed
      */
     public function __call($method, $parameters)

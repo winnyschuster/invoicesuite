@@ -91,7 +91,7 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
      * Dynamically pass missing methods to the reader provided by format provider
      *
      * @param  string $method
-     * @param  array  $parameters
+     * @param  array<mixed> $parameters
      * @return mixed
      */
     public function __call($method, $parameters)
