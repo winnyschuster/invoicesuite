@@ -112,7 +112,7 @@ interface InvoiceSuiteBuilderContract
      * @param string|null $newSubjectCode
      * @return self
      */
-    public function addDocumentNote(string $newContent, ?string $newContentCode = null, ?string $newSubjectCode = null): self;
+    public function addDocumentNote(string $newContent, string $newContentCode, string $newSubjectCode): self;
 
     #endregion
 
@@ -141,6 +141,99 @@ interface InvoiceSuiteBuilderContract
      * @return self
      */
     public function addSellerId(string $newId): self;
+
+    /**
+     * Set the Global ID of the seller/supplier party
+     *
+     * @param string $newGlobalId
+     * @param string $newGlobalIdType
+     * @return self
+     */
+    public function setSellerGlobalId(string $newGlobalId, string $newGlobalIdType): self;
+
+    /**
+     * Add an ID to the seller/supplier party
+     *
+     * @param string $newGlobalId
+     * @param string $newGlobalIdType
+     * @return self
+     */
+    public function addSellerGlobalId(string $newGlobalId, string $newGlobalIdType): self;
+
+    /**
+     * Set the Tax Registration of the seller/supplier party
+     *
+     * @param string $newTaxRegistrationTyüe
+     * @param string $newTaxRegistrationId
+     * @return self
+     */
+    public function setSellerTaxRegistration(string $newTaxRegistrationTyüe, string $newTaxRegistrationId): self;
+
+    /**
+     * Add an Tax Registration to the seller/supplier party
+     *
+     * @param string $newTaxRegistrationTyüe
+     * @param string $newTaxRegistrationId
+     * @return self
+     */
+    public function addSellerTaxRegistration(string $newTaxRegistrationTyüe, string $newTaxRegistrationId): self;
+
+    /**
+     * Set the address of the seller/supplier party
+     *
+     * @param string $newAddressLine1
+     * @param string $newAddressLine2
+     * @param string $newAddressLine3
+     * @param string $newPostcode
+     * @param string $newCity
+     * @param string $newCountryId
+     * @param string $newSubDivision
+     * @return self
+     */
+    public function setSellerAddress(string $newAddressLine1, string $newAddressLine2, string $newAddressLine3, string $newPostcode, string $newCity, string $newCountryId, string $newSubDivision): self;
+
+    /**
+     * Set the legal information of the seller/supplier party
+     *
+     * @param string $newType
+     * @param string $newId
+     * @param string $newName
+     * @return self
+     */
+    public function setSellerLegalOrganisation(string $newType, string $newId, string $newName): self;
+
+    /**
+     * Set the contact information of the seller/supplier party
+     *
+     * @param string $newPersonName
+     * @param string $newDepartmentName
+     * @param string $newPhoneNumber
+     * @param string $newFaxNumber
+     * @param string $newEmailAddress
+     * @return self
+     */
+    public function setSellerContact(string $newPersonName, string $newDepartmentName, string $newPhoneNumber, string $newFaxNumber, string $newEmailAddress): self;
+
+    /**
+     * Add contact information of the seller/supplier party
+     *
+     * @param string $newPersonName
+     * @param string $newDepartmentName
+     * @param string $newPhoneNumber
+     * @param string $newFaxNumber
+     * @param string $newEmailAddress
+     * @return self
+     */
+    public function addSellerContact(string $newPersonName, string $newDepartmentName, string $newPhoneNumber, string $newFaxNumber, string $newEmailAddress): self;
+
+    /**
+     * Add communication information of the seller/supplier party
+     *
+     * @param string $newType
+     * @param string $newUri
+     * @return self
+     */
+    public function setSellerCommunication(string $newType, string $newUri): self;
 
     #endregion
 }

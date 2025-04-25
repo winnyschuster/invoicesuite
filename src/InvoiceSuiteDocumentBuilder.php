@@ -253,5 +253,95 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setSellerGlobalId(string $newGlobalId, string $newGlobalIdType): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setSellerGlobalId($newGlobalId, $newGlobalIdType);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addSellerGlobalId(string $newGlobalId, string $newGlobalIdType): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->addSellerGlobalId($newGlobalId, $newGlobalIdType);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setSellerTaxRegistration(string $newTaxRegistrationTyüe, string $newTaxRegistrationId): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setSellerTaxRegistration($newTaxRegistrationTyüe, $newTaxRegistrationId);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addSellerTaxRegistration(string $newTaxRegistrationTyüe, string $newTaxRegistrationId): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->addSellerTaxRegistration($newTaxRegistrationTyüe, $newTaxRegistrationId);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setSellerAddress(string $newAddressLine1, string $newAddressLine2, string $newAddressLine3, string $newPostcode, string $newCity, string $newCountryId, string $newSubDivision): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setSellerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setSellerLegalOrganisation(string $newType, string $newId, string $newName): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setSellerLegalOrganisation($newType, $newId, $newName);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setSellerContact(string $newPersonName, string $newDepartmentName, string $newPhoneNumber, string $newFaxNumber, string $newEmailAddress): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addSellerContact(string $newPersonName, string $newDepartmentName, string $newPhoneNumber, string $newFaxNumber, string $newEmailAddress): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->addSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setSellerCommunication(string $newType, string $newUri): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setSellerCommunication($newType, $newUri);
+
+        return $this;
+    }
+
     #endregion
 }
