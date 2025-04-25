@@ -26,5 +26,4 @@ class InvoiceSuiteZugferdFacturXProviderBuilder extends InvoiceSuiteAbstractForm
 
         return $this;
     }
-
 }
