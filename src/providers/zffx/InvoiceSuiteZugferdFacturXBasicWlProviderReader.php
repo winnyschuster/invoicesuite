@@ -2,6 +2,6 @@
 
 namespace horstoeko\invoicesuite\providers\zffx;
 
-class InvoiceSuiteZugferdFacturXBasicWLProviderReader extends InvoiceSuiteZugferdFacturXProviderReader
+class InvoiceSuiteZugferdFacturXBasicWlProviderReader extends InvoiceSuiteZugferdFacturXProviderReader
 {
 }

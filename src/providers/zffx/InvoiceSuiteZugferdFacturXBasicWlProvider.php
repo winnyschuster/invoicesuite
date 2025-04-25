@@ -5,7 +5,7 @@ namespace horstoeko\invoicesuite\providers\zffx;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProvider;
 use horstoeko\invoicesuite\models\zffx\rsm\CrossIndustryInvoice;
 
-class InvoiceSuiteZugferdFacturXBasicWLProvider extends InvoiceSuiteAbstractFormatProvider
+class InvoiceSuiteZugferdFacturXBasicWlProvider extends InvoiceSuiteAbstractFormatProvider
 {
     /**
      * @inheritDoc
@@ -86,7 +86,7 @@ class InvoiceSuiteZugferdFacturXBasicWLProvider extends InvoiceSuiteAbstractForm
      */
     public function getReaderClassName(): string
     {
-        return InvoiceSuiteZugferdFacturXBasicWLProviderReader::class;
+        return InvoiceSuiteZugferdFacturXBasicWlProviderReader::class;
     }
 
     /**
@@ -94,6 +94,6 @@ class InvoiceSuiteZugferdFacturXBasicWLProvider extends InvoiceSuiteAbstractForm
      */
     public function getBuilderClassName(): string
     {
-        return InvoiceSuiteZugferdFacturXBasicWLProviderBuilder::class;
+        return InvoiceSuiteZugferdFacturXBasicWlProviderBuilder::class;
     }
 }
