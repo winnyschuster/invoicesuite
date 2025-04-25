@@ -5,6 +5,7 @@ namespace horstoeko\invoicesuite\abstracts;
 use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesRootObject;
 use horstoeko\invoicesuite\concerns\HandlesSerializer;
+use horstoeko\invoicesuite\contracts\InvoiceSuiteReaderContract;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContent;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use JMS\Serializer\DeserializationContext;
@@ -19,7 +20,7 @@ use JMS\Serializer\Exception\RuntimeException;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-abstract class InvoiceSuiteAbstractFormatProviderReader
+abstract class InvoiceSuiteAbstractFormatProviderReader implements InvoiceSuiteReaderContract
 {
     use HandlesCurrentFormatProvider;
     use HandlesRootObject;

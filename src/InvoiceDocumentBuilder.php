@@ -2,11 +2,12 @@
 
 namespace horstoeko\invoicesuite;
 
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
-use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
-use JMS\Serializer\Exception\InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\InvalidArgumentException;
+use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use horstoeko\invoicesuite\contracts\InvoiceSuiteBuilderContract;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 
 /**
  * Class representing the document builder
@@ -17,7 +18,7 @@ use JMS\Serializer\Exception\RuntimeException;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceDocumentBuilder
+class InvoiceDocumentBuilder implements InvoiceSuiteBuilderContract
 {
     use HandlesFormatProviders;
     use HandlesCurrentFormatProvider;

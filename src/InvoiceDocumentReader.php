@@ -2,8 +2,9 @@
 
 namespace horstoeko\invoicesuite;
 
-use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
 use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
+use horstoeko\invoicesuite\contracts\InvoiceSuiteReaderContract;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
@@ -18,7 +19,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContent;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceDocumentReader
+class InvoiceDocumentReader implements InvoiceSuiteReaderContract
 {
     use HandlesFormatProviders;
     use HandlesCurrentFormatProvider;

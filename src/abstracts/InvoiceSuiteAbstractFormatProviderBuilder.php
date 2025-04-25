@@ -2,11 +2,12 @@
 
 namespace horstoeko\invoicesuite\abstracts;
 
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use JMS\Serializer\SerializationContext;
 use horstoeko\invoicesuite\concerns\HandlesRootObject;
 use horstoeko\invoicesuite\concerns\HandlesSerializer;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use horstoeko\invoicesuite\contracts\InvoiceSuiteBuilderContract;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
-use JMS\Serializer\SerializationContext;
 
 /**
  * Class representing methods for a builder
@@ -17,7 +18,7 @@ use JMS\Serializer\SerializationContext;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-abstract class InvoiceSuiteAbstractFormatProviderBuilder
+abstract class InvoiceSuiteAbstractFormatProviderBuilder implements InvoiceSuiteBuilderContract
 {
     use HandlesCurrentFormatProvider;
     use HandlesRootObject;
