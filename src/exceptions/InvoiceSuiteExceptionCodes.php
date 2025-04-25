@@ -27,4 +27,6 @@ class InvoiceSuiteExceptionCodes
     public const FILENOTREADABLE = -1002;
 
     public const UNKNOWN_CONTENT = -1003;
+
+    public const BAD_METHOD_CALL = -1004;
 }

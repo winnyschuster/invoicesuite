@@ -4,6 +4,15 @@ namespace horstoeko\invoicesuite\concerns;
 
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProvider;
 
+/**
+ * Trait representing methods for handling the current format provider
+ *
+ * @category InvoiceSuite
+ * @package  InvoiceSuite
+ * @author   horstoeko <horstoeko@erling.com.de>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/horstoeko/invoicesuite
+ */
 trait HandlesCurrentFormatProvider
 {
     /**

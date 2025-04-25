@@ -19,6 +19,7 @@ class InvoiceSuiteZugferdFacturXProviderBuilder extends InvoiceSuiteAbstractForm
     {
         return $this->getRootObject();
     }
+
     /**
      * Init context parameter for profile definition
      *
