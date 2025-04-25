@@ -3,13 +3,10 @@
 namespace horstoeko\invoicesuite\providers\xrechnung;
 
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
-use horstoeko\invoicesuite\providers\zffx\HandlesZfFxExchangeDocument;
 use horstoeko\invoicesuite\providers\zffx\InvoiceSuiteZugferdFacturXProviderBuilder;
 
 class InvoiceSuiteXRechnungProviderBuilder extends InvoiceSuiteZugferdFacturXProviderBuilder
 {
-    use HandlesZfFxExchangeDocument;
-
     /**
      * @inheritDoc
      */
