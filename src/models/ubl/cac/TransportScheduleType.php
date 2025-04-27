@@ -1,0 +1,497 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ReliabilityPercent;
+use horstoeko\invoicesuite\models\ubl\cbc\Remarks;
+use horstoeko\invoicesuite\models\ubl\cbc\SequenceNumeric;
+
+class TransportScheduleType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\SequenceNumeric
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\SequenceNumeric")
+     * @JMS\Expose
+     * @JMS\SerializedName("SequenceNumeric")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSequenceNumeric", setter="setSequenceNumeric")
+     */
+    private $sequenceNumeric;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReferenceDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getReferenceDate", setter="setReferenceDate")
+     */
+    private $referenceDate;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReferenceTime")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getReferenceTime", setter="setReferenceTime")
+     */
+    private $referenceTime;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ReliabilityPercent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ReliabilityPercent")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReliabilityPercent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getReliabilityPercent", setter="setReliabilityPercent")
+     */
+    private $reliabilityPercent;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Remarks>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Remarks>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Remarks")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Remarks", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getRemarks", setter="setRemarks")
+     */
+    private $remarks;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\StatusLocation
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\StatusLocation")
+     * @JMS\Expose
+     * @JMS\SerializedName("StatusLocation")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getStatusLocation", setter="setStatusLocation")
+     */
+    private $statusLocation;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ActualArrivalTransportEvent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ActualArrivalTransportEvent")
+     * @JMS\Expose
+     * @JMS\SerializedName("ActualArrivalTransportEvent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getActualArrivalTransportEvent", setter="setActualArrivalTransportEvent")
+     */
+    private $actualArrivalTransportEvent;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ActualDepartureTransportEvent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ActualDepartureTransportEvent")
+     * @JMS\Expose
+     * @JMS\SerializedName("ActualDepartureTransportEvent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getActualDepartureTransportEvent", setter="setActualDepartureTransportEvent")
+     */
+    private $actualDepartureTransportEvent;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\EstimatedDepartureTransportEvent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\EstimatedDepartureTransportEvent")
+     * @JMS\Expose
+     * @JMS\SerializedName("EstimatedDepartureTransportEvent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getEstimatedDepartureTransportEvent", setter="setEstimatedDepartureTransportEvent")
+     */
+    private $estimatedDepartureTransportEvent;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\EstimatedArrivalTransportEvent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\EstimatedArrivalTransportEvent")
+     * @JMS\Expose
+     * @JMS\SerializedName("EstimatedArrivalTransportEvent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getEstimatedArrivalTransportEvent", setter="setEstimatedArrivalTransportEvent")
+     */
+    private $estimatedArrivalTransportEvent;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\PlannedDepartureTransportEvent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\PlannedDepartureTransportEvent")
+     * @JMS\Expose
+     * @JMS\SerializedName("PlannedDepartureTransportEvent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPlannedDepartureTransportEvent", setter="setPlannedDepartureTransportEvent")
+     */
+    private $plannedDepartureTransportEvent;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\PlannedArrivalTransportEvent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\PlannedArrivalTransportEvent")
+     * @JMS\Expose
+     * @JMS\SerializedName("PlannedArrivalTransportEvent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPlannedArrivalTransportEvent", setter="setPlannedArrivalTransportEvent")
+     */
+    private $plannedArrivalTransportEvent;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SequenceNumeric|null
+     */
+    public function getSequenceNumeric(): ?SequenceNumeric
+    {
+        return $this->sequenceNumeric;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SequenceNumeric
+     */
+    public function getSequenceNumericWithCreate(): SequenceNumeric
+    {
+        $this->sequenceNumeric = is_null($this->sequenceNumeric) ? new SequenceNumeric() : $this->sequenceNumeric;
+
+        return $this->sequenceNumeric;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\SequenceNumeric $sequenceNumeric
+     * @return self
+     */
+    public function setSequenceNumeric(SequenceNumeric $sequenceNumeric): self
+    {
+        $this->sequenceNumeric = $sequenceNumeric;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getReferenceDate(): ?\DateTime
+    {
+        return $this->referenceDate;
+    }
+
+    /**
+     * @param \DateTime $referenceDate
+     * @return self
+     */
+    public function setReferenceDate(\DateTime $referenceDate): self
+    {
+        $this->referenceDate = $referenceDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getReferenceTime(): ?\DateTime
+    {
+        return $this->referenceTime;
+    }
+
+    /**
+     * @param \DateTime $referenceTime
+     * @return self
+     */
+    public function setReferenceTime(\DateTime $referenceTime): self
+    {
+        $this->referenceTime = $referenceTime;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReliabilityPercent|null
+     */
+    public function getReliabilityPercent(): ?ReliabilityPercent
+    {
+        return $this->reliabilityPercent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReliabilityPercent
+     */
+    public function getReliabilityPercentWithCreate(): ReliabilityPercent
+    {
+        $this->reliabilityPercent = is_null($this->reliabilityPercent) ? new ReliabilityPercent() : $this->reliabilityPercent;
+
+        return $this->reliabilityPercent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ReliabilityPercent $reliabilityPercent
+     * @return self
+     */
+    public function setReliabilityPercent(ReliabilityPercent $reliabilityPercent): self
+    {
+        $this->reliabilityPercent = $reliabilityPercent;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Remarks>|null
+     */
+    public function getRemarks(): ?array
+    {
+        return $this->remarks;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Remarks> $remarks
+     * @return self
+     */
+    public function setRemarks(array $remarks): self
+    {
+        $this->remarks = $remarks;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearRemarks(): self
+    {
+        $this->remarks = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Remarks $remarks
+     * @return self
+     */
+    public function addToRemarks(Remarks $remarks): self
+    {
+        $this->remarks[] = $remarks;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Remarks
+     */
+    public function addToRemarksWithCreate(): Remarks
+    {
+        $this->addToremarks($remarks = new Remarks());
+
+        return $remarks;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\StatusLocation|null
+     */
+    public function getStatusLocation(): ?StatusLocation
+    {
+        return $this->statusLocation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\StatusLocation
+     */
+    public function getStatusLocationWithCreate(): StatusLocation
+    {
+        $this->statusLocation = is_null($this->statusLocation) ? new StatusLocation() : $this->statusLocation;
+
+        return $this->statusLocation;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\StatusLocation $statusLocation
+     * @return self
+     */
+    public function setStatusLocation(StatusLocation $statusLocation): self
+    {
+        $this->statusLocation = $statusLocation;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ActualArrivalTransportEvent|null
+     */
+    public function getActualArrivalTransportEvent(): ?ActualArrivalTransportEvent
+    {
+        return $this->actualArrivalTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ActualArrivalTransportEvent
+     */
+    public function getActualArrivalTransportEventWithCreate(): ActualArrivalTransportEvent
+    {
+        $this->actualArrivalTransportEvent = is_null($this->actualArrivalTransportEvent) ? new ActualArrivalTransportEvent() : $this->actualArrivalTransportEvent;
+
+        return $this->actualArrivalTransportEvent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ActualArrivalTransportEvent $actualArrivalTransportEvent
+     * @return self
+     */
+    public function setActualArrivalTransportEvent(ActualArrivalTransportEvent $actualArrivalTransportEvent): self
+    {
+        $this->actualArrivalTransportEvent = $actualArrivalTransportEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ActualDepartureTransportEvent|null
+     */
+    public function getActualDepartureTransportEvent(): ?ActualDepartureTransportEvent
+    {
+        return $this->actualDepartureTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ActualDepartureTransportEvent
+     */
+    public function getActualDepartureTransportEventWithCreate(): ActualDepartureTransportEvent
+    {
+        $this->actualDepartureTransportEvent = is_null($this->actualDepartureTransportEvent) ? new ActualDepartureTransportEvent() : $this->actualDepartureTransportEvent;
+
+        return $this->actualDepartureTransportEvent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ActualDepartureTransportEvent $actualDepartureTransportEvent
+     * @return self
+     */
+    public function setActualDepartureTransportEvent(
+        ActualDepartureTransportEvent $actualDepartureTransportEvent,
+    ): self {
+        $this->actualDepartureTransportEvent = $actualDepartureTransportEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EstimatedDepartureTransportEvent|null
+     */
+    public function getEstimatedDepartureTransportEvent(): ?EstimatedDepartureTransportEvent
+    {
+        return $this->estimatedDepartureTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EstimatedDepartureTransportEvent
+     */
+    public function getEstimatedDepartureTransportEventWithCreate(): EstimatedDepartureTransportEvent
+    {
+        $this->estimatedDepartureTransportEvent = is_null($this->estimatedDepartureTransportEvent) ? new EstimatedDepartureTransportEvent() : $this->estimatedDepartureTransportEvent;
+
+        return $this->estimatedDepartureTransportEvent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent
+     * @return self
+     */
+    public function setEstimatedDepartureTransportEvent(
+        EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent,
+    ): self {
+        $this->estimatedDepartureTransportEvent = $estimatedDepartureTransportEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EstimatedArrivalTransportEvent|null
+     */
+    public function getEstimatedArrivalTransportEvent(): ?EstimatedArrivalTransportEvent
+    {
+        return $this->estimatedArrivalTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EstimatedArrivalTransportEvent
+     */
+    public function getEstimatedArrivalTransportEventWithCreate(): EstimatedArrivalTransportEvent
+    {
+        $this->estimatedArrivalTransportEvent = is_null($this->estimatedArrivalTransportEvent) ? new EstimatedArrivalTransportEvent() : $this->estimatedArrivalTransportEvent;
+
+        return $this->estimatedArrivalTransportEvent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent
+     * @return self
+     */
+    public function setEstimatedArrivalTransportEvent(
+        EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent,
+    ): self {
+        $this->estimatedArrivalTransportEvent = $estimatedArrivalTransportEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PlannedDepartureTransportEvent|null
+     */
+    public function getPlannedDepartureTransportEvent(): ?PlannedDepartureTransportEvent
+    {
+        return $this->plannedDepartureTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PlannedDepartureTransportEvent
+     */
+    public function getPlannedDepartureTransportEventWithCreate(): PlannedDepartureTransportEvent
+    {
+        $this->plannedDepartureTransportEvent = is_null($this->plannedDepartureTransportEvent) ? new PlannedDepartureTransportEvent() : $this->plannedDepartureTransportEvent;
+
+        return $this->plannedDepartureTransportEvent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\PlannedDepartureTransportEvent $plannedDepartureTransportEvent
+     * @return self
+     */
+    public function setPlannedDepartureTransportEvent(
+        PlannedDepartureTransportEvent $plannedDepartureTransportEvent,
+    ): self {
+        $this->plannedDepartureTransportEvent = $plannedDepartureTransportEvent;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PlannedArrivalTransportEvent|null
+     */
+    public function getPlannedArrivalTransportEvent(): ?PlannedArrivalTransportEvent
+    {
+        return $this->plannedArrivalTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PlannedArrivalTransportEvent
+     */
+    public function getPlannedArrivalTransportEventWithCreate(): PlannedArrivalTransportEvent
+    {
+        $this->plannedArrivalTransportEvent = is_null($this->plannedArrivalTransportEvent) ? new PlannedArrivalTransportEvent() : $this->plannedArrivalTransportEvent;
+
+        return $this->plannedArrivalTransportEvent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\PlannedArrivalTransportEvent $plannedArrivalTransportEvent
+     * @return self
+     */
+    public function setPlannedArrivalTransportEvent(PlannedArrivalTransportEvent $plannedArrivalTransportEvent): self
+    {
+        $this->plannedArrivalTransportEvent = $plannedArrivalTransportEvent;
+
+        return $this;
+    }
+}

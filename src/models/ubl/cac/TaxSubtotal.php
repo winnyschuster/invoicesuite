@@ -1,0 +1,12 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+
+/**
+ * @JMS\XmlRoot(name="TaxSubtotal", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+ */
+class TaxSubtotal extends TaxSubtotalType
+{
+}

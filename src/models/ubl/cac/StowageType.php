@@ -1,0 +1,174 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Location;
+use horstoeko\invoicesuite\models\ubl\cbc\LocationID;
+
+class StowageType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LocationID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LocationID")
+     * @JMS\Expose
+     * @JMS\SerializedName("LocationID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLocationID", setter="setLocationID")
+     */
+    private $locationID;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Location>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Location>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Location")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Location", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getLocation", setter="setLocation")
+     */
+    private $location;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension>")
+     * @JMS\Expose
+     * @JMS\SerializedName("MeasurementDimension")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="MeasurementDimension", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getMeasurementDimension", setter="setMeasurementDimension")
+     */
+    private $measurementDimension;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LocationID|null
+     */
+    public function getLocationID(): ?LocationID
+    {
+        return $this->locationID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LocationID
+     */
+    public function getLocationIDWithCreate(): LocationID
+    {
+        $this->locationID = is_null($this->locationID) ? new LocationID() : $this->locationID;
+
+        return $this->locationID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LocationID $locationID
+     * @return self
+     */
+    public function setLocationID(LocationID $locationID): self
+    {
+        $this->locationID = $locationID;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Location>|null
+     */
+    public function getLocation(): ?array
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Location> $location
+     * @return self
+     */
+    public function setLocation(array $location): self
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearLocation(): self
+    {
+        $this->location = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Location $location
+     * @return self
+     */
+    public function addToLocation(Location $location): self
+    {
+        $this->location[] = $location;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Location
+     */
+    public function addToLocationWithCreate(): Location
+    {
+        $this->addTolocation($location = new Location());
+
+        return $location;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension>|null
+     */
+    public function getMeasurementDimension(): ?array
+    {
+        return $this->measurementDimension;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension> $measurementDimension
+     * @return self
+     */
+    public function setMeasurementDimension(array $measurementDimension): self
+    {
+        $this->measurementDimension = $measurementDimension;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearMeasurementDimension(): self
+    {
+        $this->measurementDimension = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @return self
+     */
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    {
+        $this->measurementDimension[] = $measurementDimension;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension
+     */
+    public function addToMeasurementDimensionWithCreate(): MeasurementDimension
+    {
+        $this->addTomeasurementDimension($measurementDimension = new MeasurementDimension());
+
+        return $measurementDimension;
+    }
+}

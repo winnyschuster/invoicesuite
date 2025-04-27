@@ -1,0 +1,358 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\CertificateType as CertificateType1;
+use horstoeko\invoicesuite\models\ubl\cbc\CertificateTypeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\Remarks;
+
+class CertificateType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CertificateTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CertificateTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("CertificateTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCertificateTypeCode", setter="setCertificateTypeCode")
+     */
+    private $certificateTypeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CertificateType
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CertificateType")
+     * @JMS\Expose
+     * @JMS\SerializedName("CertificateType")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCertificateType", setter="setCertificateType")
+     */
+    private $certificateType;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Remarks>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Remarks>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Remarks")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Remarks", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getRemarks", setter="setRemarks")
+     */
+    private $remarks;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\IssuerParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\IssuerParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("IssuerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getIssuerParty", setter="setIssuerParty")
+     */
+    private $issuerParty;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDocumentReference", setter="setDocumentReference")
+     */
+    private $documentReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Signature>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Signature>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Signature")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Signature", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getSignature", setter="setSignature")
+     */
+    private $signature;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CertificateTypeCode|null
+     */
+    public function getCertificateTypeCode(): ?CertificateTypeCode
+    {
+        return $this->certificateTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CertificateTypeCode
+     */
+    public function getCertificateTypeCodeWithCreate(): CertificateTypeCode
+    {
+        $this->certificateTypeCode = is_null($this->certificateTypeCode) ? new CertificateTypeCode() : $this->certificateTypeCode;
+
+        return $this->certificateTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CertificateTypeCode $certificateTypeCode
+     * @return self
+     */
+    public function setCertificateTypeCode(CertificateTypeCode $certificateTypeCode): self
+    {
+        $this->certificateTypeCode = $certificateTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CertificateType|null
+     */
+    public function getCertificateType(): ?CertificateType1
+    {
+        return $this->certificateType;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CertificateType
+     */
+    public function getCertificateTypeWithCreate(): CertificateType1
+    {
+        $this->certificateType = is_null($this->certificateType) ? new CertificateType() : $this->certificateType;
+
+        return $this->certificateType;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CertificateType $certificateType
+     * @return self
+     */
+    public function setCertificateType(CertificateType1 $certificateType): self
+    {
+        $this->certificateType = $certificateType;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Remarks>|null
+     */
+    public function getRemarks(): ?array
+    {
+        return $this->remarks;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Remarks> $remarks
+     * @return self
+     */
+    public function setRemarks(array $remarks): self
+    {
+        $this->remarks = $remarks;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearRemarks(): self
+    {
+        $this->remarks = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Remarks $remarks
+     * @return self
+     */
+    public function addToRemarks(Remarks $remarks): self
+    {
+        $this->remarks[] = $remarks;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Remarks
+     */
+    public function addToRemarksWithCreate(): Remarks
+    {
+        $this->addToremarks($remarks = new Remarks());
+
+        return $remarks;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\IssuerParty|null
+     */
+    public function getIssuerParty(): ?IssuerParty
+    {
+        return $this->issuerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\IssuerParty
+     */
+    public function getIssuerPartyWithCreate(): IssuerParty
+    {
+        $this->issuerParty = is_null($this->issuerParty) ? new IssuerParty() : $this->issuerParty;
+
+        return $this->issuerParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\IssuerParty $issuerParty
+     * @return self
+     */
+    public function setIssuerParty(IssuerParty $issuerParty): self
+    {
+        $this->issuerParty = $issuerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>|null
+     */
+    public function getDocumentReference(): ?array
+    {
+        return $this->documentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference> $documentReference
+     * @return self
+     */
+    public function setDocumentReference(array $documentReference): self
+    {
+        $this->documentReference = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDocumentReference(): self
+    {
+        $this->documentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
+     * @return self
+     */
+    public function addToDocumentReference(DocumentReference $documentReference): self
+    {
+        $this->documentReference[] = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     */
+    public function addToDocumentReferenceWithCreate(): DocumentReference
+    {
+        $this->addTodocumentReference($documentReference = new DocumentReference());
+
+        return $documentReference;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Signature>|null
+     */
+    public function getSignature(): ?array
+    {
+        return $this->signature;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Signature> $signature
+     * @return self
+     */
+    public function setSignature(array $signature): self
+    {
+        $this->signature = $signature;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearSignature(): self
+    {
+        $this->signature = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Signature $signature
+     * @return self
+     */
+    public function addToSignature(Signature $signature): self
+    {
+        $this->signature[] = $signature;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature
+     */
+    public function addToSignatureWithCreate(): Signature
+    {
+        $this->addTosignature($signature = new Signature());
+
+        return $signature;
+    }
+}

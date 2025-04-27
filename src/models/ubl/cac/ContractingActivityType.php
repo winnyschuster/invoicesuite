@@ -1,0 +1,90 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ActivityType;
+use horstoeko\invoicesuite\models\ubl\cbc\ActivityTypeCode;
+
+class ContractingActivityType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ActivityTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ActivityTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("ActivityTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getActivityTypeCode", setter="setActivityTypeCode")
+     */
+    private $activityTypeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ActivityType
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ActivityType")
+     * @JMS\Expose
+     * @JMS\SerializedName("ActivityType")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getActivityType", setter="setActivityType")
+     */
+    private $activityType;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ActivityTypeCode|null
+     */
+    public function getActivityTypeCode(): ?ActivityTypeCode
+    {
+        return $this->activityTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ActivityTypeCode
+     */
+    public function getActivityTypeCodeWithCreate(): ActivityTypeCode
+    {
+        $this->activityTypeCode = is_null($this->activityTypeCode) ? new ActivityTypeCode() : $this->activityTypeCode;
+
+        return $this->activityTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ActivityTypeCode $activityTypeCode
+     * @return self
+     */
+    public function setActivityTypeCode(ActivityTypeCode $activityTypeCode): self
+    {
+        $this->activityTypeCode = $activityTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ActivityType|null
+     */
+    public function getActivityType(): ?ActivityType
+    {
+        return $this->activityType;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ActivityType
+     */
+    public function getActivityTypeWithCreate(): ActivityType
+    {
+        $this->activityType = is_null($this->activityType) ? new ActivityType() : $this->activityType;
+
+        return $this->activityType;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ActivityType $activityType
+     * @return self
+     */
+    public function setActivityType(ActivityType $activityType): self
+    {
+        $this->activityType = $activityType;
+
+        return $this;
+    }
+}

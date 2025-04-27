@@ -1,0 +1,1596 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation;
+use horstoeko\invoicesuite\models\ubl\cbc\BrandName;
+use horstoeko\invoicesuite\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\models\ubl\cbc\Keyword;
+use horstoeko\invoicesuite\models\ubl\cbc\ModelName;
+use horstoeko\invoicesuite\models\ubl\cbc\Name;
+use horstoeko\invoicesuite\models\ubl\cbc\PackQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\PackSizeNumeric;
+
+class ItemType
+{
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Description>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Description>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Description")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Description", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDescription", setter="setDescription")
+     */
+    private $description;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PackQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PackQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("PackQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPackQuantity", setter="setPackQuantity")
+     */
+    private $packQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PackSizeNumeric
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PackSizeNumeric")
+     * @JMS\Expose
+     * @JMS\SerializedName("PackSizeNumeric")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPackSizeNumeric", setter="setPackSizeNumeric")
+     */
+    private $packSizeNumeric;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("CatalogueIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCatalogueIndicator", setter="setCatalogueIndicator")
+     */
+    private $catalogueIndicator;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Name
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Name")
+     * @JMS\Expose
+     * @JMS\SerializedName("Name")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getName", setter="setName")
+     */
+    private $name;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("HazardousRiskIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getHazardousRiskIndicator", setter="setHazardousRiskIndicator")
+     */
+    private $hazardousRiskIndicator;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation>")
+     * @JMS\Expose
+     * @JMS\SerializedName("AdditionalInformation")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="AdditionalInformation", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getAdditionalInformation", setter="setAdditionalInformation")
+     */
+    private $additionalInformation;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Keyword>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Keyword>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Keyword")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Keyword", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getKeyword", setter="setKeyword")
+     */
+    private $keyword;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\BrandName>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\BrandName>")
+     * @JMS\Expose
+     * @JMS\SerializedName("BrandName")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="BrandName", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getBrandName", setter="setBrandName")
+     */
+    private $brandName;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\ModelName>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\ModelName>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ModelName")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ModelName", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getModelName", setter="setModelName")
+     */
+    private $modelName;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\BuyersItemIdentification
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\BuyersItemIdentification")
+     * @JMS\Expose
+     * @JMS\SerializedName("BuyersItemIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getBuyersItemIdentification", setter="setBuyersItemIdentification")
+     */
+    private $buyersItemIdentification;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\SellersItemIdentification
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\SellersItemIdentification")
+     * @JMS\Expose
+     * @JMS\SerializedName("SellersItemIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSellersItemIdentification", setter="setSellersItemIdentification")
+     */
+    private $sellersItemIdentification;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ManufacturersItemIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ManufacturersItemIdentification", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getManufacturersItemIdentification", setter="setManufacturersItemIdentification")
+     */
+    private $manufacturersItemIdentification;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\StandardItemIdentification
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\StandardItemIdentification")
+     * @JMS\Expose
+     * @JMS\SerializedName("StandardItemIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getStandardItemIdentification", setter="setStandardItemIdentification")
+     */
+    private $standardItemIdentification;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\CatalogueItemIdentification
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\CatalogueItemIdentification")
+     * @JMS\Expose
+     * @JMS\SerializedName("CatalogueItemIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCatalogueItemIdentification", setter="setCatalogueItemIdentification")
+     */
+    private $catalogueItemIdentification;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification>")
+     * @JMS\Expose
+     * @JMS\SerializedName("AdditionalItemIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="AdditionalItemIdentification", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getAdditionalItemIdentification", setter="setAdditionalItemIdentification")
+     */
+    private $additionalItemIdentification;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\CatalogueDocumentReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\CatalogueDocumentReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("CatalogueDocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCatalogueDocumentReference", setter="setCatalogueDocumentReference")
+     */
+    private $catalogueDocumentReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ItemSpecificationDocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ItemSpecificationDocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getItemSpecificationDocumentReference", setter="setItemSpecificationDocumentReference")
+     */
+    private $itemSpecificationDocumentReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\OriginCountry
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\OriginCountry")
+     * @JMS\Expose
+     * @JMS\SerializedName("OriginCountry")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOriginCountry", setter="setOriginCountry")
+     */
+    private $originCountry;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\CommodityClassification>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\CommodityClassification>")
+     * @JMS\Expose
+     * @JMS\SerializedName("CommodityClassification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="CommodityClassification", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getCommodityClassification", setter="setCommodityClassification")
+     */
+    private $commodityClassification;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\TransactionConditions>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\TransactionConditions>")
+     * @JMS\Expose
+     * @JMS\SerializedName("TransactionConditions")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="TransactionConditions", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getTransactionConditions", setter="setTransactionConditions")
+     */
+    private $transactionConditions;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\HazardousItem>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\HazardousItem>")
+     * @JMS\Expose
+     * @JMS\SerializedName("HazardousItem")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="HazardousItem", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getHazardousItem", setter="setHazardousItem")
+     */
+    private $hazardousItem;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ClassifiedTaxCategory")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ClassifiedTaxCategory", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getClassifiedTaxCategory", setter="setClassifiedTaxCategory")
+     */
+    private $classifiedTaxCategory;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>")
+     * @JMS\Expose
+     * @JMS\SerializedName("AdditionalItemProperty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="AdditionalItemProperty", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getAdditionalItemProperty", setter="setAdditionalItemProperty")
+     */
+    private $additionalItemProperty;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ManufacturerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ManufacturerParty", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getManufacturerParty", setter="setManufacturerParty")
+     */
+    private $manufacturerParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\InformationContentProviderParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\InformationContentProviderParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("InformationContentProviderParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getInformationContentProviderParty", setter="setInformationContentProviderParty")
+     */
+    private $informationContentProviderParty;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\OriginAddress>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\OriginAddress>")
+     * @JMS\Expose
+     * @JMS\SerializedName("OriginAddress")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="OriginAddress", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getOriginAddress", setter="setOriginAddress")
+     */
+    private $originAddress;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ItemInstance>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ItemInstance>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ItemInstance")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ItemInstance", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getItemInstance", setter="setItemInstance")
+     */
+    private $itemInstance;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Certificate>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Certificate>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Certificate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Certificate", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getCertificate", setter="setCertificate")
+     */
+    private $certificate;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Dimension>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Dimension>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Dimension")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Dimension", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDimension", setter="setDimension")
+     */
+    private $dimension;
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Description>|null
+     */
+    public function getDescription(): ?array
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Description> $description
+     * @return self
+     */
+    public function setDescription(array $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDescription(): self
+    {
+        $this->description = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
+     * @return self
+     */
+    public function addToDescription(Description $description): self
+    {
+        $this->description[] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description
+     */
+    public function addToDescriptionWithCreate(): Description
+    {
+        $this->addTodescription($description = new Description());
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackQuantity|null
+     */
+    public function getPackQuantity(): ?PackQuantity
+    {
+        return $this->packQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackQuantity
+     */
+    public function getPackQuantityWithCreate(): PackQuantity
+    {
+        $this->packQuantity = is_null($this->packQuantity) ? new PackQuantity() : $this->packQuantity;
+
+        return $this->packQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PackQuantity $packQuantity
+     * @return self
+     */
+    public function setPackQuantity(PackQuantity $packQuantity): self
+    {
+        $this->packQuantity = $packQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackSizeNumeric|null
+     */
+    public function getPackSizeNumeric(): ?PackSizeNumeric
+    {
+        return $this->packSizeNumeric;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackSizeNumeric
+     */
+    public function getPackSizeNumericWithCreate(): PackSizeNumeric
+    {
+        $this->packSizeNumeric = is_null($this->packSizeNumeric) ? new PackSizeNumeric() : $this->packSizeNumeric;
+
+        return $this->packSizeNumeric;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PackSizeNumeric $packSizeNumeric
+     * @return self
+     */
+    public function setPackSizeNumeric(PackSizeNumeric $packSizeNumeric): self
+    {
+        $this->packSizeNumeric = $packSizeNumeric;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getCatalogueIndicator(): ?bool
+    {
+        return $this->catalogueIndicator;
+    }
+
+    /**
+     * @param bool $catalogueIndicator
+     * @return self
+     */
+    public function setCatalogueIndicator(bool $catalogueIndicator): self
+    {
+        $this->catalogueIndicator = $catalogueIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function getName(): ?Name
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name
+     */
+    public function getNameWithCreate(): Name
+    {
+        $this->name = is_null($this->name) ? new Name() : $this->name;
+
+        return $this->name;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Name $name
+     * @return self
+     */
+    public function setName(Name $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getHazardousRiskIndicator(): ?bool
+    {
+        return $this->hazardousRiskIndicator;
+    }
+
+    /**
+     * @param bool $hazardousRiskIndicator
+     * @return self
+     */
+    public function setHazardousRiskIndicator(bool $hazardousRiskIndicator): self
+    {
+        $this->hazardousRiskIndicator = $hazardousRiskIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation>|null
+     */
+    public function getAdditionalInformation(): ?array
+    {
+        return $this->additionalInformation;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation> $additionalInformation
+     * @return self
+     */
+    public function setAdditionalInformation(array $additionalInformation): self
+    {
+        $this->additionalInformation = $additionalInformation;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearAdditionalInformation(): self
+    {
+        $this->additionalInformation = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation $additionalInformation
+     * @return self
+     */
+    public function addToAdditionalInformation(AdditionalInformation $additionalInformation): self
+    {
+        $this->additionalInformation[] = $additionalInformation;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation
+     */
+    public function addToAdditionalInformationWithCreate(): AdditionalInformation
+    {
+        $this->addToadditionalInformation($additionalInformation = new AdditionalInformation());
+
+        return $additionalInformation;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Keyword>|null
+     */
+    public function getKeyword(): ?array
+    {
+        return $this->keyword;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Keyword> $keyword
+     * @return self
+     */
+    public function setKeyword(array $keyword): self
+    {
+        $this->keyword = $keyword;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearKeyword(): self
+    {
+        $this->keyword = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Keyword $keyword
+     * @return self
+     */
+    public function addToKeyword(Keyword $keyword): self
+    {
+        $this->keyword[] = $keyword;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Keyword
+     */
+    public function addToKeywordWithCreate(): Keyword
+    {
+        $this->addTokeyword($keyword = new Keyword());
+
+        return $keyword;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\BrandName>|null
+     */
+    public function getBrandName(): ?array
+    {
+        return $this->brandName;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\BrandName> $brandName
+     * @return self
+     */
+    public function setBrandName(array $brandName): self
+    {
+        $this->brandName = $brandName;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearBrandName(): self
+    {
+        $this->brandName = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\BrandName $brandName
+     * @return self
+     */
+    public function addToBrandName(BrandName $brandName): self
+    {
+        $this->brandName[] = $brandName;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BrandName
+     */
+    public function addToBrandNameWithCreate(): BrandName
+    {
+        $this->addTobrandName($brandName = new BrandName());
+
+        return $brandName;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\ModelName>|null
+     */
+    public function getModelName(): ?array
+    {
+        return $this->modelName;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\ModelName> $modelName
+     * @return self
+     */
+    public function setModelName(array $modelName): self
+    {
+        $this->modelName = $modelName;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearModelName(): self
+    {
+        $this->modelName = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ModelName $modelName
+     * @return self
+     */
+    public function addToModelName(ModelName $modelName): self
+    {
+        $this->modelName[] = $modelName;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ModelName
+     */
+    public function addToModelNameWithCreate(): ModelName
+    {
+        $this->addTomodelName($modelName = new ModelName());
+
+        return $modelName;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BuyersItemIdentification|null
+     */
+    public function getBuyersItemIdentification(): ?BuyersItemIdentification
+    {
+        return $this->buyersItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BuyersItemIdentification
+     */
+    public function getBuyersItemIdentificationWithCreate(): BuyersItemIdentification
+    {
+        $this->buyersItemIdentification = is_null($this->buyersItemIdentification) ? new BuyersItemIdentification() : $this->buyersItemIdentification;
+
+        return $this->buyersItemIdentification;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\BuyersItemIdentification $buyersItemIdentification
+     * @return self
+     */
+    public function setBuyersItemIdentification(BuyersItemIdentification $buyersItemIdentification): self
+    {
+        $this->buyersItemIdentification = $buyersItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellersItemIdentification|null
+     */
+    public function getSellersItemIdentification(): ?SellersItemIdentification
+    {
+        return $this->sellersItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellersItemIdentification
+     */
+    public function getSellersItemIdentificationWithCreate(): SellersItemIdentification
+    {
+        $this->sellersItemIdentification = is_null($this->sellersItemIdentification) ? new SellersItemIdentification() : $this->sellersItemIdentification;
+
+        return $this->sellersItemIdentification;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\SellersItemIdentification $sellersItemIdentification
+     * @return self
+     */
+    public function setSellersItemIdentification(SellersItemIdentification $sellersItemIdentification): self
+    {
+        $this->sellersItemIdentification = $sellersItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification>|null
+     */
+    public function getManufacturersItemIdentification(): ?array
+    {
+        return $this->manufacturersItemIdentification;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification> $manufacturersItemIdentification
+     * @return self
+     */
+    public function setManufacturersItemIdentification(array $manufacturersItemIdentification): self
+    {
+        $this->manufacturersItemIdentification = $manufacturersItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearManufacturersItemIdentification(): self
+    {
+        $this->manufacturersItemIdentification = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification $manufacturersItemIdentification
+     * @return self
+     */
+    public function addToManufacturersItemIdentification(
+        ManufacturersItemIdentification $manufacturersItemIdentification,
+    ): self {
+        $this->manufacturersItemIdentification[] = $manufacturersItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification
+     */
+    public function addToManufacturersItemIdentificationWithCreate(): ManufacturersItemIdentification
+    {
+        $this->addTomanufacturersItemIdentification($manufacturersItemIdentification = new ManufacturersItemIdentification());
+
+        return $manufacturersItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\StandardItemIdentification|null
+     */
+    public function getStandardItemIdentification(): ?StandardItemIdentification
+    {
+        return $this->standardItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\StandardItemIdentification
+     */
+    public function getStandardItemIdentificationWithCreate(): StandardItemIdentification
+    {
+        $this->standardItemIdentification = is_null($this->standardItemIdentification) ? new StandardItemIdentification() : $this->standardItemIdentification;
+
+        return $this->standardItemIdentification;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\StandardItemIdentification $standardItemIdentification
+     * @return self
+     */
+    public function setStandardItemIdentification(StandardItemIdentification $standardItemIdentification): self
+    {
+        $this->standardItemIdentification = $standardItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CatalogueItemIdentification|null
+     */
+    public function getCatalogueItemIdentification(): ?CatalogueItemIdentification
+    {
+        return $this->catalogueItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CatalogueItemIdentification
+     */
+    public function getCatalogueItemIdentificationWithCreate(): CatalogueItemIdentification
+    {
+        $this->catalogueItemIdentification = is_null($this->catalogueItemIdentification) ? new CatalogueItemIdentification() : $this->catalogueItemIdentification;
+
+        return $this->catalogueItemIdentification;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CatalogueItemIdentification $catalogueItemIdentification
+     * @return self
+     */
+    public function setCatalogueItemIdentification(CatalogueItemIdentification $catalogueItemIdentification): self
+    {
+        $this->catalogueItemIdentification = $catalogueItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification>|null
+     */
+    public function getAdditionalItemIdentification(): ?array
+    {
+        return $this->additionalItemIdentification;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification> $additionalItemIdentification
+     * @return self
+     */
+    public function setAdditionalItemIdentification(array $additionalItemIdentification): self
+    {
+        $this->additionalItemIdentification = $additionalItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearAdditionalItemIdentification(): self
+    {
+        $this->additionalItemIdentification = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification $additionalItemIdentification
+     * @return self
+     */
+    public function addToAdditionalItemIdentification(
+        AdditionalItemIdentification $additionalItemIdentification,
+    ): self {
+        $this->additionalItemIdentification[] = $additionalItemIdentification;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification
+     */
+    public function addToAdditionalItemIdentificationWithCreate(): AdditionalItemIdentification
+    {
+        $this->addToadditionalItemIdentification($additionalItemIdentification = new AdditionalItemIdentification());
+
+        return $additionalItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CatalogueDocumentReference|null
+     */
+    public function getCatalogueDocumentReference(): ?CatalogueDocumentReference
+    {
+        return $this->catalogueDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CatalogueDocumentReference
+     */
+    public function getCatalogueDocumentReferenceWithCreate(): CatalogueDocumentReference
+    {
+        $this->catalogueDocumentReference = is_null($this->catalogueDocumentReference) ? new CatalogueDocumentReference() : $this->catalogueDocumentReference;
+
+        return $this->catalogueDocumentReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CatalogueDocumentReference $catalogueDocumentReference
+     * @return self
+     */
+    public function setCatalogueDocumentReference(CatalogueDocumentReference $catalogueDocumentReference): self
+    {
+        $this->catalogueDocumentReference = $catalogueDocumentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference>|null
+     */
+    public function getItemSpecificationDocumentReference(): ?array
+    {
+        return $this->itemSpecificationDocumentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference> $itemSpecificationDocumentReference
+     * @return self
+     */
+    public function setItemSpecificationDocumentReference(array $itemSpecificationDocumentReference): self
+    {
+        $this->itemSpecificationDocumentReference = $itemSpecificationDocumentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearItemSpecificationDocumentReference(): self
+    {
+        $this->itemSpecificationDocumentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference $itemSpecificationDocumentReference
+     * @return self
+     */
+    public function addToItemSpecificationDocumentReference(
+        ItemSpecificationDocumentReference $itemSpecificationDocumentReference,
+    ): self {
+        $this->itemSpecificationDocumentReference[] = $itemSpecificationDocumentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference
+     */
+    public function addToItemSpecificationDocumentReferenceWithCreate(): ItemSpecificationDocumentReference
+    {
+        $this->addToitemSpecificationDocumentReference($itemSpecificationDocumentReference = new ItemSpecificationDocumentReference());
+
+        return $itemSpecificationDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginCountry|null
+     */
+    public function getOriginCountry(): ?OriginCountry
+    {
+        return $this->originCountry;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginCountry
+     */
+    public function getOriginCountryWithCreate(): OriginCountry
+    {
+        $this->originCountry = is_null($this->originCountry) ? new OriginCountry() : $this->originCountry;
+
+        return $this->originCountry;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\OriginCountry $originCountry
+     * @return self
+     */
+    public function setOriginCountry(OriginCountry $originCountry): self
+    {
+        $this->originCountry = $originCountry;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\CommodityClassification>|null
+     */
+    public function getCommodityClassification(): ?array
+    {
+        return $this->commodityClassification;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\CommodityClassification> $commodityClassification
+     * @return self
+     */
+    public function setCommodityClassification(array $commodityClassification): self
+    {
+        $this->commodityClassification = $commodityClassification;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearCommodityClassification(): self
+    {
+        $this->commodityClassification = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification $commodityClassification
+     * @return self
+     */
+    public function addToCommodityClassification(CommodityClassification $commodityClassification): self
+    {
+        $this->commodityClassification[] = $commodityClassification;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification
+     */
+    public function addToCommodityClassificationWithCreate(): CommodityClassification
+    {
+        $this->addTocommodityClassification($commodityClassification = new CommodityClassification());
+
+        return $commodityClassification;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\TransactionConditions>|null
+     */
+    public function getTransactionConditions(): ?array
+    {
+        return $this->transactionConditions;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\TransactionConditions> $transactionConditions
+     * @return self
+     */
+    public function setTransactionConditions(array $transactionConditions): self
+    {
+        $this->transactionConditions = $transactionConditions;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearTransactionConditions(): self
+    {
+        $this->transactionConditions = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\TransactionConditions $transactionConditions
+     * @return self
+     */
+    public function addToTransactionConditions(TransactionConditions $transactionConditions): self
+    {
+        $this->transactionConditions[] = $transactionConditions;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransactionConditions
+     */
+    public function addToTransactionConditionsWithCreate(): TransactionConditions
+    {
+        $this->addTotransactionConditions($transactionConditions = new TransactionConditions());
+
+        return $transactionConditions;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\HazardousItem>|null
+     */
+    public function getHazardousItem(): ?array
+    {
+        return $this->hazardousItem;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\HazardousItem> $hazardousItem
+     * @return self
+     */
+    public function setHazardousItem(array $hazardousItem): self
+    {
+        $this->hazardousItem = $hazardousItem;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearHazardousItem(): self
+    {
+        $this->hazardousItem = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\HazardousItem $hazardousItem
+     * @return self
+     */
+    public function addToHazardousItem(HazardousItem $hazardousItem): self
+    {
+        $this->hazardousItem[] = $hazardousItem;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousItem
+     */
+    public function addToHazardousItemWithCreate(): HazardousItem
+    {
+        $this->addTohazardousItem($hazardousItem = new HazardousItem());
+
+        return $hazardousItem;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory>|null
+     */
+    public function getClassifiedTaxCategory(): ?array
+    {
+        return $this->classifiedTaxCategory;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory> $classifiedTaxCategory
+     * @return self
+     */
+    public function setClassifiedTaxCategory(array $classifiedTaxCategory): self
+    {
+        $this->classifiedTaxCategory = $classifiedTaxCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearClassifiedTaxCategory(): self
+    {
+        $this->classifiedTaxCategory = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory $classifiedTaxCategory
+     * @return self
+     */
+    public function addToClassifiedTaxCategory(ClassifiedTaxCategory $classifiedTaxCategory): self
+    {
+        $this->classifiedTaxCategory[] = $classifiedTaxCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory
+     */
+    public function addToClassifiedTaxCategoryWithCreate(): ClassifiedTaxCategory
+    {
+        $this->addToclassifiedTaxCategory($classifiedTaxCategory = new ClassifiedTaxCategory());
+
+        return $classifiedTaxCategory;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>|null
+     */
+    public function getAdditionalItemProperty(): ?array
+    {
+        return $this->additionalItemProperty;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty> $additionalItemProperty
+     * @return self
+     */
+    public function setAdditionalItemProperty(array $additionalItemProperty): self
+    {
+        $this->additionalItemProperty = $additionalItemProperty;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearAdditionalItemProperty(): self
+    {
+        $this->additionalItemProperty = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @return self
+     */
+    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    {
+        $this->additionalItemProperty[] = $additionalItemProperty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty
+     */
+    public function addToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
+    {
+        $this->addToadditionalItemProperty($additionalItemProperty = new AdditionalItemProperty());
+
+        return $additionalItemProperty;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty>|null
+     */
+    public function getManufacturerParty(): ?array
+    {
+        return $this->manufacturerParty;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty> $manufacturerParty
+     * @return self
+     */
+    public function setManufacturerParty(array $manufacturerParty): self
+    {
+        $this->manufacturerParty = $manufacturerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearManufacturerParty(): self
+    {
+        $this->manufacturerParty = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty $manufacturerParty
+     * @return self
+     */
+    public function addToManufacturerParty(ManufacturerParty $manufacturerParty): self
+    {
+        $this->manufacturerParty[] = $manufacturerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty
+     */
+    public function addToManufacturerPartyWithCreate(): ManufacturerParty
+    {
+        $this->addTomanufacturerParty($manufacturerParty = new ManufacturerParty());
+
+        return $manufacturerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InformationContentProviderParty|null
+     */
+    public function getInformationContentProviderParty(): ?InformationContentProviderParty
+    {
+        return $this->informationContentProviderParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InformationContentProviderParty
+     */
+    public function getInformationContentProviderPartyWithCreate(): InformationContentProviderParty
+    {
+        $this->informationContentProviderParty = is_null($this->informationContentProviderParty) ? new InformationContentProviderParty() : $this->informationContentProviderParty;
+
+        return $this->informationContentProviderParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\InformationContentProviderParty $informationContentProviderParty
+     * @return self
+     */
+    public function setInformationContentProviderParty(
+        InformationContentProviderParty $informationContentProviderParty,
+    ): self {
+        $this->informationContentProviderParty = $informationContentProviderParty;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\OriginAddress>|null
+     */
+    public function getOriginAddress(): ?array
+    {
+        return $this->originAddress;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\OriginAddress> $originAddress
+     * @return self
+     */
+    public function setOriginAddress(array $originAddress): self
+    {
+        $this->originAddress = $originAddress;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearOriginAddress(): self
+    {
+        $this->originAddress = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\OriginAddress $originAddress
+     * @return self
+     */
+    public function addToOriginAddress(OriginAddress $originAddress): self
+    {
+        $this->originAddress[] = $originAddress;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginAddress
+     */
+    public function addToOriginAddressWithCreate(): OriginAddress
+    {
+        $this->addTooriginAddress($originAddress = new OriginAddress());
+
+        return $originAddress;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ItemInstance>|null
+     */
+    public function getItemInstance(): ?array
+    {
+        return $this->itemInstance;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ItemInstance> $itemInstance
+     * @return self
+     */
+    public function setItemInstance(array $itemInstance): self
+    {
+        $this->itemInstance = $itemInstance;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearItemInstance(): self
+    {
+        $this->itemInstance = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ItemInstance $itemInstance
+     * @return self
+     */
+    public function addToItemInstance(ItemInstance $itemInstance): self
+    {
+        $this->itemInstance[] = $itemInstance;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemInstance
+     */
+    public function addToItemInstanceWithCreate(): ItemInstance
+    {
+        $this->addToitemInstance($itemInstance = new ItemInstance());
+
+        return $itemInstance;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Certificate>|null
+     */
+    public function getCertificate(): ?array
+    {
+        return $this->certificate;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Certificate> $certificate
+     * @return self
+     */
+    public function setCertificate(array $certificate): self
+    {
+        $this->certificate = $certificate;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearCertificate(): self
+    {
+        $this->certificate = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Certificate $certificate
+     * @return self
+     */
+    public function addToCertificate(Certificate $certificate): self
+    {
+        $this->certificate[] = $certificate;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Certificate
+     */
+    public function addToCertificateWithCreate(): Certificate
+    {
+        $this->addTocertificate($certificate = new Certificate());
+
+        return $certificate;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Dimension>|null
+     */
+    public function getDimension(): ?array
+    {
+        return $this->dimension;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Dimension> $dimension
+     * @return self
+     */
+    public function setDimension(array $dimension): self
+    {
+        $this->dimension = $dimension;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDimension(): self
+    {
+        $this->dimension = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Dimension $dimension
+     * @return self
+     */
+    public function addToDimension(Dimension $dimension): self
+    {
+        $this->dimension[] = $dimension;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Dimension
+     */
+    public function addToDimensionWithCreate(): Dimension
+    {
+        $this->addTodimension($dimension = new Dimension());
+
+        return $dimension;
+    }
+}

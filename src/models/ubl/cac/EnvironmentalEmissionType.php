@@ -1,0 +1,216 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\models\ubl\cbc\EnvironmentalEmissionTypeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\ValueMeasure;
+
+class EnvironmentalEmissionType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\EnvironmentalEmissionTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\EnvironmentalEmissionTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("EnvironmentalEmissionTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getEnvironmentalEmissionTypeCode", setter="setEnvironmentalEmissionTypeCode")
+     */
+    private $environmentalEmissionTypeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ValueMeasure
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ValueMeasure")
+     * @JMS\Expose
+     * @JMS\SerializedName("ValueMeasure")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getValueMeasure", setter="setValueMeasure")
+     */
+    private $valueMeasure;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Description>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Description>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Description")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Description", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDescription", setter="setDescription")
+     */
+    private $description;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod>")
+     * @JMS\Expose
+     * @JMS\SerializedName("EmissionCalculationMethod")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="EmissionCalculationMethod", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getEmissionCalculationMethod", setter="setEmissionCalculationMethod")
+     */
+    private $emissionCalculationMethod;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\EnvironmentalEmissionTypeCode|null
+     */
+    public function getEnvironmentalEmissionTypeCode(): ?EnvironmentalEmissionTypeCode
+    {
+        return $this->environmentalEmissionTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\EnvironmentalEmissionTypeCode
+     */
+    public function getEnvironmentalEmissionTypeCodeWithCreate(): EnvironmentalEmissionTypeCode
+    {
+        $this->environmentalEmissionTypeCode = is_null($this->environmentalEmissionTypeCode) ? new EnvironmentalEmissionTypeCode() : $this->environmentalEmissionTypeCode;
+
+        return $this->environmentalEmissionTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode
+     * @return self
+     */
+    public function setEnvironmentalEmissionTypeCode(
+        EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode,
+    ): self {
+        $this->environmentalEmissionTypeCode = $environmentalEmissionTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ValueMeasure|null
+     */
+    public function getValueMeasure(): ?ValueMeasure
+    {
+        return $this->valueMeasure;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ValueMeasure
+     */
+    public function getValueMeasureWithCreate(): ValueMeasure
+    {
+        $this->valueMeasure = is_null($this->valueMeasure) ? new ValueMeasure() : $this->valueMeasure;
+
+        return $this->valueMeasure;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ValueMeasure $valueMeasure
+     * @return self
+     */
+    public function setValueMeasure(ValueMeasure $valueMeasure): self
+    {
+        $this->valueMeasure = $valueMeasure;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Description>|null
+     */
+    public function getDescription(): ?array
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Description> $description
+     * @return self
+     */
+    public function setDescription(array $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDescription(): self
+    {
+        $this->description = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
+     * @return self
+     */
+    public function addToDescription(Description $description): self
+    {
+        $this->description[] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description
+     */
+    public function addToDescriptionWithCreate(): Description
+    {
+        $this->addTodescription($description = new Description());
+
+        return $description;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod>|null
+     */
+    public function getEmissionCalculationMethod(): ?array
+    {
+        return $this->emissionCalculationMethod;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod> $emissionCalculationMethod
+     * @return self
+     */
+    public function setEmissionCalculationMethod(array $emissionCalculationMethod): self
+    {
+        $this->emissionCalculationMethod = $emissionCalculationMethod;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearEmissionCalculationMethod(): self
+    {
+        $this->emissionCalculationMethod = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod $emissionCalculationMethod
+     * @return self
+     */
+    public function addToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): self
+    {
+        $this->emissionCalculationMethod[] = $emissionCalculationMethod;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod
+     */
+    public function addToEmissionCalculationMethodWithCreate(): EmissionCalculationMethod
+    {
+        $this->addToemissionCalculationMethod($emissionCalculationMethod = new EmissionCalculationMethod());
+
+        return $emissionCalculationMethod;
+    }
+}

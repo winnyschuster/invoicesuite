@@ -163,20 +163,20 @@ interface InvoiceSuiteBuilderContract
     /**
      * Set the Tax Registration of the seller/supplier party
      *
-     * @param string $newTaxRegistrationTyüe
+     * @param string $newTaxRegistrationType
      * @param string $newTaxRegistrationId
      * @return self
      */
-    public function setSellerTaxRegistration(string $newTaxRegistrationTyüe, string $newTaxRegistrationId): self;
+    public function setSellerTaxRegistration(string $newTaxRegistrationType, string $newTaxRegistrationId): self;
 
     /**
      * Add an Tax Registration to the seller/supplier party
      *
-     * @param string $newTaxRegistrationTyüe
+     * @param string $newTaxRegistrationType
      * @param string $newTaxRegistrationId
      * @return self
      */
-    public function addSellerTaxRegistration(string $newTaxRegistrationTyüe, string $newTaxRegistrationId): self;
+    public function addSellerTaxRegistration(string $newTaxRegistrationType, string $newTaxRegistrationId): self;
 
     /**
      * Set the address of the seller/supplier party

@@ -1,0 +1,89 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Amount;
+
+class PromotionalEventLineItemType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Amount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Amount")
+     * @JMS\Expose
+     * @JMS\SerializedName("Amount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAmount", setter="setAmount")
+     */
+    private $amount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\EventLineItem
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\EventLineItem")
+     * @JMS\Expose
+     * @JMS\SerializedName("EventLineItem")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getEventLineItem", setter="setEventLineItem")
+     */
+    private $eventLineItem;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Amount|null
+     */
+    public function getAmount(): ?Amount
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Amount
+     */
+    public function getAmountWithCreate(): Amount
+    {
+        $this->amount = is_null($this->amount) ? new Amount() : $this->amount;
+
+        return $this->amount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Amount $amount
+     * @return self
+     */
+    public function setAmount(Amount $amount): self
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventLineItem|null
+     */
+    public function getEventLineItem(): ?EventLineItem
+    {
+        return $this->eventLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventLineItem
+     */
+    public function getEventLineItemWithCreate(): EventLineItem
+    {
+        $this->eventLineItem = is_null($this->eventLineItem) ? new EventLineItem() : $this->eventLineItem;
+
+        return $this->eventLineItem;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\EventLineItem $eventLineItem
+     * @return self
+     */
+    public function setEventLineItem(EventLineItem $eventLineItem): self
+    {
+        $this->eventLineItem = $eventLineItem;
+
+        return $this;
+    }
+}

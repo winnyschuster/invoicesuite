@@ -1,0 +1,120 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\BatchQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\ConsumerUnitQuantity;
+
+class DeliveryUnitType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\BatchQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\BatchQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("BatchQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getBatchQuantity", setter="setBatchQuantity")
+     */
+    private $batchQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ConsumerUnitQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ConsumerUnitQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("ConsumerUnitQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getConsumerUnitQuantity", setter="setConsumerUnitQuantity")
+     */
+    private $consumerUnitQuantity;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("HazardousRiskIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getHazardousRiskIndicator", setter="setHazardousRiskIndicator")
+     */
+    private $hazardousRiskIndicator;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BatchQuantity|null
+     */
+    public function getBatchQuantity(): ?BatchQuantity
+    {
+        return $this->batchQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BatchQuantity
+     */
+    public function getBatchQuantityWithCreate(): BatchQuantity
+    {
+        $this->batchQuantity = is_null($this->batchQuantity) ? new BatchQuantity() : $this->batchQuantity;
+
+        return $this->batchQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\BatchQuantity $batchQuantity
+     * @return self
+     */
+    public function setBatchQuantity(BatchQuantity $batchQuantity): self
+    {
+        $this->batchQuantity = $batchQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ConsumerUnitQuantity|null
+     */
+    public function getConsumerUnitQuantity(): ?ConsumerUnitQuantity
+    {
+        return $this->consumerUnitQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ConsumerUnitQuantity
+     */
+    public function getConsumerUnitQuantityWithCreate(): ConsumerUnitQuantity
+    {
+        $this->consumerUnitQuantity = is_null($this->consumerUnitQuantity) ? new ConsumerUnitQuantity() : $this->consumerUnitQuantity;
+
+        return $this->consumerUnitQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ConsumerUnitQuantity $consumerUnitQuantity
+     * @return self
+     */
+    public function setConsumerUnitQuantity(ConsumerUnitQuantity $consumerUnitQuantity): self
+    {
+        $this->consumerUnitQuantity = $consumerUnitQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getHazardousRiskIndicator(): ?bool
+    {
+        return $this->hazardousRiskIndicator;
+    }
+
+    /**
+     * @param bool $hazardousRiskIndicator
+     * @return self
+     */
+    public function setHazardousRiskIndicator(bool $hazardousRiskIndicator): self
+    {
+        $this->hazardousRiskIndicator = $hazardousRiskIndicator;
+
+        return $this;
+    }
+}

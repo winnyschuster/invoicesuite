@@ -1,0 +1,323 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ProductTraceID;
+use horstoeko\invoicesuite\models\ubl\cbc\RegistrationID;
+use horstoeko\invoicesuite\models\ubl\cbc\SerialID;
+
+class ItemInstanceType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ProductTraceID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ProductTraceID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ProductTraceID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getProductTraceID", setter="setProductTraceID")
+     */
+    private $productTraceID;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("ManufactureDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getManufactureDate", setter="setManufactureDate")
+     */
+    private $manufactureDate;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
+     * @JMS\Expose
+     * @JMS\SerializedName("ManufactureTime")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getManufactureTime", setter="setManufactureTime")
+     */
+    private $manufactureTime;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("BestBeforeDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getBestBeforeDate", setter="setBestBeforeDate")
+     */
+    private $bestBeforeDate;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\RegistrationID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\RegistrationID")
+     * @JMS\Expose
+     * @JMS\SerializedName("RegistrationID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRegistrationID", setter="setRegistrationID")
+     */
+    private $registrationID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\SerialID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\SerialID")
+     * @JMS\Expose
+     * @JMS\SerializedName("SerialID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSerialID", setter="setSerialID")
+     */
+    private $serialID;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>")
+     * @JMS\Expose
+     * @JMS\SerializedName("AdditionalItemProperty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="AdditionalItemProperty", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getAdditionalItemProperty", setter="setAdditionalItemProperty")
+     */
+    private $additionalItemProperty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\LotIdentification
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\LotIdentification")
+     * @JMS\Expose
+     * @JMS\SerializedName("LotIdentification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLotIdentification", setter="setLotIdentification")
+     */
+    private $lotIdentification;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProductTraceID|null
+     */
+    public function getProductTraceID(): ?ProductTraceID
+    {
+        return $this->productTraceID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProductTraceID
+     */
+    public function getProductTraceIDWithCreate(): ProductTraceID
+    {
+        $this->productTraceID = is_null($this->productTraceID) ? new ProductTraceID() : $this->productTraceID;
+
+        return $this->productTraceID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ProductTraceID $productTraceID
+     * @return self
+     */
+    public function setProductTraceID(ProductTraceID $productTraceID): self
+    {
+        $this->productTraceID = $productTraceID;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getManufactureDate(): ?\DateTime
+    {
+        return $this->manufactureDate;
+    }
+
+    /**
+     * @param \DateTime $manufactureDate
+     * @return self
+     */
+    public function setManufactureDate(\DateTime $manufactureDate): self
+    {
+        $this->manufactureDate = $manufactureDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getManufactureTime(): ?\DateTime
+    {
+        return $this->manufactureTime;
+    }
+
+    /**
+     * @param \DateTime $manufactureTime
+     * @return self
+     */
+    public function setManufactureTime(\DateTime $manufactureTime): self
+    {
+        $this->manufactureTime = $manufactureTime;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getBestBeforeDate(): ?\DateTime
+    {
+        return $this->bestBeforeDate;
+    }
+
+    /**
+     * @param \DateTime $bestBeforeDate
+     * @return self
+     */
+    public function setBestBeforeDate(\DateTime $bestBeforeDate): self
+    {
+        $this->bestBeforeDate = $bestBeforeDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RegistrationID|null
+     */
+    public function getRegistrationID(): ?RegistrationID
+    {
+        return $this->registrationID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RegistrationID
+     */
+    public function getRegistrationIDWithCreate(): RegistrationID
+    {
+        $this->registrationID = is_null($this->registrationID) ? new RegistrationID() : $this->registrationID;
+
+        return $this->registrationID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\RegistrationID $registrationID
+     * @return self
+     */
+    public function setRegistrationID(RegistrationID $registrationID): self
+    {
+        $this->registrationID = $registrationID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SerialID|null
+     */
+    public function getSerialID(): ?SerialID
+    {
+        return $this->serialID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SerialID
+     */
+    public function getSerialIDWithCreate(): SerialID
+    {
+        $this->serialID = is_null($this->serialID) ? new SerialID() : $this->serialID;
+
+        return $this->serialID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\SerialID $serialID
+     * @return self
+     */
+    public function setSerialID(SerialID $serialID): self
+    {
+        $this->serialID = $serialID;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>|null
+     */
+    public function getAdditionalItemProperty(): ?array
+    {
+        return $this->additionalItemProperty;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty> $additionalItemProperty
+     * @return self
+     */
+    public function setAdditionalItemProperty(array $additionalItemProperty): self
+    {
+        $this->additionalItemProperty = $additionalItemProperty;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearAdditionalItemProperty(): self
+    {
+        $this->additionalItemProperty = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @return self
+     */
+    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    {
+        $this->additionalItemProperty[] = $additionalItemProperty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty
+     */
+    public function addToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
+    {
+        $this->addToadditionalItemProperty($additionalItemProperty = new AdditionalItemProperty());
+
+        return $additionalItemProperty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LotIdentification|null
+     */
+    public function getLotIdentification(): ?LotIdentification
+    {
+        return $this->lotIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LotIdentification
+     */
+    public function getLotIdentificationWithCreate(): LotIdentification
+    {
+        $this->lotIdentification = is_null($this->lotIdentification) ? new LotIdentification() : $this->lotIdentification;
+
+        return $this->lotIdentification;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\LotIdentification $lotIdentification
+     * @return self
+     */
+    public function setLotIdentification(LotIdentification $lotIdentification): self
+    {
+        $this->lotIdentification = $lotIdentification;
+
+        return $this;
+    }
+}

@@ -1,0 +1,70 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\ext;
+
+use JMS\Serializer\Annotation as JMS;
+
+class UBLExtensionsType
+{
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\ext\UBLExtension>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\ext\UBLExtension>")
+     * @JMS\Expose
+     * @JMS\SerializedName("UBLExtension")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="UBLExtension", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2")
+     * @JMS\Accessor(getter="getUBLExtension", setter="setUBLExtension")
+     */
+    private $uBLExtension;
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\ext\UBLExtension>|null
+     */
+    public function getUBLExtension(): ?array
+    {
+        return $this->uBLExtension;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\ext\UBLExtension> $uBLExtension
+     * @return self
+     */
+    public function setUBLExtension(array $uBLExtension): self
+    {
+        $this->uBLExtension = $uBLExtension;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearUBLExtension(): self
+    {
+        $this->uBLExtension = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\ext\UBLExtension $uBLExtension
+     * @return self
+     */
+    public function addToUBLExtension(UBLExtension $uBLExtension): self
+    {
+        $this->uBLExtension[] = $uBLExtension;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\ext\UBLExtension
+     */
+    public function addToUBLExtensionWithCreate(): UBLExtension
+    {
+        $this->addTouBLExtension($uBLExtension = new UBLExtension());
+
+        return $uBLExtension;
+    }
+}

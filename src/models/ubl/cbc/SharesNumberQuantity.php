@@ -1,0 +1,12 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cbc;
+
+use JMS\Serializer\Annotation as JMS;
+
+/**
+ * @JMS\XmlRoot(name="SharesNumberQuantity", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+ */
+class SharesNumberQuantity extends SharesNumberQuantityType
+{
+}

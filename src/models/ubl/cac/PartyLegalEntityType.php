@@ -1,0 +1,556 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\CompanyID;
+use horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalForm;
+use horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalFormCode;
+use horstoeko\invoicesuite\models\ubl\cbc\CompanyLiquidationStatusCode;
+use horstoeko\invoicesuite\models\ubl\cbc\CorporateStockAmount;
+use horstoeko\invoicesuite\models\ubl\cbc\RegistrationName;
+
+class PartyLegalEntityType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\RegistrationName
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\RegistrationName")
+     * @JMS\Expose
+     * @JMS\SerializedName("RegistrationName")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRegistrationName", setter="setRegistrationName")
+     */
+    private $registrationName;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CompanyID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CompanyID")
+     * @JMS\Expose
+     * @JMS\SerializedName("CompanyID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCompanyID", setter="setCompanyID")
+     */
+    private $companyID;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("RegistrationDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRegistrationDate", setter="setRegistrationDate")
+     */
+    private $registrationDate;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("RegistrationExpirationDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRegistrationExpirationDate", setter="setRegistrationExpirationDate")
+     */
+    private $registrationExpirationDate;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalFormCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalFormCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("CompanyLegalFormCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCompanyLegalFormCode", setter="setCompanyLegalFormCode")
+     */
+    private $companyLegalFormCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalForm
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalForm")
+     * @JMS\Expose
+     * @JMS\SerializedName("CompanyLegalForm")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCompanyLegalForm", setter="setCompanyLegalForm")
+     */
+    private $companyLegalForm;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("SoleProprietorshipIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSoleProprietorshipIndicator", setter="setSoleProprietorshipIndicator")
+     */
+    private $soleProprietorshipIndicator;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CompanyLiquidationStatusCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CompanyLiquidationStatusCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("CompanyLiquidationStatusCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCompanyLiquidationStatusCode", setter="setCompanyLiquidationStatusCode")
+     */
+    private $companyLiquidationStatusCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CorporateStockAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CorporateStockAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("CorporateStockAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCorporateStockAmount", setter="setCorporateStockAmount")
+     */
+    private $corporateStockAmount;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("FullyPaidSharesIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getFullyPaidSharesIndicator", setter="setFullyPaidSharesIndicator")
+     */
+    private $fullyPaidSharesIndicator;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\RegistrationAddress
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\RegistrationAddress")
+     * @JMS\Expose
+     * @JMS\SerializedName("RegistrationAddress")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRegistrationAddress", setter="setRegistrationAddress")
+     */
+    private $registrationAddress;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\CorporateRegistrationScheme
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\CorporateRegistrationScheme")
+     * @JMS\Expose
+     * @JMS\SerializedName("CorporateRegistrationScheme")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCorporateRegistrationScheme", setter="setCorporateRegistrationScheme")
+     */
+    private $corporateRegistrationScheme;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\HeadOfficeParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\HeadOfficeParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("HeadOfficeParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getHeadOfficeParty", setter="setHeadOfficeParty")
+     */
+    private $headOfficeParty;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ShareholderParty>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ShareholderParty>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ShareholderParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ShareholderParty", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getShareholderParty", setter="setShareholderParty")
+     */
+    private $shareholderParty;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RegistrationName|null
+     */
+    public function getRegistrationName(): ?RegistrationName
+    {
+        return $this->registrationName;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RegistrationName
+     */
+    public function getRegistrationNameWithCreate(): RegistrationName
+    {
+        $this->registrationName = is_null($this->registrationName) ? new RegistrationName() : $this->registrationName;
+
+        return $this->registrationName;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\RegistrationName $registrationName
+     * @return self
+     */
+    public function setRegistrationName(RegistrationName $registrationName): self
+    {
+        $this->registrationName = $registrationName;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyID|null
+     */
+    public function getCompanyID(): ?CompanyID
+    {
+        return $this->companyID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyID
+     */
+    public function getCompanyIDWithCreate(): CompanyID
+    {
+        $this->companyID = is_null($this->companyID) ? new CompanyID() : $this->companyID;
+
+        return $this->companyID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CompanyID $companyID
+     * @return self
+     */
+    public function setCompanyID(CompanyID $companyID): self
+    {
+        $this->companyID = $companyID;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getRegistrationDate(): ?\DateTime
+    {
+        return $this->registrationDate;
+    }
+
+    /**
+     * @param \DateTime $registrationDate
+     * @return self
+     */
+    public function setRegistrationDate(\DateTime $registrationDate): self
+    {
+        $this->registrationDate = $registrationDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getRegistrationExpirationDate(): ?\DateTime
+    {
+        return $this->registrationExpirationDate;
+    }
+
+    /**
+     * @param \DateTime $registrationExpirationDate
+     * @return self
+     */
+    public function setRegistrationExpirationDate(\DateTime $registrationExpirationDate): self
+    {
+        $this->registrationExpirationDate = $registrationExpirationDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalFormCode|null
+     */
+    public function getCompanyLegalFormCode(): ?CompanyLegalFormCode
+    {
+        return $this->companyLegalFormCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalFormCode
+     */
+    public function getCompanyLegalFormCodeWithCreate(): CompanyLegalFormCode
+    {
+        $this->companyLegalFormCode = is_null($this->companyLegalFormCode) ? new CompanyLegalFormCode() : $this->companyLegalFormCode;
+
+        return $this->companyLegalFormCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalFormCode $companyLegalFormCode
+     * @return self
+     */
+    public function setCompanyLegalFormCode(CompanyLegalFormCode $companyLegalFormCode): self
+    {
+        $this->companyLegalFormCode = $companyLegalFormCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalForm|null
+     */
+    public function getCompanyLegalForm(): ?CompanyLegalForm
+    {
+        return $this->companyLegalForm;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalForm
+     */
+    public function getCompanyLegalFormWithCreate(): CompanyLegalForm
+    {
+        $this->companyLegalForm = is_null($this->companyLegalForm) ? new CompanyLegalForm() : $this->companyLegalForm;
+
+        return $this->companyLegalForm;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CompanyLegalForm $companyLegalForm
+     * @return self
+     */
+    public function setCompanyLegalForm(CompanyLegalForm $companyLegalForm): self
+    {
+        $this->companyLegalForm = $companyLegalForm;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getSoleProprietorshipIndicator(): ?bool
+    {
+        return $this->soleProprietorshipIndicator;
+    }
+
+    /**
+     * @param bool $soleProprietorshipIndicator
+     * @return self
+     */
+    public function setSoleProprietorshipIndicator(bool $soleProprietorshipIndicator): self
+    {
+        $this->soleProprietorshipIndicator = $soleProprietorshipIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyLiquidationStatusCode|null
+     */
+    public function getCompanyLiquidationStatusCode(): ?CompanyLiquidationStatusCode
+    {
+        return $this->companyLiquidationStatusCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CompanyLiquidationStatusCode
+     */
+    public function getCompanyLiquidationStatusCodeWithCreate(): CompanyLiquidationStatusCode
+    {
+        $this->companyLiquidationStatusCode = is_null($this->companyLiquidationStatusCode) ? new CompanyLiquidationStatusCode() : $this->companyLiquidationStatusCode;
+
+        return $this->companyLiquidationStatusCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CompanyLiquidationStatusCode $companyLiquidationStatusCode
+     * @return self
+     */
+    public function setCompanyLiquidationStatusCode(CompanyLiquidationStatusCode $companyLiquidationStatusCode): self
+    {
+        $this->companyLiquidationStatusCode = $companyLiquidationStatusCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CorporateStockAmount|null
+     */
+    public function getCorporateStockAmount(): ?CorporateStockAmount
+    {
+        return $this->corporateStockAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CorporateStockAmount
+     */
+    public function getCorporateStockAmountWithCreate(): CorporateStockAmount
+    {
+        $this->corporateStockAmount = is_null($this->corporateStockAmount) ? new CorporateStockAmount() : $this->corporateStockAmount;
+
+        return $this->corporateStockAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CorporateStockAmount $corporateStockAmount
+     * @return self
+     */
+    public function setCorporateStockAmount(CorporateStockAmount $corporateStockAmount): self
+    {
+        $this->corporateStockAmount = $corporateStockAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getFullyPaidSharesIndicator(): ?bool
+    {
+        return $this->fullyPaidSharesIndicator;
+    }
+
+    /**
+     * @param bool $fullyPaidSharesIndicator
+     * @return self
+     */
+    public function setFullyPaidSharesIndicator(bool $fullyPaidSharesIndicator): self
+    {
+        $this->fullyPaidSharesIndicator = $fullyPaidSharesIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RegistrationAddress|null
+     */
+    public function getRegistrationAddress(): ?RegistrationAddress
+    {
+        return $this->registrationAddress;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RegistrationAddress
+     */
+    public function getRegistrationAddressWithCreate(): RegistrationAddress
+    {
+        $this->registrationAddress = is_null($this->registrationAddress) ? new RegistrationAddress() : $this->registrationAddress;
+
+        return $this->registrationAddress;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\RegistrationAddress $registrationAddress
+     * @return self
+     */
+    public function setRegistrationAddress(RegistrationAddress $registrationAddress): self
+    {
+        $this->registrationAddress = $registrationAddress;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CorporateRegistrationScheme|null
+     */
+    public function getCorporateRegistrationScheme(): ?CorporateRegistrationScheme
+    {
+        return $this->corporateRegistrationScheme;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CorporateRegistrationScheme
+     */
+    public function getCorporateRegistrationSchemeWithCreate(): CorporateRegistrationScheme
+    {
+        $this->corporateRegistrationScheme = is_null($this->corporateRegistrationScheme) ? new CorporateRegistrationScheme() : $this->corporateRegistrationScheme;
+
+        return $this->corporateRegistrationScheme;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CorporateRegistrationScheme $corporateRegistrationScheme
+     * @return self
+     */
+    public function setCorporateRegistrationScheme(CorporateRegistrationScheme $corporateRegistrationScheme): self
+    {
+        $this->corporateRegistrationScheme = $corporateRegistrationScheme;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HeadOfficeParty|null
+     */
+    public function getHeadOfficeParty(): ?HeadOfficeParty
+    {
+        return $this->headOfficeParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HeadOfficeParty
+     */
+    public function getHeadOfficePartyWithCreate(): HeadOfficeParty
+    {
+        $this->headOfficeParty = is_null($this->headOfficeParty) ? new HeadOfficeParty() : $this->headOfficeParty;
+
+        return $this->headOfficeParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\HeadOfficeParty $headOfficeParty
+     * @return self
+     */
+    public function setHeadOfficeParty(HeadOfficeParty $headOfficeParty): self
+    {
+        $this->headOfficeParty = $headOfficeParty;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ShareholderParty>|null
+     */
+    public function getShareholderParty(): ?array
+    {
+        return $this->shareholderParty;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ShareholderParty> $shareholderParty
+     * @return self
+     */
+    public function setShareholderParty(array $shareholderParty): self
+    {
+        $this->shareholderParty = $shareholderParty;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearShareholderParty(): self
+    {
+        $this->shareholderParty = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ShareholderParty $shareholderParty
+     * @return self
+     */
+    public function addToShareholderParty(ShareholderParty $shareholderParty): self
+    {
+        $this->shareholderParty[] = $shareholderParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShareholderParty
+     */
+    public function addToShareholderPartyWithCreate(): ShareholderParty
+    {
+        $this->addToshareholderParty($shareholderParty = new ShareholderParty());
+
+        return $shareholderParty;
+    }
+}

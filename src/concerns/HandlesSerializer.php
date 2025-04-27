@@ -2,13 +2,15 @@
 
 namespace horstoeko\invoicesuite\concerns;
 
+use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\BaseTypesHandler;
+use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\XmlSchemaDateHandler;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProvider;
+use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Exception\InvalidArgumentException;
+use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProvider;
 
 /**
  * Trait representing methods for handling the serializer/deserializer
@@ -49,6 +51,8 @@ trait HandlesSerializer
         $this->serializerBuilder->addDefaultHandlers();
 
         $this->serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handlerRegistry) use ($invoiceSuiteAbstractFormatProvider): void {
+            $handlerRegistry->registerSubscribingHandler(new BaseTypesHandler());
+            $handlerRegistry->registerSubscribingHandler(new XmlSchemaDateHandler());
             foreach ($invoiceSuiteAbstractFormatProvider->getHandlers() as $handlerClassname) {
                 $handlerRegistry->registerSubscribingHandler(new $handlerClassname());
             }

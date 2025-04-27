@@ -1,0 +1,334 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\FinancingInstrumentCode;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+
+class TradeFinancingType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\FinancingInstrumentCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\FinancingInstrumentCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("FinancingInstrumentCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getFinancingInstrumentCode", setter="setFinancingInstrumentCode")
+     */
+    private $financingInstrumentCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("ContractDocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getContractDocumentReference", setter="setContractDocumentReference")
+     */
+    private $contractDocumentReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDocumentReference", setter="setDocumentReference")
+     */
+    private $documentReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\FinancingParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\FinancingParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("FinancingParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getFinancingParty", setter="setFinancingParty")
+     */
+    private $financingParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\FinancingFinancialAccount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\FinancingFinancialAccount")
+     * @JMS\Expose
+     * @JMS\SerializedName("FinancingFinancialAccount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getFinancingFinancialAccount", setter="setFinancingFinancialAccount")
+     */
+    private $financingFinancialAccount;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Clause>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Clause>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Clause")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Clause", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getClause", setter="setClause")
+     */
+    private $clause;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FinancingInstrumentCode|null
+     */
+    public function getFinancingInstrumentCode(): ?FinancingInstrumentCode
+    {
+        return $this->financingInstrumentCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FinancingInstrumentCode
+     */
+    public function getFinancingInstrumentCodeWithCreate(): FinancingInstrumentCode
+    {
+        $this->financingInstrumentCode = is_null($this->financingInstrumentCode) ? new FinancingInstrumentCode() : $this->financingInstrumentCode;
+
+        return $this->financingInstrumentCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\FinancingInstrumentCode $financingInstrumentCode
+     * @return self
+     */
+    public function setFinancingInstrumentCode(FinancingInstrumentCode $financingInstrumentCode): self
+    {
+        $this->financingInstrumentCode = $financingInstrumentCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference|null
+     */
+    public function getContractDocumentReference(): ?ContractDocumentReference
+    {
+        return $this->contractDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference
+     */
+    public function getContractDocumentReferenceWithCreate(): ContractDocumentReference
+    {
+        $this->contractDocumentReference = is_null($this->contractDocumentReference) ? new ContractDocumentReference() : $this->contractDocumentReference;
+
+        return $this->contractDocumentReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference $contractDocumentReference
+     * @return self
+     */
+    public function setContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
+    {
+        $this->contractDocumentReference = $contractDocumentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>|null
+     */
+    public function getDocumentReference(): ?array
+    {
+        return $this->documentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference> $documentReference
+     * @return self
+     */
+    public function setDocumentReference(array $documentReference): self
+    {
+        $this->documentReference = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDocumentReference(): self
+    {
+        $this->documentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
+     * @return self
+     */
+    public function addToDocumentReference(DocumentReference $documentReference): self
+    {
+        $this->documentReference[] = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     */
+    public function addToDocumentReferenceWithCreate(): DocumentReference
+    {
+        $this->addTodocumentReference($documentReference = new DocumentReference());
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancingParty|null
+     */
+    public function getFinancingParty(): ?FinancingParty
+    {
+        return $this->financingParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancingParty
+     */
+    public function getFinancingPartyWithCreate(): FinancingParty
+    {
+        $this->financingParty = is_null($this->financingParty) ? new FinancingParty() : $this->financingParty;
+
+        return $this->financingParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\FinancingParty $financingParty
+     * @return self
+     */
+    public function setFinancingParty(FinancingParty $financingParty): self
+    {
+        $this->financingParty = $financingParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancingFinancialAccount|null
+     */
+    public function getFinancingFinancialAccount(): ?FinancingFinancialAccount
+    {
+        return $this->financingFinancialAccount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancingFinancialAccount
+     */
+    public function getFinancingFinancialAccountWithCreate(): FinancingFinancialAccount
+    {
+        $this->financingFinancialAccount = is_null($this->financingFinancialAccount) ? new FinancingFinancialAccount() : $this->financingFinancialAccount;
+
+        return $this->financingFinancialAccount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\FinancingFinancialAccount $financingFinancialAccount
+     * @return self
+     */
+    public function setFinancingFinancialAccount(FinancingFinancialAccount $financingFinancialAccount): self
+    {
+        $this->financingFinancialAccount = $financingFinancialAccount;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Clause>|null
+     */
+    public function getClause(): ?array
+    {
+        return $this->clause;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Clause> $clause
+     * @return self
+     */
+    public function setClause(array $clause): self
+    {
+        $this->clause = $clause;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearClause(): self
+    {
+        $this->clause = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Clause $clause
+     * @return self
+     */
+    public function addToClause(Clause $clause): self
+    {
+        $this->clause[] = $clause;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Clause
+     */
+    public function addToClauseWithCreate(): Clause
+    {
+        $this->addToclause($clause = new Clause());
+
+        return $clause;
+    }
+}

@@ -1,0 +1,212 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\LineID;
+use horstoeko\invoicesuite\models\ubl\cbc\LineStatusCode;
+use horstoeko\invoicesuite\models\ubl\cbc\SalesOrderLineID;
+use horstoeko\invoicesuite\models\ubl\cbc\UUID;
+
+class OrderLineReferenceType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LineID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LineID")
+     * @JMS\Expose
+     * @JMS\SerializedName("LineID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLineID", setter="setLineID")
+     */
+    private $lineID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderLineID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\SalesOrderLineID")
+     * @JMS\Expose
+     * @JMS\SerializedName("SalesOrderLineID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSalesOrderLineID", setter="setSalesOrderLineID")
+     */
+    private $salesOrderLineID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\UUID")
+     * @JMS\Expose
+     * @JMS\SerializedName("UUID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getUUID", setter="setUUID")
+     */
+    private $uUID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LineStatusCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LineStatusCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("LineStatusCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLineStatusCode", setter="setLineStatusCode")
+     */
+    private $lineStatusCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\OrderReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\OrderReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("OrderReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOrderReference", setter="setOrderReference")
+     */
+    private $orderReference;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LineID|null
+     */
+    public function getLineID(): ?LineID
+    {
+        return $this->lineID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LineID
+     */
+    public function getLineIDWithCreate(): LineID
+    {
+        $this->lineID = is_null($this->lineID) ? new LineID() : $this->lineID;
+
+        return $this->lineID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LineID $lineID
+     * @return self
+     */
+    public function setLineID(LineID $lineID): self
+    {
+        $this->lineID = $lineID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderLineID|null
+     */
+    public function getSalesOrderLineID(): ?SalesOrderLineID
+    {
+        return $this->salesOrderLineID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderLineID
+     */
+    public function getSalesOrderLineIDWithCreate(): SalesOrderLineID
+    {
+        $this->salesOrderLineID = is_null($this->salesOrderLineID) ? new SalesOrderLineID() : $this->salesOrderLineID;
+
+        return $this->salesOrderLineID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderLineID $salesOrderLineID
+     * @return self
+     */
+    public function setSalesOrderLineID(SalesOrderLineID $salesOrderLineID): self
+    {
+        $this->salesOrderLineID = $salesOrderLineID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID|null
+     */
+    public function getUUID(): ?UUID
+    {
+        return $this->uUID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     */
+    public function getUUIDWithCreate(): UUID
+    {
+        $this->uUID = is_null($this->uUID) ? new UUID() : $this->uUID;
+
+        return $this->uUID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\UUID $uUID
+     * @return self
+     */
+    public function setUUID(UUID $uUID): self
+    {
+        $this->uUID = $uUID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LineStatusCode|null
+     */
+    public function getLineStatusCode(): ?LineStatusCode
+    {
+        return $this->lineStatusCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LineStatusCode
+     */
+    public function getLineStatusCodeWithCreate(): LineStatusCode
+    {
+        $this->lineStatusCode = is_null($this->lineStatusCode) ? new LineStatusCode() : $this->lineStatusCode;
+
+        return $this->lineStatusCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LineStatusCode $lineStatusCode
+     * @return self
+     */
+    public function setLineStatusCode(LineStatusCode $lineStatusCode): self
+    {
+        $this->lineStatusCode = $lineStatusCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderReference|null
+     */
+    public function getOrderReference(): ?OrderReference
+    {
+        return $this->orderReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderReference
+     */
+    public function getOrderReferenceWithCreate(): OrderReference
+    {
+        $this->orderReference = is_null($this->orderReference) ? new OrderReference() : $this->orderReference;
+
+        return $this->orderReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\OrderReference $orderReference
+     * @return self
+     */
+    public function setOrderReference(OrderReference $orderReference): self
+    {
+        $this->orderReference = $orderReference;
+
+        return $this;
+    }
+}

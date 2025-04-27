@@ -4,8 +4,9 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
-//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnung');
+$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
+//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
+//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxxrechnung');
 $builder->setDocumentNo('2025-04-000001');
 $builder->setDocumentType("380");
 $builder->setDocumentDescription("Some document description");
@@ -22,8 +23,11 @@ $builder->addDocumentNote("Some other content", "CC99", "SC99");
 $builder->setSellerName("Lieferant GmbH");
 $builder->setSellerId("0815-4711");
 $builder->addSellerId("0815-4712");
-$builder->setSellerGlobalId("347364862366467", "0088");
+$builder->setSellerGlobalId("11111", "0088");
+$builder->addSellerGlobalId("22222", "0088");
 $builder->setSellerTaxRegistration("VA", "893489787987");
+$builder->setSellerTaxRegistration("VA", "893489787987");
+$builder->addSellerTaxRegistration("FC", "893489787987_x");
 $builder->setSellerAddress("line1", "line2", "line3", "06108", "City", "DE", "Bavaria");
 $builder->setSellerLegalOrganisation("8884", "3874837489237", "Lieferant AG");
 $builder->setSellerContact("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@lieferant.de");

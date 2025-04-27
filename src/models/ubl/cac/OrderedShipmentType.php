@@ -1,0 +1,110 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+
+class OrderedShipmentType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Shipment
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Shipment")
+     * @JMS\Expose
+     * @JMS\SerializedName("Shipment")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getShipment", setter="setShipment")
+     */
+    private $shipment;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Package>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Package>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Package")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Package", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getPackage", setter="setPackage")
+     */
+    private $package;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Shipment|null
+     */
+    public function getShipment(): ?Shipment
+    {
+        return $this->shipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Shipment
+     */
+    public function getShipmentWithCreate(): Shipment
+    {
+        $this->shipment = is_null($this->shipment) ? new Shipment() : $this->shipment;
+
+        return $this->shipment;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Shipment $shipment
+     * @return self
+     */
+    public function setShipment(Shipment $shipment): self
+    {
+        $this->shipment = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Package>|null
+     */
+    public function getPackage(): ?array
+    {
+        return $this->package;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Package> $package
+     * @return self
+     */
+    public function setPackage(array $package): self
+    {
+        $this->package = $package;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearPackage(): self
+    {
+        $this->package = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Package $package
+     * @return self
+     */
+    public function addToPackage(Package $package): self
+    {
+        $this->package[] = $package;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package
+     */
+    public function addToPackageWithCreate(): Package
+    {
+        $this->addTopackage($package = new Package());
+
+        return $package;
+    }
+}

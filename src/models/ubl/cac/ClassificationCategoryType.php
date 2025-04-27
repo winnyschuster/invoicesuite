@@ -1,0 +1,216 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\CodeValue;
+use horstoeko\invoicesuite\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\models\ubl\cbc\Name;
+
+class ClassificationCategoryType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Name
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Name")
+     * @JMS\Expose
+     * @JMS\SerializedName("Name")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getName", setter="setName")
+     */
+    private $name;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CodeValue
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CodeValue")
+     * @JMS\Expose
+     * @JMS\SerializedName("CodeValue")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCodeValue", setter="setCodeValue")
+     */
+    private $codeValue;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Description>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Description>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Description")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Description", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDescription", setter="setDescription")
+     */
+    private $description;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory>")
+     * @JMS\Expose
+     * @JMS\SerializedName("CategorizesClassificationCategory")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="CategorizesClassificationCategory", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getCategorizesClassificationCategory", setter="setCategorizesClassificationCategory")
+     */
+    private $categorizesClassificationCategory;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function getName(): ?Name
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name
+     */
+    public function getNameWithCreate(): Name
+    {
+        $this->name = is_null($this->name) ? new Name() : $this->name;
+
+        return $this->name;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Name $name
+     * @return self
+     */
+    public function setName(Name $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CodeValue|null
+     */
+    public function getCodeValue(): ?CodeValue
+    {
+        return $this->codeValue;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CodeValue
+     */
+    public function getCodeValueWithCreate(): CodeValue
+    {
+        $this->codeValue = is_null($this->codeValue) ? new CodeValue() : $this->codeValue;
+
+        return $this->codeValue;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CodeValue $codeValue
+     * @return self
+     */
+    public function setCodeValue(CodeValue $codeValue): self
+    {
+        $this->codeValue = $codeValue;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Description>|null
+     */
+    public function getDescription(): ?array
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Description> $description
+     * @return self
+     */
+    public function setDescription(array $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDescription(): self
+    {
+        $this->description = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
+     * @return self
+     */
+    public function addToDescription(Description $description): self
+    {
+        $this->description[] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description
+     */
+    public function addToDescriptionWithCreate(): Description
+    {
+        $this->addTodescription($description = new Description());
+
+        return $description;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory>|null
+     */
+    public function getCategorizesClassificationCategory(): ?array
+    {
+        return $this->categorizesClassificationCategory;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory> $categorizesClassificationCategory
+     * @return self
+     */
+    public function setCategorizesClassificationCategory(array $categorizesClassificationCategory): self
+    {
+        $this->categorizesClassificationCategory = $categorizesClassificationCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearCategorizesClassificationCategory(): self
+    {
+        $this->categorizesClassificationCategory = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory $categorizesClassificationCategory
+     * @return self
+     */
+    public function addToCategorizesClassificationCategory(
+        CategorizesClassificationCategory $categorizesClassificationCategory,
+    ): self {
+        $this->categorizesClassificationCategory[] = $categorizesClassificationCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory
+     */
+    public function addToCategorizesClassificationCategoryWithCreate(): CategorizesClassificationCategory
+    {
+        $this->addTocategorizesClassificationCategory($categorizesClassificationCategory = new CategorizesClassificationCategory());
+
+        return $categorizesClassificationCategory;
+    }
+}

@@ -1,0 +1,111 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\MiscellaneousEventTypeCode;
+
+class MiscellaneousEventType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\MiscellaneousEventTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\MiscellaneousEventTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("MiscellaneousEventTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getMiscellaneousEventTypeCode", setter="setMiscellaneousEventTypeCode")
+     */
+    private $miscellaneousEventTypeCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\EventLineItem>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\EventLineItem>")
+     * @JMS\Expose
+     * @JMS\SerializedName("EventLineItem")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="EventLineItem", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getEventLineItem", setter="setEventLineItem")
+     */
+    private $eventLineItem;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MiscellaneousEventTypeCode|null
+     */
+    public function getMiscellaneousEventTypeCode(): ?MiscellaneousEventTypeCode
+    {
+        return $this->miscellaneousEventTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MiscellaneousEventTypeCode
+     */
+    public function getMiscellaneousEventTypeCodeWithCreate(): MiscellaneousEventTypeCode
+    {
+        $this->miscellaneousEventTypeCode = is_null($this->miscellaneousEventTypeCode) ? new MiscellaneousEventTypeCode() : $this->miscellaneousEventTypeCode;
+
+        return $this->miscellaneousEventTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\MiscellaneousEventTypeCode $miscellaneousEventTypeCode
+     * @return self
+     */
+    public function setMiscellaneousEventTypeCode(MiscellaneousEventTypeCode $miscellaneousEventTypeCode): self
+    {
+        $this->miscellaneousEventTypeCode = $miscellaneousEventTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\EventLineItem>|null
+     */
+    public function getEventLineItem(): ?array
+    {
+        return $this->eventLineItem;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\EventLineItem> $eventLineItem
+     * @return self
+     */
+    public function setEventLineItem(array $eventLineItem): self
+    {
+        $this->eventLineItem = $eventLineItem;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearEventLineItem(): self
+    {
+        $this->eventLineItem = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\EventLineItem $eventLineItem
+     * @return self
+     */
+    public function addToEventLineItem(EventLineItem $eventLineItem): self
+    {
+        $this->eventLineItem[] = $eventLineItem;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventLineItem
+     */
+    public function addToEventLineItemWithCreate(): EventLineItem
+    {
+        $this->addToeventLineItem($eventLineItem = new EventLineItem());
+
+        return $eventLineItem;
+    }
+}

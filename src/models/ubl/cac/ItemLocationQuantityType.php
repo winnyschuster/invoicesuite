@@ -1,0 +1,592 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\LeadTimeMeasure;
+use horstoeko\invoicesuite\models\ubl\cbc\MaximumQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\MinimumQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions;
+
+class ItemLocationQuantityType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LeadTimeMeasure
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LeadTimeMeasure")
+     * @JMS\Expose
+     * @JMS\SerializedName("LeadTimeMeasure")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLeadTimeMeasure", setter="setLeadTimeMeasure")
+     */
+    private $leadTimeMeasure;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\MinimumQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\MinimumQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("MinimumQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getMinimumQuantity", setter="setMinimumQuantity")
+     */
+    private $minimumQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\MaximumQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\MaximumQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("MaximumQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getMaximumQuantity", setter="setMaximumQuantity")
+     */
+    private $maximumQuantity;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("HazardousRiskIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getHazardousRiskIndicator", setter="setHazardousRiskIndicator")
+     */
+    private $hazardousRiskIndicator;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions>")
+     * @JMS\Expose
+     * @JMS\SerializedName("TradingRestrictions")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="TradingRestrictions", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getTradingRestrictions", setter="setTradingRestrictions")
+     */
+    private $tradingRestrictions;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ApplicableTerritoryAddress")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ApplicableTerritoryAddress", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getApplicableTerritoryAddress", setter="setApplicableTerritoryAddress")
+     */
+    private $applicableTerritoryAddress;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Price
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Price")
+     * @JMS\Expose
+     * @JMS\SerializedName("Price")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPrice", setter="setPrice")
+     */
+    private $price;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DeliveryUnit")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DeliveryUnit", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDeliveryUnit", setter="setDeliveryUnit")
+     */
+    private $deliveryUnit;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ApplicableTaxCategory")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ApplicableTaxCategory", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getApplicableTaxCategory", setter="setApplicableTaxCategory")
+     */
+    private $applicableTaxCategory;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Package
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Package")
+     * @JMS\Expose
+     * @JMS\SerializedName("Package")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPackage", setter="setPackage")
+     */
+    private $package;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge>")
+     * @JMS\Expose
+     * @JMS\SerializedName("AllowanceCharge")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="AllowanceCharge", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getAllowanceCharge", setter="setAllowanceCharge")
+     */
+    private $allowanceCharge;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\DependentPriceReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\DependentPriceReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("DependentPriceReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDependentPriceReference", setter="setDependentPriceReference")
+     */
+    private $dependentPriceReference;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LeadTimeMeasure|null
+     */
+    public function getLeadTimeMeasure(): ?LeadTimeMeasure
+    {
+        return $this->leadTimeMeasure;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LeadTimeMeasure
+     */
+    public function getLeadTimeMeasureWithCreate(): LeadTimeMeasure
+    {
+        $this->leadTimeMeasure = is_null($this->leadTimeMeasure) ? new LeadTimeMeasure() : $this->leadTimeMeasure;
+
+        return $this->leadTimeMeasure;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LeadTimeMeasure $leadTimeMeasure
+     * @return self
+     */
+    public function setLeadTimeMeasure(LeadTimeMeasure $leadTimeMeasure): self
+    {
+        $this->leadTimeMeasure = $leadTimeMeasure;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MinimumQuantity|null
+     */
+    public function getMinimumQuantity(): ?MinimumQuantity
+    {
+        return $this->minimumQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MinimumQuantity
+     */
+    public function getMinimumQuantityWithCreate(): MinimumQuantity
+    {
+        $this->minimumQuantity = is_null($this->minimumQuantity) ? new MinimumQuantity() : $this->minimumQuantity;
+
+        return $this->minimumQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\MinimumQuantity $minimumQuantity
+     * @return self
+     */
+    public function setMinimumQuantity(MinimumQuantity $minimumQuantity): self
+    {
+        $this->minimumQuantity = $minimumQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MaximumQuantity|null
+     */
+    public function getMaximumQuantity(): ?MaximumQuantity
+    {
+        return $this->maximumQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MaximumQuantity
+     */
+    public function getMaximumQuantityWithCreate(): MaximumQuantity
+    {
+        $this->maximumQuantity = is_null($this->maximumQuantity) ? new MaximumQuantity() : $this->maximumQuantity;
+
+        return $this->maximumQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\MaximumQuantity $maximumQuantity
+     * @return self
+     */
+    public function setMaximumQuantity(MaximumQuantity $maximumQuantity): self
+    {
+        $this->maximumQuantity = $maximumQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getHazardousRiskIndicator(): ?bool
+    {
+        return $this->hazardousRiskIndicator;
+    }
+
+    /**
+     * @param bool $hazardousRiskIndicator
+     * @return self
+     */
+    public function setHazardousRiskIndicator(bool $hazardousRiskIndicator): self
+    {
+        $this->hazardousRiskIndicator = $hazardousRiskIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions>|null
+     */
+    public function getTradingRestrictions(): ?array
+    {
+        return $this->tradingRestrictions;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions> $tradingRestrictions
+     * @return self
+     */
+    public function setTradingRestrictions(array $tradingRestrictions): self
+    {
+        $this->tradingRestrictions = $tradingRestrictions;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearTradingRestrictions(): self
+    {
+        $this->tradingRestrictions = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions $tradingRestrictions
+     * @return self
+     */
+    public function addToTradingRestrictions(TradingRestrictions $tradingRestrictions): self
+    {
+        $this->tradingRestrictions[] = $tradingRestrictions;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions
+     */
+    public function addToTradingRestrictionsWithCreate(): TradingRestrictions
+    {
+        $this->addTotradingRestrictions($tradingRestrictions = new TradingRestrictions());
+
+        return $tradingRestrictions;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress>|null
+     */
+    public function getApplicableTerritoryAddress(): ?array
+    {
+        return $this->applicableTerritoryAddress;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress> $applicableTerritoryAddress
+     * @return self
+     */
+    public function setApplicableTerritoryAddress(array $applicableTerritoryAddress): self
+    {
+        $this->applicableTerritoryAddress = $applicableTerritoryAddress;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearApplicableTerritoryAddress(): self
+    {
+        $this->applicableTerritoryAddress = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress $applicableTerritoryAddress
+     * @return self
+     */
+    public function addToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): self
+    {
+        $this->applicableTerritoryAddress[] = $applicableTerritoryAddress;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress
+     */
+    public function addToApplicableTerritoryAddressWithCreate(): ApplicableTerritoryAddress
+    {
+        $this->addToapplicableTerritoryAddress($applicableTerritoryAddress = new ApplicableTerritoryAddress());
+
+        return $applicableTerritoryAddress;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Price|null
+     */
+    public function getPrice(): ?Price
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Price
+     */
+    public function getPriceWithCreate(): Price
+    {
+        $this->price = is_null($this->price) ? new Price() : $this->price;
+
+        return $this->price;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Price $price
+     * @return self
+     */
+    public function setPrice(Price $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit>|null
+     */
+    public function getDeliveryUnit(): ?array
+    {
+        return $this->deliveryUnit;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit> $deliveryUnit
+     * @return self
+     */
+    public function setDeliveryUnit(array $deliveryUnit): self
+    {
+        $this->deliveryUnit = $deliveryUnit;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDeliveryUnit(): self
+    {
+        $this->deliveryUnit = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit $deliveryUnit
+     * @return self
+     */
+    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): self
+    {
+        $this->deliveryUnit[] = $deliveryUnit;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit
+     */
+    public function addToDeliveryUnitWithCreate(): DeliveryUnit
+    {
+        $this->addTodeliveryUnit($deliveryUnit = new DeliveryUnit());
+
+        return $deliveryUnit;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory>|null
+     */
+    public function getApplicableTaxCategory(): ?array
+    {
+        return $this->applicableTaxCategory;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory> $applicableTaxCategory
+     * @return self
+     */
+    public function setApplicableTaxCategory(array $applicableTaxCategory): self
+    {
+        $this->applicableTaxCategory = $applicableTaxCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearApplicableTaxCategory(): self
+    {
+        $this->applicableTaxCategory = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @return self
+     */
+    public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
+    {
+        $this->applicableTaxCategory[] = $applicableTaxCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory
+     */
+    public function addToApplicableTaxCategoryWithCreate(): ApplicableTaxCategory
+    {
+        $this->addToapplicableTaxCategory($applicableTaxCategory = new ApplicableTaxCategory());
+
+        return $applicableTaxCategory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package|null
+     */
+    public function getPackage(): ?Package
+    {
+        return $this->package;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package
+     */
+    public function getPackageWithCreate(): Package
+    {
+        $this->package = is_null($this->package) ? new Package() : $this->package;
+
+        return $this->package;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Package $package
+     * @return self
+     */
+    public function setPackage(Package $package): self
+    {
+        $this->package = $package;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge>|null
+     */
+    public function getAllowanceCharge(): ?array
+    {
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge> $allowanceCharge
+     * @return self
+     */
+    public function setAllowanceCharge(array $allowanceCharge): self
+    {
+        $this->allowanceCharge = $allowanceCharge;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearAllowanceCharge(): self
+    {
+        $this->allowanceCharge = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @return self
+     */
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    {
+        $this->allowanceCharge[] = $allowanceCharge;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge
+     */
+    public function addToAllowanceChargeWithCreate(): AllowanceCharge
+    {
+        $this->addToallowanceCharge($allowanceCharge = new AllowanceCharge());
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DependentPriceReference|null
+     */
+    public function getDependentPriceReference(): ?DependentPriceReference
+    {
+        return $this->dependentPriceReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DependentPriceReference
+     */
+    public function getDependentPriceReferenceWithCreate(): DependentPriceReference
+    {
+        $this->dependentPriceReference = is_null($this->dependentPriceReference) ? new DependentPriceReference() : $this->dependentPriceReference;
+
+        return $this->dependentPriceReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DependentPriceReference $dependentPriceReference
+     * @return self
+     */
+    public function setDependentPriceReference(DependentPriceReference $dependentPriceReference): self
+    {
+        $this->dependentPriceReference = $dependentPriceReference;
+
+        return $this;
+    }
+}

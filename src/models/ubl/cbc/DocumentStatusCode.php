@@ -1,0 +1,12 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cbc;
+
+use JMS\Serializer\Annotation as JMS;
+
+/**
+ * @JMS\XmlRoot(name="DocumentStatusCode", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+ */
+class DocumentStatusCode extends DocumentStatusCodeType
+{
+}

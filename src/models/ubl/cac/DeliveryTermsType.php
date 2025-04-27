@@ -1,0 +1,337 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Amount;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\LossRisk;
+use horstoeko\invoicesuite\models\ubl\cbc\LossRiskResponsibilityCode;
+use horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms;
+
+class DeliveryTermsType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms>")
+     * @JMS\Expose
+     * @JMS\SerializedName("SpecialTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="SpecialTerms", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getSpecialTerms", setter="setSpecialTerms")
+     */
+    private $specialTerms;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LossRiskResponsibilityCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LossRiskResponsibilityCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("LossRiskResponsibilityCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLossRiskResponsibilityCode", setter="setLossRiskResponsibilityCode")
+     */
+    private $lossRiskResponsibilityCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\LossRisk>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\LossRisk>")
+     * @JMS\Expose
+     * @JMS\SerializedName("LossRisk")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="LossRisk", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getLossRisk", setter="setLossRisk")
+     */
+    private $lossRisk;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Amount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Amount")
+     * @JMS\Expose
+     * @JMS\SerializedName("Amount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAmount", setter="setAmount")
+     */
+    private $amount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\DeliveryLocation
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\DeliveryLocation")
+     * @JMS\Expose
+     * @JMS\SerializedName("DeliveryLocation")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDeliveryLocation", setter="setDeliveryLocation")
+     */
+    private $deliveryLocation;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge")
+     * @JMS\Expose
+     * @JMS\SerializedName("AllowanceCharge")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAllowanceCharge", setter="setAllowanceCharge")
+     */
+    private $allowanceCharge;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms>|null
+     */
+    public function getSpecialTerms(): ?array
+    {
+        return $this->specialTerms;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms> $specialTerms
+     * @return self
+     */
+    public function setSpecialTerms(array $specialTerms): self
+    {
+        $this->specialTerms = $specialTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearSpecialTerms(): self
+    {
+        $this->specialTerms = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms $specialTerms
+     * @return self
+     */
+    public function addToSpecialTerms(SpecialTerms $specialTerms): self
+    {
+        $this->specialTerms[] = $specialTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms
+     */
+    public function addToSpecialTermsWithCreate(): SpecialTerms
+    {
+        $this->addTospecialTerms($specialTerms = new SpecialTerms());
+
+        return $specialTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LossRiskResponsibilityCode|null
+     */
+    public function getLossRiskResponsibilityCode(): ?LossRiskResponsibilityCode
+    {
+        return $this->lossRiskResponsibilityCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LossRiskResponsibilityCode
+     */
+    public function getLossRiskResponsibilityCodeWithCreate(): LossRiskResponsibilityCode
+    {
+        $this->lossRiskResponsibilityCode = is_null($this->lossRiskResponsibilityCode) ? new LossRiskResponsibilityCode() : $this->lossRiskResponsibilityCode;
+
+        return $this->lossRiskResponsibilityCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LossRiskResponsibilityCode $lossRiskResponsibilityCode
+     * @return self
+     */
+    public function setLossRiskResponsibilityCode(LossRiskResponsibilityCode $lossRiskResponsibilityCode): self
+    {
+        $this->lossRiskResponsibilityCode = $lossRiskResponsibilityCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\LossRisk>|null
+     */
+    public function getLossRisk(): ?array
+    {
+        return $this->lossRisk;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\LossRisk> $lossRisk
+     * @return self
+     */
+    public function setLossRisk(array $lossRisk): self
+    {
+        $this->lossRisk = $lossRisk;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearLossRisk(): self
+    {
+        $this->lossRisk = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LossRisk $lossRisk
+     * @return self
+     */
+    public function addToLossRisk(LossRisk $lossRisk): self
+    {
+        $this->lossRisk[] = $lossRisk;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LossRisk
+     */
+    public function addToLossRiskWithCreate(): LossRisk
+    {
+        $this->addTolossRisk($lossRisk = new LossRisk());
+
+        return $lossRisk;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Amount|null
+     */
+    public function getAmount(): ?Amount
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Amount
+     */
+    public function getAmountWithCreate(): Amount
+    {
+        $this->amount = is_null($this->amount) ? new Amount() : $this->amount;
+
+        return $this->amount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Amount $amount
+     * @return self
+     */
+    public function setAmount(Amount $amount): self
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryLocation|null
+     */
+    public function getDeliveryLocation(): ?DeliveryLocation
+    {
+        return $this->deliveryLocation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryLocation
+     */
+    public function getDeliveryLocationWithCreate(): DeliveryLocation
+    {
+        $this->deliveryLocation = is_null($this->deliveryLocation) ? new DeliveryLocation() : $this->deliveryLocation;
+
+        return $this->deliveryLocation;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryLocation $deliveryLocation
+     * @return self
+     */
+    public function setDeliveryLocation(DeliveryLocation $deliveryLocation): self
+    {
+        $this->deliveryLocation = $deliveryLocation;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function getAllowanceCharge(): ?AllowanceCharge
+    {
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge
+     */
+    public function getAllowanceChargeWithCreate(): AllowanceCharge
+    {
+        $this->allowanceCharge = is_null($this->allowanceCharge) ? new AllowanceCharge() : $this->allowanceCharge;
+
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @return self
+     */
+    public function setAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    {
+        $this->allowanceCharge = $allowanceCharge;
+
+        return $this;
+    }
+}

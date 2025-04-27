@@ -1,0 +1,169 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+
+class CatalogueItemSpecificationUpdateLineType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ContractorCustomerParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ContractorCustomerParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("ContractorCustomerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getContractorCustomerParty", setter="setContractorCustomerParty")
+     */
+    private $contractorCustomerParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("SellerSupplierParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSellerSupplierParty", setter="setSellerSupplierParty")
+     */
+    private $sellerSupplierParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Item
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Item")
+     * @JMS\Expose
+     * @JMS\SerializedName("Item")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getItem", setter="setItem")
+     */
+    private $item;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractorCustomerParty|null
+     */
+    public function getContractorCustomerParty(): ?ContractorCustomerParty
+    {
+        return $this->contractorCustomerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractorCustomerParty
+     */
+    public function getContractorCustomerPartyWithCreate(): ContractorCustomerParty
+    {
+        $this->contractorCustomerParty = is_null($this->contractorCustomerParty) ? new ContractorCustomerParty() : $this->contractorCustomerParty;
+
+        return $this->contractorCustomerParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ContractorCustomerParty $contractorCustomerParty
+     * @return self
+     */
+    public function setContractorCustomerParty(ContractorCustomerParty $contractorCustomerParty): self
+    {
+        $this->contractorCustomerParty = $contractorCustomerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty|null
+     */
+    public function getSellerSupplierParty(): ?SellerSupplierParty
+    {
+        return $this->sellerSupplierParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty
+     */
+    public function getSellerSupplierPartyWithCreate(): SellerSupplierParty
+    {
+        $this->sellerSupplierParty = is_null($this->sellerSupplierParty) ? new SellerSupplierParty() : $this->sellerSupplierParty;
+
+        return $this->sellerSupplierParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty $sellerSupplierParty
+     * @return self
+     */
+    public function setSellerSupplierParty(SellerSupplierParty $sellerSupplierParty): self
+    {
+        $this->sellerSupplierParty = $sellerSupplierParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item|null
+     */
+    public function getItem(): ?Item
+    {
+        return $this->item;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item
+     */
+    public function getItemWithCreate(): Item
+    {
+        $this->item = is_null($this->item) ? new Item() : $this->item;
+
+        return $this->item;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Item $item
+     * @return self
+     */
+    public function setItem(Item $item): self
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+}

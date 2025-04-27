@@ -1,0 +1,714 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode;
+use horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial;
+use horstoeko\invoicesuite\models\ubl\cbc\Quantity;
+use horstoeko\invoicesuite\models\ubl\cbc\TraceID;
+
+class PackageType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Quantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Quantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("Quantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getQuantity", setter="setQuantity")
+     */
+    private $quantity;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReturnableMaterialIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getReturnableMaterialIndicator", setter="setReturnableMaterialIndicator")
+     */
+    private $returnableMaterialIndicator;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("PackageLevelCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPackageLevelCode", setter="setPackageLevelCode")
+     */
+    private $packageLevelCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("PackagingTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPackagingTypeCode", setter="setPackagingTypeCode")
+     */
+    private $packagingTypeCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial>")
+     * @JMS\Expose
+     * @JMS\SerializedName("PackingMaterial")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="PackingMaterial", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getPackingMaterial", setter="setPackingMaterial")
+     */
+    private $packingMaterial;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TraceID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TraceID")
+     * @JMS\Expose
+     * @JMS\SerializedName("TraceID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTraceID", setter="setTraceID")
+     */
+    private $traceID;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ContainedPackage>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ContainedPackage>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ContainedPackage")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ContainedPackage", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getContainedPackage", setter="setContainedPackage")
+     */
+    private $containedPackage;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ContainingTransportEquipment
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ContainingTransportEquipment")
+     * @JMS\Expose
+     * @JMS\SerializedName("ContainingTransportEquipment")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getContainingTransportEquipment", setter="setContainingTransportEquipment")
+     */
+    private $containingTransportEquipment;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\GoodsItem>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\GoodsItem>")
+     * @JMS\Expose
+     * @JMS\SerializedName("GoodsItem")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="GoodsItem", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getGoodsItem", setter="setGoodsItem")
+     */
+    private $goodsItem;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension>")
+     * @JMS\Expose
+     * @JMS\SerializedName("MeasurementDimension")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="MeasurementDimension", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getMeasurementDimension", setter="setMeasurementDimension")
+     */
+    private $measurementDimension;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DeliveryUnit")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DeliveryUnit", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDeliveryUnit", setter="setDeliveryUnit")
+     */
+    private $deliveryUnit;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Delivery
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Delivery")
+     * @JMS\Expose
+     * @JMS\SerializedName("Delivery")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDelivery", setter="setDelivery")
+     */
+    private $delivery;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Pickup
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Pickup")
+     * @JMS\Expose
+     * @JMS\SerializedName("Pickup")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPickup", setter="setPickup")
+     */
+    private $pickup;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Despatch
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Despatch")
+     * @JMS\Expose
+     * @JMS\SerializedName("Despatch")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDespatch", setter="setDespatch")
+     */
+    private $despatch;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Quantity|null
+     */
+    public function getQuantity(): ?Quantity
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Quantity
+     */
+    public function getQuantityWithCreate(): Quantity
+    {
+        $this->quantity = is_null($this->quantity) ? new Quantity() : $this->quantity;
+
+        return $this->quantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Quantity $quantity
+     * @return self
+     */
+    public function setQuantity(Quantity $quantity): self
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getReturnableMaterialIndicator(): ?bool
+    {
+        return $this->returnableMaterialIndicator;
+    }
+
+    /**
+     * @param bool $returnableMaterialIndicator
+     * @return self
+     */
+    public function setReturnableMaterialIndicator(bool $returnableMaterialIndicator): self
+    {
+        $this->returnableMaterialIndicator = $returnableMaterialIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode|null
+     */
+    public function getPackageLevelCode(): ?PackageLevelCode
+    {
+        return $this->packageLevelCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode
+     */
+    public function getPackageLevelCodeWithCreate(): PackageLevelCode
+    {
+        $this->packageLevelCode = is_null($this->packageLevelCode) ? new PackageLevelCode() : $this->packageLevelCode;
+
+        return $this->packageLevelCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode $packageLevelCode
+     * @return self
+     */
+    public function setPackageLevelCode(PackageLevelCode $packageLevelCode): self
+    {
+        $this->packageLevelCode = $packageLevelCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode|null
+     */
+    public function getPackagingTypeCode(): ?PackagingTypeCode
+    {
+        return $this->packagingTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode
+     */
+    public function getPackagingTypeCodeWithCreate(): PackagingTypeCode
+    {
+        $this->packagingTypeCode = is_null($this->packagingTypeCode) ? new PackagingTypeCode() : $this->packagingTypeCode;
+
+        return $this->packagingTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode $packagingTypeCode
+     * @return self
+     */
+    public function setPackagingTypeCode(PackagingTypeCode $packagingTypeCode): self
+    {
+        $this->packagingTypeCode = $packagingTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial>|null
+     */
+    public function getPackingMaterial(): ?array
+    {
+        return $this->packingMaterial;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial> $packingMaterial
+     * @return self
+     */
+    public function setPackingMaterial(array $packingMaterial): self
+    {
+        $this->packingMaterial = $packingMaterial;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearPackingMaterial(): self
+    {
+        $this->packingMaterial = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial $packingMaterial
+     * @return self
+     */
+    public function addToPackingMaterial(PackingMaterial $packingMaterial): self
+    {
+        $this->packingMaterial[] = $packingMaterial;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial
+     */
+    public function addToPackingMaterialWithCreate(): PackingMaterial
+    {
+        $this->addTopackingMaterial($packingMaterial = new PackingMaterial());
+
+        return $packingMaterial;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TraceID|null
+     */
+    public function getTraceID(): ?TraceID
+    {
+        return $this->traceID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TraceID
+     */
+    public function getTraceIDWithCreate(): TraceID
+    {
+        $this->traceID = is_null($this->traceID) ? new TraceID() : $this->traceID;
+
+        return $this->traceID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TraceID $traceID
+     * @return self
+     */
+    public function setTraceID(TraceID $traceID): self
+    {
+        $this->traceID = $traceID;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ContainedPackage>|null
+     */
+    public function getContainedPackage(): ?array
+    {
+        return $this->containedPackage;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ContainedPackage> $containedPackage
+     * @return self
+     */
+    public function setContainedPackage(array $containedPackage): self
+    {
+        $this->containedPackage = $containedPackage;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearContainedPackage(): self
+    {
+        $this->containedPackage = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ContainedPackage $containedPackage
+     * @return self
+     */
+    public function addToContainedPackage(ContainedPackage $containedPackage): self
+    {
+        $this->containedPackage[] = $containedPackage;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedPackage
+     */
+    public function addToContainedPackageWithCreate(): ContainedPackage
+    {
+        $this->addTocontainedPackage($containedPackage = new ContainedPackage());
+
+        return $containedPackage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainingTransportEquipment|null
+     */
+    public function getContainingTransportEquipment(): ?ContainingTransportEquipment
+    {
+        return $this->containingTransportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainingTransportEquipment
+     */
+    public function getContainingTransportEquipmentWithCreate(): ContainingTransportEquipment
+    {
+        $this->containingTransportEquipment = is_null($this->containingTransportEquipment) ? new ContainingTransportEquipment() : $this->containingTransportEquipment;
+
+        return $this->containingTransportEquipment;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ContainingTransportEquipment $containingTransportEquipment
+     * @return self
+     */
+    public function setContainingTransportEquipment(ContainingTransportEquipment $containingTransportEquipment): self
+    {
+        $this->containingTransportEquipment = $containingTransportEquipment;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\GoodsItem>|null
+     */
+    public function getGoodsItem(): ?array
+    {
+        return $this->goodsItem;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\GoodsItem> $goodsItem
+     * @return self
+     */
+    public function setGoodsItem(array $goodsItem): self
+    {
+        $this->goodsItem = $goodsItem;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearGoodsItem(): self
+    {
+        $this->goodsItem = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\GoodsItem $goodsItem
+     * @return self
+     */
+    public function addToGoodsItem(GoodsItem $goodsItem): self
+    {
+        $this->goodsItem[] = $goodsItem;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem
+     */
+    public function addToGoodsItemWithCreate(): GoodsItem
+    {
+        $this->addTogoodsItem($goodsItem = new GoodsItem());
+
+        return $goodsItem;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension>|null
+     */
+    public function getMeasurementDimension(): ?array
+    {
+        return $this->measurementDimension;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension> $measurementDimension
+     * @return self
+     */
+    public function setMeasurementDimension(array $measurementDimension): self
+    {
+        $this->measurementDimension = $measurementDimension;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearMeasurementDimension(): self
+    {
+        $this->measurementDimension = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @return self
+     */
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    {
+        $this->measurementDimension[] = $measurementDimension;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension
+     */
+    public function addToMeasurementDimensionWithCreate(): MeasurementDimension
+    {
+        $this->addTomeasurementDimension($measurementDimension = new MeasurementDimension());
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit>|null
+     */
+    public function getDeliveryUnit(): ?array
+    {
+        return $this->deliveryUnit;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit> $deliveryUnit
+     * @return self
+     */
+    public function setDeliveryUnit(array $deliveryUnit): self
+    {
+        $this->deliveryUnit = $deliveryUnit;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDeliveryUnit(): self
+    {
+        $this->deliveryUnit = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit $deliveryUnit
+     * @return self
+     */
+    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): self
+    {
+        $this->deliveryUnit[] = $deliveryUnit;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit
+     */
+    public function addToDeliveryUnitWithCreate(): DeliveryUnit
+    {
+        $this->addTodeliveryUnit($deliveryUnit = new DeliveryUnit());
+
+        return $deliveryUnit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function getDelivery(): ?Delivery
+    {
+        return $this->delivery;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery
+     */
+    public function getDeliveryWithCreate(): Delivery
+    {
+        $this->delivery = is_null($this->delivery) ? new Delivery() : $this->delivery;
+
+        return $this->delivery;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Delivery $delivery
+     * @return self
+     */
+    public function setDelivery(Delivery $delivery): self
+    {
+        $this->delivery = $delivery;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Pickup|null
+     */
+    public function getPickup(): ?Pickup
+    {
+        return $this->pickup;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Pickup
+     */
+    public function getPickupWithCreate(): Pickup
+    {
+        $this->pickup = is_null($this->pickup) ? new Pickup() : $this->pickup;
+
+        return $this->pickup;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Pickup $pickup
+     * @return self
+     */
+    public function setPickup(Pickup $pickup): self
+    {
+        $this->pickup = $pickup;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Despatch|null
+     */
+    public function getDespatch(): ?Despatch
+    {
+        return $this->despatch;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Despatch
+     */
+    public function getDespatchWithCreate(): Despatch
+    {
+        $this->despatch = is_null($this->despatch) ? new Despatch() : $this->despatch;
+
+        return $this->despatch;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Despatch $despatch
+     * @return self
+     */
+    public function setDespatch(Despatch $despatch): self
+    {
+        $this->despatch = $despatch;
+
+        return $this;
+    }
+}

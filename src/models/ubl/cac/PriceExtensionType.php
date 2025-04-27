@@ -1,0 +1,111 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Amount;
+
+class PriceExtensionType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Amount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Amount")
+     * @JMS\Expose
+     * @JMS\SerializedName("Amount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAmount", setter="setAmount")
+     */
+    private $amount;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\TaxTotal>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\TaxTotal>")
+     * @JMS\Expose
+     * @JMS\SerializedName("TaxTotal")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="TaxTotal", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getTaxTotal", setter="setTaxTotal")
+     */
+    private $taxTotal;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Amount|null
+     */
+    public function getAmount(): ?Amount
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Amount
+     */
+    public function getAmountWithCreate(): Amount
+    {
+        $this->amount = is_null($this->amount) ? new Amount() : $this->amount;
+
+        return $this->amount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Amount $amount
+     * @return self
+     */
+    public function setAmount(Amount $amount): self
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\TaxTotal>|null
+     */
+    public function getTaxTotal(): ?array
+    {
+        return $this->taxTotal;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\TaxTotal> $taxTotal
+     * @return self
+     */
+    public function setTaxTotal(array $taxTotal): self
+    {
+        $this->taxTotal = $taxTotal;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearTaxTotal(): self
+    {
+        $this->taxTotal = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\TaxTotal $taxTotal
+     * @return self
+     */
+    public function addToTaxTotal(TaxTotal $taxTotal): self
+    {
+        $this->taxTotal[] = $taxTotal;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal
+     */
+    public function addToTaxTotalWithCreate(): TaxTotal
+    {
+        $this->addTotaxTotal($taxTotal = new TaxTotal());
+
+        return $taxTotal;
+    }
+}

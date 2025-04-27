@@ -1,0 +1,141 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\LotNumberID;
+
+class LotIdentificationType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LotNumberID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LotNumberID")
+     * @JMS\Expose
+     * @JMS\SerializedName("LotNumberID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLotNumberID", setter="setLotNumberID")
+     */
+    private $lotNumberID;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("ExpiryDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getExpiryDate", setter="setExpiryDate")
+     */
+    private $expiryDate;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>")
+     * @JMS\Expose
+     * @JMS\SerializedName("AdditionalItemProperty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="AdditionalItemProperty", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getAdditionalItemProperty", setter="setAdditionalItemProperty")
+     */
+    private $additionalItemProperty;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LotNumberID|null
+     */
+    public function getLotNumberID(): ?LotNumberID
+    {
+        return $this->lotNumberID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LotNumberID
+     */
+    public function getLotNumberIDWithCreate(): LotNumberID
+    {
+        $this->lotNumberID = is_null($this->lotNumberID) ? new LotNumberID() : $this->lotNumberID;
+
+        return $this->lotNumberID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LotNumberID $lotNumberID
+     * @return self
+     */
+    public function setLotNumberID(LotNumberID $lotNumberID): self
+    {
+        $this->lotNumberID = $lotNumberID;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getExpiryDate(): ?\DateTime
+    {
+        return $this->expiryDate;
+    }
+
+    /**
+     * @param \DateTime $expiryDate
+     * @return self
+     */
+    public function setExpiryDate(\DateTime $expiryDate): self
+    {
+        $this->expiryDate = $expiryDate;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty>|null
+     */
+    public function getAdditionalItemProperty(): ?array
+    {
+        return $this->additionalItemProperty;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty> $additionalItemProperty
+     * @return self
+     */
+    public function setAdditionalItemProperty(array $additionalItemProperty): self
+    {
+        $this->additionalItemProperty = $additionalItemProperty;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearAdditionalItemProperty(): self
+    {
+        $this->additionalItemProperty = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @return self
+     */
+    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    {
+        $this->additionalItemProperty[] = $additionalItemProperty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty
+     */
+    public function addToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
+    {
+        $this->addToadditionalItemProperty($additionalItemProperty = new AdditionalItemProperty());
+
+        return $additionalItemProperty;
+    }
+}

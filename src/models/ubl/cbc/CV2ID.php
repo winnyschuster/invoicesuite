@@ -1,0 +1,12 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cbc;
+
+use JMS\Serializer\Annotation as JMS;
+
+/**
+ * @JMS\XmlRoot(name="CV2ID", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+ */
+class CV2ID extends CV2IDType
+{
+}

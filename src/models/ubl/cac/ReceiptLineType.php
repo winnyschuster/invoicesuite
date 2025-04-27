@@ -1,0 +1,944 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\Note;
+use horstoeko\invoicesuite\models\ubl\cbc\OversupplyQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\QuantityDiscrepancyCode;
+use horstoeko\invoicesuite\models\ubl\cbc\ReceivedQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\RejectActionCode;
+use horstoeko\invoicesuite\models\ubl\cbc\RejectReason;
+use horstoeko\invoicesuite\models\ubl\cbc\RejectReasonCode;
+use horstoeko\invoicesuite\models\ubl\cbc\RejectedQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\ShortQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\ShortageActionCode;
+use horstoeko\invoicesuite\models\ubl\cbc\TimingComplaint;
+use horstoeko\invoicesuite\models\ubl\cbc\TimingComplaintCode;
+use horstoeko\invoicesuite\models\ubl\cbc\UUID;
+
+class ReceiptLineType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\UUID")
+     * @JMS\Expose
+     * @JMS\SerializedName("UUID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getUUID", setter="setUUID")
+     */
+    private $uUID;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Note>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Note>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Note")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Note", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getNote", setter="setNote")
+     */
+    private $note;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ReceivedQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ReceivedQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReceivedQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getReceivedQuantity", setter="setReceivedQuantity")
+     */
+    private $receivedQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ShortQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ShortQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("ShortQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getShortQuantity", setter="setShortQuantity")
+     */
+    private $shortQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ShortageActionCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ShortageActionCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("ShortageActionCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getShortageActionCode", setter="setShortageActionCode")
+     */
+    private $shortageActionCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\RejectedQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\RejectedQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("RejectedQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRejectedQuantity", setter="setRejectedQuantity")
+     */
+    private $rejectedQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\RejectReasonCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\RejectReasonCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("RejectReasonCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRejectReasonCode", setter="setRejectReasonCode")
+     */
+    private $rejectReasonCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\RejectReason>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\RejectReason>")
+     * @JMS\Expose
+     * @JMS\SerializedName("RejectReason")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="RejectReason", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getRejectReason", setter="setRejectReason")
+     */
+    private $rejectReason;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\RejectActionCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\RejectActionCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("RejectActionCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getRejectActionCode", setter="setRejectActionCode")
+     */
+    private $rejectActionCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\QuantityDiscrepancyCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\QuantityDiscrepancyCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("QuantityDiscrepancyCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getQuantityDiscrepancyCode", setter="setQuantityDiscrepancyCode")
+     */
+    private $quantityDiscrepancyCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\OversupplyQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\OversupplyQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("OversupplyQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOversupplyQuantity", setter="setOversupplyQuantity")
+     */
+    private $oversupplyQuantity;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReceivedDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getReceivedDate", setter="setReceivedDate")
+     */
+    private $receivedDate;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaintCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TimingComplaintCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("TimingComplaintCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTimingComplaintCode", setter="setTimingComplaintCode")
+     */
+    private $timingComplaintCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaint
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TimingComplaint")
+     * @JMS\Expose
+     * @JMS\SerializedName("TimingComplaint")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTimingComplaint", setter="setTimingComplaint")
+     */
+    private $timingComplaint;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\OrderLineReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("OrderLineReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOrderLineReference", setter="setOrderLineReference")
+     */
+    private $orderLineReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DespatchLineReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DespatchLineReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDespatchLineReference", setter="setDespatchLineReference")
+     */
+    private $despatchLineReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDocumentReference", setter="setDocumentReference")
+     */
+    private $documentReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Item>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Item>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Item")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Item", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getItem", setter="setItem")
+     */
+    private $item;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\Shipment>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\Shipment>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Shipment")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Shipment", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getShipment", setter="setShipment")
+     */
+    private $shipment;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID|null
+     */
+    public function getUUID(): ?UUID
+    {
+        return $this->uUID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     */
+    public function getUUIDWithCreate(): UUID
+    {
+        $this->uUID = is_null($this->uUID) ? new UUID() : $this->uUID;
+
+        return $this->uUID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\UUID $uUID
+     * @return self
+     */
+    public function setUUID(UUID $uUID): self
+    {
+        $this->uUID = $uUID;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Note>|null
+     */
+    public function getNote(): ?array
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Note> $note
+     * @return self
+     */
+    public function setNote(array $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearNote(): self
+    {
+        $this->note = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
+     * @return self
+     */
+    public function addToNote(Note $note): self
+    {
+        $this->note[] = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note
+     */
+    public function addToNoteWithCreate(): Note
+    {
+        $this->addTonote($note = new Note());
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReceivedQuantity|null
+     */
+    public function getReceivedQuantity(): ?ReceivedQuantity
+    {
+        return $this->receivedQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReceivedQuantity
+     */
+    public function getReceivedQuantityWithCreate(): ReceivedQuantity
+    {
+        $this->receivedQuantity = is_null($this->receivedQuantity) ? new ReceivedQuantity() : $this->receivedQuantity;
+
+        return $this->receivedQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ReceivedQuantity $receivedQuantity
+     * @return self
+     */
+    public function setReceivedQuantity(ReceivedQuantity $receivedQuantity): self
+    {
+        $this->receivedQuantity = $receivedQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ShortQuantity|null
+     */
+    public function getShortQuantity(): ?ShortQuantity
+    {
+        return $this->shortQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ShortQuantity
+     */
+    public function getShortQuantityWithCreate(): ShortQuantity
+    {
+        $this->shortQuantity = is_null($this->shortQuantity) ? new ShortQuantity() : $this->shortQuantity;
+
+        return $this->shortQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ShortQuantity $shortQuantity
+     * @return self
+     */
+    public function setShortQuantity(ShortQuantity $shortQuantity): self
+    {
+        $this->shortQuantity = $shortQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ShortageActionCode|null
+     */
+    public function getShortageActionCode(): ?ShortageActionCode
+    {
+        return $this->shortageActionCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ShortageActionCode
+     */
+    public function getShortageActionCodeWithCreate(): ShortageActionCode
+    {
+        $this->shortageActionCode = is_null($this->shortageActionCode) ? new ShortageActionCode() : $this->shortageActionCode;
+
+        return $this->shortageActionCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ShortageActionCode $shortageActionCode
+     * @return self
+     */
+    public function setShortageActionCode(ShortageActionCode $shortageActionCode): self
+    {
+        $this->shortageActionCode = $shortageActionCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectedQuantity|null
+     */
+    public function getRejectedQuantity(): ?RejectedQuantity
+    {
+        return $this->rejectedQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectedQuantity
+     */
+    public function getRejectedQuantityWithCreate(): RejectedQuantity
+    {
+        $this->rejectedQuantity = is_null($this->rejectedQuantity) ? new RejectedQuantity() : $this->rejectedQuantity;
+
+        return $this->rejectedQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\RejectedQuantity $rejectedQuantity
+     * @return self
+     */
+    public function setRejectedQuantity(RejectedQuantity $rejectedQuantity): self
+    {
+        $this->rejectedQuantity = $rejectedQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectReasonCode|null
+     */
+    public function getRejectReasonCode(): ?RejectReasonCode
+    {
+        return $this->rejectReasonCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectReasonCode
+     */
+    public function getRejectReasonCodeWithCreate(): RejectReasonCode
+    {
+        $this->rejectReasonCode = is_null($this->rejectReasonCode) ? new RejectReasonCode() : $this->rejectReasonCode;
+
+        return $this->rejectReasonCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\RejectReasonCode $rejectReasonCode
+     * @return self
+     */
+    public function setRejectReasonCode(RejectReasonCode $rejectReasonCode): self
+    {
+        $this->rejectReasonCode = $rejectReasonCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\RejectReason>|null
+     */
+    public function getRejectReason(): ?array
+    {
+        return $this->rejectReason;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\RejectReason> $rejectReason
+     * @return self
+     */
+    public function setRejectReason(array $rejectReason): self
+    {
+        $this->rejectReason = $rejectReason;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearRejectReason(): self
+    {
+        $this->rejectReason = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\RejectReason $rejectReason
+     * @return self
+     */
+    public function addToRejectReason(RejectReason $rejectReason): self
+    {
+        $this->rejectReason[] = $rejectReason;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectReason
+     */
+    public function addToRejectReasonWithCreate(): RejectReason
+    {
+        $this->addTorejectReason($rejectReason = new RejectReason());
+
+        return $rejectReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectActionCode|null
+     */
+    public function getRejectActionCode(): ?RejectActionCode
+    {
+        return $this->rejectActionCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RejectActionCode
+     */
+    public function getRejectActionCodeWithCreate(): RejectActionCode
+    {
+        $this->rejectActionCode = is_null($this->rejectActionCode) ? new RejectActionCode() : $this->rejectActionCode;
+
+        return $this->rejectActionCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\RejectActionCode $rejectActionCode
+     * @return self
+     */
+    public function setRejectActionCode(RejectActionCode $rejectActionCode): self
+    {
+        $this->rejectActionCode = $rejectActionCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\QuantityDiscrepancyCode|null
+     */
+    public function getQuantityDiscrepancyCode(): ?QuantityDiscrepancyCode
+    {
+        return $this->quantityDiscrepancyCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\QuantityDiscrepancyCode
+     */
+    public function getQuantityDiscrepancyCodeWithCreate(): QuantityDiscrepancyCode
+    {
+        $this->quantityDiscrepancyCode = is_null($this->quantityDiscrepancyCode) ? new QuantityDiscrepancyCode() : $this->quantityDiscrepancyCode;
+
+        return $this->quantityDiscrepancyCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\QuantityDiscrepancyCode $quantityDiscrepancyCode
+     * @return self
+     */
+    public function setQuantityDiscrepancyCode(QuantityDiscrepancyCode $quantityDiscrepancyCode): self
+    {
+        $this->quantityDiscrepancyCode = $quantityDiscrepancyCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OversupplyQuantity|null
+     */
+    public function getOversupplyQuantity(): ?OversupplyQuantity
+    {
+        return $this->oversupplyQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OversupplyQuantity
+     */
+    public function getOversupplyQuantityWithCreate(): OversupplyQuantity
+    {
+        $this->oversupplyQuantity = is_null($this->oversupplyQuantity) ? new OversupplyQuantity() : $this->oversupplyQuantity;
+
+        return $this->oversupplyQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\OversupplyQuantity $oversupplyQuantity
+     * @return self
+     */
+    public function setOversupplyQuantity(OversupplyQuantity $oversupplyQuantity): self
+    {
+        $this->oversupplyQuantity = $oversupplyQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getReceivedDate(): ?\DateTime
+    {
+        return $this->receivedDate;
+    }
+
+    /**
+     * @param \DateTime $receivedDate
+     * @return self
+     */
+    public function setReceivedDate(\DateTime $receivedDate): self
+    {
+        $this->receivedDate = $receivedDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaintCode|null
+     */
+    public function getTimingComplaintCode(): ?TimingComplaintCode
+    {
+        return $this->timingComplaintCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaintCode
+     */
+    public function getTimingComplaintCodeWithCreate(): TimingComplaintCode
+    {
+        $this->timingComplaintCode = is_null($this->timingComplaintCode) ? new TimingComplaintCode() : $this->timingComplaintCode;
+
+        return $this->timingComplaintCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaintCode $timingComplaintCode
+     * @return self
+     */
+    public function setTimingComplaintCode(TimingComplaintCode $timingComplaintCode): self
+    {
+        $this->timingComplaintCode = $timingComplaintCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaint|null
+     */
+    public function getTimingComplaint(): ?TimingComplaint
+    {
+        return $this->timingComplaint;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaint
+     */
+    public function getTimingComplaintWithCreate(): TimingComplaint
+    {
+        $this->timingComplaint = is_null($this->timingComplaint) ? new TimingComplaint() : $this->timingComplaint;
+
+        return $this->timingComplaint;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TimingComplaint $timingComplaint
+     * @return self
+     */
+    public function setTimingComplaint(TimingComplaint $timingComplaint): self
+    {
+        $this->timingComplaint = $timingComplaint;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference|null
+     */
+    public function getOrderLineReference(): ?OrderLineReference
+    {
+        return $this->orderLineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference
+     */
+    public function getOrderLineReferenceWithCreate(): OrderLineReference
+    {
+        $this->orderLineReference = is_null($this->orderLineReference) ? new OrderLineReference() : $this->orderLineReference;
+
+        return $this->orderLineReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference $orderLineReference
+     * @return self
+     */
+    public function setOrderLineReference(OrderLineReference $orderLineReference): self
+    {
+        $this->orderLineReference = $orderLineReference;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference>|null
+     */
+    public function getDespatchLineReference(): ?array
+    {
+        return $this->despatchLineReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference> $despatchLineReference
+     * @return self
+     */
+    public function setDespatchLineReference(array $despatchLineReference): self
+    {
+        $this->despatchLineReference = $despatchLineReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDespatchLineReference(): self
+    {
+        $this->despatchLineReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference $despatchLineReference
+     * @return self
+     */
+    public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): self
+    {
+        $this->despatchLineReference[] = $despatchLineReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference
+     */
+    public function addToDespatchLineReferenceWithCreate(): DespatchLineReference
+    {
+        $this->addTodespatchLineReference($despatchLineReference = new DespatchLineReference());
+
+        return $despatchLineReference;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>|null
+     */
+    public function getDocumentReference(): ?array
+    {
+        return $this->documentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference> $documentReference
+     * @return self
+     */
+    public function setDocumentReference(array $documentReference): self
+    {
+        $this->documentReference = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDocumentReference(): self
+    {
+        $this->documentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
+     * @return self
+     */
+    public function addToDocumentReference(DocumentReference $documentReference): self
+    {
+        $this->documentReference[] = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     */
+    public function addToDocumentReferenceWithCreate(): DocumentReference
+    {
+        $this->addTodocumentReference($documentReference = new DocumentReference());
+
+        return $documentReference;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Item>|null
+     */
+    public function getItem(): ?array
+    {
+        return $this->item;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Item> $item
+     * @return self
+     */
+    public function setItem(array $item): self
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearItem(): self
+    {
+        $this->item = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Item $item
+     * @return self
+     */
+    public function addToItem(Item $item): self
+    {
+        $this->item[] = $item;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item
+     */
+    public function addToItemWithCreate(): Item
+    {
+        $this->addToitem($item = new Item());
+
+        return $item;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\Shipment>|null
+     */
+    public function getShipment(): ?array
+    {
+        return $this->shipment;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\Shipment> $shipment
+     * @return self
+     */
+    public function setShipment(array $shipment): self
+    {
+        $this->shipment = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearShipment(): self
+    {
+        $this->shipment = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Shipment $shipment
+     * @return self
+     */
+    public function addToShipment(Shipment $shipment): self
+    {
+        $this->shipment[] = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Shipment
+     */
+    public function addToShipmentWithCreate(): Shipment
+    {
+        $this->addToshipment($shipment = new Shipment());
+
+        return $shipment;
+    }
+}

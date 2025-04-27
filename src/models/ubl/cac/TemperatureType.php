@@ -1,0 +1,153 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\AttributeID;
+use horstoeko\invoicesuite\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\models\ubl\cbc\Measure;
+
+class TemperatureType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\AttributeID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\AttributeID")
+     * @JMS\Expose
+     * @JMS\SerializedName("AttributeID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAttributeID", setter="setAttributeID")
+     */
+    private $attributeID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Measure
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Measure")
+     * @JMS\Expose
+     * @JMS\SerializedName("Measure")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getMeasure", setter="setMeasure")
+     */
+    private $measure;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Description>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Description>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Description")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Description", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDescription", setter="setDescription")
+     */
+    private $description;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AttributeID|null
+     */
+    public function getAttributeID(): ?AttributeID
+    {
+        return $this->attributeID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AttributeID
+     */
+    public function getAttributeIDWithCreate(): AttributeID
+    {
+        $this->attributeID = is_null($this->attributeID) ? new AttributeID() : $this->attributeID;
+
+        return $this->attributeID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\AttributeID $attributeID
+     * @return self
+     */
+    public function setAttributeID(AttributeID $attributeID): self
+    {
+        $this->attributeID = $attributeID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Measure|null
+     */
+    public function getMeasure(): ?Measure
+    {
+        return $this->measure;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Measure
+     */
+    public function getMeasureWithCreate(): Measure
+    {
+        $this->measure = is_null($this->measure) ? new Measure() : $this->measure;
+
+        return $this->measure;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Measure $measure
+     * @return self
+     */
+    public function setMeasure(Measure $measure): self
+    {
+        $this->measure = $measure;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Description>|null
+     */
+    public function getDescription(): ?array
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Description> $description
+     * @return self
+     */
+    public function setDescription(array $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDescription(): self
+    {
+        $this->description = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
+     * @return self
+     */
+    public function addToDescription(Description $description): self
+    {
+        $this->description[] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description
+     */
+    public function addToDescriptionWithCreate(): Description
+    {
+        $this->addTodescription($description = new Description());
+
+        return $description;
+    }
+}

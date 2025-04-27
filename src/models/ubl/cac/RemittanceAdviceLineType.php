@@ -1,0 +1,824 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount;
+use horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount;
+use horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\InvoicingPartyReference;
+use horstoeko\invoicesuite\models\ubl\cbc\Note;
+use horstoeko\invoicesuite\models\ubl\cbc\PaymentPurposeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\UUID;
+
+class RemittanceAdviceLineType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Note>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Note>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Note")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Note", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getNote", setter="setNote")
+     */
+    private $note;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\UUID")
+     * @JMS\Expose
+     * @JMS\SerializedName("UUID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getUUID", setter="setUUID")
+     */
+    private $uUID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("DebitLineAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDebitLineAmount", setter="setDebitLineAmount")
+     */
+    private $debitLineAmount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("CreditLineAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCreditLineAmount", setter="setCreditLineAmount")
+     */
+    private $creditLineAmount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("BalanceAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getBalanceAmount", setter="setBalanceAmount")
+     */
+    private $balanceAmount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PaymentPurposeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PaymentPurposeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("PaymentPurposeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPaymentPurposeCode", setter="setPaymentPurposeCode")
+     */
+    private $paymentPurposeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\InvoicingPartyReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\InvoicingPartyReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("InvoicingPartyReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getInvoicingPartyReference", setter="setInvoicingPartyReference")
+     */
+    private $invoicingPartyReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\AccountingSupplierParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\AccountingSupplierParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("AccountingSupplierParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAccountingSupplierParty", setter="setAccountingSupplierParty")
+     */
+    private $accountingSupplierParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\AccountingCustomerParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\AccountingCustomerParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("AccountingCustomerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAccountingCustomerParty", setter="setAccountingCustomerParty")
+     */
+    private $accountingCustomerParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\BuyerCustomerParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\BuyerCustomerParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("BuyerCustomerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getBuyerCustomerParty", setter="setBuyerCustomerParty")
+     */
+    private $buyerCustomerParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("SellerSupplierParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSellerSupplierParty", setter="setSellerSupplierParty")
+     */
+    private $sellerSupplierParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\OriginatorCustomerParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\OriginatorCustomerParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("OriginatorCustomerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOriginatorCustomerParty", setter="setOriginatorCustomerParty")
+     */
+    private $originatorCustomerParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\PayeeParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\PayeeParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("PayeeParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPayeeParty", setter="setPayeeParty")
+     */
+    private $payeeParty;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod>")
+     * @JMS\Expose
+     * @JMS\SerializedName("InvoicePeriod")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="InvoicePeriod", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getInvoicePeriod", setter="setInvoicePeriod")
+     */
+    private $invoicePeriod;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\BillingReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\BillingReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("BillingReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="BillingReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getBillingReference", setter="setBillingReference")
+     */
+    private $billingReference;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDocumentReference", setter="setDocumentReference")
+     */
+    private $documentReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ExchangeRate")
+     * @JMS\Expose
+     * @JMS\SerializedName("ExchangeRate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getExchangeRate", setter="setExchangeRate")
+     */
+    private $exchangeRate;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Note>|null
+     */
+    public function getNote(): ?array
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Note> $note
+     * @return self
+     */
+    public function setNote(array $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearNote(): self
+    {
+        $this->note = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
+     * @return self
+     */
+    public function addToNote(Note $note): self
+    {
+        $this->note[] = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note
+     */
+    public function addToNoteWithCreate(): Note
+    {
+        $this->addTonote($note = new Note());
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID|null
+     */
+    public function getUUID(): ?UUID
+    {
+        return $this->uUID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     */
+    public function getUUIDWithCreate(): UUID
+    {
+        $this->uUID = is_null($this->uUID) ? new UUID() : $this->uUID;
+
+        return $this->uUID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\UUID $uUID
+     * @return self
+     */
+    public function setUUID(UUID $uUID): self
+    {
+        $this->uUID = $uUID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount|null
+     */
+    public function getDebitLineAmount(): ?DebitLineAmount
+    {
+        return $this->debitLineAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount
+     */
+    public function getDebitLineAmountWithCreate(): DebitLineAmount
+    {
+        $this->debitLineAmount = is_null($this->debitLineAmount) ? new DebitLineAmount() : $this->debitLineAmount;
+
+        return $this->debitLineAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount $debitLineAmount
+     * @return self
+     */
+    public function setDebitLineAmount(DebitLineAmount $debitLineAmount): self
+    {
+        $this->debitLineAmount = $debitLineAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount|null
+     */
+    public function getCreditLineAmount(): ?CreditLineAmount
+    {
+        return $this->creditLineAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount
+     */
+    public function getCreditLineAmountWithCreate(): CreditLineAmount
+    {
+        $this->creditLineAmount = is_null($this->creditLineAmount) ? new CreditLineAmount() : $this->creditLineAmount;
+
+        return $this->creditLineAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount $creditLineAmount
+     * @return self
+     */
+    public function setCreditLineAmount(CreditLineAmount $creditLineAmount): self
+    {
+        $this->creditLineAmount = $creditLineAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount|null
+     */
+    public function getBalanceAmount(): ?BalanceAmount
+    {
+        return $this->balanceAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount
+     */
+    public function getBalanceAmountWithCreate(): BalanceAmount
+    {
+        $this->balanceAmount = is_null($this->balanceAmount) ? new BalanceAmount() : $this->balanceAmount;
+
+        return $this->balanceAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount $balanceAmount
+     * @return self
+     */
+    public function setBalanceAmount(BalanceAmount $balanceAmount): self
+    {
+        $this->balanceAmount = $balanceAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentPurposeCode|null
+     */
+    public function getPaymentPurposeCode(): ?PaymentPurposeCode
+    {
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentPurposeCode
+     */
+    public function getPaymentPurposeCodeWithCreate(): PaymentPurposeCode
+    {
+        $this->paymentPurposeCode = is_null($this->paymentPurposeCode) ? new PaymentPurposeCode() : $this->paymentPurposeCode;
+
+        return $this->paymentPurposeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PaymentPurposeCode $paymentPurposeCode
+     * @return self
+     */
+    public function setPaymentPurposeCode(PaymentPurposeCode $paymentPurposeCode): self
+    {
+        $this->paymentPurposeCode = $paymentPurposeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\InvoicingPartyReference|null
+     */
+    public function getInvoicingPartyReference(): ?InvoicingPartyReference
+    {
+        return $this->invoicingPartyReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\InvoicingPartyReference
+     */
+    public function getInvoicingPartyReferenceWithCreate(): InvoicingPartyReference
+    {
+        $this->invoicingPartyReference = is_null($this->invoicingPartyReference) ? new InvoicingPartyReference() : $this->invoicingPartyReference;
+
+        return $this->invoicingPartyReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\InvoicingPartyReference $invoicingPartyReference
+     * @return self
+     */
+    public function setInvoicingPartyReference(InvoicingPartyReference $invoicingPartyReference): self
+    {
+        $this->invoicingPartyReference = $invoicingPartyReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AccountingSupplierParty|null
+     */
+    public function getAccountingSupplierParty(): ?AccountingSupplierParty
+    {
+        return $this->accountingSupplierParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AccountingSupplierParty
+     */
+    public function getAccountingSupplierPartyWithCreate(): AccountingSupplierParty
+    {
+        $this->accountingSupplierParty = is_null($this->accountingSupplierParty) ? new AccountingSupplierParty() : $this->accountingSupplierParty;
+
+        return $this->accountingSupplierParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AccountingSupplierParty $accountingSupplierParty
+     * @return self
+     */
+    public function setAccountingSupplierParty(AccountingSupplierParty $accountingSupplierParty): self
+    {
+        $this->accountingSupplierParty = $accountingSupplierParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AccountingCustomerParty|null
+     */
+    public function getAccountingCustomerParty(): ?AccountingCustomerParty
+    {
+        return $this->accountingCustomerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AccountingCustomerParty
+     */
+    public function getAccountingCustomerPartyWithCreate(): AccountingCustomerParty
+    {
+        $this->accountingCustomerParty = is_null($this->accountingCustomerParty) ? new AccountingCustomerParty() : $this->accountingCustomerParty;
+
+        return $this->accountingCustomerParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\AccountingCustomerParty $accountingCustomerParty
+     * @return self
+     */
+    public function setAccountingCustomerParty(AccountingCustomerParty $accountingCustomerParty): self
+    {
+        $this->accountingCustomerParty = $accountingCustomerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BuyerCustomerParty|null
+     */
+    public function getBuyerCustomerParty(): ?BuyerCustomerParty
+    {
+        return $this->buyerCustomerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BuyerCustomerParty
+     */
+    public function getBuyerCustomerPartyWithCreate(): BuyerCustomerParty
+    {
+        $this->buyerCustomerParty = is_null($this->buyerCustomerParty) ? new BuyerCustomerParty() : $this->buyerCustomerParty;
+
+        return $this->buyerCustomerParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\BuyerCustomerParty $buyerCustomerParty
+     * @return self
+     */
+    public function setBuyerCustomerParty(BuyerCustomerParty $buyerCustomerParty): self
+    {
+        $this->buyerCustomerParty = $buyerCustomerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty|null
+     */
+    public function getSellerSupplierParty(): ?SellerSupplierParty
+    {
+        return $this->sellerSupplierParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty
+     */
+    public function getSellerSupplierPartyWithCreate(): SellerSupplierParty
+    {
+        $this->sellerSupplierParty = is_null($this->sellerSupplierParty) ? new SellerSupplierParty() : $this->sellerSupplierParty;
+
+        return $this->sellerSupplierParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\SellerSupplierParty $sellerSupplierParty
+     * @return self
+     */
+    public function setSellerSupplierParty(SellerSupplierParty $sellerSupplierParty): self
+    {
+        $this->sellerSupplierParty = $sellerSupplierParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginatorCustomerParty|null
+     */
+    public function getOriginatorCustomerParty(): ?OriginatorCustomerParty
+    {
+        return $this->originatorCustomerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginatorCustomerParty
+     */
+    public function getOriginatorCustomerPartyWithCreate(): OriginatorCustomerParty
+    {
+        $this->originatorCustomerParty = is_null($this->originatorCustomerParty) ? new OriginatorCustomerParty() : $this->originatorCustomerParty;
+
+        return $this->originatorCustomerParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\OriginatorCustomerParty $originatorCustomerParty
+     * @return self
+     */
+    public function setOriginatorCustomerParty(OriginatorCustomerParty $originatorCustomerParty): self
+    {
+        $this->originatorCustomerParty = $originatorCustomerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PayeeParty|null
+     */
+    public function getPayeeParty(): ?PayeeParty
+    {
+        return $this->payeeParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PayeeParty
+     */
+    public function getPayeePartyWithCreate(): PayeeParty
+    {
+        $this->payeeParty = is_null($this->payeeParty) ? new PayeeParty() : $this->payeeParty;
+
+        return $this->payeeParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\PayeeParty $payeeParty
+     * @return self
+     */
+    public function setPayeeParty(PayeeParty $payeeParty): self
+    {
+        $this->payeeParty = $payeeParty;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod>|null
+     */
+    public function getInvoicePeriod(): ?array
+    {
+        return $this->invoicePeriod;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod> $invoicePeriod
+     * @return self
+     */
+    public function setInvoicePeriod(array $invoicePeriod): self
+    {
+        $this->invoicePeriod = $invoicePeriod;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearInvoicePeriod(): self
+    {
+        $this->invoicePeriod = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod $invoicePeriod
+     * @return self
+     */
+    public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): self
+    {
+        $this->invoicePeriod[] = $invoicePeriod;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod
+     */
+    public function addToInvoicePeriodWithCreate(): InvoicePeriod
+    {
+        $this->addToinvoicePeriod($invoicePeriod = new InvoicePeriod());
+
+        return $invoicePeriod;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\BillingReference>|null
+     */
+    public function getBillingReference(): ?array
+    {
+        return $this->billingReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\BillingReference> $billingReference
+     * @return self
+     */
+    public function setBillingReference(array $billingReference): self
+    {
+        $this->billingReference = $billingReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearBillingReference(): self
+    {
+        $this->billingReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\BillingReference $billingReference
+     * @return self
+     */
+    public function addToBillingReference(BillingReference $billingReference): self
+    {
+        $this->billingReference[] = $billingReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference
+     */
+    public function addToBillingReferenceWithCreate(): BillingReference
+    {
+        $this->addTobillingReference($billingReference = new BillingReference());
+
+        return $billingReference;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>|null
+     */
+    public function getDocumentReference(): ?array
+    {
+        return $this->documentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference> $documentReference
+     * @return self
+     */
+    public function setDocumentReference(array $documentReference): self
+    {
+        $this->documentReference = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDocumentReference(): self
+    {
+        $this->documentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
+     * @return self
+     */
+    public function addToDocumentReference(DocumentReference $documentReference): self
+    {
+        $this->documentReference[] = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     */
+    public function addToDocumentReferenceWithCreate(): DocumentReference
+    {
+        $this->addTodocumentReference($documentReference = new DocumentReference());
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate|null
+     */
+    public function getExchangeRate(): ?ExchangeRate
+    {
+        return $this->exchangeRate;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate
+     */
+    public function getExchangeRateWithCreate(): ExchangeRate
+    {
+        $this->exchangeRate = is_null($this->exchangeRate) ? new ExchangeRate() : $this->exchangeRate;
+
+        return $this->exchangeRate;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate $exchangeRate
+     * @return self
+     */
+    public function setExchangeRate(ExchangeRate $exchangeRate): self
+    {
+        $this->exchangeRate = $exchangeRate;
+
+        return $this;
+    }
+}

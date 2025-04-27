@@ -1,0 +1,994 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ContentUnitQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\LineExtensionAmount;
+use horstoeko\invoicesuite\models\ubl\cbc\MaximumOrderQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\MinimumOrderQuantity;
+use horstoeko\invoicesuite\models\ubl\cbc\Note;
+use horstoeko\invoicesuite\models\ubl\cbc\OrderQuantityIncrementNumeric;
+use horstoeko\invoicesuite\models\ubl\cbc\OrderableUnit;
+use horstoeko\invoicesuite\models\ubl\cbc\PackLevelCode;
+use horstoeko\invoicesuite\models\ubl\cbc\Quantity;
+use horstoeko\invoicesuite\models\ubl\cbc\TotalTaxAmount;
+use horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation;
+
+class TenderLineType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Note>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Note>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Note")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Note", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getNote", setter="setNote")
+     */
+    private $note;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Quantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Quantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("Quantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getQuantity", setter="setQuantity")
+     */
+    private $quantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LineExtensionAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LineExtensionAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("LineExtensionAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLineExtensionAmount", setter="setLineExtensionAmount")
+     */
+    private $lineExtensionAmount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TotalTaxAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TotalTaxAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("TotalTaxAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTotalTaxAmount", setter="setTotalTaxAmount")
+     */
+    private $totalTaxAmount;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\OrderableUnit
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\OrderableUnit")
+     * @JMS\Expose
+     * @JMS\SerializedName("OrderableUnit")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOrderableUnit", setter="setOrderableUnit")
+     */
+    private $orderableUnit;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ContentUnitQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ContentUnitQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("ContentUnitQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getContentUnitQuantity", setter="setContentUnitQuantity")
+     */
+    private $contentUnitQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\OrderQuantityIncrementNumeric
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\OrderQuantityIncrementNumeric")
+     * @JMS\Expose
+     * @JMS\SerializedName("OrderQuantityIncrementNumeric")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOrderQuantityIncrementNumeric", setter="setOrderQuantityIncrementNumeric")
+     */
+    private $orderQuantityIncrementNumeric;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\MinimumOrderQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\MinimumOrderQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("MinimumOrderQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getMinimumOrderQuantity", setter="setMinimumOrderQuantity")
+     */
+    private $minimumOrderQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\MaximumOrderQuantity
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\MaximumOrderQuantity")
+     * @JMS\Expose
+     * @JMS\SerializedName("MaximumOrderQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getMaximumOrderQuantity", setter="setMaximumOrderQuantity")
+     */
+    private $maximumOrderQuantity;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation>")
+     * @JMS\Expose
+     * @JMS\SerializedName("WarrantyInformation")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="WarrantyInformation", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getWarrantyInformation", setter="setWarrantyInformation")
+     */
+    private $warrantyInformation;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PackLevelCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PackLevelCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("PackLevelCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPackLevelCode", setter="setPackLevelCode")
+     */
+    private $packLevelCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDocumentReference", setter="setDocumentReference")
+     */
+    private $documentReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Item
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Item")
+     * @JMS\Expose
+     * @JMS\SerializedName("Item")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getItem", setter="setItem")
+     */
+    private $item;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity>")
+     * @JMS\Expose
+     * @JMS\SerializedName("OfferedItemLocationQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="OfferedItemLocationQuantity", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getOfferedItemLocationQuantity", setter="setOfferedItemLocationQuantity")
+     */
+    private $offeredItemLocationQuantity;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ReplacementRelatedItem")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ReplacementRelatedItem", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getReplacementRelatedItem", setter="setReplacementRelatedItem")
+     */
+    private $replacementRelatedItem;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\WarrantyParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\WarrantyParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("WarrantyParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getWarrantyParty", setter="setWarrantyParty")
+     */
+    private $warrantyParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\WarrantyValidityPeriod
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\WarrantyValidityPeriod")
+     * @JMS\Expose
+     * @JMS\SerializedName("WarrantyValidityPeriod")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getWarrantyValidityPeriod", setter="setWarrantyValidityPeriod")
+     */
+    private $warrantyValidityPeriod;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\SubTenderLine>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\SubTenderLine>")
+     * @JMS\Expose
+     * @JMS\SerializedName("SubTenderLine")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="SubTenderLine", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getSubTenderLine", setter="setSubTenderLine")
+     */
+    private $subTenderLine;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\CallForTendersLineReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\CallForTendersLineReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("CallForTendersLineReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCallForTendersLineReference", setter="setCallForTendersLineReference")
+     */
+    private $callForTendersLineReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\CallForTendersDocumentReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\CallForTendersDocumentReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("CallForTendersDocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCallForTendersDocumentReference", setter="setCallForTendersDocumentReference")
+     */
+    private $callForTendersDocumentReference;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Note>|null
+     */
+    public function getNote(): ?array
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Note> $note
+     * @return self
+     */
+    public function setNote(array $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearNote(): self
+    {
+        $this->note = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
+     * @return self
+     */
+    public function addToNote(Note $note): self
+    {
+        $this->note[] = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note
+     */
+    public function addToNoteWithCreate(): Note
+    {
+        $this->addTonote($note = new Note());
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Quantity|null
+     */
+    public function getQuantity(): ?Quantity
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Quantity
+     */
+    public function getQuantityWithCreate(): Quantity
+    {
+        $this->quantity = is_null($this->quantity) ? new Quantity() : $this->quantity;
+
+        return $this->quantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Quantity $quantity
+     * @return self
+     */
+    public function setQuantity(Quantity $quantity): self
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LineExtensionAmount|null
+     */
+    public function getLineExtensionAmount(): ?LineExtensionAmount
+    {
+        return $this->lineExtensionAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LineExtensionAmount
+     */
+    public function getLineExtensionAmountWithCreate(): LineExtensionAmount
+    {
+        $this->lineExtensionAmount = is_null($this->lineExtensionAmount) ? new LineExtensionAmount() : $this->lineExtensionAmount;
+
+        return $this->lineExtensionAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LineExtensionAmount $lineExtensionAmount
+     * @return self
+     */
+    public function setLineExtensionAmount(LineExtensionAmount $lineExtensionAmount): self
+    {
+        $this->lineExtensionAmount = $lineExtensionAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TotalTaxAmount|null
+     */
+    public function getTotalTaxAmount(): ?TotalTaxAmount
+    {
+        return $this->totalTaxAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TotalTaxAmount
+     */
+    public function getTotalTaxAmountWithCreate(): TotalTaxAmount
+    {
+        $this->totalTaxAmount = is_null($this->totalTaxAmount) ? new TotalTaxAmount() : $this->totalTaxAmount;
+
+        return $this->totalTaxAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TotalTaxAmount $totalTaxAmount
+     * @return self
+     */
+    public function setTotalTaxAmount(TotalTaxAmount $totalTaxAmount): self
+    {
+        $this->totalTaxAmount = $totalTaxAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OrderableUnit|null
+     */
+    public function getOrderableUnit(): ?OrderableUnit
+    {
+        return $this->orderableUnit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OrderableUnit
+     */
+    public function getOrderableUnitWithCreate(): OrderableUnit
+    {
+        $this->orderableUnit = is_null($this->orderableUnit) ? new OrderableUnit() : $this->orderableUnit;
+
+        return $this->orderableUnit;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\OrderableUnit $orderableUnit
+     * @return self
+     */
+    public function setOrderableUnit(OrderableUnit $orderableUnit): self
+    {
+        $this->orderableUnit = $orderableUnit;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ContentUnitQuantity|null
+     */
+    public function getContentUnitQuantity(): ?ContentUnitQuantity
+    {
+        return $this->contentUnitQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ContentUnitQuantity
+     */
+    public function getContentUnitQuantityWithCreate(): ContentUnitQuantity
+    {
+        $this->contentUnitQuantity = is_null($this->contentUnitQuantity) ? new ContentUnitQuantity() : $this->contentUnitQuantity;
+
+        return $this->contentUnitQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ContentUnitQuantity $contentUnitQuantity
+     * @return self
+     */
+    public function setContentUnitQuantity(ContentUnitQuantity $contentUnitQuantity): self
+    {
+        $this->contentUnitQuantity = $contentUnitQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OrderQuantityIncrementNumeric|null
+     */
+    public function getOrderQuantityIncrementNumeric(): ?OrderQuantityIncrementNumeric
+    {
+        return $this->orderQuantityIncrementNumeric;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OrderQuantityIncrementNumeric
+     */
+    public function getOrderQuantityIncrementNumericWithCreate(): OrderQuantityIncrementNumeric
+    {
+        $this->orderQuantityIncrementNumeric = is_null($this->orderQuantityIncrementNumeric) ? new OrderQuantityIncrementNumeric() : $this->orderQuantityIncrementNumeric;
+
+        return $this->orderQuantityIncrementNumeric;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
+     * @return self
+     */
+    public function setOrderQuantityIncrementNumeric(
+        OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric,
+    ): self {
+        $this->orderQuantityIncrementNumeric = $orderQuantityIncrementNumeric;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MinimumOrderQuantity|null
+     */
+    public function getMinimumOrderQuantity(): ?MinimumOrderQuantity
+    {
+        return $this->minimumOrderQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MinimumOrderQuantity
+     */
+    public function getMinimumOrderQuantityWithCreate(): MinimumOrderQuantity
+    {
+        $this->minimumOrderQuantity = is_null($this->minimumOrderQuantity) ? new MinimumOrderQuantity() : $this->minimumOrderQuantity;
+
+        return $this->minimumOrderQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\MinimumOrderQuantity $minimumOrderQuantity
+     * @return self
+     */
+    public function setMinimumOrderQuantity(MinimumOrderQuantity $minimumOrderQuantity): self
+    {
+        $this->minimumOrderQuantity = $minimumOrderQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MaximumOrderQuantity|null
+     */
+    public function getMaximumOrderQuantity(): ?MaximumOrderQuantity
+    {
+        return $this->maximumOrderQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MaximumOrderQuantity
+     */
+    public function getMaximumOrderQuantityWithCreate(): MaximumOrderQuantity
+    {
+        $this->maximumOrderQuantity = is_null($this->maximumOrderQuantity) ? new MaximumOrderQuantity() : $this->maximumOrderQuantity;
+
+        return $this->maximumOrderQuantity;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\MaximumOrderQuantity $maximumOrderQuantity
+     * @return self
+     */
+    public function setMaximumOrderQuantity(MaximumOrderQuantity $maximumOrderQuantity): self
+    {
+        $this->maximumOrderQuantity = $maximumOrderQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation>|null
+     */
+    public function getWarrantyInformation(): ?array
+    {
+        return $this->warrantyInformation;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation> $warrantyInformation
+     * @return self
+     */
+    public function setWarrantyInformation(array $warrantyInformation): self
+    {
+        $this->warrantyInformation = $warrantyInformation;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearWarrantyInformation(): self
+    {
+        $this->warrantyInformation = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation $warrantyInformation
+     * @return self
+     */
+    public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): self
+    {
+        $this->warrantyInformation[] = $warrantyInformation;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation
+     */
+    public function addToWarrantyInformationWithCreate(): WarrantyInformation
+    {
+        $this->addTowarrantyInformation($warrantyInformation = new WarrantyInformation());
+
+        return $warrantyInformation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackLevelCode|null
+     */
+    public function getPackLevelCode(): ?PackLevelCode
+    {
+        return $this->packLevelCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackLevelCode
+     */
+    public function getPackLevelCodeWithCreate(): PackLevelCode
+    {
+        $this->packLevelCode = is_null($this->packLevelCode) ? new PackLevelCode() : $this->packLevelCode;
+
+        return $this->packLevelCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PackLevelCode $packLevelCode
+     * @return self
+     */
+    public function setPackLevelCode(PackLevelCode $packLevelCode): self
+    {
+        $this->packLevelCode = $packLevelCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference>|null
+     */
+    public function getDocumentReference(): ?array
+    {
+        return $this->documentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DocumentReference> $documentReference
+     * @return self
+     */
+    public function setDocumentReference(array $documentReference): self
+    {
+        $this->documentReference = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDocumentReference(): self
+    {
+        $this->documentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
+     * @return self
+     */
+    public function addToDocumentReference(DocumentReference $documentReference): self
+    {
+        $this->documentReference[] = $documentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     */
+    public function addToDocumentReferenceWithCreate(): DocumentReference
+    {
+        $this->addTodocumentReference($documentReference = new DocumentReference());
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item|null
+     */
+    public function getItem(): ?Item
+    {
+        return $this->item;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item
+     */
+    public function getItemWithCreate(): Item
+    {
+        $this->item = is_null($this->item) ? new Item() : $this->item;
+
+        return $this->item;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Item $item
+     * @return self
+     */
+    public function setItem(Item $item): self
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity>|null
+     */
+    public function getOfferedItemLocationQuantity(): ?array
+    {
+        return $this->offeredItemLocationQuantity;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity> $offeredItemLocationQuantity
+     * @return self
+     */
+    public function setOfferedItemLocationQuantity(array $offeredItemLocationQuantity): self
+    {
+        $this->offeredItemLocationQuantity = $offeredItemLocationQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearOfferedItemLocationQuantity(): self
+    {
+        $this->offeredItemLocationQuantity = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity $offeredItemLocationQuantity
+     * @return self
+     */
+    public function addToOfferedItemLocationQuantity(OfferedItemLocationQuantity $offeredItemLocationQuantity): self
+    {
+        $this->offeredItemLocationQuantity[] = $offeredItemLocationQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity
+     */
+    public function addToOfferedItemLocationQuantityWithCreate(): OfferedItemLocationQuantity
+    {
+        $this->addToofferedItemLocationQuantity($offeredItemLocationQuantity = new OfferedItemLocationQuantity());
+
+        return $offeredItemLocationQuantity;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem>|null
+     */
+    public function getReplacementRelatedItem(): ?array
+    {
+        return $this->replacementRelatedItem;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem> $replacementRelatedItem
+     * @return self
+     */
+    public function setReplacementRelatedItem(array $replacementRelatedItem): self
+    {
+        $this->replacementRelatedItem = $replacementRelatedItem;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearReplacementRelatedItem(): self
+    {
+        $this->replacementRelatedItem = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem $replacementRelatedItem
+     * @return self
+     */
+    public function addToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): self
+    {
+        $this->replacementRelatedItem[] = $replacementRelatedItem;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem
+     */
+    public function addToReplacementRelatedItemWithCreate(): ReplacementRelatedItem
+    {
+        $this->addToreplacementRelatedItem($replacementRelatedItem = new ReplacementRelatedItem());
+
+        return $replacementRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WarrantyParty|null
+     */
+    public function getWarrantyParty(): ?WarrantyParty
+    {
+        return $this->warrantyParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WarrantyParty
+     */
+    public function getWarrantyPartyWithCreate(): WarrantyParty
+    {
+        $this->warrantyParty = is_null($this->warrantyParty) ? new WarrantyParty() : $this->warrantyParty;
+
+        return $this->warrantyParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\WarrantyParty $warrantyParty
+     * @return self
+     */
+    public function setWarrantyParty(WarrantyParty $warrantyParty): self
+    {
+        $this->warrantyParty = $warrantyParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WarrantyValidityPeriod|null
+     */
+    public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
+    {
+        return $this->warrantyValidityPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WarrantyValidityPeriod
+     */
+    public function getWarrantyValidityPeriodWithCreate(): WarrantyValidityPeriod
+    {
+        $this->warrantyValidityPeriod = is_null($this->warrantyValidityPeriod) ? new WarrantyValidityPeriod() : $this->warrantyValidityPeriod;
+
+        return $this->warrantyValidityPeriod;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\WarrantyValidityPeriod $warrantyValidityPeriod
+     * @return self
+     */
+    public function setWarrantyValidityPeriod(WarrantyValidityPeriod $warrantyValidityPeriod): self
+    {
+        $this->warrantyValidityPeriod = $warrantyValidityPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\SubTenderLine>|null
+     */
+    public function getSubTenderLine(): ?array
+    {
+        return $this->subTenderLine;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\SubTenderLine> $subTenderLine
+     * @return self
+     */
+    public function setSubTenderLine(array $subTenderLine): self
+    {
+        $this->subTenderLine = $subTenderLine;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearSubTenderLine(): self
+    {
+        $this->subTenderLine = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\SubTenderLine $subTenderLine
+     * @return self
+     */
+    public function addToSubTenderLine(SubTenderLine $subTenderLine): self
+    {
+        $this->subTenderLine[] = $subTenderLine;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubTenderLine
+     */
+    public function addToSubTenderLineWithCreate(): SubTenderLine
+    {
+        $this->addTosubTenderLine($subTenderLine = new SubTenderLine());
+
+        return $subTenderLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CallForTendersLineReference|null
+     */
+    public function getCallForTendersLineReference(): ?CallForTendersLineReference
+    {
+        return $this->callForTendersLineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CallForTendersLineReference
+     */
+    public function getCallForTendersLineReferenceWithCreate(): CallForTendersLineReference
+    {
+        $this->callForTendersLineReference = is_null($this->callForTendersLineReference) ? new CallForTendersLineReference() : $this->callForTendersLineReference;
+
+        return $this->callForTendersLineReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CallForTendersLineReference $callForTendersLineReference
+     * @return self
+     */
+    public function setCallForTendersLineReference(CallForTendersLineReference $callForTendersLineReference): self
+    {
+        $this->callForTendersLineReference = $callForTendersLineReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CallForTendersDocumentReference|null
+     */
+    public function getCallForTendersDocumentReference(): ?CallForTendersDocumentReference
+    {
+        return $this->callForTendersDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CallForTendersDocumentReference
+     */
+    public function getCallForTendersDocumentReferenceWithCreate(): CallForTendersDocumentReference
+    {
+        $this->callForTendersDocumentReference = is_null($this->callForTendersDocumentReference) ? new CallForTendersDocumentReference() : $this->callForTendersDocumentReference;
+
+        return $this->callForTendersDocumentReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CallForTendersDocumentReference $callForTendersDocumentReference
+     * @return self
+     */
+    public function setCallForTendersDocumentReference(
+        CallForTendersDocumentReference $callForTendersDocumentReference,
+    ): self {
+        $this->callForTendersDocumentReference = $callForTendersDocumentReference;
+
+        return $this;
+    }
+}

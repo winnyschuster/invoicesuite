@@ -1,0 +1,606 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions;
+use horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms;
+use horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms;
+
+class TransportExecutionTermsType
+{
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms>")
+     * @JMS\Expose
+     * @JMS\SerializedName("TransportUserSpecialTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="TransportUserSpecialTerms", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getTransportUserSpecialTerms", setter="setTransportUserSpecialTerms")
+     */
+    private $transportUserSpecialTerms;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms>")
+     * @JMS\Expose
+     * @JMS\SerializedName("TransportServiceProviderSpecialTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="TransportServiceProviderSpecialTerms", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getTransportServiceProviderSpecialTerms", setter="setTransportServiceProviderSpecialTerms")
+     */
+    private $transportServiceProviderSpecialTerms;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions>")
+     * @JMS\Expose
+     * @JMS\SerializedName("ChangeConditions")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="ChangeConditions", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getChangeConditions", setter="setChangeConditions")
+     */
+    private $changeConditions;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\PaymentTerms>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\PaymentTerms>")
+     * @JMS\Expose
+     * @JMS\SerializedName("PaymentTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="PaymentTerms", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getPaymentTerms", setter="setPaymentTerms")
+     */
+    private $paymentTerms;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DeliveryTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DeliveryTerms", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getDeliveryTerms", setter="setDeliveryTerms")
+     */
+    private $deliveryTerms;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\BonusPaymentTerms
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\BonusPaymentTerms")
+     * @JMS\Expose
+     * @JMS\SerializedName("BonusPaymentTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getBonusPaymentTerms", setter="setBonusPaymentTerms")
+     */
+    private $bonusPaymentTerms;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\CommissionPaymentTerms
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\CommissionPaymentTerms")
+     * @JMS\Expose
+     * @JMS\SerializedName("CommissionPaymentTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCommissionPaymentTerms", setter="setCommissionPaymentTerms")
+     */
+    private $commissionPaymentTerms;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\PenaltyPaymentTerms
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\PenaltyPaymentTerms")
+     * @JMS\Expose
+     * @JMS\SerializedName("PenaltyPaymentTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPenaltyPaymentTerms", setter="setPenaltyPaymentTerms")
+     */
+    private $penaltyPaymentTerms;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission>")
+     * @JMS\Expose
+     * @JMS\SerializedName("EnvironmentalEmission")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="EnvironmentalEmission", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getEnvironmentalEmission", setter="setEnvironmentalEmission")
+     */
+    private $environmentalEmission;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement>")
+     * @JMS\Expose
+     * @JMS\SerializedName("NotificationRequirement")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="NotificationRequirement", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getNotificationRequirement", setter="setNotificationRequirement")
+     */
+    private $notificationRequirement;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ServiceChargePaymentTerms
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ServiceChargePaymentTerms")
+     * @JMS\Expose
+     * @JMS\SerializedName("ServiceChargePaymentTerms")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getServiceChargePaymentTerms", setter="setServiceChargePaymentTerms")
+     */
+    private $serviceChargePaymentTerms;
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms>|null
+     */
+    public function getTransportUserSpecialTerms(): ?array
+    {
+        return $this->transportUserSpecialTerms;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms> $transportUserSpecialTerms
+     * @return self
+     */
+    public function setTransportUserSpecialTerms(array $transportUserSpecialTerms): self
+    {
+        $this->transportUserSpecialTerms = $transportUserSpecialTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearTransportUserSpecialTerms(): self
+    {
+        $this->transportUserSpecialTerms = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms $transportUserSpecialTerms
+     * @return self
+     */
+    public function addToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): self
+    {
+        $this->transportUserSpecialTerms[] = $transportUserSpecialTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms
+     */
+    public function addToTransportUserSpecialTermsWithCreate(): TransportUserSpecialTerms
+    {
+        $this->addTotransportUserSpecialTerms($transportUserSpecialTerms = new TransportUserSpecialTerms());
+
+        return $transportUserSpecialTerms;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms>|null
+     */
+    public function getTransportServiceProviderSpecialTerms(): ?array
+    {
+        return $this->transportServiceProviderSpecialTerms;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms> $transportServiceProviderSpecialTerms
+     * @return self
+     */
+    public function setTransportServiceProviderSpecialTerms(array $transportServiceProviderSpecialTerms): self
+    {
+        $this->transportServiceProviderSpecialTerms = $transportServiceProviderSpecialTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearTransportServiceProviderSpecialTerms(): self
+    {
+        $this->transportServiceProviderSpecialTerms = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
+     * @return self
+     */
+    public function addToTransportServiceProviderSpecialTerms(
+        TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms,
+    ): self {
+        $this->transportServiceProviderSpecialTerms[] = $transportServiceProviderSpecialTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms
+     */
+    public function addToTransportServiceProviderSpecialTermsWithCreate(): TransportServiceProviderSpecialTerms
+    {
+        $this->addTotransportServiceProviderSpecialTerms($transportServiceProviderSpecialTerms = new TransportServiceProviderSpecialTerms());
+
+        return $transportServiceProviderSpecialTerms;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions>|null
+     */
+    public function getChangeConditions(): ?array
+    {
+        return $this->changeConditions;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions> $changeConditions
+     * @return self
+     */
+    public function setChangeConditions(array $changeConditions): self
+    {
+        $this->changeConditions = $changeConditions;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearChangeConditions(): self
+    {
+        $this->changeConditions = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions $changeConditions
+     * @return self
+     */
+    public function addToChangeConditions(ChangeConditions $changeConditions): self
+    {
+        $this->changeConditions[] = $changeConditions;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions
+     */
+    public function addToChangeConditionsWithCreate(): ChangeConditions
+    {
+        $this->addTochangeConditions($changeConditions = new ChangeConditions());
+
+        return $changeConditions;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\PaymentTerms>|null
+     */
+    public function getPaymentTerms(): ?array
+    {
+        return $this->paymentTerms;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\PaymentTerms> $paymentTerms
+     * @return self
+     */
+    public function setPaymentTerms(array $paymentTerms): self
+    {
+        $this->paymentTerms = $paymentTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearPaymentTerms(): self
+    {
+        $this->paymentTerms = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms $paymentTerms
+     * @return self
+     */
+    public function addToPaymentTerms(PaymentTerms $paymentTerms): self
+    {
+        $this->paymentTerms[] = $paymentTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms
+     */
+    public function addToPaymentTermsWithCreate(): PaymentTerms
+    {
+        $this->addTopaymentTerms($paymentTerms = new PaymentTerms());
+
+        return $paymentTerms;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms>|null
+     */
+    public function getDeliveryTerms(): ?array
+    {
+        return $this->deliveryTerms;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms> $deliveryTerms
+     * @return self
+     */
+    public function setDeliveryTerms(array $deliveryTerms): self
+    {
+        $this->deliveryTerms = $deliveryTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDeliveryTerms(): self
+    {
+        $this->deliveryTerms = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms $deliveryTerms
+     * @return self
+     */
+    public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): self
+    {
+        $this->deliveryTerms[] = $deliveryTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms
+     */
+    public function addToDeliveryTermsWithCreate(): DeliveryTerms
+    {
+        $this->addTodeliveryTerms($deliveryTerms = new DeliveryTerms());
+
+        return $deliveryTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BonusPaymentTerms|null
+     */
+    public function getBonusPaymentTerms(): ?BonusPaymentTerms
+    {
+        return $this->bonusPaymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BonusPaymentTerms
+     */
+    public function getBonusPaymentTermsWithCreate(): BonusPaymentTerms
+    {
+        $this->bonusPaymentTerms = is_null($this->bonusPaymentTerms) ? new BonusPaymentTerms() : $this->bonusPaymentTerms;
+
+        return $this->bonusPaymentTerms;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\BonusPaymentTerms $bonusPaymentTerms
+     * @return self
+     */
+    public function setBonusPaymentTerms(BonusPaymentTerms $bonusPaymentTerms): self
+    {
+        $this->bonusPaymentTerms = $bonusPaymentTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommissionPaymentTerms|null
+     */
+    public function getCommissionPaymentTerms(): ?CommissionPaymentTerms
+    {
+        return $this->commissionPaymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommissionPaymentTerms
+     */
+    public function getCommissionPaymentTermsWithCreate(): CommissionPaymentTerms
+    {
+        $this->commissionPaymentTerms = is_null($this->commissionPaymentTerms) ? new CommissionPaymentTerms() : $this->commissionPaymentTerms;
+
+        return $this->commissionPaymentTerms;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\CommissionPaymentTerms $commissionPaymentTerms
+     * @return self
+     */
+    public function setCommissionPaymentTerms(CommissionPaymentTerms $commissionPaymentTerms): self
+    {
+        $this->commissionPaymentTerms = $commissionPaymentTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PenaltyPaymentTerms|null
+     */
+    public function getPenaltyPaymentTerms(): ?PenaltyPaymentTerms
+    {
+        return $this->penaltyPaymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PenaltyPaymentTerms
+     */
+    public function getPenaltyPaymentTermsWithCreate(): PenaltyPaymentTerms
+    {
+        $this->penaltyPaymentTerms = is_null($this->penaltyPaymentTerms) ? new PenaltyPaymentTerms() : $this->penaltyPaymentTerms;
+
+        return $this->penaltyPaymentTerms;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\PenaltyPaymentTerms $penaltyPaymentTerms
+     * @return self
+     */
+    public function setPenaltyPaymentTerms(PenaltyPaymentTerms $penaltyPaymentTerms): self
+    {
+        $this->penaltyPaymentTerms = $penaltyPaymentTerms;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission>|null
+     */
+    public function getEnvironmentalEmission(): ?array
+    {
+        return $this->environmentalEmission;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission> $environmentalEmission
+     * @return self
+     */
+    public function setEnvironmentalEmission(array $environmentalEmission): self
+    {
+        $this->environmentalEmission = $environmentalEmission;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearEnvironmentalEmission(): self
+    {
+        $this->environmentalEmission = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission $environmentalEmission
+     * @return self
+     */
+    public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): self
+    {
+        $this->environmentalEmission[] = $environmentalEmission;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission
+     */
+    public function addToEnvironmentalEmissionWithCreate(): EnvironmentalEmission
+    {
+        $this->addToenvironmentalEmission($environmentalEmission = new EnvironmentalEmission());
+
+        return $environmentalEmission;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement>|null
+     */
+    public function getNotificationRequirement(): ?array
+    {
+        return $this->notificationRequirement;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement> $notificationRequirement
+     * @return self
+     */
+    public function setNotificationRequirement(array $notificationRequirement): self
+    {
+        $this->notificationRequirement = $notificationRequirement;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearNotificationRequirement(): self
+    {
+        $this->notificationRequirement = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement $notificationRequirement
+     * @return self
+     */
+    public function addToNotificationRequirement(NotificationRequirement $notificationRequirement): self
+    {
+        $this->notificationRequirement[] = $notificationRequirement;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement
+     */
+    public function addToNotificationRequirementWithCreate(): NotificationRequirement
+    {
+        $this->addTonotificationRequirement($notificationRequirement = new NotificationRequirement());
+
+        return $notificationRequirement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ServiceChargePaymentTerms|null
+     */
+    public function getServiceChargePaymentTerms(): ?ServiceChargePaymentTerms
+    {
+        return $this->serviceChargePaymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ServiceChargePaymentTerms
+     */
+    public function getServiceChargePaymentTermsWithCreate(): ServiceChargePaymentTerms
+    {
+        $this->serviceChargePaymentTerms = is_null($this->serviceChargePaymentTerms) ? new ServiceChargePaymentTerms() : $this->serviceChargePaymentTerms;
+
+        return $this->serviceChargePaymentTerms;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ServiceChargePaymentTerms $serviceChargePaymentTerms
+     * @return self
+     */
+    public function setServiceChargePaymentTerms(ServiceChargePaymentTerms $serviceChargePaymentTerms): self
+    {
+        $this->serviceChargePaymentTerms = $serviceChargePaymentTerms;
+
+        return $this;
+    }
+}

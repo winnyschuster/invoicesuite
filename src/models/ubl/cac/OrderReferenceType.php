@@ -1,0 +1,343 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\CustomerReference;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\OrderTypeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\SalesOrderID;
+use horstoeko\invoicesuite\models\ubl\cbc\UUID;
+
+class OrderReferenceType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\SalesOrderID")
+     * @JMS\Expose
+     * @JMS\SerializedName("SalesOrderID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getSalesOrderID", setter="setSalesOrderID")
+     */
+    private $salesOrderID;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("CopyIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCopyIndicator", setter="setCopyIndicator")
+     */
+    private $copyIndicator;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\UUID")
+     * @JMS\Expose
+     * @JMS\SerializedName("UUID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getUUID", setter="setUUID")
+     */
+    private $uUID;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("IssueDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getIssueDate", setter="setIssueDate")
+     */
+    private $issueDate;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
+     * @JMS\Expose
+     * @JMS\SerializedName("IssueTime")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getIssueTime", setter="setIssueTime")
+     */
+    private $issueTime;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\CustomerReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\CustomerReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("CustomerReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCustomerReference", setter="setCustomerReference")
+     */
+    private $customerReference;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\OrderTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\OrderTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("OrderTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getOrderTypeCode", setter="setOrderTypeCode")
+     */
+    private $orderTypeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\DocumentReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDocumentReference", setter="setDocumentReference")
+     */
+    private $documentReference;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderID|null
+     */
+    public function getSalesOrderID(): ?SalesOrderID
+    {
+        return $this->salesOrderID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderID
+     */
+    public function getSalesOrderIDWithCreate(): SalesOrderID
+    {
+        $this->salesOrderID = is_null($this->salesOrderID) ? new SalesOrderID() : $this->salesOrderID;
+
+        return $this->salesOrderID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\SalesOrderID $salesOrderID
+     * @return self
+     */
+    public function setSalesOrderID(SalesOrderID $salesOrderID): self
+    {
+        $this->salesOrderID = $salesOrderID;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getCopyIndicator(): ?bool
+    {
+        return $this->copyIndicator;
+    }
+
+    /**
+     * @param bool $copyIndicator
+     * @return self
+     */
+    public function setCopyIndicator(bool $copyIndicator): self
+    {
+        $this->copyIndicator = $copyIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID|null
+     */
+    public function getUUID(): ?UUID
+    {
+        return $this->uUID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     */
+    public function getUUIDWithCreate(): UUID
+    {
+        $this->uUID = is_null($this->uUID) ? new UUID() : $this->uUID;
+
+        return $this->uUID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\UUID $uUID
+     * @return self
+     */
+    public function setUUID(UUID $uUID): self
+    {
+        $this->uUID = $uUID;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getIssueDate(): ?\DateTime
+    {
+        return $this->issueDate;
+    }
+
+    /**
+     * @param \DateTime $issueDate
+     * @return self
+     */
+    public function setIssueDate(\DateTime $issueDate): self
+    {
+        $this->issueDate = $issueDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getIssueTime(): ?\DateTime
+    {
+        return $this->issueTime;
+    }
+
+    /**
+     * @param \DateTime $issueTime
+     * @return self
+     */
+    public function setIssueTime(\DateTime $issueTime): self
+    {
+        $this->issueTime = $issueTime;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CustomerReference|null
+     */
+    public function getCustomerReference(): ?CustomerReference
+    {
+        return $this->customerReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CustomerReference
+     */
+    public function getCustomerReferenceWithCreate(): CustomerReference
+    {
+        $this->customerReference = is_null($this->customerReference) ? new CustomerReference() : $this->customerReference;
+
+        return $this->customerReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\CustomerReference $customerReference
+     * @return self
+     */
+    public function setCustomerReference(CustomerReference $customerReference): self
+    {
+        $this->customerReference = $customerReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OrderTypeCode|null
+     */
+    public function getOrderTypeCode(): ?OrderTypeCode
+    {
+        return $this->orderTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OrderTypeCode
+     */
+    public function getOrderTypeCodeWithCreate(): OrderTypeCode
+    {
+        $this->orderTypeCode = is_null($this->orderTypeCode) ? new OrderTypeCode() : $this->orderTypeCode;
+
+        return $this->orderTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\OrderTypeCode $orderTypeCode
+     * @return self
+     */
+    public function setOrderTypeCode(OrderTypeCode $orderTypeCode): self
+    {
+        $this->orderTypeCode = $orderTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function getDocumentReference(): ?DocumentReference
+    {
+        return $this->documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference
+     */
+    public function getDocumentReferenceWithCreate(): DocumentReference
+    {
+        $this->documentReference = is_null($this->documentReference) ? new DocumentReference() : $this->documentReference;
+
+        return $this->documentReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
+     * @return self
+     */
+    public function setDocumentReference(DocumentReference $documentReference): self
+    {
+        $this->documentReference = $documentReference;
+
+        return $this;
+    }
+}

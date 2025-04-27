@@ -1,0 +1,299 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\models\ubl\cbc\PrivacyCode;
+use horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyType as TelecommunicationsSupplyType1;
+use horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyTypeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\TotalAmount;
+
+class TelecommunicationsSupplyType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyType
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyType")
+     * @JMS\Expose
+     * @JMS\SerializedName("TelecommunicationsSupplyType")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTelecommunicationsSupplyType", setter="setTelecommunicationsSupplyType")
+     */
+    private $telecommunicationsSupplyType;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("TelecommunicationsSupplyTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTelecommunicationsSupplyTypeCode", setter="setTelecommunicationsSupplyTypeCode")
+     */
+    private $telecommunicationsSupplyTypeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PrivacyCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PrivacyCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("PrivacyCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPrivacyCode", setter="setPrivacyCode")
+     */
+    private $privacyCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Description>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Description>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Description")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Description", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDescription", setter="setDescription")
+     */
+    private $description;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\TotalAmount
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\TotalAmount")
+     * @JMS\Expose
+     * @JMS\SerializedName("TotalAmount")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getTotalAmount", setter="setTotalAmount")
+     */
+    private $totalAmount;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine>")
+     * @JMS\Expose
+     * @JMS\SerializedName("TelecommunicationsSupplyLine")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="TelecommunicationsSupplyLine", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getTelecommunicationsSupplyLine", setter="setTelecommunicationsSupplyLine")
+     */
+    private $telecommunicationsSupplyLine;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyType|null
+     */
+    public function getTelecommunicationsSupplyType(): ?TelecommunicationsSupplyType1
+    {
+        return $this->telecommunicationsSupplyType;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyType
+     */
+    public function getTelecommunicationsSupplyTypeWithCreate(): TelecommunicationsSupplyType1
+    {
+        $this->telecommunicationsSupplyType = is_null($this->telecommunicationsSupplyType) ? new TelecommunicationsSupplyType() : $this->telecommunicationsSupplyType;
+
+        return $this->telecommunicationsSupplyType;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyType $telecommunicationsSupplyType
+     * @return self
+     */
+    public function setTelecommunicationsSupplyType(TelecommunicationsSupplyType1 $telecommunicationsSupplyType): self
+    {
+        $this->telecommunicationsSupplyType = $telecommunicationsSupplyType;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyTypeCode|null
+     */
+    public function getTelecommunicationsSupplyTypeCode(): ?TelecommunicationsSupplyTypeCode
+    {
+        return $this->telecommunicationsSupplyTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyTypeCode
+     */
+    public function getTelecommunicationsSupplyTypeCodeWithCreate(): TelecommunicationsSupplyTypeCode
+    {
+        $this->telecommunicationsSupplyTypeCode = is_null($this->telecommunicationsSupplyTypeCode) ? new TelecommunicationsSupplyTypeCode() : $this->telecommunicationsSupplyTypeCode;
+
+        return $this->telecommunicationsSupplyTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode
+     * @return self
+     */
+    public function setTelecommunicationsSupplyTypeCode(
+        TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode,
+    ): self {
+        $this->telecommunicationsSupplyTypeCode = $telecommunicationsSupplyTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PrivacyCode|null
+     */
+    public function getPrivacyCode(): ?PrivacyCode
+    {
+        return $this->privacyCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PrivacyCode
+     */
+    public function getPrivacyCodeWithCreate(): PrivacyCode
+    {
+        $this->privacyCode = is_null($this->privacyCode) ? new PrivacyCode() : $this->privacyCode;
+
+        return $this->privacyCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PrivacyCode $privacyCode
+     * @return self
+     */
+    public function setPrivacyCode(PrivacyCode $privacyCode): self
+    {
+        $this->privacyCode = $privacyCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Description>|null
+     */
+    public function getDescription(): ?array
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Description> $description
+     * @return self
+     */
+    public function setDescription(array $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDescription(): self
+    {
+        $this->description = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
+     * @return self
+     */
+    public function addToDescription(Description $description): self
+    {
+        $this->description[] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description
+     */
+    public function addToDescriptionWithCreate(): Description
+    {
+        $this->addTodescription($description = new Description());
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TotalAmount|null
+     */
+    public function getTotalAmount(): ?TotalAmount
+    {
+        return $this->totalAmount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TotalAmount
+     */
+    public function getTotalAmountWithCreate(): TotalAmount
+    {
+        $this->totalAmount = is_null($this->totalAmount) ? new TotalAmount() : $this->totalAmount;
+
+        return $this->totalAmount;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\TotalAmount $totalAmount
+     * @return self
+     */
+    public function setTotalAmount(TotalAmount $totalAmount): self
+    {
+        $this->totalAmount = $totalAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine>|null
+     */
+    public function getTelecommunicationsSupplyLine(): ?array
+    {
+        return $this->telecommunicationsSupplyLine;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine> $telecommunicationsSupplyLine
+     * @return self
+     */
+    public function setTelecommunicationsSupplyLine(array $telecommunicationsSupplyLine): self
+    {
+        $this->telecommunicationsSupplyLine = $telecommunicationsSupplyLine;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearTelecommunicationsSupplyLine(): self
+    {
+        $this->telecommunicationsSupplyLine = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine $telecommunicationsSupplyLine
+     * @return self
+     */
+    public function addToTelecommunicationsSupplyLine(
+        TelecommunicationsSupplyLine $telecommunicationsSupplyLine,
+    ): self {
+        $this->telecommunicationsSupplyLine[] = $telecommunicationsSupplyLine;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine
+     */
+    public function addToTelecommunicationsSupplyLineWithCreate(): TelecommunicationsSupplyLine
+    {
+        $this->addTotelecommunicationsSupplyLine($telecommunicationsSupplyLine = new TelecommunicationsSupplyLine());
+
+        return $telecommunicationsSupplyLine;
+    }
+}

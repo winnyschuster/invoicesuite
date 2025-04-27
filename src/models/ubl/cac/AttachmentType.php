@@ -1,0 +1,89 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\EmbeddedDocumentBinaryObject;
+
+class AttachmentType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\EmbeddedDocumentBinaryObject
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\EmbeddedDocumentBinaryObject")
+     * @JMS\Expose
+     * @JMS\SerializedName("EmbeddedDocumentBinaryObject")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getEmbeddedDocumentBinaryObject", setter="setEmbeddedDocumentBinaryObject")
+     */
+    private $embeddedDocumentBinaryObject;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ExternalReference
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ExternalReference")
+     * @JMS\Expose
+     * @JMS\SerializedName("ExternalReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getExternalReference", setter="setExternalReference")
+     */
+    private $externalReference;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\EmbeddedDocumentBinaryObject|null
+     */
+    public function getEmbeddedDocumentBinaryObject(): ?EmbeddedDocumentBinaryObject
+    {
+        return $this->embeddedDocumentBinaryObject;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\EmbeddedDocumentBinaryObject
+     */
+    public function getEmbeddedDocumentBinaryObjectWithCreate(): EmbeddedDocumentBinaryObject
+    {
+        $this->embeddedDocumentBinaryObject = is_null($this->embeddedDocumentBinaryObject) ? new EmbeddedDocumentBinaryObject() : $this->embeddedDocumentBinaryObject;
+
+        return $this->embeddedDocumentBinaryObject;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject
+     * @return self
+     */
+    public function setEmbeddedDocumentBinaryObject(EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject): self
+    {
+        $this->embeddedDocumentBinaryObject = $embeddedDocumentBinaryObject;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExternalReference|null
+     */
+    public function getExternalReference(): ?ExternalReference
+    {
+        return $this->externalReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExternalReference
+     */
+    public function getExternalReferenceWithCreate(): ExternalReference
+    {
+        $this->externalReference = is_null($this->externalReference) ? new ExternalReference() : $this->externalReference;
+
+        return $this->externalReference;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ExternalReference $externalReference
+     * @return self
+     */
+    public function setExternalReference(ExternalReference $externalReference): self
+    {
+        $this->externalReference = $externalReference;
+
+        return $this;
+    }
+}

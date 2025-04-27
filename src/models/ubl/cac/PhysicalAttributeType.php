@@ -1,0 +1,194 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\AttributeID;
+use horstoeko\invoicesuite\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\models\ubl\cbc\DescriptionCode;
+use horstoeko\invoicesuite\models\ubl\cbc\PositionCode;
+
+class PhysicalAttributeType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\AttributeID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\AttributeID")
+     * @JMS\Expose
+     * @JMS\SerializedName("AttributeID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAttributeID", setter="setAttributeID")
+     */
+    private $attributeID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\PositionCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\PositionCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("PositionCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getPositionCode", setter="setPositionCode")
+     */
+    private $positionCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\DescriptionCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\DescriptionCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("DescriptionCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDescriptionCode", setter="setDescriptionCode")
+     */
+    private $descriptionCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Description>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Description>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Description")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Description", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDescription", setter="setDescription")
+     */
+    private $description;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AttributeID|null
+     */
+    public function getAttributeID(): ?AttributeID
+    {
+        return $this->attributeID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AttributeID
+     */
+    public function getAttributeIDWithCreate(): AttributeID
+    {
+        $this->attributeID = is_null($this->attributeID) ? new AttributeID() : $this->attributeID;
+
+        return $this->attributeID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\AttributeID $attributeID
+     * @return self
+     */
+    public function setAttributeID(AttributeID $attributeID): self
+    {
+        $this->attributeID = $attributeID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PositionCode|null
+     */
+    public function getPositionCode(): ?PositionCode
+    {
+        return $this->positionCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PositionCode
+     */
+    public function getPositionCodeWithCreate(): PositionCode
+    {
+        $this->positionCode = is_null($this->positionCode) ? new PositionCode() : $this->positionCode;
+
+        return $this->positionCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\PositionCode $positionCode
+     * @return self
+     */
+    public function setPositionCode(PositionCode $positionCode): self
+    {
+        $this->positionCode = $positionCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DescriptionCode|null
+     */
+    public function getDescriptionCode(): ?DescriptionCode
+    {
+        return $this->descriptionCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DescriptionCode
+     */
+    public function getDescriptionCodeWithCreate(): DescriptionCode
+    {
+        $this->descriptionCode = is_null($this->descriptionCode) ? new DescriptionCode() : $this->descriptionCode;
+
+        return $this->descriptionCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\DescriptionCode $descriptionCode
+     * @return self
+     */
+    public function setDescriptionCode(DescriptionCode $descriptionCode): self
+    {
+        $this->descriptionCode = $descriptionCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Description>|null
+     */
+    public function getDescription(): ?array
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Description> $description
+     * @return self
+     */
+    public function setDescription(array $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDescription(): self
+    {
+        $this->description = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
+     * @return self
+     */
+    public function addToDescription(Description $description): self
+    {
+        $this->description[] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description
+     */
+    public function addToDescriptionWithCreate(): Description
+    {
+        $this->addTodescription($description = new Description());
+
+        return $description;
+    }
+}

@@ -1,0 +1,316 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\ProgressPercent;
+use horstoeko\invoicesuite\models\ubl\cbc\WorkPhase;
+use horstoeko\invoicesuite\models\ubl\cbc\WorkPhaseCode;
+
+class WorkPhaseReferenceType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\WorkPhaseCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\WorkPhaseCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("WorkPhaseCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getWorkPhaseCode", setter="setWorkPhaseCode")
+     */
+    private $workPhaseCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\WorkPhase>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\WorkPhase>")
+     * @JMS\Expose
+     * @JMS\SerializedName("WorkPhase")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="WorkPhase", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getWorkPhase", setter="setWorkPhase")
+     */
+    private $workPhase;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ProgressPercent
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ProgressPercent")
+     * @JMS\Expose
+     * @JMS\SerializedName("ProgressPercent")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getProgressPercent", setter="setProgressPercent")
+     */
+    private $progressPercent;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("StartDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getStartDate", setter="setStartDate")
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("EndDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getEndDate", setter="setEndDate")
+     */
+    private $endDate;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference>")
+     * @JMS\Expose
+     * @JMS\SerializedName("WorkOrderDocumentReference")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="WorkOrderDocumentReference", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getWorkOrderDocumentReference", setter="setWorkOrderDocumentReference")
+     */
+    private $workOrderDocumentReference;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WorkPhaseCode|null
+     */
+    public function getWorkPhaseCode(): ?WorkPhaseCode
+    {
+        return $this->workPhaseCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WorkPhaseCode
+     */
+    public function getWorkPhaseCodeWithCreate(): WorkPhaseCode
+    {
+        $this->workPhaseCode = is_null($this->workPhaseCode) ? new WorkPhaseCode() : $this->workPhaseCode;
+
+        return $this->workPhaseCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\WorkPhaseCode $workPhaseCode
+     * @return self
+     */
+    public function setWorkPhaseCode(WorkPhaseCode $workPhaseCode): self
+    {
+        $this->workPhaseCode = $workPhaseCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\WorkPhase>|null
+     */
+    public function getWorkPhase(): ?array
+    {
+        return $this->workPhase;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\WorkPhase> $workPhase
+     * @return self
+     */
+    public function setWorkPhase(array $workPhase): self
+    {
+        $this->workPhase = $workPhase;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearWorkPhase(): self
+    {
+        $this->workPhase = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\WorkPhase $workPhase
+     * @return self
+     */
+    public function addToWorkPhase(WorkPhase $workPhase): self
+    {
+        $this->workPhase[] = $workPhase;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WorkPhase
+     */
+    public function addToWorkPhaseWithCreate(): WorkPhase
+    {
+        $this->addToworkPhase($workPhase = new WorkPhase());
+
+        return $workPhase;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProgressPercent|null
+     */
+    public function getProgressPercent(): ?ProgressPercent
+    {
+        return $this->progressPercent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProgressPercent
+     */
+    public function getProgressPercentWithCreate(): ProgressPercent
+    {
+        $this->progressPercent = is_null($this->progressPercent) ? new ProgressPercent() : $this->progressPercent;
+
+        return $this->progressPercent;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ProgressPercent $progressPercent
+     * @return self
+     */
+    public function setProgressPercent(ProgressPercent $progressPercent): self
+    {
+        $this->progressPercent = $progressPercent;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getStartDate(): ?\DateTime
+    {
+        return $this->startDate;
+    }
+
+    /**
+     * @param \DateTime $startDate
+     * @return self
+     */
+    public function setStartDate(\DateTime $startDate): self
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getEndDate(): ?\DateTime
+    {
+        return $this->endDate;
+    }
+
+    /**
+     * @param \DateTime $endDate
+     * @return self
+     */
+    public function setEndDate(\DateTime $endDate): self
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference>|null
+     */
+    public function getWorkOrderDocumentReference(): ?array
+    {
+        return $this->workOrderDocumentReference;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference> $workOrderDocumentReference
+     * @return self
+     */
+    public function setWorkOrderDocumentReference(array $workOrderDocumentReference): self
+    {
+        $this->workOrderDocumentReference = $workOrderDocumentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearWorkOrderDocumentReference(): self
+    {
+        $this->workOrderDocumentReference = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference $workOrderDocumentReference
+     * @return self
+     */
+    public function addToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): self
+    {
+        $this->workOrderDocumentReference[] = $workOrderDocumentReference;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference
+     */
+    public function addToWorkOrderDocumentReferenceWithCreate(): WorkOrderDocumentReference
+    {
+        $this->addToworkOrderDocumentReference($workOrderDocumentReference = new WorkOrderDocumentReference());
+
+        return $workOrderDocumentReference;
+    }
+}

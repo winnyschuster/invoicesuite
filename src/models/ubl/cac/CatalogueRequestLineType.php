@@ -1,0 +1,296 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\ContractSubdivision;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\Note;
+
+class CatalogueRequestLineType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ContractSubdivision
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ContractSubdivision")
+     * @JMS\Expose
+     * @JMS\SerializedName("ContractSubdivision")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getContractSubdivision", setter="setContractSubdivision")
+     */
+    private $contractSubdivision;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Note>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\Note>")
+     * @JMS\Expose
+     * @JMS\SerializedName("Note")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="Note", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getNote", setter="setNote")
+     */
+    private $note;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\LineValidityPeriod
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\LineValidityPeriod")
+     * @JMS\Expose
+     * @JMS\SerializedName("LineValidityPeriod")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLineValidityPeriod", setter="setLineValidityPeriod")
+     */
+    private $lineValidityPeriod;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity>")
+     * @JMS\Expose
+     * @JMS\SerializedName("RequiredItemLocationQuantity")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="RequiredItemLocationQuantity", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2")
+     * @JMS\Accessor(getter="getRequiredItemLocationQuantity", setter="setRequiredItemLocationQuantity")
+     */
+    private $requiredItemLocationQuantity;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Item
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Item")
+     * @JMS\Expose
+     * @JMS\SerializedName("Item")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getItem", setter="setItem")
+     */
+    private $item;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ContractSubdivision|null
+     */
+    public function getContractSubdivision(): ?ContractSubdivision
+    {
+        return $this->contractSubdivision;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ContractSubdivision
+     */
+    public function getContractSubdivisionWithCreate(): ContractSubdivision
+    {
+        $this->contractSubdivision = is_null($this->contractSubdivision) ? new ContractSubdivision() : $this->contractSubdivision;
+
+        return $this->contractSubdivision;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ContractSubdivision $contractSubdivision
+     * @return self
+     */
+    public function setContractSubdivision(ContractSubdivision $contractSubdivision): self
+    {
+        $this->contractSubdivision = $contractSubdivision;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\Note>|null
+     */
+    public function getNote(): ?array
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\Note> $note
+     * @return self
+     */
+    public function setNote(array $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearNote(): self
+    {
+        $this->note = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
+     * @return self
+     */
+    public function addToNote(Note $note): self
+    {
+        $this->note[] = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note
+     */
+    public function addToNoteWithCreate(): Note
+    {
+        $this->addTonote($note = new Note());
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LineValidityPeriod|null
+     */
+    public function getLineValidityPeriod(): ?LineValidityPeriod
+    {
+        return $this->lineValidityPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LineValidityPeriod
+     */
+    public function getLineValidityPeriodWithCreate(): LineValidityPeriod
+    {
+        $this->lineValidityPeriod = is_null($this->lineValidityPeriod) ? new LineValidityPeriod() : $this->lineValidityPeriod;
+
+        return $this->lineValidityPeriod;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\LineValidityPeriod $lineValidityPeriod
+     * @return self
+     */
+    public function setLineValidityPeriod(LineValidityPeriod $lineValidityPeriod): self
+    {
+        $this->lineValidityPeriod = $lineValidityPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity>|null
+     */
+    public function getRequiredItemLocationQuantity(): ?array
+    {
+        return $this->requiredItemLocationQuantity;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity> $requiredItemLocationQuantity
+     * @return self
+     */
+    public function setRequiredItemLocationQuantity(array $requiredItemLocationQuantity): self
+    {
+        $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearRequiredItemLocationQuantity(): self
+    {
+        $this->requiredItemLocationQuantity = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @return self
+     */
+    public function addToRequiredItemLocationQuantity(
+        RequiredItemLocationQuantity $requiredItemLocationQuantity,
+    ): self {
+        $this->requiredItemLocationQuantity[] = $requiredItemLocationQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity
+     */
+    public function addToRequiredItemLocationQuantityWithCreate(): RequiredItemLocationQuantity
+    {
+        $this->addTorequiredItemLocationQuantity($requiredItemLocationQuantity = new RequiredItemLocationQuantity());
+
+        return $requiredItemLocationQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item|null
+     */
+    public function getItem(): ?Item
+    {
+        return $this->item;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item
+     */
+    public function getItemWithCreate(): Item
+    {
+        $this->item = is_null($this->item) ? new Item() : $this->item;
+
+        return $this->item;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Item $item
+     * @return self
+     */
+    public function setItem(Item $item): self
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+}

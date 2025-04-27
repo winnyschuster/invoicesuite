@@ -1,0 +1,39 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\udt;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cct\BinaryObjectType;
+
+class PictureType extends BinaryObjectType
+{
+    /**
+     * @var string
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("string")
+     * @JMS\Expose
+     * @JMS\SerializedName("mimeCode")
+     * @JMS\XmlAttribute
+     * @JMS\Accessor(getter="getMimeCode", setter="setMimeCode")
+     */
+    private $mimeCode;
+
+    /**
+     * @return string|null
+     */
+    public function getMimeCode(): ?string
+    {
+        return $this->mimeCode;
+    }
+
+    /**
+     * @param string $mimeCode
+     * @return self
+     */
+    public function setMimeCode(string $mimeCode): self
+    {
+        $this->mimeCode = $mimeCode;
+
+        return $this;
+    }
+}

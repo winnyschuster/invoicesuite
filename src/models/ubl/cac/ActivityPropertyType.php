@@ -1,0 +1,90 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\Name;
+use horstoeko\invoicesuite\models\ubl\cbc\Value;
+
+class ActivityPropertyType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Name
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Name")
+     * @JMS\Expose
+     * @JMS\SerializedName("Name")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getName", setter="setName")
+     */
+    private $name;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\Value
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\Value")
+     * @JMS\Expose
+     * @JMS\SerializedName("Value")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getValue", setter="setValue")
+     */
+    private $value;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function getName(): ?Name
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name
+     */
+    public function getNameWithCreate(): Name
+    {
+        $this->name = is_null($this->name) ? new Name() : $this->name;
+
+        return $this->name;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Name $name
+     * @return self
+     */
+    public function setName(Name $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Value|null
+     */
+    public function getValue(): ?Value
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Value
+     */
+    public function getValueWithCreate(): Value
+    {
+        $this->value = is_null($this->value) ? new Value() : $this->value;
+
+        return $this->value;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\Value $value
+     * @return self
+     */
+    public function setValue(Value $value): self
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+}

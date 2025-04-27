@@ -1,0 +1,712 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription;
+use horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode;
+use horstoeko\invoicesuite\models\ubl\cbc\DocumentType;
+use horstoeko\invoicesuite\models\ubl\cbc\DocumentTypeCode;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cbc\LanguageID;
+use horstoeko\invoicesuite\models\ubl\cbc\LocaleCode;
+use horstoeko\invoicesuite\models\ubl\cbc\UUID;
+use horstoeko\invoicesuite\models\ubl\cbc\VersionID;
+use horstoeko\invoicesuite\models\ubl\cbc\XPath;
+
+class DocumentReferenceType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\ID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\ID")
+     * @JMS\Expose
+     * @JMS\SerializedName("ID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getID", setter="setID")
+     */
+    private $iD;
+
+    /**
+     * @var bool
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("bool")
+     * @JMS\Expose
+     * @JMS\SerializedName("CopyIndicator")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getCopyIndicator", setter="setCopyIndicator")
+     */
+    private $copyIndicator;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\UUID")
+     * @JMS\Expose
+     * @JMS\SerializedName("UUID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getUUID", setter="setUUID")
+     */
+    private $uUID;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
+     * @JMS\Expose
+     * @JMS\SerializedName("IssueDate")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getIssueDate", setter="setIssueDate")
+     */
+    private $issueDate;
+
+    /**
+     * @var \DateTime
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
+     * @JMS\Expose
+     * @JMS\SerializedName("IssueTime")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getIssueTime", setter="setIssueTime")
+     */
+    private $issueTime;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\DocumentTypeCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\DocumentTypeCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentTypeCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDocumentTypeCode", setter="setDocumentTypeCode")
+     */
+    private $documentTypeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\DocumentType
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\DocumentType")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentType")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDocumentType", setter="setDocumentType")
+     */
+    private $documentType;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\XPath>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\XPath>")
+     * @JMS\Expose
+     * @JMS\SerializedName("XPath")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="XPath", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getXPath", setter="setXPath")
+     */
+    private $xPath;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LanguageID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LanguageID")
+     * @JMS\Expose
+     * @JMS\SerializedName("LanguageID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLanguageID", setter="setLanguageID")
+     */
+    private $languageID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\LocaleCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\LocaleCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("LocaleCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getLocaleCode", setter="setLocaleCode")
+     */
+    private $localeCode;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\VersionID
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\VersionID")
+     * @JMS\Expose
+     * @JMS\SerializedName("VersionID")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getVersionID", setter="setVersionID")
+     */
+    private $versionID;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentStatusCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getDocumentStatusCode", setter="setDocumentStatusCode")
+     */
+    private $documentStatusCode;
+
+    /**
+     * @var array<\horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription>
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("array<horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription>")
+     * @JMS\Expose
+     * @JMS\SerializedName("DocumentDescription")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\XmlList(inline=true, entry="DocumentDescription", namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2")
+     * @JMS\Accessor(getter="getDocumentDescription", setter="setDocumentDescription")
+     */
+    private $documentDescription;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\Attachment
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\Attachment")
+     * @JMS\Expose
+     * @JMS\SerializedName("Attachment")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getAttachment", setter="setAttachment")
+     */
+    private $attachment;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod")
+     * @JMS\Expose
+     * @JMS\SerializedName("ValidityPeriod")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getValidityPeriod", setter="setValidityPeriod")
+     */
+    private $validityPeriod;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\IssuerParty
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\IssuerParty")
+     * @JMS\Expose
+     * @JMS\SerializedName("IssuerParty")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getIssuerParty", setter="setIssuerParty")
+     */
+    private $issuerParty;
+
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cac\ResultOfVerification
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cac\ResultOfVerification")
+     * @JMS\Expose
+     * @JMS\SerializedName("ResultOfVerification")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getResultOfVerification", setter="setResultOfVerification")
+     */
+    private $resultOfVerification;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID|null
+     */
+    public function getID(): ?ID
+    {
+        return $this->iD;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ID
+     */
+    public function getIDWithCreate(): ID
+    {
+        $this->iD = is_null($this->iD) ? new ID() : $this->iD;
+
+        return $this->iD;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\ID $iD
+     * @return self
+     */
+    public function setID(ID $iD): self
+    {
+        $this->iD = $iD;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getCopyIndicator(): ?bool
+    {
+        return $this->copyIndicator;
+    }
+
+    /**
+     * @param bool $copyIndicator
+     * @return self
+     */
+    public function setCopyIndicator(bool $copyIndicator): self
+    {
+        $this->copyIndicator = $copyIndicator;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID|null
+     */
+    public function getUUID(): ?UUID
+    {
+        return $this->uUID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\UUID
+     */
+    public function getUUIDWithCreate(): UUID
+    {
+        $this->uUID = is_null($this->uUID) ? new UUID() : $this->uUID;
+
+        return $this->uUID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\UUID $uUID
+     * @return self
+     */
+    public function setUUID(UUID $uUID): self
+    {
+        $this->uUID = $uUID;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getIssueDate(): ?\DateTime
+    {
+        return $this->issueDate;
+    }
+
+    /**
+     * @param \DateTime $issueDate
+     * @return self
+     */
+    public function setIssueDate(\DateTime $issueDate): self
+    {
+        $this->issueDate = $issueDate;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getIssueTime(): ?\DateTime
+    {
+        return $this->issueTime;
+    }
+
+    /**
+     * @param \DateTime $issueTime
+     * @return self
+     */
+    public function setIssueTime(\DateTime $issueTime): self
+    {
+        $this->issueTime = $issueTime;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentTypeCode|null
+     */
+    public function getDocumentTypeCode(): ?DocumentTypeCode
+    {
+        return $this->documentTypeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentTypeCode
+     */
+    public function getDocumentTypeCodeWithCreate(): DocumentTypeCode
+    {
+        $this->documentTypeCode = is_null($this->documentTypeCode) ? new DocumentTypeCode() : $this->documentTypeCode;
+
+        return $this->documentTypeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\DocumentTypeCode $documentTypeCode
+     * @return self
+     */
+    public function setDocumentTypeCode(DocumentTypeCode $documentTypeCode): self
+    {
+        $this->documentTypeCode = $documentTypeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentType|null
+     */
+    public function getDocumentType(): ?DocumentType
+    {
+        return $this->documentType;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentType
+     */
+    public function getDocumentTypeWithCreate(): DocumentType
+    {
+        $this->documentType = is_null($this->documentType) ? new DocumentType() : $this->documentType;
+
+        return $this->documentType;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\DocumentType $documentType
+     * @return self
+     */
+    public function setDocumentType(DocumentType $documentType): self
+    {
+        $this->documentType = $documentType;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\XPath>|null
+     */
+    public function getXPath(): ?array
+    {
+        return $this->xPath;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\XPath> $xPath
+     * @return self
+     */
+    public function setXPath(array $xPath): self
+    {
+        $this->xPath = $xPath;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearXPath(): self
+    {
+        $this->xPath = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\XPath $xPath
+     * @return self
+     */
+    public function addToXPath(XPath $xPath): self
+    {
+        $this->xPath[] = $xPath;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\XPath
+     */
+    public function addToXPathWithCreate(): XPath
+    {
+        $this->addToxPath($xPath = new XPath());
+
+        return $xPath;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LanguageID|null
+     */
+    public function getLanguageID(): ?LanguageID
+    {
+        return $this->languageID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LanguageID
+     */
+    public function getLanguageIDWithCreate(): LanguageID
+    {
+        $this->languageID = is_null($this->languageID) ? new LanguageID() : $this->languageID;
+
+        return $this->languageID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LanguageID $languageID
+     * @return self
+     */
+    public function setLanguageID(LanguageID $languageID): self
+    {
+        $this->languageID = $languageID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LocaleCode|null
+     */
+    public function getLocaleCode(): ?LocaleCode
+    {
+        return $this->localeCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LocaleCode
+     */
+    public function getLocaleCodeWithCreate(): LocaleCode
+    {
+        $this->localeCode = is_null($this->localeCode) ? new LocaleCode() : $this->localeCode;
+
+        return $this->localeCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\LocaleCode $localeCode
+     * @return self
+     */
+    public function setLocaleCode(LocaleCode $localeCode): self
+    {
+        $this->localeCode = $localeCode;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\VersionID|null
+     */
+    public function getVersionID(): ?VersionID
+    {
+        return $this->versionID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\VersionID
+     */
+    public function getVersionIDWithCreate(): VersionID
+    {
+        $this->versionID = is_null($this->versionID) ? new VersionID() : $this->versionID;
+
+        return $this->versionID;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\VersionID $versionID
+     * @return self
+     */
+    public function setVersionID(VersionID $versionID): self
+    {
+        $this->versionID = $versionID;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode|null
+     */
+    public function getDocumentStatusCode(): ?DocumentStatusCode
+    {
+        return $this->documentStatusCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode
+     */
+    public function getDocumentStatusCodeWithCreate(): DocumentStatusCode
+    {
+        $this->documentStatusCode = is_null($this->documentStatusCode) ? new DocumentStatusCode() : $this->documentStatusCode;
+
+        return $this->documentStatusCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode $documentStatusCode
+     * @return self
+     */
+    public function setDocumentStatusCode(DocumentStatusCode $documentStatusCode): self
+    {
+        $this->documentStatusCode = $documentStatusCode;
+
+        return $this;
+    }
+
+    /**
+     * @return array<\horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription>|null
+     */
+    public function getDocumentDescription(): ?array
+    {
+        return $this->documentDescription;
+    }
+
+    /**
+     * @param array<\horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription> $documentDescription
+     * @return self
+     */
+    public function setDocumentDescription(array $documentDescription): self
+    {
+        $this->documentDescription = $documentDescription;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function clearDocumentDescription(): self
+    {
+        $this->documentDescription = [];
+
+        return $this;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription $documentDescription
+     * @return self
+     */
+    public function addToDocumentDescription(DocumentDescription $documentDescription): self
+    {
+        $this->documentDescription[] = $documentDescription;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription
+     */
+    public function addToDocumentDescriptionWithCreate(): DocumentDescription
+    {
+        $this->addTodocumentDescription($documentDescription = new DocumentDescription());
+
+        return $documentDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Attachment|null
+     */
+    public function getAttachment(): ?Attachment
+    {
+        return $this->attachment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Attachment
+     */
+    public function getAttachmentWithCreate(): Attachment
+    {
+        $this->attachment = is_null($this->attachment) ? new Attachment() : $this->attachment;
+
+        return $this->attachment;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\Attachment $attachment
+     * @return self
+     */
+    public function setAttachment(Attachment $attachment): self
+    {
+        $this->attachment = $attachment;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function getValidityPeriod(): ?ValidityPeriod
+    {
+        return $this->validityPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod
+     */
+    public function getValidityPeriodWithCreate(): ValidityPeriod
+    {
+        $this->validityPeriod = is_null($this->validityPeriod) ? new ValidityPeriod() : $this->validityPeriod;
+
+        return $this->validityPeriod;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @return self
+     */
+    public function setValidityPeriod(ValidityPeriod $validityPeriod): self
+    {
+        $this->validityPeriod = $validityPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\IssuerParty|null
+     */
+    public function getIssuerParty(): ?IssuerParty
+    {
+        return $this->issuerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\IssuerParty
+     */
+    public function getIssuerPartyWithCreate(): IssuerParty
+    {
+        $this->issuerParty = is_null($this->issuerParty) ? new IssuerParty() : $this->issuerParty;
+
+        return $this->issuerParty;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\IssuerParty $issuerParty
+     * @return self
+     */
+    public function setIssuerParty(IssuerParty $issuerParty): self
+    {
+        $this->issuerParty = $issuerParty;
+
+        return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ResultOfVerification|null
+     */
+    public function getResultOfVerification(): ?ResultOfVerification
+    {
+        return $this->resultOfVerification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ResultOfVerification
+     */
+    public function getResultOfVerificationWithCreate(): ResultOfVerification
+    {
+        $this->resultOfVerification = is_null($this->resultOfVerification) ? new ResultOfVerification() : $this->resultOfVerification;
+
+        return $this->resultOfVerification;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cac\ResultOfVerification $resultOfVerification
+     * @return self
+     */
+    public function setResultOfVerification(ResultOfVerification $resultOfVerification): self
+    {
+        $this->resultOfVerification = $resultOfVerification;
+
+        return $this;
+    }
+}

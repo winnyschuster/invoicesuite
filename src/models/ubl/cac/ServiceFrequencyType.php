@@ -1,0 +1,49 @@
+<?php
+
+namespace horstoeko\invoicesuite\models\ubl\cac;
+
+use JMS\Serializer\Annotation as JMS;
+use horstoeko\invoicesuite\models\ubl\cbc\WeekDayCode;
+
+class ServiceFrequencyType
+{
+    /**
+     * @var \horstoeko\invoicesuite\models\ubl\cbc\WeekDayCode
+     * @JMS\Groups({"ubl"})
+     * @JMS\Type("horstoeko\invoicesuite\models\ubl\cbc\WeekDayCode")
+     * @JMS\Expose
+     * @JMS\SerializedName("WeekDayCode")
+     * @JMS\XmlElement(namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2", cdata=false)
+     * @JMS\Accessor(getter="getWeekDayCode", setter="setWeekDayCode")
+     */
+    private $weekDayCode;
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WeekDayCode|null
+     */
+    public function getWeekDayCode(): ?WeekDayCode
+    {
+        return $this->weekDayCode;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WeekDayCode
+     */
+    public function getWeekDayCodeWithCreate(): WeekDayCode
+    {
+        $this->weekDayCode = is_null($this->weekDayCode) ? new WeekDayCode() : $this->weekDayCode;
+
+        return $this->weekDayCode;
+    }
+
+    /**
+     * @param \horstoeko\invoicesuite\models\ubl\cbc\WeekDayCode $weekDayCode
+     * @return self
+     */
+    public function setWeekDayCode(WeekDayCode $weekDayCode): self
+    {
+        $this->weekDayCode = $weekDayCode;
+
+        return $this;
+    }
+}
