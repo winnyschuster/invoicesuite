@@ -314,6 +314,78 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentAdditionalReference(
+        string $newReferenceNumber,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->clearAdditionalDocumentReference();
+
+        $this->addDocumentAdditionalReference(
+            $newReferenceNumber,
+            $newReferenceDate,
+            $newTypeCode,
+            $newReferenceTypeCode,
+            $newDescription
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentAdditionalReference(
+        string $newReferenceNumber,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $additionalReference = $this
+            ->getUblInvoiceRootObject()
+            ->addToAdditionalDocumentReferenceWithCreate();
+
+        $additionalReference
+            ->getIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        if (!is_null($newReferenceDate)) {
+            $additionalReference
+                ->setIssueDate($newReferenceDate);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTypeCode)) {
+            $additionalReference
+                ->getDocumentTypeCodeWithCreate()
+                ->setValue($newTypeCode);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDescription)) {
+            $additionalReference
+                ->clearDocumentDescription()
+                ->addToDocumentDescriptionWithCreate()
+                ->setValue($newDescription);
+        }
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

@@ -420,6 +420,98 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         return $this;
     }
 
+    /**
+     * @param string $newReferenceNumber __BT-122, From EN 16931__ Additional document number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-149, From EXTENDED__ Additional document date
+     * @param string|null $newTypeCode __BT-122-0, From EN 16931__ Additional document type code
+     * @param string|null $newReferenceTypeCode __BT-18-1, From EN 16931__ Additional document reference-type code
+     * @param string|null $newDescription __BT-123, From EN 16931__ Additional document description
+     * @return self
+     */
+    public function setDocumentAdditionalReference(
+        string $newReferenceNumber,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+            return $this;
+        }
+
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeAgreementWithCreate()
+            ->clearAdditionalReferencedDocument();
+
+        $this->addDocumentAdditionalReference(
+            $newReferenceNumber,
+            $newReferenceDate,
+            $newTypeCode,
+            $newReferenceTypeCode,
+            $newDescription
+        );
+
+        return $this;
+    }
+
+    /**
+     * @param string $newReferenceNumber __BT-122, From EN 16931__ Additional document number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-149, From EXTENDED__ Additional document date
+     * @param string|null $newTypeCode __BT-122-0, From EN 16931__ Additional document type code
+     * @param string|null $newReferenceTypeCode __BT-18-1, From EN 16931__ Additional document reference-type code
+     * @param string|null $newDescription __BT-123, From EN 16931__ Additional document description
+     * @return self
+     */
+    public function addDocumentAdditionalReference(
+        string $newReferenceNumber,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+            return $this;
+        }
+
+        $additionalReference = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeAgreementWithCreate()
+            ->addToAdditionalReferencedDocumentWithCreate();
+
+        $additionalReference
+            ->getIssuerAssignedIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        $additionalReference
+            ->getTypeCodeWithCreate()
+            ->setValue($newTypeCode);
+
+        if (!is_null($newReferenceDate)) {
+            $additionalReference
+                ->getFormattedIssueDateTimeWithCreate()
+                ->getDateTimeStringWithCreate()
+                ->setValue($newReferenceDate->format("Ymd"))
+                ->setFormat("102");
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceTypeCode)) {
+            $additionalReference
+                ->getReferenceTypeCodeWithCreate()
+                ->setValue($newReferenceTypeCode);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDescription)) {
+            $additionalReference
+                ->getNameWithCreate()
+                ->setValue($newDescription);
+        }
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

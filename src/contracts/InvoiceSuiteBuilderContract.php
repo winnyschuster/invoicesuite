@@ -164,6 +164,30 @@ interface InvoiceSuiteBuilderContract
      */
     public function setDocumentContractReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null): self;
 
+    /**
+     * Set an additional associated document
+     *
+     * @param string $newReferenceNumber Additional document number
+     * @param DateTimeInterface|null $newReferenceDate Additional document date
+     * @param string|null $newTypeCode Additional document type code
+     * @param string|null $newReferenceTypeCode Additional document reference-type code
+     * @param string|null $newDescription Additional document description
+     * @return self
+     */
+    public function setDocumentAdditionalReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null, ?string $newDescription = null): self;
+
+    /**
+     * Add an additional associated document
+     *
+     * @param string $newReferenceNumber Additional document number
+     * @param DateTimeInterface|null $newReferenceDate Additional document date
+     * @param string|null $newTypeCode Additional document type code
+     * @param string|null $newReferenceTypeCode Additional document reference-type code
+     * @param string|null $newDescription Additional document description
+     * @return self
+     */
+    public function addDocumentAdditionalReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null, ?string $newDescription = null): self;
+
     #endregion
 
     #region Document Seller/Supplier

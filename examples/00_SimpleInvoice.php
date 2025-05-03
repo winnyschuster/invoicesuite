@@ -128,5 +128,6 @@ $builder->setDocumentSellerOrderReference('SO-2025/0000001', new DateTime());
 $builder->setDocumentBuyerOrderReference('PO-0000011', new DateTime());
 $builder->setDocumentSellerQuotationReference('ANG-2025/0000055', new DateTime());
 $builder->setDocumentContractReference('CON-2025/0000001', new DateTime());
+$builder->addDocumentAdditionalReference('ADDDOC-001', new DateTime(), "918");
 
 echo $builder->getContentAsXml();
