@@ -124,5 +124,6 @@ $builder->addDocumentPayeeContact("Alfons Baum", "Dispo", "0999-10001", "0999-10
 $builder->setDocumentPayeeCommunication("EM", "invoice@payee-gmbh.de");
 
 $builder->setDocumentSellerOrderReference('SO-2025/0000001', new DateTime());
+$builder->setDocumentBuyerOrderReference('PO-0000011', new DateTime());
 
 echo $builder->getContentAsXml();

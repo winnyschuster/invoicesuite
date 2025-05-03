@@ -205,9 +205,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     #region Document References
 
     /**
-     * @param string $newReferenceNumber Seller's order confirmation number
-     * @param DateTimeInterface|null $newReferenceDate Seller's order confirmation date
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerOrderReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null): self
     {
@@ -219,6 +217,24 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             ->getUblInvoiceRootObject()
             ->getOrderReferenceWithCreate()
             ->getSalesOrderIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentBuyerOrderReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null): self
+    {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->getOrderReferenceWithCreate()
+            ->getIDWithCreate()
             ->setValue($newReferenceNumber);
 
         return $this;

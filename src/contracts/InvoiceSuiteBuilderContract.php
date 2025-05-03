@@ -137,6 +137,15 @@ interface InvoiceSuiteBuilderContract
      */
     public function setDocumentSellerOrderReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null): self;
 
+    /**
+     * Set the associated buyer's order
+     *
+     * @param string $newReferenceNumber Buyers's order number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order date
+     * @return self
+     */
+    public function setDocumentBuyerOrderReference(string $newReferenceNumber, ?DateTimeInterface $newReferenceDate = null): self;
+
     #endregion
 
     #region Document Seller/Supplier
