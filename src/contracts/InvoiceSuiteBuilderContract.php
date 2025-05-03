@@ -138,6 +138,15 @@ interface InvoiceSuiteBuilderContract
     public function setDocumentSellerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
 
     /**
+     * Add an associated seller's order confirmation.
+     *
+     * @param string|null $newReferenceNumber Seller's order confirmation number
+     * @param DateTimeInterface|null $newReferenceDate Seller's order confirmation date
+     * @return self
+     */
+    public function addDocumentSellerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
+
+    /**
      * Set the associated buyer's order
      *
      * @param string|null $newReferenceNumber Buyers's order number
@@ -145,6 +154,15 @@ interface InvoiceSuiteBuilderContract
      * @return self
      */
     public function setDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
+
+    /**
+     * Add an associated buyer's order
+     *
+     * @param string|null $newReferenceNumber Buyers's order number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order date
+     * @return self
+     */
+    public function addDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
 
     /**
      * Set the associated seller's quotation
@@ -156,6 +174,15 @@ interface InvoiceSuiteBuilderContract
     public function setDocumentSellerQuotationReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
 
     /**
+     * Add an associated seller's quotation
+     *
+     * @param string|null $newReferenceNumber Seller's quotation number
+     * @param DateTimeInterface|null $newReferenceDate Seller's quotation date
+     * @return self
+     */
+    public function addDocumentSellerQuotationReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
+
+    /**
      * Set the associated contract
      *
      * @param string $newReferenceNumber Contract number
@@ -163,6 +190,15 @@ interface InvoiceSuiteBuilderContract
      * @return self
      */
     public function setDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
+
+    /**
+     * Add am associated contract
+     *
+     * @param string $newReferenceNumber Contract number
+     * @param DateTimeInterface|null $newReferenceDate Contract date
+     * @return self
+     */
+    public function addDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self;
 
     /**
      * Set an additional associated document

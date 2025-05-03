@@ -226,6 +226,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     /**
      * @inheritDoc
      */
+    public function addDocumentSellerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self
+    {
+        return $this->setDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function setDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self
     {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
@@ -244,6 +252,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
 
         return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self
+    {
+        return $this->setDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
     }
 
     /**
@@ -294,7 +310,31 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     /**
      * @inheritDoc
      */
+    public function addDocumentSellerQuotationReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self
+    {
+        return $this->setDocumentSellerQuotationReference($newReferenceNumber, $newReferenceDate);
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function setDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self
+    {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->clearContractDocumentReference();
+
+        return $this->addDocumentContractReference($newReferenceNumber, $newReferenceDate);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): self
     {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
@@ -302,7 +342,6 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         $contractReference = $this
             ->getUblInvoiceRootObject()
-            ->clearContractDocumentReference()
             ->addToContractDocumentReferenceWithCreate();
 
         $contractReference->getIDWithCreate()->setValue($newReferenceNumber);
