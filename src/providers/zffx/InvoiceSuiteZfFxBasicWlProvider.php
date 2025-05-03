@@ -28,6 +28,14 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractFormatProvider
     /**
      * @inheritDoc
      */
+    public function getParameters(): array
+    {
+        return [];
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getSerializerMetadataDirectories(): array
     {
         return [];

@@ -44,6 +44,13 @@ abstract class InvoiceSuiteAbstractFormatProvider
     abstract public function getDescription(): string;
 
     /**
+     * Get parameters
+     *
+     * @return array<string,mixed>
+     */
+    abstract public function getParameters(): array;
+
+    /**
      * Get meta data directories
      *
      * @return array<string,string>

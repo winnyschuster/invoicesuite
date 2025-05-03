@@ -2,14 +2,14 @@
 
 namespace horstoeko\invoicesuite\abstracts;
 
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use JMS\Serializer\DeserializationContext;
+use JMS\Serializer\Exception\RuntimeException;
 use horstoeko\invoicesuite\concerns\HandlesRootObject;
 use horstoeko\invoicesuite\concerns\HandlesSerializer;
 use horstoeko\invoicesuite\contracts\InvoiceSuiteReaderContract;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContent;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\RuntimeException;
 
 /**
  * Class representing methods for a reader

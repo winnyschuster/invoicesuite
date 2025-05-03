@@ -28,6 +28,14 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractFormatProvide
     /**
      * @inheritDoc
      */
+    public function getParameters(): array
+    {
+        return [];
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getSerializerMetadataDirectories(): array
     {
         return [];

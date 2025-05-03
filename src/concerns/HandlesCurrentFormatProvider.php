@@ -42,4 +42,41 @@ trait HandlesCurrentFormatProvider
     {
         $this->currentInvoiceSuiteAbstractFormat = $invoiceSuiteAbstractFormatProvider;
     }
+
+    /**
+     * Resolve parameters from the requested format provider
+     *
+     * @return array<string,mixed>
+     */
+    public function resolveCurrentFormatProviderParameters(): array
+    {
+        return $this->currentInvoiceSuiteAbstractFormat->getParameters();
+    }
+
+    /**
+     * Returns true if a parameter exists for the requested format provider
+     *
+     * @param string $parameterName
+     * @return boolean
+     */
+    public function hasCurrentFormatProviderParameter(string $parameterName): bool
+    {
+        return array_key_exists($parameterName, $this->resolveCurrentFormatProviderParameters());
+    }
+
+    /**
+     * Returns the parameter value for the request parameter for the requested format provider
+     *
+     * @param string $parameterName
+     * @param mixed $defaultValue
+     * @return mixed
+     */
+    public function getCurrentFormatProviderParameterValue(string $parameterName, $defaultValue)
+    {
+        if (!$this->hasCurrentFormatProviderParameter($parameterName)) {
+            return $defaultValue;
+        }
+
+        return $this->resolveCurrentFormatProviderParameters()[$parameterName];
+    }
 }
