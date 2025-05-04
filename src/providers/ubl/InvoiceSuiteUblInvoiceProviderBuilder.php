@@ -452,6 +452,60 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->clearBillingReference();
+
+        $this->addDocumentInvoiceReference(
+            $newReferenceNumber,
+            $newReferenceDate,
+            $newTypeCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $invoiceReference = $this
+            ->getUblInvoiceRootObject()
+            ->addToBillingReferenceWithCreate()
+            ->getInvoiceDocumentReferenceWithCreate();
+
+        $invoiceReference
+            ->getIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        if (!is_null($newReferenceDate)) {
+            $invoiceReference
+                ->setIssueDate($newReferenceDate);
+        }
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

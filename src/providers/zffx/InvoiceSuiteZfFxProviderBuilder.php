@@ -571,6 +571,76 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         return $this;
     }
 
+    /**
+     * @param string|null $newReferenceNumber __BT-25, From BASIC WL__ Identification of an invoice previously sent
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-555, From EXTENDED__ Date of the previous invoice
+     * @param string|null $newTypeCode __BT-26, From BASIC WL__ Type code of previous invoice
+     * @return self
+     */
+    public function setDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+            return $this;
+        }
+
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeSettlementWithCreate()
+            ->clearInvoiceReferencedDocument();
+
+        $this->addDocumentInvoiceReference(
+            $newReferenceNumber,
+            $newReferenceDate,
+            $newTypeCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newReferenceNumber __BT-25, From BASIC WL__ Identification of an invoice previously sent
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-555, From EXTENDED__ Date of the previous invoice
+     * @param string|null $newTypeCode __BT-26, From BASIC WL__ Type code of previous invoice
+     * @return self
+     */
+    public function addDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+            return $this;
+        }
+
+        $invoiceReference = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeSettlementWithCreate()
+            ->addToInvoiceReferencedDocumentWithCreate();
+
+        $invoiceReference
+            ->getIssuerAssignedIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        $invoiceReference
+            ->getTypeCodeWithCreate()
+            ->setValue($newTypeCode);
+
+        if (!is_null($newReferenceDate)) {
+            $invoiceReference
+                ->getFormattedIssueDateTimeWithCreate()
+                ->getDateTimeStringWithCreate()
+                ->setValue($newReferenceDate->format("Ymd"))
+                ->setFormat("102");
+        }
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

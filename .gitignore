@@ -83,3 +83,4 @@ _backup*
 /composer.lock
 
 lint.ps1
+/examples/00_SimpleInvoice.xml

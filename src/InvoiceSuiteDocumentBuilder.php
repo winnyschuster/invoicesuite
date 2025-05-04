@@ -360,6 +360,40 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentInvoiceReference(
+            $newReferenceNumber,
+            $newReferenceDate,
+            $newTypeCode,
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentInvoiceReference(
+            $newReferenceNumber,
+            $newReferenceDate,
+            $newTypeCode,
+        );
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

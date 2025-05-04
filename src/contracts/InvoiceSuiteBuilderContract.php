@@ -241,6 +241,34 @@ interface InvoiceSuiteBuilderContract
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null
     ): self;
 
+    /**
+     * Set an additional invoice document (reference to preceding invoice)
+     *
+     * @param string|null $newReferenceNumber Identification of an invoice previously sent
+     * @param DateTimeInterface|null $newReferenceDate Date of the previous invoice
+     * @param string|null $newTypeCode Type code of previous invoice
+     * @return self
+     */
+    public function setDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self;
+
+    /**
+     * Add an additional invoice document (reference to preceding invoice)
+     *
+     * @param string|null $newReferenceNumber Identification of an invoice previously sent
+     * @param DateTimeInterface|null $newReferenceDate Date of the previous invoice
+     * @param string|null $newTypeCode Type code of previous invoice
+     * @return self
+     */
+    public function addDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): self;
+
     #endregion
 
     #region Document Seller/Supplier
