@@ -394,6 +394,30 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentProjectReference($newReferenceNumber, $newName);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentProjectReference($newReferenceNumber, $newName);
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

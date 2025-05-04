@@ -269,6 +269,30 @@ interface InvoiceSuiteBuilderContract
         ?string $newTypeCode = null
     ): self;
 
+    /**
+     * Set an additional project reference
+     *
+     * @param string|null $newReferenceNumber Project number
+     * @param string|null $newName Project name
+     * @return self
+     */
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self;
+
+    /**
+     * Add an additional project reference
+     *
+     * @param string|null $newReferenceNumber Project number
+     * @param string|null $newName Project name
+     * @return self
+     */
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self;
+
     #endregion
 
     #region Document Seller/Supplier

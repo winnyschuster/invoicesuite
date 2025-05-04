@@ -641,6 +641,56 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         return $this;
     }
 
+    /**
+     * @param string|null $newReferenceNumber __BT-11, From EN 16931__ Project number
+     * @param string|null $newName __BT-11-0, From EN 16931__ Project name
+     * @return self
+     */
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $projectReference = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeAgreementWithCreate()
+            ->getSpecifiedProcuringProjectWithCreate();
+
+        $projectReference
+            ->getIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            $projectReference
+                ->getNameWithCreate()
+                ->setValue($newName);
+        };
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newReferenceNumber __BT-11, From EN 16931__ Project number
+     * @param string|null $newName __BT-11-0, From EN 16931__ Project name
+     * @return self
+     */
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this->setDocumentProjectReference($newReferenceNumber, $newName);
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier

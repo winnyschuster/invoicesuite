@@ -506,6 +506,49 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @param string|null $newReferenceNumber Project number
+     * @return self
+     */
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->clearProjectReference();
+
+        $this->addDocumentProjectReference($newReferenceNumber, $newName);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $projectReference = $this
+            ->getUblInvoiceRootObject()
+            ->addToProjectReferenceWithCreate();
+
+        $projectReference
+            ->getIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        return $this;
+    }
+
     #endregion
 
     #region Document Seller/Supplier
