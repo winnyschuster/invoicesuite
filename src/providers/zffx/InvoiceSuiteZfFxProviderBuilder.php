@@ -836,6 +836,58 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
     }
 
     /**
+     * @param string|null $newReferenceNumber __BT-15, From BASIC WL__ Receipt notification number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-201, From EXTENDED__ Receipt notification date
+     * @return self
+     */
+    public function setDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $receivingAdviceReference = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeDeliveryWithCreate()
+            ->getReceivingAdviceReferencedDocumentWithCreate();
+
+        $receivingAdviceReference
+            ->getIssuerAssignedIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        if (!is_null($newReferenceDate)) {
+            $receivingAdviceReference
+                ->getFormattedIssueDateTimeWithCreate()
+                ->getDateTimeStringWithCreate()
+                ->setValue($newReferenceDate->format("Ymd"))
+                ->setFormat("102");
+        };
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newReferenceNumber __BT-15, From BASIC WL__ Receipt notification number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-201, From EXTENDED__ Receipt notification date
+     * @return self
+     */
+    public function addDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this->setDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        return $this;
+    }
+
+    /**
      * @param DateTimeInterface|null $newDate __BT-72, From BASIC WL__ Actual delivery date
      * @return self
      */

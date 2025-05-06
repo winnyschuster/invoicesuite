@@ -5,8 +5,8 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
-//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
+//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
+$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
 //$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxxrechnung');
 
 $builder->setDocumentNo('2025-04-000001');
@@ -138,6 +138,7 @@ $builder->setDocumentProjectReference("PROJECT-0001", "Project 1");
 $builder->addDocumentProjectReference("PROJECT-0002", "Project 2");
 $builder->addDocumentUltimateCustomerOrderReference('UCOR-0000001', new DateTime());
 $builder->setDocumentDespatchAdviceReference('DESPATCHADV-0000001', new DateTime());
+$builder->setDocumentReceivingAdviceReference('RECEIPTADV-0000001', new DateTime());
 
 $builder->setAocumentSupplyChainEvent(new DateTime());
 

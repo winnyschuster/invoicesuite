@@ -394,6 +394,30 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
+     * Set an additional receiving advice reference
+     *
+     * @param string|null $newReferenceNumber Receipt notification number
+     * @param DateTimeInterface|null $newReferenceDate Receipt notification date
+     * @return self
+     */
+    public function setDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self;
+
+    /**
+     * Set an additional receiving advice reference
+     *
+     * @param string|null $newReferenceNumber Receipt notification number
+     * @param DateTimeInterface|null $newReferenceDate Receipt notification date
+     * @return self
+     */
+    public function addDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self;
+
+    /**
      * Set the date of the delivery
      *
      * @param DateTimeInterface|null $newDate Actual delivery date

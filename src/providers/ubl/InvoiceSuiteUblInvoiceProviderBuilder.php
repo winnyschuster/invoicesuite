@@ -664,6 +664,52 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     /**
      * @inheritDoc
      */
+    public function setDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->clearReceiptDocumentReference();
+
+        $this->addDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $receivingAdviceReference = $this
+            ->getUblInvoiceRootObject()
+            ->addToReceiptDocumentReferenceWithCreate();
+
+        $receivingAdviceReference
+            ->getIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        if (!is_null($newReferenceDate)) {
+            $receivingAdviceReference->setIssueDate($newReferenceDate);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function setAocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
