@@ -888,6 +888,58 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
     }
 
     /**
+     * @param string|null $newReferenceNumber __BT-X-202, From EXTENDED__ Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-203, From EXTENDED__ Delivery slip date
+     * @return self
+     */
+    public function setDocumentDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $deliveryNoteReference = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeDeliveryWithCreate()
+            ->getDeliveryNoteReferencedDocumentWithCreate();
+
+        $deliveryNoteReference
+            ->getIssuerAssignedIDWithCreate()
+            ->setValue($newReferenceNumber);
+
+        if (!is_null($newReferenceDate)) {
+            $deliveryNoteReference
+                ->getFormattedIssueDateTimeWithCreate()
+                ->getDateTimeStringWithCreate()
+                ->setValue($newReferenceDate->format("Ymd"))
+                ->setFormat("102");
+        };
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newReferenceNumber __BT-X-202, From EXTENDED__ Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-203, From EXTENDED__ Delivery slip date
+     * @return self
+     */
+    public function addDocumentDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            return $this;
+        }
+
+        $this->setDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
+
+        return $this;
+    }
+
+    /**
      * @param DateTimeInterface|null $newDate __BT-72, From BASIC WL__ Actual delivery date
      * @return self
      */

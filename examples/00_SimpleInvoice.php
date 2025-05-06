@@ -139,6 +139,7 @@ $builder->addDocumentProjectReference("PROJECT-0002", "Project 2");
 $builder->addDocumentUltimateCustomerOrderReference('UCOR-0000001', new DateTime());
 $builder->setDocumentDespatchAdviceReference('DESPATCHADV-0000001', new DateTime());
 $builder->setDocumentReceivingAdviceReference('RECEIPTADV-0000001', new DateTime());
+$builder->setDocumentDeliveryNoteReference('DELIVERYNOTE-0000001', new DateTime());
 
 $builder->setAocumentSupplyChainEvent(new DateTime());
 

@@ -358,7 +358,7 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Set an additional ultimate customer order reference
+     * Add an additional ultimate customer order reference
      *
      * @param string|null $newReferenceNumber
      * @param DateTimeInterface|null $newReferenceDate
@@ -382,7 +382,7 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Set an additional despatch advice reference
+     * Add an additional despatch advice reference
      *
      * @param string|null $newReferenceNumber Shipping notification number
      * @param DateTimeInterface|null $newReferenceDate Shipping notification date
@@ -413,6 +413,30 @@ interface InvoiceSuiteBuilderContract
      * @return self
      */
     public function addDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self;
+
+    /**
+     * Set an additional delivery note
+     *
+     * @param string|null $newReferenceNumber Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate Delivery slip date
+     * @return self
+     */
+    public function setDocumentDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self;
+
+    /**
+     * Add an additional delivery note
+     *
+     * @param string|null $newReferenceNumber Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate Delivery slip date
+     * @return self
+     */
+    public function addDocumentDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self;
