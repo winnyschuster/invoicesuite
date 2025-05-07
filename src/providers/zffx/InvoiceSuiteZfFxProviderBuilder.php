@@ -5056,6 +5056,29 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null
     ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            return $this;
+        }
+
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeSettlementWithCreate()
+            ->clearSpecifiedTradeSettlementPaymentMeans();
+
+        $this->addDocumentPaymentMean(
+            $newTypeCode,
+            $newName,
+            $newFinancialCardId,
+            $newFinancialCardHolder,
+            $newBuyerIban,
+            $newPayeeIban,
+            $newPayeeAccountName,
+            $newPayeeProprietaryId,
+            $newPayeeBic,
+            $newPaymentReference
+        );
+
         return $this;
     }
 
@@ -5084,6 +5107,22 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null
     ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            return $this;
+        }
+
+        $paymentMean = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getApplicableHeaderTradeSettlementWithCreate()
+            ->addToSpecifiedTradeSettlementPaymentMeansWithCreate();
+
+        $paymentMean->getTypeCodeWithCreate()->setValue($newTypeCode);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            $paymentMean->getInformationWithCreate()->setValue($newName);
+        }
+
         return $this;
     }
 

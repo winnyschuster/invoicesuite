@@ -3482,6 +3482,27 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null
     ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            return $this;
+        }
+
+        $this
+            ->getUblInvoiceRootObject()
+            ->clearPaymentMeans();
+
+        $this->addDocumentPaymentMean(
+            $newTypeCode,
+            $newName,
+            $newFinancialCardId,
+            $newFinancialCardHolder,
+            $newBuyerIban,
+            $newPayeeIban,
+            $newPayeeAccountName,
+            $newPayeeProprietaryId,
+            $newPayeeBic,
+            $newPaymentReference
+        );
+
         return $this;
     }
 
@@ -3500,6 +3521,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null
     ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            return $this;
+        }
+
         return $this;
     }
 
