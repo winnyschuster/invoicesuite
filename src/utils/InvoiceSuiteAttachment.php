@@ -124,7 +124,7 @@ class InvoiceSuiteAttachment
     public static function fromUrl(string $url): InvoiceSuiteAttachment
     {
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-            throw new InvalidArgumentException("Not a valid URL: $url");
+            throw new InvalidArgumentException(sprintf('Not a valid URL: %s', $url));
         }
 
         return new static($url, '', static::IS_FROM_URL);

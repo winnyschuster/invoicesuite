@@ -480,6 +480,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     ->setMimeCode($newInvoiceSuiteAttachment->getContentMimeType())
                     ->setValue($newInvoiceSuiteAttachment->getRawContent());
             }
+
             if ($newInvoiceSuiteAttachment->isUrlAttachment()) {
                 $additionalReference
                     ->getAttachmentWithCreate()
