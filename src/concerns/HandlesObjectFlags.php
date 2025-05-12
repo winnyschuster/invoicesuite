@@ -28,7 +28,7 @@ trait HandlesObjectFlags
      * @param string $flag
      * @return self
      */
-    protected function objectFlagAdd(string $flag): self
+    public function objectFlagAdd(string $flag): self
     {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($flag)) {
             return $this;
@@ -49,7 +49,7 @@ trait HandlesObjectFlags
      * @param string $flag
      * @return self
      */
-    protected function objectFlagRemove(string $flag): self
+    public function objectFlagRemove(string $flag): self
     {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($flag)) {
             return $this;
