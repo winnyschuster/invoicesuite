@@ -34,7 +34,7 @@ trait HandlesObjectFlags
             return $this;
         }
 
-        if ($this->objectFlagExists($flag)) {
+        if ($this->objectFlagIsSet($flag)) {
             return $this;
         }
 
@@ -55,13 +55,11 @@ trait HandlesObjectFlags
             return $this;
         }
 
-        if (!$this->objectFlagExists($flag)) {
+        if (!$this->objectFlagIsSet($flag)) {
             return $this;
         }
 
-        $this->objectFlags = array_filter($this->objectFlags, function ($currentFlag) use ($flag) {
-            return strcasecmp($currentFlag, $flag) !== 0;
-        });
+        $this->objectFlags = array_filter($this->objectFlags, fn ($currentFlag) => strcasecmp($currentFlag, $flag) !== 0);
 
         return $this;
     }
@@ -72,8 +70,8 @@ trait HandlesObjectFlags
      * @param string $flag
      * @return boolean
      */
-    public function objectFlagExists(string $flag): bool
+    public function objectFlagIsSet(string $flag): bool
     {
-        return in_array($flag, $this->objectFlags);
+        return array_filter($this->objectFlags, fn ($currentFlag) => strcasecmp($currentFlag, $flag) === 0) !== [];
     }
 }
