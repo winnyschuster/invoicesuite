@@ -956,7 +956,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->addToPartyIdentificationWithCreate()
-            ->addToObjectFlags('id')
+            ->addToObjectFlags('globalid')
             ->getIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);

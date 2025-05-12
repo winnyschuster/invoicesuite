@@ -5,8 +5,8 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
-$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
+$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
+//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
 //$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxxrechnung');
 
 $builder->setDocumentNo('2025-04-000001');
@@ -28,6 +28,7 @@ $builder->setDocumentSellerId("0815-4711");
 $builder->addDocumentSellerId("0815-4712");
 $builder->setDocumentSellerGlobalId("11111", "0088");
 $builder->addDocumentSellerGlobalId("22222", "0088");
+$builder->setDocumentSellerId("0815-4713");
 $builder->setDocumentSellerTaxRegistration("VA", "893489787987");
 $builder->setDocumentSellerTaxRegistration("VA", "893489787987");
 $builder->addDocumentSellerTaxRegistration("FC", "893489787987_x");
