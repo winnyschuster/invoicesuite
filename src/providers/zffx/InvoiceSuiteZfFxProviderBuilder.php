@@ -6340,17 +6340,27 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getTaxCurrencyCode()?->getValue();
 
-        $taxTotalAmount = $summation->clearTaxTotalAmount()->addToTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
+        $taxTotalAmount = $summation
+            ->clearTaxTotalAmount()
+            ->addToTaxTotalAmountWithCreate()
+            ->setValue($newTaxTotalAmount)
+            ->addToObjectFlags('taxtotalamount1');
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($invoiceCurrencyCode)) {
             $taxTotalAmount->setCurrencyId($invoiceCurrencyCode);
         }
 
-        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount2)) {
-            $taxTotalAmount = $summation->addToTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount2);
-            if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($taxCurrencyCode)) {
-                $taxTotalAmount->setCurrencyId($taxCurrencyCode);
-            }
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount2)) {
+            return $this;
+        }
+
+        $taxTotalAmount = $summation
+            ->addToTaxTotalAmountWithCreate()
+            ->setValue($newTaxTotalAmount2)
+            ->addToObjectFlags('taxtotalamount2');
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($taxCurrencyCode)) {
+            $taxTotalAmount->setCurrencyId($taxCurrencyCode);
         }
 
         return $this;
