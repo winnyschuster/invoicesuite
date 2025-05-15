@@ -2683,4 +2683,24 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     #endregion
+
+    #region Document Positions
+
+    /**
+     * Add a new position to document
+     *
+     * @param string|null $newPositionId Identification of the position
+     * @param string|null $newParentPositionId Identification of the parent position
+     * @param string|null $newLineStatusCode Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
+     * @param string|null $newLineStatusReasonCode Type to specify whether the invoice line is
+     * @return self
+     */
+    public function addDocumentPosition(
+        ?string $newPositionId = null,
+        ?string $newParentPositionId = null,
+        ?string $newLineStatusCode = null,
+        ?string $newLineStatusReasonCode = null
+    ): self;
+
+    #endregion
 }

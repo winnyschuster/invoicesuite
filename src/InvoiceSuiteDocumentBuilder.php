@@ -2805,4 +2805,27 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
     }
 
     #endregion
+
+    #region Document Positions
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPosition(
+        ?string $newPositionId = null,
+        ?string $newParentPositionId = null,
+        ?string $newLineStatusCode = null,
+        ?string $newLineStatusReasonCode = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPosition(
+            $newPositionId,
+            $newParentPositionId,
+            $newLineStatusCode,
+            $newLineStatusReasonCode,
+        );
+
+        return $this;
+    }
+
+    #endregion
 }

@@ -4483,4 +4483,42 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     #endregion
+
+    #region Document Positions
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPosition(
+        ?string $newPositionId = null,
+        ?string $newParentPositionId = null,
+        ?string $newLineStatusCode = null,
+        ?string $newLineStatusReasonCode = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])) {
+            return $this;
+        }
+
+        $position = $this
+            ->getUblInvoiceRootObject()
+            ->addToInvoiceLineWithCreate();
+
+        $position->getIDWithCreate()->setValue($newPositionId);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newParentPositionId)) {
+            // Nothing here
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newLineStatusCode)) {
+            // Nothing here
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newLineStatusReasonCode)) {
+            // Nothing here
+        }
+
+        return $this;
+    }
+
+    #endregion
 }

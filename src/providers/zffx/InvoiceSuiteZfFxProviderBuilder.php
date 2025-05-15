@@ -6391,4 +6391,59 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
     }
 
     #endregion
+
+    #region Document Positions
+
+    /**
+     * @param string|null $newPositionId __BT-126, From BASIC__ Identification of the position
+     * @param string|null $newParentPositionId __BT-X-304, From EXTENDED__ Identification of the parent position
+     * @param string|null $newLineStatusCode __BT-X-7, From EXTENDED__ Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
+     * @param string|null $newLineStatusReasonCode __BT-X-8, From EXTENDED__ Type to specify whether the invoice line is
+     * @return self
+     */
+    public function addDocumentPosition(
+        ?string $newPositionId = null,
+        ?string $newParentPositionId = null,
+        ?string $newLineStatusCode = null,
+        ?string $newLineStatusReasonCode = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])) {
+            return $this;
+        }
+
+        $position = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->addToIncludedSupplyChainTradeLineItemWithCreate();
+
+        $position
+            ->getAssociatedDocumentLineDocumentWithCreate()
+            ->getLineIDWithCreate()
+            ->setValue($newPositionId);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newParentPositionId)) {
+            $position
+                ->getAssociatedDocumentLineDocumentWithCreate()
+                ->getParentLineIDWithCreate()
+                ->setValue($newParentPositionId);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newLineStatusCode)) {
+            $position
+                ->getAssociatedDocumentLineDocumentWithCreate()
+                ->getLineStatusCodeWithCreate()
+                ->setValue($newLineStatusCode);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newLineStatusReasonCode)) {
+            $position
+                ->getAssociatedDocumentLineDocumentWithCreate()
+                ->getLineStatusReasonCodeWithCreate()
+                ->setValue($newLineStatusReasonCode);
+        }
+
+        return $this;
+    }
+
+    #endregion
 }
