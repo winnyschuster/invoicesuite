@@ -4568,5 +4568,24 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionProductDetails(
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?string $newProductModelId = null,
+        ?string $newProductBatchId = null,
+        ?string $newProductBrancdName = null,
+        ?string $newProductModelName = null
+    ): self {
+        return $this;
+    }
+
     #endregion
 }

@@ -2861,5 +2861,38 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionProductDetails(
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?string $newProductModelId = null,
+        ?string $newProductBatchId = null,
+        ?string $newProductBrancdName = null,
+        ?string $newProductModelName = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionProductDetails(
+            $newProductName,
+            $newProductDescription,
+            $newProductSellerId,
+            $newProductBuyerId,
+            $newProductGlobalId,
+            $newProductGlobalIdType,
+            $newProductIndustryId,
+            $newProductModelId,
+            $newProductBatchId,
+            $newProductBrancdName,
+            $newProductModelName
+        );
+
+        return $this;
+    }
+
     #endregion
 }

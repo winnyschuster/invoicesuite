@@ -6513,5 +6513,35 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         return $this;
     }
 
+    /**
+     * @param string|null $newProductName __BT-153, From BASIC__ Name of the product (product name)
+     * @param string|null $newProductDescription __BT-154, From EN 16931__ Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId __BT-155, From EN 16931__ Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId __BT-156, From EN 16931__ Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId __BT-157, From BASIC__ Product global id
+     * @param string|null $newProductGlobalIdType __BT-157-1, From BASIC__ Type of the product global id
+     * @param string|null $newProductIndustryId __BT-X-309, From EXTENDED__ Id assigned by the industry
+     * @param string|null $newProductModelId __BT-X-533, From EXTENDED__ Unique model identifier of the product
+     * @param string|null $newProductBatchId __BT-X-534. From EXTENDED__ Batch (lot) identifier of the product
+     * @param string|null $newProductBrancdName __BT-X-535. From EXTENDED__ Brand name of the product
+     * @param string|null $newProductModelName __BT-X-536. From EXTENDED__ Model name of the product
+     * @return self
+     */
+    public function setDocumentPositionProductDetails(
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?string $newProductModelId = null,
+        ?string $newProductBatchId = null,
+        ?string $newProductBrancdName = null,
+        ?string $newProductModelName = null
+    ): self {
+        return $this;
+    }
+
     #endregion
 }

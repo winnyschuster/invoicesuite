@@ -2730,5 +2730,35 @@ interface InvoiceSuiteBuilderContract
         ?string $newSubjectCode = null
     ): self;
 
+    /**
+     * Add product details to latest added position
+     *
+     * @param string|null $newProductName Name of the product (product name)
+     * @param string|null $newProductDescription Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId Product global id
+     * @param string|null $newProductGlobalIdType Type of the product global id
+     * @param string|null $newProductIndustryId Id assigned by the industry
+     * @param string|null $newProductModelId Unique model identifier of the product
+     * @param string|null $newProductBatchId Batch (lot) identifier of the product
+     * @param string|null $newProductBrancdName Brand name of the product
+     * @param string|null $newProductModelName Model name of the product
+     * @return self
+     */
+    public function setDocumentPositionProductDetails(
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?string $newProductModelId = null,
+        ?string $newProductBatchId = null,
+        ?string $newProductBrancdName = null,
+        ?string $newProductModelName = null
+    ): self;
+
     #endregion
 }
