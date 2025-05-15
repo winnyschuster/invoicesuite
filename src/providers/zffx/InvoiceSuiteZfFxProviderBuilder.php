@@ -100,8 +100,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         if (!is_null($summation)) {
             $taxTotalAmounts = $summation->getTaxTotalAmount();
             if (!is_null($taxTotalAmounts) && is_array($taxTotalAmounts)) {
-                $taxTotalAmount1 = isset($taxTotalAmounts[0]) ? $taxTotalAmounts[0] : null;
-                $taxTotalAmount2 = isset($taxTotalAmounts[1]) ? $taxTotalAmounts[1] : null;
+                $taxTotalAmount1 = $taxTotalAmounts[0] ?? null;
+                $taxTotalAmount2 = $taxTotalAmounts[1] ?? null;
                 if (!is_null($taxTotalAmount1) && !is_null($invoiceCurrencyCode)) {
                     $taxTotalAmount1->setCurrencyID($invoiceCurrencyCode);
                 }
@@ -6366,12 +6366,15 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newChargeTotalAmount)) {
             $summation->getChargeTotalAmountWithCreate()->setValue($newChargeTotalAmount);
         }
+
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDiscountTotalAmount)) {
             $summation->getAllowanceTotalAmountWithCreate()->setValue($newDiscountTotalAmount);
         }
+
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newPrepaidAmount)) {
             $summation->getTotalPrepaidAmountWithCreate()->setValue($newPrepaidAmount);
         }
+
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newRoungingAmount)) {
             $summation->getRoundingAmountWithCreate()->setValue($newRoungingAmount);
         }
