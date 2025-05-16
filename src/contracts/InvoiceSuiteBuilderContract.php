@@ -2763,7 +2763,7 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Set product characteristics to latest added position
+     * Set product characteristics in latest added position
      *
      * @param string|null $newProductCharacteristicDescription Name of the attribute or characteristic ("Colour")
      * @param string|null $newProductCharacteristicValue Value of the attribute or characteristic ("Red")
@@ -2781,7 +2781,7 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Add product characteristics to latest added position
+     * Add product characteristics in latest added position
      *
      * @param string|null $newProductCharacteristicDescription Name of the attribute or characteristic ("Colour")
      * @param string|null $newProductCharacteristicValue Value of the attribute or characteristic ("Red")
@@ -2796,6 +2796,38 @@ interface InvoiceSuiteBuilderContract
         ?string $newProductCharacteristicType = null,
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null
+    ): self;
+
+    /**
+     * Set product classification in latest added position
+     *
+     * @param string|null $newProductClassificationCode Classification identifier
+     * @param string|null $newProductClassificationListId Identifier for the identification scheme of the item classification
+     * @param string|null $newProductClassificationListVersionId Version of the identification scheme
+     * @param string|null $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
+     * @return self
+     */
+    public function setDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): self;
+
+    /**
+     * Add product classification in latest added position
+     *
+     * @param string|null $newProductClassificationCode Classification identifier
+     * @param string|null $newProductClassificationListId Identifier for the identification scheme of the item classification
+     * @param string|null $newProductClassificationListVersionId Version of the identification scheme
+     * @param string|null $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
+     * @return self
+     */
+    public function addDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
     ): self;
 
     #endregion

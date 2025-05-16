@@ -6684,5 +6684,80 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         return $this;
     }
 
+    /**
+     * @param string|null $newProductClassificationCode __BT-158, From EN 16931__ Classification identifier
+     * @param string|null $newProductClassificationListId __BT-158-1, From EN 16931__ Identifier for the identification scheme of the item classification
+     * @param string|null $newProductClassificationListVersionId __BT-158-2, From EN 16931__ Version of the identification scheme
+     * @param string|null $newProductClassificationCodeClassname __BT-X-138, From EXTENDED__ Name with which an article can be classified according to type or quality
+     * @return self
+     */
+    public function setDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
+
+        $positionProduct->clearDesignatedProductClassification();
+
+        $this->addDocumentPositionProductClassification(
+            $newProductClassificationCode,
+            $newProductClassificationListId,
+            $newProductClassificationListVersionId,
+            $newProductClassificationCodeClassname
+        );
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newProductClassificationCode __BT-158, From EN 16931__ Classification identifier
+     * @param string|null $newProductClassificationListId __BT-158-1, From EN 16931__ Identifier for the identification scheme of the item classification
+     * @param string|null $newProductClassificationListVersionId __BT-158-2, From EN 16931__ Version of the identification scheme
+     * @param string|null $newProductClassificationCodeClassname __BT-X-138, From EXTENDED__ Name with which an article can be classified according to type or quality
+     * @return self
+     */
+    public function addDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
+
+        $positionProductClassification = $positionProduct->addToDesignatedProductClassificationWithCreate();
+
+        $positionProductClassification
+            ->getClassCodeWithCreate()
+            ->setValue($newProductClassificationCode)
+            ->setListID($newProductClassificationListId)
+            ->setListVersionID($newProductClassificationListVersionId);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductClassificationCodeClassname)) {
+            $positionProductClassification->getClassNameWithCreate()->setValue($newProductClassificationCodeClassname);
+        }
+
+        return $this;
+    }
+
     #endregion
 }

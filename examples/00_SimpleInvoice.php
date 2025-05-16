@@ -182,4 +182,6 @@ $builder->addDocumentPositionNote("Some second Content");
 $builder->setDocumentPositionNote("Some third Content", "ContentCode", "SubjectCode");
 $builder->setDocumentPositionProductDetails('ProductId', 'ProductName', 'ProductDescription', 'SellerID', 'BuyerID', '3333432332', '0088', 'IndustryId', 'ModelId', 'BatchId', 'Brandname', 'Modelname');
 $builder->setDocumentPositionProductCharacteristic('Füllmenge', '1000 Liter', 'FM', 1000.0, "LTR");
+$builder->setDocumentPositionProductClassification("classcode", 'listid', '1.0', 'classnam');
+
 echo $builder->saveAsXmlFile(__DIR__ . "/00_SimpleInvoice.xml");

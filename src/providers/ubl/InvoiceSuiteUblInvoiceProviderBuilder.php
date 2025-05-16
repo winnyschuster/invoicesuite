@@ -4661,5 +4661,68 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
+            return $this;
+        }
+
+        $latestPosition = $this->getUblInvoiceRootObject()->getLatestInvoiceLineWithCreate();
+
+        $positionProduct = $latestPosition->getItemWithCreate();
+
+        $positionProduct->clearCommodityClassification();
+
+        $this->addDocumentPositionProductClassification(
+            $newProductClassificationCode,
+            $newProductClassificationListId,
+            $newProductClassificationListVersionId,
+            $newProductClassificationCodeClassname
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
+            return $this;
+        }
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
+            return $this;
+        }
+
+        $latestPosition = $this->getUblInvoiceRootObject()->getLatestInvoiceLineWithCreate();
+
+        $positionProduct = $latestPosition->getItemWithCreate();
+
+        $positionProductClassification = $positionProduct->addToCommodityClassificationWithCreate();
+
+        $positionProductClassificationCode = $positionProductClassification
+            ->getItemClassificationCodeWithCreate()
+            ->setValue($newProductClassificationCode)
+            ->setListID($newProductClassificationListId);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductClassificationListVersionId)) {
+            $positionProductClassificationCode->setListVersionID($newProductClassificationListVersionId);
+        }
+
+        return $this;
+    }
+
     #endregion
 }
