@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\models\ubl\cbc\PackageLevelCode;
 use horstoeko\invoicesuite\models\ubl\cbc\PackagingTypeCode;
@@ -13,6 +14,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\TraceID;
 
 class PackageType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\CompanyID;
 use horstoeko\invoicesuite\models\ubl\cbc\ExemptionReason;
 use horstoeko\invoicesuite\models\ubl\cbc\ExemptionReasonCode;
@@ -12,6 +13,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\TaxLevelCode;
 
 class PartyTaxSchemeType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

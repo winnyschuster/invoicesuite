@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\AttributeID;
 use horstoeko\invoicesuite\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\models\ubl\cbc\MaximumMeasure;
@@ -12,6 +13,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\MinimumMeasure;
 
 class DimensionType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

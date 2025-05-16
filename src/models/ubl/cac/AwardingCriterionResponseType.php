@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\models\ubl\cbc\AwardingCriterionDescription;
 use horstoeko\invoicesuite\models\ubl\cbc\AwardingCriterionID;
@@ -13,6 +14,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\Quantity;
 
 class AwardingCriterionResponseType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

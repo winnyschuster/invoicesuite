@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\CargoTypeCode;
 use horstoeko\invoicesuite\models\ubl\cbc\CommodityCode;
 use horstoeko\invoicesuite\models\ubl\cbc\ItemClassificationCode;
@@ -11,6 +12,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\NatureCode;
 
 class CommodityClassificationType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

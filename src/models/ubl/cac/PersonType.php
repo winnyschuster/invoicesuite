@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\BirthplaceName;
 use horstoeko\invoicesuite\models\ubl\cbc\FamilyName;
 use horstoeko\invoicesuite\models\ubl\cbc\FirstName;
@@ -19,6 +20,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\Title;
 
 class PersonType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

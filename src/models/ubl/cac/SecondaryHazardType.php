@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\EmergencyProceduresCode;
 use horstoeko\invoicesuite\models\ubl\cbc\Extension;
 use horstoeko\invoicesuite\models\ubl\cbc\ID;
@@ -12,6 +13,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\PlacardNotation;
 
 class SecondaryHazardType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription;
 use horstoeko\invoicesuite\models\ubl\cbc\DocumentStatusCode;
 use horstoeko\invoicesuite\models\ubl\cbc\DocumentType;
@@ -17,6 +18,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\XPath;
 
 class DocumentReferenceType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

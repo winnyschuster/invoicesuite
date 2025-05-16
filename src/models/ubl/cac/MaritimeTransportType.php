@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\GrossTonnageMeasure;
 use horstoeko\invoicesuite\models\ubl\cbc\NetTonnageMeasure;
 use horstoeko\invoicesuite\models\ubl\cbc\RadioCallSignID;
@@ -13,6 +14,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\VesselName;
 
 class MaritimeTransportType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\DeliveredQuantity;
 use horstoeko\invoicesuite\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\models\ubl\cbc\LatestMeterQuantity;
@@ -18,6 +19,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\PreviousMeterReadingMethodCode;
 
 class MeterReadingType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

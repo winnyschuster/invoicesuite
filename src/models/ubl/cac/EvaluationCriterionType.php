@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\models\ubl\cbc\EvaluationCriterionTypeCode;
 use horstoeko\invoicesuite\models\ubl\cbc\Expression;
@@ -13,6 +14,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\ThresholdQuantity;
 
 class EvaluationCriterionType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

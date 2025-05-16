@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\CharacterSetCode;
 use horstoeko\invoicesuite\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\models\ubl\cbc\DocumentHash;
@@ -16,6 +17,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\URI;
 
 class ExternalReferenceType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\CrewQuantity;
 use horstoeko\invoicesuite\models\ubl\cbc\DemurrageInstructions;
 use horstoeko\invoicesuite\models\ubl\cbc\ID;
@@ -17,6 +18,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\TransportModeCode;
 
 class ShipmentStageType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\BackorderQuantity;
 use horstoeko\invoicesuite\models\ubl\cbc\BackorderReason;
 use horstoeko\invoicesuite\models\ubl\cbc\DeliveredQuantity;
@@ -17,6 +18,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\UUID;
 
 class DespatchLineType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

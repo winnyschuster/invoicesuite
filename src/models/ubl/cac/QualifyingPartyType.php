@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\BusinessClassificationEvidenceID;
 use horstoeko\invoicesuite\models\ubl\cbc\BusinessIdentityEvidenceID;
 use horstoeko\invoicesuite\models\ubl\cbc\EmployeeQuantity;
@@ -14,6 +15,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\TendererRoleCode;
 
 class QualifyingPartyType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

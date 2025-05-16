@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\CalculationRate;
 use horstoeko\invoicesuite\models\ubl\cbc\ExchangeMarketID;
 use horstoeko\invoicesuite\models\ubl\cbc\MathematicOperatorCode;
@@ -14,6 +15,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\TargetCurrencyCode;
 
 class ExchangeRateType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

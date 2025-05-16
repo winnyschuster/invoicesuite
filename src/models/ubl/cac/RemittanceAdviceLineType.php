@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\BalanceAmount;
 use horstoeko\invoicesuite\models\ubl\cbc\CreditLineAmount;
 use horstoeko\invoicesuite\models\ubl\cbc\DebitLineAmount;
@@ -15,6 +16,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\UUID;
 
 class RemittanceAdviceLineType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

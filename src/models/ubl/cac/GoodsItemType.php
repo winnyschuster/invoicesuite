@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\ChargeableQuantity;
 use horstoeko\invoicesuite\models\ubl\cbc\ChargeableWeightMeasure;
 use horstoeko\invoicesuite\models\ubl\cbc\CustomsStatusCode;
@@ -30,6 +31,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\ValueAmount;
 
 class GoodsItemType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

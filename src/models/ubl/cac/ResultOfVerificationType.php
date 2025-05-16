@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\ValidateProcess;
 use horstoeko\invoicesuite\models\ubl\cbc\ValidateTool;
 use horstoeko\invoicesuite\models\ubl\cbc\ValidateToolVersion;
@@ -12,6 +13,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\ValidatorID;
 
 class ResultOfVerificationType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

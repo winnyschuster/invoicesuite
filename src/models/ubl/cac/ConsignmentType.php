@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\BrokerAssignedID;
 use horstoeko\invoicesuite\models\ubl\cbc\CarrierAssignedID;
 use horstoeko\invoicesuite\models\ubl\cbc\CarrierServiceInstructions;
@@ -51,6 +52,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\TotalTransportHandlingUnitQuantity;
 
 class ConsignmentType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

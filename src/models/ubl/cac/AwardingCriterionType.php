@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\AwardingCriterionTypeCode;
 use horstoeko\invoicesuite\models\ubl\cbc\CalculationExpression;
 use horstoeko\invoicesuite\models\ubl\cbc\CalculationExpressionCode;
@@ -19,6 +20,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\WeightNumeric;
 
 class AwardingCriterionType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**

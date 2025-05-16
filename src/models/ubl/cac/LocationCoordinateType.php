@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\ubl\cac;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\ubl\cbc\AltitudeMeasure;
 use horstoeko\invoicesuite\models\ubl\cbc\CoordinateSystemCode;
 use horstoeko\invoicesuite\models\ubl\cbc\LatitudeDegreesMeasure;
@@ -15,6 +16,7 @@ use horstoeko\invoicesuite\models\ubl\cbc\LongitudeMinutesMeasure;
 
 class LocationCoordinateType
 {
+    use HandlesOptional;
     use HandlesObjectFlags;
 
     /**
