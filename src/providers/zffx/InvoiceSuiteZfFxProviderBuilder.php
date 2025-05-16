@@ -587,7 +587,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
      * @param DateTimeInterface|null $newReferenceDate __BT-X-404, From EXTENDED__ Seller's quotation date
      * @return self
      */
-    public function setDocumentSellerQuotationReference(
+    public function setDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
@@ -621,11 +621,11 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
      * @param DateTimeInterface|null $newReferenceDate __BT-X-404, From EXTENDED__ Seller's quotation date
      * @return self
      */
-    public function addDocumentSellerQuotationReference(
+    public function addDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
-        return $this->setDocumentSellerQuotationReference($newReferenceNumber, $newReferenceDate);
+        return $this->setDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
     }
 
     /**

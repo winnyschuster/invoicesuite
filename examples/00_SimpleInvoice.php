@@ -129,7 +129,7 @@ $builder->setDocumentPayeeCommunication("EM", "invoice@payee-gmbh.de");
 
 $builder->setDocumentSellerOrderReference('SO-2025/0000001', new DateTime());
 $builder->setDocumentBuyerOrderReference('PO-0000011', new DateTime());
-$builder->setDocumentSellerQuotationReference('ANG-2025/0000055', new DateTime());
+$builder->setDocumentQuotationReference('ANG-2025/0000055', new DateTime());
 $builder->setDocumentContractReference('CON-2025/0000001', new DateTime());
 $builder->addDocumentAdditionalReference('ADDDOC-001', new DateTime(), "918", "0815", "Description for additional docuemnt", InvoiceSuiteAttachment::fromBase64String('SWNoIGJpbiBlaW4gVGVzdHRleHQ=', 'att.ext'));
 $builder->addDocumentAdditionalReference('ADDDOC-002', new DateTime(), "918", "0816", "Description for additional docuemnt", InvoiceSuiteAttachment::fromUrl('http://some.url'));

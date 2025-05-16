@@ -451,7 +451,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     /**
      * @inheritDoc
      */
-    public function setDocumentSellerQuotationReference(
+    public function setDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
@@ -498,11 +498,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     /**
      * @inheritDoc
      */
-    public function addDocumentSellerQuotationReference(
+    public function addDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
-        return $this->setDocumentSellerQuotationReference($newReferenceNumber, $newReferenceDate);
+        return $this->setDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
     }
 
     /**

@@ -361,11 +361,11 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
     /**
      * @inheritDoc
      */
-    public function setDocumentSellerQuotationReference(
+    public function setDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
-        $this->getCurrentFormatProvider()->getBuilder()->setDocumentSellerQuotationReference($newReferenceNumber, $newReferenceDate);
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
     }
@@ -373,11 +373,11 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
     /**
      * @inheritDoc
      */
-    public function addDocumentSellerQuotationReference(
+    public function addDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
-        $this->getCurrentFormatProvider()->getBuilder()->addDocumentSellerQuotationReference($newReferenceNumber, $newReferenceDate);
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
     }

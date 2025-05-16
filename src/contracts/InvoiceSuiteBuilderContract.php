@@ -264,7 +264,7 @@ interface InvoiceSuiteBuilderContract
      * @param DateTimeInterface|null $newReferenceDate Seller's quotation date
      * @return self
      */
-    public function setDocumentSellerQuotationReference(
+    public function setDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self;
@@ -276,7 +276,7 @@ interface InvoiceSuiteBuilderContract
      * @param DateTimeInterface|null $newReferenceDate Seller's quotation date
      * @return self
      */
-    public function addDocumentSellerQuotationReference(
+    public function addDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self;
