@@ -2832,5 +2832,61 @@ interface InvoiceSuiteBuilderContract
         ?string $newProductClassificationCodeClassname = null
     ): self;
 
+    /**
+     * Set referenced product in latest added position
+     *
+     * @param string|null $newProductId ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName Name of the product (product name)
+     * @param string|null $newProductDescription Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId Product global id
+     * @param string|null $newProductGlobalIdType Type of the product global id
+     * @param string|null $newProductIndustryId Id assigned by the industry
+     * @param float|null $newProductUnitQuantity Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
+     * @return self
+     */
+    public function setDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): self;
+
+    /**
+     * Add referenced product in latest added position
+     *
+     * @param string|null $newProductId ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName Name of the product (product name)
+     * @param string|null $newProductDescription Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId Product global id
+     * @param string|null $newProductGlobalIdType Type of the product global id
+     * @param string|null $newProductIndustryId Id assigned by the industry
+     * @param float|null $newProductUnitQuantity Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
+     * @return self
+     */
+    public function addDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): self;
+
     #endregion
 }

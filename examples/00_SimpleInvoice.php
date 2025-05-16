@@ -5,8 +5,8 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
-//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
+//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
+$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
 //$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxxrechnung');
 
 $builder->setDocumentNo('2025-04-000001');
@@ -183,5 +183,6 @@ $builder->setDocumentPositionNote("Some third Content", "ContentCode", "SubjectC
 $builder->setDocumentPositionProductDetails('ProductId', 'ProductName', 'ProductDescription', 'SellerID', 'BuyerID', '3333432332', '0088', 'IndustryId', 'ModelId', 'BatchId', 'Brandname', 'Modelname', 'CN');
 $builder->setDocumentPositionProductCharacteristic('Füllmenge', '1000 Liter', 'FM', 1000.0, "LTR");
 $builder->setDocumentPositionProductClassification("classcode", 'listid', '1.0', 'classnam');
+$builder->setDocumentPositionReferencedProduct("id", "name", "descr", "sellerid", "buyerid", "324423432", "0088", "industryidentifier", 10, "PCT");
 
 echo $builder->saveAsXmlFile(__DIR__ . "/00_SimpleInvoice.xml");

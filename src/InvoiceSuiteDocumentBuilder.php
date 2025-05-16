@@ -2978,5 +2978,67 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionReferencedProduct(
+            $newProductId,
+            $newProductName,
+            $newProductDescription,
+            $newProductSellerId,
+            $newProductBuyerId,
+            $newProductGlobalId,
+            $newProductGlobalIdType,
+            $newProductIndustryId,
+            $newProductUnitQuantity,
+            $newProductUnitQuantityUnit
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPositionReferencedProduct(
+            $newProductId,
+            $newProductName,
+            $newProductDescription,
+            $newProductSellerId,
+            $newProductBuyerId,
+            $newProductGlobalId,
+            $newProductGlobalIdType,
+            $newProductIndustryId,
+            $newProductUnitQuantity,
+            $newProductUnitQuantityUnit
+        );
+
+        return $this;
+    }
+
     #endregion
 }

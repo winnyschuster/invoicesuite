@@ -6765,5 +6765,130 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
         return $this;
     }
 
+    /**
+     * @param string|null $newProductId __BT-X-301, From EXTENDED__ ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName __BT-X-18, From EXTENDED__ Name of the product (product name)
+     * @param string|null $newProductDescription __BT-X-19, From EXTENDED__ Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId __BT-X-16, From EXTENDED__ Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId __BT-X-17, From EXTENDED__ Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId __BT-X-15, From EXTENDED__ Product global id
+     * @param string|null $newProductGlobalIdType __BT-X-15-1, From EXTENDED__ Type of the product global id
+     * @param string|null $newProductIndustryId __BT-X-309, From EXTENDED__ Id assigned by the industry
+     * @param float|null $newProductUnitQuantity __BT-X-20, From EXTENDED__ Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit __BT-X-20-1, From EXTENDED__ Unit code of the quantity of the referenced product contained
+     * @return self
+     */
+    public function setDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
+
+        $positionProduct->clearIncludedReferencedProduct();
+
+        $this->addDocumentPositionReferencedProduct(
+            $newProductId,
+            $newProductName,
+            $newProductDescription,
+            $newProductSellerId,
+            $newProductBuyerId,
+            $newProductGlobalId,
+            $newProductGlobalIdType,
+            $newProductIndustryId,
+            $newProductUnitQuantity,
+            $newProductUnitQuantityUnit
+        );
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newProductId __BT-X-301, From EXTENDED__ ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName __BT-X-18, From EXTENDED__ Name of the product (product name)
+     * @param string|null $newProductDescription __BT-X-19, From EXTENDED__ Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId __BT-X-16, From EXTENDED__ Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId __BT-X-17, From EXTENDED__ Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId __BT-X-15, From EXTENDED__ Product global id
+     * @param string|null $newProductGlobalIdType __BT-X-15-1, From EXTENDED__ Type of the product global id
+     * @param string|null $newProductIndustryId __BT-X-309, From EXTENDED__ Id assigned by the industry
+     * @param float|null $newProductUnitQuantity __BT-X-20, From EXTENDED__ Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit __BT-X-20-1, From EXTENDED__ Unit code of the quantity of the referenced product contained
+     * @return self
+     */
+    public function addDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
+
+        $positionReferencedProduct = $positionProduct->addToIncludedReferencedProductWithCreate();
+
+        $positionReferencedProduct->getNameWithCreate()->setValue($newProductName);
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductId])) {
+            $positionReferencedProduct->getIDWithCreate()->setValue($newProductId);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductDescription])) {
+            $positionReferencedProduct->getDescriptionWithCreate()->setValue($newProductDescription);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductSellerId])) {
+            $positionReferencedProduct->getSellerAssignedIDWithCreate()->setValue($newProductSellerId);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductBuyerId])) {
+            $positionReferencedProduct->getBuyerAssignedIDWithCreate()->setValue($newProductBuyerId);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductGlobalIdType]) && !InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductGlobalId])) {
+            $positionReferencedProduct->addOnceToGlobalIDWithCreate()->setValue($newProductGlobalId)->setSchemeID($newProductGlobalIdType);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductIndustryId])) {
+            $positionReferencedProduct->getIndustryAssignedIDWithCreate()->setValue($newProductIndustryId);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductUnitQuantity, $newProductUnitQuantityUnit])) {
+            $positionReferencedProduct->getUnitQuantityWithCreate()->setValue($newProductUnitQuantity)->setUnitCode($newProductUnitQuantityUnit);
+        }
+
+        return $this;
+    }
+
     #endregion
 }
