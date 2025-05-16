@@ -3,17 +3,17 @@
 namespace horstoeko\invoicesuite\providers\zffx;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
-use horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType;
-use horstoeko\invoicesuite\models\zffx\ram\TradePaymentTermsType;
-use horstoeko\invoicesuite\models\zffx\rsm\CrossIndustryInvoiceType;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 use horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType;
 use horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentContextType;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
+use horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType;
+use horstoeko\invoicesuite\models\zffx\ram\TradePaymentTermsType;
+use horstoeko\invoicesuite\models\zffx\rsm\CrossIndustryInvoiceType;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProviderBuilder
 {
