@@ -4811,7 +4811,19 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
-        // Nothing here...
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+            return $this;
+        }
+
+        $latestPosition = $this->getUblInvoiceRootObject()->getLatestInvoiceLineWithCreate();
+
+        $latestPosition->clearOrderLineReference();
+
+        $this->addDocumentPositionBuyerOrderReference(
+            $newReferenceNumber,
+            $newReferenceLineNumber,
+            $newReferenceDate
+        );
 
         return $this;
     }
@@ -4824,7 +4836,15 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null
     ): self {
-        // Nothing here...
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+            return $this;
+        }
+
+        $latestPosition = $this->getUblInvoiceRootObject()->getLatestInvoiceLineWithCreate();
+
+        $buyerOrderReference = $latestPosition->addToOrderLineReferenceWithCreate();
+
+        $buyerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
 
         return $this;
     }

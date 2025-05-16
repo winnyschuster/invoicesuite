@@ -6911,15 +6911,15 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
             ->getSupplyChainTradeTransactionWithCreate()
             ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
 
-        $latestPositionSellerOrderReference = $latestPosition
+        $sellerOrderReference = $latestPosition
             ->getSpecifiedLineTradeAgreementWithCreate()
             ->getSellerOrderReferencedDocumentWithCreate();
 
-        $latestPositionSellerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
-        $latestPositionSellerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
+        $sellerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
+        $sellerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
 
         if (!InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newReferenceDate])) {
-            $latestPositionSellerOrderReference
+            $sellerOrderReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
                 ->setValue($newReferenceDate->format("Ymd"))
@@ -6973,15 +6973,15 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractFormatProvider
             ->getSupplyChainTradeTransactionWithCreate()
             ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
 
-        $latestPositionBuyerOrderReference = $latestPosition
+        $buyerOrderReference = $latestPosition
             ->getSpecifiedLineTradeAgreementWithCreate()
             ->getBuyerOrderReferencedDocumentWithCreate();
 
-        $latestPositionBuyerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
-        $latestPositionBuyerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
+        $buyerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
+        $buyerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
 
         if (!InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newReferenceDate])) {
-            $latestPositionBuyerOrderReference
+            $buyerOrderReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
                 ->setValue($newReferenceDate->format("Ymd"))
