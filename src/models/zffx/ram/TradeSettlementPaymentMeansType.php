@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\qdt\PaymentMeansCodeType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class TradeSettlementPaymentMeansType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\qdt\PaymentMeansCodeType
@@ -20,7 +22,7 @@ class TradeSettlementPaymentMeansType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getTypeCode", setter="setTypeCode")
      */
-    private $paymentMeansCodeType;
+    private $typeCode;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -31,7 +33,7 @@ class TradeSettlementPaymentMeansType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getInformation", setter="setInformation")
      */
-    private $textType;
+    private $information;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\TradeSettlementFinancialCardType
@@ -42,7 +44,7 @@ class TradeSettlementPaymentMeansType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getApplicableTradeSettlementFinancialCard", setter="setApplicableTradeSettlementFinancialCard")
      */
-    private $tradeSettlementFinancialCardType;
+    private $applicableTradeSettlementFinancialCard;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\DebtorFinancialAccountType
@@ -53,7 +55,7 @@ class TradeSettlementPaymentMeansType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getPayerPartyDebtorFinancialAccount", setter="setPayerPartyDebtorFinancialAccount")
      */
-    private $debtorFinancialAccountType;
+    private $payerPartyDebtorFinancialAccount;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\CreditorFinancialAccountType
@@ -64,7 +66,7 @@ class TradeSettlementPaymentMeansType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getPayeePartyCreditorFinancialAccount", setter="setPayeePartyCreditorFinancialAccount")
      */
-    private $creditorFinancialAccountType;
+    private $payeePartyCreditorFinancialAccount;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\CreditorFinancialInstitutionType
@@ -75,14 +77,14 @@ class TradeSettlementPaymentMeansType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getPayeeSpecifiedCreditorFinancialInstitution", setter="setPayeeSpecifiedCreditorFinancialInstitution")
      */
-    private $creditorFinancialInstitutionType;
+    private $payeeSpecifiedCreditorFinancialInstitution;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\qdt\PaymentMeansCodeType|null
      */
     public function getTypeCode(): ?PaymentMeansCodeType
     {
-        return $this->paymentMeansCodeType;
+        return $this->typeCode;
     }
 
     /**
@@ -90,18 +92,18 @@ class TradeSettlementPaymentMeansType
      */
     public function getTypeCodeWithCreate(): PaymentMeansCodeType
     {
-        $this->paymentMeansCodeType = is_null($this->paymentMeansCodeType) ? new PaymentMeansCodeType() : $this->paymentMeansCodeType;
+        $this->typeCode = is_null($this->typeCode) ? new PaymentMeansCodeType() : $this->typeCode;
 
-        return $this->paymentMeansCodeType;
+        return $this->typeCode;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\qdt\PaymentMeansCodeType $paymentMeansCodeType
+     * @param \horstoeko\invoicesuite\models\zffx\qdt\PaymentMeansCodeType $typeCode
      * @return self
      */
-    public function setTypeCode(PaymentMeansCodeType $paymentMeansCodeType): self
+    public function setTypeCode(PaymentMeansCodeType $typeCode): self
     {
-        $this->paymentMeansCodeType = $paymentMeansCodeType;
+        $this->typeCode = $typeCode;
 
         return $this;
     }
@@ -111,7 +113,7 @@ class TradeSettlementPaymentMeansType
      */
     public function getInformation(): ?TextType
     {
-        return $this->textType;
+        return $this->information;
     }
 
     /**
@@ -119,18 +121,18 @@ class TradeSettlementPaymentMeansType
      */
     public function getInformationWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->information = is_null($this->information) ? new TextType() : $this->information;
 
-        return $this->textType;
+        return $this->information;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $information
      * @return self
      */
-    public function setInformation(TextType $textType): self
+    public function setInformation(TextType $information): self
     {
-        $this->textType = $textType;
+        $this->information = $information;
 
         return $this;
     }
@@ -140,7 +142,7 @@ class TradeSettlementPaymentMeansType
      */
     public function getApplicableTradeSettlementFinancialCard(): ?TradeSettlementFinancialCardType
     {
-        return $this->tradeSettlementFinancialCardType;
+        return $this->applicableTradeSettlementFinancialCard;
     }
 
     /**
@@ -148,19 +150,19 @@ class TradeSettlementPaymentMeansType
      */
     public function getApplicableTradeSettlementFinancialCardWithCreate(): TradeSettlementFinancialCardType
     {
-        $this->tradeSettlementFinancialCardType = is_null($this->tradeSettlementFinancialCardType) ? new TradeSettlementFinancialCardType() : $this->tradeSettlementFinancialCardType;
+        $this->applicableTradeSettlementFinancialCard = is_null($this->applicableTradeSettlementFinancialCard) ? new TradeSettlementFinancialCardType() : $this->applicableTradeSettlementFinancialCard;
 
-        return $this->tradeSettlementFinancialCardType;
+        return $this->applicableTradeSettlementFinancialCard;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeSettlementFinancialCardType $tradeSettlementFinancialCardType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard
      * @return self
      */
     public function setApplicableTradeSettlementFinancialCard(
-        TradeSettlementFinancialCardType $tradeSettlementFinancialCardType,
+        TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard,
     ): self {
-        $this->tradeSettlementFinancialCardType = $tradeSettlementFinancialCardType;
+        $this->applicableTradeSettlementFinancialCard = $applicableTradeSettlementFinancialCard;
 
         return $this;
     }
@@ -170,7 +172,7 @@ class TradeSettlementPaymentMeansType
      */
     public function getPayerPartyDebtorFinancialAccount(): ?DebtorFinancialAccountType
     {
-        return $this->debtorFinancialAccountType;
+        return $this->payerPartyDebtorFinancialAccount;
     }
 
     /**
@@ -178,19 +180,19 @@ class TradeSettlementPaymentMeansType
      */
     public function getPayerPartyDebtorFinancialAccountWithCreate(): DebtorFinancialAccountType
     {
-        $this->debtorFinancialAccountType = is_null($this->debtorFinancialAccountType) ? new DebtorFinancialAccountType() : $this->debtorFinancialAccountType;
+        $this->payerPartyDebtorFinancialAccount = is_null($this->payerPartyDebtorFinancialAccount) ? new DebtorFinancialAccountType() : $this->payerPartyDebtorFinancialAccount;
 
-        return $this->debtorFinancialAccountType;
+        return $this->payerPartyDebtorFinancialAccount;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\DebtorFinancialAccountType $debtorFinancialAccountType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\DebtorFinancialAccountType $payerPartyDebtorFinancialAccount
      * @return self
      */
     public function setPayerPartyDebtorFinancialAccount(
-        DebtorFinancialAccountType $debtorFinancialAccountType,
+        DebtorFinancialAccountType $payerPartyDebtorFinancialAccount,
     ): self {
-        $this->debtorFinancialAccountType = $debtorFinancialAccountType;
+        $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
 
         return $this;
     }
@@ -200,7 +202,7 @@ class TradeSettlementPaymentMeansType
      */
     public function getPayeePartyCreditorFinancialAccount(): ?CreditorFinancialAccountType
     {
-        return $this->creditorFinancialAccountType;
+        return $this->payeePartyCreditorFinancialAccount;
     }
 
     /**
@@ -208,19 +210,19 @@ class TradeSettlementPaymentMeansType
      */
     public function getPayeePartyCreditorFinancialAccountWithCreate(): CreditorFinancialAccountType
     {
-        $this->creditorFinancialAccountType = is_null($this->creditorFinancialAccountType) ? new CreditorFinancialAccountType() : $this->creditorFinancialAccountType;
+        $this->payeePartyCreditorFinancialAccount = is_null($this->payeePartyCreditorFinancialAccount) ? new CreditorFinancialAccountType() : $this->payeePartyCreditorFinancialAccount;
 
-        return $this->creditorFinancialAccountType;
+        return $this->payeePartyCreditorFinancialAccount;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\CreditorFinancialAccountType $creditorFinancialAccountType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\CreditorFinancialAccountType $payeePartyCreditorFinancialAccount
      * @return self
      */
     public function setPayeePartyCreditorFinancialAccount(
-        CreditorFinancialAccountType $creditorFinancialAccountType,
+        CreditorFinancialAccountType $payeePartyCreditorFinancialAccount,
     ): self {
-        $this->creditorFinancialAccountType = $creditorFinancialAccountType;
+        $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
 
         return $this;
     }
@@ -230,7 +232,7 @@ class TradeSettlementPaymentMeansType
      */
     public function getPayeeSpecifiedCreditorFinancialInstitution(): ?CreditorFinancialInstitutionType
     {
-        return $this->creditorFinancialInstitutionType;
+        return $this->payeeSpecifiedCreditorFinancialInstitution;
     }
 
     /**
@@ -238,19 +240,19 @@ class TradeSettlementPaymentMeansType
      */
     public function getPayeeSpecifiedCreditorFinancialInstitutionWithCreate(): CreditorFinancialInstitutionType
     {
-        $this->creditorFinancialInstitutionType = is_null($this->creditorFinancialInstitutionType) ? new CreditorFinancialInstitutionType() : $this->creditorFinancialInstitutionType;
+        $this->payeeSpecifiedCreditorFinancialInstitution = is_null($this->payeeSpecifiedCreditorFinancialInstitution) ? new CreditorFinancialInstitutionType() : $this->payeeSpecifiedCreditorFinancialInstitution;
 
-        return $this->creditorFinancialInstitutionType;
+        return $this->payeeSpecifiedCreditorFinancialInstitution;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\CreditorFinancialInstitutionType $creditorFinancialInstitutionType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution
      * @return self
      */
     public function setPayeeSpecifiedCreditorFinancialInstitution(
-        CreditorFinancialInstitutionType $creditorFinancialInstitutionType,
+        CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution,
     ): self {
-        $this->creditorFinancialInstitutionType = $creditorFinancialInstitutionType;
+        $this->payeeSpecifiedCreditorFinancialInstitution = $payeeSpecifiedCreditorFinancialInstitution;
 
         return $this;
     }

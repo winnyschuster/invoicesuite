@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class TradeSettlementFinancialCardType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -20,7 +22,7 @@ class TradeSettlementFinancialCardType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getID", setter="setID")
      */
-    private $idType;
+    private $iD;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -31,14 +33,14 @@ class TradeSettlementFinancialCardType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getCardholderName", setter="setCardholderName")
      */
-    private $textType;
+    private $cardholderName;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\IDType|null
      */
     public function getID(): ?IDType
     {
-        return $this->idType;
+        return $this->iD;
     }
 
     /**
@@ -46,18 +48,18 @@ class TradeSettlementFinancialCardType
      */
     public function getIDWithCreate(): IDType
     {
-        $this->idType = is_null($this->idType) ? new IDType() : $this->idType;
+        $this->iD = is_null($this->iD) ? new IDType() : $this->iD;
 
-        return $this->idType;
+        return $this->iD;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $iD
      * @return self
      */
-    public function setID(IDType $idType): self
+    public function setID(IDType $iD): self
     {
-        $this->idType = $idType;
+        $this->iD = $iD;
 
         return $this;
     }
@@ -67,7 +69,7 @@ class TradeSettlementFinancialCardType
      */
     public function getCardholderName(): ?TextType
     {
-        return $this->textType;
+        return $this->cardholderName;
     }
 
     /**
@@ -75,18 +77,18 @@ class TradeSettlementFinancialCardType
      */
     public function getCardholderNameWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->cardholderName = is_null($this->cardholderName) ? new TextType() : $this->cardholderName;
 
-        return $this->textType;
+        return $this->cardholderName;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $cardholderName
      * @return self
      */
-    public function setCardholderName(TextType $textType): self
+    public function setCardholderName(TextType $cardholderName): self
     {
-        $this->textType = $textType;
+        $this->cardholderName = $cardholderName;
 
         return $this;
     }

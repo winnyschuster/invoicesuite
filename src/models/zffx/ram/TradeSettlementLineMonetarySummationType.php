@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\AmountType;
 
 class TradeSettlementLineMonetarySummationType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -95,12 +97,12 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $lineTotalAmount
      * @return self
      */
-    public function setLineTotalAmount(AmountType $amountType): self
+    public function setLineTotalAmount(AmountType $lineTotalAmount): self
     {
-        $this->lineTotalAmount = $amountType;
+        $this->lineTotalAmount = $lineTotalAmount;
 
         return $this;
     }
@@ -124,12 +126,12 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $chargeTotalAmount
      * @return self
      */
-    public function setChargeTotalAmount(AmountType $amountType): self
+    public function setChargeTotalAmount(AmountType $chargeTotalAmount): self
     {
-        $this->chargeTotalAmount = $amountType;
+        $this->chargeTotalAmount = $chargeTotalAmount;
 
         return $this;
     }
@@ -153,12 +155,12 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $allowanceTotalAmount
      * @return self
      */
-    public function setAllowanceTotalAmount(AmountType $amountType): self
+    public function setAllowanceTotalAmount(AmountType $allowanceTotalAmount): self
     {
-        $this->allowanceTotalAmount = $amountType;
+        $this->allowanceTotalAmount = $allowanceTotalAmount;
 
         return $this;
     }
@@ -182,12 +184,12 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $taxTotalAmount
      * @return self
      */
-    public function setTaxTotalAmount(AmountType $amountType): self
+    public function setTaxTotalAmount(AmountType $taxTotalAmount): self
     {
-        $this->taxTotalAmount = $amountType;
+        $this->taxTotalAmount = $taxTotalAmount;
 
         return $this;
     }
@@ -211,12 +213,12 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $grandTotalAmount
      * @return self
      */
-    public function setGrandTotalAmount(AmountType $amountType): self
+    public function setGrandTotalAmount(AmountType $grandTotalAmount): self
     {
-        $this->grandTotalAmount = $amountType;
+        $this->grandTotalAmount = $grandTotalAmount;
 
         return $this;
     }
@@ -240,12 +242,12 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $totalAllowanceChargeAmount
      * @return self
      */
-    public function setTotalAllowanceChargeAmount(AmountType $amountType): self
+    public function setTotalAllowanceChargeAmount(AmountType $totalAllowanceChargeAmount): self
     {
-        $this->totalAllowanceChargeAmount = $amountType;
+        $this->totalAllowanceChargeAmount = $totalAllowanceChargeAmount;
 
         return $this;
     }

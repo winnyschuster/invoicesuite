@@ -4,10 +4,12 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 
 class SupplyChainTradeTransactionType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType>
@@ -30,7 +32,7 @@ class SupplyChainTradeTransactionType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getApplicableHeaderTradeAgreement", setter="setApplicableHeaderTradeAgreement")
      */
-    private $headerTradeAgreementType;
+    private $applicableHeaderTradeAgreement;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeDeliveryType
@@ -41,7 +43,7 @@ class SupplyChainTradeTransactionType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getApplicableHeaderTradeDelivery", setter="setApplicableHeaderTradeDelivery")
      */
-    private $headerTradeDeliveryType;
+    private $applicableHeaderTradeDelivery;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeSettlementType
@@ -52,7 +54,7 @@ class SupplyChainTradeTransactionType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getApplicableHeaderTradeSettlement", setter="setApplicableHeaderTradeSettlement")
      */
-    private $headerTradeSettlementType;
+    private $applicableHeaderTradeSettlement;
 
     /**
      * @return array<\horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType>|null
@@ -84,13 +86,13 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType $supplyChainTradeLineItemType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem
      * @return self
      */
     public function addToIncludedSupplyChainTradeLineItem(
-        SupplyChainTradeLineItemType $supplyChainTradeLineItemType,
+        SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem,
     ): self {
-        $this->includedSupplyChainTradeLineItem[] = $supplyChainTradeLineItemType;
+        $this->includedSupplyChainTradeLineItem[] = $includedSupplyChainTradeLineItem;
 
         return $this;
     }
@@ -100,23 +102,23 @@ class SupplyChainTradeTransactionType
      */
     public function addToIncludedSupplyChainTradeLineItemWithCreate(): SupplyChainTradeLineItemType
     {
-        $this->addToincludedSupplyChainTradeLineItem($supplyChainTradeLineItemType = new SupplyChainTradeLineItemType());
+        $this->addToincludedSupplyChainTradeLineItem($includedSupplyChainTradeLineItem = new SupplyChainTradeLineItemType());
 
-        return $supplyChainTradeLineItemType;
+        return $includedSupplyChainTradeLineItem;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType $supplyChainTradeLineItemType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem
      * @return self
      */
     public function addOnceToIncludedSupplyChainTradeLineItem(
-        SupplyChainTradeLineItemType $supplyChainTradeLineItemType,
+        SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem,
     ): self {
         if (!is_array($this->includedSupplyChainTradeLineItem)) {
             $this->includedSupplyChainTradeLineItem = [];
         }
 
-        $this->includedSupplyChainTradeLineItem[0] = $supplyChainTradeLineItemType;
+        $this->includedSupplyChainTradeLineItem[0] = $includedSupplyChainTradeLineItem;
 
         return $this;
     }
@@ -138,38 +140,11 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType|null
-     */
-    public function getLatestIncludedSupplyChainTradeLineItem(): ?SupplyChainTradeLineItemType
-    {
-        $supplyChainTradeLineItems = $this->getIncludedSupplyChainTradeLineItem() ?? [];
-        $supplyChainTradeLineItem = end($supplyChainTradeLineItems);
-
-        if ($supplyChainTradeLineItem === false) {
-            return null;
-        }
-
-        return $supplyChainTradeLineItem;
-    }
-
-    /**
-     * @return \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeLineItemType|null
-     */
-    public function getLatestIncludedSupplyChainTradeLineItemWithCreate(): ?SupplyChainTradeLineItemType
-    {
-        if (is_null($supplyChainTradeLineItem = $this->getLatestIncludedSupplyChainTradeLineItem())) {
-            $supplyChainTradeLineItem = $this->addToIncludedSupplyChainTradeLineItemWithCreate();
-        }
-
-        return $supplyChainTradeLineItem;
-    }
-
-    /**
      * @return \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeAgreementType|null
      */
     public function getApplicableHeaderTradeAgreement(): ?HeaderTradeAgreementType
     {
-        return $this->headerTradeAgreementType;
+        return $this->applicableHeaderTradeAgreement;
     }
 
     /**
@@ -177,18 +152,18 @@ class SupplyChainTradeTransactionType
      */
     public function getApplicableHeaderTradeAgreementWithCreate(): HeaderTradeAgreementType
     {
-        $this->headerTradeAgreementType = is_null($this->headerTradeAgreementType) ? new HeaderTradeAgreementType() : $this->headerTradeAgreementType;
+        $this->applicableHeaderTradeAgreement = is_null($this->applicableHeaderTradeAgreement) ? new HeaderTradeAgreementType() : $this->applicableHeaderTradeAgreement;
 
-        return $this->headerTradeAgreementType;
+        return $this->applicableHeaderTradeAgreement;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeAgreementType $headerTradeAgreementType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeAgreementType $applicableHeaderTradeAgreement
      * @return self
      */
-    public function setApplicableHeaderTradeAgreement(HeaderTradeAgreementType $headerTradeAgreementType): self
+    public function setApplicableHeaderTradeAgreement(HeaderTradeAgreementType $applicableHeaderTradeAgreement): self
     {
-        $this->headerTradeAgreementType = $headerTradeAgreementType;
+        $this->applicableHeaderTradeAgreement = $applicableHeaderTradeAgreement;
 
         return $this;
     }
@@ -198,7 +173,7 @@ class SupplyChainTradeTransactionType
      */
     public function getApplicableHeaderTradeDelivery(): ?HeaderTradeDeliveryType
     {
-        return $this->headerTradeDeliveryType;
+        return $this->applicableHeaderTradeDelivery;
     }
 
     /**
@@ -206,18 +181,18 @@ class SupplyChainTradeTransactionType
      */
     public function getApplicableHeaderTradeDeliveryWithCreate(): HeaderTradeDeliveryType
     {
-        $this->headerTradeDeliveryType = is_null($this->headerTradeDeliveryType) ? new HeaderTradeDeliveryType() : $this->headerTradeDeliveryType;
+        $this->applicableHeaderTradeDelivery = is_null($this->applicableHeaderTradeDelivery) ? new HeaderTradeDeliveryType() : $this->applicableHeaderTradeDelivery;
 
-        return $this->headerTradeDeliveryType;
+        return $this->applicableHeaderTradeDelivery;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeDeliveryType $headerTradeDeliveryType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeDeliveryType $applicableHeaderTradeDelivery
      * @return self
      */
-    public function setApplicableHeaderTradeDelivery(HeaderTradeDeliveryType $headerTradeDeliveryType): self
+    public function setApplicableHeaderTradeDelivery(HeaderTradeDeliveryType $applicableHeaderTradeDelivery): self
     {
-        $this->headerTradeDeliveryType = $headerTradeDeliveryType;
+        $this->applicableHeaderTradeDelivery = $applicableHeaderTradeDelivery;
 
         return $this;
     }
@@ -227,7 +202,7 @@ class SupplyChainTradeTransactionType
      */
     public function getApplicableHeaderTradeSettlement(): ?HeaderTradeSettlementType
     {
-        return $this->headerTradeSettlementType;
+        return $this->applicableHeaderTradeSettlement;
     }
 
     /**
@@ -235,19 +210,19 @@ class SupplyChainTradeTransactionType
      */
     public function getApplicableHeaderTradeSettlementWithCreate(): HeaderTradeSettlementType
     {
-        $this->headerTradeSettlementType = is_null($this->headerTradeSettlementType) ? new HeaderTradeSettlementType() : $this->headerTradeSettlementType;
+        $this->applicableHeaderTradeSettlement = is_null($this->applicableHeaderTradeSettlement) ? new HeaderTradeSettlementType() : $this->applicableHeaderTradeSettlement;
 
-        return $this->headerTradeSettlementType;
+        return $this->applicableHeaderTradeSettlement;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeSettlementType $headerTradeSettlementType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\HeaderTradeSettlementType $applicableHeaderTradeSettlement
      * @return self
      */
     public function setApplicableHeaderTradeSettlement(
-        HeaderTradeSettlementType $headerTradeSettlementType,
+        HeaderTradeSettlementType $applicableHeaderTradeSettlement,
     ): self {
-        $this->headerTradeSettlementType = $headerTradeSettlementType;
+        $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
 
         return $this;
     }

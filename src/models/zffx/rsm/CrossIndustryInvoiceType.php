@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\zffx\rsm;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentContextType;
 use horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType;
 use horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeTransactionType;
@@ -19,6 +20,7 @@ use horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeTransactionType;
 class CrossIndustryInvoiceType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentContextType
@@ -29,7 +31,7 @@ class CrossIndustryInvoiceType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100", cdata=false)
      * @JMS\Accessor(getter="getExchangedDocumentContext", setter="setExchangedDocumentContext")
      */
-    private $exchangedDocumentContextType;
+    private $exchangedDocumentContext;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType
@@ -40,7 +42,7 @@ class CrossIndustryInvoiceType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100", cdata=false)
      * @JMS\Accessor(getter="getExchangedDocument", setter="setExchangedDocument")
      */
-    private $exchangedDocumentType;
+    private $exchangedDocument;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeTransactionType
@@ -51,14 +53,14 @@ class CrossIndustryInvoiceType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100", cdata=false)
      * @JMS\Accessor(getter="getSupplyChainTradeTransaction", setter="setSupplyChainTradeTransaction")
      */
-    private $supplyChainTradeTransactionType;
+    private $supplyChainTradeTransaction;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentContextType|null
      */
     public function getExchangedDocumentContext(): ?ExchangedDocumentContextType
     {
-        return $this->exchangedDocumentContextType;
+        return $this->exchangedDocumentContext;
     }
 
     /**
@@ -66,18 +68,18 @@ class CrossIndustryInvoiceType
      */
     public function getExchangedDocumentContextWithCreate(): ExchangedDocumentContextType
     {
-        $this->exchangedDocumentContextType = is_null($this->exchangedDocumentContextType) ? new ExchangedDocumentContextType() : $this->exchangedDocumentContextType;
+        $this->exchangedDocumentContext = is_null($this->exchangedDocumentContext) ? new ExchangedDocumentContextType() : $this->exchangedDocumentContext;
 
-        return $this->exchangedDocumentContextType;
+        return $this->exchangedDocumentContext;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentContextType $exchangedDocumentContextType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentContextType $exchangedDocumentContext
      * @return self
      */
-    public function setExchangedDocumentContext(ExchangedDocumentContextType $exchangedDocumentContextType): self
+    public function setExchangedDocumentContext(ExchangedDocumentContextType $exchangedDocumentContext): self
     {
-        $this->exchangedDocumentContextType = $exchangedDocumentContextType;
+        $this->exchangedDocumentContext = $exchangedDocumentContext;
 
         return $this;
     }
@@ -87,7 +89,7 @@ class CrossIndustryInvoiceType
      */
     public function getExchangedDocument(): ?ExchangedDocumentType
     {
-        return $this->exchangedDocumentType;
+        return $this->exchangedDocument;
     }
 
     /**
@@ -95,18 +97,18 @@ class CrossIndustryInvoiceType
      */
     public function getExchangedDocumentWithCreate(): ExchangedDocumentType
     {
-        $this->exchangedDocumentType = is_null($this->exchangedDocumentType) ? new ExchangedDocumentType() : $this->exchangedDocumentType;
+        $this->exchangedDocument = is_null($this->exchangedDocument) ? new ExchangedDocumentType() : $this->exchangedDocument;
 
-        return $this->exchangedDocumentType;
+        return $this->exchangedDocument;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType $exchangedDocumentType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\ExchangedDocumentType $exchangedDocument
      * @return self
      */
-    public function setExchangedDocument(ExchangedDocumentType $exchangedDocumentType): self
+    public function setExchangedDocument(ExchangedDocumentType $exchangedDocument): self
     {
-        $this->exchangedDocumentType = $exchangedDocumentType;
+        $this->exchangedDocument = $exchangedDocument;
 
         return $this;
     }
@@ -116,7 +118,7 @@ class CrossIndustryInvoiceType
      */
     public function getSupplyChainTradeTransaction(): ?SupplyChainTradeTransactionType
     {
-        return $this->supplyChainTradeTransactionType;
+        return $this->supplyChainTradeTransaction;
     }
 
     /**
@@ -124,18 +126,18 @@ class CrossIndustryInvoiceType
      */
     public function getSupplyChainTradeTransactionWithCreate(): SupplyChainTradeTransactionType
     {
-        $this->supplyChainTradeTransactionType = is_null($this->supplyChainTradeTransactionType) ? new SupplyChainTradeTransactionType() : $this->supplyChainTradeTransactionType;
+        $this->supplyChainTradeTransaction = is_null($this->supplyChainTradeTransaction) ? new SupplyChainTradeTransactionType() : $this->supplyChainTradeTransaction;
 
-        return $this->supplyChainTradeTransactionType;
+        return $this->supplyChainTradeTransaction;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeTransactionType $supplyChainTradeTransactionType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\SupplyChainTradeTransactionType $supplyChainTradeTransaction
      * @return self
      */
-    public function setSupplyChainTradeTransaction(SupplyChainTradeTransactionType $supplyChainTradeTransactionType): self
+    public function setSupplyChainTradeTransaction(SupplyChainTradeTransactionType $supplyChainTradeTransaction): self
     {
-        $this->supplyChainTradeTransactionType = $supplyChainTradeTransactionType;
+        $this->supplyChainTradeTransaction = $supplyChainTradeTransaction;
 
         return $this;
     }

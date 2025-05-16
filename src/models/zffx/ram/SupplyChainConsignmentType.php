@@ -4,10 +4,12 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 
 class SupplyChainConsignmentType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\LogisticsTransportMovementType>
@@ -51,13 +53,13 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\LogisticsTransportMovementType $logisticsTransportMovementType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      * @return self
      */
     public function addToSpecifiedLogisticsTransportMovement(
-        LogisticsTransportMovementType $logisticsTransportMovementType,
+        LogisticsTransportMovementType $specifiedLogisticsTransportMovement,
     ): self {
-        $this->specifiedLogisticsTransportMovement[] = $logisticsTransportMovementType;
+        $this->specifiedLogisticsTransportMovement[] = $specifiedLogisticsTransportMovement;
 
         return $this;
     }
@@ -67,23 +69,23 @@ class SupplyChainConsignmentType
      */
     public function addToSpecifiedLogisticsTransportMovementWithCreate(): LogisticsTransportMovementType
     {
-        $this->addTospecifiedLogisticsTransportMovement($logisticsTransportMovementType = new LogisticsTransportMovementType());
+        $this->addTospecifiedLogisticsTransportMovement($specifiedLogisticsTransportMovement = new LogisticsTransportMovementType());
 
-        return $logisticsTransportMovementType;
+        return $specifiedLogisticsTransportMovement;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\LogisticsTransportMovementType $logisticsTransportMovementType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      * @return self
      */
     public function addOnceToSpecifiedLogisticsTransportMovement(
-        LogisticsTransportMovementType $logisticsTransportMovementType,
+        LogisticsTransportMovementType $specifiedLogisticsTransportMovement,
     ): self {
         if (!is_array($this->specifiedLogisticsTransportMovement)) {
             $this->specifiedLogisticsTransportMovement = [];
         }
 
-        $this->specifiedLogisticsTransportMovement[0] = $logisticsTransportMovementType;
+        $this->specifiedLogisticsTransportMovement[0] = $specifiedLogisticsTransportMovement;
 
         return $this;
     }

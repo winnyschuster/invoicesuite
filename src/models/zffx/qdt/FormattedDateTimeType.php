@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\qdt;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\qdt\FormattedDateTimeType\DateTimeStringAType;
 
 class FormattedDateTimeType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\qdt\FormattedDateTimeType\DateTimeStringAType
@@ -19,14 +21,14 @@ class FormattedDateTimeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:100", cdata=false)
      * @JMS\Accessor(getter="getDateTimeString", setter="setDateTimeString")
      */
-    private $dateTimeStringAType;
+    private $dateTimeString;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\qdt\FormattedDateTimeType\DateTimeStringAType|null
      */
     public function getDateTimeString(): ?DateTimeStringAType
     {
-        return $this->dateTimeStringAType;
+        return $this->dateTimeString;
     }
 
     /**
@@ -34,18 +36,18 @@ class FormattedDateTimeType
      */
     public function getDateTimeStringWithCreate(): DateTimeStringAType
     {
-        $this->dateTimeStringAType = is_null($this->dateTimeStringAType) ? new DateTimeStringAType() : $this->dateTimeStringAType;
+        $this->dateTimeString = is_null($this->dateTimeString) ? new DateTimeStringAType() : $this->dateTimeString;
 
-        return $this->dateTimeStringAType;
+        return $this->dateTimeString;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeStringAType
+     * @param \horstoeko\invoicesuite\models\zffx\qdt\FormattedDateTimeType\DateTimeStringAType $dateTimeString
      * @return self
      */
-    public function setDateTimeString(DateTimeStringAType $dateTimeStringAType): self
+    public function setDateTimeString(DateTimeStringAType $dateTimeString): self
     {
-        $this->dateTimeStringAType = $dateTimeStringAType;
+        $this->dateTimeString = $dateTimeString;
 
         return $this;
     }

@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\AmountType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class LogisticsServiceChargeType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -20,7 +22,7 @@ class LogisticsServiceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getDescription", setter="setDescription")
      */
-    private $textType;
+    private $description;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -31,7 +33,7 @@ class LogisticsServiceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getAppliedAmount", setter="setAppliedAmount")
      */
-    private $amountType;
+    private $appliedAmount;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\TradeTaxType>
@@ -50,7 +52,7 @@ class LogisticsServiceChargeType
      */
     public function getDescription(): ?TextType
     {
-        return $this->textType;
+        return $this->description;
     }
 
     /**
@@ -58,18 +60,18 @@ class LogisticsServiceChargeType
      */
     public function getDescriptionWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->description = is_null($this->description) ? new TextType() : $this->description;
 
-        return $this->textType;
+        return $this->description;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $description
      * @return self
      */
-    public function setDescription(TextType $textType): self
+    public function setDescription(TextType $description): self
     {
-        $this->textType = $textType;
+        $this->description = $description;
 
         return $this;
     }
@@ -79,7 +81,7 @@ class LogisticsServiceChargeType
      */
     public function getAppliedAmount(): ?AmountType
     {
-        return $this->amountType;
+        return $this->appliedAmount;
     }
 
     /**
@@ -87,18 +89,18 @@ class LogisticsServiceChargeType
      */
     public function getAppliedAmountWithCreate(): AmountType
     {
-        $this->amountType = is_null($this->amountType) ? new AmountType() : $this->amountType;
+        $this->appliedAmount = is_null($this->appliedAmount) ? new AmountType() : $this->appliedAmount;
 
-        return $this->amountType;
+        return $this->appliedAmount;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $appliedAmount
      * @return self
      */
-    public function setAppliedAmount(AmountType $amountType): self
+    public function setAppliedAmount(AmountType $appliedAmount): self
     {
-        $this->amountType = $amountType;
+        $this->appliedAmount = $appliedAmount;
 
         return $this;
     }
@@ -133,12 +135,12 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $tradeTaxType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $appliedTradeTax
      * @return self
      */
-    public function addToAppliedTradeTax(TradeTaxType $tradeTaxType): self
+    public function addToAppliedTradeTax(TradeTaxType $appliedTradeTax): self
     {
-        $this->appliedTradeTax[] = $tradeTaxType;
+        $this->appliedTradeTax[] = $appliedTradeTax;
 
         return $this;
     }
@@ -148,22 +150,22 @@ class LogisticsServiceChargeType
      */
     public function addToAppliedTradeTaxWithCreate(): TradeTaxType
     {
-        $this->addToappliedTradeTax($tradeTaxType = new TradeTaxType());
+        $this->addToappliedTradeTax($appliedTradeTax = new TradeTaxType());
 
-        return $tradeTaxType;
+        return $appliedTradeTax;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $tradeTaxType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $appliedTradeTax
      * @return self
      */
-    public function addOnceToAppliedTradeTax(TradeTaxType $tradeTaxType): self
+    public function addOnceToAppliedTradeTax(TradeTaxType $appliedTradeTax): self
     {
         if (!is_array($this->appliedTradeTax)) {
             $this->appliedTradeTax = [];
         }
 
-        $this->appliedTradeTax[0] = $tradeTaxType;
+        $this->appliedTradeTax[0] = $appliedTradeTax;
 
         return $this;
     }

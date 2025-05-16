@@ -4,10 +4,12 @@ namespace horstoeko\invoicesuite\models\zffx\udt;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 
 class MeasureType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var float

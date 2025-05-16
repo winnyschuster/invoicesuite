@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\qdt\LineStatusCodeType;
 use horstoeko\invoicesuite\models\zffx\udt\CodeType;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
@@ -11,6 +12,7 @@ use horstoeko\invoicesuite\models\zffx\udt\IDType;
 class DocumentLineDocumentType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -43,7 +45,7 @@ class DocumentLineDocumentType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getLineStatusCode", setter="setLineStatusCode")
      */
-    private $lineStatusCodeType;
+    private $lineStatusCode;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\CodeType
@@ -54,7 +56,7 @@ class DocumentLineDocumentType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getLineStatusReasonCode", setter="setLineStatusReasonCode")
      */
-    private $codeType;
+    private $lineStatusReasonCode;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\NoteType>
@@ -87,12 +89,12 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $lineID
      * @return self
      */
-    public function setLineID(IDType $idType): self
+    public function setLineID(IDType $lineID): self
     {
-        $this->lineID = $idType;
+        $this->lineID = $lineID;
 
         return $this;
     }
@@ -116,12 +118,12 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $parentLineID
      * @return self
      */
-    public function setParentLineID(IDType $idType): self
+    public function setParentLineID(IDType $parentLineID): self
     {
-        $this->parentLineID = $idType;
+        $this->parentLineID = $parentLineID;
 
         return $this;
     }
@@ -131,7 +133,7 @@ class DocumentLineDocumentType
      */
     public function getLineStatusCode(): ?LineStatusCodeType
     {
-        return $this->lineStatusCodeType;
+        return $this->lineStatusCode;
     }
 
     /**
@@ -139,18 +141,18 @@ class DocumentLineDocumentType
      */
     public function getLineStatusCodeWithCreate(): LineStatusCodeType
     {
-        $this->lineStatusCodeType = is_null($this->lineStatusCodeType) ? new LineStatusCodeType() : $this->lineStatusCodeType;
+        $this->lineStatusCode = is_null($this->lineStatusCode) ? new LineStatusCodeType() : $this->lineStatusCode;
 
-        return $this->lineStatusCodeType;
+        return $this->lineStatusCode;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\qdt\LineStatusCodeType $lineStatusCodeType
+     * @param \horstoeko\invoicesuite\models\zffx\qdt\LineStatusCodeType $lineStatusCode
      * @return self
      */
-    public function setLineStatusCode(LineStatusCodeType $lineStatusCodeType): self
+    public function setLineStatusCode(LineStatusCodeType $lineStatusCode): self
     {
-        $this->lineStatusCodeType = $lineStatusCodeType;
+        $this->lineStatusCode = $lineStatusCode;
 
         return $this;
     }
@@ -160,7 +162,7 @@ class DocumentLineDocumentType
      */
     public function getLineStatusReasonCode(): ?CodeType
     {
-        return $this->codeType;
+        return $this->lineStatusReasonCode;
     }
 
     /**
@@ -168,18 +170,18 @@ class DocumentLineDocumentType
      */
     public function getLineStatusReasonCodeWithCreate(): CodeType
     {
-        $this->codeType = is_null($this->codeType) ? new CodeType() : $this->codeType;
+        $this->lineStatusReasonCode = is_null($this->lineStatusReasonCode) ? new CodeType() : $this->lineStatusReasonCode;
 
-        return $this->codeType;
+        return $this->lineStatusReasonCode;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $codeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $lineStatusReasonCode
      * @return self
      */
-    public function setLineStatusReasonCode(CodeType $codeType): self
+    public function setLineStatusReasonCode(CodeType $lineStatusReasonCode): self
     {
-        $this->codeType = $codeType;
+        $this->lineStatusReasonCode = $lineStatusReasonCode;
 
         return $this;
     }
@@ -214,12 +216,12 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\NoteType $noteType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\NoteType $includedNote
      * @return self
      */
-    public function addToIncludedNote(NoteType $noteType): self
+    public function addToIncludedNote(NoteType $includedNote): self
     {
-        $this->includedNote[] = $noteType;
+        $this->includedNote[] = $includedNote;
 
         return $this;
     }
@@ -229,22 +231,22 @@ class DocumentLineDocumentType
      */
     public function addToIncludedNoteWithCreate(): NoteType
     {
-        $this->addToincludedNote($noteType = new NoteType());
+        $this->addToincludedNote($includedNote = new NoteType());
 
-        return $noteType;
+        return $includedNote;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\NoteType $noteType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\NoteType $includedNote
      * @return self
      */
-    public function addOnceToIncludedNote(NoteType $noteType): self
+    public function addOnceToIncludedNote(NoteType $includedNote): self
     {
         if (!is_array($this->includedNote)) {
             $this->includedNote = [];
         }
 
-        $this->includedNote[0] = $noteType;
+        $this->includedNote[0] = $includedNote;
 
         return $this;
     }

@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IndicatorType;
 
 class ExchangedDocumentContextType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IndicatorType
@@ -19,7 +21,7 @@ class ExchangedDocumentContextType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getTestIndicator", setter="setTestIndicator")
      */
-    private $indicatorType;
+    private $testIndicator;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType
@@ -48,7 +50,7 @@ class ExchangedDocumentContextType
      */
     public function getTestIndicator(): ?IndicatorType
     {
-        return $this->indicatorType;
+        return $this->testIndicator;
     }
 
     /**
@@ -56,18 +58,18 @@ class ExchangedDocumentContextType
      */
     public function getTestIndicatorWithCreate(): IndicatorType
     {
-        $this->indicatorType = is_null($this->indicatorType) ? new IndicatorType() : $this->indicatorType;
+        $this->testIndicator = is_null($this->testIndicator) ? new IndicatorType() : $this->testIndicator;
 
-        return $this->indicatorType;
+        return $this->testIndicator;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IndicatorType $indicatorType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IndicatorType $testIndicator
      * @return self
      */
-    public function setTestIndicator(IndicatorType $indicatorType): self
+    public function setTestIndicator(IndicatorType $testIndicator): self
     {
-        $this->indicatorType = $indicatorType;
+        $this->testIndicator = $testIndicator;
 
         return $this;
     }
@@ -91,13 +93,13 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType $documentContextParameterType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
      * @return self
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
-        DocumentContextParameterType $documentContextParameterType,
+        DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter,
     ): self {
-        $this->businessProcessSpecifiedDocumentContextParameter = $documentContextParameterType;
+        $this->businessProcessSpecifiedDocumentContextParameter = $businessProcessSpecifiedDocumentContextParameter;
 
         return $this;
     }
@@ -121,13 +123,13 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType $documentContextParameterType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
      * @return self
      */
     public function setGuidelineSpecifiedDocumentContextParameter(
-        DocumentContextParameterType $documentContextParameterType,
+        DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter,
     ): self {
-        $this->guidelineSpecifiedDocumentContextParameter = $documentContextParameterType;
+        $this->guidelineSpecifiedDocumentContextParameter = $guidelineSpecifiedDocumentContextParameter;
 
         return $this;
     }

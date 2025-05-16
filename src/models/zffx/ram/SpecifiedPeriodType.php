@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\DateTimeType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class SpecifiedPeriodType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -20,7 +22,7 @@ class SpecifiedPeriodType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getDescription", setter="setDescription")
      */
-    private $textType;
+    private $description;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\DateTimeType
@@ -60,7 +62,7 @@ class SpecifiedPeriodType
      */
     public function getDescription(): ?TextType
     {
-        return $this->textType;
+        return $this->description;
     }
 
     /**
@@ -68,18 +70,18 @@ class SpecifiedPeriodType
      */
     public function getDescriptionWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->description = is_null($this->description) ? new TextType() : $this->description;
 
-        return $this->textType;
+        return $this->description;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $description
      * @return self
      */
-    public function setDescription(TextType $textType): self
+    public function setDescription(TextType $description): self
     {
-        $this->textType = $textType;
+        $this->description = $description;
 
         return $this;
     }
@@ -103,12 +105,12 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $dateTimeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $startDateTime
      * @return self
      */
-    public function setStartDateTime(DateTimeType $dateTimeType): self
+    public function setStartDateTime(DateTimeType $startDateTime): self
     {
-        $this->startDateTime = $dateTimeType;
+        $this->startDateTime = $startDateTime;
 
         return $this;
     }
@@ -132,12 +134,12 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $dateTimeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $endDateTime
      * @return self
      */
-    public function setEndDateTime(DateTimeType $dateTimeType): self
+    public function setEndDateTime(DateTimeType $endDateTime): self
     {
-        $this->endDateTime = $dateTimeType;
+        $this->endDateTime = $endDateTime;
 
         return $this;
     }
@@ -161,12 +163,12 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $dateTimeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $completeDateTime
      * @return self
      */
-    public function setCompleteDateTime(DateTimeType $dateTimeType): self
+    public function setCompleteDateTime(DateTimeType $completeDateTime): self
     {
-        $this->completeDateTime = $dateTimeType;
+        $this->completeDateTime = $completeDateTime;
 
         return $this;
     }

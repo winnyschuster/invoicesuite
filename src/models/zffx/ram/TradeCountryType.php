@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\qdt\CountryIDType;
 
 class TradeCountryType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\qdt\CountryIDType
@@ -19,14 +21,14 @@ class TradeCountryType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getID", setter="setID")
      */
-    private $countryIDType;
+    private $iD;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\qdt\CountryIDType|null
      */
     public function getID(): ?CountryIDType
     {
-        return $this->countryIDType;
+        return $this->iD;
     }
 
     /**
@@ -34,18 +36,18 @@ class TradeCountryType
      */
     public function getIDWithCreate(): CountryIDType
     {
-        $this->countryIDType = is_null($this->countryIDType) ? new CountryIDType() : $this->countryIDType;
+        $this->iD = is_null($this->iD) ? new CountryIDType() : $this->iD;
 
-        return $this->countryIDType;
+        return $this->iD;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\qdt\CountryIDType $countryIDType
+     * @param \horstoeko\invoicesuite\models\zffx\qdt\CountryIDType $iD
      * @return self
      */
-    public function setID(CountryIDType $countryIDType): self
+    public function setID(CountryIDType $iD): self
     {
-        $this->countryIDType = $countryIDType;
+        $this->iD = $iD;
 
         return $this;
     }

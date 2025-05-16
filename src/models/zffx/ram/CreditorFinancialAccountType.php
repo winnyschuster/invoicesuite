@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class CreditorFinancialAccountType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -31,7 +33,7 @@ class CreditorFinancialAccountType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getAccountName", setter="setAccountName")
      */
-    private $textType;
+    private $accountName;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -63,12 +65,12 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $iBANID
      * @return self
      */
-    public function setIBANID(IDType $idType): self
+    public function setIBANID(IDType $iBANID): self
     {
-        $this->iBANID = $idType;
+        $this->iBANID = $iBANID;
 
         return $this;
     }
@@ -78,7 +80,7 @@ class CreditorFinancialAccountType
      */
     public function getAccountName(): ?TextType
     {
-        return $this->textType;
+        return $this->accountName;
     }
 
     /**
@@ -86,18 +88,18 @@ class CreditorFinancialAccountType
      */
     public function getAccountNameWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->accountName = is_null($this->accountName) ? new TextType() : $this->accountName;
 
-        return $this->textType;
+        return $this->accountName;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $accountName
      * @return self
      */
-    public function setAccountName(TextType $textType): self
+    public function setAccountName(TextType $accountName): self
     {
-        $this->textType = $textType;
+        $this->accountName = $accountName;
 
         return $this;
     }
@@ -121,12 +123,12 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $proprietaryID
      * @return self
      */
-    public function setProprietaryID(IDType $idType): self
+    public function setProprietaryID(IDType $proprietaryID): self
     {
-        $this->proprietaryID = $idType;
+        $this->proprietaryID = $proprietaryID;
 
         return $this;
     }

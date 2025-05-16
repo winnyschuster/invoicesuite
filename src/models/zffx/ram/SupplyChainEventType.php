@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\DateTimeType;
 
 class SupplyChainEventType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\DateTimeType
@@ -19,14 +21,14 @@ class SupplyChainEventType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getOccurrenceDateTime", setter="setOccurrenceDateTime")
      */
-    private $dateTimeType;
+    private $occurrenceDateTime;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\DateTimeType|null
      */
     public function getOccurrenceDateTime(): ?DateTimeType
     {
-        return $this->dateTimeType;
+        return $this->occurrenceDateTime;
     }
 
     /**
@@ -34,18 +36,18 @@ class SupplyChainEventType
      */
     public function getOccurrenceDateTimeWithCreate(): DateTimeType
     {
-        $this->dateTimeType = is_null($this->dateTimeType) ? new DateTimeType() : $this->dateTimeType;
+        $this->occurrenceDateTime = is_null($this->occurrenceDateTime) ? new DateTimeType() : $this->occurrenceDateTime;
 
-        return $this->dateTimeType;
+        return $this->occurrenceDateTime;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $dateTimeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $occurrenceDateTime
      * @return self
      */
-    public function setOccurrenceDateTime(DateTimeType $dateTimeType): self
+    public function setOccurrenceDateTime(DateTimeType $occurrenceDateTime): self
     {
-        $this->dateTimeType = $dateTimeType;
+        $this->occurrenceDateTime = $occurrenceDateTime;
 
         return $this;
     }

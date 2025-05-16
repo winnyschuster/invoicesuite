@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\qdt\AllowanceChargeReasonCodeType;
 use horstoeko\invoicesuite\models\zffx\udt\AmountType;
 use horstoeko\invoicesuite\models\zffx\udt\IndicatorType;
@@ -15,6 +16,7 @@ use horstoeko\invoicesuite\models\zffx\udt\TextType;
 class TradeAllowanceChargeType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IndicatorType
@@ -25,7 +27,7 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getChargeIndicator", setter="setChargeIndicator")
      */
-    private $indicatorType;
+    private $chargeIndicator;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\NumericType
@@ -36,7 +38,7 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getSequenceNumeric", setter="setSequenceNumeric")
      */
-    private $numericType;
+    private $sequenceNumeric;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\PercentType
@@ -47,7 +49,7 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getCalculationPercent", setter="setCalculationPercent")
      */
-    private $percentType;
+    private $calculationPercent;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -69,7 +71,7 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getBasisQuantity", setter="setBasisQuantity")
      */
-    private $quantityType;
+    private $basisQuantity;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -91,7 +93,7 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getReasonCode", setter="setReasonCode")
      */
-    private $allowanceChargeReasonCodeType;
+    private $reasonCode;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -102,7 +104,7 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getReason", setter="setReason")
      */
-    private $textType;
+    private $reason;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType
@@ -113,14 +115,14 @@ class TradeAllowanceChargeType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getCategoryTradeTax", setter="setCategoryTradeTax")
      */
-    private $tradeTaxType;
+    private $categoryTradeTax;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\IndicatorType|null
      */
     public function getChargeIndicator(): ?IndicatorType
     {
-        return $this->indicatorType;
+        return $this->chargeIndicator;
     }
 
     /**
@@ -128,18 +130,18 @@ class TradeAllowanceChargeType
      */
     public function getChargeIndicatorWithCreate(): IndicatorType
     {
-        $this->indicatorType = is_null($this->indicatorType) ? new IndicatorType() : $this->indicatorType;
+        $this->chargeIndicator = is_null($this->chargeIndicator) ? new IndicatorType() : $this->chargeIndicator;
 
-        return $this->indicatorType;
+        return $this->chargeIndicator;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IndicatorType $indicatorType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IndicatorType $chargeIndicator
      * @return self
      */
-    public function setChargeIndicator(IndicatorType $indicatorType): self
+    public function setChargeIndicator(IndicatorType $chargeIndicator): self
     {
-        $this->indicatorType = $indicatorType;
+        $this->chargeIndicator = $chargeIndicator;
 
         return $this;
     }
@@ -149,7 +151,7 @@ class TradeAllowanceChargeType
      */
     public function getSequenceNumeric(): ?NumericType
     {
-        return $this->numericType;
+        return $this->sequenceNumeric;
     }
 
     /**
@@ -157,18 +159,18 @@ class TradeAllowanceChargeType
      */
     public function getSequenceNumericWithCreate(): NumericType
     {
-        $this->numericType = is_null($this->numericType) ? new NumericType() : $this->numericType;
+        $this->sequenceNumeric = is_null($this->sequenceNumeric) ? new NumericType() : $this->sequenceNumeric;
 
-        return $this->numericType;
+        return $this->sequenceNumeric;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\NumericType $numericType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\NumericType $sequenceNumeric
      * @return self
      */
-    public function setSequenceNumeric(NumericType $numericType): self
+    public function setSequenceNumeric(NumericType $sequenceNumeric): self
     {
-        $this->numericType = $numericType;
+        $this->sequenceNumeric = $sequenceNumeric;
 
         return $this;
     }
@@ -178,7 +180,7 @@ class TradeAllowanceChargeType
      */
     public function getCalculationPercent(): ?PercentType
     {
-        return $this->percentType;
+        return $this->calculationPercent;
     }
 
     /**
@@ -186,18 +188,18 @@ class TradeAllowanceChargeType
      */
     public function getCalculationPercentWithCreate(): PercentType
     {
-        $this->percentType = is_null($this->percentType) ? new PercentType() : $this->percentType;
+        $this->calculationPercent = is_null($this->calculationPercent) ? new PercentType() : $this->calculationPercent;
 
-        return $this->percentType;
+        return $this->calculationPercent;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\PercentType $percentType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\PercentType $calculationPercent
      * @return self
      */
-    public function setCalculationPercent(PercentType $percentType): self
+    public function setCalculationPercent(PercentType $calculationPercent): self
     {
-        $this->percentType = $percentType;
+        $this->calculationPercent = $calculationPercent;
 
         return $this;
     }
@@ -221,12 +223,12 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $basisAmount
      * @return self
      */
-    public function setBasisAmount(AmountType $amountType): self
+    public function setBasisAmount(AmountType $basisAmount): self
     {
-        $this->basisAmount = $amountType;
+        $this->basisAmount = $basisAmount;
 
         return $this;
     }
@@ -236,7 +238,7 @@ class TradeAllowanceChargeType
      */
     public function getBasisQuantity(): ?QuantityType
     {
-        return $this->quantityType;
+        return $this->basisQuantity;
     }
 
     /**
@@ -244,18 +246,18 @@ class TradeAllowanceChargeType
      */
     public function getBasisQuantityWithCreate(): QuantityType
     {
-        $this->quantityType = is_null($this->quantityType) ? new QuantityType() : $this->quantityType;
+        $this->basisQuantity = is_null($this->basisQuantity) ? new QuantityType() : $this->basisQuantity;
 
-        return $this->quantityType;
+        return $this->basisQuantity;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\QuantityType $quantityType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\QuantityType $basisQuantity
      * @return self
      */
-    public function setBasisQuantity(QuantityType $quantityType): self
+    public function setBasisQuantity(QuantityType $basisQuantity): self
     {
-        $this->quantityType = $quantityType;
+        $this->basisQuantity = $basisQuantity;
 
         return $this;
     }
@@ -279,12 +281,12 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $actualAmount
      * @return self
      */
-    public function setActualAmount(AmountType $amountType): self
+    public function setActualAmount(AmountType $actualAmount): self
     {
-        $this->actualAmount = $amountType;
+        $this->actualAmount = $actualAmount;
 
         return $this;
     }
@@ -294,7 +296,7 @@ class TradeAllowanceChargeType
      */
     public function getReasonCode(): ?AllowanceChargeReasonCodeType
     {
-        return $this->allowanceChargeReasonCodeType;
+        return $this->reasonCode;
     }
 
     /**
@@ -302,18 +304,18 @@ class TradeAllowanceChargeType
      */
     public function getReasonCodeWithCreate(): AllowanceChargeReasonCodeType
     {
-        $this->allowanceChargeReasonCodeType = is_null($this->allowanceChargeReasonCodeType) ? new AllowanceChargeReasonCodeType() : $this->allowanceChargeReasonCodeType;
+        $this->reasonCode = is_null($this->reasonCode) ? new AllowanceChargeReasonCodeType() : $this->reasonCode;
 
-        return $this->allowanceChargeReasonCodeType;
+        return $this->reasonCode;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\qdt\AllowanceChargeReasonCodeType $allowanceChargeReasonCodeType
+     * @param \horstoeko\invoicesuite\models\zffx\qdt\AllowanceChargeReasonCodeType $reasonCode
      * @return self
      */
-    public function setReasonCode(AllowanceChargeReasonCodeType $allowanceChargeReasonCodeType): self
+    public function setReasonCode(AllowanceChargeReasonCodeType $reasonCode): self
     {
-        $this->allowanceChargeReasonCodeType = $allowanceChargeReasonCodeType;
+        $this->reasonCode = $reasonCode;
 
         return $this;
     }
@@ -323,7 +325,7 @@ class TradeAllowanceChargeType
      */
     public function getReason(): ?TextType
     {
-        return $this->textType;
+        return $this->reason;
     }
 
     /**
@@ -331,18 +333,18 @@ class TradeAllowanceChargeType
      */
     public function getReasonWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->reason = is_null($this->reason) ? new TextType() : $this->reason;
 
-        return $this->textType;
+        return $this->reason;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $reason
      * @return self
      */
-    public function setReason(TextType $textType): self
+    public function setReason(TextType $reason): self
     {
-        $this->textType = $textType;
+        $this->reason = $reason;
 
         return $this;
     }
@@ -352,7 +354,7 @@ class TradeAllowanceChargeType
      */
     public function getCategoryTradeTax(): ?TradeTaxType
     {
-        return $this->tradeTaxType;
+        return $this->categoryTradeTax;
     }
 
     /**
@@ -360,18 +362,18 @@ class TradeAllowanceChargeType
      */
     public function getCategoryTradeTaxWithCreate(): TradeTaxType
     {
-        $this->tradeTaxType = is_null($this->tradeTaxType) ? new TradeTaxType() : $this->tradeTaxType;
+        $this->categoryTradeTax = is_null($this->categoryTradeTax) ? new TradeTaxType() : $this->categoryTradeTax;
 
-        return $this->tradeTaxType;
+        return $this->categoryTradeTax;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $tradeTaxType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $categoryTradeTax
      * @return self
      */
-    public function setCategoryTradeTax(TradeTaxType $tradeTaxType): self
+    public function setCategoryTradeTax(TradeTaxType $categoryTradeTax): self
     {
-        $this->tradeTaxType = $tradeTaxType;
+        $this->categoryTradeTax = $categoryTradeTax;
 
         return $this;
     }

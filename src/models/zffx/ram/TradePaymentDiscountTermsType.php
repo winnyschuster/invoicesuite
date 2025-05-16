@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\AmountType;
 use horstoeko\invoicesuite\models\zffx\udt\DateTimeType;
 use horstoeko\invoicesuite\models\zffx\udt\MeasureType;
@@ -12,6 +13,7 @@ use horstoeko\invoicesuite\models\zffx\udt\PercentType;
 class TradePaymentDiscountTermsType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\DateTimeType
@@ -22,7 +24,7 @@ class TradePaymentDiscountTermsType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getBasisDateTime", setter="setBasisDateTime")
      */
-    private $dateTimeType;
+    private $basisDateTime;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\MeasureType
@@ -33,7 +35,7 @@ class TradePaymentDiscountTermsType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getBasisPeriodMeasure", setter="setBasisPeriodMeasure")
      */
-    private $measureType;
+    private $basisPeriodMeasure;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -55,7 +57,7 @@ class TradePaymentDiscountTermsType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getCalculationPercent", setter="setCalculationPercent")
      */
-    private $percentType;
+    private $calculationPercent;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -73,7 +75,7 @@ class TradePaymentDiscountTermsType
      */
     public function getBasisDateTime(): ?DateTimeType
     {
-        return $this->dateTimeType;
+        return $this->basisDateTime;
     }
 
     /**
@@ -81,18 +83,18 @@ class TradePaymentDiscountTermsType
      */
     public function getBasisDateTimeWithCreate(): DateTimeType
     {
-        $this->dateTimeType = is_null($this->dateTimeType) ? new DateTimeType() : $this->dateTimeType;
+        $this->basisDateTime = is_null($this->basisDateTime) ? new DateTimeType() : $this->basisDateTime;
 
-        return $this->dateTimeType;
+        return $this->basisDateTime;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $dateTimeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\DateTimeType $basisDateTime
      * @return self
      */
-    public function setBasisDateTime(DateTimeType $dateTimeType): self
+    public function setBasisDateTime(DateTimeType $basisDateTime): self
     {
-        $this->dateTimeType = $dateTimeType;
+        $this->basisDateTime = $basisDateTime;
 
         return $this;
     }
@@ -102,7 +104,7 @@ class TradePaymentDiscountTermsType
      */
     public function getBasisPeriodMeasure(): ?MeasureType
     {
-        return $this->measureType;
+        return $this->basisPeriodMeasure;
     }
 
     /**
@@ -110,18 +112,18 @@ class TradePaymentDiscountTermsType
      */
     public function getBasisPeriodMeasureWithCreate(): MeasureType
     {
-        $this->measureType = is_null($this->measureType) ? new MeasureType() : $this->measureType;
+        $this->basisPeriodMeasure = is_null($this->basisPeriodMeasure) ? new MeasureType() : $this->basisPeriodMeasure;
 
-        return $this->measureType;
+        return $this->basisPeriodMeasure;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\MeasureType $measureType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\MeasureType $basisPeriodMeasure
      * @return self
      */
-    public function setBasisPeriodMeasure(MeasureType $measureType): self
+    public function setBasisPeriodMeasure(MeasureType $basisPeriodMeasure): self
     {
-        $this->measureType = $measureType;
+        $this->basisPeriodMeasure = $basisPeriodMeasure;
 
         return $this;
     }
@@ -145,12 +147,12 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $basisAmount
      * @return self
      */
-    public function setBasisAmount(AmountType $amountType): self
+    public function setBasisAmount(AmountType $basisAmount): self
     {
-        $this->basisAmount = $amountType;
+        $this->basisAmount = $basisAmount;
 
         return $this;
     }
@@ -160,7 +162,7 @@ class TradePaymentDiscountTermsType
      */
     public function getCalculationPercent(): ?PercentType
     {
-        return $this->percentType;
+        return $this->calculationPercent;
     }
 
     /**
@@ -168,18 +170,18 @@ class TradePaymentDiscountTermsType
      */
     public function getCalculationPercentWithCreate(): PercentType
     {
-        $this->percentType = is_null($this->percentType) ? new PercentType() : $this->percentType;
+        $this->calculationPercent = is_null($this->calculationPercent) ? new PercentType() : $this->calculationPercent;
 
-        return $this->percentType;
+        return $this->calculationPercent;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\PercentType $percentType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\PercentType $calculationPercent
      * @return self
      */
-    public function setCalculationPercent(PercentType $percentType): self
+    public function setCalculationPercent(PercentType $calculationPercent): self
     {
-        $this->percentType = $percentType;
+        $this->calculationPercent = $calculationPercent;
 
         return $this;
     }
@@ -203,12 +205,12 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $actualDiscountAmount
      * @return self
      */
-    public function setActualDiscountAmount(AmountType $amountType): self
+    public function setActualDiscountAmount(AmountType $actualDiscountAmount): self
     {
-        $this->actualDiscountAmount = $amountType;
+        $this->actualDiscountAmount = $actualDiscountAmount;
 
         return $this;
     }

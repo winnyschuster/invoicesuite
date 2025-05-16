@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class ProcuringProjectType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -20,7 +22,7 @@ class ProcuringProjectType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getID", setter="setID")
      */
-    private $idType;
+    private $iD;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -31,14 +33,14 @@ class ProcuringProjectType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getName", setter="setName")
      */
-    private $textType;
+    private $name;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\IDType|null
      */
     public function getID(): ?IDType
     {
-        return $this->idType;
+        return $this->iD;
     }
 
     /**
@@ -46,18 +48,18 @@ class ProcuringProjectType
      */
     public function getIDWithCreate(): IDType
     {
-        $this->idType = is_null($this->idType) ? new IDType() : $this->idType;
+        $this->iD = is_null($this->iD) ? new IDType() : $this->iD;
 
-        return $this->idType;
+        return $this->iD;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $iD
      * @return self
      */
-    public function setID(IDType $idType): self
+    public function setID(IDType $iD): self
     {
-        $this->idType = $idType;
+        $this->iD = $iD;
 
         return $this;
     }
@@ -67,7 +69,7 @@ class ProcuringProjectType
      */
     public function getName(): ?TextType
     {
-        return $this->textType;
+        return $this->name;
     }
 
     /**
@@ -75,18 +77,18 @@ class ProcuringProjectType
      */
     public function getNameWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->name = is_null($this->name) ? new TextType() : $this->name;
 
-        return $this->textType;
+        return $this->name;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $name
      * @return self
      */
-    public function setName(TextType $textType): self
+    public function setName(TextType $name): self
     {
-        $this->textType = $textType;
+        $this->name = $name;
 
         return $this;
     }

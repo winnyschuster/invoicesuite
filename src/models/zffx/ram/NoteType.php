@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\CodeType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class NoteType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\CodeType
@@ -31,7 +33,7 @@ class NoteType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getContent", setter="setContent")
      */
-    private $textType;
+    private $content;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\CodeType
@@ -63,12 +65,12 @@ class NoteType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $codeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $contentCode
      * @return self
      */
-    public function setContentCode(CodeType $codeType): self
+    public function setContentCode(CodeType $contentCode): self
     {
-        $this->contentCode = $codeType;
+        $this->contentCode = $contentCode;
 
         return $this;
     }
@@ -78,7 +80,7 @@ class NoteType
      */
     public function getContent(): ?TextType
     {
-        return $this->textType;
+        return $this->content;
     }
 
     /**
@@ -86,18 +88,18 @@ class NoteType
      */
     public function getContentWithCreate(): TextType
     {
-        $this->textType = is_null($this->textType) ? new TextType() : $this->textType;
+        $this->content = is_null($this->content) ? new TextType() : $this->content;
 
-        return $this->textType;
+        return $this->content;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $content
      * @return self
      */
-    public function setContent(TextType $textType): self
+    public function setContent(TextType $content): self
     {
-        $this->textType = $textType;
+        $this->content = $content;
 
         return $this;
     }
@@ -121,12 +123,12 @@ class NoteType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $codeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $subjectCode
      * @return self
      */
-    public function setSubjectCode(CodeType $codeType): self
+    public function setSubjectCode(CodeType $subjectCode): self
     {
-        $this->subjectCode = $codeType;
+        $this->subjectCode = $subjectCode;
 
         return $this;
     }

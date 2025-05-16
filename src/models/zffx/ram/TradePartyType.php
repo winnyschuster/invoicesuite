@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class TradePartyType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\udt\IDType>
@@ -77,7 +79,7 @@ class TradePartyType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getSpecifiedLegalOrganization", setter="setSpecifiedLegalOrganization")
      */
-    private $legalOrganizationType;
+    private $specifiedLegalOrganization;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\TradeContactType>
@@ -100,7 +102,7 @@ class TradePartyType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getPostalTradeAddress", setter="setPostalTradeAddress")
      */
-    private $tradeAddressType;
+    private $postalTradeAddress;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType
@@ -111,7 +113,7 @@ class TradePartyType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getURIUniversalCommunication", setter="setURIUniversalCommunication")
      */
-    private $universalCommunicationType;
+    private $uRIUniversalCommunication;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\TaxRegistrationType>
@@ -155,12 +157,12 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $iD
      * @return self
      */
-    public function addToID(IDType $idType): self
+    public function addToID(IDType $iD): self
     {
-        $this->iD[] = $idType;
+        $this->iD[] = $iD;
 
         return $this;
     }
@@ -170,22 +172,22 @@ class TradePartyType
      */
     public function addToIDWithCreate(): IDType
     {
-        $this->addToiD($idType = new IDType());
+        $this->addToiD($iD = new IDType());
 
-        return $idType;
+        return $iD;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $iD
      * @return self
      */
-    public function addOnceToID(IDType $idType): self
+    public function addOnceToID(IDType $iD): self
     {
         if (!is_array($this->iD)) {
             $this->iD = [];
         }
 
-        $this->iD[0] = $idType;
+        $this->iD[0] = $iD;
 
         return $this;
     }
@@ -236,12 +238,12 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $globalID
      * @return self
      */
-    public function addToGlobalID(IDType $idType): self
+    public function addToGlobalID(IDType $globalID): self
     {
-        $this->globalID[] = $idType;
+        $this->globalID[] = $globalID;
 
         return $this;
     }
@@ -251,22 +253,22 @@ class TradePartyType
      */
     public function addToGlobalIDWithCreate(): IDType
     {
-        $this->addToglobalID($idType = new IDType());
+        $this->addToglobalID($globalID = new IDType());
 
-        return $idType;
+        return $globalID;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $globalID
      * @return self
      */
-    public function addOnceToGlobalID(IDType $idType): self
+    public function addOnceToGlobalID(IDType $globalID): self
     {
         if (!is_array($this->globalID)) {
             $this->globalID = [];
         }
 
-        $this->globalID[0] = $idType;
+        $this->globalID[0] = $globalID;
 
         return $this;
     }
@@ -306,12 +308,12 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $name
      * @return self
      */
-    public function setName(TextType $textType): self
+    public function setName(TextType $name): self
     {
-        $this->name = $textType;
+        $this->name = $name;
 
         return $this;
     }
@@ -354,12 +356,12 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $description
      * @return self
      */
-    public function setDescription(TextType $textType): self
+    public function setDescription(TextType $description): self
     {
-        $this->description = $textType;
+        $this->description = $description;
 
         return $this;
     }
@@ -369,7 +371,7 @@ class TradePartyType
      */
     public function getSpecifiedLegalOrganization(): ?LegalOrganizationType
     {
-        return $this->legalOrganizationType;
+        return $this->specifiedLegalOrganization;
     }
 
     /**
@@ -377,18 +379,18 @@ class TradePartyType
      */
     public function getSpecifiedLegalOrganizationWithCreate(): LegalOrganizationType
     {
-        $this->legalOrganizationType = is_null($this->legalOrganizationType) ? new LegalOrganizationType() : $this->legalOrganizationType;
+        $this->specifiedLegalOrganization = is_null($this->specifiedLegalOrganization) ? new LegalOrganizationType() : $this->specifiedLegalOrganization;
 
-        return $this->legalOrganizationType;
+        return $this->specifiedLegalOrganization;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\LegalOrganizationType $legalOrganizationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\LegalOrganizationType $specifiedLegalOrganization
      * @return self
      */
-    public function setSpecifiedLegalOrganization(LegalOrganizationType $legalOrganizationType): self
+    public function setSpecifiedLegalOrganization(LegalOrganizationType $specifiedLegalOrganization): self
     {
-        $this->legalOrganizationType = $legalOrganizationType;
+        $this->specifiedLegalOrganization = $specifiedLegalOrganization;
 
         return $this;
     }
@@ -423,12 +425,12 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeContactType $tradeContactType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeContactType $definedTradeContact
      * @return self
      */
-    public function addToDefinedTradeContact(TradeContactType $tradeContactType): self
+    public function addToDefinedTradeContact(TradeContactType $definedTradeContact): self
     {
-        $this->definedTradeContact[] = $tradeContactType;
+        $this->definedTradeContact[] = $definedTradeContact;
 
         return $this;
     }
@@ -438,22 +440,22 @@ class TradePartyType
      */
     public function addToDefinedTradeContactWithCreate(): TradeContactType
     {
-        $this->addTodefinedTradeContact($tradeContactType = new TradeContactType());
+        $this->addTodefinedTradeContact($definedTradeContact = new TradeContactType());
 
-        return $tradeContactType;
+        return $definedTradeContact;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeContactType $tradeContactType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeContactType $definedTradeContact
      * @return self
      */
-    public function addOnceToDefinedTradeContact(TradeContactType $tradeContactType): self
+    public function addOnceToDefinedTradeContact(TradeContactType $definedTradeContact): self
     {
         if (!is_array($this->definedTradeContact)) {
             $this->definedTradeContact = [];
         }
 
-        $this->definedTradeContact[0] = $tradeContactType;
+        $this->definedTradeContact[0] = $definedTradeContact;
 
         return $this;
     }
@@ -479,7 +481,7 @@ class TradePartyType
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
-        return $this->tradeAddressType;
+        return $this->postalTradeAddress;
     }
 
     /**
@@ -487,18 +489,18 @@ class TradePartyType
      */
     public function getPostalTradeAddressWithCreate(): TradeAddressType
     {
-        $this->tradeAddressType = is_null($this->tradeAddressType) ? new TradeAddressType() : $this->tradeAddressType;
+        $this->postalTradeAddress = is_null($this->postalTradeAddress) ? new TradeAddressType() : $this->postalTradeAddress;
 
-        return $this->tradeAddressType;
+        return $this->postalTradeAddress;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeAddressType $tradeAddressType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeAddressType $postalTradeAddress
      * @return self
      */
-    public function setPostalTradeAddress(TradeAddressType $tradeAddressType): self
+    public function setPostalTradeAddress(TradeAddressType $postalTradeAddress): self
     {
-        $this->tradeAddressType = $tradeAddressType;
+        $this->postalTradeAddress = $postalTradeAddress;
 
         return $this;
     }
@@ -508,7 +510,7 @@ class TradePartyType
      */
     public function getURIUniversalCommunication(): ?UniversalCommunicationType
     {
-        return $this->universalCommunicationType;
+        return $this->uRIUniversalCommunication;
     }
 
     /**
@@ -516,18 +518,18 @@ class TradePartyType
      */
     public function getURIUniversalCommunicationWithCreate(): UniversalCommunicationType
     {
-        $this->universalCommunicationType = is_null($this->universalCommunicationType) ? new UniversalCommunicationType() : $this->universalCommunicationType;
+        $this->uRIUniversalCommunication = is_null($this->uRIUniversalCommunication) ? new UniversalCommunicationType() : $this->uRIUniversalCommunication;
 
-        return $this->universalCommunicationType;
+        return $this->uRIUniversalCommunication;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $universalCommunicationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $uRIUniversalCommunication
      * @return self
      */
-    public function setURIUniversalCommunication(UniversalCommunicationType $universalCommunicationType): self
+    public function setURIUniversalCommunication(UniversalCommunicationType $uRIUniversalCommunication): self
     {
-        $this->universalCommunicationType = $universalCommunicationType;
+        $this->uRIUniversalCommunication = $uRIUniversalCommunication;
 
         return $this;
     }
@@ -562,12 +564,12 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TaxRegistrationType $taxRegistrationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TaxRegistrationType $specifiedTaxRegistration
      * @return self
      */
-    public function addToSpecifiedTaxRegistration(TaxRegistrationType $taxRegistrationType): self
+    public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
     {
-        $this->specifiedTaxRegistration[] = $taxRegistrationType;
+        $this->specifiedTaxRegistration[] = $specifiedTaxRegistration;
 
         return $this;
     }
@@ -577,22 +579,22 @@ class TradePartyType
      */
     public function addToSpecifiedTaxRegistrationWithCreate(): TaxRegistrationType
     {
-        $this->addTospecifiedTaxRegistration($taxRegistrationType = new TaxRegistrationType());
+        $this->addTospecifiedTaxRegistration($specifiedTaxRegistration = new TaxRegistrationType());
 
-        return $taxRegistrationType;
+        return $specifiedTaxRegistration;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TaxRegistrationType $taxRegistrationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TaxRegistrationType $specifiedTaxRegistration
      * @return self
      */
-    public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $taxRegistrationType): self
+    public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
     {
         if (!is_array($this->specifiedTaxRegistration)) {
             $this->specifiedTaxRegistration = [];
         }
 
-        $this->specifiedTaxRegistration[0] = $taxRegistrationType;
+        $this->specifiedTaxRegistration[0] = $specifiedTaxRegistration;
 
         return $this;
     }

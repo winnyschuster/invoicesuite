@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\udt;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\DateType\DateStringAType;
 
 class DateType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\DateType\DateStringAType
@@ -19,14 +21,14 @@ class DateType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100", cdata=false)
      * @JMS\Accessor(getter="getDateString", setter="setDateString")
      */
-    private $dateStringAType;
+    private $dateString;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\DateType\DateStringAType|null
      */
     public function getDateString(): ?DateStringAType
     {
-        return $this->dateStringAType;
+        return $this->dateString;
     }
 
     /**
@@ -34,18 +36,18 @@ class DateType
      */
     public function getDateStringWithCreate(): DateStringAType
     {
-        $this->dateStringAType = is_null($this->dateStringAType) ? new DateStringAType() : $this->dateStringAType;
+        $this->dateString = is_null($this->dateString) ? new DateStringAType() : $this->dateString;
 
-        return $this->dateStringAType;
+        return $this->dateString;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\DateType\DateStringAType $dateStringAType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\DateType\DateStringAType $dateString
      * @return self
      */
-    public function setDateString(DateStringAType $dateStringAType): self
+    public function setDateString(DateStringAType $dateString): self
     {
-        $this->dateStringAType = $dateStringAType;
+        $this->dateString = $dateString;
 
         return $this;
     }

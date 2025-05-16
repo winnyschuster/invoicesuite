@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
 
 class CreditorFinancialInstitutionType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -19,14 +21,14 @@ class CreditorFinancialInstitutionType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getBICID", setter="setBICID")
      */
-    private $idType;
+    private $bICID;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\IDType|null
      */
     public function getBICID(): ?IDType
     {
-        return $this->idType;
+        return $this->bICID;
     }
 
     /**
@@ -34,18 +36,18 @@ class CreditorFinancialInstitutionType
      */
     public function getBICIDWithCreate(): IDType
     {
-        $this->idType = is_null($this->idType) ? new IDType() : $this->idType;
+        $this->bICID = is_null($this->bICID) ? new IDType() : $this->bICID;
 
-        return $this->idType;
+        return $this->bICID;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $bICID
      * @return self
      */
-    public function setBICID(IDType $idType): self
+    public function setBICID(IDType $bICID): self
     {
-        $this->idType = $idType;
+        $this->bICID = $bICID;
 
         return $this;
     }

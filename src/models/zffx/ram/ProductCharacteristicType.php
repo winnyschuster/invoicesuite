@@ -4,6 +4,7 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\CodeType;
 use horstoeko\invoicesuite\models\zffx\udt\MeasureType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
@@ -11,6 +12,7 @@ use horstoeko\invoicesuite\models\zffx\udt\TextType;
 class ProductCharacteristicType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\CodeType
@@ -21,7 +23,7 @@ class ProductCharacteristicType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getTypeCode", setter="setTypeCode")
      */
-    private $codeType;
+    private $typeCode;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -43,7 +45,7 @@ class ProductCharacteristicType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getValueMeasure", setter="setValueMeasure")
      */
-    private $measureType;
+    private $valueMeasure;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -61,7 +63,7 @@ class ProductCharacteristicType
      */
     public function getTypeCode(): ?CodeType
     {
-        return $this->codeType;
+        return $this->typeCode;
     }
 
     /**
@@ -69,18 +71,18 @@ class ProductCharacteristicType
      */
     public function getTypeCodeWithCreate(): CodeType
     {
-        $this->codeType = is_null($this->codeType) ? new CodeType() : $this->codeType;
+        $this->typeCode = is_null($this->typeCode) ? new CodeType() : $this->typeCode;
 
-        return $this->codeType;
+        return $this->typeCode;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $codeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $typeCode
      * @return self
      */
-    public function setTypeCode(CodeType $codeType): self
+    public function setTypeCode(CodeType $typeCode): self
     {
-        $this->codeType = $codeType;
+        $this->typeCode = $typeCode;
 
         return $this;
     }
@@ -104,12 +106,12 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $description
      * @return self
      */
-    public function setDescription(TextType $textType): self
+    public function setDescription(TextType $description): self
     {
-        $this->description = $textType;
+        $this->description = $description;
 
         return $this;
     }
@@ -119,7 +121,7 @@ class ProductCharacteristicType
      */
     public function getValueMeasure(): ?MeasureType
     {
-        return $this->measureType;
+        return $this->valueMeasure;
     }
 
     /**
@@ -127,18 +129,18 @@ class ProductCharacteristicType
      */
     public function getValueMeasureWithCreate(): MeasureType
     {
-        $this->measureType = is_null($this->measureType) ? new MeasureType() : $this->measureType;
+        $this->valueMeasure = is_null($this->valueMeasure) ? new MeasureType() : $this->valueMeasure;
 
-        return $this->measureType;
+        return $this->valueMeasure;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\MeasureType $measureType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\MeasureType $valueMeasure
      * @return self
      */
-    public function setValueMeasure(MeasureType $measureType): self
+    public function setValueMeasure(MeasureType $valueMeasure): self
     {
-        $this->measureType = $measureType;
+        $this->valueMeasure = $valueMeasure;
 
         return $this;
     }
@@ -162,12 +164,12 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $value
      * @return self
      */
-    public function setValue(TextType $textType): self
+    public function setValue(TextType $value): self
     {
-        $this->value = $textType;
+        $this->value = $value;
 
         return $this;
     }

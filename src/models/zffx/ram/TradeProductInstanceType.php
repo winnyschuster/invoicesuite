@@ -4,11 +4,13 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\IDType;
 
 class TradeProductInstanceType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\IDType
@@ -51,12 +53,12 @@ class TradeProductInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $batchID
      * @return self
      */
-    public function setBatchID(IDType $idType): self
+    public function setBatchID(IDType $batchID): self
     {
-        $this->batchID = $idType;
+        $this->batchID = $batchID;
 
         return $this;
     }
@@ -80,12 +82,12 @@ class TradeProductInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $idType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\IDType $supplierAssignedSerialID
      * @return self
      */
-    public function setSupplierAssignedSerialID(IDType $idType): self
+    public function setSupplierAssignedSerialID(IDType $supplierAssignedSerialID): self
     {
-        $this->supplierAssignedSerialID = $idType;
+        $this->supplierAssignedSerialID = $supplierAssignedSerialID;
 
         return $this;
     }

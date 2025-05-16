@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\AmountType;
 use horstoeko\invoicesuite\models\zffx\udt\QuantityType;
 
 class TradePriceType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\AmountType
@@ -20,7 +22,7 @@ class TradePriceType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getChargeAmount", setter="setChargeAmount")
      */
-    private $amountType;
+    private $chargeAmount;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\QuantityType
@@ -31,7 +33,7 @@ class TradePriceType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getBasisQuantity", setter="setBasisQuantity")
      */
-    private $quantityType;
+    private $basisQuantity;
 
     /**
      * @var array<\horstoeko\invoicesuite\models\zffx\ram\TradeAllowanceChargeType>
@@ -54,14 +56,14 @@ class TradePriceType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getIncludedTradeTax", setter="setIncludedTradeTax")
      */
-    private $tradeTaxType;
+    private $includedTradeTax;
 
     /**
      * @return \horstoeko\invoicesuite\models\zffx\udt\AmountType|null
      */
     public function getChargeAmount(): ?AmountType
     {
-        return $this->amountType;
+        return $this->chargeAmount;
     }
 
     /**
@@ -69,18 +71,18 @@ class TradePriceType
      */
     public function getChargeAmountWithCreate(): AmountType
     {
-        $this->amountType = is_null($this->amountType) ? new AmountType() : $this->amountType;
+        $this->chargeAmount = is_null($this->chargeAmount) ? new AmountType() : $this->chargeAmount;
 
-        return $this->amountType;
+        return $this->chargeAmount;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $amountType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\AmountType $chargeAmount
      * @return self
      */
-    public function setChargeAmount(AmountType $amountType): self
+    public function setChargeAmount(AmountType $chargeAmount): self
     {
-        $this->amountType = $amountType;
+        $this->chargeAmount = $chargeAmount;
 
         return $this;
     }
@@ -90,7 +92,7 @@ class TradePriceType
      */
     public function getBasisQuantity(): ?QuantityType
     {
-        return $this->quantityType;
+        return $this->basisQuantity;
     }
 
     /**
@@ -98,18 +100,18 @@ class TradePriceType
      */
     public function getBasisQuantityWithCreate(): QuantityType
     {
-        $this->quantityType = is_null($this->quantityType) ? new QuantityType() : $this->quantityType;
+        $this->basisQuantity = is_null($this->basisQuantity) ? new QuantityType() : $this->basisQuantity;
 
-        return $this->quantityType;
+        return $this->basisQuantity;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\QuantityType $quantityType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\QuantityType $basisQuantity
      * @return self
      */
-    public function setBasisQuantity(QuantityType $quantityType): self
+    public function setBasisQuantity(QuantityType $basisQuantity): self
     {
-        $this->quantityType = $quantityType;
+        $this->basisQuantity = $basisQuantity;
 
         return $this;
     }
@@ -144,12 +146,12 @@ class TradePriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeAllowanceChargeType $tradeAllowanceChargeType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeAllowanceChargeType $appliedTradeAllowanceCharge
      * @return self
      */
-    public function addToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $tradeAllowanceChargeType): self
+    public function addToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): self
     {
-        $this->appliedTradeAllowanceCharge[] = $tradeAllowanceChargeType;
+        $this->appliedTradeAllowanceCharge[] = $appliedTradeAllowanceCharge;
 
         return $this;
     }
@@ -159,22 +161,22 @@ class TradePriceType
      */
     public function addToAppliedTradeAllowanceChargeWithCreate(): TradeAllowanceChargeType
     {
-        $this->addToappliedTradeAllowanceCharge($tradeAllowanceChargeType = new TradeAllowanceChargeType());
+        $this->addToappliedTradeAllowanceCharge($appliedTradeAllowanceCharge = new TradeAllowanceChargeType());
 
-        return $tradeAllowanceChargeType;
+        return $appliedTradeAllowanceCharge;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeAllowanceChargeType $tradeAllowanceChargeType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeAllowanceChargeType $appliedTradeAllowanceCharge
      * @return self
      */
-    public function addOnceToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $tradeAllowanceChargeType): self
+    public function addOnceToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): self
     {
         if (!is_array($this->appliedTradeAllowanceCharge)) {
             $this->appliedTradeAllowanceCharge = [];
         }
 
-        $this->appliedTradeAllowanceCharge[0] = $tradeAllowanceChargeType;
+        $this->appliedTradeAllowanceCharge[0] = $appliedTradeAllowanceCharge;
 
         return $this;
     }
@@ -200,7 +202,7 @@ class TradePriceType
      */
     public function getIncludedTradeTax(): ?TradeTaxType
     {
-        return $this->tradeTaxType;
+        return $this->includedTradeTax;
     }
 
     /**
@@ -208,18 +210,18 @@ class TradePriceType
      */
     public function getIncludedTradeTaxWithCreate(): TradeTaxType
     {
-        $this->tradeTaxType = is_null($this->tradeTaxType) ? new TradeTaxType() : $this->tradeTaxType;
+        $this->includedTradeTax = is_null($this->includedTradeTax) ? new TradeTaxType() : $this->includedTradeTax;
 
-        return $this->tradeTaxType;
+        return $this->includedTradeTax;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $tradeTaxType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\TradeTaxType $includedTradeTax
      * @return self
      */
-    public function setIncludedTradeTax(TradeTaxType $tradeTaxType): self
+    public function setIncludedTradeTax(TradeTaxType $includedTradeTax): self
     {
-        $this->tradeTaxType = $tradeTaxType;
+        $this->includedTradeTax = $includedTradeTax;
 
         return $this;
     }

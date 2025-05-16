@@ -4,12 +4,14 @@ namespace horstoeko\invoicesuite\models\zffx\ram;
 
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\concerns\HandlesOptional;
 use horstoeko\invoicesuite\models\zffx\udt\CodeType;
 use horstoeko\invoicesuite\models\zffx\udt\TextType;
 
 class TradeContactType
 {
     use HandlesObjectFlags;
+    use HandlesOptional;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\udt\TextType
@@ -42,7 +44,7 @@ class TradeContactType
      * @JMS\XmlElement(namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100", cdata=false)
      * @JMS\Accessor(getter="getTypeCode", setter="setTypeCode")
      */
-    private $codeType;
+    private $typeCode;
 
     /**
      * @var \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType
@@ -96,12 +98,12 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $personName
      * @return self
      */
-    public function setPersonName(TextType $textType): self
+    public function setPersonName(TextType $personName): self
     {
-        $this->personName = $textType;
+        $this->personName = $personName;
 
         return $this;
     }
@@ -125,12 +127,12 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $textType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\TextType $departmentName
      * @return self
      */
-    public function setDepartmentName(TextType $textType): self
+    public function setDepartmentName(TextType $departmentName): self
     {
-        $this->departmentName = $textType;
+        $this->departmentName = $departmentName;
 
         return $this;
     }
@@ -140,7 +142,7 @@ class TradeContactType
      */
     public function getTypeCode(): ?CodeType
     {
-        return $this->codeType;
+        return $this->typeCode;
     }
 
     /**
@@ -148,18 +150,18 @@ class TradeContactType
      */
     public function getTypeCodeWithCreate(): CodeType
     {
-        $this->codeType = is_null($this->codeType) ? new CodeType() : $this->codeType;
+        $this->typeCode = is_null($this->typeCode) ? new CodeType() : $this->typeCode;
 
-        return $this->codeType;
+        return $this->typeCode;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $codeType
+     * @param \horstoeko\invoicesuite\models\zffx\udt\CodeType $typeCode
      * @return self
      */
-    public function setTypeCode(CodeType $codeType): self
+    public function setTypeCode(CodeType $typeCode): self
     {
-        $this->codeType = $codeType;
+        $this->typeCode = $typeCode;
 
         return $this;
     }
@@ -183,13 +185,13 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $universalCommunicationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $telephoneUniversalCommunication
      * @return self
      */
     public function setTelephoneUniversalCommunication(
-        UniversalCommunicationType $universalCommunicationType,
+        UniversalCommunicationType $telephoneUniversalCommunication,
     ): self {
-        $this->telephoneUniversalCommunication = $universalCommunicationType;
+        $this->telephoneUniversalCommunication = $telephoneUniversalCommunication;
 
         return $this;
     }
@@ -213,12 +215,12 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $universalCommunicationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $faxUniversalCommunication
      * @return self
      */
-    public function setFaxUniversalCommunication(UniversalCommunicationType $universalCommunicationType): self
+    public function setFaxUniversalCommunication(UniversalCommunicationType $faxUniversalCommunication): self
     {
-        $this->faxUniversalCommunication = $universalCommunicationType;
+        $this->faxUniversalCommunication = $faxUniversalCommunication;
 
         return $this;
     }
@@ -242,13 +244,13 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $universalCommunicationType
+     * @param \horstoeko\invoicesuite\models\zffx\ram\UniversalCommunicationType $emailURIUniversalCommunication
      * @return self
      */
     public function setEmailURIUniversalCommunication(
-        UniversalCommunicationType $universalCommunicationType,
+        UniversalCommunicationType $emailURIUniversalCommunication,
     ): self {
-        $this->emailURIUniversalCommunication = $universalCommunicationType;
+        $this->emailURIUniversalCommunication = $emailURIUniversalCommunication;
 
         return $this;
     }
