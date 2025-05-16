@@ -37,7 +37,7 @@ trait HandlesOptional
      */
     public function __set($name, $value)
     {
-        return new InvoiceSuiteOptionalWrapper();
+        // Ignore
     }
 
     /**
