@@ -3277,5 +3277,51 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionGrossPriceAllowanceCharge(
+            $newGrossPriceAllowanceChargeAmount,
+            $newIsCharge,
+            $newGrossPriceAllowanceChargePercent,
+            $newGrossPriceAllowanceChargeBasisAmount,
+            $newGrossPriceAllowanceChargeReason,
+            $newGrossPriceAllowanceChargeReasonCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPositionGrossPriceAllowanceCharge(
+            $newGrossPriceAllowanceChargeAmount,
+            $newIsCharge,
+            $newGrossPriceAllowanceChargePercent,
+            $newGrossPriceAllowanceChargeBasisAmount,
+            $newGrossPriceAllowanceChargeReason,
+            $newGrossPriceAllowanceChargeReasonCode
+        );
+
+        return $this;
+    }
+
     #endregion
 }

@@ -7381,5 +7381,108 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         return $this;
     }
 
+    /**
+     * @param null|float $newGrossPriceAllowanceChargeAmount __BT-147, From BASIC__ Discount amount or charge amount on the item price
+     * @param null|bool $newIsCharge __BT-147-02, From BASIC__ Switch for charge/discount
+     * @param null|float $newGrossPriceAllowanceChargePercent __BT-X-34, From EXTENDED__ Discount or charge on the item price in percent
+     * @param null|float $newGrossPriceAllowanceChargeBasisAmount __BT-X-35, From EXTENDED__ Base amount of the discount or charge
+     * @param null|string $newGrossPriceAllowanceChargeReason __BT-X-36, From EXTENDED__ Reason for discount or charge (free text)
+     * @param null|string $newGrossPriceAllowanceChargeReasonCode __BT-X-313, From EXTENDED__ Reason code for discount or charge (free text)
+     */
+    public function setDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self {
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
+            return $this;
+        }
+
+        $grossPrice = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
+            ->getSpecifiedLineTradeAgreementWithCreate()
+            ->getGrossPriceProductTradePrice();
+
+        if (is_null($grossPrice)) {
+            return $this;
+        }
+
+        $grossPrice->clearAppliedTradeAllowanceCharge();
+
+        $this->addDocumentPositionGrossPriceAllowanceCharge(
+            $newGrossPriceAllowanceChargeAmount,
+            $newIsCharge,
+            $newGrossPriceAllowanceChargePercent,
+            $newGrossPriceAllowanceChargeBasisAmount,
+            $newGrossPriceAllowanceChargeReason,
+            $newGrossPriceAllowanceChargeReasonCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * @param null|float $newGrossPriceAllowanceChargeAmount __BT-147, From BASIC__ Discount amount or charge amount on the item price
+     * @param null|bool $newIsCharge __BT-147-02, From BASIC__ Switch for charge/discount
+     * @param null|float $newGrossPriceAllowanceChargePercent __BT-X-34, From EXTENDED__ Discount or charge on the item price in percent
+     * @param null|float $newGrossPriceAllowanceChargeBasisAmount __BT-X-35, From EXTENDED__ Base amount of the discount or charge
+     * @param null|string $newGrossPriceAllowanceChargeReason __BT-X-36, From EXTENDED__ Reason for discount or charge (free text)
+     * @param null|string $newGrossPriceAllowanceChargeReasonCode __BT-X-313, From EXTENDED__ Reason code for discount or charge (free text)
+     */
+    public function addDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self {
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $grossPrice = $latestPosition
+            ->getSpecifiedLineTradeAgreementWithCreate()
+            ->getGrossPriceProductTradePrice();
+
+        if (is_null($grossPrice)) {
+            return $this;
+        }
+
+        $allowanceCharge = $grossPrice
+            ->addToAppliedTradeAllowanceChargeWithCreate();
+
+        $allowanceCharge->getActualAmountWithCreate()->setValue($newGrossPriceAllowanceChargeAmount);
+        $allowanceCharge->getChargeIndicatorWithCreate()->setIndicator($newIsCharge);
+
+        if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargePercent])) {
+            $allowanceCharge->getCalculationPercentWithCreate()->setValue($newGrossPriceAllowanceChargePercent);
+        }
+
+        if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeBasisAmount])) {
+            $allowanceCharge->getBasisAmountWithCreate()->setValue($newGrossPriceAllowanceChargeBasisAmount);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeReason])) {
+            $allowanceCharge->getReasonWithCreate()->setValue($newGrossPriceAllowanceChargeReason);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeReasonCode])) {
+            $allowanceCharge->getReasonCodeWithCreate()->setValue($newGrossPriceAllowanceChargeReasonCode);
+        }
+
+        return $this;
+    }
+
     #endregion
 }

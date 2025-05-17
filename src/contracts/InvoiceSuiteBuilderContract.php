@@ -3084,5 +3084,45 @@ interface InvoiceSuiteBuilderContract
         ?string $newGrossPriceBasisQuantityUnit = null
     ): self;
 
+    /**
+     * Set discount or charge to the gross price
+     *
+     * @param null|float $newGrossPriceAllowanceChargeAmount Discount amount or charge amount on the item price
+     * @param null|bool $newIsCharge Switch for charge/discount
+     * @param null|float $newGrossPriceAllowanceChargePercent Discount or charge on the item price in percent
+     * @param null|float $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
+     * @param null|string $newGrossPriceAllowanceChargeReason Reason for discount or charge (free text)
+     * @param null|string $newGrossPriceAllowanceChargeReasonCode Reason code for discount or charge (free text)
+     * @return self
+     */
+    public function setDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self;
+
+    /**
+     * Add discount or charge to the gross price
+     *
+     * @param null|float $newGrossPriceAllowanceChargeAmount Discount amount or charge amount on the item price
+     * @param null|bool $newIsCharge Switch for charge/discount
+     * @param null|float $newGrossPriceAllowanceChargePercent Discount or charge on the item price in percent
+     * @param null|float $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
+     * @param null|string $newGrossPriceAllowanceChargeReason Reason for discount or charge (free text)
+     * @param null|string $newGrossPriceAllowanceChargeReasonCode Reason code for discount or charge (free text)
+     * @return self
+     */
+    public function addDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self;
+
     #endregion
 }

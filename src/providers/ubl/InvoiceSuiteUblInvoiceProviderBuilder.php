@@ -4974,5 +4974,37 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self {
+        // Nothing here
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self {
+        // Nothing here
+
+        return $this;
+    }
+
     #endregion
 }
