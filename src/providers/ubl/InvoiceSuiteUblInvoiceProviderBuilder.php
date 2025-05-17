@@ -5006,5 +5006,16 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionNetPrice(
+        ?float $newNetPrice = null,
+        ?float $newNetPriceBasisQuantity = null,
+        ?string $newNetPriceBasisQuantityUnit = null
+    ): self {
+        return $this;
+    }
+
     #endregion
 }

@@ -7482,5 +7482,41 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         return $this;
     }
 
+    /**
+     * @param null|float $newNetPrice __BT-146, From BASIC__ Unit price excluding sales tax after deduction of the discount on the item price
+     * @param null|float $newNetPriceBasisQuantity __BT-149, From BASIC__ Number of item units for which the price applies
+     * @param null|string $newNetPriceBasisQuantityUnit __BT-150, From BASIC__ Unit code of the number of item units for which the price applies
+     * @return self
+     */
+    public function setDocumentPositionNetPrice(
+        ?float $newNetPrice = null,
+        ?float $newNetPriceBasisQuantity = null,
+        ?string $newNetPriceBasisQuantityUnit = null
+    ): self {
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $netPrice = $latestPosition
+            ->getSpecifiedLineTradeAgreementWithCreate()
+            ->getNetPriceProductTradePriceWithCreate();
+
+        $netPrice->getChargeAmountWithCreate()->setValue($newNetPrice);
+
+        if (
+            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPriceBasisQuantity]) &&
+            !InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newNetPriceBasisQuantityUnit])
+        ) {
+            $netPrice->getBasisQuantityWithCreate()->setValue($newNetPriceBasisQuantity)->setUnitCode($newNetPriceBasisQuantityUnit);
+        }
+
+        return $this;
+    }
+
     #endregion
 }

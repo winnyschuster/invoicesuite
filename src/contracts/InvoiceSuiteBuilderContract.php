@@ -3073,6 +3073,8 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
+     * Set the position gross price
+     *
      * @param null|float $newGrossPrice Unit price excluding sales tax before deduction of the discount on the item price
      * @param null|float $newGrossPriceBasisQuantity Number of item units for which the price applies
      * @param null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
@@ -3122,6 +3124,20 @@ interface InvoiceSuiteBuilderContract
         ?float $newGrossPriceAllowanceChargeBasisAmount = null,
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): self;
+
+    /**
+     * Set the position net price
+     *
+     * @param null|float $newNetPrice Unit price excluding sales tax after deduction of the discount on the item price
+     * @param null|float $newNetPriceBasisQuantity Number of item units for which the price applies
+     * @param null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
+     * @return self
+     */
+    public function setDocumentPositionNetPrice(
+        ?float $newNetPrice = null,
+        ?float $newNetPriceBasisQuantity = null,
+        ?string $newNetPriceBasisQuantityUnit = null
     ): self;
 
     #endregion

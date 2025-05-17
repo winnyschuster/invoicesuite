@@ -3323,5 +3323,22 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionNetPrice(
+        ?float $newNetPrice = null,
+        ?float $newNetPriceBasisQuantity = null,
+        ?string $newNetPriceBasisQuantityUnit = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionNetPrice(
+            $newNetPrice,
+            $newNetPriceBasisQuantity,
+            $newNetPriceBasisQuantityUnit
+        );
+
+        return $this;
+    }
+
     #endregion
 }
