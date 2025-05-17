@@ -7635,5 +7635,459 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         return $this;
     }
 
+    /**
+     * Set the name of the Ship-To party
+     *
+     * @param string $newName __BT-X-50, From EXTENDED__ The full formal name under which the party is registered.
+     * @return self
+     */
+    public function setDocumentPositionShipToName(
+        string $newName
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty
+            ->getNameWithCreate()
+            ->setValue($newName);
+
+        return $this;
+    }
+
+    /**
+     * Set the ID of the Ship-To party
+     *
+     * @param string $newId __BT-X-48, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
+     * @return self
+     */
+    public function setDocumentPositionShipToId(
+        string $newId
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty->clearID();
+
+        $this->addDocumentPositionShipToId($newId);
+
+        return $this;
+    }
+
+    /**
+     * Add an ID to the Ship-To party
+     *
+     * @param string $newId __BT-X-48, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
+     * @return self
+     */
+    public function addDocumentPositionShipToId(
+        string $newId
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty->addToIDWithCreate()->setValue($newId);
+
+        return $this;
+    }
+
+    /**
+     * Set the Global ID of the Ship-To party
+     *
+     * @param string $newGlobalId __BT-X-49, From EXTENDED__ A global identifier of the party.
+     * @param string $newGlobalIdType __BT-X-49-0, From EXTENDED__ Type of the global identifier of the party.
+     * @return self
+     */
+    public function setDocumentPositionShipToGlobalId(
+        string $newGlobalId,
+        string $newGlobalIdType
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty->clearGlobalID();
+
+        $this->addDocumentPositionShipToGlobalId($newGlobalId, $newGlobalIdType);
+
+        return $this;
+    }
+
+    /**
+     * Add an ID to the Ship-To party
+     *
+     * @param string $newGlobalId __BT-X-49, From EXTENDED__ A global identifier of the party.
+     * @param string $newGlobalIdType __BT-X-49-0, From EXTENDED__ Type of the global identifier of the party.
+     * @return self
+     */
+    public function addDocumentPositionShipToGlobalId(
+        string $newGlobalId,
+        string $newGlobalIdType
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty
+            ->addToGlobalIDWithCreate()
+            ->setValue($newGlobalId)
+            ->setSchemeID($newGlobalIdType);
+
+        return $this;
+    }
+
+    /**
+     * Set the Tax Registration of the Ship-To party
+     *
+     * @param string $newTaxRegistrationType __BT-X-66-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string $newTaxRegistrationId __BT-X-66, From EXTENDED__ Tax identification number.
+     * @return self
+     */
+    public function setDocumentPositionShipToTaxRegistration(
+        string $newTaxRegistrationType,
+        string $newTaxRegistrationId
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty->clearSpecifiedTaxRegistration();
+
+        $this->addDocumentPositionShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        return $this;
+    }
+
+    /**
+     * Add an Tax Registration to the Ship-To party
+     *
+     * @param string $newTaxRegistrationType __BT-X-66-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string $newTaxRegistrationId __BT-X-66, From EXTENDED__ Tax identification number.
+     * @return self
+     */
+    public function addDocumentPositionShipToTaxRegistration(
+        string $newTaxRegistrationType,
+        string $newTaxRegistrationId
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty
+            ->addToSpecifiedTaxRegistrationWithCreate()
+            ->getIDWithCreate()
+            ->setValue($newTaxRegistrationId)
+            ->setSchemeID($newTaxRegistrationType);
+
+        return $this;
+    }
+
+    /**
+     * Set the address of the Ship-To party
+     *
+     * @param string $newAddressLine1 __BG-X-59, From EXTENDED__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string $newAddressLine2 __BG-X-60, From EXTENDED__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string $newAddressLine3 __BG-X-61, From EXTENDED__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string $newPostcode __BG-X-58, From EXTENDED__ Zip code of the city or municipality in which the party's address is located.
+     * @param string $newCity __BG-X-62, From EXTENDED__ Name of the city or municipality in which the party's address is located.
+     * @param string $newCountryId __BG-X-63, From EXTENDED__ Country in which the party's address is located.
+     * @param string $newSubDivision __BG-X-64, From EXTENDED__ Region or federal state in which the party's address is located.
+     * @return self
+     */
+    public function setDocumentPositionShipToAddress(
+        string $newAddressLine1,
+        string $newAddressLine2,
+        string $newAddressLine3,
+        string $newPostcode,
+        string $newCity,
+        string $newCountryId,
+        string $newSubDivision
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine1])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getLineOneWithCreate()->setValue($newAddressLine1);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine2])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getLineTwoWithCreate()->setValue($newAddressLine2);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine3])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getLineThreeWithCreate()->setValue($newAddressLine3);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPostcode])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getPostcodeCodeWithCreate()->setValue($newPostcode);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCity])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getCityNameWithCreate()->setValue($newCity);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getCountryIDWithCreate()->setValue($newCountryId);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newSubDivision])) {
+            $shipToTradeParty->getPostalTradeAddressWithCreate()->getCountrySubDivisionNameWithCreate()->setValue($newSubDivision);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the legal information of the Ship-To party
+     *
+     * @param string $newType __BT-X-51-0, From EXTENDED__ Type of the identification number of the legal registration of the party.
+     * @param string $newId __BT-X-51, From EXTENDED__ Identification number of the legal registration of the party.
+     * @param string $newName __BT-X-52, From EXTENDED__ Name by which the party is known, if different from the party's name.
+     * @return self
+     */
+    public function setDocumentPositionShipToLegalOrganisation(
+        string $newType,
+        string $newId,
+        string $newName
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $shipToTradeParty->getSpecifiedLegalOrganizationWithCreate()->getIDWithCreate()->setValue($newId);
+            if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType])) {
+                $shipToTradeParty->getSpecifiedLegalOrganization()->getID()->setSchemeID($newType);
+            }
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $shipToTradeParty->getSpecifiedLegalOrganizationWithCreate()->getTradingBusinessNameWithCreate()->setValue($newName);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the contact information of the Ship-To party
+     *
+     * @param string $newPersonName __BT-X-54, From EXTENDED__ Name of contact person or department or office for the contact point.
+     * @param string $newDepartmentName __BT-X-54-1, From EXTENDED__ Name of the department for the contact point.
+     * @param string $newPhoneNumber __BT-X-55, From EXTENDED__ Telephone number for the contact point.
+     * @param string $newFaxNumber __BT-X-56, From EXTENDED__ Fax number of the contact point.
+     * @param string $newEmailAddress __BT-X-57, From EXTENDED__ E-Mail address of the contact point.
+     * @return self
+     */
+    public function setDocumentPositionShipToContact(
+        string $newPersonName,
+        string $newDepartmentName,
+        string $newPhoneNumber,
+        string $newFaxNumber,
+        string $newEmailAddress
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeParty->clearDefinedTradeContact();
+
+        $this->addDocumentShipToContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Add contact information of the Ship-To party
+     *
+     * @param string $newPersonName __BT-X-54, From EXTENDED__ Name of contact person or department or office for the contact point.
+     * @param string $newDepartmentName __BT-X-54-1, From EXTENDED__ Name of the department for the contact point.
+     * @param string $newPhoneNumber __BT-X-55, From EXTENDED__ Telephone number for the contact point.
+     * @param string $newFaxNumber __BT-X-56, From EXTENDED__ Fax number of the contact point.
+     * @param string $newEmailAddress __BT-X-57, From EXTENDED__ E-Mail address of the contact point.
+     * @return self
+     */
+    public function addDocumentPositionShipToContact(
+        string $newPersonName,
+        string $newDepartmentName,
+        string $newPhoneNumber,
+        string $newFaxNumber,
+        string $newEmailAddress
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToTradeContact = $shipToTradeParty
+            ->addToDefinedTradeContactWithCreate();
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName])) {
+            $shipToTradeContact->getPersonNameWithCreate()->setValue($newPersonName);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newDepartmentName])) {
+            $shipToTradeContact->getDepartmentNameWithCreate()->setValue($newDepartmentName);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPhoneNumber])) {
+            $shipToTradeContact->getTelephoneUniversalCommunicationWithCreate()->getCompleteNumberWithCreate()->setValue($newPhoneNumber);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newFaxNumber])) {
+            $shipToTradeContact->getFaxUniversalCommunicationWithCreate()->getCompleteNumberWithCreate()->setValue($newFaxNumber);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newEmailAddress])) {
+            $shipToTradeContact->getEmailURIUniversalCommunicationWithCreate()->getURIIDWithCreate()->setValue($newEmailAddress);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add communication information of the Ship-To party
+     *
+     * @param string $newType __BT-X-65-0, From EXTENDED__ The type for the party's electronic address.
+     * @param string $newUri __BT-X-65, From EXTENDED__ The party's electronic address.
+     * @return self
+     */
+    public function setDocumentPositionShipToCommunication(
+        string $newType,
+        string $newUri
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newUri])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $shipToTradeParty = $latestPosition
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getShipToTradePartyWithCreate();
+
+        $shipToUniversalCommunication = $shipToTradeParty
+            ->getURIUniversalCommunicationWithCreate();
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType])) {
+            $shipToUniversalCommunication->getURIIDWithCreate()->setSchemeID($newType);
+        }
+
+        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newUri])) {
+            $shipToUniversalCommunication->getURIIDWithCreate()->setValue($newUri);
+        }
+
+        return $this;
+    }
+
     #endregion
 }

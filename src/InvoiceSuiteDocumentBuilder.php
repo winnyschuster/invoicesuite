@@ -3386,5 +3386,203 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToName(
+        string $newName
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToName(
+            $newName
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToId(
+        string $newId
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToId(
+            $newId
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionShipToId(
+        string $newId
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPositionShipToId(
+            $newId
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToGlobalId(
+        string $newGlobalId,
+        string $newGlobalIdType
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToGlobalId(
+            $newGlobalId,
+            $newGlobalIdType
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionShipToGlobalId(
+        string $newGlobalId,
+        string $newGlobalIdType
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPositionShipToGlobalId(
+            $newGlobalId,
+            $newGlobalIdType
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToTaxRegistration(
+        string $newTaxRegistrationType,
+        string $newTaxRegistrationId
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToTaxRegistration(
+            $newTaxRegistrationType,
+            $newTaxRegistrationId
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionShipToTaxRegistration(
+        string $newTaxRegistrationType,
+        string $newTaxRegistrationId
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPositionShipToTaxRegistration(
+            $newTaxRegistrationType,
+            $newTaxRegistrationId
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToAddress(
+        string $newAddressLine1,
+        string $newAddressLine2,
+        string $newAddressLine3,
+        string $newPostcode,
+        string $newCity,
+        string $newCountryId,
+        string $newSubDivision
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToLegalOrganisation(
+        string $newType,
+        string $newId,
+        string $newName
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToLegalOrganisation(
+            $newType,
+            $newId,
+            $newName
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToContact(
+        string $newPersonName,
+        string $newDepartmentName,
+        string $newPhoneNumber,
+        string $newFaxNumber,
+        string $newEmailAddress
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function addDocumentPositionShipToContact(
+        string $newPersonName,
+        string $newDepartmentName,
+        string $newPhoneNumber,
+        string $newFaxNumber,
+        string $newEmailAddress
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->addDocumentPositionShipToContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionShipToCommunication(
+        string $newType,
+        string $newUri
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionShipToCommunication(
+            $newType,
+            $newUri
+        );
+
+        return $this;
+    }
+
     #endregion
 }

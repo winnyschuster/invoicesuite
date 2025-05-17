@@ -200,4 +200,16 @@ $builder->setDocumentPositionNetPriceTax("S", "VAT", 9.0, 7.0, 'Reason', 'Reason
 
 $builder->setDocumentPositionQuantities(10.0, "C62", 2, "KTR", 1, "MTR");
 
+$builder->setDocumentPositionShipToName("User GmbH");
+$builder->setDocumentPositionShipToId("1111111");
+$builder->addDocumentPositionShipToId("1111111-A");
+$builder->setDocumentPositionShipToId("2222222");
+$builder->setDocumentPositionShipToGlobalId("9999999", "0088");
+$builder->setDocumentPositionShipToTaxRegistration("VA", "50970870000");
+$builder->addDocumentPositionShipToTaxRegistration("FC", "99999999999");
+$builder->setDocumentPositionShipToAddress("line1", "line2", "line3", "10175", "Berlin", "DE", "Berlin");
+$builder->setDocumentPositionShipToLegalOrganisation("8884", "99ß0224444", "User AG");
+$builder->addDocumentPositionShipToContact("Alfons Zitterbacke", "Buchhaltung", "030-9991", "030-9992", "alfzit@user-gmbh.de");
+$builder->setDocumentPositionShipToCommunication("EM", "invoice@user-gmbh.de");
+
 echo $builder->saveAsXmlFile(__DIR__ . "/00_SimpleInvoice.xml");
