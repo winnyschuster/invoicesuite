@@ -7176,7 +7176,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
+            ->getSpecifiedLineTradeAgreementWithCreate()
             ->clearAdditionalReferencedDocument();
 
         $this->addDocumentPositionAdditionalReference(
