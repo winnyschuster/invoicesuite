@@ -7087,5 +7087,67 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         return $this;
     }
 
+    /**
+     * @param string|null $newReferenceNumber __BT-X-24, From EXTENDED__ Contract number
+     * @param string|null $newReferenceLineNumber __BT-X-25, From EXTENDED__ Contract line number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-26, From EXTENDED__ Contract number date
+     * @return self
+     */
+    public function setDocumentPositionContractReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+            return $this;
+        }
+
+        $latestPosition = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+
+        $contractOrderReference = $latestPosition
+            ->getSpecifiedLineTradeAgreementWithCreate()
+            ->getContractReferencedDocumentWithCreate();
+
+        $contractOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
+        $contractOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
+
+        if (!InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newReferenceDate])) {
+            $contractOrderReference
+                ->getFormattedIssueDateTimeWithCreate()
+                ->getDateTimeStringWithCreate()
+                ->setValue($newReferenceDate->format("Ymd"))
+                ->setFormat("102");
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string|null $newReferenceNumber __BT-X-24, From EXTENDED__ Contract number
+     * @param string|null $newReferenceLineNumber __BT-X-25, From EXTENDED__ Contract line number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-26, From EXTENDED__ Contract number date
+     * @return self
+     */
+    public function addDocumentPositionContractReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+            return $this;
+        }
+
+        $this->setDocumentPositionContractReference(
+            $newReferenceNumber,
+            $newReferenceLineNumber,
+            $newReferenceDate
+        );
+
+        return $this;
+    }
+
     #endregion
 }
