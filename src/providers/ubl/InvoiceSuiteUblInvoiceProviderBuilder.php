@@ -898,7 +898,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     /**
      * @inheritDoc
      */
-    public function setAocumentSupplyChainEvent(
+    public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
         if (is_null($newDate)) {
@@ -5375,6 +5375,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     public function setDocumentPositionUltimateShipToCommunication(
         string $newType,
         string $newUri
+    ): self {
+        // Nothing here
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionSupplyChainEvent(
+        ?DateTimeInterface $newDate = null
     ): self {
         // Nothing here
 

@@ -499,7 +499,7 @@ interface InvoiceSuiteBuilderContract
      * @param DateTimeInterface|null $newDate Actual delivery date
      * @return self
      */
-    public function setAocumentSupplyChainEvent(
+    public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self;
 
@@ -3502,6 +3502,16 @@ interface InvoiceSuiteBuilderContract
     public function setDocumentPositionUltimateShipToCommunication(
         string $newType,
         string $newUri
+    ): self;
+
+    /**
+     * Set the date of the delivery
+     *
+     * @param DateTimeInterface|null $newDate
+     * @return self
+     */
+    public function setDocumentPositionSupplyChainEvent(
+        ?DateTimeInterface $newDate = null
     ): self;
 
     #endregion

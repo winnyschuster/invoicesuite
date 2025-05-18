@@ -1133,7 +1133,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      * @param DateTimeInterface|null $newDate __BT-72, From BASIC WL__ Actual delivery date
      * @return self
      */
-    public function setAocumentSupplyChainEvent(
+    public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
         if (is_null($newDate)) {
@@ -8083,7 +8083,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty
             ->getNameWithCreate()
@@ -8110,7 +8110,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty->clearID();
 
@@ -8137,7 +8137,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty->addToIDWithCreate()->setValue($newId);
 
@@ -8164,7 +8164,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty->clearGlobalID();
 
@@ -8193,7 +8193,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty
             ->addToGlobalIDWithCreate()
@@ -8223,7 +8223,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty->clearSpecifiedTaxRegistration();
 
@@ -8252,7 +8252,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty
             ->addToSpecifiedTaxRegistrationWithCreate()
@@ -8293,7 +8293,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine1])) {
             $ultimateShipToTradeParty->getPostalTradeAddressWithCreate()->getLineOneWithCreate()->setValue($newAddressLine1);
@@ -8348,7 +8348,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             $ultimateShipToTradeParty->getSpecifiedLegalOrganizationWithCreate()->getIDWithCreate()->setValue($newId);
@@ -8390,7 +8390,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeParty->clearDefinedTradeContact();
 
@@ -8431,7 +8431,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToTradeContact = $ultimateShipToTradeParty
             ->addToDefinedTradeContactWithCreate();
@@ -8479,7 +8479,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $ultimateShipToTradeParty = $latestPosition
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradeParty();
+            ->getUltimateShipToTradePartyWithCreate();
 
         $ultimateShipToUniversalCommunication = $ultimateShipToTradeParty
             ->getURIUniversalCommunicationWithCreate();
@@ -8491,6 +8491,31 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newUri])) {
             $ultimateShipToUniversalCommunication->getURIIDWithCreate()->setValue($newUri);
         }
+
+        return $this;
+    }
+
+    /**
+     * @param DateTimeInterface|null $newDate __BT-72, From BASIC WL__ Actual delivery date
+     * @return self
+     */
+    public function setDocumentPositionSupplyChainEvent(
+        ?DateTimeInterface $newDate = null
+    ): self {
+        if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDate])) {
+            return $this;
+        }
+
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransactionWithCreate()
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
+            ->getSpecifiedLineTradeDeliveryWithCreate()
+            ->getActualDeliverySupplyChainEventWithCreate()
+            ->getOccurrenceDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newDate->format("Ymd"))
+            ->setFormat("102");
 
         return $this;
     }

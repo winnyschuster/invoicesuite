@@ -609,10 +609,10 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
     /**
      * @inheritDoc
      */
-    public function setAocumentSupplyChainEvent(
+    public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
-        $this->getCurrentFormatProvider()->getBuilder()->setAocumentSupplyChainEvent($newDate);
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentSupplyChainEvent($newDate);
 
         return $this;
     }
@@ -3777,6 +3777,19 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToCommunication(
             $newType,
             $newUri
+        );
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setDocumentPositionSupplyChainEvent(
+        ?DateTimeInterface $newDate = null
+    ): self {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionSupplyChainEvent(
+            $newDate
         );
 
         return $this;
