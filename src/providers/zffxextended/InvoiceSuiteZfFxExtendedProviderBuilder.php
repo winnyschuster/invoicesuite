@@ -8709,8 +8709,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     /**
      * Set the start and/or end date of the billing period
      *
-     * @param null|DateTimeInterface $newStartDate __BT-73, From BASIC WL__ Start of the billing period
-     * @param null|DateTimeInterface $newEndDate __BT-74, From BASIC WL__ End of the billing period
+     * @param null|DateTimeInterface $newStartDate __BT-134, From BASIC__ Start of the billing period
+     * @param null|DateTimeInterface $newEndDate __BT-135, From BASIC__ End of the billing period
      * @param null|string $newDescription __BT-X-264, From EXTENDED__ Further information of the billing period (Obsolete)
      * @return InvoiceSuiteBuilderContract
      */
