@@ -5657,7 +5657,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLineWithCreate();
 
-        $allowanceCharge = $latestPosition
+        $latestPosition
             ->getLineExtensionAmountWithCreate()
             ->setValue($newNetAmount);
 
