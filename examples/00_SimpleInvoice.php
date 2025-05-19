@@ -192,6 +192,7 @@ $builder->setDocumentPositionContractReference('CON-2025/0000001', '40', new Dat
 $builder->addDocumentPositionAdditionalReference('ADDDOC-001', '100', new DateTime(), "918", "0815", "Description for additional docuemnt", InvoiceSuiteAttachment::fromBase64String('SWNoIGJpbiBlaW4gVGVzdHRleHQ=', 'att.ext'));
 $builder->addDocumentPositionAdditionalReference('ADDDOC-002', '101', new DateTime(), "918", "0816", "Description for additional docuemnt", InvoiceSuiteAttachment::fromUrl('http://some.url'));
 $builder->addDocumentPositionUltimateCustomerOrderReference('UCOR-0000001', '200', new DateTime());
+$builder->setDocumentPositionDespatchAdviceReference('DESPATCHADV-0000001', '300', new DateTime());
 
 $builder->setDocumentPositionGrossPrice(110.0, 1.0, "C62");
 $builder->addDocumentPositionGrossPriceAllowanceCharge(10, false, 10.0, 100.0, 'Reason', 'ReasonCode');

@@ -3073,6 +3073,34 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
+     * Set an additional despatch advice reference
+     *
+     * @param string|null $newReferenceNumber Shipping notification number
+     * @param string|null $newReferenceLineNumber Shipping notification line number
+     * @param DateTimeInterface|null $newReferenceDate Shipping notification date
+     * @return self
+     */
+    public function setDocumentPositionDespatchAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self;
+
+    /**
+     * Add an additional despatch advice reference
+     *
+     * @param string|null $newReferenceNumber Shipping notification number
+     * @param string|null $newReferenceLineNumber Shipping notification line number
+     * @param DateTimeInterface|null $newReferenceDate Shipping notification date
+     * @return self
+     */
+    public function addDocumentPositionDespatchAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): self;
+
+    /**
      * Set the position's gross price
      *
      * @param null|float $newGrossPrice Unit price excluding sales tax before deduction of the discount on the item price
@@ -3161,7 +3189,7 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Set the position's
+     * Set the position's quantities
      *
      * @param null|float $newQuantity Invoiced quantity
      * @param null|string $newQuantityUnit Invoiced quantity unit
