@@ -46,6 +46,7 @@ trait HandlesSerializer
         $this->serializerBuilder = SerializerBuilder::create();
 
         $this->serializerBuilder->addMetadataDirs($invoiceSuiteAbstractFormatProvider->getSerializerMetadataDirectories());
+        $this->serializerBuilder->setCacheDir(sys_get_temp_dir() . "\jms");
         $this->serializerBuilder->addDefaultListeners();
         $this->serializerBuilder->addDefaultHandlers();
 
