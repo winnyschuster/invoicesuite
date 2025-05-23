@@ -109,7 +109,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         if (!is_null($summation)) {
             $taxTotalAmounts = $summation->getTaxTotalAmount();
-            if (!is_null($taxTotalAmounts) && is_array($taxTotalAmounts)) {
+            if (!is_null($taxTotalAmounts)) {
                 $taxTotalAmount1 = $taxTotalAmounts[0] ?? null;
                 $taxTotalAmount2 = $taxTotalAmounts[1] ?? null;
                 if (!is_null($taxTotalAmount1) && !is_null($invoiceCurrencyCode)) {
@@ -383,7 +383,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      * @param null|DateTimeInterface $newStartDate __BT-73, From BASIC WL__ Start of the billing period
      * @param null|DateTimeInterface $newEndDate __BT-74, From BASIC WL__ End of the billing period
      * @param null|string $newDescription __BT-X-264, From EXTENDED__ Further information of the billing period (Obsolete)
-     * @return InvoiceSuiteBuilderContract
+     * @return self
      */
     public function setDocumentBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
@@ -431,7 +431,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      * @param null|DateTimeInterface $newStartDate __BT-73, From BASIC WL__ Start of the billing period
      * @param null|DateTimeInterface $newEndDate __BT-74, From BASIC WL__ End of the billing period
      * @param null|string $newDescription __BT-X-264, From EXTENDED__ Further information of the billing period (Obsolete)
-     * @return InvoiceSuiteBuilderContract
+     * @return self
      */
     public function addDocumentBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
@@ -6699,7 +6699,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             $positionProductCharacteristic->getTypeCodeWithCreate()->setValue($newProductCharacteristicType);
         }
 
-        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureValue, $newProductCharacteristicMeasureUnit])) {
+        if (
+            !InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureUnit]) &&
+            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureValue])
+        ) {
             $positionProductCharacteristic
                 ->getValueMeasureWithCreate()
                 ->setValue($newProductCharacteristicMeasureValue)
@@ -6902,7 +6905,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             $positionReferencedProduct->getIndustryAssignedIDWithCreate()->setValue($newProductIndustryId);
         }
 
-        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductUnitQuantity, $newProductUnitQuantityUnit])) {
+        if (
+            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newProductUnitQuantity]) &&
+            !InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductUnitQuantityUnit])
+        ) {
             $positionReferencedProduct->getUnitQuantityWithCreate()->setValue($newProductUnitQuantity)->setUnitCode($newProductUnitQuantityUnit);
         }
 

@@ -313,7 +313,7 @@ interface InvoiceSuiteBuilderContract
      * @param string|null $newTypeCode Additional document type code
      * @param string|null $newReferenceTypeCode Additional document reference-type code
      * @param string|null $newDescription Additional document description
-     * @param InvoiceSuiteAttachment|null $InvoiceSuiteAttachment Additional document attachment
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment Additional document attachment
      * @return self
      */
     public function setDocumentAdditionalReference(
@@ -333,7 +333,7 @@ interface InvoiceSuiteBuilderContract
      * @param string|null $newTypeCode Additional document type code
      * @param string|null $newReferenceTypeCode Additional document reference-type code
      * @param string|null $newDescription Additional document description
-     * @param InvoiceSuiteAttachment|null $InvoiceSuiteAttachment Additional document attachment
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment Additional document attachment
      * @return self
      */
     public function addDocumentAdditionalReference(
@@ -3009,7 +3009,7 @@ interface InvoiceSuiteBuilderContract
      * @param string|null $newTypeCode Additional document type code
      * @param string|null $newReferenceTypeCode Additional document reference-type code
      * @param string|null $newDescription Additional document description
-     * @param InvoiceSuiteAttachment|null $InvoiceSuiteAttachment Additional document attachment
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment Additional document attachment
      * @return self
      */
     public function setDocumentPositionAdditionalReference(
@@ -3031,7 +3031,7 @@ interface InvoiceSuiteBuilderContract
      * @param string|null $newTypeCode Additional document type code
      * @param string|null $newReferenceTypeCode Additional document reference-type code
      * @param string|null $newDescription Additional document description
-     * @param InvoiceSuiteAttachment|null $InvoiceSuiteAttachment Additional document attachment
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment Additional document attachment
      * @return self
      */
     public function addDocumentPositionAdditionalReference(

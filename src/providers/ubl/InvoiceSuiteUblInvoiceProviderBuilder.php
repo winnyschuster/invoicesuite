@@ -117,7 +117,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         }
 
         // Update Tax
-        
+
         $taxTotal = $this->getUblInvoiceRootObject()->getTaxTotal();
 
         if (!is_null($taxTotal)) {
@@ -4519,7 +4519,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         }
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount)) {
-            if (is_null($this->getUblInvoiceRootObject()?->getTaxTotal())) {
+            if (is_null($this->getUblInvoiceRootObject()->getTaxTotal())) {
                 $this->getUblInvoiceRootObject()->addToTaxTotalWithCreate();
             }
 
@@ -4527,12 +4527,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         }
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount2)) {
-            if (is_null($this->getUblInvoiceRootObject()?->getTaxTotal())) {
+            if (is_null($this->getUblInvoiceRootObject()->getTaxTotal())) {
                 $this->getUblInvoiceRootObject()->addToTaxTotalWithCreate();
                 $this->getUblInvoiceRootObject()->addToTaxTotalWithCreate();
             }
 
-            if (!isset($this->getUblInvoiceRootObject()?->getTaxTotal()[1])) {
+            if (!isset($this->getUblInvoiceRootObject()->getTaxTotal()[1])) {
                 $this->getUblInvoiceRootObject()->addToTaxTotalWithCreate();
             }
 
@@ -4718,7 +4718,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         $positionProductCharacteristic->getNameWithCreate()->setValue($newProductCharacteristicDescription);
         $positionProductCharacteristic->getValueWithCreate()->setValue($newProductCharacteristicValue);
 
-        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureValue, $newProductCharacteristicMeasureUnit])) {
+        if (
+            !InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureUnit]) &&
+            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureValue])
+        ) {
             $positionProductCharacteristic
                 ->getValueQuantityWithCreate()
                 ->setValue($newProductCharacteristicMeasureValue)
@@ -4766,10 +4769,6 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null
     ): self {
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
-            return $this;
-        }
-
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
             return $this;
         }

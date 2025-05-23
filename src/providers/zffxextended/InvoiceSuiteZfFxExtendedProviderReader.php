@@ -2,6 +2,8 @@
 
 namespace horstoeko\invoicesuite\providers\zffxextended;
 
-class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteZfFxProviderReader
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
+
+class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatProviderReader
 {
 }

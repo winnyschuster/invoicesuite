@@ -32,7 +32,7 @@ class DateTimeType
     /**
      * @return DateTime|null
      */
-    public function getValueWithCreate(): DateTime
+    public function getValueWithCreate(): ?DateTime
     {
         $this->value = is_null($this->value) ? new DateTime() : $this->value;
 
@@ -40,7 +40,7 @@ class DateTimeType
     }
 
     /**
-     * @param DateTime $value
+     * @param DateTime|null $value
      * @return self
      */
     public function setValue(?DateTime $value = null): self
