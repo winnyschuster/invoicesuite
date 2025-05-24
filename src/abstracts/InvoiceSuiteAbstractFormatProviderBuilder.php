@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\abstracts;
 
+use horstoeko\invoicesuite\concerns\HandlesConditionals;
 use JMS\Serializer\SerializationContext;
 use horstoeko\invoicesuite\concerns\HandlesRootObject;
 use horstoeko\invoicesuite\concerns\HandlesSerializer;
@@ -23,6 +24,7 @@ abstract class InvoiceSuiteAbstractFormatProviderBuilder implements InvoiceSuite
     use HandlesCurrentFormatProvider;
     use HandlesRootObject;
     use HandlesSerializer;
+    use HandlesConditionals;
 
     /**
      * Constructor
