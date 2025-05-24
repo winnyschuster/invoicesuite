@@ -1165,11 +1165,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     #region Document Seller/Supplier
 
     /**
-     * @param string $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered.
+     * @param string|null $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered.
      * @return self
      */
     public function setDocumentSellerName(
-        string $newName
+        ?string $newName = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
@@ -1187,11 +1187,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
+     * @param string|null $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
      * @return self
      */
     public function setDocumentSellerId(
-        string $newId
+        ?string $newId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
@@ -1210,11 +1210,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
+     * @param string|null $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
      * @return self
      */
     public function addDocumentSellerId(
-        string $newId
+        ?string $newId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
@@ -1232,13 +1232,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newGlobalId     __BT-29-0, From BASIC WL__ A global identifier of the party.
-     * @param string $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
+     * @param string|null $newGlobalId     __BT-29-0, From BASIC WL__ A global identifier of the party.
+     * @param string|null $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
      * @return self
      */
     public function setDocumentSellerGlobalId(
-        string $newGlobalId,
-        string $newGlobalIdType
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -1257,13 +1257,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newGlobalId     __BT-29-0, From BASIC WL__ A global identifier of the party.
-     * @param string $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
+     * @param string|null $newGlobalId     __BT-29-0, From BASIC WL__ A global identifier of the party.
+     * @param string|null $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
      * @return self
      */
     public function addDocumentSellerGlobalId(
-        string $newGlobalId,
-        string $newGlobalIdType
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -1282,13 +1282,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
+     * @param string|null $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
      * @return self
      */
     public function setDocumentSellerTaxRegistration(
-        string $newTaxRegistrationType,
-        string $newTaxRegistrationId
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
@@ -1307,13 +1307,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
+     * @param string|null $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
      * @return self
      */
     public function addDocumentSellerTaxRegistration(
-        string $newTaxRegistrationType,
-        string $newTaxRegistrationId
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
     ): self {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
@@ -1335,23 +1335,23 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newAddressLine1 __BT-35, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
-     * @param string $newAddressLine2 __BT-36, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
-     * @param string $newAddressLine3 __BT-162, From BASIC WL__ This is an additional address line in an address that can be used to provide additional details in addition to the main line.
-     * @param string $newPostcode     __BT-38, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
-     * @param string $newCity         __BT-37, From BASIC WL__ Name of the city or municipality in which the party's address is located.
-     * @param string $newCountryId    __BT-40, From MINIMUM__ Country in which the party's address is located.
-     * @param string $newSubDivision  __BT-39, From BASIC WL__ Region or federal state in which the party's address is located.
+     * @param string|null $newAddressLine1 __BT-35, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 __BT-36, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 __BT-162, From BASIC WL__ This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode     __BT-38, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity         __BT-37, From BASIC WL__ Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId    __BT-40, From MINIMUM__ Country in which the party's address is located.
+     * @param string|null $newSubDivision  __BT-39, From BASIC WL__ Region or federal state in which the party's address is located.
      * @return self
      */
     public function setDocumentSellerAddress(
-        string $newAddressLine1,
-        string $newAddressLine2,
-        string $newAddressLine3,
-        string $newPostcode,
-        string $newCity,
-        string $newCountryId,
-        string $newSubDivision
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
     ): self {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
@@ -1404,15 +1404,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newType __BT-30-1, From MINIMUM__ Type of the identification number of the legal registration of the party.
-     * @param string $newId   __BT-30, From MINIMUM__ Identification number of the legal registration of the party.
-     * @param string $newName __BT-28, From BASIC WL__ Name by which the party is known, if different from the party's name.
+     * @param string|null $newType __BT-30-1, From MINIMUM__ Type of the identification number of the legal registration of the party.
+     * @param string|null $newId   __BT-30, From MINIMUM__ Identification number of the legal registration of the party.
+     * @param string|null $newName __BT-28, From BASIC WL__ Name by which the party is known, if different from the party's name.
      * @return self
      */
     public function setDocumentSellerLegalOrganisation(
-        string $newType,
-        string $newId,
-        string $newName
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
@@ -1438,19 +1438,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newPersonName     __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
-     * @param string $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
-     * @param string $newPhoneNumber    __BT-42, From EN 16931__ Telephone number for the contact point.
-     * @param string $newFaxNumber      __BT-X-107, From EXTENDED__ Fax number of the contact point.
-     * @param string $newEmailAddress   __BT-43, From EN 16931__ E-Mail address of the contact point.
+     * @param string|null $newPersonName     __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber    __BT-42, From EN 16931__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber      __BT-X-107, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress   __BT-43, From EN 16931__ E-Mail address of the contact point.
      * @return self
      */
     public function setDocumentSellerContact(
-        string $newPersonName,
-        string $newDepartmentName,
-        string $newPhoneNumber,
-        string $newFaxNumber,
-        string $newEmailAddress
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
     ): self {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
@@ -1476,19 +1476,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newPersonName     __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
-     * @param string $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
-     * @param string $newPhoneNumber    __BT-42, From EN 16931__ Telephone number for the contact point.
-     * @param string $newFaxNumber      __BT-X-107, From EXTENDED__ Fax number of the contact point.
-     * @param string $newEmailAddress   __BT-43, From EN 16931__ E-Mail address of the contact point.
+     * @param string|null $newPersonName     __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber    __BT-42, From EN 16931__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber      __BT-X-107, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress   __BT-43, From EN 16931__ E-Mail address of the contact point.
      * @return self
      */
     public function addDocumentSellerContact(
-        string $newPersonName,
-        string $newDepartmentName,
-        string $newPhoneNumber,
-        string $newFaxNumber,
-        string $newEmailAddress
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
     ): self {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
@@ -1532,13 +1532,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * @param string $newType __BT-34-1, From BASIC WL__ The type for the party's electronic address.
-     * @param string $newUri  __BT-34, From BASIC WL__ The party's electronic address.
+     * @param string|null $newType __BT-34-1, From BASIC WL__ The type for the party's electronic address.
+     * @param string|null $newUri  __BT-34, From BASIC WL__ The party's electronic address.
      * @return self
      */
     public function setDocumentSellerCommunication(
-        string $newType,
-        string $newUri
+        ?string $newType = null,
+        ?string $newUri = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newUri])) {
             return $this;

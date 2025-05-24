@@ -952,11 +952,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     #region Document Seller/Supplier
 
     /**
-     * @param string $newName The full formal name under which the party is registered
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerName(
-        string $newName
+        ?string $newName = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
@@ -974,11 +973,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newId An identifier of the seller. In many systems, seller identification is key information. Multiple seller IDs can be assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerId(
-        string $newId
+        ?string $newId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
@@ -1009,11 +1007,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newId An identifier of the seller. In many systems, seller identification is key information. Multiple seller IDs can be assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
-     * @return self
+     * @inheritDoc
      */
     public function addDocumentSellerId(
-        string $newId
+        ?string $newId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
@@ -1032,13 +1029,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newGlobalId     An identifier of the seller. In many systems, seller identification is key information. Multiple seller IDs can be assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
-     * @param string $newGlobalIdType If the identifier is used for the identification scheme, it must be selected from the entries in the list published by the ISO / IEC 6523 Maintenance Agency.
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerGlobalId(
-        string $newGlobalId,
-        string $newGlobalIdType
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -1069,13 +1064,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newGlobalId     An identifier of the seller. In many systems, seller identification is key information. Multiple seller IDs can be assigned or specified. They can be differentiated by using different identification schemes. If no scheme is given, it should be known to the buyer and seller, e.g. a previously exchanged, buyer-assigned identifier of the seller
-     * @param string $newGlobalIdType If the identifier is used for the identification scheme, it must be selected from the entries in the list published by the ISO / IEC 6523 Maintenance Agency.
-     * @return self
+     * @inheritDoc
      */
     public function addDocumentSellerGlobalId(
-        string $newGlobalId,
-        string $newGlobalIdType
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -1095,13 +1088,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newTaxRegistrationType Type of tax number of the seller (FC = Tax number, VA = Sales tax identification number)
-     * @param string $newTaxRegistrationId   Tax number of the seller or sales tax identification number of the seller
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerTaxRegistration(
-        string $newTaxRegistrationType,
-        string $newTaxRegistrationId
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
@@ -1119,13 +1110,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newTaxRegistrationType Type of tax number of the seller (FC = Tax number, VA = Sales tax identification number)
-     * @param string $newTaxRegistrationId   Tax number of the seller or sales tax identification number of the seller
-     * @return self
+     * @inheritDoc
      */
     public function addDocumentSellerTaxRegistration(
-        string $newTaxRegistrationType,
-        string $newTaxRegistrationId
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
@@ -1150,23 +1139,16 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newAddressLine1 The main line in the sellers address. This is usually the street name and house number or the post office box
-     * @param string $newAddressLine2 Line 2 of the seller's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line used to provide additional details in addition to the main line
-     * @param string $newAddressLine3 Line 3 of the seller's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
-     * @param string $newPostcode     Identifier for a group of properties, such as a zip code
-     * @param string $newCity         Usual name of the city or municipality in which the seller's address is located
-     * @param string $newCountryId    Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the representation of names of countries and their subdivisions”
-     * @param string $newSubDivision  The sellers state
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerAddress(
-        string $newAddressLine1,
-        string $newAddressLine2,
-        string $newAddressLine3,
-        string $newPostcode,
-        string $newCity,
-        string $newCountryId,
-        string $newSubDivision
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
     ): self {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
@@ -1216,15 +1198,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newType The identifier for the identification scheme of the legal registration of the seller. If the identification scheme is used, it must be selected from ISO/IEC 6523 list
-     * @param string $newId   An identifier issued by an official registrar that identifies the seller as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided, it should be known to the buyer and seller
-     * @param string $newName A name by which the seller is known, if different from the seller's name (also known as the company name). Note: This may be used if different from the seller's name.
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerLegalOrganisation(
-        string $newType,
-        string $newId,
-        string $newName
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
@@ -1254,19 +1233,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newPersonName     Such as personal name, name of contact person or department or office
-     * @param string $newDepartmentName If a contact person is specified, either the name or the department must be transmitted.
-     * @param string $newPhoneNumber    A telephone number for the contact point
-     * @param string $newFaxNumber      A fax number of the contact point
-     * @param string $newEmailAddress   An e-mail address of the contact point
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerContact(
-        string $newPersonName,
-        string $newDepartmentName,
-        string $newPhoneNumber,
-        string $newFaxNumber,
-        string $newEmailAddress
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
     ): self {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
@@ -1310,31 +1284,24 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * @param string $newPersonName     Such as personal name, name of contact person or department or office
-     * @param string $newDepartmentName If a contact person is specified, either the name or the department must be transmitted.
-     * @param string $newPhoneNumber    A telephone number for the contact point
-     * @param string $newFaxNumber      A fax number of the contact point
-     * @param string $newEmailAddress   An e-mail address of the contact point
-     * @return self
+     * @inheritDoc
      */
     public function addDocumentSellerContact(
-        string $newPersonName,
-        string $newDepartmentName,
-        string $newPhoneNumber,
-        string $newFaxNumber,
-        string $newEmailAddress
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
     ): self {
         return $this->setDocumentSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
     }
 
     /**
-     * @param string $newType The identifier for the identification scheme of the party's electronic address
-     * @param string $newUri  The party's electronic address
-     * @return self
+     * @inheritDoc
      */
     public function setDocumentSellerCommunication(
-        string $newType,
-        string $newUri
+        ?string $newType = null,
+        ?string $newUri = null
     ): self {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newUri])) {
             return $this;
