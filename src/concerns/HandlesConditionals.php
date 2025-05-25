@@ -22,7 +22,7 @@ trait HandlesConditionals
      */
     public function callWhen(bool $condition, callable $callback): void
     {
-        if ($condition === true) {
+        if ($condition) {
             $callback();
         }
     }

@@ -90,7 +90,7 @@ class InvoiceSuiteClassFinder
      */
     public function getClassesWhenItsSubClassOf(string $isSubClassOf, bool $disableCache = false): array
     {
-        if ($disableCache !== true) {
+        if (!$disableCache) {
             $cacheFilename = preg_replace("/[^a-zA-Z0-9]/", "", sprintf("invoicesuite-cf-%s", $isSubClassOf));
             $cacheFilenameFq = PathUtils::combinePathWithFile(sys_get_temp_dir(), $cacheFilename);
 
@@ -121,7 +121,7 @@ class InvoiceSuiteClassFinder
             }
         }
 
-        if ($disableCache !== true) {
+        if (!$disableCache) {
             file_put_contents($cacheFilenameFq, serialize($classes));
         }
 
