@@ -28,7 +28,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document number (e.g. invoice number)
      *
-     * @param  string $newDocumentNo
+     * @param string $newDocumentNo
      * @return static
      */
     public function setDocumentNo(
@@ -38,7 +38,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document type code
      *
-     * @param  string $newDocumentType
+     * @param string $newDocumentType
      * @return static
      */
     public function setDocumentType(
@@ -48,7 +48,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document description
      *
-     * @param  string $newDocumentDescription
+     * @param string $newDocumentDescription
      * @return self
      */
     public function setDocumentDescription(
@@ -58,7 +58,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document language
      *
-     * @param  string $newDocumentLanguage
+     * @param string $newDocumentLanguage
      * @return self
      */
     public function setDocumentLanguage(
@@ -68,7 +68,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document date (e.g. invoice date)
      *
-     * @param  DateTimeInterface $newDocumentDate
+     * @param DateTimeInterface $newDocumentDate
      * @return InvoiceSuiteBuilderContract
      */
     public function setDocumentDate(
@@ -78,7 +78,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document period
      *
-     * @param  DateTimeInterface $newCompleteDate
+     * @param DateTimeInterface $newCompleteDate
      * @return InvoiceSuiteBuilderContract
      */
     public function setDocumentCompleteDate(
@@ -88,7 +88,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document currency
      *
-     * @param  string $newDocumentCurrency
+     * @param string $newDocumentCurrency
      * @return self
      */
     public function setDocumentCurrency(
@@ -98,7 +98,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new document tax currency
      *
-     * @param  string $newDocumentTaxCurrency
+     * @param string $newDocumentTaxCurrency
      * @return self
      */
     public function setDocumentTaxCurrency(
@@ -108,7 +108,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new status of the copy indicator
      *
-     * @param  boolean $newDocumentIsCopy
+     * @param boolean $newDocumentIsCopy
      * @return self
      */
     public function setDocumentIsCopy(
@@ -118,7 +118,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new status of the test indicator
      *
-     * @param  boolean $newDocumentIsTest
+     * @param boolean $newDocumentIsTest
      * @return self
      */
     public function setDocumentIsTest(
@@ -128,9 +128,9 @@ interface InvoiceSuiteBuilderContract
     /**
      * Set a note to the document. This clears all added notes
      *
-     * @param  string $newContent
-     * @param  string $newContentCode
-     * @param  string $newSubjectCode
+     * @param string $newContent
+     * @param string $newContentCode
+     * @param string $newSubjectCode
      * @return self
      */
     public function setDocumentNote(
@@ -142,9 +142,9 @@ interface InvoiceSuiteBuilderContract
     /**
      * Add a note to the document
      *
-     * @param  string $newContent
-     * @param  string $newContentCode
-     * @param  string $newSubjectCode
+     * @param string $newContent
+     * @param string $newContentCode
+     * @param string $newSubjectCode
      * @return self
      */
     public function addDocumentNote(
