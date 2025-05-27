@@ -1255,6 +1255,24 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
+     * Add a name of the seller/supplier party
+     *
+     * @param string|null $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered.
+     * @return self
+     */
+    public function addDocumentSellerName(
+        ?string $newName = null
+    ): self {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            return $this;
+        }
+
+        $this->setDocumentSellerName($newName);
+
+        return $this;
+    }
+
+    /**
      * Set the ID of the seller/supplier party
      *
      * @param string|null $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.

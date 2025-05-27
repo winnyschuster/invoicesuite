@@ -518,6 +518,16 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
+     * Add a name of the seller/supplier party
+     *
+     * @param string|null $newName The full formal name under which the party is registered.
+     * @return self
+     */
+    public function addDocumentSellerName(
+        ?string $newName = null
+    ): self;
+
+    /**
      * Set the ID of the seller/supplier party
      *
      * @param string|null $newId An identifier of the party. In many systems, identification is key information.
