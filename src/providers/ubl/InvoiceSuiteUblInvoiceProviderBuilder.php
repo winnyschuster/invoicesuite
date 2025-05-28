@@ -3,17 +3,18 @@
 namespace horstoeko\invoicesuite\providers\ubl;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
-use horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge;
-use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
-use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
 use horstoeko\invoicesuite\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
+use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
 
 class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatProviderBuilder
 {
@@ -1548,6 +1549,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         $this->setDocumentSellerCommunication($newType, $newUri);
 
+        return $this;
+    }
+
+    /**
+     * Set the seller by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $party
+     * @return self
+     */
+    public function setDocumentSeller(InvoiceSuitePartyDTO $party): self
+    {
         return $this;
     }
 

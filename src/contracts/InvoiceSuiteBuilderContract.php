@@ -10,6 +10,7 @@
 namespace horstoeko\invoicesuite\contracts;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 /**
@@ -703,6 +704,16 @@ interface InvoiceSuiteBuilderContract
     public function addDocumentSellerCommunication(
         ?string $newType = null,
         ?string $newUri = null
+    ): self;
+
+    /**
+     * Set the seller by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $party
+     * @return self
+     */
+    public function setDocumentSeller(
+        InvoiceSuitePartyDTO $party
     ): self;
 
     #endregion

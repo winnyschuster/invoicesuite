@@ -3,14 +3,15 @@
 namespace horstoeko\invoicesuite;
 
 use DateTimeInterface;
-use JMS\Serializer\Exception\InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
+use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
+use JMS\Serializer\Exception\InvalidArgumentException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\contracts\InvoiceSuiteBuilderContract;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 /**
  * Class representing the document builder
@@ -1002,6 +1003,19 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
     public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): self
     {
         $this->getCurrentFormatProvider()->getBuilder()->addDocumentSellerCommunication($newType, $newUri);
+
+        return $this;
+    }
+
+    /**
+     * Set the seller by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $party
+     * @return self
+     */
+    public function setDocumentSeller(InvoiceSuitePartyDTO $party): self
+    {
+        $this->getCurrentFormatProvider()->getBuilder()->setDocumentSeller($party);
 
         return $this;
     }

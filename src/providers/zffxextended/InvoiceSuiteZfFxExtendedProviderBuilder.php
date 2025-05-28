@@ -3,17 +3,18 @@
 namespace horstoeko\invoicesuite\providers\zffxextended;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
+use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\models\zffxextended\ram\DocumentContextParameterType;
-use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentContextType;
 use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentType;
 use horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType;
 use horstoeko\invoicesuite\models\zffxextended\rsm\CrossIndustryInvoiceType;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
+use horstoeko\invoicesuite\models\zffxextended\ram\DocumentContextParameterType;
+use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentContextType;
 
 class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormatProviderBuilder
 {
@@ -1700,6 +1701,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $this->setDocumentSellerCommunication($newType, $newUri);
 
+        return $this;
+    }
+
+    /**
+     * Set the seller by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $party
+     * @return self
+     */
+    public function setDocumentSeller(InvoiceSuitePartyDTO $party): self
+    {
         return $this;
     }
 
