@@ -85,18 +85,18 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<string>
      */
-    public function getName(): array
+    public function getNames(): array
     {
         return $this->name;
     }
 
     /**
-     * @param array<string> $names
+     * @param array<string> $newNames
      * @return self
      */
-    public function setName(array $names): self
+    public function setNames(array $newNames): self
     {
-        $this->name = array_filter($names, function ($name) {
+        $this->name = array_filter($newNames, function ($name) {
             return !InvoiceSuiteStringUtils::stringIsNullOrEmpty($name);
         });
 
@@ -104,16 +104,16 @@ class InvoiceSuitePartyDTO
     }
 
     /**
-     * @param string $name
+     * @param string $newName
      * @return self
      */
-    public function addName(string $name): self
+    public function addName(string $newName): self
     {
-        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($name)) {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
             return $this;
         }
 
-        $this->name[] = $name;
+        $this->name[] = $newName;
 
         return $this;
     }
@@ -121,7 +121,7 @@ class InvoiceSuitePartyDTO
     /**
      * @return bool
      */
-    public function hasName(): bool
+    public function hasNames(): bool
     {
         return $this->name !== [];
     }
@@ -142,35 +142,35 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<InvoiceSuiteIdDTO>
      */
-    public function getId(): array
+    public function getIds(): array
     {
         return $this->id;
     }
 
     /**
-     * @param array<InvoiceSuiteIdDTO> $id
+     * @param array<InvoiceSuiteIdDTO> $newIds
      * @return self
      */
-    public function setId(array $id): self
+    public function setIds(array $newIds): self
     {
-        $this->id = $id;
+        $this->id = $newIds;
         return $this;
     }
 
     /**
-     * @param InvoiceSuiteIdDTO $id
+     * @param InvoiceSuiteIdDTO $newId
      * @return self
      */
-    public function addId(InvoiceSuiteIdDTO $id): self
+    public function addId(InvoiceSuiteIdDTO $newId): self
     {
-        $this->id[] = $id;
+        $this->id[] = $newId;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function hasId(): bool
+    public function hasIds(): bool
     {
         return $this->id !== [];
     }
@@ -191,35 +191,35 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<InvoiceSuiteIdDTO>
      */
-    public function getGlobalId(): array
+    public function getGlobalIds(): array
     {
         return $this->globalId;
     }
 
     /**
-     * @param array<InvoiceSuiteIdDTO> $globalId
+     * @param array<InvoiceSuiteIdDTO> $newGlobalIds
      * @return self
      */
-    public function setGlobalId(array $globalId): self
+    public function setGlobalIds(array $newGlobalIds): self
     {
-        $this->globalId = $globalId;
+        $this->globalId = $newGlobalIds;
         return $this;
     }
 
     /**
-     * @param InvoiceSuiteIdDTO $globalId
+     * @param InvoiceSuiteIdDTO $newGlobalId
      * @return self
      */
-    public function addGlobalId(InvoiceSuiteIdDTO $globalId): self
+    public function addGlobalId(InvoiceSuiteIdDTO $newGlobalId): self
     {
-        $this->globalId[] = $globalId;
+        $this->globalId[] = $newGlobalId;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function hasGlobalId(): bool
+    public function hasGlobalIds(): bool
     {
         return $this->globalId !== [];
     }
@@ -240,35 +240,35 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<InvoiceSuiteIdDTO>
      */
-    public function getTaxRegistration(): array
+    public function getTaxRegistrations(): array
     {
         return $this->taxRegistration;
     }
 
     /**
-     * @param array<InvoiceSuiteIdDTO> $taxRegistration
+     * @param array<InvoiceSuiteIdDTO> $newTaxRegistrations
      * @return self
      */
-    public function setTaxRegistration(array $taxRegistration): self
+    public function setTaxRegistrations(array $newTaxRegistrations): self
     {
-        $this->taxRegistration = $taxRegistration;
+        $this->taxRegistration = $newTaxRegistrations;
         return $this;
     }
 
     /**
-     * @param InvoiceSuiteIdDTO $taxRegistration
+     * @param InvoiceSuiteIdDTO $newTaxRegistration
      * @return self
      */
-    public function addTaxRegistration(InvoiceSuiteIdDTO $taxRegistration): self
+    public function addTaxRegistration(InvoiceSuiteIdDTO $newTaxRegistration): self
     {
-        $this->taxRegistration[] = $taxRegistration;
+        $this->taxRegistration[] = $newTaxRegistration;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function hasTaxRegistration(): bool
+    public function hasTaxRegistrations(): bool
     {
         return $this->taxRegistration !== [];
     }
@@ -289,35 +289,35 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<InvoiceSuiteAddressDTO>
      */
-    public function getAddress(): array
+    public function getAddresses(): array
     {
         return $this->address;
     }
 
     /**
-     * @param array<InvoiceSuiteAddressDTO> $address
+     * @param array<InvoiceSuiteAddressDTO> $newAddresses
      * @return self
      */
-    public function setAddress(array $address): self
+    public function setAddresses(array $newAddresses): self
     {
-        $this->address = $address;
+        $this->address = $newAddresses;
         return $this;
     }
 
     /**
-     * @param InvoiceSuiteAddressDTO $address
+     * @param InvoiceSuiteAddressDTO $newAddress
      * @return self
      */
-    public function addAddress(InvoiceSuiteAddressDTO $address): self
+    public function addAddress(InvoiceSuiteAddressDTO $newAddress): self
     {
-        $this->address[] = $address;
+        $this->address[] = $newAddress;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function hasAddress(): bool
+    public function hasAddresses(): bool
     {
         return $this->address !== [];
     }
@@ -338,35 +338,35 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<InvoiceSuiteOrganisationDTO>
      */
-    public function getOrganisation(): array
+    public function getLogalOrganisations(): array
     {
         return $this->organisation;
     }
 
     /**
-     * @param array<InvoiceSuiteOrganisationDTO> $organisation
+     * @param array<InvoiceSuiteOrganisationDTO> $newLegalOrganisations
      * @return self
      */
-    public function setOrganisation(array $organisation): self
+    public function setLegalOrganisations(array $newLegalOrganisations): self
     {
-        $this->organisation = $organisation;
+        $this->organisation = $newLegalOrganisations;
         return $this;
     }
 
     /**
-     * @param InvoiceSuiteOrganisationDTO $organisation
+     * @param InvoiceSuiteOrganisationDTO $newLegalOrganisation
      * @return self
      */
-    public function addOrganisation(InvoiceSuiteOrganisationDTO $organisation): self
+    public function addLegalOrganisation(InvoiceSuiteOrganisationDTO $newLegalOrganisation): self
     {
-        $this->organisation[] = $organisation;
+        $this->organisation[] = $newLegalOrganisation;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function hasOrganisation(): bool
+    public function hasLegalOrganisations(): bool
     {
         return $this->organisation !== [];
     }
@@ -375,7 +375,7 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachOrganisation(callable $callback): self
+    public function forEachLegalOrganisation(callable $callback): self
     {
         foreach ($this->organisation as $item) {
             $callback($item);
