@@ -1528,6 +1528,16 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
+     * Add a name of the ultimate Ship-To party
+     *
+     * @param string|null $newName The full formal name under which the party is registered.
+     * @return self
+     */
+    public function addDocumentUltimateShipToName(
+        ?string $newName = null
+    ): self;
+
+    /**
      * Set the ID of the ultimate Ship-To party
      *
      * @param string|null $newId An identifier of the party. In many systems, identification is key information.
@@ -1632,6 +1642,20 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
+     * Add a legal information of the ultimate Ship-To party
+     *
+     * @param string|null $newType Type of the identification number of the legal registration of the party.
+     * @param string|null $newId Identification number of the legal registration of the party.
+     * @param string|null $newName Name by which the party is known, if different from the party's name.
+     * @return self
+     */
+    public function addDocumentUltimateShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): self;
+
+    /**
      * Set the contact information of the ultimate Ship-To party
      *
      * @param string|null $newPersonName Name of contact person or department or office for the contact point.
@@ -1668,13 +1692,25 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Add communication information of the ultimate Ship-To party
+     * Set communication information of the ultimate Ship-To party
      *
      * @param string|null $newType The type for the party's electronic address.
      * @param string|null $newUri The party's electronic address.
      * @return self
      */
     public function setDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): self;
+
+    /**
+     * Add a communication information of the ultimate Ship-To party
+     *
+     * @param string|null $newType The type for the party's electronic address.
+     * @param string|null $newUri The party's electronic address.
+     * @return self
+     */
+    public function addDocumentUltimateShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): self;
