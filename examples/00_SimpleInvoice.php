@@ -36,6 +36,7 @@ $sellerDTO->addGlobalId(new InvoiceSuiteIdDTO("11111", "0088"));
 $sellerDTO->addGlobalId(new InvoiceSuiteIdDTO("22222", "0088"));
 $sellerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("893489787987", "VA"));
 $sellerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("893489787987-X", "FC"));
+$sellerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("893489787987-AA", "VA"));
 $sellerDTO->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "06108", "City", "DE", "Bavaria"));
 $sellerDTO->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Lieferant AG"));
 $sellerDTO->addContact(new InvoiceSuiteContactDTO("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@lieferant.de"));

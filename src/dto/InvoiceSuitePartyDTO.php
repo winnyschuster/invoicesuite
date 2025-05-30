@@ -130,9 +130,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachName(callable $callback): self
+    public function forEachName(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->names as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -194,9 +202,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachId(callable $callback): self
+    public function forEachId(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->ids as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -263,9 +279,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachGlobalId(callable $callback): self
+    public function forEachGlobalId(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->globalIds as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -332,9 +356,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachTaxRegistration(callable $callback): self
+    public function forEachTaxRegistration(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->taxRegistrations as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -401,9 +433,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachAddress(callable $callback): self
+    public function forEachAddress(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->addresses as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -470,9 +510,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachLegalOrganisation(callable $callback): self
+    public function forEachLegalOrganisation(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->legalOrganisations as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -539,9 +587,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachContact(callable $callback): self
+    public function forEachContact(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->contacts as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
@@ -608,9 +664,17 @@ class InvoiceSuitePartyDTO
      * @param callable $callback
      * @return self
      */
-    public function forEachCommunication(callable $callback): self
+    public function forEachCommunication(callable $callback, ?int $limit = null): self
     {
+        $count = 0;
+
         foreach ($this->communications as $item) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
             $callback($item);
         }
 
