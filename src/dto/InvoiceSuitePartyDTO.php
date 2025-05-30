@@ -205,12 +205,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callbackelse
      * @return self
      */
-    public function firstId(callable $callback): self
+    public function firstId(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->ids)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;
@@ -269,12 +274,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callbackElse
      * @return self
      */
-    public function firstGlobalId(callable $callback): self
+    public function firstGlobalId(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->globalIds)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;
@@ -333,12 +343,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callbackElse
      * @return self
      */
-    public function firstTaxRegistration(callable $callback): self
+    public function firstTaxRegistration(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->taxRegistrations)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;
@@ -397,12 +412,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callbackElse
      * @return self
      */
-    public function firstAddress(callable $callback): self
+    public function firstAddress(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->addresses)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;
@@ -411,7 +431,7 @@ class InvoiceSuitePartyDTO
     /**
      * @return array<InvoiceSuiteOrganisationDTO>
      */
-    public function getLogalOrganisations(): array
+    public function getLegalOrganisations(): array
     {
         return $this->legalOrganisations;
     }
@@ -461,12 +481,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callbackElse
      * @return self
      */
-    public function firstLogalOrganisation(callable $callback): self
+    public function firstLegalOrganisation(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->legalOrganisations)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;
@@ -525,12 +550,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callback
      * @return self
      */
-    public function firstContact(callable $callback): self
+    public function firstContact(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->contacts)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;
@@ -589,12 +619,17 @@ class InvoiceSuitePartyDTO
 
     /**
      * @param callable $callback
+     * @param callable|null $callback
      * @return self
      */
-    public function firstCommunication(callable $callback): self
+    public function firstCommunication(callable $callback, ?callable $callbackElse = null): self
     {
         if (($name = reset($this->communications)) !== false) {
             $callback($name);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
         }
 
         return $this;

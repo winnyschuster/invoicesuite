@@ -1,13 +1,18 @@
 <?php
 
+use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 require __DIR__ . "/../vendor/autoload.php";
 
 $builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('ublinvoice');
-$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
-//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxxrechnung');
+//$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
 
 $builder->setDocumentNo('2025-04-000001');
 $builder->setDocumentType("380");
@@ -23,20 +28,49 @@ $builder->addDocumentNote("Some content", "CC00", "SC00");
 $builder->addDocumentNote("Some other content", "CC99", "SC99");
 $builder->setDocumentBillingPeriod(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description");
 
+$sellerDTO = new InvoiceSuitePartyDTO();
+$sellerDTO->addName("Lieferant GmbH");
+$sellerDTO->addId(new InvoiceSuiteIdDTO("0815-4711"));
+$sellerDTO->addId(new InvoiceSuiteIdDTO("0815-4712"));
+$sellerDTO->addGlobalId(new InvoiceSuiteIdDTO("11111", "0088"));
+$sellerDTO->addGlobalId(new InvoiceSuiteIdDTO("22222", "0088"));
+$sellerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("893489787987", "VA"));
+$sellerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("893489787987-X", "FC"));
+$sellerDTO->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "06108", "City", "DE", "Bavaria"));
+$sellerDTO->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Lieferant AG"));
+$sellerDTO->addContact(new InvoiceSuiteContactDTO("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@lieferant.de"));
+$sellerDTO->addCommunication(new InvoiceSuiteCommunicationDTO("info@lieferant.de", "EM"));
+
+/*
 $builder->setDocumentSellerName("Lieferant GmbH");
 $builder->setDocumentSellerId("0815-4711");
 $builder->addDocumentSellerId("0815-4712");
 $builder->setDocumentSellerGlobalId("11111", "0088");
 $builder->addDocumentSellerGlobalId("22222", "0088");
-$builder->setDocumentSellerId("0815-4713");
-$builder->setDocumentSellerTaxRegistration("VA", "893489787987");
 $builder->setDocumentSellerTaxRegistration("VA", "893489787987");
 $builder->addDocumentSellerTaxRegistration("FC", "893489787987_x");
 $builder->setDocumentSellerAddress("line1", "line2", "line3", "06108", "City", "DE", "Bavaria");
 $builder->setDocumentSellerLegalOrganisation("8884", "3874837489237", "Lieferant AG");
 $builder->addDocumentSellerContact("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@lieferant.de");
 $builder->setDocumentSellerCommunication("EM", "info@lieferant.de");
+*/
 
+$builder->setDocumentSeller($sellerDTO);
+
+$buyerDTO = new InvoiceSuitePartyDTO();
+$buyerDTO->addName("Kunde GmbH");
+$buyerDTO->addId(new InvoiceSuiteIdDTO("0815-4711"));
+$buyerDTO->addId(new InvoiceSuiteIdDTO("0815-4712"));
+$buyerDTO->addGlobalId(new InvoiceSuiteIdDTO("347364862366467", "0088"));
+$buyerDTO->addGlobalId(new InvoiceSuiteIdDTO("972984923467863", "0088"));
+$buyerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("333355525", "VA"));
+$buyerDTO->addTaxRegistration(new InvoiceSuiteIdDTO("333355526", "VA"));
+$buyerDTO->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "06108", "City", "DE", "Bavaria"));
+$buyerDTO->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Kunde AG"));
+$buyerDTO->addContact(new InvoiceSuiteContactDTO("Lars Müller", "Buchhaltung", "0815-9991", "0815-9992", "la.mue@kunde.de"));
+$buyerDTO->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@kunde.de", "EM"));
+
+/*
 $builder->setDocumentBuyerName("Kunde GmbH");
 $builder->setDocumentBuyerId("0815-4711");
 $builder->addDocumentBuyerId("0815-4712");
@@ -46,7 +80,21 @@ $builder->setDocumentBuyerAddress("line1", "line2", "line3", "06108", "City", "D
 $builder->setDocumentBuyerLegalOrganisation("8884", "3874837489237", "Kunde AG");
 $builder->addDocumentBuyerContact("Lars Müller", "Buchhaltung", "0815-9991", "0815-9992", "la.mue@kunde.de");
 $builder->setDocumentBuyerCommunication("EM", "invoice@kunde.de");
+*/
 
+$builder->setDocumentBuyer($buyerDTO);
+
+$taxRepresentativeDTO = new InvoiceSuitePartyDTO();
+$taxRepresentativeDTO->addName("Tax GmbH");
+$taxRepresentativeDTO->addId(new InvoiceSuiteIdDTO("0901-4711"));
+$taxRepresentativeDTO->addId(new InvoiceSuiteIdDTO("0901-4712"));
+$taxRepresentativeDTO->addGlobalId(new InvoiceSuiteIdDTO("T-1", "0088"));
+$taxRepresentativeDTO->addTaxRegistration(new InvoiceSuiteIdDTO("9089767578", "VA"));
+$taxRepresentativeDTO->addTaxRegistration(new InvoiceSuiteIdDTO("9089767578-1", "VA"));
+$taxRepresentativeDTO->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "04001", "Somewhere", "DE", "Saxonia"));
+$taxRepresentativeDTO->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Tax AG"));
+
+/*
 $builder->setDocumentTaxRepresentativeName("Tax GmbH");
 $builder->setDocumentTaxRepresentativeId("0901-4711");
 $builder->addDocumentTaxRepresentativeId("0901-4712");
@@ -56,7 +104,25 @@ $builder->setDocumentTaxRepresentativeAddress("line1", "line2", "line3", "04001"
 $builder->setDocumentTaxRepresentativeLegalOrganisation("8884", "3874837489237", "Tax AG");
 $builder->addDocumentTaxRepresentativeContact("Karl Schneider", "Buchhaltung", "0901-9991", "0901-9992", "ks@tax-gnbh.de");
 $builder->setDocumentTaxRepresentativeCommunication("EM", "invoice@tax-gmbh.de");
+*/
 
+$builder->setDocumentTaxRepresentative($taxRepresentativeDTO);
+
+$productEndUserDTO = new InvoiceSuitePartyDTO();
+$productEndUserDTO->addName("End-User GmbH");
+$productEndUserDTO->addId(new InvoiceSuiteIdDTO("0201-4711"));
+$productEndUserDTO->addId(new InvoiceSuiteIdDTO("0201-4712"));
+$productEndUserDTO->addGlobalId(new InvoiceSuiteIdDTO("37877787", "0088"));
+$productEndUserDTO->addGlobalId(new InvoiceSuiteIdDTO("37877787-1", "0088"));
+$productEndUserDTO->addTaxRegistration(new InvoiceSuiteIdDTO("333355525", "VA"));
+$productEndUserDTO->addTaxRegistration(new InvoiceSuiteIdDTO("333355525-2", "VA"));
+$productEndUserDTO->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "06108", "OtherCity", "DE", "NRW"));
+$productEndUserDTO->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Kunde AG"));
+$productEndUserDTO->addContact(new InvoiceSuiteContactDTO("Lars Müller", "Buchhaltung", "0815-9991", "0815-9992", "la.mue@end-user.de"));
+$productEndUserDTO->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@end-user.de", "EM"));
+$productEndUserDTO->addCommunication(new InvoiceSuiteCommunicationDTO("invoice-2@end-user.de", "EM"));
+
+/*
 $builder->setDocumentProductEndUserName("End-User GmbH");
 $builder->setDocumentProductEndUserId("0201-4711");
 $builder->addDocumentProductEndUserId("0201-4712");
@@ -66,7 +132,27 @@ $builder->setDocumentProductEndUserAddress("line1", "line2", "line3", "06108", "
 $builder->setDocumentProductEndUserLegalOrganisation("8884", "3874837489237", "Kunde AG");
 $builder->addDocumentProductEndUserContact("Lars Müller", "Buchhaltung", "0815-9991", "0815-9992", "la.mue@end-user.de");
 $builder->setDocumentProductEndUserCommunication("EM", "invoice@end-user.de");
+*/
 
+$builder->setDocumentProductEndUser($productEndUserDTO);
+
+$shipTo = new InvoiceSuitePartyDTO();
+$shipTo->addName("ShipTo GmbH");
+$shipTo->addId(new InvoiceSuiteIdDTO("1111111"));
+$shipTo->addId(new InvoiceSuiteIdDTO("1111111-A"));
+$shipTo->addGlobalId(new InvoiceSuiteIdDTO("9999999", "0088"));
+$shipTo->addGlobalId(new InvoiceSuiteIdDTO("9999999-A", "0088"));
+$shipTo->addGlobalId(new InvoiceSuiteIdDTO("9999999-B", "0088"));
+$shipTo->addTaxRegistration(new InvoiceSuiteIdDTO("50970870000", "VA"));
+$shipTo->addTaxRegistration(new InvoiceSuiteIdDTO("50970870000-A", "VA"));
+$shipTo->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "10175", "Berlin", "DE", "Berlin"));
+$shipTo->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("99ß0224444", "8884", "ShipTo AG"));
+$shipTo->addContact(new InvoiceSuiteContactDTO("Alfons Zitterbacke", "Buchhaltung", "030-9991", "030-9992", "alfzit@shipto-gmbh.de"));
+$shipTo->addContact(new InvoiceSuiteContactDTO("Rolf Zitterbacke", "Controlling", "030-9991", "030-9992", "rolzit@shipto-gmbh.de"));
+$shipTo->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@shipto-gmbh.de", "EM"));
+$shipTo->addCommunication(new InvoiceSuiteCommunicationDTO("invoice-2@shipto-gmbh.de", "EM"));
+
+/*
 $builder->setDocumentShipToName("User GmbH");
 $builder->setDocumentShipToId("1111111");
 $builder->addDocumentShipToId("1111111-A");
@@ -76,7 +162,24 @@ $builder->setDocumentShipToAddress("line1", "line2", "line3", "10175", "Berlin",
 $builder->setDocumentShipToLegalOrganisation("8884", "99ß0224444", "User AG");
 $builder->addDocumentShipToContact("Alfons Zitterbacke", "Buchhaltung", "030-9991", "030-9992", "alfzit@user-gmbh.de");
 $builder->setDocumentShipToCommunication("EM", "invoice@user-gmbh.de");
+*/
 
+$builder->setDocumentShipTo($shipTo);
+
+$ultimateShipTo = new InvoiceSuitePartyDTO();
+$ultimateShipTo->addName("Ultimate User GmbH");
+$ultimateShipTo->addId(new InvoiceSuiteIdDTO("U-1111111"));
+$ultimateShipTo->addId(new InvoiceSuiteIdDTO("U-1111111-A"));
+$ultimateShipTo->addGlobalId(new InvoiceSuiteIdDTO("9999999", "0088"));
+$ultimateShipTo->addGlobalId(new InvoiceSuiteIdDTO("9999999-A", "0088"));
+$ultimateShipTo->addTaxRegistration(new InvoiceSuiteIdDTO("444574987534", "VA"));
+$ultimateShipTo->addTaxRegistration(new InvoiceSuiteIdDTO("444574987534-A", "VA"));
+$ultimateShipTo->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "10176", "Berlin", "DE", "Berlin"));
+$ultimateShipTo->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("99ß0224444", "8884", "Ultimate User AG"));
+$ultimateShipTo->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "030-10001", "030-10001", "alfzit@ultimate-user-gmbh.de"));
+$ultimateShipTo->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@ultimate-user-gmbh.de", "EM"));
+
+/*
 $builder->setDocumentUltimateShipToName("Ultimate User GmbH");
 $builder->setDocumentUltimateShipToId("U-1111111");
 $builder->addDocumentUltimateShipToId("U-1111111-A");
@@ -86,7 +189,24 @@ $builder->setDocumentUltimateShipToAddress("line1", "line2", "line3", "10176", "
 $builder->setDocumentUltimateShipToLegalOrganisation("8884", "99ß0224444", "User AG");
 $builder->addDocumentUltimateShipToContact("Alfons Baum", "Dispo", "030-10001", "030-10001", "alfzit@ultimate-user-gmbh.de");
 $builder->setDocumentUltimateShipToCommunication("EM", "invoice@ultimate-user-gmbh.de");
+*/
 
+$builder->setDocumentUltimateShipTo($ultimateShipTo);
+
+$shipFrom = new InvoiceSuitePartyDTO();
+$shipFrom->addName("Ship-From GmbH");
+$shipFrom->addId(new InvoiceSuiteIdDTO("SF-999999-A"));
+$shipFrom->addId(new InvoiceSuiteIdDTO("SF-999999-B"));
+$shipFrom->addGlobalId(new InvoiceSuiteIdDTO("8888888", "0088"));
+$shipFrom->addGlobalId(new InvoiceSuiteIdDTO("8888888-A", "0088"));
+$shipFrom->addTaxRegistration(new InvoiceSuiteIdDTO("000008080663", "VA"));
+$shipFrom->addTaxRegistration(new InvoiceSuiteIdDTO("000008080663-A", "VA"));
+$shipFrom->addAddress(new InvoiceSuiteAddressDTO("line1", "line2", "line3", "10176", "Düsseldorf", "DE", "NRW"));
+$shipFrom->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("99ß0224444", "8884", "Ship-From AG"));
+$shipFrom->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "0221-10001", "0221-10001", "alfzit@ship-from-gmbh.de"));
+$shipFrom->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@ship-from-gmbh.de", "EM"));
+
+/*
 $builder->setDocumentShipFromName("Ship-From GmbH");
 $builder->setDocumentShipFromId("SF-999999-A");
 $builder->addDocumentShipFromId("SF-999999-B");
@@ -96,7 +216,24 @@ $builder->setDocumentShipFromAddress("line1", "line2", "line3", "10176", "Düsse
 $builder->setDocumentShipFromLegalOrganisation("8884", "99ß0224444", "Ship-From AG");
 $builder->addDocumentShipFromContact("Alfons Baum", "Dispo", "0221-10001", "0221-10001", "alfzit@ship-from-gmbh.de");
 $builder->setDocumentShipFromCommunication("EM", "invoice@ship-from-gmbh.de");
+*/
 
+$builder->setDocumentShipFrom($shipFrom);
+
+$invoicer = new InvoiceSuitePartyDTO();
+$invoicer->addName("Invoicer GmbH");
+$invoicer->addId(new InvoiceSuiteIdDTO("INVOICER-001"));
+$invoicer->addId(new InvoiceSuiteIdDTO("INVOICER-002"));
+$invoicer->addGlobalId(new InvoiceSuiteIdDTO("INVOICER222", "0088"));
+$invoicer->addGlobalId(new InvoiceSuiteIdDTO("INVOICER222-A", "0088"));
+$invoicer->addTaxRegistration(new InvoiceSuiteIdDTO("9989773373", "VA"));
+$invoicer->addTaxRegistration(new InvoiceSuiteIdDTO("9989773373-A", "VA"));
+$invoicer->addAddress(new InvoiceSuiteAddressDTO("Invoicer Street", "Invoicer Street 2", "Invoicer Street 3", "99999", "Invoicer-City", "DE", "RLP"));
+$invoicer->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("Invoicer-Org-Id", "8884", "Invoicer AG"));
+$invoicer->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "0999-10001", "0999-10001", "alfzit@Invoicer-gmbh.de"));
+$invoicer->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@invoicer-gmbh.de", "EM"));
+
+/*
 $builder->setDocumentInvoicerName("Invoicer GmbH");
 $builder->setDocumentInvoicerId("INVOICER-001");
 $builder->addDocumentInvoicerId("INVOICER-002");
@@ -106,7 +243,24 @@ $builder->setDocumentInvoicerAddress("Invoicer Street", "Invoicer Street 2", "In
 $builder->setDocumentInvoicerLegalOrganisation("8884", "Invoicer-Org-Id", "Invoicer AG");
 $builder->addDocumentInvoicerContact("Alfons Baum", "Dispo", "0999-10001", "0999-10001", "alfzit@Invoicer-gmbh.de");
 $builder->setDocumentInvoicerCommunication("EM", "invoice@invoicer-gmbh.de");
+*/
 
+$builder->setDocumentInvoicer($invoicer);
+
+$invoicee = new InvoiceSuitePartyDTO();
+$invoicee->addName("Invoicee GmbH");
+$invoicee->addId(new InvoiceSuiteIdDTO("INVOICEE-001"));
+$invoicee->addId(new InvoiceSuiteIdDTO("INVOICEE-002"));
+$invoicee->addGlobalId(new InvoiceSuiteIdDTO("INVOICEE222", "0088"));
+$invoicee->addGlobalId(new InvoiceSuiteIdDTO("INVOICEE222-A", "0088"));
+$invoicee->addTaxRegistration(new InvoiceSuiteIdDTO("9989773373", "VA"));
+$invoicee->addTaxRegistration(new InvoiceSuiteIdDTO("9989773373-A", "VA"));
+$invoicee->addAddress(new InvoiceSuiteAddressDTO("Invoicee Street", "Invoicee Street 2", "Invoicee Street 3", "99999", "Invoicee-City", "DE", "RLP"));
+$invoicee->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("Invoicee-Org-Id", "8884", "Invoicee AG"));
+$invoicee->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "0999-10001", "0999-10001", "alfzit@Invoicee-gmbh.de"));
+$invoicee->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@Invoicee-gmbh.de", "EM"));
+
+/*
 $builder->setDocumentInvoiceeName("Invoicee GmbH");
 $builder->setDocumentInvoiceeId("INVOICEE-001");
 $builder->addDocumentInvoiceeId("INVOICEE-002");
@@ -116,7 +270,24 @@ $builder->setDocumentInvoiceeAddress("Invoicee Street", "Invoicee Street 2", "In
 $builder->setDocumentInvoiceeLegalOrganisation("8884", "Invoicee-Org-Id", "Invoicee AG");
 $builder->addDocumentInvoiceeContact("Alfons Baum", "Dispo", "0999-10001", "0999-10001", "alfzit@Invoicee-gmbh.de");
 $builder->setDocumentInvoiceeCommunication("EM", "invoice@invoicee-gmbh.de");
+*/
 
+$builder->setDocumentInvoicee($invoicee);
+
+$payee = new InvoiceSuitePartyDTO();
+$payee->addName("Payee GmbH");
+$payee->addId(new InvoiceSuiteIdDTO("PAYEE-001"));
+$payee->addId(new InvoiceSuiteIdDTO("PAYEE-002"));
+$payee->addGlobalId(new InvoiceSuiteIdDTO("PAYEE222", "0088"));
+$payee->addGlobalId(new InvoiceSuiteIdDTO("PAYEE222-A", "0088"));
+$payee->addTaxRegistration(new InvoiceSuiteIdDTO("9989773373", "VA"));
+$payee->addTaxRegistration(new InvoiceSuiteIdDTO("9989773373-A", "VA"));
+$payee->addAddress(new InvoiceSuiteAddressDTO("Payee Street", "Payee Street 2", "Payee Street 3", "99999", "Payee-City", "DE", "RLP"));
+$payee->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("Payee-Org-Id", "8884", "Payee AG"));
+$payee->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "0999-10001", "0999-10001", "alfzit@payee-gmbh.de"));
+$payee->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@payee-gmbh.de", "EM"));
+
+/*
 $builder->setDocumentPayeeName("Payee GmbH");
 $builder->setDocumentPayeeId("PAYEE-001");
 $builder->addDocumentPayeeId("PAYEE-002");
@@ -126,6 +297,9 @@ $builder->setDocumentPayeeAddress("Payee Street", "Payee Street 2", "Payee Stree
 $builder->setDocumentPayeeLegalOrganisation("8884", "Payee-Org-Id", "Payee AG");
 $builder->addDocumentPayeeContact("Alfons Baum", "Dispo", "0999-10001", "0999-10001", "alfzit@payee-gmbh.de");
 $builder->setDocumentPayeeCommunication("EM", "invoice@payee-gmbh.de");
+*/
+
+$builder->setDocumentPayee($payee);
 
 $builder->setDocumentSellerOrderReference('SO-2025/0000001', new DateTime());
 $builder->setDocumentBuyerOrderReference('PO-0000011', new DateTime());

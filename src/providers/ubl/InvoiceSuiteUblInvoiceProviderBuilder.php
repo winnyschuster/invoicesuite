@@ -3,18 +3,23 @@
 namespace horstoeko\invoicesuite\providers\ubl;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
 use horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
+use horstoeko\invoicesuite\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatProviderBuilder
 {
@@ -1554,13 +1559,76 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
-     * Set the seller by a DTO
+     * Set the seller/supplier party by a DTO
      *
-     * @param InvoiceSuitePartyDTO $party
+     * @param InvoiceSuitePartyDTO $newDefinition
      * @return self
      */
-    public function setDocumentSeller(InvoiceSuitePartyDTO $party): self
+    public function setDocumentSeller(InvoiceSuitePartyDTO $newDefinition): self
     {
+        $newDefinition->firstName(
+            fn(string $item) => $this->setDocumentSellerName(
+                $item
+            )
+        );
+
+        $newDefinition->forEachId(
+            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerId(
+                $item->getId()
+            )
+        );
+
+        $newDefinition->forEachGlobalId(
+            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerGlobalId(
+                $item->getId(),
+                $item->getIdType()
+            )
+        );
+
+        $newDefinition->forEachTaxRegistration(
+            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRegistration(
+                $item->getIdType(),
+                $item->getId()
+            )
+        );
+
+        $newDefinition->firstAddress(
+            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerAddress(
+                $item->getAddressLine1(),
+                $item->getAddressLine2(),
+                $item->getAddressLine3(),
+                $item->getPostcode(),
+                $item->getCity(),
+                $item->getCountry(),
+                $item->getSubDivision()
+            )
+        );
+
+        $newDefinition->firstLegalOrganisation(
+            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerLegalOrganisation(
+                $item->getIdType(),
+                $item->getId(),
+                $item->getName()
+            )
+        );
+
+        $newDefinition->firstContact(
+            fn(InvoiceSuiteContactDTO $item) => $this->setDocumentSellerContact(
+                $item->getPersonName(),
+                $item->getDepartmentName(),
+                $item->getPhoneNumber(),
+                $item->getFaxNumber(),
+                $item->getEmailAddress()
+            )
+        );
+
+        $newDefinition->firstCommunication(
+            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerCommunication(
+                $item->getIdType(),
+                $item->getId()
+            )
+        );
+
         return $this;
     }
 
@@ -2058,6 +2126,77 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
+     * Set the buyer/customer party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentBuyer(InvoiceSuitePartyDTO $newDefinition): self
+    {
+        $newDefinition->firstName(
+            fn(string $item) => $this->setDocumentBuyerName(
+                $item
+            )
+        );
+
+        $newDefinition->firstId(
+            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerId(
+                $item->getId()
+            ),
+            fn() => $newDefinition->firstGlobalId(fn($item) => $this->setDocumentBuyerGlobalId(
+                $item->getId(),
+                $item->getIdType()
+            ))
+        );
+
+        $newDefinition->firstTaxRegistration(
+            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerTaxRegistration(
+                $item->getIdType(),
+                $item->getId()
+            )
+        );
+
+        $newDefinition->firstAddress(
+            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentBuyerAddress(
+                $item->getAddressLine1(),
+                $item->getAddressLine2(),
+                $item->getAddressLine3(),
+                $item->getPostcode(),
+                $item->getCity(),
+                $item->getCountry(),
+                $item->getSubDivision()
+            )
+        );
+
+        $newDefinition->firstLegalOrganisation(
+            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentBuyerLegalOrganisation(
+                $item->getIdType(),
+                $item->getId(),
+                $item->getName()
+            )
+        );
+
+        $newDefinition->firstContact(
+            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
+                $item->getPersonName(),
+                $item->getDepartmentName(),
+                $item->getPhoneNumber(),
+                $item->getFaxNumber(),
+                $item->getEmailAddress()
+            )
+        );
+
+        $newDefinition->firstCommunication(
+            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentBuyerCommunication(
+                $item->getIdType(),
+                $item->getId()
+            )
+        );
+
+        return $this;
+    }
+
+    /**
      * Set the name of the tax representative party
      *
      * @param string|null $newName The full formal name under which the party is registered.
@@ -2073,9 +2212,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         $this
             ->getUblInvoiceRootObject()
             ->getTaxRepresentativePartyWithCreate()
-            ->addOnceToPartyLegalEntityWithCreate()
-            ->getRegistrationNameWithCreate()
-            ->setValue($newName);
+            ->clearPartyName();
+
+        $this->addDocumentTaxRepresentativeName($newName);
 
         return $this;
     }
@@ -2093,7 +2232,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             return $this;
         }
 
-        $this->setDocumentTaxRepresentativeName($newName);
+        $this
+            ->getUblInvoiceRootObject()
+            ->getTaxRepresentativePartyWithCreate()
+            ->addToPartyNameWithCreate()
+            ->getNameWithCreate()
+            ->setValue($newName);
 
         return $this;
     }
@@ -2530,6 +2674,42 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
+     * Set the tax representative party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentTaxRepresentative(InvoiceSuitePartyDTO $newDefinition): self
+    {
+        $newDefinition->firstName(
+            fn(string $item) => $this->setDocumentTaxRepresentativeName(
+                $item
+            )
+        );
+
+        $newDefinition->firstTaxRegistration(
+            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration(
+                $item->getIdType(),
+                $item->getId()
+            )
+        );
+
+        $newDefinition->firstAddress(
+            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
+                $item->getAddressLine1(),
+                $item->getAddressLine2(),
+                $item->getAddressLine3(),
+                $item->getPostcode(),
+                $item->getCity(),
+                $item->getCountry(),
+                $item->getSubDivision()
+            )
+        );
+
+        return $this;
+    }
+
+    /**
      * Set the name of the product end-user party
      *
      * @param string|null $newName The full formal name under which the party is registered.
@@ -2749,6 +2929,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
      * @return self
      */
     public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
+    {
+        return $this;
+    }
+
+    /**
+     * Set the product end-user party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentProductEndUser(InvoiceSuitePartyDTO $newDefinition): self
     {
         return $this;
     }
@@ -3070,6 +3261,23 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
+     * Set the Ship-to party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentShipTo(InvoiceSuitePartyDTO $newDefinition): self
+    {
+        $newDefinition->firstName(
+            fn(string $item) => $this->setDocumentShipToName(
+                $item
+            )
+        );
+
+        return $this;
+    }
+
+    /**
      * Set the name of the ultimate Ship-To party
      *
      * @param string|null $newName The full formal name under which the party is registered.
@@ -3289,6 +3497,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
      * @return self
      */
     public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    {
+        return $this;
+    }
+
+    /**
+     * Set the ultimate Ship-to party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentUltimateShipTo(InvoiceSuitePartyDTO $newDefinition): self
     {
         return $this;
     }
@@ -3514,6 +3733,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
+     * Set the Ship-From party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentShipFrom(InvoiceSuitePartyDTO $newDefinition): self
+    {
+        return $this;
+    }
+
+    /**
      * Set the name of the Invoicer party
      *
      * @param string|null $newName The full formal name under which the party is registered.
@@ -3734,6 +3964,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     }
 
     /**
+     * Set the invoicer party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentInvoicer(InvoiceSuitePartyDTO $newDefinition): self
+    {
+        return $this;
+    }
+
+    /**
      * Set the name of the Invoicee party
      *
      * @param string|null $newName The full formal name under which the party is registered.
@@ -3949,6 +4190,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
      * @return self
      */
     public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): self
+    {
+        return $this;
+    }
+
+    /**
+     * Set the Invoicee party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentInvoicee(InvoiceSuitePartyDTO $newDefinition): self
     {
         return $this;
     }
@@ -4417,6 +4669,41 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         }
 
         $this->setDocumentPayeeCommunication($newType, $newUri);
+
+        return $this;
+    }
+
+    /**
+     * Set the invoicee by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentPayee(InvoiceSuitePartyDTO $newDefinition): self
+    {
+        $newDefinition->firstName(
+            fn(string $item) => $this->setDocumentPayeeName(
+                $item
+            )
+        );
+
+        $newDefinition->firstId(
+            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentPayeeId(
+                $item->getId()
+            ),
+            fn() => $newDefinition->firstGlobalId(fn($item) => $this->addDocumentPayeeGlobalId(
+                $item->getId(),
+                $item->getIdType()
+            ))
+        );
+
+        $newDefinition->firstLegalOrganisation(
+            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPayeeLegalOrganisation(
+                $item->getIdType(),
+                $item->getId(),
+                $item->getName()
+            )
+        );
 
         return $this;
     }

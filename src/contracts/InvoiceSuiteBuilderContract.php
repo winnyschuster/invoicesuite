@@ -707,13 +707,13 @@ interface InvoiceSuiteBuilderContract
     ): self;
 
     /**
-     * Set the seller by a DTO
+     * Set the seller/supplier party by a DTO
      *
-     * @param InvoiceSuitePartyDTO $party
+     * @param InvoiceSuitePartyDTO $newDefinition
      * @return self
      */
     public function setDocumentSeller(
-        InvoiceSuitePartyDTO $party
+        InvoiceSuitePartyDTO $newDefinition
     ): self;
 
     #endregion
@@ -918,6 +918,16 @@ interface InvoiceSuiteBuilderContract
         ?string $newUri = null
     ): self;
 
+    /**
+     * Set the buyer/customer party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentBuyer(
+        InvoiceSuitePartyDTO $newDefinition
+    ): self;
+
     #endregion
 
     #region Document Tax Representativ party
@@ -1118,6 +1128,16 @@ interface InvoiceSuiteBuilderContract
     public function addDocumentTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
+    ): self;
+
+    /**
+     * Set the tax representative party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentTaxRepresentative(
+        InvoiceSuitePartyDTO $newDefinition
     ): self;
 
     #endregion
@@ -1322,6 +1342,16 @@ interface InvoiceSuiteBuilderContract
         ?string $newUri = null
     ): self;
 
+    /**
+     * Set the product end-user party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentProductEndUser(
+        InvoiceSuitePartyDTO $newDefinition
+    ): self;
+
     #endregion
 
     #region Document Ship-To
@@ -1522,6 +1552,16 @@ interface InvoiceSuiteBuilderContract
     public function addDocumentShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
+    ): self;
+
+    /**
+     * Set the Ship-to party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentShipTo(
+        InvoiceSuitePartyDTO $newDefinition
     ): self;
 
     #endregion
@@ -1726,6 +1766,16 @@ interface InvoiceSuiteBuilderContract
         ?string $newUri = null
     ): self;
 
+    /**
+     * Set the ultimate Ship-to party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentUltimateShipTo(
+        InvoiceSuitePartyDTO $newDefinition
+    ): self;
+
     #endregion
 
     #region Document Ship-From
@@ -1926,6 +1976,16 @@ interface InvoiceSuiteBuilderContract
     public function addDocumentShipFromCommunication(
         ?string $newType = null,
         ?string $newUri = null
+    ): self;
+
+    /**
+     * Set the Ship-From party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentShipFrom(
+        InvoiceSuitePartyDTO $newDefinition
     ): self;
 
     #endregion
@@ -2130,6 +2190,16 @@ interface InvoiceSuiteBuilderContract
         ?string $newUri = null
     ): self;
 
+    /**
+     * Set the invoicer party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentInvoicer(
+        InvoiceSuitePartyDTO $newDefinition
+    ): self;
+
     #endregion
 
     #region Document Invoicee
@@ -2332,6 +2402,16 @@ interface InvoiceSuiteBuilderContract
         ?string $newUri = null
     ): self;
 
+    /**
+     * Set the Invoicee party by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentInvoicee(
+        InvoiceSuitePartyDTO $newDefinition
+    ): self;
+
     #endregion
 
     #region Document Payee
@@ -2532,6 +2612,16 @@ interface InvoiceSuiteBuilderContract
     public function addDocumentPayeeCommunication(
         ?string $newType = null,
         ?string $newUri = null
+    ): self;
+
+    /**
+     * Set the invoicee by a DTO
+     *
+     * @param InvoiceSuitePartyDTO $newDefinition
+     * @return self
+     */
+    public function setDocumentPayee(
+        InvoiceSuitePartyDTO $newDefinition
     ): self;
 
     #endregion
