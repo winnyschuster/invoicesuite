@@ -240,6 +240,12 @@ $documentDTO
     ->addPaymentmean(
         InvoiceSuitePaymentMeanDTO::createAsDirectDebitSepa('0000000000000815', 'MANDATE-1')
     )
+    ->addPaymentmean(
+        InvoiceSuitePaymentMeanDTO::createAsCreditTransferSepa('payeeiban', 'payeeaccountname', 'payeepropid', 'payeebic', 'paymentref')
+    )
+    ->addPaymentmean(
+        InvoiceSuitePaymentMeanDTO::createAsPaymentCardPayment('cardid', 'cardholder')
+    )
 ;
 
 $builder->createFromDTO($documentDTO);
