@@ -151,7 +151,7 @@ class InvoiceSuiteDocumentDTO
     /**
      * The additional invoice document
      *
-     * @var array<InvoiceSuiteReferenceDTO>
+     * @var array<InvoiceSuiteReferenceExtDTO>
      */
     protected array $invoiceReference = [];
 
@@ -282,7 +282,7 @@ class InvoiceSuiteDocumentDTO
      * @param array<InvoiceSuiteReferenceDTO> $quotationReference The associated quotation
      * @param array<InvoiceSuiteReferenceDTO> $contractReference The associated contract
      * @param array<InvoiceSuiteReferenceExtDTO> $additionalReference The additional associated document
-     * @param array<InvoiceSuiteReferenceDTO> $invoiceReference The additional invoice document
+     * @param array<InvoiceSuiteReferenceExtDTO> $invoiceReference The additional invoice document
      * @param array<InvoiceSuiteProjectDTO> $projectReference The project reference
      * @param array<InvoiceSuiteReferenceDTO> $ultimateCustomerOrderReference The ultimate customer order reference
      * @param array<InvoiceSuiteReferenceDTO> $despatchAdviceReference The despatch advice reference
@@ -1807,7 +1807,7 @@ class InvoiceSuiteDocumentDTO
     /**
      * Returns the additional invoice document
      *
-     * @return array<InvoiceSuiteReferenceDTO>
+     * @return array<InvoiceSuiteReferenceExtDTO>
      */
     public function getInvoiceReference(): array
     {
@@ -1817,7 +1817,7 @@ class InvoiceSuiteDocumentDTO
     /**
      * Sets the additional invoice document
      *
-     * @param array<InvoiceSuiteReferenceDTO> $invoiceReference The additional invoice document
+     * @param array<InvoiceSuiteReferenceExtDTO> $invoiceReference The additional invoice document
      * @return self
      */
     public function setInvoiceReference(array $invoiceReference): self
@@ -1830,10 +1830,10 @@ class InvoiceSuiteDocumentDTO
     /**
      * Add single The additional invoice document
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $invoiceReference The additional invoice document
+     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO $invoiceReference The additional invoice document
      * @return self
      */
-    public function addInvoiceReference(InvoiceSuiteReferenceDTO $invoiceReference): self
+    public function addInvoiceReference(InvoiceSuiteReferenceExtDTO $invoiceReference): self
     {
         $this->invoiceReference[] = $invoiceReference;
 

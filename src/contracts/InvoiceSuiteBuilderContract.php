@@ -10,6 +10,7 @@
 namespace horstoeko\invoicesuite\contracts;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 /**
@@ -23,6 +24,20 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
  */
 interface InvoiceSuiteBuilderContract
 {
+    #region Document DTO
+
+    /**
+     * Create a document by a DTO
+     *
+     * @param InvoiceSuiteDocumentDTO $newDocumentDTO Data-Transfer-Object
+     * @return self
+     */
+    public function createFromDTO(
+        InvoiceSuiteDocumentDTO $newDocumentDTO
+    ): self;
+
+    #endregion
+
     #region Document Generals
 
     /**
@@ -108,21 +123,21 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new status of the copy indicator
      *
-     * @param boolean $newDocumentIsCopy Indicates that the document is a copy
+     * @param boolean<null $newDocumentIsCopy Indicates that the document is a copy
      * @return self
      */
     public function setDocumentIsCopy(
-        bool $newDocumentIsCopy
+        ?bool $newDocumentIsCopy = null
     ): self;
 
     /**
      * Sets the new status of the test indicator
      *
-     * @param boolean $newDocumentIsTest Indicates that the document is a test
+     * @param boolean|null $newDocumentIsTest Indicates that the document is a test
      * @return self
      */
     public function setDocumentIsTest(
-        bool $newDocumentIsTest
+        ?bool $newDocumentIsTest = null
     ): self;
 
     /**

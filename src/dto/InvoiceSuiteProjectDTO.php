@@ -18,25 +18,25 @@ class InvoiceSuiteProjectDTO
      *
      * @var string|null
      */
-    protected ?string $referenceNumber = null;
+    protected ?string $projectNumber = null;
 
     /**
      * The project name
      *
      * @var string|null
      */
-    protected ?string $referenceName = null;
+    protected ?string $projectName = null;
 
     /**
      * Constructor
      *
-     * @param string|null $referenceNumber The project number
-     * @param string|null $referenceName The project name
+     * @param string|null $projectNumber The project number
+     * @param string|null $projectName The project name
      */
-    public function __construct(?string $referenceNumber = null, ?string $referenceName = null)
+    public function __construct(?string $projectNumber = null, ?string $projectName = null)
     {
-        $this->setReferenceNumber($referenceNumber);
-        $this->setReferenceName($referenceName);
+        $this->setProjectNumber($projectNumber);
+        $this->setProjectName($projectName);
     }
 
     /**
@@ -44,20 +44,20 @@ class InvoiceSuiteProjectDTO
      *
      * @return string|null
      */
-    public function getReferenceNumber(): ?string
+    public function getProjectNumber(): ?string
     {
-        return $this->referenceNumber;
+        return $this->projectNumber;
     }
 
     /**
      * Sets the project number
      *
-     * @param string|null $referenceNumber The project number
+     * @param string|null $projectNumber The project number
      * @return self
      */
-    public function setReferenceNumber(?string $referenceNumber): self
+    public function setProjectNumber(?string $projectNumber): self
     {
-        $this->referenceNumber = $referenceNumber;
+        $this->projectNumber = $projectNumber;
 
         return $this;
     }
@@ -67,20 +67,20 @@ class InvoiceSuiteProjectDTO
      *
      * @return string|null
      */
-    public function getReferenceName(): ?string
+    public function getProjectName(): ?string
     {
-        return $this->referenceName;
+        return $this->projectName;
     }
 
     /**
      * Sets the project name
      *
-     * @param string|null $referenceName The project name
+     * @param string|null $projectName The project name
      * @return self
      */
-    public function setReferenceName(?string $referenceName): self
+    public function setProjectName(?string $projectName): self
     {
-        $this->referenceName = $referenceName;
+        $this->projectName = $projectName;
 
         return $this;
     }

@@ -3,23 +3,27 @@
 namespace horstoeko\invoicesuite\providers\zffxextended;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteNoteDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
-use horstoeko\invoicesuite\models\zffxextended\ram\DocumentContextParameterType;
-use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentContextType;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentType;
 use horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType;
 use horstoeko\invoicesuite\models\zffxextended\rsm\CrossIndustryInvoiceType;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
+use horstoeko\invoicesuite\models\zffxextended\ram\DocumentContextParameterType;
+use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentContextType;
 
 class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormatProviderBuilder
 {
@@ -125,6 +129,607 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                 }
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * Create a document by a DTO
+     *
+     * @param InvoiceSuiteDocumentDTO $newDocumentDTO Data-Transfer-Object
+     * @return self
+     */
+    public function createFromDTO(
+        InvoiceSuiteDocumentDTO $newDocumentDTO
+    ): self {
+        $this->setDocumentNo($newDocumentDTO->getNumber());
+        $this->setDocumentType($newDocumentDTO->getType());
+        $this->setDocumentDescription($newDocumentDTO->getDescription());
+        $this->setDocumentLanguage($newDocumentDTO->getLanguage());
+        $this->setDocumentDate($newDocumentDTO->getDate());
+        $this->setDocumentCompleteDate($newDocumentDTO->getCompleteDate());
+        $this->setDocumentCurrency($newDocumentDTO->getCurrency());
+        $this->setDocumentTaxCurrency($newDocumentDTO->getTaxCurrency());
+        $this->setDocumentIsTest($newDocumentDTO->getIsTest());
+        $this->setDocumentIsCopy($newDocumentDTO->getIsCopy());
+
+        $newDocumentDTO->forEachNote(fn(InvoiceSuiteNoteDTO $note) => $this->addDocumentNote(
+            $note->getContent(),
+            $note->getContentCode(),
+            $note->getSubjectCode()
+        ));
+
+        $newDocumentDTO
+            ->getSellerParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentSellerName($item)
+            )
+            ->forEachId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerGlobalId($item->getId(), $item->getIdType())
+            )
+            ->forEachTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentSellerContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getBuyerParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentBuyerName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentBuyerGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentBuyerAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentBuyerLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentBuyerCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getTaxRepresentativeParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentTaxRepresentativeName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentTaxRepresentativeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentTaxRepresentativeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentTaxRepresentativeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getProductEndUserParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentProductEndUserName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentProductEndUserGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentProductEndUserAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentProductEndUserLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentProductEndUserContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentProductEndUserCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getShipToParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentShipToName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentShipToGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipToAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipToLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentShipToContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipToCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getUltimateShipToParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentUltimateShipToName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentUltimateShipToGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentUltimateShipToAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentUltimateShipToLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentUltimateShipToContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentUltimateShipToCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getShipFromParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentShipfromName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentShipfromGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipfromAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipfromLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentShipfromContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipfromCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getInvoicerParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentInvoicerName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentInvoicerGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoicerAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoicerLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentInvoicerContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoicerCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getInvoiceeParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentInvoiceeName($item)
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeId($item->getId())
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentInvoiceeGlobalId($item->getId(), $item->getIdType())
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoiceeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoiceeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentInvoiceeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoiceeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO
+            ->getPayeeParty()
+            ->firstName(
+                fn(string $item) => $this->setDocumentPayeeName(
+                    $item
+                )
+            )
+            ->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeId(
+                    $item->getId()
+                )
+            )
+            ->forEachGlobalId(
+                fn(InvoiceSuiteIdDTO $item) => $this->addDocumentPayeeGlobalId(
+                    $item->getId(),
+                    $item->getIdType()
+                )
+            )
+            ->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeTaxRegistration(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            )
+            ->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentPayeeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPayeeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ->forEachContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentPayeeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPayeeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        $newDocumentDTO->firstSellerOrderReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentSellerOrderReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            ));
+
+        $newDocumentDTO->firstBuyerOrderReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentBuyerOrderReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            ));
+
+        $newDocumentDTO->firstQuotationReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentQuotationReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            ));
+
+        $newDocumentDTO->firstContractReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentContractReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            ));
+
+        $newDocumentDTO->forEachAdditionalReference(
+            fn(InvoiceSuiteReferenceExtDTO $item) => $this->addDocumentAdditionalReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate(),
+                $item->getTypeCode(),
+                $item->getReferenceTypeCode(),
+                $item->getDescription(),
+                $item->getAttachment()
+            )
+        );
+
+        $newDocumentDTO->forEachInvoiceReference(
+            fn(InvoiceSuiteReferenceExtDTO $item) => $this->addDocumentInvoiceReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate(),
+                $item->getTypeCode()
+            )
+        );
+
+        $newDocumentDTO->firstProjectReference(
+            fn(InvoiceSuiteProjectDTO $item) => $this->setDocumentProjectReference(
+                $item->getProjectNumber(),
+                $item->getProjectName()
+            )
+        );
+
+        $newDocumentDTO->forEachUltimateCustomerOrderReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->addDocumentUltimateCustomerOrderReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        $newDocumentDTO->firstDespatchAdviceReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentDespatchAdviceReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        $newDocumentDTO->firstReceivingAdviceReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentReceivingAdviceReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        $newDocumentDTO->firstDeliveryNoteReference(
+            fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentDeliveryNoteReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        $this->setDocumentSupplyChainEvent($newDocumentDTO->getSupplyChainEvent());
 
         return $this;
     }
@@ -319,11 +924,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     /**
      * Sets the new status of the copy indicator
      *
-     * @param boolean $newDocumentIsCopy __BT-X-1-00, From EXTENDED__ Indicates that the document is a copy
+     * @param boolean|null $newDocumentIsCopy __BT-X-1-00, From EXTENDED__ Indicates that the document is a copy
      * @return self
      */
     public function setDocumentIsCopy(
-        bool $newDocumentIsCopy
+        ?bool $newDocumentIsCopy = null
     ): self {
         $this
             ->getCrossIndustryRootObject()
@@ -337,11 +942,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     /**
      * Sets the new status of the test indicator
      *
-     * @param boolean $newDocumentIsTest __BT-X-3-00, From EXTENDED__ Indicates that the document is a test
+     * @param boolean|null $newDocumentIsTest __BT-X-3-00, From EXTENDED__ Indicates that the document is a test
      * @return self
      */
     public function setDocumentIsTest(
-        bool $newDocumentIsTest
+        ?bool $newDocumentIsTest = null
     ): self {
         $this
             ->getCrossIndustryRootObject()
@@ -1711,80 +2316,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * Set the seller/supplier party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentSeller(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentSellerName(
-                $item
-            )
-        );
-
-        $newDefinition->forEachId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->forEachTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentSellerContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        return $this;
-    }
-
-    /**
      * Set the name of the buyer/customer party
      *
      * @param string|null $newName __BT-44, From MINIMUM__ The full formal name under which the party is registered.
@@ -2259,80 +2790,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         }
 
         $this->setDocumentBuyerCommunication($newType, $newUri);
-
-        return $this;
-    }
-
-    /**
-     * Set the buyer/customer party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentBuyer(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentBuyerName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentBuyerGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentBuyerAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentBuyerLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentBuyerCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
 
         return $this;
     }
@@ -2821,80 +3278,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * Set the tax representative party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentTaxRepresentative(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentTaxRepresentativeName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentTaxRepresentativeGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentTaxRepresentativeLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentTaxRepresentativeContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentTaxRepresentativeCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        return $this;
-    }
-
-    /**
      * Set the name of the product end-user party
      *
      * @param string|null $newName __BT-X-128, From EXTENDED__ The full formal name under which the party is registered.
@@ -3378,80 +3761,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * Set the product end-user party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentProductEndUser(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentProductEndUserName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentProductEndUserGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentProductEndUserAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentProductEndUserLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentProductEndUserContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentProductEndUserCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        return $this;
-    }
-
-    /**
      * Set the name of the Ship-To party
      *
      * @param string|null $newName __BT-70, From BASIC WL__ The full formal name under which the party is registered.
@@ -3926,80 +4235,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         }
 
         $this->setDocumentShipToCommunication($newType, $newUri);
-
-        return $this;
-    }
-
-    /**
-     * Set the Ship-to party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentShipTo(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentShipToName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentShipToGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipToAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipToLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentShipToContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipToCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
 
         return $this;
     }
@@ -4488,80 +4723,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * Set the ultimate Ship-to party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentUltimateShipTo(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentUltimateShipToName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentUltimateShipToGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentUltimateShipToAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentUltimateShipToLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentUltimateShipToContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentUltimateShipToCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        return $this;
-    }
-
-    /**
      * Set the name of the Ship-From party
      *
      * @param string|null $newName __BT-X-183, From EXTENDED__ The full formal name under which the party is registered.
@@ -5036,80 +5197,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         }
 
         $this->setDocumentShipFromCommunication($newType, $newUri);
-
-        return $this;
-    }
-
-    /**
-     * Set the Ship-From party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentShipFrom(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentShipfromName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentShipfromGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipfromAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipfromLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentShipfromContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipfromCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
 
         return $this;
     }
@@ -5594,80 +5681,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * Set the invoicer party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentInvoicer(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentInvoicerName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentInvoicerGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoicerAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoicerLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentInvoicerContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoicerCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        return $this;
-    }
-
-    /**
      * Set the name of the Invoicee party
      *
      * @param string|null $newName __BT-X-226, From EXTENDED__ The full formal name under which the party is registered.
@@ -6147,80 +6160,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     }
 
     /**
-     * Set the Invoicee party by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentInvoicee(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentInvoiceeName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentInvoiceeGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoiceeAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoiceeLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentInvoiceeContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoiceeCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        return $this;
-    }
-
-    /**
      * Set the name of the Payee party
      *
      * @param string|null $newName __BT-59, From BASIC WL__ The full formal name under which the party is registered.
@@ -6695,80 +6634,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         }
 
         $this->setDocumentPayeeCommunication($newType, $newUri);
-
-        return $this;
-    }
-
-    /**
-     * Set the invoicee by a DTO
-     *
-     * @param InvoiceSuitePartyDTO $newDefinition
-     * @return self
-     */
-    public function setDocumentPayee(InvoiceSuitePartyDTO $newDefinition): self
-    {
-        $newDefinition->firstName(
-            fn(string $item) => $this->setDocumentPayeeName(
-                $item
-            )
-        );
-
-        $newDefinition->firstId(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeId(
-                $item->getId()
-            )
-        );
-
-        $newDefinition->forEachGlobalId(
-            fn(InvoiceSuiteIdDTO $item) => $this->addDocumentPayeeGlobalId(
-                $item->getId(),
-                $item->getIdType()
-            )
-        );
-
-        $newDefinition->firstTaxRegistration(
-            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeTaxRegistration(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
-
-        $newDefinition->firstAddress(
-            fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentPayeeAddress(
-                $item->getAddressLine1(),
-                $item->getAddressLine2(),
-                $item->getAddressLine3(),
-                $item->getPostcode(),
-                $item->getCity(),
-                $item->getCountry(),
-                $item->getSubDivision()
-            )
-        );
-
-        $newDefinition->firstLegalOrganisation(
-            fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPayeeLegalOrganisation(
-                $item->getIdType(),
-                $item->getId(),
-                $item->getName()
-            )
-        );
-
-        $newDefinition->forEachContact(
-            fn(InvoiceSuiteContactDTO $item) => $this->addDocumentPayeeContact(
-                $item->getPersonName(),
-                $item->getDepartmentName(),
-                $item->getPhoneNumber(),
-                $item->getFaxNumber(),
-                $item->getEmailAddress()
-            )
-        );
-
-        $newDefinition->firstCommunication(
-            fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPayeeCommunication(
-                $item->getIdType(),
-                $item->getId()
-            )
-        );
 
         return $this;
     }
