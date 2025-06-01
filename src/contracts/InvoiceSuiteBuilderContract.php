@@ -123,7 +123,7 @@ interface InvoiceSuiteBuilderContract
     /**
      * Sets the new status of the copy indicator
      *
-     * @param boolean<null $newDocumentIsCopy Indicates that the document is a copy
+     * @param boolean|null $newDocumentIsCopy Indicates that the document is a copy
      * @return self
      */
     public function setDocumentIsCopy(

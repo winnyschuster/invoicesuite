@@ -662,7 +662,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The notes for this document
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteNoteDTO $note The notes for this document
+     * @param InvoiceSuiteNoteDTO $note The notes for this document
      * @return self
      */
     public function addNote(InvoiceSuiteNoteDTO $note): self
@@ -807,7 +807,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The start and/or end date of the billing period
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO $billingPeriod The start and/or end date of the billing period
+     * @param InvoiceSuitePeriodDTO $billingPeriod The start and/or end date of the billing period
      * @return self
      */
     public function addBillingPeriod(InvoiceSuitePeriodDTO $billingPeriod): self
@@ -952,7 +952,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The posting reference
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO $postingReference The posting reference
+     * @param InvoiceSuiteIdDTO $postingReference The posting reference
      * @return self
      */
     public function addPostingReference(InvoiceSuiteIdDTO $postingReference): self
@@ -1100,7 +1100,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The associated seller's order confirmation
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $sellerOrderReference The associated seller's order confirmation
+     * @param InvoiceSuiteReferenceDTO $sellerOrderReference The associated seller's order confirmation
      * @return self
      */
     public function addSellerOrderReference(InvoiceSuiteReferenceDTO $sellerOrderReference): self
@@ -1248,7 +1248,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The associated buyer's order
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $buyerOrderReference The associated buyer's order
+     * @param InvoiceSuiteReferenceDTO $buyerOrderReference The associated buyer's order
      * @return self
      */
     public function addBuyerOrderReference(InvoiceSuiteReferenceDTO $buyerOrderReference): self
@@ -1396,7 +1396,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The associated quotation
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $quotationReference The associated quotation
+     * @param InvoiceSuiteReferenceDTO $quotationReference The associated quotation
      * @return self
      */
     public function addQuotationReference(InvoiceSuiteReferenceDTO $quotationReference): self
@@ -1544,7 +1544,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The associated contract
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $contractReference The associated contract
+     * @param InvoiceSuiteReferenceDTO $contractReference The associated contract
      * @return self
      */
     public function addContractReference(InvoiceSuiteReferenceDTO $contractReference): self
@@ -1692,7 +1692,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The additional associated document
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO $additionalReference The additional associated document
+     * @param InvoiceSuiteReferenceExtDTO $additionalReference The additional associated document
      * @return self
      */
     public function addAdditionalReference(InvoiceSuiteReferenceExtDTO $additionalReference): self
@@ -1840,7 +1840,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The additional invoice document
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO $invoiceReference The additional invoice document
+     * @param InvoiceSuiteReferenceExtDTO $invoiceReference The additional invoice document
      * @return self
      */
     public function addInvoiceReference(InvoiceSuiteReferenceExtDTO $invoiceReference): self
@@ -1988,7 +1988,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The project reference
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO $projectReference The project reference
+     * @param InvoiceSuiteProjectDTO $projectReference The project reference
      * @return self
      */
     public function addProjectReference(InvoiceSuiteProjectDTO $projectReference): self
@@ -2136,7 +2136,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The ultimate customer order reference
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $ultimateCustomerOrderReference The ultimate customer order reference
+     * @param InvoiceSuiteReferenceDTO $ultimateCustomerOrderReference The ultimate customer order reference
      * @return self
      */
     public function addUltimateCustomerOrderReference(InvoiceSuiteReferenceDTO $ultimateCustomerOrderReference): self
@@ -2284,7 +2284,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The despatch advice reference
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $despatchAdviceReference The despatch advice reference
+     * @param InvoiceSuiteReferenceDTO $despatchAdviceReference The despatch advice reference
      * @return self
      */
     public function addDespatchAdviceReference(InvoiceSuiteReferenceDTO $despatchAdviceReference): self
@@ -2432,7 +2432,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The receiving advice reference
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $receivingAdviceReference The receiving advice reference
+     * @param InvoiceSuiteReferenceDTO $receivingAdviceReference The receiving advice reference
      * @return self
      */
     public function addReceivingAdviceReference(InvoiceSuiteReferenceDTO $receivingAdviceReference): self
@@ -2580,7 +2580,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The delivery note reference
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO $deliveryNoteReference The delivery note reference
+     * @param InvoiceSuiteReferenceDTO $deliveryNoteReference The delivery note reference
      * @return self
      */
     public function addDeliveryNoteReference(InvoiceSuiteReferenceDTO $deliveryNoteReference): self
@@ -2958,7 +2958,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The Document positions
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO $positions The Document positions
+     * @param InvoiceSuiteDocumentPositionDTO $positions The Document positions
      * @return self
      */
     public function addPositions(InvoiceSuiteDocumentPositionDTO $positions): self

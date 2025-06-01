@@ -272,7 +272,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party IDs
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO $id Party IDs
+     * @param InvoiceSuiteIdDTO $id Party IDs
      * @return self
      */
     public function addId(InvoiceSuiteIdDTO $id): self
@@ -417,7 +417,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party global IDs
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO $globalId Party global IDs
+     * @param InvoiceSuiteIdDTO $globalId Party global IDs
      * @return self
      */
     public function addGlobalId(InvoiceSuiteIdDTO $globalId): self
@@ -562,7 +562,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party tax registrations
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO $taxRegistration Party tax registrations
+     * @param InvoiceSuiteIdDTO $taxRegistration Party tax registrations
      * @return self
      */
     public function addTaxRegistration(InvoiceSuiteIdDTO $taxRegistration): self
@@ -710,7 +710,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party addresses
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO $address Party addresses
+     * @param InvoiceSuiteAddressDTO $address Party addresses
      * @return self
      */
     public function addAddress(InvoiceSuiteAddressDTO $address): self
@@ -855,7 +855,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party legal organisations
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO $legalOrganisation Party legal organisations
+     * @param InvoiceSuiteOrganisationDTO $legalOrganisation Party legal organisations
      * @return self
      */
     public function addLegalOrganisation(InvoiceSuiteOrganisationDTO $legalOrganisation): self
@@ -1003,7 +1003,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party contacts
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO $contact Party contacts
+     * @param InvoiceSuiteContactDTO $contact Party contacts
      * @return self
      */
     public function addContact(InvoiceSuiteContactDTO $contact): self
@@ -1148,7 +1148,7 @@ class InvoiceSuitePartyDTO
     /**
      * Add single Party electronic communications
      *
-     * @param horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO $communication Party electronic communications
+     * @param InvoiceSuiteCommunicationDTO $communication Party electronic communications
      * @return self
      */
     public function addCommunication(InvoiceSuiteCommunicationDTO $communication): self

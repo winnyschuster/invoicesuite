@@ -448,7 +448,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             );
 
         $newDocumentDTO
-            ?->getShipFromParty()
+            ->getShipFromParty()
             ?->firstName(
                 fn(string $item) => $this->setDocumentShipfromName($item)
             )
@@ -592,7 +592,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             );
 
         $newDocumentDTO
-            ?->getPayeeParty()
+            ->getPayeeParty()
             ?->firstName(
                 fn(string $item) => $this->setDocumentPayeeName(
                     $item
