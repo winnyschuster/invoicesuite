@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -266,6 +267,9 @@ $documentDTO
     )
     ->addCreditorReference(
         (new InvoiceSuiteIdDTO("CREDREF2"))
+    )
+    ->addTax(
+        (new InvoiceSuiteTaxDTO('S', 'VAT', 100.00, 19.00, 19.0, 'Reason', 'ReasonCode', new DateTime(), 'DUECODE'))
     )
 ;
 

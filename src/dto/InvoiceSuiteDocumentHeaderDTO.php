@@ -282,6 +282,13 @@ class InvoiceSuiteDocumentHeaderDTO
     protected array $creditorReference = [];
 
     /**
+     * The VAT breakdown
+     *
+     * @var array<InvoiceSuiteTaxDTO>
+     */
+    protected array $tax = [];
+
+    /**
      * The Document positions
      *
      * @var array<InvoiceSuiteDocumentPositionDTO>
@@ -329,6 +336,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param array<InvoiceSuitePaymentMeanDTO> $paymentMean The payment means
      * @param array<InvoiceSuitePaymentTermDTO> $paymentTerm The payment terms
      * @param array<InvoiceSuiteIdDTO> $creditorReference The creditor identifier
+     * @param array<InvoiceSuiteTaxDTO> $tax The VAT breakdown
      * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      */
     public function __construct(
@@ -370,6 +378,7 @@ class InvoiceSuiteDocumentHeaderDTO
         array $paymentMean = [],
         array $paymentTerm = [],
         array $creditorReference = [],
+        array $tax = [],
         array $positions = [],
     ) {
         $this->setNumber($number);
@@ -410,6 +419,7 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setPaymentMean($paymentMean);
         $this->setPaymentTerm($paymentTerm);
         $this->setCreditorReference($creditorReference);
+        $this->setTax($tax);
         $this->setPositions($positions);
     }
 
@@ -3391,6 +3401,151 @@ class InvoiceSuiteDocumentHeaderDTO
             $count++;
 
             $callback($creditorReference);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the VAT breakdown
+     *
+     * @return array<InvoiceSuiteTaxDTO>
+     */
+    public function getTax(): array
+    {
+        return $this->tax;
+    }
+
+    /**
+     * Sets the VAT breakdown
+     *
+     * @param array<InvoiceSuiteTaxDTO> $tax The VAT breakdown
+     * @return self
+     */
+    public function setTax(array $tax): self
+    {
+        $this->tax = $tax;
+
+        return $this;
+    }
+
+    /**
+     * Add single The VAT breakdown
+     *
+     * @param InvoiceSuiteTaxDTO $tax The VAT breakdown
+     * @return self
+     */
+    public function addTax(InvoiceSuiteTaxDTO $tax): self
+    {
+        $this->tax[] = $tax;
+
+        return $this;
+    }
+
+    /**
+     * Get first The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function firstTax(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($tax = reset($this->tax)) !== false) {
+            $callback($tax);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function nextTax(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($tax = next($this->tax)) !== false) {
+            $callback($tax);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function previousTax(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($tax = prev($this->tax)) !== false) {
+            $callback($tax);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function lastTax(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($tax = end($this->tax)) !== false) {
+            $callback($tax);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The VAT breakdown and execute callback
+     *
+     * @param callable $callback Callback to execute for each item
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @param int|null $limit Maximum number of loops
+     * @return self
+     */
+    public function forEachTax(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
+    {
+        $count = 0;
+
+        foreach ($this->tax as $tax) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
+            $callback($tax);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {

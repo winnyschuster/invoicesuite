@@ -19,6 +19,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\models\zffxextended\ram\DocumentContextParameterType;
 use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentContextType;
 use horstoeko\invoicesuite\models\zffxextended\ram\ExchangedDocumentType;
@@ -791,6 +792,20 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO->firstCreditorReference(
             fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPaymentCreditorReferenceID($item->getId())
+        );
+
+        $newDocumentDTO->forEachTax(
+            fn(InvoiceSuiteTaxDTO $item) => $this->addDocumentTax(
+                $item->getCategory(),
+                $item->getType(),
+                $item->getBasisAmount(),
+                $item->getAmount(),
+                $item->getPercent(),
+                $item->getExemptionReason(),
+                $item->getExemptionReasonCode(),
+                $item->getDueDate(),
+                $item->getDueCode()
+            )
         );
 
         return $this;
