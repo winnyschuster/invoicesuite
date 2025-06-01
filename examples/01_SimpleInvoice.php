@@ -261,6 +261,12 @@ $documentDTO
             ]
         ))
     )
+    ->addCreditorReference(
+        (new InvoiceSuiteIdDTO("CREDREF"))
+    )
+    ->addCreditorReference(
+        (new InvoiceSuiteIdDTO("CREDREF2"))
+    )
 ;
 
 $builder->createFromDTO($documentDTO);

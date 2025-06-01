@@ -789,6 +789,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             }
         );
 
+        $newDocumentDTO->firstCreditorReference(
+            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPaymentCreditorReferenceID($item->getId())
+        );
+
         return $this;
     }
 

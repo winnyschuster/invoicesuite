@@ -275,6 +275,13 @@ class InvoiceSuiteDocumentHeaderDTO
     protected array $paymentTerm = [];
 
     /**
+     * The creditor identifier
+     *
+     * @var array<InvoiceSuiteIdDTO>
+     */
+    protected array $creditorReference = [];
+
+    /**
      * The Document positions
      *
      * @var array<InvoiceSuiteDocumentPositionDTO>
@@ -321,6 +328,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param InvoiceSuitePartyDTO|null $payeeParty The Payee Party
      * @param array<InvoiceSuitePaymentMeanDTO> $paymentMean The payment means
      * @param array<InvoiceSuitePaymentTermDTO> $paymentTerm The payment terms
+     * @param array<InvoiceSuiteIdDTO> $creditorReference The creditor identifier
      * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      */
     public function __construct(
@@ -361,6 +369,7 @@ class InvoiceSuiteDocumentHeaderDTO
         ?InvoiceSuitePartyDTO $payeeParty = null,
         array $paymentMean = [],
         array $paymentTerm = [],
+        array $creditorReference = [],
         array $positions = [],
     ) {
         $this->setNumber($number);
@@ -400,6 +409,7 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setPayeeParty($payeeParty);
         $this->setPaymentMean($paymentMean);
         $this->setPaymentTerm($paymentTerm);
+        $this->setCreditorReference($creditorReference);
         $this->setPositions($positions);
     }
 
@@ -3233,6 +3243,154 @@ class InvoiceSuiteDocumentHeaderDTO
             $count++;
 
             $callback($paymentTerm);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the creditor identifier
+     *
+     * @return array<InvoiceSuiteIdDTO>
+     */
+    public function getCreditorReference(): array
+    {
+        return $this->creditorReference;
+    }
+
+    /**
+     * Sets the creditor identifier
+     *
+     * @param array<InvoiceSuiteIdDTO> $creditorReference The creditor identifier
+     * @return self
+     */
+    public function setCreditorReference(array $creditorReference): self
+    {
+        $this->creditorReference = $creditorReference;
+
+        return $this;
+    }
+
+    /**
+     * Add single The creditor identifier
+     *
+     * @param InvoiceSuiteIdDTO $creditorReference The creditor identifier
+     * @return self
+     */
+    public function addCreditorReference(InvoiceSuiteIdDTO $creditorReference): self
+    {
+        $this->creditorReference[] = $creditorReference;
+
+        return $this;
+    }
+
+    /**
+     * Get first The creditor identifier
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function firstCreditorReference(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($creditorReference = reset($this->creditorReference)) !== false) {
+            $callback($creditorReference);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The creditor identifier
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function nextCreditorReference(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($creditorReference = next($this->creditorReference)) !== false) {
+            $callback($creditorReference);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The creditor identifier
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function previousCreditorReference(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($creditorReference = prev($this->creditorReference)) !== false) {
+            $callback($creditorReference);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The creditor identifier
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function lastCreditorReference(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($creditorReference = end($this->creditorReference)) !== false) {
+            $callback($creditorReference);
+        } else {
+            if (!is_null($callbackElse)) {
+                $callbackElse();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The creditor identifier and execute callback
+     *
+     * @param callable $callback Callback to execute for each item
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @param int|null $limit Maximum number of loops
+     * @return self
+     */
+    public function forEachCreditorReference(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): self {
+        $count = 0;
+
+        foreach ($this->creditorReference as $creditorReference) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
+            $callback($creditorReference);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {

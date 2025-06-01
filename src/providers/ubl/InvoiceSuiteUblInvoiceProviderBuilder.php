@@ -401,27 +401,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getDescription(),
                     $item->getDueDate()
                 );
-                $item->forEachDiscountTerms(
-                    fn(InvoiceSuitePaymentTermDiscountDTO $item) => $this->addDocumentPaymentDiscountTermsInLastPaymentTerm(
-                        $item->getBaseAmount(),
-                        $item->getDiscountAmount(),
-                        $item->getDiscountPercent(),
-                        $item->getBaseDate(),
-                        $item->getBasePeriod(),
-                        $item->getBasePeriodUnit()
-                    )
-                );
-                $item->forEachPenaltyTerms(
-                    fn(InvoiceSuitePaymentTermPenaltyDTO $item) => $this->addDocumentPaymentPenaltyTermsInLastPaymentTerm(
-                        $item->getBaseAmount(),
-                        $item->getDiscountAmount(),
-                        $item->getDiscountPercent(),
-                        $item->getBaseDate(),
-                        $item->getBasePeriod(),
-                        $item->getBasePeriodUnit()
-                    )
-                );
             }
+        );
+
+        $newDocumentDTO->firstCreditorReference(
+            fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPaymentCreditorReferenceID($item->getId())
         );
 
         return $this;
