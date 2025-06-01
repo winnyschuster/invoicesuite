@@ -51,6 +51,9 @@
         "squizlabs/php_codesniffer": "^3"
     },
     "scripts": {
+        "post-autoload-dump": [
+            "@php src/cache/clear-cache.php"
+        ],
         "tests": "./vendor/bin/phpunit ./tests/",
         "testsreal": "./vendor/bin/phpunit --configuration ./build/phpunit.xml",
         "phpcs": "./vendor/bin/phpcs --standard=./build/phpcsrules.xml --extensions=php --ignore=autoload.php ./src ./tests",
