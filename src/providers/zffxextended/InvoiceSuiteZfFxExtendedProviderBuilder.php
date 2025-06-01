@@ -161,19 +161,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getSellerParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentSellerName($item)
             )
-            ->forEachId(
+            ?->forEachId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerGlobalId($item->getId(), $item->getIdType())
             )
-            ->forEachTaxRegistration(
+            ?->forEachTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -184,14 +184,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentSellerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -199,7 +199,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getFaxNumber(),
                     $item->getEmailAddress()
                 )
-            )->firstCommunication(
+            )
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -208,19 +209,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getBuyerParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentBuyerName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentBuyerGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentBuyerAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -231,14 +232,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentBuyerLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -247,7 +248,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentBuyerCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -256,19 +257,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getTaxRepresentativeParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentTaxRepresentativeName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -279,14 +280,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentTaxRepresentativeLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentTaxRepresentativeContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -295,7 +296,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentTaxRepresentativeCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -304,19 +305,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getProductEndUserParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentProductEndUserName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentProductEndUserGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentProductEndUserAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -327,14 +328,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentProductEndUserLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentProductEndUserContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -343,7 +344,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentProductEndUserCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -352,19 +353,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getShipToParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentShipToName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentShipToGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipToAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -375,16 +376,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipToLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentShipToContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -393,8 +392,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipToCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -403,19 +401,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getUltimateShipToParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentUltimateShipToName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentUltimateShipToGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentUltimateShipToAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -426,14 +424,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentUltimateShipToLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentUltimateShipToContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -442,7 +440,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentUltimateShipToCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -450,20 +448,20 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             );
 
         $newDocumentDTO
-            ->getShipFromParty()
-            ->firstName(
+            ?->getShipFromParty()
+            ?->firstName(
                 fn(string $item) => $this->setDocumentShipfromName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentShipfromGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipfromAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -474,14 +472,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipfromLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentShipfromContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -490,7 +488,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipfromCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -499,19 +497,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getInvoicerParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentInvoicerName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentInvoicerGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoicerAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -522,14 +520,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoicerLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentInvoicerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -538,7 +536,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoicerCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -547,19 +545,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
         $newDocumentDTO
             ->getInvoiceeParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentInvoiceeName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentInvoiceeGlobalId($item->getId(), $item->getIdType())
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoiceeAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -570,14 +568,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoiceeLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentInvoiceeContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -586,7 +584,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoiceeCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -594,30 +592,30 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             );
 
         $newDocumentDTO
-            ->getPayeeParty()
-            ->firstName(
+            ?->getPayeeParty()
+            ?->firstName(
                 fn(string $item) => $this->setDocumentPayeeName(
                     $item
                 )
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeId(
                     $item->getId()
                 )
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentPayeeGlobalId(
                     $item->getId(),
                     $item->getIdType()
                 )
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeTaxRegistration(
                     $item->getIdType(),
                     $item->getId()
                 )
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentPayeeAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -628,14 +626,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPayeeLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->forEachContact(
+            ?->forEachContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentPayeeContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -644,7 +642,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPayeeCommunication(
                     $item->getIdType(),
                     $item->getId()

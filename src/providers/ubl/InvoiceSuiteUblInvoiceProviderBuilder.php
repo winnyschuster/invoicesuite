@@ -167,21 +167,21 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         $newDocumentDTO
             ->getSellerParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentSellerName($item)
             )
-            ->forEachId(
+            ?->forEachId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerId($item->getId())
             )
-            ->forEachGlobalId(
+            ?->forEachGlobalId(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerGlobalId($item->getId(), $item->getIdType())
             )
-            ->forEachTaxRegistration(
+            ?->forEachTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRegistration($item->getIdType(), $item->getId()),
                 null,
                 2
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -192,14 +192,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->firstContact(
+            ?->firstContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->setDocumentSellerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -208,7 +208,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -217,17 +217,17 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         $newDocumentDTO
             ->getBuyerParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentBuyerName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerId($item->getId()),
                 fn() => $newDocumentDTO->getBuyerParty()->firstGlobalId(fn($item) => $this->setDocumentBuyerGlobalId($item->getId(), $item->getIdType()))
             )
-            ->firstTaxRegistration(
+            ?->firstTaxRegistration(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerTaxRegistration($item->getIdType(), $item->getId())
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentBuyerAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
@@ -238,14 +238,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getSubDivision()
                 )
             )
-            ->firstLegalOrganisation(
+            ?->firstLegalOrganisation(
                 fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentBuyerLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
-            ->firstContact(
+            ?->firstContact(
                 fn(InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
@@ -254,7 +254,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getEmailAddress()
                 )
             )
-            ->firstCommunication(
+            ?->firstCommunication(
                 fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentBuyerCommunication(
                     $item->getIdType(),
                     $item->getId()
@@ -283,14 +283,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         $newDocumentDTO
             ->getShipToParty()
-            ->firstName(
+            ?->firstName(
                 fn(string $item) => $this->setDocumentShipToName($item)
             )
-            ->firstId(
+            ?->firstId(
                 fn(InvoiceSuiteIdDTO $item) => $this->setDocumentShipToId($item->getId()),
                 fn() => $newDocumentDTO->getShipToParty()->firstGlobalId(fn($item) => $this->setDocumentShipToGlobalId($item->getId(), $item->getIdType()))
             )
-            ->firstAddress(
+            ?->firstAddress(
                 fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentShipToAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
