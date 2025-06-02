@@ -5,6 +5,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
@@ -270,6 +271,9 @@ $documentDTO
     )
     ->addTax(
         (new InvoiceSuiteTaxDTO('S', 'VAT', 100.00, 19.00, 19.0, 'Reason', 'ReasonCode', new DateTime(), 'DUECODE'))
+    )
+    ->addAllowanceCharge(
+        (new InvoiceSuiteAllowanceChargeDTO(true, 10, 100, 2, 'S', 'VAT', 19, 'Reason', 'ReasonCode'))
     )
 ;
 

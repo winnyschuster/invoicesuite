@@ -27,14 +27,14 @@ class InvoiceSuitePaymentTermPenaltyDTO
      *
      * @var float|null
      */
-    protected ?float $discountAmount = null;
+    protected ?float $penaltyAmount = null;
 
     /**
      * The percentage of the payment penalty
      *
      * @var float|null
      */
-    protected ?float $discountPercent = null;
+    protected ?float $penaltyPercent = null;
 
     /**
      * The due date reference date
@@ -61,23 +61,23 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * Constructor
      *
      * @param float|null $baseAmount The base amount of the payment penalty
-     * @param float|null $discountAmount The amount of the payment penalty
-     * @param float|null $discountPercent The percentage of the payment penalty
+     * @param float|null $penaltyAmount The amount of the payment penalty
+     * @param float|null $penaltyPercent The percentage of the payment penalty
      * @param DateTimeInterface|null $baseDate The due date reference date
      * @param float|null $basePeriod The maturity period (basis)
      * @param string|null $basePeriodUnit The maturity period (unit)
      */
     public function __construct(
         ?float $baseAmount = null,
-        ?float $discountAmount = null,
-        ?float $discountPercent = null,
+        ?float $penaltyAmount = null,
+        ?float $penaltyPercent = null,
         ?DateTimeInterface $baseDate = null,
         ?float $basePeriod = null,
         ?string $basePeriodUnit = null,
     ) {
         $this->setBaseAmount($baseAmount);
-        $this->setDiscountAmount($discountAmount);
-        $this->setDiscountPercent($discountPercent);
+        $this->setPenaltyAmount($penaltyAmount);
+        $this->setPenaltyPercent($penaltyPercent);
         $this->setBaseDate($baseDate);
         $this->setBasePeriod($basePeriod);
         $this->setBasePeriodUnit($basePeriodUnit);
@@ -111,20 +111,20 @@ class InvoiceSuitePaymentTermPenaltyDTO
      *
      * @return float|null
      */
-    public function getDiscountAmount(): ?float
+    public function getPenaltyAmount(): ?float
     {
-        return $this->discountAmount;
+        return $this->penaltyAmount;
     }
 
     /**
      * Sets the amount of the payment penalty
      *
-     * @param float|null $discountAmount The amount of the payment penalty
+     * @param float|null $penaltyAmount The amount of the payment penalty
      * @return self
      */
-    public function setDiscountAmount(?float $discountAmount): self
+    public function setPenaltyAmount(?float $penaltyAmount): self
     {
-        $this->discountAmount = $discountAmount;
+        $this->penaltyAmount = $penaltyAmount;
 
         return $this;
     }
@@ -134,20 +134,20 @@ class InvoiceSuitePaymentTermPenaltyDTO
      *
      * @return float|null
      */
-    public function getDiscountPercent(): ?float
+    public function getPenaltyPercent(): ?float
     {
-        return $this->discountPercent;
+        return $this->penaltyPercent;
     }
 
     /**
      * Sets the percentage of the payment penalty
      *
-     * @param float|null $discountPercent The percentage of the payment penalty
+     * @param float|null $penaltyPercent The percentage of the payment penalty
      * @return self
      */
-    public function setDiscountPercent(?float $discountPercent): self
+    public function setPenaltyPercent(?float $penaltyPercent): self
     {
-        $this->discountPercent = $discountPercent;
+        $this->penaltyPercent = $penaltyPercent;
 
         return $this;
     }

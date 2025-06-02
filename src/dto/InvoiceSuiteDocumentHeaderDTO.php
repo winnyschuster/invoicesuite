@@ -289,6 +289,13 @@ class InvoiceSuiteDocumentHeaderDTO
     protected array $tax = [];
 
     /**
+     * The VAT breakdown
+     *
+     * @var array<InvoiceSuiteAllowanceChargeDTO>
+     */
+    protected array $allowanceCharge = [];
+
+    /**
      * The Document positions
      *
      * @var array<InvoiceSuiteDocumentPositionDTO>
@@ -337,6 +344,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param array<InvoiceSuitePaymentTermDTO> $paymentTerm The payment terms
      * @param array<InvoiceSuiteIdDTO> $creditorReference The creditor identifier
      * @param array<InvoiceSuiteTaxDTO> $tax The VAT breakdown
+     * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharge The VAT breakdown
      * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      */
     public function __construct(
@@ -379,6 +387,7 @@ class InvoiceSuiteDocumentHeaderDTO
         array $paymentTerm = [],
         array $creditorReference = [],
         array $tax = [],
+        array $allowanceCharge = [],
         array $positions = [],
     ) {
         $this->setNumber($number);
@@ -420,6 +429,7 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setPaymentTerm($paymentTerm);
         $this->setCreditorReference($creditorReference);
         $this->setTax($tax);
+        $this->setAllowanceCharge($allowanceCharge);
         $this->setPositions($positions);
     }
 
@@ -3402,6 +3412,146 @@ class InvoiceSuiteDocumentHeaderDTO
             $count++;
 
             $callback($tax);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the VAT breakdown
+     *
+     * @return array<InvoiceSuiteAllowanceChargeDTO>
+     */
+    public function getAllowanceCharge(): array
+    {
+        return $this->allowanceCharge;
+    }
+
+    /**
+     * Sets the VAT breakdown
+     *
+     * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharge The VAT breakdown
+     * @return self
+     */
+    public function setAllowanceCharge(array $allowanceCharge): self
+    {
+        $this->allowanceCharge = $allowanceCharge;
+
+        return $this;
+    }
+
+    /**
+     * Add single The VAT breakdown
+     *
+     * @param InvoiceSuiteAllowanceChargeDTO $allowanceCharge The VAT breakdown
+     * @return self
+     */
+    public function addAllowanceCharge(InvoiceSuiteAllowanceChargeDTO $allowanceCharge): self
+    {
+        $this->allowanceCharge[] = $allowanceCharge;
+
+        return $this;
+    }
+
+    /**
+     * Get first The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function firstAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($allowanceCharge = reset($this->allowanceCharge)) !== false) {
+            $callback($allowanceCharge);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function nextAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($allowanceCharge = next($this->allowanceCharge)) !== false) {
+            $callback($allowanceCharge);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function previousAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($allowanceCharge = prev($this->allowanceCharge)) !== false) {
+            $callback($allowanceCharge);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The VAT breakdown
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function lastAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($allowanceCharge = end($this->allowanceCharge)) !== false) {
+            $callback($allowanceCharge);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The VAT breakdown and execute callback
+     *
+     * @param callable $callback Callback to execute for each item
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @param int|null $limit Maximum number of loops
+     * @return self
+     */
+    public function forEachAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): self {
+        $count = 0;
+
+        foreach ($this->allowanceCharge as $allowanceCharge) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
+            $callback($allowanceCharge);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {

@@ -6,6 +6,7 @@ use DateTimeInterface;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
@@ -780,8 +781,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                 $item->forEachPenaltyTerms(
                     fn(InvoiceSuitePaymentTermPenaltyDTO $item) => $this->addDocumentPaymentPenaltyTermsInLastPaymentTerm(
                         $item->getBaseAmount(),
-                        $item->getDiscountAmount(),
-                        $item->getDiscountPercent(),
+                        $item->getPenaltyAmount(),
+                        $item->getPenaltyPercent(),
                         $item->getBaseDate(),
                         $item->getBasePeriod(),
                         $item->getBasePeriodUnit()
@@ -805,6 +806,20 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                 $item->getExemptionReasonCode(),
                 $item->getDueDate(),
                 $item->getDueCode()
+            )
+        );
+
+        $newDocumentDTO->forEachAllowanceCharge(
+            fn(InvoiceSuiteAllowanceChargeDTO $item) => $this->addDocumentAllowanceCharge(
+                $item->getChargeIndicator(),
+                $item->getAmount(),
+                $item->getBaseAmount(),
+                $item->getTaxCategory(),
+                $item->getTaxType(),
+                $item->getTaxPercent(),
+                $item->getReason(),
+                $item->getReasonCode(),
+                $item->getPercent()
             )
         );
 

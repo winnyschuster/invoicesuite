@@ -22,6 +22,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
@@ -420,6 +421,20 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                 $item->getExemptionReasonCode(),
                 $item->getDueDate(),
                 $item->getDueCode()
+            )
+        );
+
+        $newDocumentDTO->forEachAllowanceCharge(
+            fn(InvoiceSuiteAllowanceChargeDTO $item) => $this->addDocumentAllowanceCharge(
+                $item->getChargeIndicator(),
+                $item->getAmount(),
+                $item->getBaseAmount(),
+                $item->getTaxCategory(),
+                $item->getTaxType(),
+                $item->getTaxPercent(),
+                $item->getReason(),
+                $item->getReasonCode(),
+                $item->getPercent()
             )
         );
 
