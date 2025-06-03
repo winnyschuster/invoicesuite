@@ -10,6 +10,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
@@ -845,6 +846,24 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             $newDocumentDTO->getSummation()?->getDueAmount(),
             $newDocumentDTO->getSummation()?->getPrepaidAmount(),
             $newDocumentDTO->getSummation()?->getRoungingAmount()
+        );
+
+        $newDocumentDTO->forEachPosition(
+            function(InvoiceSuiteDocumentPositionDTO $item) {
+                $this->addDocumentPosition(
+                    $item->getLineId(),
+                    $item->getParentLineId(),
+                    $item->getLineStatus(),
+                    $item->getLineStatusReason()
+                );
+                $item->forEachNote(
+                    fn(InvoiceSuiteNoteDTO $itemNote) => $this->addDocumentPositionNote(
+                        $itemNote->getContent(),
+                        $itemNote->getContentCode(),
+                        $itemNote->getSubjectCode()
+                    )
+                );
+            }
         );
 
         return $this;

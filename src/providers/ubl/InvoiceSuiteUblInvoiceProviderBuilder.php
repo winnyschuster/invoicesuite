@@ -25,6 +25,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
@@ -460,6 +461,24 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             $newDocumentDTO->getSummation()?->getDueAmount(),
             $newDocumentDTO->getSummation()?->getPrepaidAmount(),
             $newDocumentDTO->getSummation()?->getRoungingAmount()
+        );
+
+        $newDocumentDTO->forEachPosition(
+            function(InvoiceSuiteDocumentPositionDTO $item) {
+                $this->addDocumentPosition(
+                    $item->getLineId(),
+                    $item->getParentLineId(),
+                    $item->getLineStatus(),
+                    $item->getLineStatusReason()
+                );
+                $item->forEachNote(
+                    fn(InvoiceSuiteNoteDTO $itemNote) => $this->addDocumentPositionNote(
+                        $itemNote->getContent(),
+                        $itemNote->getContentCode(),
+                        $itemNote->getSubjectCode()
+                    )
+                );
+            }
         );
 
         return $this;
@@ -5890,7 +5909,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         $latestPosition = $this->getUblInvoiceRootObject()->getLatestInvoiceLineWithCreate();
 
-        $latestPosition->addOnceToNoteWithCreate()->setValue($newContent);
+        $latestPosition->addToNoteWithCreate()->setValue($newContent);
 
         return $this;
     }

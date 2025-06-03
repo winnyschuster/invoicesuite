@@ -314,7 +314,7 @@ class InvoiceSuiteDocumentHeaderDTO
      *
      * @var array<InvoiceSuiteDocumentPositionDTO>
      */
-    protected array $positions = [];
+    protected array $position = [];
 
     /**
      * Constructor
@@ -361,7 +361,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharge The allowances/charges
      * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharge The allowances/charges
      * @param InvoiceSuitesummationDTO|null $summation The summation
-     * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
+     * @param array<InvoiceSuiteDocumentPositionDTO> $position The Document positions
      */
     public function __construct(
         ?string $number = null,
@@ -406,7 +406,7 @@ class InvoiceSuiteDocumentHeaderDTO
         array $allowanceCharge = [],
         array $serviceCharge = [],
         ?InvoiceSuitesummationDTO $summation = null,
-        array $positions = [],
+        array $position = [],
     ) {
         $this->setNumber($number);
         $this->setType($type);
@@ -450,7 +450,7 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setAllowanceCharge($allowanceCharge);
         $this->setServiceCharge($serviceCharge);
         $this->setSummation($summation);
-        $this->setPositions($positions);
+        $this->setPosition($position);
     }
 
     /**
@@ -3746,20 +3746,20 @@ class InvoiceSuiteDocumentHeaderDTO
      *
      * @return array<InvoiceSuiteDocumentPositionDTO>
      */
-    public function getPositions(): array
+    public function getPosition(): array
     {
-        return $this->positions;
+        return $this->position;
     }
 
     /**
      * Sets the Document positions
      *
-     * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
+     * @param array<InvoiceSuiteDocumentPositionDTO> $position The Document positions
      * @return self
      */
-    public function setPositions(array $positions): self
+    public function setPosition(array $position): self
     {
-        $this->positions = $positions;
+        $this->position = $position;
 
         return $this;
     }
@@ -3767,12 +3767,12 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single The Document positions
      *
-     * @param InvoiceSuiteDocumentPositionDTO $positions The Document positions
+     * @param InvoiceSuiteDocumentPositionDTO $position The Document positions
      * @return self
      */
-    public function addPositions(InvoiceSuiteDocumentPositionDTO $positions): self
+    public function addPosition(InvoiceSuiteDocumentPositionDTO $position): self
     {
-        $this->positions[] = $positions;
+        $this->position[] = $position;
 
         return $this;
     }
@@ -3784,10 +3784,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function firstPositions(callable $callback, ?callable $callbackElse = null): self
+    public function firstPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($positions = reset($this->positions)) !== false) {
-            $callback($positions);
+        if (($position = reset($this->position)) !== false) {
+            $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -3802,10 +3802,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function nextPositions(callable $callback, ?callable $callbackElse = null): self
+    public function nextPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($positions = next($this->positions)) !== false) {
-            $callback($positions);
+        if (($position = next($this->position)) !== false) {
+            $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -3820,10 +3820,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function previousPositions(callable $callback, ?callable $callbackElse = null): self
+    public function previousPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($positions = prev($this->positions)) !== false) {
-            $callback($positions);
+        if (($position = prev($this->position)) !== false) {
+            $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -3838,10 +3838,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function lastPositions(callable $callback, ?callable $callbackElse = null): self
+    public function lastPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($positions = end($this->positions)) !== false) {
-            $callback($positions);
+        if (($position = end($this->position)) !== false) {
+            $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -3857,18 +3857,18 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param int|null $limit Maximum number of loops
      * @return self
      */
-    public function forEachPositions(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
+    public function forEachPosition(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
     {
         $count = 0;
 
-        foreach ($this->positions as $positions) {
+        foreach ($this->position as $position) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
 
             $count++;
 
-            $callback($positions);
+            $callback($position);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {

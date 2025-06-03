@@ -14,6 +14,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
@@ -282,8 +283,16 @@ $documentDTO
     )
     ->setSummation(
         (new InvoiceSuitesummationDTO(100, 10, 20, 90, 90 * 0.19, 50, 107.1, 100.0, 7.10, 0.0))
-    )
-;
+    );
+
+$position = new InvoiceSuiteDocumentPositionDTO('1', null, null, 'GROUP');
+$documentDTO->addPosition($position);
+
+$position = new InvoiceSuiteDocumentPositionDTO('1.1', '1', '0815', 'DETAIL');
+$position->addNote(new InvoiceSuiteNoteDTO('Some content'));
+$position->addNote(new InvoiceSuiteNoteDTO('Some second content'));
+$position->addNote(new InvoiceSuiteNoteDTO("Some third Content", "ContentCode", "SubjectCode"));
+$documentDTO->addPosition($position);
 
 $builder->createFromDTO($documentDTO);
 $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
