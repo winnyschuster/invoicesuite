@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductCharacteristicDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
@@ -849,13 +850,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         );
 
         $newDocumentDTO->forEachPosition(
-            function(InvoiceSuiteDocumentPositionDTO $item) {
+            function (InvoiceSuiteDocumentPositionDTO $item) {
                 $this->addDocumentPosition(
                     $item->getLineId(),
                     $item->getParentLineId(),
                     $item->getLineStatus(),
                     $item->getLineStatusReason()
                 );
+
                 $item->forEachNote(
                     fn(InvoiceSuiteNoteDTO $itemNote) => $this->addDocumentPositionNote(
                         $itemNote->getContent(),
@@ -863,6 +865,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                         $itemNote->getSubjectCode()
                     )
                 );
+
                 $this->setDocumentPositionProductDetails(
                     $item->getProduct()?->getId(),
                     $item->getProduct()?->getName(),
@@ -877,6 +880,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getProduct()?->getBrandName(),
                     $item->getProduct()?->getModelName(),
                     $item->getProduct()?->getOriginTradeCountry()
+                );
+
+                $item->getProduct()?->forEachCharacteristic(
+                    fn(InvoiceSuiteProductCharacteristicDTO $characteristic) => $this->addDocumentPositionProductCharacteristic(
+                        $characteristic->getDescription(),
+                        $characteristic->getValue(),
+                        $characteristic->getType(),
+                        $characteristic->getValueMeasure()?->getValue(),
+                        $characteristic->getValueMeasure()?->getUnit()
+                    )
                 );
             }
         );

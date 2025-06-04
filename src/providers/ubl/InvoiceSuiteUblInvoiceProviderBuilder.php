@@ -29,6 +29,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductCharacteristicDTO;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderBuilder;
@@ -314,25 +315,29 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             fn(InvoiceSuiteReferenceDTO $item) => $this->addDocumentSellerOrderReference(
                 $item->getReferenceNumber(),
                 $item->getReferenceDate()
-            ));
+            )
+        );
 
         $newDocumentDTO->firstBuyerOrderReference(
             fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentBuyerOrderReference(
                 $item->getReferenceNumber(),
                 $item->getReferenceDate()
-            ));
+            )
+        );
 
         $newDocumentDTO->firstQuotationReference(
             fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentQuotationReference(
                 $item->getReferenceNumber(),
                 $item->getReferenceDate()
-            ));
+            )
+        );
 
         $newDocumentDTO->firstContractReference(
             fn(InvoiceSuiteReferenceDTO $item) => $this->setDocumentContractReference(
                 $item->getReferenceNumber(),
                 $item->getReferenceDate()
-            ));
+            )
+        );
 
         $newDocumentDTO->forEachAdditionalReference(
             fn(InvoiceSuiteReferenceExtDTO $item) => $this->addDocumentAdditionalReference(
@@ -464,13 +469,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         );
 
         $newDocumentDTO->forEachPosition(
-            function(InvoiceSuiteDocumentPositionDTO $item) {
+            function (InvoiceSuiteDocumentPositionDTO $item) {
                 $this->addDocumentPosition(
                     $item->getLineId(),
                     $item->getParentLineId(),
                     $item->getLineStatus(),
                     $item->getLineStatusReason()
                 );
+
                 $item->forEachNote(
                     fn(InvoiceSuiteNoteDTO $itemNote) => $this->addDocumentPositionNote(
                         $itemNote->getContent(),
@@ -478,6 +484,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                         $itemNote->getSubjectCode()
                     )
                 );
+
                 $this->setDocumentPositionProductDetails(
                     $item->getProduct()?->getId(),
                     $item->getProduct()?->getName(),
@@ -492,6 +499,16 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getProduct()?->getBrandName(),
                     $item->getProduct()?->getModelName(),
                     $item->getProduct()?->getOriginTradeCountry()
+                );
+
+                $item->getProduct()?->forEachCharacteristic(
+                    fn(InvoiceSuiteProductCharacteristicDTO $characteristic) => $this->addDocumentPositionProductCharacteristic(
+                        $characteristic->getDescription(),
+                        $characteristic->getValue(),
+                        $characteristic->getType(),
+                        $characteristic->getValueMeasure()?->getValue(),
+                        $characteristic->getValueMeasure()?->getUnit()
+                    )
                 );
             }
         );

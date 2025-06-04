@@ -15,15 +15,18 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteMeasurecDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductCharacteristicDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProductDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\models\zffxcomfort\ram\ProductCharacteristicType;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -293,7 +296,27 @@ $position = new InvoiceSuiteDocumentPositionDTO('1.1', '1', '0815', 'DETAIL');
 $position->addNote(new InvoiceSuiteNoteDTO('Some content'));
 $position->addNote(new InvoiceSuiteNoteDTO('Some second content'));
 $position->addNote(new InvoiceSuiteNoteDTO("Some third Content", "ContentCode", "SubjectCode"));
-$position->setProduct(new InvoiceSuiteProductDTO('ProductId', 'ProductName', 'ProductDescription', 'SellerID', 'BuyerID', new InvoiceSuiteIdDTO('3333432332', '0088'), 'IndustryId', 'ModelId', 'BatchId', 'Brandname', 'Modelname', 'CN'));
+$position->setProduct(
+    (new InvoiceSuiteProductDTO(
+        'ProductId',
+        'ProductName',
+        'ProductDescription',
+        'SellerID',
+        'BuyerID',
+        new InvoiceSuiteIdDTO('3333432332', '0088'),
+        'IndustryId',
+        'ModelId',
+        'BatchId',
+        'Brandname',
+        'Modelname',
+        'CN'
+    ))->addCharacteristic(new InvoiceSuiteProductCharacteristicDTO(
+        'Füllmenge',
+        '1000 Liter',
+        'FM',
+        new InvoiceSuiteMeasurecDTO(1000.0, "LTR")
+    ))
+);
 $documentDTO->addPosition($position);
 
 $builder->createFromDTO($documentDTO);
