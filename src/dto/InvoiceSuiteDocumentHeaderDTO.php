@@ -97,98 +97,98 @@ class InvoiceSuiteDocumentHeaderDTO
      *
      * @var array<InvoiceSuiteNoteDTO>
      */
-    protected array $note = [];
+    protected array $notes = [];
 
     /**
      * The start and/or end date of the billing period
      *
      * @var array<InvoiceSuitePeriodDTO>
      */
-    protected array $billingPeriod = [];
+    protected array $billingPeriods = [];
 
     /**
      * The posting reference
      *
      * @var array<InvoiceSuiteIdDTO>
      */
-    protected array $postingReference = [];
+    protected array $postingReferences = [];
 
     /**
      * The associated seller's order confirmation
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $sellerOrderReference = [];
+    protected array $sellerOrderReferences = [];
 
     /**
      * The associated buyer's order
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $buyerOrderReference = [];
+    protected array $buyerOrderReferences = [];
 
     /**
      * The associated quotation
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $quotationReference = [];
+    protected array $quotationReferences = [];
 
     /**
      * The associated contract
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $contractReference = [];
+    protected array $contractReferences = [];
 
     /**
      * The additional associated document
      *
      * @var array<InvoiceSuiteReferenceExtDTO>
      */
-    protected array $additionalReference = [];
+    protected array $additionalReferences = [];
 
     /**
      * The additional invoice document
      *
      * @var array<InvoiceSuiteReferenceExtDTO>
      */
-    protected array $invoiceReference = [];
+    protected array $invoiceReferences = [];
 
     /**
      * The project reference
      *
      * @var array<InvoiceSuiteProjectDTO>
      */
-    protected array $projectReference = [];
+    protected array $projectReferences = [];
 
     /**
      * The ultimate customer order reference
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $ultimateCustomerOrderReference = [];
+    protected array $ultimateCustomerOrderReferences = [];
 
     /**
      * The despatch advice reference
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $despatchAdviceReference = [];
+    protected array $despatchAdviceReferences = [];
 
     /**
      * The receiving advice reference
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $receivingAdviceReference = [];
+    protected array $receivingAdviceReferences = [];
 
     /**
      * The delivery note reference
      *
      * @var array<InvoiceSuiteReferenceDTO>
      */
-    protected array $deliveryNoteReference = [];
+    protected array $deliveryNoteReferences = [];
 
     /**
      * The Seller/Supplier Party
@@ -265,42 +265,42 @@ class InvoiceSuiteDocumentHeaderDTO
      *
      * @var array<InvoiceSuitePaymentMeanDTO>
      */
-    protected array $paymentMean = [];
+    protected array $paymentMeans = [];
 
     /**
      * The payment terms
      *
      * @var array<InvoiceSuitePaymentTermDTO>
      */
-    protected array $paymentTerm = [];
+    protected array $paymentTerms = [];
 
     /**
      * The creditor identifier
      *
      * @var array<InvoiceSuiteIdDTO>
      */
-    protected array $creditorReference = [];
+    protected array $creditorReferences = [];
 
     /**
      * The VAT breakdown
      *
      * @var array<InvoiceSuiteTaxDTO>
      */
-    protected array $tax = [];
+    protected array $taxs = [];
 
     /**
      * The allowances/charges
      *
      * @var array<InvoiceSuiteAllowanceChargeDTO>
      */
-    protected array $allowanceCharge = [];
+    protected array $allowanceCharges = [];
 
     /**
      * The allowances/charges
      *
      * @var array<InvoiceSuiteServiceChargeDTO>
      */
-    protected array $serviceCharge = [];
+    protected array $serviceCharges = [];
 
     /**
      * The summation
@@ -314,7 +314,7 @@ class InvoiceSuiteDocumentHeaderDTO
      *
      * @var array<InvoiceSuiteDocumentPositionDTO>
      */
-    protected array $position = [];
+    protected array $positions = [];
 
     /**
      * Constructor
@@ -330,20 +330,20 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param string|null $taxCurrency The code for the tax currency
      * @param bool|null $isCopy The flag that indicated that this document is a copy
      * @param bool|null $isTest The flag that indicated that this document is a test
-     * @param array<InvoiceSuiteNoteDTO> $note The notes for this document
-     * @param array<InvoiceSuitePeriodDTO> $billingPeriod The start and/or end date of the billing period
-     * @param array<InvoiceSuiteIdDTO> $postingReference The posting reference
-     * @param array<InvoiceSuiteReferenceDTO> $sellerOrderReference The associated seller's order confirmation
-     * @param array<InvoiceSuiteReferenceDTO> $buyerOrderReference The associated buyer's order
-     * @param array<InvoiceSuiteReferenceDTO> $quotationReference The associated quotation
-     * @param array<InvoiceSuiteReferenceDTO> $contractReference The associated contract
-     * @param array<InvoiceSuiteReferenceExtDTO> $additionalReference The additional associated document
-     * @param array<InvoiceSuiteReferenceExtDTO> $invoiceReference The additional invoice document
-     * @param array<InvoiceSuiteProjectDTO> $projectReference The project reference
-     * @param array<InvoiceSuiteReferenceDTO> $ultimateCustomerOrderReference The ultimate customer order reference
-     * @param array<InvoiceSuiteReferenceDTO> $despatchAdviceReference The despatch advice reference
-     * @param array<InvoiceSuiteReferenceDTO> $receivingAdviceReference The receiving advice reference
-     * @param array<InvoiceSuiteReferenceDTO> $deliveryNoteReference The delivery note reference
+     * @param array<InvoiceSuiteNoteDTO> $notes The notes for this document
+     * @param array<InvoiceSuitePeriodDTO> $billingPeriods The start and/or end date of the billing period
+     * @param array<InvoiceSuiteIdDTO> $postingReferences The posting reference
+     * @param array<InvoiceSuiteReferenceDTO> $sellerOrderReferences The associated seller's order confirmation
+     * @param array<InvoiceSuiteReferenceDTO> $buyerOrderReferences The associated buyer's order
+     * @param array<InvoiceSuiteReferenceDTO> $quotationReferences The associated quotation
+     * @param array<InvoiceSuiteReferenceDTO> $contractReferences The associated contract
+     * @param array<InvoiceSuiteReferenceExtDTO> $additionalReferences The additional associated document
+     * @param array<InvoiceSuiteReferenceExtDTO> $invoiceReferences The additional invoice document
+     * @param array<InvoiceSuiteProjectDTO> $projectReferences The project reference
+     * @param array<InvoiceSuiteReferenceDTO> $ultimateCustomerOrderReferences The ultimate customer order reference
+     * @param array<InvoiceSuiteReferenceDTO> $despatchAdviceReferences The despatch advice reference
+     * @param array<InvoiceSuiteReferenceDTO> $receivingAdviceReferences The receiving advice reference
+     * @param array<InvoiceSuiteReferenceDTO> $deliveryNoteReferences The delivery note reference
      * @param InvoiceSuitePartyDTO|null $sellerParty The Seller/Supplier Party
      * @param InvoiceSuitePartyDTO|null $buyerParty The Buyer/Customer Party
      * @param InvoiceSuitePartyDTO|null $taxRepresentativeParty The Tax Representativ Party
@@ -354,14 +354,14 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param InvoiceSuitePartyDTO|null $invoicerParty The Invoicer Party
      * @param InvoiceSuitePartyDTO|null $invoiceeParty The Invoicee Party
      * @param InvoiceSuitePartyDTO|null $payeeParty The Payee Party
-     * @param array<InvoiceSuitePaymentMeanDTO> $paymentMean The payment means
-     * @param array<InvoiceSuitePaymentTermDTO> $paymentTerm The payment terms
-     * @param array<InvoiceSuiteIdDTO> $creditorReference The creditor identifier
-     * @param array<InvoiceSuiteTaxDTO> $tax The VAT breakdown
-     * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharge The allowances/charges
-     * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharge The allowances/charges
+     * @param array<InvoiceSuitePaymentMeanDTO> $paymentMeans The payment means
+     * @param array<InvoiceSuitePaymentTermDTO> $paymentTerms The payment terms
+     * @param array<InvoiceSuiteIdDTO> $creditorReferences The creditor identifier
+     * @param array<InvoiceSuiteTaxDTO> $taxs The VAT breakdown
+     * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The allowances/charges
+     * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharges The allowances/charges
      * @param InvoiceSuitesummationDTO|null $summation The summation
-     * @param array<InvoiceSuiteDocumentPositionDTO> $position The Document positions
+     * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      */
     public function __construct(
         ?string $number = null,
@@ -375,20 +375,20 @@ class InvoiceSuiteDocumentHeaderDTO
         ?string $taxCurrency = null,
         ?bool $isCopy = null,
         ?bool $isTest = null,
-        array $note = [],
-        array $billingPeriod = [],
-        array $postingReference = [],
-        array $sellerOrderReference = [],
-        array $buyerOrderReference = [],
-        array $quotationReference = [],
-        array $contractReference = [],
-        array $additionalReference = [],
-        array $invoiceReference = [],
-        array $projectReference = [],
-        array $ultimateCustomerOrderReference = [],
-        array $despatchAdviceReference = [],
-        array $receivingAdviceReference = [],
-        array $deliveryNoteReference = [],
+        array $notes = [],
+        array $billingPeriods = [],
+        array $postingReferences = [],
+        array $sellerOrderReferences = [],
+        array $buyerOrderReferences = [],
+        array $quotationReferences = [],
+        array $contractReferences = [],
+        array $additionalReferences = [],
+        array $invoiceReferences = [],
+        array $projectReferences = [],
+        array $ultimateCustomerOrderReferences = [],
+        array $despatchAdviceReferences = [],
+        array $receivingAdviceReferences = [],
+        array $deliveryNoteReferences = [],
         ?InvoiceSuitePartyDTO $sellerParty = null,
         ?InvoiceSuitePartyDTO $buyerParty = null,
         ?InvoiceSuitePartyDTO $taxRepresentativeParty = null,
@@ -399,14 +399,14 @@ class InvoiceSuiteDocumentHeaderDTO
         ?InvoiceSuitePartyDTO $invoicerParty = null,
         ?InvoiceSuitePartyDTO $invoiceeParty = null,
         ?InvoiceSuitePartyDTO $payeeParty = null,
-        array $paymentMean = [],
-        array $paymentTerm = [],
-        array $creditorReference = [],
-        array $tax = [],
-        array $allowanceCharge = [],
-        array $serviceCharge = [],
+        array $paymentMeans = [],
+        array $paymentTerms = [],
+        array $creditorReferences = [],
+        array $taxs = [],
+        array $allowanceCharges = [],
+        array $serviceCharges = [],
         ?InvoiceSuitesummationDTO $summation = null,
-        array $position = [],
+        array $positions = [],
     ) {
         $this->setNumber($number);
         $this->setType($type);
@@ -419,20 +419,20 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setTaxCurrency($taxCurrency);
         $this->setIsCopy($isCopy);
         $this->setIsTest($isTest);
-        $this->setNotes($note);
-        $this->setBillingPeriods($billingPeriod);
-        $this->setPostingReferences($postingReference);
-        $this->setSellerOrderReferences($sellerOrderReference);
-        $this->setBuyerOrderReferences($buyerOrderReference);
-        $this->setQuotationReferences($quotationReference);
-        $this->setContractReferences($contractReference);
-        $this->setAdditionalReferences($additionalReference);
-        $this->setInvoiceReferences($invoiceReference);
-        $this->setProjectReferences($projectReference);
-        $this->setUltimateCustomerOrderReferences($ultimateCustomerOrderReference);
-        $this->setDespatchAdviceReferences($despatchAdviceReference);
-        $this->setReceivingAdviceReferences($receivingAdviceReference);
-        $this->setDeliveryNoteReferences($deliveryNoteReference);
+        $this->setNotes($notes);
+        $this->setBillingPeriods($billingPeriods);
+        $this->setPostingReferences($postingReferences);
+        $this->setSellerOrderReferences($sellerOrderReferences);
+        $this->setBuyerOrderReferences($buyerOrderReferences);
+        $this->setQuotationReferences($quotationReferences);
+        $this->setContractReferences($contractReferences);
+        $this->setAdditionalReferences($additionalReferences);
+        $this->setInvoiceReferences($invoiceReferences);
+        $this->setProjectReferences($projectReferences);
+        $this->setUltimateCustomerOrderReferences($ultimateCustomerOrderReferences);
+        $this->setDespatchAdviceReferences($despatchAdviceReferences);
+        $this->setReceivingAdviceReferences($receivingAdviceReferences);
+        $this->setDeliveryNoteReferences($deliveryNoteReferences);
         $this->setSellerParty($sellerParty);
         $this->setBuyerParty($buyerParty);
         $this->setTaxRepresentativeParty($taxRepresentativeParty);
@@ -443,14 +443,14 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setInvoicerParty($invoicerParty);
         $this->setInvoiceeParty($invoiceeParty);
         $this->setPayeeParty($payeeParty);
-        $this->setPaymentMeans($paymentMean);
-        $this->setPaymentTerms($paymentTerm);
-        $this->setCreditorReferences($creditorReference);
-        $this->setTaxes($tax);
-        $this->setAllowanceCharges($allowanceCharge);
-        $this->setServiceCharges($serviceCharge);
+        $this->setPaymentMeans($paymentMeans);
+        $this->setPaymentTerms($paymentTerms);
+        $this->setCreditorReferences($creditorReferences);
+        $this->setTaxes($taxs);
+        $this->setAllowanceCharges($allowanceCharges);
+        $this->setServiceCharges($serviceCharges);
         $this->setSummation($summation);
-        $this->setPositions($position);
+        $this->setPositions($positions);
     }
 
     /**
@@ -713,18 +713,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getNotes(): array
     {
-        return $this->note;
+        return $this->notes;
     }
 
     /**
      * Sets the notes for this document
      *
-     * @param array<InvoiceSuiteNoteDTO> $note The notes for this document
+     * @param array<InvoiceSuiteNoteDTO> $notes The notes for this document
      * @return self
      */
-    public function setNotes(array $note): self
+    public function setNotes(array $notes): self
     {
-        $this->note = $note;
+        $this->notes = $notes;
 
         return $this;
     }
@@ -737,7 +737,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addNote(InvoiceSuiteNoteDTO $note): self
     {
-        $this->note[] = $note;
+        $this->notes[] = $note;
 
         return $this;
     }
@@ -751,7 +751,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstNote(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($note = reset($this->note)) !== false) {
+        if (($note = reset($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -769,7 +769,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextNote(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($note = next($this->note)) !== false) {
+        if (($note = next($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -787,7 +787,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousNote(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($note = prev($this->note)) !== false) {
+        if (($note = prev($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -805,7 +805,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastNote(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($note = end($this->note)) !== false) {
+        if (($note = end($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -826,7 +826,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->note as $note) {
+        foreach ($this->notes as $note) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -850,18 +850,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getBillingPeriods(): array
     {
-        return $this->billingPeriod;
+        return $this->billingPeriods;
     }
 
     /**
      * Sets the start and/or end date of the billing period
      *
-     * @param array<InvoiceSuitePeriodDTO> $billingPeriod The start and/or end date of the billing period
+     * @param array<InvoiceSuitePeriodDTO> $billingPeriods The start and/or end date of the billing period
      * @return self
      */
-    public function setBillingPeriods(array $billingPeriod): self
+    public function setBillingPeriods(array $billingPeriods): self
     {
-        $this->billingPeriod = $billingPeriod;
+        $this->billingPeriods = $billingPeriods;
 
         return $this;
     }
@@ -874,7 +874,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addBillingPeriod(InvoiceSuitePeriodDTO $billingPeriod): self
     {
-        $this->billingPeriod[] = $billingPeriod;
+        $this->billingPeriods[] = $billingPeriod;
 
         return $this;
     }
@@ -888,7 +888,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstBillingPeriod(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($billingPeriod = reset($this->billingPeriod)) !== false) {
+        if (($billingPeriod = reset($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -906,7 +906,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextBillingPeriod(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($billingPeriod = next($this->billingPeriod)) !== false) {
+        if (($billingPeriod = next($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -924,7 +924,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousBillingPeriod(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($billingPeriod = prev($this->billingPeriod)) !== false) {
+        if (($billingPeriod = prev($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -942,7 +942,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastBillingPeriod(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($billingPeriod = end($this->billingPeriod)) !== false) {
+        if (($billingPeriod = end($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -963,7 +963,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->billingPeriod as $billingPeriod) {
+        foreach ($this->billingPeriods as $billingPeriod) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -987,18 +987,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getPostingReferences(): array
     {
-        return $this->postingReference;
+        return $this->postingReferences;
     }
 
     /**
      * Sets the posting reference
      *
-     * @param array<InvoiceSuiteIdDTO> $postingReference The posting reference
+     * @param array<InvoiceSuiteIdDTO> $postingReferences The posting reference
      * @return self
      */
-    public function setPostingReferences(array $postingReference): self
+    public function setPostingReferences(array $postingReferences): self
     {
-        $this->postingReference = $postingReference;
+        $this->postingReferences = $postingReferences;
 
         return $this;
     }
@@ -1011,7 +1011,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addPostingReference(InvoiceSuiteIdDTO $postingReference): self
     {
-        $this->postingReference[] = $postingReference;
+        $this->postingReferences[] = $postingReference;
 
         return $this;
     }
@@ -1025,7 +1025,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstPostingReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($postingReference = reset($this->postingReference)) !== false) {
+        if (($postingReference = reset($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1043,7 +1043,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextPostingReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($postingReference = next($this->postingReference)) !== false) {
+        if (($postingReference = next($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1061,7 +1061,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousPostingReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($postingReference = prev($this->postingReference)) !== false) {
+        if (($postingReference = prev($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1079,7 +1079,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastPostingReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($postingReference = end($this->postingReference)) !== false) {
+        if (($postingReference = end($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1103,7 +1103,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->postingReference as $postingReference) {
+        foreach ($this->postingReferences as $postingReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1127,18 +1127,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getSellerOrderReferences(): array
     {
-        return $this->sellerOrderReference;
+        return $this->sellerOrderReferences;
     }
 
     /**
      * Sets the associated seller's order confirmation
      *
-     * @param array<InvoiceSuiteReferenceDTO> $sellerOrderReference The associated seller's order confirmation
+     * @param array<InvoiceSuiteReferenceDTO> $sellerOrderReferences The associated seller's order confirmation
      * @return self
      */
-    public function setSellerOrderReferences(array $sellerOrderReference): self
+    public function setSellerOrderReferences(array $sellerOrderReferences): self
     {
-        $this->sellerOrderReference = $sellerOrderReference;
+        $this->sellerOrderReferences = $sellerOrderReferences;
 
         return $this;
     }
@@ -1151,7 +1151,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addSellerOrderReference(InvoiceSuiteReferenceDTO $sellerOrderReference): self
     {
-        $this->sellerOrderReference[] = $sellerOrderReference;
+        $this->sellerOrderReferences[] = $sellerOrderReference;
 
         return $this;
     }
@@ -1165,7 +1165,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstSellerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($sellerOrderReference = reset($this->sellerOrderReference)) !== false) {
+        if (($sellerOrderReference = reset($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1183,7 +1183,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextSellerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($sellerOrderReference = next($this->sellerOrderReference)) !== false) {
+        if (($sellerOrderReference = next($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1201,7 +1201,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousSellerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($sellerOrderReference = prev($this->sellerOrderReference)) !== false) {
+        if (($sellerOrderReference = prev($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1219,7 +1219,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastSellerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($sellerOrderReference = end($this->sellerOrderReference)) !== false) {
+        if (($sellerOrderReference = end($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1243,7 +1243,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->sellerOrderReference as $sellerOrderReference) {
+        foreach ($this->sellerOrderReferences as $sellerOrderReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1267,18 +1267,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getBuyerOrderReferences(): array
     {
-        return $this->buyerOrderReference;
+        return $this->buyerOrderReferences;
     }
 
     /**
      * Sets the associated buyer's order
      *
-     * @param array<InvoiceSuiteReferenceDTO> $buyerOrderReference The associated buyer's order
+     * @param array<InvoiceSuiteReferenceDTO> $buyerOrderReferences The associated buyer's order
      * @return self
      */
-    public function setBuyerOrderReferences(array $buyerOrderReference): self
+    public function setBuyerOrderReferences(array $buyerOrderReferences): self
     {
-        $this->buyerOrderReference = $buyerOrderReference;
+        $this->buyerOrderReferences = $buyerOrderReferences;
 
         return $this;
     }
@@ -1291,7 +1291,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addBuyerOrderReference(InvoiceSuiteReferenceDTO $buyerOrderReference): self
     {
-        $this->buyerOrderReference[] = $buyerOrderReference;
+        $this->buyerOrderReferences[] = $buyerOrderReference;
 
         return $this;
     }
@@ -1305,7 +1305,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstBuyerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($buyerOrderReference = reset($this->buyerOrderReference)) !== false) {
+        if (($buyerOrderReference = reset($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1323,7 +1323,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextBuyerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($buyerOrderReference = next($this->buyerOrderReference)) !== false) {
+        if (($buyerOrderReference = next($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1341,7 +1341,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousBuyerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($buyerOrderReference = prev($this->buyerOrderReference)) !== false) {
+        if (($buyerOrderReference = prev($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1359,7 +1359,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastBuyerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($buyerOrderReference = end($this->buyerOrderReference)) !== false) {
+        if (($buyerOrderReference = end($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1383,7 +1383,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->buyerOrderReference as $buyerOrderReference) {
+        foreach ($this->buyerOrderReferences as $buyerOrderReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1407,18 +1407,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getQuotationReferences(): array
     {
-        return $this->quotationReference;
+        return $this->quotationReferences;
     }
 
     /**
      * Sets the associated quotation
      *
-     * @param array<InvoiceSuiteReferenceDTO> $quotationReference The associated quotation
+     * @param array<InvoiceSuiteReferenceDTO> $quotationReferences The associated quotation
      * @return self
      */
-    public function setQuotationReferences(array $quotationReference): self
+    public function setQuotationReferences(array $quotationReferences): self
     {
-        $this->quotationReference = $quotationReference;
+        $this->quotationReferences = $quotationReferences;
 
         return $this;
     }
@@ -1431,7 +1431,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addQuotationReference(InvoiceSuiteReferenceDTO $quotationReference): self
     {
-        $this->quotationReference[] = $quotationReference;
+        $this->quotationReferences[] = $quotationReference;
 
         return $this;
     }
@@ -1445,7 +1445,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstQuotationReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($quotationReference = reset($this->quotationReference)) !== false) {
+        if (($quotationReference = reset($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1463,7 +1463,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextQuotationReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($quotationReference = next($this->quotationReference)) !== false) {
+        if (($quotationReference = next($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1481,7 +1481,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousQuotationReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($quotationReference = prev($this->quotationReference)) !== false) {
+        if (($quotationReference = prev($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1499,7 +1499,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastQuotationReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($quotationReference = end($this->quotationReference)) !== false) {
+        if (($quotationReference = end($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1523,7 +1523,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->quotationReference as $quotationReference) {
+        foreach ($this->quotationReferences as $quotationReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1547,18 +1547,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getContractReferences(): array
     {
-        return $this->contractReference;
+        return $this->contractReferences;
     }
 
     /**
      * Sets the associated contract
      *
-     * @param array<InvoiceSuiteReferenceDTO> $contractReference The associated contract
+     * @param array<InvoiceSuiteReferenceDTO> $contractReferences The associated contract
      * @return self
      */
-    public function setContractReferences(array $contractReference): self
+    public function setContractReferences(array $contractReferences): self
     {
-        $this->contractReference = $contractReference;
+        $this->contractReferences = $contractReferences;
 
         return $this;
     }
@@ -1571,7 +1571,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addContractReference(InvoiceSuiteReferenceDTO $contractReference): self
     {
-        $this->contractReference[] = $contractReference;
+        $this->contractReferences[] = $contractReference;
 
         return $this;
     }
@@ -1585,7 +1585,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstContractReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($contractReference = reset($this->contractReference)) !== false) {
+        if (($contractReference = reset($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1603,7 +1603,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextContractReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($contractReference = next($this->contractReference)) !== false) {
+        if (($contractReference = next($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1621,7 +1621,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousContractReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($contractReference = prev($this->contractReference)) !== false) {
+        if (($contractReference = prev($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1639,7 +1639,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastContractReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($contractReference = end($this->contractReference)) !== false) {
+        if (($contractReference = end($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1663,7 +1663,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->contractReference as $contractReference) {
+        foreach ($this->contractReferences as $contractReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1687,18 +1687,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getAdditionalReferences(): array
     {
-        return $this->additionalReference;
+        return $this->additionalReferences;
     }
 
     /**
      * Sets the additional associated document
      *
-     * @param array<InvoiceSuiteReferenceExtDTO> $additionalReference The additional associated document
+     * @param array<InvoiceSuiteReferenceExtDTO> $additionalReferences The additional associated document
      * @return self
      */
-    public function setAdditionalReferences(array $additionalReference): self
+    public function setAdditionalReferences(array $additionalReferences): self
     {
-        $this->additionalReference = $additionalReference;
+        $this->additionalReferences = $additionalReferences;
 
         return $this;
     }
@@ -1711,7 +1711,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addAdditionalReference(InvoiceSuiteReferenceExtDTO $additionalReference): self
     {
-        $this->additionalReference[] = $additionalReference;
+        $this->additionalReferences[] = $additionalReference;
 
         return $this;
     }
@@ -1725,7 +1725,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstAdditionalReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($additionalReference = reset($this->additionalReference)) !== false) {
+        if (($additionalReference = reset($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1743,7 +1743,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextAdditionalReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($additionalReference = next($this->additionalReference)) !== false) {
+        if (($additionalReference = next($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1761,7 +1761,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousAdditionalReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($additionalReference = prev($this->additionalReference)) !== false) {
+        if (($additionalReference = prev($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1779,7 +1779,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastAdditionalReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($additionalReference = end($this->additionalReference)) !== false) {
+        if (($additionalReference = end($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1803,7 +1803,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->additionalReference as $additionalReference) {
+        foreach ($this->additionalReferences as $additionalReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1827,18 +1827,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getInvoiceReferences(): array
     {
-        return $this->invoiceReference;
+        return $this->invoiceReferences;
     }
 
     /**
      * Sets the additional invoice document
      *
-     * @param array<InvoiceSuiteReferenceExtDTO> $invoiceReference The additional invoice document
+     * @param array<InvoiceSuiteReferenceExtDTO> $invoiceReferences The additional invoice document
      * @return self
      */
-    public function setInvoiceReferences(array $invoiceReference): self
+    public function setInvoiceReferences(array $invoiceReferences): self
     {
-        $this->invoiceReference = $invoiceReference;
+        $this->invoiceReferences = $invoiceReferences;
 
         return $this;
     }
@@ -1851,7 +1851,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addInvoiceReference(InvoiceSuiteReferenceExtDTO $invoiceReference): self
     {
-        $this->invoiceReference[] = $invoiceReference;
+        $this->invoiceReferences[] = $invoiceReference;
 
         return $this;
     }
@@ -1865,7 +1865,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstInvoiceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($invoiceReference = reset($this->invoiceReference)) !== false) {
+        if (($invoiceReference = reset($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1883,7 +1883,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextInvoiceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($invoiceReference = next($this->invoiceReference)) !== false) {
+        if (($invoiceReference = next($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1901,7 +1901,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousInvoiceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($invoiceReference = prev($this->invoiceReference)) !== false) {
+        if (($invoiceReference = prev($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1919,7 +1919,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastInvoiceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($invoiceReference = end($this->invoiceReference)) !== false) {
+        if (($invoiceReference = end($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1943,7 +1943,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->invoiceReference as $invoiceReference) {
+        foreach ($this->invoiceReferences as $invoiceReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -1967,18 +1967,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getProjectReferences(): array
     {
-        return $this->projectReference;
+        return $this->projectReferences;
     }
 
     /**
      * Sets the project reference
      *
-     * @param array<InvoiceSuiteProjectDTO> $projectReference The project reference
+     * @param array<InvoiceSuiteProjectDTO> $projectReferences The project reference
      * @return self
      */
-    public function setProjectReferences(array $projectReference): self
+    public function setProjectReferences(array $projectReferences): self
     {
-        $this->projectReference = $projectReference;
+        $this->projectReferences = $projectReferences;
 
         return $this;
     }
@@ -1991,7 +1991,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addProjectReference(InvoiceSuiteProjectDTO $projectReference): self
     {
-        $this->projectReference[] = $projectReference;
+        $this->projectReferences[] = $projectReference;
 
         return $this;
     }
@@ -2005,7 +2005,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstProjectReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($projectReference = reset($this->projectReference)) !== false) {
+        if (($projectReference = reset($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2023,7 +2023,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextProjectReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($projectReference = next($this->projectReference)) !== false) {
+        if (($projectReference = next($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2041,7 +2041,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousProjectReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($projectReference = prev($this->projectReference)) !== false) {
+        if (($projectReference = prev($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2059,7 +2059,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastProjectReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($projectReference = end($this->projectReference)) !== false) {
+        if (($projectReference = end($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2083,7 +2083,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->projectReference as $projectReference) {
+        foreach ($this->projectReferences as $projectReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -2107,18 +2107,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getUltimateCustomerOrderReferences(): array
     {
-        return $this->ultimateCustomerOrderReference;
+        return $this->ultimateCustomerOrderReferences;
     }
 
     /**
      * Sets the ultimate customer order reference
      *
-     * @param array<InvoiceSuiteReferenceDTO> $ultimateCustomerOrderReference The ultimate customer order reference
+     * @param array<InvoiceSuiteReferenceDTO> $ultimateCustomerOrderReferences The ultimate customer order reference
      * @return self
      */
-    public function setUltimateCustomerOrderReferences(array $ultimateCustomerOrderReference): self
+    public function setUltimateCustomerOrderReferences(array $ultimateCustomerOrderReferences): self
     {
-        $this->ultimateCustomerOrderReference = $ultimateCustomerOrderReference;
+        $this->ultimateCustomerOrderReferences = $ultimateCustomerOrderReferences;
 
         return $this;
     }
@@ -2131,7 +2131,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addUltimateCustomerOrderReference(InvoiceSuiteReferenceDTO $ultimateCustomerOrderReference): self
     {
-        $this->ultimateCustomerOrderReference[] = $ultimateCustomerOrderReference;
+        $this->ultimateCustomerOrderReferences[] = $ultimateCustomerOrderReference;
 
         return $this;
     }
@@ -2145,7 +2145,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($ultimateCustomerOrderReference = reset($this->ultimateCustomerOrderReference)) !== false) {
+        if (($ultimateCustomerOrderReference = reset($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2163,7 +2163,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($ultimateCustomerOrderReference = next($this->ultimateCustomerOrderReference)) !== false) {
+        if (($ultimateCustomerOrderReference = next($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2181,7 +2181,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($ultimateCustomerOrderReference = prev($this->ultimateCustomerOrderReference)) !== false) {
+        if (($ultimateCustomerOrderReference = prev($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2199,7 +2199,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($ultimateCustomerOrderReference = end($this->ultimateCustomerOrderReference)) !== false) {
+        if (($ultimateCustomerOrderReference = end($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2223,7 +2223,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->ultimateCustomerOrderReference as $ultimateCustomerOrderReference) {
+        foreach ($this->ultimateCustomerOrderReferences as $ultimateCustomerOrderReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -2247,18 +2247,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getDespatchAdviceReferences(): array
     {
-        return $this->despatchAdviceReference;
+        return $this->despatchAdviceReferences;
     }
 
     /**
      * Sets the despatch advice reference
      *
-     * @param array<InvoiceSuiteReferenceDTO> $despatchAdviceReference The despatch advice reference
+     * @param array<InvoiceSuiteReferenceDTO> $despatchAdviceReferences The despatch advice reference
      * @return self
      */
-    public function setDespatchAdviceReferences(array $despatchAdviceReference): self
+    public function setDespatchAdviceReferences(array $despatchAdviceReferences): self
     {
-        $this->despatchAdviceReference = $despatchAdviceReference;
+        $this->despatchAdviceReferences = $despatchAdviceReferences;
 
         return $this;
     }
@@ -2271,7 +2271,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addDespatchAdviceReference(InvoiceSuiteReferenceDTO $despatchAdviceReference): self
     {
-        $this->despatchAdviceReference[] = $despatchAdviceReference;
+        $this->despatchAdviceReferences[] = $despatchAdviceReference;
 
         return $this;
     }
@@ -2285,7 +2285,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($despatchAdviceReference = reset($this->despatchAdviceReference)) !== false) {
+        if (($despatchAdviceReference = reset($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2303,7 +2303,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($despatchAdviceReference = next($this->despatchAdviceReference)) !== false) {
+        if (($despatchAdviceReference = next($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2321,7 +2321,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($despatchAdviceReference = prev($this->despatchAdviceReference)) !== false) {
+        if (($despatchAdviceReference = prev($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2339,7 +2339,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($despatchAdviceReference = end($this->despatchAdviceReference)) !== false) {
+        if (($despatchAdviceReference = end($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2363,7 +2363,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->despatchAdviceReference as $despatchAdviceReference) {
+        foreach ($this->despatchAdviceReferences as $despatchAdviceReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -2387,18 +2387,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getReceivingAdviceReferences(): array
     {
-        return $this->receivingAdviceReference;
+        return $this->receivingAdviceReferences;
     }
 
     /**
      * Sets the receiving advice reference
      *
-     * @param array<InvoiceSuiteReferenceDTO> $receivingAdviceReference The receiving advice reference
+     * @param array<InvoiceSuiteReferenceDTO> $receivingAdviceReferences The receiving advice reference
      * @return self
      */
-    public function setReceivingAdviceReferences(array $receivingAdviceReference): self
+    public function setReceivingAdviceReferences(array $receivingAdviceReferences): self
     {
-        $this->receivingAdviceReference = $receivingAdviceReference;
+        $this->receivingAdviceReferences = $receivingAdviceReferences;
 
         return $this;
     }
@@ -2411,7 +2411,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addReceivingAdviceReference(InvoiceSuiteReferenceDTO $receivingAdviceReference): self
     {
-        $this->receivingAdviceReference[] = $receivingAdviceReference;
+        $this->receivingAdviceReferences[] = $receivingAdviceReference;
 
         return $this;
     }
@@ -2425,7 +2425,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($receivingAdviceReference = reset($this->receivingAdviceReference)) !== false) {
+        if (($receivingAdviceReference = reset($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2443,7 +2443,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($receivingAdviceReference = next($this->receivingAdviceReference)) !== false) {
+        if (($receivingAdviceReference = next($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2461,7 +2461,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($receivingAdviceReference = prev($this->receivingAdviceReference)) !== false) {
+        if (($receivingAdviceReference = prev($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2479,7 +2479,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($receivingAdviceReference = end($this->receivingAdviceReference)) !== false) {
+        if (($receivingAdviceReference = end($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2503,7 +2503,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->receivingAdviceReference as $receivingAdviceReference) {
+        foreach ($this->receivingAdviceReferences as $receivingAdviceReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -2527,18 +2527,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getDeliveryNoteReferences(): array
     {
-        return $this->deliveryNoteReference;
+        return $this->deliveryNoteReferences;
     }
 
     /**
      * Sets the delivery note reference
      *
-     * @param array<InvoiceSuiteReferenceDTO> $deliveryNoteReference The delivery note reference
+     * @param array<InvoiceSuiteReferenceDTO> $deliveryNoteReferences The delivery note reference
      * @return self
      */
-    public function setDeliveryNoteReferences(array $deliveryNoteReference): self
+    public function setDeliveryNoteReferences(array $deliveryNoteReferences): self
     {
-        $this->deliveryNoteReference = $deliveryNoteReference;
+        $this->deliveryNoteReferences = $deliveryNoteReferences;
 
         return $this;
     }
@@ -2551,7 +2551,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addDeliveryNoteReference(InvoiceSuiteReferenceDTO $deliveryNoteReference): self
     {
-        $this->deliveryNoteReference[] = $deliveryNoteReference;
+        $this->deliveryNoteReferences[] = $deliveryNoteReference;
 
         return $this;
     }
@@ -2565,7 +2565,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($deliveryNoteReference = reset($this->deliveryNoteReference)) !== false) {
+        if (($deliveryNoteReference = reset($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2583,7 +2583,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($deliveryNoteReference = next($this->deliveryNoteReference)) !== false) {
+        if (($deliveryNoteReference = next($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2601,7 +2601,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($deliveryNoteReference = prev($this->deliveryNoteReference)) !== false) {
+        if (($deliveryNoteReference = prev($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2619,7 +2619,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($deliveryNoteReference = end($this->deliveryNoteReference)) !== false) {
+        if (($deliveryNoteReference = end($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2643,7 +2643,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->deliveryNoteReference as $deliveryNoteReference) {
+        foreach ($this->deliveryNoteReferences as $deliveryNoteReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -2897,18 +2897,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getPaymentMeans(): array
     {
-        return $this->paymentMean;
+        return $this->paymentMeans;
     }
 
     /**
      * Sets the payment means
      *
-     * @param array<InvoiceSuitePaymentMeanDTO> $paymentMean The payment means
+     * @param array<InvoiceSuitePaymentMeanDTO> $paymentMeans The payment means
      * @return self
      */
-    public function setPaymentMeans(array $paymentMean): self
+    public function setPaymentMeans(array $paymentMeans): self
     {
-        $this->paymentMean = $paymentMean;
+        $this->paymentMeans = $paymentMeans;
 
         return $this;
     }
@@ -2921,7 +2921,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addPaymentMean(InvoiceSuitePaymentMeanDTO $paymentMean): self
     {
-        $this->paymentMean[] = $paymentMean;
+        $this->paymentMeans[] = $paymentMean;
 
         return $this;
     }
@@ -2935,7 +2935,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstPaymentMean(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentMean = reset($this->paymentMean)) !== false) {
+        if (($paymentMean = reset($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2953,7 +2953,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextPaymentMean(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentMean = next($this->paymentMean)) !== false) {
+        if (($paymentMean = next($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2971,7 +2971,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousPaymentMean(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentMean = prev($this->paymentMean)) !== false) {
+        if (($paymentMean = prev($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2989,7 +2989,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastPaymentMean(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentMean = end($this->paymentMean)) !== false) {
+        if (($paymentMean = end($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3010,7 +3010,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->paymentMean as $paymentMean) {
+        foreach ($this->paymentMeans as $paymentMean) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -3034,18 +3034,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getPaymentTerms(): array
     {
-        return $this->paymentTerm;
+        return $this->paymentTerms;
     }
 
     /**
      * Sets the payment terms
      *
-     * @param array<InvoiceSuitePaymentTermDTO> $paymentTerm The payment terms
+     * @param array<InvoiceSuitePaymentTermDTO> $paymentTerms The payment terms
      * @return self
      */
-    public function setPaymentTerms(array $paymentTerm): self
+    public function setPaymentTerms(array $paymentTerms): self
     {
-        $this->paymentTerm = $paymentTerm;
+        $this->paymentTerms = $paymentTerms;
 
         return $this;
     }
@@ -3058,7 +3058,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addPaymentTerm(InvoiceSuitePaymentTermDTO $paymentTerm): self
     {
-        $this->paymentTerm[] = $paymentTerm;
+        $this->paymentTerms[] = $paymentTerm;
 
         return $this;
     }
@@ -3072,7 +3072,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstPaymentTerm(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentTerm = reset($this->paymentTerm)) !== false) {
+        if (($paymentTerm = reset($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3090,7 +3090,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextPaymentTerm(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentTerm = next($this->paymentTerm)) !== false) {
+        if (($paymentTerm = next($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3108,7 +3108,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousPaymentTerm(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentTerm = prev($this->paymentTerm)) !== false) {
+        if (($paymentTerm = prev($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3126,7 +3126,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastPaymentTerm(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($paymentTerm = end($this->paymentTerm)) !== false) {
+        if (($paymentTerm = end($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3147,7 +3147,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->paymentTerm as $paymentTerm) {
+        foreach ($this->paymentTerms as $paymentTerm) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -3171,18 +3171,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getCreditorReferences(): array
     {
-        return $this->creditorReference;
+        return $this->creditorReferences;
     }
 
     /**
      * Sets the creditor identifier
      *
-     * @param array<InvoiceSuiteIdDTO> $creditorReference The creditor identifier
+     * @param array<InvoiceSuiteIdDTO> $creditorReferences The creditor identifier
      * @return self
      */
-    public function setCreditorReferences(array $creditorReference): self
+    public function setCreditorReferences(array $creditorReferences): self
     {
-        $this->creditorReference = $creditorReference;
+        $this->creditorReferences = $creditorReferences;
 
         return $this;
     }
@@ -3195,7 +3195,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addCreditorReference(InvoiceSuiteIdDTO $creditorReference): self
     {
-        $this->creditorReference[] = $creditorReference;
+        $this->creditorReferences[] = $creditorReference;
 
         return $this;
     }
@@ -3209,7 +3209,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstCreditorReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($creditorReference = reset($this->creditorReference)) !== false) {
+        if (($creditorReference = reset($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3227,7 +3227,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextCreditorReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($creditorReference = next($this->creditorReference)) !== false) {
+        if (($creditorReference = next($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3245,7 +3245,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousCreditorReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($creditorReference = prev($this->creditorReference)) !== false) {
+        if (($creditorReference = prev($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3263,7 +3263,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastCreditorReference(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($creditorReference = end($this->creditorReference)) !== false) {
+        if (($creditorReference = end($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3287,7 +3287,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->creditorReference as $creditorReference) {
+        foreach ($this->creditorReferences as $creditorReference) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -3311,18 +3311,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getTaxes(): array
     {
-        return $this->tax;
+        return $this->taxs;
     }
 
     /**
      * Sets the VAT breakdown
      *
-     * @param array<InvoiceSuiteTaxDTO> $tax The VAT breakdown
+     * @param array<InvoiceSuiteTaxDTO> $taxs The VAT breakdown
      * @return self
      */
-    public function setTaxes(array $tax): self
+    public function setTaxes(array $taxs): self
     {
-        $this->tax = $tax;
+        $this->taxs = $taxs;
 
         return $this;
     }
@@ -3335,7 +3335,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addTax(InvoiceSuiteTaxDTO $tax): self
     {
-        $this->tax[] = $tax;
+        $this->taxs[] = $tax;
 
         return $this;
     }
@@ -3349,7 +3349,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstTax(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($tax = reset($this->tax)) !== false) {
+        if (($tax = reset($this->taxs)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3367,7 +3367,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextTax(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($tax = next($this->tax)) !== false) {
+        if (($tax = next($this->taxs)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3385,7 +3385,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousTax(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($tax = prev($this->tax)) !== false) {
+        if (($tax = prev($this->taxs)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3403,7 +3403,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastTax(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($tax = end($this->tax)) !== false) {
+        if (($tax = end($this->taxs)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3424,7 +3424,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->tax as $tax) {
+        foreach ($this->taxs as $tax) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -3448,18 +3448,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getAllowanceCharges(): array
     {
-        return $this->allowanceCharge;
+        return $this->allowanceCharges;
     }
 
     /**
      * Sets the allowances/charges
      *
-     * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharge The allowances/charges
+     * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The allowances/charges
      * @return self
      */
-    public function setAllowanceCharges(array $allowanceCharge): self
+    public function setAllowanceCharges(array $allowanceCharges): self
     {
-        $this->allowanceCharge = $allowanceCharge;
+        $this->allowanceCharges = $allowanceCharges;
 
         return $this;
     }
@@ -3472,7 +3472,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addAllowanceCharge(InvoiceSuiteAllowanceChargeDTO $allowanceCharge): self
     {
-        $this->allowanceCharge[] = $allowanceCharge;
+        $this->allowanceCharges[] = $allowanceCharge;
 
         return $this;
     }
@@ -3486,7 +3486,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($allowanceCharge = reset($this->allowanceCharge)) !== false) {
+        if (($allowanceCharge = reset($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3504,7 +3504,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($allowanceCharge = next($this->allowanceCharge)) !== false) {
+        if (($allowanceCharge = next($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3522,7 +3522,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($allowanceCharge = prev($this->allowanceCharge)) !== false) {
+        if (($allowanceCharge = prev($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3540,7 +3540,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($allowanceCharge = end($this->allowanceCharge)) !== false) {
+        if (($allowanceCharge = end($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3564,7 +3564,7 @@ class InvoiceSuiteDocumentHeaderDTO
     ): self {
         $count = 0;
 
-        foreach ($this->allowanceCharge as $allowanceCharge) {
+        foreach ($this->allowanceCharges as $allowanceCharge) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -3588,18 +3588,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getServiceCharges(): array
     {
-        return $this->serviceCharge;
+        return $this->serviceCharges;
     }
 
     /**
      * Sets the allowances/charges
      *
-     * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharge The allowances/charges
+     * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharges The allowances/charges
      * @return self
      */
-    public function setServiceCharges(array $serviceCharge): self
+    public function setServiceCharges(array $serviceCharges): self
     {
-        $this->serviceCharge = $serviceCharge;
+        $this->serviceCharges = $serviceCharges;
 
         return $this;
     }
@@ -3612,7 +3612,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addServiceCharge(InvoiceSuiteServiceChargeDTO $serviceCharge): self
     {
-        $this->serviceCharge[] = $serviceCharge;
+        $this->serviceCharges[] = $serviceCharge;
 
         return $this;
     }
@@ -3626,7 +3626,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstServiceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($serviceCharge = reset($this->serviceCharge)) !== false) {
+        if (($serviceCharge = reset($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3644,7 +3644,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextServiceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($serviceCharge = next($this->serviceCharge)) !== false) {
+        if (($serviceCharge = next($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3662,7 +3662,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousServiceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($serviceCharge = prev($this->serviceCharge)) !== false) {
+        if (($serviceCharge = prev($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3680,7 +3680,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastServiceCharge(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($serviceCharge = end($this->serviceCharge)) !== false) {
+        if (($serviceCharge = end($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3701,7 +3701,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->serviceCharge as $serviceCharge) {
+        foreach ($this->serviceCharges as $serviceCharge) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
@@ -3748,18 +3748,18 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function getPositions(): array
     {
-        return $this->position;
+        return $this->positions;
     }
 
     /**
      * Sets the Document positions
      *
-     * @param array<InvoiceSuiteDocumentPositionDTO> $position The Document positions
+     * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      * @return self
      */
-    public function setPositions(array $position): self
+    public function setPositions(array $positions): self
     {
-        $this->position = $position;
+        $this->positions = $positions;
 
         return $this;
     }
@@ -3772,7 +3772,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function addPosition(InvoiceSuiteDocumentPositionDTO $position): self
     {
-        $this->position[] = $position;
+        $this->positions[] = $position;
 
         return $this;
     }
@@ -3786,7 +3786,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function firstPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($position = reset($this->position)) !== false) {
+        if (($position = reset($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3804,7 +3804,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function nextPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($position = next($this->position)) !== false) {
+        if (($position = next($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3822,7 +3822,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function previousPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($position = prev($this->position)) !== false) {
+        if (($position = prev($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3840,7 +3840,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function lastPosition(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($position = end($this->position)) !== false) {
+        if (($position = end($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -3861,7 +3861,7 @@ class InvoiceSuiteDocumentHeaderDTO
     {
         $count = 0;
 
-        foreach ($this->position as $position) {
+        foreach ($this->positions as $position) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }

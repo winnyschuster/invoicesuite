@@ -102,7 +102,7 @@ class InvoiceSuiteProductDTO
      *
      * @var array<InvoiceSuiteProductCharacteristicDTO>
      */
-    protected array $characteristic = [];
+    protected array $characteristics = [];
 
     /**
      * Constructor
@@ -119,7 +119,7 @@ class InvoiceSuiteProductDTO
      * @param string|null $brandName THe brand name of the product
      * @param string|null $modelName THe model name of the product
      * @param string|null $originTradeCountry THe code indicating the country the goods came from
-     * @param array<InvoiceSuiteProductCharacteristicDTO> $characteristic THe product characteristics
+     * @param array<InvoiceSuiteProductCharacteristicDTO> $characteristics THe product characteristics
      */
     public function __construct(
         ?string $id = null,
@@ -134,7 +134,7 @@ class InvoiceSuiteProductDTO
         ?string $brandName = null,
         ?string $modelName = null,
         ?string $originTradeCountry = null,
-        array $characteristic = [],
+        array $characteristics = [],
     ) {
         $this->setId($id);
         $this->setName($name);
@@ -148,7 +148,7 @@ class InvoiceSuiteProductDTO
         $this->setBrandName($brandName);
         $this->setModelName($modelName);
         $this->setOriginTradeCountry($originTradeCountry);
-        $this->setCharacteristics($characteristic);
+        $this->setCharacteristics($characteristics);
     }
 
     /**
@@ -434,18 +434,18 @@ class InvoiceSuiteProductDTO
      */
     public function getCharacteristics(): array
     {
-        return $this->characteristic;
+        return $this->characteristics;
     }
 
     /**
      * Sets tHe product characteristics
      *
-     * @param array<InvoiceSuiteProductCharacteristicDTO> $characteristic THe product characteristics
+     * @param array<InvoiceSuiteProductCharacteristicDTO> $characteristics THe product characteristics
      * @return self
      */
-    public function setCharacteristics(array $characteristic): self
+    public function setCharacteristics(array $characteristics): self
     {
-        $this->characteristic = $characteristic;
+        $this->characteristics = $characteristics;
 
         return $this;
     }
@@ -458,7 +458,7 @@ class InvoiceSuiteProductDTO
      */
     public function addCharacteristic(InvoiceSuiteProductCharacteristicDTO $characteristic): self
     {
-        $this->characteristic[] = $characteristic;
+        $this->characteristics[] = $characteristic;
 
         return $this;
     }
@@ -472,7 +472,7 @@ class InvoiceSuiteProductDTO
      */
     public function firstCharacteristic(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($characteristic = reset($this->characteristic)) !== false) {
+        if (($characteristic = reset($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -490,7 +490,7 @@ class InvoiceSuiteProductDTO
      */
     public function nextCharacteristic(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($characteristic = next($this->characteristic)) !== false) {
+        if (($characteristic = next($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -508,7 +508,7 @@ class InvoiceSuiteProductDTO
      */
     public function previousCharacteristic(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($characteristic = prev($this->characteristic)) !== false) {
+        if (($characteristic = prev($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -526,7 +526,7 @@ class InvoiceSuiteProductDTO
      */
     public function lastCharacteristic(callable $callback, ?callable $callbackElse = null): self
     {
-        if (($characteristic = end($this->characteristic)) !== false) {
+        if (($characteristic = end($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -550,7 +550,7 @@ class InvoiceSuiteProductDTO
     ): self {
         $count = 0;
 
-        foreach ($this->characteristic as $characteristic) {
+        foreach ($this->characteristics as $characteristic) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
