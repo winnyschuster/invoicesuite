@@ -11,7 +11,7 @@ namespace horstoeko\invoicesuite\dto;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuiteMeasurecDTO
+class InvoiceSuiteMeasureDTO
 {
     /**
      * The value

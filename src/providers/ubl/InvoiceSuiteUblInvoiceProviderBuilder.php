@@ -26,6 +26,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
@@ -518,6 +519,21 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                         $classification->getListId(),
                         $classification->getListVersionId(),
                         $classification->getName()
+                    )
+                );
+
+                $item->getProduct()?->forEachReferenceProduct(
+                    fn(InvoiceSuiteReferenceProductDTO $referencedProduct) => $this->addDocumentPositionReferencedProduct(
+                        $referencedProduct->getId(),
+                        $referencedProduct->getName(),
+                        $referencedProduct->getDescription(),
+                        $referencedProduct->getSellerId(),
+                        $referencedProduct->getBuyerId(),
+                        $referencedProduct->getGlobalId()?->getId(),
+                        $referencedProduct->getGlobalId()?->getIdType(),
+                        $referencedProduct->getIndustryId(),
+                        $referencedProduct->getUnitQuantity()?->getQuantity(),
+                        $referencedProduct->getUnitQuantity()?->getQuantityUnit()
                     )
                 );
             }

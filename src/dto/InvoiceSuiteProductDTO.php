@@ -112,6 +112,13 @@ class InvoiceSuiteProductDTO
     protected array $classifications = [];
 
     /**
+     * The reference product
+     *
+     * @var array<InvoiceSuiteReferenceProductDTO>
+     */
+    protected array $referenceProducts = [];
+
+    /**
      * Constructor
      *
      * @param string|null $id The ID of the product (product id, Order-X interoperable)
@@ -128,6 +135,7 @@ class InvoiceSuiteProductDTO
      * @param string|null $originTradeCountry The code indicating the country the goods came from
      * @param array<InvoiceSuiteProductCharacteristicDTO> $characteristics The product characteristics
      * @param array<InvoiceSuiteProductClassificationDTO> $classifications The product classification
+     * @param array<InvoiceSuiteReferenceProductDTO> $referenceProducts The reference product
      */
     public function __construct(
         ?string $id = null,
@@ -144,6 +152,7 @@ class InvoiceSuiteProductDTO
         ?string $originTradeCountry = null,
         array $characteristics = [],
         array $classifications = [],
+        array $referenceProducts = [],
     ) {
         $this->setId($id);
         $this->setName($name);
@@ -159,6 +168,7 @@ class InvoiceSuiteProductDTO
         $this->setOriginTradeCountry($originTradeCountry);
         $this->setCharacteristics($characteristics);
         $this->setClassifications($classifications);
+        $this->setReferenceProducts($referenceProducts);
     }
 
     /**
@@ -708,6 +718,146 @@ class InvoiceSuiteProductDTO
             $count++;
 
             $callback($classification);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns the reference product
+     *
+     * @return array<InvoiceSuiteReferenceProductDTO>
+     */
+    public function getReferenceProducts(): array
+    {
+        return $this->referenceProducts;
+    }
+
+    /**
+     * Sets the reference product
+     *
+     * @param array<InvoiceSuiteReferenceProductDTO> $referenceProducts The reference product
+     * @return self
+     */
+    public function setReferenceProducts(array $referenceProducts): self
+    {
+        $this->referenceProducts = $referenceProducts;
+
+        return $this;
+    }
+
+    /**
+     * Add single The reference product
+     *
+     * @param InvoiceSuiteReferenceProductDTO $referenceProduct The reference product
+     * @return self
+     */
+    public function addReferenceProduct(InvoiceSuiteReferenceProductDTO $referenceProduct): self
+    {
+        $this->referenceProducts[] = $referenceProduct;
+
+        return $this;
+    }
+
+    /**
+     * Get first The reference product
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function firstReferenceProduct(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($referenceProduct = reset($this->referenceProducts)) !== false) {
+            $callback($referenceProduct);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The reference product
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function nextReferenceProduct(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($referenceProduct = next($this->referenceProducts)) !== false) {
+            $callback($referenceProduct);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The reference product
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function previousReferenceProduct(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($referenceProduct = prev($this->referenceProducts)) !== false) {
+            $callback($referenceProduct);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The reference product
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function lastReferenceProduct(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($referenceProduct = end($this->referenceProducts)) !== false) {
+            $callback($referenceProduct);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The reference product and execute callback
+     *
+     * @param callable $callback Callback to execute for each item
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @param int|null $limit Maximum number of loops
+     * @return self
+     */
+    public function forEachReferenceProduct(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): self {
+        $count = 0;
+
+        foreach ($this->referenceProducts as $referenceProduct) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
+            $callback($referenceProduct);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {

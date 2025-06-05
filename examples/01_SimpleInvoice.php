@@ -1,32 +1,34 @@
 <?php
 
 use horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteMeasureDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentMeanDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceExtDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteMeasurecDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuitePaymentMeanDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProductCharacteristicDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteProductClassificationDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteProductDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO;
-use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteQuantityDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\models\zffxcomfort\ram\ProductCharacteristicType;
 
 require __DIR__ . "/../vendor/autoload.php";
@@ -315,12 +317,21 @@ $position->setProduct(
         'Füllmenge',
         '1000 Liter',
         'FM',
-        new InvoiceSuiteMeasurecDTO(1000.0, "LTR")
+        new InvoiceSuiteMeasureDTO(1000.0, "LTR")
     ))->addClassification(new InvoiceSuiteProductClassificationDTO(
         'classcode',
         'classname',
         'listid',
         '1.0'
+    ))->addReferenceProduct(new InvoiceSuiteReferenceProductDTO(
+        'id',
+        'some ma,e',
+        'some description',
+        'sellerid',
+        'buyerid',
+        new InvoiceSuiteIdDTO('someid','0088'),
+        'industryid',
+        new InvoiceSuiteQuantityDTO('10', 'KGM')
     ))
 );
 $documentDTO->addPosition($position);

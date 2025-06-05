@@ -37,9 +37,9 @@ class InvoiceSuiteProductCharacteristicDTO
     /**
      * The value of the product property (numerical measured variable)
      *
-     * @var InvoiceSuiteMeasurecDTO|null
+     * @var InvoiceSuiteMeasureDTO|null
      */
-    protected ?InvoiceSuiteMeasurecDTO $valueMeasure = null;
+    protected ?InvoiceSuiteMeasureDTO $valueMeasure = null;
 
     /**
      * Constructor
@@ -47,13 +47,13 @@ class InvoiceSuiteProductCharacteristicDTO
      * @param string|null $description The name of the attribute or characteristic ("Colour")
      * @param string|null $value The value of the attribute or characteristic ("Red")
      * @param string|null $type The type (Code) of product characteristic
-     * @param InvoiceSuiteMeasurecDTO|null $valueMeasure The value of the product property (numerical measured variable)
+     * @param InvoiceSuiteMeasureDTO|null $valueMeasure The value of the product property (numerical measured variable)
      */
     public function __construct(
         ?string $description = null,
         ?string $value = null,
         ?string $type = null,
-        ?InvoiceSuiteMeasurecDTO $valueMeasure = null,
+        ?InvoiceSuiteMeasureDTO $valueMeasure = null,
     ) {
         $this->setDescription($description);
         $this->setValue($value);
@@ -133,9 +133,9 @@ class InvoiceSuiteProductCharacteristicDTO
     /**
      * Returns the value of the product property (numerical measured variable)
      *
-     * @return InvoiceSuiteMeasurecDTO|null
+     * @return InvoiceSuiteMeasureDTO|null
      */
-    public function getValueMeasure(): ?InvoiceSuiteMeasurecDTO
+    public function getValueMeasure(): ?InvoiceSuiteMeasureDTO
     {
         return $this->valueMeasure;
     }
@@ -143,10 +143,10 @@ class InvoiceSuiteProductCharacteristicDTO
     /**
      * Sets the value of the product property (numerical measured variable)
      *
-     * @param InvoiceSuiteMeasurecDTO|null $valueMeasure The value of the product property (numerical measured variable)
+     * @param InvoiceSuiteMeasureDTO|null $valueMeasure The value of the product property (numerical measured variable)
      * @return self
      */
-    public function setValueMeasure(?InvoiceSuiteMeasurecDTO $valueMeasure): self
+    public function setValueMeasure(?InvoiceSuiteMeasureDTO $valueMeasure): self
     {
         $this->valueMeasure = $valueMeasure;
 
