@@ -790,8 +790,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                         $item->getPenaltyAmount(),
                         $item->getPenaltyPercent(),
                         $item->getBaseDate(),
-                        $item->getBasePeriod(),
-                        $item->getBasePeriodUnit()
+                        $item->getPeriod()?->getPeriod(),
+                        $item->getPeriod()?->getPeriodUnit()
                     )
                 );
             }

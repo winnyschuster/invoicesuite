@@ -46,16 +46,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
     /**
      * The maturity period (basis)
      *
-     * @var float|null
+     * @var horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO|null
      */
-    protected ?float $basePeriod = null;
-
-    /**
-     * The maturity period (unit)
-     *
-     * @var string|null
-     */
-    protected ?string $basePeriodUnit = null;
+    protected ?InvoiceSuitePeriodDTO $period = null;
 
     /**
      * Constructor
@@ -64,23 +57,20 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * @param float|null $penaltyAmount The amount of the payment penalty
      * @param float|null $penaltyPercent The percentage of the payment penalty
      * @param DateTimeInterface|null $baseDate The due date reference date
-     * @param float|null $basePeriod The maturity period (basis)
-     * @param string|null $basePeriodUnit The maturity period (unit)
+     * @param InvoiceSuitePeriodDTO|null $period The maturity period (basis)
      */
     public function __construct(
         ?float $baseAmount = null,
         ?float $penaltyAmount = null,
         ?float $penaltyPercent = null,
         ?DateTimeInterface $baseDate = null,
-        ?float $basePeriod = null,
-        ?string $basePeriodUnit = null,
+        ?InvoiceSuitePeriodDTO $period = null,
     ) {
         $this->setBaseAmount($baseAmount);
         $this->setPenaltyAmount($penaltyAmount);
         $this->setPenaltyPercent($penaltyPercent);
         $this->setBaseDate($baseDate);
-        $this->setBasePeriod($basePeriod);
-        $this->setBasePeriodUnit($basePeriodUnit);
+        $this->setPeriod($period);
     }
 
     /**
@@ -178,45 +168,22 @@ class InvoiceSuitePaymentTermPenaltyDTO
     /**
      * Returns the maturity period (basis)
      *
-     * @return float|null
+     * @return horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO|null
      */
-    public function getBasePeriod(): ?float
+    public function getPeriod(): ?InvoiceSuitePeriodDTO
     {
-        return $this->basePeriod;
+        return $this->period;
     }
 
     /**
      * Sets the maturity period (basis)
      *
-     * @param float|null $basePeriod The maturity period (basis)
+     * @param InvoiceSuitePeriodDTO|null $period The maturity period (basis)
      * @return self
      */
-    public function setBasePeriod(?float $basePeriod): self
+    public function setPeriod(?InvoiceSuitePeriodDTO $period): self
     {
-        $this->basePeriod = $basePeriod;
-
-        return $this;
-    }
-
-    /**
-     * Returns the maturity period (unit)
-     *
-     * @return string|null
-     */
-    public function getBasePeriodUnit(): ?string
-    {
-        return $this->basePeriodUnit;
-    }
-
-    /**
-     * Sets the maturity period (unit)
-     *
-     * @param string|null $basePeriodUnit The maturity period (unit)
-     * @return self
-     */
-    public function setBasePeriodUnit(?string $basePeriodUnit): self
-    {
-        $this->basePeriodUnit = $basePeriodUnit;
+        $this->period = $period;
 
         return $this;
     }

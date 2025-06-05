@@ -270,7 +270,7 @@ $documentDTO
                 (new InvoiceSuitePaymentTermDiscountDTO(100.0, 10.0, 10.0, new DateTime(), new InvoiceSuitePeriodDTO(10.0, 'DAY')))
             ],
             [
-                (new InvoiceSuitePaymentTermPenaltyDTO(10.0, 1.0, 5.0, new DateTime(), 2, 'MON'))
+                (new InvoiceSuitePaymentTermPenaltyDTO(10.0, 1.0, 5.0, new DateTime(), new InvoiceSuitePeriodDTO(2, 'MON')))
             ]
         ))
     )
