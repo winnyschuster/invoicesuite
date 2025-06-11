@@ -54,7 +54,7 @@ $documentDTO
     ->setIsTest(true)
     ->addNote(new InvoiceSuiteNoteDTO("Some content", "CC00", "SC00"))
     ->addNote(new InvoiceSuiteNoteDTO("Some other content", "CC99", "SC99"))
-    ->addBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"))
+    ->setBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"))
     ->setSellerParty(
         (new InvoiceSuitePartyDTO())
             ->addName("Lieferant GmbH")
@@ -387,7 +387,8 @@ $position->addNote(new InvoiceSuiteNoteDTO('Some content'))
             ->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "030-10001", "030-10001", "alfzit@ultimate-user-gmbh.de"))
             ->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@ultimate-user-gmbh.de", "EM"))
     )
-    ->setSupplyChainEvent(new DateTime());
+    ->setSupplyChainEvent(new DateTime())
+    ->setBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"));
 
 $documentDTO->addPosition($position);
 

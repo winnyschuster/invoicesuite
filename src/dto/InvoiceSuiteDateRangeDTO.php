@@ -16,21 +16,21 @@ use DateTimeInterface;
 class InvoiceSuiteDateRangeDTO
 {
     /**
-     * Start of the billing period
+     * Start of the period
      *
      * @var DateTimeInterface|null
      */
     protected ?DateTimeInterface $startDate = null;
 
     /**
-     * End of the billing period
+     * End of the period
      *
      * @var DateTimeInterface|null
      */
     protected ?DateTimeInterface $endDate = null;
 
     /**
-     * Further information of the billing period
+     * Further information of the period
      *
      * @var string|null
      */
@@ -39,9 +39,9 @@ class InvoiceSuiteDateRangeDTO
     /**
      * Constructor
      *
-     * @param DateTimeInterface|null $startDate Start of the billing period
-     * @param DateTimeInterface|null $endDate End of the billing period
-     * @param string|null $description Further information of the billing period
+     * @param DateTimeInterface|null $startDate Start of the period
+     * @param DateTimeInterface|null $endDate End of the period
+     * @param string|null $description Further information of the period
      */
     public function __construct(
         ?DateTimeInterface $startDate = null,
@@ -54,7 +54,7 @@ class InvoiceSuiteDateRangeDTO
     }
 
     /**
-     * Returns start of the billing period
+     * Returns start of the period
      *
      * @return DateTimeInterface|null
      */
@@ -64,9 +64,9 @@ class InvoiceSuiteDateRangeDTO
     }
 
     /**
-     * Sets start of the billing period
+     * Sets start of the period
      *
-     * @param DateTimeInterface|null $startDate Start of the billing period
+     * @param DateTimeInterface|null $startDate Start of the period
      * @return self
      */
     public function setStartDate(?DateTimeInterface $startDate): self
@@ -77,7 +77,7 @@ class InvoiceSuiteDateRangeDTO
     }
 
     /**
-     * Returns end of the billing period
+     * Returns end of the period
      *
      * @return DateTimeInterface|null
      */
@@ -87,9 +87,9 @@ class InvoiceSuiteDateRangeDTO
     }
 
     /**
-     * Sets end of the billing period
+     * Sets end of the period
      *
-     * @param DateTimeInterface|null $endDate End of the billing period
+     * @param DateTimeInterface|null $endDate End of the period
      * @return self
      */
     public function setEndDate(?DateTimeInterface $endDate): self
@@ -100,7 +100,7 @@ class InvoiceSuiteDateRangeDTO
     }
 
     /**
-     * Returns further information of the billing period
+     * Returns further information of the period
      *
      * @return string|null
      */
@@ -110,9 +110,9 @@ class InvoiceSuiteDateRangeDTO
     }
 
     /**
-     * Sets further information of the billing period
+     * Sets further information of the period
      *
-     * @param string|null $description Further information of the billing period
+     * @param string|null $description Further information of the period
      * @return self
      */
     public function setDescription(?string $description): self

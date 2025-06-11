@@ -184,6 +184,13 @@ class InvoiceSuiteDocumentPositionDTO
     protected ?DateTimeInterface $supplyChainEvent = null;
 
     /**
+     * The start and/or end date of the billing period
+     *
+     * @var InvoiceSuiteDateRangeDTO|null
+     */
+    protected ?InvoiceSuiteDateRangeDTO $billingPeriod = null;
+
+    /**
      * Constructor
      *
      * @param string|null $lineId The identification of the position
@@ -210,6 +217,7 @@ class InvoiceSuiteDocumentPositionDTO
      * @param InvoiceSuitePartyDTO|null $shipToParty The Ship-To Party
      * @param InvoiceSuitePartyDTO|null $ultimateShipToParty The Ultimate Ship-To Party
      * @param DateTimeInterface|null $supplyChainEvent The date of the delivery
+     * @param InvoiceSuiteDateRangeDTO|null $billingPeriod The start and/or end date of the billing period
      */
     public function __construct(
         ?string $lineId = null,
@@ -236,6 +244,7 @@ class InvoiceSuiteDocumentPositionDTO
         ?InvoiceSuitePartyDTO $shipToParty = null,
         ?InvoiceSuitePartyDTO $ultimateShipToParty = null,
         ?DateTimeInterface $supplyChainEvent = null,
+        ?InvoiceSuiteDateRangeDTO $billingPeriod = null,
     ) {
         $this->setLineId($lineId);
         $this->setParentLineId($parentLineId);
@@ -261,6 +270,7 @@ class InvoiceSuiteDocumentPositionDTO
         $this->setShipToParty($shipToParty);
         $this->setUltimateShipToParty($ultimateShipToParty);
         $this->setSupplyChainEvent($supplyChainEvent);
+        $this->setBillingPeriod($billingPeriod);
     }
 
     /**
@@ -2096,6 +2106,29 @@ class InvoiceSuiteDocumentPositionDTO
     public function setSupplyChainEvent(?DateTimeInterface $supplyChainEvent): self
     {
         $this->supplyChainEvent = $supplyChainEvent;
+
+        return $this;
+    }
+
+    /**
+     * Returns the start and/or end date of the billing period
+     *
+     * @return InvoiceSuiteDateRangeDTO|null
+     */
+    public function getBillingPeriod(): ?InvoiceSuiteDateRangeDTO
+    {
+        return $this->billingPeriod;
+    }
+
+    /**
+     * Sets the start and/or end date of the billing period
+     *
+     * @param InvoiceSuiteDateRangeDTO|null $billingPeriod The start and/or end date of the billing period
+     * @return self
+     */
+    public function setBillingPeriod(?InvoiceSuiteDateRangeDTO $billingPeriod): self
+    {
+        $this->billingPeriod = $billingPeriod;
 
         return $this;
     }

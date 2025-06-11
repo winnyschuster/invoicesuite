@@ -751,6 +751,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             )
         );
 
+        $this->setDocumentBillingPeriod(
+            $newDocumentDTO->getBillingPeriod()?->getStartDate(),
+            $newDocumentDTO->getBillingPeriod()?->getEndDate(),
+            $newDocumentDTO->getBillingPeriod()?->getDescription()
+        );
+
         $this->setDocumentSupplyChainEvent($newDocumentDTO->getSupplyChainEvent());
 
         $newDocumentDTO->forEachPaymentmean(
@@ -1139,6 +1145,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     );
 
                 $this->setDocumentPositionSupplyChainEvent($item->getSupplyChainEvent());
+
+                $this->setDocumentPositionBillingPeriod(
+                    $item->getBillingPeriod()?->getStartDate(),
+                    $item->getBillingPeriod()?->getEndDate(),
+                    $item->getBillingPeriod()?->getDescription()
+                );
             }
         );
 
