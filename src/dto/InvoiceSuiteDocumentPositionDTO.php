@@ -2,6 +2,8 @@
 
 namespace horstoeko\invoicesuite\dto;
 
+use DateTimeInterface;
+
 /**
  * Class representing a DTO for...
  *
@@ -175,6 +177,13 @@ class InvoiceSuiteDocumentPositionDTO
     protected ?InvoiceSuitePartyDTO $ultimateShipToParty = null;
 
     /**
+     * The date of the delivery
+     *
+     * @var DateTimeInterface|null
+     */
+    protected ?DateTimeInterface $supplyChainEvent = null;
+
+    /**
      * Constructor
      *
      * @param string|null $lineId The identification of the position
@@ -200,6 +209,7 @@ class InvoiceSuiteDocumentPositionDTO
      * @param InvoiceSuiteQuantityDTO|null $quantityPackage The package quantity
      * @param InvoiceSuitePartyDTO|null $shipToParty The Ship-To Party
      * @param InvoiceSuitePartyDTO|null $ultimateShipToParty The Ultimate Ship-To Party
+     * @param DateTimeInterface|null $supplyChainEvent The date of the delivery
      */
     public function __construct(
         ?string $lineId = null,
@@ -225,6 +235,7 @@ class InvoiceSuiteDocumentPositionDTO
         ?InvoiceSuiteQuantityDTO $quantityPackage = null,
         ?InvoiceSuitePartyDTO $shipToParty = null,
         ?InvoiceSuitePartyDTO $ultimateShipToParty = null,
+        ?DateTimeInterface $supplyChainEvent = null,
     ) {
         $this->setLineId($lineId);
         $this->setParentLineId($parentLineId);
@@ -249,6 +260,7 @@ class InvoiceSuiteDocumentPositionDTO
         $this->setQuantityPackage($quantityPackage);
         $this->setShipToParty($shipToParty);
         $this->setUltimateShipToParty($ultimateShipToParty);
+        $this->setSupplyChainEvent($supplyChainEvent);
     }
 
     /**
@@ -2061,6 +2073,29 @@ class InvoiceSuiteDocumentPositionDTO
     public function setUltimateShipToParty(?InvoiceSuitePartyDTO $ultimateShipToParty): self
     {
         $this->ultimateShipToParty = $ultimateShipToParty;
+
+        return $this;
+    }
+
+    /**
+     * Returns the date of the delivery
+     *
+     * @return DateTimeInterface|null
+     */
+    public function getSupplyChainEvent(): ?DateTimeInterface
+    {
+        return $this->supplyChainEvent;
+    }
+
+    /**
+     * Sets the date of the delivery
+     *
+     * @param DateTimeInterface|null $supplyChainEvent The date of the delivery
+     * @return self
+     */
+    public function setSupplyChainEvent(?DateTimeInterface $supplyChainEvent): self
+    {
+        $this->supplyChainEvent = $supplyChainEvent;
 
         return $this;
     }

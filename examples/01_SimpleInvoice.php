@@ -386,7 +386,8 @@ $position->addNote(new InvoiceSuiteNoteDTO('Some content'))
             ->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("99ß0224444", "8884", "Ultimate User AG"))
             ->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "030-10001", "030-10001", "alfzit@ultimate-user-gmbh.de"))
             ->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@ultimate-user-gmbh.de", "EM"))
-    );
+    )
+    ->setSupplyChainEvent(new DateTime());
 
 $documentDTO->addPosition($position);
 

@@ -1137,6 +1137,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                             $item->getId()
                         )
                     );
+
+                $this->setDocumentPositionSupplyChainEvent($item->getSupplyChainEvent());
             }
         );
 
