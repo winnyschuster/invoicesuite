@@ -34,6 +34,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteQuantityDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceProductDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitesummationLineDTO;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -391,6 +392,7 @@ $position->addNote(new InvoiceSuiteNoteDTO('Some content'))
     ->setBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"))
     ->addTax((new InvoiceSuiteTaxDTO('S', 'VAT', 100.00, 19.00, 19.0, 'Reason', 'ReasonCode', new DateTime(), 'DUECODE')))
     ->addAllowanceCharge(new InvoiceSuiteAllowanceChargeDTO(true, 10, 100, 2, 'S', 'VAT', 19, 'Reason', 'ReasonCode'))
+    ->setSummation(new InvoiceSuitesummationLineDTO(100.0, 0, 0, 19, 119))
     ;
 
 $documentDTO->addPosition($position);

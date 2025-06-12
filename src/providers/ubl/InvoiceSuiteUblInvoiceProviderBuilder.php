@@ -578,6 +578,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                         $allowanceCharge->getPercent()
                     )
                 );
+
+                $this->setDocumentPositionSummation(
+                    $item->getSummation()?->getNetAmount(),
+                    $item->getSummation()?->getChargeTotalAmount(),
+                    $item->getSummation()?->getDiscountTotalAmount(),
+                    $item->getSummation()?->getTaxTotalAmount(),
+                    $item->getSummation()?->getGrossAmount()
+                );
             }
         );
 

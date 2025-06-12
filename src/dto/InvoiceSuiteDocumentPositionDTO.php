@@ -205,6 +205,13 @@ class InvoiceSuiteDocumentPositionDTO
     protected array $allowanceCharges = [];
 
     /**
+     * The summation
+     *
+     * @var InvoiceSuitesummationLineDTO|null
+     */
+    protected ?InvoiceSuitesummationLineDTO $summation = null;
+
+    /**
      * Constructor
      *
      * @param string|null $lineId The identification of the position
@@ -234,6 +241,7 @@ class InvoiceSuiteDocumentPositionDTO
      * @param InvoiceSuiteDateRangeDTO|null $billingPeriod The start and/or end date of the billing period
      * @param array<InvoiceSuiteTaxDTO> $taxes The VAT breakdown
      * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The allowances/charges
+     * @param InvoiceSuitesummationLineDTO|null $summation The summation
      */
     public function __construct(
         ?string $lineId = null,
@@ -263,6 +271,7 @@ class InvoiceSuiteDocumentPositionDTO
         ?InvoiceSuiteDateRangeDTO $billingPeriod = null,
         array $taxes = [],
         array $allowanceCharges = [],
+        ?InvoiceSuitesummationLineDTO $summation = null,
     ) {
         $this->setLineId($lineId);
         $this->setParentLineId($parentLineId);
@@ -291,6 +300,7 @@ class InvoiceSuiteDocumentPositionDTO
         $this->setBillingPeriod($billingPeriod);
         $this->setTaxes($taxes);
         $this->setAllowanceCharges($allowanceCharges);
+        $this->setSummation($summation);
     }
 
     /**
@@ -2426,6 +2436,29 @@ class InvoiceSuiteDocumentPositionDTO
         if ($count === 0 && !is_null($callbackElse)) {
             $callbackElse();
         }
+
+        return $this;
+    }
+
+    /**
+     * Returns the summation
+     *
+     * @return InvoiceSuitesummationLineDTO|null
+     */
+    public function getSummation(): ?InvoiceSuitesummationLineDTO
+    {
+        return $this->summation;
+    }
+
+    /**
+     * Sets the summation
+     *
+     * @param InvoiceSuitesummationLineDTO|null $summation The summation
+     * @return self
+     */
+    public function setSummation(?InvoiceSuitesummationLineDTO $summation): self
+    {
+        $this->summation = $summation;
 
         return $this;
     }

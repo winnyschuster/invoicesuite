@@ -1173,6 +1173,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                         $allowanceCharge->getPercent()
                     )
                 );
+
+                $this->setDocumentPositionSummation(
+                    $item->getSummation()?->getNetAmount(),
+                    $item->getSummation()?->getChargeTotalAmount(),
+                    $item->getSummation()?->getDiscountTotalAmount(),
+                    $item->getSummation()?->getTaxTotalAmount(),
+                    $item->getSummation()?->getGrossAmount()
+                );
             }
         );
 
