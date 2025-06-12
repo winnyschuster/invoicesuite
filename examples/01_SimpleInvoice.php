@@ -388,7 +388,8 @@ $position->addNote(new InvoiceSuiteNoteDTO('Some content'))
             ->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@ultimate-user-gmbh.de", "EM"))
     )
     ->setSupplyChainEvent(new DateTime())
-    ->setBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"));
+    ->setBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"))
+    ->addTax((new InvoiceSuiteTaxDTO('S', 'VAT', 100.00, 19.00, 19.0, 'Reason', 'ReasonCode', new DateTime(), 'DUECODE')));
 
 $documentDTO->addPosition($position);
 

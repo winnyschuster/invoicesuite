@@ -550,8 +550,19 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                     $item->getQuantityBilled()?->getQuantityUnit(),
                     $item->getQuantityChargeFree()?->getQuantity(),
                     $item->getQuantityChargeFree()?->getQuantityUnit(),
-                    $item->getQuantityPackage()->getQuantity(),
-                    $item->getQuantityPackage()->getQuantityUnit()
+                    $item->getQuantityPackage()?->getQuantity(),
+                    $item->getQuantityPackage()?->getQuantityUnit()
+                );
+
+                $item->forEachTax(
+                    fn(InvoiceSuiteTaxDTO $tax) => $this->addDocumentPositionTax(
+                        $tax->getCategory(),
+                        $tax->getType(),
+                        $tax->getAmount(),
+                        $tax->getPercent(),
+                        $tax->getExemptionReason(),
+                        $tax->getExemptionReasonCode()
+                    )
                 );
             }
         );

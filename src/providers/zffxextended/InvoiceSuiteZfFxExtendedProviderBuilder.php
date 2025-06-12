@@ -1151,6 +1151,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                     $item->getBillingPeriod()?->getEndDate(),
                     $item->getBillingPeriod()?->getDescription()
                 );
+
+                $item->forEachTax(
+                    fn(InvoiceSuiteTaxDTO $tax) => $this->addDocumentPositionTax(
+                        $tax->getCategory(),
+                        $tax->getType(),
+                        $tax->getAmount(),
+                        $tax->getPercent(),
+                        $tax->getExemptionReason(),
+                        $tax->getExemptionReasonCode()
+                    )
+                );
             }
         );
 
