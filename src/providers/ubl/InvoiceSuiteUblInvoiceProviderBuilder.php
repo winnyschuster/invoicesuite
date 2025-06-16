@@ -468,7 +468,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         );
 
         $newDocumentDTO->forEachPosition(
-            function (InvoiceSuiteDocumentPositionDTO $item) {
+            function (InvoiceSuiteDocumentPositionDTO $item): void {
                 $this->addDocumentPosition(
                     $item->getLineId(),
                     $item->getParentLineId(),
