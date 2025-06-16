@@ -46,7 +46,7 @@ class InvoiceSuitePaymentTermDiscountDTO
     /**
      * The maturity period (basis)
      *
-     * @var horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO|null
+     * @var InvoiceSuitePeriodDTO|null
      */
     protected ?InvoiceSuitePeriodDTO $period = null;
 
@@ -168,7 +168,7 @@ class InvoiceSuitePaymentTermDiscountDTO
     /**
      * Returns the maturity period (basis)
      *
-     * @return horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO|null
+     * @return InvoiceSuitePeriodDTO|null
      */
     public function getPeriod(): ?InvoiceSuitePeriodDTO
     {
