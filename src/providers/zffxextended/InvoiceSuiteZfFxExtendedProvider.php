@@ -30,7 +30,9 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractFormatProvide
      */
     public function getParameters(): array
     {
-        return [];
+        return [
+            'CONTEXTPARAMETER' => 'urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended',
+        ];
     }
 
     /**

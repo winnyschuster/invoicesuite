@@ -50,7 +50,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
      */
     public function initRootObject(): InvoiceSuiteUblInvoiceProviderBuilder
     {
-        $this->setContextParameter('urn:cen.eu:en16931:2017');
+        $this->setContextParameter(
+            $this->getCurrentFormatProviderParameterValue('CUSTOMIZATIONID', ''),
+            $this->getCurrentFormatProviderParameterValue('PROFILEID', '')
+        );
 
         return $this;
     }
@@ -62,15 +65,10 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
      * @param string $newProfileId
      * @return static
      */
-    public function setContextParameter(string $newCustomizationId, string $newProfileId = ''): self
+    public function setContextParameter(string $newCustomizationId, string $newProfileId): self
     {
         $this->getUblInvoiceRootObject()->getCustomizationIDWithCreate()->setValue($newCustomizationId);
-
-        if ($newProfileId !== "") {
-            $this->getUblInvoiceRootObject()->getProfileIDWithCreate()->setValue($newProfileId);
-        } else {
-            $this->getUblInvoiceRootObject()->getProfileIDWithCreate()->setValue('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0');
-        }
+        $this->getUblInvoiceRootObject()->getProfileIDWithCreate()->setValue($newProfileId);
 
         return $this;
     }

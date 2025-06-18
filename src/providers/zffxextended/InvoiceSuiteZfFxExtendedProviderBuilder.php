@@ -45,7 +45,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function initRootObject(): InvoiceSuiteZfFxExtendedProviderBuilder
     {
-        $this->setContextParameter('urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended');
+        $this->setContextParameter($this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''));
 
         return $this;
     }
