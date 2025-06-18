@@ -111,7 +111,7 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
     public function getDocumentNo(
         ?string &$newDocumentNo
     ): self {
-        $this->getCurrentFormatProvider()->getBuilder()->setDocumentNo($newDocumentNo);
+        $this->getCurrentFormatProvider()->getReader()->getDocumentNo($newDocumentNo);
 
         return $this;
     }

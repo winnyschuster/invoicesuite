@@ -81,7 +81,7 @@ class InvoiceSuiteUblInvoiceProvider extends InvoiceSuiteAbstractFormatProvider
      */
     public function isSatisfiableBy(string $content): bool
     {
-        return true;
+        return false;
     }
 
     /**
