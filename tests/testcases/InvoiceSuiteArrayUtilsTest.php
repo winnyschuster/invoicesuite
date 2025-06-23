@@ -51,6 +51,7 @@ class InvoiceSuiteArrayUtilsTest extends TestCase
         $this->assertTrue(InvoiceSuiteArrayUtils::hasLast($array));
         $this->assertSame(5, InvoiceSuiteArrayUtils::currentValue($array));
         $this->assertFalse(InvoiceSuiteArrayUtils::hasNext($array));
+        $this->assertNull(InvoiceSuiteArrayUtils::currentValue($array));
     }
 
     public function testHasFirstEmptyArray(): void
