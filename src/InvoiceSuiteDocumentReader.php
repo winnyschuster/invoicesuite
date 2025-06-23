@@ -199,4 +199,46 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    /**
+     * Gets the document tax currency
+     *
+     * @param string|null $newDocumentTaxCurrency Code for the tax currency
+     * @return self
+     */
+    public function getDocumentTaxCurrency(
+        ?string &$newDocumentTaxCurrency
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentTaxCurrency($newDocumentTaxCurrency);
+
+        return $this;
+    }
+
+    /**
+     * Gets the status of the copy indicator
+     *
+     * @param boolean|null $newDocumentIsCopy Indicates that the document is a copy
+     * @return self
+     */
+    public function getDocumentIsCopy(
+        ?bool &$newDocumentIsCopy
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentIsCopy($newDocumentIsCopy);
+
+        return $this;
+    }
+
+    /**
+     * Gets the status of the test indicator
+     *
+     * @param boolean|null $newDocumentIsTest Indicates that the document is a test
+     * @return self
+     */
+    public function getDocumentIsTest(
+        ?bool &$newDocumentIsTest
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentIsTest($newDocumentIsTest);
+
+        return $this;
+    }
 }

@@ -139,4 +139,59 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
 
         return $this;
     }
+
+    /**
+     * Gets the new document tax currency
+     *
+     * @param string|null $newDocumentTaxCurrency Code for the tax currency
+     * @return self
+     *
+     * @phpstan-param-out string $newDocumentTaxCurrency
+     */
+    public function getDocumentTaxCurrency(
+        ?string &$newDocumentTaxCurrency
+    ): self {
+        $newDocumentTaxCurrency = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getTaxCurrencyCode()
+            ?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Gets the new status of the copy indicator
+     *
+     * @param boolean|null $newDocumentIsCopy Indicates that the document is a copy
+     * @return self
+     *
+     * @phpstan-param-out boolean $newDocumentIsCopy
+     */
+    public function getDocumentIsCopy(
+        ?bool &$newDocumentIsCopy = null
+    ): self {
+        $newDocumentIsCopy = $this->getCrossIndustryRootObject()->getExchangedDocument()
+            ?->getCopyIndicator()
+            ?->getIndicator() ?? false;
+
+        return $this;
+    }
+
+    /**
+     * Gets the status of the test indicator
+     *
+     * @param boolean|null $newDocumentIsTest Indicates that the document is a test
+     * @return self
+     *
+     * @phpstan-param-out boolean $newDocumentIsTest
+     */
+    public function getDocumentIsTest(
+        ?bool &$newDocumentIsTest
+    ): self {
+        $newDocumentIsTest = $this->getCrossIndustryRootObject()->getExchangedDocumentContext()
+            ?->getTestIndicator()
+            ?->getIndicator() ?? false;
+
+        return $this;
+    }
 }
