@@ -24,3 +24,9 @@ echo "Document Compl. Date ... " . $documentCompleteDate->format("d.m.Y") . "\n"
 echo "Document Currency ...... $documentCurrency\n";
 echo "Document Tax Currency .. $documentTaxCurrency\n";
 echo "Document Copy .......... $documentIsCopy\n";
+
+if ($reader->firstDocumentNote()) {
+    do {
+        echo "Document has notes...\n";
+    } while ($reader->nextDocumentNote());
+}

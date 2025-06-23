@@ -5,10 +5,13 @@ namespace horstoeko\invoicesuite\providers\zffxextended;
 use DateTimeInterface;
 use horstoeko\invoicesuite\models\zffxextended\rsm\CrossIndustryInvoiceType;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
+use horstoeko\invoicesuite\concerns\HandlesReaderPointers;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 
 class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatProviderReader
 {
+    use HandlesReaderPointers;
+
     /**
      * Returns the root object as a CrossIndustryInvoiceType
      *
@@ -202,7 +205,12 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
      */
     public function firstDocumentNote(): bool
     {
-        return reset($this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? []) !== false;
+        $this->initNamedPointer('documentnote');
+
+        return $this->getArrayHasNamedPointer(
+            $this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? [],
+            'documentnote'
+        );
     }
 
     /**
@@ -212,6 +220,11 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
      */
     public function nextDocumentNote(): bool
     {
-        return next($this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? []) !== false;
+        $this->nextNamedPointer('documentnote');
+
+        return $this->getArrayHasNamedPointer(
+            $this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? [],
+            'documentnote'
+        );
     }
 }

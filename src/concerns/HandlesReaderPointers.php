@@ -2,6 +2,8 @@
 
 namespace horstoeko\invoicesuite\concerns;
 
+use LogicException;
+
 /**
  * Trait representing reader pointer handling
  *
@@ -34,16 +36,27 @@ trait HandlesReaderPointers
     }
 
     /**
-     * Next value oi named pointer
+     * Returns true if the given pointers exists, otherwise false
      *
      * @param string $name
-     * @return self
+     * @return boolean
      */
-    protected function nextNamedPointer(string $name): self
+    protected function hasNamedPointer(string $name): bool
     {
-        $this->pointerState[$name] = ($this->pointerState[$name] ?? 0) + 1;
+        return array_key_exists($name, $this->pointerState);
+    }
 
-        return $this;
+    /**
+     * Check that a pointer is regisered. If not, an exception will be raised
+     *
+     * @param string $name
+     * @return void
+     */
+    protected function testHasNamedPointer(string $name): void
+    {
+        if (!static::hasNamedPointer($name)) {
+            throw new LogicException(sprintf("No pointer with name %s registered", $name));
+        }
     }
 
     /**
@@ -54,7 +67,24 @@ trait HandlesReaderPointers
      */
     protected function getNamedPointer(string $name): int
     {
+        static::testHasNamedPointer($name);
+
         return $this->pointerState[$name] ?? 0;
+    }
+
+    /**
+     * Next value oi named pointer
+     *
+     * @param string $name
+     * @return self
+     */
+    protected function nextNamedPointer(string $name): self
+    {
+        static::testHasNamedPointer($name);
+
+        $this->pointerState[$name] = static::getNamedPointer($name) + 1;
+
+        return $this;
     }
 
     /**
@@ -66,6 +96,8 @@ trait HandlesReaderPointers
      */
     protected function getArrayHasNamedPointer(array $array, string $name): bool
     {
-        return array_key_exists($this->pointerState[$name] ?? 0, $array);
+        static::testHasNamedPointer($name);
+
+        return array_key_exists(static::getNamedPointer($name), $array);
     }
 }
