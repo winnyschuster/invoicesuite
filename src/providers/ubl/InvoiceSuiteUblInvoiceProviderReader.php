@@ -5,6 +5,7 @@ namespace horstoeko\invoicesuite\providers\ubl;
 use DateTime;
 use DateTimeInterface;
 use horstoeko\invoicesuite\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
 
 class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatProviderReader
@@ -186,16 +187,47 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     public function firstDocumentNote(): bool
     {
-        return reset($this->getUblInvoiceRootObject()->getNote() ?? []) !== false;
+        InvoiceSuitePointerUtils::first('documentnote');
+
+        return InvoiceSuitePointerUtils::has($this->getUblInvoiceRootObject()->getNote() ?? [], 'documentnote');
     }
 
     /**
-     * Go to the first document of the document
+     * Go to the next document of the document
      *
      * @return bool
      */
     public function nextDocumentNote(): bool
     {
-        return next($this->getUblInvoiceRootObject()->getNote() ?? []) !== false;
+        InvoiceSuitePointerUtils::next('documentnote');
+
+        return InvoiceSuitePointerUtils::has($this->getUblInvoiceRootObject()->getNote() ?? [], 'documentnote');
+    }
+
+    /**
+     * Get a note to the document.
+     *
+     * @param string|null $newContent Free text containing unstructured information that is relevant to the invoice as a whole
+     * @param string|null $newContentCode Code to classify the content of the free text of the invoice
+     * @param string|null $newSubjectCode Qualification of the free text for the invoice
+     * @return self
+     *
+     * @phpstan-param-out string $newContent
+     * @phpstan-param-out string $newContentCode
+     * @phpstan-param-out string $newSubjectCode
+     */
+    public function getDocumentNote(
+        ?string &$newContent,
+        ?string &$newContentCode,
+        ?string &$newSubjectCode
+    ): self {
+        $documentNotes = ($this->getUblInvoiceRootObject()->getNote() ?? []);
+        $documentNote = $documentNotes[InvoiceSuitePointerUtils::getValue('documentnote')];
+
+        $newContent = $documentNote->getValue() ?? "";
+        $newContentCode = "";
+        $newSubjectCode = "";
+
+        return $this;
     }
 }

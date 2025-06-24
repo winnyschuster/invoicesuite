@@ -219,4 +219,31 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
 
         return InvoiceSuitePointerUtils::has($this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? [], 'documentnote');
     }
+
+    /**
+     * Get a note to the document.
+     *
+     * @param string|null $newContent Free text containing unstructured information that is relevant to the invoice as a whole
+     * @param string|null $newContentCode Code to classify the content of the free text of the invoice
+     * @param string|null $newSubjectCode Qualification of the free text for the invoice
+     * @return self
+     *
+     * @phpstan-param-out string $newContent
+     * @phpstan-param-out string $newContentCode
+     * @phpstan-param-out string $newSubjectCode
+     */
+    public function getDocumentNote(
+        ?string &$newContent,
+        ?string &$newContentCode,
+        ?string &$newSubjectCode
+    ): self {
+        $documentNotes = ($this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? []);
+        $documentNote = $documentNotes[InvoiceSuitePointerUtils::getValue('documentnote')];
+
+        $newContent = $documentNote->getContent()?->getValue() ?? "";
+        $newContentCode = $documentNote->getContentCode()?->getValue() ?? "";
+        $newSubjectCode = $documentNote->getSubjectCode()?->getValue() ?? "";
+
+        return $this;
+    }
 }

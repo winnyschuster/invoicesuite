@@ -25,8 +25,7 @@ echo "Document Currency ...... $documentCurrency\n";
 echo "Document Tax Currency .. $documentTaxCurrency\n";
 echo "Document Copy .......... $documentIsCopy\n";
 
-if ($reader->firstDocumentNote()) {
-    do {
-        echo "Document has notes...\n";
-    } while ($reader->nextDocumentNote());
+while ($reader->nextDocumentNote()) {
+    $reader->getDocumentNote($documentNoteContent, $documentNoteContentCode, $documentNoteSubjectCode);
+    echo sprintf("%s (%s, %s)\n", $documentNoteContent, $documentNoteContentCode, $documentNoteSubjectCode);
 }

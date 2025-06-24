@@ -261,4 +261,22 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
     {
         return $this->getCurrentFormatProvider()->getReader()->nextDocumentNote();
     }
+
+    /**
+     * Get a note to the document.
+     *
+     * @param string|null $newContent Free text containing unstructured information that is relevant to the invoice as a whole
+     * @param string|null $newContentCode Code to classify the content of the free text of the invoice
+     * @param string|null $newSubjectCode Qualification of the free text for the invoice
+     * @return self
+     */
+    public function getDocumentNote(
+        ?string &$newContent,
+        ?string &$newContentCode,
+        ?string &$newSubjectCode
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentNote($newContent, $newContentCode, $newSubjectCode);
+
+        return $this;
+    }
 }
