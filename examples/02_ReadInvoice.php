@@ -41,6 +41,11 @@ while ($reader->nextDocumentPostingReference()) {
 }
 
 while ($reader->nextDocumentSellerOrderReference()) {
-    $reader->getDocumentSellerOrderReference($documentSellerOrderNo, $documentSellerOrderDate);
-    echo sprintf("Seller Order %s by %s\n", $documentSellerOrderNo, $documentSellerOrderDate?->format("d.m.Y") ?? "");
+    $reader->getDocumentSellerOrderReference($documentBuyerOrderNo, $documentBuyerOrderDate);
+    echo sprintf("Seller Order %s by %s\n", $documentBuyerOrderNo, $documentBuyerOrderDate?->format("d.m.Y") ?? "");
+}
+
+while ($reader->nextDocumentBuyerOrderReference()) {
+    $reader->getDocumentBuyerOrderReference($documentBuyerOrderNo, $documentBuyerOrderDate);
+    echo sprintf("Buyer Order %s by %s\n", $documentBuyerOrderNo, $documentBuyerOrderDate?->format("d.m.Y") ?? "");
 }

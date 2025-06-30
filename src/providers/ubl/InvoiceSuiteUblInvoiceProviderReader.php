@@ -430,4 +430,64 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    /**
+     * Go to the first associated buyer's order confirmation
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getOrderReference() ?? []
+            ),
+            'documentbuyerorderreference'
+        );
+    }
+
+    /**
+     * Go to the next associated buyer's order confirmation
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getOrderReference() ?? []
+            ),
+            'documentbuyerorderreference'
+        );
+    }
+
+    /**
+     * Get the associated buyer's order confirmation.
+     *
+     * @param string|null $newReferenceNumber Buyer's order number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentBuyerOrderReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\OrderReference>
+         */
+        $documentBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getOrderReference() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\OrderReference
+         */
+        $documentBuyerOrderReference = $documentBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentbuyerorderreference')];
+
+        $newReferenceNumber = $documentBuyerOrderReference->getID() ?? "";
+        $newReferenceDate = $documentBuyerOrderReference->getIssueDate();
+
+        return $this;
+    }
 }

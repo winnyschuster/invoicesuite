@@ -240,5 +240,31 @@ interface InvoiceSuiteReaderContract
         ?DateTimeInterface &$newReferenceDate
     ): self;
 
+    /**
+     * Go to the first associated buyer's order confirmation
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerOrderReference(): bool;
+
+    /**
+     * Go to the next associated buyer's order confirmation
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerOrderReference(): bool;
+
+    /**
+     * Get the associated buyer's order confirmation.
+     *
+     * @param string|null $newReferenceNumber Buyer's order number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order date
+     * @return self
+     */
+    public function getDocumentBuyerOrderReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self;
+
     #endregion
 }

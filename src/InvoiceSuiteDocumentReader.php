@@ -389,4 +389,40 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    /**
+     * Go to the first associated buyer's order confirmation
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerOrderReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerOrderReference();
+    }
+
+    /**
+     * Go to the next associated buyer's order confirmation
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerOrderReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerOrderReference();
+    }
+
+    /**
+     * Get the associated buyer's order confirmation.
+     *
+     * @param string|null $newReferenceNumber Buyer's order number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order date
+     * @return self
+     */
+    public function getDocumentBuyerOrderReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
+
+        return $this;
+    }
 }
