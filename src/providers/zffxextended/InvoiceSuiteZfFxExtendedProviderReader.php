@@ -440,8 +440,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
 
         $newReferenceNumber = $documentSellerOrderReference->getIssuerAssignedID()?->getValue() ?? "";
         $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentSellerOrderReference->getFormattedIssueDateTime()->getDateTimeString()?->getValue() ?? "",
-            $documentSellerOrderReference->getFormattedIssueDateTime()->getDateTimeString()?->getFormat() ?? "",
+            $documentSellerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? "",
+            $documentSellerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? "",
         );
 
         return $this;
