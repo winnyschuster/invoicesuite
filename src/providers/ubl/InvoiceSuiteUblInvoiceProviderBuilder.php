@@ -958,7 +958,6 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
             $orderReference->setIssueDate($newReferenceDate);
         }
 
-
         return $this;
     }
 
