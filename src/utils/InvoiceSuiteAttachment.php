@@ -192,7 +192,7 @@ class InvoiceSuiteAttachment
      */
     public function isBinaryAttachment(): bool
     {
-        return $this->isFileAttachment() || $this->isBinaryStringAttachment() || $this->isFileAttachment();
+        return $this->isFileAttachment() || $this->isBinaryStringAttachment() || $this->isBase64StringAttachment();
     }
 
     /**
@@ -213,10 +213,6 @@ class InvoiceSuiteAttachment
     public function getContent(): string
     {
         if ($this->isUrlAttachment()) {
-            return $this->getRawContent();
-        }
-
-        if ($this->isBase64StringAttachment()) {
             return $this->getRawContent();
         }
 
