@@ -407,5 +407,31 @@ interface InvoiceSuiteReaderContract
         ?string &$newName
     ): self;
 
+    /**
+     * Go to the first additional ultimate customer order reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentUltimateCustomerOrderReference(): bool;
+
+    /**
+     * Go to the next additional ultimate customer order reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentUltimateCustomerOrderReference(): bool;
+
+    /**
+     * Get an additional ultimate customer order reference
+     *
+     * @param string|null $newReferenceNumber Ultimate customer order number
+     * @param DateTimeInterface|null $newReferenceDate Ultimate customer order date
+     * @return self
+     */
+    public function getDocumentUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self;
+
     #endregion
 }

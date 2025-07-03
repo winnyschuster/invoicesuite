@@ -74,3 +74,8 @@ while ($reader->nextDocumentProjectReference()) {
     $reader->getDocumentProjectReference($documentProjectReferenceNo, $documentProjectReferenceName);
     echo sprintf("Project Reference %s, %s\n", $documentProjectReferenceNo, $documentProjectReferenceName);
 }
+
+while ($reader->nextDocumentUltimateCustomerOrderReference()) {
+    $reader->getDocumentUltimateCustomerOrderReference($documentUltimateCustomerOrderNo, $documentUltimateCustomerOrderDate);
+    echo sprintf("Ultimate Customer Order %s by %s\n", $documentUltimateCustomerOrderNo, $documentUltimateCustomerOrderDate?->format("d.m.Y") ?? "");
+}

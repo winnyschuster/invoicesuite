@@ -526,7 +526,10 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     public function firstDocumentQuotationReference(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(InvoiceSuiteArrayUtils::ensure($this->getQuotationReferences()), 'documentquotationreference');
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->getQuotationReferences()),
+            'documentquotationreference'
+        );
     }
 
     /**
@@ -536,7 +539,10 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     public function nextDocumentQuotationReference(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(InvoiceSuiteArrayUtils::ensure($this->getQuotationReferences()), 'documentquotationreference');
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->getQuotationReferences()),
+            'documentquotationreference'
+        );
     }
 
     /**
@@ -826,6 +832,86 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         $newReferenceNumber = $documentProjectReference->getID()?->getValue() ?? "";
         $newName = "";
+
+        return $this;
+    }
+
+    /**
+     * Get the ultimate customer order references from additional documents filtered by type code 220
+     *
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference>
+     */
+    private function getDocumentUltimateCustomerOrderReferences(): array
+    {
+        $ultimateCustomerOrderDocTypeCode = $this->getCurrentFormatProviderParameterValue('BUILDER_ULTIMATECUSTOMERORDER_DOCTYPECODE', '220');
+
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$ultimateCustomerOrderDocTypeCode])) {
+            return [];
+        }
+
+        $ultimateCustomerOrderReferences =
+            array_filter(
+                $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
+                function (AdditionalDocumentReference $additionalDocumentReference) use ($ultimateCustomerOrderDocTypeCode) {
+                    return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $ultimateCustomerOrderDocTypeCode) !== 0;
+                }
+            );
+
+        return $ultimateCustomerOrderReferences;
+    }
+
+    /**
+     * Go to the first additional ultimate customer order reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentUltimateCustomerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->getDocumentUltimateCustomerOrderReferences()),
+            'documentultimatecustomerorderreference'
+        );
+    }
+
+    /**
+     * Go to the next additional ultimate customer order reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentUltimateCustomerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->getDocumentUltimateCustomerOrderReferences()),
+            'documentultimatecustomerorderreference'
+        );
+    }
+
+    /**
+     * Get an additional ultimate customer order reference
+     *
+     * @param string|null $newReferenceNumber Ultimate customer order number
+     * @param DateTimeInterface|null $newReferenceDate Ultimate customer order date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference>
+         */
+        $documentUltimateCustomerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getDocumentUltimateCustomerOrderReferences());
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference
+         */
+        $documentUltimateCustomerOrderReference = $documentUltimateCustomerOrderReferences[InvoiceSuitePointerUtils::getValue('documentultimatecustomerorderreference')];
+
+        $newReferenceNumber = $documentUltimateCustomerOrderReference->getID()?->getValue() ?? "";
+        $newReferenceDate = $documentUltimateCustomerOrderReference->getIssueDate();
 
         return $this;
     }

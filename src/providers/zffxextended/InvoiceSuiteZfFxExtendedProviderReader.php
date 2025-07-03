@@ -852,4 +852,67 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
 
         return $this;
     }
+
+    /**
+     * Go to the first additional ultimate customer order reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentUltimateCustomerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getUltimateCustomerOrderReferencedDocument() ?? []
+            ),
+            'documentultimatecustomerorderreference'
+        );
+    }
+
+    /**
+     * Go to the next additional ultimate customer order reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentUltimateCustomerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getUltimateCustomerOrderReferencedDocument() ?? []
+            ),
+            'documentultimatecustomerorderreference'
+        );
+    }
+
+    /**
+     * Get an additional ultimate customer order reference
+     *
+     * @param string|null $newReferenceNumber __BT-X-150, From EXTENDED__
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-151, From EXTENDED__
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
+         */
+        $documentUltimateCustomerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getUltimateCustomerOrderReferencedDocument() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
+         */
+        $documentUltimateCustomerOrderReference = $documentUltimateCustomerOrderReferences[InvoiceSuitePointerUtils::getValue('documentultimatecustomerorderreference')];
+
+        $newReferenceNumber = $documentUltimateCustomerOrderReference->getIssuerAssignedID()?->getValue() ?? "";
+        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $documentUltimateCustomerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
+            $documentUltimateCustomerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
+        );
+
+        return $this;
+    }
 }
