@@ -925,7 +925,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()->getDespatchAdviceReferencedDocument() ?? []
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDespatchAdviceReferencedDocument() ?? []
             ),
             'documentdespatchadvicereference'
         );
@@ -940,7 +940,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()->getDespatchAdviceReferencedDocument() ?? []
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDespatchAdviceReferencedDocument() ?? []
             ),
             'documentdespatchadvicereference'
         );
@@ -963,7 +963,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         /**
          * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
          */
-        $documentDespatchAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()->getDespatchAdviceReferencedDocument() ?? []);
+        $documentDespatchAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDespatchAdviceReferencedDocument() ?? []);
 
         /**
          * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
@@ -988,7 +988,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()->getReceivingAdviceReferencedDocument() ?? []
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getReceivingAdviceReferencedDocument() ?? []
             ),
             'documentreceivingadvicereference'
         );
@@ -1003,7 +1003,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()->getReceivingAdviceReferencedDocument() ?? []
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getReceivingAdviceReferencedDocument() ?? []
             ),
             'documentreceivingadvicereference'
         );
@@ -1026,7 +1026,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         /**
          * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
          */
-        $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()->getReceivingAdviceReferencedDocument() ?? []);
+        $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getReceivingAdviceReferencedDocument() ?? []);
 
         /**
          * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
@@ -1037,6 +1037,69 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
             $documentReceivingAdviceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
             $documentReceivingAdviceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
+        );
+
+        return $this;
+    }
+
+    /**
+     * Go to the first additional delivery note reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentDeliveryNoteReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDeliveryNoteReferencedDocument() ?? []
+            ),
+            'documentdeliverynotereference'
+        );
+    }
+
+    /**
+     * Go to the next additional delivery note reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentDeliveryNoteReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDeliveryNoteReferencedDocument() ?? []
+            ),
+            'documentdeliverynotereference'
+        );
+    }
+
+    /**
+     * Get an additional delivery note reference
+     *
+     * @param string|null $newReferenceNumber __BT-X-202, From EXTENDED__ Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-203, From EXTENDED__ Delivery slip date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentDeliveryNoteReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
+         */
+        $documentDeliveryNoteReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDeliveryNoteReferencedDocument() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
+         */
+        $documentDeliveryNoteReference = $documentDeliveryNoteReferences[InvoiceSuitePointerUtils::getValue('documentdeliverynotereference')];
+
+        $newReferenceNumber = $documentDeliveryNoteReference->getIssuerAssignedID()?->getValue() ?? "";
+        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $documentDeliveryNoteReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
+            $documentDeliveryNoteReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
         );
 
         return $this;

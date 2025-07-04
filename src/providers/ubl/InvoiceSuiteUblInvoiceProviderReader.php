@@ -1035,4 +1035,44 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    /**
+     * Go to the first additional delivery note reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentDeliveryNoteReference(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Go to the next additional delivery note reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentDeliveryNoteReference(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Get an additional delivery note reference
+     *
+     * @param string|null $newReferenceNumber Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate Delivery slip date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out null $newReferenceDate
+     */
+    public function getDocumentDeliveryNoteReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        $newReferenceNumber = "";
+        $newReferenceDate = null;
+
+        return $this;
+    }
 }

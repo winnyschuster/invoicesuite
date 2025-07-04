@@ -89,3 +89,8 @@ while ($reader->nextDocumentReceivingAdviceReference()) {
     $reader->getDocumentReceivingAdviceReference($documentReceivingAdviceNo, $documentReceivingAdviceDate);
     echo sprintf("Receiving Advice %s by %s\n", $documentReceivingAdviceNo, $documentReceivingAdviceDate?->format("d.m.Y") ?? "");
 }
+
+while ($reader->nextDocumentDeliveryNoteReference()) {
+    $reader->getDocumentDeliveryNoteReference($documentDeliveryNoteNo, $documentDeliveryNoteDate);
+    echo sprintf("Delivery Note %s by %s\n", $documentDeliveryNoteNo, $documentDeliveryNoteDate?->format("d.m.Y") ?? "");
+}

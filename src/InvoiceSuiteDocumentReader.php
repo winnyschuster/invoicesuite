@@ -731,4 +731,40 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    /**
+     * Go to the first additional delivery note reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentDeliveryNoteReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentDeliveryNoteReference();
+    }
+
+    /**
+     * Go to the next additional delivery note reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentDeliveryNoteReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentDeliveryNoteReference();
+    }
+
+    /**
+     * Get an additional delivery note reference
+     *
+     * @param string|null $newReferenceNumber Delivery slip number
+     * @param DateTimeInterface|null $newReferenceDate Delivery slip date
+     * @return self
+     */
+    public function getDocumentDeliveryNoteReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
+
+        return $this;
+    }
 }
