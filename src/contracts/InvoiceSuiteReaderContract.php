@@ -459,5 +459,31 @@ interface InvoiceSuiteReaderContract
         ?DateTimeInterface &$newReferenceDate
     ): self;
 
+    /**
+     * Go to the first additional receiving advice reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentReceivingAdviceReference(): bool;
+
+    /**
+     * Go to the next additional Receiving advice reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentReceivingAdviceReference(): bool;
+
+    /**
+     * Get an additional receiving advice reference
+     *
+     * @param string|null $newReferenceNumber Receipt notification number
+     * @param DateTimeInterface|null $newReferenceDate Receipt notification date
+     * @return self
+     */
+    public function getDocumentReceivingAdviceReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self;
+
     #endregion
 }

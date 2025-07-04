@@ -975,4 +975,64 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    /**
+     * Go to the first additional receiving advice reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentReceivingAdviceReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getReceiptDocumentReference() ?? []
+            ),
+            'documentreceivingadvicereference'
+        );
+    }
+
+    /**
+     * Go to the next additional receiving advice reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentReceivingAdviceReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getReceiptDocumentReference() ?? []
+            ),
+            'documentreceivingadvicereference'
+        );
+    }
+
+    /**
+     * Get an additional receiving advice reference
+     *
+     * @param string|null $newReferenceNumber Shipping notification number
+     * @param DateTimeInterface|null $newReferenceDate Shipping notification date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentReceivingAdviceReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\ReceiptDocumentReference>
+         */
+        $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getReceiptDocumentReference() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\ReceiptDocumentReference
+         */
+        $documentReceivingAdviceReference = $documentReceivingAdviceReferences[InvoiceSuitePointerUtils::getValue('documentreceivingadvicereference')];
+
+        $newReferenceNumber = $documentReceivingAdviceReference->getID()?->getValue() ?? "";
+        $newReferenceDate = $documentReceivingAdviceReference->getIssueDate();
+
+        return $this;
+    }
 }

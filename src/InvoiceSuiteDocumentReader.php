@@ -695,4 +695,40 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    /**
+     * Go to the first additional receiving advice reference
+     *
+     * @return boolean
+     */
+    public function firstDocumentReceivingAdviceReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentReceivingAdviceReference();
+    }
+
+    /**
+     * Go to the next additional receiving advice reference
+     *
+     * @return boolean
+     */
+    public function nextDocumentReceivingAdviceReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentReceivingAdviceReference();
+    }
+
+    /**
+     * Get an additional receiving advice reference
+     *
+     * @param string|null $newReferenceNumber Receipt notification number
+     * @param DateTimeInterface|null $newReferenceDate Receipt notification date
+     * @return self
+     */
+    public function getDocumentReceivingAdviceReference(
+        ?string &$newReferenceNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        return $this;
+    }
 }
