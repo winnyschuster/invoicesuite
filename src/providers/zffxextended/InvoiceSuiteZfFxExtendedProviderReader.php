@@ -1255,4 +1255,64 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
 
         return $this;
     }
+
+    /**
+     * Go to the first Tax Registration of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function firstDocumentSellerTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()->getSellerTradeParty()->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documentsellertaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function nextDocumentSellerTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()->getSellerTradeParty()->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documentsellertaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the seller/supplier party
+     *
+     * @param string|null $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
+     * @return self
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentSellerTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TaxRegistrationType>
+         */
+        $documentSellerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()->getSellerTradeParty()->getSpecifiedTaxRegistration() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TaxRegistrationType
+         */
+        $documentSellerTaxRegistration = $documentSellerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentsellertaxregistration')];
+
+        $newTaxRegistrationType =$documentSellerTaxRegistration->getID()?->getSchemeID() ?? "";
+        $newTaxRegistrationId =$documentSellerTaxRegistration->getID()?->getValue() ?? "";
+
+        return $this;
+    }
 }

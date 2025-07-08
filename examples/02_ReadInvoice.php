@@ -114,3 +114,8 @@ while ($reader->nextDocumentSellerGlobalId()) {
     $reader->getDocumentSellerGlobalId($documentSellerGlobalId, $documentSellerGlobalIdType);
     echo sprintf("Seller Global ID ... %s (%s)\n", $documentSellerGlobalId, $documentSellerGlobalIdType);
 }
+
+while ($reader->nextDocumentSellerTaxRegistration()) {
+    $reader->getDocumentSellerTaxRegistration($documentSellerTaxRegistrationType, $documentSellerTaxRegistrationId);
+    echo sprintf("Seller Tax Reg. .... %s (%s)\n", $documentSellerTaxRegistrationId, $documentSellerTaxRegistrationType);
+}

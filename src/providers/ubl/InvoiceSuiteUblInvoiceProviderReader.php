@@ -1264,4 +1264,64 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    /**
+     * Go to the first Tax Registration of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function firstDocumentSellerTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []
+            ),
+            'documentsellertaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function nextDocumentSellerTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []
+            ),
+            'documentsellertaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the seller/supplier party
+     *
+     * @param string|null $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId Tax identification number.
+     * @return self
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentSellerTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme>
+         */
+        $documentSellerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme
+         */
+        $documentSellerTaxRegistration = $documentSellerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentsellertaxregistration')];
+
+        $newTaxRegistrationType = $documentSellerTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? "";
+        $newTaxRegistrationId = $documentSellerTaxRegistration->getCompanyID()?->getValue() ?? "";
+
+        return $this;
+    }
 }

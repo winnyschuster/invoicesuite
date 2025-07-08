@@ -865,4 +865,40 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    /**
+     * Go to the first Tax Registration of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function firstDocumentSellerTaxRegistration(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentSellerTaxRegistration();
+    }
+
+    /**
+     * Go to the next Tax Registration of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function nextDocumentSellerTaxRegistration(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentSellerTaxRegistration();
+    }
+
+    /**
+     * Get the Tax Registration of the seller/supplier party
+     *
+     * @param string|null $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId Tax identification number.
+     * @return self
+     */
+    public function getDocumentSellerTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        return $this;
+    }
 }
