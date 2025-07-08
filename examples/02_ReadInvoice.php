@@ -119,3 +119,12 @@ while ($reader->nextDocumentSellerTaxRegistration()) {
     $reader->getDocumentSellerTaxRegistration($documentSellerTaxRegistrationType, $documentSellerTaxRegistrationId);
     echo sprintf("Seller Tax Reg. .... %s (%s)\n", $documentSellerTaxRegistrationId, $documentSellerTaxRegistrationType);
 }
+
+while ($reader->nextDocumentSellerAddress()) {
+    $reader->getDocumentSellerAddress($documentSellerAddressLine1, $documentSellerAddressLine2, $documentSellerAddressLine3, $documentSellerPostCode, $documentSellerCity, $documentSellerCountryId, $documentSellerSubDivision);
+    echo sprintf("Seller Address ..... %s\n", $documentSellerAddressLine1);
+    echo sprintf("               ..... %s\n", $documentSellerAddressLine2);
+    echo sprintf("               ..... %s\n", $documentSellerAddressLine3);
+    echo sprintf("               ..... %s %s %s\n", $documentSellerCountryId, $documentSellerPostCode, $documentSellerCity);
+    echo sprintf("               ..... %s\n", $documentSellerSubDivision);
+}

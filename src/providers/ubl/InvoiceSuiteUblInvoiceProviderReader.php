@@ -1324,4 +1324,84 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    /**
+     * Go to the first address of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function firstDocumentSellerAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []
+            ),
+            'documentselleraddress'
+        );
+    }
+
+    /**
+     * Go to the next address of the seller/supplier party
+     *
+     * @return boolean
+     */
+    public function nextDocumentSellerAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []
+            ),
+            'documentselleraddress'
+        );
+    }
+
+    /**
+     * Set the address of the seller/supplier party
+     *
+     * @param string|null $newAddressLine1 The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId Country in which the party's address is located.
+     * @param string|null $newSubDivision Region or federal state in which the party's address is located.
+     * @return self
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentSellerAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PostalAddress>
+         */
+        $documentSellerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PostalAddress
+         */
+        $documentSellerAddress = $documentSellerAddresses[InvoiceSuitePointerUtils::getValue('documentselleraddress')];
+
+        $newAddressLine1 = $documentSellerAddress->getStreetName()?->getValue() ?? "";
+        $newAddressLine2 = $documentSellerAddress->getAdditionalStreetName()?->getValue() ?? "";
+        $newAddressLine3 = "";
+        $newPostcode = $documentSellerAddress->getPostalZone()?->getValue() ?? "";
+        $newCity = $documentSellerAddress->getCityName()?->getValue() ?? "";
+        $newCountryId = $documentSellerAddress->getCountry()?->getIdentificationCode()?->getValue() ?? "";
+        $newSubDivision = $documentSellerAddress->getCountrySubentity()?->getValue() ?? "";
+
+        return $this;
+    }
 }
