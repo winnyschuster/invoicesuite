@@ -4,7 +4,8 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice.xml");
+//$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice.xml");
+$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 $reader->getDocumentNo($documentNumber);
 $reader->getDocumentType($documentType);
 $reader->getDocumentDescription($documentDescription);
@@ -202,6 +203,60 @@ while ($reader->nextDocumentBuyerContact()) {
 while ($reader->nextDocumentBuyerCommunication()) {
     $reader->getDocumentBuyerCommunication($documentBuyerCommunicationType, $documentBuyerCommunicationUri);
     echo sprintf("Buyer Comm. ....... %s (%s)\n", $documentBuyerCommunicationUri, $documentBuyerCommunicationType);
+}
+
+#endregion
+
+#region Tax Representativ Output
+
+echo "\n";
+echo "Tax Representativ Party\n";
+echo "\n";
+
+$reader->getDocumentTaxRepresentativeName($documentTaxRepresentativeName);
+echo sprintf("TaxRepresentative Name ........ %s\n", $documentTaxRepresentativeName);
+
+while ($reader->nextDocumentTaxRepresentativeId()) {
+    $reader->getDocumentTaxRepresentativeId($documentTaxRepresentativeGlobalId);
+    echo sprintf("TaxRepresentative ID .......... %s\n", $documentTaxRepresentativeGlobalId);
+}
+
+while ($reader->nextDocumentTaxRepresentativeGlobalId()) {
+    $reader->getDocumentTaxRepresentativeGlobalId($documentTaxRepresentativeGlobalId, $documentTaxRepresentativeGlobalIdType);
+    echo sprintf("TaxRepresentative Global ID ... %s (%s)\n", $documentTaxRepresentativeGlobalId, $documentTaxRepresentativeGlobalIdType);
+}
+
+while ($reader->nextDocumentTaxRepresentativeTaxRegistration()) {
+    $reader->getDocumentTaxRepresentativeTaxRegistration($documentTaxRepresentativeTaxRegistrationType, $documentTaxRepresentativeTaxRegistrationId);
+    echo sprintf("TaxRepresentative Tax Reg. .... %s (%s)\n", $documentTaxRepresentativeTaxRegistrationId, $documentTaxRepresentativeTaxRegistrationType);
+}
+
+while ($reader->nextDocumentTaxRepresentativeAddress()) {
+    $reader->getDocumentTaxRepresentativeAddress($documentTaxRepresentativeAddressLine1, $documentTaxRepresentativeAddressLine2, $documentTaxRepresentativeAddressLine3, $documentTaxRepresentativePostCode, $documentTaxRepresentativeCity, $documentTaxRepresentativeCountryId, $documentTaxRepresentativeSubDivision);
+    echo sprintf("TaxRepresentative Address ..... %s\n", $documentTaxRepresentativeAddressLine1);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeAddressLine2);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeAddressLine3);
+    echo sprintf("                          ..... %s %s %s\n", $documentTaxRepresentativeCountryId, $documentTaxRepresentativePostCode, $documentTaxRepresentativeCity);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeSubDivision);
+}
+
+while ($reader->nextDocumentTaxRepresentativeLegalOrganisation()) {
+    $reader->getDocumentTaxRepresentativeLegalOrganisation($documentTaxRepresentativeLegalOrgType, $documentTaxRepresentativeLegalOrgId, $documentTaxRepresentativeLegalOrgName);
+    echo sprintf("TaxRepresentative Legal ....... %s (%s), %s\n", $documentTaxRepresentativeLegalOrgId, $documentTaxRepresentativeLegalOrgType, $documentTaxRepresentativeLegalOrgName);
+}
+
+while ($reader->nextDocumentTaxRepresentativeContact()) {
+    $reader->getDocumentTaxRepresentativeContact($documentTaxRepresentativeContactName, $documentTaxRepresentativeContactDepartmenrName, $documentTaxRepresentativeContactPhoneNumber, $documentTaxRepresentativeContactFaxNumber, $documentTaxRepresentativeContactEmailAddress);
+    echo sprintf("TaxRepresentative Contact ..... %s\n", $documentTaxRepresentativeContactName);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactDepartmenrName);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactPhoneNumber);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactFaxNumber);
+    echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactEmailAddress);
+}
+
+while ($reader->nextDocumentTaxRepresentativeCommunication()) {
+    $reader->getDocumentTaxRepresentativeCommunication($documentTaxRepresentativeCommunicationType, $documentTaxRepresentativeCommunicationUri);
+    echo sprintf("TaxRepresentative Comm. ....... %s (%s)\n", $documentTaxRepresentativeCommunicationUri, $documentTaxRepresentativeCommunicationType);
 }
 
 #endregion

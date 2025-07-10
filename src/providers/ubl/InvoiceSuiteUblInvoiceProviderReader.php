@@ -516,11 +516,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         }
 
         $additionalDocumentReferences =
-            array_filter(
-                $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
-                function (AdditionalDocumentReference $additionalDocumentReference) use ($additionalDocTypeCode) {
-                    return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $additionalDocTypeCode) !== 0;
-                }
+            array_values(
+                array_filter(
+                    $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
+                    function (AdditionalDocumentReference $additionalDocumentReference) use ($additionalDocTypeCode) {
+                        return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $additionalDocTypeCode) !== 0;
+                    }
+                )
             );
 
         return $additionalDocumentReferences;
@@ -835,7 +837,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         /**
          * @var \horstoeko\invoicesuite\models\ubl\cac\ProjectReference
          */
-        $documentProjectReference = $documentProjectReferences[InvoiceSuitePointerUtils::getValue('documentinvoicereference')];
+        $documentProjectReference = $documentProjectReferences[InvoiceSuitePointerUtils::getValue('documentprojectreference')];
 
         $newReferenceNumber = $documentProjectReference->getID()?->getValue() ?? "";
         $newName = "";
@@ -857,11 +859,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         }
 
         $ultimateCustomerOrderReferences =
-            array_filter(
-                $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
-                function (AdditionalDocumentReference $additionalDocumentReference) use ($ultimateCustomerOrderDocTypeCode) {
-                    return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $ultimateCustomerOrderDocTypeCode) !== 0;
-                }
+            array_values(
+                array_filter(
+                    $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
+                    function (AdditionalDocumentReference $additionalDocumentReference) use ($ultimateCustomerOrderDocTypeCode) {
+                        return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $ultimateCustomerOrderDocTypeCode) !== 0;
+                    }
+                )
             );
 
         return $ultimateCustomerOrderReferences;
@@ -1144,12 +1148,15 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     private function resolveDocumentSellerIds(): array
     {
-        return array_filter(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
-            ),
-            fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") === ""
-        );
+        return
+            array_values(
+                array_filter(
+                    InvoiceSuiteArrayUtils::ensure(
+                        $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
+                    ),
+                    fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") === ""
+                )
+            );
     }
 
     /**
@@ -1211,12 +1218,15 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     private function resolveDocumentSellerGlobalIds(): array
     {
-        return array_filter(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
-            ),
-            fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") !== ""
-        );
+        return
+            array_values(
+                array_filter(
+                    InvoiceSuiteArrayUtils::ensure(
+                        $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
+                    ),
+                    fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") !== ""
+                )
+            );
     }
 
     /**
@@ -1651,12 +1661,15 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     private function resolveDocumentBuyerIds(): array
     {
-        return array_filter(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
-            ),
-            fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") === ""
-        );
+        return
+            array_values(
+                array_filter(
+                    InvoiceSuiteArrayUtils::ensure(
+                        $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
+                    ),
+                    fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") === ""
+                )
+            );
     }
 
     /**
@@ -1718,12 +1731,15 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      */
     private function resolveDocumentBuyerGlobalIds(): array
     {
-        return array_filter(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
-            ),
-            fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") !== ""
-        );
+        return
+            array_values(
+                array_filter(
+                    InvoiceSuiteArrayUtils::ensure(
+                        $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
+                    ),
+                    fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") !== ""
+                )
+            );
     }
 
     /**
@@ -2118,6 +2134,518 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         $newType = $documentBuyerElectronicCommunication->getSchemeID() ?? "";
         $newUri = $documentBuyerElectronicCommunication->getValue() ?? "";
+
+        return $this;
+    }
+
+    #endregion
+
+    #region Document Tax Representativ party
+
+    /**
+     * Get the name of the tax representative party
+     *
+     * @param string|null $newName The full formal name under which the party is registered.
+     * @return self
+     *
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentTaxRepresentativeName(
+        ?string &$newName
+    ): self {
+        $newName = "";
+
+        $taxRepresentativeMames = $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyName() ?? [];
+        $taxRepresentativeMame = reset($taxRepresentativeMames);
+
+        if ($taxRepresentativeMame === false) {
+            return $this;
+        }
+
+        $newName = $taxRepresentativeMame->getName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Get all tax representative IDs
+     *
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+     */
+    private function resolveDocumentTaxRepresentativeIds(): array
+    {
+        return
+            array_values(
+                array_filter(
+                    InvoiceSuiteArrayUtils::ensure(
+                        $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyIdentification() ?? []
+                    ),
+                    fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") === ""
+                )
+            );
+    }
+
+    /**
+     * Go to the first ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            $this->resolveDocumentTaxRepresentativeIds(),
+            'documenttaxrepresentativeid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            $this->resolveDocumentTaxRepresentativeIds(),
+            'documenttaxrepresentativeid'
+        );
+    }
+
+    /**
+     * Get the ID of the tax representative party
+     *
+     * @param string|null $newId An identifier of the party. In many systems, identification is key information.
+     * @return self
+     *
+     * @phpstan-param-out string $newId
+     */
+    public function getDocumentTaxRepresentativeId(
+        ?string &$newId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+         */
+        $documentTaxRepresentativeIds = $this->resolveDocumentTaxRepresentativeIds();
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification
+         */
+        $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
+
+        $newId = $documentTaxRepresentativeId->getID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Get all tax representative global IDs
+     *
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+     */
+    private function resolveDocumentTaxRepresentativeGlobalIds(): array
+    {
+        return
+            array_values(
+                array_filter(
+                    InvoiceSuiteArrayUtils::ensure(
+                        $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyIdentification() ?? []
+                    ),
+                    fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") !== ""
+                )
+            );
+    }
+
+    /**
+     * Go to the first global ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            $this->resolveDocumentTaxRepresentativeGlobalIds(),
+            'documenttaxrepresentativeglobalid'
+        );
+    }
+
+    /**
+     * Go to the next global ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            $this->resolveDocumentTaxRepresentativeGlobalIds(),
+            'documenttaxrepresentativeglobalid'
+        );
+    }
+
+    /**
+     * Get the Global ID of the tax representative party
+     *
+     * @param string|null $newGlobalId A global identifier of the party.
+     * @param string|null $newGlobalIdType Type of the global identifier of the party.
+     * @return self
+     *
+     * @phpstan-param-out string $newGlobalId
+     * @phpstan-param-out string $newGlobalIdType
+     */
+    public function getDocumentTaxRepresentativeGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+         */
+        $documentTaxRepresentativeGlobalIds = $this->resolveDocumentTaxRepresentativeGlobalIds();
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification
+         */
+        $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
+
+        $newGlobalId = $documentTaxRepresentativeGlobalId->getID()?->getValue() ?? "";
+        $newGlobalIdType = $documentTaxRepresentativeGlobalId->getID()?->getSchemeID() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []
+            ),
+            'documenttaxrepresentativetaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []
+            ),
+            'documenttaxrepresentativetaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the tax representative party
+     *
+     * @param string|null $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId Tax identification number.
+     * @return self
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentTaxRepresentativeTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme>
+         */
+        $documentTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme
+         */
+        $documentTaxRepresentativeTaxRegistration = $documentTaxRepresentativeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativetaxregistration')];
+
+        $newTaxRegistrationType = $documentTaxRepresentativeTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? "";
+        $newTaxRegistrationId = $documentTaxRepresentativeTaxRegistration->getCompanyID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []
+            ),
+            'documenttaxrepresentativeaddress'
+        );
+    }
+
+    /**
+     * Go to the next address of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []
+            ),
+            'documenttaxrepresentativeaddress'
+        );
+    }
+
+    /**
+     * Set the address of the tax representative party
+     *
+     * @param string|null $newAddressLine1 The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId Country in which the party's address is located.
+     * @param string|null $newSubDivision Region or federal state in which the party's address is located.
+     * @return self
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentTaxRepresentativeAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PostalAddress>
+         */
+        $documentTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PostalAddress
+         */
+        $documentTaxRepresentativeAddress = $documentTaxRepresentativeAddresses[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeaddress')];
+
+        $newAddressLine1 = $documentTaxRepresentativeAddress->getStreetName()?->getValue() ?? "";
+        $newAddressLine2 = $documentTaxRepresentativeAddress->getAdditionalStreetName()?->getValue() ?? "";
+        $newAddressLine3 = "";
+        $newPostcode = $documentTaxRepresentativeAddress->getPostalZone()?->getValue() ?? "";
+        $newCity = $documentTaxRepresentativeAddress->getCityName()?->getValue() ?? "";
+        $newCountryId = $documentTaxRepresentativeAddress->getCountry()?->getIdentificationCode()?->getValue() ?? "";
+        $newSubDivision = $documentTaxRepresentativeAddress->getCountrySubentity()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []
+            ),
+            'documenttaxrepresentativelegalorganisation'
+        );
+    }
+
+    /**
+     * Go to the next the legal information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []
+            ),
+            'documenttaxrepresentativelegalorganisation'
+        );
+    }
+
+    /**
+     * Get the legal information of the tax representative party
+     *
+     * @param string|null $newType Type of the identification number of the legal registration of the party.
+     * @param string|null $newId Identification number of the legal registration of the party.
+     * @param string|null $newName Name by which the party is known, if different from the party's name.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newId
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentTaxRepresentativeLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyLegalEntity>
+         */
+        $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyLegalEntity
+         */
+        $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
+
+        $newType = $documentTaxRepresentativeLegalOrganisation->getCompanyID()?->getSchemeID() ?? "";
+        $newId = $documentTaxRepresentativeLegalOrganisation->getCompanyID()?->getValue() ?? "";
+
+        $partyNames = $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyName() ?? [];
+        $partyName = reset($partyNames);
+        $newName = $partyName !== false ? $partyName->getName()?->getValue() ?? "" : "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getContact() ?? []
+            ),
+            'documenttaxrepresentativecontact'
+        );
+    }
+
+    /**
+     * Go to the next contact information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getContact() ?? []
+            ),
+            'documenttaxrepresentativecontact'
+        );
+    }
+
+    /**
+     * Get the contact information of the tax representative party
+     *
+     * @param string|null $newPersonName Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName Name of the department for the contact point.
+     * @param string|null $newPhoneNumber Telephone number for the contact point.
+     * @param string|null $newFaxNumber Fax number of the contact point.
+     * @param string|null $newEmailAddress E-Mail address of the contact point.
+     * @return self
+     *
+     * @phpstan-param-out string $newPersonName
+     * @phpstan-param-out string $newDepartmentName
+     * @phpstan-param-out string $newPhoneNumber
+     * @phpstan-param-out string $newFaxNumber
+     * @phpstan-param-out string $newEmailAddress
+     */
+    public function getDocumentTaxRepresentativeContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\Contact>
+         */
+        $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getContact() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\Contact
+         */
+        $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
+
+        $newPersonName = $documentTaxRepresentativeContact->getName()?->getValue() ?? "";
+        $newDepartmentName = "";
+        $newPhoneNumber = $documentTaxRepresentativeContact->getTelephone()?->getValue() ?? "";
+        $newFaxNumber = $documentTaxRepresentativeContact->getTelefax()?->getValue() ?? "";
+        $newEmailAddress = $documentTaxRepresentativeContact->getElectronicMail()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []
+            ),
+            'documenttaxrepresentativeecommunication'
+        );
+    }
+
+    /**
+     * Go to the next communication information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []
+            ),
+            'documenttaxrepresentativeecommunication'
+        );
+    }
+
+    /**
+     * Get communication information of the tax representative party
+     *
+     * @param string|null $newType The type for the party's electronic address.
+     * @param string|null $newUri The party's electronic address.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newUri
+     */
+    public function getDocumentTaxRepresentativeCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cbc\EndpointID>
+         */
+        $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cbc\EndpointID
+         */
+        $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
+
+        $newType = $documentTaxRepresentativeElectronicCommunication->getSchemeID() ?? "";
+        $newUri = $documentTaxRepresentativeElectronicCommunication->getValue() ?? "";
 
         return $this;
     }

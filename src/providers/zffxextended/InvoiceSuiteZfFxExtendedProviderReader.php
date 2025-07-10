@@ -2075,4 +2075,476 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     }
 
     #endregion
+
+    #region Document Tax Representativ party
+
+    /**
+     * Get the name of the tax representative party
+     *
+     * @param string|null $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered.
+     * @return self
+     *
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentTaxRepresentativeName(
+        ?string &$newName
+    ): self {
+        $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []
+            ),
+            'documenttaxrepresentativeid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []
+            ),
+            'documenttaxrepresentativeid'
+        );
+    }
+
+    /**
+     * Get the ID of the tax representative party
+     *
+     * @param string|null $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
+     * @return self
+     *
+     * @phpstan-param-out string $newId
+     */
+    public function getDocumentTaxRepresentativeId(
+        ?string &$newId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\udt\IDType>
+         */
+        $documentTaxRepresentativeIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\udt\IDType
+         */
+        $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
+
+        $newId = $documentTaxRepresentativeId->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []
+            ),
+            'documenttaxrepresentativeglobalid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []
+            ),
+            'documenttaxrepresentativeglobalid'
+        );
+    }
+
+    /**
+     * Get the Global ID of the tax representative party
+     *
+     * @param string|null $newGlobalId __BT-29-0, From BASIC WL__ A global identifier of the party.
+     * @param string|null $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
+     * @return self
+     *
+     * @phpstan-param-out string $newGlobalId
+     * @phpstan-param-out string $newGlobalIdType
+     */
+    public function getDocumentTaxRepresentativeGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\udt\IDType>
+         */
+        $documentTaxRepresentativeGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\udt\IDType
+         */
+        $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
+
+        $newGlobalId = $documentTaxRepresentativeGlobalId->getValue() ?? "";
+        $newGlobalIdType = $documentTaxRepresentativeGlobalId->getSchemeID() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documenttaxrepresentativetaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documenttaxrepresentativetaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the tax representative party
+     *
+     * @param string|null $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
+     * @return self
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentTaxRepresentativeTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TaxRegistrationType>
+         */
+        $documentTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TaxRegistrationType
+         */
+        $documentTaxRepresentativeTaxRegistration = $documentTaxRepresentativeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativetaxregistration')];
+
+        $newTaxRegistrationType = $documentTaxRepresentativeTaxRegistration->getID()?->getSchemeID() ?? "";
+        $newTaxRegistrationId = $documentTaxRepresentativeTaxRegistration->getID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []
+            ),
+            'documenttaxrepresentativeaddress'
+        );
+    }
+
+    /**
+     * Go to the next address of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []
+            ),
+            'documenttaxrepresentativeaddress'
+        );
+    }
+
+    /**
+     * Set the address of the tax representative party
+     *
+     * @param string|null $newAddressLine1 __BT-35, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 __BT-36, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 __BT-162, From BASIC WL__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode __BT-38, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity __BT-37, From BASIC WL__ Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId __BT-40, From MINIMUM__ Country in which the party's address is located.
+     * @param string|null $newSubDivision __BT-39, From BASIC WL__ Region or federal state in which the party's address is located.
+     * @return self
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentTaxRepresentativeAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TradeAddressType>
+         */
+        $documentTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradeAddressType
+         */
+        $documentTaxRepresentativeAddress = $documentTaxRepresentativeAddresses[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeaddress')];
+
+        $newAddressLine1 = $documentTaxRepresentativeAddress->getLineOne()?->getValue() ?? "";
+        $newAddressLine2 = $documentTaxRepresentativeAddress->getLineTwo()?->getValue() ?? "";
+        $newAddressLine3 = $documentTaxRepresentativeAddress->getLineThree()?->getValue() ?? "";
+        $newPostcode = $documentTaxRepresentativeAddress->getPostcodeCode()?->getValue() ?? "";
+        $newCity = $documentTaxRepresentativeAddress->getCityName()?->getValue() ?? "";
+        $newCountryId = $documentTaxRepresentativeAddress->getCountryID()?->getValue() ?? "";
+        $newSubDivision = $documentTaxRepresentativeAddress->getCountrySubDivisionName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []
+            ),
+            'documenttaxrepresentativelegalorganisation'
+        );
+    }
+
+    /**
+     * Go to the next the legal information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []
+            ),
+            'documenttaxrepresentativelegalorganisation'
+        );
+    }
+
+    /**
+     * Get the legal information of the tax representative party
+     *
+     * @param string|null $newType __BT-30-1, From MINIMUM__ Type of the identification number of the legal registration of the party.
+     * @param string|null $newId __BT-30, From MINIMUM__ Identification number of the legal registration of the party.
+     * @param string|null $newName __BT-28, From BASIC WL__ Name by which the party is known, if different from the party's name.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newId
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentTaxRepresentativeLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\LegalOrganizationType>
+         */
+        $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\LegalOrganizationType
+         */
+        $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
+
+        $newType = $documentTaxRepresentativeLegalOrganisation->getID()?->getSchemeID() ?? "";
+        $newId = $documentTaxRepresentativeLegalOrganisation->getID()?->getValue() ?? "";
+        $newName = $documentTaxRepresentativeLegalOrganisation->getTradingBusinessName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []
+            ),
+            'documenttaxrepresentativecontact'
+        );
+    }
+
+    /**
+     * Go to the next contact information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []
+            ),
+            'documenttaxrepresentativecontact'
+        );
+    }
+
+    /**
+     * Get the contact information of the tax representative party
+     *
+     * @param string|null $newPersonName __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber __BT-42, From EN 16931__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber __BT-X-107, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress __BT-43, From EN 16931__ E-Mail address of the contact point.
+     * @return self
+     *
+     * @phpstan-param-out string $newPersonName
+     * @phpstan-param-out string $newDepartmentName
+     * @phpstan-param-out string $newPhoneNumber
+     * @phpstan-param-out string $newFaxNumber
+     * @phpstan-param-out string $newEmailAddress
+     */
+    public function getDocumentTaxRepresentativeContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TradeContactType>
+         */
+        $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradeContactType
+         */
+        $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
+
+        $newPersonName = $documentTaxRepresentativeContact->getPersonName()?->getValue() ?? "";
+        $newDepartmentName = $documentTaxRepresentativeContact->getDepartmentName()?->getValue() ?? "";
+        $newPhoneNumber = $documentTaxRepresentativeContact->getTelephoneUniversalCommunication()?->getCompleteNumber()?->getValue() ?? "";
+        $newFaxNumber = $documentTaxRepresentativeContact->getFaxUniversalCommunication()?->getCompleteNumber()?->getValue() ?? "";
+        $newEmailAddress = $documentTaxRepresentativeContact->getEmailURIUniversalCommunication()->getURIID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function firstDocumentTaxRepresentativeCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []
+            ),
+            'documenttaxrepresentativeecommunication'
+        );
+    }
+
+    /**
+     * Go to the next communication information of the tax representative party
+     *
+     * @return boolean
+     */
+    public function nextDocumentTaxRepresentativeCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []
+            ),
+            'documenttaxrepresentativeecommunication'
+        );
+    }
+
+    /**
+     * Get communication information of the tax representative party
+     *
+     * @param string|null $newType __BT-34-1, From BASIC WL__ The type for the party's electronic address.
+     * @param string|null $newUri __BT-34, From BASIC WL__ The party's electronic address.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newUri
+     */
+    public function getDocumentTaxRepresentativeCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\UniversalCommunicationType>
+         */
+        $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\UniversalCommunicationType
+         */
+        $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
+
+        $newType = $documentTaxRepresentativeElectronicCommunication->getURIID()?->getSchemeID() ?? "";
+        $newUri = $documentTaxRepresentativeElectronicCommunication->getURIID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    #endregion
 }
