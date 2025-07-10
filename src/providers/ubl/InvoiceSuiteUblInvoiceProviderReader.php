@@ -25,6 +25,8 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         return $this->getRootObject();
     }
 
+    #region Document Generals
+
     /**
      * Gets the document number (e.g. invoice number)
      *
@@ -374,6 +376,10 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    #endregion
+
+    #region Document References
 
     /**
      * Go to the first associated seller's order confirmation
@@ -1102,6 +1108,10 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         return $this;
     }
 
+    #endregion
+
+    #region Document Seller/Supplier
+
     /**
      * Get the name of the seller/supplier party
      *
@@ -1604,4 +1614,513 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         return $this;
     }
+
+    #endregion
+
+    #region Document Buyer/Customer
+
+    /**
+     * Get the name of the buyer/customer party
+     *
+     * @param string|null $newName The full formal name under which the party is registered.
+     * @return self
+     *
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentBuyerName(
+        ?string &$newName
+    ): self {
+        $newName = "";
+
+        $buyerLegalEntities = $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity();
+        $buyerLegalEntity = reset($buyerLegalEntities);
+
+        if ($buyerLegalEntity === false) {
+            return $this;
+        }
+
+        $newName = $buyerLegalEntity->getRegistrationName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Get all buyer/customer IDs
+     *
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+     */
+    private function resolveDocumentBuyerIds(): array
+    {
+        return array_filter(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
+            ),
+            fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") === ""
+        );
+    }
+
+    /**
+     * Go to the first ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            $this->resolveDocumentBuyerIds(),
+            'documentbuyerid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            $this->resolveDocumentBuyerIds(),
+            'documentbuyerid'
+        );
+    }
+
+    /**
+     * Get the ID of the buyer/customer party
+     *
+     * @param string|null $newId An identifier of the party. In many systems, identification is key information.
+     * @return self
+     *
+     * @phpstan-param-out string $newId
+     */
+    public function getDocumentBuyerId(
+        ?string &$newId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+         */
+        $documentBuyerIds = $this->resolveDocumentBuyerIds();
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification
+         */
+        $documentBuyerId = $documentBuyerIds[InvoiceSuitePointerUtils::getValue('documentbuyerid')];
+
+        $newId = $documentBuyerId->getID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Get all buyer/customer global IDs
+     *
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+     */
+    private function resolveDocumentBuyerGlobalIds(): array
+    {
+        return array_filter(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
+            ),
+            fn(PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? "") !== ""
+        );
+    }
+
+    /**
+     * Go to the first global ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            $this->resolveDocumentBuyerGlobalIds(),
+            'documentbuyerglobalid'
+        );
+    }
+
+    /**
+     * Go to the next global ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            $this->resolveDocumentBuyerGlobalIds(),
+            'documentbuyerglobalid'
+        );
+    }
+
+    /**
+     * Get the Global ID of the buyer/customer party
+     *
+     * @param string|null $newGlobalId A global identifier of the party.
+     * @param string|null $newGlobalIdType Type of the global identifier of the party.
+     * @return self
+     *
+     * @phpstan-param-out string $newGlobalId
+     * @phpstan-param-out string $newGlobalIdType
+     */
+    public function getDocumentBuyerGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+         */
+        $documentBuyerGlobalIds = $this->resolveDocumentBuyerGlobalIds();
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification
+         */
+        $documentBuyerGlobalId = $documentBuyerGlobalIds[InvoiceSuitePointerUtils::getValue('documentbuyerglobalid')];
+
+        $newGlobalId = $documentBuyerGlobalId->getID()?->getValue() ?? "";
+        $newGlobalIdType = $documentBuyerGlobalId->getID()?->getSchemeID() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []
+            ),
+            'documentbuyertaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []
+            ),
+            'documentbuyertaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the buyer/customer party
+     *
+     * @param string|null $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId Tax identification number.
+     * @return self
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentBuyerTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme>
+         */
+        $documentBuyerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme
+         */
+        $documentBuyerTaxRegistration = $documentBuyerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentbuyertaxregistration')];
+
+        $newTaxRegistrationType = $documentBuyerTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? "";
+        $newTaxRegistrationId = $documentBuyerTaxRegistration->getCompanyID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []
+            ),
+            'documentbuyeraddress'
+        );
+    }
+
+    /**
+     * Go to the next address of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []
+            ),
+            'documentbuyeraddress'
+        );
+    }
+
+    /**
+     * Set the address of the buyer/customer party
+     *
+     * @param string|null $newAddressLine1 The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId Country in which the party's address is located.
+     * @param string|null $newSubDivision Region or federal state in which the party's address is located.
+     * @return self
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentBuyerAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PostalAddress>
+         */
+        $documentBuyerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PostalAddress
+         */
+        $documentBuyerAddress = $documentBuyerAddresses[InvoiceSuitePointerUtils::getValue('documentbuyeraddress')];
+
+        $newAddressLine1 = $documentBuyerAddress->getStreetName()?->getValue() ?? "";
+        $newAddressLine2 = $documentBuyerAddress->getAdditionalStreetName()?->getValue() ?? "";
+        $newAddressLine3 = "";
+        $newPostcode = $documentBuyerAddress->getPostalZone()?->getValue() ?? "";
+        $newCity = $documentBuyerAddress->getCityName()?->getValue() ?? "";
+        $newCountryId = $documentBuyerAddress->getCountry()?->getIdentificationCode()?->getValue() ?? "";
+        $newSubDivision = $documentBuyerAddress->getCountrySubentity()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []
+            ),
+            'documentbuyerlegalorganisation'
+        );
+    }
+
+    /**
+     * Go to the next the legal information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []
+            ),
+            'documentbuyerlegalorganisation'
+        );
+    }
+
+    /**
+     * Get the legal information of the buyer/customer party
+     *
+     * @param string|null $newType Type of the identification number of the legal registration of the party.
+     * @param string|null $newId Identification number of the legal registration of the party.
+     * @param string|null $newName Name by which the party is known, if different from the party's name.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newId
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentBuyerLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyLegalEntity>
+         */
+        $documentBuyerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyLegalEntity
+         */
+        $documentBuyerLegalOrganisation = $documentBuyerLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentbuyerlegalorganisation')];
+
+        $newType = $documentBuyerLegalOrganisation->getCompanyID()?->getSchemeID() ?? "";
+        $newId = $documentBuyerLegalOrganisation->getCompanyID()?->getValue() ?? "";
+
+        // Trading name and Party name are swapped in UBL
+        $partyNames = $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyName() ?? [];
+        $partyName = reset($partyNames);
+        $newName = $partyName !== false ? $partyName->getName()?->getValue() ?? "" : "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []
+            ),
+            'documentbuyercontact'
+        );
+    }
+
+    /**
+     * Go to the next contact information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []
+            ),
+            'documentbuyercontact'
+        );
+    }
+
+    /**
+     * Get the contact information of the buyer/customer party
+     *
+     * @param string|null $newPersonName Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName Name of the department for the contact point.
+     * @param string|null $newPhoneNumber Telephone number for the contact point.
+     * @param string|null $newFaxNumber Fax number of the contact point.
+     * @param string|null $newEmailAddress E-Mail address of the contact point.
+     * @return self
+     *
+     * @phpstan-param-out string $newPersonName
+     * @phpstan-param-out string $newDepartmentName
+     * @phpstan-param-out string $newPhoneNumber
+     * @phpstan-param-out string $newFaxNumber
+     * @phpstan-param-out string $newEmailAddress
+     */
+    public function getDocumentBuyerContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\Contact>
+         */
+        $documentBuyerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\Contact
+         */
+        $documentBuyerContact = $documentBuyerContacts[InvoiceSuitePointerUtils::getValue('documentbuyercontact')];
+
+        $newPersonName = $documentBuyerContact->getName()?->getValue() ?? "";
+        $newDepartmentName = "";
+        $newPhoneNumber = $documentBuyerContact->getTelephone()?->getValue() ?? "";
+        $newFaxNumber = $documentBuyerContact->getTelefax()?->getValue() ?? "";
+        $newEmailAddress = $documentBuyerContact->getElectronicMail()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []
+            ),
+            'documentbuyerecommunication'
+        );
+    }
+
+    /**
+     * Go to the next communication information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []
+            ),
+            'documentbuyerecommunication'
+        );
+    }
+
+    /**
+     * Get communication information of the buyer/customer party
+     *
+     * @param string|null $newType The type for the party's electronic address.
+     * @param string|null $newUri The party's electronic address.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newUri
+     */
+    public function getDocumentBuyerCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cbc\EndpointID>
+         */
+        $documentBuyerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cbc\EndpointID
+         */
+        $documentBuyerElectronicCommunication = $documentBuyerElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentbuyerecommunication')];
+
+        $newType = $documentBuyerElectronicCommunication->getSchemeID() ?? "";
+        $newUri = $documentBuyerElectronicCommunication->getValue() ?? "";
+
+        return $this;
+    }
+
+    #endregion
 }

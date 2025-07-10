@@ -151,3 +151,57 @@ while ($reader->nextDocumentSellerCommunication()) {
 }
 
 #endregion
+
+#region Buyer Output
+
+echo "\n";
+echo "Buyer/Customer Party\n";
+echo "\n";
+
+$reader->getDocumentBuyerName($documentBuyerName);
+echo sprintf("Buyer Name ........ %s\n", $documentBuyerName);
+
+while ($reader->nextDocumentBuyerId()) {
+    $reader->getDocumentBuyerId($documentBuyerGlobalId);
+    echo sprintf("Buyer ID .......... %s\n", $documentBuyerGlobalId);
+}
+
+while ($reader->nextDocumentBuyerGlobalId()) {
+    $reader->getDocumentBuyerGlobalId($documentBuyerGlobalId, $documentBuyerGlobalIdType);
+    echo sprintf("Buyer Global ID ... %s (%s)\n", $documentBuyerGlobalId, $documentBuyerGlobalIdType);
+}
+
+while ($reader->nextDocumentBuyerTaxRegistration()) {
+    $reader->getDocumentBuyerTaxRegistration($documentBuyerTaxRegistrationType, $documentBuyerTaxRegistrationId);
+    echo sprintf("Buyer Tax Reg. .... %s (%s)\n", $documentBuyerTaxRegistrationId, $documentBuyerTaxRegistrationType);
+}
+
+while ($reader->nextDocumentBuyerAddress()) {
+    $reader->getDocumentBuyerAddress($documentBuyerAddressLine1, $documentBuyerAddressLine2, $documentBuyerAddressLine3, $documentBuyerPostCode, $documentBuyerCity, $documentBuyerCountryId, $documentBuyerSubDivision);
+    echo sprintf("Buyer Address ..... %s\n", $documentBuyerAddressLine1);
+    echo sprintf("               ..... %s\n", $documentBuyerAddressLine2);
+    echo sprintf("               ..... %s\n", $documentBuyerAddressLine3);
+    echo sprintf("               ..... %s %s %s\n", $documentBuyerCountryId, $documentBuyerPostCode, $documentBuyerCity);
+    echo sprintf("               ..... %s\n", $documentBuyerSubDivision);
+}
+
+while ($reader->nextDocumentBuyerLegalOrganisation()) {
+    $reader->getDocumentBuyerLegalOrganisation($documentBuyerLegalOrgType, $documentBuyerLegalOrgId, $documentBuyerLegalOrgName);
+    echo sprintf("Buyer Legal ....... %s (%s), %s\n", $documentBuyerLegalOrgId, $documentBuyerLegalOrgType, $documentBuyerLegalOrgName);
+}
+
+while ($reader->nextDocumentBuyerContact()) {
+    $reader->getDocumentBuyerContact($documentBuyerContactName, $documentBuyerContactDepartmenrName, $documentBuyerContactPhoneNumber, $documentBuyerContactFaxNumber, $documentBuyerContactEmailAddress);
+    echo sprintf("Buyer Contact ..... %s\n", $documentBuyerContactName);
+    echo sprintf("               ..... %s\n", $documentBuyerContactDepartmenrName);
+    echo sprintf("               ..... %s\n", $documentBuyerContactPhoneNumber);
+    echo sprintf("               ..... %s\n", $documentBuyerContactFaxNumber);
+    echo sprintf("               ..... %s\n", $documentBuyerContactEmailAddress);
+}
+
+while ($reader->nextDocumentBuyerCommunication()) {
+    $reader->getDocumentBuyerCommunication($documentBuyerCommunicationType, $documentBuyerCommunicationUri);
+    echo sprintf("Buyer Comm. ....... %s (%s)\n", $documentBuyerCommunicationUri, $documentBuyerCommunicationType);
+}
+
+#endregion

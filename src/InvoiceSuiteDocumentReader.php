@@ -103,6 +103,8 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this->forwardCallWithCheckTo($this->getCurrentFormatProvider()->getReader(), $method, $parameters);
     }
 
+    #region Document Generals
+
     /**
      * Gets the document number (e.g. invoice number)
      *
@@ -354,6 +356,10 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    #endregion
+
+    #region Document References
 
     /**
      * Go to the first associated seller's order confirmation
@@ -782,8 +788,12 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    #endregion
+
+    #region Document Seller/Supplier
+
     /**
-     * Get the name of the seller/supplier party
+     * Get the name of the buyer/customer party
      *
      * @param string|null $newName The full formal name under which the party is registered.
      * @return self
@@ -1077,4 +1087,306 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         return $this;
     }
+
+    #endregion
+
+    #region Document Buyer/Customer
+
+    /**
+     * Get the name of the buyer/customer party
+     *
+     * @param string|null $newName The full formal name under which the party is registered.
+     * @return self
+     */
+    public function getDocumentBuyerName(
+        ?string &$newName
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerName($newName);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerId(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerId();
+    }
+
+    /**
+     * Go to the next ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerId(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerId();
+    }
+
+    /**
+     * Get the ID of the buyer/customer party
+     *
+     * @param string|null $newId An identifier of the party. In many systems, identification is key information.
+     * @return self
+     */
+    public function getDocumentBuyerId(
+        ?string &$newId
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerId($newId);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first global ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerGlobalId(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerGlobalId();
+    }
+
+    /**
+     * Go to the next global ID of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerGlobalId(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerGlobalId();
+    }
+
+    /**
+     * Get the Global ID of the buyer/customer party
+     *
+     * @param string|null $newGlobalId A global identifier of the party.
+     * @param string|null $newGlobalIdType Type of the global identifier of the party.
+     * @return self
+     */
+    public function getDocumentBuyerGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerTaxRegistration(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerTaxRegistration();
+    }
+
+    /**
+     * Go to the next Tax Registration of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerTaxRegistration(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerTaxRegistration();
+    }
+
+    /**
+     * Get the Tax Registration of the buyer/customer party
+     *
+     * @param string|null $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId Tax identification number.
+     * @return self
+     */
+    public function getDocumentBuyerTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerAddress(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerAddress();
+    }
+
+    /**
+     * Go to the next address of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerAddress(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerAddress();
+    }
+
+    /**
+     * Set the address of the buyer/customer party
+     *
+     * @param string|null $newAddressLine1 The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId Country in which the party's address is located.
+     * @param string|null $newSubDivision Region or federal state in which the party's address is located.
+     * @return self
+     */
+    public function getDocumentBuyerAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerLegalOrganisation(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerLegalOrganisation();
+    }
+
+    /**
+     * Go to the next the legal information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerLegalOrganisation(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerLegalOrganisation();
+    }
+
+    /**
+     * Get the legal information of the buyer/customer party
+     *
+     * @param string|null $newType Type of the identification number of the legal registration of the party.
+     * @param string|null $newId Identification number of the legal registration of the party.
+     * @param string|null $newName Name by which the party is known, if different from the party's name.
+     * @return self
+     */
+    public function getDocumentBuyerLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerLegalOrganisation($newType, $newId, $newName);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerContact(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerContact();
+    }
+
+    /**
+     * Go to the next contact information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerContact(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerContact();
+    }
+
+    /**
+     * Get the contact information of the buyer/customer party
+     *
+     * @param string|null $newPersonName Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName Name of the department for the contact point.
+     * @param string|null $newPhoneNumber Telephone number for the contact point.
+     * @param string|null $newFaxNumber Fax number of the contact point.
+     * @param string|null $newEmailAddress E-Mail address of the contact point.
+     * @return self
+     */
+    public function getDocumentBuyerContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function firstDocumentBuyerCommunication(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentBuyerCommunication();
+    }
+
+    /**
+     * Go to the next communication information of the buyer/customer party
+     *
+     * @return boolean
+     */
+    public function nextDocumentBuyerCommunication(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentBuyerCommunication();
+    }
+
+    /**
+     * Get communication information of the buyer/customer party
+     *
+     * @param string|null $newType The type for the party's electronic address.
+     * @param string|null $newUri The party's electronic address.
+     * @return self
+     */
+    public function getDocumentBuyerCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentBuyerCommunication($newType, $newUri);
+
+        return $this;
+    }
+
+    #endregion
 }
