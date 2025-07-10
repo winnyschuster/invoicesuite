@@ -4,8 +4,8 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-//$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice.xml");
-$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice.xml");
+//$reader = InvoiceSuiteDocumentReader::createFromCFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 $reader->getDocumentNo($documentNumber);
 $reader->getDocumentType($documentType);
 $reader->getDocumentDescription($documentDescription);
@@ -257,6 +257,60 @@ while ($reader->nextDocumentTaxRepresentativeContact()) {
 while ($reader->nextDocumentTaxRepresentativeCommunication()) {
     $reader->getDocumentTaxRepresentativeCommunication($documentTaxRepresentativeCommunicationType, $documentTaxRepresentativeCommunicationUri);
     echo sprintf("TaxRepresentative Comm. ....... %s (%s)\n", $documentTaxRepresentativeCommunicationUri, $documentTaxRepresentativeCommunicationType);
+}
+
+#endregion
+
+#region Document Product Enduser
+
+echo "\n";
+echo "Product End User Party\n";
+echo "\n";
+
+$reader->getDocumentProductEndUserName($documentProductEndUserName);
+echo sprintf("ProductEndUser Name ........ %s\n", $documentProductEndUserName);
+
+while ($reader->nextDocumentProductEndUserId()) {
+    $reader->getDocumentProductEndUserId($documentProductEndUserGlobalId);
+    echo sprintf("ProductEndUser ID .......... %s\n", $documentProductEndUserGlobalId);
+}
+
+while ($reader->nextDocumentProductEndUserGlobalId()) {
+    $reader->getDocumentProductEndUserGlobalId($documentProductEndUserGlobalId, $documentProductEndUserGlobalIdType);
+    echo sprintf("ProductEndUser Global ID ... %s (%s)\n", $documentProductEndUserGlobalId, $documentProductEndUserGlobalIdType);
+}
+
+while ($reader->nextDocumentProductEndUserTaxRegistration()) {
+    $reader->getDocumentProductEndUserTaxRegistration($documentProductEndUserTaxRegistrationType, $documentProductEndUserTaxRegistrationId);
+    echo sprintf("ProductEndUser Tax Reg. .... %s (%s)\n", $documentProductEndUserTaxRegistrationId, $documentProductEndUserTaxRegistrationType);
+}
+
+while ($reader->nextDocumentProductEndUserAddress()) {
+    $reader->getDocumentProductEndUserAddress($documentProductEndUserAddressLine1, $documentProductEndUserAddressLine2, $documentProductEndUserAddressLine3, $documentProductEndUserPostCode, $documentProductEndUserCity, $documentProductEndUserCountryId, $documentProductEndUserSubDivision);
+    echo sprintf("ProductEndUser Address ..... %s\n", $documentProductEndUserAddressLine1);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserAddressLine2);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserAddressLine3);
+    echo sprintf("                       ..... %s %s %s\n", $documentProductEndUserCountryId, $documentProductEndUserPostCode, $documentProductEndUserCity);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserSubDivision);
+}
+
+while ($reader->nextDocumentProductEndUserLegalOrganisation()) {
+    $reader->getDocumentProductEndUserLegalOrganisation($documentProductEndUserLegalOrgType, $documentProductEndUserLegalOrgId, $documentProductEndUserLegalOrgName);
+    echo sprintf("ProductEndUser Legal ....... %s (%s), %s\n", $documentProductEndUserLegalOrgId, $documentProductEndUserLegalOrgType, $documentProductEndUserLegalOrgName);
+}
+
+while ($reader->nextDocumentProductEndUserContact()) {
+    $reader->getDocumentProductEndUserContact($documentProductEndUserContactName, $documentProductEndUserContactDepartmenrName, $documentProductEndUserContactPhoneNumber, $documentProductEndUserContactFaxNumber, $documentProductEndUserContactEmailAddress);
+    echo sprintf("ProductEndUser Contact ..... %s\n", $documentProductEndUserContactName);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserContactDepartmenrName);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserContactPhoneNumber);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserContactFaxNumber);
+    echo sprintf("                       ..... %s\n", $documentProductEndUserContactEmailAddress);
+}
+
+while ($reader->nextDocumentProductEndUserCommunication()) {
+    $reader->getDocumentProductEndUserCommunication($documentProductEndUserCommunicationType, $documentProductEndUserCommunicationUri);
+    echo sprintf("ProductEndUser Comm. ....... %s (%s)\n", $documentProductEndUserCommunicationUri, $documentProductEndUserCommunicationType);
 }
 
 #endregion

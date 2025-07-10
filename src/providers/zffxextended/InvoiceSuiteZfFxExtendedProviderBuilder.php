@@ -3211,11 +3211,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     /**
      * Set the contact information of the buyer/customer party
      *
-     * @param string|null $newPersonName __BT-56, From EN 16931__
-     * @param string|null $newDepartmentName __BT-56-0, From EN 16931__
-     * @param string|null $newPhoneNumber __BT-57, From EN 16931__
-     * @param string|null $newFaxNumber __BT-X-115, From EXTENDED__
-     * @param string|null $newEmailAddress __BT-58, From EN 16931__
+     * @param string|null $newPersonName __BT-56, From EN 16931__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-56-0, From EN 16931__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber __BT-57, From EN 16931__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber __BT-X-115, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress __BT-58, From EN 16931__ E-Mail address of the contact point.
      * @return self
      */
     public function setDocumentBuyerContact(
@@ -4371,8 +4371,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     /**
      * Set communication information of the product end-user party
      *
-     * @param string|null $newType __BT-, From EXTENDED__ The type for the party's electronic address.
-     * @param string|null $newUri __BT-, From EXTENDED__ The party's electronic address.
+     * @param string|null $newType __BT-X-143-0, From EXTENDED__ The type for the party's electronic address.
+     * @param string|null $newUri __BT-X-143, From EXTENDED__ The party's electronic address.
      * @return self
      */
     public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
@@ -4401,8 +4401,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     /**
      * Add a communication information of the product end-user party
      *
-     * @param string|null $newType __BT-, From EXTENDED__ The type for the party's electronic address.
-     * @param string|null $newUri __BT-, From EXTENDED__ The party's electronic address.
+     * @param string|null $newType __BT-X-143-0, From EXTENDED__ The type for the party's electronic address.
+     * @param string|null $newUri __BT-X-143, From EXTENDED__ The party's electronic address.
      * @return self
      */
     public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self

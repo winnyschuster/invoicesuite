@@ -1609,7 +1609,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the name of the buyer/customer party
      *
-     * @param string|null $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered.
+     * @param string|null $newName __BT-44, From MINIMUM__ The full formal name under which the party is registered.
      * @return self
      *
      * @phpstan-param-out string $newName
@@ -1655,7 +1655,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the ID of the buyer/customer party
      *
-     * @param string|null $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
+     * @param string|null $newId __BT-46, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
      * @return self
      *
      * @phpstan-param-out string $newId
@@ -1711,8 +1711,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the Global ID of the buyer/customer party
      *
-     * @param string|null $newGlobalId __BT-29-0, From BASIC WL__ A global identifier of the party.
-     * @param string|null $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
+     * @param string|null $newGlobalId __BT-46-0, From BASIC WL__ A global identifier of the party.
+     * @param string|null $newGlobalIdType __BT-46-1, From BASIC WL__ Type of the global identifier of the party.
      * @return self
      *
      * @phpstan-param-out string $newGlobalId
@@ -1771,8 +1771,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the Tax Registration of the buyer/customer party
      *
-     * @param string|null $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param string|null $newTaxRegistrationId __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
+     * @param string|null $newTaxRegistrationType __BT-48-0, From MINIMUM__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId __BT-48, From MINIMUM__ Tax identification number.
      * @return self
      *
      * @phpstan-param-out string $newTaxRegistrationType
@@ -1831,13 +1831,13 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Set the address of the buyer/customer party
      *
-     * @param string|null $newAddressLine1 __BT-35, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
-     * @param string|null $newAddressLine2 __BT-36, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
-     * @param string|null $newAddressLine3 __BT-162, From BASIC WL__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
-     * @param string|null $newPostcode __BT-38, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
-     * @param string|null $newCity __BT-37, From BASIC WL__ Name of the city or municipality in which the party's address is located.
-     * @param string|null $newCountryId __BT-40, From MINIMUM__ Country in which the party's address is located.
-     * @param string|null $newSubDivision __BT-39, From BASIC WL__ Region or federal state in which the party's address is located.
+     * @param string|null $newAddressLine1 __BT-50, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 __BT-51, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 __BT-163, From BASIC WL__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode __BT-53, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity __BT-52, From BASIC WL__ Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId __BT-55, From BASIC WL__ Country in which the party's address is located.
+     * @param string|null $newSubDivision __BT-54, From BASIC WL__ Region or federal state in which the party's address is located.
      * @return self
      *
      * @phpstan-param-out string $newAddressLine1
@@ -1911,9 +1911,9 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the legal information of the buyer/customer party
      *
-     * @param string|null $newType __BT-30-1, From MINIMUM__ Type of the identification number of the legal registration of the party.
-     * @param string|null $newId __BT-30, From MINIMUM__ Identification number of the legal registration of the party.
-     * @param string|null $newName __BT-28, From BASIC WL__ Name by which the party is known, if different from the party's name.
+     * @param string|null $newType __BT-47-1, From MINIMUM__ Type of the identification number of the legal registration of the party.
+     * @param string|null $newId __BT-47, From MINIMUM__ Identification number of the legal registration of the party.
+     * @param string|null $newName __BT-45, From BASIC WL__ Name by which the party is known, if different from the party's name.
      * @return self
      *
      * @phpstan-param-out string $newType
@@ -1975,11 +1975,11 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the contact information of the buyer/customer party
      *
-     * @param string|null $newPersonName __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
-     * @param string|null $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
-     * @param string|null $newPhoneNumber __BT-42, From EN 16931__ Telephone number for the contact point.
-     * @param string|null $newFaxNumber __BT-X-107, From EXTENDED__ Fax number of the contact point.
-     * @param string|null $newEmailAddress __BT-43, From EN 16931__ E-Mail address of the contact point.
+     * @param string|null $newPersonName __BT-56, From EN 16931__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-56-0, From EN 16931__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber __BT-57, From EN 16931__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber __BT-X-115, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress __BT-58, From EN 16931__ E-Mail address of the contact point.
      * @return self
      *
      * @phpstan-param-out string $newPersonName
@@ -2047,8 +2047,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get communication information of the buyer/customer party
      *
-     * @param string|null $newType __BT-34-1, From BASIC WL__ The type for the party's electronic address.
-     * @param string|null $newUri __BT-34, From BASIC WL__ The party's electronic address.
+     * @param string|null $newType __BT-49-1, From BASIC WL__ The type for the party's electronic address.
+     * @param string|null $newUri __BT-49, From BASIC WL__ The party's electronic address.
      * @return self
      *
      * @phpstan-param-out string $newType
@@ -2081,7 +2081,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the name of the tax representative party
      *
-     * @param string|null $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered.
+     * @param string|null $newName __BT-62, From BASIC WL__ The full formal name under which the party is registered.
      * @return self
      *
      * @phpstan-param-out string $newName
@@ -2127,7 +2127,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the ID of the tax representative party
      *
-     * @param string|null $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
+     * @param string|null $newId __BT-X-116, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
      * @return self
      *
      * @phpstan-param-out string $newId
@@ -2183,8 +2183,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the Global ID of the tax representative party
      *
-     * @param string|null $newGlobalId __BT-29-0, From BASIC WL__ A global identifier of the party.
-     * @param string|null $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party.
+     * @param string|null $newGlobalId __BT-X-117, From EXTENDED__ A global identifier of the party.
+     * @param string|null $newGlobalIdType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party.
      * @return self
      *
      * @phpstan-param-out string $newGlobalId
@@ -2243,8 +2243,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the Tax Registration of the tax representative party
      *
-     * @param string|null $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param string|null $newTaxRegistrationId __BT-31/32, From MINIMUM/EN 16931__ Tax identification number.
+     * @param string|null $newTaxRegistrationType __BT-63-0, From BASIC WL__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId __BT-63, From BASIC WL__ Tax identification number.
      * @return self
      *
      * @phpstan-param-out string $newTaxRegistrationType
@@ -2303,13 +2303,13 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Set the address of the tax representative party
      *
-     * @param string|null $newAddressLine1 __BT-35, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
-     * @param string|null $newAddressLine2 __BT-36, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
-     * @param string|null $newAddressLine3 __BT-162, From BASIC WL__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
-     * @param string|null $newPostcode __BT-38, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
-     * @param string|null $newCity __BT-37, From BASIC WL__ Name of the city or municipality in which the party's address is located.
-     * @param string|null $newCountryId __BT-40, From MINIMUM__ Country in which the party's address is located.
-     * @param string|null $newSubDivision __BT-39, From BASIC WL__ Region or federal state in which the party's address is located.
+     * @param string|null $newAddressLine1 __BT-64, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 __BT-65, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 __BT-164, From BASIC WL__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode __BT-67, From BASIC WL__ Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity __BT-66, From BASIC WL__ Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId __BT-69, From BASIC WL__ Country in which the party's address is located.
+     * @param string|null $newSubDivision __BT-68, From BASIC WL__ Region or federal state in which the party's address is located.
      * @return self
      *
      * @phpstan-param-out string $newAddressLine1
@@ -2383,9 +2383,9 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the legal information of the tax representative party
      *
-     * @param string|null $newType __BT-30-1, From MINIMUM__ Type of the identification number of the legal registration of the party.
-     * @param string|null $newId __BT-30, From MINIMUM__ Identification number of the legal registration of the party.
-     * @param string|null $newName __BT-28, From BASIC WL__ Name by which the party is known, if different from the party's name.
+     * @param string|null $newType __BT-, From __ Type of the identification number of the legal registration of the party.
+     * @param string|null $newId __BT-, From __ Identification number of the legal registration of the party.
+     * @param string|null $newName __BT-, From __ Name by which the party is known, if different from the party's name.
      * @return self
      *
      * @phpstan-param-out string $newType
@@ -2447,11 +2447,11 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get the contact information of the tax representative party
      *
-     * @param string|null $newPersonName __BT-41, From EN 16931__ Name of contact person or department or office for the contact point.
-     * @param string|null $newDepartmentName __BT-41-0, From EN 16931__ Name of the department for the contact point.
-     * @param string|null $newPhoneNumber __BT-42, From EN 16931__ Telephone number for the contact point.
-     * @param string|null $newFaxNumber __BT-X-107, From EXTENDED__ Fax number of the contact point.
-     * @param string|null $newEmailAddress __BT-43, From EN 16931__ E-Mail address of the contact point.
+     * @param string|null $newPersonName __BT-X-120, From EXTENDED__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-X-121, From EXTENDED__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber __BT-X-122, From EXTENDED__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber __BT-X-123, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress __BT-X-124, From EXTENDED__ E-Mail address of the contact point.
      * @return self
      *
      * @phpstan-param-out string $newPersonName
@@ -2519,8 +2519,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get communication information of the tax representative party
      *
-     * @param string|null $newType __BT-34-1, From BASIC WL__ The type for the party's electronic address.
-     * @param string|null $newUri __BT-34, From BASIC WL__ The party's electronic address.
+     * @param string|null $newType __BT-X-125-0, From EXTENDED__ The type for the party's electronic address.
+     * @param string|null $newUri __BT-X-125, From EXTENDED__ The party's electronic address.
      * @return self
      *
      * @phpstan-param-out string $newType
@@ -2542,6 +2542,478 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
 
         $newType = $documentTaxRepresentativeElectronicCommunication->getURIID()?->getSchemeID() ?? "";
         $newUri = $documentTaxRepresentativeElectronicCommunication->getURIID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    #endregion
+
+    #region Document Product Enduser
+
+    /**
+     * Get the name of the product end-user party
+     *
+     * @param string|null $newName __BT-X-128, From EXTENDED__ The full formal name under which the party is registered.
+     * @return self
+     *
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentProductEndUserName(
+        ?string &$newName
+    ): self {
+        $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getID() ?? []
+            ),
+            'documentproductenduserid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getID() ?? []
+            ),
+            'documentproductenduserid'
+        );
+    }
+
+    /**
+     * Get the ID of the product end-user party
+     *
+     * @param string|null $newId __BT-X-126, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
+     * @return self
+     *
+     * @phpstan-param-out string $newId
+     */
+    public function getDocumentProductEndUserId(
+        ?string &$newId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\udt\IDType>
+         */
+        $documentProductEndUserIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\udt\IDType
+         */
+        $documentProductEndUserId = $documentProductEndUserIds[InvoiceSuitePointerUtils::getValue('documentproductenduserid')];
+
+        $newId = $documentProductEndUserId->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getGlobalID() ?? []
+            ),
+            'documentproductenduserglobalid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserGlobalId(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getGlobalID() ?? []
+            ),
+            'documentproductenduserglobalid'
+        );
+    }
+
+    /**
+     * Get the Global ID of the product end-user party
+     *
+     * @param string|null $newGlobalId __BT-X-127, From EXTENDED__ A global identifier of the party.
+     * @param string|null $newGlobalIdType __BT-X-127-0, From EXTENDED__ Type of the global identifier of the party.
+     * @return self
+     *
+     * @phpstan-param-out string $newGlobalId
+     * @phpstan-param-out string $newGlobalIdType
+     */
+    public function getDocumentProductEndUserGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\udt\IDType>
+         */
+        $documentProductEndUserGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getGlobalID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\udt\IDType
+         */
+        $documentProductEndUserGlobalId = $documentProductEndUserGlobalIds[InvoiceSuitePointerUtils::getValue('documentproductenduserglobalid')];
+
+        $newGlobalId = $documentProductEndUserGlobalId->getValue() ?? "";
+        $newGlobalIdType = $documentProductEndUserGlobalId->getSchemeID() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documentproductendusertaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserTaxRegistration(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documentproductendusertaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the product end-user party
+     *
+     * @param string|null $newTaxRegistrationType __BT-, From __ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param string|null $newTaxRegistrationId __BT-, From __ Tax identification number.
+     * @return self
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentProductEndUserTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TaxRegistrationType>
+         */
+        $documentProductEndUserTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getSpecifiedTaxRegistration() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TaxRegistrationType
+         */
+        $documentProductEndUserTaxRegistration = $documentProductEndUserTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentproductendusertaxregistration')];
+
+        $newTaxRegistrationType = $documentProductEndUserTaxRegistration->getID()?->getSchemeID() ?? "";
+        $newTaxRegistrationId = $documentProductEndUserTaxRegistration->getID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getPostalTradeAddress() ?? []
+            ),
+            'documentproductenduseraddress'
+        );
+    }
+
+    /**
+     * Go to the next address of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserAddress(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getPostalTradeAddress() ?? []
+            ),
+            'documentproductenduseraddress'
+        );
+    }
+
+    /**
+     * Set the address of the product end-user party
+     *
+     * @param string|null $newAddressLine1 __BT-X-397, From EXTENDED__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param string|null $newAddressLine2 __BT-X-398, From EXTENDED__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newAddressLine3 __BT-X-399, From EXTENDED__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param string|null $newPostcode __BT-X-396, From EXTENDED__ Zip code of the city or municipality in which the party's address is located.
+     * @param string|null $newCity __BT-X-400, From EXTENDED__ Name of the city or municipality in which the party's address is located.
+     * @param string|null $newCountryId __BT-X-401, From EXTENDED__ Country in which the party's address is located.
+     * @param string|null $newSubDivision __BT-X-402, From EXTENDED__ Region or federal state in which the party's address is located.
+     * @return self
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentProductEndUserAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TradeAddressType>
+         */
+        $documentProductEndUserAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getPostalTradeAddress() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradeAddressType
+         */
+        $documentProductEndUserAddress = $documentProductEndUserAddresses[InvoiceSuitePointerUtils::getValue('documentproductenduseraddress')];
+
+        $newAddressLine1 = $documentProductEndUserAddress->getLineOne()?->getValue() ?? "";
+        $newAddressLine2 = $documentProductEndUserAddress->getLineTwo()?->getValue() ?? "";
+        $newAddressLine3 = $documentProductEndUserAddress->getLineThree()?->getValue() ?? "";
+        $newPostcode = $documentProductEndUserAddress->getPostcodeCode()?->getValue() ?? "";
+        $newCity = $documentProductEndUserAddress->getCityName()?->getValue() ?? "";
+        $newCountryId = $documentProductEndUserAddress->getCountryID()?->getValue() ?? "";
+        $newSubDivision = $documentProductEndUserAddress->getCountrySubDivisionName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getSpecifiedLegalOrganization() ?? []
+            ),
+            'documentproductenduserlegalorganisation'
+        );
+    }
+
+    /**
+     * Go to the next the legal information of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserLegalOrganisation(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getSpecifiedLegalOrganization() ?? []
+            ),
+            'documentproductenduserlegalorganisation'
+        );
+    }
+
+    /**
+     * Get the legal information of the product end-user party
+     *
+     * @param string|null $newType __BT-X-129-0, From EXTENDED__ Type of the identification number of the legal registration of the party.
+     * @param string|null $newId __BT-X-129, From EXTENDED__ Identification number of the legal registration of the party.
+     * @param string|null $newName __BT-X-130, From EXTENDED__ Name by which the party is known, if different from the party's name.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newId
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentProductEndUserLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\LegalOrganizationType>
+         */
+        $documentProductEndUserLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getSpecifiedLegalOrganization() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\LegalOrganizationType
+         */
+        $documentProductEndUserLegalOrganisation = $documentProductEndUserLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentproductenduserlegalorganisation')];
+
+        $newType = $documentProductEndUserLegalOrganisation->getID()?->getSchemeID() ?? "";
+        $newId = $documentProductEndUserLegalOrganisation->getID()?->getValue() ?? "";
+        $newName = $documentProductEndUserLegalOrganisation->getTradingBusinessName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getDefinedTradeContact() ?? []
+            ),
+            'documentproductendusercontact'
+        );
+    }
+
+    /**
+     * Go to the next contact information of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserContact(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getDefinedTradeContact() ?? []
+            ),
+            'documentproductendusercontact'
+        );
+    }
+
+    /**
+     * Get the contact information of the product end-user party
+     *
+     * @param string|null $newPersonName __BT-X-131, From EXTENDED__ Name of contact person or department or office for the contact point.
+     * @param string|null $newDepartmentName __BT-X-132, From EXTENDED__ Name of the department for the contact point.
+     * @param string|null $newPhoneNumber __BT-X-133, From EXTENDED__ Telephone number for the contact point.
+     * @param string|null $newFaxNumber __BT-X-134, From EXTENDED__ Fax number of the contact point.
+     * @param string|null $newEmailAddress __BT-X-135, From EXTENDED__ E-Mail address of the contact point.
+     * @return self
+     *
+     * @phpstan-param-out string $newPersonName
+     * @phpstan-param-out string $newDepartmentName
+     * @phpstan-param-out string $newPhoneNumber
+     * @phpstan-param-out string $newFaxNumber
+     * @phpstan-param-out string $newEmailAddress
+     */
+    public function getDocumentProductEndUserContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TradeContactType>
+         */
+        $documentProductEndUserContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getDefinedTradeContact() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradeContactType
+         */
+        $documentProductEndUserContact = $documentProductEndUserContacts[InvoiceSuitePointerUtils::getValue('documentproductendusercontact')];
+
+        $newPersonName = $documentProductEndUserContact->getPersonName()?->getValue() ?? "";
+        $newDepartmentName = $documentProductEndUserContact->getDepartmentName()?->getValue() ?? "";
+        $newPhoneNumber = $documentProductEndUserContact->getTelephoneUniversalCommunication()?->getCompleteNumber()?->getValue() ?? "";
+        $newFaxNumber = $documentProductEndUserContact->getFaxUniversalCommunication()?->getCompleteNumber()?->getValue() ?? "";
+        $newEmailAddress = $documentProductEndUserContact->getEmailURIUniversalCommunication()->getURIID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the product end-user party
+     *
+     * @return boolean
+     */
+    public function firstDocumentProductEndUserCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getURIUniversalCommunication() ?? []
+            ),
+            'documentproductenduserecommunication'
+        );
+    }
+
+    /**
+     * Go to the next communication information of the product end-user party
+     *
+     * @return boolean
+     */
+    public function nextDocumentProductEndUserCommunication(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getURIUniversalCommunication() ?? []
+            ),
+            'documentproductenduserecommunication'
+        );
+    }
+
+    /**
+     * Get communication information of the product end-user party
+     *
+     * @param string|null $newType __BT-X-143-0, From EXTENDED__ The type for the party's electronic address.
+     * @param string|null $newUri __BT-X-143, From EXTENDED__ The party's electronic address.
+     * @return self
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newUri
+     */
+    public function getDocumentProductEndUserCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\UniversalCommunicationType>
+         */
+        $documentProductEndUserElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getProductEndUserTradeParty()?->getURIUniversalCommunication() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\UniversalCommunicationType
+         */
+        $documentProductEndUserElectronicCommunication = $documentProductEndUserElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentproductenduserecommunication')];
+
+        $newType = $documentProductEndUserElectronicCommunication->getURIID()?->getSchemeID() ?? "";
+        $newUri = $documentProductEndUserElectronicCommunication->getURIID()?->getValue() ?? "";
 
         return $this;
     }
