@@ -515,17 +515,14 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
             return [];
         }
 
-        $additionalDocumentReferences =
-            array_values(
-                array_filter(
-                    $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
-                    function (AdditionalDocumentReference $additionalDocumentReference) use ($additionalDocTypeCode) {
-                        return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $additionalDocTypeCode) !== 0;
-                    }
-                )
-            );
-
-        return $additionalDocumentReferences;
+        return array_values(
+            array_filter(
+                $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
+                function (AdditionalDocumentReference $additionalDocumentReference) use ($additionalDocTypeCode) {
+                    return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $additionalDocTypeCode) !== 0;
+                }
+            )
+        );
     }
 
     /**
@@ -716,6 +713,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         $newReferenceTypeCode = "";
         $newDescriptions = $documentAdditionalReference->getDocumentDescription() ?? [];
         $newDescriptions = reset($newDescriptions);
+
         $newDescription = $newDescriptions !== false ? $newDescriptions->getValue() ?? "" : "";
 
         return $this;
@@ -858,17 +856,14 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
             return [];
         }
 
-        $ultimateCustomerOrderReferences =
-            array_values(
-                array_filter(
-                    $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
-                    function (AdditionalDocumentReference $additionalDocumentReference) use ($ultimateCustomerOrderDocTypeCode) {
-                        return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $ultimateCustomerOrderDocTypeCode) !== 0;
-                    }
-                )
-            );
-
-        return $ultimateCustomerOrderReferences;
+        return array_values(
+            array_filter(
+                $this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? [],
+                function (AdditionalDocumentReference $additionalDocumentReference) use ($ultimateCustomerOrderDocTypeCode) {
+                    return strcasecmp(($additionalDocumentReference->getDocumentTypeCode()?->getValue() ?? ""), $ultimateCustomerOrderDocTypeCode) !== 0;
+                }
+            )
+        );
     }
 
     /**

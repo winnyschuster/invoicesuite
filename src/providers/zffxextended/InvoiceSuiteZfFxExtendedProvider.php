@@ -100,12 +100,7 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractFormatProvide
             if ($contentEntries === false) {
                 return false;
             }
-
-            if ($contentEntries->length !== 1) {
-                return false;
-            }
-
-            return true;
+            return $contentEntries->length === 1;
         } catch (\Throwable $throwable) {
             // Do nothing
         } finally {
