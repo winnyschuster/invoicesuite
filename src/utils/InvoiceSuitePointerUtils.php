@@ -141,4 +141,14 @@ class InvoiceSuitePointerUtils
 
         return static::$pointerState[$name];
     }
+
+    /**
+     * Clear all pointers and their states
+     *
+     * @return void
+     */
+    public static function reset(): void
+    {
+        static::$pointerState = [];
+    }
 }
