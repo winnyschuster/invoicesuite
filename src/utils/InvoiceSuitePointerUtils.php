@@ -2,8 +2,6 @@
 
 namespace horstoeko\invoicesuite\utils;
 
-use LogicException;
-
 /**
  * class representing float utilities
  *
