@@ -400,3 +400,4 @@ $documentDTO->addPosition($position);
 
 $builder->createFromDTO($documentDTO);
 $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+//$builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");

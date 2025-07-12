@@ -4790,14 +4790,14 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
     ): self {
         $newName = "";
 
-        $payeeLegalEntities = $this->getUblInvoiceRootObject()->getPayeePartyWithCreate()?->getPartyLegalEntity() ?? [];
-        $payeeLegalEntity = reset($payeeLegalEntities);
+        $documentPayeeNames = $this->getUblInvoiceRootObject()->getPayeePartyWithCreate()?->getPartyName() ?? [];
+        $documentPayeeName = reset($documentPayeeNames);
 
-        if ($payeeLegalEntity === false) {
+        if ($documentPayeeName === false) {
             return $this;
         }
 
-        $newName = $payeeLegalEntity->getRegistrationName()?->getValue() ?? "";
+        $newName = $documentPayeeName->getName()?->getValue() ?? "";
 
         return $this;
     }
@@ -5145,11 +5145,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
 
         $newType = $documentPayeeLegalOrganisation->getCompanyID()?->getSchemeID() ?? "";
         $newId = $documentPayeeLegalOrganisation->getCompanyID()?->getValue() ?? "";
-
-        // Trading name and Party name are swapped in UBL
-        $partyNames = $this->getUblInvoiceRootObject()->getPayeePartyWithCreate()?->getPartyName() ?? [];
-        $partyName = reset($partyNames);
-        $newName = $partyName !== false ? $partyName->getName()?->getValue() ?? "" : "";
+        $newName = $documentPayeeLegalOrganisation->getRegistrationName()?->getValue() ?? "";
 
         return $this;
     }
