@@ -476,3 +476,57 @@ while ($reader->nextDocumentShipFromCommunication()) {
 }
 
 #endregion
+
+#region Invoicer Output
+
+echo "\n";
+echo "Invoicer Party\n";
+echo "\n";
+
+$reader->getDocumentInvoicerName($documentInvoicerName);
+echo sprintf("Invoicer Name ........ %s\n", $documentInvoicerName);
+
+while ($reader->nextDocumentInvoicerId()) {
+    $reader->getDocumentInvoicerId($documentInvoicerGlobalId);
+    echo sprintf("Invoicer ID .......... %s\n", $documentInvoicerGlobalId);
+}
+
+while ($reader->nextDocumentInvoicerGlobalId()) {
+    $reader->getDocumentInvoicerGlobalId($documentInvoicerGlobalId, $documentInvoicerGlobalIdType);
+    echo sprintf("Invoicer Global ID ... %s (%s)\n", $documentInvoicerGlobalId, $documentInvoicerGlobalIdType);
+}
+
+while ($reader->nextDocumentInvoicerTaxRegistration()) {
+    $reader->getDocumentInvoicerTaxRegistration($documentInvoicerTaxRegistrationType, $documentInvoicerTaxRegistrationId);
+    echo sprintf("Invoicer Tax Reg. .... %s (%s)\n", $documentInvoicerTaxRegistrationId, $documentInvoicerTaxRegistrationType);
+}
+
+while ($reader->nextDocumentInvoicerAddress()) {
+    $reader->getDocumentInvoicerAddress($documentInvoicerAddressLine1, $documentInvoicerAddressLine2, $documentInvoicerAddressLine3, $documentInvoicerPostCode, $documentInvoicerCity, $documentInvoicerCountryId, $documentInvoicerSubDivision);
+    echo sprintf("Invoicer Address ..... %s\n", $documentInvoicerAddressLine1);
+    echo sprintf("                 ..... %s\n", $documentInvoicerAddressLine2);
+    echo sprintf("                 ..... %s\n", $documentInvoicerAddressLine3);
+    echo sprintf("                 ..... %s %s %s\n", $documentInvoicerCountryId, $documentInvoicerPostCode, $documentInvoicerCity);
+    echo sprintf("                 ..... %s\n", $documentInvoicerSubDivision);
+}
+
+while ($reader->nextDocumentInvoicerLegalOrganisation()) {
+    $reader->getDocumentInvoicerLegalOrganisation($documentInvoicerLegalOrgType, $documentInvoicerLegalOrgId, $documentInvoicerLegalOrgName);
+    echo sprintf("Invoicer Legal ....... %s (%s), %s\n", $documentInvoicerLegalOrgId, $documentInvoicerLegalOrgType, $documentInvoicerLegalOrgName);
+}
+
+while ($reader->nextDocumentInvoicerContact()) {
+    $reader->getDocumentInvoicerContact($documentInvoicerContactName, $documentInvoicerContactDepartmenrName, $documentInvoicerContactPhoneNumber, $documentInvoicerContactFaxNumber, $documentInvoicerContactEmailAddress);
+    echo sprintf("Invoicer Contact ..... %s\n", $documentInvoicerContactName);
+    echo sprintf("                 ..... %s\n", $documentInvoicerContactDepartmenrName);
+    echo sprintf("                 ..... %s\n", $documentInvoicerContactPhoneNumber);
+    echo sprintf("                 ..... %s\n", $documentInvoicerContactFaxNumber);
+    echo sprintf("                 ..... %s\n", $documentInvoicerContactEmailAddress);
+}
+
+while ($reader->nextDocumentInvoicerCommunication()) {
+    $reader->getDocumentInvoicerCommunication($documentInvoicerCommunicationType, $documentInvoicerCommunicationUri);
+    echo sprintf("Invoicer Comm. ....... %s (%s)\n", $documentInvoicerCommunicationUri, $documentInvoicerCommunicationType);
+}
+
+#endregion
