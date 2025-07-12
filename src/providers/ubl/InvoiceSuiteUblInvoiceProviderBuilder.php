@@ -308,6 +308,52 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
                 )
             );
 
+        $newDocumentDTO
+            ->getPayeeParty()
+            ?->firstName(
+                fn(string $item) => $this->setDocumentPayeeName($item)
+            )
+            ?->firstId(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeId($item->getId()),
+                fn() => $newDocumentDTO->getPayeeParty()->firstGlobalId(fn($item) => $this->setDocumentPayeeGlobalId($item->getId(), $item->getIdType()))
+            )
+            ?->firstTaxRegistration(
+                fn(InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn(InvoiceSuiteAddressDTO $item) => $this->setDocumentPayeeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn(InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPayeeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->firstContact(
+                fn(InvoiceSuiteContactDTO $item) => $this->addDocumentPayeeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn(InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPayeeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
         $newDocumentDTO->firstSellerOrderReference(
             fn(InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentSellerOrderReference(
                 $item->getReferenceNumber(),
