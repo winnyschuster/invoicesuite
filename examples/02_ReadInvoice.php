@@ -686,3 +686,16 @@ while ($reader->nextDocumentPaymentMean()) {
 }
 
 #endregion
+
+#region Payment Mean Output
+
+echo "\n";
+echo "Creditor References\n";
+echo "\n";
+
+while ($reader->nextDocumentPaymentCreditorReferenceID()) {
+    $reader->getDocumentPaymentCreditorReferenceID($paymentCreditorReferenceId);
+    echo $paymentCreditorReferenceId . "\n";
+}
+
+#endregion

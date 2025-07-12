@@ -4,16 +4,17 @@ namespace horstoeko\invoicesuite\providers\ubl;
 
 use DateTime;
 use DateTimeInterface;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\cac\Delivery;
 use horstoeko\invoicesuite\models\ubl\main\Invoice;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
+use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
 use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
-use horstoeko\invoicesuite\models\ubl\cac\Delivery;
-use horstoeko\invoicesuite\models\ubl\cbc\ID;
 
 class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatProviderReader
 {
@@ -5331,6 +5332,18 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      * @param string|null $newPaymentReference Text value used to link the payment to the invoice issued by the seller
      * @param string|null $newMandate Identification of the mandate reference
      * @return self
+     *
+     * @phpstan-param-out string $newTypeCode
+     * @phpstan-param-out string $newName
+     * @phpstan-param-out string $newFinancialCardId
+     * @phpstan-param-out string $newFinancialCardHolder
+     * @phpstan-param-out string $newBuyerIban
+     * @phpstan-param-out string $newPayeeIban
+     * @phpstan-param-out string $newPayeeAccountName
+     * @phpstan-param-out string $newPayeeProprietaryId
+     * @phpstan-param-out string $newPayeeBic
+     * @phpstan-param-out string $newPaymentReference
+     * @phpstan-param-out string $newMandate
      */
     public function getDocumentPaymentMean(
         ?string &$newTypeCode,
@@ -5369,6 +5382,72 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         $newPayeeBic = $documentPaymentMean->getPayeeFinancialAccount()?->getFinancialInstitutionBranch()?->getID()?->getValue() ?? "";
         $newPaymentReference = $paymentMeanPaymentId !== false ? $paymentMeanPaymentId->getValue() ?? "" : "";
         $newMandate = $documentPaymentMean->getPaymentMandate()?->getID()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Internal helper for resolving payment creditor references
+     *
+     * @return array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+     */
+    private function resolveDocumentPaymentCreditorReferenceIDs(): array
+    {
+        $partyIdentifications = $this->getUblInvoiceRootObject()->getAccountingSupplierPartyWithCreate()?->getPartyWithCreate()?->getPartyIdentification();
+
+        return array_values(
+            array_filter($partyIdentifications ?? [], function (PartyIdentification $id) {
+                return strcasecmp($id->getID()?->getSchemeID() ?? "", "SEPA") === 0;
+            })
+        );
+    }
+
+    /**
+     * Go to the first Unique bank details of the payee or the seller
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentCreditorReferenceID(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            $this->resolveDocumentPaymentCreditorReferenceIDs(),
+            'documentpaymentcreditorreferences'
+        );
+    }
+
+    /**
+     * Go to the next Unique bank details of the payee or the seller
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentCreditorReferenceID(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            $this->resolveDocumentPaymentCreditorReferenceIDs(),
+            'documentpaymentcreditorreferences'
+        );
+    }
+
+    /**
+     * Get Unique bank details of the payee or the seller
+     *
+     * @param string|null $newId Creditor identifier
+     * @return self
+     */
+    public function getDocumentPaymentCreditorReferenceID(
+        ?string &$newId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PartyIdentification>
+         */
+        $documentCreditorReferences = InvoiceSuiteArrayUtils::ensure($this->resolveDocumentPaymentCreditorReferenceIDs());
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification
+         */
+        $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentpaymentcreditorreferences')];
+
+        $newId = $documentCreditorReference->getID()->getValue() ?? "";
 
         return $this;
     }

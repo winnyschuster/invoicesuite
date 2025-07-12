@@ -2689,5 +2689,29 @@ interface InvoiceSuiteReaderContract
         ?string &$newMandate
     ): self;
 
+    /**
+     * Go to the first Unique bank details of the payee or the seller
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentCreditorReferenceID(): bool;
+
+    /**
+     * Go to the next Unique bank details of the payee or the seller
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentCreditorReferenceID(): bool;
+
+    /**
+     * Get Unique bank details of the payee or the seller
+     *
+     * @param string|null $newId Creditor identifier
+     * @return self
+     */
+    public function getDocumentPaymentCreditorReferenceID(
+        ?string &$newId
+    ): self;
+
     #endregion
 }

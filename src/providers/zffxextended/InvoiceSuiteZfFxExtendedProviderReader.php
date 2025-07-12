@@ -5900,6 +5900,18 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
      * @param string|null $newPaymentReference __BT-83, From BASIC WL__ Text value used to link the payment to the invoice issued by the seller
      * @param string|null $newMandate __BT-89, From BASIC WL__ Identification of the mandate reference
      * @return self
+     *
+     * @phpstan-param-out string $newTypeCode
+     * @phpstan-param-out string $newName
+     * @phpstan-param-out string $newFinancialCardId
+     * @phpstan-param-out string $newFinancialCardHolder
+     * @phpstan-param-out string $newBuyerIban
+     * @phpstan-param-out string $newPayeeIban
+     * @phpstan-param-out string $newPayeeAccountName
+     * @phpstan-param-out string $newPayeeProprietaryId
+     * @phpstan-param-out string $newPayeeBic
+     * @phpstan-param-out string $newPaymentReference
+     * @phpstan-param-out string $newMandate
      */
     public function getDocumentPaymentMean(
         ?string &$newTypeCode,
@@ -5945,6 +5957,60 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         if ($paymentTerm !== false) {
             $newMandate = $paymentTerm->getDirectDebitMandateID()?->getValue() ?? "";
         }
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Unique bank details of the payee or the seller
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentCreditorReferenceID(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getCreditorReferenceID() ?? []
+            ),
+            'documentcreditorreference'
+        );
+    }
+
+    /**
+     * Go to the next Unique bank details of the payee or the seller
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentCreditorReferenceID(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getCreditorReferenceID() ?? []
+            ),
+            'documentcreditorreference'
+        );
+    }
+
+    /**
+     * Get Unique bank details of the payee or the seller
+     *
+     * @param string|null $newId __BT-90, From BASIC WL__ Creditor identifier
+     * @return self
+     */
+    public function getDocumentPaymentCreditorReferenceID(
+        ?string &$newId
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\udt\IDType>
+         */
+        $documentCreditorReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getCreditorReferenceID() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\udt\IDType
+         */
+        $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentcreditorreference')];
+
+        $newId = $documentCreditorReference->getValue() ?? "";
 
         return $this;
     }

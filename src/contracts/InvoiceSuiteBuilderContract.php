@@ -2976,7 +2976,6 @@ interface InvoiceSuiteBuilderContract
         ?string $newId = null
     ): self;
 
-
     /**
      * Add Unique bank details of the payee or the seller
      *
