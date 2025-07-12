@@ -2713,5 +2713,31 @@ interface InvoiceSuiteReaderContract
         ?string &$newId
     ): self;
 
+    /**
+     * Go to the first payment term
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentTerm(): bool;
+
+    /**
+     * Go to the next payment term
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentTerm(): bool;
+
+    /**
+     * Get payment term
+     *
+     * @param string|null $newDescription Text description of the payment terms
+     * @param DateTimeInterface|null $newDueDate Date by which payment is due
+     * @return self
+     */
+    public function getDocumentPaymentTerm(
+        ?string &$newDescription,
+        ?DateTimeInterface &$newDueDate
+    ): self;
+
     #endregion
 }

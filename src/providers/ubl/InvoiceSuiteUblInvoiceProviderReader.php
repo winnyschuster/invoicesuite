@@ -5433,6 +5433,8 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      *
      * @param string|null $newId Creditor identifier
      * @return self
+     *
+     * @phpstan-param-out string $newId
      */
     public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
@@ -5448,6 +5450,66 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentpaymentcreditorreferences')];
 
         $newId = $documentCreditorReference->getID()->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first payment term
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentTerm(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getPaymentTerms() ?? []
+            ),
+            'documentpaymentterm'
+        );
+    }
+
+    /**
+     * Go to the next payment term
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentTerm(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getUblInvoiceRootObject()->getPaymentTerms() ?? []
+            ),
+            'documentpaymentterm'
+        );
+    }
+
+    /**
+     * Get payment term
+     *
+     * @param string|null $newDescription Text description of the payment terms
+     * @param DateTimeInterface|null $newDueDate Date by which payment is due
+     * @return self
+     */
+    public function getDocumentPaymentTerm(
+        ?string &$newDescription,
+        ?DateTimeInterface &$newDueDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\PaymentTerms>
+         */
+        $documentPaymentTerms = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPaymentTerms() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms
+         */
+        $documentPaymentTerm = $documentPaymentTerms[InvoiceSuitePointerUtils::getValue('documentpaymentterm')];
+
+        $documentPaymentTermNotes = $documentPaymentTerm->getNote() ?? [];
+        $documentPaymentTermNote = reset($documentPaymentTermNotes);
+
+        $newDescription = $documentPaymentTermNote !== false ? ($documentPaymentTermNote->getValue() ?? "") : "";
+        $newDueDate = $this->getUblInvoiceRootObject()->getDueDate();
 
         return $this;
     }

@@ -5996,6 +5996,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
      *
      * @param string|null $newId __BT-90, From BASIC WL__ Creditor identifier
      * @return self
+     *
+     * @phpstan-param-out string $newId
      */
     public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
@@ -6011,6 +6013,68 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentcreditorreference')];
 
         $newId = $documentCreditorReference->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first payment term
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentTerm(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradePaymentTerms() ?? []
+            ),
+            'documentpaymentterm'
+        );
+    }
+
+    /**
+     * Go to the next payment term
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentTerm(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradePaymentTerms() ?? []
+            ),
+            'documentpaymentterm'
+        );
+    }
+
+    /**
+     * Get payment term
+     *
+     * @param string|null $newDescription __BT-20, From _BASIC WL__ Text description of the payment terms
+     * @param DateTimeInterface|null $newDueDate __BT-9, From BASIC WL__ Date by which payment is due
+     * @return self
+     *
+     * @phpstan-param-out string $newDescription
+     */
+    public function getDocumentPaymentTerm(
+        ?string &$newDescription,
+        ?DateTimeInterface &$newDueDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType>
+         */
+        $documentPaymentTerms = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradePaymentTerms() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType
+         */
+        $documentPaymentTerm = $documentPaymentTerms[InvoiceSuitePointerUtils::getValue('documentpaymentterm')];
+
+        $newDescription = $documentPaymentTerm->getDescription()?->getValue() ?? "";
+        $newDueDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $documentPaymentTerm->getDueDateDateTime()?->getDateTimeString()?->getValue() ?? "",
+            $documentPaymentTerm->getDueDateDateTime()?->getDateTimeString()?->getFormat() ?? "",
+        );
 
         return $this;
     }

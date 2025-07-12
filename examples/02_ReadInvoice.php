@@ -687,7 +687,7 @@ while ($reader->nextDocumentPaymentMean()) {
 
 #endregion
 
-#region Payment Mean Output
+#region Payment Creditor References Output
 
 echo "\n";
 echo "Creditor References\n";
@@ -696,6 +696,19 @@ echo "\n";
 while ($reader->nextDocumentPaymentCreditorReferenceID()) {
     $reader->getDocumentPaymentCreditorReferenceID($paymentCreditorReferenceId);
     echo $paymentCreditorReferenceId . "\n";
+}
+
+#endregion
+
+#region Payment Terms Output
+
+echo "\n";
+echo "Payments Terms\n";
+echo "\n";
+
+while ($reader->nextDocumentPaymentTerm()) {
+    $reader->getDocumentPaymentTerm($paymentTermDescription, $paymentTermDueDate);
+    echo sprintf("%s, %s\n", $paymentTermDescription, $paymentTermDueDate?->format("d.m.Y") ?? "");
 }
 
 #endregion

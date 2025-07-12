@@ -3896,5 +3896,41 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Go to the first payment term
+     *
+     * @return boolean
+     */
+    public function firstDocumentPaymentTerm(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentPaymentTerm();
+    }
+
+    /**
+     * Go to the next payment term
+     *
+     * @return boolean
+     */
+    public function nextDocumentPaymentTerm(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentPaymentTerm();
+    }
+
+    /**
+     * Get payment term
+     *
+     * @param string|null $newDescription Text description of the payment terms
+     * @param DateTimeInterface|null $newDueDate Date by which payment is due
+     * @return self
+     */
+    public function getDocumentPaymentTerm(
+        ?string &$newDescription,
+        ?DateTimeInterface &$newDueDate
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPaymentTerm($newDescription, $newDueDate);
+
+        return $this;
+    }
+
     #endregion
 }
