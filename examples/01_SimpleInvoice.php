@@ -35,6 +35,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitesummationLineDTO;
+use horstoeko\invoicesuite\InvoiceSuiteSettings;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -46,6 +47,8 @@ if ($creationMode === 0) {
 if ($creationMode === 1) {
     $builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxextended');
 }
+
+InvoiceSuiteSettings::setUnitAmountDecimals(5);
 
 $documentDTO = new InvoiceSuiteDocumentHeaderDTO();
 $documentDTO

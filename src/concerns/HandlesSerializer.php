@@ -2,15 +2,16 @@
 
 namespace horstoeko\invoicesuite\concerns;
 
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\SerializerInterface;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\BaseTypesHandler;
 use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\XmlSchemaDateHandler;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use horstoeko\invoicesuite\InvoiceSuiteSettings;
+use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Exception\InvalidArgumentException;
+use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
+use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface;
 
 /**
  * Trait representing methods for handling the serializer/deserializer
@@ -47,9 +48,14 @@ trait HandlesSerializer
         $this->serializerBuilder = SerializerBuilder::create();
 
         $this->serializerBuilder->addMetadataDirs($this->getCurrentFormatProvider()->getSerializerMetadataDirectories());
-        $this->serializerBuilder->setCacheDir(sys_get_temp_dir() . "\jms");
         $this->serializerBuilder->addDefaultListeners();
         $this->serializerBuilder->addDefaultHandlers();
+
+        if (InvoiceSuiteSettings::hasSerializerCacheDirectory()) {
+            $this->serializerBuilder->setCacheDir(InvoiceSuiteSettings::getSerializerCacheDirectory());
+        } else {
+            $this->serializerBuilder->setCacheDir(sys_get_temp_dir() . "\jms");
+        }
 
         $this->serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handlerRegistry): void {
             $handlerRegistry->registerSubscribingHandler(new BaseTypesHandler());
