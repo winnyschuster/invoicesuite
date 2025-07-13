@@ -6564,4 +6564,65 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     }
 
     #endregion
+
+    #region Document Amounts
+
+    /**
+     * Get the document summation
+     *
+     * @param float|null $newNetAmount Sum of the net amounts of all invoice lines
+     * @param float|null $newChargeTotalAmount Sum of the charges
+     * @param float|null $newDiscountTotalAmount Sum of the discounts
+     * @param float|null $newTaxBasisAmount Total invoice amount excluding sales tax
+     * @param float|null $newTaxTotalAmount Total amount of the invoice sales tax (in the invoice currency)
+     * @param float|null $newGrossAmount Total invoice amount including sales tax
+     * @param float|null $newDueAmount Payment amount due
+     * @param float|null $newPrepaidAmount Prepayment amount
+     * @param float|null $newRoungingAmount Rounding amount
+     * @return self
+     *
+     * @phpstan-param-out float $newNetAmount
+     * @phpstan-param-out float $newChargeTotalAmount
+     * @phpstan-param-out float $newDiscountTotalAmount
+     * @phpstan-param-out float $newTaxBasisAmount
+     * @phpstan-param-out float $newTaxTotalAmount
+     * @phpstan-param-out float $newTaxTotalAmount2
+     * @phpstan-param-out float $newGrossAmount
+     * @phpstan-param-out float $newDueAmount
+     * @phpstan-param-out float $newPrepaidAmount
+     * @phpstan-param-out float $newRoungingAmount
+     */
+    public function getDocumentSummation(
+        ?float &$newNetAmount,
+        ?float &$newChargeTotalAmount,
+        ?float &$newDiscountTotalAmount,
+        ?float &$newTaxBasisAmount,
+        ?float &$newTaxTotalAmount,
+        ?float &$newTaxTotalAmount2,
+        ?float &$newGrossAmount,
+        ?float &$newDueAmount,
+        ?float &$newPrepaidAmount,
+        ?float &$newRoungingAmount
+    ): self {
+        $documentSummation = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradeSettlementHeaderMonetarySummation();
+
+        $taxTotalAmounts = $documentSummation?->getTaxTotalAmount() ?? [];
+        $taxTotalAmount = reset($taxTotalAmounts);
+        $taxTotalAmount2 = next($taxTotalAmounts);
+
+        $newNetAmount = $documentSummation?->getLineTotalAmount()?->getValue() ?? 0.0;
+        $newChargeTotalAmount = $documentSummation?->getChargeTotalAmount()?->getValue() ?? 0.0;
+        $newDiscountTotalAmount = $documentSummation?->getAllowanceTotalAmount()?->getValue() ?? 0.0;
+        $newTaxBasisAmount = $documentSummation?->getTaxBasisTotalAmount()?->getValue() ?? 0.0;
+        $newTaxTotalAmount = $taxTotalAmount !== false ? ($taxTotalAmount->getValue() ?? 0.0) : 0.0;
+        $newTaxTotalAmount2 = $taxTotalAmount2 !== false ? ($taxTotalAmount2->getValue() ?? 0.0) : 0.0;
+        $newGrossAmount = $documentSummation?->getGrandTotalAmount()?->getValue() ?? 0.0;
+        $newDueAmount = $documentSummation?->getDuePayableAmount()?->getValue() ?? 0.0;
+        $newPrepaidAmount = $documentSummation?->getTotalPrepaidAmount()?->getValue() ?? 0.0;
+        $newRoungingAmount = $documentSummation?->getRoundingAmount()?->getValue() ?? 0.0;
+
+        return $this;
+    }
+
+    #endregion
 }

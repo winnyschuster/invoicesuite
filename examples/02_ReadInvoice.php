@@ -826,3 +826,35 @@ while ($reader->nextDocumentLogisticServiceCharge()) {
 }
 
 #endregion
+
+#region Document Totals
+
+echo "\n";
+echo "Document Totals\n";
+echo "\n";
+
+$reader->getDocumentSummation(
+    $documentNetAmount,
+    $documentChargeTotalAmount,
+    $documentDiscountTotalAmount,
+    $documentTaxBasisAmount,
+    $documentTaxTotalAmount,
+    $documentTaxTotalAmount2,
+    $documentGrossAmount,
+    $documentDueAmount,
+    $documentPrepaidAmount,
+    $documentRoungingAmount
+);
+
+echo sprintf("Net Amount ................ %s\n", $documentNetAmount);
+echo sprintf("Charge Total Amount ....... %s\n", $documentChargeTotalAmount);
+echo sprintf("Discount Total Amount ..... %s\n", $documentDiscountTotalAmount);
+echo sprintf("Tax Basis Amount .......... %s\n", $documentTaxBasisAmount);
+echo sprintf("Tax Total Amount 1 ........ %s\n", $documentTaxTotalAmount);
+echo sprintf("Tax Total Amount 2 ........ %s\n", $documentTaxTotalAmount2);
+echo sprintf("Gross Amount .............. %s\n", $documentGrossAmount);
+echo sprintf("Due Amount ................ %s\n", $documentDueAmount);
+echo sprintf("Prepaid Amount ............ %s\n", $documentPrepaidAmount);
+echo sprintf("Rounding Amount ........... %s\n", $documentRoungingAmount);
+
+#endregion
