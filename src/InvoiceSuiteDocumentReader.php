@@ -4305,5 +4305,43 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Go to the first text information of the latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionNote(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentPositionNote();
+    }
+
+    /**
+     * Go to the next text information of the latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionNote(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentPositionNote();
+    }
+
+    /**
+     * Get text information from latest position
+     *
+     * @param string|null $newContent Text that contains unstructured information that is relevant to the invoice item
+     * @param string|null $newContentCode Code to classify the content of the free text of the invoice
+     * @param string|null $newSubjectCode Code for qualifying the free text for the invoice item
+     * @return self
+     */
+    public function getDocumentPositionNote(
+        ?string &$newContent,
+        ?string &$newContentCode,
+        ?string &$newSubjectCode
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionNote($newContent, $newContentCode, $newSubjectCode);
+
+        return $this;
+    }
+
     #endregion
 }

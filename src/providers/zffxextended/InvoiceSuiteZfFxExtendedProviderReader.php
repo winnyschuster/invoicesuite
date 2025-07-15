@@ -6636,6 +6636,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
      */
     public function firstDocumentPosition(): bool
     {
+        $this->resetCurrentDocumentPositionSubPointers();
+
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
                 $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getIncludedSupplyChainTradeLineItem() ?? []
@@ -6651,6 +6653,8 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
      */
     public function nextDocumentPosition(): bool
     {
+        $this->resetCurrentDocumentPositionSubPointers();
+
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
                 $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getIncludedSupplyChainTradeLineItem() ?? []
@@ -6682,6 +6686,16 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     }
 
     /**
+     * Resets the sub-pointers releated to the currently seeked position
+     *
+     * @return void
+     */
+    protected function resetCurrentDocumentPositionSubPointers(): void
+    {
+        InvoiceSuitePointerUtils::resetSingle('documentpositionnote');
+    }
+
+    /**
      * Get position general information
      *
      * @param string|null $newPositionId __BT-126, From BASIC__ Identification of the position
@@ -6707,6 +6721,66 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         $newParentPositionId = $documentPosition->getAssociatedDocumentLineDocument()?->getParentLineID()?->getValue() ?? "";
         $newLineStatusCode = $documentPosition->getAssociatedDocumentLineDocument()?->getLineStatusCode()?->getValue() ?? "";
         $newLineStatusReasonCode = $documentPosition->getAssociatedDocumentLineDocument()?->getLineStatusReasonCode()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first text information of the latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionNote(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getAssociatedDocumentLineDocument()?->getIncludedNote() ?? []),
+            'documentpositionnote'
+        );
+    }
+
+    /**
+     * Go to the next text information of the latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionNote(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getAssociatedDocumentLineDocument()?->getIncludedNote() ?? []),
+            'documentpositionnote'
+        );
+    }
+
+    /**
+     * Get text information from latest position
+     *
+     * @param string|null $newContent Text that contains unstructured information that is relevant to the invoice item
+     * @param string|null $newContentCode Code to classify the content of the free text of the invoice
+     * @param string|null $newSubjectCode Code for qualifying the free text for the invoice item
+     * @return self
+     *
+     * @phpstan-param-out string $newContent
+     * @phpstan-param-out string $newContentCode
+     * @phpstan-param-out string $newSubjectCode
+     */
+    public function getDocumentPositionNote(
+        ?string &$newContent,
+        ?string &$newContentCode,
+        ?string &$newSubjectCode
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\NoteType>
+         */
+        $documentPositionNotes = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getAssociatedDocumentLineDocument()?->getIncludedNote() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\NoteType
+         */
+        $documentPositionNote = $documentPositionNotes[InvoiceSuitePointerUtils::getValue('documentpositionnote')];
+
+        $newContent = $documentPositionNote->getContent()?->getValue() ?? "";
+        $newContentCode = $documentPositionNote->getContentCode()?->getValue() ?? "";
+        $newSubjectCode = $documentPositionNote->getSubjectCode()?->getValue() ?? "";
 
         return $this;
     }

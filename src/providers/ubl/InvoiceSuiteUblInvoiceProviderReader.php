@@ -6035,5 +6035,65 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         return $this;
     }
 
+    /**
+     * Go to the first text information of the latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionNote(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getNote() ?? []),
+            'documentpositionnote'
+        );
+    }
+
+    /**
+     * Go to the next text information of the latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionNote(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getNote() ?? []),
+            'documentpositionnote'
+        );
+    }
+
+    /**
+     * Get text information from latest position
+     *
+     * @param string|null $newContent Text that contains unstructured information that is relevant to the invoice item
+     * @param string|null $newContentCode Code to classify the content of the free text of the invoice
+     * @param string|null $newSubjectCode Code for qualifying the free text for the invoice item
+     * @return self
+     *
+     * @phpstan-param-out string $newContent
+     * @phpstan-param-out string $newContentCode
+     * @phpstan-param-out string $newSubjectCode
+     */
+    public function getDocumentPositionNote(
+        ?string &$newContent,
+        ?string &$newContentCode,
+        ?string &$newSubjectCode
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cbc\Note>
+         */
+        $documentPositionNotes = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getNote() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cbc\Note
+         */
+        $documentPositionNote = $documentPositionNotes[InvoiceSuitePointerUtils::getValue('documentpositionnote')];
+
+        $newContent = $documentPositionNote->getValue();
+        $newContentCode = "";
+        $newSubjectCode = "";
+
+        return $this;
+    }
+
     #endregion
 }
