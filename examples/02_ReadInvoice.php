@@ -869,7 +869,7 @@ while ($reader->nextDocumentPosition()) {
     $reader->getDocumentPosition($positionLineNumber, $positionParentLineNumber, $positionStatusCode, $positionStatusReasonCode);
     echo sprintf("Line Number: %s, Parent Line Number: %s, StatusCode: %s, ReasonCode: %s\n", $positionLineNumber, $positionParentLineNumber, $positionStatusCode, $positionStatusReasonCode);
 
-    while($reader->nextDocumentPositionNote()) {
+    while ($reader->nextDocumentPositionNote()) {
         $reader->getDocumentPositionNote($positionNoteContent, $positionNoteContentCode, $positionNoteSubjectCode);
         echo sprintf(" - Note: %s (%s, %s)\n", $positionNoteContent, $positionNoteContentCode, $positionNoteSubjectCode);
     }
