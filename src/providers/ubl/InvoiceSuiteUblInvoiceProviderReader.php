@@ -6023,6 +6023,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         InvoiceSuitePointerUtils::resetSingle('documentpositionsellerorderreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositionbuyerorderreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositionquotationreference');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionadditionalreference');
     }
 
     /**
@@ -6586,6 +6587,66 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         $newReferenceNumber = "";
         $newReferenceLineNumber = "";
         $newReferenceDate = null;
+
+        return $this;
+    }
+
+    /**
+     * Go to first additional associated document (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionAdditionalReference(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Go to next additional associated document (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionAdditionalReference(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Get an additional associated document (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber Additional document number
+     * @param string|null $newReferenceLineNumber Additional document line number
+     * @param DateTimeInterface|null $newReferenceDate Additional document date
+     * @param string|null $newTypeCode Additional document type code
+     * @param string|null $newReferenceTypeCode Additional document reference-type code
+     * @param string|null $newDescription Additional document description
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment Additional document attachment
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out string $newReferenceLineNumber
+     * @phpstan-param-out null $newReferenceDate
+     * @phpstan-param-out string $newTypeCode
+     * @phpstan-param-out string $newReferenceTypeCode
+     * @phpstan-param-out string $newDescription
+     * @phpstan-param-out null $newInvoiceSuiteAttachment
+     */
+    public function getDocumentPositionAdditionalReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate,
+        ?string &$newTypeCode,
+        ?string &$newReferenceTypeCode,
+        ?string &$newDescription,
+        ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
+    ): self {
+        $newReferenceNumber = "";
+        $newReferenceLineNumber = "";
+        $newReferenceDate = null;
+        $newTypeCode = "";
+        $newReferenceTypeCode = "";
+        $newDescription = "";
+        $newInvoiceSuiteAttachment = null;
 
         return $this;
     }

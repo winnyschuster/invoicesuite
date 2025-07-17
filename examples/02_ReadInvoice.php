@@ -1024,6 +1024,25 @@ while ($reader->nextDocumentPosition()) {
         echo sprintf("      Line ID ............... %s\n", $positionContractReferenceLineId);
         echo sprintf("      Date .................. %s\n", $positionContractReferenceDate?->format("d.m.Y") ?? "");
     }
+
+    echo " - Additional Line References:\n";
+
+    while ($reader->nextDocumentPositionAdditionalReference()) {
+        $reader->getDocumentPositionAdditionalReference(
+            $positionAdditionalReferenceId,
+            $positionAdditionalReferenceLineId,
+            $positionAdditionalReferenceDate,
+            $positionAdditionalReferenceTypeCode,
+            $positionAdditionalReferenceReferenceTypeCode,
+            $positionAdditionalReferenceDescription,
+            $positionAdditionalReferenceAttchment
+        );
+
+        echo "    - Additional Line Referencet:\n";
+        echo sprintf("      ID .................... %s\n", $positionAdditionalReferenceId);
+        echo sprintf("      Line ID ............... %s\n", $positionAdditionalReferenceLineId);
+        echo sprintf("      Date .................. %s\n", $positionAdditionalReferenceDate?->format("d.m.Y") ?? "");
+    }
 }
 
 #endregion

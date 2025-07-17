@@ -719,6 +719,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         $newTypeCode = $documentAdditionalReference->getTypeCode()?->getValue() ?? "";
         $newReferenceTypeCode = $documentAdditionalReference->getReferenceTypeCode()?->getValue() ?? "";
         $newDescription = $documentAdditionalReference->getName()?->getValue() ?? "";
+        $newInvoiceSuiteAttachment = null;
 
         if ($documentAdditionalReference->getAttachmentBinaryObject()) {
             $newInvoiceSuiteAttachment = InvoiceSuiteAttachment::fromBase64String(
@@ -6700,6 +6701,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         InvoiceSuitePointerUtils::resetSingle('documentpositionbuyerorderreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositionquotationreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositioncontractreference');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionadditionalreference');
     }
 
     /**
@@ -7349,6 +7351,96 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
             $documentPositionContractReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
             $documentPositionContractReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
         );
+
+        return $this;
+    }
+
+    /**
+     * Go to first additional associated document (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionAdditionalReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getAdditionalReferencedDocument() ?? []),
+            'documentpositionadditionalreference'
+        );
+    }
+
+    /**
+     * Go to next additional associated document (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionAdditionalReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getAdditionalReferencedDocument() ?? []),
+            'documentpositionadditionalreference'
+        );
+    }
+
+    /**
+     * Get an additional associated document (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber __BT-X-27, From EXTENDED__ Additional document number
+     * @param string|null $newReferenceLineNumber __BT-X-29, From EXTENDED__ Additional document line number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-33, From EXTENDED__ Additional document date
+     * @param string|null $newTypeCode __BT-X-30, From EXTENDED__ Additional document type code
+     * @param string|null $newReferenceTypeCode __BT-X-32, From EXTENDED__ Additional document reference-type code
+     * @param string|null $newDescription __BT-X-299, From EXTENDED__ Additional document description
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment __BT-X-31, From EXTENDED__ Additional document attachment
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out string $newReferenceLineNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     * @phpstan-param-out string $newTypeCode
+     * @phpstan-param-out string $newReferenceTypeCode
+     * @phpstan-param-out string $newDescription
+     * @phpstan-param-out InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment
+     */
+    public function getDocumentPositionAdditionalReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate,
+        ?string &$newTypeCode,
+        ?string &$newReferenceTypeCode,
+        ?string &$newDescription,
+        ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
+         */
+        $documentPositionAdditionalReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getAdditionalReferencedDocument() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
+         */
+        $documentPositionAdditionalReference = $documentPositionAdditionalReferences[InvoiceSuitePointerUtils::getValue('documentpositionadditionalreference')];
+
+        $newReferenceNumber = $documentPositionAdditionalReference->getIssuerAssignedID()?->getValue() ?? "";
+        $newReferenceLineNumber = $documentPositionAdditionalReference->getLineID()?->getValue() ?? "";
+        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $documentPositionAdditionalReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
+            $documentPositionAdditionalReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
+        );
+        $newTypeCode = $documentPositionAdditionalReference->getTypeCode()?->getValue() ?? "";
+        $newReferenceTypeCode = $documentPositionAdditionalReference->getReferenceTypeCode()?->getValue() ?? "";
+        $newDescription = $documentPositionAdditionalReference->getName()?->getValue() ?? "";
+        $newInvoiceSuiteAttachment = null;
+
+        if ($documentPositionAdditionalReference->getAttachmentBinaryObject()) {
+            $newInvoiceSuiteAttachment = InvoiceSuiteAttachment::fromBase64String(
+                $documentPositionAdditionalReference->getAttachmentBinaryObject()->getValue(),
+                $documentPositionAdditionalReference->getAttachmentBinaryObject()->getFilename()
+            );
+        }
+
+        if ($documentPositionAdditionalReference->getURIID()) {
+            $newInvoiceSuiteAttachment = InvoiceSuiteAttachment::fromUrl($documentPositionAdditionalReference->getURIID()->getValue() ?? "");
+        }
 
         return $this;
     }

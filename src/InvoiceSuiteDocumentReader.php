@@ -4719,5 +4719,59 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Go to first additional associated document (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionAdditionalReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentPositionAdditionalReference();
+    }
+
+    /**
+     * Go to next additional associated document (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionAdditionalReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentPositionAdditionalReference();
+    }
+
+    /**
+     * Get an additional associated document (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber Additional document number
+     * @param string|null $newReferenceLineNumber Additional document line number
+     * @param DateTimeInterface|null $newReferenceDate Additional document date
+     * @param string|null $newTypeCode Additional document type code
+     * @param string|null $newReferenceTypeCode Additional document reference-type code
+     * @param string|null $newDescription Additional document description
+     * @param InvoiceSuiteAttachment|null $newInvoiceSuiteAttachment Additional document attachment
+     * @return self
+     */
+    public function getDocumentPositionAdditionalReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate,
+        ?string &$newTypeCode,
+        ?string &$newReferenceTypeCode,
+        ?string &$newDescription,
+        ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionAdditionalReference(
+            $newReferenceNumber,
+            $newReferenceLineNumber,
+            $newReferenceDate,
+            $newTypeCode,
+            $newReferenceTypeCode,
+            $newDescription,
+            $newInvoiceSuiteAttachment
+        );
+
+        return $this;
+    }
+
     #endregion
 }
