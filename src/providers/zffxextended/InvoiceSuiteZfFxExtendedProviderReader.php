@@ -6695,6 +6695,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         InvoiceSuitePointerUtils::resetSingle('documentpositionnote');
         InvoiceSuitePointerUtils::resetSingle('documentpositionproductcharacteristic');
         InvoiceSuitePointerUtils::resetSingle('documentpositionproductclassification');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionproductreferencedproduct');
     }
 
     /**
@@ -6963,10 +6964,10 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     /**
      * Get product classification from latest position
      *
-     * @param string|null $newProductClassificationCode Classification identifier
-     * @param string|null $newProductClassificationListId Identifier for the identification scheme of the item classification
-     * @param string|null $newProductClassificationListVersionId Version of the identification scheme
-     * @param string|null $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
+     * @param string|null $newProductClassificationCode __BT-158, From EN 16931__ Classification identifier
+     * @param string|null $newProductClassificationListId __BT-158-1, From EN 16931__ Identifier for the identification scheme of the item classification
+     * @param string|null $newProductClassificationListVersionId __BT-158-2, From EN 16931__ Version of the identification scheme
+     * @param string|null $newProductClassificationCodeClassname __BT-X-138, From EXTENDED__ Name with which an article can be classified according to type or quality
      * @return self
      *
      * @phpstan-param-out string $newProductClassificationCode
@@ -6994,6 +6995,104 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         $newProductClassificationListId = $documentPositionProductClassification->getClassCode()?->getListID() ?? "";
         $newProductClassificationListVersionId = $documentPositionProductClassification->getClassCode()?->getListVersionID() ?? "";
         $newProductClassificationCodeClassname = $documentPositionProductClassification->getClassName()?->getValue() ?? "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first referenced product in latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionReferencedProduct(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedTradeProduct()?->getIncludedReferencedProduct() ?? []),
+            'documentpositionproductreferencedproduct'
+        );
+    }
+
+    /**
+     * Go to the next referenced product in latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionReferencedProduct(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedTradeProduct()?->getIncludedReferencedProduct() ?? []),
+            'documentpositionproductreferencedproduct'
+        );
+    }
+
+    /**
+     * Get referenced product from latest position
+     *
+     * @param string|null $newProductId __BT-X-301, From EXTENDED__ ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName __BT-X-18, From EXTENDED__ Name of the product (product name)
+     * @param string|null $newProductDescription __BT-X-19, From EXTENDED__ Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId __BT-X-16, From EXTENDED__ Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId __BT-X-17, From EXTENDED__ Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId __BT-X-15, From EXTENDED__ Product global id
+     * @param string|null $newProductGlobalIdType __BT-X-15-1, From EXTENDED__ Type of the product global id
+     * @param string|null $newProductIndustryId __BT-X-309, From EXTENDED__ Id assigned by the industry
+     * @param float|null $newProductUnitQuantity __BT-X-20, From EXTENDED__ Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit __BT-X-20-1, From EXTENDED__ Unit code of the quantity of the referenced product contained
+     * @return self
+     *
+     * @phpstan-param-out string $newProductId
+     * @phpstan-param-out string $newProductName
+     * @phpstan-param-out string $newProductDescription
+     * @phpstan-param-out string $newProductSellerId
+     * @phpstan-param-out string $newProductBuyerId
+     * @phpstan-param-out string $newProductGlobalId
+     * @phpstan-param-out string $newProductGlobalIdType
+     * @phpstan-param-out string $newProductIndustryId
+     * @phpstan-param-out float $newProductUnitQuantity
+     * @phpstan-param-out string $newProductUnitQuantityUnit
+     */
+    public function getDocumentPositionReferencedProduct(
+        ?string &$newProductId,
+        ?string &$newProductName,
+        ?string &$newProductDescription,
+        ?string &$newProductSellerId,
+        ?string &$newProductBuyerId,
+        ?string &$newProductGlobalId,
+        ?string &$newProductGlobalIdType,
+        ?string &$newProductIndustryId,
+        ?float &$newProductUnitQuantity,
+        ?string &$newProductUnitQuantityUnit
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedProductType>
+         */
+        $documentPositionProductReferencedProducts = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedTradeProduct()?->getIncludedReferencedProduct() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedProductType
+         */
+        $documentPositionProductReferencedProduct = $documentPositionProductReferencedProducts[InvoiceSuitePointerUtils::getValue('documentpositionproductreferencedproduct')];
+
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\udt\IDType>
+         */
+        $productGlobalIds = $documentPositionProductReferencedProduct->getGlobalID() ?? [];
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\udt\IDType|false
+         */
+        $productGlobalId = reset($productGlobalIds);
+
+        $newProductId = $documentPositionProductReferencedProduct->getID()?->getValue() ?? "";
+        $newProductName = $documentPositionProductReferencedProduct->getName()?->getValue() ?? "";
+        $newProductDescription = $documentPositionProductReferencedProduct->getDescription()?->getValue() ?? "";
+        $newProductSellerId = $documentPositionProductReferencedProduct->getSellerAssignedID()?->getValue() ?? "";
+        $newProductBuyerId = $documentPositionProductReferencedProduct->getBuyerAssignedID()?->getValue() ?? "";
+        $newProductGlobalId = $productGlobalId !== false ? ($productGlobalId->getValue() ?? "") : "";
+        $newProductGlobalIdType = $productGlobalId !== false ? ($productGlobalId->getSchemeID() ?? "") : "";
+        $newProductIndustryId = $documentPositionProductReferencedProduct->getIndustryAssignedID()?->getValue() ?? "";
+        $newProductUnitQuantity = $documentPositionProductReferencedProduct->getUnitQuantity()?->getValue() ?? 0.0;
+        $newProductUnitQuantityUnit = $documentPositionProductReferencedProduct->getUnitQuantity()?->getUnitCode() ?? "";
 
         return $this;
     }

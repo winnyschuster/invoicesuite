@@ -6018,6 +6018,8 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
     {
         InvoiceSuitePointerUtils::resetSingle('documentpositionnote');
         InvoiceSuitePointerUtils::resetSingle('documentpositionproductcharacteristic');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionproductclassification');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionproductreferencedproduct');
     }
 
     /**
@@ -6317,6 +6319,78 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         $newProductClassificationListId = $documentPositionProductClassification->getItemClassificationCode()?->getListID() ?? "";
         $newProductClassificationListVersionId = $documentPositionProductClassification->getItemClassificationCode()?->getListVersionID() ?? "";
         $newProductClassificationCodeClassname = "";
+
+        return $this;
+    }
+
+    /**
+     * Go to the first referenced product in latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionReferencedProduct(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Go to the next referenced product in latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionReferencedProduct(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Get referenced product from latest position
+     *
+     * @param string|null $newProductId ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName Name of the product (product name)
+     * @param string|null $newProductDescription Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId Product global id
+     * @param string|null $newProductGlobalIdType Type of the product global id
+     * @param string|null $newProductIndustryId Id assigned by the industry
+     * @param float|null $newProductUnitQuantity Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
+     * @return self
+     *
+     * @phpstan-param-out string $newProductId
+     * @phpstan-param-out string $newProductName
+     * @phpstan-param-out string $newProductDescription
+     * @phpstan-param-out string $newProductSellerId
+     * @phpstan-param-out string $newProductBuyerId
+     * @phpstan-param-out string $newProductGlobalId
+     * @phpstan-param-out string $newProductGlobalIdType
+     * @phpstan-param-out string $newProductIndustryId
+     * @phpstan-param-out float $newProductUnitQuantity
+     * @phpstan-param-out string $newProductUnitQuantityUnit
+     */
+    public function getDocumentPositionReferencedProduct(
+        ?string &$newProductId,
+        ?string &$newProductName,
+        ?string &$newProductDescription,
+        ?string &$newProductSellerId,
+        ?string &$newProductBuyerId,
+        ?string &$newProductGlobalId,
+        ?string &$newProductGlobalIdType,
+        ?string &$newProductIndustryId,
+        ?float &$newProductUnitQuantity,
+        ?string &$newProductUnitQuantityUnit
+    ): self {
+        $newProductId = "";
+        $newProductName = "";
+        $newProductDescription = "";
+        $newProductSellerId = "";
+        $newProductBuyerId = "";
+        $newProductGlobalId = "";
+        $newProductGlobalIdType = "";
+        $newProductIndustryId = "";
+        $newProductUnitQuantity = 0.0;
+        $newProductUnitQuantityUnit = "";
 
         return $this;
     }

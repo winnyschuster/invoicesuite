@@ -936,6 +936,32 @@ while ($reader->nextDocumentPosition()) {
         echo sprintf("      List Version ID ....... %s\n", $positionProductClassificationListVersionId);
         echo sprintf("      Classname ............. %s\n", $positionProductClassificationClassname);
     }
+
+    echo " - Product Referenced Product:\n";
+
+    while ($reader->nextDocumentPositionReferencedProduct()) {
+        $reader->getDocumentPositionReferencedProduct(
+            $positionReferencedProductId,
+            $positionReferencedProductName,
+            $positionReferencedProductDescription,
+            $positionReferencedProductSellerId,
+            $positionReferencedProductBuyerId,
+            $positionReferencedProductGlobalId,
+            $positionReferencedProductGlobalIdType,
+            $positionReferencedProductIndustryId,
+            $positionReferencedProductUnitQuantity,
+            $positionReferencedProductUnitQuantityUnit
+        );
+        echo "    - Referenced Product:\n";
+        echo sprintf("      ID .................... %s\n", $positionReferencedProductId);
+        echo sprintf("      Name .................. %s\n", $positionReferencedProductName);
+        echo sprintf("      Description ........... %s\n", $positionReferencedProductDescription);
+        echo sprintf("      Seller ID ............. %s\n", $positionReferencedProductSellerId);
+        echo sprintf("      Buyer ID .............. %s\n", $positionReferencedProductBuyerId);
+        echo sprintf("      Global ID ............. %s (%s)\n", $positionReferencedProductGlobalId, $positionReferencedProductGlobalIdType);
+        echo sprintf("      Industry ID ........... %s\n", $positionReferencedProductIndustryId);
+        echo sprintf("      Unit Quantity ......... %s %s\n", $positionReferencedProductUnitQuantity, $positionReferencedProductUnitQuantityUnit);
+    }
 }
 
 #endregion

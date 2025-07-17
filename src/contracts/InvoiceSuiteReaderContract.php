@@ -3116,5 +3116,47 @@ interface InvoiceSuiteReaderContract
         ?string &$newProductClassificationCodeClassname
     ): self;
 
+    /**
+     * Go to the first referenced product in latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionReferencedProduct(): bool;
+
+    /**
+     * Go to the next referenced product in latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionReferencedProduct(): bool;
+
+    /**
+     * Get referenced product from latest position
+     *
+     * @param string|null $newProductId ID of the product (product id, Order-X interoperable)
+     * @param string|null $newProductName Name of the product (product name)
+     * @param string|null $newProductDescription Product description of the item, the item description makes it possible to describe the item
+     * @param string|null $newProductSellerId Identifier assigned to the product by the seller
+     * @param string|null $newProductBuyerId Identifier assigned to the product by the buyer
+     * @param string|null $newProductGlobalId Product global id
+     * @param string|null $newProductGlobalIdType Type of the product global id
+     * @param string|null $newProductIndustryId Id assigned by the industry
+     * @param float|null $newProductUnitQuantity Quantity Quantity of the referenced product contained
+     * @param string|null $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
+     * @return self
+     */
+    public function getDocumentPositionReferencedProduct(
+        ?string &$newProductId,
+        ?string &$newProductName,
+        ?string &$newProductDescription,
+        ?string &$newProductSellerId,
+        ?string &$newProductBuyerId,
+        ?string &$newProductGlobalId,
+        ?string &$newProductGlobalIdType,
+        ?string &$newProductIndustryId,
+        ?float &$newProductUnitQuantity,
+        ?string &$newProductUnitQuantityUnit
+    ): self;
+
     #endregion
 }
