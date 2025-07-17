@@ -6702,6 +6702,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         InvoiceSuitePointerUtils::resetSingle('documentpositionquotationreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositioncontractreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositionadditionalreference');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionultimatecustomerorderreference');
     }
 
     /**
@@ -7441,6 +7442,69 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         if ($documentPositionAdditionalReference->getURIID()) {
             $newInvoiceSuiteAttachment = InvoiceSuiteAttachment::fromUrl($documentPositionAdditionalReference->getURIID()->getValue() ?? "");
         }
+
+        return $this;
+    }
+
+    /**
+     * Go to the first an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionUltimateCustomerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getUltimateCustomerOrderReferencedDocument() ?? []),
+            'documentpositionultimatecustomerorderreference'
+        );
+    }
+
+    /**
+     * Go to the next an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionUltimateCustomerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getUltimateCustomerOrderReferencedDocument() ?? []),
+            'documentpositionultimatecustomerorderreference'
+        );
+    }
+
+    /**
+     * Get an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber __BT-X-43, From EXTENDED__ Ultimate customer order number
+     * @param string|null $newReferenceLineNumber __BT-X-44, From EXTENDED__ Ultimate customer order line number
+     * @param DateTimeInterface|null $newReferenceDate __BT-X-45, From EXTENDED__ Ultimate customer order date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out string $newReferenceLineNumber
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentPositionUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
+         */
+        $documentPositionUltimateCustomerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getUltimateCustomerOrderReferencedDocument() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
+         */
+        $documentPositionUltimateCustomerOrderReference = $documentPositionUltimateCustomerOrderReferences[InvoiceSuitePointerUtils::getValue('documentpositionultimatecustomerorderreference')];
+
+        $newReferenceNumber = $documentPositionUltimateCustomerOrderReference->getIssuerAssignedID()?->getValue() ?? "";
+        $newReferenceLineNumber = $documentPositionUltimateCustomerOrderReference->getLineID()?->getValue() ?? "";
+        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $documentPositionUltimateCustomerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
+            $documentPositionUltimateCustomerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
+        );
 
         return $this;
     }

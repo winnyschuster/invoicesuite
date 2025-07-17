@@ -4773,5 +4773,47 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Go to the first an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionUltimateCustomerOrderReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentPositionUltimateCustomerOrderReference();
+    }
+
+    /**
+     * Go to the next an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionUltimateCustomerOrderReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentPositionUltimateCustomerOrderReference();
+    }
+
+    /**
+     * Get an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber Ultimate customer order number
+     * @param string|null $newReferenceLineNumber Ultimate customer order line number
+     * @param DateTimeInterface|null $newReferenceDate Ultimate customer order date
+     * @return self
+     */
+    public function getDocumentPositionUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionUltimateCustomerOrderReference(
+            $newReferenceNumber,
+            $newReferenceLineNumber,
+            $newReferenceDate
+        );
+
+        return $this;
+    }
+
     #endregion
 }

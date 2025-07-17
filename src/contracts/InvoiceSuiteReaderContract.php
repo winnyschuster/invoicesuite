@@ -3306,5 +3306,33 @@ interface InvoiceSuiteReaderContract
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
     ): self;
 
+    /**
+     * Go to the first an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionUltimateCustomerOrderReference(): bool;
+
+    /**
+     * Go to the next an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionUltimateCustomerOrderReference(): bool;
+
+    /**
+     * Get an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber Ultimate customer order number
+     * @param string|null $newReferenceLineNumber Ultimate customer order line number
+     * @param DateTimeInterface|null $newReferenceDate Ultimate customer order date
+     * @return self
+     */
+    public function getDocumentPositionUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self;
+
     #endregion
 }

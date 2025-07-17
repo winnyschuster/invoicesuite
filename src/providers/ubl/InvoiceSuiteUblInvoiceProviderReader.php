@@ -6024,6 +6024,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         InvoiceSuitePointerUtils::resetSingle('documentpositionbuyerorderreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositionquotationreference');
         InvoiceSuitePointerUtils::resetSingle('documentpositionadditionalreference');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionultimatecustomerorderreference');
     }
 
     /**
@@ -6647,6 +6648,50 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         $newReferenceTypeCode = "";
         $newDescription = "";
         $newInvoiceSuiteAttachment = null;
+
+        return $this;
+    }
+
+    /**
+     * Go to the first an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionUltimateCustomerOrderReference(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Go to the next an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionUltimateCustomerOrderReference(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Get an additional ultimate customer order reference (line reference) from latest position
+     *
+     * @param string|null $newReferenceNumber Ultimate customer order number
+     * @param string|null $newReferenceLineNumber Ultimate customer order line number
+     * @param DateTimeInterface|null $newReferenceDate Ultimate customer order date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out string $newReferenceLineNumber
+     * @phpstan-param-out null $newReferenceDate
+     */
+    public function getDocumentPositionUltimateCustomerOrderReference(
+        ?string &$newReferenceNumber,
+        ?string &$newReferenceLineNumber,
+        ?DateTimeInterface &$newReferenceDate
+    ): self {
+        $newReferenceNumber = "";
+        $newReferenceLineNumber = "";
+        $newReferenceDate = null;
 
         return $this;
     }

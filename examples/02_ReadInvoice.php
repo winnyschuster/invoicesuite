@@ -1043,6 +1043,21 @@ while ($reader->nextDocumentPosition()) {
         echo sprintf("      Line ID ............... %s\n", $positionAdditionalReferenceLineId);
         echo sprintf("      Date .................. %s\n", $positionAdditionalReferenceDate?->format("d.m.Y") ?? "");
     }
+
+    echo " - UltimateCustomerOrder Line References:\n";
+
+    while ($reader->nextDocumentPositionUltimateCustomerOrderReference()) {
+        $reader->getDocumentPositionUltimateCustomerOrderReference(
+            $positionUltimateCustomerOrderReferenceId,
+            $positionUltimateCustomerOrderReferenceLineId,
+            $positionUltimateCustomerOrderReferenceDate
+        );
+
+        echo "    - UltimateCustomerOrder Line Referencet:\n";
+        echo sprintf("      ID .................... %s\n", $positionUltimateCustomerOrderReferenceId);
+        echo sprintf("      Line ID ............... %s\n", $positionUltimateCustomerOrderReferenceLineId);
+        echo sprintf("      Date .................. %s\n", $positionUltimateCustomerOrderReferenceDate?->format("d.m.Y") ?? "");
+    }
 }
 
 #endregion
