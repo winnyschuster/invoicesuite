@@ -4593,5 +4593,47 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Go to the first associated buyer's order confirmation (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionBuyerOrderReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentPositionBuyerOrderReference();
+    }
+
+    /**
+     * Go to the next associated buyer's order confirmation (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionBuyerOrderReference(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentPositionBuyerOrderReference();
+    }
+
+    /**
+     * Get the associated buyer's order confirmation (line reference).
+     *
+     * @param string|null $newReferenceNumber Buyer's order confirmation number
+     * @param string|null $newReferenceLineNumber Buyer's order confirmation line number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order confirmation date
+     * @return self
+     */
+    public function getDocumentPositionBuyerOrderReference(
+        ?string &$newReferenceNumber = null,
+        ?string &$newReferenceLineNumber = null,
+        ?DateTimeInterface &$newReferenceDate = null
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionBuyerOrderReference(
+            $newReferenceNumber,
+            $newReferenceLineNumber,
+            $newReferenceDate
+        );
+
+        return $this;
+    }
+
     #endregion
 }

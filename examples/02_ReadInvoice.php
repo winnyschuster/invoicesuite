@@ -979,6 +979,21 @@ while ($reader->nextDocumentPosition()) {
         echo sprintf("      Line ID ............... %s\n", $positionSellerOrderReferenceLineId);
         echo sprintf("      Date .................. %s\n", $positionSellerOrderReferenceDate?->format("d.m.Y") ?? "");
     }
+
+    echo " - Buyer Order Line References:\n";
+
+    while ($reader->nextDocumentPositionBuyerOrderReference()) {
+        $reader->getDocumentPositionBuyerOrderReference(
+            $positionBuyerOrderReferenceId,
+            $positionBuyerOrderReferenceLineId,
+            $positionBuyerOrderReferenceDate
+        );
+
+        echo "    - Buyer Order Line Referencet:\n";
+        echo sprintf("      ID .................... %s\n", $positionBuyerOrderReferenceId);
+        echo sprintf("      Line ID ............... %s\n", $positionBuyerOrderReferenceLineId);
+        echo sprintf("      Date .................. %s\n", $positionBuyerOrderReferenceDate?->format("d.m.Y") ?? "");
+    }
 }
 
 #endregion

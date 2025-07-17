@@ -6021,6 +6021,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         InvoiceSuitePointerUtils::resetSingle('documentpositionproductclassification');
         InvoiceSuitePointerUtils::resetSingle('documentpositionproductreferencedproduct');
         InvoiceSuitePointerUtils::resetSingle('documentpositionsellerorderreference');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionbuyerorderreference');
     }
 
     /**
@@ -6435,6 +6436,66 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
     ): self {
         $newReferenceNumber = "";
         $newReferenceLineNumber = "";
+        $newReferenceDate = null;
+
+        return $this;
+    }
+
+    /**
+     * Go to the first associated buyer's order confirmation (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionBuyerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getOrderLineReference() ?? []),
+            'documentpositionbuyerorderreference'
+        );
+    }
+
+    /**
+     * Go to the next associated buyer's order confirmation (line reference) from latest position
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionBuyerOrderReference(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getOrderLineReference() ?? []),
+            'documentpositionbuyerorderreference'
+        );
+    }
+
+    /**
+     * Get the associated buyer's order confirmation (line reference).
+     *
+     * @param string|null $newReferenceNumber Buyer's order confirmation number
+     * @param string|null $newReferenceLineNumber Buyer's order confirmation line number
+     * @param DateTimeInterface|null $newReferenceDate Buyer's order confirmation date
+     * @return self
+     *
+     * @phpstan-param-out string $newReferenceNumber
+     * @phpstan-param-out string $newReferenceLineNumber
+     * @phpstan-param-out null $newReferenceDate
+     */
+    public function getDocumentPositionBuyerOrderReference(
+        ?string &$newReferenceNumber = null,
+        ?string &$newReferenceLineNumber = null,
+        ?DateTimeInterface &$newReferenceDate = null
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\OrderLineReference>
+         */
+        $documentPositionBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getOrderLineReference() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference
+         */
+        $documentPositionBuyerOrderReference = $documentPositionBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentpositionbuyerorderreference')];
+
+        $newReferenceNumber = "";
+        $newReferenceLineNumber = $documentPositionBuyerOrderReference->getLineID()?->getValue() ?? "";
         $newReferenceDate = null;
 
         return $this;
