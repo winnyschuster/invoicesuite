@@ -4986,5 +4986,27 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Get the position's gross price from latest position
+     *
+     * @param null|float $newGrossPrice Unit price excluding sales tax before deduction of the discount on the item price
+     * @param null|float $newGrossPriceBasisQuantity Number of item units for which the price applies
+     * @param null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
+     * @return self
+     */
+    public function getDocumentPositionGrossPrice(
+        ?float &$newGrossPrice,
+        ?float &$newGrossPriceBasisQuantity,
+        ?string &$newGrossPriceBasisQuantityUnit
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionGrossPrice(
+            $newGrossPrice,
+            $newGrossPriceBasisQuantity,
+            $newGrossPriceBasisQuantityUnit
+        );
+
+        return $this;
+    }
+
     #endregion
 }

@@ -6880,5 +6880,29 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         return $this;
     }
 
+    /**
+     * Get the position's gross price from latest position
+     *
+     * @param null|float $newGrossPrice Unit price excluding sales tax before deduction of the discount on the item price
+     * @param null|float $newGrossPriceBasisQuantity Number of item units for which the price applies
+     * @param null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
+     * @return self
+     *
+     * @phpstan-param-out float $newGrossPrice
+     * @phpstan-param-out float $newGrossPriceBasisQuantity
+     * @phpstan-param-out string $newGrossPriceBasisQuantityUnit
+     */
+    public function getDocumentPositionGrossPrice(
+        ?float &$newGrossPrice,
+        ?float &$newGrossPriceBasisQuantity,
+        ?string &$newGrossPriceBasisQuantityUnit
+    ): self {
+        $newGrossPrice = 0.0;
+        $newGrossPriceBasisQuantity = 0.0;
+        $newGrossPriceBasisQuantityUnit = "";
+
+        return $this;
+    }
+
     #endregion
 }

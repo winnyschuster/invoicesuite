@@ -7769,5 +7769,31 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         return $this;
     }
 
+    /**
+     * Get the position's gross price from latest position
+     *
+     * @param null|float $newGrossPrice __BT-148, From BASIC__ Unit price excluding sales tax before deduction of the discount on the item price
+     * @param null|float $newGrossPriceBasisQuantity __BT-149-1, From BASIC__ Number of item units for which the price applies
+     * @param null|string $newGrossPriceBasisQuantityUnit __BT-150-1, From BASIC__ Unit code of the number of item units for which the price applies
+     * @return self
+     *
+     * @phpstan-param-out float $newGrossPrice
+     * @phpstan-param-out float $newGrossPriceBasisQuantity
+     * @phpstan-param-out string $newGrossPriceBasisQuantityUnit
+     */
+    public function getDocumentPositionGrossPrice(
+        ?float &$newGrossPrice,
+        ?float &$newGrossPriceBasisQuantity,
+        ?string &$newGrossPriceBasisQuantityUnit
+    ): self {
+        $documentPosition = $this->resolveCurrentDocumentPosition();
+
+        $newGrossPrice = $documentPosition->getSpecifiedLineTradeAgreement()?->getGrossPriceProductTradePrice()?->getChargeAmount()?->getValue() ?? 0.0;
+        $newGrossPriceBasisQuantity = $documentPosition->getSpecifiedLineTradeAgreement()?->getGrossPriceProductTradePrice()?->getBasisQuantity()?->getValue() ?? 0.0;
+        $newGrossPriceBasisQuantityUnit = $documentPosition->getSpecifiedLineTradeAgreement()?->getGrossPriceProductTradePrice()?->getBasisQuantity()?->getUnitCode() ?? "";
+
+        return $this;
+    }
+
     #endregion
 }

@@ -1120,6 +1120,13 @@ while ($reader->nextDocumentPosition()) {
         echo sprintf("      Date .................. %s\n", $positionInvoiceReferenceDate?->format("d.m.Y") ?? "");
         echo sprintf("      Type Code ............. %s\n", $positionInvoiceReferenceTypeCode);
     }
+
+    echo " - Position Gross Price:\n";
+
+    $reader->getDocumentPositionGrossPrice($positionGrossPrice, $positionGrossPriceBaseQuantity, $positionGrossPriceBaseQuantityUnit);
+
+    echo sprintf("    - Gross Price: ........... %s\n", $positionGrossPrice);
+    echo sprintf("    - Base Quantity: ......... %s %s\n", $positionGrossPriceBaseQuantity, $positionGrossPriceBaseQuantityUnit);
 }
 
 #endregion
