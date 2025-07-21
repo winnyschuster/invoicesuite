@@ -1188,7 +1188,6 @@ while ($reader->nextDocumentPosition()) {
     echo sprintf("    - Charge-Free Quantity ... %s %s\n", $positionChargeFreeQuantity, $positionChargeFreeQuantityUnit);
     echo sprintf("    - Package Quantity ....... %s %s\n", $positionPackageQuantity, $positionPackageQuantityUnit);
 
-
     echo "\n";
     echo " - Position Ship-To Party\n";
     echo "\n";
@@ -1237,6 +1236,56 @@ while ($reader->nextDocumentPosition()) {
     while ($reader->nextDocumentPositionShipToCommunication()) {
         $reader->getDocumentPositionShipToCommunication($documentPositionShipToCommunicationType, $documentPositionShipToCommunicationUri);
         echo sprintf("   ShipTo Comm. ....... %s (%s)\n", $documentPositionShipToCommunicationUri, $documentPositionShipToCommunicationType);
+    }
+
+    echo "\n";
+    echo " - Position Ultimate Ship-To Party\n";
+    echo "\n";
+
+    $reader->getDocumentPositionUltimateShipToName($documentPositionUltimateShipToName);
+    echo sprintf("   UltimateShipTo Name ........ %s\n", $documentPositionUltimateShipToName);
+
+    while ($reader->nextDocumentPositionUltimateShipToId()) {
+        $reader->getDocumentPositionUltimateShipToId($documentPositionUltimateShipToGlobalId);
+        echo sprintf("   UltimateShipTo ID .......... %s\n", $documentPositionUltimateShipToGlobalId);
+    }
+
+    while ($reader->nextDocumentPositionUltimateShipToGlobalId()) {
+        $reader->getDocumentPositionUltimateShipToGlobalId($documentPositionUltimateShipToGlobalId, $documentPositionUltimateShipToGlobalIdType);
+        echo sprintf("   UltimateShipTo Global ID ... %s (%s)\n", $documentPositionUltimateShipToGlobalId, $documentPositionUltimateShipToGlobalIdType);
+    }
+
+    while ($reader->nextDocumentPositionUltimateShipToTaxRegistration()) {
+        $reader->getDocumentPositionUltimateShipToTaxRegistration($documentPositionUltimateShipToTaxRegistrationType, $documentPositionUltimateShipToTaxRegistrationId);
+        echo sprintf("   UltimateShipTo Tax Reg. .... %s (%s)\n", $documentPositionUltimateShipToTaxRegistrationId, $documentPositionUltimateShipToTaxRegistrationType);
+    }
+
+    while ($reader->nextDocumentPositionUltimateShipToAddress()) {
+        $reader->getDocumentPositionUltimateShipToAddress($documentPositionUltimateShipToAddressLine1, $documentPositionUltimateShipToAddressLine2, $documentPositionUltimateShipToAddressLine3, $documentPositionUltimateShipToPostCode, $documentPositionUltimateShipToCity, $documentPositionUltimateShipToCountryId, $documentPositionUltimateShipToSubDivision);
+        echo sprintf("   UltimateShipTo Address ..... %s\n", $documentPositionUltimateShipToAddressLine1);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToAddressLine2);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToAddressLine3);
+        echo sprintf("                          ..... %s %s %s\n", $documentPositionUltimateShipToCountryId, $documentPositionUltimateShipToPostCode, $documentPositionUltimateShipToCity);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToSubDivision);
+    }
+
+    while ($reader->nextDocumentPositionUltimateShipToLegalOrganisation()) {
+        $reader->getDocumentPositionUltimateShipToLegalOrganisation($documentPositionUltimateShipToLegalOrgType, $documentPositionUltimateShipToLegalOrgId, $documentPositionUltimateShipToLegalOrgName);
+        echo sprintf("   UltimateShipTo Legal ....... %s (%s), %s\n", $documentPositionUltimateShipToLegalOrgId, $documentPositionUltimateShipToLegalOrgType, $documentPositionUltimateShipToLegalOrgName);
+    }
+
+    while ($reader->nextDocumentPositionUltimateShipToContact()) {
+        $reader->getDocumentPositionUltimateShipToContact($documentPositionUltimateShipToContactName, $documentPositionUltimateShipToContactDepartmenrName, $documentPositionUltimateShipToContactPhoneNumber, $documentPositionUltimateShipToContactFaxNumber, $documentPositionUltimateShipToContactEmailAddress);
+        echo sprintf("   UltimateShipTo Contact ..... %s\n", $documentPositionUltimateShipToContactName);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToContactDepartmenrName);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToContactPhoneNumber);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToContactFaxNumber);
+        echo sprintf("                          ..... %s\n", $documentPositionUltimateShipToContactEmailAddress);
+    }
+
+    while ($reader->nextDocumentPositionUltimateShipToCommunication()) {
+        $reader->getDocumentPositionUltimateShipToCommunication($documentPositionUltimateShipToCommunicationType, $documentPositionUltimateShipToCommunicationUri);
+        echo sprintf("   UltimateShipTo Comm. ....... %s (%s)\n", $documentPositionUltimateShipToCommunicationUri, $documentPositionUltimateShipToCommunicationType);
     }
 }
 
