@@ -51,6 +51,110 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
     #region Document Generals
 
     /**
+     * Reset all document-header-level internal pointers
+     *
+     * @return void
+     */
+    protected function resetCurrentDocumentSubPointers(): void
+    {
+        InvoiceSuitePointerUtils::resetSingle('documentnote');
+        InvoiceSuitePointerUtils::resetSingle('documentbillingperiod');
+        InvoiceSuitePointerUtils::resetSingle('documentpostingreference');
+        InvoiceSuitePointerUtils::resetSingle('documentsellerorderreference');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyerorderreference');
+        InvoiceSuitePointerUtils::resetSingle('documentquotationreference');
+        InvoiceSuitePointerUtils::resetSingle('documentcontractreference');
+        InvoiceSuitePointerUtils::resetSingle('documentadditionalreference');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicereference');
+        InvoiceSuitePointerUtils::resetSingle('documentprojectreference');
+        InvoiceSuitePointerUtils::resetSingle('documentultimatecustomerorderreference');
+        InvoiceSuitePointerUtils::resetSingle('documentdespatchadvicereference');
+        InvoiceSuitePointerUtils::resetSingle('documentreceivingadvicereference');
+        InvoiceSuitePointerUtils::resetSingle('documentdeliverynotereference');
+        InvoiceSuitePointerUtils::resetSingle('documentsellerid');
+        InvoiceSuitePointerUtils::resetSingle('documentsellerglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentsellertaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentselleraddress');
+        InvoiceSuitePointerUtils::resetSingle('documentsellerlegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentsellercontact');
+        InvoiceSuitePointerUtils::resetSingle('documentsellerecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyerid');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyerglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyeraddress');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyerlegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyercontact');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyerecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativeid');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativeglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativetaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativeaddress');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativelegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativecontact');
+        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativeecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentproductenduserid');
+        InvoiceSuitePointerUtils::resetSingle('documentproductenduserglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentproductendusertaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentproductenduseraddress');
+        InvoiceSuitePointerUtils::resetSingle('documentproductenduserlegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentproductendusercontact');
+        InvoiceSuitePointerUtils::resetSingle('documentproductenduserecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptoid');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptoglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptotaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptoaddress');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptolegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptocontact');
+        InvoiceSuitePointerUtils::resetSingle('documentshiptoecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptoid');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptoglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptotaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptoaddress');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptolegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptocontact');
+        InvoiceSuitePointerUtils::resetSingle('documentultimateshiptoecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromid');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromtaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromaddress');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromlegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromcontact');
+        InvoiceSuitePointerUtils::resetSingle('documentshipfromecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicerid');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicerglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicertaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceraddress');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicerlegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicercontact');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoicerecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceeid');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceeglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceetaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceeaddress');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceelegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceecontact');
+        InvoiceSuitePointerUtils::resetSingle('documentinvoiceeecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeeid');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeeglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeetaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeeaddress');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeelegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeecontact');
+        InvoiceSuitePointerUtils::resetSingle('documentpayeecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentpaymentmean');
+        InvoiceSuitePointerUtils::resetSingle('documentcreditorreference');
+        InvoiceSuitePointerUtils::resetSingle('documentpaymentterm');
+        InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentdiscount');
+        InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentpenalty');
+        InvoiceSuitePointerUtils::resetSingle('documenttax');
+        InvoiceSuitePointerUtils::resetSingle('documentallowancecharge');
+        InvoiceSuitePointerUtils::resetSingle('documentlogservicecharge');
+        InvoiceSuitePointerUtils::resetSingle('documentposition');
+
+        $this->resetCurrentDocumentPositionSubPointers();
+    }
+
+    /**
      * Gets the document number (e.g. invoice number)
      *
      * @param string|null $newDocumentNo The document no issued by the seller

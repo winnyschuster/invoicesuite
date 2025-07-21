@@ -1358,4 +1358,8 @@ while ($reader->nextDocumentPosition()) {
     }
 }
 
+$reader->convertToDTO($dto);
+
+var_dump($dto->getPostingReferences());
+
 #endregion
