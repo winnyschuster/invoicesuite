@@ -1333,6 +1333,18 @@ while ($reader->nextDocumentPosition()) {
         echo sprintf("     Reason .............. %s\n", $positionACReason);
         echo sprintf("     Reason Code ......... %s\n", $positionACReasonCode);
     }
+
+    echo "\n";
+    echo " - Position Summation\n";
+    echo "\n";
+
+    $reader->getDocumentPositionSummation($positionNetAmount, $positionChargeTotalAmount, $positionDiscountTotalAmount, $positionTaxTotalAmount, $positionGrossAmount);
+
+    echo sprintf("     Net Amount .......... %s\n", $positionNetAmount);
+    echo sprintf("     Charge Total Amount . %s\n", $positionChargeTotalAmount);
+    echo sprintf("     Disc. Total Amount .. %s\n", $positionDiscountTotalAmount);
+    echo sprintf("     Tax Total Amount .... %s\n", $positionTaxTotalAmount);
+    echo sprintf("     Gross Amount ........ %s\n", $positionGrossAmount);
 }
 
 #endregion

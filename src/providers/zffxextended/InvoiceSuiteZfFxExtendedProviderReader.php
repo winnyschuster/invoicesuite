@@ -9166,5 +9166,39 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         return $this;
     }
 
+    /**
+     * Get the document position summation from latest position
+     *
+     * @param float|null $newNetAmount __BT-131, From BASIC__ Net amount
+     * @param float|null $newChargeTotalAmount __BT-X-327, From EXTENDED__ Sum of the charges
+     * @param float|null $newDiscountTotalAmount __BT-X-328, From EXTENDED__ Sum of the discounts
+     * @param float|null $newTaxTotalAmount __BT-X-329, From EXTENDED__ Total amount of the line (in the invoice currency)
+     * @param float|null $newGrossAmount __BT-X-330, From EXTENDED__ Total invoice line amount including sales tax
+     * @return self
+     *
+     * @phpstan-param-out float $newNetAmount
+     * @phpstan-param-out float $newChargeTotalAmount
+     * @phpstan-param-out float $newDiscountTotalAmount
+     * @phpstan-param-out float $newTaxTotalAmount
+     * @phpstan-param-out float $newGrossAmount
+     */
+    public function getDocumentPositionSummation(
+        ?float &$newNetAmount,
+        ?float &$newChargeTotalAmount,
+        ?float &$newDiscountTotalAmount,
+        ?float &$newTaxTotalAmount,
+        ?float &$newGrossAmount
+    ): self {
+        $positionSummation = $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getSpecifiedTradeSettlementLineMonetarySummation();
+
+        $newNetAmount = $positionSummation?->getLineTotalAmount()?->getValue() ?? 0.0;;
+        $newChargeTotalAmount = $positionSummation?->getChargeTotalAmount()?->getValue() ?? 0.0;
+        $newDiscountTotalAmount = $positionSummation?->getAllowanceTotalAmount()?->getValue() ?? 0.0;
+        $newTaxTotalAmount = $positionSummation?->getTaxTotalAmount()?->getValue() ?? 0.0;
+        $newGrossAmount = $positionSummation?->getGrandTotalAmount()?->getValue() ?? 0.0;
+
+        return $this;
+    }
+
     #endregion
 }

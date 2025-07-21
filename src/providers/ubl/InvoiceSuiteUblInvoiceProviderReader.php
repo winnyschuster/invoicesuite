@@ -7976,5 +7976,37 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         return $this;
     }
 
+    /**
+     * Get the document position summation from latest position
+     *
+     * @param float|null $newNetAmount Net amount
+     * @param float|null $newChargeTotalAmount Sum of the charges
+     * @param float|null $newDiscountTotalAmount Sum of the discounts
+     * @param float|null $newTaxTotalAmount Total amount of the line (in the invoice currency)
+     * @param float|null $newGrossAmount Total invoice line amount including sales tax
+     * @return self
+     *
+     * @phpstan-param-out float $newNetAmount
+     * @phpstan-param-out float $newChargeTotalAmount
+     * @phpstan-param-out float $newDiscountTotalAmount
+     * @phpstan-param-out float $newTaxTotalAmount
+     * @phpstan-param-out float $newGrossAmount
+     */
+    public function getDocumentPositionSummation(
+        ?float &$newNetAmount,
+        ?float &$newChargeTotalAmount,
+        ?float &$newDiscountTotalAmount,
+        ?float &$newTaxTotalAmount,
+        ?float &$newGrossAmount
+    ): self {
+        $newNetAmount = $this->resolveCurrentDocumentPosition()->getLineExtensionAmount()?->getValue() ?? 0.0;
+        $newChargeTotalAmount = 0.0;
+        $newDiscountTotalAmount = 0.0;
+        $newTaxTotalAmount = 0.0;
+        $newGrossAmount = 0.0;
+
+        return $this;
+    }
+
     #endregion
 }

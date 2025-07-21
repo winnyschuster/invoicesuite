@@ -5913,5 +5913,33 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Get the document position summation from latest position
+     *
+     * @param float|null $newNetAmount Net amount
+     * @param float|null $newChargeTotalAmount Sum of the charges
+     * @param float|null $newDiscountTotalAmount Sum of the discounts
+     * @param float|null $newTaxTotalAmount Total amount of the line (in the invoice currency)
+     * @param float|null $newGrossAmount Total invoice line amount including sales tax
+     * @return self
+     */
+    public function getDocumentPositionSummation(
+        ?float &$newNetAmount,
+        ?float &$newChargeTotalAmount,
+        ?float &$newDiscountTotalAmount,
+        ?float &$newTaxTotalAmount,
+        ?float &$newGrossAmount
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionSummation(
+            $newNetAmount,
+            $newChargeTotalAmount,
+            $newDiscountTotalAmount,
+            $newTaxTotalAmount,
+            $newGrossAmount
+        );
+
+        return $this;
+    }
+
     #endregion
 }
