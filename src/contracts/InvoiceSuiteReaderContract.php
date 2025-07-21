@@ -3976,5 +3976,33 @@ interface InvoiceSuiteReaderContract
         ?DateTimeInterface &$newDate
     ): self;
 
+    /**
+     * Go to the first billing period
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionBillingPeriod(): bool;
+
+    /**
+     * Go to the next billing period
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionBillingPeriod(): bool;
+
+    /**
+     * Get the start and/or end date of the billing period
+     *
+     * @param null|DateTimeInterface $newStartDate Start of the billing period
+     * @param null|DateTimeInterface $newEndDate End of the billing period
+     * @param null|string $newDescription Further information of the billing period (Obsolete)
+     * @return self
+     */
+    public function getDocumentPositionBillingPeriod(
+        ?DateTimeInterface &$newStartDate,
+        ?DateTimeInterface &$newEndDate,
+        ?string &$newDescription,
+    ): self;
+
     #endregion
 }

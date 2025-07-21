@@ -6722,6 +6722,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         InvoiceSuitePointerUtils::resetSingle('documentpositionultimateshiptolegalorganisation');
         InvoiceSuitePointerUtils::resetSingle('documentpositionultimateshiptocontact');
         InvoiceSuitePointerUtils::resetSingle('documentpositionultimateshiptoecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionbillingperiod');
     }
 
     /**
@@ -8941,5 +8942,74 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
         return $this;
     }
 
+    /**
+     * Go to the first billing period
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionBillingPeriod(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getBillingSpecifiedPeriod() ?? []
+            ),
+            'documentpositionbillingperiod'
+        );
+    }
+
+    /**
+     * Go to the next billing period
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionBillingPeriod(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getBillingSpecifiedPeriod() ?? []
+            ),
+            'documentpositionbillingperiod'
+        );
+    }
+
+    /**
+     * Get the start and/or end date of the billing period
+     *
+     * @param null|DateTimeInterface $newStartDate __BT-134, From BASIC__ Start of the billing period
+     * @param null|DateTimeInterface $newEndDate __BT-135, From BASIC__ End of the billing period
+     * @param null|string $newDescription __BT-X-264, From EXTENDED__ Further information of the billing period (Obsolete)
+     * @return self
+     *
+     * @phpstan-param-out DateTimeInterface|null $newStartDate
+     * @phpstan-param-out DateTimeInterface|null $newEndDate
+     * @phpstan-param-out string $newDescription
+     */
+    public function getDocumentPositionBillingPeriod(
+        ?DateTimeInterface &$newStartDate,
+        ?DateTimeInterface &$newEndDate,
+        ?string &$newDescription,
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\SpecifiedPeriodType>
+         */
+        $positionBillingPeriods = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getBillingSpecifiedPeriod() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\SpecifiedPeriodType
+         */
+        $positionBillingPeriod = $positionBillingPeriods[InvoiceSuitePointerUtils::getValue('documentpositionbillingperiod')];
+
+        $newStartDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $positionBillingPeriod->getStartDateTime()?->getDateTimeString()?->getValue(),
+            $positionBillingPeriod->getStartDateTime()?->getDateTimeString()?->getFormat()
+        );
+        $newEndDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $positionBillingPeriod->getEndDateTime()?->getDateTimeString()?->getValue(),
+            $positionBillingPeriod->getEndDateTime()?->getDateTimeString()?->getFormat()
+        );
+        $newDescription = $positionBillingPeriod->getDescription()?->getValue() ?? "";
+
+        return $this;
+    }
     #endregion
 }

@@ -1294,6 +1294,15 @@ while ($reader->nextDocumentPosition()) {
 
     $reader->getDocumentPositionSupplyChainEvent($positionSupplyChainEvent);
     echo sprintf("   Date of Event .............. %s\n", $positionSupplyChainEvent?->format("d.m.y") ?? "");
+
+    echo "\n";
+    echo " - Position Billing Period\n";
+    echo "\n";
+
+    while ($reader->nextDocumentPositionBillingPeriod()) {
+        $reader->getDocumentPositionBillingPeriod($documentBillingPeriodStartDate, $documentBillingPeriodEndDate, $documentBillingPeriodDescription);
+        echo sprintf("   %s - %s (%s)\n", $documentBillingPeriodStartDate?->format("d.m.Y") ?? "", $documentBillingPeriodEndDate?->format("d.m.Y") ?? "", $documentBillingPeriodDescription);
+    }
 }
 
 #endregion

@@ -6045,6 +6045,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         InvoiceSuitePointerUtils::resetSingle('documentpositionultimateshiptolegalorganisation');
         InvoiceSuitePointerUtils::resetSingle('documentpositionultimateshiptocontact');
         InvoiceSuitePointerUtils::resetSingle('documentpositionultimateshiptoecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentpositionbillingperiod');
     }
 
     /**
@@ -7744,6 +7745,70 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
         ?DateTimeInterface &$newDate
     ): self {
         $newDate = null;
+
+        return $this;
+    }
+
+    /**
+     * Go to the first billing period
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionBillingPeriod(): bool
+    {
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->resolveCurrentDocumentPosition()->getInvoicePeriod() ?? []
+            ),
+            'documentpositionbillingperiod'
+        );
+    }
+
+    /**
+     * Go to the next billing period
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionBillingPeriod(): bool
+    {
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->resolveCurrentDocumentPosition()->getInvoicePeriod() ?? []
+            ),
+            'documentpositionbillingperiod'
+        );
+    }
+
+    /**
+     * Get the start and/or end date of the billing period
+     *
+     * @param null|DateTimeInterface $newStartDate Start of the billing period
+     * @param null|DateTimeInterface $newEndDate End of the billing period
+     * @param null|string $newDescription Further information of the billing period (Obsolete)
+     * @return self
+     *
+     * @phpstan-param-out DateTimeInterface|null $newStartDate
+     * @phpstan-param-out DateTimeInterface|null $newEndDate
+     * @phpstan-param-out string $newDescription
+     */
+    public function getDocumentPositionBillingPeriod(
+        ?DateTimeInterface &$newStartDate,
+        ?DateTimeInterface &$newEndDate,
+        ?string &$newDescription,
+    ): self {
+        /**
+         * @var array<\horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod>
+         */
+        $positionBillingPeriods = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getInvoicePeriod() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod
+         */
+        $positionBillingPeriod = $positionBillingPeriods[InvoiceSuitePointerUtils::getValue('documentpositionbillingperiod')];
+
+        $newStartDate = $positionBillingPeriod->getStartDate();
+        $newEndDate = $positionBillingPeriod->getEndDate();
+        $newDescription = $positionBillingPeriod->getDescription() ?? "";
 
         return $this;
     }

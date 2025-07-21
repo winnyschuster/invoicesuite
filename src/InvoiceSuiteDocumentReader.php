@@ -5769,5 +5769,47 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this;
     }
 
+    /**
+     * Go to the first billing period
+     *
+     * @return boolean
+     */
+    public function firstDocumentPositionBillingPeriod(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->firstDocumentPositionBillingPeriod();
+    }
+
+    /**
+     * Go to the next billing period
+     *
+     * @return boolean
+     */
+    public function nextDocumentPositionBillingPeriod(): bool
+    {
+        return $this->getCurrentFormatProvider()->getReader()->nextDocumentPositionBillingPeriod();
+    }
+
+    /**
+     * Get the start and/or end date of the billing period
+     *
+     * @param null|DateTimeInterface $newStartDate Start of the billing period
+     * @param null|DateTimeInterface $newEndDate End of the billing period
+     * @param null|string $newDescription Further information of the billing period (Obsolete)
+     * @return self
+     */
+    public function getDocumentPositionBillingPeriod(
+        ?DateTimeInterface &$newStartDate,
+        ?DateTimeInterface &$newEndDate,
+        ?string &$newDescription,
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->getDocumentPositionBillingPeriod(
+            $newStartDate,
+            $newEndDate,
+            $newDescription
+        );
+
+        return $this;
+    }
+
     #endregion
 }
