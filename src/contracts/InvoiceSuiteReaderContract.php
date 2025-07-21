@@ -11,6 +11,7 @@ namespace horstoeko\invoicesuite\contracts;
 
 use DateTimeInterface;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
 
 /**
  * Interface representing the required methods for a reader
@@ -24,6 +25,16 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 interface InvoiceSuiteReaderContract
 {
     #region Document DTO
+
+    /**
+     * Create a DTO from this document
+     *
+     * @param InvoiceSuiteDocumentHeaderDTO|null $newDocumentDTO Data-Transfer-Object
+     * @return self
+     */
+    public function convertToDTO(
+        ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
+    ): self;
 
     #endregion
 

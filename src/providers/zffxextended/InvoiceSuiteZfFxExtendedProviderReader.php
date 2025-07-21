@@ -3,14 +3,15 @@
 namespace horstoeko\invoicesuite\providers\zffxextended;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\models\zffxextended\ram\SupplyChainTradeLineItemType;
 use horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType;
 use horstoeko\invoicesuite\models\zffxextended\rsm\CrossIndustryInvoiceType;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
-use horstoeko\invoicesuite\models\zffxextended\ram\SupplyChainTradeLineItemType;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
 
 class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatProviderReader
 {
@@ -23,6 +24,24 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
     {
         return $this->getRootObject();
     }
+
+    #region Document DTO
+
+    /**
+     * Create a DTO from this document
+     *
+     * @param InvoiceSuiteDocumentHeaderDTO|null $newDocumentDTO Data-Transfer-Object
+     * @return self
+     */
+    public function convertToDTO(
+        ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
+    ): self {
+        // TODO
+
+        return $this;
+    }
+
+    #endregion
 
     #region Document Generals
 

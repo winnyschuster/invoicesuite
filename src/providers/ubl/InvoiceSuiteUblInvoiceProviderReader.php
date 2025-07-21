@@ -4,18 +4,19 @@ namespace horstoeko\invoicesuite\providers\ubl;
 
 use DateTime;
 use DateTimeInterface;
-use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
 use horstoeko\invoicesuite\models\ubl\cac\Delivery;
-use horstoeko\invoicesuite\models\ubl\main\Invoice;
 use horstoeko\invoicesuite\models\ubl\cac\InvoiceLine;
-use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentification;
 use horstoeko\invoicesuite\models\ubl\cac\PartyIdentificationType;
-use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
+use horstoeko\invoicesuite\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatProviderReader
 {
@@ -28,6 +29,24 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
     {
         return $this->getRootObject();
     }
+
+    #region Document DTO
+
+    /**
+     * Create a DTO from this document
+     *
+     * @param InvoiceSuiteDocumentHeaderDTO|null $newDocumentDTO Data-Transfer-Object
+     * @return self
+     */
+    public function convertToDTO(
+        ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
+    ): self {
+        // TODO
+
+        return $this;
+    }
+
+    #endregion
 
     #region Document Generals
 

@@ -3,15 +3,16 @@
 namespace horstoeko\invoicesuite;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
+use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
 use horstoeko\invoicesuite\contracts\InvoiceSuiteReaderContract;
-use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContent;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContent;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 /**
  * Class representing the document reader
@@ -103,6 +104,24 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
     public function __call($method, $parameters)
     {
         return $this->forwardCallWithCheckTo($this->getCurrentFormatProvider()->getReader(), $method, $parameters);
+    }
+
+    #endregion
+
+    #region Document DTO
+
+    /**
+     * Create a DTO from this document
+     *
+     * @param InvoiceSuiteDocumentHeaderDTO|null $newDocumentDTO Data-Transfer-Object
+     * @return self
+     */
+    public function convertToDTO(
+        ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
+    ): self {
+        $this->getCurrentFormatProvider()->getReader()->convertToDTO($newDocumentDTO);
+
+        return $this;
     }
 
     #endregion
