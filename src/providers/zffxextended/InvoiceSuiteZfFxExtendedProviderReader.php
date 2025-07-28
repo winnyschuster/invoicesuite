@@ -1621,7 +1621,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
             $newDocumentDTO->addCreditorReference(new InvoiceSuiteIdDTO($newDocumentCreditorReferenceId));
         }
 
-        // Buyer Reference
+        // Document-Level Buyer Reference
 
         $this->getDocumentBuyerReference($newDocumentBuyerReference);
 
