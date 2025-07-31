@@ -5,7 +5,39 @@ namespace horstoeko\invoicesuite\providers\ubl;
 use DateTime;
 use DateTimeInterface;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractFormatProviderReader;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteContactDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteMeasureDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteNoteDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteOrganisationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentMeanDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDiscountDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePeriodDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePriceGrossDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitePriceNetDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductCharacteristicDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductClassificationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProductDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteQuantityDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentExtDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceProductDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitesummationLineDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
 use horstoeko\invoicesuite\models\ubl\cac\Delivery;
 use horstoeko\invoicesuite\models\ubl\cac\InvoiceLine;
@@ -41,7 +73,1376 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
     public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
     ): self {
-        // TODO
+        // Initialize
+
+        $this->resetCurrentDocumentSubPointers();
+
+        // Create DTO
+
+        $newDocumentDTO = new InvoiceSuiteDocumentHeaderDTO();
+
+        // Document-Level General information
+
+        $this->getDocumentNo($newDocumentNo);
+        $newDocumentDTO->setNumber($newDocumentNo);
+
+        $this->getDocumentType($newDocuemntType);
+        $newDocumentDTO->setType($newDocuemntType);
+
+        $this->getDocumentDescription($newDocumentDescription);
+        $newDocumentDTO->setDescription($newDocumentDescription);
+
+        $this->getDocumentLanguage($newDocumentLanguage);
+        $newDocumentDTO->setLanguage($newDocumentLanguage);
+
+        $this->getDocumentDate($newDocumentDate);
+        $newDocumentDTO->setDate($newDocumentDate);
+
+        $this->getDocumentCompleteDate($newDocumentCompleteDate);
+        $newDocumentDTO->setCompleteDate($newDocumentCompleteDate);
+
+        $this->getDocumentCurrency($newDocumentCurrency);
+        $newDocumentDTO->setCurrency($newDocumentCurrency);
+
+        $this->getDocumentTaxCurrency($newDocumentTaxCurrency);
+        $newDocumentDTO->setTaxCurrency($newDocumentTaxCurrency);
+
+        $this->getDocumentIsCopy($newDocumentIsCopy);
+        $newDocumentDTO->setIsCopy($newDocumentIsCopy);
+
+        $this->getDocumentIsTest($newDocumentIsTest);
+        $newDocumentDTO->setIsTest($newDocumentIsTest);
+
+        // Document-Level Notes
+
+        while ($this->nextDocumentNote()) {
+            $this->getDocumentNote(
+                $newDocumentNoteContent,
+                $newDocumentNoteContentCode,
+                $newDocumentNoteSubjectCode
+            );
+
+            $newDocumentDTO->addNote(
+                new InvoiceSuiteNoteDTO(
+                    $newDocumentNoteContent,
+                    $newDocumentNoteContentCode,
+                    $newDocumentNoteSubjectCode
+                )
+            );
+        }
+
+        // Document-Level Billing period
+
+        while ($this->nextDocumentBillingPeriod()) {
+            $this->getDocumentBillingPeriod(
+                $newDocumentBillingPeriodStartDate,
+                $newDocumentBillingPeriodEndDate,
+                $newDocumentBillingPeriodDescription
+            );
+
+            $newDocumentDTO->addBillingPeriod(
+                new InvoiceSuiteDateRangeDTO(
+                    $newDocumentBillingPeriodStartDate,
+                    $newDocumentBillingPeriodEndDate,
+                    $newDocumentBillingPeriodDescription
+                )
+            );
+        }
+
+        // Document-Level Posting Reference
+
+        while ($this->nextDocumentPostingReference()) {
+            $this->getDocumentPostingReference(
+                $newDocumentPostingReferenceType,
+                $newDocumentPostingReferenceAccountId
+            );
+
+            $newDocumentDTO->addPostingReference(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentPostingReferenceAccountId,
+                    $newDocumentPostingReferenceType
+                )
+            );
+        }
+
+        // Document-Level Seller Order Reference
+
+        while ($this->nextDocumentSellerOrderReference()) {
+            $this->getDocumentSellerOrderReference(
+                $newDocumentSellerOrderReferenceNumber,
+                $newDocumentSellerOrderReferenceDate
+            );
+
+            $newDocumentDTO->addSellerOrderReference(
+                new InvoiceSuiteReferenceDocumentDTO(
+                    $newDocumentSellerOrderReferenceNumber,
+                    $newDocumentSellerOrderReferenceDate
+                )
+            );
+        }
+
+        // Document-Level Buyer Order Reference
+
+        while ($this->nextDocumentBuyerOrderReference()) {
+            $this->getDocumentBuyerOrderReference(
+                $newDocumentBuyerOrderReferenceNumber,
+                $newDocumentBuyerOrderReferenceDate
+            );
+
+            $newDocumentDTO->addBuyerOrderReference(
+                new InvoiceSuiteReferenceDocumentDTO(
+                    $newDocumentBuyerOrderReferenceNumber,
+                    $newDocumentBuyerOrderReferenceDate
+                )
+            );
+        }
+
+        // Document-Level Quotation Reference
+
+        while ($this->nextDocumentQuotationReference()) {
+            $this->getDocumentQuotationReference(
+                $newDocumentQuotationReferenceNumber,
+                $newDocumentQuotationReferenceDate
+            );
+
+            $newDocumentDTO->addQuotationReference(
+                new InvoiceSuiteReferenceDocumentDTO(
+                    $newDocumentQuotationReferenceNumber,
+                    $newDocumentQuotationReferenceDate
+                )
+            );
+        }
+
+        // Document-Level Contract Reference
+
+        while ($this->nextDocumentContractReference()) {
+            $this->getDocumentContractReference(
+                $newDocumentContractReferenceNumber,
+                $newDocumentContractReferenceDate
+            );
+
+            $newDocumentDTO->addContractReference(
+                new InvoiceSuiteReferenceDocumentDTO(
+                    $newDocumentContractReferenceNumber,
+                    $newDocumentContractReferenceDate
+                )
+            );
+        }
+
+        // Document-Level Additional Reference
+
+        while ($this->nextDocumentAdditionalReference()) {
+            $this->getDocumentAdditionalReference(
+                $newDocumentAdditionalReferenceNumber,
+                $newDocumentAdditionalReferenceDate,
+                $newDocumentAdditionalReferenceTypeCode,
+                $newDocumentAdditionalReferenceReferenceTypeCode,
+                $newDocumentAdditionalReferenceDescription,
+                $newDocumentAdditionalReferenceAttachment
+            );
+
+            $newDocumentDTO->addAdditionalReference(
+                new InvoiceSuiteReferenceDocumentExtDTO(
+                    $newDocumentAdditionalReferenceNumber,
+                    $newDocumentAdditionalReferenceDate,
+                    $newDocumentAdditionalReferenceTypeCode,
+                    $newDocumentAdditionalReferenceReferenceTypeCode,
+                    $newDocumentAdditionalReferenceDescription,
+                    $newDocumentAdditionalReferenceAttachment
+                )
+            );
+        }
+
+        // Document-Level Invoice Reference
+
+        while ($this->nextDocumentInvoiceReference()) {
+            $this->getDocumentInvoiceReference(
+                $newDocumentInvoiceReferenceNumber,
+                $newDocumentInvoiceReferenceDate,
+                $newDocumentInvoiceReferenceTypeCode
+            );
+
+            $newDocumentDTO->addInvoiceReference(
+                new InvoiceSuiteReferenceDocumentExtDTO(
+                    $newDocumentInvoiceReferenceNumber,
+                    $newDocumentInvoiceReferenceDate,
+                    $newDocumentInvoiceReferenceTypeCode
+                )
+            );
+        }
+
+        // Document-Level Project Reference
+
+        while ($this->nextDocumentProjectReference()) {
+            $this->getDocumentProjectReference(
+                $newDocumentProjectReferenceNumber,
+                $newDocumentProjectReferenceName
+            );
+
+            $newDocumentDTO->addProjectReference(
+                new InvoiceSuiteProjectDTO(
+                    $newDocumentProjectReferenceNumber,
+                    $newDocumentProjectReferenceName
+                )
+            );
+        }
+
+        // Document-Level Ultimate Customer Order Reference
+
+        // ... nothing here, not supported
+
+        // Document-Level Despatch Advice Reference
+
+        while ($this->nextDocumentDespatchAdviceReference()) {
+            $this->getDocumentDespatchAdviceReference(
+                $newDocumentDespatchAdviceReferenceNumber,
+                $newDocumentDespatchAdviceReferenceDate
+            );
+
+            $newDocumentDTO->addDespatchAdviceReference(
+                new InvoiceSuiteReferenceDocumentDTO(
+                    $newDocumentDespatchAdviceReferenceNumber,
+                    $newDocumentDespatchAdviceReferenceDate
+                )
+            );
+        }
+
+        // Document-Level Receiving Advice Reference
+
+        while ($this->nextDocumentReceivingAdviceReference()) {
+            $this->getDocumentReceivingAdviceReference(
+                $newDocumentReceivingAdviceReferenceNumber,
+                $newDocumentReceivingAdviceReferenceDate
+            );
+
+            $newDocumentDTO->addReceivingAdviceReference(
+                new InvoiceSuiteReferenceDocumentDTO(
+                    $newDocumentReceivingAdviceReferenceNumber,
+                    $newDocumentReceivingAdviceReferenceDate
+                )
+            );
+        }
+
+        // Document-Level Delivery Note Reference
+
+        // ... nothing here, not supported
+
+        // Document-Level Supply Chain Event
+
+        $this->getDocumentSupplyChainEvent($newDocumentSupplyChainEvent);
+
+        $newDocumentDTO->setSupplyChainEvent($newDocumentSupplyChainEvent);
+
+        // Document-Level Buyer Reference
+
+        $this->getDocumentBuyerReference($newDocumentBuyerReference);
+
+        $newDocumentDTO->addBuyerReference(new InvoiceSuiteIdDTO($newDocumentBuyerReference));
+
+        // Document-Level Seller/Supplier Party
+
+        $newDocumentDTO->setSellerParty(new InvoiceSuitePartyDTO());
+
+        $this->getDocumentSellerName($newDocumentSellerName);
+        $newDocumentDTO->getSellerParty()->addName($newDocumentSellerName);
+
+        while ($this->nextDocumentSellerId()) {
+            $this->getDocumentSellerId(
+                $newDocumentSellerId
+            );
+
+            $newDocumentDTO->getSellerParty()->addId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentSellerId
+                )
+            );
+        }
+
+        while ($this->nextDocumentSellerGlobalId()) {
+            $this->getDocumentSellerGlobalId(
+                $newDocumentSellerGlobalId,
+                $newDocumentSellerGlobalIdType
+            );
+
+            $newDocumentDTO->getSellerParty()->addGlobalId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentSellerGlobalId,
+                    $newDocumentSellerGlobalIdType
+                )
+            );
+        }
+
+        while ($this->nextDocumentSellerTaxRegistration()) {
+            $this->getDocumentSellerTaxRegistration(
+                $newDocumentSellerTaxRegistationType,
+                $newDocumentSellerTaxRegistationId
+            );
+
+            $newDocumentDTO->getSellerParty()->addTaxRegistration(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentSellerTaxRegistationId,
+                    $newDocumentSellerTaxRegistationType
+                )
+            );
+        }
+
+        while ($this->nextDocumentSellerAddress()) {
+            $this->getDocumentSellerAddress(
+                $documentSellerAddressLine1,
+                $documentSellerAddressLine2,
+                $documentSellerAddressLine3,
+                $documentSellerAddressPostCode,
+                $documentSellerAddressCity,
+                $documentSellerAddressCountry,
+                $documentSellerAddressSubDivision
+            );
+
+            $newDocumentDTO->getSellerParty()->addAddress(new InvoiceSuiteAddressDTO(
+                $documentSellerAddressLine1,
+                $documentSellerAddressLine2,
+                $documentSellerAddressLine3,
+                $documentSellerAddressPostCode,
+                $documentSellerAddressCity,
+                $documentSellerAddressCountry,
+                $documentSellerAddressSubDivision
+            ));
+        }
+
+        while ($this->nextDocumentSellerLegalOrganisation()) {
+            $this->getDocumentSellerLegalOrganisation(
+                $newDocumentSellerLegalOrganisationType,
+                $newDocumentSellerLegalOrganisationId,
+                $newDocumentSellerLegalOrganisationName
+            );
+
+            $newDocumentDTO->getSellerParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+                $newDocumentSellerLegalOrganisationType,
+                $newDocumentSellerLegalOrganisationId,
+                $newDocumentSellerLegalOrganisationName
+            ));
+        }
+
+        while ($this->nextDocumentSellerContact()) {
+            $this->getDocumentSellerContact(
+                $newDocumentSellerContactPersonName,
+                $newDocumentSellerContactDepartmentName,
+                $newDocumentSellerContactPhoneNumber,
+                $newDocumentSellerContactFaxNumber,
+                $newDocumentSellerContactEmailAddress
+            );
+
+            $newDocumentDTO->getSellerParty()->addContact(
+                new InvoiceSuiteContactDTO(
+                    $newDocumentSellerContactPersonName,
+                    $newDocumentSellerContactDepartmentName,
+                    $newDocumentSellerContactPhoneNumber,
+                    $newDocumentSellerContactFaxNumber,
+                    $newDocumentSellerContactEmailAddress
+                )
+            );
+        }
+
+        while ($this->nextDocumentSellerCommunication()) {
+            $this->getDocumentSellerCommunication(
+                $newDocumentSellerCommunicationType,
+                $newDocumentSellerCommunicationUri
+            );
+
+            $newDocumentDTO->getSellerParty()->addCommunication(
+                new InvoiceSuiteCommunicationDTO(
+                    $newDocumentSellerCommunicationUri,
+                    $newDocumentSellerCommunicationType
+                )
+            );
+        }
+
+        // Document-Level Buyer/Customer Party
+
+        $newDocumentDTO->setBuyerParty(new InvoiceSuitePartyDTO());
+
+        $this->getDocumentBuyerName($newDocumentBuyerName);
+        $newDocumentDTO->getBuyerParty()->addName($newDocumentBuyerName);
+
+        while ($this->nextDocumentBuyerId()) {
+            $this->getDocumentBuyerId(
+                $newDocumentBuyerId
+            );
+
+            $newDocumentDTO->getBuyerParty()->addId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentBuyerId
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerGlobalId()) {
+            $this->getDocumentBuyerGlobalId(
+                $newDocumentBuyerGlobalId,
+                $newDocumentBuyerGlobalIdType
+            );
+
+            $newDocumentDTO->getBuyerParty()->addGlobalId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentBuyerGlobalId,
+                    $newDocumentBuyerGlobalIdType
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerTaxRegistration()) {
+            $this->getDocumentBuyerTaxRegistration(
+                $newDocumentBuyerTaxRegistationType,
+                $newDocumentBuyerTaxRegistationId
+            );
+
+            $newDocumentDTO->getBuyerParty()->addTaxRegistration(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentBuyerTaxRegistationId,
+                    $newDocumentBuyerTaxRegistationType
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerAddress()) {
+            $this->getDocumentBuyerAddress(
+                $documentBuyerAddressLine1,
+                $documentBuyerAddressLine2,
+                $documentBuyerAddressLine3,
+                $documentBuyerAddressPostCode,
+                $documentBuyerAddressCity,
+                $documentBuyerAddressCountry,
+                $documentBuyerAddressSubDivision
+            );
+
+            $newDocumentDTO->getBuyerParty()->addAddress(new InvoiceSuiteAddressDTO(
+                $documentBuyerAddressLine1,
+                $documentBuyerAddressLine2,
+                $documentBuyerAddressLine3,
+                $documentBuyerAddressPostCode,
+                $documentBuyerAddressCity,
+                $documentBuyerAddressCountry,
+                $documentBuyerAddressSubDivision
+            ));
+        }
+
+        while ($this->nextDocumentBuyerLegalOrganisation()) {
+            $this->getDocumentBuyerLegalOrganisation(
+                $newDocumentBuyerLegalOrganisationType,
+                $newDocumentBuyerLegalOrganisationId,
+                $newDocumentBuyerLegalOrganisationName
+            );
+
+            $newDocumentDTO->getBuyerParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+                $newDocumentBuyerLegalOrganisationType,
+                $newDocumentBuyerLegalOrganisationId,
+                $newDocumentBuyerLegalOrganisationName
+            ));
+        }
+
+        while ($this->nextDocumentBuyerContact()) {
+            $this->getDocumentBuyerContact(
+                $newDocumentBuyerContactPersonName,
+                $newDocumentBuyerContactDepartmentName,
+                $newDocumentBuyerContactPhoneNumber,
+                $newDocumentBuyerContactFaxNumber,
+                $newDocumentBuyerContactEmailAddress
+            );
+
+            $newDocumentDTO->getBuyerParty()->addContact(
+                new InvoiceSuiteContactDTO(
+                    $newDocumentBuyerContactPersonName,
+                    $newDocumentBuyerContactDepartmentName,
+                    $newDocumentBuyerContactPhoneNumber,
+                    $newDocumentBuyerContactFaxNumber,
+                    $newDocumentBuyerContactEmailAddress
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerCommunication()) {
+            $this->getDocumentBuyerCommunication(
+                $newDocumentBuyerCommunicationType,
+                $newDocumentBuyerCommunicationUri
+            );
+
+            $newDocumentDTO->getBuyerParty()->addCommunication(
+                new InvoiceSuiteCommunicationDTO(
+                    $newDocumentBuyerCommunicationUri,
+                    $newDocumentBuyerCommunicationType
+                )
+            );
+        }
+
+        // Document-Level Seller Tax Representative Party
+
+        $newDocumentDTO->setTaxRepresentativeParty(new InvoiceSuitePartyDTO());
+
+        $this->getDocumentTaxRepresentativeName($newDocumentTaxRepresentativeName);
+        $newDocumentDTO->getTaxRepresentativeParty()->addName($newDocumentTaxRepresentativeName);
+
+        while ($this->nextDocumentTaxRepresentativeId()) {
+            $this->getDocumentTaxRepresentativeId(
+                $newDocumentTaxRepresentativeId
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentTaxRepresentativeId
+                )
+            );
+        }
+
+        while ($this->nextDocumentTaxRepresentativeGlobalId()) {
+            $this->getDocumentTaxRepresentativeGlobalId(
+                $newDocumentTaxRepresentativeGlobalId,
+                $newDocumentTaxRepresentativeGlobalIdType
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addGlobalId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentTaxRepresentativeGlobalId,
+                    $newDocumentTaxRepresentativeGlobalIdType
+                )
+            );
+        }
+
+        while ($this->nextDocumentTaxRepresentativeTaxRegistration()) {
+            $this->getDocumentTaxRepresentativeTaxRegistration(
+                $newDocumentTaxRepresentativeTaxRegistationType,
+                $newDocumentTaxRepresentativeTaxRegistationId
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addTaxRegistration(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentTaxRepresentativeTaxRegistationId,
+                    $newDocumentTaxRepresentativeTaxRegistationType
+                )
+            );
+        }
+
+        while ($this->nextDocumentTaxRepresentativeAddress()) {
+            $this->getDocumentTaxRepresentativeAddress(
+                $documentTaxRepresentativeAddressLine1,
+                $documentTaxRepresentativeAddressLine2,
+                $documentTaxRepresentativeAddressLine3,
+                $documentTaxRepresentativeAddressPostCode,
+                $documentTaxRepresentativeAddressCity,
+                $documentTaxRepresentativeAddressCountry,
+                $documentTaxRepresentativeAddressSubDivision
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addAddress(new InvoiceSuiteAddressDTO(
+                $documentTaxRepresentativeAddressLine1,
+                $documentTaxRepresentativeAddressLine2,
+                $documentTaxRepresentativeAddressLine3,
+                $documentTaxRepresentativeAddressPostCode,
+                $documentTaxRepresentativeAddressCity,
+                $documentTaxRepresentativeAddressCountry,
+                $documentTaxRepresentativeAddressSubDivision
+            ));
+        }
+
+        while ($this->nextDocumentTaxRepresentativeLegalOrganisation()) {
+            $this->getDocumentTaxRepresentativeLegalOrganisation(
+                $newDocumentTaxRepresentativeLegalOrganisationType,
+                $newDocumentTaxRepresentativeLegalOrganisationId,
+                $newDocumentTaxRepresentativeLegalOrganisationName
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+                $newDocumentTaxRepresentativeLegalOrganisationType,
+                $newDocumentTaxRepresentativeLegalOrganisationId,
+                $newDocumentTaxRepresentativeLegalOrganisationName
+            ));
+        }
+
+        while ($this->nextDocumentTaxRepresentativeContact()) {
+            $this->getDocumentTaxRepresentativeContact(
+                $newDocumentTaxRepresentativeContactPersonName,
+                $newDocumentTaxRepresentativeContactDepartmentName,
+                $newDocumentTaxRepresentativeContactPhoneNumber,
+                $newDocumentTaxRepresentativeContactFaxNumber,
+                $newDocumentTaxRepresentativeContactEmailAddress
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addContact(
+                new InvoiceSuiteContactDTO(
+                    $newDocumentTaxRepresentativeContactPersonName,
+                    $newDocumentTaxRepresentativeContactDepartmentName,
+                    $newDocumentTaxRepresentativeContactPhoneNumber,
+                    $newDocumentTaxRepresentativeContactFaxNumber,
+                    $newDocumentTaxRepresentativeContactEmailAddress
+                )
+            );
+        }
+
+        while ($this->nextDocumentTaxRepresentativeCommunication()) {
+            $this->getDocumentTaxRepresentativeCommunication(
+                $newDocumentTaxRepresentativeCommunicationType,
+                $newDocumentTaxRepresentativeCommunicationUri
+            );
+
+            $newDocumentDTO->getTaxRepresentativeParty()->addCommunication(
+                new InvoiceSuiteCommunicationDTO(
+                    $newDocumentTaxRepresentativeCommunicationUri,
+                    $newDocumentTaxRepresentativeCommunicationType
+                )
+            );
+        }
+
+        // Document-Level Product End-User Party
+
+        // ... nothing here, not supported
+
+        // Document-Level Ship-To Party
+
+        $newDocumentDTO->setShipToParty(new InvoiceSuitePartyDTO());
+
+        $this->getDocumentShipToName($newDocumentShipToName);
+        $newDocumentDTO->getShipToParty()->addName($newDocumentShipToName);
+
+        while ($this->nextDocumentShipToId()) {
+            $this->getDocumentShipToId(
+                $newDocumentShipToId
+            );
+
+            $newDocumentDTO->getShipToParty()->addId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentShipToId
+                )
+            );
+        }
+
+        while ($this->nextDocumentShipToGlobalId()) {
+            $this->getDocumentShipToGlobalId(
+                $newDocumentShipToGlobalId,
+                $newDocumentShipToGlobalIdType
+            );
+
+            $newDocumentDTO->getShipToParty()->addGlobalId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentShipToGlobalId,
+                    $newDocumentShipToGlobalIdType
+                )
+            );
+        }
+
+        while ($this->nextDocumentShipToTaxRegistration()) {
+            $this->getDocumentShipToTaxRegistration(
+                $newDocumentShipToTaxRegistationType,
+                $newDocumentShipToTaxRegistationId
+            );
+
+            $newDocumentDTO->getShipToParty()->addTaxRegistration(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentShipToTaxRegistationId,
+                    $newDocumentShipToTaxRegistationType
+                )
+            );
+        }
+
+        while ($this->nextDocumentShipToAddress()) {
+            $this->getDocumentShipToAddress(
+                $documentShipToAddressLine1,
+                $documentShipToAddressLine2,
+                $documentShipToAddressLine3,
+                $documentShipToAddressPostCode,
+                $documentShipToAddressCity,
+                $documentShipToAddressCountry,
+                $documentShipToAddressSubDivision
+            );
+
+            $newDocumentDTO->getShipToParty()->addAddress(new InvoiceSuiteAddressDTO(
+                $documentShipToAddressLine1,
+                $documentShipToAddressLine2,
+                $documentShipToAddressLine3,
+                $documentShipToAddressPostCode,
+                $documentShipToAddressCity,
+                $documentShipToAddressCountry,
+                $documentShipToAddressSubDivision
+            ));
+        }
+
+        while ($this->nextDocumentShipToLegalOrganisation()) {
+            $this->getDocumentShipToLegalOrganisation(
+                $newDocumentShipToLegalOrganisationType,
+                $newDocumentShipToLegalOrganisationId,
+                $newDocumentShipToLegalOrganisationName
+            );
+
+            $newDocumentDTO->getShipToParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+                $newDocumentShipToLegalOrganisationType,
+                $newDocumentShipToLegalOrganisationId,
+                $newDocumentShipToLegalOrganisationName
+            ));
+        }
+
+        while ($this->nextDocumentShipToContact()) {
+            $this->getDocumentShipToContact(
+                $newDocumentShipToContactPersonName,
+                $newDocumentShipToContactDepartmentName,
+                $newDocumentShipToContactPhoneNumber,
+                $newDocumentShipToContactFaxNumber,
+                $newDocumentShipToContactEmailAddress
+            );
+
+            $newDocumentDTO->getShipToParty()->addContact(
+                new InvoiceSuiteContactDTO(
+                    $newDocumentShipToContactPersonName,
+                    $newDocumentShipToContactDepartmentName,
+                    $newDocumentShipToContactPhoneNumber,
+                    $newDocumentShipToContactFaxNumber,
+                    $newDocumentShipToContactEmailAddress
+                )
+            );
+        }
+
+        while ($this->nextDocumentShipToCommunication()) {
+            $this->getDocumentShipToCommunication(
+                $newDocumentShipToCommunicationType,
+                $newDocumentShipToCommunicationUri
+            );
+
+            $newDocumentDTO->getShipToParty()->addCommunication(
+                new InvoiceSuiteCommunicationDTO(
+                    $newDocumentShipToCommunicationUri,
+                    $newDocumentShipToCommunicationType
+                )
+            );
+        }
+
+        // Document-Level Ultimate Ship-To Party
+
+        // ... nothing here, not supported
+
+        // Document-Level Ship-From Party
+
+        // ... nothing here, not supported
+
+        // Document-Level Invoicer Party
+
+        // ... nothing here, not supported
+
+        // Document-Level Invoicee Party
+
+        // ... nothing here, not supported
+
+        // Document-Level Payee Party
+
+        $newDocumentDTO->setPayeeParty(new InvoiceSuitePartyDTO());
+
+        $this->getDocumentPayeeName($newDocumentPayeeName);
+        $newDocumentDTO->getPayeeParty()->addName($newDocumentPayeeName);
+
+        while ($this->nextDocumentPayeeId()) {
+            $this->getDocumentPayeeId(
+                $newDocumentPayeeId
+            );
+
+            $newDocumentDTO->getPayeeParty()->addId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentPayeeId
+                )
+            );
+        }
+
+        while ($this->nextDocumentPayeeGlobalId()) {
+            $this->getDocumentPayeeGlobalId(
+                $newDocumentPayeeGlobalId,
+                $newDocumentPayeeGlobalIdType
+            );
+
+            $newDocumentDTO->getPayeeParty()->addGlobalId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentPayeeGlobalId,
+                    $newDocumentPayeeGlobalIdType
+                )
+            );
+        }
+
+        while ($this->nextDocumentPayeeTaxRegistration()) {
+            $this->getDocumentPayeeTaxRegistration(
+                $newDocumentPayeeTaxRegistationType,
+                $newDocumentPayeeTaxRegistationId
+            );
+
+            $newDocumentDTO->getPayeeParty()->addTaxRegistration(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentPayeeTaxRegistationId,
+                    $newDocumentPayeeTaxRegistationType
+                )
+            );
+        }
+
+        while ($this->nextDocumentPayeeAddress()) {
+            $this->getDocumentPayeeAddress(
+                $documentPayeeAddressLine1,
+                $documentPayeeAddressLine2,
+                $documentPayeeAddressLine3,
+                $documentPayeeAddressPostCode,
+                $documentPayeeAddressCity,
+                $documentPayeeAddressCountry,
+                $documentPayeeAddressSubDivision
+            );
+
+            $newDocumentDTO->getPayeeParty()->addAddress(new InvoiceSuiteAddressDTO(
+                $documentPayeeAddressLine1,
+                $documentPayeeAddressLine2,
+                $documentPayeeAddressLine3,
+                $documentPayeeAddressPostCode,
+                $documentPayeeAddressCity,
+                $documentPayeeAddressCountry,
+                $documentPayeeAddressSubDivision
+            ));
+        }
+
+        while ($this->nextDocumentPayeeLegalOrganisation()) {
+            $this->getDocumentPayeeLegalOrganisation(
+                $newDocumentPayeeLegalOrganisationType,
+                $newDocumentPayeeLegalOrganisationId,
+                $newDocumentPayeeLegalOrganisationName
+            );
+
+            $newDocumentDTO->getPayeeParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+                $newDocumentPayeeLegalOrganisationType,
+                $newDocumentPayeeLegalOrganisationId,
+                $newDocumentPayeeLegalOrganisationName
+            ));
+        }
+
+        while ($this->nextDocumentPayeeContact()) {
+            $this->getDocumentPayeeContact(
+                $newDocumentPayeeContactPersonName,
+                $newDocumentPayeeContactDepartmentName,
+                $newDocumentPayeeContactPhoneNumber,
+                $newDocumentPayeeContactFaxNumber,
+                $newDocumentPayeeContactEmailAddress
+            );
+
+            $newDocumentDTO->getPayeeParty()->addContact(
+                new InvoiceSuiteContactDTO(
+                    $newDocumentPayeeContactPersonName,
+                    $newDocumentPayeeContactDepartmentName,
+                    $newDocumentPayeeContactPhoneNumber,
+                    $newDocumentPayeeContactFaxNumber,
+                    $newDocumentPayeeContactEmailAddress
+                )
+            );
+        }
+
+        while ($this->nextDocumentPayeeCommunication()) {
+            $this->getDocumentPayeeCommunication(
+                $newDocumentPayeeCommunicationType,
+                $newDocumentPayeeCommunicationUri
+            );
+
+            $newDocumentDTO->getPayeeParty()->addCommunication(
+                new InvoiceSuiteCommunicationDTO(
+                    $newDocumentPayeeCommunicationUri,
+                    $newDocumentPayeeCommunicationType
+                )
+            );
+        }
+
+        // Document-Level Payment Means
+
+        while ($this->nextDocumentPaymentMean()) {
+            $this->getDocumentPaymentMean(
+                $newDocumentPaymentMeanTypeCode,
+                $newDocumentPaymentMeanName,
+                $newDocumentPaymentMeanFinancialCardId,
+                $newDocumentPaymentMeanFinancialCardHolder,
+                $newDocumentPaymentMeanBuyerIban,
+                $newDocumentPaymentMeanPayeeIban,
+                $newDocumentPaymentMeanPayeeAccountName,
+                $newDocumentPaymentMeanPayeeProprietaryId,
+                $newDocumentPaymentMeanPayeeBic,
+                $newDocumentPaymentMeanPaymentReference,
+                $newDocumentPaymentMeanMandate
+            );
+
+            $newDocumentDTO->addPaymentMean(
+                new InvoiceSuitePaymentMeanDTO(
+                    $newDocumentPaymentMeanTypeCode,
+                    $newDocumentPaymentMeanName,
+                    $newDocumentPaymentMeanFinancialCardId,
+                    $newDocumentPaymentMeanFinancialCardHolder,
+                    $newDocumentPaymentMeanBuyerIban,
+                    $newDocumentPaymentMeanPayeeIban,
+                    $newDocumentPaymentMeanPayeeAccountName,
+                    $newDocumentPaymentMeanPayeeProprietaryId,
+                    $newDocumentPaymentMeanPayeeBic,
+                    $newDocumentPaymentMeanPaymentReference,
+                    $newDocumentPaymentMeanMandate
+                )
+            );
+        }
+
+        // Document-Level Payment Terms
+
+        while ($this->nextDocumentPaymentTerm()) {
+            $this->getDocumentPaymentTerm(
+                $newDocumentPaymentTermDescription,
+                $newDocumentPaymentTermDueDate
+            );
+
+            $documentPaymentTermDTO = new InvoiceSuitePaymentTermDTO(
+                $newDocumentPaymentTermDescription,
+                $newDocumentPaymentTermDueDate
+            );
+
+            while ($this->nextDocumentPaymentPenaltyTermsInLastPaymentTerm()) {
+                $this->getDocumentPaymentPenaltyTermsInLastPaymentTerm(
+                    $newDocumentPaymentTermPenaltyBaseAmount,
+                    $newDocumentPaymentTermPenaltyAmount,
+                    $newDocumentPaymentTermPenaltyPercent,
+                    $newDocumentPaymentTermPenaltyBaseDate,
+                    $newDocumentPaymentTermPenaltyBasePeriod,
+                    $newDocumentPaymentTermPenaltyBasePeriodUnit
+                );
+
+                $documentPaymentTermDTO->addPenaltyTerms(
+                    new InvoiceSuitePaymentTermPenaltyDTO(
+                        $newDocumentPaymentTermPenaltyBaseAmount,
+                        $newDocumentPaymentTermPenaltyAmount,
+                        $newDocumentPaymentTermPenaltyPercent,
+                        $newDocumentPaymentTermPenaltyBaseDate,
+                        new InvoiceSuitePeriodDTO(
+                            $newDocumentPaymentTermPenaltyBasePeriod,
+                            $newDocumentPaymentTermPenaltyBasePeriodUnit
+                        )
+                    )
+                );
+
+                $this->getDocumentPaymentDiscountTermsInLastPaymentTerm(
+                    $newDocumentPaymentTermDiscountBaseAmount,
+                    $newDocumentPaymentTermDiscountAmount,
+                    $newDocumentPaymentTermDiscountPercent,
+                    $newDocumentPaymentTermDiscountBaseDate,
+                    $newDocumentPaymentTermDiscountBasePeriod,
+                    $newDocumentPaymentTermDiscountBasePeriodUnit
+                );
+
+                $documentPaymentTermDTO->addDiscountTerms(
+                    new InvoiceSuitePaymentTermDiscountDTO(
+                        $newDocumentPaymentTermDiscountBaseAmount,
+                        $newDocumentPaymentTermDiscountAmount,
+                        $newDocumentPaymentTermDiscountPercent,
+                        $newDocumentPaymentTermDiscountBaseDate,
+                        new InvoiceSuitePeriodDTO(
+                            $newDocumentPaymentTermDiscountBasePeriod,
+                            $newDocumentPaymentTermDiscountBasePeriodUnit
+                        )
+                    )
+                );
+            }
+        }
+
+        // Document-Level Creditor reference
+
+        while ($this->nextDocumentPaymentCreditorReferenceID()) {
+            $this->getDocumentPaymentCreditorReferenceID($newDocumentCreditorReferenceId);
+            $newDocumentDTO->addCreditorReference(new InvoiceSuiteIdDTO($newDocumentCreditorReferenceId));
+        }
+
+        // Document-Level Taxes
+
+        while ($this->nextDocumentTax()) {
+            $this->getDocumentTax(
+                $newDocumentTaxCategory,
+                $newDocumentTaxType,
+                $newDocumentTaxBasisAmount,
+                $newDocumentTaxAmount,
+                $newDocumentTaxPercent,
+                $newDocumentTaxExemptionReason,
+                $newDocumentTaxExemptionReasonCode,
+                $newDocumentTaxDueDate,
+                $newDocumentTaxDueCode
+            );
+
+            $newDocumentDTO->addTax(
+                new InvoiceSuiteTaxDTO(
+                    $newDocumentTaxCategory,
+                    $newDocumentTaxType,
+                    $newDocumentTaxBasisAmount,
+                    $newDocumentTaxAmount,
+                    $newDocumentTaxPercent,
+                    $newDocumentTaxExemptionReason,
+                    $newDocumentTaxExemptionReasonCode,
+                    $newDocumentTaxDueDate,
+                    $newDocumentTaxDueCode
+                )
+            );
+        }
+
+        // Document-Level Allowances/Charges
+
+        while ($this->nextDocumentAllowanceCharge()) {
+            $this->getDocumentAllowanceCharge(
+                $newDocumentAllowanceChargeChargeIndicator,
+                $newDocumentAllowanceChargeAmount,
+                $newDocumentAllowanceChargeBaseAmount,
+                $newDocumentAllowanceChargeTaxCategory,
+                $newDocumentAllowanceChargeTaxType,
+                $newDocumentAllowanceChargeTaxPercent,
+                $newDocumentAllowanceChargeReason,
+                $newDocumentAllowanceChargeReasonCode,
+                $newDocumentAllowanceChargePercent
+            );
+
+            $newDocumentDTO->addAllowanceCharge(
+                new InvoiceSuiteAllowanceChargeDTO(
+                    $newDocumentAllowanceChargeChargeIndicator,
+                    $newDocumentAllowanceChargeAmount,
+                    $newDocumentAllowanceChargeBaseAmount,
+                    $newDocumentAllowanceChargePercent,
+                    $newDocumentAllowanceChargeTaxCategory,
+                    $newDocumentAllowanceChargeTaxType,
+                    $newDocumentAllowanceChargeTaxPercent,
+                    $newDocumentAllowanceChargeReason,
+                    $newDocumentAllowanceChargeReasonCode
+                )
+            );
+        }
+
+        // Document-Level Logistic Service Charges
+
+        while ($this->nextDocumentLogisticServiceCharge()) {
+            $this->getDocumentLogisticServiceCharge(
+                $newDocumentLogServiceChargeAmount,
+                $newDocumentLogServiceChargeDescription,
+                $newDocumentLogServiceChargeTaxCategory,
+                $newDocumentLogServiceChargeTaxType,
+                $newDocumentLogServiceChargeTaxPercent
+            );
+
+            $newDocumentDTO->addServiceCharge(
+                new InvoiceSuiteServiceChargeDTO(
+                    $newDocumentLogServiceChargeAmount,
+                    $newDocumentLogServiceChargeDescription,
+                    $newDocumentLogServiceChargeTaxCategory,
+                    $newDocumentLogServiceChargeTaxType,
+                    $newDocumentLogServiceChargeTaxPercent
+                )
+            );
+        }
+
+        // Document-Level Summation
+
+        $this->getDocumentSummation(
+            $newDocumentNetAmount,
+            $newDocumentChargeTotalAmount,
+            $newDocumentDiscountTotalAmount,
+            $newDocumentTaxBasisAmount,
+            $newDocumentTaxTotalAmount,
+            $newDocumentTaxTotalAmount2,
+            $newDocumentGrossAmount,
+            $newDocumentDueAmount,
+            $newDocumentPrepaidAmount,
+            $newDocumentRoungingAmount
+        );
+
+        $newDocumentDTO->setSummation(
+            new InvoiceSuitesummationDTO(
+                $newDocumentNetAmount,
+                $newDocumentChargeTotalAmount,
+                $newDocumentDiscountTotalAmount,
+                $newDocumentTaxBasisAmount,
+                $newDocumentTaxTotalAmount,
+                $newDocumentTaxTotalAmount2,
+                $newDocumentGrossAmount,
+                $newDocumentDueAmount,
+                $newDocumentPrepaidAmount,
+                $newDocumentRoungingAmount
+            )
+        );
+
+        // Positions
+
+        while ($this->nextDocumentPosition()) {
+            $this->getDocumentPosition(
+                $newDocumentPositionId,
+                $newDocumentPositionParentPositionId,
+                $newDocumentPositionLineStatusCode,
+                $newDocumentPositionLineStatusReasonCode
+            );
+
+            $newDocumentPositionDTO = new InvoiceSuiteDocumentPositionDTO(
+                $newDocumentPositionId,
+                $newDocumentPositionParentPositionId,
+                $newDocumentPositionLineStatusCode,
+                $newDocumentPositionLineStatusReasonCode
+            );
+
+            while ($this->nextDocumentPositionNote()) {
+                $this->getDocumentPositionNote(
+                    $newDocumentPositionNoteContent,
+                    $newDocumentPositionNoteContentCode,
+                    $newDocumentPositionNoteSubjectCode
+                );
+
+                $newDocumentPositionDTO->addNote(
+                    new InvoiceSuiteNoteDTO(
+                        $newDocumentPositionNoteContent,
+                        $newDocumentPositionNoteContentCode,
+                        $newDocumentPositionNoteSubjectCode
+                    )
+                );
+            }
+
+            $this->getDocumentPositionProductDetails(
+                $newDocumentPositionProductId,
+                $newDocumentPositionProductName,
+                $newDocumentPositionProductDescription,
+                $newDocumentPositionProductSellerId,
+                $newDocumentPositionProductBuyerId,
+                $newDocumentPositionProductGlobalId,
+                $newDocumentPositionProductGlobalIdType,
+                $newDocumentPositionProductIndustryId,
+                $newDocumentPositionProductModelId,
+                $newDocumentPositionProductBatchId,
+                $newDocumentPositionProductBrandName,
+                $newDocumentPositionProductModelName,
+                $newDocumentPositionProductOriginTradeCountry
+            );
+
+            $newDocumentPositionProductDTO = new InvoiceSuiteProductDTO(
+                $newDocumentPositionProductId,
+                $newDocumentPositionProductName,
+                $newDocumentPositionProductDescription,
+                $newDocumentPositionProductSellerId,
+                $newDocumentPositionProductBuyerId,
+                new InvoiceSuiteIdDTO(
+                    $newDocumentPositionProductGlobalId,
+                    $newDocumentPositionProductGlobalIdType
+                ),
+                $newDocumentPositionProductIndustryId,
+                $newDocumentPositionProductModelId,
+                $newDocumentPositionProductBatchId,
+                $newDocumentPositionProductBrandName,
+                $newDocumentPositionProductModelName,
+                $newDocumentPositionProductOriginTradeCountry
+            );
+
+            while ($this->nextDocumentPositionProductCharacteristic()) {
+                $this->getDocumentPositionProductCharacteristic(
+                    $newDocumentPositionProductCharacteristicDescription,
+                    $newDocumentPositionProductCharacteristicValue,
+                    $newDocumentPositionProductCharacteristicType,
+                    $newDocumentPositionProductCharacteristicMeasureValue,
+                    $newDocumentPositionProductCharacteristicMeasureUnit
+                );
+
+                $newDocumentPositionProductDTO->addCharacteristic(
+                    new InvoiceSuiteProductCharacteristicDTO(
+                        $newDocumentPositionProductCharacteristicDescription,
+                        $newDocumentPositionProductCharacteristicValue,
+                        $newDocumentPositionProductCharacteristicType,
+                        new InvoiceSuiteMeasureDTO(
+                            $newDocumentPositionProductCharacteristicMeasureValue,
+                            $newDocumentPositionProductCharacteristicMeasureUnit
+                        )
+                    )
+                );
+            }
+
+            while ($this->nextDocumentPositionProductClassification()) {
+                $this->getDocumentPositionProductClassification(
+                    $newDocumentPositionProductClassificationCode,
+                    $newDocumentPositionProductClassificationListId,
+                    $newDocumentPositionProductClassificationListVersionId,
+                    $newDocumentPositionProductClassificationCodeClassname
+                );
+
+                $newDocumentPositionProductDTO->addClassification(
+                    new InvoiceSuiteProductClassificationDTO(
+                        $newDocumentPositionProductClassificationCode,
+                        $newDocumentPositionProductClassificationCodeClassname,
+                        $newDocumentPositionProductClassificationListId,
+                        $newDocumentPositionProductClassificationListVersionId
+                    )
+                );
+            }
+
+            while ($this->nextDocumentPositionBuyerOrderReference()) {
+                $this->getDocumentPositionBuyerOrderReference(
+                    $newDocumentPositionBuyerOrderReferenceNumber,
+                    $newDocumentPositionBuyerOrderReferenceLineNumber,
+                    $newDocumentPositionBuyerOrderReferenceDate
+                );
+
+                $newDocumentPositionDTO->addBuyerOrderReference(
+                    new InvoiceSuiteReferenceDocumentLineDTO(
+                        $newDocumentPositionBuyerOrderReferenceNumber,
+                        $newDocumentPositionBuyerOrderReferenceLineNumber,
+                        $newDocumentPositionBuyerOrderReferenceDate
+                    )
+                );
+            }
+
+            // Position Gross Price
+
+            // ... nothing here, not supported
+
+            // Position Net Price
+
+            $this->getDocumentPositionNetPrice(
+                $newDocumentPositionNetPrice,
+                $newDocumentPositionNetPriceBasisQuantity,
+                $newDocumentPositionNetPriceBasisQuantityUnit
+            );
+
+            $newDocumentPositionNetPriceDTO = new InvoiceSuitePriceNetDTO(
+                $newDocumentPositionNetPrice,
+                new InvoiceSuiteQuantityDTO(
+                    $newDocumentPositionNetPriceBasisQuantity,
+                    $newDocumentPositionNetPriceBasisQuantityUnit
+                )
+            );
+
+            $newDocumentPositionDTO->setNetPrice($newDocumentPositionNetPriceDTO);
+
+            // Position Quantities
+
+            $this->getDocumentPositionQuantities(
+                $newDocumentPositionQuantity,
+                $newDocumentPositionQuantityUnit,
+                $newDocumentPositionChargeFreeQuantity,
+                $newDocumentPositionChargeFreeQuantityUnit,
+                $newDocumentPositionPackageQuantity,
+                $newDocumentPositionPackageQuantityUnit
+            );
+
+            $newDocumentPositionDTO->setQuantityBilled(new InvoiceSuiteQuantityDTO($newDocumentPositionQuantity, $newDocumentPositionQuantityUnit));
+            $newDocumentPositionDTO->setQuantityChargeFree(new InvoiceSuiteQuantityDTO($newDocumentPositionChargeFreeQuantity, $newDocumentPositionChargeFreeQuantityUnit));
+            $newDocumentPositionDTO->setQuantityPackage(new InvoiceSuiteQuantityDTO($newDocumentPositionPackageQuantity, $newDocumentPositionPackageQuantityUnit));
+
+            // Position Ship-To
+
+            // ... nothing here, not supported
+
+            // Position Ultimate Ship-To
+
+            // ... nothing here, not supported
+
+            // Position supply chain event
+
+            // ... nothing here, not supported
+
+            // Position billing period
+
+            while ($this->nextDocumentPositionBillingPeriod()) {
+                $this->getDocumentPositionBillingPeriod(
+                    $newDocumentPositionBillingPeriodStartDate,
+                    $newDocumentPositionBillingPeriodEndDate,
+                    $newDocumentPositionBillingPeriodDescription
+                );
+
+                $newDocumentPositionDTO->addBillingPeriod(
+                    new InvoiceSuiteDateRangeDTO(
+                        $newDocumentPositionBillingPeriodStartDate,
+                        $newDocumentPositionBillingPeriodEndDate,
+                        $newDocumentPositionBillingPeriodDescription
+                    )
+                );
+            }
+
+            // Position posting references
+
+            while ($this->nextDocumentPositionPostingReference()) {
+                $this->getDocumentPositionPostingReference(
+                    $newDocumentPositionPostingReferenceType,
+                    $newDocumentPositionPostingReferenceAccountId
+                );
+
+                $newDocumentPositionDTO->addPostingReference(
+                    new InvoiceSuiteIdDTO(
+                        $newDocumentPositionPostingReferenceAccountId,
+                        $newDocumentPositionPostingReferenceType
+                    )
+                );
+            }
+
+            // Position taxes
+
+            while ($this->nextDocumentPositionTax()) {
+                $this->getDocumentPositionTax(
+                    $newDocumentPositionTaxCategory,
+                    $newDocumentPositionTaxType,
+                    $newDocumentPositionTaxAmount,
+                    $newDocumentPositionTaxPercent,
+                    $newDocumentPositionTaxExemptionReason,
+                    $newDocumentPositionTaxExemptionReasonCode,
+                );
+
+                $newDocumentPositionDTO->addTax(
+                    new InvoiceSuiteTaxDTO(
+                        $newDocumentPositionTaxCategory,
+                        $newDocumentPositionTaxType,
+                        null,
+                        $newDocumentPositionTaxAmount,
+                        $newDocumentPositionTaxPercent,
+                        $newDocumentPositionTaxExemptionReason,
+                        $newDocumentPositionTaxExemptionReasonCode
+                    )
+                );
+            }
+
+            // Position allowances/charges
+
+            while ($this->nextDocumentPositionAllowanceCharge()) {
+                $this->getDocumentPositionAllowanceCharge(
+                    $newDocumentPositionAllowanceChargeIsCharge,
+                    $newDocumentPositionAllowanceChargeAmount,
+                    $newDocumentPositionAllowanceChargeBaseAmount,
+                    $newDocumentPositionAllowanceChargeReason,
+                    $newDocumentPositionAllowanceChargeReasonCode,
+                    $newDocumentPositionAllowanceChargePercent
+                );
+
+                $newDocumentPositionDTO->addAllowanceCharge(
+                    new InvoiceSuiteAllowanceChargeDTO(
+                        $newDocumentPositionAllowanceChargeIsCharge,
+                        $newDocumentPositionAllowanceChargeAmount,
+                        $newDocumentPositionAllowanceChargeBaseAmount,
+                        $newDocumentPositionAllowanceChargePercent,
+                        null,
+                        null,
+                        null,
+                        $newDocumentPositionAllowanceChargeReason,
+                        $newDocumentPositionAllowanceChargeReasonCode
+                    )
+                );
+            }
+
+            // Position summation
+
+            $this->getDocumentPositionSummation(
+                $newDocumentPositionNetAmount,
+                $newDocumentPositionChargeTotalAmount,
+                $newDocumentPositionDiscountTotalAmount,
+                $newDocumentPositionTaxTotalAmount,
+                $newDocumentPositionGrossAmount
+            );
+
+            $newDocumentPositionDTO->setSummation(
+                new InvoiceSuitesummationLineDTO(
+                    $newDocumentPositionNetAmount,
+                    $newDocumentPositionChargeTotalAmount,
+                    $newDocumentPositionDiscountTotalAmount,
+                    $newDocumentPositionTaxTotalAmount,
+                    $newDocumentPositionGrossAmount
+                )
+            );
+
+            // Finally add the position
+
+            $newDocumentDTO->addPosition($newDocumentPositionDTO);
+        }
+
+        // Finished
+
+        $this->resetCurrentDocumentSubPointers();
 
         return $this;
     }
