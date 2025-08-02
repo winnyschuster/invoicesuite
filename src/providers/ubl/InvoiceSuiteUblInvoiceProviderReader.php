@@ -7240,6 +7240,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
      * @phpstan-param-out float $newTaxPercent
      * @phpstan-param-out string $newExemptionReason
      * @phpstan-param-out string $newExemptionReasonCode
+     * @phpstan-param-out DateTimeInterface|null $newTaxDueDate
      * @phpstan-param-out string $newTaxDueCode
      */
     public function getDocumentTax(
