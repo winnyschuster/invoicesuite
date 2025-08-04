@@ -2,9 +2,8 @@
 
 namespace horstoeko\invoicesuite\utils;
 
-use RuntimeException;
+use DOMDocument;
 use Throwable;
-use SimpleXMLElement;
 
 /**
  * class representing tools for getting the content type
@@ -54,18 +53,17 @@ class InvoiceSuiteContentTypeResolver
      */
     protected static function isValidXml(string $fromContent): bool
     {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($fromContent)) {
+            return false;
+        }
+
         $prevUseInternalErrors = \libxml_use_internal_errors(true);
 
         try {
             libxml_clear_errors();
-
-            new SimpleXMLElement($fromContent);
-
-            if (libxml_get_last_error()) {
-                throw new RuntimeException();
-            }
-
-            return true;
+            $doc = new DOMDocument();
+            $success = $doc->loadXML($fromContent, LIBXML_NOERROR | LIBXML_NOWARNING);
+            return $success;
         } catch (Throwable $throwable) {
             return false;
         } finally {
@@ -82,9 +80,13 @@ class InvoiceSuiteContentTypeResolver
      */
     protected static function isValidJson(string $fromContent): bool
     {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($fromContent)) {
+            return false;
+        }
+
         try {
-            json_decode($fromContent, false, 512, JSON_THROW_ON_ERROR);
-            return true;
+            $jsonDecoded = json_decode($fromContent, false, 512, JSON_THROW_ON_ERROR);
+            return is_object($jsonDecoded) || is_array($jsonDecoded);
         } catch (Throwable $throwable) {
             return false;
         }
