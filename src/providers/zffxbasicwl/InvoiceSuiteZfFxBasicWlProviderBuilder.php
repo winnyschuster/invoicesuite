@@ -945,8 +945,8 @@ class InvoiceSuiteZfFxBasicWlProviderBuilder extends InvoiceSuiteAbstractFormatP
                     $item->getLineStatusReason()
                 );
 
-                $item->forEachNote(
-                    fn(InvoiceSuiteNoteDTO $itemNote) => $this->addDocumentPositionNote(
+                $item->firstNote(
+                    fn(InvoiceSuiteNoteDTO $itemNote) => $this->setDocumentPositionNote(
                         $itemNote->getContent(),
                         $itemNote->getContentCode(),
                         $itemNote->getSubjectCode()
