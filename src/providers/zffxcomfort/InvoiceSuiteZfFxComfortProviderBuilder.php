@@ -71,12 +71,14 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
         string $newContextParameter,
         string $newBusinessProcessContextParameter = '',
     ): self {
-        $this
-            ->getCrossIndustryRootObject()
-            ->getExchangedDocumentContextWithCreate()
-            ->getGuidelineSpecifiedDocumentContextParameterWithCreate()
-            ->getIDWithCreate()
-            ->setValue($newContextParameter);
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContextParameter)) {
+            $this
+                ->getCrossIndustryRootObject()
+                ->getExchangedDocumentContextWithCreate()
+                ->getGuidelineSpecifiedDocumentContextParameterWithCreate()
+                ->getIDWithCreate()
+                ->setValue($newContextParameter);
+        }
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newBusinessProcessContextParameter)) {
             $this
