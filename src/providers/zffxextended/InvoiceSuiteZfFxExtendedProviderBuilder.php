@@ -46,8 +46,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function initRootObject(): InvoiceSuiteZfFxExtendedProviderBuilder
     {
-        $this->setContextParameter($this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''));
-        $this->setBusinessProcess($this->getCurrentFormatProviderParameterValue('BUSINESSPROCESS', ''));
+        $this->setContextParameter(
+            $this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''),
+            $this->getCurrentFormatProviderParameterValue('BUSINESSPROCESS', '')
+        );
 
         return $this;
     }
@@ -99,24 +101,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
                 ->getExchangedDocumentContext()
                 ->setBusinessProcessSpecifiedDocumentContextParameter($documentContextParameterType);
         }
-
-        return $this;
-    }
-
-    /**
-     * Set the business process parameter
-     *
-     * @param string $newBusinessProcess
-     * @return self
-     */
-    public function setBusinessProcess(string $newBusinessProcess): self
-    {
-        $this
-            ->getCrossIndustryRootObject()
-            ->getExchangedDocumentContextWithCreate()
-            ->getBusinessProcessSpecifiedDocumentContextParameterWithCreate()
-            ->getIDWithCreate()
-            ->setValue($newBusinessProcess);
 
         return $this;
     }
