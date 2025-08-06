@@ -788,8 +788,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
                     $item->getDescription(),
                     $item->getDueDate()
                 );
-                $item->forEachDiscountTerms(
-                    fn(InvoiceSuitePaymentTermDiscountDTO $item) => $this->addDocumentPaymentDiscountTermsInLastPaymentTerm(
+                $item->firstDiscountTerms(
+                    fn(InvoiceSuitePaymentTermDiscountDTO $item) => $this->setDocumentPaymentDiscountTermsInLastPaymentTerm(
                         $item->getBaseAmount(),
                         $item->getDiscountAmount(),
                         $item->getDiscountPercent(),
@@ -798,8 +798,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
                         $item->getPeriod()?->getPeriodUnit()
                     )
                 );
-                $item->forEachPenaltyTerms(
-                    fn(InvoiceSuitePaymentTermPenaltyDTO $item) => $this->addDocumentPaymentPenaltyTermsInLastPaymentTerm(
+                $item->firstPenaltyTerms(
+                    fn(InvoiceSuitePaymentTermPenaltyDTO $item) => $this->setDocumentPaymentPenaltyTermsInLastPaymentTerm(
                         $item->getBaseAmount(),
                         $item->getPenaltyAmount(),
                         $item->getPenaltyPercent(),
