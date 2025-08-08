@@ -62,8 +62,7 @@ class InvoiceSuiteContentTypeResolver
         try {
             libxml_clear_errors();
             $doc = new DOMDocument();
-            $success = $doc->loadXML($fromContent, LIBXML_NOERROR | LIBXML_NOWARNING);
-            return $success;
+            return $doc->loadXML($fromContent, LIBXML_NOERROR | LIBXML_NOWARNING);
         } catch (Throwable $throwable) {
             return false;
         } finally {
