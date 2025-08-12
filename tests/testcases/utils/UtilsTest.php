@@ -1,6 +1,6 @@
 <?php
 
-namespace horstoeko\invoicesuite\tests\testcases;
+namespace horstoeko\invoicesuite\tests\testcases\utils;
 
 use DateTime;
 use DateTimeInterface;
@@ -446,7 +446,7 @@ class UtilsTest extends TestCase
 
     public function testInvoiceSuiteAttachmentFromFile(): void
     {
-        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../assets/01_InvoiceSuiteAttachment_1.txt');
+        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../../assets/01_InvoiceSuiteAttachment_1.txt');
 
         $this->assertInstanceOf(InvoiceSuiteAttachment::class, $attachment);
         $this->assertTrue($attachment->isFileAttachment());
@@ -456,7 +456,7 @@ class UtilsTest extends TestCase
         $this->assertSame('text/plain', $attachment->getContentMimeType());
         $this->assertSame('01_InvoiceSuiteAttachment_1.txt', $attachment->getFilename());
 
-        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../assets/01_InvoiceSuiteAttachment_2.txt');
+        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../../assets/01_InvoiceSuiteAttachment_2.txt');
 
         $this->assertInstanceOf(InvoiceSuiteAttachment::class, $attachment);
         $this->assertTrue($attachment->isFileAttachment());
@@ -468,7 +468,7 @@ class UtilsTest extends TestCase
 
         $this->expectException(InvoiceSuiteFileNotFoundException::class);
 
-        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../assets/01_InvoiceSuiteAttachment_3.txt');
+        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../../assets/01_InvoiceSuiteAttachment_3.txt');
     }
 
     public function testInvoiceSuiteAttachmentFromBinaryString(): void
@@ -547,7 +547,7 @@ class UtilsTest extends TestCase
     public function testInvoiceSuiteClassFinderFactory(): void
     {
         $cacheFilename = md5(preg_replace("/[^a-zA-Z0-9]/", "", sprintf("invoicesuite-cf-%s", InvoiceSuiteAbstractFormatProvider::class))) . ".cache";
-        $cacheFullFilename = __DIR__ . '/../../src/cache/' . $cacheFilename;
+        $cacheFullFilename = __DIR__ . '/../../../src/cache/' . $cacheFilename;
         @unlink($cacheFullFilename);
 
         // One

@@ -25,9 +25,9 @@ trait HandlesCurrentFormatProvider
     /**
      * Returns the requested format provider
      *
-     * @return InvoiceSuiteAbstractFormatProvider
+     * @return InvoiceSuiteAbstractFormatProvider|null
      */
-    public function getCurrentFormatProvider(): InvoiceSuiteAbstractFormatProvider
+    public function getCurrentFormatProvider(): ?InvoiceSuiteAbstractFormatProvider
     {
         return $this->currentInvoiceSuiteAbstractFormatProvider;
     }
