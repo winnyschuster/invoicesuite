@@ -29,6 +29,7 @@ return RectorConfig::configure()
         SetList::DEAD_CODE,
         SetList::CODE_QUALITY,
         SetList::CODING_STYLE,
+        SetList::INSTANCEOF,
     ])
     ->withConfiguredRule(EncapsedStringsToSprintfRector::class, [
         'always' => true,
