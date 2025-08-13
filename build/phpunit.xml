@@ -11,6 +11,9 @@
             <file>../tests/testcases/concerns/HandlesRootObjectTest.php</file>
             <file>../tests/testcases/concerns/HandlesSerializerTest.php</file>
         </testsuite>
+        <testsuite name="providers">
+            <file>../tests/testcases/providers/ZfFxExtendedProviderTest.php</file>
+        </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
