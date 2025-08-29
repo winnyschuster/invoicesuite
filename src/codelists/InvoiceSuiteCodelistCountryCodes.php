@@ -1788,8 +1788,7 @@ enum InvoiceSuiteCodelistCountryCodes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistCountryCodes::AFGHANISTAN => "Afghanistan",
             InvoiceSuiteCodelistCountryCodes::ALBANIEN => "Albanien",
             InvoiceSuiteCodelistCountryCodes::ALGERIEN => "Algerien",
@@ -2052,8 +2051,7 @@ enum InvoiceSuiteCodelistCountryCodes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistCountryCodes::AFGHANISTAN => "AF",
             InvoiceSuiteCodelistCountryCodes::ALBANIEN => "AL",
             InvoiceSuiteCodelistCountryCodes::ALGERIEN => "DZ",
@@ -2342,6 +2340,6 @@ enum InvoiceSuiteCodelistCountryCodes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

@@ -192,8 +192,7 @@ enum InvoiceSuiteCodelistVatCategoryCodes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistVatCategoryCodes::CANA_ISLA_GENE_INDI_TAX => "Canary Islands general indirect tax",
             InvoiceSuiteCodelistVatCategoryCodes::DUTY_PAID_BY_SUPP => "Duty paid by supplier",
             InvoiceSuiteCodelistVatCategoryCodes::EXEM_FOR_RESA => "Exempt for resale",
@@ -226,8 +225,7 @@ enum InvoiceSuiteCodelistVatCategoryCodes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistVatCategoryCodes::CANA_ISLA_GENE_INDI_TAX => "Impuesto General Indirecto Canario (IGIC) is an indirect tax levied on goods and services supplied in the Canary Islands (Spain) by traders and professionals, as well as on import of goods.",
             InvoiceSuiteCodelistVatCategoryCodes::DUTY_PAID_BY_SUPP => "Duty associated with shipment of goods is paid by the supplier; customer receives goods with duty paid.",
             InvoiceSuiteCodelistVatCategoryCodes::EXEM_FOR_RESA => "A tax category code indicating the item is tax exempt when the item is bought for future resale.",
@@ -286,6 +284,6 @@ enum InvoiceSuiteCodelistVatCategoryCodes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:06+02:00';
+        return '2025-08-30T00:35:50+02:00';
     }
 }

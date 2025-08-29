@@ -1358,8 +1358,7 @@ enum InvoiceSuiteCodelistItemTypeIdentificationCodes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistItemTypeIdentificationCodes::LEVE_DOT_CODE => "46 Level DOT Code",
             InvoiceSuiteCodelistItemTypeIdentificationCodes::AHFS_AMER_HOSP_FORM_SERV_PHAR_THER_CLAS => "AHFS (American Hospital Formulary Service) pharmacologic - therapeutic classification",
             InvoiceSuiteCodelistItemTypeIdentificationCodes::AIR_FORC_REGU => "Air Force Regulation 71-4",
@@ -1547,8 +1546,7 @@ enum InvoiceSuiteCodelistItemTypeIdentificationCodes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistItemTypeIdentificationCodes::LEVE_DOT_CODE => "A US Department of Transportation (DOT) code to identify hazardous (dangerous) goods, managed by the Customs and Border Protection (CBP) agency.",
             InvoiceSuiteCodelistItemTypeIdentificationCodes::AHFS_AMER_HOSP_FORM_SERV_PHAR_THER_CLAS => "Pharmacologic - therapeutic classification maintained by the American Hospital Formulary Service (AHFS).",
             InvoiceSuiteCodelistItemTypeIdentificationCodes::AIR_FORC_REGU => "A department of Defense/Air Force code used to identify hazardous (dangerous) goods, managed by the Customs and Border Protection (CBP) agency.",
@@ -1762,6 +1760,6 @@ enum InvoiceSuiteCodelistItemTypeIdentificationCodes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

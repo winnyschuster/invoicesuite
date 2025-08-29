@@ -2042,8 +2042,7 @@ enum InvoiceSuiteCodelistAllowanceChargeCodes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistAllowanceChargeCodes::ACCEPTANCE => "Acceptance",
             InvoiceSuiteCodelistAllowanceChargeCodes::ADDI_PACK => "Additional packaging",
             InvoiceSuiteCodelistAllowanceChargeCodes::ADDI_PROC => "Additional processing",
@@ -2335,8 +2334,7 @@ enum InvoiceSuiteCodelistAllowanceChargeCodes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistAllowanceChargeCodes::ACCEPTANCE => "The service of accepting goods or services.",
             InvoiceSuiteCodelistAllowanceChargeCodes::ADDI_PACK => "The service of providing additional packaging.",
             InvoiceSuiteCodelistAllowanceChargeCodes::ADDI_PROC => "The service of providing additional processing.",
@@ -2655,6 +2653,6 @@ enum InvoiceSuiteCodelistAllowanceChargeCodes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

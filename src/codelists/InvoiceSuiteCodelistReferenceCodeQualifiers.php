@@ -5953,8 +5953,7 @@ enum InvoiceSuiteCodelistReferenceCodeQualifiers: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistReferenceCodeQualifiers::ACCI_REFE_NUMB => "Accident reference number",
             InvoiceSuiteCodelistReferenceCodeQualifiers::ACCO_NUMB => "Account number",
             InvoiceSuiteCodelistReferenceCodeQualifiers::ACCO_PART_BANK_REFE => "Account partys bank reference",
@@ -6772,8 +6771,7 @@ enum InvoiceSuiteCodelistReferenceCodeQualifiers: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistReferenceCodeQualifiers::ACCI_REFE_NUMB => "Reference number assigned to an accident.",
             InvoiceSuiteCodelistReferenceCodeQualifiers::ACCO_NUMB => "Identification number of an account.",
             InvoiceSuiteCodelistReferenceCodeQualifiers::ACCO_PART_BANK_REFE => "Reference number of the account partys bank.",
@@ -7617,6 +7615,6 @@ enum InvoiceSuiteCodelistReferenceCodeQualifiers: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

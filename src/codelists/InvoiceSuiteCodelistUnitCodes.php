@@ -15123,8 +15123,7 @@ enum InvoiceSuiteCodelistUnitCodes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistUnitCodes::REC20_DAY_MONTH => "30-day month",
             InvoiceSuiteCodelistUnitCodes::REC20_PART_CLOUD_COVER => "8-part cloud cover",
             InvoiceSuiteCodelistUnitCodes::REC20_ACCESS_LINE => "access line",
@@ -17278,8 +17277,7 @@ enum InvoiceSuiteCodelistUnitCodes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistUnitCodes::REC20_DAY_MONTH => "30-day month",
             InvoiceSuiteCodelistUnitCodes::REC20_PART_CLOUD_COVER => "8-part cloud cover",
             InvoiceSuiteCodelistUnitCodes::REC20_ACCESS_LINE => "access line",
@@ -19461,6 +19459,6 @@ enum InvoiceSuiteCodelistUnitCodes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:06+02:00';
+        return '2025-08-30T00:35:50+02:00';
     }
 }

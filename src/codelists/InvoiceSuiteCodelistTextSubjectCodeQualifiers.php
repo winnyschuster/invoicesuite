@@ -2883,8 +2883,7 @@ enum InvoiceSuiteCodelistTextSubjectCodeQualifiers: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistTextSubjectCodeQualifiers::ABSE_DECL => "Absence declaration",
             InvoiceSuiteCodelistTextSubjectCodeQualifiers::ACCE_TERM_ADDI => "Acceptance terms additional",
             InvoiceSuiteCodelistTextSubjectCodeQualifiers::ACCE_INST => "Access instructions",
@@ -3291,8 +3290,7 @@ enum InvoiceSuiteCodelistTextSubjectCodeQualifiers: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistTextSubjectCodeQualifiers::ABSE_DECL => "A declaration on the reason of the absence.",
             InvoiceSuiteCodelistTextSubjectCodeQualifiers::ACCE_TERM_ADDI => "Additional terms concerning acceptance.",
             InvoiceSuiteCodelistTextSubjectCodeQualifiers::ACCE_INST => "Description of how to access an entity.",
@@ -3725,6 +3723,6 @@ enum InvoiceSuiteCodelistTextSubjectCodeQualifiers: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

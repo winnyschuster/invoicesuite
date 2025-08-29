@@ -17,7 +17,7 @@ class ZfFxExtendedProviderBuilderTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$document = new InvoiceSuiteZfFxExtendedProviderBuilder(new InvoiceSuiteZfFxExtendedProvider);
+        self::$document = new InvoiceSuiteZfFxExtendedProviderBuilder(new InvoiceSuiteZfFxExtendedProvider());
     }
 
     public function testInitRootObject(): void

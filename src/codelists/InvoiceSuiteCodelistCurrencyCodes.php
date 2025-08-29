@@ -1277,8 +1277,7 @@ enum InvoiceSuiteCodelistCurrencyCodes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistCurrencyCodes::ADB_UNIT_OF_ACCOUNT => "ADB Unit of Account",
             InvoiceSuiteCodelistCurrencyCodes::AFGHANI => "Afghani",
             InvoiceSuiteCodelistCurrencyCodes::ALGERIAN_DINAR => "Algerian Dinar",
@@ -1468,8 +1467,7 @@ enum InvoiceSuiteCodelistCurrencyCodes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistCurrencyCodes::ADB_UNIT_OF_ACCOUNT => "ADB Unit of Account",
             InvoiceSuiteCodelistCurrencyCodes::AFGHANI => "Afghani",
             InvoiceSuiteCodelistCurrencyCodes::ALGERIAN_DINAR => "Algerian Dinar",
@@ -1685,6 +1683,6 @@ enum InvoiceSuiteCodelistCurrencyCodes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

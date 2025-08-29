@@ -180,8 +180,7 @@ enum InvoiceSuiteCodelistDutyTaxFeeCategories: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistDutyTaxFeeCategories::CANARY_ISLANDS_GENERAL_INDIRECT_TAX => "Canary Islands general indirect tax",
             InvoiceSuiteCodelistDutyTaxFeeCategories::DUTY_PAID_BY_SUPPLIER => "Duty paid by supplier",
             InvoiceSuiteCodelistDutyTaxFeeCategories::EXEMPT_FOR_RESALE => "Exempt for resale",
@@ -214,8 +213,7 @@ enum InvoiceSuiteCodelistDutyTaxFeeCategories: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistDutyTaxFeeCategories::CANARY_ISLANDS_GENERAL_INDIRECT_TAX => "Canary Islands general indirect tax",
             InvoiceSuiteCodelistDutyTaxFeeCategories::DUTY_PAID_BY_SUPPLIER => "Duty paid by supplier",
             InvoiceSuiteCodelistDutyTaxFeeCategories::EXEMPT_FOR_RESALE => "Exempt for resale",
@@ -274,6 +272,6 @@ enum InvoiceSuiteCodelistDutyTaxFeeCategories: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

@@ -687,8 +687,7 @@ enum InvoiceSuiteCodelistPaymentMeans: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_1 => "Instrument not defined",
             InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_10 => "In cash",
             InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_11 => "ACH savings credit reversal",
@@ -783,8 +782,7 @@ enum InvoiceSuiteCodelistPaymentMeans: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_1 => "Not defined legally enforceable agreement between two or more parties (expressing a contractual right or a right to the payment of money).",
             InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_10 => "Payment by currency (including bills and coins) in circulation, including checking account deposits.",
             InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_11 => "A request to reverse an ACH credit transaction to a savings account.",
@@ -905,6 +903,6 @@ enum InvoiceSuiteCodelistPaymentMeans: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

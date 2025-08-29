@@ -6429,8 +6429,7 @@ enum InvoiceSuiteCodelistDocumentTypes: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistDocumentTypes::A_CLAIM_FOR_PARTS_ANDOR_LABOUR_CHARGES => "A claim for parts and/or labour charges",
             InvoiceSuiteCodelistDocumentTypes::ACCOUNTING_STATEMENT => "Accounting statement",
             InvoiceSuiteCodelistDocumentTypes::ACCOUNTING_VOUCHER => "Accounting voucher",
@@ -7238,8 +7237,7 @@ enum InvoiceSuiteCodelistDocumentTypes: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistDocumentTypes::A_CLAIM_FOR_PARTS_ANDOR_LABOUR_CHARGES => "A claim for parts and/or labour charges incurred .",
             InvoiceSuiteCodelistDocumentTypes::ACCOUNTING_STATEMENT => "Document specifying an accounting statement.",
             InvoiceSuiteCodelistDocumentTypes::ACCOUNTING_VOUCHER => "A document/message justifying an accounting entry.",
@@ -8073,6 +8071,6 @@ enum InvoiceSuiteCodelistDocumentTypes: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }

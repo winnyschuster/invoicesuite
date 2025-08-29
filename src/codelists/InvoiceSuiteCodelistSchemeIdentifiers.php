@@ -2103,8 +2103,7 @@ enum InvoiceSuiteCodelistSchemeIdentifiers: string
      */
     final public function getCaption(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistSchemeIdentifiers::ACTA_OBJE_IDEN => "ACTALIS Object Identifiers",
             InvoiceSuiteCodelistSchemeIdentifiers::ADVA_TELE_MODU_LIMI_CORP_NETW => "Advanced Telecommunications Modules Limited, Corporate Network",
             InvoiceSuiteCodelistSchemeIdentifiers::ADVANTIS => "Advantis",
@@ -2330,8 +2329,7 @@ enum InvoiceSuiteCodelistSchemeIdentifiers: string
      */
     final public function getDescription(): string
     {
-        return match($this)
-        {
+        return match ($this) {
             InvoiceSuiteCodelistSchemeIdentifiers::ACTA_OBJE_IDEN => "The code is primarily intended for the registration of Object Identifiers (OIDs) according to ISO 8824/8825: Level 1: iso (1), Level 2: identified-organization (3), Level 3: ACTALIS SpA (0159), Level 4 and higher: (defined by ACTALIS) See Intended purpose/application area Issuing agency: ACTALIS S.p.A., ITALY.",
             InvoiceSuiteCodelistSchemeIdentifiers::ADVA_TELE_MODU_LIMI_CORP_NETW => "Notes on Use of Code: The ICD code will also form part of the Initial Domain Part of the OSI network addressing as specified in Addendum 2 to ISO 8348. Issuing agency: ATM Ltd, ENGLAND.",
             InvoiceSuiteCodelistSchemeIdentifiers::ADVANTIS => "Issuing agency: Advantis, USA.",
@@ -2583,6 +2581,6 @@ enum InvoiceSuiteCodelistSchemeIdentifiers: string
      */
     final public static function getCreatedAt(): string
     {
-        return '2025-08-29T14:18:05+02:00';
+        return '2025-08-30T00:35:49+02:00';
     }
 }
