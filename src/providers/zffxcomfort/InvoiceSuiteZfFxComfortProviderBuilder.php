@@ -1556,7 +1556,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getBillingSpecifiedPeriodWithCreate();
 
-        if (!is_null($newStartDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate)) {
             $billingPeriod
                 ->getStartDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -1564,7 +1564,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
                 ->setFormat("102");
         }
 
-        if (!is_null($newEndDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
             $billingPeriod
                 ->getEndDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -1668,7 +1668,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $sellerOrderReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -1718,7 +1718,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $buyerOrderReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -1800,7 +1800,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $contractReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -1903,7 +1903,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getTypeCodeWithCreate()
             ->setValue($newTypeCode);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $additionalReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -2005,7 +2005,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getTypeCodeWithCreate()
             ->setValue($newTypeCode);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $invoiceReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -2123,7 +2123,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $despatchAdviceReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -2179,7 +2179,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
 
-        if (!is_null($newReferenceDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
             $receivingAdviceReference
                 ->getFormattedIssueDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -2251,7 +2251,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
-        if (is_null($newDate)) {
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)) {
             return $this;
         }
 
@@ -6795,7 +6795,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
 
         $paymentTerm->getDescriptionWithCreate()->setValue($newDescription);
 
-        if (!is_null($newDueDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDueDate)) {
             $paymentTerm
                 ->getDueDateDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -7018,19 +7018,19 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
         $applicableTradeTax->getBasisAmountWithCreate()->setValue($newBasisAmount);
         $applicableTradeTax->getCalculatedAmountWithCreate()->setValue($newTaxAmount);
 
-        if (!is_null($newTaxPercent)) {
+        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
             $applicableTradeTax->getRateApplicablePercentWithCreate()->setValue($newTaxPercent);
         }
 
-        if (!is_null($newExemptionReason)) {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newExemptionReason)) {
             $applicableTradeTax->getExemptionReasonWithCreate()->setValue($newExemptionReason);
         }
 
-        if (!is_null($newExemptionReasonCode)) {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newExemptionReasonCode)) {
             $applicableTradeTax->getExemptionReasonCodeWithCreate()->setValue($newExemptionReasonCode);
         }
 
-        if (!is_null($newTaxDueDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newTaxDueDate)) {
             $applicableTradeTax
                 ->getTaxPointDateWithCreate()
                 ->getDateStringWithCreate()
@@ -7038,7 +7038,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
                 ->setFormat("102");
         }
 
-        if (!is_null($newTaxDueCode)) {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxDueCode)) {
             $applicableTradeTax->getDueDateTypeCodeWithCreate()->setValue($newTaxDueCode);
         }
 
@@ -7144,25 +7144,25 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getActualAmountWithCreate()
             ->setValue($newAllowanceChargeAmount);
 
-        if (!is_null($newAllowanceChargeBaseAmount)) {
+        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeBaseAmount)) {
             $specifiedTradeAllowanceCharge
                 ->getBasisAmountWithCreate()
                 ->setValue($newAllowanceChargeBaseAmount);
         }
 
-        if (!is_null($newAllowanceChargePercent)) {
+        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargePercent)) {
             $specifiedTradeAllowanceCharge
                 ->getCalculationPercentWithCreate()
                 ->setValue($newAllowanceChargePercent);
         }
 
-        if (!is_null($newAllowanceChargeReason)) {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newAllowanceChargeReason)) {
             $specifiedTradeAllowanceCharge
                 ->getReasonWithCreate()
                 ->setValue($newAllowanceChargeReason);
         }
 
-        if (!is_null($newAllowanceChargeReasonCode)) {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newAllowanceChargeReasonCode)) {
             $specifiedTradeAllowanceCharge
                 ->getReasonCodeWithCreate()
                 ->setValue($newAllowanceChargeReasonCode);
@@ -7173,7 +7173,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
         $categoryTradeTax->getCategoryCodeWithCreate()->setValue($newTaxCategory);
         $categoryTradeTax->getTypeCodeWithCreate()->setValue($newTaxType);
 
-        if (!is_null($newTaxPercent)) {
+        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
             $categoryTradeTax->getRateApplicablePercentWithCreate()->setValue($newTaxPercent);
         }
 
@@ -8965,7 +8965,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): self {
-        if (is_null($newStartDate) && is_null($newEndDate)) {
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate) && InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
             return $this;
         }
 
@@ -8978,7 +8978,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getSpecifiedLineTradeSettlementWithCreate()
             ->getBillingSpecifiedPeriodWithCreate();
 
-        if (!is_null($newStartDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate)) {
             $billingPeriod
                 ->getStartDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -8986,7 +8986,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
                 ->setFormat("102");
         }
 
-        if (!is_null($newEndDate)) {
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
             $billingPeriod
                 ->getEndDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
@@ -9010,7 +9010,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): self {
-        if (is_null($newStartDate) && is_null($newEndDate)) {
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate) && InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
             return $this;
         }
 
