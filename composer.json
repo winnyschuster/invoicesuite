@@ -64,9 +64,10 @@
         "phpstan": "@phpstan12",
         "phpstan12": "./vendor/bin/phpstan analyze -c ./build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --no-progress",
         "phpmd": "@phpmd12",
-        "phpmd12": "./vendor/bin/phpmd src github ./build/phpmd.xml",
+        "phpmd12": "./vendor/bin/phpmd src xml ./build/phpmd.xml",
         "checkstyle": [
             "Composer\\Config::disableProcessTimeout",
+            "@phpmd",
             "@phpcs",
             "@phpstan"
         ],
