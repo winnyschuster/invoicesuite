@@ -3,15 +3,16 @@
 namespace horstoeko\invoicesuite;
 
 use DateTimeInterface;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
-use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
 use horstoeko\invoicesuite\concerns\HandlesCurrentFormatProvider;
+use horstoeko\invoicesuite\concerns\HandlesFormatProviders;
 use horstoeko\invoicesuite\contracts\InvoiceSuiteBuilderContract;
+use horstoeko\invoicesuite\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use JMS\Serializer\Exception\InvalidArgumentException;
+use JMS\Serializer\Exception\LogicException;
+use JMS\Serializer\Exception\RuntimeException;
 
 /**
  * Class representing the document builder
@@ -111,6 +112,18 @@ class InvoiceSuiteDocumentBuilder implements InvoiceSuiteBuilderContract
         string $tofile
     ): void {
         $this->getCurrentFormatProvider()->getBuilder()->saveAsJsonFile($tofile);
+    }
+
+    /**
+     * Copy Builder to a Reader instance
+     *
+     * @return InvoiceSuiteDocumentReader
+     * @throws LogicException
+     * @throws RuntimeException
+     */
+    public function copyToReader(): InvoiceSuiteDocumentReader
+    {
+        return InvoiceSuiteDocumentReader::createFromContent($this->getContentAsXml());
     }
 
     /**

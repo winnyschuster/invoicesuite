@@ -104,6 +104,20 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
         return $this->forwardCallWithCheckTo($this->getCurrentFormatProvider()->getReader(), $method, $parameters);
     }
 
+    /**
+     * Copy Reader to a Builder instance
+     *
+     * @return InvoiceSuiteDocumentBuilder
+     */
+    public function copyToBuilder(): InvoiceSuiteDocumentBuilder
+    {
+        $this->convertToDTO($dto);
+
+        return (InvoiceSuiteDocumentBuilder::createByProviderUniqueId(
+            $this->getCurrentFormatProvider()->getUniqueId()
+        ))->createFromDTO($dto);
+    }
+
     #endregion
 
     #region Document DTO
