@@ -5,7 +5,6 @@ namespace horstoeko\invoicesuite\utils;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\mimedb\MimeDb;
-use horstoeko\stringmanagement\FileUtils;
 use InvalidArgumentException;
 
 /**
@@ -142,7 +141,7 @@ class InvoiceSuiteAttachment
     {
         $this->internalType = $internalType;
         $this->internalContent = $internalContent;
-        $this->internalFilename = FileUtils::getFilenameWithoutExtension($internalFilename);
+        $this->internalFilename = InvoiceSuiteFileUtils::getFilenameWithoutExtension($internalFilename);
     }
 
     /**
@@ -252,6 +251,6 @@ class InvoiceSuiteAttachment
 
         $tempFileExtension = (MimeDb::singleton())->findFirstFileExtensionByMimeType($this->getContentMimeType());
 
-        return FileUtils::combineFilenameWithFileextension($this->internalFilename, $tempFileExtension);
+        return InvoiceSuiteFileUtils::combineFilenameWithFileextension($this->internalFilename, $tempFileExtension);
     }
 }

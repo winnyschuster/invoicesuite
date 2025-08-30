@@ -3,7 +3,6 @@
 namespace horstoeko\invoicesuite\utils;
 
 use Composer\Autoload\ClassLoader;
-use horstoeko\stringmanagement\PathUtils;
 use Throwable;
 
 /**
@@ -92,8 +91,8 @@ class InvoiceSuiteClassFinder
     {
         if (!$disableCache) {
             $cacheFilename = md5(preg_replace("/[^a-zA-Z0-9]/", "", sprintf("invoicesuite-cf-%s", $isSubClassOf))) . ".cache";
-            $cacheFilepath = PathUtils::combineAllPaths(__DIR__, "..", "cache");
-            $cacheFilenameFq = PathUtils::combinePathWithFile($cacheFilepath, $cacheFilename);
+            $cacheFilepath = InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "cache");
+            $cacheFilenameFq = InvoiceSuitePathUtils::combinePathWithFile($cacheFilepath, $cacheFilename);
 
             if (file_exists($cacheFilenameFq)) {
                 $cacheFilenameContent = file_get_contents($cacheFilenameFq);

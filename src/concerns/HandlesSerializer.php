@@ -5,7 +5,7 @@ namespace horstoeko\invoicesuite\concerns;
 use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\BaseTypesHandler;
 use GoetasWebservices\Xsd\XsdToPhpRuntime\Jms\Handler\XmlSchemaDateHandler;
 use horstoeko\invoicesuite\InvoiceSuiteSettings;
-use horstoeko\stringmanagement\PathUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\Exception\InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
@@ -52,7 +52,7 @@ trait HandlesSerializer
         if (InvoiceSuiteSettings::hasSerializerCacheDirectory()) {
             $this->serializerBuilder->setCacheDir(InvoiceSuiteSettings::getSerializerCacheDirectory());
         } else {
-            $this->serializerBuilder->setCacheDir(PathUtils::combineAllPaths(sys_get_temp_dir(), "jms"));
+            $this->serializerBuilder->setCacheDir(InvoiceSuitePathUtils::combineAllPaths(sys_get_temp_dir(), "jms"));
         }
 
         $this->serializerBuilder->configureHandlers(function (HandlerRegistryInterface $handlerRegistry): void {

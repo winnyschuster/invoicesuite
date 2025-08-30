@@ -2,8 +2,8 @@
 
 namespace horstoeko\invoicesuite;
 
+use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use horstoeko\stringmanagement\PathUtils;
 
 /**
  * Class representing the general InvoiceSuite settings
@@ -299,7 +299,7 @@ class InvoiceSuiteSettings
      */
     public static function getRootDirectory(): string
     {
-        return PathUtils::combineAllPaths(__DIR__, "..");
+        return InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..");
     }
 
     /**
@@ -309,6 +309,6 @@ class InvoiceSuiteSettings
      */
     public static function getSourceDirectory(): string
     {
-        return PathUtils::combineAllPaths(static::getRootDirectory(), "src");
+        return InvoiceSuitePathUtils::combineAllPaths(static::getRootDirectory(), "src");
     }
 }
