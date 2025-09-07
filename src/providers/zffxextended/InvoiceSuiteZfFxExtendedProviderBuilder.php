@@ -1599,21 +1599,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getBillingSpecifiedPeriodWithCreate();
 
-        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate)) {
-            $billingPeriod
-                ->getStartDateTimeWithCreate()
-                ->getDateTimeStringWithCreate()
-                ->setValue($newStartDate->format("Ymd"))
-                ->setFormat("102");
-        }
+        $billingPeriod
+            ->getStartDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newStartDate->format("Ymd"))
+            ->setFormat("102");
 
-        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
-            $billingPeriod
-                ->getEndDateTimeWithCreate()
-                ->getDateTimeStringWithCreate()
-                ->setValue($newEndDate->format("Ymd"))
-                ->setFormat("102");
-        }
+        $billingPeriod
+            ->getEndDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newEndDate->format("Ymd"))
+            ->setFormat("102");
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDescription)) {
             $billingPeriod
