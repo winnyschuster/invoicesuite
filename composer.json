@@ -83,6 +83,9 @@
             "@phpcs",
             "@phpstan"
         ],
-        "rector": "vendor/bin/rector --config=./build/phprectorconfig.php"
+        "rector": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/rector --config=./build/phprectorconfig.php"
+        ]
     }
 }
