@@ -11,7 +11,7 @@ class DateTimeType
     use HandlesObjectFlags;
 
     /**
-     * @var DateTime
+     * @var DateTime|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime")
      * @JMS\Expose

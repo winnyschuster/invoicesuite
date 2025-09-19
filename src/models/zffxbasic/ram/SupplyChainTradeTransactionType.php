@@ -293,4 +293,24 @@ class SupplyChainTradeTransactionType
 
         return $supplyChainTradeLineItem;
     }
+
+    /**
+     * @return boolean
+     */
+    public function hasLatestIncludedSupplyChainTradeLineItem(): bool
+    {
+        $supplyChainTradeLineItems = $this->getIncludedSupplyChainTradeLineItem() ?? [];
+
+        return $supplyChainTradeLineItems !== [];
+    }
+
+    /**
+     * @return boolean
+     */
+    public function hasNotLatestIncludedSupplyChainTradeLineItem(): bool
+    {
+        $supplyChainTradeLineItems = $this->getIncludedSupplyChainTradeLineItem() ?? [];
+
+        return $supplyChainTradeLineItems === [];
+    }
 }

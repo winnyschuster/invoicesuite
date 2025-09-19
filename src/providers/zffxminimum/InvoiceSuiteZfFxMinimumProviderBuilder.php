@@ -41,7 +41,10 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
      */
     public function initRootObject(): InvoiceSuiteZfFxMinimumProviderBuilder
     {
-        $this->setContextParameter($this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''));
+        $this->setContextParameter(
+            $this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''),
+            $this->getCurrentFormatProviderParameterValue('BUSINESSPROCESS', '')
+        );
 
         return $this;
     }
@@ -1250,6 +1253,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentNo(
         ?string $newDocumentNo = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])) {
             return $this;
         }
@@ -1272,6 +1277,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentType(
         ?string $newDocumentType = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetTypeCode();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])) {
             return $this;
         }
@@ -1322,6 +1329,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetIssueDateTime();
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
             return $this;
         }
@@ -1360,6 +1369,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
     ): self {
+        $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetInvoiceCurrencyCode();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])) {
             return $this;
         }
@@ -1559,6 +1570,12 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetBuyerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1917,6 +1934,12 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentBuyerReference(
         ?string $newBuyerReference = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetBuyerReference();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])) {
             return $this;
         }
@@ -1940,6 +1963,13 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentSellerName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -2040,16 +2070,16 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -2107,6 +2137,13 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2194,6 +2231,13 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -2316,6 +2360,13 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function setDocumentBuyerName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -2416,18 +2467,18 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -2485,6 +2536,13 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2572,6 +2630,13 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -5539,6 +5604,12 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetSpecifiedTradeSettlementHeaderMonetarySummation();
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])) {
             return $this;
         }

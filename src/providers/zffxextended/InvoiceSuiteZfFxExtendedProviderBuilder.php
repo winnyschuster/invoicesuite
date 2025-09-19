@@ -125,11 +125,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             if (!is_null($taxTotalAmounts)) {
                 $taxTotalAmount1 = $taxTotalAmounts[0] ?? null;
                 $taxTotalAmount2 = $taxTotalAmounts[1] ?? null;
-                if (!is_null($taxTotalAmount1) && !is_null($invoiceCurrencyCode)) {
+                if (!is_null($taxTotalAmount1)) {
                     $taxTotalAmount1->setCurrencyID($invoiceCurrencyCode);
                 }
-
-                if (!is_null($taxTotalAmount2) && !is_null($taxCurrencyCode)) {
+                if (!is_null($taxTotalAmount2)) {
                     $taxTotalAmount2->setCurrencyID($taxCurrencyCode);
                 }
             }
@@ -1300,6 +1299,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentNo(
         ?string $newDocumentNo = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])) {
             return $this;
         }
@@ -1322,6 +1323,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentType(
         ?string $newDocumentType = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetTypeCode();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])) {
             return $this;
         }
@@ -1344,6 +1347,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentDescription(
         ?string $newDocumentDescription = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetName();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentDescription])) {
             return $this;
         }
@@ -1366,6 +1371,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentLanguage(
         ?string $newDocumentLanguage = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetLanguageID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentLanguage])) {
             return $this;
         }
@@ -1388,6 +1395,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetIssueDateTime();
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
             return $this;
         }
@@ -1412,6 +1421,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentCompleteDate(
         ?DateTimeInterface $newCompleteDate = null
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocumentWithCreate()->unsetEffectiveSpecifiedPeriod();
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newCompleteDate])) {
             return $this;
         }
@@ -1437,6 +1448,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
     ): self {
+        $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetInvoiceCurrencyCode();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])) {
             return $this;
         }
@@ -1462,6 +1475,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentTaxCurrency(
         ?string $newDocumentTaxCurrency = null
     ): self {
+        $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetTaxCurrencyCode();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentTaxCurrency])) {
             return $this;
         }
@@ -1527,14 +1542,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): self {
+        $this->getCrossIndustryRootObject()->getExchangedDocumentWithCreate()->unsetIncludedNote();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getExchangedDocumentWithCreate()
-            ->clearIncludedNote();
 
         $this->addDocumentNote($newContent, $newContentCode, $newSubjectCode);
 
@@ -1589,6 +1601,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetBillingSpecifiedPeriod();
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
             return $this;
         }
@@ -1655,15 +1673,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetReceivableSpecifiedTradeAccountingAccount();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearReceivableSpecifiedTradeAccountingAccount();
 
         $this->addDocumentPostingReference($newType, $newAccountId);
 
@@ -1709,6 +1727,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetSellerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1759,6 +1783,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetBuyerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1809,6 +1839,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetQuotationReferencedDocument();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1859,6 +1895,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetContractReferencedDocument();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1917,15 +1959,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetAdditionalReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->clearAdditionalReferencedDocument();
 
         $this->addDocumentAdditionalReference(
             $newReferenceNumber,
@@ -2028,15 +2070,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetInvoiceReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearInvoiceReferencedDocument();
 
         $this->addDocumentInvoiceReference(
             $newReferenceNumber,
@@ -2098,6 +2140,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetSpecifiedProcuringProject();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -2150,15 +2198,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetUltimateCustomerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->clearUltimateCustomerOrderReferencedDocument();
 
         $this->addDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
@@ -2212,6 +2260,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->unsetDespatchAdviceReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -2268,6 +2322,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->unsetReceivingAdviceReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -2324,6 +2384,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->unsetDeliveryNoteReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -2378,6 +2444,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->unsetActualDeliverySupplyChainEvent();
+
         if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)) {
             return $this;
         }
@@ -2404,6 +2476,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentBuyerReference(
         ?string $newBuyerReference = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->unsetBuyerReference();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])) {
             return $this;
         }
@@ -2427,6 +2505,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentSellerName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -2469,16 +2554,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentSellerId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentSellerId($newId);
 
@@ -2518,16 +2603,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetGlobalID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -2570,16 +2655,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -2637,6 +2722,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2748,6 +2840,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -2810,6 +2909,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -2821,12 +2927,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -2900,6 +3000,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -2943,6 +3050,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentBuyerName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -2985,16 +3099,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentBuyerId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentBuyerId($newId);
 
@@ -3034,18 +3148,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -3090,18 +3204,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -3159,6 +3273,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -3270,6 +3391,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -3332,6 +3460,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -3343,12 +3478,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentBuyerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -3422,6 +3551,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getBuyerTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -3470,6 +3606,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentTaxRepresentativeName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -3512,16 +3655,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentTaxRepresentativeId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTaxRepresentativeTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentTaxRepresentativeId($newId);
 
@@ -3563,18 +3706,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTaxRepresentativeTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -3621,18 +3764,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTaxRepresentativeTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -3690,6 +3833,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -3801,6 +3951,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -3863,6 +4020,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -3874,12 +4038,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getSellerTaxRepresentativeTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -3953,6 +4111,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getSellerTaxRepresentativeTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -4001,6 +4166,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentProductEndUserName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -4043,16 +4215,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentProductEndUserId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getProductEndUserTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentProductEndUserId($newId);
 
@@ -4094,18 +4266,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getProductEndUserTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentProductEndUserGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -4152,18 +4324,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getProductEndUserTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentProductEndUserTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -4221,6 +4393,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -4332,6 +4511,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -4394,6 +4580,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -4405,12 +4598,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getProductEndUserTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentProductEndUserContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -4484,6 +4671,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeAgreement()
+            ?->getProductEndUserTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -4532,6 +4726,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentShipToName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -4574,16 +4775,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentShipToId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentShipToId($newId);
 
@@ -4623,18 +4824,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -4679,18 +4880,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -4748,6 +4949,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -4859,6 +5067,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -4921,6 +5136,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -4932,12 +5154,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentShipToContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -5011,6 +5227,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -5059,6 +5282,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentUltimateShipToName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -5101,16 +5331,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentUltimateShipToId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentUltimateShipToId($newId);
 
@@ -5152,18 +5382,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentUltimateShipToGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -5210,18 +5440,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentUltimateShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -5279,6 +5509,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -5390,6 +5627,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -5452,6 +5696,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -5463,12 +5714,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentUltimateShipToContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -5542,6 +5787,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -5590,6 +5842,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentShipFromName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -5632,16 +5891,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentShipFromId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipFromTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentShipFromId($newId);
 
@@ -5681,18 +5940,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipFromTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentShipFromGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -5737,18 +5996,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipFromTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentShipFromTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -5806,6 +6065,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -5917,6 +6183,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -5979,6 +6252,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -5990,12 +6270,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeDeliveryWithCreate()
-            ->getShipFromTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentShipFromContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -6069,6 +6343,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeDelivery()
+            ?->getShipFromTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -6117,6 +6398,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentInvoicerName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -6159,16 +6447,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentInvoicerId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoicerTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentInvoicerId($newId);
 
@@ -6208,18 +6496,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoicerTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -6264,18 +6552,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoicerTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -6333,6 +6621,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -6444,6 +6739,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -6506,6 +6808,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -6517,12 +6826,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoicerTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentInvoicerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -6596,6 +6899,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoicerTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -6644,6 +6954,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentInvoiceeName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -6686,16 +7003,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentInvoiceeId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoiceeTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentInvoiceeId($newId);
 
@@ -6735,18 +7052,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoiceeTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -6791,18 +7108,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoiceeTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -6860,6 +7177,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -6971,6 +7295,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -7033,6 +7364,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -7044,12 +7382,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoiceeTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentInvoiceeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -7123,6 +7455,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getInvoiceeTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
@@ -7171,6 +7510,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPayeeName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -7213,16 +7559,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPayeeId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getPayeeTradePartyWithCreate()
-            ->clearID();
 
         $this->addDocumentPayeeId($newId);
 
@@ -7262,18 +7608,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetGlobalID();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getPayeeTradePartyWithCreate()
-            ->clearGlobalID();
 
         $this->addDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -7318,18 +7664,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getPayeeTradePartyWithCreate()
-            ->clearSpecifiedTaxRegistration();
 
         $this->addDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -7387,6 +7733,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -7498,6 +7851,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -7560,6 +7920,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -7571,12 +7938,6 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ) {
             return $this;
         }
-
-        $this->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getPayeeTradePartyWithCreate()
-            ->clearDefinedTradeContact();
 
         $this->addDocumentPayeeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
@@ -7650,23 +8011,25 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->getPayeeTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
 
-        $payeeUniversalCommunication = $this->getCrossIndustryRootObject()
+        $this->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getPayeeTradePartyWithCreate()
-            ->getURIUniversalCommunicationWithCreate();
-
-        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType])) {
-            $payeeUniversalCommunication->getURIIDWithCreate()->setSchemeID($newType);
-        }
-
-        if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newUri])) {
-            $payeeUniversalCommunication->getURIIDWithCreate()->setValue($newUri);
-        }
+            ->getURIUniversalCommunicationWithCreate()
+            ->getURIIDWithCreate()
+            ->setValue($newUri)
+            ->setSchemeID($newType);
 
         return $this;
     }
@@ -7718,15 +8081,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetSpecifiedTradeSettlementPaymentMeans();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearSpecifiedTradeSettlementPaymentMeans();
 
         $this->addDocumentPaymentMean(
             $newTypeCode,
@@ -8162,6 +8525,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPaymentCreditorReferenceID(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetCreditorReferenceID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -8205,15 +8574,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newDescription = null,
         ?DateTimeInterface $newDueDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetSpecifiedTradePaymentTerms();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearSpecifiedTradePaymentTerms();
 
         $this->addDocumentPaymentTerm(
             $newDescription,
@@ -8288,31 +8657,32 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        /**
-         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType $lastPaymentTerm
-         */
-        $paymentDiscountTerms = $lastPaymentTerm->getApplicableTradePaymentDiscountTermsWithCreate();
+        $lastPaymentTerm->unsetApplicableTradePaymentDiscountTerms();
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newBaseAmount)) {
-            $paymentDiscountTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentDiscountTermsWithCreate()
                 ->getBasisAmountWithCreate()
                 ->setValue($newBaseAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDiscountAmount)) {
-            $paymentDiscountTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentDiscountTermsWithCreate()
                 ->getActualDiscountAmountWithCreate()
                 ->setValue($newDiscountAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDiscountPercent)) {
-            $paymentDiscountTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentDiscountTermsWithCreate()
                 ->getCalculationPercentWithCreate()
                 ->setValue($newDiscountPercent);
         }
 
         if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newBaseDate)) {
-            $paymentDiscountTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentDiscountTermsWithCreate()
                 ->getBasisDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
                 ->setValue($newBaseDate->format("Ymd"))
@@ -8323,7 +8693,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newBasePeriod) &&
             !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newBasePeriodUnit)
         ) {
-            $paymentDiscountTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentDiscountTermsWithCreate()
                 ->getBasisPeriodMeasureWithCreate()
                 ->setValue($newBasePeriod)
                 ->setUnitCode($newBasePeriodUnit);
@@ -8394,31 +8765,32 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        /**
-         * @var \horstoeko\invoicesuite\models\zffxextended\ram\TradePaymentTermsType $lastPaymentTerm
-         */
-        $paymentPenaltyTerms = $lastPaymentTerm->getApplicableTradePaymentPenaltyTermsWithCreate();
+        $lastPaymentTerm->unsetApplicableTradePaymentPenaltyTerms();
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newBaseAmount)) {
-            $paymentPenaltyTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentPenaltyTermsWithCreate()
                 ->getBasisAmountWithCreate()
                 ->setValue($newBaseAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newPenaltyAmount)) {
-            $paymentPenaltyTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentPenaltyTermsWithCreate()
                 ->getActualPenaltyAmountWithCreate()
                 ->setValue($newPenaltyAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newPenaltyPercent)) {
-            $paymentPenaltyTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentPenaltyTermsWithCreate()
                 ->getCalculationPercentWithCreate()
                 ->setValue($newPenaltyPercent);
         }
 
         if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newBaseDate)) {
-            $paymentPenaltyTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentPenaltyTermsWithCreate()
                 ->getBasisDateTimeWithCreate()
                 ->getDateTimeStringWithCreate()
                 ->setValue($newBaseDate->format("Ymd"))
@@ -8429,7 +8801,8 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newBasePeriod) &&
             !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newBasePeriodUnit)
         ) {
-            $paymentPenaltyTerms
+            $lastPaymentTerm
+                ->getApplicableTradePaymentPenaltyTermsWithCreate()
                 ->getBasisPeriodMeasureWithCreate()
                 ->setValue($newBasePeriod)
                 ->setUnitCode($newBasePeriodUnit);
@@ -8494,18 +8867,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetApplicableTradeTax();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) ||
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearApplicableTradeTax();
 
         $this->addDocumentTax(
             $newTaxCategory,
@@ -8617,18 +8990,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetSpecifiedTradeAllowanceCharge();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) ||
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearSpecifiedTradeAllowanceCharge();
 
         $this->addDocumentAllowanceCharge(
             $newChargeIndicator,
@@ -8744,18 +9117,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetSpecifiedLogisticsServiceCharge();
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription]) ||
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])
         ) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeSettlementWithCreate()
-            ->clearSpecifiedLogisticsServiceCharge();
 
         $this->addDocumentLogisticServiceCharge(
             $newChargeAmount,
@@ -8884,6 +9257,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetSpecifiedTradeSettlementHeaderMonetarySummation();
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])) {
             return $this;
         }
@@ -8945,12 +9324,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $position = $this
+        $positionLineDocument = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->addToIncludedSupplyChainTradeLineItemWithCreate();
-
-        $positionLineDocument = $position->getAssociatedDocumentLineDocumentWithCreate();
+            ->addToIncludedSupplyChainTradeLineItemWithCreate()
+            ->getAssociatedDocumentLineDocumentWithCreate();
 
         $positionLineDocument
             ->getLineIDWithCreate()
@@ -8990,18 +9368,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getAssociatedDocumentLineDocument()
+            ?->unsetIncludedNote();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $latestPosition
-            ->getAssociatedDocumentLineDocumentWithCreate()
-            ->clearIncludedNote();
 
         $this->addDocumentPositionNote(
             $newContent,
@@ -9029,12 +9405,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $positionNote = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $positionNote = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getAssociatedDocumentLineDocumentWithCreate()
             ->addToIncludedNoteWithCreate();
 
@@ -9084,16 +9458,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newProductModelName = null,
         ?string $newProductOriginTradeCountry = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->unsetSpecifiedTradeProduct();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $positionProduct = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
+            ->getSpecifiedTradeProductWithCreate();
 
         $positionProduct->getNameWithCreate()->setValue($newProductName);
 
@@ -9161,18 +9540,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
     ): self {
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])) {
+        $positionProduct = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedTradeProduct();
+
+        if (is_null($positionProduct)) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+        $positionProduct->unsetApplicableProductCharacteristic();
 
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
-
-        $positionProduct->clearApplicableProductCharacteristic();
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])) {
+            return $this;
+        }
 
         $this->addDocumentPositionProductCharacteristic(
             $newProductCharacteristicDescription,
@@ -9202,19 +9584,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
     ): self {
+        $positionProduct = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedTradeProduct();
+
+        if (is_null($positionProduct)) {
+            return $this;
+        }
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
-
         $positionProductCharacteristic = $positionProduct->addToApplicableProductCharacteristicWithCreate();
-
         $positionProductCharacteristic->getDescriptionWithCreate()->setValue($newProductCharacteristicDescription);
         $positionProductCharacteristic->getValueWithCreate()->setValue($newProductCharacteristicValue);
 
@@ -9250,18 +9634,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
     ): self {
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
+        $positionProduct = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedTradeProduct();
+
+        if (is_null($positionProduct)) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+        $positionProduct->unsetDesignatedProductClassification();
 
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
-
-        $positionProduct->clearDesignatedProductClassification();
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
+            return $this;
+        }
 
         $this->addDocumentPositionProductClassification(
             $newProductClassificationCode,
@@ -9288,19 +9675,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
     ): self {
+        $positionProduct = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedTradeProduct();
+
+        if (is_null($positionProduct)) {
+            return $this;
+        }
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
-
         $positionProductClassification = $positionProduct->addToDesignatedProductClassificationWithCreate();
-
         $positionProductClassification
             ->getClassCodeWithCreate()
             ->setValue($newProductClassificationCode)
@@ -9341,18 +9730,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
     ): self {
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
+        $positionProduct = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedTradeProduct();
+
+        if (is_null($positionProduct)) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+        $positionProduct->unsetIncludedReferencedProduct();
 
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
-
-        $positionProduct->clearIncludedReferencedProduct();
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
+            return $this;
+        }
 
         $this->addDocumentPositionReferencedProduct(
             $newProductId,
@@ -9397,19 +9789,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
     ): self {
+        $positionProduct = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedTradeProduct();
+
+        if (is_null($positionProduct)) {
+            return $this;
+        }
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $positionProduct = $latestPosition->getSpecifiedTradeProductWithCreate();
-
         $positionReferencedProduct = $positionProduct->addToIncludedReferencedProductWithCreate();
-
         $positionReferencedProduct->getNameWithCreate()->setValue($newProductName);
 
         if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductId])) {
@@ -9459,6 +9853,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetSellerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -9525,6 +9926,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetBuyerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -9591,6 +9999,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetQuotationReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -9657,6 +10072,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetContractReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -9731,16 +10153,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetAdditionalReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber, $newTypeCode])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
-            ->getSpecifiedLineTradeAgreementWithCreate()
-            ->clearAdditionalReferencedDocument();
 
         $this->addDocumentPositionAdditionalReference(
             $newReferenceNumber,
@@ -9853,16 +10275,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetUltimateCustomerOrderReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
-            ->getSpecifiedLineTradeAgreementWithCreate()
-            ->clearUltimateCustomerOrderReferencedDocument();
 
         $this->addDocumentPositionUltimateCustomerOrderReference(
             $newReferenceNumber,
@@ -9926,6 +10348,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->unsetDespatchAdviceReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -9992,6 +10421,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->unsetReceivingAdviceReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -10058,6 +10494,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->unsetDeliveryNoteReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -10126,6 +10569,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeSettlement()
+            ?->unsetInvoiceReferencedDocument();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber, $newTypeCode])) {
             return $this;
         }
@@ -10173,7 +10623,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $this->getCurrentFormatProvider()->getBuilder()->setDocumentPositionInvoiceReference(
+        $this->setDocumentPositionInvoiceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
             $newReferenceDate,
@@ -10196,6 +10646,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newGrossPriceBasisQuantity = null,
         ?string $newGrossPriceBasisQuantityUnit = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetGrossPriceProductTradePrice();
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPrice])) {
             return $this;
         }
@@ -10240,22 +10697,22 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
     ): self {
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
-            return $this;
-        }
-
         $grossPrice = $this
             ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
-            ->getSpecifiedLineTradeAgreementWithCreate()
-            ->getGrossPriceProductTradePrice();
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->getGrossPriceProductTradePrice();
 
         if (is_null($grossPrice)) {
             return $this;
         }
 
-        $grossPrice->clearAppliedTradeAllowanceCharge();
+        $grossPrice->unsetAppliedTradeAllowanceCharge();
+
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
+            return $this;
+        }
 
         $this->addDocumentPositionGrossPriceAllowanceCharge(
             $newGrossPriceAllowanceChargeAmount,
@@ -10288,20 +10745,18 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
     ): self {
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
+        $grossPrice = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->getGrossPriceProductTradePrice();
+
+        if (is_null($grossPrice)) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $grossPrice = $latestPosition
-            ->getSpecifiedLineTradeAgreementWithCreate()
-            ->getGrossPriceProductTradePrice();
-
-        if (is_null($grossPrice)) {
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
             return $this;
         }
 
@@ -10341,6 +10796,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newNetPriceBasisQuantity = null,
         ?string $newNetPriceBasisQuantityUnit = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->unsetNetPriceProductTradePrice();
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])) {
             return $this;
         }
@@ -10385,23 +10847,23 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): self {
-        if (
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent]) ||
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-        ) {
+        $netPrice = $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeAgreement()
+            ?->getNetPriceProductTradePrice();
+
+        if (is_null($netPrice)) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
+        $netPrice->unsetIncludedTradeTax();
 
-        $netPrice = $latestPosition
-            ->getSpecifiedLineTradeAgreementWithCreate()
-            ->getNetPriceProductTradePrice();
-
-        if (is_null($netPrice)) {
+        if (
+            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newTaxAmount]) ||
+            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
+        ) {
             return $this;
         }
 
@@ -10409,10 +10871,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         $tradeTax->getCategoryCodeWithCreate()->setValue($newTaxCategory);
         $tradeTax->getTypeCodeWithCreate()->setValue($newTaxType);
         $tradeTax->getRateApplicablePercentWithCreate()->setValue($newTaxPercent);
-
-        if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxAmount])) {
-            $tradeTax->getCalculatedAmountWithCreate()->setValue($newTaxAmount);
-        }
+        $tradeTax->getCalculatedAmountWithCreate()->setValue($newTaxAmount);
 
         if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newExemptionReason])) {
             $tradeTax->getExemptionReasonWithCreate()->setValue($newExemptionReason);
@@ -10444,6 +10903,15 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newPackageQuantity = null,
         ?string $newPackageQuantityUnit = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->unsetBilledQuantity()
+            ?->unsetChargeFreeQuantity()
+            ?->unsetPackageQuantity();
+
         if (
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity]) ||
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newQuantityUnit])
@@ -10496,20 +10964,23 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPositionShipToName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
+        $this->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty
+            ->getShipToTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
 
@@ -10543,20 +11014,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPositionShipToId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty->clearID();
 
         $this->addDocumentPositionShipToId($newId);
 
@@ -10576,16 +11044,14 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty->addToIDWithCreate()->setValue($newId);
+            ->getShipToTradePartyWithCreate()
+            ->addToIDWithCreate()
+            ->setValue($newId);
 
         return $this;
     }
@@ -10601,20 +11067,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetGlobalID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty->clearGlobalID();
 
         $this->addDocumentPositionShipToGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -10636,16 +11099,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty
+            ->getShipToTradePartyWithCreate()
             ->addToGlobalIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
@@ -10664,20 +11123,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty->clearSpecifiedTaxRegistration();
 
         $this->addDocumentPositionShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -10699,16 +11155,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty
+            ->getShipToTradePartyWithCreate()
             ->addToSpecifiedTaxRegistrationWithCreate()
             ->getIDWithCreate()
             ->setValue($newTaxRegistrationId)
@@ -10738,16 +11190,22 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $shipToTradeParty = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
             ->getShipToTradePartyWithCreate();
 
@@ -10833,16 +11291,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
+        $shipToTradeParty = $this->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
             ->getShipToTradePartyWithCreate();
 
@@ -10899,22 +11362,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeParty->clearDefinedTradeContact();
-
-        $this->addDocumentShipToContact(
+        $this->addDocumentPositionShipToContact(
             $newPersonName,
             $newDepartmentName,
             $newPhoneNumber,
@@ -10946,16 +11406,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $shipToTradeContact = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToTradeContact = $shipToTradeParty
+            ->getShipToTradePartyWithCreate()
             ->addToDefinedTradeContactWithCreate();
 
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName])) {
@@ -10992,20 +11448,23 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newType = null,
         ?string $newUri = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getShipToTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
+        $shipToUniversalCommunication = $this->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $shipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getShipToTradePartyWithCreate();
-
-        $shipToUniversalCommunication = $shipToTradeParty
+            ->getShipToTradePartyWithCreate()
             ->getURIUniversalCommunicationWithCreate();
 
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType])) {
@@ -11048,20 +11507,24 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPositionUltimateShipToName(
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetName();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty
+            ->getUltimateShipToTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
 
@@ -11095,20 +11558,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPositionUltimateShipToId(
         ?string $newId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetID();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty->clearID();
 
         $this->addDocumentPositionUltimateShipToId($newId);
 
@@ -11153,20 +11613,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetGlobalID();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty->clearGlobalID();
 
         $this->addDocumentPositionUltimateShipToGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -11188,16 +11645,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty
+            ->getUltimateShipToTradePartyWithCreate()
             ->addToGlobalIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
@@ -11216,20 +11669,17 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetSpecifiedTaxRegistration();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty->clearSpecifiedTaxRegistration();
 
         $this->addDocumentPositionUltimateShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
@@ -11251,16 +11701,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty
+            ->getUltimateShipToTradePartyWithCreate()
             ->addToSpecifiedTaxRegistrationWithCreate()
             ->getIDWithCreate()
             ->setValue($newTaxRegistrationId)
@@ -11290,16 +11736,22 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetPostalTradeAddress();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $ultimateShipToTradeParty = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
             ->getUltimateShipToTradePartyWithCreate();
 
@@ -11385,16 +11837,22 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newId = null,
         ?string $newName = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetSpecifiedLegalOrganization();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $ultimateShipToTradeParty = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
             ->getUltimateShipToTradePartyWithCreate();
 
@@ -11455,22 +11913,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetDefinedTradeContact();
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
             return $this;
         }
 
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
-            ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeParty->clearDefinedTradeContact();
-
-        $this->addDocumentShipToContact(
+        $this->addDocumentPositionUltimateShipToContact(
             $newPersonName,
             $newDepartmentName,
             $newPhoneNumber,
@@ -11502,16 +11957,12 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $ultimateShipToTradeContact = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToTradeContact = $ultimateShipToTradeParty
+            ->getUltimateShipToTradePartyWithCreate()
             ->addToDefinedTradeContactWithCreate();
 
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPersonName])) {
@@ -11548,20 +11999,24 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newType = null,
         ?string $newUri = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->getUltimateShipToTradeParty()
+            ?->unsetURIUniversalCommunication();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $ultimateShipToUniversalCommunication = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $ultimateShipToTradeParty = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeDeliveryWithCreate()
-            ->getUltimateShipToTradePartyWithCreate();
-
-        $ultimateShipToUniversalCommunication = $ultimateShipToTradeParty
+            ->getUltimateShipToTradePartyWithCreate()
             ->getURIUniversalCommunicationWithCreate();
 
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType])) {
@@ -11604,6 +12059,13 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
     public function setDocumentPositionSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeDelivery()
+            ?->unsetActualDeliverySupplyChainEvent();
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDate])) {
             return $this;
         }
@@ -11635,34 +12097,35 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): self {
-        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate) && InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeSettlement()
+            ?->unsetBillingSpecifiedPeriod();
+
+        if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $billingPeriod = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $billingPeriod = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeSettlementWithCreate()
             ->getBillingSpecifiedPeriodWithCreate();
 
-        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate)) {
-            $billingPeriod
-                ->getStartDateTimeWithCreate()
-                ->getDateTimeStringWithCreate()
-                ->setValue($newStartDate->format("Ymd"))
-                ->setFormat("102");
-        }
+        $billingPeriod
+            ->getStartDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newStartDate->format("Ymd"))
+            ->setFormat("102");
 
-        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
-            $billingPeriod
-                ->getEndDateTimeWithCreate()
-                ->getDateTimeStringWithCreate()
-                ->setValue($newEndDate->format("Ymd"))
-                ->setFormat("102");
-        }
+        $billingPeriod
+            ->getEndDateTimeWithCreate()
+            ->getDateTimeStringWithCreate()
+            ->setValue($newEndDate->format("Ymd"))
+            ->setFormat("102");
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDescription)) {
             $billingPeriod
@@ -11686,7 +12149,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): self {
-        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newStartDate) && InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newEndDate)) {
+        if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
             return $this;
         }
 
@@ -11714,21 +12177,19 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeSettlement()
+            ?->unsetApplicableTradeTax();
+
         if (
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent]) ||
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
         ) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $latestPosition
-            ->getSpecifiedLineTradeSettlementWithCreate()
-            ->clearApplicableTradeTax();
 
         $this->addDocumentPositionTax(
             $newTaxCategory,
@@ -11768,12 +12229,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $tradeTax = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $tradeTax = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeSettlementWithCreate()
             ->addToApplicableTradeTaxWithCreate();
 
@@ -11815,18 +12274,16 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeSettlement()
+            ?->unsetSpecifiedTradeAllowanceCharge();
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)) {
             return $this;
         }
-
-        $latestPosition = $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $latestPosition
-            ->getSpecifiedLineTradeSettlementWithCreate()
-            ->clearSpecifiedTradeAllowanceCharge();
 
         $this->addDocumentPositionAllowanceCharge(
             $newChargeIndicator,
@@ -11863,12 +12320,10 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
             return $this;
         }
 
-        $latestPosition = $this
+        $allowanceCharge = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $allowanceCharge = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeSettlementWithCreate()
             ->addToSpecifiedTradeAllowanceChargeWithCreate();
 
@@ -11911,35 +12366,40 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
         ?float $newTaxTotalAmount = null,
         ?float $newGrossAmount = null,
     ): self {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeSettlement()
+            ?->unsetSpecifiedTradeSettlementLineMonetarySummation();
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $positionSummation = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $summation = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeSettlementWithCreate()
             ->getSpecifiedTradeSettlementLineMonetarySummationWithCreate();
 
-        $summation->getLineTotalAmountWithCreate()->setValue($newNetAmount);
+        $positionSummation->getLineTotalAmountWithCreate()->setValue($newNetAmount);
 
         if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newChargeTotalAmount])) {
-            $summation->getChargeTotalAmountWithCreate()->setValue($newChargeTotalAmount);
+            $positionSummation->getChargeTotalAmountWithCreate()->setValue($newChargeTotalAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newDiscountTotalAmount])) {
-            $summation->getAllowanceTotalAmountWithCreate()->setValue($newDiscountTotalAmount);
+            $positionSummation->getAllowanceTotalAmountWithCreate()->setValue($newDiscountTotalAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxTotalAmount])) {
-            $summation->getTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
+            $positionSummation->getTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
         }
 
         if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossAmount])) {
-            $summation->getGrandTotalAmountWithCreate()->setValue($newGrossAmount);
+            $positionSummation->getGrandTotalAmountWithCreate()->setValue($newGrossAmount);
         }
 
         return $this;
@@ -11954,16 +12414,21 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
      */
     public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): self
     {
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getLatestIncludedSupplyChainTradeLineItem()
+            ?->getSpecifiedLineTradeSettlement()
+            ?->unsetReceivableSpecifiedTradeAccountingAccount();
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
             return $this;
         }
 
-        $latestPosition = $this
+        $tradeAccountingAccount = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
-            ->getLatestIncludedSupplyChainTradeLineItemWithCreate();
-
-        $tradeAccountingAccount = $latestPosition
+            ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
             ->getSpecifiedLineTradeSettlementWithCreate()
             ->getReceivableSpecifiedTradeAccountingAccountWithCreate();
 

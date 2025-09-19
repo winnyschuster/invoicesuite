@@ -3776,4 +3776,31 @@ class InvoiceType
 
         return $this->invoiceLine[0];
     }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoiceLine|null
+     */
+    public function getLatestInvoiceLine(): ?InvoiceLine
+    {
+        $invoiceLines = $this->getInvoiceLine() ?? [];
+        $invoiceLine = end($invoiceLines);
+
+        if ($invoiceLine === false) {
+            return null;
+        }
+
+        return $invoiceLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoiceLine|null
+     */
+    public function getLatestInvoiceLineWithCreate(): ?InvoiceLine
+    {
+        if (is_null($invoiceLine = $this->getLatestInvoiceLine())) {
+            $invoiceLine = $this->addToInvoiceLineWithCreate();
+        }
+
+        return $invoiceLine;
+    }
 }
