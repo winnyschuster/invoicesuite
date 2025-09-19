@@ -480,7 +480,7 @@ class UtilsTest extends TestCase
 
         $this->expectException(InvoiceSuiteFileNotFoundException::class);
 
-        $attachment = InvoiceSuiteAttachment::fromFile(__DIR__ . '/../../assets/01_InvoiceSuiteAttachment_3.txt');
+        InvoiceSuiteAttachment::fromFile(__DIR__ . '/../../assets/01_InvoiceSuiteAttachment_3.txt');
     }
 
     public function testInvoiceSuiteAttachmentFromBinaryString(): void
@@ -530,7 +530,7 @@ class UtilsTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Not a BASE64 string');
 
-        $attachment = InvoiceSuiteAttachment::fromBase64String('{"a":"b","c":2}', 'test.txt');
+        InvoiceSuiteAttachment::fromBase64String('{"a":"b","c":2}', 'test.txt');
     }
 
     public function testInvoiceSuiteAttachmentFromUrl(): void
@@ -549,7 +549,7 @@ class UtilsTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Not a valid URL: Dummy');
 
-        $attachment = InvoiceSuiteAttachment::fromUrl('Dummy');
+        InvoiceSuiteAttachment::fromUrl('Dummy');
     }
 
     #endregion

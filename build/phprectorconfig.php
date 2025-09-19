@@ -5,16 +5,15 @@ declare(strict_types=1);
 use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
 use Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector;
-use Rector\Naming\Rector\Class_\RenamePropertyToMatchTypeRector;
-use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
 use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
-use Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector;
+use Rector\PHPUnit\Set\PHPUnitSetList;
 
 return RectorConfig::configure()
     ->withPaths([
         __DIR__ . '/../src',
+        __DIR__ . '/../tests/testcases',
     ])
     ->withSkip([
         __DIR__ . '/../src/models',
@@ -30,6 +29,7 @@ return RectorConfig::configure()
         SetList::CODE_QUALITY,
         SetList::CODING_STYLE,
         SetList::INSTANCEOF,
+        PHPUnitSetList::PHPUNIT_90,
     ])
     ->withConfiguredRule(EncapsedStringsToSprintfRector::class, [
         'always' => true,
@@ -39,4 +39,5 @@ return RectorConfig::configure()
         //RenameParamToMatchTypeRector::class,
         //RenameVariableToMatchNewTypeRector::class,
     ])
+    ->withoutParallel()
     ->withTypeCoverageLevel(0);
