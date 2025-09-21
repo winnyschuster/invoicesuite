@@ -20,6 +20,8 @@
             <file>../tests/testcases/providers/ZfFxBasicProviderBuilderTest.php</file>
             <file>../tests/testcases/providers/ZfFxBasicWlProviderTest.php</file>
             <file>../tests/testcases/providers/ZfFxBasicWlProviderBuilderTest.php</file>
+            <file>../tests/testcases/providers/ZfFxMinimumProviderTest.php</file>
+            <file>../tests/testcases/providers/ZfFxMinimumProviderBuilderTest.php</file>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
