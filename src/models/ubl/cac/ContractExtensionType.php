@@ -109,6 +109,36 @@ class ContractExtensionType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OptionsDescription|null
+     */
+    public function firstOptionsDescription(): ?OptionsDescription
+    {
+        $optionsDescription = $this->optionsDescription ?? [];
+        $optionsDescription = reset($optionsDescription);
+
+        if ($optionsDescription === false) {
+            return null;
+        }
+
+        return $optionsDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OptionsDescription|null
+     */
+    public function lastOptionsDescription(): ?OptionsDescription
+    {
+        $optionsDescription = $this->optionsDescription ?? [];
+        $optionsDescription = end($optionsDescription);
+
+        if ($optionsDescription === false) {
+            return null;
+        }
+
+        return $optionsDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\OptionsDescription $optionsDescription
      * @return self
      */
@@ -314,6 +344,36 @@ class ContractExtensionType
         $this->renewal = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Renewal|null
+     */
+    public function firstRenewal(): ?Renewal
+    {
+        $renewal = $this->renewal ?? [];
+        $renewal = reset($renewal);
+
+        if ($renewal === false) {
+            return null;
+        }
+
+        return $renewal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Renewal|null
+     */
+    public function lastRenewal(): ?Renewal
+    {
+        $renewal = $this->renewal ?? [];
+        $renewal = end($renewal);
+
+        if ($renewal === false) {
+            return null;
+        }
+
+        return $renewal;
     }
 
     /**

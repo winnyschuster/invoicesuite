@@ -180,6 +180,36 @@ class TransportExecutionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms|null
+     */
+    public function firstTransportUserSpecialTerms(): ?TransportUserSpecialTerms
+    {
+        $transportUserSpecialTerms = $this->transportUserSpecialTerms ?? [];
+        $transportUserSpecialTerms = reset($transportUserSpecialTerms);
+
+        if ($transportUserSpecialTerms === false) {
+            return null;
+        }
+
+        return $transportUserSpecialTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms|null
+     */
+    public function lastTransportUserSpecialTerms(): ?TransportUserSpecialTerms
+    {
+        $transportUserSpecialTerms = $this->transportUserSpecialTerms ?? [];
+        $transportUserSpecialTerms = end($transportUserSpecialTerms);
+
+        if ($transportUserSpecialTerms === false) {
+            return null;
+        }
+
+        return $transportUserSpecialTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\TransportUserSpecialTerms $transportUserSpecialTerms
      * @return self
      */
@@ -268,6 +298,36 @@ class TransportExecutionTermsType
         $this->transportServiceProviderSpecialTerms = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms|null
+     */
+    public function firstTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
+    {
+        $transportServiceProviderSpecialTerms = $this->transportServiceProviderSpecialTerms ?? [];
+        $transportServiceProviderSpecialTerms = reset($transportServiceProviderSpecialTerms);
+
+        if ($transportServiceProviderSpecialTerms === false) {
+            return null;
+        }
+
+        return $transportServiceProviderSpecialTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportServiceProviderSpecialTerms|null
+     */
+    public function lastTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
+    {
+        $transportServiceProviderSpecialTerms = $this->transportServiceProviderSpecialTerms ?? [];
+        $transportServiceProviderSpecialTerms = end($transportServiceProviderSpecialTerms);
+
+        if ($transportServiceProviderSpecialTerms === false) {
+            return null;
+        }
+
+        return $transportServiceProviderSpecialTerms;
     }
 
     /**
@@ -364,6 +424,36 @@ class TransportExecutionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions|null
+     */
+    public function firstChangeConditions(): ?ChangeConditions
+    {
+        $changeConditions = $this->changeConditions ?? [];
+        $changeConditions = reset($changeConditions);
+
+        if ($changeConditions === false) {
+            return null;
+        }
+
+        return $changeConditions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions|null
+     */
+    public function lastChangeConditions(): ?ChangeConditions
+    {
+        $changeConditions = $this->changeConditions ?? [];
+        $changeConditions = end($changeConditions);
+
+        if ($changeConditions === false) {
+            return null;
+        }
+
+        return $changeConditions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ChangeConditions $changeConditions
      * @return self
      */
@@ -455,6 +545,36 @@ class TransportExecutionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function firstPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = reset($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function lastPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = end($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms $paymentTerms
      * @return self
      */
@@ -543,6 +663,36 @@ class TransportExecutionTermsType
         $this->deliveryTerms = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms|null
+     */
+    public function firstDeliveryTerms(): ?DeliveryTerms
+    {
+        $deliveryTerms = $this->deliveryTerms ?? [];
+        $deliveryTerms = reset($deliveryTerms);
+
+        if ($deliveryTerms === false) {
+            return null;
+        }
+
+        return $deliveryTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms|null
+     */
+    public function lastDeliveryTerms(): ?DeliveryTerms
+    {
+        $deliveryTerms = $this->deliveryTerms ?? [];
+        $deliveryTerms = end($deliveryTerms);
+
+        if ($deliveryTerms === false) {
+            return null;
+        }
+
+        return $deliveryTerms;
     }
 
     /**
@@ -754,6 +904,36 @@ class TransportExecutionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission|null
+     */
+    public function firstEnvironmentalEmission(): ?EnvironmentalEmission
+    {
+        $environmentalEmission = $this->environmentalEmission ?? [];
+        $environmentalEmission = reset($environmentalEmission);
+
+        if ($environmentalEmission === false) {
+            return null;
+        }
+
+        return $environmentalEmission;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission|null
+     */
+    public function lastEnvironmentalEmission(): ?EnvironmentalEmission
+    {
+        $environmentalEmission = $this->environmentalEmission ?? [];
+        $environmentalEmission = end($environmentalEmission);
+
+        if ($environmentalEmission === false) {
+            return null;
+        }
+
+        return $environmentalEmission;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission $environmentalEmission
      * @return self
      */
@@ -842,6 +1022,36 @@ class TransportExecutionTermsType
         $this->notificationRequirement = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement|null
+     */
+    public function firstNotificationRequirement(): ?NotificationRequirement
+    {
+        $notificationRequirement = $this->notificationRequirement ?? [];
+        $notificationRequirement = reset($notificationRequirement);
+
+        if ($notificationRequirement === false) {
+            return null;
+        }
+
+        return $notificationRequirement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationRequirement|null
+     */
+    public function lastNotificationRequirement(): ?NotificationRequirement
+    {
+        $notificationRequirement = $this->notificationRequirement ?? [];
+        $notificationRequirement = end($notificationRequirement);
+
+        if ($notificationRequirement === false) {
+            return null;
+        }
+
+        return $notificationRequirement;
     }
 
     /**

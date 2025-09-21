@@ -125,6 +125,36 @@ class StowageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Location|null
+     */
+    public function firstLocation(): ?Location
+    {
+        $location = $this->location ?? [];
+        $location = reset($location);
+
+        if ($location === false) {
+            return null;
+        }
+
+        return $location;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Location|null
+     */
+    public function lastLocation(): ?Location
+    {
+        $location = $this->location ?? [];
+        $location = end($location);
+
+        if ($location === false) {
+            return null;
+        }
+
+        return $location;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Location $location
      * @return self
      */
@@ -213,6 +243,36 @@ class StowageType
         $this->measurementDimension = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function firstMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = reset($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function lastMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = end($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
     }
 
     /**

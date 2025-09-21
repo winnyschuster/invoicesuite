@@ -118,6 +118,36 @@ class SupplierConsumptionType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -362,6 +392,36 @@ class SupplierConsumptionType
         $this->consumptionLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionLine|null
+     */
+    public function firstConsumptionLine(): ?ConsumptionLine
+    {
+        $consumptionLine = $this->consumptionLine ?? [];
+        $consumptionLine = reset($consumptionLine);
+
+        if ($consumptionLine === false) {
+            return null;
+        }
+
+        return $consumptionLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionLine|null
+     */
+    public function lastConsumptionLine(): ?ConsumptionLine
+    {
+        $consumptionLine = $this->consumptionLine ?? [];
+        $consumptionLine = end($consumptionLine);
+
+        if ($consumptionLine === false) {
+            return null;
+        }
+
+        return $consumptionLine;
     }
 
     /**

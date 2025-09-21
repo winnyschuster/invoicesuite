@@ -198,6 +198,36 @@ class ResponseType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -344,6 +374,36 @@ class ResponseType
         $this->status = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Status|null
+     */
+    public function firstStatus(): ?Status
+    {
+        $status = $this->status ?? [];
+        $status = reset($status);
+
+        if ($status === false) {
+            return null;
+        }
+
+        return $status;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Status|null
+     */
+    public function lastStatus(): ?Status
+    {
+        $status = $this->status ?? [];
+        $status = end($status);
+
+        if ($status === false) {
+            return null;
+        }
+
+        return $status;
     }
 
     /**

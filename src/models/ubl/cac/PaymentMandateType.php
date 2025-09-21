@@ -517,6 +517,36 @@ class PaymentMandateType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Clause|null
+     */
+    public function firstClause(): ?Clause
+    {
+        $clause = $this->clause ?? [];
+        $clause = reset($clause);
+
+        if ($clause === false) {
+            return null;
+        }
+
+        return $clause;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Clause|null
+     */
+    public function lastClause(): ?Clause
+    {
+        $clause = $this->clause ?? [];
+        $clause = end($clause);
+
+        if ($clause === false) {
+            return null;
+        }
+
+        return $clause;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Clause $clause
      * @return self
      */

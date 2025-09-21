@@ -207,6 +207,36 @@ class ConsumptionType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge $allowanceCharge
      * @return self
      */
@@ -295,6 +325,36 @@ class ConsumptionType
         $this->taxTotal = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
     }
 
     /**

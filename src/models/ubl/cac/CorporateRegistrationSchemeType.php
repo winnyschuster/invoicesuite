@@ -215,6 +215,36 @@ class CorporateRegistrationSchemeType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\JurisdictionRegionAddress|null
+     */
+    public function firstJurisdictionRegionAddress(): ?JurisdictionRegionAddress
+    {
+        $jurisdictionRegionAddress = $this->jurisdictionRegionAddress ?? [];
+        $jurisdictionRegionAddress = reset($jurisdictionRegionAddress);
+
+        if ($jurisdictionRegionAddress === false) {
+            return null;
+        }
+
+        return $jurisdictionRegionAddress;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\JurisdictionRegionAddress|null
+     */
+    public function lastJurisdictionRegionAddress(): ?JurisdictionRegionAddress
+    {
+        $jurisdictionRegionAddress = $this->jurisdictionRegionAddress ?? [];
+        $jurisdictionRegionAddress = end($jurisdictionRegionAddress);
+
+        if ($jurisdictionRegionAddress === false) {
+            return null;
+        }
+
+        return $jurisdictionRegionAddress;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return self
      */

@@ -376,6 +376,36 @@ class DebitNoteLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -691,6 +721,36 @@ class DebitNoteLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DiscrepancyResponse|null
+     */
+    public function firstDiscrepancyResponse(): ?DiscrepancyResponse
+    {
+        $discrepancyResponse = $this->discrepancyResponse ?? [];
+        $discrepancyResponse = reset($discrepancyResponse);
+
+        if ($discrepancyResponse === false) {
+            return null;
+        }
+
+        return $discrepancyResponse;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DiscrepancyResponse|null
+     */
+    public function lastDiscrepancyResponse(): ?DiscrepancyResponse
+    {
+        $discrepancyResponse = $this->discrepancyResponse ?? [];
+        $discrepancyResponse = end($discrepancyResponse);
+
+        if ($discrepancyResponse === false) {
+            return null;
+        }
+
+        return $discrepancyResponse;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DiscrepancyResponse $discrepancyResponse
      * @return self
      */
@@ -779,6 +839,36 @@ class DebitNoteLineType
         $this->despatchLineReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference|null
+     */
+    public function firstDespatchLineReference(): ?DespatchLineReference
+    {
+        $despatchLineReference = $this->despatchLineReference ?? [];
+        $despatchLineReference = reset($despatchLineReference);
+
+        if ($despatchLineReference === false) {
+            return null;
+        }
+
+        return $despatchLineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DespatchLineReference|null
+     */
+    public function lastDespatchLineReference(): ?DespatchLineReference
+    {
+        $despatchLineReference = $this->despatchLineReference ?? [];
+        $despatchLineReference = end($despatchLineReference);
+
+        if ($despatchLineReference === false) {
+            return null;
+        }
+
+        return $despatchLineReference;
     }
 
     /**
@@ -873,6 +963,36 @@ class DebitNoteLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReceiptLineReference|null
+     */
+    public function firstReceiptLineReference(): ?ReceiptLineReference
+    {
+        $receiptLineReference = $this->receiptLineReference ?? [];
+        $receiptLineReference = reset($receiptLineReference);
+
+        if ($receiptLineReference === false) {
+            return null;
+        }
+
+        return $receiptLineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReceiptLineReference|null
+     */
+    public function lastReceiptLineReference(): ?ReceiptLineReference
+    {
+        $receiptLineReference = $this->receiptLineReference ?? [];
+        $receiptLineReference = end($receiptLineReference);
+
+        if ($receiptLineReference === false) {
+            return null;
+        }
+
+        return $receiptLineReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ReceiptLineReference $receiptLineReference
      * @return self
      */
@@ -964,6 +1084,36 @@ class DebitNoteLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function firstBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = reset($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function lastBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = end($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\BillingReference $billingReference
      * @return self
      */
@@ -1052,6 +1202,36 @@ class DebitNoteLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**
@@ -1185,6 +1365,36 @@ class DebitNoteLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function firstDelivery(): ?Delivery
+    {
+        $delivery = $this->delivery ?? [];
+        $delivery = reset($delivery);
+
+        if ($delivery === false) {
+            return null;
+        }
+
+        return $delivery;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function lastDelivery(): ?Delivery
+    {
+        $delivery = $this->delivery ?? [];
+        $delivery = end($delivery);
+
+        if ($delivery === false) {
+            return null;
+        }
+
+        return $delivery;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Delivery $delivery
      * @return self
      */
@@ -1276,6 +1486,36 @@ class DebitNoteLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxTotal $taxTotal
      * @return self
      */
@@ -1364,6 +1604,36 @@ class DebitNoteLineType
         $this->allowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
     }
 
     /**
@@ -1533,6 +1803,36 @@ class DebitNoteLineType
         $this->subDebitNoteLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubDebitNoteLine|null
+     */
+    public function firstSubDebitNoteLine(): ?SubDebitNoteLine
+    {
+        $subDebitNoteLine = $this->subDebitNoteLine ?? [];
+        $subDebitNoteLine = reset($subDebitNoteLine);
+
+        if ($subDebitNoteLine === false) {
+            return null;
+        }
+
+        return $subDebitNoteLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubDebitNoteLine|null
+     */
+    public function lastSubDebitNoteLine(): ?SubDebitNoteLine
+    {
+        $subDebitNoteLine = $this->subDebitNoteLine ?? [];
+        $subDebitNoteLine = end($subDebitNoteLine);
+
+        if ($subDebitNoteLine === false) {
+            return null;
+        }
+
+        return $subDebitNoteLine;
     }
 
     /**

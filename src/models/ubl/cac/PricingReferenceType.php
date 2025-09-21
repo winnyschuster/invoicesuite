@@ -112,6 +112,36 @@ class PricingReferenceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AlternativeConditionPrice|null
+     */
+    public function firstAlternativeConditionPrice(): ?AlternativeConditionPrice
+    {
+        $alternativeConditionPrice = $this->alternativeConditionPrice ?? [];
+        $alternativeConditionPrice = reset($alternativeConditionPrice);
+
+        if ($alternativeConditionPrice === false) {
+            return null;
+        }
+
+        return $alternativeConditionPrice;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AlternativeConditionPrice|null
+     */
+    public function lastAlternativeConditionPrice(): ?AlternativeConditionPrice
+    {
+        $alternativeConditionPrice = $this->alternativeConditionPrice ?? [];
+        $alternativeConditionPrice = end($alternativeConditionPrice);
+
+        if ($alternativeConditionPrice === false) {
+            return null;
+        }
+
+        return $alternativeConditionPrice;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AlternativeConditionPrice $alternativeConditionPrice
      * @return self
      */

@@ -288,6 +288,36 @@ class PartyTaxSchemeType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ExemptionReason|null
+     */
+    public function firstExemptionReason(): ?ExemptionReason
+    {
+        $exemptionReason = $this->exemptionReason ?? [];
+        $exemptionReason = reset($exemptionReason);
+
+        if ($exemptionReason === false) {
+            return null;
+        }
+
+        return $exemptionReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ExemptionReason|null
+     */
+    public function lastExemptionReason(): ?ExemptionReason
+    {
+        $exemptionReason = $this->exemptionReason ?? [];
+        $exemptionReason = end($exemptionReason);
+
+        if ($exemptionReason === false) {
+            return null;
+        }
+
+        return $exemptionReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ExemptionReason $exemptionReason
      * @return self
      */

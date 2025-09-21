@@ -136,6 +136,36 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractingPartyType|null
+     */
+    public function firstContractingPartyType(): ?ContractingPartyType
+    {
+        $contractingPartyType = $this->contractingPartyType ?? [];
+        $contractingPartyType = reset($contractingPartyType);
+
+        if ($contractingPartyType === false) {
+            return null;
+        }
+
+        return $contractingPartyType;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractingPartyType|null
+     */
+    public function lastContractingPartyType(): ?ContractingPartyType
+    {
+        $contractingPartyType = $this->contractingPartyType ?? [];
+        $contractingPartyType = end($contractingPartyType);
+
+        if ($contractingPartyType === false) {
+            return null;
+        }
+
+        return $contractingPartyType;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ContractingPartyType $contractingPartyType
      * @return self
      */
@@ -224,6 +254,36 @@ class ContractingPartyType extends ContractingPartyTypeType
         $this->contractingActivity = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractingActivity|null
+     */
+    public function firstContractingActivity(): ?ContractingActivity
+    {
+        $contractingActivity = $this->contractingActivity ?? [];
+        $contractingActivity = reset($contractingActivity);
+
+        if ($contractingActivity === false) {
+            return null;
+        }
+
+        return $contractingActivity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractingActivity|null
+     */
+    public function lastContractingActivity(): ?ContractingActivity
+    {
+        $contractingActivity = $this->contractingActivity ?? [];
+        $contractingActivity = end($contractingActivity);
+
+        if ($contractingActivity === false) {
+            return null;
+        }
+
+        return $contractingActivity;
     }
 
     /**

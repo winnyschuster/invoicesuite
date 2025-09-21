@@ -542,6 +542,36 @@ class LineItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -1120,6 +1150,36 @@ class LineItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation|null
+     */
+    public function firstWarrantyInformation(): ?WarrantyInformation
+    {
+        $warrantyInformation = $this->warrantyInformation ?? [];
+        $warrantyInformation = reset($warrantyInformation);
+
+        if ($warrantyInformation === false) {
+            return null;
+        }
+
+        return $warrantyInformation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation|null
+     */
+    public function lastWarrantyInformation(): ?WarrantyInformation
+    {
+        $warrantyInformation = $this->warrantyInformation ?? [];
+        $warrantyInformation = end($warrantyInformation);
+
+        if ($warrantyInformation === false) {
+            return null;
+        }
+
+        return $warrantyInformation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation $warrantyInformation
      * @return self
      */
@@ -1208,6 +1268,36 @@ class LineItemType
         $this->delivery = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function firstDelivery(): ?Delivery
+    {
+        $delivery = $this->delivery ?? [];
+        $delivery = reset($delivery);
+
+        if ($delivery === false) {
+            return null;
+        }
+
+        return $delivery;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function lastDelivery(): ?Delivery
+    {
+        $delivery = $this->delivery ?? [];
+        $delivery = end($delivery);
+
+        if ($delivery === false) {
+            return null;
+        }
+
+        return $delivery;
     }
 
     /**
@@ -1380,6 +1470,36 @@ class LineItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderedShipment|null
+     */
+    public function firstOrderedShipment(): ?OrderedShipment
+    {
+        $orderedShipment = $this->orderedShipment ?? [];
+        $orderedShipment = reset($orderedShipment);
+
+        if ($orderedShipment === false) {
+            return null;
+        }
+
+        return $orderedShipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderedShipment|null
+     */
+    public function lastOrderedShipment(): ?OrderedShipment
+    {
+        $orderedShipment = $this->orderedShipment ?? [];
+        $orderedShipment = end($orderedShipment);
+
+        if ($orderedShipment === false) {
+            return null;
+        }
+
+        return $orderedShipment;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\OrderedShipment $orderedShipment
      * @return self
      */
@@ -1507,6 +1627,36 @@ class LineItemType
         $this->allowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
     }
 
     /**
@@ -1679,6 +1829,36 @@ class LineItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubLineItem|null
+     */
+    public function firstSubLineItem(): ?SubLineItem
+    {
+        $subLineItem = $this->subLineItem ?? [];
+        $subLineItem = reset($subLineItem);
+
+        if ($subLineItem === false) {
+            return null;
+        }
+
+        return $subLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubLineItem|null
+     */
+    public function lastSubLineItem(): ?SubLineItem
+    {
+        $subLineItem = $this->subLineItem ?? [];
+        $subLineItem = end($subLineItem);
+
+        if ($subLineItem === false) {
+            return null;
+        }
+
+        return $subLineItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SubLineItem $subLineItem
      * @return self
      */
@@ -1848,6 +2028,36 @@ class LineItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxTotal $taxTotal
      * @return self
      */
@@ -1975,6 +2185,36 @@ class LineItemType
         $this->lineReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LineReference|null
+     */
+    public function firstLineReference(): ?LineReference
+    {
+        $lineReference = $this->lineReference ?? [];
+        $lineReference = reset($lineReference);
+
+        if ($lineReference === false) {
+            return null;
+        }
+
+        return $lineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LineReference|null
+     */
+    public function lastLineReference(): ?LineReference
+    {
+        $lineReference = $this->lineReference ?? [];
+        $lineReference = end($lineReference);
+
+        if ($lineReference === false) {
+            return null;
+        }
+
+        return $lineReference;
     }
 
     /**

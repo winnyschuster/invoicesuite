@@ -445,6 +445,36 @@ class ContractType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -575,6 +605,36 @@ class ContractType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -702,6 +762,36 @@ class ContractType
         $this->contractDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference|null
+     */
+    public function firstContractDocumentReference(): ?ContractDocumentReference
+    {
+        $contractDocumentReference = $this->contractDocumentReference ?? [];
+        $contractDocumentReference = reset($contractDocumentReference);
+
+        if ($contractDocumentReference === false) {
+            return null;
+        }
+
+        return $contractDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference|null
+     */
+    public function lastContractDocumentReference(): ?ContractDocumentReference
+    {
+        $contractDocumentReference = $this->contractDocumentReference ?? [];
+        $contractDocumentReference = end($contractDocumentReference);
+
+        if ($contractDocumentReference === false) {
+            return null;
+        }
+
+        return $contractDocumentReference;
     }
 
     /**

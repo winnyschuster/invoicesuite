@@ -113,6 +113,36 @@ class EconomicOperatorRoleType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RoleDescription|null
+     */
+    public function firstRoleDescription(): ?RoleDescription
+    {
+        $roleDescription = $this->roleDescription ?? [];
+        $roleDescription = reset($roleDescription);
+
+        if ($roleDescription === false) {
+            return null;
+        }
+
+        return $roleDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RoleDescription|null
+     */
+    public function lastRoleDescription(): ?RoleDescription
+    {
+        $roleDescription = $this->roleDescription ?? [];
+        $roleDescription = end($roleDescription);
+
+        if ($roleDescription === false) {
+            return null;
+        }
+
+        return $roleDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\RoleDescription $roleDescription
      * @return self
      */

@@ -195,6 +195,36 @@ class ConsumptionPointType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -517,6 +547,36 @@ class ConsumptionPointType
         $this->utilityMeter = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\UtilityMeter|null
+     */
+    public function firstUtilityMeter(): ?UtilityMeter
+    {
+        $utilityMeter = $this->utilityMeter ?? [];
+        $utilityMeter = reset($utilityMeter);
+
+        if ($utilityMeter === false) {
+            return null;
+        }
+
+        return $utilityMeter;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\UtilityMeter|null
+     */
+    public function lastUtilityMeter(): ?UtilityMeter
+    {
+        $utilityMeter = $this->utilityMeter ?? [];
+        $utilityMeter = end($utilityMeter);
+
+        if ($utilityMeter === false) {
+            return null;
+        }
+
+        return $utilityMeter;
     }
 
     /**

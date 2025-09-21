@@ -241,6 +241,36 @@ class TelecommunicationsSupplyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -368,6 +398,36 @@ class TelecommunicationsSupplyType
         $this->telecommunicationsSupplyLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine|null
+     */
+    public function firstTelecommunicationsSupplyLine(): ?TelecommunicationsSupplyLine
+    {
+        $telecommunicationsSupplyLine = $this->telecommunicationsSupplyLine ?? [];
+        $telecommunicationsSupplyLine = reset($telecommunicationsSupplyLine);
+
+        if ($telecommunicationsSupplyLine === false) {
+            return null;
+        }
+
+        return $telecommunicationsSupplyLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsSupplyLine|null
+     */
+    public function lastTelecommunicationsSupplyLine(): ?TelecommunicationsSupplyLine
+    {
+        $telecommunicationsSupplyLine = $this->telecommunicationsSupplyLine ?? [];
+        $telecommunicationsSupplyLine = end($telecommunicationsSupplyLine);
+
+        if ($telecommunicationsSupplyLine === false) {
+            return null;
+        }
+
+        return $telecommunicationsSupplyLine;
     }
 
     /**

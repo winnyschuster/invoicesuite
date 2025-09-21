@@ -113,6 +113,36 @@ class MiscellaneousEventType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventLineItem|null
+     */
+    public function firstEventLineItem(): ?EventLineItem
+    {
+        $eventLineItem = $this->eventLineItem ?? [];
+        $eventLineItem = reset($eventLineItem);
+
+        if ($eventLineItem === false) {
+            return null;
+        }
+
+        return $eventLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventLineItem|null
+     */
+    public function lastEventLineItem(): ?EventLineItem
+    {
+        $eventLineItem = $this->eventLineItem ?? [];
+        $eventLineItem = end($eventLineItem);
+
+        if ($eventLineItem === false) {
+            return null;
+        }
+
+        return $eventLineItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\EventLineItem $eventLineItem
      * @return self
      */

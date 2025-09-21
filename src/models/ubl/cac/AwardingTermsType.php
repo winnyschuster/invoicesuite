@@ -222,6 +222,36 @@ class AwardingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -310,6 +340,36 @@ class AwardingTermsType
         $this->technicalCommitteeDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TechnicalCommitteeDescription|null
+     */
+    public function firstTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
+    {
+        $technicalCommitteeDescription = $this->technicalCommitteeDescription ?? [];
+        $technicalCommitteeDescription = reset($technicalCommitteeDescription);
+
+        if ($technicalCommitteeDescription === false) {
+            return null;
+        }
+
+        return $technicalCommitteeDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TechnicalCommitteeDescription|null
+     */
+    public function lastTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
+    {
+        $technicalCommitteeDescription = $this->technicalCommitteeDescription ?? [];
+        $technicalCommitteeDescription = end($technicalCommitteeDescription);
+
+        if ($technicalCommitteeDescription === false) {
+            return null;
+        }
+
+        return $technicalCommitteeDescription;
     }
 
     /**
@@ -403,6 +463,36 @@ class AwardingTermsType
         $this->lowTendersDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LowTendersDescription|null
+     */
+    public function firstLowTendersDescription(): ?LowTendersDescription
+    {
+        $lowTendersDescription = $this->lowTendersDescription ?? [];
+        $lowTendersDescription = reset($lowTendersDescription);
+
+        if ($lowTendersDescription === false) {
+            return null;
+        }
+
+        return $lowTendersDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LowTendersDescription|null
+     */
+    public function lastLowTendersDescription(): ?LowTendersDescription
+    {
+        $lowTendersDescription = $this->lowTendersDescription ?? [];
+        $lowTendersDescription = end($lowTendersDescription);
+
+        if ($lowTendersDescription === false) {
+            return null;
+        }
+
+        return $lowTendersDescription;
     }
 
     /**
@@ -526,6 +616,36 @@ class AwardingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PrizeDescription|null
+     */
+    public function firstPrizeDescription(): ?PrizeDescription
+    {
+        $prizeDescription = $this->prizeDescription ?? [];
+        $prizeDescription = reset($prizeDescription);
+
+        if ($prizeDescription === false) {
+            return null;
+        }
+
+        return $prizeDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PrizeDescription|null
+     */
+    public function lastPrizeDescription(): ?PrizeDescription
+    {
+        $prizeDescription = $this->prizeDescription ?? [];
+        $prizeDescription = end($prizeDescription);
+
+        if ($prizeDescription === false) {
+            return null;
+        }
+
+        return $prizeDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PrizeDescription $prizeDescription
      * @return self
      */
@@ -614,6 +734,36 @@ class AwardingTermsType
         $this->paymentDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentDescription|null
+     */
+    public function firstPaymentDescription(): ?PaymentDescription
+    {
+        $paymentDescription = $this->paymentDescription ?? [];
+        $paymentDescription = reset($paymentDescription);
+
+        if ($paymentDescription === false) {
+            return null;
+        }
+
+        return $paymentDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentDescription|null
+     */
+    public function lastPaymentDescription(): ?PaymentDescription
+    {
+        $paymentDescription = $this->paymentDescription ?? [];
+        $paymentDescription = end($paymentDescription);
+
+        if ($paymentDescription === false) {
+            return null;
+        }
+
+        return $paymentDescription;
     }
 
     /**
@@ -766,6 +916,36 @@ class AwardingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AwardingCriterion|null
+     */
+    public function firstAwardingCriterion(): ?AwardingCriterion
+    {
+        $awardingCriterion = $this->awardingCriterion ?? [];
+        $awardingCriterion = reset($awardingCriterion);
+
+        if ($awardingCriterion === false) {
+            return null;
+        }
+
+        return $awardingCriterion;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AwardingCriterion|null
+     */
+    public function lastAwardingCriterion(): ?AwardingCriterion
+    {
+        $awardingCriterion = $this->awardingCriterion ?? [];
+        $awardingCriterion = end($awardingCriterion);
+
+        if ($awardingCriterion === false) {
+            return null;
+        }
+
+        return $awardingCriterion;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AwardingCriterion $awardingCriterion
      * @return self
      */
@@ -854,6 +1034,36 @@ class AwardingTermsType
         $this->technicalCommitteePerson = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TechnicalCommitteePerson|null
+     */
+    public function firstTechnicalCommitteePerson(): ?TechnicalCommitteePerson
+    {
+        $technicalCommitteePerson = $this->technicalCommitteePerson ?? [];
+        $technicalCommitteePerson = reset($technicalCommitteePerson);
+
+        if ($technicalCommitteePerson === false) {
+            return null;
+        }
+
+        return $technicalCommitteePerson;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TechnicalCommitteePerson|null
+     */
+    public function lastTechnicalCommitteePerson(): ?TechnicalCommitteePerson
+    {
+        $technicalCommitteePerson = $this->technicalCommitteePerson ?? [];
+        $technicalCommitteePerson = end($technicalCommitteePerson);
+
+        if ($technicalCommitteePerson === false) {
+            return null;
+        }
+
+        return $technicalCommitteePerson;
     }
 
     /**

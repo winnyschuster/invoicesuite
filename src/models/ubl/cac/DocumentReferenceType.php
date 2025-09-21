@@ -491,6 +491,36 @@ class DocumentReferenceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\XPath|null
+     */
+    public function firstXPath(): ?XPath
+    {
+        $xPath = $this->xPath ?? [];
+        $xPath = reset($xPath);
+
+        if ($xPath === false) {
+            return null;
+        }
+
+        return $xPath;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\XPath|null
+     */
+    public function lastXPath(): ?XPath
+    {
+        $xPath = $this->xPath ?? [];
+        $xPath = end($xPath);
+
+        if ($xPath === false) {
+            return null;
+        }
+
+        return $xPath;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\XPath $xPath
      * @return self
      */
@@ -735,6 +765,36 @@ class DocumentReferenceType
         $this->documentDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription|null
+     */
+    public function firstDocumentDescription(): ?DocumentDescription
+    {
+        $documentDescription = $this->documentDescription ?? [];
+        $documentDescription = reset($documentDescription);
+
+        if ($documentDescription === false) {
+            return null;
+        }
+
+        return $documentDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DocumentDescription|null
+     */
+    public function lastDocumentDescription(): ?DocumentDescription
+    {
+        $documentDescription = $this->documentDescription ?? [];
+        $documentDescription = end($documentDescription);
+
+        if ($documentDescription === false) {
+            return null;
+        }
+
+        return $documentDescription;
     }
 
     /**

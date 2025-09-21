@@ -312,6 +312,36 @@ class PaymentTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentMeansID|null
+     */
+    public function firstPaymentMeansID(): ?PaymentMeansID
+    {
+        $paymentMeansID = $this->paymentMeansID ?? [];
+        $paymentMeansID = reset($paymentMeansID);
+
+        if ($paymentMeansID === false) {
+            return null;
+        }
+
+        return $paymentMeansID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentMeansID|null
+     */
+    public function lastPaymentMeansID(): ?PaymentMeansID
+    {
+        $paymentMeansID = $this->paymentMeansID ?? [];
+        $paymentMeansID = end($paymentMeansID);
+
+        if ($paymentMeansID === false) {
+            return null;
+        }
+
+        return $paymentMeansID;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PaymentMeansID $paymentMeansID
      * @return self
      */
@@ -439,6 +469,36 @@ class PaymentTermsType
         $this->note = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
     }
 
     /**

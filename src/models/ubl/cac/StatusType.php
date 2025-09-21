@@ -290,6 +290,36 @@ class StatusType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -420,6 +450,36 @@ class StatusType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\StatusReason|null
+     */
+    public function firstStatusReason(): ?StatusReason
+    {
+        $statusReason = $this->statusReason ?? [];
+        $statusReason = reset($statusReason);
+
+        if ($statusReason === false) {
+            return null;
+        }
+
+        return $statusReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\StatusReason|null
+     */
+    public function lastStatusReason(): ?StatusReason
+    {
+        $statusReason = $this->statusReason ?? [];
+        $statusReason = end($statusReason);
+
+        if ($statusReason === false) {
+            return null;
+        }
+
+        return $statusReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\StatusReason $statusReason
      * @return self
      */
@@ -547,6 +607,36 @@ class StatusType
         $this->text = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Text|null
+     */
+    public function firstText(): ?Text
+    {
+        $text = $this->text ?? [];
+        $text = reset($text);
+
+        if ($text === false) {
+            return null;
+        }
+
+        return $text;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Text|null
+     */
+    public function lastText(): ?Text
+    {
+        $text = $this->text ?? [];
+        $text = end($text);
+
+        if ($text === false) {
+            return null;
+        }
+
+        return $text;
     }
 
     /**
@@ -745,6 +835,36 @@ class StatusType
         $this->condition = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Condition|null
+     */
+    public function firstCondition(): ?Condition
+    {
+        $condition = $this->condition ?? [];
+        $condition = reset($condition);
+
+        if ($condition === false) {
+            return null;
+        }
+
+        return $condition;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Condition|null
+     */
+    public function lastCondition(): ?Condition
+    {
+        $condition = $this->condition ?? [];
+        $condition = end($condition);
+
+        if ($condition === false) {
+            return null;
+        }
+
+        return $condition;
     }
 
     /**

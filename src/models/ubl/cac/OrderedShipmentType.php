@@ -111,6 +111,36 @@ class OrderedShipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package|null
+     */
+    public function firstPackage(): ?Package
+    {
+        $package = $this->package ?? [];
+        $package = reset($package);
+
+        if ($package === false) {
+            return null;
+        }
+
+        return $package;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package|null
+     */
+    public function lastPackage(): ?Package
+    {
+        $package = $this->package ?? [];
+        $package = end($package);
+
+        if ($package === false) {
+            return null;
+        }
+
+        return $package;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Package $package
      * @return self
      */

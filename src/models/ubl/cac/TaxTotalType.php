@@ -243,6 +243,36 @@ class TaxTotalType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxSubtotal|null
+     */
+    public function firstTaxSubtotal(): ?TaxSubtotal
+    {
+        $taxSubtotal = $this->taxSubtotal ?? [];
+        $taxSubtotal = reset($taxSubtotal);
+
+        if ($taxSubtotal === false) {
+            return null;
+        }
+
+        return $taxSubtotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxSubtotal|null
+     */
+    public function lastTaxSubtotal(): ?TaxSubtotal
+    {
+        $taxSubtotal = $this->taxSubtotal ?? [];
+        $taxSubtotal = end($taxSubtotal);
+
+        if ($taxSubtotal === false) {
+            return null;
+        }
+
+        return $taxSubtotal;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxSubtotal $taxSubtotal
      * @return self
      */

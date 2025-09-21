@@ -1308,6 +1308,36 @@ class AddressType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AddressLine|null
+     */
+    public function firstAddressLine(): ?AddressLine
+    {
+        $addressLine = $this->addressLine ?? [];
+        $addressLine = reset($addressLine);
+
+        if ($addressLine === false) {
+            return null;
+        }
+
+        return $addressLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AddressLine|null
+     */
+    public function lastAddressLine(): ?AddressLine
+    {
+        $addressLine = $this->addressLine ?? [];
+        $addressLine = end($addressLine);
+
+        if ($addressLine === false) {
+            return null;
+        }
+
+        return $addressLine;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AddressLine $addressLine
      * @return self
      */
@@ -1435,6 +1465,36 @@ class AddressType
         $this->locationCoordinate = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LocationCoordinate|null
+     */
+    public function firstLocationCoordinate(): ?LocationCoordinate
+    {
+        $locationCoordinate = $this->locationCoordinate ?? [];
+        $locationCoordinate = reset($locationCoordinate);
+
+        if ($locationCoordinate === false) {
+            return null;
+        }
+
+        return $locationCoordinate;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LocationCoordinate|null
+     */
+    public function lastLocationCoordinate(): ?LocationCoordinate
+    {
+        $locationCoordinate = $this->locationCoordinate ?? [];
+        $locationCoordinate = end($locationCoordinate);
+
+        if ($locationCoordinate === false) {
+            return null;
+        }
+
+        return $locationCoordinate;
     }
 
     /**

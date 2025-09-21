@@ -176,6 +176,36 @@ class TransactionConditionsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -264,6 +294,36 @@ class TransactionConditionsType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**

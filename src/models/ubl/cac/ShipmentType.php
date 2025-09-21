@@ -547,6 +547,36 @@ class ShipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\HandlingInstructions|null
+     */
+    public function firstHandlingInstructions(): ?HandlingInstructions
+    {
+        $handlingInstructions = $this->handlingInstructions ?? [];
+        $handlingInstructions = reset($handlingInstructions);
+
+        if ($handlingInstructions === false) {
+            return null;
+        }
+
+        return $handlingInstructions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\HandlingInstructions|null
+     */
+    public function lastHandlingInstructions(): ?HandlingInstructions
+    {
+        $handlingInstructions = $this->handlingInstructions ?? [];
+        $handlingInstructions = end($handlingInstructions);
+
+        if ($handlingInstructions === false) {
+            return null;
+        }
+
+        return $handlingInstructions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\HandlingInstructions $handlingInstructions
      * @return self
      */
@@ -635,6 +665,36 @@ class ShipmentType
         $this->information = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Information|null
+     */
+    public function firstInformation(): ?Information
+    {
+        $information = $this->information ?? [];
+        $information = reset($information);
+
+        if ($information === false) {
+            return null;
+        }
+
+        return $information;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Information|null
+     */
+    public function lastInformation(): ?Information
+    {
+        $information = $this->information ?? [];
+        $information = end($information);
+
+        if ($information === false) {
+            return null;
+        }
+
+        return $information;
     }
 
     /**
@@ -1201,6 +1261,36 @@ class ShipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialInstructions|null
+     */
+    public function firstSpecialInstructions(): ?SpecialInstructions
+    {
+        $specialInstructions = $this->specialInstructions ?? [];
+        $specialInstructions = reset($specialInstructions);
+
+        if ($specialInstructions === false) {
+            return null;
+        }
+
+        return $specialInstructions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialInstructions|null
+     */
+    public function lastSpecialInstructions(): ?SpecialInstructions
+    {
+        $specialInstructions = $this->specialInstructions ?? [];
+        $specialInstructions = end($specialInstructions);
+
+        if ($specialInstructions === false) {
+            return null;
+        }
+
+        return $specialInstructions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\SpecialInstructions $specialInstructions
      * @return self
      */
@@ -1289,6 +1379,36 @@ class ShipmentType
         $this->deliveryInstructions = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DeliveryInstructions|null
+     */
+    public function firstDeliveryInstructions(): ?DeliveryInstructions
+    {
+        $deliveryInstructions = $this->deliveryInstructions ?? [];
+        $deliveryInstructions = reset($deliveryInstructions);
+
+        if ($deliveryInstructions === false) {
+            return null;
+        }
+
+        return $deliveryInstructions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DeliveryInstructions|null
+     */
+    public function lastDeliveryInstructions(): ?DeliveryInstructions
+    {
+        $deliveryInstructions = $this->deliveryInstructions ?? [];
+        $deliveryInstructions = end($deliveryInstructions);
+
+        if ($deliveryInstructions === false) {
+            return null;
+        }
+
+        return $deliveryInstructions;
     }
 
     /**
@@ -1451,6 +1571,36 @@ class ShipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Consignment|null
+     */
+    public function firstConsignment(): ?Consignment
+    {
+        $consignment = $this->consignment ?? [];
+        $consignment = reset($consignment);
+
+        if ($consignment === false) {
+            return null;
+        }
+
+        return $consignment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Consignment|null
+     */
+    public function lastConsignment(): ?Consignment
+    {
+        $consignment = $this->consignment ?? [];
+        $consignment = end($consignment);
+
+        if ($consignment === false) {
+            return null;
+        }
+
+        return $consignment;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Consignment $consignment
      * @return self
      */
@@ -1542,6 +1692,36 @@ class ShipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem|null
+     */
+    public function firstGoodsItem(): ?GoodsItem
+    {
+        $goodsItem = $this->goodsItem ?? [];
+        $goodsItem = reset($goodsItem);
+
+        if ($goodsItem === false) {
+            return null;
+        }
+
+        return $goodsItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem|null
+     */
+    public function lastGoodsItem(): ?GoodsItem
+    {
+        $goodsItem = $this->goodsItem ?? [];
+        $goodsItem = end($goodsItem);
+
+        if ($goodsItem === false) {
+            return null;
+        }
+
+        return $goodsItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\GoodsItem $goodsItem
      * @return self
      */
@@ -1630,6 +1810,36 @@ class ShipmentType
         $this->shipmentStage = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage|null
+     */
+    public function firstShipmentStage(): ?ShipmentStage
+    {
+        $shipmentStage = $this->shipmentStage ?? [];
+        $shipmentStage = reset($shipmentStage);
+
+        if ($shipmentStage === false) {
+            return null;
+        }
+
+        return $shipmentStage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage|null
+     */
+    public function lastShipmentStage(): ?ShipmentStage
+    {
+        $shipmentStage = $this->shipmentStage ?? [];
+        $shipmentStage = end($shipmentStage);
+
+        if ($shipmentStage === false) {
+            return null;
+        }
+
+        return $shipmentStage;
     }
 
     /**
@@ -1760,6 +1970,36 @@ class ShipmentType
         $this->transportHandlingUnit = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportHandlingUnit|null
+     */
+    public function firstTransportHandlingUnit(): ?TransportHandlingUnit
+    {
+        $transportHandlingUnit = $this->transportHandlingUnit ?? [];
+        $transportHandlingUnit = reset($transportHandlingUnit);
+
+        if ($transportHandlingUnit === false) {
+            return null;
+        }
+
+        return $transportHandlingUnit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportHandlingUnit|null
+     */
+    public function lastTransportHandlingUnit(): ?TransportHandlingUnit
+    {
+        $transportHandlingUnit = $this->transportHandlingUnit ?? [];
+        $transportHandlingUnit = end($transportHandlingUnit);
+
+        if ($transportHandlingUnit === false) {
+            return null;
+        }
+
+        return $transportHandlingUnit;
     }
 
     /**
@@ -2046,6 +2286,36 @@ class ShipmentType
         $this->freightAllowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = reset($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = end($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
     }
 
     /**

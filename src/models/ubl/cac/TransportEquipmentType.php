@@ -803,6 +803,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReferencedConsignmentID|null
+     */
+    public function firstReferencedConsignmentID(): ?ReferencedConsignmentID
+    {
+        $referencedConsignmentID = $this->referencedConsignmentID ?? [];
+        $referencedConsignmentID = reset($referencedConsignmentID);
+
+        if ($referencedConsignmentID === false) {
+            return null;
+        }
+
+        return $referencedConsignmentID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReferencedConsignmentID|null
+     */
+    public function lastReferencedConsignmentID(): ?ReferencedConsignmentID
+    {
+        $referencedConsignmentID = $this->referencedConsignmentID ?? [];
+        $referencedConsignmentID = end($referencedConsignmentID);
+
+        if ($referencedConsignmentID === false) {
+            return null;
+        }
+
+        return $referencedConsignmentID;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ReferencedConsignmentID $referencedConsignmentID
      * @return self
      */
@@ -1155,6 +1185,36 @@ class TransportEquipmentType
         $this->information = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Information|null
+     */
+    public function firstInformation(): ?Information
+    {
+        $information = $this->information ?? [];
+        $information = reset($information);
+
+        if ($information === false) {
+            return null;
+        }
+
+        return $information;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Information|null
+     */
+    public function lastInformation(): ?Information
+    {
+        $information = $this->information ?? [];
+        $information = end($information);
+
+        if ($information === false) {
+            return null;
+        }
+
+        return $information;
     }
 
     /**
@@ -1540,6 +1600,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DamageRemarks|null
+     */
+    public function firstDamageRemarks(): ?DamageRemarks
+    {
+        $damageRemarks = $this->damageRemarks ?? [];
+        $damageRemarks = reset($damageRemarks);
+
+        if ($damageRemarks === false) {
+            return null;
+        }
+
+        return $damageRemarks;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DamageRemarks|null
+     */
+    public function lastDamageRemarks(): ?DamageRemarks
+    {
+        $damageRemarks = $this->damageRemarks ?? [];
+        $damageRemarks = end($damageRemarks);
+
+        if ($damageRemarks === false) {
+            return null;
+        }
+
+        return $damageRemarks;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\DamageRemarks $damageRemarks
      * @return self
      */
@@ -1631,6 +1721,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -1719,6 +1839,36 @@ class TransportEquipmentType
         $this->specialTransportRequirements = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialTransportRequirements|null
+     */
+    public function firstSpecialTransportRequirements(): ?SpecialTransportRequirements
+    {
+        $specialTransportRequirements = $this->specialTransportRequirements ?? [];
+        $specialTransportRequirements = reset($specialTransportRequirements);
+
+        if ($specialTransportRequirements === false) {
+            return null;
+        }
+
+        return $specialTransportRequirements;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialTransportRequirements|null
+     */
+    public function lastSpecialTransportRequirements(): ?SpecialTransportRequirements
+    {
+        $specialTransportRequirements = $this->specialTransportRequirements ?? [];
+        $specialTransportRequirements = end($specialTransportRequirements);
+
+        if ($specialTransportRequirements === false) {
+            return null;
+        }
+
+        return $specialTransportRequirements;
     }
 
     /**
@@ -2039,6 +2189,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function firstMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = reset($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function lastMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = end($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension $measurementDimension
      * @return self
      */
@@ -2127,6 +2307,36 @@ class TransportEquipmentType
         $this->transportEquipmentSeal = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEquipmentSeal|null
+     */
+    public function firstTransportEquipmentSeal(): ?TransportEquipmentSeal
+    {
+        $transportEquipmentSeal = $this->transportEquipmentSeal ?? [];
+        $transportEquipmentSeal = reset($transportEquipmentSeal);
+
+        if ($transportEquipmentSeal === false) {
+            return null;
+        }
+
+        return $transportEquipmentSeal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEquipmentSeal|null
+     */
+    public function lastTransportEquipmentSeal(): ?TransportEquipmentSeal
+    {
+        $transportEquipmentSeal = $this->transportEquipmentSeal ?? [];
+        $transportEquipmentSeal = end($transportEquipmentSeal);
+
+        if ($transportEquipmentSeal === false) {
+            return null;
+        }
+
+        return $transportEquipmentSeal;
     }
 
     /**
@@ -2611,6 +2821,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PositioningTransportEvent|null
+     */
+    public function firstPositioningTransportEvent(): ?PositioningTransportEvent
+    {
+        $positioningTransportEvent = $this->positioningTransportEvent ?? [];
+        $positioningTransportEvent = reset($positioningTransportEvent);
+
+        if ($positioningTransportEvent === false) {
+            return null;
+        }
+
+        return $positioningTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PositioningTransportEvent|null
+     */
+    public function lastPositioningTransportEvent(): ?PositioningTransportEvent
+    {
+        $positioningTransportEvent = $this->positioningTransportEvent ?? [];
+        $positioningTransportEvent = end($positioningTransportEvent);
+
+        if ($positioningTransportEvent === false) {
+            return null;
+        }
+
+        return $positioningTransportEvent;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PositioningTransportEvent $positioningTransportEvent
      * @return self
      */
@@ -2699,6 +2939,36 @@ class TransportEquipmentType
         $this->quarantineTransportEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\QuarantineTransportEvent|null
+     */
+    public function firstQuarantineTransportEvent(): ?QuarantineTransportEvent
+    {
+        $quarantineTransportEvent = $this->quarantineTransportEvent ?? [];
+        $quarantineTransportEvent = reset($quarantineTransportEvent);
+
+        if ($quarantineTransportEvent === false) {
+            return null;
+        }
+
+        return $quarantineTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\QuarantineTransportEvent|null
+     */
+    public function lastQuarantineTransportEvent(): ?QuarantineTransportEvent
+    {
+        $quarantineTransportEvent = $this->quarantineTransportEvent ?? [];
+        $quarantineTransportEvent = end($quarantineTransportEvent);
+
+        if ($quarantineTransportEvent === false) {
+            return null;
+        }
+
+        return $quarantineTransportEvent;
     }
 
     /**
@@ -2793,6 +3063,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTransportEvent|null
+     */
+    public function firstDeliveryTransportEvent(): ?DeliveryTransportEvent
+    {
+        $deliveryTransportEvent = $this->deliveryTransportEvent ?? [];
+        $deliveryTransportEvent = reset($deliveryTransportEvent);
+
+        if ($deliveryTransportEvent === false) {
+            return null;
+        }
+
+        return $deliveryTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTransportEvent|null
+     */
+    public function lastDeliveryTransportEvent(): ?DeliveryTransportEvent
+    {
+        $deliveryTransportEvent = $this->deliveryTransportEvent ?? [];
+        $deliveryTransportEvent = end($deliveryTransportEvent);
+
+        if ($deliveryTransportEvent === false) {
+            return null;
+        }
+
+        return $deliveryTransportEvent;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryTransportEvent $deliveryTransportEvent
      * @return self
      */
@@ -2881,6 +3181,36 @@ class TransportEquipmentType
         $this->pickupTransportEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PickupTransportEvent|null
+     */
+    public function firstPickupTransportEvent(): ?PickupTransportEvent
+    {
+        $pickupTransportEvent = $this->pickupTransportEvent ?? [];
+        $pickupTransportEvent = reset($pickupTransportEvent);
+
+        if ($pickupTransportEvent === false) {
+            return null;
+        }
+
+        return $pickupTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PickupTransportEvent|null
+     */
+    public function lastPickupTransportEvent(): ?PickupTransportEvent
+    {
+        $pickupTransportEvent = $this->pickupTransportEvent ?? [];
+        $pickupTransportEvent = end($pickupTransportEvent);
+
+        if ($pickupTransportEvent === false) {
+            return null;
+        }
+
+        return $pickupTransportEvent;
     }
 
     /**
@@ -2975,6 +3305,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HandlingTransportEvent|null
+     */
+    public function firstHandlingTransportEvent(): ?HandlingTransportEvent
+    {
+        $handlingTransportEvent = $this->handlingTransportEvent ?? [];
+        $handlingTransportEvent = reset($handlingTransportEvent);
+
+        if ($handlingTransportEvent === false) {
+            return null;
+        }
+
+        return $handlingTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HandlingTransportEvent|null
+     */
+    public function lastHandlingTransportEvent(): ?HandlingTransportEvent
+    {
+        $handlingTransportEvent = $this->handlingTransportEvent ?? [];
+        $handlingTransportEvent = end($handlingTransportEvent);
+
+        if ($handlingTransportEvent === false) {
+            return null;
+        }
+
+        return $handlingTransportEvent;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\HandlingTransportEvent $handlingTransportEvent
      * @return self
      */
@@ -3066,6 +3426,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LoadingTransportEvent|null
+     */
+    public function firstLoadingTransportEvent(): ?LoadingTransportEvent
+    {
+        $loadingTransportEvent = $this->loadingTransportEvent ?? [];
+        $loadingTransportEvent = reset($loadingTransportEvent);
+
+        if ($loadingTransportEvent === false) {
+            return null;
+        }
+
+        return $loadingTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LoadingTransportEvent|null
+     */
+    public function lastLoadingTransportEvent(): ?LoadingTransportEvent
+    {
+        $loadingTransportEvent = $this->loadingTransportEvent ?? [];
+        $loadingTransportEvent = end($loadingTransportEvent);
+
+        if ($loadingTransportEvent === false) {
+            return null;
+        }
+
+        return $loadingTransportEvent;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\LoadingTransportEvent $loadingTransportEvent
      * @return self
      */
@@ -3154,6 +3544,36 @@ class TransportEquipmentType
         $this->transportEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEvent|null
+     */
+    public function firstTransportEvent(): ?TransportEvent
+    {
+        $transportEvent = $this->transportEvent ?? [];
+        $transportEvent = reset($transportEvent);
+
+        if ($transportEvent === false) {
+            return null;
+        }
+
+        return $transportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEvent|null
+     */
+    public function lastTransportEvent(): ?TransportEvent
+    {
+        $transportEvent = $this->transportEvent ?? [];
+        $transportEvent = end($transportEvent);
+
+        if ($transportEvent === false) {
+            return null;
+        }
+
+        return $transportEvent;
     }
 
     /**
@@ -3287,6 +3707,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HaulageTradingTerms|null
+     */
+    public function firstHaulageTradingTerms(): ?HaulageTradingTerms
+    {
+        $haulageTradingTerms = $this->haulageTradingTerms ?? [];
+        $haulageTradingTerms = reset($haulageTradingTerms);
+
+        if ($haulageTradingTerms === false) {
+            return null;
+        }
+
+        return $haulageTradingTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HaulageTradingTerms|null
+     */
+    public function lastHaulageTradingTerms(): ?HaulageTradingTerms
+    {
+        $haulageTradingTerms = $this->haulageTradingTerms ?? [];
+        $haulageTradingTerms = end($haulageTradingTerms);
+
+        if ($haulageTradingTerms === false) {
+            return null;
+        }
+
+        return $haulageTradingTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\HaulageTradingTerms $haulageTradingTerms
      * @return self
      */
@@ -3378,6 +3828,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousGoodsTransit|null
+     */
+    public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
+    {
+        $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
+        $hazardousGoodsTransit = reset($hazardousGoodsTransit);
+
+        if ($hazardousGoodsTransit === false) {
+            return null;
+        }
+
+        return $hazardousGoodsTransit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousGoodsTransit|null
+     */
+    public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
+    {
+        $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
+        $hazardousGoodsTransit = end($hazardousGoodsTransit);
+
+        if ($hazardousGoodsTransit === false) {
+            return null;
+        }
+
+        return $hazardousGoodsTransit;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\HazardousGoodsTransit $hazardousGoodsTransit
      * @return self
      */
@@ -3466,6 +3946,36 @@ class TransportEquipmentType
         $this->packagedTransportHandlingUnit = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PackagedTransportHandlingUnit|null
+     */
+    public function firstPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
+    {
+        $packagedTransportHandlingUnit = $this->packagedTransportHandlingUnit ?? [];
+        $packagedTransportHandlingUnit = reset($packagedTransportHandlingUnit);
+
+        if ($packagedTransportHandlingUnit === false) {
+            return null;
+        }
+
+        return $packagedTransportHandlingUnit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PackagedTransportHandlingUnit|null
+     */
+    public function lastPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
+    {
+        $packagedTransportHandlingUnit = $this->packagedTransportHandlingUnit ?? [];
+        $packagedTransportHandlingUnit = end($packagedTransportHandlingUnit);
+
+        if ($packagedTransportHandlingUnit === false) {
+            return null;
+        }
+
+        return $packagedTransportHandlingUnit;
     }
 
     /**
@@ -3562,6 +4072,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ServiceAllowanceCharge|null
+     */
+    public function firstServiceAllowanceCharge(): ?ServiceAllowanceCharge
+    {
+        $serviceAllowanceCharge = $this->serviceAllowanceCharge ?? [];
+        $serviceAllowanceCharge = reset($serviceAllowanceCharge);
+
+        if ($serviceAllowanceCharge === false) {
+            return null;
+        }
+
+        return $serviceAllowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ServiceAllowanceCharge|null
+     */
+    public function lastServiceAllowanceCharge(): ?ServiceAllowanceCharge
+    {
+        $serviceAllowanceCharge = $this->serviceAllowanceCharge ?? [];
+        $serviceAllowanceCharge = end($serviceAllowanceCharge);
+
+        if ($serviceAllowanceCharge === false) {
+            return null;
+        }
+
+        return $serviceAllowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ServiceAllowanceCharge $serviceAllowanceCharge
      * @return self
      */
@@ -3653,6 +4193,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = reset($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = end($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
@@ -3741,6 +4311,36 @@ class TransportEquipmentType
         $this->attachedTransportEquipment = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AttachedTransportEquipment|null
+     */
+    public function firstAttachedTransportEquipment(): ?AttachedTransportEquipment
+    {
+        $attachedTransportEquipment = $this->attachedTransportEquipment ?? [];
+        $attachedTransportEquipment = reset($attachedTransportEquipment);
+
+        if ($attachedTransportEquipment === false) {
+            return null;
+        }
+
+        return $attachedTransportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AttachedTransportEquipment|null
+     */
+    public function lastAttachedTransportEquipment(): ?AttachedTransportEquipment
+    {
+        $attachedTransportEquipment = $this->attachedTransportEquipment ?? [];
+        $attachedTransportEquipment = end($attachedTransportEquipment);
+
+        if ($attachedTransportEquipment === false) {
+            return null;
+        }
+
+        return $attachedTransportEquipment;
     }
 
     /**
@@ -3952,6 +4552,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentDocumentReference|null
+     */
+    public function firstShipmentDocumentReference(): ?ShipmentDocumentReference
+    {
+        $shipmentDocumentReference = $this->shipmentDocumentReference ?? [];
+        $shipmentDocumentReference = reset($shipmentDocumentReference);
+
+        if ($shipmentDocumentReference === false) {
+            return null;
+        }
+
+        return $shipmentDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentDocumentReference|null
+     */
+    public function lastShipmentDocumentReference(): ?ShipmentDocumentReference
+    {
+        $shipmentDocumentReference = $this->shipmentDocumentReference ?? [];
+        $shipmentDocumentReference = end($shipmentDocumentReference);
+
+        if ($shipmentDocumentReference === false) {
+            return null;
+        }
+
+        return $shipmentDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ShipmentDocumentReference $shipmentDocumentReference
      * @return self
      */
@@ -4040,6 +4670,36 @@ class TransportEquipmentType
         $this->containedInTransportEquipment = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedInTransportEquipment|null
+     */
+    public function firstContainedInTransportEquipment(): ?ContainedInTransportEquipment
+    {
+        $containedInTransportEquipment = $this->containedInTransportEquipment ?? [];
+        $containedInTransportEquipment = reset($containedInTransportEquipment);
+
+        if ($containedInTransportEquipment === false) {
+            return null;
+        }
+
+        return $containedInTransportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedInTransportEquipment|null
+     */
+    public function lastContainedInTransportEquipment(): ?ContainedInTransportEquipment
+    {
+        $containedInTransportEquipment = $this->containedInTransportEquipment ?? [];
+        $containedInTransportEquipment = end($containedInTransportEquipment);
+
+        if ($containedInTransportEquipment === false) {
+            return null;
+        }
+
+        return $containedInTransportEquipment;
     }
 
     /**
@@ -4136,6 +4796,36 @@ class TransportEquipmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package|null
+     */
+    public function firstPackage(): ?Package
+    {
+        $package = $this->package ?? [];
+        $package = reset($package);
+
+        if ($package === false) {
+            return null;
+        }
+
+        return $package;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Package|null
+     */
+    public function lastPackage(): ?Package
+    {
+        $package = $this->package ?? [];
+        $package = end($package);
+
+        if ($package === false) {
+            return null;
+        }
+
+        return $package;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Package $package
      * @return self
      */
@@ -4224,6 +4914,36 @@ class TransportEquipmentType
         $this->goodsItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem|null
+     */
+    public function firstGoodsItem(): ?GoodsItem
+    {
+        $goodsItem = $this->goodsItem ?? [];
+        $goodsItem = reset($goodsItem);
+
+        if ($goodsItem === false) {
+            return null;
+        }
+
+        return $goodsItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem|null
+     */
+    public function lastGoodsItem(): ?GoodsItem
+    {
+        $goodsItem = $this->goodsItem ?? [];
+        $goodsItem = end($goodsItem);
+
+        if ($goodsItem === false) {
+            return null;
+        }
+
+        return $goodsItem;
     }
 
     /**

@@ -414,6 +414,36 @@ class ActivityDataLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SalesItem|null
+     */
+    public function firstSalesItem(): ?SalesItem
+    {
+        $salesItem = $this->salesItem ?? [];
+        $salesItem = reset($salesItem);
+
+        if ($salesItem === false) {
+            return null;
+        }
+
+        return $salesItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SalesItem|null
+     */
+    public function lastSalesItem(): ?SalesItem
+    {
+        $salesItem = $this->salesItem ?? [];
+        $salesItem = end($salesItem);
+
+        if ($salesItem === false) {
+            return null;
+        }
+
+        return $salesItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SalesItem $salesItem
      * @return self
      */

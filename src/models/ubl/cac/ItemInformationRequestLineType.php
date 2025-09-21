@@ -278,6 +278,36 @@ class ItemInformationRequestLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Period|null
+     */
+    public function firstPeriod(): ?Period
+    {
+        $period = $this->period ?? [];
+        $period = reset($period);
+
+        if ($period === false) {
+            return null;
+        }
+
+        return $period;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Period|null
+     */
+    public function lastPeriod(): ?Period
+    {
+        $period = $this->period ?? [];
+        $period = end($period);
+
+        if ($period === false) {
+            return null;
+        }
+
+        return $period;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Period $period
      * @return self
      */
@@ -366,6 +396,36 @@ class ItemInformationRequestLineType
         $this->salesItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SalesItem|null
+     */
+    public function firstSalesItem(): ?SalesItem
+    {
+        $salesItem = $this->salesItem ?? [];
+        $salesItem = reset($salesItem);
+
+        if ($salesItem === false) {
+            return null;
+        }
+
+        return $salesItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SalesItem|null
+     */
+    public function lastSalesItem(): ?SalesItem
+    {
+        $salesItem = $this->salesItem ?? [];
+        $salesItem = end($salesItem);
+
+        if ($salesItem === false) {
+            return null;
+        }
+
+        return $salesItem;
     }
 
     /**

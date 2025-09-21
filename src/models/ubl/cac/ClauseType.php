@@ -113,6 +113,36 @@ class ClauseType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Content|null
+     */
+    public function firstContent(): ?Content
+    {
+        $content = $this->content ?? [];
+        $content = reset($content);
+
+        if ($content === false) {
+            return null;
+        }
+
+        return $content;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Content|null
+     */
+    public function lastContent(): ?Content
+    {
+        $content = $this->content ?? [];
+        $content = end($content);
+
+        if ($content === false) {
+            return null;
+        }
+
+        return $content;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Content $content
      * @return self
      */

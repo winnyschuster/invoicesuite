@@ -315,6 +315,36 @@ class TransportationSegmentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage|null
+     */
+    public function firstShipmentStage(): ?ShipmentStage
+    {
+        $shipmentStage = $this->shipmentStage ?? [];
+        $shipmentStage = reset($shipmentStage);
+
+        if ($shipmentStage === false) {
+            return null;
+        }
+
+        return $shipmentStage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage|null
+     */
+    public function lastShipmentStage(): ?ShipmentStage
+    {
+        $shipmentStage = $this->shipmentStage ?? [];
+        $shipmentStage = end($shipmentStage);
+
+        if ($shipmentStage === false) {
+            return null;
+        }
+
+        return $shipmentStage;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage $shipmentStage
      * @return self
      */

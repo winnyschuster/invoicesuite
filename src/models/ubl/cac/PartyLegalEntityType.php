@@ -679,6 +679,36 @@ class PartyLegalEntityType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShareholderParty|null
+     */
+    public function firstShareholderParty(): ?ShareholderParty
+    {
+        $shareholderParty = $this->shareholderParty ?? [];
+        $shareholderParty = reset($shareholderParty);
+
+        if ($shareholderParty === false) {
+            return null;
+        }
+
+        return $shareholderParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShareholderParty|null
+     */
+    public function lastShareholderParty(): ?ShareholderParty
+    {
+        $shareholderParty = $this->shareholderParty ?? [];
+        $shareholderParty = end($shareholderParty);
+
+        if ($shareholderParty === false) {
+            return null;
+        }
+
+        return $shareholderParty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ShareholderParty $shareholderParty
      * @return self
      */

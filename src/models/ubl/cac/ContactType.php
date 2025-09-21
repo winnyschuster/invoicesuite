@@ -329,6 +329,36 @@ class ContactType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -417,6 +447,36 @@ class ContactType
         $this->otherCommunication = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OtherCommunication|null
+     */
+    public function firstOtherCommunication(): ?OtherCommunication
+    {
+        $otherCommunication = $this->otherCommunication ?? [];
+        $otherCommunication = reset($otherCommunication);
+
+        if ($otherCommunication === false) {
+            return null;
+        }
+
+        return $otherCommunication;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OtherCommunication|null
+     */
+    public function lastOtherCommunication(): ?OtherCommunication
+    {
+        $otherCommunication = $this->otherCommunication ?? [];
+        $otherCommunication = end($otherCommunication);
+
+        if ($otherCommunication === false) {
+            return null;
+        }
+
+        return $otherCommunication;
     }
 
     /**

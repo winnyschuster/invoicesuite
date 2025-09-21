@@ -824,6 +824,36 @@ class PersonType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\IdentityDocumentReference|null
+     */
+    public function firstIdentityDocumentReference(): ?IdentityDocumentReference
+    {
+        $identityDocumentReference = $this->identityDocumentReference ?? [];
+        $identityDocumentReference = reset($identityDocumentReference);
+
+        if ($identityDocumentReference === false) {
+            return null;
+        }
+
+        return $identityDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\IdentityDocumentReference|null
+     */
+    public function lastIdentityDocumentReference(): ?IdentityDocumentReference
+    {
+        $identityDocumentReference = $this->identityDocumentReference ?? [];
+        $identityDocumentReference = end($identityDocumentReference);
+
+        if ($identityDocumentReference === false) {
+            return null;
+        }
+
+        return $identityDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\IdentityDocumentReference $identityDocumentReference
      * @return self
      */

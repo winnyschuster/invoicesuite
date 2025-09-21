@@ -484,6 +484,36 @@ class PartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification|null
+     */
+    public function firstPartyIdentification(): ?PartyIdentification
+    {
+        $partyIdentification = $this->partyIdentification ?? [];
+        $partyIdentification = reset($partyIdentification);
+
+        if ($partyIdentification === false) {
+            return null;
+        }
+
+        return $partyIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification|null
+     */
+    public function lastPartyIdentification(): ?PartyIdentification
+    {
+        $partyIdentification = $this->partyIdentification ?? [];
+        $partyIdentification = end($partyIdentification);
+
+        if ($partyIdentification === false) {
+            return null;
+        }
+
+        return $partyIdentification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PartyIdentification $partyIdentification
      * @return self
      */
@@ -572,6 +602,36 @@ class PartyType
         $this->partyName = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyName|null
+     */
+    public function firstPartyName(): ?PartyName
+    {
+        $partyName = $this->partyName ?? [];
+        $partyName = reset($partyName);
+
+        if ($partyName === false) {
+            return null;
+        }
+
+        return $partyName;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyName|null
+     */
+    public function lastPartyName(): ?PartyName
+    {
+        $partyName = $this->partyName ?? [];
+        $partyName = end($partyName);
+
+        if ($partyName === false) {
+            return null;
+        }
+
+        return $partyName;
     }
 
     /**
@@ -783,6 +843,36 @@ class PartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme|null
+     */
+    public function firstPartyTaxScheme(): ?PartyTaxScheme
+    {
+        $partyTaxScheme = $this->partyTaxScheme ?? [];
+        $partyTaxScheme = reset($partyTaxScheme);
+
+        if ($partyTaxScheme === false) {
+            return null;
+        }
+
+        return $partyTaxScheme;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme|null
+     */
+    public function lastPartyTaxScheme(): ?PartyTaxScheme
+    {
+        $partyTaxScheme = $this->partyTaxScheme ?? [];
+        $partyTaxScheme = end($partyTaxScheme);
+
+        if ($partyTaxScheme === false) {
+            return null;
+        }
+
+        return $partyTaxScheme;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PartyTaxScheme $partyTaxScheme
      * @return self
      */
@@ -871,6 +961,36 @@ class PartyType
         $this->partyLegalEntity = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyLegalEntity|null
+     */
+    public function firstPartyLegalEntity(): ?PartyLegalEntity
+    {
+        $partyLegalEntity = $this->partyLegalEntity ?? [];
+        $partyLegalEntity = reset($partyLegalEntity);
+
+        if ($partyLegalEntity === false) {
+            return null;
+        }
+
+        return $partyLegalEntity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PartyLegalEntity|null
+     */
+    public function lastPartyLegalEntity(): ?PartyLegalEntity
+    {
+        $partyLegalEntity = $this->partyLegalEntity ?? [];
+        $partyLegalEntity = end($partyLegalEntity);
+
+        if ($partyLegalEntity === false) {
+            return null;
+        }
+
+        return $partyLegalEntity;
     }
 
     /**
@@ -1004,6 +1124,36 @@ class PartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Person|null
+     */
+    public function firstPerson(): ?Person
+    {
+        $person = $this->person ?? [];
+        $person = reset($person);
+
+        if ($person === false) {
+            return null;
+        }
+
+        return $person;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Person|null
+     */
+    public function lastPerson(): ?Person
+    {
+        $person = $this->person ?? [];
+        $person = end($person);
+
+        if ($person === false) {
+            return null;
+        }
+
+        return $person;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Person $person
      * @return self
      */
@@ -1134,6 +1284,36 @@ class PartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ServiceProviderParty|null
+     */
+    public function firstServiceProviderParty(): ?ServiceProviderParty
+    {
+        $serviceProviderParty = $this->serviceProviderParty ?? [];
+        $serviceProviderParty = reset($serviceProviderParty);
+
+        if ($serviceProviderParty === false) {
+            return null;
+        }
+
+        return $serviceProviderParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ServiceProviderParty|null
+     */
+    public function lastServiceProviderParty(): ?ServiceProviderParty
+    {
+        $serviceProviderParty = $this->serviceProviderParty ?? [];
+        $serviceProviderParty = end($serviceProviderParty);
+
+        if ($serviceProviderParty === false) {
+            return null;
+        }
+
+        return $serviceProviderParty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ServiceProviderParty $serviceProviderParty
      * @return self
      */
@@ -1222,6 +1402,36 @@ class PartyType
         $this->powerOfAttorney = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PowerOfAttorney|null
+     */
+    public function firstPowerOfAttorney(): ?PowerOfAttorney
+    {
+        $powerOfAttorney = $this->powerOfAttorney ?? [];
+        $powerOfAttorney = reset($powerOfAttorney);
+
+        if ($powerOfAttorney === false) {
+            return null;
+        }
+
+        return $powerOfAttorney;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PowerOfAttorney|null
+     */
+    public function lastPowerOfAttorney(): ?PowerOfAttorney
+    {
+        $powerOfAttorney = $this->powerOfAttorney ?? [];
+        $powerOfAttorney = end($powerOfAttorney);
+
+        if ($powerOfAttorney === false) {
+            return null;
+        }
+
+        return $powerOfAttorney;
     }
 
     /**

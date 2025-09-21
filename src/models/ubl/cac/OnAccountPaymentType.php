@@ -125,6 +125,36 @@ class OnAccountPaymentType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -213,6 +243,36 @@ class OnAccountPaymentType
         $this->paymentTerms = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function firstPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = reset($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function lastPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = end($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
     }
 
     /**

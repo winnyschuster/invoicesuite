@@ -250,6 +250,36 @@ class CertificateType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Remarks|null
+     */
+    public function firstRemarks(): ?Remarks
+    {
+        $remarks = $this->remarks ?? [];
+        $remarks = reset($remarks);
+
+        if ($remarks === false) {
+            return null;
+        }
+
+        return $remarks;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Remarks|null
+     */
+    public function lastRemarks(): ?Remarks
+    {
+        $remarks = $this->remarks ?? [];
+        $remarks = end($remarks);
+
+        if ($remarks === false) {
+            return null;
+        }
+
+        return $remarks;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Remarks $remarks
      * @return self
      */
@@ -380,6 +410,36 @@ class CertificateType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
      * @return self
      */
@@ -468,6 +528,36 @@ class CertificateType
         $this->signature = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature|null
+     */
+    public function firstSignature(): ?Signature
+    {
+        $signature = $this->signature ?? [];
+        $signature = reset($signature);
+
+        if ($signature === false) {
+            return null;
+        }
+
+        return $signature;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature|null
+     */
+    public function lastSignature(): ?Signature
+    {
+        $signature = $this->signature ?? [];
+        $signature = end($signature);
+
+        if ($signature === false) {
+            return null;
+        }
+
+        return $signature;
     }
 
     /**

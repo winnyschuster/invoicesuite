@@ -163,6 +163,36 @@ class BillingReferenceLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge $allowanceCharge
      * @return self
      */

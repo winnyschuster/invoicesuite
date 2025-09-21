@@ -599,6 +599,36 @@ class GoodsItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -1531,6 +1561,36 @@ class GoodsItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item|null
+     */
+    public function firstItem(): ?Item
+    {
+        $item = $this->item ?? [];
+        $item = reset($item);
+
+        if ($item === false) {
+            return null;
+        }
+
+        return $item;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Item|null
+     */
+    public function lastItem(): ?Item
+    {
+        $item = $this->item ?? [];
+        $item = end($item);
+
+        if ($item === false) {
+            return null;
+        }
+
+        return $item;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Item $item
      * @return self
      */
@@ -1619,6 +1679,36 @@ class GoodsItemType
         $this->goodsItemContainer = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItemContainer|null
+     */
+    public function firstGoodsItemContainer(): ?GoodsItemContainer
+    {
+        $goodsItemContainer = $this->goodsItemContainer ?? [];
+        $goodsItemContainer = reset($goodsItemContainer);
+
+        if ($goodsItemContainer === false) {
+            return null;
+        }
+
+        return $goodsItemContainer;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItemContainer|null
+     */
+    public function lastGoodsItemContainer(): ?GoodsItemContainer
+    {
+        $goodsItemContainer = $this->goodsItemContainer ?? [];
+        $goodsItemContainer = end($goodsItemContainer);
+
+        if ($goodsItemContainer === false) {
+            return null;
+        }
+
+        return $goodsItemContainer;
     }
 
     /**
@@ -1713,6 +1803,36 @@ class GoodsItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = reset($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = end($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
@@ -1801,6 +1921,36 @@ class GoodsItemType
         $this->invoiceLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoiceLine|null
+     */
+    public function firstInvoiceLine(): ?InvoiceLine
+    {
+        $invoiceLine = $this->invoiceLine ?? [];
+        $invoiceLine = reset($invoiceLine);
+
+        if ($invoiceLine === false) {
+            return null;
+        }
+
+        return $invoiceLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoiceLine|null
+     */
+    public function lastInvoiceLine(): ?InvoiceLine
+    {
+        $invoiceLine = $this->invoiceLine ?? [];
+        $invoiceLine = end($invoiceLine);
+
+        if ($invoiceLine === false) {
+            return null;
+        }
+
+        return $invoiceLine;
     }
 
     /**
@@ -1895,6 +2045,36 @@ class GoodsItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Temperature|null
+     */
+    public function firstTemperature(): ?Temperature
+    {
+        $temperature = $this->temperature ?? [];
+        $temperature = reset($temperature);
+
+        if ($temperature === false) {
+            return null;
+        }
+
+        return $temperature;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Temperature|null
+     */
+    public function lastTemperature(): ?Temperature
+    {
+        $temperature = $this->temperature ?? [];
+        $temperature = end($temperature);
+
+        if ($temperature === false) {
+            return null;
+        }
+
+        return $temperature;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Temperature $temperature
      * @return self
      */
@@ -1983,6 +2163,36 @@ class GoodsItemType
         $this->containedGoodsItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedGoodsItem|null
+     */
+    public function firstContainedGoodsItem(): ?ContainedGoodsItem
+    {
+        $containedGoodsItem = $this->containedGoodsItem ?? [];
+        $containedGoodsItem = reset($containedGoodsItem);
+
+        if ($containedGoodsItem === false) {
+            return null;
+        }
+
+        return $containedGoodsItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedGoodsItem|null
+     */
+    public function lastContainedGoodsItem(): ?ContainedGoodsItem
+    {
+        $containedGoodsItem = $this->containedGoodsItem ?? [];
+        $containedGoodsItem = end($containedGoodsItem);
+
+        if ($containedGoodsItem === false) {
+            return null;
+        }
+
+        return $containedGoodsItem;
     }
 
     /**
@@ -2233,6 +2443,36 @@ class GoodsItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function firstMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = reset($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function lastMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = end($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension $measurementDimension
      * @return self
      */
@@ -2321,6 +2561,36 @@ class GoodsItemType
         $this->containingPackage = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainingPackage|null
+     */
+    public function firstContainingPackage(): ?ContainingPackage
+    {
+        $containingPackage = $this->containingPackage ?? [];
+        $containingPackage = reset($containingPackage);
+
+        if ($containingPackage === false) {
+            return null;
+        }
+
+        return $containingPackage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainingPackage|null
+     */
+    public function lastContainingPackage(): ?ContainingPackage
+    {
+        $containingPackage = $this->containingPackage ?? [];
+        $containingPackage = end($containingPackage);
+
+        if ($containingPackage === false) {
+            return null;
+        }
+
+        return $containingPackage;
     }
 
     /**

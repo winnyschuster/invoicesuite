@@ -210,6 +210,36 @@ class EvidenceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -298,6 +328,36 @@ class EvidenceType
         $this->candidateStatement = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CandidateStatement|null
+     */
+    public function firstCandidateStatement(): ?CandidateStatement
+    {
+        $candidateStatement = $this->candidateStatement ?? [];
+        $candidateStatement = reset($candidateStatement);
+
+        if ($candidateStatement === false) {
+            return null;
+        }
+
+        return $candidateStatement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\CandidateStatement|null
+     */
+    public function lastCandidateStatement(): ?CandidateStatement
+    {
+        $candidateStatement = $this->candidateStatement ?? [];
+        $candidateStatement = end($candidateStatement);
+
+        if ($candidateStatement === false) {
+            return null;
+        }
+
+        return $candidateStatement;
     }
 
     /**

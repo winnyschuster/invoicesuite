@@ -328,6 +328,36 @@ class MeterType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeterReading|null
+     */
+    public function firstMeterReading(): ?MeterReading
+    {
+        $meterReading = $this->meterReading ?? [];
+        $meterReading = reset($meterReading);
+
+        if ($meterReading === false) {
+            return null;
+        }
+
+        return $meterReading;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeterReading|null
+     */
+    public function lastMeterReading(): ?MeterReading
+    {
+        $meterReading = $this->meterReading ?? [];
+        $meterReading = end($meterReading);
+
+        if ($meterReading === false) {
+            return null;
+        }
+
+        return $meterReading;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\MeterReading $meterReading
      * @return self
      */
@@ -416,6 +446,36 @@ class MeterType
         $this->meterProperty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeterProperty|null
+     */
+    public function firstMeterProperty(): ?MeterProperty
+    {
+        $meterProperty = $this->meterProperty ?? [];
+        $meterProperty = reset($meterProperty);
+
+        if ($meterProperty === false) {
+            return null;
+        }
+
+        return $meterProperty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeterProperty|null
+     */
+    public function lastMeterProperty(): ?MeterProperty
+    {
+        $meterProperty = $this->meterProperty ?? [];
+        $meterProperty = end($meterProperty);
+
+        if ($meterProperty === false) {
+            return null;
+        }
+
+        return $meterProperty;
     }
 
     /**

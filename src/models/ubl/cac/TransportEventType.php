@@ -324,6 +324,36 @@ class TransportEventType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -483,6 +513,36 @@ class TransportEventType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CurrentStatus|null
+     */
+    public function firstCurrentStatus(): ?CurrentStatus
+    {
+        $currentStatus = $this->currentStatus ?? [];
+        $currentStatus = reset($currentStatus);
+
+        if ($currentStatus === false) {
+            return null;
+        }
+
+        return $currentStatus;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CurrentStatus|null
+     */
+    public function lastCurrentStatus(): ?CurrentStatus
+    {
+        $currentStatus = $this->currentStatus ?? [];
+        $currentStatus = end($currentStatus);
+
+        if ($currentStatus === false) {
+            return null;
+        }
+
+        return $currentStatus;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\CurrentStatus $currentStatus
      * @return self
      */
@@ -571,6 +631,36 @@ class TransportEventType
         $this->contact = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Contact|null
+     */
+    public function firstContact(): ?Contact
+    {
+        $contact = $this->contact ?? [];
+        $contact = reset($contact);
+
+        if ($contact === false) {
+            return null;
+        }
+
+        return $contact;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Contact|null
+     */
+    public function lastContact(): ?Contact
+    {
+        $contact = $this->contact ?? [];
+        $contact = end($contact);
+
+        if ($contact === false) {
+            return null;
+        }
+
+        return $contact;
     }
 
     /**
@@ -740,6 +830,36 @@ class TransportEventType
         $this->period = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Period|null
+     */
+    public function firstPeriod(): ?Period
+    {
+        $period = $this->period ?? [];
+        $period = reset($period);
+
+        if ($period === false) {
+            return null;
+        }
+
+        return $period;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Period|null
+     */
+    public function lastPeriod(): ?Period
+    {
+        $period = $this->period ?? [];
+        $period = end($period);
+
+        if ($period === false) {
+            return null;
+        }
+
+        return $period;
     }
 
     /**

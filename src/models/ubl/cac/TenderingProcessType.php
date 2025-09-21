@@ -397,6 +397,36 @@ class TenderingProcessType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -485,6 +515,36 @@ class TenderingProcessType
         $this->negotiationDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\NegotiationDescription|null
+     */
+    public function firstNegotiationDescription(): ?NegotiationDescription
+    {
+        $negotiationDescription = $this->negotiationDescription ?? [];
+        $negotiationDescription = reset($negotiationDescription);
+
+        if ($negotiationDescription === false) {
+            return null;
+        }
+
+        return $negotiationDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\NegotiationDescription|null
+     */
+    public function lastNegotiationDescription(): ?NegotiationDescription
+    {
+        $negotiationDescription = $this->negotiationDescription ?? [];
+        $negotiationDescription = end($negotiationDescription);
+
+        if ($negotiationDescription === false) {
+            return null;
+        }
+
+        return $negotiationDescription;
     }
 
     /**
@@ -1033,6 +1093,36 @@ class TenderingProcessType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NoticeDocumentReference|null
+     */
+    public function firstNoticeDocumentReference(): ?NoticeDocumentReference
+    {
+        $noticeDocumentReference = $this->noticeDocumentReference ?? [];
+        $noticeDocumentReference = reset($noticeDocumentReference);
+
+        if ($noticeDocumentReference === false) {
+            return null;
+        }
+
+        return $noticeDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NoticeDocumentReference|null
+     */
+    public function lastNoticeDocumentReference(): ?NoticeDocumentReference
+    {
+        $noticeDocumentReference = $this->noticeDocumentReference ?? [];
+        $noticeDocumentReference = end($noticeDocumentReference);
+
+        if ($noticeDocumentReference === false) {
+            return null;
+        }
+
+        return $noticeDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\NoticeDocumentReference $noticeDocumentReference
      * @return self
      */
@@ -1121,6 +1211,36 @@ class TenderingProcessType
         $this->additionalDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference|null
+     */
+    public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
+    {
+        $additionalDocumentReference = $this->additionalDocumentReference ?? [];
+        $additionalDocumentReference = reset($additionalDocumentReference);
+
+        if ($additionalDocumentReference === false) {
+            return null;
+        }
+
+        return $additionalDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference|null
+     */
+    public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
+    {
+        $additionalDocumentReference = $this->additionalDocumentReference ?? [];
+        $additionalDocumentReference = end($additionalDocumentReference);
+
+        if ($additionalDocumentReference === false) {
+            return null;
+        }
+
+        return $additionalDocumentReference;
     }
 
     /**
@@ -1213,6 +1333,36 @@ class TenderingProcessType
         $this->processJustification = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ProcessJustification|null
+     */
+    public function firstProcessJustification(): ?ProcessJustification
+    {
+        $processJustification = $this->processJustification ?? [];
+        $processJustification = reset($processJustification);
+
+        if ($processJustification === false) {
+            return null;
+        }
+
+        return $processJustification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ProcessJustification|null
+     */
+    public function lastProcessJustification(): ?ProcessJustification
+    {
+        $processJustification = $this->processJustification ?? [];
+        $processJustification = end($processJustification);
+
+        if ($processJustification === false) {
+            return null;
+        }
+
+        return $processJustification;
     }
 
     /**
@@ -1343,6 +1493,36 @@ class TenderingProcessType
         $this->openTenderEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OpenTenderEvent|null
+     */
+    public function firstOpenTenderEvent(): ?OpenTenderEvent
+    {
+        $openTenderEvent = $this->openTenderEvent ?? [];
+        $openTenderEvent = reset($openTenderEvent);
+
+        if ($openTenderEvent === false) {
+            return null;
+        }
+
+        return $openTenderEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OpenTenderEvent|null
+     */
+    public function lastOpenTenderEvent(): ?OpenTenderEvent
+    {
+        $openTenderEvent = $this->openTenderEvent ?? [];
+        $openTenderEvent = end($openTenderEvent);
+
+        if ($openTenderEvent === false) {
+            return null;
+        }
+
+        return $openTenderEvent;
     }
 
     /**

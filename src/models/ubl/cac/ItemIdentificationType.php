@@ -237,6 +237,36 @@ class ItemIdentificationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PhysicalAttribute|null
+     */
+    public function firstPhysicalAttribute(): ?PhysicalAttribute
+    {
+        $physicalAttribute = $this->physicalAttribute ?? [];
+        $physicalAttribute = reset($physicalAttribute);
+
+        if ($physicalAttribute === false) {
+            return null;
+        }
+
+        return $physicalAttribute;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PhysicalAttribute|null
+     */
+    public function lastPhysicalAttribute(): ?PhysicalAttribute
+    {
+        $physicalAttribute = $this->physicalAttribute ?? [];
+        $physicalAttribute = end($physicalAttribute);
+
+        if ($physicalAttribute === false) {
+            return null;
+        }
+
+        return $physicalAttribute;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PhysicalAttribute $physicalAttribute
      * @return self
      */
@@ -325,6 +355,36 @@ class ItemIdentificationType
         $this->measurementDimension = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function firstMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = reset($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function lastMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = end($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
     }
 
     /**

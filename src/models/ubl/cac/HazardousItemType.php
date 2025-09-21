@@ -440,6 +440,36 @@ class HazardousItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation|null
+     */
+    public function firstAdditionalInformation(): ?AdditionalInformation
+    {
+        $additionalInformation = $this->additionalInformation ?? [];
+        $additionalInformation = reset($additionalInformation);
+
+        if ($additionalInformation === false) {
+            return null;
+        }
+
+        return $additionalInformation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation|null
+     */
+    public function lastAdditionalInformation(): ?AdditionalInformation
+    {
+        $additionalInformation = $this->additionalInformation ?? [];
+        $additionalInformation = end($additionalInformation);
+
+        if ($additionalInformation === false) {
+            return null;
+        }
+
+        return $additionalInformation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation $additionalInformation
      * @return self
      */
@@ -1079,6 +1109,36 @@ class HazardousItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SecondaryHazard|null
+     */
+    public function firstSecondaryHazard(): ?SecondaryHazard
+    {
+        $secondaryHazard = $this->secondaryHazard ?? [];
+        $secondaryHazard = reset($secondaryHazard);
+
+        if ($secondaryHazard === false) {
+            return null;
+        }
+
+        return $secondaryHazard;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SecondaryHazard|null
+     */
+    public function lastSecondaryHazard(): ?SecondaryHazard
+    {
+        $secondaryHazard = $this->secondaryHazard ?? [];
+        $secondaryHazard = end($secondaryHazard);
+
+        if ($secondaryHazard === false) {
+            return null;
+        }
+
+        return $secondaryHazard;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SecondaryHazard $secondaryHazard
      * @return self
      */
@@ -1167,6 +1227,36 @@ class HazardousItemType
         $this->hazardousGoodsTransit = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousGoodsTransit|null
+     */
+    public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
+    {
+        $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
+        $hazardousGoodsTransit = reset($hazardousGoodsTransit);
+
+        if ($hazardousGoodsTransit === false) {
+            return null;
+        }
+
+        return $hazardousGoodsTransit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousGoodsTransit|null
+     */
+    public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
+    {
+        $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
+        $hazardousGoodsTransit = end($hazardousGoodsTransit);
+
+        if ($hazardousGoodsTransit === false) {
+            return null;
+        }
+
+        return $hazardousGoodsTransit;
     }
 
     /**
@@ -1336,6 +1426,36 @@ class HazardousItemType
         $this->additionalTemperature = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalTemperature|null
+     */
+    public function firstAdditionalTemperature(): ?AdditionalTemperature
+    {
+        $additionalTemperature = $this->additionalTemperature ?? [];
+        $additionalTemperature = reset($additionalTemperature);
+
+        if ($additionalTemperature === false) {
+            return null;
+        }
+
+        return $additionalTemperature;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalTemperature|null
+     */
+    public function lastAdditionalTemperature(): ?AdditionalTemperature
+    {
+        $additionalTemperature = $this->additionalTemperature ?? [];
+        $additionalTemperature = end($additionalTemperature);
+
+        if ($additionalTemperature === false) {
+            return null;
+        }
+
+        return $additionalTemperature;
     }
 
     /**

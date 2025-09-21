@@ -337,6 +337,36 @@ class TenderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -741,6 +771,36 @@ class TenderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation|null
+     */
+    public function firstWarrantyInformation(): ?WarrantyInformation
+    {
+        $warrantyInformation = $this->warrantyInformation ?? [];
+        $warrantyInformation = reset($warrantyInformation);
+
+        if ($warrantyInformation === false) {
+            return null;
+        }
+
+        return $warrantyInformation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation|null
+     */
+    public function lastWarrantyInformation(): ?WarrantyInformation
+    {
+        $warrantyInformation = $this->warrantyInformation ?? [];
+        $warrantyInformation = end($warrantyInformation);
+
+        if ($warrantyInformation === false) {
+            return null;
+        }
+
+        return $warrantyInformation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation $warrantyInformation
      * @return self
      */
@@ -868,6 +928,36 @@ class TenderLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**
@@ -1001,6 +1091,36 @@ class TenderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity|null
+     */
+    public function firstOfferedItemLocationQuantity(): ?OfferedItemLocationQuantity
+    {
+        $offeredItemLocationQuantity = $this->offeredItemLocationQuantity ?? [];
+        $offeredItemLocationQuantity = reset($offeredItemLocationQuantity);
+
+        if ($offeredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $offeredItemLocationQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity|null
+     */
+    public function lastOfferedItemLocationQuantity(): ?OfferedItemLocationQuantity
+    {
+        $offeredItemLocationQuantity = $this->offeredItemLocationQuantity ?? [];
+        $offeredItemLocationQuantity = end($offeredItemLocationQuantity);
+
+        if ($offeredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $offeredItemLocationQuantity;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\OfferedItemLocationQuantity $offeredItemLocationQuantity
      * @return self
      */
@@ -1090,6 +1210,36 @@ class TenderLineType
         $this->replacementRelatedItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem|null
+     */
+    public function firstReplacementRelatedItem(): ?ReplacementRelatedItem
+    {
+        $replacementRelatedItem = $this->replacementRelatedItem ?? [];
+        $replacementRelatedItem = reset($replacementRelatedItem);
+
+        if ($replacementRelatedItem === false) {
+            return null;
+        }
+
+        return $replacementRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem|null
+     */
+    public function lastReplacementRelatedItem(): ?ReplacementRelatedItem
+    {
+        $replacementRelatedItem = $this->replacementRelatedItem ?? [];
+        $replacementRelatedItem = end($replacementRelatedItem);
+
+        if ($replacementRelatedItem === false) {
+            return null;
+        }
+
+        return $replacementRelatedItem;
     }
 
     /**
@@ -1259,6 +1409,36 @@ class TenderLineType
         $this->subTenderLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubTenderLine|null
+     */
+    public function firstSubTenderLine(): ?SubTenderLine
+    {
+        $subTenderLine = $this->subTenderLine ?? [];
+        $subTenderLine = reset($subTenderLine);
+
+        if ($subTenderLine === false) {
+            return null;
+        }
+
+        return $subTenderLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubTenderLine|null
+     */
+    public function lastSubTenderLine(): ?SubTenderLine
+    {
+        $subTenderLine = $this->subTenderLine ?? [];
+        $subTenderLine = end($subTenderLine);
+
+        if ($subTenderLine === false) {
+            return null;
+        }
+
+        return $subTenderLine;
     }
 
     /**

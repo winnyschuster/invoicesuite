@@ -231,6 +231,36 @@ class ExceptionCriteriaLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -633,6 +663,36 @@ class ExceptionCriteriaLineType
         $this->supplyItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupplyItem|null
+     */
+    public function firstSupplyItem(): ?SupplyItem
+    {
+        $supplyItem = $this->supplyItem ?? [];
+        $supplyItem = reset($supplyItem);
+
+        if ($supplyItem === false) {
+            return null;
+        }
+
+        return $supplyItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupplyItem|null
+     */
+    public function lastSupplyItem(): ?SupplyItem
+    {
+        $supplyItem = $this->supplyItem ?? [];
+        $supplyItem = end($supplyItem);
+
+        if ($supplyItem === false) {
+            return null;
+        }
+
+        return $supplyItem;
     }
 
     /**

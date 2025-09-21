@@ -266,6 +266,36 @@ class SecondaryHazardType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Extension|null
+     */
+    public function firstExtension(): ?Extension
+    {
+        $extension = $this->extension ?? [];
+        $extension = reset($extension);
+
+        if ($extension === false) {
+            return null;
+        }
+
+        return $extension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Extension|null
+     */
+    public function lastExtension(): ?Extension
+    {
+        $extension = $this->extension ?? [];
+        $extension = end($extension);
+
+        if ($extension === false) {
+            return null;
+        }
+
+        return $extension;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Extension $extension
      * @return self
      */

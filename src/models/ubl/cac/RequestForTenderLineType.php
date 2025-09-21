@@ -317,6 +317,36 @@ class RequestForTenderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -671,6 +701,36 @@ class RequestForTenderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
      * @return self
      */
@@ -762,6 +822,36 @@ class RequestForTenderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryPeriod|null
+     */
+    public function firstDeliveryPeriod(): ?DeliveryPeriod
+    {
+        $deliveryPeriod = $this->deliveryPeriod ?? [];
+        $deliveryPeriod = reset($deliveryPeriod);
+
+        if ($deliveryPeriod === false) {
+            return null;
+        }
+
+        return $deliveryPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryPeriod|null
+     */
+    public function lastDeliveryPeriod(): ?DeliveryPeriod
+    {
+        $deliveryPeriod = $this->deliveryPeriod ?? [];
+        $deliveryPeriod = end($deliveryPeriod);
+
+        if ($deliveryPeriod === false) {
+            return null;
+        }
+
+        return $deliveryPeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryPeriod $deliveryPeriod
      * @return self
      */
@@ -850,6 +940,36 @@ class RequestForTenderLineType
         $this->requiredItemLocationQuantity = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
     }
 
     /**
@@ -1021,6 +1141,36 @@ class RequestForTenderLineType
         $this->subRequestForTenderLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubRequestForTenderLine|null
+     */
+    public function firstSubRequestForTenderLine(): ?SubRequestForTenderLine
+    {
+        $subRequestForTenderLine = $this->subRequestForTenderLine ?? [];
+        $subRequestForTenderLine = reset($subRequestForTenderLine);
+
+        if ($subRequestForTenderLine === false) {
+            return null;
+        }
+
+        return $subRequestForTenderLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubRequestForTenderLine|null
+     */
+    public function lastSubRequestForTenderLine(): ?SubRequestForTenderLine
+    {
+        $subRequestForTenderLine = $this->subRequestForTenderLine ?? [];
+        $subRequestForTenderLine = end($subRequestForTenderLine);
+
+        if ($subRequestForTenderLine === false) {
+            return null;
+        }
+
+        return $subRequestForTenderLine;
     }
 
     /**

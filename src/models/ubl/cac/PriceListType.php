@@ -174,6 +174,36 @@ class PriceListType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function firstValidityPeriod(): ?ValidityPeriod
+    {
+        $validityPeriod = $this->validityPeriod ?? [];
+        $validityPeriod = reset($validityPeriod);
+
+        if ($validityPeriod === false) {
+            return null;
+        }
+
+        return $validityPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function lastValidityPeriod(): ?ValidityPeriod
+    {
+        $validityPeriod = $this->validityPeriod ?? [];
+        $validityPeriod = end($validityPeriod);
+
+        if ($validityPeriod === false) {
+            return null;
+        }
+
+        return $validityPeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod $validityPeriod
      * @return self
      */

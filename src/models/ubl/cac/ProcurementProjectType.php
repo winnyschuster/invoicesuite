@@ -303,6 +303,36 @@ class ProcurementProjectType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function firstName(): ?Name
+    {
+        $name = $this->name ?? [];
+        $name = reset($name);
+
+        if ($name === false) {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function lastName(): ?Name
+    {
+        $name = $this->name ?? [];
+        $name = end($name);
+
+        if ($name === false) {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Name $name
      * @return self
      */
@@ -391,6 +421,36 @@ class ProcurementProjectType
         $this->description = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
     }
 
     /**
@@ -641,6 +701,36 @@ class ProcurementProjectType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FeeDescription|null
+     */
+    public function firstFeeDescription(): ?FeeDescription
+    {
+        $feeDescription = $this->feeDescription ?? [];
+        $feeDescription = reset($feeDescription);
+
+        if ($feeDescription === false) {
+            return null;
+        }
+
+        return $feeDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FeeDescription|null
+     */
+    public function lastFeeDescription(): ?FeeDescription
+    {
+        $feeDescription = $this->feeDescription ?? [];
+        $feeDescription = end($feeDescription);
+
+        if ($feeDescription === false) {
+            return null;
+        }
+
+        return $feeDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\FeeDescription $feeDescription
      * @return self
      */
@@ -798,6 +888,36 @@ class ProcurementProjectType
         $this->note = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
     }
 
     /**
@@ -971,6 +1091,36 @@ class ProcurementProjectType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalCommodityClassification|null
+     */
+    public function firstAdditionalCommodityClassification(): ?AdditionalCommodityClassification
+    {
+        $additionalCommodityClassification = $this->additionalCommodityClassification ?? [];
+        $additionalCommodityClassification = reset($additionalCommodityClassification);
+
+        if ($additionalCommodityClassification === false) {
+            return null;
+        }
+
+        return $additionalCommodityClassification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalCommodityClassification|null
+     */
+    public function lastAdditionalCommodityClassification(): ?AdditionalCommodityClassification
+    {
+        $additionalCommodityClassification = $this->additionalCommodityClassification ?? [];
+        $additionalCommodityClassification = end($additionalCommodityClassification);
+
+        if ($additionalCommodityClassification === false) {
+            return null;
+        }
+
+        return $additionalCommodityClassification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalCommodityClassification $additionalCommodityClassification
      * @return self
      */
@@ -1061,6 +1211,36 @@ class ProcurementProjectType
         $this->realizedLocation = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RealizedLocation|null
+     */
+    public function firstRealizedLocation(): ?RealizedLocation
+    {
+        $realizedLocation = $this->realizedLocation ?? [];
+        $realizedLocation = reset($realizedLocation);
+
+        if ($realizedLocation === false) {
+            return null;
+        }
+
+        return $realizedLocation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RealizedLocation|null
+     */
+    public function lastRealizedLocation(): ?RealizedLocation
+    {
+        $realizedLocation = $this->realizedLocation ?? [];
+        $realizedLocation = end($realizedLocation);
+
+        if ($realizedLocation === false) {
+            return null;
+        }
+
+        return $realizedLocation;
     }
 
     /**
@@ -1230,6 +1410,36 @@ class ProcurementProjectType
         $this->requestForTenderLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequestForTenderLine|null
+     */
+    public function firstRequestForTenderLine(): ?RequestForTenderLine
+    {
+        $requestForTenderLine = $this->requestForTenderLine ?? [];
+        $requestForTenderLine = reset($requestForTenderLine);
+
+        if ($requestForTenderLine === false) {
+            return null;
+        }
+
+        return $requestForTenderLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequestForTenderLine|null
+     */
+    public function lastRequestForTenderLine(): ?RequestForTenderLine
+    {
+        $requestForTenderLine = $this->requestForTenderLine ?? [];
+        $requestForTenderLine = end($requestForTenderLine);
+
+        if ($requestForTenderLine === false) {
+            return null;
+        }
+
+        return $requestForTenderLine;
     }
 
     /**

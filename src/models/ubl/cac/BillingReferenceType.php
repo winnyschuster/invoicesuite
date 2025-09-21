@@ -416,6 +416,36 @@ class BillingReferenceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReferenceLine|null
+     */
+    public function firstBillingReferenceLine(): ?BillingReferenceLine
+    {
+        $billingReferenceLine = $this->billingReferenceLine ?? [];
+        $billingReferenceLine = reset($billingReferenceLine);
+
+        if ($billingReferenceLine === false) {
+            return null;
+        }
+
+        return $billingReferenceLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReferenceLine|null
+     */
+    public function lastBillingReferenceLine(): ?BillingReferenceLine
+    {
+        $billingReferenceLine = $this->billingReferenceLine ?? [];
+        $billingReferenceLine = end($billingReferenceLine);
+
+        if ($billingReferenceLine === false) {
+            return null;
+        }
+
+        return $billingReferenceLine;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\BillingReferenceLine $billingReferenceLine
      * @return self
      */

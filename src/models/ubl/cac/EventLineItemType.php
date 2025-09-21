@@ -174,6 +174,36 @@ class EventLineItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RetailPlannedImpact|null
+     */
+    public function firstRetailPlannedImpact(): ?RetailPlannedImpact
+    {
+        $retailPlannedImpact = $this->retailPlannedImpact ?? [];
+        $retailPlannedImpact = reset($retailPlannedImpact);
+
+        if ($retailPlannedImpact === false) {
+            return null;
+        }
+
+        return $retailPlannedImpact;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RetailPlannedImpact|null
+     */
+    public function lastRetailPlannedImpact(): ?RetailPlannedImpact
+    {
+        $retailPlannedImpact = $this->retailPlannedImpact ?? [];
+        $retailPlannedImpact = end($retailPlannedImpact);
+
+        if ($retailPlannedImpact === false) {
+            return null;
+        }
+
+        return $retailPlannedImpact;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\RetailPlannedImpact $retailPlannedImpact
      * @return self
      */

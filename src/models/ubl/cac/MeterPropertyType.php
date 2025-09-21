@@ -266,6 +266,36 @@ class MeterPropertyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ValueQualifier|null
+     */
+    public function firstValueQualifier(): ?ValueQualifier
+    {
+        $valueQualifier = $this->valueQualifier ?? [];
+        $valueQualifier = reset($valueQualifier);
+
+        if ($valueQualifier === false) {
+            return null;
+        }
+
+        return $valueQualifier;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ValueQualifier|null
+     */
+    public function lastValueQualifier(): ?ValueQualifier
+    {
+        $valueQualifier = $this->valueQualifier ?? [];
+        $valueQualifier = end($valueQualifier);
+
+        if ($valueQualifier === false) {
+            return null;
+        }
+
+        return $valueQualifier;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ValueQualifier $valueQualifier
      * @return self
      */

@@ -239,6 +239,36 @@ class PowerOfAttorneyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -408,6 +438,36 @@ class PowerOfAttorneyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WitnessParty|null
+     */
+    public function firstWitnessParty(): ?WitnessParty
+    {
+        $witnessParty = $this->witnessParty ?? [];
+        $witnessParty = reset($witnessParty);
+
+        if ($witnessParty === false) {
+            return null;
+        }
+
+        return $witnessParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WitnessParty|null
+     */
+    public function lastWitnessParty(): ?WitnessParty
+    {
+        $witnessParty = $this->witnessParty ?? [];
+        $witnessParty = end($witnessParty);
+
+        if ($witnessParty === false) {
+            return null;
+        }
+
+        return $witnessParty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\WitnessParty $witnessParty
      * @return self
      */
@@ -496,6 +556,36 @@ class PowerOfAttorneyType
         $this->mandateDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MandateDocumentReference|null
+     */
+    public function firstMandateDocumentReference(): ?MandateDocumentReference
+    {
+        $mandateDocumentReference = $this->mandateDocumentReference ?? [];
+        $mandateDocumentReference = reset($mandateDocumentReference);
+
+        if ($mandateDocumentReference === false) {
+            return null;
+        }
+
+        return $mandateDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MandateDocumentReference|null
+     */
+    public function lastMandateDocumentReference(): ?MandateDocumentReference
+    {
+        $mandateDocumentReference = $this->mandateDocumentReference ?? [];
+        $mandateDocumentReference = end($mandateDocumentReference);
+
+        if ($mandateDocumentReference === false) {
+            return null;
+        }
+
+        return $mandateDocumentReference;
     }
 
     /**

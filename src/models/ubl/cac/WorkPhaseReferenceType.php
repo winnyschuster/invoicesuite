@@ -210,6 +210,36 @@ class WorkPhaseReferenceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WorkPhase|null
+     */
+    public function firstWorkPhase(): ?WorkPhase
+    {
+        $workPhase = $this->workPhase ?? [];
+        $workPhase = reset($workPhase);
+
+        if ($workPhase === false) {
+            return null;
+        }
+
+        return $workPhase;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WorkPhase|null
+     */
+    public function lastWorkPhase(): ?WorkPhase
+    {
+        $workPhase = $this->workPhase ?? [];
+        $workPhase = end($workPhase);
+
+        if ($workPhase === false) {
+            return null;
+        }
+
+        return $workPhase;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\WorkPhase $workPhase
      * @return self
      */
@@ -395,6 +425,36 @@ class WorkPhaseReferenceType
         $this->workOrderDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference|null
+     */
+    public function firstWorkOrderDocumentReference(): ?WorkOrderDocumentReference
+    {
+        $workOrderDocumentReference = $this->workOrderDocumentReference ?? [];
+        $workOrderDocumentReference = reset($workOrderDocumentReference);
+
+        if ($workOrderDocumentReference === false) {
+            return null;
+        }
+
+        return $workOrderDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WorkOrderDocumentReference|null
+     */
+    public function lastWorkOrderDocumentReference(): ?WorkOrderDocumentReference
+    {
+        $workOrderDocumentReference = $this->workOrderDocumentReference ?? [];
+        $workOrderDocumentReference = end($workOrderDocumentReference);
+
+        if ($workOrderDocumentReference === false) {
+            return null;
+        }
+
+        return $workOrderDocumentReference;
     }
 
     /**

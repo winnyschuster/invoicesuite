@@ -84,6 +84,36 @@ class TendererPartyQualificationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InterestedProcurementProjectLot|null
+     */
+    public function firstInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
+    {
+        $interestedProcurementProjectLot = $this->interestedProcurementProjectLot ?? [];
+        $interestedProcurementProjectLot = reset($interestedProcurementProjectLot);
+
+        if ($interestedProcurementProjectLot === false) {
+            return null;
+        }
+
+        return $interestedProcurementProjectLot;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InterestedProcurementProjectLot|null
+     */
+    public function lastInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
+    {
+        $interestedProcurementProjectLot = $this->interestedProcurementProjectLot ?? [];
+        $interestedProcurementProjectLot = end($interestedProcurementProjectLot);
+
+        if ($interestedProcurementProjectLot === false) {
+            return null;
+        }
+
+        return $interestedProcurementProjectLot;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\InterestedProcurementProjectLot $interestedProcurementProjectLot
      * @return self
      */
@@ -213,6 +243,36 @@ class TendererPartyQualificationType
         $this->additionalQualifyingParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalQualifyingParty|null
+     */
+    public function firstAdditionalQualifyingParty(): ?AdditionalQualifyingParty
+    {
+        $additionalQualifyingParty = $this->additionalQualifyingParty ?? [];
+        $additionalQualifyingParty = reset($additionalQualifyingParty);
+
+        if ($additionalQualifyingParty === false) {
+            return null;
+        }
+
+        return $additionalQualifyingParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalQualifyingParty|null
+     */
+    public function lastAdditionalQualifyingParty(): ?AdditionalQualifyingParty
+    {
+        $additionalQualifyingParty = $this->additionalQualifyingParty ?? [];
+        $additionalQualifyingParty = end($additionalQualifyingParty);
+
+        if ($additionalQualifyingParty === false) {
+            return null;
+        }
+
+        return $additionalQualifyingParty;
     }
 
     /**

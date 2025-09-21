@@ -163,6 +163,36 @@ class BudgetAccountLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BudgetAccount|null
+     */
+    public function firstBudgetAccount(): ?BudgetAccount
+    {
+        $budgetAccount = $this->budgetAccount ?? [];
+        $budgetAccount = reset($budgetAccount);
+
+        if ($budgetAccount === false) {
+            return null;
+        }
+
+        return $budgetAccount;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BudgetAccount|null
+     */
+    public function lastBudgetAccount(): ?BudgetAccount
+    {
+        $budgetAccount = $this->budgetAccount ?? [];
+        $budgetAccount = end($budgetAccount);
+
+        if ($budgetAccount === false) {
+            return null;
+        }
+
+        return $budgetAccount;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\BudgetAccount $budgetAccount
      * @return self
      */

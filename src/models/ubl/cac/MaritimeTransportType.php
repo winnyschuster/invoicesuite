@@ -261,6 +261,36 @@ class MaritimeTransportType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ShipsRequirements|null
+     */
+    public function firstShipsRequirements(): ?ShipsRequirements
+    {
+        $shipsRequirements = $this->shipsRequirements ?? [];
+        $shipsRequirements = reset($shipsRequirements);
+
+        if ($shipsRequirements === false) {
+            return null;
+        }
+
+        return $shipsRequirements;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ShipsRequirements|null
+     */
+    public function lastShipsRequirements(): ?ShipsRequirements
+    {
+        $shipsRequirements = $this->shipsRequirements ?? [];
+        $shipsRequirements = end($shipsRequirements);
+
+        if ($shipsRequirements === false) {
+            return null;
+        }
+
+        return $shipsRequirements;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ShipsRequirements $shipsRequirements
      * @return self
      */

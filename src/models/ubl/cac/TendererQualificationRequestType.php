@@ -261,6 +261,36 @@ class TendererQualificationRequestType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PersonalSituation|null
+     */
+    public function firstPersonalSituation(): ?PersonalSituation
+    {
+        $personalSituation = $this->personalSituation ?? [];
+        $personalSituation = reset($personalSituation);
+
+        if ($personalSituation === false) {
+            return null;
+        }
+
+        return $personalSituation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PersonalSituation|null
+     */
+    public function lastPersonalSituation(): ?PersonalSituation
+    {
+        $personalSituation = $this->personalSituation ?? [];
+        $personalSituation = end($personalSituation);
+
+        if ($personalSituation === false) {
+            return null;
+        }
+
+        return $personalSituation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PersonalSituation $personalSituation
      * @return self
      */
@@ -430,6 +460,36 @@ class TendererQualificationRequestType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -518,6 +578,36 @@ class TendererQualificationRequestType
         $this->requiredBusinessClassificationScheme = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredBusinessClassificationScheme|null
+     */
+    public function firstRequiredBusinessClassificationScheme(): ?RequiredBusinessClassificationScheme
+    {
+        $requiredBusinessClassificationScheme = $this->requiredBusinessClassificationScheme ?? [];
+        $requiredBusinessClassificationScheme = reset($requiredBusinessClassificationScheme);
+
+        if ($requiredBusinessClassificationScheme === false) {
+            return null;
+        }
+
+        return $requiredBusinessClassificationScheme;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredBusinessClassificationScheme|null
+     */
+    public function lastRequiredBusinessClassificationScheme(): ?RequiredBusinessClassificationScheme
+    {
+        $requiredBusinessClassificationScheme = $this->requiredBusinessClassificationScheme ?? [];
+        $requiredBusinessClassificationScheme = end($requiredBusinessClassificationScheme);
+
+        if ($requiredBusinessClassificationScheme === false) {
+            return null;
+        }
+
+        return $requiredBusinessClassificationScheme;
     }
 
     /**
@@ -614,6 +704,36 @@ class TendererQualificationRequestType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TechnicalEvaluationCriterion|null
+     */
+    public function firstTechnicalEvaluationCriterion(): ?TechnicalEvaluationCriterion
+    {
+        $technicalEvaluationCriterion = $this->technicalEvaluationCriterion ?? [];
+        $technicalEvaluationCriterion = reset($technicalEvaluationCriterion);
+
+        if ($technicalEvaluationCriterion === false) {
+            return null;
+        }
+
+        return $technicalEvaluationCriterion;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TechnicalEvaluationCriterion|null
+     */
+    public function lastTechnicalEvaluationCriterion(): ?TechnicalEvaluationCriterion
+    {
+        $technicalEvaluationCriterion = $this->technicalEvaluationCriterion ?? [];
+        $technicalEvaluationCriterion = end($technicalEvaluationCriterion);
+
+        if ($technicalEvaluationCriterion === false) {
+            return null;
+        }
+
+        return $technicalEvaluationCriterion;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TechnicalEvaluationCriterion $technicalEvaluationCriterion
      * @return self
      */
@@ -704,6 +824,36 @@ class TendererQualificationRequestType
         $this->financialEvaluationCriterion = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancialEvaluationCriterion|null
+     */
+    public function firstFinancialEvaluationCriterion(): ?FinancialEvaluationCriterion
+    {
+        $financialEvaluationCriterion = $this->financialEvaluationCriterion ?? [];
+        $financialEvaluationCriterion = reset($financialEvaluationCriterion);
+
+        if ($financialEvaluationCriterion === false) {
+            return null;
+        }
+
+        return $financialEvaluationCriterion;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancialEvaluationCriterion|null
+     */
+    public function lastFinancialEvaluationCriterion(): ?FinancialEvaluationCriterion
+    {
+        $financialEvaluationCriterion = $this->financialEvaluationCriterion ?? [];
+        $financialEvaluationCriterion = end($financialEvaluationCriterion);
+
+        if ($financialEvaluationCriterion === false) {
+            return null;
+        }
+
+        return $financialEvaluationCriterion;
     }
 
     /**
@@ -800,6 +950,36 @@ class TendererQualificationRequestType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SpecificTendererRequirement|null
+     */
+    public function firstSpecificTendererRequirement(): ?SpecificTendererRequirement
+    {
+        $specificTendererRequirement = $this->specificTendererRequirement ?? [];
+        $specificTendererRequirement = reset($specificTendererRequirement);
+
+        if ($specificTendererRequirement === false) {
+            return null;
+        }
+
+        return $specificTendererRequirement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SpecificTendererRequirement|null
+     */
+    public function lastSpecificTendererRequirement(): ?SpecificTendererRequirement
+    {
+        $specificTendererRequirement = $this->specificTendererRequirement ?? [];
+        $specificTendererRequirement = end($specificTendererRequirement);
+
+        if ($specificTendererRequirement === false) {
+            return null;
+        }
+
+        return $specificTendererRequirement;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SpecificTendererRequirement $specificTendererRequirement
      * @return self
      */
@@ -889,6 +1069,36 @@ class TendererQualificationRequestType
         $this->economicOperatorRole = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EconomicOperatorRole|null
+     */
+    public function firstEconomicOperatorRole(): ?EconomicOperatorRole
+    {
+        $economicOperatorRole = $this->economicOperatorRole ?? [];
+        $economicOperatorRole = reset($economicOperatorRole);
+
+        if ($economicOperatorRole === false) {
+            return null;
+        }
+
+        return $economicOperatorRole;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EconomicOperatorRole|null
+     */
+    public function lastEconomicOperatorRole(): ?EconomicOperatorRole
+    {
+        $economicOperatorRole = $this->economicOperatorRole ?? [];
+        $economicOperatorRole = end($economicOperatorRole);
+
+        if ($economicOperatorRole === false) {
+            return null;
+        }
+
+        return $economicOperatorRole;
     }
 
     /**

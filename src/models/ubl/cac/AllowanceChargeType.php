@@ -334,6 +334,36 @@ class AllowanceChargeType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AllowanceChargeReason|null
+     */
+    public function firstAllowanceChargeReason(): ?AllowanceChargeReason
+    {
+        $allowanceChargeReason = $this->allowanceChargeReason ?? [];
+        $allowanceChargeReason = reset($allowanceChargeReason);
+
+        if ($allowanceChargeReason === false) {
+            return null;
+        }
+
+        return $allowanceChargeReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AllowanceChargeReason|null
+     */
+    public function lastAllowanceChargeReason(): ?AllowanceChargeReason
+    {
+        $allowanceChargeReason = $this->allowanceChargeReason ?? [];
+        $allowanceChargeReason = end($allowanceChargeReason);
+
+        if ($allowanceChargeReason === false) {
+            return null;
+        }
+
+        return $allowanceChargeReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AllowanceChargeReason $allowanceChargeReason
      * @return self
      */
@@ -727,6 +757,36 @@ class AllowanceChargeType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxCategory|null
+     */
+    public function firstTaxCategory(): ?TaxCategory
+    {
+        $taxCategory = $this->taxCategory ?? [];
+        $taxCategory = reset($taxCategory);
+
+        if ($taxCategory === false) {
+            return null;
+        }
+
+        return $taxCategory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxCategory|null
+     */
+    public function lastTaxCategory(): ?TaxCategory
+    {
+        $taxCategory = $this->taxCategory ?? [];
+        $taxCategory = end($taxCategory);
+
+        if ($taxCategory === false) {
+            return null;
+        }
+
+        return $taxCategory;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxCategory $taxCategory
      * @return self
      */
@@ -854,6 +914,36 @@ class AllowanceChargeType
         $this->paymentMeans = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentMeans|null
+     */
+    public function firstPaymentMeans(): ?PaymentMeans
+    {
+        $paymentMeans = $this->paymentMeans ?? [];
+        $paymentMeans = reset($paymentMeans);
+
+        if ($paymentMeans === false) {
+            return null;
+        }
+
+        return $paymentMeans;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentMeans|null
+     */
+    public function lastPaymentMeans(): ?PaymentMeans
+    {
+        $paymentMeans = $this->paymentMeans ?? [];
+        $paymentMeans = end($paymentMeans);
+
+        if ($paymentMeans === false) {
+            return null;
+        }
+
+        return $paymentMeans;
     }
 
     /**

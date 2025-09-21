@@ -681,6 +681,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\ext\UBLExtension|null
+     */
+    public function firstUBLExtensions(): ?UBLExtension
+    {
+        $uBLExtensions = $this->uBLExtensions ?? [];
+        $uBLExtensions = reset($uBLExtensions);
+
+        if ($uBLExtensions === false) {
+            return null;
+        }
+
+        return $uBLExtensions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\ext\UBLExtension|null
+     */
+    public function lastUBLExtensions(): ?UBLExtension
+    {
+        $uBLExtensions = $this->uBLExtensions ?? [];
+        $uBLExtensions = end($uBLExtensions);
+
+        if ($uBLExtensions === false) {
+            return null;
+        }
+
+        return $uBLExtensions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\ext\UBLExtension $uBLExtensions
      * @return self
      */
@@ -1161,6 +1191,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -1604,6 +1664,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod|null
+     */
+    public function firstInvoicePeriod(): ?InvoicePeriod
+    {
+        $invoicePeriod = $this->invoicePeriod ?? [];
+        $invoicePeriod = reset($invoicePeriod);
+
+        if ($invoicePeriod === false) {
+            return null;
+        }
+
+        return $invoicePeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod|null
+     */
+    public function lastInvoicePeriod(): ?InvoicePeriod
+    {
+        $invoicePeriod = $this->invoicePeriod ?? [];
+        $invoicePeriod = end($invoicePeriod);
+
+        if ($invoicePeriod === false) {
+            return null;
+        }
+
+        return $invoicePeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod $invoicePeriod
      * @return self
      */
@@ -1692,6 +1782,36 @@ class CreditNoteType
         $this->discrepancyResponse = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DiscrepancyResponse|null
+     */
+    public function firstDiscrepancyResponse(): ?DiscrepancyResponse
+    {
+        $discrepancyResponse = $this->discrepancyResponse ?? [];
+        $discrepancyResponse = reset($discrepancyResponse);
+
+        if ($discrepancyResponse === false) {
+            return null;
+        }
+
+        return $discrepancyResponse;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DiscrepancyResponse|null
+     */
+    public function lastDiscrepancyResponse(): ?DiscrepancyResponse
+    {
+        $discrepancyResponse = $this->discrepancyResponse ?? [];
+        $discrepancyResponse = end($discrepancyResponse);
+
+        if ($discrepancyResponse === false) {
+            return null;
+        }
+
+        return $discrepancyResponse;
     }
 
     /**
@@ -1825,6 +1945,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function firstBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = reset($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function lastBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = end($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\BillingReference $billingReference
      * @return self
      */
@@ -1913,6 +2063,36 @@ class CreditNoteType
         $this->despatchDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DespatchDocumentReference|null
+     */
+    public function firstDespatchDocumentReference(): ?DespatchDocumentReference
+    {
+        $despatchDocumentReference = $this->despatchDocumentReference ?? [];
+        $despatchDocumentReference = reset($despatchDocumentReference);
+
+        if ($despatchDocumentReference === false) {
+            return null;
+        }
+
+        return $despatchDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DespatchDocumentReference|null
+     */
+    public function lastDespatchDocumentReference(): ?DespatchDocumentReference
+    {
+        $despatchDocumentReference = $this->despatchDocumentReference ?? [];
+        $despatchDocumentReference = end($despatchDocumentReference);
+
+        if ($despatchDocumentReference === false) {
+            return null;
+        }
+
+        return $despatchDocumentReference;
     }
 
     /**
@@ -2007,6 +2187,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReceiptDocumentReference|null
+     */
+    public function firstReceiptDocumentReference(): ?ReceiptDocumentReference
+    {
+        $receiptDocumentReference = $this->receiptDocumentReference ?? [];
+        $receiptDocumentReference = reset($receiptDocumentReference);
+
+        if ($receiptDocumentReference === false) {
+            return null;
+        }
+
+        return $receiptDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReceiptDocumentReference|null
+     */
+    public function lastReceiptDocumentReference(): ?ReceiptDocumentReference
+    {
+        $receiptDocumentReference = $this->receiptDocumentReference ?? [];
+        $receiptDocumentReference = end($receiptDocumentReference);
+
+        if ($receiptDocumentReference === false) {
+            return null;
+        }
+
+        return $receiptDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ReceiptDocumentReference $receiptDocumentReference
      * @return self
      */
@@ -2098,6 +2308,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference|null
+     */
+    public function firstContractDocumentReference(): ?ContractDocumentReference
+    {
+        $contractDocumentReference = $this->contractDocumentReference ?? [];
+        $contractDocumentReference = reset($contractDocumentReference);
+
+        if ($contractDocumentReference === false) {
+            return null;
+        }
+
+        return $contractDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference|null
+     */
+    public function lastContractDocumentReference(): ?ContractDocumentReference
+    {
+        $contractDocumentReference = $this->contractDocumentReference ?? [];
+        $contractDocumentReference = end($contractDocumentReference);
+
+        if ($contractDocumentReference === false) {
+            return null;
+        }
+
+        return $contractDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ContractDocumentReference $contractDocumentReference
      * @return self
      */
@@ -2186,6 +2426,36 @@ class CreditNoteType
         $this->additionalDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference|null
+     */
+    public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
+    {
+        $additionalDocumentReference = $this->additionalDocumentReference ?? [];
+        $additionalDocumentReference = reset($additionalDocumentReference);
+
+        if ($additionalDocumentReference === false) {
+            return null;
+        }
+
+        return $additionalDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference|null
+     */
+    public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
+    {
+        $additionalDocumentReference = $this->additionalDocumentReference ?? [];
+        $additionalDocumentReference = end($additionalDocumentReference);
+
+        if ($additionalDocumentReference === false) {
+            return null;
+        }
+
+        return $additionalDocumentReference;
     }
 
     /**
@@ -2281,6 +2551,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\StatementDocumentReference|null
+     */
+    public function firstStatementDocumentReference(): ?StatementDocumentReference
+    {
+        $statementDocumentReference = $this->statementDocumentReference ?? [];
+        $statementDocumentReference = reset($statementDocumentReference);
+
+        if ($statementDocumentReference === false) {
+            return null;
+        }
+
+        return $statementDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\StatementDocumentReference|null
+     */
+    public function lastStatementDocumentReference(): ?StatementDocumentReference
+    {
+        $statementDocumentReference = $this->statementDocumentReference ?? [];
+        $statementDocumentReference = end($statementDocumentReference);
+
+        if ($statementDocumentReference === false) {
+            return null;
+        }
+
+        return $statementDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\StatementDocumentReference $statementDocumentReference
      * @return self
      */
@@ -2369,6 +2669,36 @@ class CreditNoteType
         $this->originatorDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginatorDocumentReference|null
+     */
+    public function firstOriginatorDocumentReference(): ?OriginatorDocumentReference
+    {
+        $originatorDocumentReference = $this->originatorDocumentReference ?? [];
+        $originatorDocumentReference = reset($originatorDocumentReference);
+
+        if ($originatorDocumentReference === false) {
+            return null;
+        }
+
+        return $originatorDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginatorDocumentReference|null
+     */
+    public function lastOriginatorDocumentReference(): ?OriginatorDocumentReference
+    {
+        $originatorDocumentReference = $this->originatorDocumentReference ?? [];
+        $originatorDocumentReference = end($originatorDocumentReference);
+
+        if ($originatorDocumentReference === false) {
+            return null;
+        }
+
+        return $originatorDocumentReference;
     }
 
     /**
@@ -2461,6 +2791,36 @@ class CreditNoteType
         $this->signature = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature|null
+     */
+    public function firstSignature(): ?Signature
+    {
+        $signature = $this->signature ?? [];
+        $signature = reset($signature);
+
+        if ($signature === false) {
+            return null;
+        }
+
+        return $signature;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature|null
+     */
+    public function lastSignature(): ?Signature
+    {
+        $signature = $this->signature ?? [];
+        $signature = end($signature);
+
+        if ($signature === false) {
+            return null;
+        }
+
+        return $signature;
     }
 
     /**
@@ -2789,6 +3149,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function firstDelivery(): ?Delivery
+    {
+        $delivery = $this->delivery ?? [];
+        $delivery = reset($delivery);
+
+        if ($delivery === false) {
+            return null;
+        }
+
+        return $delivery;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Delivery|null
+     */
+    public function lastDelivery(): ?Delivery
+    {
+        $delivery = $this->delivery ?? [];
+        $delivery = end($delivery);
+
+        if ($delivery === false) {
+            return null;
+        }
+
+        return $delivery;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Delivery $delivery
      * @return self
      */
@@ -2877,6 +3267,36 @@ class CreditNoteType
         $this->deliveryTerms = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms|null
+     */
+    public function firstDeliveryTerms(): ?DeliveryTerms
+    {
+        $deliveryTerms = $this->deliveryTerms ?? [];
+        $deliveryTerms = reset($deliveryTerms);
+
+        if ($deliveryTerms === false) {
+            return null;
+        }
+
+        return $deliveryTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms|null
+     */
+    public function lastDeliveryTerms(): ?DeliveryTerms
+    {
+        $deliveryTerms = $this->deliveryTerms ?? [];
+        $deliveryTerms = end($deliveryTerms);
+
+        if ($deliveryTerms === false) {
+            return null;
+        }
+
+        return $deliveryTerms;
     }
 
     /**
@@ -2971,6 +3391,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentMeans|null
+     */
+    public function firstPaymentMeans(): ?PaymentMeans
+    {
+        $paymentMeans = $this->paymentMeans ?? [];
+        $paymentMeans = reset($paymentMeans);
+
+        if ($paymentMeans === false) {
+            return null;
+        }
+
+        return $paymentMeans;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentMeans|null
+     */
+    public function lastPaymentMeans(): ?PaymentMeans
+    {
+        $paymentMeans = $this->paymentMeans ?? [];
+        $paymentMeans = end($paymentMeans);
+
+        if ($paymentMeans === false) {
+            return null;
+        }
+
+        return $paymentMeans;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PaymentMeans $paymentMeans
      * @return self
      */
@@ -3059,6 +3509,36 @@ class CreditNoteType
         $this->paymentTerms = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function firstPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = reset($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function lastPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = end($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
     }
 
     /**
@@ -3310,6 +3790,36 @@ class CreditNoteType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge $allowanceCharge
      * @return self
      */
@@ -3398,6 +3908,36 @@ class CreditNoteType
         $this->taxTotal = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
     }
 
     /**
@@ -3528,6 +4068,36 @@ class CreditNoteType
         $this->creditNoteLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CreditNoteLine|null
+     */
+    public function firstCreditNoteLine(): ?CreditNoteLine
+    {
+        $creditNoteLine = $this->creditNoteLine ?? [];
+        $creditNoteLine = reset($creditNoteLine);
+
+        if ($creditNoteLine === false) {
+            return null;
+        }
+
+        return $creditNoteLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CreditNoteLine|null
+     */
+    public function lastCreditNoteLine(): ?CreditNoteLine
+    {
+        $creditNoteLine = $this->creditNoteLine ?? [];
+        $creditNoteLine = end($creditNoteLine);
+
+        if ($creditNoteLine === false) {
+            return null;
+        }
+
+        return $creditNoteLine;
     }
 
     /**

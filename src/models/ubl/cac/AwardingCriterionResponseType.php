@@ -213,6 +213,36 @@ class AwardingCriterionResponseType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AwardingCriterionDescription|null
+     */
+    public function firstAwardingCriterionDescription(): ?AwardingCriterionDescription
+    {
+        $awardingCriterionDescription = $this->awardingCriterionDescription ?? [];
+        $awardingCriterionDescription = reset($awardingCriterionDescription);
+
+        if ($awardingCriterionDescription === false) {
+            return null;
+        }
+
+        return $awardingCriterionDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AwardingCriterionDescription|null
+     */
+    public function lastAwardingCriterionDescription(): ?AwardingCriterionDescription
+    {
+        $awardingCriterionDescription = $this->awardingCriterionDescription ?? [];
+        $awardingCriterionDescription = end($awardingCriterionDescription);
+
+        if ($awardingCriterionDescription === false) {
+            return null;
+        }
+
+        return $awardingCriterionDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AwardingCriterionDescription $awardingCriterionDescription
      * @return self
      */
@@ -303,6 +333,36 @@ class AwardingCriterionResponseType
         $this->description = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
     }
 
     /**
@@ -472,6 +532,36 @@ class AwardingCriterionResponseType
         $this->subordinateAwardingCriterionResponse = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubordinateAwardingCriterionResponse|null
+     */
+    public function firstSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
+    {
+        $subordinateAwardingCriterionResponse = $this->subordinateAwardingCriterionResponse ?? [];
+        $subordinateAwardingCriterionResponse = reset($subordinateAwardingCriterionResponse);
+
+        if ($subordinateAwardingCriterionResponse === false) {
+            return null;
+        }
+
+        return $subordinateAwardingCriterionResponse;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubordinateAwardingCriterionResponse|null
+     */
+    public function lastSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
+    {
+        $subordinateAwardingCriterionResponse = $this->subordinateAwardingCriterionResponse ?? [];
+        $subordinateAwardingCriterionResponse = end($subordinateAwardingCriterionResponse);
+
+        if ($subordinateAwardingCriterionResponse === false) {
+            return null;
+        }
+
+        return $subordinateAwardingCriterionResponse;
     }
 
     /**

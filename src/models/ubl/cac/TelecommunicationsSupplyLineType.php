@@ -224,6 +224,36 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -354,6 +384,36 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate|null
+     */
+    public function firstExchangeRate(): ?ExchangeRate
+    {
+        $exchangeRate = $this->exchangeRate ?? [];
+        $exchangeRate = reset($exchangeRate);
+
+        if ($exchangeRate === false) {
+            return null;
+        }
+
+        return $exchangeRate;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate|null
+     */
+    public function lastExchangeRate(): ?ExchangeRate
+    {
+        $exchangeRate = $this->exchangeRate ?? [];
+        $exchangeRate = end($exchangeRate);
+
+        if ($exchangeRate === false) {
+            return null;
+        }
+
+        return $exchangeRate;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate $exchangeRate
      * @return self
      */
@@ -442,6 +502,36 @@ class TelecommunicationsSupplyLineType
         $this->allowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
     }
 
     /**
@@ -536,6 +626,36 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxTotal $taxTotal
      * @return self
      */
@@ -624,6 +744,36 @@ class TelecommunicationsSupplyLineType
         $this->telecommunicationsService = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsService|null
+     */
+    public function firstTelecommunicationsService(): ?TelecommunicationsService
+    {
+        $telecommunicationsService = $this->telecommunicationsService ?? [];
+        $telecommunicationsService = reset($telecommunicationsService);
+
+        if ($telecommunicationsService === false) {
+            return null;
+        }
+
+        return $telecommunicationsService;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TelecommunicationsService|null
+     */
+    public function lastTelecommunicationsService(): ?TelecommunicationsService
+    {
+        $telecommunicationsService = $this->telecommunicationsService ?? [];
+        $telecommunicationsService = end($telecommunicationsService);
+
+        if ($telecommunicationsService === false) {
+            return null;
+        }
+
+        return $telecommunicationsService;
     }
 
     /**

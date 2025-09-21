@@ -166,6 +166,36 @@ class AuctionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\JustificationDescription|null
+     */
+    public function firstJustificationDescription(): ?JustificationDescription
+    {
+        $justificationDescription = $this->justificationDescription ?? [];
+        $justificationDescription = reset($justificationDescription);
+
+        if ($justificationDescription === false) {
+            return null;
+        }
+
+        return $justificationDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\JustificationDescription|null
+     */
+    public function lastJustificationDescription(): ?JustificationDescription
+    {
+        $justificationDescription = $this->justificationDescription ?? [];
+        $justificationDescription = end($justificationDescription);
+
+        if ($justificationDescription === false) {
+            return null;
+        }
+
+        return $justificationDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\JustificationDescription $justificationDescription
      * @return self
      */
@@ -254,6 +284,36 @@ class AuctionTermsType
         $this->description = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
     }
 
     /**
@@ -348,6 +408,36 @@ class AuctionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProcessDescription|null
+     */
+    public function firstProcessDescription(): ?ProcessDescription
+    {
+        $processDescription = $this->processDescription ?? [];
+        $processDescription = reset($processDescription);
+
+        if ($processDescription === false) {
+            return null;
+        }
+
+        return $processDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProcessDescription|null
+     */
+    public function lastProcessDescription(): ?ProcessDescription
+    {
+        $processDescription = $this->processDescription ?? [];
+        $processDescription = end($processDescription);
+
+        if ($processDescription === false) {
+            return null;
+        }
+
+        return $processDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ProcessDescription $processDescription
      * @return self
      */
@@ -439,6 +529,36 @@ class AuctionTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ConditionsDescription|null
+     */
+    public function firstConditionsDescription(): ?ConditionsDescription
+    {
+        $conditionsDescription = $this->conditionsDescription ?? [];
+        $conditionsDescription = reset($conditionsDescription);
+
+        if ($conditionsDescription === false) {
+            return null;
+        }
+
+        return $conditionsDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ConditionsDescription|null
+     */
+    public function lastConditionsDescription(): ?ConditionsDescription
+    {
+        $conditionsDescription = $this->conditionsDescription ?? [];
+        $conditionsDescription = end($conditionsDescription);
+
+        if ($conditionsDescription === false) {
+            return null;
+        }
+
+        return $conditionsDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ConditionsDescription $conditionsDescription
      * @return self
      */
@@ -527,6 +647,36 @@ class AuctionTermsType
         $this->electronicDeviceDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ElectronicDeviceDescription|null
+     */
+    public function firstElectronicDeviceDescription(): ?ElectronicDeviceDescription
+    {
+        $electronicDeviceDescription = $this->electronicDeviceDescription ?? [];
+        $electronicDeviceDescription = reset($electronicDeviceDescription);
+
+        if ($electronicDeviceDescription === false) {
+            return null;
+        }
+
+        return $electronicDeviceDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ElectronicDeviceDescription|null
+     */
+    public function lastElectronicDeviceDescription(): ?ElectronicDeviceDescription
+    {
+        $electronicDeviceDescription = $this->electronicDeviceDescription ?? [];
+        $electronicDeviceDescription = end($electronicDeviceDescription);
+
+        if ($electronicDeviceDescription === false) {
+            return null;
+        }
+
+        return $electronicDeviceDescription;
     }
 
     /**

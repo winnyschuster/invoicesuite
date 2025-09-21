@@ -380,6 +380,36 @@ class ConsumptionReportType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -939,6 +969,36 @@ class ConsumptionReportType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionReportReference|null
+     */
+    public function firstConsumptionReportReference(): ?ConsumptionReportReference
+    {
+        $consumptionReportReference = $this->consumptionReportReference ?? [];
+        $consumptionReportReference = reset($consumptionReportReference);
+
+        if ($consumptionReportReference === false) {
+            return null;
+        }
+
+        return $consumptionReportReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionReportReference|null
+     */
+    public function lastConsumptionReportReference(): ?ConsumptionReportReference
+    {
+        $consumptionReportReference = $this->consumptionReportReference ?? [];
+        $consumptionReportReference = end($consumptionReportReference);
+
+        if ($consumptionReportReference === false) {
+            return null;
+        }
+
+        return $consumptionReportReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ConsumptionReportReference $consumptionReportReference
      * @return self
      */
@@ -1027,6 +1087,36 @@ class ConsumptionReportType
         $this->consumptionHistory = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionHistory|null
+     */
+    public function firstConsumptionHistory(): ?ConsumptionHistory
+    {
+        $consumptionHistory = $this->consumptionHistory ?? [];
+        $consumptionHistory = reset($consumptionHistory);
+
+        if ($consumptionHistory === false) {
+            return null;
+        }
+
+        return $consumptionHistory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionHistory|null
+     */
+    public function lastConsumptionHistory(): ?ConsumptionHistory
+    {
+        $consumptionHistory = $this->consumptionHistory ?? [];
+        $consumptionHistory = end($consumptionHistory);
+
+        if ($consumptionHistory === false) {
+            return null;
+        }
+
+        return $consumptionHistory;
     }
 
     /**

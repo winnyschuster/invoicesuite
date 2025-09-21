@@ -240,6 +240,36 @@ class NotificationRequirementType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotifyParty|null
+     */
+    public function firstNotifyParty(): ?NotifyParty
+    {
+        $notifyParty = $this->notifyParty ?? [];
+        $notifyParty = reset($notifyParty);
+
+        if ($notifyParty === false) {
+            return null;
+        }
+
+        return $notifyParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotifyParty|null
+     */
+    public function lastNotifyParty(): ?NotifyParty
+    {
+        $notifyParty = $this->notifyParty ?? [];
+        $notifyParty = end($notifyParty);
+
+        if ($notifyParty === false) {
+            return null;
+        }
+
+        return $notifyParty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\NotifyParty $notifyParty
      * @return self
      */
@@ -331,6 +361,36 @@ class NotificationRequirementType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationPeriod|null
+     */
+    public function firstNotificationPeriod(): ?NotificationPeriod
+    {
+        $notificationPeriod = $this->notificationPeriod ?? [];
+        $notificationPeriod = reset($notificationPeriod);
+
+        if ($notificationPeriod === false) {
+            return null;
+        }
+
+        return $notificationPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationPeriod|null
+     */
+    public function lastNotificationPeriod(): ?NotificationPeriod
+    {
+        $notificationPeriod = $this->notificationPeriod ?? [];
+        $notificationPeriod = end($notificationPeriod);
+
+        if ($notificationPeriod === false) {
+            return null;
+        }
+
+        return $notificationPeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\NotificationPeriod $notificationPeriod
      * @return self
      */
@@ -419,6 +479,36 @@ class NotificationRequirementType
         $this->notificationLocation = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationLocation|null
+     */
+    public function firstNotificationLocation(): ?NotificationLocation
+    {
+        $notificationLocation = $this->notificationLocation ?? [];
+        $notificationLocation = reset($notificationLocation);
+
+        if ($notificationLocation === false) {
+            return null;
+        }
+
+        return $notificationLocation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotificationLocation|null
+     */
+    public function lastNotificationLocation(): ?NotificationLocation
+    {
+        $notificationLocation = $this->notificationLocation ?? [];
+        $notificationLocation = end($notificationLocation);
+
+        if ($notificationLocation === false) {
+            return null;
+        }
+
+        return $notificationLocation;
     }
 
     /**

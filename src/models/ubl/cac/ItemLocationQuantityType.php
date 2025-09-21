@@ -336,6 +336,36 @@ class ItemLocationQuantityType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions|null
+     */
+    public function firstTradingRestrictions(): ?TradingRestrictions
+    {
+        $tradingRestrictions = $this->tradingRestrictions ?? [];
+        $tradingRestrictions = reset($tradingRestrictions);
+
+        if ($tradingRestrictions === false) {
+            return null;
+        }
+
+        return $tradingRestrictions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions|null
+     */
+    public function lastTradingRestrictions(): ?TradingRestrictions
+    {
+        $tradingRestrictions = $this->tradingRestrictions ?? [];
+        $tradingRestrictions = end($tradingRestrictions);
+
+        if ($tradingRestrictions === false) {
+            return null;
+        }
+
+        return $tradingRestrictions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\TradingRestrictions $tradingRestrictions
      * @return self
      */
@@ -424,6 +454,36 @@ class ItemLocationQuantityType
         $this->applicableTerritoryAddress = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress|null
+     */
+    public function firstApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
+    {
+        $applicableTerritoryAddress = $this->applicableTerritoryAddress ?? [];
+        $applicableTerritoryAddress = reset($applicableTerritoryAddress);
+
+        if ($applicableTerritoryAddress === false) {
+            return null;
+        }
+
+        return $applicableTerritoryAddress;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTerritoryAddress|null
+     */
+    public function lastApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
+    {
+        $applicableTerritoryAddress = $this->applicableTerritoryAddress ?? [];
+        $applicableTerritoryAddress = end($applicableTerritoryAddress);
+
+        if ($applicableTerritoryAddress === false) {
+            return null;
+        }
+
+        return $applicableTerritoryAddress;
     }
 
     /**
@@ -557,6 +617,36 @@ class ItemLocationQuantityType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit|null
+     */
+    public function firstDeliveryUnit(): ?DeliveryUnit
+    {
+        $deliveryUnit = $this->deliveryUnit ?? [];
+        $deliveryUnit = reset($deliveryUnit);
+
+        if ($deliveryUnit === false) {
+            return null;
+        }
+
+        return $deliveryUnit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit|null
+     */
+    public function lastDeliveryUnit(): ?DeliveryUnit
+    {
+        $deliveryUnit = $this->deliveryUnit ?? [];
+        $deliveryUnit = end($deliveryUnit);
+
+        if ($deliveryUnit === false) {
+            return null;
+        }
+
+        return $deliveryUnit;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit $deliveryUnit
      * @return self
      */
@@ -645,6 +735,36 @@ class ItemLocationQuantityType
         $this->applicableTaxCategory = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory|null
+     */
+    public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
+    {
+        $applicableTaxCategory = $this->applicableTaxCategory ?? [];
+        $applicableTaxCategory = reset($applicableTaxCategory);
+
+        if ($applicableTaxCategory === false) {
+            return null;
+        }
+
+        return $applicableTaxCategory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory|null
+     */
+    public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
+    {
+        $applicableTaxCategory = $this->applicableTaxCategory ?? [];
+        $applicableTaxCategory = end($applicableTaxCategory);
+
+        if ($applicableTaxCategory === false) {
+            return null;
+        }
+
+        return $applicableTaxCategory;
     }
 
     /**
@@ -775,6 +895,36 @@ class ItemLocationQuantityType
         $this->allowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
     }
 
     /**

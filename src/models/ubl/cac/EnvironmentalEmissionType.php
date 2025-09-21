@@ -177,6 +177,36 @@ class EnvironmentalEmissionType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -265,6 +295,36 @@ class EnvironmentalEmissionType
         $this->emissionCalculationMethod = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod|null
+     */
+    public function firstEmissionCalculationMethod(): ?EmissionCalculationMethod
+    {
+        $emissionCalculationMethod = $this->emissionCalculationMethod ?? [];
+        $emissionCalculationMethod = reset($emissionCalculationMethod);
+
+        if ($emissionCalculationMethod === false) {
+            return null;
+        }
+
+        return $emissionCalculationMethod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EmissionCalculationMethod|null
+     */
+    public function lastEmissionCalculationMethod(): ?EmissionCalculationMethod
+    {
+        $emissionCalculationMethod = $this->emissionCalculationMethod ?? [];
+        $emissionCalculationMethod = end($emissionCalculationMethod);
+
+        if ($emissionCalculationMethod === false) {
+            return null;
+        }
+
+        return $emissionCalculationMethod;
     }
 
     /**

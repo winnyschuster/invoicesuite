@@ -61,6 +61,36 @@ class UBLExtensionsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\ext\UBLExtension|null
+     */
+    public function firstUBLExtension(): ?UBLExtension
+    {
+        $uBLExtension = $this->uBLExtension ?? [];
+        $uBLExtension = reset($uBLExtension);
+
+        if ($uBLExtension === false) {
+            return null;
+        }
+
+        return $uBLExtension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\ext\UBLExtension|null
+     */
+    public function lastUBLExtension(): ?UBLExtension
+    {
+        $uBLExtension = $this->uBLExtension ?? [];
+        $uBLExtension = end($uBLExtension);
+
+        if ($uBLExtension === false) {
+            return null;
+        }
+
+        return $uBLExtension;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\ext\UBLExtension $uBLExtension
      * @return self
      */

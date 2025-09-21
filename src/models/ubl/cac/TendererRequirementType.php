@@ -111,6 +111,36 @@ class TendererRequirementType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function firstName(): ?Name
+    {
+        $name = $this->name ?? [];
+        $name = reset($name);
+
+        if ($name === false) {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function lastName(): ?Name
+    {
+        $name = $this->name ?? [];
+        $name = end($name);
+
+        if ($name === false) {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Name $name
      * @return self
      */
@@ -242,6 +272,36 @@ class TendererRequirementType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -369,6 +429,36 @@ class TendererRequirementType
         $this->suggestedEvidence = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SuggestedEvidence|null
+     */
+    public function firstSuggestedEvidence(): ?SuggestedEvidence
+    {
+        $suggestedEvidence = $this->suggestedEvidence ?? [];
+        $suggestedEvidence = reset($suggestedEvidence);
+
+        if ($suggestedEvidence === false) {
+            return null;
+        }
+
+        return $suggestedEvidence;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SuggestedEvidence|null
+     */
+    public function lastSuggestedEvidence(): ?SuggestedEvidence
+    {
+        $suggestedEvidence = $this->suggestedEvidence ?? [];
+        $suggestedEvidence = end($suggestedEvidence);
+
+        if ($suggestedEvidence === false) {
+            return null;
+        }
+
+        return $suggestedEvidence;
     }
 
     /**

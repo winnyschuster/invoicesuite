@@ -697,6 +697,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AcceptedVariantsDescription|null
+     */
+    public function firstAcceptedVariantsDescription(): ?AcceptedVariantsDescription
+    {
+        $acceptedVariantsDescription = $this->acceptedVariantsDescription ?? [];
+        $acceptedVariantsDescription = reset($acceptedVariantsDescription);
+
+        if ($acceptedVariantsDescription === false) {
+            return null;
+        }
+
+        return $acceptedVariantsDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AcceptedVariantsDescription|null
+     */
+    public function lastAcceptedVariantsDescription(): ?AcceptedVariantsDescription
+    {
+        $acceptedVariantsDescription = $this->acceptedVariantsDescription ?? [];
+        $acceptedVariantsDescription = end($acceptedVariantsDescription);
+
+        if ($acceptedVariantsDescription === false) {
+            return null;
+        }
+
+        return $acceptedVariantsDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AcceptedVariantsDescription $acceptedVariantsDescription
      * @return self
      */
@@ -786,6 +816,36 @@ class TenderingTermsType
         $this->priceRevisionFormulaDescription = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PriceRevisionFormulaDescription|null
+     */
+    public function firstPriceRevisionFormulaDescription(): ?PriceRevisionFormulaDescription
+    {
+        $priceRevisionFormulaDescription = $this->priceRevisionFormulaDescription ?? [];
+        $priceRevisionFormulaDescription = reset($priceRevisionFormulaDescription);
+
+        if ($priceRevisionFormulaDescription === false) {
+            return null;
+        }
+
+        return $priceRevisionFormulaDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PriceRevisionFormulaDescription|null
+     */
+    public function lastPriceRevisionFormulaDescription(): ?PriceRevisionFormulaDescription
+    {
+        $priceRevisionFormulaDescription = $this->priceRevisionFormulaDescription ?? [];
+        $priceRevisionFormulaDescription = end($priceRevisionFormulaDescription);
+
+        if ($priceRevisionFormulaDescription === false) {
+            return null;
+        }
+
+        return $priceRevisionFormulaDescription;
     }
 
     /**
@@ -921,6 +981,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FundingProgram|null
+     */
+    public function firstFundingProgram(): ?FundingProgram
+    {
+        $fundingProgram = $this->fundingProgram ?? [];
+        $fundingProgram = reset($fundingProgram);
+
+        if ($fundingProgram === false) {
+            return null;
+        }
+
+        return $fundingProgram;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FundingProgram|null
+     */
+    public function lastFundingProgram(): ?FundingProgram
+    {
+        $fundingProgram = $this->fundingProgram ?? [];
+        $fundingProgram = end($fundingProgram);
+
+        if ($fundingProgram === false) {
+            return null;
+        }
+
+        return $fundingProgram;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\FundingProgram $fundingProgram
      * @return self
      */
@@ -1049,6 +1139,36 @@ class TenderingTermsType
         $this->note = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
     }
 
     /**
@@ -1280,6 +1400,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalConditions|null
+     */
+    public function firstAdditionalConditions(): ?AdditionalConditions
+    {
+        $additionalConditions = $this->additionalConditions ?? [];
+        $additionalConditions = reset($additionalConditions);
+
+        if ($additionalConditions === false) {
+            return null;
+        }
+
+        return $additionalConditions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalConditions|null
+     */
+    public function lastAdditionalConditions(): ?AdditionalConditions
+    {
+        $additionalConditions = $this->additionalConditions ?? [];
+        $additionalConditions = end($additionalConditions);
+
+        if ($additionalConditions === false) {
+            return null;
+        }
+
+        return $additionalConditions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AdditionalConditions $additionalConditions
      * @return self
      */
@@ -1439,6 +1589,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PenaltyClause|null
+     */
+    public function firstPenaltyClause(): ?PenaltyClause
+    {
+        $penaltyClause = $this->penaltyClause ?? [];
+        $penaltyClause = reset($penaltyClause);
+
+        if ($penaltyClause === false) {
+            return null;
+        }
+
+        return $penaltyClause;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PenaltyClause|null
+     */
+    public function lastPenaltyClause(): ?PenaltyClause
+    {
+        $penaltyClause = $this->penaltyClause ?? [];
+        $penaltyClause = end($penaltyClause);
+
+        if ($penaltyClause === false) {
+            return null;
+        }
+
+        return $penaltyClause;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PenaltyClause $penaltyClause
      * @return self
      */
@@ -1527,6 +1707,36 @@ class TenderingTermsType
         $this->requiredFinancialGuarantee = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredFinancialGuarantee|null
+     */
+    public function firstRequiredFinancialGuarantee(): ?RequiredFinancialGuarantee
+    {
+        $requiredFinancialGuarantee = $this->requiredFinancialGuarantee ?? [];
+        $requiredFinancialGuarantee = reset($requiredFinancialGuarantee);
+
+        if ($requiredFinancialGuarantee === false) {
+            return null;
+        }
+
+        return $requiredFinancialGuarantee;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredFinancialGuarantee|null
+     */
+    public function lastRequiredFinancialGuarantee(): ?RequiredFinancialGuarantee
+    {
+        $requiredFinancialGuarantee = $this->requiredFinancialGuarantee ?? [];
+        $requiredFinancialGuarantee = end($requiredFinancialGuarantee);
+
+        if ($requiredFinancialGuarantee === false) {
+            return null;
+        }
+
+        return $requiredFinancialGuarantee;
     }
 
     /**
@@ -1672,8 +1882,8 @@ class TenderingTermsType
     /**
      * @return \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalLegislationDocumentReference
      */
-    public function getEnvironmentalLegislationDocumentReferenceWithCreate(): EnvironmentalLegislationDocumentReference
-    {
+    public function getEnvironmentalLegislationDocumentReferenceWithCreate(
+    ): EnvironmentalLegislationDocumentReference {
         $this->environmentalLegislationDocumentReference = is_null($this->environmentalLegislationDocumentReference) ? new EnvironmentalLegislationDocumentReference() : $this->environmentalLegislationDocumentReference;
 
         return $this->environmentalLegislationDocumentReference;
@@ -1778,6 +1988,36 @@ class TenderingTermsType
         $this->contractualDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractualDocumentReference|null
+     */
+    public function firstContractualDocumentReference(): ?ContractualDocumentReference
+    {
+        $contractualDocumentReference = $this->contractualDocumentReference ?? [];
+        $contractualDocumentReference = reset($contractualDocumentReference);
+
+        if ($contractualDocumentReference === false) {
+            return null;
+        }
+
+        return $contractualDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractualDocumentReference|null
+     */
+    public function lastContractualDocumentReference(): ?ContractualDocumentReference
+    {
+        $contractualDocumentReference = $this->contractualDocumentReference ?? [];
+        $contractualDocumentReference = end($contractualDocumentReference);
+
+        if ($contractualDocumentReference === false) {
+            return null;
+        }
+
+        return $contractualDocumentReference;
     }
 
     /**
@@ -1953,6 +2193,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function firstPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = reset($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function lastPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = end($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms $paymentTerms
      * @return self
      */
@@ -2041,6 +2311,36 @@ class TenderingTermsType
         $this->tendererQualificationRequest = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TendererQualificationRequest|null
+     */
+    public function firstTendererQualificationRequest(): ?TendererQualificationRequest
+    {
+        $tendererQualificationRequest = $this->tendererQualificationRequest ?? [];
+        $tendererQualificationRequest = reset($tendererQualificationRequest);
+
+        if ($tendererQualificationRequest === false) {
+            return null;
+        }
+
+        return $tendererQualificationRequest;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TendererQualificationRequest|null
+     */
+    public function lastTendererQualificationRequest(): ?TendererQualificationRequest
+    {
+        $tendererQualificationRequest = $this->tendererQualificationRequest ?? [];
+        $tendererQualificationRequest = end($tendererQualificationRequest);
+
+        if ($tendererQualificationRequest === false) {
+            return null;
+        }
+
+        return $tendererQualificationRequest;
     }
 
     /**
@@ -2137,6 +2437,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowedSubcontractTerms|null
+     */
+    public function firstAllowedSubcontractTerms(): ?AllowedSubcontractTerms
+    {
+        $allowedSubcontractTerms = $this->allowedSubcontractTerms ?? [];
+        $allowedSubcontractTerms = reset($allowedSubcontractTerms);
+
+        if ($allowedSubcontractTerms === false) {
+            return null;
+        }
+
+        return $allowedSubcontractTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowedSubcontractTerms|null
+     */
+    public function lastAllowedSubcontractTerms(): ?AllowedSubcontractTerms
+    {
+        $allowedSubcontractTerms = $this->allowedSubcontractTerms ?? [];
+        $allowedSubcontractTerms = end($allowedSubcontractTerms);
+
+        if ($allowedSubcontractTerms === false) {
+            return null;
+        }
+
+        return $allowedSubcontractTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AllowedSubcontractTerms $allowedSubcontractTerms
      * @return self
      */
@@ -2228,6 +2558,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TenderPreparation|null
+     */
+    public function firstTenderPreparation(): ?TenderPreparation
+    {
+        $tenderPreparation = $this->tenderPreparation ?? [];
+        $tenderPreparation = reset($tenderPreparation);
+
+        if ($tenderPreparation === false) {
+            return null;
+        }
+
+        return $tenderPreparation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TenderPreparation|null
+     */
+    public function lastTenderPreparation(): ?TenderPreparation
+    {
+        $tenderPreparation = $this->tenderPreparation ?? [];
+        $tenderPreparation = end($tenderPreparation);
+
+        if ($tenderPreparation === false) {
+            return null;
+        }
+
+        return $tenderPreparation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TenderPreparation $tenderPreparation
      * @return self
      */
@@ -2316,6 +2676,36 @@ class TenderingTermsType
         $this->contractExecutionRequirement = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractExecutionRequirement|null
+     */
+    public function firstContractExecutionRequirement(): ?ContractExecutionRequirement
+    {
+        $contractExecutionRequirement = $this->contractExecutionRequirement ?? [];
+        $contractExecutionRequirement = reset($contractExecutionRequirement);
+
+        if ($contractExecutionRequirement === false) {
+            return null;
+        }
+
+        return $contractExecutionRequirement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContractExecutionRequirement|null
+     */
+    public function lastContractExecutionRequirement(): ?ContractExecutionRequirement
+    {
+        $contractExecutionRequirement = $this->contractExecutionRequirement ?? [];
+        $contractExecutionRequirement = end($contractExecutionRequirement);
+
+        if ($contractExecutionRequirement === false) {
+            return null;
+        }
+
+        return $contractExecutionRequirement;
     }
 
     /**
@@ -2608,6 +2998,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TenderEvaluationParty|null
+     */
+    public function firstTenderEvaluationParty(): ?TenderEvaluationParty
+    {
+        $tenderEvaluationParty = $this->tenderEvaluationParty ?? [];
+        $tenderEvaluationParty = reset($tenderEvaluationParty);
+
+        if ($tenderEvaluationParty === false) {
+            return null;
+        }
+
+        return $tenderEvaluationParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TenderEvaluationParty|null
+     */
+    public function lastTenderEvaluationParty(): ?TenderEvaluationParty
+    {
+        $tenderEvaluationParty = $this->tenderEvaluationParty ?? [];
+        $tenderEvaluationParty = end($tenderEvaluationParty);
+
+        if ($tenderEvaluationParty === false) {
+            return null;
+        }
+
+        return $tenderEvaluationParty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TenderEvaluationParty $tenderEvaluationParty
      * @return self
      */
@@ -2816,6 +3236,36 @@ class TenderingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Language|null
+     */
+    public function firstLanguage(): ?Language
+    {
+        $language = $this->language ?? [];
+        $language = reset($language);
+
+        if ($language === false) {
+            return null;
+        }
+
+        return $language;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Language|null
+     */
+    public function lastLanguage(): ?Language
+    {
+        $language = $this->language ?? [];
+        $language = end($language);
+
+        if ($language === false) {
+            return null;
+        }
+
+        return $language;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Language $language
      * @return self
      */
@@ -2904,6 +3354,36 @@ class TenderingTermsType
         $this->budgetAccountLine = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BudgetAccountLine|null
+     */
+    public function firstBudgetAccountLine(): ?BudgetAccountLine
+    {
+        $budgetAccountLine = $this->budgetAccountLine ?? [];
+        $budgetAccountLine = reset($budgetAccountLine);
+
+        if ($budgetAccountLine === false) {
+            return null;
+        }
+
+        return $budgetAccountLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BudgetAccountLine|null
+     */
+    public function lastBudgetAccountLine(): ?BudgetAccountLine
+    {
+        $budgetAccountLine = $this->budgetAccountLine ?? [];
+        $budgetAccountLine = end($budgetAccountLine);
+
+        if ($budgetAccountLine === false) {
+            return null;
+        }
+
+        return $budgetAccountLine;
     }
 
     /**

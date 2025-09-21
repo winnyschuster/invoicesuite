@@ -176,6 +176,36 @@ class ClassificationCategoryType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -264,6 +294,36 @@ class ClassificationCategoryType
         $this->categorizesClassificationCategory = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory|null
+     */
+    public function firstCategorizesClassificationCategory(): ?CategorizesClassificationCategory
+    {
+        $categorizesClassificationCategory = $this->categorizesClassificationCategory ?? [];
+        $categorizesClassificationCategory = reset($categorizesClassificationCategory);
+
+        if ($categorizesClassificationCategory === false) {
+            return null;
+        }
+
+        return $categorizesClassificationCategory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CategorizesClassificationCategory|null
+     */
+    public function lastCategorizesClassificationCategory(): ?CategorizesClassificationCategory
+    {
+        $categorizesClassificationCategory = $this->categorizesClassificationCategory ?? [];
+        $categorizesClassificationCategory = end($categorizesClassificationCategory);
+
+        if ($categorizesClassificationCategory === false) {
+            return null;
+        }
+
+        return $categorizesClassificationCategory;
     }
 
     /**

@@ -247,6 +247,36 @@ class TradeFinancingType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
      * @return self
      */
@@ -413,6 +443,36 @@ class TradeFinancingType
         $this->clause = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Clause|null
+     */
+    public function firstClause(): ?Clause
+    {
+        $clause = $this->clause ?? [];
+        $clause = reset($clause);
+
+        if ($clause === false) {
+            return null;
+        }
+
+        return $clause;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Clause|null
+     */
+    public function lastClause(): ?Clause
+    {
+        $clause = $this->clause ?? [];
+        $clause = end($clause);
+
+        if ($clause === false) {
+            return null;
+        }
+
+        return $clause;
     }
 
     /**

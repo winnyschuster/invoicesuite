@@ -232,6 +232,36 @@ class PromotionalEventType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PromotionalSpecification|null
+     */
+    public function firstPromotionalSpecification(): ?PromotionalSpecification
+    {
+        $promotionalSpecification = $this->promotionalSpecification ?? [];
+        $promotionalSpecification = reset($promotionalSpecification);
+
+        if ($promotionalSpecification === false) {
+            return null;
+        }
+
+        return $promotionalSpecification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PromotionalSpecification|null
+     */
+    public function lastPromotionalSpecification(): ?PromotionalSpecification
+    {
+        $promotionalSpecification = $this->promotionalSpecification ?? [];
+        $promotionalSpecification = end($promotionalSpecification);
+
+        if ($promotionalSpecification === false) {
+            return null;
+        }
+
+        return $promotionalSpecification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PromotionalSpecification $promotionalSpecification
      * @return self
      */

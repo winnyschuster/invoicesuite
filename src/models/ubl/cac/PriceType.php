@@ -246,6 +246,36 @@ class PriceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PriceChangeReason|null
+     */
+    public function firstPriceChangeReason(): ?PriceChangeReason
+    {
+        $priceChangeReason = $this->priceChangeReason ?? [];
+        $priceChangeReason = reset($priceChangeReason);
+
+        if ($priceChangeReason === false) {
+            return null;
+        }
+
+        return $priceChangeReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PriceChangeReason|null
+     */
+    public function lastPriceChangeReason(): ?PriceChangeReason
+    {
+        $priceChangeReason = $this->priceChangeReason ?? [];
+        $priceChangeReason = end($priceChangeReason);
+
+        if ($priceChangeReason === false) {
+            return null;
+        }
+
+        return $priceChangeReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PriceChangeReason $priceChangeReason
      * @return self
      */
@@ -454,6 +484,36 @@ class PriceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function firstValidityPeriod(): ?ValidityPeriod
+    {
+        $validityPeriod = $this->validityPeriod ?? [];
+        $validityPeriod = reset($validityPeriod);
+
+        if ($validityPeriod === false) {
+            return null;
+        }
+
+        return $validityPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function lastValidityPeriod(): ?ValidityPeriod
+    {
+        $validityPeriod = $this->validityPeriod ?? [];
+        $validityPeriod = end($validityPeriod);
+
+        if ($validityPeriod === false) {
+            return null;
+        }
+
+        return $validityPeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod $validityPeriod
      * @return self
      */
@@ -581,6 +641,36 @@ class PriceType
         $this->allowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
     }
 
     /**

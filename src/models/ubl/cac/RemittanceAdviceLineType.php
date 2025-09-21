@@ -298,6 +298,36 @@ class RemittanceAdviceLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -857,6 +887,36 @@ class RemittanceAdviceLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod|null
+     */
+    public function firstInvoicePeriod(): ?InvoicePeriod
+    {
+        $invoicePeriod = $this->invoicePeriod ?? [];
+        $invoicePeriod = reset($invoicePeriod);
+
+        if ($invoicePeriod === false) {
+            return null;
+        }
+
+        return $invoicePeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod|null
+     */
+    public function lastInvoicePeriod(): ?InvoicePeriod
+    {
+        $invoicePeriod = $this->invoicePeriod ?? [];
+        $invoicePeriod = end($invoicePeriod);
+
+        if ($invoicePeriod === false) {
+            return null;
+        }
+
+        return $invoicePeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod $invoicePeriod
      * @return self
      */
@@ -948,6 +1008,36 @@ class RemittanceAdviceLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function firstBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = reset($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function lastBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = end($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\BillingReference $billingReference
      * @return self
      */
@@ -1036,6 +1126,36 @@ class RemittanceAdviceLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**

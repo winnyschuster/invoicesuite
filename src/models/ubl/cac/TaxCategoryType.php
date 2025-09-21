@@ -403,6 +403,36 @@ class TaxCategoryType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TaxExemptionReason|null
+     */
+    public function firstTaxExemptionReason(): ?TaxExemptionReason
+    {
+        $taxExemptionReason = $this->taxExemptionReason ?? [];
+        $taxExemptionReason = reset($taxExemptionReason);
+
+        if ($taxExemptionReason === false) {
+            return null;
+        }
+
+        return $taxExemptionReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TaxExemptionReason|null
+     */
+    public function lastTaxExemptionReason(): ?TaxExemptionReason
+    {
+        $taxExemptionReason = $this->taxExemptionReason ?? [];
+        $taxExemptionReason = end($taxExemptionReason);
+
+        if ($taxExemptionReason === false) {
+            return null;
+        }
+
+        return $taxExemptionReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\TaxExemptionReason $taxExemptionReason
      * @return self
      */

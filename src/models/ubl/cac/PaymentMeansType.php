@@ -385,6 +385,36 @@ class PaymentMeansType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\InstructionNote|null
+     */
+    public function firstInstructionNote(): ?InstructionNote
+    {
+        $instructionNote = $this->instructionNote ?? [];
+        $instructionNote = reset($instructionNote);
+
+        if ($instructionNote === false) {
+            return null;
+        }
+
+        return $instructionNote;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\InstructionNote|null
+     */
+    public function lastInstructionNote(): ?InstructionNote
+    {
+        $instructionNote = $this->instructionNote ?? [];
+        $instructionNote = end($instructionNote);
+
+        if ($instructionNote === false) {
+            return null;
+        }
+
+        return $instructionNote;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\InstructionNote $instructionNote
      * @return self
      */
@@ -473,6 +503,36 @@ class PaymentMeansType
         $this->paymentID = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentID|null
+     */
+    public function firstPaymentID(): ?PaymentID
+    {
+        $paymentID = $this->paymentID ?? [];
+        $paymentID = reset($paymentID);
+
+        if ($paymentID === false) {
+            return null;
+        }
+
+        return $paymentID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentID|null
+     */
+    public function lastPaymentID(): ?PaymentID
+    {
+        $paymentID = $this->paymentID ?? [];
+        $paymentID = end($paymentID);
+
+        if ($paymentID === false) {
+            return null;
+        }
+
+        return $paymentID;
     }
 
     /**

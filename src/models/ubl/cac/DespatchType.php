@@ -573,6 +573,36 @@ class DespatchType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Instructions|null
+     */
+    public function firstInstructions(): ?Instructions
+    {
+        $instructions = $this->instructions ?? [];
+        $instructions = reset($instructions);
+
+        if ($instructions === false) {
+            return null;
+        }
+
+        return $instructions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Instructions|null
+     */
+    public function lastInstructions(): ?Instructions
+    {
+        $instructions = $this->instructions ?? [];
+        $instructions = end($instructions);
+
+        if ($instructions === false) {
+            return null;
+        }
+
+        return $instructions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Instructions $instructions
      * @return self
      */
@@ -817,6 +847,36 @@ class DespatchType
         $this->notifyParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotifyParty|null
+     */
+    public function firstNotifyParty(): ?NotifyParty
+    {
+        $notifyParty = $this->notifyParty ?? [];
+        $notifyParty = reset($notifyParty);
+
+        if ($notifyParty === false) {
+            return null;
+        }
+
+        return $notifyParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotifyParty|null
+     */
+    public function lastNotifyParty(): ?NotifyParty
+    {
+        $notifyParty = $this->notifyParty ?? [];
+        $notifyParty = end($notifyParty);
+
+        if ($notifyParty === false) {
+            return null;
+        }
+
+        return $notifyParty;
     }
 
     /**

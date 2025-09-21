@@ -163,6 +163,36 @@ class GoodsItemContainerType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEquipment|null
+     */
+    public function firstTransportEquipment(): ?TransportEquipment
+    {
+        $transportEquipment = $this->transportEquipment ?? [];
+        $transportEquipment = reset($transportEquipment);
+
+        if ($transportEquipment === false) {
+            return null;
+        }
+
+        return $transportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEquipment|null
+     */
+    public function lastTransportEquipment(): ?TransportEquipment
+    {
+        $transportEquipment = $this->transportEquipment ?? [];
+        $transportEquipment = end($transportEquipment);
+
+        if ($transportEquipment === false) {
+            return null;
+        }
+
+        return $transportEquipment;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TransportEquipment $transportEquipment
      * @return self
      */

@@ -147,6 +147,36 @@ class SalesItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ActivityProperty|null
+     */
+    public function firstActivityProperty(): ?ActivityProperty
+    {
+        $activityProperty = $this->activityProperty ?? [];
+        $activityProperty = reset($activityProperty);
+
+        if ($activityProperty === false) {
+            return null;
+        }
+
+        return $activityProperty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ActivityProperty|null
+     */
+    public function lastActivityProperty(): ?ActivityProperty
+    {
+        $activityProperty = $this->activityProperty ?? [];
+        $activityProperty = end($activityProperty);
+
+        if ($activityProperty === false) {
+            return null;
+        }
+
+        return $activityProperty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ActivityProperty $activityProperty
      * @return self
      */
@@ -238,6 +268,36 @@ class SalesItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxExclusivePrice|null
+     */
+    public function firstTaxExclusivePrice(): ?TaxExclusivePrice
+    {
+        $taxExclusivePrice = $this->taxExclusivePrice ?? [];
+        $taxExclusivePrice = reset($taxExclusivePrice);
+
+        if ($taxExclusivePrice === false) {
+            return null;
+        }
+
+        return $taxExclusivePrice;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxExclusivePrice|null
+     */
+    public function lastTaxExclusivePrice(): ?TaxExclusivePrice
+    {
+        $taxExclusivePrice = $this->taxExclusivePrice ?? [];
+        $taxExclusivePrice = end($taxExclusivePrice);
+
+        if ($taxExclusivePrice === false) {
+            return null;
+        }
+
+        return $taxExclusivePrice;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxExclusivePrice $taxExclusivePrice
      * @return self
      */
@@ -326,6 +386,36 @@ class SalesItemType
         $this->taxInclusivePrice = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxInclusivePrice|null
+     */
+    public function firstTaxInclusivePrice(): ?TaxInclusivePrice
+    {
+        $taxInclusivePrice = $this->taxInclusivePrice ?? [];
+        $taxInclusivePrice = reset($taxInclusivePrice);
+
+        if ($taxInclusivePrice === false) {
+            return null;
+        }
+
+        return $taxInclusivePrice;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxInclusivePrice|null
+     */
+    public function lastTaxInclusivePrice(): ?TaxInclusivePrice
+    {
+        $taxInclusivePrice = $this->taxInclusivePrice ?? [];
+        $taxInclusivePrice = end($taxInclusivePrice);
+
+        if ($taxInclusivePrice === false) {
+            return null;
+        }
+
+        return $taxInclusivePrice;
     }
 
     /**

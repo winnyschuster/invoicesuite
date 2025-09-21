@@ -186,6 +186,36 @@ class ServiceProviderPartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ServiceType|null
+     */
+    public function firstServiceType(): ?ServiceType
+    {
+        $serviceType = $this->serviceType ?? [];
+        $serviceType = reset($serviceType);
+
+        if ($serviceType === false) {
+            return null;
+        }
+
+        return $serviceType;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ServiceType|null
+     */
+    public function lastServiceType(): ?ServiceType
+    {
+        $serviceType = $this->serviceType ?? [];
+        $serviceType = end($serviceType);
+
+        if ($serviceType === false) {
+            return null;
+        }
+
+        return $serviceType;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ServiceType $serviceType
      * @return self
      */

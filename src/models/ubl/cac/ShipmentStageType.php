@@ -1149,6 +1149,36 @@ class ShipmentStageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Instructions|null
+     */
+    public function firstInstructions(): ?Instructions
+    {
+        $instructions = $this->instructions ?? [];
+        $instructions = reset($instructions);
+
+        if ($instructions === false) {
+            return null;
+        }
+
+        return $instructions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Instructions|null
+     */
+    public function lastInstructions(): ?Instructions
+    {
+        $instructions = $this->instructions ?? [];
+        $instructions = end($instructions);
+
+        if ($instructions === false) {
+            return null;
+        }
+
+        return $instructions;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Instructions $instructions
      * @return self
      */
@@ -1237,6 +1267,36 @@ class ShipmentStageType
         $this->demurrageInstructions = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DemurrageInstructions|null
+     */
+    public function firstDemurrageInstructions(): ?DemurrageInstructions
+    {
+        $demurrageInstructions = $this->demurrageInstructions ?? [];
+        $demurrageInstructions = reset($demurrageInstructions);
+
+        if ($demurrageInstructions === false) {
+            return null;
+        }
+
+        return $demurrageInstructions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\DemurrageInstructions|null
+     */
+    public function lastDemurrageInstructions(): ?DemurrageInstructions
+    {
+        $demurrageInstructions = $this->demurrageInstructions ?? [];
+        $demurrageInstructions = end($demurrageInstructions);
+
+        if ($demurrageInstructions === false) {
+            return null;
+        }
+
+        return $demurrageInstructions;
     }
 
     /**
@@ -1445,6 +1505,36 @@ class ShipmentStageType
         $this->carrierParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CarrierParty|null
+     */
+    public function firstCarrierParty(): ?CarrierParty
+    {
+        $carrierParty = $this->carrierParty ?? [];
+        $carrierParty = reset($carrierParty);
+
+        if ($carrierParty === false) {
+            return null;
+        }
+
+        return $carrierParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CarrierParty|null
+     */
+    public function lastCarrierParty(): ?CarrierParty
+    {
+        $carrierParty = $this->carrierParty ?? [];
+        $carrierParty = end($carrierParty);
+
+        if ($carrierParty === false) {
+            return null;
+        }
+
+        return $carrierParty;
     }
 
     /**
@@ -2361,6 +2451,36 @@ class ShipmentStageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = reset($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge|null
+     */
+    public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
+    {
+        $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
+        $freightAllowanceCharge = end($freightAllowanceCharge);
+
+        if ($freightAllowanceCharge === false) {
+            return null;
+        }
+
+        return $freightAllowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
@@ -2488,6 +2608,36 @@ class ShipmentStageType
         $this->detentionTransportEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DetentionTransportEvent|null
+     */
+    public function firstDetentionTransportEvent(): ?DetentionTransportEvent
+    {
+        $detentionTransportEvent = $this->detentionTransportEvent ?? [];
+        $detentionTransportEvent = reset($detentionTransportEvent);
+
+        if ($detentionTransportEvent === false) {
+            return null;
+        }
+
+        return $detentionTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DetentionTransportEvent|null
+     */
+    public function lastDetentionTransportEvent(): ?DetentionTransportEvent
+    {
+        $detentionTransportEvent = $this->detentionTransportEvent ?? [];
+        $detentionTransportEvent = end($detentionTransportEvent);
+
+        if ($detentionTransportEvent === false) {
+            return null;
+        }
+
+        return $detentionTransportEvent;
     }
 
     /**
@@ -2662,6 +2812,36 @@ class ShipmentStageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequestedWaypointTransportEvent|null
+     */
+    public function firstRequestedWaypointTransportEvent(): ?RequestedWaypointTransportEvent
+    {
+        $requestedWaypointTransportEvent = $this->requestedWaypointTransportEvent ?? [];
+        $requestedWaypointTransportEvent = reset($requestedWaypointTransportEvent);
+
+        if ($requestedWaypointTransportEvent === false) {
+            return null;
+        }
+
+        return $requestedWaypointTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequestedWaypointTransportEvent|null
+     */
+    public function lastRequestedWaypointTransportEvent(): ?RequestedWaypointTransportEvent
+    {
+        $requestedWaypointTransportEvent = $this->requestedWaypointTransportEvent ?? [];
+        $requestedWaypointTransportEvent = end($requestedWaypointTransportEvent);
+
+        if ($requestedWaypointTransportEvent === false) {
+            return null;
+        }
+
+        return $requestedWaypointTransportEvent;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\RequestedWaypointTransportEvent $requestedWaypointTransportEvent
      * @return self
      */
@@ -2832,6 +3012,36 @@ class ShipmentStageType
         $this->plannedWaypointTransportEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PlannedWaypointTransportEvent|null
+     */
+    public function firstPlannedWaypointTransportEvent(): ?PlannedWaypointTransportEvent
+    {
+        $plannedWaypointTransportEvent = $this->plannedWaypointTransportEvent ?? [];
+        $plannedWaypointTransportEvent = reset($plannedWaypointTransportEvent);
+
+        if ($plannedWaypointTransportEvent === false) {
+            return null;
+        }
+
+        return $plannedWaypointTransportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PlannedWaypointTransportEvent|null
+     */
+    public function lastPlannedWaypointTransportEvent(): ?PlannedWaypointTransportEvent
+    {
+        $plannedWaypointTransportEvent = $this->plannedWaypointTransportEvent ?? [];
+        $plannedWaypointTransportEvent = end($plannedWaypointTransportEvent);
+
+        if ($plannedWaypointTransportEvent === false) {
+            return null;
+        }
+
+        return $plannedWaypointTransportEvent;
     }
 
     /**
@@ -3048,6 +3258,36 @@ class ShipmentStageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEvent|null
+     */
+    public function firstTransportEvent(): ?TransportEvent
+    {
+        $transportEvent = $this->transportEvent ?? [];
+        $transportEvent = reset($transportEvent);
+
+        if ($transportEvent === false) {
+            return null;
+        }
+
+        return $transportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEvent|null
+     */
+    public function lastTransportEvent(): ?TransportEvent
+    {
+        $transportEvent = $this->transportEvent ?? [];
+        $transportEvent = end($transportEvent);
+
+        if ($transportEvent === false) {
+            return null;
+        }
+
+        return $transportEvent;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TransportEvent $transportEvent
      * @return self
      */
@@ -3219,6 +3459,36 @@ class ShipmentStageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PassengerPerson|null
+     */
+    public function firstPassengerPerson(): ?PassengerPerson
+    {
+        $passengerPerson = $this->passengerPerson ?? [];
+        $passengerPerson = reset($passengerPerson);
+
+        if ($passengerPerson === false) {
+            return null;
+        }
+
+        return $passengerPerson;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PassengerPerson|null
+     */
+    public function lastPassengerPerson(): ?PassengerPerson
+    {
+        $passengerPerson = $this->passengerPerson ?? [];
+        $passengerPerson = end($passengerPerson);
+
+        if ($passengerPerson === false) {
+            return null;
+        }
+
+        return $passengerPerson;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PassengerPerson $passengerPerson
      * @return self
      */
@@ -3307,6 +3577,36 @@ class ShipmentStageType
         $this->driverPerson = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DriverPerson|null
+     */
+    public function firstDriverPerson(): ?DriverPerson
+    {
+        $driverPerson = $this->driverPerson ?? [];
+        $driverPerson = reset($driverPerson);
+
+        if ($driverPerson === false) {
+            return null;
+        }
+
+        return $driverPerson;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DriverPerson|null
+     */
+    public function lastDriverPerson(): ?DriverPerson
+    {
+        $driverPerson = $this->driverPerson ?? [];
+        $driverPerson = end($driverPerson);
+
+        if ($driverPerson === false) {
+            return null;
+        }
+
+        return $driverPerson;
     }
 
     /**
@@ -3437,6 +3737,36 @@ class ShipmentStageType
         $this->crewMemberPerson = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CrewMemberPerson|null
+     */
+    public function firstCrewMemberPerson(): ?CrewMemberPerson
+    {
+        $crewMemberPerson = $this->crewMemberPerson ?? [];
+        $crewMemberPerson = reset($crewMemberPerson);
+
+        if ($crewMemberPerson === false) {
+            return null;
+        }
+
+        return $crewMemberPerson;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CrewMemberPerson|null
+     */
+    public function lastCrewMemberPerson(): ?CrewMemberPerson
+    {
+        $crewMemberPerson = $this->crewMemberPerson ?? [];
+        $crewMemberPerson = end($crewMemberPerson);
+
+        if ($crewMemberPerson === false) {
+            return null;
+        }
+
+        return $crewMemberPerson;
     }
 
     /**

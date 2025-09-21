@@ -97,6 +97,36 @@ class EnergyWaterSupplyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionReport|null
+     */
+    public function firstConsumptionReport(): ?ConsumptionReport
+    {
+        $consumptionReport = $this->consumptionReport ?? [];
+        $consumptionReport = reset($consumptionReport);
+
+        if ($consumptionReport === false) {
+            return null;
+        }
+
+        return $consumptionReport;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionReport|null
+     */
+    public function lastConsumptionReport(): ?ConsumptionReport
+    {
+        $consumptionReport = $this->consumptionReport ?? [];
+        $consumptionReport = end($consumptionReport);
+
+        if ($consumptionReport === false) {
+            return null;
+        }
+
+        return $consumptionReport;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ConsumptionReport $consumptionReport
      * @return self
      */
@@ -185,6 +215,36 @@ class EnergyWaterSupplyType
         $this->energyTaxReport = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnergyTaxReport|null
+     */
+    public function firstEnergyTaxReport(): ?EnergyTaxReport
+    {
+        $energyTaxReport = $this->energyTaxReport ?? [];
+        $energyTaxReport = reset($energyTaxReport);
+
+        if ($energyTaxReport === false) {
+            return null;
+        }
+
+        return $energyTaxReport;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnergyTaxReport|null
+     */
+    public function lastEnergyTaxReport(): ?EnergyTaxReport
+    {
+        $energyTaxReport = $this->energyTaxReport ?? [];
+        $energyTaxReport = end($energyTaxReport);
+
+        if ($energyTaxReport === false) {
+            return null;
+        }
+
+        return $energyTaxReport;
     }
 
     /**
@@ -279,6 +339,36 @@ class EnergyWaterSupplyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionAverage|null
+     */
+    public function firstConsumptionAverage(): ?ConsumptionAverage
+    {
+        $consumptionAverage = $this->consumptionAverage ?? [];
+        $consumptionAverage = reset($consumptionAverage);
+
+        if ($consumptionAverage === false) {
+            return null;
+        }
+
+        return $consumptionAverage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ConsumptionAverage|null
+     */
+    public function lastConsumptionAverage(): ?ConsumptionAverage
+    {
+        $consumptionAverage = $this->consumptionAverage ?? [];
+        $consumptionAverage = end($consumptionAverage);
+
+        if ($consumptionAverage === false) {
+            return null;
+        }
+
+        return $consumptionAverage;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ConsumptionAverage $consumptionAverage
      * @return self
      */
@@ -367,6 +457,36 @@ class EnergyWaterSupplyType
         $this->energyWaterConsumptionCorrection = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnergyWaterConsumptionCorrection|null
+     */
+    public function firstEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
+    {
+        $energyWaterConsumptionCorrection = $this->energyWaterConsumptionCorrection ?? [];
+        $energyWaterConsumptionCorrection = reset($energyWaterConsumptionCorrection);
+
+        if ($energyWaterConsumptionCorrection === false) {
+            return null;
+        }
+
+        return $energyWaterConsumptionCorrection;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnergyWaterConsumptionCorrection|null
+     */
+    public function lastEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
+    {
+        $energyWaterConsumptionCorrection = $this->energyWaterConsumptionCorrection ?? [];
+        $energyWaterConsumptionCorrection = end($energyWaterConsumptionCorrection);
+
+        if ($energyWaterConsumptionCorrection === false) {
+            return null;
+        }
+
+        return $energyWaterConsumptionCorrection;
     }
 
     /**

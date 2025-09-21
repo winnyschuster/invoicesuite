@@ -124,6 +124,36 @@ class PromotionalSpecificationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PromotionalEventLineItem|null
+     */
+    public function firstPromotionalEventLineItem(): ?PromotionalEventLineItem
+    {
+        $promotionalEventLineItem = $this->promotionalEventLineItem ?? [];
+        $promotionalEventLineItem = reset($promotionalEventLineItem);
+
+        if ($promotionalEventLineItem === false) {
+            return null;
+        }
+
+        return $promotionalEventLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PromotionalEventLineItem|null
+     */
+    public function lastPromotionalEventLineItem(): ?PromotionalEventLineItem
+    {
+        $promotionalEventLineItem = $this->promotionalEventLineItem ?? [];
+        $promotionalEventLineItem = end($promotionalEventLineItem);
+
+        if ($promotionalEventLineItem === false) {
+            return null;
+        }
+
+        return $promotionalEventLineItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PromotionalEventLineItem $promotionalEventLineItem
      * @return self
      */
@@ -212,6 +242,36 @@ class PromotionalSpecificationType
         $this->eventTactic = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventTactic|null
+     */
+    public function firstEventTactic(): ?EventTactic
+    {
+        $eventTactic = $this->eventTactic ?? [];
+        $eventTactic = reset($eventTactic);
+
+        if ($eventTactic === false) {
+            return null;
+        }
+
+        return $eventTactic;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EventTactic|null
+     */
+    public function lastEventTactic(): ?EventTactic
+    {
+        $eventTactic = $this->eventTactic ?? [];
+        $eventTactic = end($eventTactic);
+
+        if ($eventTactic === false) {
+            return null;
+        }
+
+        return $eventTactic;
     }
 
     /**

@@ -278,6 +278,36 @@ class TransportMeansType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RegistrationNationality|null
+     */
+    public function firstRegistrationNationality(): ?RegistrationNationality
+    {
+        $registrationNationality = $this->registrationNationality ?? [];
+        $registrationNationality = reset($registrationNationality);
+
+        if ($registrationNationality === false) {
+            return null;
+        }
+
+        return $registrationNationality;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\RegistrationNationality|null
+     */
+    public function lastRegistrationNationality(): ?RegistrationNationality
+    {
+        $registrationNationality = $this->registrationNationality ?? [];
+        $registrationNationality = end($registrationNationality);
+
+        if ($registrationNationality === false) {
+            return null;
+        }
+
+        return $registrationNationality;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\RegistrationNationality $registrationNationality
      * @return self
      */
@@ -717,6 +747,36 @@ class TransportMeansType
         $this->measurementDimension = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function firstMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = reset($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function lastMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = end($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
     }
 
     /**

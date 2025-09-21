@@ -99,6 +99,36 @@ class DeclarationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function firstName(): ?Name
+    {
+        $name = $this->name ?? [];
+        $name = reset($name);
+
+        if ($name === false) {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Name|null
+     */
+    public function lastName(): ?Name
+    {
+        $name = $this->name ?? [];
+        $name = end($name);
+
+        if ($name === false) {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Name $name
      * @return self
      */
@@ -229,6 +259,36 @@ class DeclarationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -317,6 +377,36 @@ class DeclarationType
         $this->evidenceSupplied = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EvidenceSupplied|null
+     */
+    public function firstEvidenceSupplied(): ?EvidenceSupplied
+    {
+        $evidenceSupplied = $this->evidenceSupplied ?? [];
+        $evidenceSupplied = reset($evidenceSupplied);
+
+        if ($evidenceSupplied === false) {
+            return null;
+        }
+
+        return $evidenceSupplied;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EvidenceSupplied|null
+     */
+    public function lastEvidenceSupplied(): ?EvidenceSupplied
+    {
+        $evidenceSupplied = $this->evidenceSupplied ?? [];
+        $evidenceSupplied = end($evidenceSupplied);
+
+        if ($evidenceSupplied === false) {
+            return null;
+        }
+
+        return $evidenceSupplied;
     }
 
     /**

@@ -984,6 +984,36 @@ class DeliveryType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotifyParty|null
+     */
+    public function firstNotifyParty(): ?NotifyParty
+    {
+        $notifyParty = $this->notifyParty ?? [];
+        $notifyParty = reset($notifyParty);
+
+        if ($notifyParty === false) {
+            return null;
+        }
+
+        return $notifyParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\NotifyParty|null
+     */
+    public function lastNotifyParty(): ?NotifyParty
+    {
+        $notifyParty = $this->notifyParty ?? [];
+        $notifyParty = end($notifyParty);
+
+        if ($notifyParty === false) {
+            return null;
+        }
+
+        return $notifyParty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\NotifyParty $notifyParty
      * @return self
      */
@@ -1111,6 +1141,36 @@ class DeliveryType
         $this->deliveryTerms = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms|null
+     */
+    public function firstDeliveryTerms(): ?DeliveryTerms
+    {
+        $deliveryTerms = $this->deliveryTerms ?? [];
+        $deliveryTerms = reset($deliveryTerms);
+
+        if ($deliveryTerms === false) {
+            return null;
+        }
+
+        return $deliveryTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryTerms|null
+     */
+    public function lastDeliveryTerms(): ?DeliveryTerms
+    {
+        $deliveryTerms = $this->deliveryTerms ?? [];
+        $deliveryTerms = end($deliveryTerms);
+
+        if ($deliveryTerms === false) {
+            return null;
+        }
+
+        return $deliveryTerms;
     }
 
     /**

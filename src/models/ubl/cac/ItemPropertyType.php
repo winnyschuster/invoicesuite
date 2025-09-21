@@ -438,6 +438,36 @@ class ItemPropertyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ValueQualifier|null
+     */
+    public function firstValueQualifier(): ?ValueQualifier
+    {
+        $valueQualifier = $this->valueQualifier ?? [];
+        $valueQualifier = reset($valueQualifier);
+
+        if ($valueQualifier === false) {
+            return null;
+        }
+
+        return $valueQualifier;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ValueQualifier|null
+     */
+    public function lastValueQualifier(): ?ValueQualifier
+    {
+        $valueQualifier = $this->valueQualifier ?? [];
+        $valueQualifier = end($valueQualifier);
+
+        if ($valueQualifier === false) {
+            return null;
+        }
+
+        return $valueQualifier;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ValueQualifier $valueQualifier
      * @return self
      */
@@ -568,6 +598,36 @@ class ItemPropertyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ListValue|null
+     */
+    public function firstListValue(): ?ListValue
+    {
+        $listValue = $this->listValue ?? [];
+        $listValue = reset($listValue);
+
+        if ($listValue === false) {
+            return null;
+        }
+
+        return $listValue;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ListValue|null
+     */
+    public function lastListValue(): ?ListValue
+    {
+        $listValue = $this->listValue ?? [];
+        $listValue = end($listValue);
+
+        if ($listValue === false) {
+            return null;
+        }
+
+        return $listValue;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ListValue $listValue
      * @return self
      */
@@ -695,6 +755,36 @@ class ItemPropertyType
         $this->itemPropertyGroup = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemPropertyGroup|null
+     */
+    public function firstItemPropertyGroup(): ?ItemPropertyGroup
+    {
+        $itemPropertyGroup = $this->itemPropertyGroup ?? [];
+        $itemPropertyGroup = reset($itemPropertyGroup);
+
+        if ($itemPropertyGroup === false) {
+            return null;
+        }
+
+        return $itemPropertyGroup;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemPropertyGroup|null
+     */
+    public function lastItemPropertyGroup(): ?ItemPropertyGroup
+    {
+        $itemPropertyGroup = $this->itemPropertyGroup ?? [];
+        $itemPropertyGroup = end($itemPropertyGroup);
+
+        if ($itemPropertyGroup === false) {
+            return null;
+        }
+
+        return $itemPropertyGroup;
     }
 
     /**

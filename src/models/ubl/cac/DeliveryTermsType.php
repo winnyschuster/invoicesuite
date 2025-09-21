@@ -172,6 +172,36 @@ class DeliveryTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms|null
+     */
+    public function firstSpecialTerms(): ?SpecialTerms
+    {
+        $specialTerms = $this->specialTerms ?? [];
+        $specialTerms = reset($specialTerms);
+
+        if ($specialTerms === false) {
+            return null;
+        }
+
+        return $specialTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms|null
+     */
+    public function lastSpecialTerms(): ?SpecialTerms
+    {
+        $specialTerms = $this->specialTerms ?? [];
+        $specialTerms = end($specialTerms);
+
+        if ($specialTerms === false) {
+            return null;
+        }
+
+        return $specialTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\SpecialTerms $specialTerms
      * @return self
      */
@@ -300,6 +330,36 @@ class DeliveryTermsType
         $this->lossRisk = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LossRisk|null
+     */
+    public function firstLossRisk(): ?LossRisk
+    {
+        $lossRisk = $this->lossRisk ?? [];
+        $lossRisk = reset($lossRisk);
+
+        if ($lossRisk === false) {
+            return null;
+        }
+
+        return $lossRisk;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LossRisk|null
+     */
+    public function lastLossRisk(): ?LossRisk
+    {
+        $lossRisk = $this->lossRisk ?? [];
+        $lossRisk = end($lossRisk);
+
+        if ($lossRisk === false) {
+            return null;
+        }
+
+        return $lossRisk;
     }
 
     /**

@@ -233,6 +233,36 @@ class SubscriberConsumptionType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -441,6 +471,36 @@ class SubscriberConsumptionType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OnAccountPayment|null
+     */
+    public function firstOnAccountPayment(): ?OnAccountPayment
+    {
+        $onAccountPayment = $this->onAccountPayment ?? [];
+        $onAccountPayment = reset($onAccountPayment);
+
+        if ($onAccountPayment === false) {
+            return null;
+        }
+
+        return $onAccountPayment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OnAccountPayment|null
+     */
+    public function lastOnAccountPayment(): ?OnAccountPayment
+    {
+        $onAccountPayment = $this->onAccountPayment ?? [];
+        $onAccountPayment = end($onAccountPayment);
+
+        if ($onAccountPayment === false) {
+            return null;
+        }
+
+        return $onAccountPayment;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\OnAccountPayment $onAccountPayment
      * @return self
      */
@@ -568,6 +628,36 @@ class SubscriberConsumptionType
         $this->supplierConsumption = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupplierConsumption|null
+     */
+    public function firstSupplierConsumption(): ?SupplierConsumption
+    {
+        $supplierConsumption = $this->supplierConsumption ?? [];
+        $supplierConsumption = reset($supplierConsumption);
+
+        if ($supplierConsumption === false) {
+            return null;
+        }
+
+        return $supplierConsumption;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupplierConsumption|null
+     */
+    public function lastSupplierConsumption(): ?SupplierConsumption
+    {
+        $supplierConsumption = $this->supplierConsumption ?? [];
+        $supplierConsumption = end($supplierConsumption);
+
+        if ($supplierConsumption === false) {
+            return null;
+        }
+
+        return $supplierConsumption;
     }
 
     /**

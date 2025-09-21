@@ -297,6 +297,36 @@ class DespatchLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -505,6 +535,36 @@ class DespatchLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BackorderReason|null
+     */
+    public function firstBackorderReason(): ?BackorderReason
+    {
+        $backorderReason = $this->backorderReason ?? [];
+        $backorderReason = reset($backorderReason);
+
+        if ($backorderReason === false) {
+            return null;
+        }
+
+        return $backorderReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BackorderReason|null
+     */
+    public function lastBackorderReason(): ?BackorderReason
+    {
+        $backorderReason = $this->backorderReason ?? [];
+        $backorderReason = end($backorderReason);
+
+        if ($backorderReason === false) {
+            return null;
+        }
+
+        return $backorderReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\BackorderReason $backorderReason
      * @return self
      */
@@ -632,6 +692,36 @@ class DespatchLineType
         $this->outstandingReason = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OutstandingReason|null
+     */
+    public function firstOutstandingReason(): ?OutstandingReason
+    {
+        $outstandingReason = $this->outstandingReason ?? [];
+        $outstandingReason = reset($outstandingReason);
+
+        if ($outstandingReason === false) {
+            return null;
+        }
+
+        return $outstandingReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\OutstandingReason|null
+     */
+    public function lastOutstandingReason(): ?OutstandingReason
+    {
+        $outstandingReason = $this->outstandingReason ?? [];
+        $outstandingReason = end($outstandingReason);
+
+        if ($outstandingReason === false) {
+            return null;
+        }
+
+        return $outstandingReason;
     }
 
     /**
@@ -765,6 +855,36 @@ class DespatchLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference|null
+     */
+    public function firstOrderLineReference(): ?OrderLineReference
+    {
+        $orderLineReference = $this->orderLineReference ?? [];
+        $orderLineReference = reset($orderLineReference);
+
+        if ($orderLineReference === false) {
+            return null;
+        }
+
+        return $orderLineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference|null
+     */
+    public function lastOrderLineReference(): ?OrderLineReference
+    {
+        $orderLineReference = $this->orderLineReference ?? [];
+        $orderLineReference = end($orderLineReference);
+
+        if ($orderLineReference === false) {
+            return null;
+        }
+
+        return $orderLineReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference $orderLineReference
      * @return self
      */
@@ -853,6 +973,36 @@ class DespatchLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**
@@ -983,6 +1133,36 @@ class DespatchLineType
         $this->shipment = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Shipment|null
+     */
+    public function firstShipment(): ?Shipment
+    {
+        $shipment = $this->shipment ?? [];
+        $shipment = reset($shipment);
+
+        if ($shipment === false) {
+            return null;
+        }
+
+        return $shipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Shipment|null
+     */
+    public function lastShipment(): ?Shipment
+    {
+        $shipment = $this->shipment ?? [];
+        $shipment = end($shipment);
+
+        if ($shipment === false) {
+            return null;
+        }
+
+        return $shipment;
     }
 
     /**

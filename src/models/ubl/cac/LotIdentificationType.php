@@ -152,6 +152,36 @@ class LotIdentificationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty|null
+     */
+    public function firstAdditionalItemProperty(): ?AdditionalItemProperty
+    {
+        $additionalItemProperty = $this->additionalItemProperty ?? [];
+        $additionalItemProperty = reset($additionalItemProperty);
+
+        if ($additionalItemProperty === false) {
+            return null;
+        }
+
+        return $additionalItemProperty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty|null
+     */
+    public function lastAdditionalItemProperty(): ?AdditionalItemProperty
+    {
+        $additionalItemProperty = $this->additionalItemProperty ?? [];
+        $additionalItemProperty = end($additionalItemProperty);
+
+        if ($additionalItemProperty === false) {
+            return null;
+        }
+
+        return $additionalItemProperty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
      * @return self
      */

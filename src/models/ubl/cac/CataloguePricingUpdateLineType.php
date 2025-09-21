@@ -212,6 +212,36 @@ class CataloguePricingUpdateLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return self
      */

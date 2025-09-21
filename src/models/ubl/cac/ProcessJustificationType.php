@@ -178,6 +178,36 @@ class ProcessJustificationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProcessReason|null
+     */
+    public function firstProcessReason(): ?ProcessReason
+    {
+        $processReason = $this->processReason ?? [];
+        $processReason = reset($processReason);
+
+        if ($processReason === false) {
+            return null;
+        }
+
+        return $processReason;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ProcessReason|null
+     */
+    public function lastProcessReason(): ?ProcessReason
+    {
+        $processReason = $this->processReason ?? [];
+        $processReason = end($processReason);
+
+        if ($processReason === false) {
+            return null;
+        }
+
+        return $processReason;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ProcessReason $processReason
      * @return self
      */
@@ -266,6 +296,36 @@ class ProcessJustificationType
         $this->description = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
     }
 
     /**

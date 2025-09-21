@@ -145,6 +145,36 @@ class DocumentResponseType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentReference $documentReference
      * @return self
      */
@@ -311,6 +341,36 @@ class DocumentResponseType
         $this->lineResponse = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LineResponse|null
+     */
+    public function firstLineResponse(): ?LineResponse
+    {
+        $lineResponse = $this->lineResponse ?? [];
+        $lineResponse = reset($lineResponse);
+
+        if ($lineResponse === false) {
+            return null;
+        }
+
+        return $lineResponse;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LineResponse|null
+     */
+    public function lastLineResponse(): ?LineResponse
+    {
+        $lineResponse = $this->lineResponse ?? [];
+        $lineResponse = end($lineResponse);
+
+        if ($lineResponse === false) {
+            return null;
+        }
+
+        return $lineResponse;
     }
 
     /**

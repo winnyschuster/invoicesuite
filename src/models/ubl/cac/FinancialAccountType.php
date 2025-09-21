@@ -390,6 +390,36 @@ class FinancialAccountType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentNote|null
+     */
+    public function firstPaymentNote(): ?PaymentNote
+    {
+        $paymentNote = $this->paymentNote ?? [];
+        $paymentNote = reset($paymentNote);
+
+        if ($paymentNote === false) {
+            return null;
+        }
+
+        return $paymentNote;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PaymentNote|null
+     */
+    public function lastPaymentNote(): ?PaymentNote
+    {
+        $paymentNote = $this->paymentNote ?? [];
+        $paymentNote = end($paymentNote);
+
+        if ($paymentNote === false) {
+            return null;
+        }
+
+        return $paymentNote;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PaymentNote $paymentNote
      * @return self
      */

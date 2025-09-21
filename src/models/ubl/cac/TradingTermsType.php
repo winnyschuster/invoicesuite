@@ -85,6 +85,36 @@ class TradingTermsType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Information|null
+     */
+    public function firstInformation(): ?Information
+    {
+        $information = $this->information ?? [];
+        $information = reset($information);
+
+        if ($information === false) {
+            return null;
+        }
+
+        return $information;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Information|null
+     */
+    public function lastInformation(): ?Information
+    {
+        $information = $this->information ?? [];
+        $information = end($information);
+
+        if ($information === false) {
+            return null;
+        }
+
+        return $information;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Information $information
      * @return self
      */

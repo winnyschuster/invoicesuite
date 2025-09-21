@@ -198,6 +198,36 @@ class CatalogueRequestLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -325,6 +355,36 @@ class CatalogueRequestLineType
         $this->requiredItemLocationQuantity = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
     }
 
     /**

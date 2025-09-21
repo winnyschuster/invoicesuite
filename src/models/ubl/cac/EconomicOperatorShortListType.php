@@ -110,6 +110,36 @@ class EconomicOperatorShortListType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LimitationDescription|null
+     */
+    public function firstLimitationDescription(): ?LimitationDescription
+    {
+        $limitationDescription = $this->limitationDescription ?? [];
+        $limitationDescription = reset($limitationDescription);
+
+        if ($limitationDescription === false) {
+            return null;
+        }
+
+        return $limitationDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\LimitationDescription|null
+     */
+    public function lastLimitationDescription(): ?LimitationDescription
+    {
+        $limitationDescription = $this->limitationDescription ?? [];
+        $limitationDescription = end($limitationDescription);
+
+        if ($limitationDescription === false) {
+            return null;
+        }
+
+        return $limitationDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\LimitationDescription $limitationDescription
      * @return self
      */
@@ -315,6 +345,36 @@ class EconomicOperatorShortListType
         $this->preSelectedParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PreSelectedParty|null
+     */
+    public function firstPreSelectedParty(): ?PreSelectedParty
+    {
+        $preSelectedParty = $this->preSelectedParty ?? [];
+        $preSelectedParty = reset($preSelectedParty);
+
+        if ($preSelectedParty === false) {
+            return null;
+        }
+
+        return $preSelectedParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PreSelectedParty|null
+     */
+    public function lastPreSelectedParty(): ?PreSelectedParty
+    {
+        $preSelectedParty = $this->preSelectedParty ?? [];
+        $preSelectedParty = end($preSelectedParty);
+
+        if ($preSelectedParty === false) {
+            return null;
+        }
+
+        return $preSelectedParty;
     }
 
     /**

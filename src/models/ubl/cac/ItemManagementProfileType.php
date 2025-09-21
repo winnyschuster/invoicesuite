@@ -323,6 +323,36 @@ class ItemManagementProfileType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReplenishmentOwnerDescription|null
+     */
+    public function firstReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
+    {
+        $replenishmentOwnerDescription = $this->replenishmentOwnerDescription ?? [];
+        $replenishmentOwnerDescription = reset($replenishmentOwnerDescription);
+
+        if ($replenishmentOwnerDescription === false) {
+            return null;
+        }
+
+        return $replenishmentOwnerDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ReplenishmentOwnerDescription|null
+     */
+    public function lastReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
+    {
+        $replenishmentOwnerDescription = $this->replenishmentOwnerDescription ?? [];
+        $replenishmentOwnerDescription = end($replenishmentOwnerDescription);
+
+        if ($replenishmentOwnerDescription === false) {
+            return null;
+        }
+
+        return $replenishmentOwnerDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\ReplenishmentOwnerDescription $replenishmentOwnerDescription
      * @return self
      */

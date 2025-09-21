@@ -410,6 +410,36 @@ class PackageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial|null
+     */
+    public function firstPackingMaterial(): ?PackingMaterial
+    {
+        $packingMaterial = $this->packingMaterial ?? [];
+        $packingMaterial = reset($packingMaterial);
+
+        if ($packingMaterial === false) {
+            return null;
+        }
+
+        return $packingMaterial;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial|null
+     */
+    public function lastPackingMaterial(): ?PackingMaterial
+    {
+        $packingMaterial = $this->packingMaterial ?? [];
+        $packingMaterial = end($packingMaterial);
+
+        if ($packingMaterial === false) {
+            return null;
+        }
+
+        return $packingMaterial;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PackingMaterial $packingMaterial
      * @return self
      */
@@ -537,6 +567,36 @@ class PackageType
         $this->containedPackage = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedPackage|null
+     */
+    public function firstContainedPackage(): ?ContainedPackage
+    {
+        $containedPackage = $this->containedPackage ?? [];
+        $containedPackage = reset($containedPackage);
+
+        if ($containedPackage === false) {
+            return null;
+        }
+
+        return $containedPackage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ContainedPackage|null
+     */
+    public function lastContainedPackage(): ?ContainedPackage
+    {
+        $containedPackage = $this->containedPackage ?? [];
+        $containedPackage = end($containedPackage);
+
+        if ($containedPackage === false) {
+            return null;
+        }
+
+        return $containedPackage;
     }
 
     /**
@@ -671,6 +731,36 @@ class PackageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem|null
+     */
+    public function firstGoodsItem(): ?GoodsItem
+    {
+        $goodsItem = $this->goodsItem ?? [];
+        $goodsItem = reset($goodsItem);
+
+        if ($goodsItem === false) {
+            return null;
+        }
+
+        return $goodsItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\GoodsItem|null
+     */
+    public function lastGoodsItem(): ?GoodsItem
+    {
+        $goodsItem = $this->goodsItem ?? [];
+        $goodsItem = end($goodsItem);
+
+        if ($goodsItem === false) {
+            return null;
+        }
+
+        return $goodsItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\GoodsItem $goodsItem
      * @return self
      */
@@ -762,6 +852,36 @@ class PackageType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function firstMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = reset($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension|null
+     */
+    public function lastMeasurementDimension(): ?MeasurementDimension
+    {
+        $measurementDimension = $this->measurementDimension ?? [];
+        $measurementDimension = end($measurementDimension);
+
+        if ($measurementDimension === false) {
+            return null;
+        }
+
+        return $measurementDimension;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\MeasurementDimension $measurementDimension
      * @return self
      */
@@ -850,6 +970,36 @@ class PackageType
         $this->deliveryUnit = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit|null
+     */
+    public function firstDeliveryUnit(): ?DeliveryUnit
+    {
+        $deliveryUnit = $this->deliveryUnit ?? [];
+        $deliveryUnit = reset($deliveryUnit);
+
+        if ($deliveryUnit === false) {
+            return null;
+        }
+
+        return $deliveryUnit;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DeliveryUnit|null
+     */
+    public function lastDeliveryUnit(): ?DeliveryUnit
+    {
+        $deliveryUnit = $this->deliveryUnit ?? [];
+        $deliveryUnit = end($deliveryUnit);
+
+        if ($deliveryUnit === false) {
+            return null;
+        }
+
+        return $deliveryUnit;
     }
 
     /**

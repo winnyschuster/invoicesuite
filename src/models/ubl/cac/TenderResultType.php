@@ -275,6 +275,36 @@ class TenderResultType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -807,6 +837,36 @@ class TenderResultType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubcontractTerms|null
+     */
+    public function firstSubcontractTerms(): ?SubcontractTerms
+    {
+        $subcontractTerms = $this->subcontractTerms ?? [];
+        $subcontractTerms = reset($subcontractTerms);
+
+        if ($subcontractTerms === false) {
+            return null;
+        }
+
+        return $subcontractTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubcontractTerms|null
+     */
+    public function lastSubcontractTerms(): ?SubcontractTerms
+    {
+        $subcontractTerms = $this->subcontractTerms ?? [];
+        $subcontractTerms = end($subcontractTerms);
+
+        if ($subcontractTerms === false) {
+            return null;
+        }
+
+        return $subcontractTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SubcontractTerms $subcontractTerms
      * @return self
      */
@@ -895,6 +955,36 @@ class TenderResultType
         $this->winningParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WinningParty|null
+     */
+    public function firstWinningParty(): ?WinningParty
+    {
+        $winningParty = $this->winningParty ?? [];
+        $winningParty = reset($winningParty);
+
+        if ($winningParty === false) {
+            return null;
+        }
+
+        return $winningParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WinningParty|null
+     */
+    public function lastWinningParty(): ?WinningParty
+    {
+        $winningParty = $this->winningParty ?? [];
+        $winningParty = end($winningParty);
+
+        if ($winningParty === false) {
+            return null;
+        }
+
+        return $winningParty;
     }
 
     /**

@@ -405,6 +405,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -671,6 +701,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation|null
+     */
+    public function firstAdditionalInformation(): ?AdditionalInformation
+    {
+        $additionalInformation = $this->additionalInformation ?? [];
+        $additionalInformation = reset($additionalInformation);
+
+        if ($additionalInformation === false) {
+            return null;
+        }
+
+        return $additionalInformation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation|null
+     */
+    public function lastAdditionalInformation(): ?AdditionalInformation
+    {
+        $additionalInformation = $this->additionalInformation ?? [];
+        $additionalInformation = end($additionalInformation);
+
+        if ($additionalInformation === false) {
+            return null;
+        }
+
+        return $additionalInformation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AdditionalInformation $additionalInformation
      * @return self
      */
@@ -759,6 +819,36 @@ class ItemType
         $this->keyword = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Keyword|null
+     */
+    public function firstKeyword(): ?Keyword
+    {
+        $keyword = $this->keyword ?? [];
+        $keyword = reset($keyword);
+
+        if ($keyword === false) {
+            return null;
+        }
+
+        return $keyword;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Keyword|null
+     */
+    public function lastKeyword(): ?Keyword
+    {
+        $keyword = $this->keyword ?? [];
+        $keyword = end($keyword);
+
+        if ($keyword === false) {
+            return null;
+        }
+
+        return $keyword;
     }
 
     /**
@@ -853,6 +943,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BrandName|null
+     */
+    public function firstBrandName(): ?BrandName
+    {
+        $brandName = $this->brandName ?? [];
+        $brandName = reset($brandName);
+
+        if ($brandName === false) {
+            return null;
+        }
+
+        return $brandName;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\BrandName|null
+     */
+    public function lastBrandName(): ?BrandName
+    {
+        $brandName = $this->brandName ?? [];
+        $brandName = end($brandName);
+
+        if ($brandName === false) {
+            return null;
+        }
+
+        return $brandName;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\BrandName $brandName
      * @return self
      */
@@ -941,6 +1061,36 @@ class ItemType
         $this->modelName = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ModelName|null
+     */
+    public function firstModelName(): ?ModelName
+    {
+        $modelName = $this->modelName ?? [];
+        $modelName = reset($modelName);
+
+        if ($modelName === false) {
+            return null;
+        }
+
+        return $modelName;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\ModelName|null
+     */
+    public function lastModelName(): ?ModelName
+    {
+        $modelName = $this->modelName ?? [];
+        $modelName = end($modelName);
+
+        if ($modelName === false) {
+            return null;
+        }
+
+        return $modelName;
     }
 
     /**
@@ -1110,6 +1260,36 @@ class ItemType
         $this->manufacturersItemIdentification = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification|null
+     */
+    public function firstManufacturersItemIdentification(): ?ManufacturersItemIdentification
+    {
+        $manufacturersItemIdentification = $this->manufacturersItemIdentification ?? [];
+        $manufacturersItemIdentification = reset($manufacturersItemIdentification);
+
+        if ($manufacturersItemIdentification === false) {
+            return null;
+        }
+
+        return $manufacturersItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ManufacturersItemIdentification|null
+     */
+    public function lastManufacturersItemIdentification(): ?ManufacturersItemIdentification
+    {
+        $manufacturersItemIdentification = $this->manufacturersItemIdentification ?? [];
+        $manufacturersItemIdentification = end($manufacturersItemIdentification);
+
+        if ($manufacturersItemIdentification === false) {
+            return null;
+        }
+
+        return $manufacturersItemIdentification;
     }
 
     /**
@@ -1286,6 +1466,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification|null
+     */
+    public function firstAdditionalItemIdentification(): ?AdditionalItemIdentification
+    {
+        $additionalItemIdentification = $this->additionalItemIdentification ?? [];
+        $additionalItemIdentification = reset($additionalItemIdentification);
+
+        if ($additionalItemIdentification === false) {
+            return null;
+        }
+
+        return $additionalItemIdentification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification|null
+     */
+    public function lastAdditionalItemIdentification(): ?AdditionalItemIdentification
+    {
+        $additionalItemIdentification = $this->additionalItemIdentification ?? [];
+        $additionalItemIdentification = end($additionalItemIdentification);
+
+        if ($additionalItemIdentification === false) {
+            return null;
+        }
+
+        return $additionalItemIdentification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemIdentification $additionalItemIdentification
      * @return self
      */
@@ -1416,6 +1626,36 @@ class ItemType
         $this->itemSpecificationDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference|null
+     */
+    public function firstItemSpecificationDocumentReference(): ?ItemSpecificationDocumentReference
+    {
+        $itemSpecificationDocumentReference = $this->itemSpecificationDocumentReference ?? [];
+        $itemSpecificationDocumentReference = reset($itemSpecificationDocumentReference);
+
+        if ($itemSpecificationDocumentReference === false) {
+            return null;
+        }
+
+        return $itemSpecificationDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemSpecificationDocumentReference|null
+     */
+    public function lastItemSpecificationDocumentReference(): ?ItemSpecificationDocumentReference
+    {
+        $itemSpecificationDocumentReference = $this->itemSpecificationDocumentReference ?? [];
+        $itemSpecificationDocumentReference = end($itemSpecificationDocumentReference);
+
+        if ($itemSpecificationDocumentReference === false) {
+            return null;
+        }
+
+        return $itemSpecificationDocumentReference;
     }
 
     /**
@@ -1551,6 +1791,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification|null
+     */
+    public function firstCommodityClassification(): ?CommodityClassification
+    {
+        $commodityClassification = $this->commodityClassification ?? [];
+        $commodityClassification = reset($commodityClassification);
+
+        if ($commodityClassification === false) {
+            return null;
+        }
+
+        return $commodityClassification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification|null
+     */
+    public function lastCommodityClassification(): ?CommodityClassification
+    {
+        $commodityClassification = $this->commodityClassification ?? [];
+        $commodityClassification = end($commodityClassification);
+
+        if ($commodityClassification === false) {
+            return null;
+        }
+
+        return $commodityClassification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification $commodityClassification
      * @return self
      */
@@ -1639,6 +1909,36 @@ class ItemType
         $this->transactionConditions = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransactionConditions|null
+     */
+    public function firstTransactionConditions(): ?TransactionConditions
+    {
+        $transactionConditions = $this->transactionConditions ?? [];
+        $transactionConditions = reset($transactionConditions);
+
+        if ($transactionConditions === false) {
+            return null;
+        }
+
+        return $transactionConditions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransactionConditions|null
+     */
+    public function lastTransactionConditions(): ?TransactionConditions
+    {
+        $transactionConditions = $this->transactionConditions ?? [];
+        $transactionConditions = end($transactionConditions);
+
+        if ($transactionConditions === false) {
+            return null;
+        }
+
+        return $transactionConditions;
     }
 
     /**
@@ -1733,6 +2033,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousItem|null
+     */
+    public function firstHazardousItem(): ?HazardousItem
+    {
+        $hazardousItem = $this->hazardousItem ?? [];
+        $hazardousItem = reset($hazardousItem);
+
+        if ($hazardousItem === false) {
+            return null;
+        }
+
+        return $hazardousItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\HazardousItem|null
+     */
+    public function lastHazardousItem(): ?HazardousItem
+    {
+        $hazardousItem = $this->hazardousItem ?? [];
+        $hazardousItem = end($hazardousItem);
+
+        if ($hazardousItem === false) {
+            return null;
+        }
+
+        return $hazardousItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\HazardousItem $hazardousItem
      * @return self
      */
@@ -1821,6 +2151,36 @@ class ItemType
         $this->classifiedTaxCategory = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory|null
+     */
+    public function firstClassifiedTaxCategory(): ?ClassifiedTaxCategory
+    {
+        $classifiedTaxCategory = $this->classifiedTaxCategory ?? [];
+        $classifiedTaxCategory = reset($classifiedTaxCategory);
+
+        if ($classifiedTaxCategory === false) {
+            return null;
+        }
+
+        return $classifiedTaxCategory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ClassifiedTaxCategory|null
+     */
+    public function lastClassifiedTaxCategory(): ?ClassifiedTaxCategory
+    {
+        $classifiedTaxCategory = $this->classifiedTaxCategory ?? [];
+        $classifiedTaxCategory = end($classifiedTaxCategory);
+
+        if ($classifiedTaxCategory === false) {
+            return null;
+        }
+
+        return $classifiedTaxCategory;
     }
 
     /**
@@ -1915,6 +2275,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty|null
+     */
+    public function firstAdditionalItemProperty(): ?AdditionalItemProperty
+    {
+        $additionalItemProperty = $this->additionalItemProperty ?? [];
+        $additionalItemProperty = reset($additionalItemProperty);
+
+        if ($additionalItemProperty === false) {
+            return null;
+        }
+
+        return $additionalItemProperty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty|null
+     */
+    public function lastAdditionalItemProperty(): ?AdditionalItemProperty
+    {
+        $additionalItemProperty = $this->additionalItemProperty ?? [];
+        $additionalItemProperty = end($additionalItemProperty);
+
+        if ($additionalItemProperty === false) {
+            return null;
+        }
+
+        return $additionalItemProperty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
      * @return self
      */
@@ -2003,6 +2393,36 @@ class ItemType
         $this->manufacturerParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty|null
+     */
+    public function firstManufacturerParty(): ?ManufacturerParty
+    {
+        $manufacturerParty = $this->manufacturerParty ?? [];
+        $manufacturerParty = reset($manufacturerParty);
+
+        if ($manufacturerParty === false) {
+            return null;
+        }
+
+        return $manufacturerParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ManufacturerParty|null
+     */
+    public function lastManufacturerParty(): ?ManufacturerParty
+    {
+        $manufacturerParty = $this->manufacturerParty ?? [];
+        $manufacturerParty = end($manufacturerParty);
+
+        if ($manufacturerParty === false) {
+            return null;
+        }
+
+        return $manufacturerParty;
     }
 
     /**
@@ -2137,6 +2557,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginAddress|null
+     */
+    public function firstOriginAddress(): ?OriginAddress
+    {
+        $originAddress = $this->originAddress ?? [];
+        $originAddress = reset($originAddress);
+
+        if ($originAddress === false) {
+            return null;
+        }
+
+        return $originAddress;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OriginAddress|null
+     */
+    public function lastOriginAddress(): ?OriginAddress
+    {
+        $originAddress = $this->originAddress ?? [];
+        $originAddress = end($originAddress);
+
+        if ($originAddress === false) {
+            return null;
+        }
+
+        return $originAddress;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\OriginAddress $originAddress
      * @return self
      */
@@ -2225,6 +2675,36 @@ class ItemType
         $this->itemInstance = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemInstance|null
+     */
+    public function firstItemInstance(): ?ItemInstance
+    {
+        $itemInstance = $this->itemInstance ?? [];
+        $itemInstance = reset($itemInstance);
+
+        if ($itemInstance === false) {
+            return null;
+        }
+
+        return $itemInstance;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemInstance|null
+     */
+    public function lastItemInstance(): ?ItemInstance
+    {
+        $itemInstance = $this->itemInstance ?? [];
+        $itemInstance = end($itemInstance);
+
+        if ($itemInstance === false) {
+            return null;
+        }
+
+        return $itemInstance;
     }
 
     /**
@@ -2319,6 +2799,36 @@ class ItemType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Certificate|null
+     */
+    public function firstCertificate(): ?Certificate
+    {
+        $certificate = $this->certificate ?? [];
+        $certificate = reset($certificate);
+
+        if ($certificate === false) {
+            return null;
+        }
+
+        return $certificate;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Certificate|null
+     */
+    public function lastCertificate(): ?Certificate
+    {
+        $certificate = $this->certificate ?? [];
+        $certificate = end($certificate);
+
+        if ($certificate === false) {
+            return null;
+        }
+
+        return $certificate;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Certificate $certificate
      * @return self
      */
@@ -2407,6 +2917,36 @@ class ItemType
         $this->dimension = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Dimension|null
+     */
+    public function firstDimension(): ?Dimension
+    {
+        $dimension = $this->dimension ?? [];
+        $dimension = reset($dimension);
+
+        if ($dimension === false) {
+            return null;
+        }
+
+        return $dimension;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Dimension|null
+     */
+    public function lastDimension(): ?Dimension
+    {
+        $dimension = $this->dimension ?? [];
+        $dimension = end($dimension);
+
+        if ($dimension === false) {
+            return null;
+        }
+
+        return $dimension;
     }
 
     /**

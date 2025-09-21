@@ -331,6 +331,36 @@ class RequestedTenderTotalType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MonetaryScope|null
+     */
+    public function firstMonetaryScope(): ?MonetaryScope
+    {
+        $monetaryScope = $this->monetaryScope ?? [];
+        $monetaryScope = reset($monetaryScope);
+
+        if ($monetaryScope === false) {
+            return null;
+        }
+
+        return $monetaryScope;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MonetaryScope|null
+     */
+    public function lastMonetaryScope(): ?MonetaryScope
+    {
+        $monetaryScope = $this->monetaryScope ?? [];
+        $monetaryScope = end($monetaryScope);
+
+        if ($monetaryScope === false) {
+            return null;
+        }
+
+        return $monetaryScope;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\MonetaryScope $monetaryScope
      * @return self
      */
@@ -459,6 +489,36 @@ class RequestedTenderTotalType
         $this->applicableTaxCategory = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory|null
+     */
+    public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
+    {
+        $applicableTaxCategory = $this->applicableTaxCategory ?? [];
+        $applicableTaxCategory = reset($applicableTaxCategory);
+
+        if ($applicableTaxCategory === false) {
+            return null;
+        }
+
+        return $applicableTaxCategory;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ApplicableTaxCategory|null
+     */
+    public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
+    {
+        $applicableTaxCategory = $this->applicableTaxCategory ?? [];
+        $applicableTaxCategory = end($applicableTaxCategory);
+
+        if ($applicableTaxCategory === false) {
+            return null;
+        }
+
+        return $applicableTaxCategory;
     }
 
     /**

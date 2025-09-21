@@ -206,6 +206,36 @@ class OrderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -336,6 +366,36 @@ class OrderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerProposedSubstituteLineItem|null
+     */
+    public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
+    {
+        $sellerProposedSubstituteLineItem = $this->sellerProposedSubstituteLineItem ?? [];
+        $sellerProposedSubstituteLineItem = reset($sellerProposedSubstituteLineItem);
+
+        if ($sellerProposedSubstituteLineItem === false) {
+            return null;
+        }
+
+        return $sellerProposedSubstituteLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerProposedSubstituteLineItem|null
+     */
+    public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
+    {
+        $sellerProposedSubstituteLineItem = $this->sellerProposedSubstituteLineItem ?? [];
+        $sellerProposedSubstituteLineItem = end($sellerProposedSubstituteLineItem);
+
+        if ($sellerProposedSubstituteLineItem === false) {
+            return null;
+        }
+
+        return $sellerProposedSubstituteLineItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return self
      */
@@ -429,6 +489,36 @@ class OrderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerSubstitutedLineItem|null
+     */
+    public function firstSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
+    {
+        $sellerSubstitutedLineItem = $this->sellerSubstitutedLineItem ?? [];
+        $sellerSubstitutedLineItem = reset($sellerSubstitutedLineItem);
+
+        if ($sellerSubstitutedLineItem === false) {
+            return null;
+        }
+
+        return $sellerSubstitutedLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SellerSubstitutedLineItem|null
+     */
+    public function lastSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
+    {
+        $sellerSubstitutedLineItem = $this->sellerSubstitutedLineItem ?? [];
+        $sellerSubstitutedLineItem = end($sellerSubstitutedLineItem);
+
+        if ($sellerSubstitutedLineItem === false) {
+            return null;
+        }
+
+        return $sellerSubstitutedLineItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return self
      */
@@ -517,6 +607,36 @@ class OrderLineType
         $this->buyerProposedSubstituteLineItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BuyerProposedSubstituteLineItem|null
+     */
+    public function firstBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
+    {
+        $buyerProposedSubstituteLineItem = $this->buyerProposedSubstituteLineItem ?? [];
+        $buyerProposedSubstituteLineItem = reset($buyerProposedSubstituteLineItem);
+
+        if ($buyerProposedSubstituteLineItem === false) {
+            return null;
+        }
+
+        return $buyerProposedSubstituteLineItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BuyerProposedSubstituteLineItem|null
+     */
+    public function lastBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
+    {
+        $buyerProposedSubstituteLineItem = $this->buyerProposedSubstituteLineItem ?? [];
+        $buyerProposedSubstituteLineItem = end($buyerProposedSubstituteLineItem);
+
+        if ($buyerProposedSubstituteLineItem === false) {
+            return null;
+        }
+
+        return $buyerProposedSubstituteLineItem;
     }
 
     /**
@@ -691,6 +811,36 @@ class OrderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference|null
+     */
+    public function firstOrderLineReference(): ?OrderLineReference
+    {
+        $orderLineReference = $this->orderLineReference ?? [];
+        $orderLineReference = reset($orderLineReference);
+
+        if ($orderLineReference === false) {
+            return null;
+        }
+
+        return $orderLineReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference|null
+     */
+    public function lastOrderLineReference(): ?OrderLineReference
+    {
+        $orderLineReference = $this->orderLineReference ?? [];
+        $orderLineReference = end($orderLineReference);
+
+        if ($orderLineReference === false) {
+            return null;
+        }
+
+        return $orderLineReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\OrderLineReference $orderLineReference
      * @return self
      */
@@ -779,6 +929,36 @@ class OrderLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**

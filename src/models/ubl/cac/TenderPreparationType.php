@@ -200,6 +200,36 @@ class TenderPreparationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -330,6 +360,36 @@ class TenderPreparationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ProcurementProjectLot|null
+     */
+    public function firstProcurementProjectLot(): ?ProcurementProjectLot
+    {
+        $procurementProjectLot = $this->procurementProjectLot ?? [];
+        $procurementProjectLot = reset($procurementProjectLot);
+
+        if ($procurementProjectLot === false) {
+            return null;
+        }
+
+        return $procurementProjectLot;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ProcurementProjectLot|null
+     */
+    public function lastProcurementProjectLot(): ?ProcurementProjectLot
+    {
+        $procurementProjectLot = $this->procurementProjectLot ?? [];
+        $procurementProjectLot = end($procurementProjectLot);
+
+        if ($procurementProjectLot === false) {
+            return null;
+        }
+
+        return $procurementProjectLot;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ProcurementProjectLot $procurementProjectLot
      * @return self
      */
@@ -418,6 +478,36 @@ class TenderPreparationType
         $this->documentTenderRequirement = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentTenderRequirement|null
+     */
+    public function firstDocumentTenderRequirement(): ?DocumentTenderRequirement
+    {
+        $documentTenderRequirement = $this->documentTenderRequirement ?? [];
+        $documentTenderRequirement = reset($documentTenderRequirement);
+
+        if ($documentTenderRequirement === false) {
+            return null;
+        }
+
+        return $documentTenderRequirement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentTenderRequirement|null
+     */
+    public function lastDocumentTenderRequirement(): ?DocumentTenderRequirement
+    {
+        $documentTenderRequirement = $this->documentTenderRequirement ?? [];
+        $documentTenderRequirement = end($documentTenderRequirement);
+
+        if ($documentTenderRequirement === false) {
+            return null;
+        }
+
+        return $documentTenderRequirement;
     }
 
     /**

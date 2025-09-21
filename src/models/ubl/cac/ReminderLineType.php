@@ -255,6 +255,36 @@ class ReminderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -687,6 +717,36 @@ class ReminderLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReminderPeriod|null
+     */
+    public function firstReminderPeriod(): ?ReminderPeriod
+    {
+        $reminderPeriod = $this->reminderPeriod ?? [];
+        $reminderPeriod = reset($reminderPeriod);
+
+        if ($reminderPeriod === false) {
+            return null;
+        }
+
+        return $reminderPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReminderPeriod|null
+     */
+    public function lastReminderPeriod(): ?ReminderPeriod
+    {
+        $reminderPeriod = $this->reminderPeriod ?? [];
+        $reminderPeriod = end($reminderPeriod);
+
+        if ($reminderPeriod === false) {
+            return null;
+        }
+
+        return $reminderPeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ReminderPeriod $reminderPeriod
      * @return self
      */
@@ -775,6 +835,36 @@ class ReminderLineType
         $this->billingReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function firstBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = reset($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function lastBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = end($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
     }
 
     /**

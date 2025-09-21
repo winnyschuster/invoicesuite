@@ -477,6 +477,36 @@ class TransportationServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportationServiceDescription|null
+     */
+    public function firstTransportationServiceDescription(): ?TransportationServiceDescription
+    {
+        $transportationServiceDescription = $this->transportationServiceDescription ?? [];
+        $transportationServiceDescription = reset($transportationServiceDescription);
+
+        if ($transportationServiceDescription === false) {
+            return null;
+        }
+
+        return $transportationServiceDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\TransportationServiceDescription|null
+     */
+    public function lastTransportationServiceDescription(): ?TransportationServiceDescription
+    {
+        $transportationServiceDescription = $this->transportationServiceDescription ?? [];
+        $transportationServiceDescription = end($transportationServiceDescription);
+
+        if ($transportationServiceDescription === false) {
+            return null;
+        }
+
+        return $transportationServiceDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\TransportationServiceDescription $transportationServiceDescription
      * @return self
      */
@@ -746,6 +776,36 @@ class TransportationServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEquipment|null
+     */
+    public function firstTransportEquipment(): ?TransportEquipment
+    {
+        $transportEquipment = $this->transportEquipment ?? [];
+        $transportEquipment = reset($transportEquipment);
+
+        if ($transportEquipment === false) {
+            return null;
+        }
+
+        return $transportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEquipment|null
+     */
+    public function lastTransportEquipment(): ?TransportEquipment
+    {
+        $transportEquipment = $this->transportEquipment ?? [];
+        $transportEquipment = end($transportEquipment);
+
+        if ($transportEquipment === false) {
+            return null;
+        }
+
+        return $transportEquipment;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TransportEquipment $transportEquipment
      * @return self
      */
@@ -834,6 +894,36 @@ class TransportationServiceType
         $this->supportedTransportEquipment = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupportedTransportEquipment|null
+     */
+    public function firstSupportedTransportEquipment(): ?SupportedTransportEquipment
+    {
+        $supportedTransportEquipment = $this->supportedTransportEquipment ?? [];
+        $supportedTransportEquipment = reset($supportedTransportEquipment);
+
+        if ($supportedTransportEquipment === false) {
+            return null;
+        }
+
+        return $supportedTransportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupportedTransportEquipment|null
+     */
+    public function lastSupportedTransportEquipment(): ?SupportedTransportEquipment
+    {
+        $supportedTransportEquipment = $this->supportedTransportEquipment ?? [];
+        $supportedTransportEquipment = end($supportedTransportEquipment);
+
+        if ($supportedTransportEquipment === false) {
+            return null;
+        }
+
+        return $supportedTransportEquipment;
     }
 
     /**
@@ -926,6 +1016,36 @@ class TransportationServiceType
         $this->unsupportedTransportEquipment = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\UnsupportedTransportEquipment|null
+     */
+    public function firstUnsupportedTransportEquipment(): ?UnsupportedTransportEquipment
+    {
+        $unsupportedTransportEquipment = $this->unsupportedTransportEquipment ?? [];
+        $unsupportedTransportEquipment = reset($unsupportedTransportEquipment);
+
+        if ($unsupportedTransportEquipment === false) {
+            return null;
+        }
+
+        return $unsupportedTransportEquipment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\UnsupportedTransportEquipment|null
+     */
+    public function lastUnsupportedTransportEquipment(): ?UnsupportedTransportEquipment
+    {
+        $unsupportedTransportEquipment = $this->unsupportedTransportEquipment ?? [];
+        $unsupportedTransportEquipment = end($unsupportedTransportEquipment);
+
+        if ($unsupportedTransportEquipment === false) {
+            return null;
+        }
+
+        return $unsupportedTransportEquipment;
     }
 
     /**
@@ -1022,6 +1142,36 @@ class TransportationServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification|null
+     */
+    public function firstCommodityClassification(): ?CommodityClassification
+    {
+        $commodityClassification = $this->commodityClassification ?? [];
+        $commodityClassification = reset($commodityClassification);
+
+        if ($commodityClassification === false) {
+            return null;
+        }
+
+        return $commodityClassification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification|null
+     */
+    public function lastCommodityClassification(): ?CommodityClassification
+    {
+        $commodityClassification = $this->commodityClassification ?? [];
+        $commodityClassification = end($commodityClassification);
+
+        if ($commodityClassification === false) {
+            return null;
+        }
+
+        return $commodityClassification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\CommodityClassification $commodityClassification
      * @return self
      */
@@ -1110,6 +1260,36 @@ class TransportationServiceType
         $this->supportedCommodityClassification = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupportedCommodityClassification|null
+     */
+    public function firstSupportedCommodityClassification(): ?SupportedCommodityClassification
+    {
+        $supportedCommodityClassification = $this->supportedCommodityClassification ?? [];
+        $supportedCommodityClassification = reset($supportedCommodityClassification);
+
+        if ($supportedCommodityClassification === false) {
+            return null;
+        }
+
+        return $supportedCommodityClassification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupportedCommodityClassification|null
+     */
+    public function lastSupportedCommodityClassification(): ?SupportedCommodityClassification
+    {
+        $supportedCommodityClassification = $this->supportedCommodityClassification ?? [];
+        $supportedCommodityClassification = end($supportedCommodityClassification);
+
+        if ($supportedCommodityClassification === false) {
+            return null;
+        }
+
+        return $supportedCommodityClassification;
     }
 
     /**
@@ -1203,6 +1383,36 @@ class TransportationServiceType
         $this->unsupportedCommodityClassification = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\UnsupportedCommodityClassification|null
+     */
+    public function firstUnsupportedCommodityClassification(): ?UnsupportedCommodityClassification
+    {
+        $unsupportedCommodityClassification = $this->unsupportedCommodityClassification ?? [];
+        $unsupportedCommodityClassification = reset($unsupportedCommodityClassification);
+
+        if ($unsupportedCommodityClassification === false) {
+            return null;
+        }
+
+        return $unsupportedCommodityClassification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\UnsupportedCommodityClassification|null
+     */
+    public function lastUnsupportedCommodityClassification(): ?UnsupportedCommodityClassification
+    {
+        $unsupportedCommodityClassification = $this->unsupportedCommodityClassification ?? [];
+        $unsupportedCommodityClassification = end($unsupportedCommodityClassification);
+
+        if ($unsupportedCommodityClassification === false) {
+            return null;
+        }
+
+        return $unsupportedCommodityClassification;
     }
 
     /**
@@ -1338,6 +1548,36 @@ class TransportationServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage|null
+     */
+    public function firstShipmentStage(): ?ShipmentStage
+    {
+        $shipmentStage = $this->shipmentStage ?? [];
+        $shipmentStage = reset($shipmentStage);
+
+        if ($shipmentStage === false) {
+            return null;
+        }
+
+        return $shipmentStage;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage|null
+     */
+    public function lastShipmentStage(): ?ShipmentStage
+    {
+        $shipmentStage = $this->shipmentStage ?? [];
+        $shipmentStage = end($shipmentStage);
+
+        if ($shipmentStage === false) {
+            return null;
+        }
+
+        return $shipmentStage;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ShipmentStage $shipmentStage
      * @return self
      */
@@ -1426,6 +1666,36 @@ class TransportationServiceType
         $this->transportEvent = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEvent|null
+     */
+    public function firstTransportEvent(): ?TransportEvent
+    {
+        $transportEvent = $this->transportEvent ?? [];
+        $transportEvent = reset($transportEvent);
+
+        if ($transportEvent === false) {
+            return null;
+        }
+
+        return $transportEvent;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TransportEvent|null
+     */
+    public function lastTransportEvent(): ?TransportEvent
+    {
+        $transportEvent = $this->transportEvent ?? [];
+        $transportEvent = end($transportEvent);
+
+        if ($transportEvent === false) {
+            return null;
+        }
+
+        return $transportEvent;
     }
 
     /**
@@ -1560,6 +1830,36 @@ class TransportationServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission|null
+     */
+    public function firstEnvironmentalEmission(): ?EnvironmentalEmission
+    {
+        $environmentalEmission = $this->environmentalEmission ?? [];
+        $environmentalEmission = reset($environmentalEmission);
+
+        if ($environmentalEmission === false) {
+            return null;
+        }
+
+        return $environmentalEmission;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission|null
+     */
+    public function lastEnvironmentalEmission(): ?EnvironmentalEmission
+    {
+        $environmentalEmission = $this->environmentalEmission ?? [];
+        $environmentalEmission = end($environmentalEmission);
+
+        if ($environmentalEmission === false) {
+            return null;
+        }
+
+        return $environmentalEmission;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\EnvironmentalEmission $environmentalEmission
      * @return self
      */
@@ -1687,6 +1987,36 @@ class TransportationServiceType
         $this->scheduledServiceFrequency = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ScheduledServiceFrequency|null
+     */
+    public function firstScheduledServiceFrequency(): ?ScheduledServiceFrequency
+    {
+        $scheduledServiceFrequency = $this->scheduledServiceFrequency ?? [];
+        $scheduledServiceFrequency = reset($scheduledServiceFrequency);
+
+        if ($scheduledServiceFrequency === false) {
+            return null;
+        }
+
+        return $scheduledServiceFrequency;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ScheduledServiceFrequency|null
+     */
+    public function lastScheduledServiceFrequency(): ?ScheduledServiceFrequency
+    {
+        $scheduledServiceFrequency = $this->scheduledServiceFrequency ?? [];
+        $scheduledServiceFrequency = end($scheduledServiceFrequency);
+
+        if ($scheduledServiceFrequency === false) {
+            return null;
+        }
+
+        return $scheduledServiceFrequency;
     }
 
     /**

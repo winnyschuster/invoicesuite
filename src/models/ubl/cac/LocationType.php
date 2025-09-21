@@ -233,6 +233,36 @@ class LocationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function firstDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = reset($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Description|null
+     */
+    public function lastDescription(): ?Description
+    {
+        $description = $this->description ?? [];
+        $description = end($description);
+
+        if ($description === false) {
+            return null;
+        }
+
+        return $description;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Description $description
      * @return self
      */
@@ -321,6 +351,36 @@ class LocationType
         $this->conditions = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Conditions|null
+     */
+    public function firstConditions(): ?Conditions
+    {
+        $conditions = $this->conditions ?? [];
+        $conditions = reset($conditions);
+
+        if ($conditions === false) {
+            return null;
+        }
+
+        return $conditions;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Conditions|null
+     */
+    public function lastConditions(): ?Conditions
+    {
+        $conditions = $this->conditions ?? [];
+        $conditions = end($conditions);
+
+        if ($conditions === false) {
+            return null;
+        }
+
+        return $conditions;
     }
 
     /**
@@ -610,6 +670,36 @@ class LocationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function firstValidityPeriod(): ?ValidityPeriod
+    {
+        $validityPeriod = $this->validityPeriod ?? [];
+        $validityPeriod = reset($validityPeriod);
+
+        if ($validityPeriod === false) {
+            return null;
+        }
+
+        return $validityPeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod|null
+     */
+    public function lastValidityPeriod(): ?ValidityPeriod
+    {
+        $validityPeriod = $this->validityPeriod ?? [];
+        $validityPeriod = end($validityPeriod);
+
+        if ($validityPeriod === false) {
+            return null;
+        }
+
+        return $validityPeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ValidityPeriod $validityPeriod
      * @return self
      */
@@ -740,6 +830,36 @@ class LocationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubsidiaryLocation|null
+     */
+    public function firstSubsidiaryLocation(): ?SubsidiaryLocation
+    {
+        $subsidiaryLocation = $this->subsidiaryLocation ?? [];
+        $subsidiaryLocation = reset($subsidiaryLocation);
+
+        if ($subsidiaryLocation === false) {
+            return null;
+        }
+
+        return $subsidiaryLocation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubsidiaryLocation|null
+     */
+    public function lastSubsidiaryLocation(): ?SubsidiaryLocation
+    {
+        $subsidiaryLocation = $this->subsidiaryLocation ?? [];
+        $subsidiaryLocation = end($subsidiaryLocation);
+
+        if ($subsidiaryLocation === false) {
+            return null;
+        }
+
+        return $subsidiaryLocation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\SubsidiaryLocation $subsidiaryLocation
      * @return self
      */
@@ -828,6 +948,36 @@ class LocationType
         $this->locationCoordinate = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LocationCoordinate|null
+     */
+    public function firstLocationCoordinate(): ?LocationCoordinate
+    {
+        $locationCoordinate = $this->locationCoordinate ?? [];
+        $locationCoordinate = reset($locationCoordinate);
+
+        if ($locationCoordinate === false) {
+            return null;
+        }
+
+        return $locationCoordinate;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\LocationCoordinate|null
+     */
+    public function lastLocationCoordinate(): ?LocationCoordinate
+    {
+        $locationCoordinate = $this->locationCoordinate ?? [];
+        $locationCoordinate = end($locationCoordinate);
+
+        if ($locationCoordinate === false) {
+            return null;
+        }
+
+        return $locationCoordinate;
     }
 
     /**

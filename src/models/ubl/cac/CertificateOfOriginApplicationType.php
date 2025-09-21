@@ -431,6 +431,36 @@ class CertificateOfOriginApplicationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Remarks|null
+     */
+    public function firstRemarks(): ?Remarks
+    {
+        $remarks = $this->remarks ?? [];
+        $remarks = reset($remarks);
+
+        if ($remarks === false) {
+            return null;
+        }
+
+        return $remarks;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Remarks|null
+     */
+    public function lastRemarks(): ?Remarks
+    {
+        $remarks = $this->remarks ?? [];
+        $remarks = end($remarks);
+
+        if ($remarks === false) {
+            return null;
+        }
+
+        return $remarks;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Remarks $remarks
      * @return self
      */
@@ -558,6 +588,36 @@ class CertificateOfOriginApplicationType
         $this->endorserParty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EndorserParty|null
+     */
+    public function firstEndorserParty(): ?EndorserParty
+    {
+        $endorserParty = $this->endorserParty ?? [];
+        $endorserParty = reset($endorserParty);
+
+        if ($endorserParty === false) {
+            return null;
+        }
+
+        return $endorserParty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EndorserParty|null
+     */
+    public function lastEndorserParty(): ?EndorserParty
+    {
+        $endorserParty = $this->endorserParty ?? [];
+        $endorserParty = end($endorserParty);
+
+        if ($endorserParty === false) {
+            return null;
+        }
+
+        return $endorserParty;
     }
 
     /**
@@ -847,6 +907,36 @@ class CertificateOfOriginApplicationType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentDistribution|null
+     */
+    public function firstDocumentDistribution(): ?DocumentDistribution
+    {
+        $documentDistribution = $this->documentDistribution ?? [];
+        $documentDistribution = reset($documentDistribution);
+
+        if ($documentDistribution === false) {
+            return null;
+        }
+
+        return $documentDistribution;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentDistribution|null
+     */
+    public function lastDocumentDistribution(): ?DocumentDistribution
+    {
+        $documentDistribution = $this->documentDistribution ?? [];
+        $documentDistribution = end($documentDistribution);
+
+        if ($documentDistribution === false) {
+            return null;
+        }
+
+        return $documentDistribution;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\DocumentDistribution $documentDistribution
      * @return self
      */
@@ -935,6 +1025,36 @@ class CertificateOfOriginApplicationType
         $this->supportingDocumentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupportingDocumentReference|null
+     */
+    public function firstSupportingDocumentReference(): ?SupportingDocumentReference
+    {
+        $supportingDocumentReference = $this->supportingDocumentReference ?? [];
+        $supportingDocumentReference = reset($supportingDocumentReference);
+
+        if ($supportingDocumentReference === false) {
+            return null;
+        }
+
+        return $supportingDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SupportingDocumentReference|null
+     */
+    public function lastSupportingDocumentReference(): ?SupportingDocumentReference
+    {
+        $supportingDocumentReference = $this->supportingDocumentReference ?? [];
+        $supportingDocumentReference = end($supportingDocumentReference);
+
+        if ($supportingDocumentReference === false) {
+            return null;
+        }
+
+        return $supportingDocumentReference;
     }
 
     /**
@@ -1027,6 +1147,36 @@ class CertificateOfOriginApplicationType
         $this->signature = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature|null
+     */
+    public function firstSignature(): ?Signature
+    {
+        $signature = $this->signature ?? [];
+        $signature = reset($signature);
+
+        if ($signature === false) {
+            return null;
+        }
+
+        return $signature;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Signature|null
+     */
+    public function lastSignature(): ?Signature
+    {
+        $signature = $this->signature ?? [];
+        $signature = end($signature);
+
+        if ($signature === false) {
+            return null;
+        }
+
+        return $signature;
     }
 
     /**

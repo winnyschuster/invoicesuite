@@ -616,6 +616,36 @@ class MeterReadingType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MeterReadingComments|null
+     */
+    public function firstMeterReadingComments(): ?MeterReadingComments
+    {
+        $meterReadingComments = $this->meterReadingComments ?? [];
+        $meterReadingComments = reset($meterReadingComments);
+
+        if ($meterReadingComments === false) {
+            return null;
+        }
+
+        return $meterReadingComments;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\MeterReadingComments|null
+     */
+    public function lastMeterReadingComments(): ?MeterReadingComments
+    {
+        $meterReadingComments = $this->meterReadingComments ?? [];
+        $meterReadingComments = end($meterReadingComments);
+
+        if ($meterReadingComments === false) {
+            return null;
+        }
+
+        return $meterReadingComments;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\MeterReadingComments $meterReadingComments
      * @return self
      */

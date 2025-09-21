@@ -203,6 +203,36 @@ class ProjectReferenceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WorkPhaseReference|null
+     */
+    public function firstWorkPhaseReference(): ?WorkPhaseReference
+    {
+        $workPhaseReference = $this->workPhaseReference ?? [];
+        $workPhaseReference = reset($workPhaseReference);
+
+        if ($workPhaseReference === false) {
+            return null;
+        }
+
+        return $workPhaseReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\WorkPhaseReference|null
+     */
+    public function lastWorkPhaseReference(): ?WorkPhaseReference
+    {
+        $workPhaseReference = $this->workPhaseReference ?? [];
+        $workPhaseReference = end($workPhaseReference);
+
+        if ($workPhaseReference === false) {
+            return null;
+        }
+
+        return $workPhaseReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\WorkPhaseReference $workPhaseReference
      * @return self
      */

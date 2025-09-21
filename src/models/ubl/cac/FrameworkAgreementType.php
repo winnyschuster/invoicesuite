@@ -200,6 +200,36 @@ class FrameworkAgreementType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Justification|null
+     */
+    public function firstJustification(): ?Justification
+    {
+        $justification = $this->justification ?? [];
+        $justification = reset($justification);
+
+        if ($justification === false) {
+            return null;
+        }
+
+        return $justification;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Justification|null
+     */
+    public function lastJustification(): ?Justification
+    {
+        $justification = $this->justification ?? [];
+        $justification = end($justification);
+
+        if ($justification === false) {
+            return null;
+        }
+
+        return $justification;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Justification $justification
      * @return self
      */
@@ -288,6 +318,36 @@ class FrameworkAgreementType
         $this->frequency = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Frequency|null
+     */
+    public function firstFrequency(): ?Frequency
+    {
+        $frequency = $this->frequency ?? [];
+        $frequency = reset($frequency);
+
+        if ($frequency === false) {
+            return null;
+        }
+
+        return $frequency;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Frequency|null
+     */
+    public function lastFrequency(): ?Frequency
+    {
+        $frequency = $this->frequency ?? [];
+        $frequency = end($frequency);
+
+        if ($frequency === false) {
+            return null;
+        }
+
+        return $frequency;
     }
 
     /**
@@ -418,6 +478,36 @@ class FrameworkAgreementType
         $this->subsequentProcessTenderRequirement = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubsequentProcessTenderRequirement|null
+     */
+    public function firstSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
+    {
+        $subsequentProcessTenderRequirement = $this->subsequentProcessTenderRequirement ?? [];
+        $subsequentProcessTenderRequirement = reset($subsequentProcessTenderRequirement);
+
+        if ($subsequentProcessTenderRequirement === false) {
+            return null;
+        }
+
+        return $subsequentProcessTenderRequirement;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\SubsequentProcessTenderRequirement|null
+     */
+    public function lastSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
+    {
+        $subsequentProcessTenderRequirement = $this->subsequentProcessTenderRequirement ?? [];
+        $subsequentProcessTenderRequirement = end($subsequentProcessTenderRequirement);
+
+        if ($subsequentProcessTenderRequirement === false) {
+            return null;
+        }
+
+        return $subsequentProcessTenderRequirement;
     }
 
     /**

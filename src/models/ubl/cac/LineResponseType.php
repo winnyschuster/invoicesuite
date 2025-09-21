@@ -111,6 +111,36 @@ class LineResponseType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Response|null
+     */
+    public function firstResponse(): ?Response
+    {
+        $response = $this->response ?? [];
+        $response = reset($response);
+
+        if ($response === false) {
+            return null;
+        }
+
+        return $response;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Response|null
+     */
+    public function lastResponse(): ?Response
+    {
+        $response = $this->response ?? [];
+        $response = end($response);
+
+        if ($response === false) {
+            return null;
+        }
+
+        return $response;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\Response $response
      * @return self
      */

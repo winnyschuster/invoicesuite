@@ -570,6 +570,36 @@ class CatalogueLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -883,6 +913,36 @@ class CatalogueLineType
         $this->warrantyInformation = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation|null
+     */
+    public function firstWarrantyInformation(): ?WarrantyInformation
+    {
+        $warrantyInformation = $this->warrantyInformation ?? [];
+        $warrantyInformation = reset($warrantyInformation);
+
+        if ($warrantyInformation === false) {
+            return null;
+        }
+
+        return $warrantyInformation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\WarrantyInformation|null
+     */
+    public function lastWarrantyInformation(): ?WarrantyInformation
+    {
+        $warrantyInformation = $this->warrantyInformation ?? [];
+        $warrantyInformation = end($warrantyInformation);
+
+        if ($warrantyInformation === false) {
+            return null;
+        }
+
+        return $warrantyInformation;
     }
 
     /**
@@ -1211,6 +1271,36 @@ class CatalogueLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemComparison|null
+     */
+    public function firstItemComparison(): ?ItemComparison
+    {
+        $itemComparison = $this->itemComparison ?? [];
+        $itemComparison = reset($itemComparison);
+
+        if ($itemComparison === false) {
+            return null;
+        }
+
+        return $itemComparison;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ItemComparison|null
+     */
+    public function lastItemComparison(): ?ItemComparison
+    {
+        $itemComparison = $this->itemComparison ?? [];
+        $itemComparison = end($itemComparison);
+
+        if ($itemComparison === false) {
+            return null;
+        }
+
+        return $itemComparison;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ItemComparison $itemComparison
      * @return self
      */
@@ -1299,6 +1389,36 @@ class CatalogueLineType
         $this->componentRelatedItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ComponentRelatedItem|null
+     */
+    public function firstComponentRelatedItem(): ?ComponentRelatedItem
+    {
+        $componentRelatedItem = $this->componentRelatedItem ?? [];
+        $componentRelatedItem = reset($componentRelatedItem);
+
+        if ($componentRelatedItem === false) {
+            return null;
+        }
+
+        return $componentRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ComponentRelatedItem|null
+     */
+    public function lastComponentRelatedItem(): ?ComponentRelatedItem
+    {
+        $componentRelatedItem = $this->componentRelatedItem ?? [];
+        $componentRelatedItem = end($componentRelatedItem);
+
+        if ($componentRelatedItem === false) {
+            return null;
+        }
+
+        return $componentRelatedItem;
     }
 
     /**
@@ -1393,6 +1513,36 @@ class CatalogueLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AccessoryRelatedItem|null
+     */
+    public function firstAccessoryRelatedItem(): ?AccessoryRelatedItem
+    {
+        $accessoryRelatedItem = $this->accessoryRelatedItem ?? [];
+        $accessoryRelatedItem = reset($accessoryRelatedItem);
+
+        if ($accessoryRelatedItem === false) {
+            return null;
+        }
+
+        return $accessoryRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AccessoryRelatedItem|null
+     */
+    public function lastAccessoryRelatedItem(): ?AccessoryRelatedItem
+    {
+        $accessoryRelatedItem = $this->accessoryRelatedItem ?? [];
+        $accessoryRelatedItem = end($accessoryRelatedItem);
+
+        if ($accessoryRelatedItem === false) {
+            return null;
+        }
+
+        return $accessoryRelatedItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AccessoryRelatedItem $accessoryRelatedItem
      * @return self
      */
@@ -1481,6 +1631,36 @@ class CatalogueLineType
         $this->requiredRelatedItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredRelatedItem|null
+     */
+    public function firstRequiredRelatedItem(): ?RequiredRelatedItem
+    {
+        $requiredRelatedItem = $this->requiredRelatedItem ?? [];
+        $requiredRelatedItem = reset($requiredRelatedItem);
+
+        if ($requiredRelatedItem === false) {
+            return null;
+        }
+
+        return $requiredRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredRelatedItem|null
+     */
+    public function lastRequiredRelatedItem(): ?RequiredRelatedItem
+    {
+        $requiredRelatedItem = $this->requiredRelatedItem ?? [];
+        $requiredRelatedItem = end($requiredRelatedItem);
+
+        if ($requiredRelatedItem === false) {
+            return null;
+        }
+
+        return $requiredRelatedItem;
     }
 
     /**
@@ -1575,6 +1755,36 @@ class CatalogueLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem|null
+     */
+    public function firstReplacementRelatedItem(): ?ReplacementRelatedItem
+    {
+        $replacementRelatedItem = $this->replacementRelatedItem ?? [];
+        $replacementRelatedItem = reset($replacementRelatedItem);
+
+        if ($replacementRelatedItem === false) {
+            return null;
+        }
+
+        return $replacementRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem|null
+     */
+    public function lastReplacementRelatedItem(): ?ReplacementRelatedItem
+    {
+        $replacementRelatedItem = $this->replacementRelatedItem ?? [];
+        $replacementRelatedItem = end($replacementRelatedItem);
+
+        if ($replacementRelatedItem === false) {
+            return null;
+        }
+
+        return $replacementRelatedItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ReplacementRelatedItem $replacementRelatedItem
      * @return self
      */
@@ -1663,6 +1873,36 @@ class CatalogueLineType
         $this->complementaryRelatedItem = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ComplementaryRelatedItem|null
+     */
+    public function firstComplementaryRelatedItem(): ?ComplementaryRelatedItem
+    {
+        $complementaryRelatedItem = $this->complementaryRelatedItem ?? [];
+        $complementaryRelatedItem = reset($complementaryRelatedItem);
+
+        if ($complementaryRelatedItem === false) {
+            return null;
+        }
+
+        return $complementaryRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ComplementaryRelatedItem|null
+     */
+    public function lastComplementaryRelatedItem(): ?ComplementaryRelatedItem
+    {
+        $complementaryRelatedItem = $this->complementaryRelatedItem ?? [];
+        $complementaryRelatedItem = end($complementaryRelatedItem);
+
+        if ($complementaryRelatedItem === false) {
+            return null;
+        }
+
+        return $complementaryRelatedItem;
     }
 
     /**
@@ -1757,6 +1997,36 @@ class CatalogueLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacedRelatedItem|null
+     */
+    public function firstReplacedRelatedItem(): ?ReplacedRelatedItem
+    {
+        $replacedRelatedItem = $this->replacedRelatedItem ?? [];
+        $replacedRelatedItem = reset($replacedRelatedItem);
+
+        if ($replacedRelatedItem === false) {
+            return null;
+        }
+
+        return $replacedRelatedItem;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ReplacedRelatedItem|null
+     */
+    public function lastReplacedRelatedItem(): ?ReplacedRelatedItem
+    {
+        $replacedRelatedItem = $this->replacedRelatedItem ?? [];
+        $replacedRelatedItem = end($replacedRelatedItem);
+
+        if ($replacedRelatedItem === false) {
+            return null;
+        }
+
+        return $replacedRelatedItem;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ReplacedRelatedItem $replacedRelatedItem
      * @return self
      */
@@ -1845,6 +2115,36 @@ class CatalogueLineType
         $this->requiredItemLocationQuantity = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\RequiredItemLocationQuantity|null
+     */
+    public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
+    {
+        $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
+        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+
+        if ($requiredItemLocationQuantity === false) {
+            return null;
+        }
+
+        return $requiredItemLocationQuantity;
     }
 
     /**
@@ -1938,6 +2238,36 @@ class CatalogueLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**
@@ -2068,6 +2398,36 @@ class CatalogueLineType
         $this->keywordItemProperty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\KeywordItemProperty|null
+     */
+    public function firstKeywordItemProperty(): ?KeywordItemProperty
+    {
+        $keywordItemProperty = $this->keywordItemProperty ?? [];
+        $keywordItemProperty = reset($keywordItemProperty);
+
+        if ($keywordItemProperty === false) {
+            return null;
+        }
+
+        return $keywordItemProperty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\KeywordItemProperty|null
+     */
+    public function lastKeywordItemProperty(): ?KeywordItemProperty
+    {
+        $keywordItemProperty = $this->keywordItemProperty ?? [];
+        $keywordItemProperty = end($keywordItemProperty);
+
+        if ($keywordItemProperty === false) {
+            return null;
+        }
+
+        return $keywordItemProperty;
     }
 
     /**

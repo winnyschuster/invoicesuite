@@ -169,6 +169,36 @@ class SupplierPartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalAccountID|null
+     */
+    public function firstAdditionalAccountID(): ?AdditionalAccountID
+    {
+        $additionalAccountID = $this->additionalAccountID ?? [];
+        $additionalAccountID = reset($additionalAccountID);
+
+        if ($additionalAccountID === false) {
+            return null;
+        }
+
+        return $additionalAccountID;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\AdditionalAccountID|null
+     */
+    public function lastAdditionalAccountID(): ?AdditionalAccountID
+    {
+        $additionalAccountID = $this->additionalAccountID ?? [];
+        $additionalAccountID = end($additionalAccountID);
+
+        if ($additionalAccountID === false) {
+            return null;
+        }
+
+        return $additionalAccountID;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\AdditionalAccountID $additionalAccountID
      * @return self
      */

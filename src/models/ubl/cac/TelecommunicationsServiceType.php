@@ -905,6 +905,36 @@ class TelecommunicationsServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate|null
+     */
+    public function firstExchangeRate(): ?ExchangeRate
+    {
+        $exchangeRate = $this->exchangeRate ?? [];
+        $exchangeRate = reset($exchangeRate);
+
+        if ($exchangeRate === false) {
+            return null;
+        }
+
+        return $exchangeRate;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate|null
+     */
+    public function lastExchangeRate(): ?ExchangeRate
+    {
+        $exchangeRate = $this->exchangeRate ?? [];
+        $exchangeRate = end($exchangeRate);
+
+        if ($exchangeRate === false) {
+            return null;
+        }
+
+        return $exchangeRate;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\ExchangeRate $exchangeRate
      * @return self
      */
@@ -993,6 +1023,36 @@ class TelecommunicationsServiceType
         $this->allowanceCharge = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
     }
 
     /**
@@ -1087,6 +1147,36 @@ class TelecommunicationsServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TaxTotal $taxTotal
      * @return self
      */
@@ -1178,6 +1268,36 @@ class TelecommunicationsServiceType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CallDuty|null
+     */
+    public function firstCallDuty(): ?CallDuty
+    {
+        $callDuty = $this->callDuty ?? [];
+        $callDuty = reset($callDuty);
+
+        if ($callDuty === false) {
+            return null;
+        }
+
+        return $callDuty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CallDuty|null
+     */
+    public function lastCallDuty(): ?CallDuty
+    {
+        $callDuty = $this->callDuty ?? [];
+        $callDuty = end($callDuty);
+
+        if ($callDuty === false) {
+            return null;
+        }
+
+        return $callDuty;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\CallDuty $callDuty
      * @return self
      */
@@ -1266,6 +1386,36 @@ class TelecommunicationsServiceType
         $this->timeDuty = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TimeDuty|null
+     */
+    public function firstTimeDuty(): ?TimeDuty
+    {
+        $timeDuty = $this->timeDuty ?? [];
+        $timeDuty = reset($timeDuty);
+
+        if ($timeDuty === false) {
+            return null;
+        }
+
+        return $timeDuty;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TimeDuty|null
+     */
+    public function lastTimeDuty(): ?TimeDuty
+    {
+        $timeDuty = $this->timeDuty ?? [];
+        $timeDuty = end($timeDuty);
+
+        if ($timeDuty === false) {
+            return null;
+        }
+
+        return $timeDuty;
     }
 
     /**

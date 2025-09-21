@@ -254,6 +254,36 @@ class QualifyingPartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PersonalSituation|null
+     */
+    public function firstPersonalSituation(): ?PersonalSituation
+    {
+        $personalSituation = $this->personalSituation ?? [];
+        $personalSituation = reset($personalSituation);
+
+        if ($personalSituation === false) {
+            return null;
+        }
+
+        return $personalSituation;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\PersonalSituation|null
+     */
+    public function lastPersonalSituation(): ?PersonalSituation
+    {
+        $personalSituation = $this->personalSituation ?? [];
+        $personalSituation = end($personalSituation);
+
+        if ($personalSituation === false) {
+            return null;
+        }
+
+        return $personalSituation;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\PersonalSituation $personalSituation
      * @return self
      */
@@ -582,6 +612,36 @@ class QualifyingPartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TechnicalCapability|null
+     */
+    public function firstTechnicalCapability(): ?TechnicalCapability
+    {
+        $technicalCapability = $this->technicalCapability ?? [];
+        $technicalCapability = reset($technicalCapability);
+
+        if ($technicalCapability === false) {
+            return null;
+        }
+
+        return $technicalCapability;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TechnicalCapability|null
+     */
+    public function lastTechnicalCapability(): ?TechnicalCapability
+    {
+        $technicalCapability = $this->technicalCapability ?? [];
+        $technicalCapability = end($technicalCapability);
+
+        if ($technicalCapability === false) {
+            return null;
+        }
+
+        return $technicalCapability;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TechnicalCapability $technicalCapability
      * @return self
      */
@@ -670,6 +730,36 @@ class QualifyingPartyType
         $this->financialCapability = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancialCapability|null
+     */
+    public function firstFinancialCapability(): ?FinancialCapability
+    {
+        $financialCapability = $this->financialCapability ?? [];
+        $financialCapability = reset($financialCapability);
+
+        if ($financialCapability === false) {
+            return null;
+        }
+
+        return $financialCapability;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\FinancialCapability|null
+     */
+    public function lastFinancialCapability(): ?FinancialCapability
+    {
+        $financialCapability = $this->financialCapability ?? [];
+        $financialCapability = end($financialCapability);
+
+        if ($financialCapability === false) {
+            return null;
+        }
+
+        return $financialCapability;
     }
 
     /**
@@ -764,6 +854,36 @@ class QualifyingPartyType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CompletedTask|null
+     */
+    public function firstCompletedTask(): ?CompletedTask
+    {
+        $completedTask = $this->completedTask ?? [];
+        $completedTask = reset($completedTask);
+
+        if ($completedTask === false) {
+            return null;
+        }
+
+        return $completedTask;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CompletedTask|null
+     */
+    public function lastCompletedTask(): ?CompletedTask
+    {
+        $completedTask = $this->completedTask ?? [];
+        $completedTask = end($completedTask);
+
+        if ($completedTask === false) {
+            return null;
+        }
+
+        return $completedTask;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\CompletedTask $completedTask
      * @return self
      */
@@ -852,6 +972,36 @@ class QualifyingPartyType
         $this->declaration = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Declaration|null
+     */
+    public function firstDeclaration(): ?Declaration
+    {
+        $declaration = $this->declaration ?? [];
+        $declaration = reset($declaration);
+
+        if ($declaration === false) {
+            return null;
+        }
+
+        return $declaration;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\Declaration|null
+     */
+    public function lastDeclaration(): ?Declaration
+    {
+        $declaration = $this->declaration ?? [];
+        $declaration = end($declaration);
+
+        if ($declaration === false) {
+            return null;
+        }
+
+        return $declaration;
     }
 
     /**

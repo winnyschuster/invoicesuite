@@ -258,6 +258,36 @@ class TenderedProjectType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FeeDescription|null
+     */
+    public function firstFeeDescription(): ?FeeDescription
+    {
+        $feeDescription = $this->feeDescription ?? [];
+        $feeDescription = reset($feeDescription);
+
+        if ($feeDescription === false) {
+            return null;
+        }
+
+        return $feeDescription;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\FeeDescription|null
+     */
+    public function lastFeeDescription(): ?FeeDescription
+    {
+        $feeDescription = $this->feeDescription ?? [];
+        $feeDescription = end($feeDescription);
+
+        if ($feeDescription === false) {
+            return null;
+        }
+
+        return $feeDescription;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\FeeDescription $feeDescription
      * @return self
      */
@@ -466,6 +496,36 @@ class TenderedProjectType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EvidenceDocumentReference|null
+     */
+    public function firstEvidenceDocumentReference(): ?EvidenceDocumentReference
+    {
+        $evidenceDocumentReference = $this->evidenceDocumentReference ?? [];
+        $evidenceDocumentReference = reset($evidenceDocumentReference);
+
+        if ($evidenceDocumentReference === false) {
+            return null;
+        }
+
+        return $evidenceDocumentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\EvidenceDocumentReference|null
+     */
+    public function lastEvidenceDocumentReference(): ?EvidenceDocumentReference
+    {
+        $evidenceDocumentReference = $this->evidenceDocumentReference ?? [];
+        $evidenceDocumentReference = end($evidenceDocumentReference);
+
+        if ($evidenceDocumentReference === false) {
+            return null;
+        }
+
+        return $evidenceDocumentReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\EvidenceDocumentReference $evidenceDocumentReference
      * @return self
      */
@@ -554,6 +614,36 @@ class TenderedProjectType
         $this->taxTotal = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function firstTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = reset($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TaxTotal|null
+     */
+    public function lastTaxTotal(): ?TaxTotal
+    {
+        $taxTotal = $this->taxTotal ?? [];
+        $taxTotal = end($taxTotal);
+
+        if ($taxTotal === false) {
+            return null;
+        }
+
+        return $taxTotal;
     }
 
     /**
@@ -687,6 +777,36 @@ class TenderedProjectType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TenderLine|null
+     */
+    public function firstTenderLine(): ?TenderLine
+    {
+        $tenderLine = $this->tenderLine ?? [];
+        $tenderLine = reset($tenderLine);
+
+        if ($tenderLine === false) {
+            return null;
+        }
+
+        return $tenderLine;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\TenderLine|null
+     */
+    public function lastTenderLine(): ?TenderLine
+    {
+        $tenderLine = $this->tenderLine ?? [];
+        $tenderLine = end($tenderLine);
+
+        if ($tenderLine === false) {
+            return null;
+        }
+
+        return $tenderLine;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\TenderLine $tenderLine
      * @return self
      */
@@ -775,6 +895,36 @@ class TenderedProjectType
         $this->awardingCriterionResponse = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AwardingCriterionResponse|null
+     */
+    public function firstAwardingCriterionResponse(): ?AwardingCriterionResponse
+    {
+        $awardingCriterionResponse = $this->awardingCriterionResponse ?? [];
+        $awardingCriterionResponse = reset($awardingCriterionResponse);
+
+        if ($awardingCriterionResponse === false) {
+            return null;
+        }
+
+        return $awardingCriterionResponse;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AwardingCriterionResponse|null
+     */
+    public function lastAwardingCriterionResponse(): ?AwardingCriterionResponse
+    {
+        $awardingCriterionResponse = $this->awardingCriterionResponse ?? [];
+        $awardingCriterionResponse = end($awardingCriterionResponse);
+
+        if ($awardingCriterionResponse === false) {
+            return null;
+        }
+
+        return $awardingCriterionResponse;
     }
 
     /**

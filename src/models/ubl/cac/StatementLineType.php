@@ -344,6 +344,36 @@ class StatementLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function firstNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = reset($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cbc\Note|null
+     */
+    public function lastNote(): ?Note
+    {
+        $note = $this->note ?? [];
+        $note = end($note);
+
+        if ($note === false) {
+            return null;
+        }
+
+        return $note;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cbc\Note $note
      * @return self
      */
@@ -698,6 +728,36 @@ class StatementLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function firstPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = reset($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms|null
+     */
+    public function lastPaymentTerms(): ?PaymentTerms
+    {
+        $paymentTerms = $this->paymentTerms ?? [];
+        $paymentTerms = end($paymentTerms);
+
+        if ($paymentTerms === false) {
+            return null;
+        }
+
+        return $paymentTerms;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\PaymentTerms $paymentTerms
      * @return self
      */
@@ -1023,6 +1083,36 @@ class StatementLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod|null
+     */
+    public function firstInvoicePeriod(): ?InvoicePeriod
+    {
+        $invoicePeriod = $this->invoicePeriod ?? [];
+        $invoicePeriod = reset($invoicePeriod);
+
+        if ($invoicePeriod === false) {
+            return null;
+        }
+
+        return $invoicePeriod;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod|null
+     */
+    public function lastInvoicePeriod(): ?InvoicePeriod
+    {
+        $invoicePeriod = $this->invoicePeriod ?? [];
+        $invoicePeriod = end($invoicePeriod);
+
+        if ($invoicePeriod === false) {
+            return null;
+        }
+
+        return $invoicePeriod;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\InvoicePeriod $invoicePeriod
      * @return self
      */
@@ -1114,6 +1204,36 @@ class StatementLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function firstBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = reset($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\BillingReference|null
+     */
+    public function lastBillingReference(): ?BillingReference
+    {
+        $billingReference = $this->billingReference ?? [];
+        $billingReference = end($billingReference);
+
+        if ($billingReference === false) {
+            return null;
+        }
+
+        return $billingReference;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\BillingReference $billingReference
      * @return self
      */
@@ -1202,6 +1322,36 @@ class StatementLineType
         $this->documentReference = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function firstDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = reset($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\DocumentReference|null
+     */
+    public function lastDocumentReference(): ?DocumentReference
+    {
+        $documentReference = $this->documentReference ?? [];
+        $documentReference = end($documentReference);
+
+        if ($documentReference === false) {
+            return null;
+        }
+
+        return $documentReference;
     }
 
     /**
@@ -1335,6 +1485,36 @@ class StatementLineType
     }
 
     /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function firstAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = reset($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge|null
+     */
+    public function lastAllowanceCharge(): ?AllowanceCharge
+    {
+        $allowanceCharge = $this->allowanceCharge ?? [];
+        $allowanceCharge = end($allowanceCharge);
+
+        if ($allowanceCharge === false) {
+            return null;
+        }
+
+        return $allowanceCharge;
+    }
+
+    /**
      * @param \horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge $allowanceCharge
      * @return self
      */
@@ -1423,6 +1603,36 @@ class StatementLineType
         $this->collectedPayment = [];
 
         return $this;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CollectedPayment|null
+     */
+    public function firstCollectedPayment(): ?CollectedPayment
+    {
+        $collectedPayment = $this->collectedPayment ?? [];
+        $collectedPayment = reset($collectedPayment);
+
+        if ($collectedPayment === false) {
+            return null;
+        }
+
+        return $collectedPayment;
+    }
+
+    /**
+     * @return \horstoeko\invoicesuite\models\ubl\cac\CollectedPayment|null
+     */
+    public function lastCollectedPayment(): ?CollectedPayment
+    {
+        $collectedPayment = $this->collectedPayment ?? [];
+        $collectedPayment = end($collectedPayment);
+
+        if ($collectedPayment === false) {
+            return null;
+        }
+
+        return $collectedPayment;
     }
 
     /**
