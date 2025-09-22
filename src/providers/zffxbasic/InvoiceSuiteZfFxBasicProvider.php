@@ -29,12 +29,12 @@ class InvoiceSuiteZfFxBasicProvider extends InvoiceSuiteAbstractFormatProvider
     public function getParameters(): array
     {
         return [
-            'CONTEXTPARAMETER' => 'urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic',
-            'ALTERNATIVECONTEXTPARAMETERS' => ['urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic'],
-            'PDFEMBEDDABLE' => true,
-            'PDFXMPNAME' => 'BASIC',
-            'PDFXMPVERSION' => '1.0',
-            'PDFXMÜATTACHMENTFILENAME' => 'factur-x.xml',
+            'ContextParameter' => 'urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic',
+            'AlternativeContextParameters' => ['urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic'],
+            'PDFEmbeddable' => true,
+            'PDFXmpName' => 'BASIC',
+            'PDFXmpVersion' => '1.0',
+            'PDFXmlAttachmentFilename' => 'factur-x.xml',
         ];
     }
 
@@ -90,8 +90,8 @@ class InvoiceSuiteZfFxBasicProvider extends InvoiceSuiteAbstractFormatProvider
 
         try {
             $contextParameters = array_merge(
-                [$this->getParameters()['CONTEXTPARAMETER']],
-                $this->getParameters()['ALTERNATIVECONTEXTPARAMETERS']
+                [$this->getParameters()['ContextParameter']],
+                $this->getParameters()['AlternativeContextParameters']
             );
 
             foreach ($contextParameters as $contextParameter) {

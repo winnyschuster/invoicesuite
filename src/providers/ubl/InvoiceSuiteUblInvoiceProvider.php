@@ -33,7 +33,7 @@ class InvoiceSuiteUblInvoiceProvider extends InvoiceSuiteAbstractFormatProvider
             'BUILDER_QUOTATION_DOCDESCRIPTION' => 'Quotation',
             'CUSTOMIZATIONID' => 'urn:cen.eu:en16931:2017',
             'PROFILEID' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',
-            'PDFEMBEDDABLE' => false,
+            'PDFEmbeddable' => false,
         ];
     }
 

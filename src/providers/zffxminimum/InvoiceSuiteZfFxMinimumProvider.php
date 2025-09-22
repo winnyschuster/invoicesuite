@@ -30,12 +30,12 @@ class InvoiceSuiteZfFxMinimumProvider extends InvoiceSuiteAbstractFormatProvider
     public function getParameters(): array
     {
         return [
-            'CONTEXTPARAMETER' => 'urn:factur-x.eu:1p0:minimum',
-            'ALTERNATIVECONTEXTPARAMETERS' => ['urn:zugferd.de:2p0:minimum'],
-            'PDFEMBEDDABLE' => true,
-            'PDFXMPNAME' => 'MINIMUM',
-            'PDFXMPVERSION' => '1.0',
-            'PDFXMÜATTACHMENTFILENAME' => 'factur-x.xml',
+            'ContextParameter' => 'urn:factur-x.eu:1p0:minimum',
+            'AlternativeContextParameters' => ['urn:zugferd.de:2p0:minimum'],
+            'PDFEmbeddable' => true,
+            'PDFXmpName' => 'MINIMUM',
+            'PDFXmpVersion' => '1.0',
+            'PDFXmlAttachmentFilename' => 'factur-x.xml',
         ];
     }
 
@@ -91,8 +91,8 @@ class InvoiceSuiteZfFxMinimumProvider extends InvoiceSuiteAbstractFormatProvider
 
         try {
             $contextParameters = array_merge(
-                [$this->getParameters()['CONTEXTPARAMETER']],
-                $this->getParameters()['ALTERNATIVECONTEXTPARAMETERS']
+                [$this->getParameters()['ContextParameter']],
+                $this->getParameters()['AlternativeContextParameters']
             );
 
             foreach ($contextParameters as $contextParameter) {

@@ -27,15 +27,15 @@ class ZfFxComfortProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteZfFxComfortProvider();
 
-        $this->assertArrayHasKey('CONTEXTPARAMETER', $provider->getParameters());
-        $this->assertArrayHasKey('ALTERNATIVECONTEXTPARAMETERS', $provider->getParameters());
-        $this->assertArrayNotHasKey('BUSINESSPROCESS', $provider->getParameters());
+        $this->assertArrayHasKey('ContextParameter', $provider->getParameters());
+        $this->assertArrayHasKey('AlternativeContextParameters', $provider->getParameters());
+        $this->assertArrayNotHasKey('BusinessProcess', $provider->getParameters());
 
-        $this->assertIsString($provider->getParameters()['CONTEXTPARAMETER']);
-        $this->assertSame('urn:cen.eu:en16931:2017', $provider->getParameters()['CONTEXTPARAMETER']);
+        $this->assertIsString($provider->getParameters()['ContextParameter']);
+        $this->assertSame('urn:cen.eu:en16931:2017', $provider->getParameters()['ContextParameter']);
 
-        $this->assertIsArray($provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertCount(0, $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
+        $this->assertIsArray($provider->getParameters()['AlternativeContextParameters']);
+        $this->assertCount(0, $provider->getParameters()['AlternativeContextParameters']);
     }
 
     public function testGetSerializerMetadataDirectories(): void

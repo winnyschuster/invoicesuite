@@ -43,8 +43,8 @@ class InvoiceSuiteZfFxBasicWlProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function initRootObject(): InvoiceSuiteZfFxBasicWlProviderBuilder
     {
         $this->setContextParameter(
-            $this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''),
-            $this->getCurrentFormatProviderParameterValue('BUSINESSPROCESS', '')
+            $this->getCurrentFormatProviderParameterValue('ContextParameter', ''),
+            $this->getCurrentFormatProviderParameterValue('BusinessProcess', '')
         );
 
         return $this;

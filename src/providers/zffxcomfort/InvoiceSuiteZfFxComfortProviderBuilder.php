@@ -43,8 +43,8 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractFormatP
     public function initRootObject(): InvoiceSuiteZfFxComfortProviderBuilder
     {
         $this->setContextParameter(
-            $this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''),
-            $this->getCurrentFormatProviderParameterValue('BUSINESSPROCESS', '')
+            $this->getCurrentFormatProviderParameterValue('ContextParameter', ''),
+            $this->getCurrentFormatProviderParameterValue('BusinessProcess', '')
         );
 
         return $this;

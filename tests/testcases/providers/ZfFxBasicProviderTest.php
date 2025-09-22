@@ -27,16 +27,16 @@ class ZfFxBasicProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteZfFxBasicProvider();
 
-        $this->assertArrayHasKey('CONTEXTPARAMETER', $provider->getParameters());
-        $this->assertArrayHasKey('ALTERNATIVECONTEXTPARAMETERS', $provider->getParameters());
-        $this->assertArrayNotHasKey('BUSINESSPROCESS', $provider->getParameters());
+        $this->assertArrayHasKey('ContextParameter', $provider->getParameters());
+        $this->assertArrayHasKey('AlternativeContextParameters', $provider->getParameters());
+        $this->assertArrayNotHasKey('BusinessProcess', $provider->getParameters());
 
-        $this->assertIsString($provider->getParameters()['CONTEXTPARAMETER']);
-        $this->assertSame('urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic', $provider->getParameters()['CONTEXTPARAMETER']);
+        $this->assertIsString($provider->getParameters()['ContextParameter']);
+        $this->assertSame('urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic', $provider->getParameters()['ContextParameter']);
 
-        $this->assertIsArray($provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertCount(1, $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertContains('urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic', $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
+        $this->assertIsArray($provider->getParameters()['AlternativeContextParameters']);
+        $this->assertCount(1, $provider->getParameters()['AlternativeContextParameters']);
+        $this->assertContains('urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic', $provider->getParameters()['AlternativeContextParameters']);
     }
 
     public function testGetSerializerMetadataDirectories(): void

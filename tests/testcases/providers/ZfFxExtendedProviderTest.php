@@ -27,19 +27,19 @@ class ZfFxExtendedProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteZfFxExtendedProvider();
 
-        $this->assertArrayHasKey('CONTEXTPARAMETER', $provider->getParameters());
-        $this->assertArrayHasKey('ALTERNATIVECONTEXTPARAMETERS', $provider->getParameters());
-        $this->assertArrayHasKey('BUSINESSPROCESS', $provider->getParameters());
+        $this->assertArrayHasKey('ContextParameter', $provider->getParameters());
+        $this->assertArrayHasKey('AlternativeContextParameters', $provider->getParameters());
+        $this->assertArrayHasKey('BusinessProcess', $provider->getParameters());
 
-        $this->assertIsString($provider->getParameters()['CONTEXTPARAMETER']);
-        $this->assertSame('urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended', $provider->getParameters()['CONTEXTPARAMETER']);
+        $this->assertIsString($provider->getParameters()['ContextParameter']);
+        $this->assertSame('urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended', $provider->getParameters()['ContextParameter']);
 
-        $this->assertIsArray($provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertCount(1, $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertContains('urn:cen.eu:en16931:2017#conformant#urn:zugferd.de:2p0:extended', $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
+        $this->assertIsArray($provider->getParameters()['AlternativeContextParameters']);
+        $this->assertCount(1, $provider->getParameters()['AlternativeContextParameters']);
+        $this->assertContains('urn:cen.eu:en16931:2017#conformant#urn:zugferd.de:2p0:extended', $provider->getParameters()['AlternativeContextParameters']);
 
-        $this->assertIsString($provider->getParameters()['BUSINESSPROCESS']);
-        $this->assertSame('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0', $provider->getParameters()['BUSINESSPROCESS']);
+        $this->assertIsString($provider->getParameters()['BusinessProcess']);
+        $this->assertSame('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0', $provider->getParameters()['BusinessProcess']);
     }
 
     public function testGetSerializerMetadataDirectories(): void

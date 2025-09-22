@@ -37,9 +37,9 @@ class HandlesCurrentFormatProviderTest extends TestCase
     {
         $this->assertNull($this->currentInvoiceSuiteAbstractFormatProvider);
         $this->setCurrentFormatProvider(new InvoiceSuiteZfFxExtendedProvider());
-        $this->assertTrue($this->hasCurrentFormatProviderParameter('CONTEXTPARAMETER'));
-        $this->assertTrue($this->hasCurrentFormatProviderParameter('ALTERNATIVECONTEXTPARAMETERS'));
-        $this->assertTrue($this->hasCurrentFormatProviderParameter('BUSINESSPROCESS'));
+        $this->assertTrue($this->hasCurrentFormatProviderParameter('ContextParameter'));
+        $this->assertTrue($this->hasCurrentFormatProviderParameter('AlternativeContextParameters'));
+        $this->assertTrue($this->hasCurrentFormatProviderParameter('BusinessProcess'));
         $this->assertFalse($this->hasCurrentFormatProviderParameter('__UNKNOWN__'));
     }
 
@@ -47,10 +47,10 @@ class HandlesCurrentFormatProviderTest extends TestCase
     {
         $this->assertNull($this->currentInvoiceSuiteAbstractFormatProvider);
         $this->setCurrentFormatProvider(new InvoiceSuiteZfFxExtendedProvider());
-        $this->assertSame('urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended', $this->getCurrentFormatProviderParameterValue('CONTEXTPARAMETER', ''));
-        $this->assertIsArray($this->getCurrentFormatProviderParameterValue('ALTERNATIVECONTEXTPARAMETERS', ''));
-        $this->assertNotEmpty($this->getCurrentFormatProviderParameterValue('ALTERNATIVECONTEXTPARAMETERS', ''));
-        $this->assertSame('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0', $this->getCurrentFormatProviderParameterValue('BUSINESSPROCESS', ''));
+        $this->assertSame('urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended', $this->getCurrentFormatProviderParameterValue('ContextParameter', ''));
+        $this->assertIsArray($this->getCurrentFormatProviderParameterValue('AlternativeContextParameters', ''));
+        $this->assertNotEmpty($this->getCurrentFormatProviderParameterValue('AlternativeContextParameters', ''));
+        $this->assertSame('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0', $this->getCurrentFormatProviderParameterValue('BusinessProcess', ''));
         $this->assertSame('__DEFAULT__', $this->getCurrentFormatProviderParameterValue('__UNKNOWN__', '__DEFAULT__'));
     }
 }

@@ -27,16 +27,16 @@ class ZfFxBasicWlWlProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteZfFxBasicWlProvider();
 
-        $this->assertArrayHasKey('CONTEXTPARAMETER', $provider->getParameters());
-        $this->assertArrayHasKey('ALTERNATIVECONTEXTPARAMETERS', $provider->getParameters());
-        $this->assertArrayNotHasKey('BUSINESSPROCESS', $provider->getParameters());
+        $this->assertArrayHasKey('ContextParameter', $provider->getParameters());
+        $this->assertArrayHasKey('AlternativeContextParameters', $provider->getParameters());
+        $this->assertArrayNotHasKey('BusinessProcess', $provider->getParameters());
 
-        $this->assertIsString($provider->getParameters()['CONTEXTPARAMETER']);
-        $this->assertSame('urn:factur-x.eu:1p0:basicwl', $provider->getParameters()['CONTEXTPARAMETER']);
+        $this->assertIsString($provider->getParameters()['ContextParameter']);
+        $this->assertSame('urn:factur-x.eu:1p0:basicwl', $provider->getParameters()['ContextParameter']);
 
-        $this->assertIsArray($provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertCount(1, $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
-        $this->assertContains('urn:zugferd.de:2p0:basicwl', $provider->getParameters()['ALTERNATIVECONTEXTPARAMETERS']);
+        $this->assertIsArray($provider->getParameters()['AlternativeContextParameters']);
+        $this->assertCount(1, $provider->getParameters()['AlternativeContextParameters']);
+        $this->assertContains('urn:zugferd.de:2p0:basicwl', $provider->getParameters()['AlternativeContextParameters']);
     }
 
     public function testGetSerializerMetadataDirectories(): void
