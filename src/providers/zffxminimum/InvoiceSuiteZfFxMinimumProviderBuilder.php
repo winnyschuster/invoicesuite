@@ -5577,7 +5577,8 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractFormatP
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
             ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoiceCurrencyCode()?->getValue();
+            ->getInvoiceCurrencyCode()
+            ?->getValue();
 
         $taxTotalAmount = $summation->clearTaxTotalAmount()->addToTaxTotalAmountWithCreate()->setValue(0);
 

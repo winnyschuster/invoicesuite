@@ -7008,13 +7008,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractFormatPro
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
             ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getInvoiceCurrencyCode()?->getValue();
+            ->getInvoiceCurrencyCode()
+            ?->getValue();
 
         $taxCurrencyCode = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
             ->getApplicableHeaderTradeSettlementWithCreate()
-            ->getTaxCurrencyCode()?->getValue();
+            ->getTaxCurrencyCode()
+            ?->getValue();
 
         $taxTotalAmount = $summation->clearTaxTotalAmount()->addToTaxTotalAmountWithCreate()->setValue(0);
 
