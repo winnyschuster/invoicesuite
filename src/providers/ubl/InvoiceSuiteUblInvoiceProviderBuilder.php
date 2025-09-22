@@ -6648,12 +6648,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): self {
-        $this->getUblInvoiceRootObject()->setAllowanceCharge(
-            array_filter(
-                $this->getUblInvoiceRootObject()->getAllowanceCharge() ?? [],
-                fn(AllowanceCharge $currentAllowanceChage) => !$currentAllowanceChage->hasObjectFlag('logservicecharge')
-            )
-        );
+        $this
+            ->getUblInvoiceRootObject()
+            ->setAllowanceCharge(
+                array_filter(
+                    $this->getUblInvoiceRootObject()->getAllowanceCharge() ?? [],
+                    fn(AllowanceCharge $currentAllowanceChage) => !$currentAllowanceChage->hasObjectFlag('logservicecharge')
+                )
+            );
 
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription]) ||
