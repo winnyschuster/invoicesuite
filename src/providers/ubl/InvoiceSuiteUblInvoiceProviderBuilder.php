@@ -53,8 +53,8 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
     public function initRootObject(): InvoiceSuiteUblInvoiceProviderBuilder
     {
         $this->setContextParameter(
-            $this->getCurrentFormatProviderParameterValue('CUSTOMIZATIONID', ''),
-            $this->getCurrentFormatProviderParameterValue('PROFILEID', '')
+            $this->getCurrentFormatProviderParameterValue('CustomizationId', ''),
+            $this->getCurrentFormatProviderParameterValue('ProfileId', '')
         );
 
         return $this;
@@ -1209,8 +1209,8 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): self {
-        $additionalDocTypeCode = $this->getCurrentFormatProviderParameterValue('BUILDER_QUOTATION_DOCTYPECODE', '');
-        $additionalDocDescription = $this->getCurrentFormatProviderParameterValue('BUILDER_QUOTATION_DOCDESCRIPTION', '');
+        $additionalDocTypeCode = $this->getCurrentFormatProviderParameterValue('QuotationDocTypeCode', '');
+        $additionalDocDescription = $this->getCurrentFormatProviderParameterValue('QuotationDocDescription', '');
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$additionalDocTypeCode, $additionalDocDescription])) {
             return $this;
