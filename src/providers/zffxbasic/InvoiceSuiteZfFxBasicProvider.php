@@ -31,6 +31,10 @@ class InvoiceSuiteZfFxBasicProvider extends InvoiceSuiteAbstractFormatProvider
         return [
             'CONTEXTPARAMETER' => 'urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic',
             'ALTERNATIVECONTEXTPARAMETERS' => ['urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic'],
+            'PDFEMBEDDABLE' => true,
+            'PDFXMPNAME' => 'BASIC',
+            'PDFXMPVERSION' => '1.0',
+            'PDFXMÜATTACHMENTFILENAME' => 'factur-x.xml',
         ];
     }
 

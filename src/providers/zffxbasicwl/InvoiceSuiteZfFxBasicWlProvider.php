@@ -33,6 +33,10 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractFormatProvider
         return [
             'CONTEXTPARAMETER' => 'urn:factur-x.eu:1p0:basicwl',
             'ALTERNATIVECONTEXTPARAMETERS' => ['urn:zugferd.de:2p0:basicwl'],
+            'PDFEMBEDDABLE' => true,
+            'PDFXMPNAME' => 'BASIC WL',
+            'PDFXMPVERSION' => '1.0',
+            'PDFXMÜATTACHMENTFILENAME' => 'factur-x.xml',
         ];
     }
 
