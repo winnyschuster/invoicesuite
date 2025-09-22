@@ -6942,11 +6942,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractFormatPro
     /**
      * Set Document Logistic Service Charge
      *
-     * @param float|null $newChargeAmount Amount of the service fee
-     * @param string|null $newDescription Identification of the service fee
-     * @param string|null $newTaxCategory Coded description of the tax category
-     * @param string|null $newTaxType Coded description of the tax type
-     * @param float|null $newTaxPercent Tax Rate (Percentage)
+     * @param float|null $newChargeAmount __BT-X-272, From EXTENDED__ Amount of the service fee
+     * @param string|null $newDescription __BT-X-271, From EXTENDED__ Identification of the service fee
+     * @param string|null $newTaxCategory __BT-X-273, From EXTENDED__ Coded description of the tax category
+     * @param string|null $newTaxType __BT-X-273-0, From EXTENDED__ Coded description of the tax type
+     * @param float|null $newTaxPercent __BT-X-274, From EXTENDED__ Tax Rate (Percentage)
      * @return self
      */
     public function setDocumentLogisticServiceCharge(
@@ -6964,11 +6964,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractFormatPro
     /**
      * Add Document Logistic Service Charge
      *
-     * @param float|null $newChargeAmount Amount of the service fee
-     * @param string|null $newDescription Identification of the service fee
-     * @param string|null $newTaxCategory Coded description of the tax category
-     * @param string|null $newTaxType Coded description of the tax type
-     * @param float|null $newTaxPercent Tax Rate (Percentage)
+     * @param float|null $newChargeAmount __BT-X-272, From EXTENDED__ Amount of the service fee
+     * @param string|null $newDescription __BT-X-271, From EXTENDED__ Identification of the service fee
+     * @param string|null $newTaxCategory __BT-X-273, From EXTENDED__ Coded description of the tax category
+     * @param string|null $newTaxType __BT-X-273-0, From EXTENDED__ Coded description of the tax type
+     * @param float|null $newTaxPercent __BT-X-274, From EXTENDED__ Tax Rate (Percentage)
      * @return self
      */
     public function addDocumentLogisticServiceCharge(
@@ -7035,15 +7035,16 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractFormatPro
     /**
      * Set the document summation
      *
-     * @param float|null $newNetAmount Sum of the net amounts of all invoice lines
-     * @param float|null $newChargeTotalAmount Sum of the charges
-     * @param float|null $newDiscountTotalAmount Sum of the discounts
-     * @param float|null $newTaxBasisAmount Total invoice amount excluding sales tax
-     * @param float|null $newTaxTotalAmount Total amount of the invoice sales tax (in the invoice currency)
-     * @param float|null $newGrossAmount Total invoice amount including sales tax
-     * @param float|null $newDueAmount Payment amount due
-     * @param float|null $newPrepaidAmount Prepayment amount
-     * @param float|null $newRoungingAmount Rounding amount
+     * @param float|null $newNetAmount __BT-106, From BASIC WL__ Sum of the net amounts of all invoice lines
+     * @param float|null $newChargeTotalAmount __BT-108, From BASIC WL__ Sum of the charges
+     * @param float|null $newDiscountTotalAmount __BT-107, From BASIC WL__ Sum of the discounts
+     * @param float|null $newTaxBasisAmount __BT-109, From BASIC WL__ Total invoice amount excluding sales tax
+     * @param float|null $newTaxTotalAmount __BT-110, From BASIC WL__ Total amount of the invoice sales tax (in the invoice currency)
+     * @param float|null $newTaxTotalAmount2 __BT-111, From BASIC WL__ Total amount of the invoice sales tax (in the ledger currency)
+     * @param float|null $newGrossAmount __BT-112, From BASIC WL__ Total invoice amount including sales tax
+     * @param float|null $newDueAmount __BT-115,  From MINIMUM__ Payment amount due
+     * @param float|null $newPrepaidAmount __BT-113, From BASIC WL__ Prepayment amount
+     * @param float|null $newRoungingAmount __BT-114, From EN16931__ Rounding amount
      * @return self
      */
     public function setDocumentSummation(
