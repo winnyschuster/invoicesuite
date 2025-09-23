@@ -168,4 +168,31 @@ abstract class InvoiceSuiteAbstractFormatProvider
     {
         return in_array($group, $this->getSerializerGroups());
     }
+
+    /**
+     * Returns true if a parameter exists for the requested format provider
+     *
+     * @param string $parameterName
+     * @return boolean
+     */
+    public function hasFormatProviderParameter(string $parameterName): bool
+    {
+        return array_key_exists($parameterName, $this->getParameters());
+    }
+
+    /**
+     * Returns the parameter value for the request parameter for the requested format provider
+     *
+     * @param string $parameterName
+     * @param mixed $defaultValue
+     * @return mixed
+     */
+    public function getFormatProviderParameterValue(string $parameterName, $defaultValue)
+    {
+        if (!$this->hasFormatProviderParameter($parameterName)) {
+            return $defaultValue;
+        }
+
+        return $this->getParameters()[$parameterName];
+    }
 }

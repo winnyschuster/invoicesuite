@@ -61,7 +61,7 @@ trait HandlesCurrentFormatProvider
      */
     public function hasCurrentFormatProviderParameter(string $parameterName): bool
     {
-        return array_key_exists($parameterName, $this->resolveCurrentFormatProviderParameters());
+        return $this->currentInvoiceSuiteAbstractFormatProvider->hasFormatProviderParameter($parameterName);
     }
 
     /**
@@ -73,10 +73,6 @@ trait HandlesCurrentFormatProvider
      */
     public function getCurrentFormatProviderParameterValue(string $parameterName, $defaultValue)
     {
-        if (!$this->hasCurrentFormatProviderParameter($parameterName)) {
-            return $defaultValue;
-        }
-
-        return $this->resolveCurrentFormatProviderParameters()[$parameterName];
+        return $this->currentInvoiceSuiteAbstractFormatProvider->getFormatProviderParameterValue($parameterName, $defaultValue);
     }
 }
