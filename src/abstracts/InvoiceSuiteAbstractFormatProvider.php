@@ -88,10 +88,10 @@ abstract class InvoiceSuiteAbstractFormatProvider
     /**
      * Returns true if the content matches the requirements for this format provider, otherwise false
      *
-     * @param  string $content
+     * @param  string $serializedContent
      * @return boolean
      */
-    abstract public function isSatisfiableBy(string $content): bool;
+    abstract public function isSatisfiableBySerializedContent(string $serializedContent): bool;
 
     /**
      * Returns the classname of the root invoice-object

@@ -97,7 +97,7 @@ class ZfFxBasicProviderTest extends TestCase
     </rsm:CrossIndustryInvoice>
     XML;
 
-        $this->assertTrue($provider->isSatisfiableBy($xml));
+        $this->assertTrue($provider->isSatisfiableBySerializedContent($xml));
 
         $xml = <<<XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -116,13 +116,13 @@ class ZfFxBasicProviderTest extends TestCase
     </rsm:CrossIndustryInvoice>
     XML;
 
-        $this->assertFalse($provider->isSatisfiableBy($xml));
+        $this->assertFalse($provider->isSatisfiableBySerializedContent($xml));
 
         $xml = <<<XML
     Dummy
     XML;
 
-        $this->assertFalse($provider->isSatisfiableBy($xml));
+        $this->assertFalse($provider->isSatisfiableBySerializedContent($xml));
     }
 
     public function testGetRootClassName(): void

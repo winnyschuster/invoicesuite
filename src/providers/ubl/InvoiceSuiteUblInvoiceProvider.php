@@ -82,14 +82,14 @@ class InvoiceSuiteUblInvoiceProvider extends InvoiceSuiteAbstractFormatProvider
     /**
      * @inheritDoc
      */
-    public function isSatisfiableBy(string $content): bool
+    public function isSatisfiableBySerializedContent(string $serializedContent): bool
     {
         $prevUseInternalErrors = libxml_use_internal_errors(true);
         libxml_clear_errors();
 
         try {
             $contentDomDocument = new \DOMDocument();
-            $contentDomDocument->loadXML($content);
+            $contentDomDocument->loadXML($serializedContent);
             $contentDomXPath = new \DOMXPath($contentDomDocument);
             $contentDomXPath->registerNamespace('inv', 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2');
             $contentDomXPath->registerNamespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2');

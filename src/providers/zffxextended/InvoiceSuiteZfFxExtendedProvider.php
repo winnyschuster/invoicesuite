@@ -87,7 +87,7 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractFormatProvide
     /**
      * @inheritDoc
      */
-    public function isSatisfiableBy(string $content): bool
+    public function isSatisfiableBySerializedContent(string $serializedContent): bool
     {
         $prevUseInternalErrors = libxml_use_internal_errors(true);
         libxml_clear_errors();
@@ -100,7 +100,7 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractFormatProvide
 
             foreach ($contextParameters as $contextParameter) {
                 $contentDomDocument = new \DOMDocument();
-                $contentDomDocument->loadXML($content);
+                $contentDomDocument->loadXML($serializedContent);
                 $contentDomXPath = new \DOMXPath($contentDomDocument);
                 $contentDomXPath->registerNamespace('rsm', 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100');
                 $contentDomXPath->registerNamespace('ram', 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100');

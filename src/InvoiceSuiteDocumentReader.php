@@ -79,7 +79,7 @@ class InvoiceSuiteDocumentReader implements InvoiceSuiteReaderContract
 
         $formatProviders = array_filter(
             $this->getRegisteredFormatProviders(),
-            fn($formatProvider) => $formatProvider->isSatisfiableBy($fromContent)
+            fn($formatProvider) => $formatProvider->isSatisfiableBySerializedContent($fromContent)
         );
 
         if ($formatProviders === []) {
