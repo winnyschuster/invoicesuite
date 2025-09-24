@@ -3140,7 +3140,12 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractFormatPr
      */
     public function firstDocumentContractReference(): bool
     {
-        return false;
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getContractReferencedDocument() ?? []
+            ),
+            'documentcontractreference'
+        );
     }
 
     /**
@@ -3150,7 +3155,12 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractFormatPr
      */
     public function nextDocumentContractReference(): bool
     {
-        return false;
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getContractReferencedDocument() ?? []
+            ),
+            'documentcontractreference'
+        );
     }
 
     /**
@@ -3167,8 +3177,21 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractFormatPr
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): self {
-        $newReferenceNumber = "";
-        $newReferenceDate = null;
+        /**
+         * @var array<\horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType>
+         */
+        $documentContractReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getContractReferencedDocument() ?? []);
+
+        /**
+         * @var \horstoeko\invoicesuite\models\zffxextended\ram\ReferencedDocumentType
+         */
+        $documentContractReference = $documentContractReferences[InvoiceSuitePointerUtils::getValue('documentcontractreference')];
+
+        $newReferenceNumber = $documentContractReference->getIssuerAssignedID()?->getValue() ?? "";
+        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
+            $documentContractReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? "",
+            $documentContractReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? "",
+        );
 
         return $this;
     }
