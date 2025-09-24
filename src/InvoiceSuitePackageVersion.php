@@ -33,7 +33,7 @@ final class InvoiceSuitePackageVersion
     {
         try {
             return ComposerInstalledVersions::getVersion('horstoeko/invoicesuite') ?? self::getDefaultVersion();
-        } catch (OutOfBoundsException $outOfBoundsException) {
+        } catch (OutOfBoundsException) {
             return self::getDefaultVersion();
         }
     }
