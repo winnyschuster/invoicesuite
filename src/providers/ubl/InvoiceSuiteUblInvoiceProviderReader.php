@@ -1034,9 +1034,9 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractFormatPro
                         )
                     )
                 );
-
-                $newDocumentDTO->addPaymentTerm($documentPaymentTermDTO);
             }
+
+            $newDocumentDTO->addPaymentTerm($documentPaymentTermDTO);
         }
 
         // Document-Level Creditor reference

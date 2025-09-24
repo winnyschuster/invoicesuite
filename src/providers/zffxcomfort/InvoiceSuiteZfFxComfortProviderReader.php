@@ -1621,9 +1621,9 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractFormatPr
                         )
                     )
                 );
-
-                $newDocumentDTO->addPaymentTerm($documentPaymentTermDTO);
             }
+
+            $newDocumentDTO->addPaymentTerm($documentPaymentTermDTO);
         }
 
         // Document-Level Creditor reference
