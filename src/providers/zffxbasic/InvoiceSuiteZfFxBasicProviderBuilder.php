@@ -294,7 +294,9 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractFormatPro
 
         // Document-Level Supply Chain Event
 
-        $this->setDocumentSupplyChainEvent($newDocumentDTO->getSupplyChainEvent());
+        $newDocumentDTO->firstSupplyChainEvent(
+            fn(DateTimeInterface $item) => $this->setDocumentSupplyChainEvent($item)
+        );
 
         // Document-Level Buyer Reference
 

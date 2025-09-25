@@ -351,7 +351,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractFormatPr
 
         $this->getDocumentSupplyChainEvent($newDocumentSupplyChainEvent);
 
-        $newDocumentDTO->setSupplyChainEvent($newDocumentSupplyChainEvent);
+        $newDocumentDTO->addSupplyChainEvent($newDocumentSupplyChainEvent);
 
         // Document-Level Buyer Reference
 

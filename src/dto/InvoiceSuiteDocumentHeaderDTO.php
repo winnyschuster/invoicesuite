@@ -60,9 +60,9 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * The date of the delivery
      *
-     * @var DateTimeInterface|null
+     * @var array<DateTimeInterface>
      */
-    protected ?DateTimeInterface $supplyChainEvent = null;
+    protected array $supplyChainEvents = [];
 
     /**
      * The code for the invoice currency
@@ -332,7 +332,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param string|null $language The language code in which the document was written
      * @param DateTimeInterface|null $date Date of the document. The date when the document was issued by the seller
      * @param DateTimeInterface|null $completeDate The contractual due date of the document
-     * @param DateTimeInterface|null $supplyChainEvent The date of the delivery
+     * @param array<DateTimeInterface> $supplyChainEvents The date of the delivery
      * @param string|null $currency The code for the invoice currency
      * @param string|null $taxCurrency The code for the tax currency
      * @param bool|null $isCopy The flag that indicated that this document is a copy
@@ -378,7 +378,7 @@ class InvoiceSuiteDocumentHeaderDTO
         ?string $language = null,
         ?DateTimeInterface $date = null,
         ?DateTimeInterface $completeDate = null,
-        ?DateTimeInterface $supplyChainEvent = null,
+        array $supplyChainEvents = [],
         ?string $currency = null,
         ?string $taxCurrency = null,
         ?bool $isCopy = null,
@@ -423,7 +423,7 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setLanguage($language);
         $this->setDate($date);
         $this->setCompleteDate($completeDate);
-        $this->setSupplyChainEvent($supplyChainEvent);
+        $this->setSupplyChainEvents($supplyChainEvents);
         $this->setCurrency($currency);
         $this->setTaxCurrency($taxCurrency);
         $this->setIsCopy($isCopy);
@@ -604,22 +604,139 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Returns the date of the delivery
      *
-     * @return DateTimeInterface|null
+     * @return array<DateTimeInterface>
      */
-    public function getSupplyChainEvent(): ?DateTimeInterface
+    public function getSupplyChainEvents(): array
     {
-        return $this->supplyChainEvent;
+        return $this->supplyChainEvents;
     }
 
     /**
      * Sets the date of the delivery
      *
-     * @param DateTimeInterface|null $supplyChainEvent The date of the delivery
+     * @param array<DateTimeInterface> $supplyChainEvents The date of the delivery
      * @return self
      */
-    public function setSupplyChainEvent(?DateTimeInterface $supplyChainEvent): self
+    public function setSupplyChainEvents(array $supplyChainEvents): self
     {
-        $this->supplyChainEvent = $supplyChainEvent;
+        $this->supplyChainEvents = $supplyChainEvents;
+
+        return $this;
+    }
+
+    /**
+     * Add single The date of the delivery
+     *
+     * @param DateTimeInterface $supplyChainEvent The date of the delivery
+     * @return self
+     */
+    public function addSupplyChainEvent(DateTimeInterface $supplyChainEvent): self
+    {
+        $this->supplyChainEvents[] = $supplyChainEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get first The date of the delivery
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function firstSupplyChainEvent(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($supplyChainEvent = reset($this->supplyChainEvents)) !== false) {
+            $callback($supplyChainEvent);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The date of the delivery
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function nextSupplyChainEvent(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($supplyChainEvent = next($this->supplyChainEvents)) !== false) {
+            $callback($supplyChainEvent);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The date of the delivery
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function previousSupplyChainEvent(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($supplyChainEvent = prev($this->supplyChainEvents)) !== false) {
+            $callback($supplyChainEvent);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The date of the delivery
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function lastSupplyChainEvent(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($supplyChainEvent = end($this->supplyChainEvents)) !== false) {
+            $callback($supplyChainEvent);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The date of the delivery and execute callback
+     *
+     * @param callable $callback Callback to execute for each item
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @param int|null $limit Maximum number of loops
+     * @return self
+     */
+    public function forEachSupplyChainEvent(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): self {
+        $count = 0;
+
+        foreach ($this->supplyChainEvents as $supplyChainEvent) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
+            $callback($supplyChainEvent);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
 
         return $this;
     }
