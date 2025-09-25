@@ -276,7 +276,7 @@ $documentDTO
     ->addPostingReference(
         (new InvoiceSuiteIdDTO('FINACC', '1'))
     )
-    ->setSupplyChainEvent(
+    ->addSupplyChainEvent(
         new DateTime()
     )
     ->addPaymentmean(
@@ -315,7 +315,7 @@ $documentDTO
     ->addServiceCharge(
         (new InvoiceSuiteServiceChargeDTO(50, 'Logisitic Charge', 'S', 'VAT', 19))
     )
-    ->setSummation(
+    ->addSummation(
         (new InvoiceSuitesummationDTO(100, 10, 20, 90, 90 * 0.19, 50, 107.1, 100.0, 7.10, 0.0))
     );
 
@@ -410,7 +410,7 @@ $position->addNote(new InvoiceSuiteNoteDTO('Some content'))
             ->addContact(new InvoiceSuiteContactDTO("Alfons Baum", "Dispo", "030-10001", "030-10001", "alfzit@ultimate-user-gmbh.de"))
             ->addCommunication(new InvoiceSuiteCommunicationDTO("invoice@ultimate-user-gmbh.de", "EM"))
     )
-    ->setSupplyChainEvent(new DateTime())
+    ->addSupplyChainEvent(new DateTime())
     ->addBillingPeriod(new InvoiceSuiteDateRangeDTO(new DateTime("first day of this month"), new DateTime("last day of this month"), "Some Description"))
     ->addPostingReference(new InvoiceSuiteIdDTO("FINACC", "1"))
     ->addTax((new InvoiceSuiteTaxDTO('S', 'VAT', 100.00, 19.00, 19.0, 'Reason', 'ReasonCode', new DateTime(), 'DUECODE')))
