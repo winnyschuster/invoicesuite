@@ -1234,7 +1234,9 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractFormat
 
                 // Position supply chain event
 
-                $this->setDocumentPositionSupplyChainEvent($item->getSupplyChainEvent());
+                $item->firstSupplyChainEvent(
+                    fn(DateTimeInterface $supplyChainEvent) => $this->setDocumentPositionSupplyChainEvent($supplyChainEvent)
+                );
 
                 // Position billing period
 

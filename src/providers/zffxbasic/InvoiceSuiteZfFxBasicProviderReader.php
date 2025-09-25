@@ -2399,7 +2399,7 @@ class InvoiceSuiteZfFxBasicProviderReader extends InvoiceSuiteAbstractFormatProv
 
             $this->getDocumentPositionSupplyChainEvent($newDocumentPositionSupplyChainEvent);
 
-            $newDocumentPositionDTO->setSupplyChainEvent($newDocumentPositionSupplyChainEvent);
+            $newDocumentPositionDTO->addSupplyChainEvent($newDocumentPositionSupplyChainEvent);
 
             // Position billing period
 
