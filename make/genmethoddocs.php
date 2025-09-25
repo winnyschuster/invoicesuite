@@ -1,14 +1,23 @@
 <?php
 
 use horstoeko\invoicesuite\contracts\InvoiceSuiteBuilderContract;
+use horstoeko\invoicesuite\contracts\InvoiceSuiteReaderContract;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\providers\ubl\InvoiceSuiteUblInvoiceProviderBuilder;
 use horstoeko\invoicesuite\providers\ubl\InvoiceSuiteUblInvoiceProviderReader;
+use horstoeko\invoicesuite\providers\zffxbasic\InvoiceSuiteZfFxBasicProviderBuilder;
+use horstoeko\invoicesuite\providers\zffxbasic\InvoiceSuiteZfFxBasicProviderReader;
+use horstoeko\invoicesuite\providers\zffxbasicwl\InvoiceSuiteZfFxBasicWlProviderBuilder;
+use horstoeko\invoicesuite\providers\zffxbasicwl\InvoiceSuiteZfFxBasicWlProviderReader;
 use horstoeko\invoicesuite\providers\zffxcomfort\InvoiceSuiteZfFxComfortProviderBuilder;
 use horstoeko\invoicesuite\providers\zffxcomfort\InvoiceSuiteZfFxComfortProviderReader;
 use horstoeko\invoicesuite\providers\zffxextended\InvoiceSuiteZfFxExtendedProviderBuilder;
 use horstoeko\invoicesuite\providers\zffxextended\InvoiceSuiteZfFxExtendedProviderReader;
-use horstoeko\stringmanagement\StringUtils;
+use horstoeko\invoicesuite\providers\zffxminimum\InvoiceSuiteZfFxMinimumProviderBuilder;
+use horstoeko\invoicesuite\providers\zffxminimum\InvoiceSuiteZfFxMinimumProviderReader;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Printer;
 use phpDocumentor\Reflection\DocBlock\Tags\Param;
@@ -404,6 +413,12 @@ class MarkDownGenerator
      */
     public function saveToFile(string $filename): MarkDownGenerator
     {
+        $dir = InvoiceSuiteFileUtils::getFileDirectory($filename);
+
+        if (!is_dir($dir)) {
+            mkdir($dir, recursive: true);
+        }
+
         file_put_contents($filename, implode(PHP_EOL, $this->lines));
 
         return $this;
@@ -418,7 +433,7 @@ class MarkDownGenerator
      */
     private function addLine(string $string, ...$args): MarkDownGenerator
     {
-        if (StringUtils::stringIsNullOrEmpty($string)) {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($string)) {
             return $this;
         }
 
@@ -436,7 +451,7 @@ class MarkDownGenerator
      */
     private function addLineRaw(string $string, ...$args): MarkDownGenerator
     {
-        if (StringUtils::stringIsNullOrEmpty($string)) {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($string)) {
             return $this;
         }
 
@@ -663,12 +678,20 @@ class BatchMarkDownGenerator
 }
 
 BatchMarkDownGenerator::generate([
+    InvoiceSuiteReaderContract::class => dirname(__FILE__) . '/classes/Interface-InvoiceSuiteReaderContract.md',
     InvoiceSuiteBuilderContract::class => dirname(__FILE__) . '/classes/Interface-InvoiceSuiteBuilderContract.md',
+    InvoiceSuiteDocumentReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteDocumentReader.md',
     InvoiceSuiteDocumentBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteDocumentBuilder.md',
     InvoiceSuiteZfFxExtendedProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxExtendedProviderBuilder.md',
     InvoiceSuiteZfFxExtendedProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxExtendedProviderReader.md',
     InvoiceSuiteZfFxComfortProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxComfortProviderBuilder.md',
     InvoiceSuiteZfFxComfortProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxComfortProviderReader.md',
+    InvoiceSuiteZfFxBasicProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxBasicProviderBuilder.md',
+    InvoiceSuiteZfFxBasicProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxBasicProviderReader.md',
+    InvoiceSuiteZfFxBasicWlProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxBasicWlProviderBuilder.md',
+    InvoiceSuiteZfFxBasicWlProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxBasicWlProviderReader.md',
+    InvoiceSuiteZfFxMinimumProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxMinimumProviderBuilder.md',
+    InvoiceSuiteZfFxMinimumProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxMinimumProviderReader.md',
     InvoiceSuiteUblInvoiceProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteUblInvoiceProviderBuilder.md',
     InvoiceSuiteUblInvoiceProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteUblInvoiceProviderReader.md',
 ], [
