@@ -312,9 +312,9 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * The summation
      *
-     * @var InvoiceSuitesummationDTO|null
+     * @var array<horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO>
      */
-    protected ?InvoiceSuitesummationDTO $summation = null;
+    protected array $summations = [];
 
     /**
      * The Document positions
@@ -368,7 +368,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param array<InvoiceSuiteTaxDTO> $taxes The VAT breakdown
      * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The allowances/charges
      * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharges The allowances/charges
-     * @param InvoiceSuitesummationDTO|null $summation The summation
+     * @param InvoiceSuitesummationDTO> $summations The summation
      * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      */
     public function __construct(
@@ -414,7 +414,7 @@ class InvoiceSuiteDocumentHeaderDTO
         array $taxes = [],
         array $allowanceCharges = [],
         array $serviceCharges = [],
-        ?InvoiceSuitesummationDTO $summation = null,
+        array $summations = [],
         array $positions = [],
     ) {
         $this->setNumber($number);
@@ -459,7 +459,7 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setTaxes($taxes);
         $this->setAllowanceCharges($allowanceCharges);
         $this->setServiceCharges($serviceCharges);
-        $this->setSummation($summation);
+        $this->setSummations($summations);
         $this->setPositions($positions);
     }
 
@@ -3872,22 +3872,136 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Returns the summation
      *
-     * @return InvoiceSuitesummationDTO|null
+     * @return array<horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO>
      */
-    public function getSummation(): ?InvoiceSuitesummationDTO
+    public function getSummations(): array
     {
-        return $this->summation;
+        return $this->summations;
     }
 
     /**
      * Sets the summation
      *
-     * @param InvoiceSuitesummationDTO|null $summation The summation
+     * @param InvoiceSuitesummationDTO> $summations The summation
      * @return self
      */
-    public function setSummation(?InvoiceSuitesummationDTO $summation): self
+    public function setSummations(array $summations): self
     {
-        $this->summation = $summation;
+        $this->summations = $summations;
+
+        return $this;
+    }
+
+    /**
+     * Add single The summation
+     *
+     * @param InvoiceSuitesummationDTO $summation The summation
+     * @return self
+     */
+    public function addSummation(InvoiceSuitesummationDTO $summation): self
+    {
+        $this->summations[] = $summation;
+
+        return $this;
+    }
+
+    /**
+     * Get first The summation
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function firstSummation(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($summation = reset($this->summations)) !== false) {
+            $callback($summation);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The summation
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function nextSummation(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($summation = next($this->summations)) !== false) {
+            $callback($summation);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The summation
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function previousSummation(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($summation = prev($this->summations)) !== false) {
+            $callback($summation);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The summation
+     *
+     * @param callable $callback Callback to execute if an item was found
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @return self
+     */
+    public function lastSummation(callable $callback, ?callable $callbackElse = null): self
+    {
+        if (($summation = end($this->summations)) !== false) {
+            $callback($summation);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The summation and execute callback
+     *
+     * @param callable $callback Callback to execute for each item
+     * @param callable|null $callbackElse Callback to execute if no item was found
+     * @param int|null $limit Maximum number of loops
+     * @return self
+     */
+    public function forEachSummation(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
+    {
+        $count = 0;
+
+        foreach ($this->summations as $summation) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            $count++;
+
+            $callback($summation);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
 
         return $this;
     }

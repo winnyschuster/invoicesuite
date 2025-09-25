@@ -1730,7 +1730,7 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractFormatP
             $newDocumentRoungingAmount
         );
 
-        $newDocumentDTO->setSummation(
+        $newDocumentDTO->addSummation(
             new InvoiceSuitesummationDTO(
                 $newDocumentNetAmount,
                 $newDocumentChargeTotalAmount,

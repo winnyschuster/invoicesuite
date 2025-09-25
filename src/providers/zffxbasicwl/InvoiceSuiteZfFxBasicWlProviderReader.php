@@ -37,7 +37,6 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuitesummationLineDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
-use horstoeko\invoicesuite\models\zffxbasicwl\ram\SupplyChainTradeLineItemType;
 use horstoeko\invoicesuite\models\zffxbasicwl\ram\TradePaymentTermsType;
 use horstoeko\invoicesuite\models\zffxbasicwl\rsm\CrossIndustryInvoiceType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
@@ -1730,7 +1729,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractFormatPr
             $newDocumentRoungingAmount
         );
 
-        $newDocumentDTO->setSummation(
+        $newDocumentDTO->addSummation(
             new InvoiceSuitesummationDTO(
                 $newDocumentNetAmount,
                 $newDocumentChargeTotalAmount,

@@ -24,6 +24,7 @@ use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentExtDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\dto\InvoiceSuitesummationDTO;
 use horstoeko\invoicesuite\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\models\ubl\cac\AdditionalDocumentReference;
 use horstoeko\invoicesuite\models\ubl\cac\AllowanceCharge;
@@ -595,17 +596,19 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractFormatPr
 
         // Document-Level Summation
 
-        $this->setDocumentSummation(
-            $newDocumentDTO->getSummation()?->getNetAmount(),
-            $newDocumentDTO->getSummation()?->getChargeTotalAmount(),
-            $newDocumentDTO->getSummation()?->getDiscountTotalAmount(),
-            $newDocumentDTO->getSummation()?->getTaxBasisAmount(),
-            $newDocumentDTO->getSummation()?->getTaxTotalAmount(),
-            $newDocumentDTO->getSummation()?->getTaxTotalAmount2(),
-            $newDocumentDTO->getSummation()?->getGrossAmount(),
-            $newDocumentDTO->getSummation()?->getDueAmount(),
-            $newDocumentDTO->getSummation()?->getPrepaidAmount(),
-            $newDocumentDTO->getSummation()?->getRoungingAmount()
+        $newDocumentDTO->firstSummation(
+            fn(InvoiceSuitesummationDTO $item) => $this->setDocumentSummation(
+                $item->getNetAmount(),
+                $item->getChargeTotalAmount(),
+                $item->getDiscountTotalAmount(),
+                $item->getTaxBasisAmount(),
+                $item->getTaxTotalAmount(),
+                $item->getTaxTotalAmount2(),
+                $item->getGrossAmount(),
+                $item->getDueAmount(),
+                $item->getPrepaidAmount(),
+                $item->getRoungingAmount()
+            )
         );
 
         // Positions
