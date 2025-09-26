@@ -17,6 +17,7 @@ use LogicException;
 use Traversable;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
+use RectorPrefix202509\Illuminate\Contracts\Support\Arrayable;
 use Smalot\PdfParser\Parser as PdfParser;
 
 /**
@@ -28,7 +29,7 @@ use Smalot\PdfParser\Parser as PdfParser;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAccess
+class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAccess, Arrayable
 {
     /**
      * Array containing all the attached files found in PDF
