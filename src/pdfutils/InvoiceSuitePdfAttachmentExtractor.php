@@ -161,7 +161,9 @@ class InvoiceSuitePdfAttachmentExtractor
 
             $attachmentIndex++;
 
-            $callback($attachment, $attachmentIndex);
+            if ($callback($attachment, $attachmentIndex) === false) {
+                break;
+            };
         }
 
         if ($attachmentIndex === 0 && !is_null($callbackElse)) {
