@@ -319,7 +319,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * The summation
      *
-     * @var array<horstoeko\invoicesuite\documentdto\InvoiceSuitesummationDTO>
+     * @var array<InvoiceSuitesummationDTO>
      */
     protected array $summations = [];
 
@@ -375,7 +375,7 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param array<InvoiceSuiteTaxDTO> $taxes The VAT breakdown
      * @param array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The allowances/charges
      * @param array<InvoiceSuiteServiceChargeDTO> $serviceCharges The allowances/charges
-     * @param InvoiceSuitesummationDTO> $summations The summation
+     * @param array<InvoiceSuitesummationDTO> $summations The summation
      * @param array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      */
     public function __construct(
@@ -4000,7 +4000,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Returns the summation
      *
-     * @return array<horstoeko\invoicesuite\documentdto\InvoiceSuitesummationDTO>
+     * @return array<InvoiceSuitesummationDTO>
      */
     public function getSummations(): array
     {
@@ -4010,7 +4010,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Sets the summation
      *
-     * @param InvoiceSuitesummationDTO> $summations The summation
+     * @param array<InvoiceSuitesummationDTO> $summations The summation
      * @return self
      */
     public function setSummations(array $summations): self

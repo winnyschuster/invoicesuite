@@ -78,6 +78,11 @@
             "Composer\\Config::disableProcessTimeout",
             "./vendor/bin/phpmd src xml ./build/phpmd.xml"
         ],
+        "phpstancache": "@phpstan12cache",
+        "phpstan12cache": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/phpstan clear-result-cache"
+        ],
         "checkstyle": [
             "Composer\\Config::disableProcessTimeout",
             "@phpmd",
