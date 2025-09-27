@@ -28,6 +28,9 @@ use Smalot\PdfParser\Parser as PdfParser;
  * @author   horstoeko <horstoeko@erling.com.de>
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
+ *
+ * @implements ArrayAccess<int, InvoiceSuitePdfExtractorAttachment>
+ * @implements IteratorAggregate<int, InvoiceSuitePdfExtractorAttachment>
  */
 class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAccess
 {
