@@ -12,6 +12,7 @@ namespace horstoeko\invoicesuite\pdfutils;
 use ArrayAccess;
 use ArrayIterator;
 use Countable;
+use Exception;
 use IteratorAggregate;
 use LogicException;
 use Traversable;
