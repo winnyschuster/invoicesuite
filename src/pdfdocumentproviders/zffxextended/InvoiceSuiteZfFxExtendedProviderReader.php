@@ -17,11 +17,11 @@ class InvoiceSuiteZfFxExtendedProviderReader extends InvoiceSuiteAbstractPdfDocu
     /**
      * Initialize, Set contents to read
      *
-     * @param string $fromContent
+     * @param string $fromDocumentContent
      * @return InvoiceSuiteZfFxExtendedProviderReader
      */
-    public function setContents(string $fromContent): self
+    public function setContents(string $fromDocumentContent): self
     {
-        return $this->setDocumentReaderObject(InvoiceSuiteDocumentReader::createFromContent($fromContent));
+        return $this->setDocumentReaderObject(InvoiceSuiteDocumentReader::createFromContent($fromDocumentContent));
     }
 }
