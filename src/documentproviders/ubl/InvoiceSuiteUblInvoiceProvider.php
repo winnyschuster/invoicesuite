@@ -154,4 +154,34 @@ class InvoiceSuiteUblInvoiceProvider extends InvoiceSuiteAbstractDocumentFormatP
     {
         return InvoiceSuiteUblInvoiceProviderBuilder::class;
     }
+
+    /**
+     * Returns true if PDF support is available
+     *
+     * @return boolean
+     */
+    public function getPdfSupportAvailable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * Returns a list of valid PDF attachment filenames
+     *
+     * @return array<string>
+     */
+    public function getAllowedPdfAttachmentFilenames(): array
+    {
+        return [];
+    }
+
+    /**
+     * Get the default PDF attachment filename
+     *
+     * @return string
+     */
+    public function getDefaultPdfAttachmentFilename(): string
+    {
+        return "";
+    }
 }

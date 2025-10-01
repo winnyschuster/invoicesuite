@@ -23,4 +23,16 @@ class InvoiceSuiteArrayUtils
     {
         return is_array($value) ? $value : [$value];
     }
+
+    /**
+     * Search an array of string for a value (case-insensitive)
+     *
+     * @param array<string> $array
+     * @param string $search
+     * @return bool
+     */
+    public static function inArrayNoCase(array $array, string $search): bool
+    {
+        return in_array(strtolower($search), array_map('strtolower', $array));
+    }
 }

@@ -153,4 +153,39 @@ class InvoiceSuiteZfFxMinimumProvider extends InvoiceSuiteAbstractDocumentFormat
     {
         return InvoiceSuiteZfFxMinimumProviderBuilder::class;
     }
+
+    /**
+     * Returns true if PDF support is available
+     *
+     * @return boolean
+     */
+    public function getPdfSupportAvailable(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Returns a list of valid PDF attachment filenames
+     *
+     * @return array<string>
+     */
+    public function getAllowedPdfAttachmentFilenames(): array
+    {
+        return [
+            'ZUGFeRD-invoice.xml' /*1.0*/,
+            'zugferd-invoice.xml' /*2.0*/,
+            'factur-x.xml' /*2.1*/,
+            'xrechnung.xml'
+        ];
+    }
+
+    /**
+     * Get the default PDF attachment filename
+     *
+     * @return string
+     */
+    public function getDefaultPdfAttachmentFilename(): string
+    {
+        return "factur-x.xml";
+    }
 }

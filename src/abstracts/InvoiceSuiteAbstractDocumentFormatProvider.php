@@ -10,6 +10,7 @@
 namespace horstoeko\invoicesuite\abstracts;
 
 use Closure;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 
 /**
  * Class representing methods for a document format provider definition
@@ -22,6 +23,8 @@ use Closure;
  */
 abstract class InvoiceSuiteAbstractDocumentFormatProvider
 {
+    #region Document
+
     /**
      * The instance of the internal reader class
      *
@@ -121,6 +124,35 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      */
     abstract public function getBuilderClassName(): string;
 
+    #endregion
+
+    #region PDF
+
+    /**
+     * Returns true if PDF support is available
+     *
+     * @return boolean
+     */
+    abstract public function getPdfSupportAvailable(): bool;
+
+    /**
+     * Returns a list of valid PDF attachment filenames
+     *
+     * @return array<string>
+     */
+    abstract public function getAllowedPdfAttachmentFilenames(): array;
+
+    /**
+     * Get the default PDF attachment filename
+     *
+     * @return string
+     */
+    abstract public function getDefaultPdfAttachmentFilename(): string;
+
+    #endregion
+
+    #region General
+
     /**
      * Create a new reader instance
      *
@@ -202,4 +234,17 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
 
         return $this->getParameters()[$parameterName];
     }
+
+    /**
+     * Returns true if the given filename is a valid PDF attachment filename
+     *
+     * @param string $filename
+     * @return boolean
+     */
+    public function isValidPdfAttachmentFilename(string $filename): bool
+    {
+        return InvoiceSuiteArrayUtils::inArrayNoCase($this->getAllowedPdfAttachmentFilenames(), $filename);
+    }
+
+    #endregion
 }
