@@ -1,7 +1,5 @@
 <?php
 
-use horstoeko\invoicesuite\contracts\InvoiceSuiteDocumentBuilderContract;
-use horstoeko\invoicesuite\contracts\InvoiceSuiteDocumentReaderContract;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\documentproviders\ubl\InvoiceSuiteUblInvoiceProviderBuilder;
@@ -680,8 +678,6 @@ class BatchMarkDownGenerator
 
 BatchMarkDownGenerator::generate([
     InvoiceSuitePdfExtractor::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePdfExtractor.md',
-    InvoiceSuiteDocumentReaderContract::class => dirname(__FILE__) . '/classes/Interface-InvoiceSuiteReaderContract.md',
-    InvoiceSuiteDocumentBuilderContract::class => dirname(__FILE__) . '/classes/Interface-InvoiceSuiteBuilderContract.md',
     InvoiceSuiteDocumentReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteDocumentReader.md',
     InvoiceSuiteDocumentBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteDocumentBuilder.md',
     InvoiceSuiteZfFxExtendedProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxExtendedProviderBuilder.md',

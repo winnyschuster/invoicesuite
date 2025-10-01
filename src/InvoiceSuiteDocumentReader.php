@@ -13,7 +13,6 @@ use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
-use horstoeko\invoicesuite\contracts\InvoiceSuiteDocumentReaderContract;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
@@ -30,7 +29,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuiteDocumentReader implements InvoiceSuiteDocumentReaderContract
+class InvoiceSuiteDocumentReader
 {
     use HandlesCallForwarding;
     use HandlesCurrentDocumentFormatProvider;
