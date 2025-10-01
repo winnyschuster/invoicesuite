@@ -88,7 +88,7 @@ class InvoiceSuitePdfDocumentReader
             $formatProviders = array_filter(
                 $this->getRegisteredDocumentFormatProviders(),
                 fn($formatProvider) =>
-                    $formatProvider->isPdfSupportAvailable() &&
+                $formatProvider->isPdfSupportAvailable() &&
                     $formatProvider->isValidPdfAttachmentFilename($pdfExtractorAttachment->getAttachmentFilename()) &&
                     $formatProvider->isSatisfiableBySerializedContent($pdfExtractorAttachment->getAttachmentContent())
             );
@@ -102,10 +102,12 @@ class InvoiceSuitePdfDocumentReader
             $this->setCurrentDocumentFormatProvider($formatProvider);
             $this->getCurrentDocumentFormatProvider()->getReader()->deserializeFromContent($pdfExtractorAttachment->getAttachmentContent());
 
-            return;
+            break;
         }
 
-        throw new InvoiceSuiteFormatProviderNotFoundException("unknown");
+        if (is_null($this->getCurrentDocumentFormatProvider())) {
+            throw new InvoiceSuiteFormatProviderNotFoundException("unknown");
+        }
     }
 
     /**
