@@ -17,6 +17,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContent;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\pdf\InvoiceSuiteAbstractPdfConstructor;
 use JMS\Serializer\Exception\LogicException;
@@ -253,6 +254,310 @@ class InvoiceSuitePdfDocumentBuilder
     public function generatePdfDocumentAndSaveToFile(string $toFilename): self
     {
         $this->getCurrentPdfConstructor()->generatePdfDocumentAndSaveToFile($toFilename);
+
+        return $this;
+    }
+
+    /**
+     * Get the additional creator tool (e.g. the ERP software that called the PHP library)
+     *
+     * @return string
+     */
+    public function getAdditionalCreatorTool(): string
+    {
+        return $this->getCurrentPdfConstructor()->getAdditionalCreatorTool();
+    }
+
+    /**
+     * Set the additional creator tool (e.g. the ERP software that called the PHP library)
+     *
+     * @param string $newAdditionalCreatorTool
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setAdditionalCreatorTool(string $newAdditionalCreatorTool): self
+    {
+        $this->getCurrentPdfConstructor()->setAdditionalCreatorTool($newAdditionalCreatorTool);
+
+        return $this;
+    }
+
+    /**
+     * Get the relationship type of the attached invoice document
+     *
+     * @return string
+     */
+    public function getDocumentRelationshipType(): string
+    {
+        return $this->getCurrentPdfConstructor()->getDocumentRelationshipType();
+    }
+
+    /**
+     * Set the relationship type of the attached invoice document
+     *
+     * @param string $newDocumentRelationshipType
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDocumentRelationshipType(string $newDocumentRelationshipType): self
+    {
+        $this->getCurrentPdfConstructor()->setDocumentRelationshipType($newDocumentRelationshipType);
+
+        return $this;
+    }
+
+    /**
+     * Set the type of relationship for the XML attachment to "Data"
+     *
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDocumentRelationshipTypeToData()
+    {
+        $this->getCurrentPdfConstructor()->setDocumentRelationshipTypeToData();
+
+        return $this;
+    }
+
+    /**
+     * Set the type of relationship for the XML attachment to "Alternative"
+     *
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDocumentRelationshipTypeToAlternative()
+    {
+        $this->getCurrentPdfConstructor()->setDocumentRelationshipTypeToAlternative();
+
+        return $this;
+    }
+
+    /**
+     * Set the type of relationship for the XML attachment to "Source"
+     *
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDocumentRelationshipTypeToSource()
+    {
+        $this->getCurrentPdfConstructor()->setDocumentRelationshipTypeToSource();
+
+        return $this;
+    }
+
+    /**
+     * Get a list of additional documents to attach
+     *
+     * @return array<int, array{content: string, filename: string, displayname: string, relationship: string, mimetype: string}>
+     */
+    public function getaddAdditionalDocument(): array
+    {
+        return $this->getCurrentPdfConstructor()->getaddAdditionalDocument();
+    }
+
+    /**
+     * Add an additional document to attach by an existing file
+     *
+     * @param string $newFullFilename
+     * @param string $newDisplayName
+     * @param string $newRelationshipType
+     * @return InvoiceSuitePdfDocumentBuilder
+     * @throws InvoiceSuiteInvalidArgumentException
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteUnknownContent
+     */
+    public function addAdditionalDocumentByRealFile(string $newFullFilename, string $newDisplayName = "", string $newRelationshipType = ""): self
+    {
+        $this->getCurrentPdfConstructor()->addAdditionalDocumentByRealFile($newFullFilename, $newDisplayName, $newRelationshipType);
+
+        return $this;
+    }
+
+    /**
+     * Add an additional document to attach by a content string
+     *
+     * @param string $newContent
+     * @param string $newFilename
+     * @param string $newDisplayName
+     * @param string $newRelationshipType
+     * @return InvoiceSuitePdfDocumentBuilder
+     * @throws InvoiceSuiteInvalidArgumentException
+     * @throws InvoiceSuiteUnknownContent
+     */
+    public function addAdditionalDocumentByContent(string $newContent, string $newFilename, string $newDisplayName = "", string $newRelationshipType = ""): self
+    {
+        $this->getCurrentPdfConstructor()->addAdditionalDocumentByContent($newContent, $newFilename, $newDisplayName, $newRelationshipType);
+
+        return $this;
+    }
+
+    /**
+     * Set the status of deterministic mode
+     *
+     * @param bool $newDeterministicMode
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDeterministicMode(bool $newDeterministicMode): self
+    {
+        $this->getCurrentPdfConstructor()->setDeterministicMode($newDeterministicMode);
+
+        return $this;
+    }
+
+    /**
+     * Enable deterministic mode
+     *
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDeterministicModeToEnabled(): Self
+    {
+        $this->getCurrentPdfConstructor()->setDeterministicModeToEnabled();
+
+        return $this;
+    }
+
+    /**
+     * Disable deterministic mode
+     *
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setDeterministicModeToDisabled(): Self
+    {
+        $this->getCurrentPdfConstructor()->setDeterministicModeToDisabled();
+
+        return $this;
+    }
+
+    /**
+     * Get the template for author-metainformation
+     *
+     * @return string
+     */
+    public function getMetaInformationAuthorTemplate(): string
+    {
+        return $this->getCurrentPdfConstructor()->getMetaInformationAuthorTemplate();
+    }
+
+    /**
+     * Set the template for author-metainformation
+     *
+     * @param string $newMetaInformationAuthorTemplate
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setMetaInformationAuthorTemplate(string $newMetaInformationAuthorTemplate): self
+    {
+        $this->getCurrentPdfConstructor()->setMetaInformationAuthorTemplate($newMetaInformationAuthorTemplate);
+
+        return $this;
+    }
+
+    /**
+     * Get the template for keyword-metainformation
+     *
+     * @return string
+     */
+    public function getMetaInformationKeywordTemplate(): string
+    {
+        return $this->getCurrentPdfConstructor()->getMetaInformationKeywordTemplate();
+    }
+
+    /**
+     * Set the template for keyword-metainformation
+     *
+     * @param string $newMetaInformationKeywordTemplate
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setMetaInformationKeywordTemplate(string $newMetaInformationKeywordTemplate): self
+    {
+        $this->getCurrentPdfConstructor()->setMetaInformationKeywordTemplate($newMetaInformationKeywordTemplate);
+
+        return $this;
+    }
+
+    /**
+     * Get the template for title-metainformation
+     *
+     * @return string
+     */
+    public function getMetaInformationTitleTemplate(): string
+    {
+        return $this->getCurrentPdfConstructor()->getMetaInformationTitleTemplate();
+    }
+
+    /**
+     * Set the template for title-metainformation
+     *
+     * @param string $newMetaInformationTitleTemplate
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setMetaInformationTitleTemplate(string $newMetaInformationTitleTemplate): self
+    {
+        $this->getCurrentPdfConstructor()->setMetaInformationTitleTemplate($newMetaInformationTitleTemplate);
+
+        return $this;
+    }
+
+    /**
+     * Get the template for subject-metainformation
+     *
+     * @return string
+     */
+    public function getMetaInformationSubjectTemplate(): string
+    {
+        return $this->getCurrentPdfConstructor()->getMetaInformationSubjectTemplate();
+    }
+
+    /**
+     * Set the template for subject-metainformation
+     *
+     * @param string $newMetaInformationSubjectTemplate
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setMetaInformationSubjectTemplate(string $newMetaInformationSubjectTemplate): self
+    {
+        $this->getCurrentPdfConstructor()->setMetaInformationSubjectTemplate($newMetaInformationSubjectTemplate);
+
+        return $this;
+    }
+
+    /**
+     * Get the callback for metainformation
+     *
+     * @return callable|null
+     */
+    public function getMetaInformationCallback(): ?callable
+    {
+        return $this->getCurrentPdfConstructor()->getMetaInformationCallback();
+    }
+
+    /**
+     * Set the callback for metainformation
+     *
+     * @param null|callable $newMetaInformationCallback
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setMetaInformationCallback(?callable $newMetaInformationCallback): self
+    {
+        $this->getCurrentPdfConstructor()->setMetaInformationCallback($newMetaInformationCallback);
+
+        return $this;
+    }
+
+    /**
+     * Get the attachment pane visibility
+     *
+     * @return bool
+     */
+    public function getAttachmentPaneVisibility(): bool
+    {
+        return $this->getCurrentPdfConstructor()->getAttachmentPaneVisibility();
+    }
+
+    /**
+     * Set the attachment pane visibility
+     *
+     * @param boolean $newAttachmentPaneVisibility
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function setAttachmentPaneVisibility(bool $newAttachmentPaneVisibility): self
+    {
+        $this->getCurrentPdfConstructor()->setAttachmentPaneVisibility($newAttachmentPaneVisibility);
 
         return $this;
     }

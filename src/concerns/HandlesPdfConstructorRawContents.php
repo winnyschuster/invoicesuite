@@ -38,7 +38,7 @@ trait HandlesPdfConstructorRawContents
      * Set the invoice document content
      *
      * @param string $fromDocumentContent
-     * @return InvoiceSuitePdfDocumentBuilder
+     * @return self
      */
     protected function setRawDocumentContent(string $fromDocumentContent): self
     {
@@ -61,7 +61,7 @@ trait HandlesPdfConstructorRawContents
      * Set the PDF content
      *
      * @param string $fromPdfContent
-     * @return InvoiceSuitePdfDocumentBuilder
+     * @return self
      */
     protected function setRawPdfContent(string $fromPdfContent): self
     {
