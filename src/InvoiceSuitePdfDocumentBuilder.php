@@ -178,7 +178,7 @@ class InvoiceSuitePdfDocumentBuilder
             fn ($formatProvider) => (
                 $formatProvider->isPdfSupportAvailable() &&
                 is_subclass_of($formatProvider->getPdfConstructorClassName(), InvoiceSuiteAbstractPdfConstructor::class) &&
-                $formatProvider->isSatisfiableBySerializedContent($fromDocumentContent())
+                $formatProvider->isSatisfiableBySerializedContent($fromDocumentContent)
             )
         );
 

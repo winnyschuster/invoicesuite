@@ -9,6 +9,7 @@
 
 namespace horstoeko\invoicesuite\documentproviders\zffxextended;
 
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxExtendedPdfConstructor;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documentmodels\zffxextended\rsm\CrossIndustryInvoice;
 
@@ -198,6 +199,6 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
      */
     public function getPdfConstructorClassName(): string
     {
-        return "";
+        return InvoiceSuiteZffxExtendedPdfConstructor::class;
     }
 }

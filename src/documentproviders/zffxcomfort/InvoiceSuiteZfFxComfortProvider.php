@@ -9,8 +9,9 @@
 
 namespace horstoeko\invoicesuite\documentproviders\zffxcomfort;
 
-use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxComfortPdfConstructor;
 use horstoeko\invoicesuite\documentmodels\zffxcomfort\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 
 class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -196,6 +197,6 @@ class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormat
      */
     public function getPdfConstructorClassName(): string
     {
-        return "";
+        return InvoiceSuiteZffxComfortPdfConstructor::class;
     }
 }
