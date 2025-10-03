@@ -22,7 +22,7 @@ use horstoeko\invoicesuite\concerns\HandlesPdfConstructorRawContents;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuiteAbstractPdfConstructor
+abstract class InvoiceSuiteAbstractPdfConstructor
 {
     use HandlesCurrentDocumentFormatProvider;
     use HandlesPdfConstructorRawContents;
@@ -31,17 +31,60 @@ class InvoiceSuiteAbstractPdfConstructor
      * Constructor
      *
      * @param InvoiceSuiteAbstractDocumentFormatProvider $newProvider
-     * @param string $rawDocumentContent
-     * @param string $rawPdfContent
+     * @param string $newRawDocumentContent
+     * @param string $newRawPdfContent
      * @return self
      */
     public function __construct(
         InvoiceSuiteAbstractDocumentFormatProvider $newProvider,
-        string $rawDocumentContent,
-        string $rawPdfContent
+        string $newRawDocumentContent,
+        string $newRawPdfContent
     ) {
         $this->setCurrentDocumentFormatProvider($newProvider);
-        $this->setRawDocumentContent($rawDocumentContent);
-        $this->setRawPdfContent($rawPdfContent);
+        $this->setRawDocumentContent($newRawDocumentContent);
+        $this->setRawPdfContent($newRawPdfContent);
     }
+
+    /**
+     * Generate the final PDF and get the content as string
+     *
+     * @return string
+     */
+    public function generatePdfDocumentAndGetContent(): string
+    {
+        return $this->generatePdfDocument()->getGeneratedPdfDocumentContent();
+    }
+
+    /**
+     * Generate the final PDF and save it to a file
+     *
+     * @param string $toFilename
+     * @return InvoiceSuiteAbstractPdfConstructor
+     */
+    public function generatePdfDocumentAndSaveToFile(string $toFilename): self
+    {
+        return $this->generatePdfDocument()->saveGeneratedPdfDocumentToFile($toFilename);
+    }
+
+    /**
+     * Generate the final PDF
+     *
+     * @return InvoiceSuiteAbstractPdfConstructor
+     */
+    protected abstract function generatePdfDocument(): self;
+
+    /**
+     * Get the content of the generated PDF as string
+     *
+     * @return string
+     */
+    protected abstract function getGeneratedPdfDocumentContent(): string;
+
+    /**
+     * Save the content of the generated PDF to a file
+     *
+     * @param string $toFilename
+     * @return InvoiceSuiteAbstractPdfConstructor
+     */
+    protected abstract function saveGeneratedPdfDocumentToFile(string $toFilename): self;
 }

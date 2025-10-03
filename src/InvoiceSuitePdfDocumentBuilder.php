@@ -233,4 +233,27 @@ class InvoiceSuitePdfDocumentBuilder
 
         return $this;
     }
+
+    /**
+     * Get the content of the generated PDF as string
+     *
+     * @return string
+     */
+    public function generatePdfDocumentAndGetContent(): string
+    {
+        return $this->getCurrentPdfConstructor()->generatePdfDocumentAndGetContent();
+    }
+
+    /**
+     * Save the content of the generated PDF to a file
+     *
+     * @param string $toFilename
+     * @return InvoiceSuitePdfDocumentBuilder
+     */
+    public function generatePdfDocumentAndSaveToFile(string $toFilename): self
+    {
+        $this->getCurrentPdfConstructor()->generatePdfDocumentAndSaveToFile($toFilename);
+
+        return $this;
+    }
 }
