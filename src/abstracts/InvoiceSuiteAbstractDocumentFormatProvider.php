@@ -10,6 +10,7 @@
 namespace horstoeko\invoicesuite\abstracts;
 
 use Closure;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownProviderParameterException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 
 /**
@@ -245,6 +246,24 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             return $defaultValue;
+        }
+
+        return $this->getParameters()[$parameterName];
+    }
+
+    /**
+     * Returns the parameter value for the requested parameter. If the parameter does not exist an
+     * InvoiceSuiteUnknownProviderParameterException is thrown
+     *
+     * @param string $parameterName
+     * @param mixed $defaultValue
+     * @return mixed
+     * @throws InvoiceSuiteUnknownProviderParameterException
+     */
+    public function getFormatProviderRequiredParameterValue(string $parameterName, $defaultValue)
+    {
+        if (!$this->hasFormatProviderParameter($parameterName)) {
+            throw new InvoiceSuiteUnknownProviderParameterException($parameterName);
         }
 
         return $this->getParameters()[$parameterName];
