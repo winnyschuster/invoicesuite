@@ -9,9 +9,9 @@
 
 namespace horstoeko\invoicesuite\documentproviders\xrechnung;
 
-use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteXRechnungPdfConstructor;
-use horstoeko\invoicesuite\documentmodels\zffxcomfort\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\documentmodels\zffxcomfort\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfConstructor;
 
 class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -48,6 +48,8 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
                 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.2',
                 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.3',
             ],
+            'PdfXmpName' => 'XRECHNUNG',
+            'PdfXmüVersion' => '3.0',
         ];
     }
 
@@ -200,6 +202,6 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
      */
     public function getPdfConstructorClassName(): string
     {
-        return InvoiceSuiteXRechnungPdfConstructor::class;
+        return InvoiceSuiteZffxPdfConstructor::class;
     }
 }

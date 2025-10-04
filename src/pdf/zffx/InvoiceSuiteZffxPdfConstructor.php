@@ -12,13 +12,13 @@ namespace horstoeko\invoicesuite\pdf\zffx;
 use DateTime;
 use DOMXPath;
 use DOMDocument;
-use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
-use setasign\Fpdi\PdfParser\StreamReader as PdfStreamReader;
-use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfWriter;
-use horstoeko\invoicesuite\pdf\InvoiceSuiteAbstractPdfConstructor;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\pdf\InvoiceSuiteAbstractPdfConstructor;
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfWriter;
+use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use setasign\Fpdi\PdfParser\StreamReader as PdfStreamReader;
 
 /**
  * Class representing the basics for a ZUGFeRD/Factor-X PDF document constructor
@@ -29,7 +29,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-abstract class InvoiceSuiteZffxAbstractPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
+class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
 {
     /**
      * The PDF writer
@@ -293,12 +293,18 @@ abstract class InvoiceSuiteZffxAbstractPdfConstructor extends InvoiceSuiteAbstra
      *
      * @return string
      */
-    abstract protected function getXmlAttachmentXmpName(): string;
+    protected function getXmlAttachmentXmpName(): string
+    {
+        return $this->getCurrentDocumentFormatProvider()->getFormatProviderParameterValue('PdfXmpName', '');
+    }
 
     /**
      * Return the XMP veesion
      *
      * @return string
      */
-    abstract protected function getXmlAttachmentXmpVersion(): string;
+    protected function getXmlAttachmentXmpVersion(): string
+    {
+        return $this->getCurrentDocumentFormatProvider()->getFormatProviderParameterValue('PdfXmüVersion', '');
+    }
 }

@@ -9,9 +9,9 @@
 
 namespace horstoeko\invoicesuite\documentproviders\zffxextended;
 
-use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxExtendedPdfConstructor;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documentmodels\zffxextended\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfConstructor;
 
 class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -42,6 +42,8 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
             'ContextParameter' => 'urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended',
             'AlternativeContextParameters' => ['urn:cen.eu:en16931:2017#conformant#urn:zugferd.de:2p0:extended'],
             'BusinessProcess' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',
+            'PdfXmpName' => 'EXTENDED',
+            'PdfXmüVersion' => '1.0',
         ];
     }
 
@@ -199,6 +201,6 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
      */
     public function getPdfConstructorClassName(): string
     {
-        return InvoiceSuiteZffxExtendedPdfConstructor::class;
+        return InvoiceSuiteZffxPdfConstructor::class;
     }
 }

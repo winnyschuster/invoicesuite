@@ -9,9 +9,9 @@
 
 namespace horstoeko\invoicesuite\documentproviders\zffxbasicwl;
 
-use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxBasicWlPdfConstructor;
-use horstoeko\invoicesuite\documentmodels\zffxbasicwl\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\documentmodels\zffxbasicwl\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfConstructor;
 
 class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -41,6 +41,8 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractDocumentFormat
         return [
             'ContextParameter' => 'urn:factur-x.eu:1p0:basicwl',
             'AlternativeContextParameters' => ['urn:zugferd.de:2p0:basicwl'],
+            'PdfXmpName' => 'BASIC WL',
+            'PdfXmüVersion' => '1.0',
         ];
     }
 
@@ -198,6 +200,6 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractDocumentFormat
      */
     public function getPdfConstructorClassName(): string
     {
-        return InvoiceSuiteZffxBasicWlPdfConstructor::class;
+        return InvoiceSuiteZffxPdfConstructor::class;
     }
 }

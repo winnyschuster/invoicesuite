@@ -9,9 +9,9 @@
 
 namespace horstoeko\invoicesuite\documentproviders\zffxminimum;
 
-use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxMinimumPdfConstructor;
-use horstoeko\invoicesuite\documentmodels\zffxminimum\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\documentmodels\zffxminimum\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfConstructor;
 
 class InvoiceSuiteZfFxMinimumProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -40,6 +40,8 @@ class InvoiceSuiteZfFxMinimumProvider extends InvoiceSuiteAbstractDocumentFormat
         return [
             'ContextParameter' => 'urn:factur-x.eu:1p0:minimum',
             'AlternativeContextParameters' => ['urn:zugferd.de:2p0:minimum'],
+            'PdfXmpName' => 'MINIMUM',
+            'PdfXmüVersion' => '1.0',
         ];
     }
 
@@ -197,6 +199,6 @@ class InvoiceSuiteZfFxMinimumProvider extends InvoiceSuiteAbstractDocumentFormat
      */
     public function getPdfConstructorClassName(): string
     {
-        return InvoiceSuiteZffxMinimumPdfConstructor::class;
+        return InvoiceSuiteZffxPdfConstructor::class;
     }
 }
