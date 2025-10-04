@@ -335,6 +335,14 @@ class UtilsTest extends TestCase
         $this->assertNotNull(InvoiceSuiteStringUtils::asNullWhenEmpty($stringValue));
     }
 
+    public function testInvoiceSuiteStringUtilsCreateGuid(): void
+    {
+        $guid_regex = "/^(?:\\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\\}{0,1})$/";
+
+        $this->assertSame(1, preg_match($guid_regex, InvoiceSuiteStringUtils::createGuid()));
+        $this->assertSame(1, preg_match($guid_regex, InvoiceSuiteStringUtils::createGuid(false)));
+    }
+
     #endregion
 
     #region InvoiceSuitePointerUtils
