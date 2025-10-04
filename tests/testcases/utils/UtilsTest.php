@@ -13,7 +13,9 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteClassFinder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
@@ -658,6 +660,135 @@ class UtilsTest extends TestCase
         $this->assertIsArray($classNames);
         $this->assertCount(7, $classNames);
         $this->assertFileExists($cacheFullFilename);
+    }
+
+    #endregion
+
+    #region InvoiceSuiteFileUtils
+
+    public function testInvoiceSuiteFileUtils(): void
+    {
+        $this->assertTrue(InvoiceSuiteFileUtils::fileExists(__FILE__, true));
+        $this->assertFalse(InvoiceSuiteFileUtils::fileExists(__FILE__ . ".xxx", true));
+
+        $this->assertSame("SSBhbSBhIHRlc3RmaWxl", substr(InvoiceSuiteFileUtils::fileToBase64(__DIR__ . "/../../assets/99_FileUtilsTest_tobase64.txt"), 0, 20));
+        $this->assertEquals(false, InvoiceSuiteFileUtils::fileToBase64(__FILE__ . ".xxx"));
+
+        $sourceFilename = __DIR__ . "/../../assets/99_FileUtilsTest_tobase64.txt";
+        $destinationFilename = __DIR__ . "/../../assets/encbase64.txt";
+        $this->assertTrue(InvoiceSuiteFileUtils::fileToBase64File($sourceFilename, $destinationFilename));
+        $this->assertTrue(InvoiceSuiteFileUtils::fileExists($destinationFilename));
+        $destinationFilenameContent = file_get_contents($destinationFilename);
+        $this->assertSame("SSBhbSBhIHRlc3RmaWxl", substr($destinationFilenameContent, 0, 20));
+        @unlink($destinationFilename);
+
+        $sourceFilename = __DIR__ . "/../../assets/tobase64_2.txt";
+        $destinationFilename = __DIR__ . "/../../assets/encbase64_2.txt";
+        $this->assertFalse(InvoiceSuiteFileUtils::fileToBase64File($sourceFilename, $destinationFilename));
+        $this->assertFalse(InvoiceSuiteFileUtils::fileExists($destinationFilename));
+
+        $sourceData = "SSBhbSBhIHRlc3RmaWxlLiBEb24ndCBtb2RpZnkgbWUuLi4=";
+        $destinationFilename = __DIR__ . "/../../assets/decbase64.txt";
+        $this->assertTrue(InvoiceSuiteFileUtils::base64ToFile($sourceData, $destinationFilename));
+        $this->assertTrue(InvoiceSuiteFileUtils::fileExists($destinationFilename));
+        $destinationFilenameContent = file_get_contents($destinationFilename);
+        $this->assertSame("I am a testfile. Don", substr($destinationFilenameContent, 0, 20));
+        @unlink($destinationFilename);
+
+        $sourceFilename = __DIR__ . "/../../assets/99_FileUtilsTest_base64.txt";
+        $destinationFilename = __DIR__ . "/../../assets/decbase64.txt";
+        $this->assertTrue(InvoiceSuiteFileUtils::base64FileToFile($sourceFilename, $destinationFilename));
+        $this->assertTrue(InvoiceSuiteFileUtils::fileExists($destinationFilename));
+        $destinationFilenameContent = file_get_contents($destinationFilename);
+        $this->assertSame("I am a testfile. Don", substr($destinationFilenameContent, 0, 20));
+        @unlink($destinationFilename);
+
+        $this->assertSame("file.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file", "txt"));
+        $this->assertSame("file.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file.", "txt"));
+        $this->assertSame("file.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file.", ".txt"));
+        $this->assertSame("file.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file..", "txt"));
+        $this->assertSame("file.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file..", "..txt"));
+        $this->assertSame("file.x.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file.x", "txt"));
+        $this->assertSame("file.x.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("file.x", ".txt"));
+        $this->assertSame("/home/john/file.txt", InvoiceSuiteFileUtils::combineFilenameWithFileextension("/home/john/file", "txt"));
+
+        $this->assertSame("/home/john", InvoiceSuiteFileUtils::getFileDirectory("/home/john/file.txt"));
+        $this->assertSame("/home/john", InvoiceSuiteFileUtils::getFileDirectory("/home/john/file.x.txt"));
+
+        $this->assertSame("file.txt", InvoiceSuiteFileUtils::getFilenameWithExtension("/home/john/file.txt"));
+        $this->assertSame("file.x.txt", InvoiceSuiteFileUtils::getFilenameWithExtension("/home/john/file.x.txt"));
+
+        $this->assertSame("file", InvoiceSuiteFileUtils::getFilenameWithoutExtension("/home/john/file.txt"));
+        $this->assertSame("file.x", InvoiceSuiteFileUtils::getFilenameWithoutExtension("/home/john/file.x.txt"));
+
+        $this->assertSame(".txt", InvoiceSuiteFileUtils::getFileExtension("file.txt", true));
+        $this->assertSame(".txt", InvoiceSuiteFileUtils::getFileExtension("file.x.txt", true));
+        $this->assertSame(".txt", InvoiceSuiteFileUtils::getFileExtension("/home/john/file.x.txt", true));
+        $this->assertSame("txt", InvoiceSuiteFileUtils::getFileExtension("file.txt"));
+        $this->assertSame("txt", InvoiceSuiteFileUtils::getFileExtension("file.x.txt"));
+        $this->assertSame("txt", InvoiceSuiteFileUtils::getFileExtension("/home/john/file.x.txt"));
+
+        $ds = DIRECTORY_SEPARATOR;
+
+        $this->assertSame(sprintf('.%sfile.new', $ds), InvoiceSuiteFileUtils::changeFileExtension("file.txt", "new"));
+        $this->assertSame(sprintf('.%sfile.new', $ds), InvoiceSuiteFileUtils::changeFileExtension("file.txt", ".new"));
+        $this->assertSame(sprintf('%shome%sjohn%sfile.new', $ds, $ds, $ds), InvoiceSuiteFileUtils::changeFileExtension(sprintf('%shome%sjohn%sfile.txt', $ds, $ds, $ds), "new"));
+        $this->assertSame(sprintf('%shome%sjohn%sfile.new', $ds, $ds, $ds), InvoiceSuiteFileUtils::changeFileExtension(sprintf('%shome%sjohn%sfile.txt', $ds, $ds, $ds), ".new"));
+
+        $this->assertSame(35, InvoiceSuiteFileUtils::getFileSize(__DIR__ . "/../../assets/99_FileUtilsTest_tobase64.txt"));
+        $this->assertSame(0, InvoiceSuiteFileUtils::getFileSize(__DIR__ . "/../../assets/filenotexists.txt"));
+
+        $this->assertSame(35, InvoiceSuiteFileUtils::getFileSizeFromBase64String("SSBhbSBhIHRlc3RmaWxlLiBEb24ndCBtb2RpZnkgbWUuLi4="));
+        $this->assertSame(0, InvoiceSuiteFileUtils::getFileSizeFromBase64String(""));
+    }
+
+    #endregion
+
+    #region InvoiceSuiteFileUtils
+
+    public function testInvoiceSuitePathUtils(): void
+    {
+        $ds = DIRECTORY_SEPARATOR;
+
+        $this->assertSame(sprintf('%shome%suser%stest.txt', $ds, $ds, $ds), InvoiceSuitePathUtils::combinePathWithFile(sprintf('%shome%suser', $ds, $ds), "test.txt"));
+        $this->assertSame(sprintf('%shome%suser%stest.txt', $ds, $ds, $ds), InvoiceSuitePathUtils::combinePathWithFile(sprintf('%shome%suser%s', $ds, $ds, $ds), "test.txt"));
+        $this->assertSame(sprintf('%shome%suser%stest.txt', $ds, $ds, $ds), InvoiceSuitePathUtils::combinePathWithFile(sprintf('%shome%suser', $ds, $ds), $ds . 'test.txt'));
+
+        $this->assertSame(sprintf('%shome%suser', $ds, $ds), InvoiceSuitePathUtils::combinePathWithPath($ds . 'home', "user"));
+        $this->assertSame(sprintf('%shome%suser', $ds, $ds), InvoiceSuitePathUtils::combinePathWithPath($ds . 'home', $ds . 'user'));
+        $this->assertSame(sprintf('%shome%suser', $ds, $ds), InvoiceSuitePathUtils::combinePathWithPath(sprintf('%shome%s%s', $ds, $ds, $ds), $ds . 'user'));
+        $this->assertSame(sprintf('%shome%suser', $ds, $ds), InvoiceSuitePathUtils::combinePathWithPath(sprintf('%shome%s%s', $ds, $ds, $ds), "user"));
+
+        $this->assertSame(sprintf('home%suser%sjohn', $ds, $ds), InvoiceSuitePathUtils::combineAllPaths("home", "user", "john"));
+        $this->assertSame(sprintf('%shome%suser%sjohn', $ds, $ds, $ds), InvoiceSuitePathUtils::combineAllPaths($ds . 'home', "user", "john"));
+        $this->assertSame(sprintf('%shome%suser%sjohn', $ds, $ds, $ds), InvoiceSuitePathUtils::combineAllPaths($ds . 'home', $ds . 'user', "john"));
+        $this->assertSame(sprintf('%shome%suser%sjohn', $ds, $ds, $ds), InvoiceSuitePathUtils::combineAllPaths($ds . 'home', $ds . 'user', $ds . 'john'));
+        $this->assertSame(sprintf('%shome%suser%sjohn', $ds, $ds, $ds), InvoiceSuitePathUtils::combineAllPaths(sprintf('%shome%s%s', $ds, $ds, $ds), "user", "john"));
+        $this->assertSame(sprintf('%shome%suser%sjohn', $ds, $ds, $ds), InvoiceSuitePathUtils::combineAllPaths(sprintf('%shome%s%s', $ds, $ds, $ds), sprintf('%suser%s%s', $ds, $ds, $ds), "john"));
+        $this->assertSame(sprintf('%shome%suser%sjohn', $ds, $ds, $ds), InvoiceSuitePathUtils::combineAllPaths(sprintf('%shome%s%s', $ds, $ds, $ds), sprintf('%suser%s%s', $ds, $ds, $ds), $ds . 'john'));
+
+        $this->assertNotSame("", InvoiceSuitePathUtils::getHashedDirectory(3));
+        $this->assertSame(3, substr_count(InvoiceSuitePathUtils::getHashedDirectory(3), DIRECTORY_SEPARATOR));
+        $this->assertStringStartsWith(DIRECTORY_SEPARATOR, InvoiceSuitePathUtils::getHashedDirectory(3));
+        $this->assertStringEndsNotWith(DIRECTORY_SEPARATOR, InvoiceSuitePathUtils::getHashedDirectory(3));
+        $this->expectException(\Exception::class);
+        InvoiceSuitePathUtils::getHashedDirectory(0);
+
+        $baseDirectory = InvoiceSuitePathUtils::combineAllPaths(__DIR__, "test");
+        $createdDirectory = InvoiceSuitePathUtils::createHashedDirectory($baseDirectory, 3);
+
+        $this->assertIsString($createdDirectory);
+        $this->assertNotSame("", InvoiceSuitePathUtils::getHashedDirectory(3));
+        $this->assertSame(3, substr_count(InvoiceSuitePathUtils::getHashedDirectory(3), DIRECTORY_SEPARATOR));
+        $this->assertStringStartsWith($ds, InvoiceSuitePathUtils::getHashedDirectory(3));
+        $this->assertStringEndsNotWith($ds, InvoiceSuitePathUtils::getHashedDirectory(3));
+        $this->assertDirectoryExists($createdDirectory);
+        $this->assertFileExists($createdDirectory);
+
+        InvoiceSuitePathUtils::recursiveRemoveDirectory($baseDirectory);
+
+        $this->assertDirectoryDoesNotExist($createdDirectory);
+        $this->assertFileDoesNotExist($createdDirectory);
     }
 
     #endregion
