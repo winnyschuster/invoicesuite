@@ -12,6 +12,17 @@
             <file>../tests/testcases/concerns/HandlesSerializerTest.php</file>
             <file>../tests/testcases/concerns/HandlesPdfConstructorRawContentsTest.php</file>
         </testsuite>
+        <testsuite name="dto">
+            <file>../tests/testcases/documentdto/InvoiceSuiteAddressDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteAllowanceChargeDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteContactDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteDateRangeDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteIdDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteMeasureDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteNoteDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteOrganisationDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuitePaymentMeanDTOTest.php</file>
+        </testsuite>
         <testsuite name="providers">
             <file>../tests/testcases/documentproviders/ZfFxExtendedProviderTest.php</file>
             <file>../tests/testcases/documentproviders/ZfFxExtendedProviderBuilderTest.php</file>
