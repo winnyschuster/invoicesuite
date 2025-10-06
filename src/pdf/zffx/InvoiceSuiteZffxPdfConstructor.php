@@ -9,16 +9,24 @@
 
 namespace horstoeko\invoicesuite\pdf\zffx;
 
+use BadMethodCallException;
 use DateTime;
 use DOMXPath;
 use DOMDocument;
+use Exception;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\pdf\InvoiceSuiteAbstractPdfConstructor;
 use horstoeko\invoicesuite\pdf\zffx\InvoiceSuiteZffxPdfWriter;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use Random\RandomException;
+use setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException;
+use setasign\Fpdi\PdfParser\Filter\FilterException;
+use setasign\Fpdi\PdfParser\PdfParserException;
 use setasign\Fpdi\PdfParser\StreamReader as PdfStreamReader;
+use setasign\Fpdi\PdfParser\Type\PdfTypeException;
+use setasign\Fpdi\PdfReader\PdfReaderException;
 
 /**
  * Class representing the basics for a ZUGFeRD/Factor-X PDF document constructor
@@ -60,6 +68,13 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * Generate the final PDF
      *
      * @return InvoiceSuiteAbstractPdfConstructor
+     * @throws PdfParserException
+     * @throws CrossReferenceException
+     * @throws FilterException
+     * @throws PdfTypeException
+     * @throws PdfReaderException
+     * @throws BadMethodCallException
+     * @throws RandomException
      */
     protected function generatePdfDocument(): InvoiceSuiteAbstractPdfConstructor
     {
@@ -116,11 +131,24 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
         return $this;
     }
 
+    /**
+     * Get the content of the generated PDF as string
+     *
+     * @return string
+     * @throws Exception
+     */
     protected function getGeneratedPdfDocumentContent(): string
     {
         return $this->pdfWriter->Output('S');
     }
 
+    /**
+     * Save the content of the generated PDF to a file
+     *
+     * @param string $toFilename
+     * @return InvoiceSuiteAbstractPdfConstructor
+     * @throws Exception
+     */
     protected function saveGeneratedPdfDocumentToFile(string $toFilename): InvoiceSuiteAbstractPdfConstructor
     {
         $this->pdfWriter->Output('F', $toFilename);
