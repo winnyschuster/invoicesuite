@@ -79,33 +79,33 @@ class InvoiceSuitePartyDTO
     /**
      * Constructor
      *
-     * @param array<string> $name Party names
-     * @param array<InvoiceSuiteIdDTO> $id Party IDs
-     * @param array<InvoiceSuiteIdDTO> $globalId Party global IDs
-     * @param array<InvoiceSuiteIdDTO> $taxRegistration Party tax registrations
-     * @param array<InvoiceSuiteAddressDTO> $address Party addresses
-     * @param array<InvoiceSuiteOrganisationDTO> $legalOrganisation Party legal organisations
-     * @param array<InvoiceSuiteContactDTO> $contact Party contacts
-     * @param array<InvoiceSuiteCommunicationDTO> $communication Party electronic communications
+     * @param array<string> $names Party names
+     * @param array<InvoiceSuiteIdDTO> $ids Party IDs
+     * @param array<InvoiceSuiteIdDTO> $globalIds Party global IDs
+     * @param array<InvoiceSuiteIdDTO> $taxRegistrations Party tax registrations
+     * @param array<InvoiceSuiteAddressDTO> $addres Party addresses
+     * @param array<InvoiceSuiteOrganisationDTO> $legalOrganisations Party legal organisations
+     * @param array<InvoiceSuiteContactDTO> $contacts Party contacts
+     * @param array<InvoiceSuiteCommunicationDTO> $communications Party electronic communications
      */
     public function __construct(
-        array $name = [],
-        array $id = [],
-        array $globalId = [],
-        array $taxRegistration = [],
-        array $address = [],
-        array $legalOrganisation = [],
-        array $contact = [],
-        array $communication = [],
+        array $names = [],
+        array $ids = [],
+        array $globalIds = [],
+        array $taxRegistrations = [],
+        array $addres = [],
+        array $legalOrganisations = [],
+        array $contacts = [],
+        array $communications = [],
     ) {
-        $this->setNames($name);
-        $this->setIds($id);
-        $this->setGlobalIds($globalId);
-        $this->setTaxRegistrations($taxRegistration);
-        $this->setAddresses($address);
-        $this->setLegalOrganisations($legalOrganisation);
-        $this->setContacts($contact);
-        $this->setCommunications($communication);
+        $this->setNames($names);
+        $this->setIds($ids);
+        $this->setGlobalIds($globalIds);
+        $this->setTaxRegistrations($taxRegistrations);
+        $this->setAddres($addres);
+        $this->setLegalOrganisations($legalOrganisations);
+        $this->setContacts($contacts);
+        $this->setCommunications($communications);
     }
 
     /**
@@ -121,12 +121,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party names
      *
-     * @param array<string> $name Party names
+     * @param array<string> $names Party names
      * @return self
      */
-    public function setNames(array $name): self
+    public function setNames(array $names): self
     {
-        $this->names = $name;
+        $this->names = $names;
 
         return $this;
     }
@@ -258,12 +258,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party IDs
      *
-     * @param array<InvoiceSuiteIdDTO> $id Party IDs
+     * @param array<InvoiceSuiteIdDTO> $ids Party IDs
      * @return self
      */
-    public function setIds(array $id): self
+    public function setIds(array $ids): self
     {
-        $this->ids = $id;
+        $this->ids = $ids;
 
         return $this;
     }
@@ -395,12 +395,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party global IDs
      *
-     * @param array<InvoiceSuiteIdDTO> $globalId Party global IDs
+     * @param array<InvoiceSuiteIdDTO> $globalIds Party global IDs
      * @return self
      */
-    public function setGlobalIds(array $globalId): self
+    public function setGlobalIds(array $globalIds): self
     {
-        $this->globalIds = $globalId;
+        $this->globalIds = $globalIds;
 
         return $this;
     }
@@ -532,12 +532,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party tax registrations
      *
-     * @param array<InvoiceSuiteIdDTO> $taxRegistration Party tax registrations
+     * @param array<InvoiceSuiteIdDTO> $taxRegistrations Party tax registrations
      * @return self
      */
-    public function setTaxRegistrations(array $taxRegistration): self
+    public function setTaxRegistrations(array $taxRegistrations): self
     {
-        $this->taxRegistrations = $taxRegistration;
+        $this->taxRegistrations = $taxRegistrations;
 
         return $this;
     }
@@ -664,7 +664,7 @@ class InvoiceSuitePartyDTO
      *
      * @return array<InvoiceSuiteAddressDTO>
      */
-    public function getAddresses(): array
+    public function getAddres(): array
     {
         return $this->addresses;
     }
@@ -672,12 +672,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party addresses
      *
-     * @param array<InvoiceSuiteAddressDTO> $address Party addresses
+     * @param array<InvoiceSuiteAddressDTO> $addres Party addresses
      * @return self
      */
-    public function setAddresses(array $address): self
+    public function setAddres(array $addres): self
     {
-        $this->addresses = $address;
+        $this->addresses = $addres;
 
         return $this;
     }
@@ -688,7 +688,7 @@ class InvoiceSuitePartyDTO
      * @param InvoiceSuiteAddressDTO $address Party addresses
      * @return self
      */
-    public function addAddress(InvoiceSuiteAddressDTO $address): self
+    public function addAddre(InvoiceSuiteAddressDTO $address): self
     {
         $this->addresses[] = $address;
 
@@ -702,7 +702,7 @@ class InvoiceSuitePartyDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function firstAddress(callable $callback, ?callable $callbackElse = null): self
+    public function firstAddre(callable $callback, ?callable $callbackElse = null): self
     {
         if (($address = reset($this->addresses)) !== false) {
             $callback($address);
@@ -720,7 +720,7 @@ class InvoiceSuitePartyDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function nextAddress(callable $callback, ?callable $callbackElse = null): self
+    public function nextAddre(callable $callback, ?callable $callbackElse = null): self
     {
         if (($address = next($this->addresses)) !== false) {
             $callback($address);
@@ -756,7 +756,7 @@ class InvoiceSuitePartyDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function lastAddress(callable $callback, ?callable $callbackElse = null): self
+    public function lastAddre(callable $callback, ?callable $callbackElse = null): self
     {
         if (($address = end($this->addresses)) !== false) {
             $callback($address);
@@ -775,7 +775,7 @@ class InvoiceSuitePartyDTO
      * @param int|null $limit Maximum number of loops
      * @return self
      */
-    public function forEachAddress(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
+    public function forEachAddre(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
     {
         $count = 0;
 
@@ -809,12 +809,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party legal organisations
      *
-     * @param array<InvoiceSuiteOrganisationDTO> $legalOrganisation Party legal organisations
+     * @param array<InvoiceSuiteOrganisationDTO> $legalOrganisations Party legal organisations
      * @return self
      */
-    public function setLegalOrganisations(array $legalOrganisation): self
+    public function setLegalOrganisations(array $legalOrganisations): self
     {
-        $this->legalOrganisations = $legalOrganisation;
+        $this->legalOrganisations = $legalOrganisations;
 
         return $this;
     }
@@ -949,12 +949,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party contacts
      *
-     * @param array<InvoiceSuiteContactDTO> $contact Party contacts
+     * @param array<InvoiceSuiteContactDTO> $contacts Party contacts
      * @return self
      */
-    public function setContacts(array $contact): self
+    public function setContacts(array $contacts): self
     {
-        $this->contacts = $contact;
+        $this->contacts = $contacts;
 
         return $this;
     }
@@ -1086,12 +1086,12 @@ class InvoiceSuitePartyDTO
     /**
      * Sets party electronic communications
      *
-     * @param array<InvoiceSuiteCommunicationDTO> $communication Party electronic communications
+     * @param array<InvoiceSuiteCommunicationDTO> $communications Party electronic communications
      * @return self
      */
-    public function setCommunications(array $communication): self
+    public function setCommunications(array $communications): self
     {
-        $this->communications = $communication;
+        $this->communications = $communications;
 
         return $this;
     }
