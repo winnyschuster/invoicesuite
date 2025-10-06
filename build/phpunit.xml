@@ -15,6 +15,7 @@
         <testsuite name="dto">
             <file>../tests/testcases/documentdto/InvoiceSuiteAddressDTOTest.php</file>
             <file>../tests/testcases/documentdto/InvoiceSuiteAllowanceChargeDTOTest.php</file>
+            <file>../tests/testcases/documentdto/InvoiceSuiteCommunicationDTOTest.php</file>
             <file>../tests/testcases/documentdto/InvoiceSuiteContactDTOTest.php</file>
             <file>../tests/testcases/documentdto/InvoiceSuiteDateRangeDTOTest.php</file>
             <file>../tests/testcases/documentdto/InvoiceSuiteDocumentHeaderDTOTest.php</file>
