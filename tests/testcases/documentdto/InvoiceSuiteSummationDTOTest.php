@@ -12,6 +12,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
+
         $this->assertNull($invoiceSuiteSummationDTO->getNetAmount());
         $this->assertNull($invoiceSuiteSummationDTO->getChargeTotalAmount());
         $this->assertNull($invoiceSuiteSummationDTO->getDiscountTotalAmount());
@@ -29,6 +30,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $netAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setNetAmount($netAmountValue);
+
         $this->assertSame($netAmountValue, $invoiceSuiteSummationDTO->getNetAmount());
     }
 
@@ -37,6 +39,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $chargeTotalAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setChargeTotalAmount($chargeTotalAmountValue);
+
         $this->assertSame($chargeTotalAmountValue, $invoiceSuiteSummationDTO->getChargeTotalAmount());
     }
 
@@ -45,6 +48,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $discountTotalAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setDiscountTotalAmount($discountTotalAmountValue);
+
         $this->assertSame($discountTotalAmountValue, $invoiceSuiteSummationDTO->getDiscountTotalAmount());
     }
 
@@ -53,6 +57,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $taxBasisAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setTaxBasisAmount($taxBasisAmountValue);
+
         $this->assertSame($taxBasisAmountValue, $invoiceSuiteSummationDTO->getTaxBasisAmount());
     }
 
@@ -61,6 +66,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $taxTotalAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setTaxTotalAmount($taxTotalAmountValue);
+
         $this->assertSame($taxTotalAmountValue, $invoiceSuiteSummationDTO->getTaxTotalAmount());
     }
 
@@ -69,6 +75,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $taxTotalAmount2Value = 123.45;
         $invoiceSuiteSummationDTO->setTaxTotalAmount2($taxTotalAmount2Value);
+
         $this->assertSame($taxTotalAmount2Value, $invoiceSuiteSummationDTO->getTaxTotalAmount2());
     }
 
@@ -77,6 +84,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $grossAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setGrossAmount($grossAmountValue);
+
         $this->assertSame($grossAmountValue, $invoiceSuiteSummationDTO->getGrossAmount());
     }
 
@@ -85,6 +93,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $dueAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setDueAmount($dueAmountValue);
+
         $this->assertSame($dueAmountValue, $invoiceSuiteSummationDTO->getDueAmount());
     }
 
@@ -93,6 +102,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $prepaidAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setPrepaidAmount($prepaidAmountValue);
+
         $this->assertSame($prepaidAmountValue, $invoiceSuiteSummationDTO->getPrepaidAmount());
     }
 
@@ -101,6 +111,7 @@ class InvoiceSuiteSummationDTOTest extends TestCase
         $invoiceSuiteSummationDTO = new InvoiceSuiteSummationDTO();
         $roungingAmountValue = 123.45;
         $invoiceSuiteSummationDTO->setRoungingAmount($roungingAmountValue);
+
         $this->assertSame($roungingAmountValue, $invoiceSuiteSummationDTO->getRoungingAmount());
     }
 }

@@ -12,6 +12,7 @@ class InvoiceSuiteServiceChargeDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteServiceChargeDTO = new InvoiceSuiteServiceChargeDTO();
+
         $this->assertNull($invoiceSuiteServiceChargeDTO->getAmount());
         $this->assertNull($invoiceSuiteServiceChargeDTO->getDescription());
         $this->assertNull($invoiceSuiteServiceChargeDTO->getTaxCategory());
@@ -24,6 +25,7 @@ class InvoiceSuiteServiceChargeDTOTest extends TestCase
         $invoiceSuiteServiceChargeDTO = new InvoiceSuiteServiceChargeDTO();
         $amountValue = 123.45;
         $invoiceSuiteServiceChargeDTO->setAmount($amountValue);
+
         $this->assertSame($amountValue, $invoiceSuiteServiceChargeDTO->getAmount());
     }
 
@@ -32,6 +34,7 @@ class InvoiceSuiteServiceChargeDTOTest extends TestCase
         $invoiceSuiteServiceChargeDTO = new InvoiceSuiteServiceChargeDTO();
         $descriptionValue = "Example Value";
         $invoiceSuiteServiceChargeDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuiteServiceChargeDTO->getDescription());
     }
 
@@ -40,6 +43,7 @@ class InvoiceSuiteServiceChargeDTOTest extends TestCase
         $invoiceSuiteServiceChargeDTO = new InvoiceSuiteServiceChargeDTO();
         $taxCategoryValue = "Example Value";
         $invoiceSuiteServiceChargeDTO->setTaxCategory($taxCategoryValue);
+
         $this->assertSame($taxCategoryValue, $invoiceSuiteServiceChargeDTO->getTaxCategory());
     }
 
@@ -48,6 +52,7 @@ class InvoiceSuiteServiceChargeDTOTest extends TestCase
         $invoiceSuiteServiceChargeDTO = new InvoiceSuiteServiceChargeDTO();
         $taxTypeValue = "Example Value";
         $invoiceSuiteServiceChargeDTO->setTaxType($taxTypeValue);
+
         $this->assertSame($taxTypeValue, $invoiceSuiteServiceChargeDTO->getTaxType());
     }
 
@@ -56,6 +61,7 @@ class InvoiceSuiteServiceChargeDTOTest extends TestCase
         $invoiceSuiteServiceChargeDTO = new InvoiceSuiteServiceChargeDTO();
         $taxPercentValue = 123.45;
         $invoiceSuiteServiceChargeDTO->setTaxPercent($taxPercentValue);
+
         $this->assertSame($taxPercentValue, $invoiceSuiteServiceChargeDTO->getTaxPercent());
     }
 }

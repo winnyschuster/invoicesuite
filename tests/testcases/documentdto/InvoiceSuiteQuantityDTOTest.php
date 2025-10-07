@@ -12,6 +12,7 @@ class InvoiceSuiteQuantityDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteQuantityDTO = new InvoiceSuiteQuantityDTO();
+
         $this->assertNull($invoiceSuiteQuantityDTO->getQuantity());
         $this->assertNull($invoiceSuiteQuantityDTO->getQuantityUnit());
     }
@@ -21,6 +22,7 @@ class InvoiceSuiteQuantityDTOTest extends TestCase
         $invoiceSuiteQuantityDTO = new InvoiceSuiteQuantityDTO();
         $quantityValue = 123.45;
         $invoiceSuiteQuantityDTO->setQuantity($quantityValue);
+
         $this->assertSame($quantityValue, $invoiceSuiteQuantityDTO->getQuantity());
     }
 
@@ -29,6 +31,7 @@ class InvoiceSuiteQuantityDTOTest extends TestCase
         $invoiceSuiteQuantityDTO = new InvoiceSuiteQuantityDTO();
         $quantityUnitValue = "Example Value";
         $invoiceSuiteQuantityDTO->setQuantityUnit($quantityUnitValue);
+
         $this->assertSame($quantityUnitValue, $invoiceSuiteQuantityDTO->getQuantityUnit());
     }
 }

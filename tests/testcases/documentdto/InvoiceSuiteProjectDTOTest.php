@@ -12,6 +12,7 @@ class InvoiceSuiteProjectDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteProjectDTO = new InvoiceSuiteProjectDTO();
+
         $this->assertNull($invoiceSuiteProjectDTO->getProjectNumber());
         $this->assertNull($invoiceSuiteProjectDTO->getProjectName());
     }
@@ -21,6 +22,7 @@ class InvoiceSuiteProjectDTOTest extends TestCase
         $invoiceSuiteProjectDTO = new InvoiceSuiteProjectDTO();
         $projectNumberValue = "Example Value";
         $invoiceSuiteProjectDTO->setProjectNumber($projectNumberValue);
+
         $this->assertSame($projectNumberValue, $invoiceSuiteProjectDTO->getProjectNumber());
     }
 
@@ -29,6 +31,7 @@ class InvoiceSuiteProjectDTOTest extends TestCase
         $invoiceSuiteProjectDTO = new InvoiceSuiteProjectDTO();
         $projectNameValue = "Example Value";
         $invoiceSuiteProjectDTO->setProjectName($projectNameValue);
+
         $this->assertSame($projectNameValue, $invoiceSuiteProjectDTO->getProjectName());
     }
 }

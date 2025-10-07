@@ -12,6 +12,7 @@ class InvoiceSuiteProductClassificationDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteProductClassificationDTO = new InvoiceSuiteProductClassificationDTO();
+
         $this->assertNull($invoiceSuiteProductClassificationDTO->getCode());
         $this->assertNull($invoiceSuiteProductClassificationDTO->getName());
         $this->assertNull($invoiceSuiteProductClassificationDTO->getListId());
@@ -23,6 +24,7 @@ class InvoiceSuiteProductClassificationDTOTest extends TestCase
         $invoiceSuiteProductClassificationDTO = new InvoiceSuiteProductClassificationDTO();
         $codeValue = "Example Value";
         $invoiceSuiteProductClassificationDTO->setCode($codeValue);
+
         $this->assertSame($codeValue, $invoiceSuiteProductClassificationDTO->getCode());
     }
 
@@ -31,6 +33,7 @@ class InvoiceSuiteProductClassificationDTOTest extends TestCase
         $invoiceSuiteProductClassificationDTO = new InvoiceSuiteProductClassificationDTO();
         $nameValue = "Example Value";
         $invoiceSuiteProductClassificationDTO->setName($nameValue);
+
         $this->assertSame($nameValue, $invoiceSuiteProductClassificationDTO->getName());
     }
 
@@ -39,6 +42,7 @@ class InvoiceSuiteProductClassificationDTOTest extends TestCase
         $invoiceSuiteProductClassificationDTO = new InvoiceSuiteProductClassificationDTO();
         $listIdValue = "Example Value";
         $invoiceSuiteProductClassificationDTO->setListId($listIdValue);
+
         $this->assertSame($listIdValue, $invoiceSuiteProductClassificationDTO->getListId());
     }
 
@@ -47,6 +51,7 @@ class InvoiceSuiteProductClassificationDTOTest extends TestCase
         $invoiceSuiteProductClassificationDTO = new InvoiceSuiteProductClassificationDTO();
         $listVersionIdValue = "Example Value";
         $invoiceSuiteProductClassificationDTO->setListVersionId($listVersionIdValue);
+
         $this->assertSame($listVersionIdValue, $invoiceSuiteProductClassificationDTO->getListVersionId());
     }
 }

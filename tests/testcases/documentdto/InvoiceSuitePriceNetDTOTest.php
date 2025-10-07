@@ -12,6 +12,7 @@ class InvoiceSuitePriceNetDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePriceNetDTO = new InvoiceSuitePriceNetDTO();
+
         $this->assertSame([], $invoiceSuitePriceNetDTO->getTaxes());
     }
 
@@ -20,6 +21,7 @@ class InvoiceSuitePriceNetDTOTest extends TestCase
         $invoiceSuitePriceNetDTO = new InvoiceSuitePriceNetDTO();
         $taxesValue = [];
         $invoiceSuitePriceNetDTO->setTaxes($taxesValue);
+
         $this->assertSame($taxesValue, $invoiceSuitePriceNetDTO->getTaxes());
     }
 }

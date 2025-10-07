@@ -12,8 +12,10 @@ class InvoiceSuiteCommunicationDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteCommunicationDTO = new InvoiceSuiteCommunicationDTO();
+
         $this->assertNull($invoiceSuiteCommunicationDTO->getId());
         $this->assertNull($invoiceSuiteCommunicationDTO->getIdType());
+
         $this->assertFalse($invoiceSuiteCommunicationDTO->hasId());
         $this->assertFalse($invoiceSuiteCommunicationDTO->hasIdType());
     }
@@ -23,6 +25,7 @@ class InvoiceSuiteCommunicationDTOTest extends TestCase
         $invoiceSuiteCommunicationDTO = new InvoiceSuiteCommunicationDTO();
         $idValue = "Example Value";
         $invoiceSuiteCommunicationDTO->setId($idValue);
+
         $this->assertSame($idValue, $invoiceSuiteCommunicationDTO->getId());
     }
 
@@ -30,8 +33,10 @@ class InvoiceSuiteCommunicationDTOTest extends TestCase
     {
         $invoiceSuiteCommunicationDTO = new InvoiceSuiteCommunicationDTO();
         $this->assertFalse($invoiceSuiteCommunicationDTO->hasId());
+
         $invoiceSuiteCommunicationDTO->setId("");
         $this->assertFalse($invoiceSuiteCommunicationDTO->hasId());
+
         $invoiceSuiteCommunicationDTO->setId("Non-empty");
         $this->assertTrue($invoiceSuiteCommunicationDTO->hasId());
     }
@@ -41,6 +46,7 @@ class InvoiceSuiteCommunicationDTOTest extends TestCase
         $invoiceSuiteCommunicationDTO = new InvoiceSuiteCommunicationDTO();
         $idTypeValue = "Example Value";
         $invoiceSuiteCommunicationDTO->setIdType($idTypeValue);
+
         $this->assertSame($idTypeValue, $invoiceSuiteCommunicationDTO->getIdType());
     }
 
@@ -48,8 +54,10 @@ class InvoiceSuiteCommunicationDTOTest extends TestCase
     {
         $invoiceSuiteCommunicationDTO = new InvoiceSuiteCommunicationDTO();
         $this->assertFalse($invoiceSuiteCommunicationDTO->hasIdType());
+
         $invoiceSuiteCommunicationDTO->setIdType("");
         $this->assertFalse($invoiceSuiteCommunicationDTO->hasIdType());
+
         $invoiceSuiteCommunicationDTO->setIdType("Non-empty");
         $this->assertTrue($invoiceSuiteCommunicationDTO->hasIdType());
     }

@@ -13,6 +13,7 @@ class InvoiceSuiteDateRangeDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteDateRangeDTO = new InvoiceSuiteDateRangeDTO();
+
         $this->assertNull($invoiceSuiteDateRangeDTO->getStartDate());
         $this->assertNull($invoiceSuiteDateRangeDTO->getEndDate());
         $this->assertNull($invoiceSuiteDateRangeDTO->getDescription());
@@ -23,6 +24,7 @@ class InvoiceSuiteDateRangeDTOTest extends TestCase
         $invoiceSuiteDateRangeDTO = new InvoiceSuiteDateRangeDTO();
         $startDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuiteDateRangeDTO->setStartDate($startDateValue);
+
         $this->assertSame($startDateValue, $invoiceSuiteDateRangeDTO->getStartDate());
     }
 
@@ -31,6 +33,7 @@ class InvoiceSuiteDateRangeDTOTest extends TestCase
         $invoiceSuiteDateRangeDTO = new InvoiceSuiteDateRangeDTO();
         $endDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuiteDateRangeDTO->setEndDate($endDateValue);
+
         $this->assertSame($endDateValue, $invoiceSuiteDateRangeDTO->getEndDate());
     }
 
@@ -39,6 +42,7 @@ class InvoiceSuiteDateRangeDTOTest extends TestCase
         $invoiceSuiteDateRangeDTO = new InvoiceSuiteDateRangeDTO();
         $descriptionValue = "Example Value";
         $invoiceSuiteDateRangeDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuiteDateRangeDTO->getDescription());
     }
 }

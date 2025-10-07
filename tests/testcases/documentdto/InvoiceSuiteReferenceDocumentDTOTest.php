@@ -13,6 +13,7 @@ class InvoiceSuiteReferenceDocumentDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteReferenceDocumentDTO = new InvoiceSuiteReferenceDocumentDTO();
+
         $this->assertNull($invoiceSuiteReferenceDocumentDTO->getReferenceNumber());
         $this->assertNull($invoiceSuiteReferenceDocumentDTO->getReferenceDate());
     }
@@ -22,6 +23,7 @@ class InvoiceSuiteReferenceDocumentDTOTest extends TestCase
         $invoiceSuiteReferenceDocumentDTO = new InvoiceSuiteReferenceDocumentDTO();
         $referenceNumberValue = "Example Value";
         $invoiceSuiteReferenceDocumentDTO->setReferenceNumber($referenceNumberValue);
+
         $this->assertSame($referenceNumberValue, $invoiceSuiteReferenceDocumentDTO->getReferenceNumber());
     }
 
@@ -30,6 +32,7 @@ class InvoiceSuiteReferenceDocumentDTOTest extends TestCase
         $invoiceSuiteReferenceDocumentDTO = new InvoiceSuiteReferenceDocumentDTO();
         $referenceDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuiteReferenceDocumentDTO->setReferenceDate($referenceDateValue);
+
         $this->assertSame($referenceDateValue, $invoiceSuiteReferenceDocumentDTO->getReferenceDate());
     }
 }

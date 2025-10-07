@@ -158,32 +158,48 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $invoiceSuiteProductDTO = new InvoiceSuiteProductDTO();
         $invoiceSuiteProductDTO->addCharacteristic(new InvoiceSuiteProductCharacteristicDTO());
         $invoiceSuiteProductDTO->addCharacteristic(new InvoiceSuiteProductCharacteristicDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteProductDTO->firstCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->nextCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->nextCharacteristic($cb, $cbElse);
+
+        $invoiceSuiteProductDTO->firstCharacteristic($cb, $cbElse);
+        $invoiceSuiteProductDTO->nextCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->previousCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->previousCharacteristic($cb, $cbElse);
+
         $invoiceSuiteProductDTO->lastCharacteristic($cb, $cbElse);
+
         $invoiceSuiteProductDTO->forEachCharacteristic($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteProductDTO->forEachCharacteristic($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteProductDTO = new InvoiceSuiteProductDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteProductDTO->firstCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->nextCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->nextCharacteristic($cb, $cbElse);
@@ -191,6 +207,7 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $invoiceSuiteProductDTO->previousCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->lastCharacteristic($cb, $cbElse);
         $invoiceSuiteProductDTO->forEachCharacteristic($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -200,32 +217,48 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $invoiceSuiteProductDTO = new InvoiceSuiteProductDTO();
         $invoiceSuiteProductDTO->addClassification(new InvoiceSuiteProductClassificationDTO());
         $invoiceSuiteProductDTO->addClassification(new InvoiceSuiteProductClassificationDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteProductDTO->firstClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->nextClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->nextClassification($cb, $cbElse);
+
+        $invoiceSuiteProductDTO->firstClassification($cb, $cbElse);
+        $invoiceSuiteProductDTO->nextClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->previousClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->previousClassification($cb, $cbElse);
+
         $invoiceSuiteProductDTO->lastClassification($cb, $cbElse);
+
         $invoiceSuiteProductDTO->forEachClassification($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteProductDTO->forEachClassification($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteProductDTO = new InvoiceSuiteProductDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteProductDTO->firstClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->nextClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->nextClassification($cb, $cbElse);
@@ -233,6 +266,7 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $invoiceSuiteProductDTO->previousClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->lastClassification($cb, $cbElse);
         $invoiceSuiteProductDTO->forEachClassification($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -242,32 +276,48 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $invoiceSuiteProductDTO = new InvoiceSuiteProductDTO();
         $invoiceSuiteProductDTO->addReferenceProduct(new InvoiceSuiteReferenceProductDTO());
         $invoiceSuiteProductDTO->addReferenceProduct(new InvoiceSuiteReferenceProductDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteProductDTO->firstReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->nextReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->nextReferenceProduct($cb, $cbElse);
+
+        $invoiceSuiteProductDTO->firstReferenceProduct($cb, $cbElse);
+        $invoiceSuiteProductDTO->nextReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->previousReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->previousReferenceProduct($cb, $cbElse);
+
         $invoiceSuiteProductDTO->lastReferenceProduct($cb, $cbElse);
+
         $invoiceSuiteProductDTO->forEachReferenceProduct($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteProductDTO->forEachReferenceProduct($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteProductDTO = new InvoiceSuiteProductDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteProductDTO->firstReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->nextReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->nextReferenceProduct($cb, $cbElse);
@@ -275,6 +325,7 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $invoiceSuiteProductDTO->previousReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->lastReferenceProduct($cb, $cbElse);
         $invoiceSuiteProductDTO->forEachReferenceProduct($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }

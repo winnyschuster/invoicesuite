@@ -12,6 +12,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
+
         $this->assertNull($invoiceSuiteAllowanceChargeDTO->getChargeIndicator());
         $this->assertNull($invoiceSuiteAllowanceChargeDTO->getAmount());
         $this->assertNull($invoiceSuiteAllowanceChargeDTO->getBaseAmount());
@@ -28,6 +29,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $chargeIndicatorValue = true;
         $invoiceSuiteAllowanceChargeDTO->setChargeIndicator($chargeIndicatorValue);
+
         $this->assertSame($chargeIndicatorValue, $invoiceSuiteAllowanceChargeDTO->getChargeIndicator());
     }
 
@@ -36,6 +38,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $amountValue = 123.45;
         $invoiceSuiteAllowanceChargeDTO->setAmount($amountValue);
+
         $this->assertSame($amountValue, $invoiceSuiteAllowanceChargeDTO->getAmount());
     }
 
@@ -44,6 +47,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $baseAmountValue = 123.45;
         $invoiceSuiteAllowanceChargeDTO->setBaseAmount($baseAmountValue);
+
         $this->assertSame($baseAmountValue, $invoiceSuiteAllowanceChargeDTO->getBaseAmount());
     }
 
@@ -52,6 +56,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $percentValue = 123.45;
         $invoiceSuiteAllowanceChargeDTO->setPercent($percentValue);
+
         $this->assertSame($percentValue, $invoiceSuiteAllowanceChargeDTO->getPercent());
     }
 
@@ -60,6 +65,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $taxCategoryValue = "Example Value";
         $invoiceSuiteAllowanceChargeDTO->setTaxCategory($taxCategoryValue);
+
         $this->assertSame($taxCategoryValue, $invoiceSuiteAllowanceChargeDTO->getTaxCategory());
     }
 
@@ -68,6 +74,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $taxTypeValue = "Example Value";
         $invoiceSuiteAllowanceChargeDTO->setTaxType($taxTypeValue);
+
         $this->assertSame($taxTypeValue, $invoiceSuiteAllowanceChargeDTO->getTaxType());
     }
 
@@ -76,6 +83,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $taxPercentValue = 123.45;
         $invoiceSuiteAllowanceChargeDTO->setTaxPercent($taxPercentValue);
+
         $this->assertSame($taxPercentValue, $invoiceSuiteAllowanceChargeDTO->getTaxPercent());
     }
 
@@ -84,6 +92,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $reasonValue = "Example Value";
         $invoiceSuiteAllowanceChargeDTO->setReason($reasonValue);
+
         $this->assertSame($reasonValue, $invoiceSuiteAllowanceChargeDTO->getReason());
     }
 
@@ -92,6 +101,7 @@ class InvoiceSuiteAllowanceChargeDTOTest extends TestCase
         $invoiceSuiteAllowanceChargeDTO = new InvoiceSuiteAllowanceChargeDTO();
         $reasonCodeValue = "Example Value";
         $invoiceSuiteAllowanceChargeDTO->setReasonCode($reasonCodeValue);
+
         $this->assertSame($reasonCodeValue, $invoiceSuiteAllowanceChargeDTO->getReasonCode());
     }
 }

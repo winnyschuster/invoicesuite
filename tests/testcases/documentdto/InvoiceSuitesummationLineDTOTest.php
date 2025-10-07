@@ -12,6 +12,7 @@ class InvoiceSuitesummationLineDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitesummationLineDTO = new InvoiceSuitesummationLineDTO();
+
         $this->assertNull($invoiceSuitesummationLineDTO->getNetAmount());
         $this->assertNull($invoiceSuitesummationLineDTO->getChargeTotalAmount());
         $this->assertNull($invoiceSuitesummationLineDTO->getDiscountTotalAmount());
@@ -24,6 +25,7 @@ class InvoiceSuitesummationLineDTOTest extends TestCase
         $invoiceSuitesummationLineDTO = new InvoiceSuitesummationLineDTO();
         $netAmountValue = 123.45;
         $invoiceSuitesummationLineDTO->setNetAmount($netAmountValue);
+
         $this->assertSame($netAmountValue, $invoiceSuitesummationLineDTO->getNetAmount());
     }
 
@@ -32,6 +34,7 @@ class InvoiceSuitesummationLineDTOTest extends TestCase
         $invoiceSuitesummationLineDTO = new InvoiceSuitesummationLineDTO();
         $chargeTotalAmountValue = 123.45;
         $invoiceSuitesummationLineDTO->setChargeTotalAmount($chargeTotalAmountValue);
+
         $this->assertSame($chargeTotalAmountValue, $invoiceSuitesummationLineDTO->getChargeTotalAmount());
     }
 
@@ -40,6 +43,7 @@ class InvoiceSuitesummationLineDTOTest extends TestCase
         $invoiceSuitesummationLineDTO = new InvoiceSuitesummationLineDTO();
         $discountTotalAmountValue = 123.45;
         $invoiceSuitesummationLineDTO->setDiscountTotalAmount($discountTotalAmountValue);
+
         $this->assertSame($discountTotalAmountValue, $invoiceSuitesummationLineDTO->getDiscountTotalAmount());
     }
 
@@ -48,6 +52,7 @@ class InvoiceSuitesummationLineDTOTest extends TestCase
         $invoiceSuitesummationLineDTO = new InvoiceSuitesummationLineDTO();
         $taxTotalAmountValue = 123.45;
         $invoiceSuitesummationLineDTO->setTaxTotalAmount($taxTotalAmountValue);
+
         $this->assertSame($taxTotalAmountValue, $invoiceSuitesummationLineDTO->getTaxTotalAmount());
     }
 
@@ -56,6 +61,7 @@ class InvoiceSuitesummationLineDTOTest extends TestCase
         $invoiceSuitesummationLineDTO = new InvoiceSuitesummationLineDTO();
         $grossAmountValue = 123.45;
         $invoiceSuitesummationLineDTO->setGrossAmount($grossAmountValue);
+
         $this->assertSame($grossAmountValue, $invoiceSuitesummationLineDTO->getGrossAmount());
     }
 }

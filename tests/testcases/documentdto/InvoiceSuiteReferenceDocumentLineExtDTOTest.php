@@ -12,6 +12,7 @@ class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteReferenceDocumentLineExtDTO = new InvoiceSuiteReferenceDocumentLineExtDTO();
+
         $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getTypeCode());
         $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getReferenceTypeCode());
         $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getDescription());
@@ -23,6 +24,7 @@ class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
         $invoiceSuiteReferenceDocumentLineExtDTO = new InvoiceSuiteReferenceDocumentLineExtDTO();
         $typeCodeValue = "Example Value";
         $invoiceSuiteReferenceDocumentLineExtDTO->setTypeCode($typeCodeValue);
+
         $this->assertSame($typeCodeValue, $invoiceSuiteReferenceDocumentLineExtDTO->getTypeCode());
     }
 
@@ -31,6 +33,7 @@ class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
         $invoiceSuiteReferenceDocumentLineExtDTO = new InvoiceSuiteReferenceDocumentLineExtDTO();
         $referenceTypeCodeValue = "Example Value";
         $invoiceSuiteReferenceDocumentLineExtDTO->setReferenceTypeCode($referenceTypeCodeValue);
+
         $this->assertSame($referenceTypeCodeValue, $invoiceSuiteReferenceDocumentLineExtDTO->getReferenceTypeCode());
     }
 
@@ -39,6 +42,7 @@ class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
         $invoiceSuiteReferenceDocumentLineExtDTO = new InvoiceSuiteReferenceDocumentLineExtDTO();
         $descriptionValue = "Example Value";
         $invoiceSuiteReferenceDocumentLineExtDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuiteReferenceDocumentLineExtDTO->getDescription());
     }
 }

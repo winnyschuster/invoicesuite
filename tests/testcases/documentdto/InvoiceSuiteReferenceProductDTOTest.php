@@ -14,6 +14,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
+
         $this->assertNull($invoiceSuiteReferenceProductDTO->getId());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getName());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getDescription());
@@ -29,6 +30,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $idValue = "Example Value";
         $invoiceSuiteReferenceProductDTO->setId($idValue);
+
         $this->assertSame($idValue, $invoiceSuiteReferenceProductDTO->getId());
     }
 
@@ -37,6 +39,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $nameValue = "Example Value";
         $invoiceSuiteReferenceProductDTO->setName($nameValue);
+
         $this->assertSame($nameValue, $invoiceSuiteReferenceProductDTO->getName());
     }
 
@@ -45,6 +48,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $descriptionValue = "Example Value";
         $invoiceSuiteReferenceProductDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuiteReferenceProductDTO->getDescription());
     }
 
@@ -53,6 +57,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $sellerIdValue = "Example Value";
         $invoiceSuiteReferenceProductDTO->setSellerId($sellerIdValue);
+
         $this->assertSame($sellerIdValue, $invoiceSuiteReferenceProductDTO->getSellerId());
     }
 
@@ -61,6 +66,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $buyerIdValue = "Example Value";
         $invoiceSuiteReferenceProductDTO->setBuyerId($buyerIdValue);
+
         $this->assertSame($buyerIdValue, $invoiceSuiteReferenceProductDTO->getBuyerId());
     }
 
@@ -69,6 +75,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $globalIdValue = new InvoiceSuiteIdDTO();
         $invoiceSuiteReferenceProductDTO->setGlobalId($globalIdValue);
+
         $this->assertSame($globalIdValue, $invoiceSuiteReferenceProductDTO->getGlobalId());
     }
 
@@ -77,6 +84,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $industryIdValue = "Example Value";
         $invoiceSuiteReferenceProductDTO->setIndustryId($industryIdValue);
+
         $this->assertSame($industryIdValue, $invoiceSuiteReferenceProductDTO->getIndustryId());
     }
 
@@ -85,6 +93,7 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $invoiceSuiteReferenceProductDTO = new InvoiceSuiteReferenceProductDTO();
         $unitQuantityValue = new InvoiceSuiteQuantityDTO();
         $invoiceSuiteReferenceProductDTO->setUnitQuantity($unitQuantityValue);
+
         $this->assertSame($unitQuantityValue, $invoiceSuiteReferenceProductDTO->getUnitQuantity());
     }
 }

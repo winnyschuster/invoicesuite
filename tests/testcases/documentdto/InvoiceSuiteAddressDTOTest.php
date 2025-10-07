@@ -12,6 +12,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
+
         $this->assertNull($invoiceSuiteAddressDTO->getAddressLine1());
         $this->assertNull($invoiceSuiteAddressDTO->getAddressLine2());
         $this->assertNull($invoiceSuiteAddressDTO->getAddressLine3());
@@ -19,6 +20,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $this->assertNull($invoiceSuiteAddressDTO->getCity());
         $this->assertNull($invoiceSuiteAddressDTO->getCountry());
         $this->assertNull($invoiceSuiteAddressDTO->getSubDivision());
+
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine1());
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine2());
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine3());
@@ -33,6 +35,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $addressLine1Value = "Example Value";
         $invoiceSuiteAddressDTO->setAddressLine1($addressLine1Value);
+
         $this->assertSame($addressLine1Value, $invoiceSuiteAddressDTO->getAddressLine1());
     }
 
@@ -40,8 +43,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine1());
+
         $invoiceSuiteAddressDTO->setAddressLine1("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine1());
+
         $invoiceSuiteAddressDTO->setAddressLine1("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasAddressLine1());
     }
@@ -51,6 +56,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $addressLine2Value = "Example Value";
         $invoiceSuiteAddressDTO->setAddressLine2($addressLine2Value);
+
         $this->assertSame($addressLine2Value, $invoiceSuiteAddressDTO->getAddressLine2());
     }
 
@@ -58,8 +64,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine2());
+
         $invoiceSuiteAddressDTO->setAddressLine2("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine2());
+
         $invoiceSuiteAddressDTO->setAddressLine2("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasAddressLine2());
     }
@@ -69,6 +77,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $addressLine3Value = "Example Value";
         $invoiceSuiteAddressDTO->setAddressLine3($addressLine3Value);
+
         $this->assertSame($addressLine3Value, $invoiceSuiteAddressDTO->getAddressLine3());
     }
 
@@ -76,8 +85,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine3());
+
         $invoiceSuiteAddressDTO->setAddressLine3("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasAddressLine3());
+
         $invoiceSuiteAddressDTO->setAddressLine3("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasAddressLine3());
     }
@@ -87,6 +98,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $postcodeValue = "Example Value";
         $invoiceSuiteAddressDTO->setPostcode($postcodeValue);
+
         $this->assertSame($postcodeValue, $invoiceSuiteAddressDTO->getPostcode());
     }
 
@@ -94,8 +106,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasPostcode());
+
         $invoiceSuiteAddressDTO->setPostcode("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasPostcode());
+
         $invoiceSuiteAddressDTO->setPostcode("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasPostcode());
     }
@@ -105,6 +119,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $cityValue = "Example Value";
         $invoiceSuiteAddressDTO->setCity($cityValue);
+
         $this->assertSame($cityValue, $invoiceSuiteAddressDTO->getCity());
     }
 
@@ -112,8 +127,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasCity());
+
         $invoiceSuiteAddressDTO->setCity("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasCity());
+
         $invoiceSuiteAddressDTO->setCity("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasCity());
     }
@@ -123,6 +140,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $countryValue = "Example Value";
         $invoiceSuiteAddressDTO->setCountry($countryValue);
+
         $this->assertSame($countryValue, $invoiceSuiteAddressDTO->getCountry());
     }
 
@@ -130,8 +148,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasCountry());
+
         $invoiceSuiteAddressDTO->setCountry("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasCountry());
+
         $invoiceSuiteAddressDTO->setCountry("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasCountry());
     }
@@ -141,6 +161,7 @@ class InvoiceSuiteAddressDTOTest extends TestCase
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $subDivisionValue = "Example Value";
         $invoiceSuiteAddressDTO->setSubDivision($subDivisionValue);
+
         $this->assertSame($subDivisionValue, $invoiceSuiteAddressDTO->getSubDivision());
     }
 
@@ -148,8 +169,10 @@ class InvoiceSuiteAddressDTOTest extends TestCase
     {
         $invoiceSuiteAddressDTO = new InvoiceSuiteAddressDTO();
         $this->assertFalse($invoiceSuiteAddressDTO->hasSubDivision());
+
         $invoiceSuiteAddressDTO->setSubDivision("");
         $this->assertFalse($invoiceSuiteAddressDTO->hasSubDivision());
+
         $invoiceSuiteAddressDTO->setSubDivision("Non-empty");
         $this->assertTrue($invoiceSuiteAddressDTO->hasSubDivision());
     }

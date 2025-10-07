@@ -13,6 +13,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
+
         $this->assertNull($invoiceSuiteTaxDTO->getCategory());
         $this->assertNull($invoiceSuiteTaxDTO->getType());
         $this->assertNull($invoiceSuiteTaxDTO->getBasisAmount());
@@ -29,6 +30,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $categoryValue = "Example Value";
         $invoiceSuiteTaxDTO->setCategory($categoryValue);
+
         $this->assertSame($categoryValue, $invoiceSuiteTaxDTO->getCategory());
     }
 
@@ -37,6 +39,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $typeValue = "Example Value";
         $invoiceSuiteTaxDTO->setType($typeValue);
+
         $this->assertSame($typeValue, $invoiceSuiteTaxDTO->getType());
     }
 
@@ -45,6 +48,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $basisAmountValue = 123.45;
         $invoiceSuiteTaxDTO->setBasisAmount($basisAmountValue);
+
         $this->assertSame($basisAmountValue, $invoiceSuiteTaxDTO->getBasisAmount());
     }
 
@@ -53,6 +57,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $amountValue = 123.45;
         $invoiceSuiteTaxDTO->setAmount($amountValue);
+
         $this->assertSame($amountValue, $invoiceSuiteTaxDTO->getAmount());
     }
 
@@ -61,6 +66,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $percentValue = 123.45;
         $invoiceSuiteTaxDTO->setPercent($percentValue);
+
         $this->assertSame($percentValue, $invoiceSuiteTaxDTO->getPercent());
     }
 
@@ -69,6 +75,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $exemptionReasonValue = "Example Value";
         $invoiceSuiteTaxDTO->setExemptionReason($exemptionReasonValue);
+
         $this->assertSame($exemptionReasonValue, $invoiceSuiteTaxDTO->getExemptionReason());
     }
 
@@ -77,6 +84,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $exemptionReasonCodeValue = "Example Value";
         $invoiceSuiteTaxDTO->setExemptionReasonCode($exemptionReasonCodeValue);
+
         $this->assertSame($exemptionReasonCodeValue, $invoiceSuiteTaxDTO->getExemptionReasonCode());
     }
 
@@ -85,6 +93,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $dueDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuiteTaxDTO->setDueDate($dueDateValue);
+
         $this->assertSame($dueDateValue, $invoiceSuiteTaxDTO->getDueDate());
     }
 
@@ -93,6 +102,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $invoiceSuiteTaxDTO = new InvoiceSuiteTaxDTO();
         $dueCodeValue = "Example Value";
         $invoiceSuiteTaxDTO->setDueCode($dueCodeValue);
+
         $this->assertSame($dueCodeValue, $invoiceSuiteTaxDTO->getDueCode());
     }
 }

@@ -13,6 +13,7 @@ class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteProductCharacteristicDTO = new InvoiceSuiteProductCharacteristicDTO();
+
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getDescription());
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getValue());
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getType());
@@ -24,6 +25,7 @@ class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
         $invoiceSuiteProductCharacteristicDTO = new InvoiceSuiteProductCharacteristicDTO();
         $descriptionValue = "Example Value";
         $invoiceSuiteProductCharacteristicDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuiteProductCharacteristicDTO->getDescription());
     }
 
@@ -32,6 +34,7 @@ class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
         $invoiceSuiteProductCharacteristicDTO = new InvoiceSuiteProductCharacteristicDTO();
         $valueValue = "Example Value";
         $invoiceSuiteProductCharacteristicDTO->setValue($valueValue);
+
         $this->assertSame($valueValue, $invoiceSuiteProductCharacteristicDTO->getValue());
     }
 
@@ -40,6 +43,7 @@ class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
         $invoiceSuiteProductCharacteristicDTO = new InvoiceSuiteProductCharacteristicDTO();
         $typeValue = "Example Value";
         $invoiceSuiteProductCharacteristicDTO->setType($typeValue);
+
         $this->assertSame($typeValue, $invoiceSuiteProductCharacteristicDTO->getType());
     }
 
@@ -48,6 +52,7 @@ class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
         $invoiceSuiteProductCharacteristicDTO = new InvoiceSuiteProductCharacteristicDTO();
         $valueMeasureValue = new InvoiceSuiteMeasureDTO();
         $invoiceSuiteProductCharacteristicDTO->setValueMeasure($valueMeasureValue);
+
         $this->assertSame($valueMeasureValue, $invoiceSuiteProductCharacteristicDTO->getValueMeasure());
     }
 }
