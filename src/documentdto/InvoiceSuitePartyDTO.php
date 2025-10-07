@@ -102,7 +102,7 @@ class InvoiceSuitePartyDTO
         $this->setIds($ids);
         $this->setGlobalIds($globalIds);
         $this->setTaxRegistrations($taxRegistrations);
-        $this->setAddres($addres);
+        $this->setAddresses($addres);
         $this->setLegalOrganisations($legalOrganisations);
         $this->setContacts($contacts);
         $this->setCommunications($communications);
@@ -664,7 +664,7 @@ class InvoiceSuitePartyDTO
      *
      * @return array<InvoiceSuiteAddressDTO>
      */
-    public function getAddres(): array
+    public function getAddresses(): array
     {
         return $this->addresses;
     }
@@ -675,7 +675,7 @@ class InvoiceSuitePartyDTO
      * @param array<InvoiceSuiteAddressDTO> $addres Party addresses
      * @return self
      */
-    public function setAddres(array $addres): self
+    public function setAddresses(array $addres): self
     {
         $this->addresses = $addres;
 
@@ -688,7 +688,7 @@ class InvoiceSuitePartyDTO
      * @param InvoiceSuiteAddressDTO $address Party addresses
      * @return self
      */
-    public function addAddre(InvoiceSuiteAddressDTO $address): self
+    public function addAddress(InvoiceSuiteAddressDTO $address): self
     {
         $this->addresses[] = $address;
 
@@ -702,7 +702,7 @@ class InvoiceSuitePartyDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function firstAddre(callable $callback, ?callable $callbackElse = null): self
+    public function firstAddress(callable $callback, ?callable $callbackElse = null): self
     {
         if (($address = reset($this->addresses)) !== false) {
             $callback($address);
@@ -720,7 +720,7 @@ class InvoiceSuitePartyDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function nextAddre(callable $callback, ?callable $callbackElse = null): self
+    public function nextAddress(callable $callback, ?callable $callbackElse = null): self
     {
         if (($address = next($this->addresses)) !== false) {
             $callback($address);
@@ -756,7 +756,7 @@ class InvoiceSuitePartyDTO
      * @param callable|null $callbackElse Callback to execute if no item was found
      * @return self
      */
-    public function lastAddre(callable $callback, ?callable $callbackElse = null): self
+    public function lastAddress(callable $callback, ?callable $callbackElse = null): self
     {
         if (($address = end($this->addresses)) !== false) {
             $callback($address);
@@ -775,7 +775,7 @@ class InvoiceSuitePartyDTO
      * @param int|null $limit Maximum number of loops
      * @return self
      */
-    public function forEachAddre(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
+    public function forEachAddress(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
     {
         $count = 0;
 
