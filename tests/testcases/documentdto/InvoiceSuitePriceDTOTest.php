@@ -13,6 +13,7 @@ class InvoiceSuitePriceDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePriceDTO = new InvoiceSuitePriceDTO();
+
         $this->assertNull($invoiceSuitePriceDTO->getAmount());
         $this->assertNull($invoiceSuitePriceDTO->getPriceQuantity());
     }
@@ -22,6 +23,7 @@ class InvoiceSuitePriceDTOTest extends TestCase
         $invoiceSuitePriceDTO = new InvoiceSuitePriceDTO();
         $amountValue = 123.45;
         $invoiceSuitePriceDTO->setAmount($amountValue);
+
         $this->assertSame($amountValue, $invoiceSuitePriceDTO->getAmount());
     }
 
@@ -30,6 +32,7 @@ class InvoiceSuitePriceDTOTest extends TestCase
         $invoiceSuitePriceDTO = new InvoiceSuitePriceDTO();
         $priceQuantityValue = new InvoiceSuiteQuantityDTO();
         $invoiceSuitePriceDTO->setPriceQuantity($priceQuantityValue);
+
         $this->assertSame($priceQuantityValue, $invoiceSuitePriceDTO->getPriceQuantity());
     }
 }

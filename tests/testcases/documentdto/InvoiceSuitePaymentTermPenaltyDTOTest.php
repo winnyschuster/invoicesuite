@@ -14,6 +14,7 @@ class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePaymentTermPenaltyDTO = new InvoiceSuitePaymentTermPenaltyDTO();
+
         $this->assertNull($invoiceSuitePaymentTermPenaltyDTO->getBaseAmount());
         $this->assertNull($invoiceSuitePaymentTermPenaltyDTO->getPenaltyAmount());
         $this->assertNull($invoiceSuitePaymentTermPenaltyDTO->getPenaltyPercent());
@@ -26,6 +27,7 @@ class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
         $invoiceSuitePaymentTermPenaltyDTO = new InvoiceSuitePaymentTermPenaltyDTO();
         $baseAmountValue = 123.45;
         $invoiceSuitePaymentTermPenaltyDTO->setBaseAmount($baseAmountValue);
+
         $this->assertSame($baseAmountValue, $invoiceSuitePaymentTermPenaltyDTO->getBaseAmount());
     }
 
@@ -34,6 +36,7 @@ class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
         $invoiceSuitePaymentTermPenaltyDTO = new InvoiceSuitePaymentTermPenaltyDTO();
         $penaltyAmountValue = 123.45;
         $invoiceSuitePaymentTermPenaltyDTO->setPenaltyAmount($penaltyAmountValue);
+
         $this->assertSame($penaltyAmountValue, $invoiceSuitePaymentTermPenaltyDTO->getPenaltyAmount());
     }
 
@@ -42,6 +45,7 @@ class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
         $invoiceSuitePaymentTermPenaltyDTO = new InvoiceSuitePaymentTermPenaltyDTO();
         $penaltyPercentValue = 123.45;
         $invoiceSuitePaymentTermPenaltyDTO->setPenaltyPercent($penaltyPercentValue);
+
         $this->assertSame($penaltyPercentValue, $invoiceSuitePaymentTermPenaltyDTO->getPenaltyPercent());
     }
 
@@ -50,6 +54,7 @@ class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
         $invoiceSuitePaymentTermPenaltyDTO = new InvoiceSuitePaymentTermPenaltyDTO();
         $baseDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuitePaymentTermPenaltyDTO->setBaseDate($baseDateValue);
+
         $this->assertSame($baseDateValue, $invoiceSuitePaymentTermPenaltyDTO->getBaseDate());
     }
 
@@ -58,6 +63,7 @@ class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
         $invoiceSuitePaymentTermPenaltyDTO = new InvoiceSuitePaymentTermPenaltyDTO();
         $periodValue = new InvoiceSuitePeriodDTO();
         $invoiceSuitePaymentTermPenaltyDTO->setPeriod($periodValue);
+
         $this->assertSame($periodValue, $invoiceSuitePaymentTermPenaltyDTO->getPeriod());
     }
 }

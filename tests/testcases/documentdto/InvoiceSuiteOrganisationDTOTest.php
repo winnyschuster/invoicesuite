@@ -12,6 +12,7 @@ class InvoiceSuiteOrganisationDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteOrganisationDTO = new InvoiceSuiteOrganisationDTO();
+
         $this->assertNull($invoiceSuiteOrganisationDTO->getName());
         $this->assertFalse($invoiceSuiteOrganisationDTO->hasName());
     }
@@ -21,6 +22,7 @@ class InvoiceSuiteOrganisationDTOTest extends TestCase
         $invoiceSuiteOrganisationDTO = new InvoiceSuiteOrganisationDTO();
         $nameValue = "Example Value";
         $invoiceSuiteOrganisationDTO->setName($nameValue);
+
         $this->assertSame($nameValue, $invoiceSuiteOrganisationDTO->getName());
     }
 
@@ -28,8 +30,10 @@ class InvoiceSuiteOrganisationDTOTest extends TestCase
     {
         $invoiceSuiteOrganisationDTO = new InvoiceSuiteOrganisationDTO();
         $this->assertFalse($invoiceSuiteOrganisationDTO->hasName());
+
         $invoiceSuiteOrganisationDTO->setName("");
         $this->assertFalse($invoiceSuiteOrganisationDTO->hasName());
+
         $invoiceSuiteOrganisationDTO->setName("Non-empty");
         $this->assertTrue($invoiceSuiteOrganisationDTO->hasName());
     }

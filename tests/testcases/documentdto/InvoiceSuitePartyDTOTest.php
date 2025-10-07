@@ -12,6 +12,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
+
         $this->assertSame([], $invoiceSuitePartyDTO->getNames());
         $this->assertSame([], $invoiceSuitePartyDTO->getIds());
         $this->assertSame([], $invoiceSuitePartyDTO->getGlobalIds());
@@ -27,6 +28,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $nameValue = [];
         $invoiceSuitePartyDTO->setNames($nameValue);
+
         $this->assertSame($nameValue, $invoiceSuitePartyDTO->getNames());
     }
 
@@ -35,6 +37,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $idValue = [];
         $invoiceSuitePartyDTO->setIds($idValue);
+
         $this->assertSame($idValue, $invoiceSuitePartyDTO->getIds());
     }
 
@@ -43,6 +46,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $globalIdValue = [];
         $invoiceSuitePartyDTO->setGlobalIds($globalIdValue);
+
         $this->assertSame($globalIdValue, $invoiceSuitePartyDTO->getGlobalIds());
     }
 
@@ -51,6 +55,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $taxRegistrationValue = [];
         $invoiceSuitePartyDTO->setTaxRegistrations($taxRegistrationValue);
+
         $this->assertSame($taxRegistrationValue, $invoiceSuitePartyDTO->getTaxRegistrations());
     }
 
@@ -59,6 +64,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $addressValue = [];
         $invoiceSuitePartyDTO->setAddresses($addressValue);
+
         $this->assertSame($addressValue, $invoiceSuitePartyDTO->getAddresses());
     }
 
@@ -67,6 +73,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $legalOrganisationValue = [];
         $invoiceSuitePartyDTO->setLegalOrganisations($legalOrganisationValue);
+
         $this->assertSame($legalOrganisationValue, $invoiceSuitePartyDTO->getLegalOrganisations());
     }
 
@@ -75,6 +82,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $contactValue = [];
         $invoiceSuitePartyDTO->setContacts($contactValue);
+
         $this->assertSame($contactValue, $invoiceSuitePartyDTO->getContacts());
     }
 
@@ -83,6 +91,7 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $invoiceSuitePartyDTO = new InvoiceSuitePartyDTO();
         $communicationValue = [];
         $invoiceSuitePartyDTO->setCommunications($communicationValue);
+
         $this->assertSame($communicationValue, $invoiceSuitePartyDTO->getCommunications());
     }
 }

@@ -5,28 +5,29 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteAllowanceChargeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDateRangeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteDateRangeDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteSummationDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceDocumentDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceDocumentExtDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteServiceChargeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteSummationDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteTaxDTO;
-use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getNumber());
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getType());
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getDescription());
@@ -78,6 +79,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $numberValue = "Example Value";
         $invoiceSuiteDocumentHeaderDTO->setNumber($numberValue);
+
         $this->assertSame($numberValue, $invoiceSuiteDocumentHeaderDTO->getNumber());
     }
 
@@ -86,6 +88,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $typeValue = "Example Value";
         $invoiceSuiteDocumentHeaderDTO->setType($typeValue);
+
         $this->assertSame($typeValue, $invoiceSuiteDocumentHeaderDTO->getType());
     }
 
@@ -94,6 +97,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $descriptionValue = "Example Value";
         $invoiceSuiteDocumentHeaderDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuiteDocumentHeaderDTO->getDescription());
     }
 
@@ -102,6 +106,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $languageValue = "Example Value";
         $invoiceSuiteDocumentHeaderDTO->setLanguage($languageValue);
+
         $this->assertSame($languageValue, $invoiceSuiteDocumentHeaderDTO->getLanguage());
     }
 
@@ -110,6 +115,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $dateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuiteDocumentHeaderDTO->setDate($dateValue);
+
         $this->assertSame($dateValue, $invoiceSuiteDocumentHeaderDTO->getDate());
     }
 
@@ -118,6 +124,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $completeDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuiteDocumentHeaderDTO->setCompleteDate($completeDateValue);
+
         $this->assertSame($completeDateValue, $invoiceSuiteDocumentHeaderDTO->getCompleteDate());
     }
 
@@ -126,6 +133,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $supplyChainEventsValue = [];
         $invoiceSuiteDocumentHeaderDTO->setSupplyChainEvents($supplyChainEventsValue);
+
         $this->assertSame($supplyChainEventsValue, $invoiceSuiteDocumentHeaderDTO->getSupplyChainEvents());
     }
 
@@ -134,6 +142,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $currencyValue = "Example Value";
         $invoiceSuiteDocumentHeaderDTO->setCurrency($currencyValue);
+
         $this->assertSame($currencyValue, $invoiceSuiteDocumentHeaderDTO->getCurrency());
     }
 
@@ -142,6 +151,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $taxCurrencyValue = "Example Value";
         $invoiceSuiteDocumentHeaderDTO->setTaxCurrency($taxCurrencyValue);
+
         $this->assertSame($taxCurrencyValue, $invoiceSuiteDocumentHeaderDTO->getTaxCurrency());
     }
 
@@ -150,6 +160,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $isCopyValue = true;
         $invoiceSuiteDocumentHeaderDTO->setIsCopy($isCopyValue);
+
         $this->assertSame($isCopyValue, $invoiceSuiteDocumentHeaderDTO->getIsCopy());
     }
 
@@ -158,6 +169,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $isTestValue = true;
         $invoiceSuiteDocumentHeaderDTO->setIsTest($isTestValue);
+
         $this->assertSame($isTestValue, $invoiceSuiteDocumentHeaderDTO->getIsTest());
     }
 
@@ -166,6 +178,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $notesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setNotes($notesValue);
+
         $this->assertSame($notesValue, $invoiceSuiteDocumentHeaderDTO->getNotes());
     }
 
@@ -174,6 +187,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $billingPeriodsValue = [];
         $invoiceSuiteDocumentHeaderDTO->setBillingPeriods($billingPeriodsValue);
+
         $this->assertSame($billingPeriodsValue, $invoiceSuiteDocumentHeaderDTO->getBillingPeriods());
     }
 
@@ -182,6 +196,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $postingReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setPostingReferences($postingReferencesValue);
+
         $this->assertSame($postingReferencesValue, $invoiceSuiteDocumentHeaderDTO->getPostingReferences());
     }
 
@@ -190,6 +205,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $sellerOrderReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setSellerOrderReferences($sellerOrderReferencesValue);
+
         $this->assertSame($sellerOrderReferencesValue, $invoiceSuiteDocumentHeaderDTO->getSellerOrderReferences());
     }
 
@@ -198,6 +214,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $buyerOrderReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setBuyerOrderReferences($buyerOrderReferencesValue);
+
         $this->assertSame($buyerOrderReferencesValue, $invoiceSuiteDocumentHeaderDTO->getBuyerOrderReferences());
     }
 
@@ -206,6 +223,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $quotationReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setQuotationReferences($quotationReferencesValue);
+
         $this->assertSame($quotationReferencesValue, $invoiceSuiteDocumentHeaderDTO->getQuotationReferences());
     }
 
@@ -214,6 +232,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $contractReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setContractReferences($contractReferencesValue);
+
         $this->assertSame($contractReferencesValue, $invoiceSuiteDocumentHeaderDTO->getContractReferences());
     }
 
@@ -222,6 +241,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $additionalReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setAdditionalReferences($additionalReferencesValue);
+
         $this->assertSame($additionalReferencesValue, $invoiceSuiteDocumentHeaderDTO->getAdditionalReferences());
     }
 
@@ -230,6 +250,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setInvoiceReferences($invoiceReferencesValue);
+
         $this->assertSame($invoiceReferencesValue, $invoiceSuiteDocumentHeaderDTO->getInvoiceReferences());
     }
 
@@ -238,6 +259,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $projectReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setProjectReferences($projectReferencesValue);
+
         $this->assertSame($projectReferencesValue, $invoiceSuiteDocumentHeaderDTO->getProjectReferences());
     }
 
@@ -246,6 +268,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $ultimateCustomerOrderReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setUltimateCustomerOrderReferences($ultimateCustomerOrderReferencesValue);
+
         $this->assertSame($ultimateCustomerOrderReferencesValue, $invoiceSuiteDocumentHeaderDTO->getUltimateCustomerOrderReferences());
     }
 
@@ -254,6 +277,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $despatchAdviceReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setDespatchAdviceReferences($despatchAdviceReferencesValue);
+
         $this->assertSame($despatchAdviceReferencesValue, $invoiceSuiteDocumentHeaderDTO->getDespatchAdviceReferences());
     }
 
@@ -262,6 +286,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $receivingAdviceReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setReceivingAdviceReferences($receivingAdviceReferencesValue);
+
         $this->assertSame($receivingAdviceReferencesValue, $invoiceSuiteDocumentHeaderDTO->getReceivingAdviceReferences());
     }
 
@@ -270,6 +295,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $deliveryNoteReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setDeliveryNoteReferences($deliveryNoteReferencesValue);
+
         $this->assertSame($deliveryNoteReferencesValue, $invoiceSuiteDocumentHeaderDTO->getDeliveryNoteReferences());
     }
 
@@ -278,6 +304,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $sellerPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setSellerParty($sellerPartyValue);
+
         $this->assertSame($sellerPartyValue, $invoiceSuiteDocumentHeaderDTO->getSellerParty());
     }
 
@@ -286,6 +313,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $buyerPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setBuyerParty($buyerPartyValue);
+
         $this->assertSame($buyerPartyValue, $invoiceSuiteDocumentHeaderDTO->getBuyerParty());
     }
 
@@ -294,6 +322,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $taxRepresentativePartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setTaxRepresentativeParty($taxRepresentativePartyValue);
+
         $this->assertSame($taxRepresentativePartyValue, $invoiceSuiteDocumentHeaderDTO->getTaxRepresentativeParty());
     }
 
@@ -302,6 +331,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $productEndUserPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setProductEndUserParty($productEndUserPartyValue);
+
         $this->assertSame($productEndUserPartyValue, $invoiceSuiteDocumentHeaderDTO->getProductEndUserParty());
     }
 
@@ -310,6 +340,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $shipToPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setShipToParty($shipToPartyValue);
+
         $this->assertSame($shipToPartyValue, $invoiceSuiteDocumentHeaderDTO->getShipToParty());
     }
 
@@ -318,6 +349,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $ultimateShipToPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setUltimateShipToParty($ultimateShipToPartyValue);
+
         $this->assertSame($ultimateShipToPartyValue, $invoiceSuiteDocumentHeaderDTO->getUltimateShipToParty());
     }
 
@@ -326,6 +358,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $shipFromPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setShipFromParty($shipFromPartyValue);
+
         $this->assertSame($shipFromPartyValue, $invoiceSuiteDocumentHeaderDTO->getShipFromParty());
     }
 
@@ -334,6 +367,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoicerPartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setInvoicerParty($invoicerPartyValue);
+
         $this->assertSame($invoicerPartyValue, $invoiceSuiteDocumentHeaderDTO->getInvoicerParty());
     }
 
@@ -342,6 +376,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceePartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setInvoiceeParty($invoiceePartyValue);
+
         $this->assertSame($invoiceePartyValue, $invoiceSuiteDocumentHeaderDTO->getInvoiceeParty());
     }
 
@@ -350,6 +385,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $payeePartyValue = new InvoiceSuitePartyDTO();
         $invoiceSuiteDocumentHeaderDTO->setPayeeParty($payeePartyValue);
+
         $this->assertSame($payeePartyValue, $invoiceSuiteDocumentHeaderDTO->getPayeeParty());
     }
 
@@ -358,6 +394,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $paymentMeansValue = [];
         $invoiceSuiteDocumentHeaderDTO->setPaymentMeans($paymentMeansValue);
+
         $this->assertSame($paymentMeansValue, $invoiceSuiteDocumentHeaderDTO->getPaymentMeans());
     }
 
@@ -366,6 +403,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $paymentTermsValue = [];
         $invoiceSuiteDocumentHeaderDTO->setPaymentTerms($paymentTermsValue);
+
         $this->assertSame($paymentTermsValue, $invoiceSuiteDocumentHeaderDTO->getPaymentTerms());
     }
 
@@ -374,6 +412,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $creditorReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setCreditorReferences($creditorReferencesValue);
+
         $this->assertSame($creditorReferencesValue, $invoiceSuiteDocumentHeaderDTO->getCreditorReferences());
     }
 
@@ -382,6 +421,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $buyerReferencesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setBuyerReferences($buyerReferencesValue);
+
         $this->assertSame($buyerReferencesValue, $invoiceSuiteDocumentHeaderDTO->getBuyerReferences());
     }
 
@@ -390,6 +430,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $taxesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setTaxes($taxesValue);
+
         $this->assertSame($taxesValue, $invoiceSuiteDocumentHeaderDTO->getTaxes());
     }
 
@@ -398,6 +439,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $allowanceChargesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setAllowanceCharges($allowanceChargesValue);
+
         $this->assertSame($allowanceChargesValue, $invoiceSuiteDocumentHeaderDTO->getAllowanceCharges());
     }
 
@@ -406,6 +448,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $serviceChargesValue = [];
         $invoiceSuiteDocumentHeaderDTO->setServiceCharges($serviceChargesValue);
+
         $this->assertSame($serviceChargesValue, $invoiceSuiteDocumentHeaderDTO->getServiceCharges());
     }
 
@@ -414,6 +457,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $summationsValue = [];
         $invoiceSuiteDocumentHeaderDTO->setSummations($summationsValue);
+
         $this->assertSame($summationsValue, $invoiceSuiteDocumentHeaderDTO->getSummations());
     }
 
@@ -422,40 +466,58 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $positionsValue = [];
         $invoiceSuiteDocumentHeaderDTO->setPositions($positionsValue);
+
         $this->assertSame($positionsValue, $invoiceSuiteDocumentHeaderDTO->getPositions());
     }
 
     public function testCollectionSupplyChainEventIteratorsWithCallbacks(): void
     {
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+        $invoiceSuiteDocumentHeaderDTO->addSupplyChainEvent(null);
         $invoiceSuiteDocumentHeaderDTO->addSupplyChainEvent(new DateTimeImmutable("2025-01-02"));
         $invoiceSuiteDocumentHeaderDTO->addSupplyChainEvent(new DateTimeImmutable("2025-01-02"));
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSupplyChainEvent($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstSupplyChainEvent($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousSupplyChainEvent($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastSupplyChainEvent($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachSupplyChainEvent($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachSupplyChainEvent($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSupplyChainEvent($cb, $cbElse);
@@ -463,6 +525,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastSupplyChainEvent($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachSupplyChainEvent($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -472,32 +535,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addNote(new InvoiceSuiteNoteDTO());
         $invoiceSuiteDocumentHeaderDTO->addNote(new InvoiceSuiteNoteDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextNote($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstNote($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousNote($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastNote($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachNote($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachNote($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextNote($cb, $cbElse);
@@ -505,6 +584,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastNote($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachNote($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -514,32 +594,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addBillingPeriod(new InvoiceSuiteDateRangeDTO());
         $invoiceSuiteDocumentHeaderDTO->addBillingPeriod(new InvoiceSuiteDateRangeDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBillingPeriod($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstBillingPeriod($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousBillingPeriod($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastBillingPeriod($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachBillingPeriod($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachBillingPeriod($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBillingPeriod($cb, $cbElse);
@@ -547,6 +643,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastBillingPeriod($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachBillingPeriod($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -556,32 +653,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addPostingReference(new InvoiceSuiteIdDTO());
         $invoiceSuiteDocumentHeaderDTO->addPostingReference(new InvoiceSuiteIdDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPostingReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstPostingReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousPostingReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastPostingReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachPostingReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachPostingReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPostingReference($cb, $cbElse);
@@ -589,6 +702,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastPostingReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachPostingReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -598,32 +712,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addSellerOrderReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addSellerOrderReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSellerOrderReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstSellerOrderReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousSellerOrderReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastSellerOrderReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachSellerOrderReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachSellerOrderReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSellerOrderReference($cb, $cbElse);
@@ -631,6 +761,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastSellerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachSellerOrderReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -640,32 +771,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addBuyerOrderReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addBuyerOrderReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerOrderReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstBuyerOrderReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousBuyerOrderReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastBuyerOrderReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachBuyerOrderReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachBuyerOrderReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerOrderReference($cb, $cbElse);
@@ -673,6 +820,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastBuyerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachBuyerOrderReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -682,32 +830,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addQuotationReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addQuotationReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextQuotationReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstQuotationReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousQuotationReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastQuotationReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachQuotationReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachQuotationReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextQuotationReference($cb, $cbElse);
@@ -715,6 +879,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastQuotationReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachQuotationReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -724,32 +889,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addContractReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addContractReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextContractReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstContractReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousContractReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastContractReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachContractReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachContractReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextContractReference($cb, $cbElse);
@@ -757,6 +938,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastContractReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachContractReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -766,32 +948,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addAdditionalReference(new InvoiceSuiteReferenceDocumentExtDTO());
         $invoiceSuiteDocumentHeaderDTO->addAdditionalReference(new InvoiceSuiteReferenceDocumentExtDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAdditionalReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstAdditionalReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousAdditionalReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastAdditionalReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachAdditionalReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachAdditionalReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAdditionalReference($cb, $cbElse);
@@ -799,6 +997,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastAdditionalReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachAdditionalReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -808,32 +1007,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addInvoiceReference(new InvoiceSuiteReferenceDocumentExtDTO());
         $invoiceSuiteDocumentHeaderDTO->addInvoiceReference(new InvoiceSuiteReferenceDocumentExtDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextInvoiceReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstInvoiceReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousInvoiceReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastInvoiceReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachInvoiceReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachInvoiceReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextInvoiceReference($cb, $cbElse);
@@ -841,6 +1056,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastInvoiceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachInvoiceReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -850,32 +1066,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addProjectReference(new InvoiceSuiteProjectDTO());
         $invoiceSuiteDocumentHeaderDTO->addProjectReference(new InvoiceSuiteProjectDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextProjectReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstProjectReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousProjectReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastProjectReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachProjectReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachProjectReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextProjectReference($cb, $cbElse);
@@ -883,6 +1115,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastProjectReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachProjectReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -892,32 +1125,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addUltimateCustomerOrderReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addUltimateCustomerOrderReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextUltimateCustomerOrderReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstUltimateCustomerOrderReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousUltimateCustomerOrderReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastUltimateCustomerOrderReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachUltimateCustomerOrderReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachUltimateCustomerOrderReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextUltimateCustomerOrderReference($cb, $cbElse);
@@ -925,6 +1174,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastUltimateCustomerOrderReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachUltimateCustomerOrderReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -934,32 +1184,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addDespatchAdviceReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addDespatchAdviceReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDespatchAdviceReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstDespatchAdviceReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousDespatchAdviceReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastDespatchAdviceReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachDespatchAdviceReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachDespatchAdviceReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDespatchAdviceReference($cb, $cbElse);
@@ -967,6 +1233,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastDespatchAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachDespatchAdviceReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -976,32 +1243,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addReceivingAdviceReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addReceivingAdviceReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextReceivingAdviceReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstReceivingAdviceReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousReceivingAdviceReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastReceivingAdviceReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachReceivingAdviceReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachReceivingAdviceReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextReceivingAdviceReference($cb, $cbElse);
@@ -1009,6 +1292,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastReceivingAdviceReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachReceivingAdviceReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1018,32 +1302,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addDeliveryNoteReference(new InvoiceSuiteReferenceDocumentDTO());
         $invoiceSuiteDocumentHeaderDTO->addDeliveryNoteReference(new InvoiceSuiteReferenceDocumentDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDeliveryNoteReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstDeliveryNoteReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousDeliveryNoteReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastDeliveryNoteReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachDeliveryNoteReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachDeliveryNoteReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextDeliveryNoteReference($cb, $cbElse);
@@ -1051,6 +1351,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastDeliveryNoteReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachDeliveryNoteReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1060,32 +1361,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addPaymentMean(new InvoiceSuitePaymentMeanDTO());
         $invoiceSuiteDocumentHeaderDTO->addPaymentMean(new InvoiceSuitePaymentMeanDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentMean($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstPaymentMean($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousPaymentMean($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastPaymentMean($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachPaymentMean($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachPaymentMean($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentMean($cb, $cbElse);
@@ -1093,6 +1410,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastPaymentMean($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachPaymentMean($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1102,32 +1420,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addPaymentTerm(new InvoiceSuitePaymentTermDTO());
         $invoiceSuiteDocumentHeaderDTO->addPaymentTerm(new InvoiceSuitePaymentTermDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentTerm($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstPaymentTerm($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousPaymentTerm($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastPaymentTerm($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachPaymentTerm($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachPaymentTerm($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPaymentTerm($cb, $cbElse);
@@ -1135,6 +1469,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastPaymentTerm($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachPaymentTerm($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1144,32 +1479,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addCreditorReference(new InvoiceSuiteIdDTO());
         $invoiceSuiteDocumentHeaderDTO->addCreditorReference(new InvoiceSuiteIdDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextCreditorReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstCreditorReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousCreditorReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastCreditorReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachCreditorReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachCreditorReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextCreditorReference($cb, $cbElse);
@@ -1177,6 +1528,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastCreditorReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachCreditorReference($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1186,32 +1538,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addBuyerReference(new InvoiceSuiteIdDTO());
         $invoiceSuiteDocumentHeaderDTO->addBuyerReference(new InvoiceSuiteIdDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerReference($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstBuyerReference($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousBuyerReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastBuyerReference($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachBuyerReference($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachBuyerReference($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextBuyerReference($cb, $cbElse);
@@ -1219,6 +1587,66 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastBuyerReference($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachBuyerReference($cb, $cbElse);
+
+        $this->assertSame(0, $hitCount);
+        $this->assertSame(7, $elseCount);
+    }
+
+    public function testCollectionTaxIteratorsWithCallbacks(): void
+    {
+        $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+        $invoiceSuiteDocumentHeaderDTO->addTax(new InvoiceSuiteTaxDTO());
+        $invoiceSuiteDocumentHeaderDTO->addTax(new InvoiceSuiteTaxDTO());
+
+        $hitCount = 0;
+        $elseCount = 0;
+
+        $cb = function ($item) use (&$hitCount) {
+            $hitCount++;
+        };
+
+        $cbElse = function () use (&$elseCount) {
+            $elseCount++;
+        };
+
+        $invoiceSuiteDocumentHeaderDTO->firstTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextTax($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->previousTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->previousTax($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->lastTax($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->forEachTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->forEachTax($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
+        $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
+        $hitCount = 0;
+        $elseCount = 0;
+
+        $cb = function ($item) use (&$hitCount) {
+            $hitCount++;
+        };
+
+        $cbElse = function () use (&$elseCount) {
+            $elseCount++;
+        };
+
+        $invoiceSuiteDocumentHeaderDTO->firstTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->previousTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->previousTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->lastTax($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->forEachTax($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1228,32 +1656,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addAllowanceCharge(new InvoiceSuiteAllowanceChargeDTO());
         $invoiceSuiteDocumentHeaderDTO->addAllowanceCharge(new InvoiceSuiteAllowanceChargeDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAllowanceCharge($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstAllowanceCharge($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousAllowanceCharge($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastAllowanceCharge($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachAllowanceCharge($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachAllowanceCharge($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextAllowanceCharge($cb, $cbElse);
@@ -1261,6 +1705,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastAllowanceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachAllowanceCharge($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1270,32 +1715,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addServiceCharge(new InvoiceSuiteServiceChargeDTO());
         $invoiceSuiteDocumentHeaderDTO->addServiceCharge(new InvoiceSuiteServiceChargeDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextServiceCharge($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstServiceCharge($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousServiceCharge($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastServiceCharge($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachServiceCharge($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachServiceCharge($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextServiceCharge($cb, $cbElse);
@@ -1303,6 +1764,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastServiceCharge($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachServiceCharge($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1312,32 +1774,48 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
         $invoiceSuiteDocumentHeaderDTO->addSummation(new InvoiceSuiteSummationDTO());
         $invoiceSuiteDocumentHeaderDTO->addSummation(new InvoiceSuiteSummationDTO());
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSummation($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->firstSummation($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->previousSummation($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->lastSummation($cb, $cbElse);
+
         $invoiceSuiteDocumentHeaderDTO->forEachSummation($cb, $cbElse);
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->forEachSummation($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
+
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $hitCount = 0;
         $elseCount = 0;
+
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
+
         $invoiceSuiteDocumentHeaderDTO->firstSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextSummation($cb, $cbElse);
@@ -1345,6 +1823,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->previousSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->lastSummation($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->forEachSummation($cb, $cbElse);
+
         $this->assertSame(0, $hitCount);
         $this->assertSame(7, $elseCount);
     }
@@ -1361,6 +1840,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };
@@ -1368,13 +1848,19 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $invoiceSuiteDocumentHeaderDTO->firstPosition($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPosition($cb, $cbElse);
         $invoiceSuiteDocumentHeaderDTO->nextPosition($cb, $cbElse);
-        $invoiceSuiteDocumentHeaderDTO->previousPosition($cb, $cbElse);
-        $invoiceSuiteDocumentHeaderDTO->previousPosition($cb, $cbElse);
-        $invoiceSuiteDocumentHeaderDTO->lastPosition($cb, $cbElse);
-        $invoiceSuiteDocumentHeaderDTO->forEachPosition($cb, $cbElse);
 
-        $this->assertSame(5, $hitCount);
-        $this->assertSame(3, $elseCount);
+        $invoiceSuiteDocumentHeaderDTO->firstPosition($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->nextPosition($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->previousPosition($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->previousPosition($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->lastPosition($cb, $cbElse);
+
+        $invoiceSuiteDocumentHeaderDTO->forEachPosition($cb, $cbElse);
+        $invoiceSuiteDocumentHeaderDTO->forEachPosition($cb, $cbElse, 1);
+
+        $this->assertSame(9, $hitCount);
+        $this->assertSame(2, $elseCount);
 
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
 
@@ -1384,6 +1870,7 @@ class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $cb = function ($item) use (&$hitCount) {
             $hitCount++;
         };
+
         $cbElse = function () use (&$elseCount) {
             $elseCount++;
         };

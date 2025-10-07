@@ -13,6 +13,7 @@ class InvoiceSuitePaymentTermDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
+
         $this->assertNull($invoiceSuitePaymentTermDTO->getDescription());
         $this->assertNull($invoiceSuitePaymentTermDTO->getDueDate());
         $this->assertSame([], $invoiceSuitePaymentTermDTO->getDiscountTerms());
@@ -24,6 +25,7 @@ class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
         $descriptionValue = "Example Value";
         $invoiceSuitePaymentTermDTO->setDescription($descriptionValue);
+
         $this->assertSame($descriptionValue, $invoiceSuitePaymentTermDTO->getDescription());
     }
 
@@ -32,6 +34,7 @@ class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
         $dueDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuitePaymentTermDTO->setDueDate($dueDateValue);
+
         $this->assertSame($dueDateValue, $invoiceSuitePaymentTermDTO->getDueDate());
     }
 
@@ -40,6 +43,7 @@ class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
         $discountTermsValue = [];
         $invoiceSuitePaymentTermDTO->setDiscountTerms($discountTermsValue);
+
         $this->assertSame($discountTermsValue, $invoiceSuitePaymentTermDTO->getDiscountTerms());
     }
 
@@ -48,6 +52,7 @@ class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
         $penaltyTermsValue = [];
         $invoiceSuitePaymentTermDTO->setPenaltyTerms($penaltyTermsValue);
+
         $this->assertSame($penaltyTermsValue, $invoiceSuitePaymentTermDTO->getPenaltyTerms());
     }
 }

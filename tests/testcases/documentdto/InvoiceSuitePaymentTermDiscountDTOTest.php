@@ -14,6 +14,7 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePaymentTermDiscountDTO = new InvoiceSuitePaymentTermDiscountDTO();
+
         $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getBaseAmount());
         $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getDiscountAmount());
         $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getDiscountPercent());
@@ -26,6 +27,7 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
         $invoiceSuitePaymentTermDiscountDTO = new InvoiceSuitePaymentTermDiscountDTO();
         $baseAmountValue = 123.45;
         $invoiceSuitePaymentTermDiscountDTO->setBaseAmount($baseAmountValue);
+
         $this->assertSame($baseAmountValue, $invoiceSuitePaymentTermDiscountDTO->getBaseAmount());
     }
 
@@ -34,6 +36,7 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
         $invoiceSuitePaymentTermDiscountDTO = new InvoiceSuitePaymentTermDiscountDTO();
         $discountAmountValue = 123.45;
         $invoiceSuitePaymentTermDiscountDTO->setDiscountAmount($discountAmountValue);
+
         $this->assertSame($discountAmountValue, $invoiceSuitePaymentTermDiscountDTO->getDiscountAmount());
     }
 
@@ -42,6 +45,7 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
         $invoiceSuitePaymentTermDiscountDTO = new InvoiceSuitePaymentTermDiscountDTO();
         $discountPercentValue = 123.45;
         $invoiceSuitePaymentTermDiscountDTO->setDiscountPercent($discountPercentValue);
+
         $this->assertSame($discountPercentValue, $invoiceSuitePaymentTermDiscountDTO->getDiscountPercent());
     }
 
@@ -50,6 +54,7 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
         $invoiceSuitePaymentTermDiscountDTO = new InvoiceSuitePaymentTermDiscountDTO();
         $baseDateValue = new DateTimeImmutable("2025-01-02");
         $invoiceSuitePaymentTermDiscountDTO->setBaseDate($baseDateValue);
+
         $this->assertSame($baseDateValue, $invoiceSuitePaymentTermDiscountDTO->getBaseDate());
     }
 
@@ -58,6 +63,7 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
         $invoiceSuitePaymentTermDiscountDTO = new InvoiceSuitePaymentTermDiscountDTO();
         $periodValue = new InvoiceSuitePeriodDTO();
         $invoiceSuitePaymentTermDiscountDTO->setPeriod($periodValue);
+
         $this->assertSame($periodValue, $invoiceSuitePaymentTermDiscountDTO->getPeriod());
     }
 }

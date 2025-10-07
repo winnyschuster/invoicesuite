@@ -12,6 +12,7 @@ class InvoiceSuiteMeasureDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteMeasureDTO = new InvoiceSuiteMeasureDTO();
+
         $this->assertNull($invoiceSuiteMeasureDTO->getValue());
         $this->assertNull($invoiceSuiteMeasureDTO->getUnit());
     }
@@ -21,6 +22,7 @@ class InvoiceSuiteMeasureDTOTest extends TestCase
         $invoiceSuiteMeasureDTO = new InvoiceSuiteMeasureDTO();
         $valueValue = 123.45;
         $invoiceSuiteMeasureDTO->setValue($valueValue);
+
         $this->assertSame($valueValue, $invoiceSuiteMeasureDTO->getValue());
     }
 
@@ -29,6 +31,7 @@ class InvoiceSuiteMeasureDTOTest extends TestCase
         $invoiceSuiteMeasureDTO = new InvoiceSuiteMeasureDTO();
         $unitValue = "Example Value";
         $invoiceSuiteMeasureDTO->setUnit($unitValue);
+
         $this->assertSame($unitValue, $invoiceSuiteMeasureDTO->getUnit());
     }
 }

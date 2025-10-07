@@ -12,6 +12,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
+
         $this->assertNull($invoiceSuitePaymentMeanDTO->getTypeCode());
         $this->assertNull($invoiceSuitePaymentMeanDTO->getName());
         $this->assertNull($invoiceSuitePaymentMeanDTO->getFinancialCardId());
@@ -30,6 +31,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $typeCodeValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setTypeCode($typeCodeValue);
+
         $this->assertSame($typeCodeValue, $invoiceSuitePaymentMeanDTO->getTypeCode());
     }
 
@@ -38,6 +40,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $nameValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setName($nameValue);
+
         $this->assertSame($nameValue, $invoiceSuitePaymentMeanDTO->getName());
     }
 
@@ -46,6 +49,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $financialCardIdValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setFinancialCardId($financialCardIdValue);
+
         $this->assertSame($financialCardIdValue, $invoiceSuitePaymentMeanDTO->getFinancialCardId());
     }
 
@@ -54,6 +58,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $financialCardHolderValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setFinancialCardHolder($financialCardHolderValue);
+
         $this->assertSame($financialCardHolderValue, $invoiceSuitePaymentMeanDTO->getFinancialCardHolder());
     }
 
@@ -62,6 +67,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $buyerIbanValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setBuyerIban($buyerIbanValue);
+
         $this->assertSame($buyerIbanValue, $invoiceSuitePaymentMeanDTO->getBuyerIban());
     }
 
@@ -70,6 +76,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $payeeIbanValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setPayeeIban($payeeIbanValue);
+
         $this->assertSame($payeeIbanValue, $invoiceSuitePaymentMeanDTO->getPayeeIban());
     }
 
@@ -78,6 +85,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $payeeAccountNameValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setPayeeAccountName($payeeAccountNameValue);
+
         $this->assertSame($payeeAccountNameValue, $invoiceSuitePaymentMeanDTO->getPayeeAccountName());
     }
 
@@ -86,6 +94,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $payeeProprietaryIdValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setPayeeProprietaryId($payeeProprietaryIdValue);
+
         $this->assertSame($payeeProprietaryIdValue, $invoiceSuitePaymentMeanDTO->getPayeeProprietaryId());
     }
 
@@ -94,6 +103,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $payeeBicValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setPayeeBic($payeeBicValue);
+
         $this->assertSame($payeeBicValue, $invoiceSuitePaymentMeanDTO->getPayeeBic());
     }
 
@@ -102,6 +112,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $paymentReferenceValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setPaymentReference($paymentReferenceValue);
+
         $this->assertSame($paymentReferenceValue, $invoiceSuitePaymentMeanDTO->getPaymentReference());
     }
 
@@ -110,6 +121,7 @@ class InvoiceSuitePaymentMeanDTOTest extends TestCase
         $invoiceSuitePaymentMeanDTO = new InvoiceSuitePaymentMeanDTO();
         $mandateValue = "Example Value";
         $invoiceSuitePaymentMeanDTO->setMandate($mandateValue);
+
         $this->assertSame($mandateValue, $invoiceSuitePaymentMeanDTO->getMandate());
     }
 }

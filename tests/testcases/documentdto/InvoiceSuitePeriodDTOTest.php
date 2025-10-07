@@ -12,6 +12,7 @@ class InvoiceSuitePeriodDTOTest extends TestCase
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePeriodDTO = new InvoiceSuitePeriodDTO();
+
         $this->assertNull($invoiceSuitePeriodDTO->getPeriod());
         $this->assertNull($invoiceSuitePeriodDTO->getPeriodUnit());
     }
@@ -21,6 +22,7 @@ class InvoiceSuitePeriodDTOTest extends TestCase
         $invoiceSuitePeriodDTO = new InvoiceSuitePeriodDTO();
         $periodValue = 123.45;
         $invoiceSuitePeriodDTO->setPeriod($periodValue);
+
         $this->assertSame($periodValue, $invoiceSuitePeriodDTO->getPeriod());
     }
 
@@ -29,6 +31,7 @@ class InvoiceSuitePeriodDTOTest extends TestCase
         $invoiceSuitePeriodDTO = new InvoiceSuitePeriodDTO();
         $periodUnitValue = "Example Value";
         $invoiceSuitePeriodDTO->setPeriodUnit($periodUnitValue);
+
         $this->assertSame($periodUnitValue, $invoiceSuitePeriodDTO->getPeriodUnit());
     }
 }
