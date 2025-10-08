@@ -9,7 +9,7 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 
-class HandlesSerializerTest extends TestCase
+class HandlesDocumentSerializerTest extends TestCase
 {
     use HandlesCurrentDocumentFormatProvider;
     use HandlesDocumentSerializer;

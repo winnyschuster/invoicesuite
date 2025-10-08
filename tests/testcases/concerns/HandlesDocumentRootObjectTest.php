@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\documentmodels\zffxextended\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 
-class HandlesRootObjectTest extends TestCase
+class HandlesDocumentRootObjectTest extends TestCase
 {
     use HandlesCurrentDocumentFormatProvider;
     use HandlesDocumentRootObject;

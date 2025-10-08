@@ -8,8 +8,8 @@
             <file>../tests/testcases/concerns/HandlesFormatProvidersTest.php</file>
             <file>../tests/testcases/concerns/HandlesCurrentFormatProviderTest.php</file>
             <file>../tests/testcases/concerns/HandlesObjectFlagsTest.php</file>
-            <file>../tests/testcases/concerns/HandlesRootObjectTest.php</file>
-            <file>../tests/testcases/concerns/HandlesSerializerTest.php</file>
+            <file>../tests/testcases/concerns/HandlesDocumentRootObjectTest.php</file>
+            <file>../tests/testcases/concerns/HandlesDocumentSerializerTest.php</file>
             <file>../tests/testcases/concerns/HandlesPdfConstructorRawContentsTest.php</file>
         </testsuite>
         <testsuite name="codelists">
