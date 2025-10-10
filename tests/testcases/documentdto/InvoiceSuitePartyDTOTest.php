@@ -109,11 +109,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -139,11 +139,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -168,11 +168,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -198,11 +198,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -227,11 +227,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -257,11 +257,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -286,11 +286,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -316,11 +316,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -345,11 +345,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -375,11 +375,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -404,11 +404,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -434,11 +434,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -463,11 +463,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -493,11 +493,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -522,11 +522,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 
@@ -552,11 +552,11 @@ class InvoiceSuitePartyDTOTest extends TestCase
         $hitCount = 0;
         $elseCount = 0;
 
-        $cb = function ($item) use (&$hitCount) {
+        $cb = function ($item) use (&$hitCount): void {
             $hitCount++;
         };
 
-        $cbElse = function () use (&$elseCount) {
+        $cbElse = function () use (&$elseCount): void {
             $elseCount++;
         };
 

@@ -106,7 +106,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
 
         // Attachment pane
 
-        if ($this->getAttachmentPaneVisibility() === true) {
+        if ($this->getAttachmentPaneVisibility()) {
             $this->pdfWriter->openAttachmentPane();
         }
 
@@ -260,14 +260,10 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
         $docTypeXpath = $xpath->query('//rsm:ExchangedDocument/ram:TypeCode');
         $docTypeCode = $docTypeXpath->item(0)->nodeValue;
 
-        switch ($docTypeCode) {
-            case InvoiceSuiteCodelistDocumentTypes::CREDIT_NOTE:
-                $docTypeName = 'Credit Note';
-                break;
-            default:
-                $docTypeName = 'Invoice';
-                break;
-        }
+        $docTypeName = match ($docTypeCode) {
+            InvoiceSuiteCodelistDocumentTypes::CREDIT_NOTE => 'Credit Note',
+            default => 'Invoice',
+        };
 
         return [
             'invoiceId' => $invoiceId,
