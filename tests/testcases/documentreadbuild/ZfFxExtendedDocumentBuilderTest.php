@@ -3,6 +3,7 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentreadbuild;
 
 use DateTime;
+use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
@@ -32,6 +33,7 @@ class ZfFxExtendedDocumentBuilderTest extends TestCase
         $this->assertSame('zffxextended', self::$document->getCurrentDocumentFormatProvider()->getUniqueId());
         $this->assertNotNull(self::$document->getCurrentDocumentFormatProvider()->getBuilder());
         $this->assertInstanceOf(InvoiceSuiteZfFxExtendedProviderBuilder::class, self::$document->getCurrentDocumentFormatProvider()->getBuilder());
+        $this->assertInstanceOf(InvoiceSuiteAbstractDocumentFormatBuilder::class, self::$document->getCurrentDocumentFormatProvider()->getBuilder());
         $this->assertNotNull(self::$document->getCurrentDocumentFormatProvider()->getBuilder()->getDocumentRootObject());
         $this->assertInstanceOf(CrossIndustryInvoice::class, self::$document->getCurrentDocumentFormatProvider()->getBuilder()->getDocumentRootObject());
     }
