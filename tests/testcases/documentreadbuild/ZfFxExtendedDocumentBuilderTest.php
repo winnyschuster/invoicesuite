@@ -12,6 +12,10 @@ use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\documentmodels\zffxextended\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProviderBuilder;
+use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProviderReader;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
+use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
+use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
 class ZfFxExtendedDocumentBuilderTest extends TestCase
 {
@@ -16479,5 +16483,68 @@ class ZfFxExtendedDocumentBuilderTest extends TestCase
         $this->assertXPathValueWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ReceivableSpecifiedTradeAccountingAccount/ram:TypeCode', 0, 'type3');
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ReceivableSpecifiedTradeAccountingAccount/ram:ID', 1);
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ReceivableSpecifiedTradeAccountingAccount/ram:TypeCode', 1);
+    }
+
+    public function testGetContentAsXml(): void
+    {
+        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(self::$document->getContentAsXml());
+
+        $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $resolvedContentType);
+    }
+
+    public function testGetContentAsJson(): void
+    {
+        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(self::$document->getContentAsJson());
+
+        $this->assertSame(InvoiceSuiteContentTypeResolver::JSON, $resolvedContentType);
+    }
+
+    public function testSaveAsXmlFile(): void
+    {
+        $xmlFilename = InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "invoice.json");
+
+        $this->registerFileForTestCaseTeardown($xmlFilename);
+
+        self::$document->saveAsXmlFile($xmlFilename);
+
+        $this->assertFileExists($xmlFilename);
+
+        $xmlFileContent = file_get_contents($xmlFilename);
+
+        $this->assertNotFalse($xmlFileContent);
+        $this->assertIsString($xmlFileContent);
+
+        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType($xmlFileContent);
+
+        $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $resolvedContentType);
+    }
+
+    public function testSaveAsJsonFile(): void
+    {
+        $jsonFilename = InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "invoice.json");
+
+        $this->registerFileForTestCaseTeardown($jsonFilename);
+
+        self::$document->saveAsJsonFile($jsonFilename);
+
+        $this->assertFileExists($jsonFilename);
+
+        $jsonFileContent = file_get_contents($jsonFilename);
+
+        $this->assertNotFalse($jsonFileContent);
+        $this->assertIsString($jsonFileContent);
+
+        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType($jsonFileContent);
+
+        $this->assertSame(InvoiceSuiteContentTypeResolver::JSON, $resolvedContentType);
+    }
+
+    public function testCopyToReader(): void
+    {
+        $documentReader = self::$document->copyToReader();
+
+        $this->assertInstanceOf(InvoiceSuiteDocumentReader::class, $documentReader);
+        $this->assertSame('zffxextended', $documentReader->getCurrentDocumentFormatProvider()->getUniqueId());
+        $this->assertInstanceOf(InvoiceSuiteZfFxExtendedProviderReader::class, $documentReader->getCurrentDocumentFormatProvider()->getReader());
     }
 }
