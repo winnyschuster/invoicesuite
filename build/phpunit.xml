@@ -68,6 +68,9 @@
         <testsuite name="pdf">
             <file>../tests/testcases/pdf/InvoiceSuitePdfExtractorTest.php</file>
         </testsuite>
+        <testsuite name="core">
+            <file>../tests/testcases/core/ZfFxExtendedDocumentBuilderTest.php</file>
+        </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>

@@ -3,12 +3,13 @@
 namespace horstoeko\invoicesuite\tests\traits;
 
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\stringmanagement\PathUtils;
 
 trait HandlesXmlTests
 {
     /**
-     * @var InvoiceSuiteAbstractDocumentFormatBuilder
+     * @var InvoiceSuiteAbstractDocumentFormatBuilder|InvoiceSuiteDocumentBuilder
      */
     protected static $document;
 

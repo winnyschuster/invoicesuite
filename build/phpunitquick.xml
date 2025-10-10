@@ -68,5 +68,8 @@
         <testsuite name="pdf">
             <file>../tests/testcases/pdf/InvoiceSuitePdfExtractorTest.php</file>
         </testsuite>
+        <testsuite name="base">
+            <file>../tests/testcases/core/ZfFxExtendedDocumentBuilderTest.php</file>
+        </testsuite>
     </testsuites>
 </phpunit>
