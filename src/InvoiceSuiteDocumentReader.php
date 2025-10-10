@@ -74,8 +74,8 @@ class InvoiceSuiteDocumentReader
     /**
      * Constructor (hidden)
      *
-     * @param  string $fromContent
-     * @return static
+     * @param string $fromContent
+     * @return void
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContent
      */
