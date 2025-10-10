@@ -756,7 +756,7 @@ class UtilsTest extends TestCase
 
     #endregion
 
-    #region InvoiceSuiteFileUtils
+    #region InvoiceSuitePathUtils
 
     public function testInvoiceSuitePathUtils(): void
     {
