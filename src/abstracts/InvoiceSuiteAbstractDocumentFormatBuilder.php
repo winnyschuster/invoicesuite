@@ -31,8 +31,8 @@ use JMS\Serializer\SerializationContext;
 abstract class InvoiceSuiteAbstractDocumentFormatBuilder
 {
     use HandlesCurrentDocumentFormatProvider;
-    use HandlesDocumentRootObject;
     use HandlesDocumentSerializer;
+    use HandlesDocumentRootObject;
 
     #region General
 
