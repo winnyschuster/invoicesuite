@@ -16,13 +16,17 @@ use horstoeko\invoicesuite\documentdto\InvoiceSuiteAddressDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
+use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteOrganisationDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
+use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\documentmodels\zffxextended\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProviderReader;
 use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProviderBuilder;
@@ -16736,6 +16740,15 @@ class ZfFxExtendedDocumentBuilderTest extends TestCase
                     ->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Payee AG"))
                     ->addContact(new InvoiceSuiteContactDTO("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@payee.de"))
                     ->addCommunication(new InvoiceSuiteCommunicationDTO("info@payee.de", "EM"))
+            )
+            ->addPaymentTerm(
+                (new InvoiceSuitePaymentTermDTO())
+                    ->setDescription("Payment Term Description 1")
+                    ->setDueDate((new DateTime())->createFromFormat('d.m.Y', '31.01.1970'))
+                    ->addDiscountTerm(new InvoiceSuitePaymentTermDiscountDTO(200.00, 10, 2.00, (new DateTime())->createFromFormat('d.m.Y', '24.02.1970')))
+                    ->addDiscountTerm(new InvoiceSuitePaymentTermDiscountDTO(400.00, 20, 2.00, (new DateTime())->createFromFormat('d.m.Y', '24.03.1970')))
+                    ->addPenaltyTerm(new InvoiceSuitePaymentTermPenaltyDTO(200.00, 10, 2.00, (new DateTime())->createFromFormat('d.m.Y', '24.02.1970')))
+                    ->addPenaltyTerm(new InvoiceSuitePaymentTermPenaltyDTO(400.00, 20, 2.00, (new DateTime())->createFromFormat('d.m.Y', '24.03.1970')))
             )
         ;
 
