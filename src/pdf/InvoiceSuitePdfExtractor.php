@@ -12,13 +12,15 @@ namespace horstoeko\invoicesuite\pdf;
 use ArrayAccess;
 use ArrayIterator;
 use Countable;
-use Exception;
 use IteratorAggregate;
 use LogicException;
 use Traversable;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
-use Smalot\PdfParser\Parser as PdfParser;
+use PrinsFrank\PdfParser\Exception\InvalidArgumentException;
+use PrinsFrank\PdfParser\Exception\ParseFailureException;
+use PrinsFrank\PdfParser\Exception\PdfParserException;
+use PrinsFrank\PdfParser\PdfParser;
 
 /**
  * Class representing an extractor for PDF attachments
@@ -44,9 +46,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     /**
      * (Hidden) Constructor
      */
-    final protected function __construct()
-    {
-    }
+    final protected function __construct() {}
 
     /**
      * Start getting attached files from a PDF file
@@ -55,7 +55,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @return InvoiceSuitePdfExtractor
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
-     * @throws Exception
+     * @throws PdfParserException
+     * @throws InvalidArgumentException
+     * @throws ParseFailureException
      */
     public static function fromFile(string $pdfFilename): self
     {
@@ -77,7 +79,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      *
      * @param string $pdfContent
      * @return InvoiceSuitePdfExtractor
-     * @throws Exception
+     * @throws PdfParserException
+     * @throws InvalidArgumentException
+     * @throws ParseFailureException
      */
     public static function fromContent(string $pdfContent): self
     {
@@ -85,39 +89,84 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     }
 
     /**
+     * Returns the classname of the LGPL-licensed PDF Parser smalot\pdfparser
+     *
+     * @return string
+     */
+    protected function getSmalotPdfParserClassname(): string
+    {
+        return '\Smalot\PdfParser\Parser';
+    }
+
+    /**
+     * Returns true if the LGPL-licensed PDF Parser smalot\pdfparser is available
+     *
+     * @return bool
+     */
+    protected function isSmalotPdfParserAvailable(): bool
+    {
+        return class_exists($this->getSmalotPdfParserClassname());
+    }
+
+    /**
      * Get a list of all the attachments.
      *
      * @param string $pdfContent
      * @return InvoiceSuitePdfExtractor
-     * @throws Exception
+     * @throws InvalidArgumentException
+     * @throws ParseFailureException
+     * @throws PdfParserException
      */
     protected function collectAttachmentsFromPdfContent(string $pdfContent): self
     {
         $this->attachmentList = [];
 
-        $pdfParser = new PdfParser();
-        $pdfParsed = $pdfParser->parseContent($pdfContent);
-        $fileSpecs = $pdfParsed->getObjectsByType('Filespec');
+        if ($this->isSmalotPdfParserAvailable()) {
+            $pdfParser = new ($this->getSmalotPdfParserClassname())();
+            $pdfParsed = $pdfParser->parseContent($pdfContent);
+            $fileSpecs = $pdfParsed->getObjectsByType('Filespec');
 
-        $fileSpecs = array_filter(
-            $fileSpecs,
-            function ($fileSpec) {
-                return $fileSpec->has('F') && $fileSpec->has('EF');
+            $fileSpecs = array_filter(
+                $fileSpecs,
+                function ($fileSpec) {
+                    return $fileSpec->has('F') && $fileSpec->has('EF');
+                }
+            );
+
+            $fileSpecs = array_filter(
+                $fileSpecs,
+                function ($fileSpec) {
+                    return $fileSpec->get('EF')->has('F');
+                }
+            );
+
+            foreach ($fileSpecs as $fileSpec) {
+                $this->attachmentList[] = [
+                    $fileSpec->get('EF')->get('F')->getContent(),
+                    $fileSpec->get('F')->getContent(),
+                    $fileSpec->get('EF')->get('F')->has('Subtype') ? (string)($fileSpec->get('EF')->get('F')->get('Subtype')->getContent()) : "",
+                ];
             }
-        );
+
+            return $this;
+        }
+
+        $pdfParser = new PdfParser();
+        $pdfParsed = $pdfParser->parseString($pdfContent);
+        $fileSpecs = $pdfParsed->getCatalog()->getFileSpecifications();
 
         $fileSpecs = array_filter(
             $fileSpecs,
             function ($fileSpec) {
-                return $fileSpec->get('EF')->has('F');
+                return !is_null($fileSpec->getEmbeddedFile());
             }
         );
 
         foreach ($fileSpecs as $fileSpec) {
             $this->attachmentList[] = new InvoiceSuitePdfExtractorAttachment(
-                $fileSpec->get('EF')->get('F')->getContent(),
-                $fileSpec->get('F')->getContent(),
-                $fileSpec->get('EF')->get('F')->has('Subtype') ? (string)($fileSpec->get('EF')->get('F')->get('Subtype')->getContent()) : ""
+                $fileSpec->getEmbeddedFile()->getStream()->toString(),
+                $fileSpec->getFileSpecificationString(),
+                ltrim($fileSpec->getEmbeddedFile()->getSubType() ?? '', '/')
             );
         }
 
