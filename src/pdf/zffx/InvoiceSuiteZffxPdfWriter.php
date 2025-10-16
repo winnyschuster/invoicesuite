@@ -142,7 +142,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
 
         if ('' == $mimetype) {
             $mimetype = mime_content_type($file);
-            if ($mimetype === '' || $mimetype === '0' || $mimetype === false) {
+            if (in_array($mimetype, ['', '0', false], true)) {
                 $mimetype = 'application/octet-stream';
             }
         }
