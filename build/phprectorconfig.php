@@ -24,7 +24,7 @@ return RectorConfig::configure()
         RemoveUselessVarTagRector::class,
     ])
     ->withSets([
-        SetList::PHP_80,
+        SetList::PHP_81,
         SetList::DEAD_CODE,
         SetList::CODE_QUALITY,
         SetList::CODING_STYLE,
