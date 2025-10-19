@@ -16984,7 +16984,8 @@ class ZfFxBasicWlDocumentBuilderTest extends TestCase
                             ->addAddress(new InvoiceSuiteAddressDTO("Line 1", "Line 2", "Line 3", "06108", "City", "DE", "Bavaria"))
                             ->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Ship To AG"))
                             ->addContact(new InvoiceSuiteContactDTO("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@shipto.de"))
-                            ->addCommunication(new InvoiceSuiteCommunicationDTO("info@shipto.de", "EM")))
+                        ->addCommunication(new InvoiceSuiteCommunicationDTO("info@shipto.de", "EM"))
+                    )
                     ->setUltimateShipToParty(
                         (new InvoiceSuitePartyDTO())
                             ->addName("Ultimate Ship Tó GmbH")
@@ -16998,7 +16999,8 @@ class ZfFxBasicWlDocumentBuilderTest extends TestCase
                             ->addAddress(new InvoiceSuiteAddressDTO("Line 1", "Line 2", "Line 3", "06108", "City", "DE", "Bavaria"))
                             ->addLegalOrganisation(new InvoiceSuiteOrganisationDTO("3874837489237", "8884", "Ultimate Ship To AG"))
                             ->addContact(new InvoiceSuiteContactDTO("Horst Meier", "Buchhaltung", "0815-4711", "0815-4712", "horst.meier@ultimateshipto.de"))
-                            ->addCommunication(new InvoiceSuiteCommunicationDTO("info@ultimateshipto.de", "EM")))
+                        ->addCommunication(new InvoiceSuiteCommunicationDTO("info@ultimateshipto.de", "EM"))
+                    )
                     ->addSupplyChainEvent((new DateTime())->createFromFormat('d.m.Y', '01.01.1970'))
                     ->addSupplyChainEvent((new DateTime())->createFromFormat('d.m.Y', '02.01.1970'))
                     ->addBillingPeriod(new InvoiceSuiteDateRangeDTO((new DateTime())->createFromFormat('d.m.Y', '01.01.1970'), (new DateTime())->createFromFormat('d.m.Y', '31.01.1970'), "Some Description"))
@@ -17034,8 +17036,7 @@ class ZfFxBasicWlDocumentBuilderTest extends TestCase
                         ->setTaxType('VAT')
                         ->setTaxPercent(19.0)
                         ->setReason('Reason')
-                        ->setReasonCode('ReasonCode')
-                    )
+                        ->setReasonCode('ReasonCode'))
                     ->addAllowanceCharge((new InvoiceSuiteAllowanceChargeDTO())
                         ->setChargeIndicator(false)
                         ->setAmount(1.0)
@@ -17045,16 +17046,13 @@ class ZfFxBasicWlDocumentBuilderTest extends TestCase
                         ->setTaxType('VAT')
                         ->setTaxPercent(19.0)
                         ->setReason('Reason2')
-                        ->setReasonCode('ReasonCode2')
-                    )
+                        ->setReasonCode('ReasonCode2'))
                     ->setSummation((new InvoiceSuitesummationLineDTO())
                         ->setNetAmount(100.0)
                         ->setChargeTotalAmount(1.0)
                         ->setDiscountTotalAmount(2.0)
                         ->setTaxTotalAmount(3.0)
-                        ->setGrossAmount(4.0))
-            )
-        ;
+                        ->setGrossAmount(4.0)));
 
         self::$document->createFromDTO($documentDTO);
 
