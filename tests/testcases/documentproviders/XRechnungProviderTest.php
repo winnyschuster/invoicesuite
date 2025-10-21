@@ -3,11 +3,11 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentmodels\zffxcomfort\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documentproviders\xrechnung\InvoiceSuiteXRechnungProvider;
-use horstoeko\invoicesuite\documentproviders\xrechnung\InvoiceSuiteXRechnungProviderReader;
-use horstoeko\invoicesuite\documentproviders\xrechnung\InvoiceSuiteXRechnungSerializerHandler;
-use horstoeko\invoicesuite\documentproviders\xrechnung\InvoiceSuiteXRechnungProviderBuilder;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProvider;
+use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderReader;
+use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungSerializerHandler;
+use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderBuilder;
 
 class XRechnungProviderTest extends TestCase
 {

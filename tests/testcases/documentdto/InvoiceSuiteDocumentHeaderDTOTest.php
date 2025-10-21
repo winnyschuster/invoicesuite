@@ -6,21 +6,21 @@ namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteIdDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteTaxDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteNoteDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePartyDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteProjectDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDateRangeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteSummationDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentMeanDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteServiceChargeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteAllowanceChargeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentPositionDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceDocumentDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceDocumentExtDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO;
 
 class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
 {

@@ -7,7 +7,7 @@ use JMS\Serializer\SerializerInterface;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProvider;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 
 class HandlesDocumentSerializerTest extends TestCase
 {

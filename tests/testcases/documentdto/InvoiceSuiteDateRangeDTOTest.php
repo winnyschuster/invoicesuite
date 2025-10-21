@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDateRangeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuiteDateRangeDTOTest extends TestCase

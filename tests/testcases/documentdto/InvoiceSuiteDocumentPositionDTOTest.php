@@ -6,20 +6,20 @@ namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteIdDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteNoteDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePartyDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteProductDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePriceNetDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteQuantityDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDateRangeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePriceGrossDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitesummationLineDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteAllowanceChargeDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteDocumentPositionDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceDocumentLineDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceDocumentLineExtDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceGrossDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitesummationLineDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 
 class InvoiceSuiteDocumentPositionDTOTest extends TestCase
 {

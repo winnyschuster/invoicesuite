@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteIdDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteQuantityDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceProductDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuiteReferenceProductDTOTest extends TestCase

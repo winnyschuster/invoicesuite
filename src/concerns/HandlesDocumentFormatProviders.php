@@ -2,7 +2,7 @@
 
 namespace horstoeko\invoicesuite\concerns;
 
-use horstoeko\invoicesuite\documentabstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteClassFinder;
 

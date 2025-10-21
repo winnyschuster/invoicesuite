@@ -3,11 +3,11 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentmodels\zffxextended\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProvider;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProviderReader;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedSerializerHandler;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProviderBuilder;
+use horstoeko\invoicesuite\documents\models\zffxextended\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProviderReader;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedSerializerHandler;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProviderBuilder;
 
 class ZfFxExtendedProviderTest extends TestCase
 {

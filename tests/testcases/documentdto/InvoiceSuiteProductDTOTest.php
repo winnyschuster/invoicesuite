@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteIdDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteProductCharacteristicDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteProductClassificationDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteProductDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteReferenceProductDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductCharacteristicDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductClassificationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuiteProductDTOTest extends TestCase

@@ -3,9 +3,9 @@
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
-use horstoeko\invoicesuite\documentabstracts\InvoiceSuiteAbstractDocumentFormatProvider;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProvider;
-use horstoeko\invoicesuite\documentproviders\zffxminimum\InvoiceSuiteZfFxMinimumProvider;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
+use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProvider;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\tests\TestCase;
 

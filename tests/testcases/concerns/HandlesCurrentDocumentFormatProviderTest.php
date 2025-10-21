@@ -3,7 +3,7 @@
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
-use horstoeko\invoicesuite\documentproviders\zffxextended\InvoiceSuiteZfFxExtendedProvider;
+use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class HandlesCurrentDocumentFormatProviderTest extends TestCase

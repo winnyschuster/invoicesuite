@@ -2,7 +2,7 @@
 
 namespace horstoeko\invoicesuite\tests\traits;
 
-use horstoeko\invoicesuite\documentabstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\stringmanagement\PathUtils;
 

@@ -6,9 +6,9 @@ namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermPenaltyDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDiscountDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDiscountDTO;
 
 class InvoiceSuitePaymentTermDTOTest extends TestCase
 {

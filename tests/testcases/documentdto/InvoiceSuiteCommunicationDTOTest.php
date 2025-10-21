@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuiteCommunicationDTOTest extends TestCase

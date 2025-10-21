@@ -3,11 +3,11 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentmodels\zffxcomfort\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documentproviders\zffxcomfort\InvoiceSuiteZfFxComfortProvider;
-use horstoeko\invoicesuite\documentproviders\zffxcomfort\InvoiceSuiteZfFxComfortProviderReader;
-use horstoeko\invoicesuite\documentproviders\zffxcomfort\InvoiceSuiteZfFxComfortSerializerHandler;
-use horstoeko\invoicesuite\documentproviders\zffxcomfort\InvoiceSuiteZfFxComfortProviderBuilder;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortProvider;
+use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortProviderReader;
+use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortSerializerHandler;
+use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortProviderBuilder;
 
 class ZfFxComfortProviderTest extends TestCase
 {

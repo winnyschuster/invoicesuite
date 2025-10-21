@@ -3,11 +3,11 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentmodels\zffxminimum\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documentproviders\zffxminimum\InvoiceSuiteZfFxMinimumProvider;
-use horstoeko\invoicesuite\documentproviders\zffxminimum\InvoiceSuiteZfFxMinimumProviderReader;
-use horstoeko\invoicesuite\documentproviders\zffxminimum\InvoiceSuiteZfFxMinimumSerializerHandler;
-use horstoeko\invoicesuite\documentproviders\zffxminimum\InvoiceSuiteZfFxMinimumProviderBuilder;
+use horstoeko\invoicesuite\documents\models\zffxminimum\rsm\CrossIndustryInvoice;
+use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProvider;
+use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProviderReader;
+use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumSerializerHandler;
+use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProviderBuilder;
 
 class ZfFxMinimumProviderTest extends TestCase
 {

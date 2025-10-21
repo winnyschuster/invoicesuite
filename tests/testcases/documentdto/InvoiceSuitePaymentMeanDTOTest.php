@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use horstoeko\invoicesuite\tests\TestCase;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentMeanDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 
 class InvoiceSuitePaymentMeanDTOTest extends TestCase

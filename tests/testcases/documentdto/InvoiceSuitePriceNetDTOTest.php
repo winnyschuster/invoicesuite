@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePriceNetDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuitePriceNetDTOTest extends TestCase

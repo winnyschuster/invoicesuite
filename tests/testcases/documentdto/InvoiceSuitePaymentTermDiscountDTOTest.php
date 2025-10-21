@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePaymentTermDiscountDTO;
-use horstoeko\invoicesuite\documentdto\InvoiceSuitePeriodDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDiscountDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
 class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
