@@ -26,7 +26,9 @@ return RectorConfig::configure()
         SetList::CODE_QUALITY,
         SetList::CODING_STYLE,
         SetList::INSTANCEOF,
+        SetList::PRIVATIZATION,
         PHPUnitSetList::PHPUNIT_90,
+        PHPUnitSetList::PHPUNIT_CODE_QUALITY,
     ])
     ->withConfiguredRule(EncapsedStringsToSprintfRector::class, [
         'always' => true,
