@@ -669,9 +669,9 @@ class UtilsTest extends TestCase
         $this->assertCount(7, $classNames);
         $this->assertFileExists($cacheFullFilename);
 
-        $this->assertTrue(file_exists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "c35b8c628be1064d803deafbb0a73415.cache")));
+        $this->assertTrue(file_exists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "8853794c547b8c48edf35be32c4bfbe5.cache")));
         InvoiceSuiteClassFinder::clearCache();
-        $this->assertFalse(file_exists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "c35b8c628be1064d803deafbb0a73415.cache")));
+        $this->assertFalse(file_exists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "8853794c547b8c48edf35be32c4bfbe5.cache")));
     }
 
     #endregion
