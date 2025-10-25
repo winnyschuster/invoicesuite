@@ -99,7 +99,7 @@ class ZfFxExtendedProviderReaderTest extends TestCase
 
     public function testGetDocumentIsTest(): void
     {
-        self::$document->getDocumentIsCopy($newDocumentIsTest);
+        self::$document->getDocumentIsTest($newDocumentIsTest);
 
         $this->assertTrue($newDocumentIsTest);
     }
@@ -307,6 +307,93 @@ class ZfFxExtendedProviderReaderTest extends TestCase
 
         $this->expectNoticeOrWarningExt(function () {
             self::$document->getDocumentInvoiceReference($newReferenceNumber, $newReferenceDate, $newTypeCode);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentProjectReference(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentProjectReference());
+
+        self::$document->getDocumentProjectReference($newReferenceNumber, $newName);
+
+        $this->assertSame('PROJECT-1', $newReferenceNumber);
+        $this->assertSame('Project 1', $newName);
+
+        $this->assertFalse(self::$document->nextDocumentProjectReference());
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentProjectReference($newReferenceNumber, $newName);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentUltimateCustomerOrderReference(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentUltimateCustomerOrderReference());
+
+        self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
+
+        $this->assertSame('UCOR-1', $newReferenceNumber);
+        $this->assertSame('19700101', $newReferenceDate->format('Ymd'));
+
+        $this->assertTrue(self::$document->nextDocumentUltimateCustomerOrderReference());
+
+        self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
+
+        $this->assertSame('UCOR-2', $newReferenceNumber);
+        $this->assertSame('19700102', $newReferenceDate->format('Ymd'));
+
+        $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
+
+        $this->expectNoticeOrWarningExt(function () {
+        self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentDespatchAdviceReference(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentDespatchAdviceReference());
+
+        self::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        $this->assertSame('DESPADV-1', $newReferenceNumber);
+        $this->assertSame('19700101', $newReferenceDate->format('Ymd'));
+
+        $this->assertFalse(self::$document->nextDocumentDespatchAdviceReference());
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentReceivingAdviceReference(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentReceivingAdviceReference());
+
+        self::$document->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        $this->assertSame('RECADV-1', $newReferenceNumber);
+        $this->assertSame('19700101', $newReferenceDate->format('Ymd'));
+
+        $this->assertFalse(self::$document->nextDocumentReceivingAdviceReference());
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentDeliveryNoteReference(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentDeliveryNoteReference());
+
+        self::$document->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
+
+        $this->assertSame('DEVNOTE-1', $newReferenceNumber);
+        $this->assertSame('19700101', $newReferenceDate->format('Ymd'));
+
+        $this->assertFalse(self::$document->nextDocumentDeliveryNoteReference());
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
 }
