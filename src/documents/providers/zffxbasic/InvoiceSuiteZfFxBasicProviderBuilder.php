@@ -6613,7 +6613,7 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             return $this;
         }
 
-        $this->setDocumentPaymentTerm($newDescription, $newDueDate);
+        $this->setDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
 
         return $this;
     }
