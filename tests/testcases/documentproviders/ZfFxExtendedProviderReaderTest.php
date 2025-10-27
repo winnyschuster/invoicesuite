@@ -1452,7 +1452,7 @@ class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame('06108', $newPostcode);
         $this->assertSame('City', $newCity);
         $this->assertSame('DE', $newCountryId);
-        $this->assertSame('Bavaria', $newSubDivision);
+        $this->assertSame('Thüringen', $newSubDivision);
 
         $this->assertFalse(self::$document->nextDocumentShipFromAddress());
 
@@ -1542,5 +1542,629 @@ class ZfFxExtendedProviderReaderTest extends TestCase
         $this->expectNoticeOrWarningExt(function () {
             self::$document->getDocumentShipFromCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
+    }
+
+    public function testDocumentInvoicer(): void
+    {
+        // Name
+
+        self::$document->getDocumentInvoicerName($newName);
+
+        $this->assertSame('Invoicer GmbH', $newName);
+
+        // ID
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerId());
+
+        self::$document->getDocumentInvoicerId($newId);
+
+        $this->assertSame('0815-4711-INVR', $newId);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerId());
+
+        // Global ID
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerGlobalId());
+
+        self::$document->getDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('11111-INVR', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertTrue(self::$document->nextDocumentInvoicerGlobalId());
+
+        self::$document->getDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('22222-INVR', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerGlobalId());
+
+        // Tax Registration
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerTaxRegistration());
+
+        self::$document->getDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->assertSame('9080706050403020-INVR', $newTaxRegistrationId);
+        $this->assertSame('VA', $newTaxRegistrationType);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerTaxRegistration());
+
+        // Address
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerAddress());
+
+        self::$document->getDocumentInvoicerAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        $this->assertSame('Line 1', $newAddressLine1);
+        $this->assertSame('Line 2', $newAddressLine2);
+        $this->assertSame('Line 3', $newAddressLine3);
+        $this->assertSame('06108', $newPostcode);
+        $this->assertSame('City', $newCity);
+        $this->assertSame('DE', $newCountryId);
+        $this->assertSame('Bavaria', $newSubDivision);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerAddress());
+
+        // Legal Organisation
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerLegalOrganisation());
+
+        self::$document->getDocumentInvoicerLegalOrganisation($newType, $newId, $newName);
+
+        $this->assertSame('8884', $newType);
+        $this->assertSame('3874837489237', $newId);
+        $this->assertSame('Invoicer AG', $newName);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerLegalOrganisation());
+
+        // Contact
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerContact());
+
+        self::$document->getDocumentInvoicerContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        $this->assertSame('Horst Meier', $newPersonName);
+        $this->assertSame('Buchhaltung', $newDepartmentName);
+        $this->assertSame('0815-4711', $newPhoneNumber);
+        $this->assertSame('0815-4712', $newFaxNumber);
+        $this->assertSame('horst.meier@invoicer.de', $newEmailAddress);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerContact());
+
+        // Communication
+
+        $this->assertTrue(self::$document->firstDocumentInvoicerCommunication());
+
+        self::$document->getDocumentInvoicerCommunication($newType, $newUri);
+
+        $this->assertSame('EM', $newType);
+        $this->assertSame('info@invoicer.de', $newUri);
+
+        $this->assertFalse(self::$document->nextDocumentInvoicerCommunication());
+
+        // Finals
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerId($newId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerAddress(
+                $newAddressLine1,
+                $newAddressLine2,
+                $newAddressLine3,
+                $newPostcode,
+                $newCity,
+                $newCountryId,
+                $newSubDivision
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerLegalOrganisation($newType, $newId, $newName);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerContact(
+                $newPersonName,
+                $newDepartmentName,
+                $newPhoneNumber,
+                $newFaxNumber,
+                $newEmailAddress
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoicerCommunication($newType, $newUri);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testDocumentInvoicee(): void
+    {
+        // Name
+
+        self::$document->getDocumentInvoiceeName($newName);
+
+        $this->assertSame('Invoicee GmbH', $newName);
+
+        // ID
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeId());
+
+        self::$document->getDocumentInvoiceeId($newId);
+
+        $this->assertSame('0815-4711', $newId);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeId());
+
+        // Global ID
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeGlobalId());
+
+        self::$document->getDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('11111', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertTrue(self::$document->nextDocumentInvoiceeGlobalId());
+
+        self::$document->getDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('22222', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeGlobalId());
+
+        // Tax Registration
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeTaxRegistration());
+
+        self::$document->getDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->assertSame('893489787987', $newTaxRegistrationId);
+        $this->assertSame('VA', $newTaxRegistrationType);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeTaxRegistration());
+
+        // Address
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeAddress());
+
+        self::$document->getDocumentInvoiceeAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        $this->assertSame('Line 1', $newAddressLine1);
+        $this->assertSame('Line 2', $newAddressLine2);
+        $this->assertSame('Line 3', $newAddressLine3);
+        $this->assertSame('06108', $newPostcode);
+        $this->assertSame('City', $newCity);
+        $this->assertSame('DE', $newCountryId);
+        $this->assertSame('Bavaria', $newSubDivision);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeAddress());
+
+        // Legal Organisation
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeLegalOrganisation());
+
+        self::$document->getDocumentInvoiceeLegalOrganisation($newType, $newId, $newName);
+
+        $this->assertSame('8884', $newType);
+        $this->assertSame('3874837489237', $newId);
+        $this->assertSame('Invoicee AG', $newName);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeLegalOrganisation());
+
+        // Contact
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeContact());
+
+        self::$document->getDocumentInvoiceeContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        $this->assertSame('Horst Meier', $newPersonName);
+        $this->assertSame('Buchhaltung', $newDepartmentName);
+        $this->assertSame('0815-4711', $newPhoneNumber);
+        $this->assertSame('0815-4712', $newFaxNumber);
+        $this->assertSame('horst.meier@invoicee.de', $newEmailAddress);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeContact());
+
+        // Communication
+
+        $this->assertTrue(self::$document->firstDocumentInvoiceeCommunication());
+
+        self::$document->getDocumentInvoiceeCommunication($newType, $newUri);
+
+        $this->assertSame('EM', $newType);
+        $this->assertSame('info@invoicee.de', $newUri);
+
+        $this->assertFalse(self::$document->nextDocumentInvoiceeCommunication());
+
+        // Finals
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeId($newId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeAddress(
+                $newAddressLine1,
+                $newAddressLine2,
+                $newAddressLine3,
+                $newPostcode,
+                $newCity,
+                $newCountryId,
+                $newSubDivision
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeLegalOrganisation($newType, $newId, $newName);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeContact(
+                $newPersonName,
+                $newDepartmentName,
+                $newPhoneNumber,
+                $newFaxNumber,
+                $newEmailAddress
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentInvoiceeCommunication($newType, $newUri);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testDocumentPayee(): void
+    {
+        // Name
+
+        self::$document->getDocumentPayeeName($newName);
+
+        $this->assertSame('Payee GmbH', $newName);
+
+        // ID
+
+        $this->assertTrue(self::$document->firstDocumentPayeeId());
+
+        self::$document->getDocumentPayeeId($newId);
+
+        $this->assertSame('0815-4711-PEE', $newId);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeId());
+
+        // Global ID
+
+        $this->assertTrue(self::$document->firstDocumentPayeeGlobalId());
+
+        self::$document->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('11111-PEE', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertTrue(self::$document->nextDocumentPayeeGlobalId());
+
+        self::$document->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('22222-PEE', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeGlobalId());
+
+        // Tax Registration
+
+        $this->assertTrue(self::$document->firstDocumentPayeeTaxRegistration());
+
+        self::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->assertSame('893489787987', $newTaxRegistrationId);
+        $this->assertSame('VA', $newTaxRegistrationType);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeTaxRegistration());
+
+        // Address
+
+        $this->assertTrue(self::$document->firstDocumentPayeeAddress());
+
+        self::$document->getDocumentPayeeAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        $this->assertSame('Line 1', $newAddressLine1);
+        $this->assertSame('Line 2', $newAddressLine2);
+        $this->assertSame('Line 3', $newAddressLine3);
+        $this->assertSame('06108', $newPostcode);
+        $this->assertSame('City', $newCity);
+        $this->assertSame('DE', $newCountryId);
+        $this->assertSame('Bavaria', $newSubDivision);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeAddress());
+
+        // Legal Organisation
+
+        $this->assertTrue(self::$document->firstDocumentPayeeLegalOrganisation());
+
+        self::$document->getDocumentPayeeLegalOrganisation($newType, $newId, $newName);
+
+        $this->assertSame('8884', $newType);
+        $this->assertSame('3874837489237', $newId);
+        $this->assertSame('Payee AG', $newName);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeLegalOrganisation());
+
+        // Contact
+
+        $this->assertTrue(self::$document->firstDocumentPayeeContact());
+
+        self::$document->getDocumentPayeeContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        $this->assertSame('Horst Mayer', $newPersonName);
+        $this->assertSame('Buchhaltung', $newDepartmentName);
+        $this->assertSame('0711-4711', $newPhoneNumber);
+        $this->assertSame('0711-4712', $newFaxNumber);
+        $this->assertSame('horst.mayer@payee.de', $newEmailAddress);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeContact());
+
+        // Communication
+
+        $this->assertTrue(self::$document->firstDocumentPayeeCommunication());
+
+        self::$document->getDocumentPayeeCommunication($newType, $newUri);
+
+        $this->assertSame('EM', $newType);
+        $this->assertSame('info@payee.de', $newUri);
+
+        $this->assertFalse(self::$document->nextDocumentPayeeCommunication());
+
+        // Finals
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeId($newId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeAddress(
+                $newAddressLine1,
+                $newAddressLine2,
+                $newAddressLine3,
+                $newPostcode,
+                $newCity,
+                $newCountryId,
+                $newSubDivision
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeLegalOrganisation($newType, $newId, $newName);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeContact(
+                $newPersonName,
+                $newDepartmentName,
+                $newPhoneNumber,
+                $newFaxNumber,
+                $newEmailAddress
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPayeeCommunication($newType, $newUri);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentPaymentMean(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentPaymentMean());
+
+        self::$document->getDocumentPaymentMean(
+            $newTypeCode,
+            $newName,
+            $newFinancialCardId,
+            $newFinancialCardHolder,
+            $newBuyerIban,
+            $newPayeeIban,
+            $newPayeeAccountName,
+            $newPayeeProprietaryId,
+            $newPayeeBic,
+            $newPaymentReference,
+            $newMandate
+        );
+
+        $this->assertSame("typecode", $newTypeCode);
+        $this->assertSame("name", $newName);
+        $this->assertSame("financialCardId", $newFinancialCardId);
+        $this->assertSame("financialCardHolder", $newFinancialCardHolder);
+        $this->assertSame("buyeriban", $newBuyerIban);
+        $this->assertSame("payeeiban", $newPayeeIban);
+        $this->assertSame("payeeaccountname", $newPayeeAccountName);
+        $this->assertSame("payeeProprietaryId", $newPayeeProprietaryId);
+        $this->assertSame("payeeBic", $newPayeeBic);
+
+        $this->assertTrue(self::$document->nextDocumentPaymentMean());
+
+        self::$document->getDocumentPaymentMean(
+            $newTypeCode,
+            $newName,
+            $newFinancialCardId,
+            $newFinancialCardHolder,
+            $newBuyerIban,
+            $newPayeeIban,
+            $newPayeeAccountName,
+            $newPayeeProprietaryId,
+            $newPayeeBic,
+            $newPaymentReference,
+            $newMandate
+        );
+
+        $this->assertSame("typecode2", $newTypeCode);
+        $this->assertSame("name2", $newName);
+        $this->assertSame("financialCardId2", $newFinancialCardId);
+        $this->assertSame("financialCardHolder2", $newFinancialCardHolder);
+        $this->assertSame("buyeriban2", $newBuyerIban);
+        $this->assertSame("payeeiban2", $newPayeeIban);
+        $this->assertSame("payeeaccountname2", $newPayeeAccountName);
+        $this->assertSame("payeeProprietaryId2", $newPayeeProprietaryId);
+        $this->assertSame("payeeBic2", $newPayeeBic);
+
+        $this->assertFalse(self::$document->nextDocumentPaymentMean());
+    }
+
+    public function testFirstNextGetDocumentPaymentCreditorReferenceID(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentPaymentCreditorReferenceID());
+
+        self::$document->getDocumentPaymentCreditorReferenceID($newId);
+
+        $this->assertSame("CREDREF-1", $newId);
+
+        $this->assertFalse(self::$document->nextDocumentPaymentCreditorReferenceID());
+
+        $this->expectNoticeOrWarningExt(function () {
+            self::$document->getDocumentPaymentCreditorReferenceID($newId);
+        }, '/Undefined (array key|index)/');
+    }
+
+    public function testFirstNextGetDocumentPaymentTerm(): void
+    {
+        // First Payment Term
+
+        $this->assertTrue(self::$document->firstDocumentPaymentTerm());
+
+        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate);
+
+        $this->assertSame("Direct Debit", $newDescription);
+
+        // Second Payment Term
+
+        $this->assertTrue(self::$document->nextDocumentPaymentTerm());
+
+        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate);
+
+        $this->assertSame("Payment Term Description 1", $newDescription);
+        $this->assertSame("19700131", $newDueDate->format("Ymd"));
+
+        $this->assertTrue(self::$document->firstDocumentPaymentPenaltyTermsInLastPaymentTerm());
+
+        self::$document->getDocumentPaymentDiscountTermsInLastPaymentTerm(
+            $newBaseAmount,
+            $newDiscountAmount,
+            $newDiscountPercent,
+            $newBaseDate,
+            $newBasePeriod,
+            $newBasePeriodUnit
+        );
+
+        $this->assertSame(200.0, $newBaseAmount);
+        $this->assertSame(10.0, $newDiscountAmount);
+        $this->assertSame(2.0, $newDiscountPercent);
+        $this->assertSame(1.0, $newBasePeriod);
+        $this->assertSame("DAY", $newBasePeriodUnit);
+        $this->assertSame("19700224", $newBaseDate->format("Ymd"));
+
+        $this->assertFalse(self::$document->nextDocumentPaymentPenaltyTermsInLastPaymentTerm());
+
+        $this->assertTrue(self::$document->firstDocumentPaymentDiscountTermsInLastPaymentTerm());
+
+        self::$document->getDocumentPaymentDiscountTermsInLastPaymentTerm(
+            $newBaseAmount,
+            $newDiscountAmount,
+            $newDiscountPercent,
+            $newBaseDate,
+            $newBasePeriod,
+            $newBasePeriodUnit
+        );
+
+        $this->assertSame(200.0, $newBaseAmount);
+        $this->assertSame(10.0, $newDiscountAmount);
+        $this->assertSame(2.0, $newDiscountPercent);
+        $this->assertSame(1.0, $newBasePeriod);
+        $this->assertSame("DAY", $newBasePeriodUnit);
+        $this->assertSame("19700224", $newBaseDate->format("Ymd"));
+
+        $this->assertFalse(self::$document->nextDocumentPaymentDiscountTermsInLastPaymentTerm());
+
+        // Third Payment Term
+
+        $this->assertTrue(self::$document->nextDocumentPaymentTerm());
+
+        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate);
+
+        $this->assertSame("Payment Term Description 2", $newDescription);
+        $this->assertSame("19700331", $newDueDate->format("Ymd"));
+
+        $this->assertFalse(self::$document->firstDocumentPaymentPenaltyTermsInLastPaymentTerm());
+        $this->assertFalse(self::$document->nextDocumentPaymentPenaltyTermsInLastPaymentTerm());
+
+        $this->assertFalse(self::$document->firstDocumentPaymentDiscountTermsInLastPaymentTerm());
+        $this->assertFalse(self::$document->nextDocumentPaymentDiscountTermsInLastPaymentTerm());
     }
 }

@@ -662,7 +662,7 @@
           <ram:LineThree>Line 3</ram:LineThree>
           <ram:CityName>City</ram:CityName>
           <ram:CountryID>DE</ram:CountryID>
-          <ram:CountrySubDivisionName>Bavaria</ram:CountrySubDivisionName>
+          <ram:CountrySubDivisionName>Thüringen</ram:CountrySubDivisionName>
         </ram:PostalTradeAddress>
         <ram:URIUniversalCommunication>
           <ram:URIID schemeID="EM">info@shipfrom.de</ram:URIID>
@@ -701,9 +701,9 @@
       <ram:TaxCurrencyCode>GBP</ram:TaxCurrencyCode>
       <ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
       <ram:InvoicerTradeParty>
-        <ram:ID>0815-4711</ram:ID>
-        <ram:GlobalID schemeID="0088">11111</ram:GlobalID>
-        <ram:GlobalID schemeID="0088">22222</ram:GlobalID>
+        <ram:ID>0815-4711-INVR</ram:ID>
+        <ram:GlobalID schemeID="0088">11111-INVR</ram:GlobalID>
+        <ram:GlobalID schemeID="0088">22222-INVR</ram:GlobalID>
         <ram:Name>Invoicer GmbH</ram:Name>
         <ram:SpecifiedLegalOrganization>
           <ram:ID schemeID="8884">3874837489237</ram:ID>
@@ -735,7 +735,7 @@
           <ram:URIID schemeID="EM">info@invoicer.de</ram:URIID>
         </ram:URIUniversalCommunication>
         <ram:SpecifiedTaxRegistration>
-          <ram:ID schemeID="VA">893489787987</ram:ID>
+          <ram:ID schemeID="VA">9080706050403020-INVR</ram:ID>
         </ram:SpecifiedTaxRegistration>
       </ram:InvoicerTradeParty>
       <ram:InvoiceeTradeParty>
@@ -777,25 +777,25 @@
         </ram:SpecifiedTaxRegistration>
       </ram:InvoiceeTradeParty>
       <ram:PayeeTradeParty>
-        <ram:ID>0815-4711</ram:ID>
-        <ram:GlobalID schemeID="0088">11111</ram:GlobalID>
-        <ram:GlobalID schemeID="0088">22222</ram:GlobalID>
+        <ram:ID>0815-4711-PEE</ram:ID>
+        <ram:GlobalID schemeID="0088">11111-PEE</ram:GlobalID>
+        <ram:GlobalID schemeID="0088">22222-PEE</ram:GlobalID>
         <ram:Name>Payee GmbH</ram:Name>
         <ram:SpecifiedLegalOrganization>
           <ram:ID schemeID="8884">3874837489237</ram:ID>
           <ram:TradingBusinessName>Payee AG</ram:TradingBusinessName>
         </ram:SpecifiedLegalOrganization>
         <ram:DefinedTradeContact>
-          <ram:PersonName>Horst Meier</ram:PersonName>
+          <ram:PersonName>Horst Mayer</ram:PersonName>
           <ram:DepartmentName>Buchhaltung</ram:DepartmentName>
           <ram:TelephoneUniversalCommunication>
-            <ram:CompleteNumber>0815-4711</ram:CompleteNumber>
+            <ram:CompleteNumber>0711-4711</ram:CompleteNumber>
           </ram:TelephoneUniversalCommunication>
           <ram:FaxUniversalCommunication>
-            <ram:CompleteNumber>0815-4712</ram:CompleteNumber>
+            <ram:CompleteNumber>0711-4712</ram:CompleteNumber>
           </ram:FaxUniversalCommunication>
           <ram:EmailURIUniversalCommunication>
-            <ram:URIID>horst.meier@payee.de</ram:URIID>
+            <ram:URIID>horst.mayer@payee.de</ram:URIID>
           </ram:EmailURIUniversalCommunication>
         </ram:DefinedTradeContact>
         <ram:PostalTradeAddress>
