@@ -3976,9 +3976,10 @@ class InvoiceSuiteDocumentReader
      */
     public function getDocumentPaymentTerm(
         ?string &$newDescription,
-        ?DateTimeInterface &$newDueDate
+        ?DateTimeInterface &$newDueDate,
+        ?string &$newMandate
     ): self {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentTerm($newDescription, $newDueDate);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
 
         return $this;
     }

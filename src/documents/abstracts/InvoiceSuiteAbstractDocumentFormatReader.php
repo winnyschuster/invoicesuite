@@ -2853,7 +2853,8 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      */
     abstract public function getDocumentPaymentTerm(
         ?string &$newDescription,
-        ?DateTimeInterface &$newDueDate
+        ?DateTimeInterface &$newDueDate,
+        ?string &$newMandate
     ): self;
 
     /**

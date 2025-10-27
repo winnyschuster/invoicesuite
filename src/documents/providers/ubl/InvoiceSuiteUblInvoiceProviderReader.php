@@ -989,12 +989,14 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         while ($this->nextDocumentPaymentTerm()) {
             $this->getDocumentPaymentTerm(
                 $newDocumentPaymentTermDescription,
-                $newDocumentPaymentTermDueDate
+                $newDocumentPaymentTermDueDate,
+                $newDocumentPaymentTermMandate
             );
 
             $documentPaymentTermDTO = new InvoiceSuitePaymentTermDTO(
                 $newDocumentPaymentTermDescription,
-                $newDocumentPaymentTermDueDate
+                $newDocumentPaymentTermDueDate,
+                mandate: $newDocumentPaymentTermMandate
             );
 
             while ($this->nextDocumentPaymentPenaltyTermsInLastPaymentTerm()) {
@@ -7036,13 +7038,16 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param string|null $newDescription Text description of the payment terms
      * @param DateTimeInterface|null $newDueDate Date by which payment is due
+     * @param string|null $newMandate Identification of the mandate reference
      * @return self
      *
      * @phpstan-param-out string $newDescription
+     * @phpstan-param-out string $newMandate
      */
     public function getDocumentPaymentTerm(
         ?string &$newDescription,
-        ?DateTimeInterface &$newDueDate
+        ?DateTimeInterface &$newDueDate,
+        ?string &$newMandate
     ): self {
         /**
          * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>
@@ -7059,6 +7064,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
 
         $newDescription = $documentPaymentTermNote !== false ? ($documentPaymentTermNote->getValue() ?? "") : "";
         $newDueDate = $this->getUblInvoiceRootObject()->getDueDate();
+        $newMandate = "";
 
         return $this;
     }

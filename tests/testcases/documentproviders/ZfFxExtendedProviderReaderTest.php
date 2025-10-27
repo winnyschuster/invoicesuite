@@ -2099,18 +2099,20 @@ class ZfFxExtendedProviderReaderTest extends TestCase
 
         $this->assertTrue(self::$document->firstDocumentPaymentTerm());
 
-        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate);
+        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
 
         $this->assertSame("Direct Debit", $newDescription);
+        $this->assertSame("mandate2", $newMandate);
 
         // Second Payment Term
 
         $this->assertTrue(self::$document->nextDocumentPaymentTerm());
 
-        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate);
+        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
 
         $this->assertSame("Payment Term Description 1", $newDescription);
         $this->assertSame("19700131", $newDueDate->format("Ymd"));
+        $this->assertSame("", $newMandate);
 
         $this->assertTrue(self::$document->firstDocumentPaymentPenaltyTermsInLastPaymentTerm());
 
@@ -2156,10 +2158,11 @@ class ZfFxExtendedProviderReaderTest extends TestCase
 
         $this->assertTrue(self::$document->nextDocumentPaymentTerm());
 
-        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate);
+        self::$document->getDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
 
         $this->assertSame("Payment Term Description 2", $newDescription);
         $this->assertSame("19700331", $newDueDate->format("Ymd"));
+        $this->assertSame("", $newMandate);
 
         $this->assertFalse(self::$document->firstDocumentPaymentPenaltyTermsInLastPaymentTerm());
         $this->assertFalse(self::$document->nextDocumentPaymentPenaltyTermsInLastPaymentTerm());

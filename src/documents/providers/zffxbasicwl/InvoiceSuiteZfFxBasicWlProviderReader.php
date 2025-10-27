@@ -1575,12 +1575,14 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         while ($this->nextDocumentPaymentTerm()) {
             $this->getDocumentPaymentTerm(
                 $newDocumentPaymentTermDescription,
-                $newDocumentPaymentTermDueDate
+                $newDocumentPaymentTermDueDate,
+                $newDocumentPaymentTermMandate
             );
 
             $documentPaymentTermDTO = new InvoiceSuitePaymentTermDTO(
                 $newDocumentPaymentTermDescription,
-                $newDocumentPaymentTermDueDate
+                $newDocumentPaymentTermDueDate,
+                mandate: $newDocumentPaymentTermMandate
             );
 
             while ($this->nextDocumentPaymentPenaltyTermsInLastPaymentTerm()) {
@@ -7712,13 +7714,16 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param string|null $newDescription __BT-20, From _BASIC WL__ Text description of the payment terms
      * @param DateTimeInterface|null $newDueDate __BT-9, From BASIC WL__ Date by which payment is due
+     * @param string|null $newMandate __BT-89, From BASIC WL__ Identification of the mandate reference
      * @return self
      *
      * @phpstan-param-out string $newDescription
+     * @phpstan-param-out string $newMandate
      */
     public function getDocumentPaymentTerm(
         ?string &$newDescription,
-        ?DateTimeInterface &$newDueDate
+        ?DateTimeInterface &$newDueDate,
+        ?string &$newMandate
     ): self {
         InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentdiscount');
         InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentpenalty');
@@ -7738,6 +7743,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
             $documentPaymentTerm->getDueDateDateTime()?->getDateTimeString()?->getValue() ?? "",
             $documentPaymentTerm->getDueDateDateTime()?->getDateTimeString()?->getFormat() ?? "",
         );
+        $newMandate = $documentPaymentTerm->getDirectDebitMandateID()?->getValue() ?? "";
 
         return $this;
     }
