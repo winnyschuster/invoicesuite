@@ -2884,4 +2884,31 @@ class ZfFxExtendedProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentPosition());
     }
+
+    public function testFirstNextGetDocumentPositionInvoiceReference(): void
+    {
+        // First position
+
+        $this->assertTrue(self::$document->firstDocumentPosition());
+
+        $this->assertTrue(self::$document->firstDocumentPositionInvoiceReference());
+
+        self::$document->getDocumentPositionInvoiceReference(
+            $newReferenceNumber,
+            $newReferenceLineNumber,
+            $newReferenceDate,
+            $newTypeCode
+        );
+
+        $this->assertSame("INVREF-1", $newReferenceNumber);
+        $this->assertSame("100", $newReferenceLineNumber);
+        $this->assertSame("19700101", $newReferenceDate->format("Ymd"));
+        $this->assertSame("TYPECODE-1", $newTypeCode);
+
+        $this->assertFalse(self::$document->nextDocumentPositionInvoiceReference());
+
+        // Second position
+
+        $this->assertFalse(self::$document->nextDocumentPosition());
+    }
 }
