@@ -282,6 +282,18 @@
         <ram:TotalPrepaidAmount>9.00</ram:TotalPrepaidAmount>
         <ram:DuePayableAmount>8.00</ram:DuePayableAmount>
       </ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+      <ram:InvoiceReferencedDocument>
+        <ram:IssuerAssignedID>INVREF-1</ram:IssuerAssignedID>
+        <ram:FormattedIssueDateTime>
+          <qdt:DateTimeString format="102">19700101</qdt:DateTimeString>
+        </ram:FormattedIssueDateTime>
+      </ram:InvoiceReferencedDocument>
+      <ram:InvoiceReferencedDocument>
+        <ram:IssuerAssignedID>INVREF-2</ram:IssuerAssignedID>
+        <ram:FormattedIssueDateTime>
+          <qdt:DateTimeString format="102">19700102</qdt:DateTimeString>
+        </ram:FormattedIssueDateTime>
+      </ram:InvoiceReferencedDocument>
       <ram:ReceivableSpecifiedTradeAccountingAccount>
         <ram:ID>PREF-1</ram:ID>
       </ram:ReceivableSpecifiedTradeAccountingAccount>

@@ -66,6 +66,7 @@
             <file>../tests/testcases/documentproviders/ZfFxBasicWlProviderReaderTest.php</file>
             <file>../tests/testcases/documentproviders/ZfFxMinimumProviderTest.php</file>
             <file>../tests/testcases/documentproviders/ZfFxMinimumProviderBuilderTest.php</file>
+            <file>../tests/testcases/documentproviders/ZfFxMinimumProviderReaderTest.php</file>
             <file>../tests/testcases/documentproviders/XRechnungProviderTest.php</file>
             <file>../tests/testcases/documentproviders/XRechnungProviderBuilderTest.php</file>
         </testsuite>
