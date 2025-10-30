@@ -211,7 +211,6 @@ class UtilsTest extends TestCase
         $this->assertSame("31", $dateTimeValue->format("i"));
         $this->assertSame("45", $dateTimeValue->format("s"));
 
-        /*
         $dateTimeString = "202002";
         $dateTimeFormat = "610";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
@@ -224,7 +223,6 @@ class UtilsTest extends TestCase
         $this->assertSame("12", $dateTimeValue->format("h"));
         $this->assertSame("00", $dateTimeValue->format("i"));
         $this->assertSame("00", $dateTimeValue->format("s"));
-        */
 
         $dateTimeString = "19700101";
         $dateTimeFormat = "999";

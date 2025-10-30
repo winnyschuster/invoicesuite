@@ -113,7 +113,7 @@ class InvoiceSuiteDateTimeUtils
         }
 
         if ($format == "610") {
-            return DateTime::createFromFormat("Ym", $dateTimeString)->modify('first day of')->modify('midnight');
+            return DateTime::createFromFormat("!Ym", $dateTimeString)->modify('first day of')->modify('midnight');
         }
 
         return null;
