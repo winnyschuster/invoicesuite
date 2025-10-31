@@ -3,11 +3,12 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
+use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\documents\models\zffxminimum\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProvider;
 use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProviderReader;
-use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumSerializerHandler;
 use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumProviderBuilder;
+use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinimumSerializerHandler;
 
 class ZfFxMinimumProviderTest extends TestCase
 {
@@ -42,6 +43,20 @@ class ZfFxMinimumProviderTest extends TestCase
         $this->assertSame('MINIMUM', $provider->getParameters()['PdfXmpName']);
         $this->assertArrayHasKey('PdfXmpVersion', $provider->getParameters());
         $this->assertSame('1.0', $provider->getParameters()['PdfXmpVersion']);
+    }
+
+    public function testPdfParameters(): void
+    {
+        $provider = new InvoiceSuiteZfFxMinimumProvider();
+
+        $this->assertTrue($provider->isPdfSupportAvailable());
+        $this->assertCount(4, $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("ZUGFeRD-invoice.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("zugferd-invoice.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("factur-x.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("xrechnung.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertSame("factur-x.xml", $provider->getDefaultPdfAttachmentFilename());
+        $this->assertSame(InvoiceSuiteZffxPdfConstructor::class, $provider->getPdfConstructorClassName());
     }
 
     public function testGetSerializerMetadataDirectories(): void

@@ -3,11 +3,12 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
+use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProvider;
 use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderReader;
-use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungSerializerHandler;
 use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderBuilder;
+use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungSerializerHandler;
 
 class XRechnungProviderTest extends TestCase
 {
@@ -49,6 +50,17 @@ class XRechnungProviderTest extends TestCase
         $this->assertSame('XRECHNUNG', $provider->getParameters()['PdfXmpName']);
         $this->assertArrayHasKey('PdfXmpVersion', $provider->getParameters());
         $this->assertSame('3.0', $provider->getParameters()['PdfXmpVersion']);
+    }
+
+    public function testPdfParameters(): void
+    {
+        $provider = new InvoiceSuiteXRechnungProvider();
+
+        $this->assertTrue($provider->isPdfSupportAvailable());
+        $this->assertCount(1, $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("xrechnung.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertSame("xrechnung.xml", $provider->getDefaultPdfAttachmentFilename());
+        $this->assertSame(InvoiceSuiteZffxPdfConstructor::class, $provider->getPdfConstructorClassName());
     }
 
     public function testGetSerializerMetadataDirectories(): void

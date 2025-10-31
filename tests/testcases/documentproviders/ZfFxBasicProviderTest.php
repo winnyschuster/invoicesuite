@@ -3,11 +3,12 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
+use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\documents\models\zffxbasic\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicProvider;
 use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicProviderReader;
-use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicSerializerHandler;
 use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicProviderBuilder;
+use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicSerializerHandler;
 
 class ZfFxBasicProviderTest extends TestCase
 {
@@ -42,6 +43,20 @@ class ZfFxBasicProviderTest extends TestCase
         $this->assertSame('BASIC', $provider->getParameters()['PdfXmpName']);
         $this->assertArrayHasKey('PdfXmpVersion', $provider->getParameters());
         $this->assertSame('1.0', $provider->getParameters()['PdfXmpVersion']);
+    }
+
+    public function testPdfParameters(): void
+    {
+        $provider = new InvoiceSuiteZfFxBasicProvider();
+
+        $this->assertTrue($provider->isPdfSupportAvailable());
+        $this->assertCount(4, $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("ZUGFeRD-invoice.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("zugferd-invoice.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("factur-x.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("xrechnung.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertSame("factur-x.xml", $provider->getDefaultPdfAttachmentFilename());
+        $this->assertSame(InvoiceSuiteZffxPdfConstructor::class, $provider->getPdfConstructorClassName());
     }
 
     public function testGetSerializerMetadataDirectories(): void

@@ -3,11 +3,12 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
+use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortProvider;
 use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortProviderReader;
-use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortSerializerHandler;
 use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortProviderBuilder;
+use horstoeko\invoicesuite\documents\providers\zffxcomfort\InvoiceSuiteZfFxComfortSerializerHandler;
 
 class ZfFxComfortProviderTest extends TestCase
 {
@@ -41,6 +42,20 @@ class ZfFxComfortProviderTest extends TestCase
         $this->assertSame('EN 16931', $provider->getParameters()['PdfXmpName']);
         $this->assertArrayHasKey('PdfXmpVersion', $provider->getParameters());
         $this->assertSame('1.0', $provider->getParameters()['PdfXmpVersion']);
+    }
+
+    public function testPdfParameters(): void
+    {
+        $provider = new InvoiceSuiteZfFxComfortProvider();
+
+        $this->assertTrue($provider->isPdfSupportAvailable());
+        $this->assertCount(4, $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("ZUGFeRD-invoice.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("zugferd-invoice.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("factur-x.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertContains("xrechnung.xml", $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertSame("factur-x.xml", $provider->getDefaultPdfAttachmentFilename());
+        $this->assertSame(InvoiceSuiteZffxPdfConstructor::class, $provider->getPdfConstructorClassName());
     }
 
     public function testGetSerializerMetadataDirectories(): void
