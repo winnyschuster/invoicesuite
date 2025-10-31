@@ -81,6 +81,7 @@
             <file>../tests/testcases/documentreadbuild/ZfFxBasicWlDocumentBuilderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxBasicDocumentBuilderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxMinimumDocumentBuilderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungDocumentBuilderTest.php</file>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
