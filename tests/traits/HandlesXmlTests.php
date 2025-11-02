@@ -67,7 +67,7 @@ trait HandlesXmlTests
     }
 
     /**
-     * Disable rendering of test content
+     * Enable rendering of test content
      *
      * @return void
      */
