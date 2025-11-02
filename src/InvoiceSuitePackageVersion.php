@@ -31,20 +31,22 @@ final class InvoiceSuitePackageVersion
      */
     public static function getInstalledVersion(): string
     {
-        try {
-            return ComposerInstalledVersions::getVersion('horstoeko/invoicesuite') ?? self::getDefaultVersion();
-        } catch (OutOfBoundsException) {
-            return self::getDefaultVersion();
-        }
+        return static::getInstalledVersionByName('horstoeko/invoicesuite');
     }
 
     /**
-     * Return the default version used for this package, when no installation was found
+     * Get the installed version of a package defined by $packageName
      *
+     * @param string $packageName
+     * @param string $defaultPackageVersion
      * @return string
      */
-    private static function getDefaultVersion(): string
+    public static function getInstalledVersionByName(string $packageName, string $defaultPackageVersion = "1.0.x"): string
     {
-        return "1.0.x";
+        try {
+            return ComposerInstalledVersions::getVersion($packageName) ?? $defaultPackageVersion;
+        } catch (OutOfBoundsException) {
+            return $defaultPackageVersion;
+        }
     }
 }

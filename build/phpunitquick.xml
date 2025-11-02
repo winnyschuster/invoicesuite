@@ -3,6 +3,7 @@
     <testsuites>
         <testsuite name="Utils">
             <file>../tests/testcases/utils/UtilsTest.php</file>
+            <file>../tests/testcases/utils/InvoiceSuitePackageVersionTest.php</file>
         </testsuite>
         <testsuite name="Exceptions">
             <file>../tests/testcases/exceptions/InvoiceSuiteBadMethodCallExceptionTest.php</file>
