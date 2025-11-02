@@ -32,7 +32,7 @@ trait HandlesXmlTests
      */
     protected function setUp(): void
     {
-        $this->EnableRenderXmlContent();
+        $this->enableRenderXmlContent();
     }
 
     /**
@@ -43,14 +43,9 @@ trait HandlesXmlTests
     protected function getXml(): \SimpleXMLElement
     {
         if ($this->renderingOfXmlDisabled === false || $this->latestXml === null) {
-            $xml = new \SimpleXMLElement((self::$document)->getContentAsXml());
-            $ns = $xml->getDocNamespaces(true);
-            foreach ($ns as $prefix => $uri) {
-                $xml->registerXPathNamespace($prefix ?: 'ns', $uri);
-            }
-            $this->latestXml = $xml;
+            $this->latestXml = new \SimpleXMLElement((self::$document)->getContentAsXml());
+            $this->registerAllNamespaces($this->latestXml);
         }
-
 
         return $this->latestXml;
     }
@@ -63,6 +58,7 @@ trait HandlesXmlTests
     protected function disableRenderXmlContent()
     {
         $this->latestXml = new \SimpleXMLElement((self::$document)->getContentAsXml());
+        $this->registerAllNamespaces($this->latestXml);
         $this->renderingOfXmlDisabled = true;
     }
 
@@ -88,7 +84,7 @@ trait HandlesXmlTests
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey(0, $xmlvalue);
-        $this->assertEquals($expected, $xmlvalue[0]);
+        $this->assertEquals($expected, (string) $xmlvalue[0]);
     }
 
     /**
@@ -104,7 +100,7 @@ trait HandlesXmlTests
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
-        $this->assertEquals($expected, $xmlvalue[$index]);
+        $this->assertEquals($expected, (string) $xmlvalue[$index]);
     }
 
     /**
@@ -120,7 +116,7 @@ trait HandlesXmlTests
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
-        $this->assertEquals($expected, substr($xmlvalue[$index], 0, strlen($expected)));
+        $this->assertEquals($expected, substr((string) $xmlvalue[$index], 0, strlen($expected)));
     }
 
     /**
@@ -137,10 +133,10 @@ trait HandlesXmlTests
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey(0, $xmlvalue);
-        $this->assertEquals($expected, $xmlvalue[0]);
+        $this->assertEquals($expected, (string) $xmlvalue[0]);
         $this->assertNotNull($xmlvalue[0]->attributes()[$expectedAttribute]);
         $this->assertNotNull($xmlvalue[0]->attributes()[$expectedAttribute][0]);
-        $this->assertEquals($expectedAttributeValue, $xmlvalue[0]->attributes()[$expectedAttribute][0]);
+        $this->assertEquals($expectedAttributeValue, (string) $xmlvalue[0]->attributes()[$expectedAttribute][0]);
     }
 
     /**
@@ -157,10 +153,10 @@ trait HandlesXmlTests
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
-        $this->assertEquals($expected, $xmlvalue[$index]);
+        $this->assertEquals($expected, (string) $xmlvalue[$index]);
         $this->assertNotNull($xmlvalue[$index]->attributes()[$expectedAttribute]);
         $this->assertNotNull($xmlvalue[$index]->attributes()[$expectedAttribute][0]);
-        $this->assertEquals($expectedAttributeValue, $xmlvalue[$index]->attributes()[$expectedAttribute][0]);
+        $this->assertEquals($expectedAttributeValue, (string) $xmlvalue[$index]->attributes()[$expectedAttribute][0]);
     }
 
     /**
@@ -177,10 +173,10 @@ trait HandlesXmlTests
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
-        $this->assertEquals($expected, substr($xmlvalue[$index], 0, strlen($expected)));
+        $this->assertEquals($expected, substr((string) $xmlvalue[$index], 0, strlen($expected)));
         $this->assertNotNull($xmlvalue[$index]->attributes()[$expectedAttribute]);
         $this->assertNotNull($xmlvalue[$index]->attributes()[$expectedAttribute][0]);
-        $this->assertEquals($expectedAttributeValue, $xmlvalue[$index]->attributes()[$expectedAttribute][0]);
+        $this->assertEquals($expectedAttributeValue, (string) $xmlvalue[$index]->attributes()[$expectedAttribute][0]);
     }
 
     /**
@@ -234,5 +230,20 @@ trait HandlesXmlTests
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, "..", ".."), 'myfile_dbg.xml'),
             (self::$document)->getContentAsXml()
         );
+    }
+
+    /**
+     * Register all namespaces on the document root.
+     * The default namespace receives prefix "ns".
+     *
+     * @param \SimpleXMLElement $xml
+     * @return void
+     */
+    private function registerAllNamespaces(\SimpleXMLElement $xml): void
+    {
+        $ns = $xml->getDocNamespaces(true);
+        foreach ($ns as $prefix => $uri) {
+            $xml->registerXPathNamespace($prefix !== '' ? $prefix : 'ns', $uri);
+        }
     }
 }
