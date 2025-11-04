@@ -388,6 +388,16 @@ class InvoiceSuitePdfDocumentBuilder
     }
 
     /**
+     * Get the status of deterministic mode
+     *
+     * @return bool
+     */
+    public function getDeterministicMode(): bool
+    {
+        return $this->getCurrentPdfConstructor()->getDeterministicMode();
+    }
+
+    /**
      * Set the status of deterministic mode
      *
      * @param bool $newDeterministicMode
