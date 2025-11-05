@@ -32,39 +32,71 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
     public static function profileProvider(): iterable
     {
         return [
-            'zffxminimum' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false],
-            'zffxbasicwl' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false],
-            'zffxbasic' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false],
-            'zffxcomfort' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false],
-            'zffxextended' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false],
-            'zffxminimum2' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml"],
-            'zffxbasicwl2' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml"],
-            'zffxbasic2' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml"],
-            'zffxcomfort2' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml"],
-            'zffxextended2' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml"],
+            // First case
+            'zffxminimum' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, false],
+            'zffxbasicwl' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false, false],
+            'zffxbasic' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false, false],
+            'zffxcomfort' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false, false],
+            'zffxextended' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false, false],
+            // Second case
+            'zffxminimum2' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml", false],
+            'zffxbasicwl2' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml", false],
+            'zffxbasic2' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml", false],
+            'zffxcomfort2' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml", false],
+            'zffxextended2' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml", false],
+            // Third case
+            'zffxminimum3' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, true],
+            'zffxbasicwl3' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false, true],
+            'zffxbasic3' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false, true],
+            'zffxcomfort3' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false, true],
+            'zffxextended3' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false, true],
+            // Fourth case
+            'zffxminimum4' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml", true],
+            'zffxbasicwl4' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml", true],
+            'zffxbasic4' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml", true],
+            'zffxcomfort4' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml", true],
+            'zffxextended4' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml", true],
         ];
     }
 
     /**
      * @dataProvider profileProvider
      */
-    public function testZfFxBasicCreateFromDocumentBuilderAndPdfFile(string $expectedProfile, string $expectedXmlContains, $expectedUseOfXmlFile): void
+    public function testZfFxBasicCreateFromDocumentBuilderAndPdfFile(string $expectedProfile, string $expectedXmlContains, $expectedUseOfXmlFile, bool $expectusePdfContent): void
     {
-        if ($expectedUseOfXmlFile !== false) {
-            $xmlFilename = InvoiceSuitePathUtils::combinePathWithFile($this->getSampleXmlPath(), $expectedUseOfXmlFile);
-            $xmlContent = file_get_contents($xmlFilename);
-            $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfFile(
-                $xmlContent,
-                $this->getSamplePlainPdfFile()
-            );
+        if ($expectusePdfContent !== true) {
+            if ($expectedUseOfXmlFile !== false) {
+                $xmlFilename = InvoiceSuitePathUtils::combinePathWithFile($this->getSampleXmlPath(), $expectedUseOfXmlFile);
+                $xmlContent = file_get_contents($xmlFilename);
+                $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfFile(
+                    $xmlContent,
+                    $this->getSamplePlainPdfFile()
+                );
+            } else {
+                $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($expectedProfile);
+                $documentBuilder->setDocumentNo('2025-00000001');
+                $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentBuilderAndPdfFile(
+                    $documentBuilder,
+                    $this->getSamplePlainPdfFile()
+                );
+            }
         } else {
-            $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($expectedProfile);
-            $documentBuilder->setDocumentNo('2025-00000001');
-
-            $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentBuilderAndPdfFile(
-                $documentBuilder,
-                $this->getSamplePlainPdfFile()
-            );
+            $pdfContent = file_get_contents($this->getSamplePlainPdfFile());
+            if ($expectedUseOfXmlFile !== false) {
+                $xmlFilename = InvoiceSuitePathUtils::combinePathWithFile($this->getSampleXmlPath(), $expectedUseOfXmlFile);
+                $xmlContent = file_get_contents($xmlFilename);
+                $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfContent(
+                    $xmlContent,
+                    $pdfContent
+                );
+            } else {
+                $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($expectedProfile);
+                $documentBuilder->setDocumentNo('2025-00000001');
+                $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentBuilderAndPdfContent(
+                    $documentBuilder,
+                    $pdfContent
+                );
+            }
         }
 
         // Provider
