@@ -31,36 +31,36 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
     {
         return [
             // First case
-            'zffxminimum' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, false],
-            'zffxbasicwl' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false, false],
-            'zffxbasic' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false, false],
-            'zffxcomfort' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false, false],
-            'zffxextended' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false, false],
+            'zffxminimum' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, false, 'MINIMUM', '1.0'],
+            'zffxbasicwl' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false, false, 'BASIC WL', '1.0'],
+            'zffxbasic' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false, false, 'BASIC', '1.0'],
+            'zffxcomfort' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false, false, 'EN 16931', '1.0'],
+            'zffxextended' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false, false, 'EXTENDED', '1.0'],
             // Second case
-            'zffxminimum2' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml", false],
-            'zffxbasicwl2' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml", false],
-            'zffxbasic2' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml", false],
-            'zffxcomfort2' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml", false],
-            'zffxextended2' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml", false],
+            'zffxminimum2' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml", false, 'MINIMUM', '1.0'],
+            'zffxbasicwl2' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml", false, 'BASIC WL', '1.0'],
+            'zffxbasic2' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml", false, 'BASIC', '1.0'],
+            'zffxcomfort2' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml", false, 'EN 16931', '1.0'],
+            'zffxextended2' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml", false, 'EXTENDED', '1.0'],
             // Third case
-            'zffxminimum3' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, true],
-            'zffxbasicwl3' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false, true],
-            'zffxbasic3' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false, true],
-            'zffxcomfort3' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false, true],
-            'zffxextended3' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false, true],
+            'zffxminimum3' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, true, 'MINIMUM', '1.0'],
+            'zffxbasicwl3' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', false, true, 'BASIC WL', '1.0'],
+            'zffxbasic3' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', false, true, 'BASIC', '1.0'],
+            'zffxcomfort3' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', false, true, 'EN 16931', '1.0'],
+            'zffxextended3' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', false, true, 'EXTENDED', '1.0'],
             // Fourth case
-            'zffxminimum4' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml", true],
-            'zffxbasicwl4' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml", true],
-            'zffxbasic4' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml", true],
-            'zffxcomfort4' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml", true],
-            'zffxextended4' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml", true],
+            'zffxminimum4' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', "02_technical_xml_zffx_minimum.xml", true, 'MINIMUM', '1.0'],
+            'zffxbasicwl4' => ['zffxbasicwl', '<ram:ID>urn:factur-x.eu:1p0:basicwl</ram:ID>', "02_technical_xml_zffx_basicwl.xml", true, 'BASIC WL', '1.0'],
+            'zffxbasic4' => ['zffxbasic', '<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic</ram:ID>', "02_technical_xml_zffx_basic.xml", true, 'BASIC', '1.0'],
+            'zffxcomfort4' => ['zffxcomfort', '<ram:ID>urn:cen.eu:en16931:2017</ram:ID>', "02_technical_xml_zffx_comfort.xml", true, 'EN 16931', '1.0'],
+            'zffxextended4' => ['zffxextended', '<ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>', "02_technical_xml_zffx_extended.xml", true, 'EXTENDED', '1.0'],
         ];
     }
 
     /**
      * @dataProvider zffxProfileProvider
      */
-    public function testZfFxPdfBuilder(string $expectedProfile, string $expectedXmlContains, $expectedUseOfXmlFile, bool $expectusePdfContent): void
+    public function testZfFxPdfBuilder(string $expectedProfile, string $expectedXmlContains, $expectedUseOfXmlFile, bool $expectusePdfContent, string $expectXmpName, string $expectXmpVersion): void
     {
         if ($expectusePdfContent !== true) {
             if ($expectedUseOfXmlFile !== false) {
@@ -72,10 +72,10 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
                 );
             } else {
                 $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($expectedProfile);
-                $documentBuilder->setDocumentNo('2025-00000001');
+                $documentBuilder->setDocumentNo('2025-04-000001');
                 $documentBuilder->setDocumentType(InvoiceSuiteCodelistDocumentTypes::COMMERCIAL_INVOICE->value);
                 $documentBuilder->setDocumentSellerId('0815');
-                $documentBuilder->setDocumentSellerName('Seller Name');
+                $documentBuilder->setDocumentSellerName('Lieferant GmbH');
                 $documentBuilder->setDocumentDate(DateTime::createFromFormat('Ymd', '19700101'));
                 $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentBuilderAndPdfFile(
                     $documentBuilder,
@@ -93,10 +93,10 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
                 );
             } else {
                 $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($expectedProfile);
-                $documentBuilder->setDocumentNo('2025-00000001');
+                $documentBuilder->setDocumentNo('2025-04-000001');
                 $documentBuilder->setDocumentType(InvoiceSuiteCodelistDocumentTypes::COMMERCIAL_INVOICE->value);
                 $documentBuilder->setDocumentSellerId('0815');
-                $documentBuilder->setDocumentSellerName('Seller Name');
+                $documentBuilder->setDocumentSellerName('Lieferant GmbH');
                 $documentBuilder->setDocumentDate(DateTime::createFromFormat('Ymd', '19700101'));
                 $pdfDOcumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentBuilderAndPdfContent(
                     $documentBuilder,
@@ -323,5 +323,102 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         $this->assertSame('Attached PDF', $propPdfConstructorValue->getaddAdditionalDocuments()[1]['displayname']);
         $this->assertSame('Supplement', $propPdfConstructorValue->getaddAdditionalDocuments()[1]['relationship']);
         $this->assertSame('application/pdf', $propPdfConstructorValue->getaddAdditionalDocuments()[1]['mimetype']);
+
+        $pdfDOcumentBuilder->setMetaInformationAuthorTemplate('%3$s');
+        $pdfDOcumentBuilder->setMetaInformationKeywordTemplate('%2$s %1$s, %4$s');
+        $pdfDOcumentBuilder->setMetaInformationTitleTemplate('%2$s %1$s issued by %3$s');
+        $pdfDOcumentBuilder->setMetaInformationSubjectTemplate('%2$s %1$s');
+
+        $method = $this->getPrivateMethodFromObject($propPdfConstructorValue, 'preparePdfMetadata');
+        $methodValue = $method->invoke($propPdfConstructorValue);
+
+        $this->assertIsArray($methodValue);
+        $this->assertArrayHasKey('author', $methodValue);
+        $this->assertArrayHasKey('keywords', $methodValue);
+        $this->assertArrayHasKey('title', $methodValue);
+        $this->assertArrayHasKey('subject', $methodValue);
+        $this->assertArrayHasKey('createdDate', $methodValue);
+        $this->assertArrayHasKey('modifiedDate', $methodValue);
+        $this->assertSame('Lieferant GmbH', $methodValue['author']);
+        $this->assertSame('Invoice 2025-04-000001, 1970-01-01T00:00:00+00:00', $methodValue['keywords']);
+        $this->assertSame('Invoice 2025-04-000001 issued by Lieferant GmbH', $methodValue['title']);
+        $this->assertSame('Invoice 2025-04-000001', $methodValue['subject']);
+
+        $pdfDOcumentBuilder->setMetaInformationCallback(function($whichTemplate, $xmlContent, $invoiceInformation, $defaultValue) {
+            if ($whichTemplate == 'author') {
+                return $invoiceInformation['seller'];
+            }
+            if ($whichTemplate == 'keyword') {
+                return sprintf('%s %s, %s', $invoiceInformation['docTypeName'], $invoiceInformation['invoiceId'], $invoiceInformation['date']);
+            }
+            if ($whichTemplate == 'title') {
+                return sprintf('%s %s issued by %s', $invoiceInformation['docTypeName'], $invoiceInformation['invoiceId'], $invoiceInformation['seller']);
+            }
+            if ($whichTemplate == 'subject') {
+                return sprintf('%s %s', $invoiceInformation['docTypeName'], $invoiceInformation['invoiceId']);
+            }
+        });
+
+        $method = $this->getPrivateMethodFromObject($propPdfConstructorValue, 'preparePdfMetadata');
+        $methodValue = $method->invoke($propPdfConstructorValue);
+
+        $this->assertIsArray($methodValue);
+        $this->assertArrayHasKey('author', $methodValue);
+        $this->assertArrayHasKey('keywords', $methodValue);
+        $this->assertArrayHasKey('title', $methodValue);
+        $this->assertArrayHasKey('subject', $methodValue);
+        $this->assertArrayHasKey('createdDate', $methodValue);
+        $this->assertArrayHasKey('modifiedDate', $methodValue);
+        $this->assertSame('Lieferant GmbH', $methodValue['author']);
+        $this->assertSame('Invoice 2025-04-000001, 1970-01-01T00:00:00+00:00', $methodValue['keywords']);
+        $this->assertSame('Invoice 2025-04-000001 issued by Lieferant GmbH', $methodValue['title']);
+        $this->assertSame('Invoice 2025-04-000001', $methodValue['subject']);
+
+        $method = $this->getPrivateMethodFromObject($propPdfConstructorValue, 'getXmlAttachmentXmpName');
+        $methodValue = $method->invoke($propPdfConstructorValue);
+
+        $this->assertSame($expectXmpName, $methodValue);
+
+        $method = $this->getPrivateMethodFromObject($propPdfConstructorValue, 'getXmlAttachmentXmpVersion');
+        $methodValue = $method->invoke($propPdfConstructorValue);
+
+        $this->assertSame("1.0", $expectXmpVersion);
+
+        $method = $this->getPrivateMethodFromObject($propPdfConstructorValue, 'updatePdfMetadata');
+        $methodValue = $method->invoke($propPdfConstructorValue);
+
+        $propPdfWriter = $this->getPrivatePropertyFromObject($propPdfConstructorValue, 'pdfWriter');
+        $propPdfWriterValue = $propPdfWriter->getValue($propPdfConstructorValue);
+
+        $propPdfWriterMetaData = $this->getPrivatePropertyFromObject($propPdfWriterValue, 'metadata');
+        $propPdfWriterMetaDataValue = $propPdfWriterMetaData->getValue($propPdfWriterValue);
+
+        $this->assertIsArray($propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey('Title', $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey('Author', $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey('Subject', $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey('Keywords', $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey('Creator', $propPdfWriterMetaDataValue);
+        $this->assertSame('Lieferant GmbH', $propPdfWriterMetaDataValue['Author']);
+        $this->assertSame('Invoice 2025-04-000001, 1970-01-01T00:00:00+00:00', $propPdfWriterMetaDataValue['Keywords']);
+        $this->assertSame('Invoice 2025-04-000001 issued by Lieferant GmbH', $propPdfWriterMetaDataValue['Title']);
+        $this->assertSame('Invoice 2025-04-000001', $propPdfWriterMetaDataValue['Subject']);
+        $this->assertSame('My Creator Tool / InvoiceSuite PHP library vdev-master by HorstOeko', $propPdfWriterMetaDataValue['Creator']);
+
+        $propPdfWriterMetaData = $this->getPrivatePropertyFromObject($propPdfWriterValue, 'metaDataDescriptions');
+        $propPdfWriterMetaDataValue = $propPdfWriterMetaData->getValue($propPdfWriterValue);
+
+        $this->assertIsArray($propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey(0, $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey(1, $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey(2, $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey(3, $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey(4, $propPdfWriterMetaDataValue);
+        $this->assertArrayHasKey(5, $propPdfWriterMetaDataValue);
+        $this->assertStringContainsString('<rdf:Description xmlns:fx="urn:factur-x:pdfa:CrossIndustryDocument:invoice:1p0#', $propPdfWriterMetaDataValue[0]);
+        $this->assertStringContainsString('<fx:DocumentType>INVOICE</fx:DocumentType>', $propPdfWriterMetaDataValue[0]);
+        $this->assertStringContainsString('<fx:DocumentFileName>factur-x.xml</fx:DocumentFileName>', $propPdfWriterMetaDataValue[0]);
+        $this->assertStringContainsString(sprintf('<fx:Version>%s</fx:Version>', $expectXmpVersion), $propPdfWriterMetaDataValue[0]);
+        $this->assertStringContainsString(sprintf('<fx:ConformanceLevel>%s</fx:ConformanceLevel>', $expectXmpName), $propPdfWriterMetaDataValue[0]);
     }
 }
