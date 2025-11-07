@@ -6,6 +6,7 @@ namespace horstoeko\invoicesuite\tests\testcases\pdf;
 
 use Closure;
 use DateTime;
+use DateTimeInterface;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
@@ -14,6 +15,7 @@ use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfWriter;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
+use PrinsFrank\PdfParser\PdfParser;
 
 final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
 {
@@ -344,7 +346,7 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         $this->assertSame('Invoice 2025-04-000001 issued by Lieferant GmbH', $methodValue['title']);
         $this->assertSame('Invoice 2025-04-000001', $methodValue['subject']);
 
-        $pdfDOcumentBuilder->setMetaInformationCallback(function($whichTemplate, $xmlContent, $invoiceInformation, $defaultValue) {
+        $pdfDOcumentBuilder->setMetaInformationCallback(function ($whichTemplate, $xmlContent, $invoiceInformation, $defaultValue) {
             if ($whichTemplate == 'author') {
                 return $invoiceInformation['seller'];
             }
@@ -420,5 +422,50 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         $this->assertStringContainsString('<fx:DocumentFileName>factur-x.xml</fx:DocumentFileName>', $propPdfWriterMetaDataValue[0]);
         $this->assertStringContainsString(sprintf('<fx:Version>%s</fx:Version>', $expectXmpVersion), $propPdfWriterMetaDataValue[0]);
         $this->assertStringContainsString(sprintf('<fx:ConformanceLevel>%s</fx:ConformanceLevel>', $expectXmpName), $propPdfWriterMetaDataValue[0]);
+
+        // Output as file
+
+        $pdfDOcumentBuilder->setDeterministicModeToEnabled();
+
+        $saveToFilename = InvoiceSuitePathUtils::combinePathWithFile(sys_get_temp_dir(), 'output.pdf');
+
+        $pdfDOcumentBuilder->generatePdfDocumentAndSaveToFile($saveToFilename);
+
+        $this->assertFileExists($saveToFilename);
+        $this->registerFileForTestMethodTeardown($saveToFilename);
+
+        // Output as string
+
+        $pdfContent = file_get_contents($saveToFilename);
+
+        $pdfParser = new PdfParser();
+        $pdfParsed = $pdfParser->parseString($pdfContent);
+        $fileSpecs = $pdfParsed->getCatalog()->getFileSpecifications();
+
+        $fileSpecs = array_filter(
+            $fileSpecs,
+            function ($fileSpec) {
+                return !is_null($fileSpec->getEmbeddedFile());
+            }
+        );
+
+        $this->assertStringContainsString('PDF-1.7', $pdfContent);
+        $this->assertCount(3, $fileSpecs);
+        $this->assertArrayHasKey(0, $fileSpecs);
+        $this->assertArrayHasKey(1, $fileSpecs);
+        $this->assertArrayHasKey(2, $fileSpecs);
+        $this->assertSame('factur-x.xml', $fileSpecs[0]->getFileSpecificationString());
+        $this->assertSame('text/xml', ltrim($fileSpecs[0]->getEmbeddedFile()->getSubType() ?? '', '/'));
+        $this->assertSame('02_picture.jpg', $fileSpecs[1]->getFileSpecificationString());
+        $this->assertSame('image/jpeg', ltrim($fileSpecs[1]->getEmbeddedFile()->getSubType() ?? '', '/'));
+        $this->assertSame('pdf.pdf', $fileSpecs[2]->getFileSpecificationString());
+        $this->assertSame('application/pdf', ltrim($fileSpecs[2]->getEmbeddedFile()->getSubType() ?? '', '/'));
+        $this->assertSame("Invoice 2025-04-000001 issued by Lieferant GmbH", $pdfParsed->getInformationDictionary()?->getTitle());
+        $this->assertSame("Lieferant GmbH", $pdfParsed->getInformationDictionary()?->getAuthor());
+        $this->assertSame("My Creator Tool / InvoiceSuite PHP library vdev-master by HorstOeko", $pdfParsed->getInformationDictionary()?->getCreator());
+        $this->assertStringContainsString("FPDF", $pdfParsed->getInformationDictionary()?->getProducer());
+        $this->assertInstanceOf(DateTimeInterface::class, $pdfParsed->getInformationDictionary()?->getCreationDate());
+        $this->assertSame("2000-01-01", $pdfParsed->getInformationDictionary()?->getCreationDate()->format("Y-m-d"));
+        $this->assertNull($pdfParsed->getInformationDictionary()?->getModificationDate());
     }
 }

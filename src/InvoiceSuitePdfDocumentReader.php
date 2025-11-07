@@ -165,19 +165,6 @@ class InvoiceSuitePdfDocumentReader
     }
 
     /**
-     * Internal method to set a bulk of additional attachments
-     *
-     * @param array<int,InvoiceSuitePdfExtractorAttachment> $attachments
-     * @return InvoiceSuitePdfDocumentReader
-     */
-    protected function setAdditionalDocumentAttachments(array $attachments): self
-    {
-        $this->additionalDocumentAttachments = $attachments;
-
-        return $this;
-    }
-
-    /**
      * Internal method to add a single additional attachments
      *
      * @param InvoiceSuitePdfExtractorAttachment $attachment
