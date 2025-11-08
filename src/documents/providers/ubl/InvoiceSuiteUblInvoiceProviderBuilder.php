@@ -1708,6 +1708,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): self {
+        $this
+            ->getUblInvoiceRootObject()
+            ->addOnceToDeliveryWithCreate()
+            ->unsetActualDeliveryDate();
+
         if (is_null($newDate)) {
             return $this;
         }
