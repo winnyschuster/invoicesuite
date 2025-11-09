@@ -107,13 +107,9 @@ class UblInvoiceProviderBuilderTest extends TestCase
 
     public function testSetDocumentLanguage(): void
     {
-        $xml = $this->getXml();
-
-        self::$document->setDocumentLanguage('de-DE');
-
-        $this->disableRenderXmlContent();
-
-        $this->assertEquals($xml, $this->getXml(), 'Nothing should be added to XML');
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentLanguage('de-DE');
+        });
     }
 
     public function testSetDocumentDate(): void
@@ -179,24 +175,16 @@ class UblInvoiceProviderBuilderTest extends TestCase
 
     public function testSetDocumentIsCopy(): void
     {
-        $xml = $this->getXml();
-
-        self::$document->setDocumentIsCopy(true);
-
-        $this->disableRenderXmlContent();
-
-        $this->assertEquals($xml, $this->getXml(), 'Nothing should be added to XML');
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentIsCopy(true);
+        });
     }
 
     public function testSetDocumentIsTest(): void
     {
-        $xml = $this->getXml();
-
-        self::$document->setDocumentIsTest(true);
-
-        $this->disableRenderXmlContent();
-
-        $this->assertEquals($xml, $this->getXml(), 'Nothing should be added to XML');
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentIsTest(true);
+        });
     }
 
     public function testSetAddDocumentNote(): void
@@ -1040,13 +1028,8 @@ class UblInvoiceProviderBuilderTest extends TestCase
 
     public function testSetAddDocumentUltimateCustomerOrderReference(): void
     {
-        $xml = $this->getXml();
-
-        $this->disableRenderXmlContent();
-
-        $this->assertEquals($xml, $this->getXml(), 'Nothing should be added to XML');
+        $this->assertXmlWasNotChanged(function () {});
     }
-
 
     public function testSetAddDocumentDespatchAdviceReference(): void
     {
@@ -1190,14 +1173,10 @@ class UblInvoiceProviderBuilderTest extends TestCase
 
     public function testSetAddDocumentDeliveryNoteReference(): void
     {
-        $xml = $this->getXml();
-
-        self::$document->setDocumentDeliveryNoteReference('DEVNOTE-1', (new DateTime())->createFromFormat('d.m.Y', '01.01.1970'));
-        self::$document->addDocumentDeliveryNoteReference('DEVNOTE-1', (new DateTime())->createFromFormat('d.m.Y', '01.01.1970'));
-
-        $this->disableRenderXmlContent();
-
-        $this->assertEquals($xml, $this->getXml(), 'Nothing should be added to XML');
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentDeliveryNoteReference('DEVNOTE-1', (new DateTime())->createFromFormat('d.m.Y', '01.01.1970'));
+            self::$document->addDocumentDeliveryNoteReference('DEVNOTE-1', (new DateTime())->createFromFormat('d.m.Y', '01.01.1970'));
+        });
     }
 
     public function testSetDocumentSupplyChainEvent(): void
@@ -3657,5 +3636,69 @@ class UblInvoiceProviderBuilderTest extends TestCase
 
         $this->assertXPathValueWithIndexAndAttribute('/ns:Invoice/cac:TaxRepresentativeParty/cbc:EndpointID', 0, 'user2@somewhere.all', 'schemeID', 'EM');
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:TaxRepresentativeParty/cbc:EndpointID', 1);
+    }
+
+    public function testSetAddDocumentProductEndUserName(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserName('Product End User Name');
+            self::$document->addDocumentProductEndUserName('Product End User Name 2');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserId(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserId('Product End User Id 1');
+            self::$document->addDocumentProductEndUserId('Product End User Id 2');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserGlobalId(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserGlobalId('Product End User Global Id 1', '0088');
+            self::$document->addDocumentProductEndUserGlobalId('Product End User Global Id 1', '0088');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserTaxRegistration(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserTaxRegistration('VA', '123456789');
+            self::$document->addDocumentProductEndUserTaxRegistration('VA', '999999999');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserAddress(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserAddress('Adress-Line 1', 'Adress-Line 2', 'Adress-Line 3', '88888', 'Cityname', 'IR', 'Waterford');
+            self::$document->addDocumentProductEndUserAddress('Adress-Line 1-1', 'Adress-Line 2-2', 'Adress-Line 3-3', '88888', 'Cityname', 'IR', 'Saxony');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserLegalOrganisation(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserLegalOrganisation('8884', '123456789', 'Company Name');
+            self::$document->addDocumentProductEndUserLegalOrganisation('8884', '123456789', 'Company Name 2');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserContact(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserContact('Name', 'Departement Name', '+49-111-123456789', '+49-111-987654321', 'user@nowhere.all');
+            self::$document->addDocumentProductEndUserContact('Name 2', 'Departement Name 2', '+49-111-123456789', '+49-111-987654321', 'user@nowhere.all');
+        });
+    }
+
+    public function testSetAddDocumentProductEndUserCommunication(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentProductEndUserCommunication('EM', 'user@somewhere.all');
+            self::$document->addDocumentProductEndUserCommunication('EM', 'user2@somewhere.all');
+        });
     }
 }

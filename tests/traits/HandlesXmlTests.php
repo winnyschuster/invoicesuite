@@ -246,4 +246,21 @@ trait HandlesXmlTests
             $xml->registerXPathNamespace($prefix !== '' ? $prefix : 'ns', $uri);
         }
     }
+
+    /**
+     * Assert that XML was not changed by a call to $code
+     *
+     * @param callable $code
+     * @return void
+     */
+    private function assertXmlWasNotChanged($code): void
+    {
+        $previousXml = (self::$document)->getContentAsXml();
+
+        call_user_func($code);
+
+        $currentXml = (self::$document)->getContentAsXml();
+
+        $this->assertEquals($previousXml, $currentXml, 'Nothing should be added to XML');
+    }
 }
