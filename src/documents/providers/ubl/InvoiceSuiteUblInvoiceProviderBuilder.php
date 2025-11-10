@@ -5578,7 +5578,8 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
             ->getUblInvoiceRootObject()
             ->getPayeeParty()
             ?->firstPartyLegalEntity()
-            ?->unsetCompanyID();
+            ?->unsetCompanyID()
+            ?->unsetRegistrationName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
@@ -5591,6 +5592,15 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->addOnceToPartyLegalEntityWithCreate()
                 ->getCompanyIDWithCreate()
                 ->setValue($newId);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            $this
+                ->getUblInvoiceRootObject()
+                ->getPayeePartyWithCreate()
+                ->addOnceToPartyLegalEntityWithCreate()
+                ->getRegistrationNameWithCreate()
+                ->setValue($newName);
         }
 
         return $this;
