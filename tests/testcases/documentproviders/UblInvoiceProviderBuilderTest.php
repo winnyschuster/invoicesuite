@@ -4113,4 +4113,68 @@ class UblInvoiceProviderBuilderTest extends TestCase
             self::$document->addDocumentUltimateShipToCommunication('EM', 'user@somewhere.all');
         });
     }
+
+    public function testSetAddDocumentShipFromName(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromName('Ship From Name');
+            self::$document->addDocumentShipFromName('Ship From Name');
+        });
+    }
+
+    public function testSetAddDocumentShipFromId(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromId('Ship From Id 1');
+            self::$document->addDocumentShipFromId('Ship From Id 1');
+        });
+    }
+
+    public function testSetAddDocumentShipFromGlobalId(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromGlobalId('Ship From Global Id 1', '0088');
+            self::$document->addDocumentShipFromGlobalId('Ship From Global Id 1', '0088');
+        });
+    }
+
+    public function testSetAddDocumentShipFromTaxRegistration(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromTaxRegistration('VA', '123456789');
+            self::$document->addDocumentShipFromTaxRegistration('VA', '123456789');
+        });
+    }
+
+    public function testSetAddDocumentShipFromAddress(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromAddress('Line 1', 'Line 2', 'Line 3', '99999', 'City', 'DE', 'Bavaria');
+            self::$document->addDocumentShipFromAddress('Line 1', 'Line 2', 'Line 3', '99999', 'City', 'DE', 'Bavaria');
+        });
+    }
+
+    public function testSetAddDocumentShipFromLegalOrganisation(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromLegalOrganisation('8884', '123456789', 'Company Name');
+            self::$document->addDocumentShipFromLegalOrganisation('8884', '123456789', 'Company Name');
+        });
+    }
+
+    public function testSetAddDocumentShipFromContact(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromContact('Name', 'Departement Name', '+49-111-123456789', '+49-111-987654321', 'user@nowhere.all');
+            self::$document->addDocumentShipFromContact('Name', 'Departement Name', '+49-111-123456789', '+49-111-987654321', 'user@nowhere.all');
+        });
+    }
+
+    public function testSetAddDocumentShipFromCommunication(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentShipFromCommunication('EM', 'user@somewhere.all');
+            self::$document->addDocumentShipFromCommunication('EM', 'user@somewhere.all');
+        });
+    }
 }
