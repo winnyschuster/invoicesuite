@@ -5584,4 +5584,213 @@ class UblInvoiceProviderBuilderTest extends TestCase
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode', 2);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID', 2);
     }
+
+    public function testSetAddDocumentAllowanceCharge(): void
+    {
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1);
+
+        self::$document->setDocumentAllowanceCharge();
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1);
+
+        self::$document->setDocumentAllowanceCharge(
+            true,
+            10.0,
+            100.0,
+            'S',
+            'VAT',
+            19.0,
+            'Reason',
+            'ReasonCode',
+            20.0
+        );
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0, 'true');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0, 'ReasonCode');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0, 'Reason');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0, '20.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0, '10.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0, '100.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0, 'S');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0, '19.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0, 'VAT');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1);
+
+        self::$document->addDocumentAllowanceCharge();
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0, 'true');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0, 'ReasonCode');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0, 'Reason');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0, '20.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0, '10.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0, '100.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0, 'S');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0, '19.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0, 'VAT');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1);
+
+        self::$document->addDocumentAllowanceCharge(
+            true,
+            10.0,
+            100.0,
+            'S',
+            'VAT',
+            19.0,
+            'Reason2',
+            'ReasonCode2',
+            20.0
+        );
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0, 'true');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0, 'ReasonCode');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0, 'Reason');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0, '20.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0, '10.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0, '100.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0, 'S');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0, '19.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0, 'VAT');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1, 'true');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1, 'ReasonCode2');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1, 'Reason2');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1, '20.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1, '10.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1, '100.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1, 'S');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1, '19.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1, 'VAT');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 2);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 2);
+
+        self::$document->setDocumentAllowanceCharge();
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1);
+
+        self::$document->setDocumentAllowanceCharge(
+            true,
+            10.0,
+            100.0,
+            'S',
+            'VAT',
+            19.0,
+            'Reason3',
+            'ReasonCode3',
+            20.0
+        );
+
+        $this->disableRenderXmlContent();
+
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 0, 'true');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 0, 'ReasonCode3');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 0, 'Reason3');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 0, '20.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 0, '10.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 0, '100.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 0, 'S');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 0, '19.00');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 0, 'VAT');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:Amount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cbc:BaseAmount', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID', 1);
+    }
+
+    public function testSetAddDocumentLogisticServiceCharge(): void
+    {
+        $this->assertXmlWasNotChanged(function () {
+            self::$document->setDocumentLogisticServiceCharge(10.0, 'description', 'S', 'VAT', 19.0);
+            self::$document->addDocumentLogisticServiceCharge(10.0, 'description', 'S', 'VAT', 19.0);
+        });
+    }
 }

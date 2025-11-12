@@ -6522,10 +6522,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     ): self {
         $this
             ->getUblInvoiceRootObject()
-            ->setAllowanceCharge(array_filter(
-                $this->getUblInvoiceRootObject()->getAllowanceCharge() ?? [],
-                fn(AllowanceCharge $currentAllowanceChage) => !$currentAllowanceChage->hasObjectFlag('allowancecharge')
-            ));
+            ->unsetAllowanceCharge();
 
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) ||
@@ -6583,8 +6580,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
 
         $allowanceCharge = $this
             ->getUblInvoiceRootObject()
-            ->addToAllowanceChargeWithCreate()
-            ->addToObjectFlags('allowancecharge');
+            ->addToAllowanceChargeWithCreate();
 
         $allowanceCharge
             ->setChargeIndicator($newChargeIndicator ?? false);
@@ -6646,29 +6642,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): self {
-        $this
-            ->getUblInvoiceRootObject()
-            ->setAllowanceCharge(
-                array_filter(
-                    $this->getUblInvoiceRootObject()->getAllowanceCharge() ?? [],
-                    fn(AllowanceCharge $currentAllowanceChage) => !$currentAllowanceChage->hasObjectFlag('logservicecharge')
-                )
-            );
-
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription]) ||
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])
-        ) {
-            return $this;
-        }
-
-        $this->addDocumentLogisticServiceCharge(
-            $newChargeAmount,
-            $newDescription,
-            $newTaxCategory,
-            $newTaxType,
-            $newTaxPercent
-        );
+        // Nothing here...
 
         return $this;
     }
@@ -6690,34 +6664,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): self {
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription]) ||
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])
-        ) {
-            return $this;
-        }
-
-        $allowanceCharge = $this
-            ->getUblInvoiceRootObject()
-            ->addToAllowanceChargeWithCreate()
-            ->addToObjectFlags('logservicecharge');
-
-        $allowanceCharge
-            ->setChargeIndicator(true);
-
-        $allowanceCharge
-            ->getAmountWithCreate()
-            ->setValue($newChargeAmount);
-
-        $allowanceCharge
-            ->clearAllowanceChargeReason()
-            ->addToAllowanceChargeReasonWithCreate()
-            ->setValue($newDescription);
-
-        $taxCategory = $allowanceCharge->clearTaxCategory()->addToTaxCategoryWithCreate();
-        $taxCategory->getIDWithCreate()->setValue($newTaxCategory);
-        $taxCategory->getTaxSchemeWithCreate()->getIDWithCreate()->setValue($newTaxType);
-        $taxCategory->getPercentWithCreate()->setValue($newTaxPercent);
+        // Nothing here...
 
         return $this;
     }
