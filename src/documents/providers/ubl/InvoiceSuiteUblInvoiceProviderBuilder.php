@@ -10,8 +10,8 @@
 namespace horstoeko\invoicesuite\documents\providers\ubl;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
@@ -34,9 +34,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteServiceChargeDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference;
-use horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge;
 use horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification;
-use horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentificationType;
 use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
@@ -92,11 +90,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     {
         $invoiceCurrencyCode = $this
             ->getUblInvoiceRootObject()
-            ->getDocumentCurrencyCode()?->getValue();
+            ->getDocumentCurrencyCode()
+            ?->getValue();
 
         $taxCurrencyCode = $this
             ->getUblInvoiceRootObject()
-            ->getTaxCurrencyCode()?->getValue();
+            ->getTaxCurrencyCode()
+            ?->getValue();
 
         // Update summation
 
@@ -1814,7 +1814,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getAccountingSupplierParty()
                 ?->getParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
         );
 
         $this
@@ -1872,7 +1872,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getAccountingSupplierParty()
                 ?->getParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
         );
 
         $this
@@ -2382,7 +2382,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getAccountingCustomerParty()
                 ?->getParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
         );
 
         $this
@@ -2440,7 +2440,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getAccountingCustomerParty()
                 ?->getParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
         );
 
         $this
@@ -2946,7 +2946,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getUblInvoiceRootObject()
                 ->getTaxRepresentativeParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
         );
 
         $this
@@ -3003,7 +3003,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getUblInvoiceRootObject()
                 ->getTaxRepresentativeParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
         );
 
         $this
@@ -5287,7 +5287,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getUblInvoiceRootObject()
                 ->getPayeeParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('id')
         );
 
         $this
@@ -5342,7 +5342,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
                 ->getUblInvoiceRootObject()
                 ->getPayeeParty()
                 ?->getPartyIdentification() ?? [],
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('globalid')
         );
 
         $this
@@ -6180,7 +6180,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
 
         $ids = array_filter(
             $ids,
-            fn(PartyIdentificationType $partyIdentification) => !$partyIdentification->hasObjectFlag('creditorreference')
+            fn(PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('creditorreference')
         );
 
         $this

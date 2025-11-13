@@ -3,15 +3,15 @@
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use DateTime;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\documents\providers\ubl\InvoiceSuiteUblInvoiceProvider;
+use horstoeko\invoicesuite\documents\providers\ubl\InvoiceSuiteUblInvoiceProviderBuilder;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\tests\traits\HandlesXmlTests;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
-use horstoeko\invoicesuite\documents\providers\ubl\InvoiceSuiteUblInvoiceProvider;
-use horstoeko\invoicesuite\documents\providers\ubl\InvoiceSuiteUblInvoiceProviderBuilder;
 
 class UblInvoiceProviderBuilderTest extends TestCase
 {
@@ -5863,6 +5863,7 @@ class UblInvoiceProviderBuilderTest extends TestCase
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount', 1);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount', 1);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount', 1);
+        $this->debugWriteFile();
 
         self::$document->setDocumentSummation();
 
