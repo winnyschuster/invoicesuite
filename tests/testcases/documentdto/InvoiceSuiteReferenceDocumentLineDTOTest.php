@@ -8,7 +8,7 @@ use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteReferenceDocumentLineDTOTest extends TestCase
+final class InvoiceSuiteReferenceDocumentLineDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -16,7 +16,7 @@ class InvoiceSuiteReferenceDocumentLineDTOTest extends TestCase
 
         $this->assertNull($invoiceSuiteReferenceDocumentLineDTO->getReferenceNumber());
         $this->assertNull($invoiceSuiteReferenceDocumentLineDTO->getReferenceLineNumber());
-        $this->assertNull($invoiceSuiteReferenceDocumentLineDTO->getReferenceDate());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteReferenceDocumentLineDTO->getReferenceDate());
     }
 
     public function testReferenceNumberGetterAndSetter(): void

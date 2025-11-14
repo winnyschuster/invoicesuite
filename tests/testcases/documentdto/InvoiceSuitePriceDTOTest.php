@@ -8,14 +8,14 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuitePriceDTOTest extends TestCase
+final class InvoiceSuitePriceDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePriceDTO = new InvoiceSuitePriceDTO();
 
         $this->assertNull($invoiceSuitePriceDTO->getAmount());
-        $this->assertNull($invoiceSuitePriceDTO->getPriceQuantity());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuitePriceDTO->getPriceQuantity());
     }
 
     public function testAmountGetterAndSetter(): void

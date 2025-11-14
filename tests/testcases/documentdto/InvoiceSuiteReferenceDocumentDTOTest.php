@@ -8,14 +8,14 @@ use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteReferenceDocumentDTOTest extends TestCase
+final class InvoiceSuiteReferenceDocumentDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteReferenceDocumentDTO = new InvoiceSuiteReferenceDocumentDTO();
 
         $this->assertNull($invoiceSuiteReferenceDocumentDTO->getReferenceNumber());
-        $this->assertNull($invoiceSuiteReferenceDocumentDTO->getReferenceDate());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteReferenceDocumentDTO->getReferenceDate());
     }
 
     public function testReferenceNumberGetterAndSetter(): void

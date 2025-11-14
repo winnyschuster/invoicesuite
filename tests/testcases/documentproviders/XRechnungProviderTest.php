@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
@@ -10,7 +12,7 @@ use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungPr
 use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderBuilder;
 use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungSerializerHandler;
 
-class XRechnungProviderTest extends TestCase
+final class XRechnungProviderTest extends TestCase
 {
     public function testGetUniqueId(): void
     {

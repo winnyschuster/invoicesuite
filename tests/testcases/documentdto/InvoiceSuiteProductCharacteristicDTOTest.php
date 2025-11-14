@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteMeasureDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductCharacteristicDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
+final class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -17,7 +17,7 @@ class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getDescription());
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getValue());
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getType());
-        $this->assertNull($invoiceSuiteProductCharacteristicDTO->getValueMeasure());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteMeasureDTO::class, $invoiceSuiteProductCharacteristicDTO->getValueMeasure());
     }
 
     public function testDescriptionGetterAndSetter(): void

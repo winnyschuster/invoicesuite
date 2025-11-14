@@ -12,7 +12,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteOrganisationDTO;
 
-class InvoiceSuitePartyDTOTest extends TestCase
+final class InvoiceSuitePartyDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {

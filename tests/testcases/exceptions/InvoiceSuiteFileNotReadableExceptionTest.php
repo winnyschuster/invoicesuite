@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 
-class InvoiceSuiteFileNotReadableExceptionTest extends TestCase
+final class InvoiceSuiteFileNotReadableExceptionTest extends TestCase
 {
     public function testException(): void
     {

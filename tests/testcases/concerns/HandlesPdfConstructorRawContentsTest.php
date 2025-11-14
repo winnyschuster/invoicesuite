@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesPdfConstructorRawContents;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class HandlesPdfConstructorRawContentsTest extends TestCase
+final class HandlesPdfConstructorRawContentsTest extends TestCase
 {
     use HandlesPdfConstructorRawContents;
 

@@ -58,11 +58,11 @@ final class InvoiceSuitePdfDocumentReaderTest extends TestCase
         /**
          * @phpstan-ignore arguments.count
          */
-        $this->arrayHasKey(0, $additionalAttachments);
+        $this->arrayHasKey(0);
         /**
          * @phpstan-ignore arguments.count
          */
-        $this->arrayHasKey(1, $additionalAttachments);
+        $this->arrayHasKey(1);
         $this->assertArrayNotHasKey(2, $additionalAttachments);
         $this->assertInstanceOf(InvoiceSuitePdfExtractorAttachment::class, $additionalAttachments[0]);
         $this->assertInstanceOf(InvoiceSuitePdfExtractorAttachment::class, $additionalAttachments[1]);

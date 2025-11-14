@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 
-class InvoiceSuiteFormatProviderNotFoundExceptionTest extends TestCase
+final class InvoiceSuiteFormatProviderNotFoundExceptionTest extends TestCase
 {
     public function testException(): void
     {

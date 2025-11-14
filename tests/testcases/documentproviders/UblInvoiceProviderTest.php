@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
@@ -9,7 +11,7 @@ use horstoeko\invoicesuite\documents\providers\ubl\InvoiceSuiteUblInvoiceProvide
 use horstoeko\invoicesuite\documents\providers\ubl\InvoiceSuiteUblInvoiceSerializerHandler;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class UblInvoiceProviderTest extends TestCase
+final class UblInvoiceProviderTest extends TestCase
 {
     public function testGetUniqueId(): void
     {

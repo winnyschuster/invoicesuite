@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 
-class InvoiceSuiteInvalidArgumentExceptionTest extends TestCase
+final class InvoiceSuiteInvalidArgumentExceptionTest extends TestCase
 {
     public function testException(): void
     {

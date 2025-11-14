@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use DateTime;
@@ -13,7 +15,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\tests\traits\HandlesXmlTests;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
-class ZfFxExtendedProviderBuilderTest extends TestCase
+final class ZfFxExtendedProviderBuilderTest extends TestCase
 {
     use HandlesXmlTests;
 

@@ -53,7 +53,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-class ZfFxMinimumDocumentBuilderTest extends TestCase
+final class ZfFxMinimumDocumentBuilderTest extends TestCase
 {
     use HandlesXmlTests;
 

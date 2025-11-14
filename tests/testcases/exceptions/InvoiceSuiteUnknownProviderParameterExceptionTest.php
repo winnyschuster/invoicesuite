@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownProviderParameterException;
 
-class InvoiceSuiteUnknownProviderParameterExceptionTest extends TestCase
+final class InvoiceSuiteUnknownProviderParameterExceptionTest extends TestCase
 {
     public function testException(): void
     {

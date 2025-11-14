@@ -11,7 +11,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteProductDTOTest extends TestCase
+final class InvoiceSuiteProductDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -22,7 +22,7 @@ class InvoiceSuiteProductDTOTest extends TestCase
         $this->assertNull($invoiceSuiteProductDTO->getDescription());
         $this->assertNull($invoiceSuiteProductDTO->getSellerId());
         $this->assertNull($invoiceSuiteProductDTO->getBuyerId());
-        $this->assertNull($invoiceSuiteProductDTO->getGlobalId());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO::class, $invoiceSuiteProductDTO->getGlobalId());
         $this->assertNull($invoiceSuiteProductDTO->getIndustryId());
         $this->assertNull($invoiceSuiteProductDTO->getModelId());
         $this->assertNull($invoiceSuiteProductDTO->getBatchId());

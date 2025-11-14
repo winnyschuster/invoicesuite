@@ -8,7 +8,7 @@ use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteTaxDTOTest extends TestCase
+final class InvoiceSuiteTaxDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -21,7 +21,7 @@ class InvoiceSuiteTaxDTOTest extends TestCase
         $this->assertNull($invoiceSuiteTaxDTO->getPercent());
         $this->assertNull($invoiceSuiteTaxDTO->getExemptionReason());
         $this->assertNull($invoiceSuiteTaxDTO->getExemptionReasonCode());
-        $this->assertNull($invoiceSuiteTaxDTO->getDueDate());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteTaxDTO->getDueDate());
         $this->assertNull($invoiceSuiteTaxDTO->getDueCode());
     }
 

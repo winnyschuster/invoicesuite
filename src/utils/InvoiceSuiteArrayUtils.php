@@ -33,6 +33,6 @@ class InvoiceSuiteArrayUtils
      */
     public static function inArrayNoCase(array $array, string $search): bool
     {
-        return in_array(strtolower($search), array_map('strtolower', $array));
+        return in_array(strtolower($search), array_map(strtolower(...), $array));
     }
 }

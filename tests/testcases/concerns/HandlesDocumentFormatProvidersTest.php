@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
@@ -9,7 +11,7 @@ use horstoeko\invoicesuite\documents\providers\zffxminimum\InvoiceSuiteZfFxMinim
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class HandlesDocumentFormatProvidersTest extends TestCase
+final class HandlesDocumentFormatProvidersTest extends TestCase
 {
     use HandlesDocumentFormatProviders;
 
@@ -58,7 +60,7 @@ class HandlesDocumentFormatProvidersTest extends TestCase
         $this->registerDocumentFormatProvider($provider2);
 
         $this->assertInstanceOf(InvoiceSuiteAbstractDocumentFormatProvider::class, $this->findDocumentFormatProviderByUniqueId('zffxextended'));
-        $this->assertNull($this->findDocumentFormatProviderByUniqueId('__unknownprovider__'));
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider::class, $this->findDocumentFormatProviderByUniqueId('__unknownprovider__'));
     }
 
     public function testFindFormatProviderByUniqueIdOrfail(): void

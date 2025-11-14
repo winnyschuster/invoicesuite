@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\tests\TestCase;
@@ -8,7 +10,7 @@ use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\models\zffxextended\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 
-class HandlesDocumentRootObjectTest extends TestCase
+final class HandlesDocumentRootObjectTest extends TestCase
 {
     use HandlesCurrentDocumentFormatProvider;
     use HandlesDocumentRootObject;

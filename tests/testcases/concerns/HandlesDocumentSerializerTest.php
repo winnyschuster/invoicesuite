@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use JMS\Serializer\SerializerBuilder;
@@ -9,7 +11,7 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 
-class HandlesDocumentSerializerTest extends TestCase
+final class HandlesDocumentSerializerTest extends TestCase
 {
     use HandlesCurrentDocumentFormatProvider;
     use HandlesDocumentSerializer;

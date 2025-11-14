@@ -7,7 +7,7 @@ namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteCommunicationDTOTest extends TestCase
+final class InvoiceSuiteCommunicationDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {

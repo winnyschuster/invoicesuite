@@ -11,14 +11,14 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-class ZfFxMinimumDocumentReaderTest extends TestCase
+final class ZfFxMinimumDocumentReaderTest extends TestCase
 {
     /**
      * The reader
      *
      * @var InvoiceSuiteDocumentReader
      */
-    protected static $document;
+    private static $document;
 
     public static function setUpBeforeClass(): void
     {
@@ -76,7 +76,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
     {
         self::$document->getDocumentCompleteDate($newCompleteDate);
 
-        $this->assertSame(null, $newCompleteDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newCompleteDate);
     }
 
     public function testGetDocumentCurrency(): void
@@ -134,8 +134,8 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         self::$document->getDocumentBillingPeriod($newStartDate, $newEndDate, $newDescription);
 
-        $this->assertSame(null, $newStartDate);
-        $this->assertSame(null, $newEndDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newStartDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newEndDate);
         $this->assertSame('', $newDescription);
 
         $this->assertFalse(self::$document->nextDocumentBillingPeriod());
@@ -160,7 +160,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentSellerOrderReference());
     }
@@ -172,11 +172,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('BO-1', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentBuyerOrderReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
@@ -188,7 +188,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentQuotationReference());
     }
@@ -200,7 +200,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentContractReference());
     }
@@ -219,11 +219,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         );
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
         $this->assertSame('', $newTypeCode);
         $this->assertSame('', $newReferenceTypeCode);
         $this->assertSame('', $newDescription);
-        $this->assertNull($newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentAdditionalReference());
     }
@@ -239,7 +239,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         );
 
         $this->assertSame("", $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
 
         $this->assertFalse(self::$document->nextDocumentInvoiceReference());
@@ -264,14 +264,14 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
 
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
     }
@@ -283,7 +283,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentDespatchAdviceReference());
     }
@@ -295,7 +295,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentReceivingAdviceReference());
     }
@@ -307,7 +307,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentDeliveryNoteReference());
     }
@@ -316,7 +316,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
     {
         self::$document->getDocumentSupplyChainEvent($newDate);
 
-        $this->assertSame(null, $newDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newDate);
     }
 
     public function testGetDocumentBuyerReference(): void
@@ -462,19 +462,19 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -486,11 +486,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -500,7 +500,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -621,19 +621,19 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -645,11 +645,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -659,7 +659,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -1626,11 +1626,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newTaxPercent
         );
 
-        $this->assertSame(0.0, $newChargeAmount);
+        $this->assertEqualsWithDelta(0.0, $newChargeAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newDescription);
         $this->assertSame("", $newTaxCategory);
         $this->assertSame("", $newTaxType);
-        $this->assertSame(0.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(0.0, $newTaxPercent, PHP_FLOAT_EPSILON);
 
         $this->assertFalse(self::$document->nextDocumentLogisticServiceCharge());
     }
@@ -1650,16 +1650,16 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newRoungingAmount
         );
 
-        $this->assertSame(0.00, $newNetAmount);
-        $this->assertSame(0.00, $newChargeTotalAmount);
-        $this->assertSame(0.00, $newDiscountTotalAmount);
-        $this->assertSame(4.00, $newTaxBasisAmount);
-        $this->assertSame(5.00, $newTaxTotalAmount);
-        $this->assertSame(6.00, $newTaxTotalAmount2);
-        $this->assertSame(7.00, $newGrossAmount);
-        $this->assertSame(8.00, $newDueAmount);
-        $this->assertSame(0.00, $newPrepaidAmount);
-        $this->assertSame(0.00, $newRoungingAmount);
+        $this->assertEqualsWithDelta(0.00, $newNetAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newChargeTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newDiscountTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(4.00, $newTaxBasisAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(5.00, $newTaxTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(6.00, $newTaxTotalAmount2, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(7.00, $newGrossAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(8.00, $newDueAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newPrepaidAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newRoungingAmount, PHP_FLOAT_EPSILON);
     }
 
     public function testFirstNextGetDocumentPosition(): void
@@ -1759,7 +1759,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         $this->assertSame("", $newProductCharacteristicDescription);
         $this->assertSame("", $newProductCharacteristicValue);
         $this->assertSame("", $newProductCharacteristicType);
-        $this->assertSame(0.0, $newProductCharacteristicMeasureValue);
+        $this->assertEqualsWithDelta(0.0, $newProductCharacteristicMeasureValue, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductCharacteristicMeasureUnit);
 
         $this->assertFalse(self::$document->nextDocumentPositionProductCharacteristic());
@@ -1825,7 +1825,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         $this->assertSame("", $newProductGlobalId);
         $this->assertSame("", $newProductGlobalIdType);
         $this->assertSame("", $newProductIndustryId);
-        $this->assertSame(0.0, $newProductUnitQuantity);
+        $this->assertEqualsWithDelta(0.0, $newProductUnitQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductUnitQuantityUnit);
 
         $this->assertFalse(self::$document->nextDocumentPositionReferencedProduct());
@@ -1851,7 +1851,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
         $this->assertSame("", $newProductGlobalId);
         $this->assertSame("", $newProductGlobalIdType);
         $this->assertSame("", $newProductIndustryId);
-        $this->assertSame(0.0, $newProductUnitQuantity);
+        $this->assertEqualsWithDelta(0.0, $newProductUnitQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductUnitQuantityUnit);
 
         $this->assertFalse(self::$document->nextDocumentPositionReferencedProduct());
@@ -1877,7 +1877,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionSellerOrderReference());
 
@@ -1902,7 +1902,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionBuyerOrderReference());
 
@@ -1927,7 +1927,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionQuotationReference());
 
@@ -1952,7 +1952,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionContractReference());
 
@@ -1981,11 +1981,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
         $this->assertSame("", $newReferenceTypeCode);
         $this->assertSame("", $newDescription);
-        $this->assertNull($newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentPositionAdditionalReference());
 
@@ -2010,7 +2010,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionUltimateCustomerOrderReference());
 
@@ -2035,7 +2035,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDespatchAdviceReference());
 
@@ -2060,7 +2060,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionReceivingAdviceReference());
 
@@ -2085,7 +2085,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDeliveryNoteReference());
 
@@ -2111,7 +2111,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
 
         $this->assertFalse(self::$document->nextDocumentPositionInvoiceReference());
@@ -2135,8 +2135,8 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newGrossPriceBasisQuantityUnit
         );
 
-        $this->assertSame(0.0, $newGrossPrice);
-        $this->assertSame(0.0, $newGrossPriceBasisQuantity);
+        $this->assertEqualsWithDelta(0.0, $newGrossPrice, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newGrossPriceBasisQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newGrossPriceBasisQuantityUnit);
 
         $this->assertFalse(self::$document->firstDocumentPositionGrossPriceAllowanceCharge());
@@ -2150,10 +2150,10 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newGrossPriceAllowanceChargeReasonCode
         );
 
-        $this->assertSame(0.0, $newGrossPriceAllowanceChargeAmount);
-        $this->assertSame(false, $newIsCharge);
-        $this->assertSame(0.0, $newGrossPriceAllowanceChargePercent);
-        $this->assertSame(0.0, $newGrossPriceAllowanceChargeBasisAmount);
+        $this->assertEqualsWithDelta(0.0, $newGrossPriceAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertFalse($newIsCharge);
+        $this->assertEqualsWithDelta(0.0, $newGrossPriceAllowanceChargePercent, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newGrossPriceAllowanceChargeBasisAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newGrossPriceAllowanceChargeReason);
         $this->assertSame("", $newGrossPriceAllowanceChargeReasonCode);
 
@@ -2178,8 +2178,8 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newNetPriceBasisQuantityUnit
         );
 
-        $this->assertSame(0.0, $newNetPrice);
-        $this->assertSame(0.0, $newNetPriceBasisQuantity);
+        $this->assertEqualsWithDelta(0.0, $newNetPrice, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newNetPriceBasisQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newNetPriceBasisQuantityUnit);
 
         self::$document->getDocumentPositionNetPriceTax(
@@ -2193,8 +2193,8 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newTaxCategory);
         $this->assertSame("", $newTaxType);
-        $this->assertSame(0.0, $newTaxAmount);
-        $this->assertSame(0.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(0.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newExemptionReason);
         $this->assertSame("", $newExemptionReasonCode);
 
@@ -2218,11 +2218,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newPackageQuantityUnit
         );
 
-        $this->assertSame(0.0, $newQuantity);
+        $this->assertEqualsWithDelta(0.0, $newQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newQuantityUnit);
-        $this->assertSame(0.0, $newChargeFreeQuantity);
+        $this->assertEqualsWithDelta(0.0, $newChargeFreeQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newChargeFreeQuantityUnit);
-        $this->assertSame(0.0, $newPackageQuantity);
+        $this->assertEqualsWithDelta(0.0, $newPackageQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newPackageQuantityUnit);
 
         // Second position
@@ -2484,7 +2484,7 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         self::$document->getDocumentPositionSupplyChainEvent($newDate);
 
-        $this->assertSame(null, $newDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newDate);
 
         // Second position
 
@@ -2505,8 +2505,8 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newDescription
         );
 
-        $this->assertSame(null, $newStartDate);
-        $this->assertSame(null, $newEndDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newStartDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newEndDate);
         $this->assertSame("", $newDescription);
 
         $this->assertFalse(self::$document->nextDocumentPositionBillingPeriod());
@@ -2535,8 +2535,8 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newTaxCategory);
         $this->assertSame("", $newTaxType);
-        $this->assertSame(0.0, $newTaxAmount);
-        $this->assertSame(0.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(0.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newExemptionReason);
         $this->assertSame("", $newExemptionReasonCode);
 
@@ -2564,12 +2564,12 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newAllowanceChargePercent
         );
 
-        $this->assertSame(false, $newChargeIndicator);
-        $this->assertSame(0.00, $newAllowanceChargeAmount);
-        $this->assertSame(0.00, $newAllowanceChargeBaseAmount);
+        $this->assertFalse($newChargeIndicator);
+        $this->assertEqualsWithDelta(0.00, $newAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newAllowanceChargeBaseAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newAllowanceChargeReason);
         $this->assertSame("", $newAllowanceChargeReasonCode);
-        $this->assertSame(0.00, $newAllowanceChargePercent);
+        $this->assertEqualsWithDelta(0.00, $newAllowanceChargePercent, PHP_FLOAT_EPSILON);
 
         $this->assertFalse(self::$document->nextDocumentPositionAllowanceCharge());
 
@@ -2594,11 +2594,11 @@ class ZfFxMinimumDocumentReaderTest extends TestCase
             $newGrossAmount
         );
 
-        $this->assertSame(0.0, $newNetAmount);
-        $this->assertSame(0.0, $newChargeTotalAmount);
-        $this->assertSame(0.0, $newDiscountTotalAmount);
-        $this->assertSame(0.0, $newTaxTotalAmount);
-        $this->assertSame(0.0, $newGrossAmount);
+        $this->assertEqualsWithDelta(0.0, $newNetAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newChargeTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newDiscountTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newTaxTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newGrossAmount, PHP_FLOAT_EPSILON);
 
         // Second position
 

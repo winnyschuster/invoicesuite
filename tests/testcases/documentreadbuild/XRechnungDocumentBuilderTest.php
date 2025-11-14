@@ -53,7 +53,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-class XRechnungDocumentBuilderTest extends TestCase
+final class XRechnungDocumentBuilderTest extends TestCase
 {
     use HandlesXmlTests;
 

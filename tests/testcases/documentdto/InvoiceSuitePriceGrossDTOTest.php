@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceGrossDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuitePriceGrossDTOTest extends TestCase
+final class InvoiceSuitePriceGrossDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {

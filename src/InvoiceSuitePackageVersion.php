@@ -31,7 +31,7 @@ final class InvoiceSuitePackageVersion
      */
     public static function getInstalledVersion(): string
     {
-        return static::getInstalledVersionByName('horstoeko/invoicesuite');
+        return self::getInstalledVersionByName('horstoeko/invoicesuite');
     }
 
     /**

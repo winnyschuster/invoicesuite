@@ -10,14 +10,14 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDiscountDTO;
 
-class InvoiceSuitePaymentTermDTOTest extends TestCase
+final class InvoiceSuitePaymentTermDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
 
         $this->assertNull($invoiceSuitePaymentTermDTO->getDescription());
-        $this->assertNull($invoiceSuitePaymentTermDTO->getDueDate());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuitePaymentTermDTO->getDueDate());
         $this->assertSame([], $invoiceSuitePaymentTermDTO->getDiscountTerms());
         $this->assertSame([], $invoiceSuitePaymentTermDTO->getPenaltyTerms());
     }

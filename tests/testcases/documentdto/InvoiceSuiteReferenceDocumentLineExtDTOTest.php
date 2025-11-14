@@ -7,7 +7,7 @@ namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
+final class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -16,7 +16,7 @@ class InvoiceSuiteReferenceDocumentLineExtDTOTest extends TestCase
         $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getTypeCode());
         $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getReferenceTypeCode());
         $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getDescription());
-        $this->assertNull($invoiceSuiteReferenceDocumentLineExtDTO->getAttachment());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $invoiceSuiteReferenceDocumentLineExtDTO->getAttachment());
     }
 
     public function testTypeCodeGetterAndSetter(): void

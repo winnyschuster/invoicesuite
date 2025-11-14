@@ -1,25 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\zffxextended\InvoiceSuiteZfFxExtendedProvider;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class HandlesCurrentDocumentFormatProviderTest extends TestCase
+final class HandlesCurrentDocumentFormatProviderTest extends TestCase
 {
     use HandlesCurrentDocumentFormatProvider;
 
     public function testInitialState(): void
     {
         $this->assertNull($this->currentDocumentFormatProvider);
-        $this->assertNull($this->getCurrentDocumentFormatProvider());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider::class, $this->getCurrentDocumentFormatProvider());
     }
 
     public function testSetCurrentFormatProvider(): void
     {
         $this->assertNull($this->currentDocumentFormatProvider);
-        $this->assertNull($this->getCurrentDocumentFormatProvider());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider::class, $this->getCurrentDocumentFormatProvider());
         $this->setCurrentDocumentFormatProvider(new InvoiceSuiteZfFxExtendedProvider());
         $this->assertInstanceOf(InvoiceSuiteZfFxExtendedProvider::class, $this->currentDocumentFormatProvider);
         $this->assertInstanceOf(InvoiceSuiteZfFxExtendedProvider::class, $this->getCurrentDocumentFormatProvider());

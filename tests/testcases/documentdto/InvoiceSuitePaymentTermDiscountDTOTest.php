@@ -9,7 +9,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDiscountDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
+final class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -18,8 +18,8 @@ class InvoiceSuitePaymentTermDiscountDTOTest extends TestCase
         $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getBaseAmount());
         $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getDiscountAmount());
         $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getDiscountPercent());
-        $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getBaseDate());
-        $this->assertNull($invoiceSuitePaymentTermDiscountDTO->getPeriod());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuitePaymentTermDiscountDTO->getBaseDate());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO::class, $invoiceSuitePaymentTermDiscountDTO->getPeriod());
     }
 
     public function testBaseAmountGetterAndSetter(): void

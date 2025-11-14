@@ -9,7 +9,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceProductDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteReferenceProductDTOTest extends TestCase
+final class InvoiceSuiteReferenceProductDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
@@ -20,9 +20,9 @@ class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $this->assertNull($invoiceSuiteReferenceProductDTO->getDescription());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getSellerId());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getBuyerId());
-        $this->assertNull($invoiceSuiteReferenceProductDTO->getGlobalId());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO::class, $invoiceSuiteReferenceProductDTO->getGlobalId());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getIndustryId());
-        $this->assertNull($invoiceSuiteReferenceProductDTO->getUnitQuantity());
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuiteReferenceProductDTO->getUnitQuantity());
     }
 
     public function testIdGetterAndSetter(): void

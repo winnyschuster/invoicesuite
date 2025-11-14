@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
 
-class InvoiceSuitePaymentMeanDTOTest extends TestCase
+final class InvoiceSuitePaymentMeanDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {

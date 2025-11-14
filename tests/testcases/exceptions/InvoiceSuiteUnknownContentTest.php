@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 
-class InvoiceSuiteUnknownContentTest extends TestCase
+final class InvoiceSuiteUnknownContentTest extends TestCase
 {
     public function testException(): void
     {

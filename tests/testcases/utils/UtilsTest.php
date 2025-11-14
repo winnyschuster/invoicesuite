@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\utils;
 
 use DateTime;
@@ -19,7 +21,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
-class UtilsTest extends TestCase
+final class UtilsTest extends TestCase
 {
     // region InvoiceSuiteArrayUtils
 
@@ -120,7 +122,7 @@ class UtilsTest extends TestCase
     {
         $dateTimeValue = null;
 
-        $this->assertNull(InvoiceSuiteDateTimeUtils::asNullWhenEmpty($dateTimeValue));
+        $this->assertNotInstanceOf(\DateTimeInterface::class, InvoiceSuiteDateTimeUtils::asNullWhenEmpty($dateTimeValue));
 
         $dateTimeValue = DateTime::createFromFormat('dmY', '01011970');
 
@@ -134,19 +136,19 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNull($dateTimeValue);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $dateTimeValue);
 
         $dateTimeString = "";
         $dateTimeFormat = "";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNull($dateTimeValue);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $dateTimeValue);
 
         $dateTimeString = "200202";
         $dateTimeFormat = "101";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("02", $dateTimeValue->format("d"));
         $this->assertSame("02", $dateTimeValue->format("m"));
@@ -156,7 +158,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "102";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("01", $dateTimeValue->format("d"));
         $this->assertSame("01", $dateTimeValue->format("m"));
@@ -166,7 +168,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "201";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("02", $dateTimeValue->format("d"));
         $this->assertSame("02", $dateTimeValue->format("m"));
@@ -176,7 +178,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "202";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("02", $dateTimeValue->format("d"));
         $this->assertSame("02", $dateTimeValue->format("m"));
@@ -189,7 +191,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "203";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("02", $dateTimeValue->format("d"));
         $this->assertSame("02", $dateTimeValue->format("m"));
@@ -202,7 +204,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "204";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("02", $dateTimeValue->format("d"));
         $this->assertSame("02", $dateTimeValue->format("m"));
@@ -215,7 +217,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "610";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNotNull($dateTimeValue);
+        $this->assertInstanceOf(\DateTimeInterface::class, $dateTimeValue);
         $this->assertInstanceOf(DateTimeInterface::class, $dateTimeValue);
         $this->assertSame("01", $dateTimeValue->format("d"));
         $this->assertSame("02", $dateTimeValue->format("m"));
@@ -228,7 +230,7 @@ class UtilsTest extends TestCase
         $dateTimeFormat = "999";
         $dateTimeValue = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime($dateTimeString, $dateTimeFormat);
 
-        $this->assertNull($dateTimeValue);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $dateTimeValue);
     }
 
     // endregion
@@ -339,8 +341,8 @@ class UtilsTest extends TestCase
     {
         $guid_regex = "/^(?:\\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\\}{0,1})$/";
 
-        $this->assertSame(1, preg_match($guid_regex, InvoiceSuiteStringUtils::createGuid()));
-        $this->assertSame(1, preg_match($guid_regex, InvoiceSuiteStringUtils::createGuid(false)));
+        $this->assertRegExp($guid_regex, InvoiceSuiteStringUtils::createGuid());
+        $this->assertRegExp($guid_regex, InvoiceSuiteStringUtils::createGuid(false));
     }
 
     // endregion
@@ -568,8 +570,8 @@ class UtilsTest extends TestCase
         $this->assertFalse($attachment->isBinaryAttachment());
         $this->assertSame('http://some.url', $attachment->getRawContent());
         $this->assertSame('http://some.url', $attachment->getContent());
-        $this->assertSame(false, $attachment->getContentMimeType());
-        $this->assertSame(false, $attachment->getFilename());
+        $this->assertFalse($attachment->getContentMimeType());
+        $this->assertFalse($attachment->getFilename());
 
         $this->expectException(InvoiceSuiteInvalidArgumentException::class);
         $this->expectExceptionMessage('Not a valid URL: Dummy');
@@ -669,9 +671,9 @@ class UtilsTest extends TestCase
         $this->assertCount(7, $classNames);
         $this->assertFileExists($cacheFullFilename);
 
-        $this->assertTrue(file_exists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "fb2c9c3d46a7d2650a8813477106ebca.cache")));
+        $this->assertFileExists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "fb2c9c3d46a7d2650a8813477106ebca.cache"));
         InvoiceSuiteClassFinder::clearCache();
-        $this->assertFalse(file_exists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "fb2c9c3d46a7d2650a8813477106ebca.cache")));
+        $this->assertFileNotExists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, "..", "..", "..", "src", "cache"), "fb2c9c3d46a7d2650a8813477106ebca.cache"));
     }
 
     // endregion

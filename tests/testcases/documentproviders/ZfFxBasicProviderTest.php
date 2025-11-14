@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\tests\TestCase;
@@ -10,7 +12,7 @@ use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicPr
 use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicProviderBuilder;
 use horstoeko\invoicesuite\documents\providers\zffxbasic\InvoiceSuiteZfFxBasicSerializerHandler;
 
-class ZfFxBasicProviderTest extends TestCase
+final class ZfFxBasicProviderTest extends TestCase
 {
     public function testGetUniqueId(): void
     {

@@ -7,7 +7,7 @@ namespace horstoeko\invoicesuite\tests\testcases\utils;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\InvoiceSuitePackageVersion;
 
-class InvoiceSuitePackageVersionTest extends TestCase
+final class InvoiceSuitePackageVersionTest extends TestCase
 {
     public function testGetInstalledInvoiceSuiteVersion(): void
     {

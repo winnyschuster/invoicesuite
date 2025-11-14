@@ -21,7 +21,7 @@ use SebastianBergmann\RecursionContext\InvalidArgumentException;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\Exception;
 
-class AllCodelistsEnumsTest extends TestCase
+final class AllCodelistsEnumsTest extends TestCase
 {
     /**
      * @return iterable<string, array{

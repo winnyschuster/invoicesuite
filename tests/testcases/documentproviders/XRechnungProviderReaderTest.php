@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use DateTimeInterface;
@@ -10,14 +12,14 @@ use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungPr
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-class XRechnungProviderReaderTest extends TestCase
+final class XRechnungProviderReaderTest extends TestCase
 {
     /**
      * The reader
      *
      * @var InvoiceSuiteAbstractDocumentFormatReader
      */
-    protected static $document;
+    private static $document;
 
     public static function setUpBeforeClass(): void
     {
@@ -73,7 +75,7 @@ class XRechnungProviderReaderTest extends TestCase
     {
         self::$document->getDocumentCompleteDate($newCompleteDate);
 
-        $this->assertSame(null, $newCompleteDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newCompleteDate);
     }
 
     public function testGetDocumentCurrency(): void
@@ -124,7 +126,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentNote());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentNote($newContent, $newContentCode, $newSubjectCode);
         }, '/Undefined (array key|index)/');
     }
@@ -141,7 +143,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentBillingPeriod());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBillingPeriod($newStartDate, $newEndDate, $newDescription);
         }, '/Undefined (array key|index)/');
     }
@@ -157,7 +159,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentPostingReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPostingReference($newType, $newAccountId);
         }, '/Undefined (array key|index)/');
     }
@@ -173,7 +175,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentSellerOrderReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
@@ -189,7 +191,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentBuyerOrderReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
@@ -201,7 +203,7 @@ class XRechnungProviderReaderTest extends TestCase
         self::$document->getDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentQuotationReference());
     }
@@ -217,7 +219,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentContractReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentContractReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
@@ -240,7 +242,7 @@ class XRechnungProviderReaderTest extends TestCase
         $this->assertSame('typecode', $newTypeCode);
         $this->assertSame('reftypecode', $newReferenceTypeCode);
         $this->assertSame('description', $newDescription);
-        $this->assertNull($newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertTrue(self::$document->nextDocumentAdditionalReference());
 
@@ -258,11 +260,11 @@ class XRechnungProviderReaderTest extends TestCase
         $this->assertSame('typecode2', $newTypeCode);
         $this->assertSame('reftypecode2', $newReferenceTypeCode);
         $this->assertSame('description2', $newDescription);
-        $this->assertNull($newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentAdditionalReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentAdditionalReference(
                 $newReferenceNumber,
                 $newReferenceDate,
@@ -294,7 +296,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentInvoiceReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentInvoiceReference($newReferenceNumber, $newReferenceDate, $newTypeCode);
         }, '/Undefined (array key|index)/');
     }
@@ -310,7 +312,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentProjectReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentProjectReference($newReferenceNumber, $newName);
         }, '/Undefined (array key|index)/');
     }
@@ -322,14 +324,14 @@ class XRechnungProviderReaderTest extends TestCase
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
 
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
     }
@@ -345,7 +347,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentDespatchAdviceReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
@@ -361,7 +363,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentReceivingAdviceReference());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
         }, '/Undefined (array key|index)/');
     }
@@ -373,7 +375,7 @@ class XRechnungProviderReaderTest extends TestCase
         self::$document->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentDeliveryNoteReference());
     }
@@ -528,19 +530,19 @@ class XRechnungProviderReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -552,11 +554,11 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -566,7 +568,7 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentSellerCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -687,19 +689,19 @@ class XRechnungProviderReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -711,11 +713,11 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -725,7 +727,7 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentBuyerCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -846,19 +848,19 @@ class XRechnungProviderReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -870,11 +872,11 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -884,7 +886,7 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -1120,19 +1122,19 @@ class XRechnungProviderReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -1144,11 +1146,11 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -1158,7 +1160,7 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentShipToCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -1739,19 +1741,19 @@ class XRechnungProviderReaderTest extends TestCase
 
         // Finals
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeId($newId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeAddress(
                 $newAddressLine1,
                 $newAddressLine2,
@@ -1763,11 +1765,11 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeContact(
                 $newPersonName,
                 $newDepartmentName,
@@ -1777,7 +1779,7 @@ class XRechnungProviderReaderTest extends TestCase
             );
         }, '/Undefined (array key|index)/');
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPayeeCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
@@ -1849,7 +1851,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentPaymentCreditorReferenceID());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentPaymentCreditorReferenceID($newId);
         }, '/Undefined (array key|index)/');
     }
@@ -1881,12 +1883,12 @@ class XRechnungProviderReaderTest extends TestCase
             $newBasePeriodUnit
         );
 
-        $this->assertSame(0.0, $newBaseAmount);
-        $this->assertSame(0.0, $newDiscountAmount);
-        $this->assertSame(0.0, $newDiscountPercent);
-        $this->assertSame(0.0, $newBasePeriod);
+        $this->assertEqualsWithDelta(0.0, $newBaseAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newDiscountAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newDiscountPercent, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newBasePeriod, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newBasePeriodUnit);
-        $this->assertSame(null, $newBaseDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newBaseDate);
 
         $this->assertFalse(self::$document->nextDocumentPaymentPenaltyTermsInLastPaymentTerm());
 
@@ -1901,12 +1903,12 @@ class XRechnungProviderReaderTest extends TestCase
             $newBasePeriodUnit
         );
 
-        $this->assertSame(0.0, $newBaseAmount);
-        $this->assertSame(0.0, $newDiscountAmount);
-        $this->assertSame(0.0, $newDiscountPercent);
-        $this->assertSame(0.0, $newBasePeriod);
+        $this->assertEqualsWithDelta(0.0, $newBaseAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newDiscountAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newDiscountPercent, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newBasePeriod, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newBasePeriodUnit);
-        $this->assertSame(null, $newBaseDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newBaseDate);
 
         $this->assertFalse(self::$document->nextDocumentPaymentDiscountTermsInLastPaymentTerm());
     }
@@ -1929,9 +1931,9 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("S", $newTaxCategory);
         $this->assertSame("VAT", $newTaxType);
-        $this->assertSame(100.0, $newBasisAmount);
-        $this->assertSame(19.0, $newTaxAmount);
-        $this->assertSame(19.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(100.0, $newBasisAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(19.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(19.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason", $newExemptionReason);
         $this->assertSame("ReasonCode", $newExemptionReasonCode);
         $this->assertSame("19700101", $newTaxDueDate->format("Ymd"));
@@ -1953,9 +1955,9 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("S", $newTaxCategory);
         $this->assertSame("VAT", $newTaxType);
-        $this->assertSame(100.0, $newBasisAmount);
-        $this->assertSame(7.0, $newTaxAmount);
-        $this->assertSame(7.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(100.0, $newBasisAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(7.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(7.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason2", $newExemptionReason);
         $this->assertSame("ReasonCode2", $newExemptionReasonCode);
         $this->assertSame("19700102", $newTaxDueDate->format("Ymd"));
@@ -1963,7 +1965,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertFalse(self::$document->nextDocumentTax());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentTax(
                 $newTaxCategory,
                 $newTaxType,
@@ -1994,15 +1996,15 @@ class XRechnungProviderReaderTest extends TestCase
             $newAllowanceChargePercent
         );
 
-        $this->assertSame(true, $newChargeIndicator);
-        $this->assertSame(10.0, $newAllowanceChargeAmount);
-        $this->assertSame(100.0, $newAllowanceChargeBaseAmount);
+        $this->assertTrue($newChargeIndicator);
+        $this->assertEqualsWithDelta(10.0, $newAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.0, $newAllowanceChargeBaseAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("S", $newTaxCategory);
         $this->assertSame("VAT", $newTaxType);
-        $this->assertSame(19.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(19.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason", $newAllowanceChargeReason);
         $this->assertSame("ReasonCode", $newAllowanceChargeReasonCode);
-        $this->assertSame(10.0, $newAllowanceChargePercent);
+        $this->assertEqualsWithDelta(10.0, $newAllowanceChargePercent, PHP_FLOAT_EPSILON);
 
         $this->assertTrue(self::$document->nextDocumentAllowanceCharge());
 
@@ -2018,19 +2020,19 @@ class XRechnungProviderReaderTest extends TestCase
             $newAllowanceChargePercent
         );
 
-        $this->assertSame(false, $newChargeIndicator);
-        $this->assertSame(1.0, $newAllowanceChargeAmount);
-        $this->assertSame(10.0, $newAllowanceChargeBaseAmount);
+        $this->assertFalse($newChargeIndicator);
+        $this->assertEqualsWithDelta(1.0, $newAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(10.0, $newAllowanceChargeBaseAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("S", $newTaxCategory);
         $this->assertSame("VAT", $newTaxType);
-        $this->assertSame(19.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(19.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason2", $newAllowanceChargeReason);
         $this->assertSame("ReasonCode2", $newAllowanceChargeReasonCode);
-        $this->assertSame(1.00, $newAllowanceChargePercent);
+        $this->assertEqualsWithDelta(1.00, $newAllowanceChargePercent, PHP_FLOAT_EPSILON);
 
         $this->assertFalse(self::$document->nextDocumentAllowanceCharge());
 
-        $this->expectNoticeOrWarningExt(function () {
+        $this->expectNoticeOrWarningExt(function (): void {
             self::$document->getDocumentAllowanceCharge(
                 $newChargeIndicator,
                 $newAllowanceChargeAmount,
@@ -2057,11 +2059,11 @@ class XRechnungProviderReaderTest extends TestCase
             $newTaxPercent
         );
 
-        $this->assertSame(0.0, $newChargeAmount);
+        $this->assertEqualsWithDelta(0.0, $newChargeAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newDescription);
         $this->assertSame("", $newTaxCategory);
         $this->assertSame("", $newTaxType);
-        $this->assertSame(0.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(0.0, $newTaxPercent, PHP_FLOAT_EPSILON);
 
         $this->assertFalse(self::$document->nextDocumentLogisticServiceCharge());
     }
@@ -2081,16 +2083,16 @@ class XRechnungProviderReaderTest extends TestCase
             $newRoungingAmount
         );
 
-        $this->assertSame(1.00, $newNetAmount);
-        $this->assertSame(2.00, $newChargeTotalAmount);
-        $this->assertSame(3.00, $newDiscountTotalAmount);
-        $this->assertSame(4.00, $newTaxBasisAmount);
-        $this->assertSame(5.00, $newTaxTotalAmount);
-        $this->assertSame(6.00, $newTaxTotalAmount2);
-        $this->assertSame(7.00, $newGrossAmount);
-        $this->assertSame(8.00, $newDueAmount);
-        $this->assertSame(9.00, $newPrepaidAmount);
-        $this->assertSame(10.00, $newRoungingAmount);
+        $this->assertEqualsWithDelta(1.00, $newNetAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2.00, $newChargeTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(3.00, $newDiscountTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(4.00, $newTaxBasisAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(5.00, $newTaxTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(6.00, $newTaxTotalAmount2, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(7.00, $newGrossAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(8.00, $newDueAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(9.00, $newPrepaidAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(10.00, $newRoungingAmount, PHP_FLOAT_EPSILON);
     }
 
     public function testFirstNextGetDocumentPosition(): void
@@ -2190,7 +2192,7 @@ class XRechnungProviderReaderTest extends TestCase
         $this->assertSame("PRODUCTCHARACTERISTICDESC-1", $newProductCharacteristicDescription);
         $this->assertSame("PRODUCTCHARACTERISTICVALUE-1", $newProductCharacteristicValue);
         $this->assertSame("", $newProductCharacteristicType);
-        $this->assertSame(0.0, $newProductCharacteristicMeasureValue);
+        $this->assertEqualsWithDelta(0.0, $newProductCharacteristicMeasureValue, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductCharacteristicMeasureUnit);
 
         $this->assertTrue(self::$document->nextDocumentPositionProductCharacteristic());
@@ -2206,7 +2208,7 @@ class XRechnungProviderReaderTest extends TestCase
         $this->assertSame("PRODUCTCHARACTERISTICDESC-2", $newProductCharacteristicDescription);
         $this->assertSame("PRODUCTCHARACTERISTICVALUE-2", $newProductCharacteristicValue);
         $this->assertSame("", $newProductCharacteristicType);
-        $this->assertSame(0.0, $newProductCharacteristicMeasureValue);
+        $this->assertEqualsWithDelta(0.0, $newProductCharacteristicMeasureValue, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductCharacteristicMeasureUnit);
 
         $this->assertFalse(self::$document->nextDocumentPositionProductCharacteristic());
@@ -2286,7 +2288,7 @@ class XRechnungProviderReaderTest extends TestCase
         $this->assertSame("", $newProductGlobalId);
         $this->assertSame("", $newProductGlobalIdType);
         $this->assertSame("", $newProductIndustryId);
-        $this->assertSame(0.0, $newProductUnitQuantity);
+        $this->assertEqualsWithDelta(0.0, $newProductUnitQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductUnitQuantityUnit);
 
         $this->assertFalse(self::$document->nextDocumentPositionReferencedProduct());
@@ -2312,7 +2314,7 @@ class XRechnungProviderReaderTest extends TestCase
         $this->assertSame("", $newProductGlobalId);
         $this->assertSame("", $newProductGlobalIdType);
         $this->assertSame("", $newProductIndustryId);
-        $this->assertSame(0.0, $newProductUnitQuantity);
+        $this->assertEqualsWithDelta(0.0, $newProductUnitQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newProductUnitQuantityUnit);
 
         $this->assertFalse(self::$document->nextDocumentPositionReferencedProduct());
@@ -2338,7 +2340,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionSellerOrderReference());
 
@@ -2388,7 +2390,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionQuotationReference());
 
@@ -2413,7 +2415,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionContractReference());
 
@@ -2442,11 +2444,11 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
         $this->assertSame("", $newReferenceTypeCode);
         $this->assertSame("", $newDescription);
-        $this->assertNull($newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentPositionAdditionalReference());
 
@@ -2471,7 +2473,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionUltimateCustomerOrderReference());
 
@@ -2496,7 +2498,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDespatchAdviceReference());
 
@@ -2521,7 +2523,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionReceivingAdviceReference());
 
@@ -2546,7 +2548,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDeliveryNoteReference());
 
@@ -2572,7 +2574,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertSame(null, $newReferenceDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
 
         $this->assertFalse(self::$document->nextDocumentPositionInvoiceReference());
@@ -2596,8 +2598,8 @@ class XRechnungProviderReaderTest extends TestCase
             $newGrossPriceBasisQuantityUnit
         );
 
-        $this->assertSame(100.0, $newGrossPrice);
-        $this->assertSame(1.0, $newGrossPriceBasisQuantity);
+        $this->assertEqualsWithDelta(100.0, $newGrossPrice, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(1.0, $newGrossPriceBasisQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("C62", $newGrossPriceBasisQuantityUnit);
 
         $this->assertTrue(self::$document->firstDocumentPositionGrossPriceAllowanceCharge());
@@ -2611,10 +2613,10 @@ class XRechnungProviderReaderTest extends TestCase
             $newGrossPriceAllowanceChargeReasonCode
         );
 
-        $this->assertSame(1.0, $newGrossPriceAllowanceChargeAmount);
-        $this->assertSame(false, $newIsCharge);
-        $this->assertSame(3.0, $newGrossPriceAllowanceChargePercent);
-        $this->assertSame(2.0, $newGrossPriceAllowanceChargeBasisAmount);
+        $this->assertEqualsWithDelta(1.0, $newGrossPriceAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertFalse($newIsCharge);
+        $this->assertEqualsWithDelta(3.0, $newGrossPriceAllowanceChargePercent, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2.0, $newGrossPriceAllowanceChargeBasisAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("REASON-1", $newGrossPriceAllowanceChargeReason);
         $this->assertSame("REASONCODE-1", $newGrossPriceAllowanceChargeReasonCode);
 
@@ -2639,8 +2641,8 @@ class XRechnungProviderReaderTest extends TestCase
             $newNetPriceBasisQuantityUnit
         );
 
-        $this->assertSame(1.0, $newNetPrice);
-        $this->assertSame(2.0, $newNetPriceBasisQuantity);
+        $this->assertEqualsWithDelta(1.0, $newNetPrice, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(2.0, $newNetPriceBasisQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("C62", $newNetPriceBasisQuantityUnit);
 
         self::$document->getDocumentPositionNetPriceTax(
@@ -2654,8 +2656,8 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newTaxCategory);
         $this->assertSame("", $newTaxType);
-        $this->assertSame(0.0, $newTaxAmount);
-        $this->assertSame(0.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(0.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newExemptionReason);
         $this->assertSame("", $newExemptionReasonCode);
 
@@ -2679,11 +2681,11 @@ class XRechnungProviderReaderTest extends TestCase
             $newPackageQuantityUnit
         );
 
-        $this->assertSame(1.0, $newQuantity);
+        $this->assertEqualsWithDelta(1.0, $newQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("C62", $newQuantityUnit);
-        $this->assertSame(0.0, $newChargeFreeQuantity);
+        $this->assertEqualsWithDelta(0.0, $newChargeFreeQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newChargeFreeQuantityUnit);
-        $this->assertSame(0.0, $newPackageQuantity);
+        $this->assertEqualsWithDelta(0.0, $newPackageQuantity, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newPackageQuantityUnit);
 
         // Second position
@@ -2945,7 +2947,7 @@ class XRechnungProviderReaderTest extends TestCase
 
         self::$document->getDocumentPositionSupplyChainEvent($newDate);
 
-        $this->assertSame(null, $newDate);
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $newDate);
 
         // Second position
 
@@ -2996,8 +2998,8 @@ class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("S", $newTaxCategory);
         $this->assertSame("VAT", $newTaxType);
-        $this->assertSame(7.0, $newTaxAmount);
-        $this->assertSame(7.0, $newTaxPercent);
+        $this->assertEqualsWithDelta(7.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(7.0, $newTaxPercent, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason", $newExemptionReason);
         $this->assertSame("ReasonCode", $newExemptionReasonCode);
 
@@ -3025,12 +3027,12 @@ class XRechnungProviderReaderTest extends TestCase
             $newAllowanceChargePercent
         );
 
-        $this->assertSame(true, $newChargeIndicator);
-        $this->assertSame(10.00, $newAllowanceChargeAmount);
-        $this->assertSame(100.00, $newAllowanceChargeBaseAmount);
+        $this->assertTrue($newChargeIndicator);
+        $this->assertEqualsWithDelta(10.00, $newAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(100.00, $newAllowanceChargeBaseAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason", $newAllowanceChargeReason);
         $this->assertSame("ReasonCode", $newAllowanceChargeReasonCode);
-        $this->assertSame(10.00, $newAllowanceChargePercent);
+        $this->assertEqualsWithDelta(10.00, $newAllowanceChargePercent, PHP_FLOAT_EPSILON);
 
         $this->assertTrue(self::$document->nextDocumentPositionAllowanceCharge());
 
@@ -3043,12 +3045,12 @@ class XRechnungProviderReaderTest extends TestCase
             $newAllowanceChargePercent
         );
 
-        $this->assertSame(false, $newChargeIndicator);
-        $this->assertSame(1.00, $newAllowanceChargeAmount);
-        $this->assertSame(10.00, $newAllowanceChargeBaseAmount);
+        $this->assertFalse($newChargeIndicator);
+        $this->assertEqualsWithDelta(1.00, $newAllowanceChargeAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(10.00, $newAllowanceChargeBaseAmount, PHP_FLOAT_EPSILON);
         $this->assertSame("Reason2", $newAllowanceChargeReason);
         $this->assertSame("ReasonCode2", $newAllowanceChargeReasonCode);
-        $this->assertSame(1.00, $newAllowanceChargePercent);
+        $this->assertEqualsWithDelta(1.00, $newAllowanceChargePercent, PHP_FLOAT_EPSILON);
 
         $this->assertFalse(self::$document->nextDocumentPositionAllowanceCharge());
 
@@ -3073,11 +3075,11 @@ class XRechnungProviderReaderTest extends TestCase
             $newGrossAmount
         );
 
-        $this->assertSame(100.00, $newNetAmount);
-        $this->assertSame(0.0, $newChargeTotalAmount);
-        $this->assertSame(0.0, $newDiscountTotalAmount);
-        $this->assertSame(0.0, $newTaxTotalAmount);
-        $this->assertSame(0.0, $newGrossAmount);
+        $this->assertEqualsWithDelta(100.00, $newNetAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newChargeTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newDiscountTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newTaxTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newGrossAmount, PHP_FLOAT_EPSILON);
 
         // Second position
 

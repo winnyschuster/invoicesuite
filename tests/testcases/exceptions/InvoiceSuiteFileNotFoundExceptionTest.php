@@ -8,7 +8,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteFileNotFoundExceptionTest extends TestCase
+final class InvoiceSuiteFileNotFoundExceptionTest extends TestCase
 {
     public function testException(): void
     {

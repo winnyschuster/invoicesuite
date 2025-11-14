@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class HandlesObjectFlagsTest extends TestCase
+final class HandlesObjectFlagsTest extends TestCase
 {
     use HandlesObjectFlags;
 

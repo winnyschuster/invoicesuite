@@ -10,36 +10,37 @@
 namespace horstoeko\invoicesuite\documents\providers\ubl;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteOrganisationDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductCharacteristicDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductClassificationDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProjectDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteServiceChargeDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
-use horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference;
-use horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification;
-use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
+use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteOrganisationDTO;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductCharacteristicDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductClassificationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
+use horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
 
 class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocumentFormatBuilder
 {
@@ -6759,6 +6760,16 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
             }
 
             $this->getUblInvoiceRootObject()->getTaxTotal()[1]->getTaxAmountWithCreate()->setValue($newTaxTotalAmount2);
+        } else {
+            if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getUblInvoiceRootObject()->getTaxCurrencyCode())) {
+                throw new InvoiceSuiteInvalidArgumentException('You must specify a tax amount for the tax currency if you have specified a tax currency code.');
+            }
+
+            if (isset($this->getUblInvoiceRootObject()->getTaxTotal()[1])) {
+                $taxTotal = $this->getUblInvoiceRootObject()->getTaxTotal();
+                unset($taxTotal[1]);
+                $this->getUblInvoiceRootObject()->setTaxTotal($taxTotal);
+            }
         }
 
         $this->updateCurrencies();

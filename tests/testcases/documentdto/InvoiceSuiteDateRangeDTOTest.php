@@ -8,14 +8,14 @@ use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\tests\TestCase;
 
-class InvoiceSuiteDateRangeDTOTest extends TestCase
+final class InvoiceSuiteDateRangeDTOTest extends TestCase
 {
     public function testConstructorAndDefaults(): void
     {
         $invoiceSuiteDateRangeDTO = new InvoiceSuiteDateRangeDTO();
 
-        $this->assertNull($invoiceSuiteDateRangeDTO->getStartDate());
-        $this->assertNull($invoiceSuiteDateRangeDTO->getEndDate());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteDateRangeDTO->getStartDate());
+        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteDateRangeDTO->getEndDate());
         $this->assertNull($invoiceSuiteDateRangeDTO->getDescription());
     }
 
