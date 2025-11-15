@@ -9,6 +9,8 @@
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for...
  *
@@ -137,8 +139,12 @@ class InvoiceSuitePartyDTO
      * @param string $name Party names
      * @return self
      */
-    public function addName(string $name): self
+    public function addName(?string $name): self
     {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($name)) {
+            return $this;
+        }
+
         $this->names[] = $name;
 
         return $this;
