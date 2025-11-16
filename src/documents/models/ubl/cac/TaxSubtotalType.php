@@ -19,7 +19,7 @@ class TaxSubtotalType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount|null
+     * @var TaxableAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class TaxSubtotalType
     private $taxableAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount|null
+     * @var TaxAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class TaxSubtotalType
     private $taxAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric|null
+     * @var CalculationSequenceNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class TaxSubtotalType
     private $calculationSequenceNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount|null
+     * @var TransactionCurrencyTaxAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class TaxSubtotalType
     private $transactionCurrencyTaxAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null
+     * @var Percent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class TaxSubtotalType
     private $percent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure|null
+     * @var BaseUnitMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class TaxSubtotalType
     private $baseUnitMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount|null
+     * @var PerUnitAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class TaxSubtotalType
     private $perUnitAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange|null
+     * @var TierRange|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class TaxSubtotalType
     private $tierRange;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent|null
+     * @var TierRatePercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class TaxSubtotalType
     private $tierRatePercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @var TaxCategory|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class TaxSubtotalType
     private $taxCategory;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount|null
+     * @return TaxableAmount|null
      */
     public function getTaxableAmount(): ?TaxableAmount
     {
@@ -137,7 +137,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount
+     * @return TaxableAmount
      */
     public function getTaxableAmountWithCreate(): TaxableAmount
     {
@@ -147,7 +147,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount|null $taxableAmount
+     * @param TaxableAmount|null $taxableAmount
      * @return self
      */
     public function setTaxableAmount(?TaxableAmount $taxableAmount = null): self
@@ -168,7 +168,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount|null
+     * @return TaxAmount|null
      */
     public function getTaxAmount(): ?TaxAmount
     {
@@ -176,7 +176,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount
+     * @return TaxAmount
      */
     public function getTaxAmountWithCreate(): TaxAmount
     {
@@ -186,7 +186,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount|null $taxAmount
+     * @param TaxAmount|null $taxAmount
      * @return self
      */
     public function setTaxAmount(?TaxAmount $taxAmount = null): self
@@ -207,7 +207,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric|null
+     * @return CalculationSequenceNumeric|null
      */
     public function getCalculationSequenceNumeric(): ?CalculationSequenceNumeric
     {
@@ -215,7 +215,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric
+     * @return CalculationSequenceNumeric
      */
     public function getCalculationSequenceNumericWithCreate(): CalculationSequenceNumeric
     {
@@ -225,7 +225,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric|null $calculationSequenceNumeric
+     * @param CalculationSequenceNumeric|null $calculationSequenceNumeric
      * @return self
      */
     public function setCalculationSequenceNumeric(
@@ -247,7 +247,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount|null
+     * @return TransactionCurrencyTaxAmount|null
      */
     public function getTransactionCurrencyTaxAmount(): ?TransactionCurrencyTaxAmount
     {
@@ -255,7 +255,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount
+     * @return TransactionCurrencyTaxAmount
      */
     public function getTransactionCurrencyTaxAmountWithCreate(): TransactionCurrencyTaxAmount
     {
@@ -265,7 +265,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount|null $transactionCurrencyTaxAmount
+     * @param TransactionCurrencyTaxAmount|null $transactionCurrencyTaxAmount
      * @return self
      */
     public function setTransactionCurrencyTaxAmount(
@@ -287,7 +287,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null
+     * @return Percent|null
      */
     public function getPercent(): ?Percent
     {
@@ -295,7 +295,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent
+     * @return Percent
      */
     public function getPercentWithCreate(): Percent
     {
@@ -305,7 +305,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null $percent
+     * @param Percent|null $percent
      * @return self
      */
     public function setPercent(?Percent $percent = null): self
@@ -326,7 +326,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure|null
+     * @return BaseUnitMeasure|null
      */
     public function getBaseUnitMeasure(): ?BaseUnitMeasure
     {
@@ -334,7 +334,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure
+     * @return BaseUnitMeasure
      */
     public function getBaseUnitMeasureWithCreate(): BaseUnitMeasure
     {
@@ -344,7 +344,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure|null $baseUnitMeasure
+     * @param BaseUnitMeasure|null $baseUnitMeasure
      * @return self
      */
     public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): self
@@ -365,7 +365,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount|null
+     * @return PerUnitAmount|null
      */
     public function getPerUnitAmount(): ?PerUnitAmount
     {
@@ -373,7 +373,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount
+     * @return PerUnitAmount
      */
     public function getPerUnitAmountWithCreate(): PerUnitAmount
     {
@@ -383,7 +383,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount|null $perUnitAmount
+     * @param PerUnitAmount|null $perUnitAmount
      * @return self
      */
     public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): self
@@ -404,7 +404,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange|null
+     * @return TierRange|null
      */
     public function getTierRange(): ?TierRange
     {
@@ -412,7 +412,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange
+     * @return TierRange
      */
     public function getTierRangeWithCreate(): TierRange
     {
@@ -422,7 +422,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange|null $tierRange
+     * @param TierRange|null $tierRange
      * @return self
      */
     public function setTierRange(?TierRange $tierRange = null): self
@@ -443,7 +443,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent|null
+     * @return TierRatePercent|null
      */
     public function getTierRatePercent(): ?TierRatePercent
     {
@@ -451,7 +451,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent
+     * @return TierRatePercent
      */
     public function getTierRatePercentWithCreate(): TierRatePercent
     {
@@ -461,7 +461,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent|null $tierRatePercent
+     * @param TierRatePercent|null $tierRatePercent
      * @return self
      */
     public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): self
@@ -482,7 +482,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @return TaxCategory|null
      */
     public function getTaxCategory(): ?TaxCategory
     {
@@ -490,7 +490,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory
+     * @return TaxCategory
      */
     public function getTaxCategoryWithCreate(): TaxCategory
     {
@@ -500,7 +500,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null $taxCategory
+     * @param TaxCategory|null $taxCategory
      * @return self
      */
     public function setTaxCategory(?TaxCategory $taxCategory = null): self

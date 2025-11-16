@@ -12,7 +12,7 @@ class UBLExtensionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class UBLExtensionType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class UBLExtensionType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyID|null
+     * @var ExtensionAgencyID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyID")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class UBLExtensionType
     private $extensionAgencyID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyName|null
+     * @var ExtensionAgencyName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyName")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class UBLExtensionType
     private $extensionAgencyName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionVersionID|null
+     * @var ExtensionVersionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionVersionID")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class UBLExtensionType
     private $extensionVersionID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyURI|null
+     * @var ExtensionAgencyURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyURI")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class UBLExtensionType
     private $extensionAgencyURI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionURI|null
+     * @var ExtensionURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionURI")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class UBLExtensionType
     private $extensionURI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReasonCode|null
+     * @var ExtensionReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReasonCode")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class UBLExtensionType
     private $extensionReasonCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReason|null
+     * @var ExtensionReason|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReason")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class UBLExtensionType
     private $extensionReason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionContent|null
+     * @var ExtensionContent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionContent")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class UBLExtensionType
     private $extensionContent;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -130,7 +130,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -140,7 +140,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -161,7 +161,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -169,7 +169,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -179,7 +179,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -200,7 +200,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyID|null
+     * @return ExtensionAgencyID|null
      */
     public function getExtensionAgencyID(): ?ExtensionAgencyID
     {
@@ -208,7 +208,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyID
+     * @return ExtensionAgencyID
      */
     public function getExtensionAgencyIDWithCreate(): ExtensionAgencyID
     {
@@ -218,7 +218,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyID|null $extensionAgencyID
+     * @param ExtensionAgencyID|null $extensionAgencyID
      * @return self
      */
     public function setExtensionAgencyID(?ExtensionAgencyID $extensionAgencyID = null): self
@@ -239,7 +239,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyName|null
+     * @return ExtensionAgencyName|null
      */
     public function getExtensionAgencyName(): ?ExtensionAgencyName
     {
@@ -247,7 +247,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyName
+     * @return ExtensionAgencyName
      */
     public function getExtensionAgencyNameWithCreate(): ExtensionAgencyName
     {
@@ -257,7 +257,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyName|null $extensionAgencyName
+     * @param ExtensionAgencyName|null $extensionAgencyName
      * @return self
      */
     public function setExtensionAgencyName(?ExtensionAgencyName $extensionAgencyName = null): self
@@ -278,7 +278,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionVersionID|null
+     * @return ExtensionVersionID|null
      */
     public function getExtensionVersionID(): ?ExtensionVersionID
     {
@@ -286,7 +286,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionVersionID
+     * @return ExtensionVersionID
      */
     public function getExtensionVersionIDWithCreate(): ExtensionVersionID
     {
@@ -296,7 +296,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionVersionID|null $extensionVersionID
+     * @param ExtensionVersionID|null $extensionVersionID
      * @return self
      */
     public function setExtensionVersionID(?ExtensionVersionID $extensionVersionID = null): self
@@ -317,7 +317,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyURI|null
+     * @return ExtensionAgencyURI|null
      */
     public function getExtensionAgencyURI(): ?ExtensionAgencyURI
     {
@@ -325,7 +325,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyURI
+     * @return ExtensionAgencyURI
      */
     public function getExtensionAgencyURIWithCreate(): ExtensionAgencyURI
     {
@@ -335,7 +335,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyURI|null $extensionAgencyURI
+     * @param ExtensionAgencyURI|null $extensionAgencyURI
      * @return self
      */
     public function setExtensionAgencyURI(?ExtensionAgencyURI $extensionAgencyURI = null): self
@@ -356,7 +356,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionURI|null
+     * @return ExtensionURI|null
      */
     public function getExtensionURI(): ?ExtensionURI
     {
@@ -364,7 +364,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionURI
+     * @return ExtensionURI
      */
     public function getExtensionURIWithCreate(): ExtensionURI
     {
@@ -374,7 +374,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionURI|null $extensionURI
+     * @param ExtensionURI|null $extensionURI
      * @return self
      */
     public function setExtensionURI(?ExtensionURI $extensionURI = null): self
@@ -395,7 +395,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReasonCode|null
+     * @return ExtensionReasonCode|null
      */
     public function getExtensionReasonCode(): ?ExtensionReasonCode
     {
@@ -403,7 +403,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReasonCode
+     * @return ExtensionReasonCode
      */
     public function getExtensionReasonCodeWithCreate(): ExtensionReasonCode
     {
@@ -413,7 +413,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReasonCode|null $extensionReasonCode
+     * @param ExtensionReasonCode|null $extensionReasonCode
      * @return self
      */
     public function setExtensionReasonCode(?ExtensionReasonCode $extensionReasonCode = null): self
@@ -434,7 +434,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReason|null
+     * @return ExtensionReason|null
      */
     public function getExtensionReason(): ?ExtensionReason
     {
@@ -442,7 +442,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReason
+     * @return ExtensionReason
      */
     public function getExtensionReasonWithCreate(): ExtensionReason
     {
@@ -452,7 +452,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReason|null $extensionReason
+     * @param ExtensionReason|null $extensionReason
      * @return self
      */
     public function setExtensionReason(?ExtensionReason $extensionReason = null): self
@@ -473,7 +473,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionContent|null
+     * @return ExtensionContent|null
      */
     public function getExtensionContent(): ?ExtensionContent
     {
@@ -481,7 +481,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionContent
+     * @return ExtensionContent
      */
     public function getExtensionContentWithCreate(): ExtensionContent
     {
@@ -491,7 +491,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionContent|null $extensionContent
+     * @param ExtensionContent|null $extensionContent
      * @return self
      */
     public function setExtensionContent(?ExtensionContent $extensionContent = null): self

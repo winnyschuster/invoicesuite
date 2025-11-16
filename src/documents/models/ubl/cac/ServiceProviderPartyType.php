@@ -13,7 +13,7 @@ class ServiceProviderPartyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ServiceProviderPartyType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode|null
+     * @var ServiceTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ServiceProviderPartyType
     private $serviceTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType>|null
+     * @var array<ServiceType>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ServiceProviderPartyType
     private $serviceType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @var Party|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ServiceProviderPartyType
     private $party;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact|null
+     * @var SellerContact|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ServiceProviderPartyType
     private $sellerContact;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -77,7 +77,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -87,7 +87,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -108,7 +108,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode|null
+     * @return ServiceTypeCode|null
      */
     public function getServiceTypeCode(): ?ServiceTypeCode
     {
@@ -116,7 +116,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode
+     * @return ServiceTypeCode
      */
     public function getServiceTypeCodeWithCreate(): ServiceTypeCode
     {
@@ -126,7 +126,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode|null $serviceTypeCode
+     * @param ServiceTypeCode|null $serviceTypeCode
      * @return self
      */
     public function setServiceTypeCode(?ServiceTypeCode $serviceTypeCode = null): self
@@ -147,7 +147,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType>|null
+     * @return array<ServiceType>|null
      */
     public function getServiceType(): ?array
     {
@@ -155,7 +155,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType>|null $serviceType
+     * @param array<ServiceType>|null $serviceType
      * @return self
      */
     public function setServiceType(?array $serviceType = null): self
@@ -186,7 +186,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType|null
+     * @return ServiceType|null
      */
     public function firstServiceType(): ?ServiceType
     {
@@ -201,7 +201,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType|null
+     * @return ServiceType|null
      */
     public function lastServiceType(): ?ServiceType
     {
@@ -216,7 +216,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType $serviceType
+     * @param ServiceType $serviceType
      * @return self
      */
     public function addToServiceType(ServiceType $serviceType): self
@@ -227,7 +227,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType
+     * @return ServiceType
      */
     public function addToServiceTypeWithCreate(): ServiceType
     {
@@ -237,7 +237,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType $serviceType
+     * @param ServiceType $serviceType
      * @return self
      */
     public function addOnceToServiceType(ServiceType $serviceType): self
@@ -252,7 +252,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType
+     * @return ServiceType
      */
     public function addOnceToServiceTypeWithCreate(): ServiceType
     {
@@ -268,7 +268,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @return Party|null
      */
     public function getParty(): ?Party
     {
@@ -276,7 +276,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party
+     * @return Party
      */
     public function getPartyWithCreate(): Party
     {
@@ -286,7 +286,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null $party
+     * @param Party|null $party
      * @return self
      */
     public function setParty(?Party $party = null): self
@@ -307,7 +307,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact|null
+     * @return SellerContact|null
      */
     public function getSellerContact(): ?SellerContact
     {
@@ -315,7 +315,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact
+     * @return SellerContact
      */
     public function getSellerContactWithCreate(): SellerContact
     {
@@ -325,7 +325,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact|null $sellerContact
+     * @param SellerContact|null $sellerContact
      * @return self
      */
     public function setSellerContact(?SellerContact $sellerContact = null): self

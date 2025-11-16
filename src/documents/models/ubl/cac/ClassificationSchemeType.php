@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID;
@@ -21,7 +22,7 @@ class ClassificationSchemeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +33,7 @@ class ClassificationSchemeType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -43,7 +44,7 @@ class ClassificationSchemeType
     private $uUID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -54,7 +55,7 @@ class ClassificationSchemeType
     private $lastRevisionDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -65,7 +66,7 @@ class ClassificationSchemeType
     private $lastRevisionTime;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -77,7 +78,7 @@ class ClassificationSchemeType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -88,7 +89,7 @@ class ClassificationSchemeType
     private $name;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -100,7 +101,7 @@ class ClassificationSchemeType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID|null
+     * @var AgencyID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID")
      * @JMS\Expose
@@ -111,7 +112,7 @@ class ClassificationSchemeType
     private $agencyID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName|null
+     * @var AgencyName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName")
      * @JMS\Expose
@@ -122,7 +123,7 @@ class ClassificationSchemeType
     private $agencyName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @var VersionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -133,7 +134,7 @@ class ClassificationSchemeType
     private $versionID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null
+     * @var URI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\URI")
      * @JMS\Expose
@@ -144,7 +145,7 @@ class ClassificationSchemeType
     private $uRI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI|null
+     * @var SchemeURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI")
      * @JMS\Expose
@@ -155,7 +156,7 @@ class ClassificationSchemeType
     private $schemeURI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID|null
+     * @var LanguageID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID")
      * @JMS\Expose
@@ -166,7 +167,7 @@ class ClassificationSchemeType
     private $languageID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory>|null
+     * @var array<ClassificationCategory>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory>")
      * @JMS\Expose
@@ -178,7 +179,7 @@ class ClassificationSchemeType
     private $classificationCategory;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -186,7 +187,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -196,7 +197,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -217,7 +218,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -225,7 +226,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -235,7 +236,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -256,18 +257,18 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getLastRevisionDate(): ?\DateTimeInterface
+    public function getLastRevisionDate(): ?DateTimeInterface
     {
         return $this->lastRevisionDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $lastRevisionDate
+     * @param DateTimeInterface|null $lastRevisionDate
      * @return self
      */
-    public function setLastRevisionDate(?\DateTimeInterface $lastRevisionDate = null): self
+    public function setLastRevisionDate(?DateTimeInterface $lastRevisionDate = null): self
     {
         $this->lastRevisionDate = $lastRevisionDate;
 
@@ -285,18 +286,18 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getLastRevisionTime(): ?\DateTimeInterface
+    public function getLastRevisionTime(): ?DateTimeInterface
     {
         return $this->lastRevisionTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $lastRevisionTime
+     * @param DateTimeInterface|null $lastRevisionTime
      * @return self
      */
-    public function setLastRevisionTime(?\DateTimeInterface $lastRevisionTime = null): self
+    public function setLastRevisionTime(?DateTimeInterface $lastRevisionTime = null): self
     {
         $this->lastRevisionTime = $lastRevisionTime;
 
@@ -314,7 +315,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -322,7 +323,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -353,7 +354,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -368,7 +369,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -383,7 +384,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -394,7 +395,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -404,7 +405,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -419,7 +420,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -435,7 +436,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -443,7 +444,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -453,7 +454,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -474,7 +475,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -482,7 +483,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -513,7 +514,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -528,7 +529,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -543,7 +544,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -554,7 +555,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -564,7 +565,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -579,7 +580,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -595,7 +596,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID|null
+     * @return AgencyID|null
      */
     public function getAgencyID(): ?AgencyID
     {
@@ -603,7 +604,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID
+     * @return AgencyID
      */
     public function getAgencyIDWithCreate(): AgencyID
     {
@@ -613,7 +614,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID|null $agencyID
+     * @param AgencyID|null $agencyID
      * @return self
      */
     public function setAgencyID(?AgencyID $agencyID = null): self
@@ -634,7 +635,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName|null
+     * @return AgencyName|null
      */
     public function getAgencyName(): ?AgencyName
     {
@@ -642,7 +643,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName
+     * @return AgencyName
      */
     public function getAgencyNameWithCreate(): AgencyName
     {
@@ -652,7 +653,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName|null $agencyName
+     * @param AgencyName|null $agencyName
      * @return self
      */
     public function setAgencyName(?AgencyName $agencyName = null): self
@@ -673,7 +674,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @return VersionID|null
      */
     public function getVersionID(): ?VersionID
     {
@@ -681,7 +682,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID
+     * @return VersionID
      */
     public function getVersionIDWithCreate(): VersionID
     {
@@ -691,7 +692,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null $versionID
+     * @param VersionID|null $versionID
      * @return self
      */
     public function setVersionID(?VersionID $versionID = null): self
@@ -712,7 +713,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null
+     * @return URI|null
      */
     public function getURI(): ?URI
     {
@@ -720,7 +721,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\URI
+     * @return URI
      */
     public function getURIWithCreate(): URI
     {
@@ -730,7 +731,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null $uRI
+     * @param URI|null $uRI
      * @return self
      */
     public function setURI(?URI $uRI = null): self
@@ -751,7 +752,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI|null
+     * @return SchemeURI|null
      */
     public function getSchemeURI(): ?SchemeURI
     {
@@ -759,7 +760,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI
+     * @return SchemeURI
      */
     public function getSchemeURIWithCreate(): SchemeURI
     {
@@ -769,7 +770,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI|null $schemeURI
+     * @param SchemeURI|null $schemeURI
      * @return self
      */
     public function setSchemeURI(?SchemeURI $schemeURI = null): self
@@ -790,7 +791,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID|null
+     * @return LanguageID|null
      */
     public function getLanguageID(): ?LanguageID
     {
@@ -798,7 +799,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID
+     * @return LanguageID
      */
     public function getLanguageIDWithCreate(): LanguageID
     {
@@ -808,7 +809,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID|null $languageID
+     * @param LanguageID|null $languageID
      * @return self
      */
     public function setLanguageID(?LanguageID $languageID = null): self
@@ -829,7 +830,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory>|null
+     * @return array<ClassificationCategory>|null
      */
     public function getClassificationCategory(): ?array
     {
@@ -837,7 +838,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory>|null $classificationCategory
+     * @param array<ClassificationCategory>|null $classificationCategory
      * @return self
      */
     public function setClassificationCategory(?array $classificationCategory = null): self
@@ -868,7 +869,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory|null
+     * @return ClassificationCategory|null
      */
     public function firstClassificationCategory(): ?ClassificationCategory
     {
@@ -883,7 +884,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory|null
+     * @return ClassificationCategory|null
      */
     public function lastClassificationCategory(): ?ClassificationCategory
     {
@@ -898,7 +899,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory $classificationCategory
+     * @param ClassificationCategory $classificationCategory
      * @return self
      */
     public function addToClassificationCategory(ClassificationCategory $classificationCategory): self
@@ -909,7 +910,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory
+     * @return ClassificationCategory
      */
     public function addToClassificationCategoryWithCreate(): ClassificationCategory
     {
@@ -919,7 +920,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory $classificationCategory
+     * @param ClassificationCategory $classificationCategory
      * @return self
      */
     public function addOnceToClassificationCategory(ClassificationCategory $classificationCategory): self
@@ -934,7 +935,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory
+     * @return ClassificationCategory
      */
     public function addOnceToClassificationCategoryWithCreate(): ClassificationCategory
     {

@@ -12,7 +12,7 @@ class EventTacticType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment|null
+     * @var Comment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Comment")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class EventTacticType
     private $comment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class EventTacticType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EventTacticEnumeration|null
+     * @var EventTacticEnumeration|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EventTacticEnumeration")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class EventTacticType
     private $eventTacticEnumeration;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @var Period|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class EventTacticType
     private $period;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment|null
+     * @return Comment|null
      */
     public function getComment(): ?Comment
     {
@@ -64,7 +64,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment
+     * @return Comment
      */
     public function getCommentWithCreate(): Comment
     {
@@ -74,7 +74,7 @@ class EventTacticType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment|null $comment
+     * @param Comment|null $comment
      * @return self
      */
     public function setComment(?Comment $comment = null): self
@@ -95,7 +95,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -103,7 +103,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -113,7 +113,7 @@ class EventTacticType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -134,7 +134,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventTacticEnumeration|null
+     * @return EventTacticEnumeration|null
      */
     public function getEventTacticEnumeration(): ?EventTacticEnumeration
     {
@@ -142,7 +142,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventTacticEnumeration
+     * @return EventTacticEnumeration
      */
     public function getEventTacticEnumerationWithCreate(): EventTacticEnumeration
     {
@@ -152,7 +152,7 @@ class EventTacticType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EventTacticEnumeration|null $eventTacticEnumeration
+     * @param EventTacticEnumeration|null $eventTacticEnumeration
      * @return self
      */
     public function setEventTacticEnumeration(?EventTacticEnumeration $eventTacticEnumeration = null): self
@@ -173,7 +173,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function getPeriod(): ?Period
     {
@@ -181,7 +181,7 @@ class EventTacticType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function getPeriodWithCreate(): Period
     {
@@ -191,7 +191,7 @@ class EventTacticType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null $period
+     * @param Period|null $period
      * @return self
      */
     public function setPeriod(?Period $period = null): self

@@ -12,7 +12,7 @@ class RailTransportType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID|null
+     * @var TrainID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class RailTransportType
     private $trainID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID|null
+     * @var RailCarID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class RailTransportType
     private $railCarID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID|null
+     * @return TrainID|null
      */
     public function getTrainID(): ?TrainID
     {
@@ -42,7 +42,7 @@ class RailTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID
+     * @return TrainID
      */
     public function getTrainIDWithCreate(): TrainID
     {
@@ -52,7 +52,7 @@ class RailTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID|null $trainID
+     * @param TrainID|null $trainID
      * @return self
      */
     public function setTrainID(?TrainID $trainID = null): self
@@ -73,7 +73,7 @@ class RailTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID|null
+     * @return RailCarID|null
      */
     public function getRailCarID(): ?RailCarID
     {
@@ -81,7 +81,7 @@ class RailTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID
+     * @return RailCarID
      */
     public function getRailCarIDWithCreate(): RailCarID
     {
@@ -91,7 +91,7 @@ class RailTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID|null $railCarID
+     * @param RailCarID|null $railCarID
      * @return self
      */
     public function setRailCarID(?RailCarID $railCarID = null): self

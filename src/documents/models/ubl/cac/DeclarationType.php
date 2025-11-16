@@ -13,7 +13,7 @@ class DeclarationType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @var array<Name>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class DeclarationType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode|null
+     * @var DeclarationTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class DeclarationType
     private $declarationTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class DeclarationType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null
+     * @var array<EvidenceSupplied>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class DeclarationType
     private $evidenceSupplied;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @return array<Name>|null
      */
     public function getName(): ?array
     {
@@ -68,7 +68,7 @@ class DeclarationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null $name
+     * @param array<Name>|null $name
      * @return self
      */
     public function setName(?array $name = null): self
@@ -99,7 +99,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function firstName(): ?Name
     {
@@ -114,7 +114,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function lastName(): ?Name
     {
@@ -129,7 +129,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addToName(Name $name): self
@@ -140,7 +140,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addToNameWithCreate(): Name
     {
@@ -150,7 +150,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addOnceToName(Name $name): self
@@ -165,7 +165,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addOnceToNameWithCreate(): Name
     {
@@ -181,7 +181,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode|null
+     * @return DeclarationTypeCode|null
      */
     public function getDeclarationTypeCode(): ?DeclarationTypeCode
     {
@@ -189,7 +189,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode
+     * @return DeclarationTypeCode
      */
     public function getDeclarationTypeCodeWithCreate(): DeclarationTypeCode
     {
@@ -199,7 +199,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode|null $declarationTypeCode
+     * @param DeclarationTypeCode|null $declarationTypeCode
      * @return self
      */
     public function setDeclarationTypeCode(?DeclarationTypeCode $declarationTypeCode = null): self
@@ -220,7 +220,7 @@ class DeclarationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -228,7 +228,7 @@ class DeclarationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -259,7 +259,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -274,7 +274,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -289,7 +289,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -300,7 +300,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -310,7 +310,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -325,7 +325,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -341,7 +341,7 @@ class DeclarationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null
+     * @return array<EvidenceSupplied>|null
      */
     public function getEvidenceSupplied(): ?array
     {
@@ -349,7 +349,7 @@ class DeclarationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null $evidenceSupplied
+     * @param array<EvidenceSupplied>|null $evidenceSupplied
      * @return self
      */
     public function setEvidenceSupplied(?array $evidenceSupplied = null): self
@@ -380,7 +380,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied|null
+     * @return EvidenceSupplied|null
      */
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -395,7 +395,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied|null
+     * @return EvidenceSupplied|null
      */
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -410,7 +410,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied $evidenceSupplied
+     * @param EvidenceSupplied $evidenceSupplied
      * @return self
      */
     public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
@@ -421,7 +421,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied
+     * @return EvidenceSupplied
      */
     public function addToEvidenceSuppliedWithCreate(): EvidenceSupplied
     {
@@ -431,7 +431,7 @@ class DeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied $evidenceSupplied
+     * @param EvidenceSupplied $evidenceSupplied
      * @return self
      */
     public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
@@ -446,7 +446,7 @@ class DeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied
+     * @return EvidenceSupplied
      */
     public function addOnceToEvidenceSuppliedWithCreate(): EvidenceSupplied
     {

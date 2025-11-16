@@ -9,6 +9,23 @@
 
 namespace horstoeko\invoicesuite\documents\providers\zffxcomfort;
 
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SpecifiedPeriodType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAccountingAccountType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProcuringProjectType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementPaymentMeansType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeTaxType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeProductType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProductCharacteristicType;
+use horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProductClassificationType;
 use DateTimeInterface;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatReader;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
@@ -2855,12 +2872,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubjectCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType>
+         * @var array<NoteType>
          */
         $documentNotes = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getExchangedDocument()?->getIncludedNote() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType
+         * @var NoteType
          */
         $documentNote = $documentNotes[InvoiceSuitePointerUtils::getValue('documentnote')];
 
@@ -2919,12 +2936,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newDescription,
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SpecifiedPeriodType>
+         * @var array<SpecifiedPeriodType>
          */
         $billingPeriods = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getBillingSpecifiedPeriod() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SpecifiedPeriodType
+         * @var SpecifiedPeriodType
          */
         $billingPeriod = $billingPeriods[InvoiceSuitePointerUtils::getValue('documentbillingperiod')];
 
@@ -2986,12 +3003,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newAccountId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAccountingAccountType>
+         * @var array<TradeAccountingAccountType>
          */
         $documentPostingReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getReceivableSpecifiedTradeAccountingAccount() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAccountingAccountType
+         * @var TradeAccountingAccountType
          */
         $documentPostingReference = $documentPostingReferences[InvoiceSuitePointerUtils::getValue('documentpostingreference')];
 
@@ -3050,12 +3067,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentSellerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerOrderReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentSellerOrderReference = $documentSellerOrderReferences[InvoiceSuitePointerUtils::getValue('documentsellerorderreference')];
 
@@ -3113,12 +3130,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerOrderReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentBuyerOrderReference = $documentBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentbuyerorderreference')];
 
@@ -3291,12 +3308,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentAdditionalReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getAdditionalReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentAdditionalReference = $documentAdditionalReferences[InvoiceSuitePointerUtils::getValue('documentadditionalreference')];
 
@@ -3372,12 +3389,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTypeCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentInvoiceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getInvoiceReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentInvoiceReference = $documentInvoiceReferences[InvoiceSuitePointerUtils::getValue('documentinvoicereference')];
 
@@ -3436,12 +3453,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProcuringProjectType>
+         * @var array<ProcuringProjectType>
          */
         $documentProjectReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSpecifiedProcuringProject() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProcuringProjectType
+         * @var ProcuringProjectType
          */
         $documentProjectReference = $documentProjectReferences[InvoiceSuitePointerUtils::getValue('documentprojectreference')];
 
@@ -3536,12 +3553,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentDespatchAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getDespatchAdviceReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentDespatchAdviceReference = $documentDespatchAdviceReferences[InvoiceSuitePointerUtils::getValue('documentdespatchadvicereference')];
 
@@ -3599,12 +3616,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getReceivingAdviceReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentReceivingAdviceReference = $documentReceivingAdviceReferences[InvoiceSuitePointerUtils::getValue('documentreceivingadvicereference')];
 
@@ -3754,12 +3771,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentSellerIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentSellerId = $documentSellerIds[InvoiceSuitePointerUtils::getValue('documentsellerid')];
 
@@ -3813,12 +3830,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentSellerGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getGlobalID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentSellerGlobalId = $documentSellerGlobalIds[InvoiceSuitePointerUtils::getValue('documentsellerglobalid')];
 
@@ -3873,12 +3890,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>
+         * @var array<TaxRegistrationType>
          */
         $documentSellerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getSpecifiedTaxRegistration() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+         * @var TaxRegistrationType
          */
         $documentSellerTaxRegistration = $documentSellerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentsellertaxregistration')];
 
@@ -3948,12 +3965,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType>
+         * @var array<TradeAddressType>
          */
         $documentSellerAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getPostalTradeAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType
+         * @var TradeAddressType
          */
         $documentSellerAddress = $documentSellerAddresses[InvoiceSuitePointerUtils::getValue('documentselleraddress')];
 
@@ -4016,12 +4033,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType>
+         * @var array<LegalOrganizationType>
          */
         $documentSellerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getSpecifiedLegalOrganization() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType
+         * @var LegalOrganizationType
          */
         $documentSellerLegalOrganisation = $documentSellerLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentsellerlegalorganisation')];
 
@@ -4086,12 +4103,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType>
+         * @var array<TradeContactType>
          */
         $documentSellerContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getDefinedTradeContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType
+         * @var TradeContactType
          */
         $documentSellerContact = $documentSellerContacts[InvoiceSuitePointerUtils::getValue('documentsellercontact')];
 
@@ -4149,12 +4166,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType>
+         * @var array<UniversalCommunicationType>
          */
         $documentSellerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getURIUniversalCommunication() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+         * @var UniversalCommunicationType
          */
         $documentSellerElectronicCommunication = $documentSellerElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentsellerecommunication')];
 
@@ -4226,12 +4243,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentBuyerIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentBuyerId = $documentBuyerIds[InvoiceSuitePointerUtils::getValue('documentbuyerid')];
 
@@ -4285,12 +4302,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentBuyerGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getGlobalID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentBuyerGlobalId = $documentBuyerGlobalIds[InvoiceSuitePointerUtils::getValue('documentbuyerglobalid')];
 
@@ -4345,12 +4362,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>
+         * @var array<TaxRegistrationType>
          */
         $documentBuyerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getSpecifiedTaxRegistration() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+         * @var TaxRegistrationType
          */
         $documentBuyerTaxRegistration = $documentBuyerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentbuyertaxregistration')];
 
@@ -4420,12 +4437,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType>
+         * @var array<TradeAddressType>
          */
         $documentBuyerAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getPostalTradeAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType
+         * @var TradeAddressType
          */
         $documentBuyerAddress = $documentBuyerAddresses[InvoiceSuitePointerUtils::getValue('documentbuyeraddress')];
 
@@ -4488,12 +4505,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType>
+         * @var array<LegalOrganizationType>
          */
         $documentBuyerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getSpecifiedLegalOrganization() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType
+         * @var LegalOrganizationType
          */
         $documentBuyerLegalOrganisation = $documentBuyerLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentbuyerlegalorganisation')];
 
@@ -4558,12 +4575,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType>
+         * @var array<TradeContactType>
          */
         $documentBuyerContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getDefinedTradeContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType
+         * @var TradeContactType
          */
         $documentBuyerContact = $documentBuyerContacts[InvoiceSuitePointerUtils::getValue('documentbuyercontact')];
 
@@ -4621,12 +4638,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType>
+         * @var array<UniversalCommunicationType>
          */
         $documentBuyerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getURIUniversalCommunication() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+         * @var UniversalCommunicationType
          */
         $documentBuyerElectronicCommunication = $documentBuyerElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentbuyerecommunication')];
 
@@ -4698,12 +4715,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentTaxRepresentativeIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
 
@@ -4757,12 +4774,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentTaxRepresentativeGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
 
@@ -4817,12 +4834,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>
+         * @var array<TaxRegistrationType>
          */
         $documentTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+         * @var TaxRegistrationType
          */
         $documentTaxRepresentativeTaxRegistration = $documentTaxRepresentativeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativetaxregistration')];
 
@@ -4892,12 +4909,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType>
+         * @var array<TradeAddressType>
          */
         $documentTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType
+         * @var TradeAddressType
          */
         $documentTaxRepresentativeAddress = $documentTaxRepresentativeAddresses[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeaddress')];
 
@@ -4960,12 +4977,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType>
+         * @var array<LegalOrganizationType>
          */
         $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType
+         * @var LegalOrganizationType
          */
         $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
 
@@ -5030,12 +5047,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType>
+         * @var array<TradeContactType>
          */
         $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType
+         * @var TradeContactType
          */
         $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
 
@@ -5093,12 +5110,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType>
+         * @var array<UniversalCommunicationType>
          */
         $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+         * @var UniversalCommunicationType
          */
         $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
 
@@ -5502,12 +5519,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentShipToIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentShipToId = $documentShipToIds[InvoiceSuitePointerUtils::getValue('documentshiptoid')];
 
@@ -5561,12 +5578,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentShipToGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getGlobalID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentShipToGlobalId = $documentShipToGlobalIds[InvoiceSuitePointerUtils::getValue('documentshiptoglobalid')];
 
@@ -5621,12 +5638,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>
+         * @var array<TaxRegistrationType>
          */
         $documentShipToTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedTaxRegistration() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+         * @var TaxRegistrationType
          */
         $documentShipToTaxRegistration = $documentShipToTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentshiptotaxregistration')];
 
@@ -5696,12 +5713,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType>
+         * @var array<TradeAddressType>
          */
         $documentShipToAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getPostalTradeAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType
+         * @var TradeAddressType
          */
         $documentShipToAddress = $documentShipToAddresses[InvoiceSuitePointerUtils::getValue('documentshiptoaddress')];
 
@@ -5764,12 +5781,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType>
+         * @var array<LegalOrganizationType>
          */
         $documentShipToLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedLegalOrganization() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType
+         * @var LegalOrganizationType
          */
         $documentShipToLegalOrganisation = $documentShipToLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentshiptolegalorganisation')];
 
@@ -5834,12 +5851,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType>
+         * @var array<TradeContactType>
          */
         $documentShipToContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getDefinedTradeContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType
+         * @var TradeContactType
          */
         $documentShipToContact = $documentShipToContacts[InvoiceSuitePointerUtils::getValue('documentshiptocontact')];
 
@@ -5897,12 +5914,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType>
+         * @var array<UniversalCommunicationType>
          */
         $documentShipToElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getURIUniversalCommunication() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+         * @var UniversalCommunicationType
          */
         $documentShipToElectronicCommunication = $documentShipToElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentshiptoecommunication')];
 
@@ -7302,12 +7319,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentPayeeIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentPayeeId = $documentPayeeIds[InvoiceSuitePointerUtils::getValue('documentpayeeid')];
 
@@ -7361,12 +7378,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentPayeeGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getGlobalID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentPayeeGlobalId = $documentPayeeGlobalIds[InvoiceSuitePointerUtils::getValue('documentpayeeglobalid')];
 
@@ -7421,12 +7438,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>
+         * @var array<TaxRegistrationType>
          */
         $documentPayeeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getSpecifiedTaxRegistration() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+         * @var TaxRegistrationType
          */
         $documentPayeeTaxRegistration = $documentPayeeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentpayeetaxregistration')];
 
@@ -7496,12 +7513,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType>
+         * @var array<TradeAddressType>
          */
         $documentPayeeAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getPostalTradeAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType
+         * @var TradeAddressType
          */
         $documentPayeeAddress = $documentPayeeAddresses[InvoiceSuitePointerUtils::getValue('documentpayeeaddress')];
 
@@ -7564,12 +7581,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType>
+         * @var array<LegalOrganizationType>
          */
         $documentPayeeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getSpecifiedLegalOrganization() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType
+         * @var LegalOrganizationType
          */
         $documentPayeeLegalOrganisation = $documentPayeeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentpayeelegalorganisation')];
 
@@ -7634,12 +7651,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType>
+         * @var array<TradeContactType>
          */
         $documentPayeeContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getDefinedTradeContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType
+         * @var TradeContactType
          */
         $documentPayeeContact = $documentPayeeContacts[InvoiceSuitePointerUtils::getValue('documentpayeecontact')];
 
@@ -7697,12 +7714,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType>
+         * @var array<UniversalCommunicationType>
          */
         $documentPayeeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getURIUniversalCommunication() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+         * @var UniversalCommunicationType
          */
         $documentPayeeElectronicCommunication = $documentPayeeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentpayeecommunication')];
 
@@ -7788,12 +7805,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newMandate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementPaymentMeansType>
+         * @var array<TradeSettlementPaymentMeansType>
          */
         $documentPaymentMeans = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradeSettlementPaymentMeans() ?? [];
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementPaymentMeansType
+         * @var TradeSettlementPaymentMeansType
          */
         $documentPaymentMean = $documentPaymentMeans[InvoiceSuitePointerUtils::getValue('documentpaymentmean')];
 
@@ -7860,12 +7877,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>
+         * @var array<IDType>
          */
         $documentCreditorReferences = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getCreditorReferenceID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+         * @var IDType
          */
         $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentcreditorreference')];
 
@@ -7930,12 +7947,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentpenalty');
 
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePaymentTermsType>
+         * @var array<TradePaymentTermsType>
          */
         $documentPaymentTerms = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradePaymentTerms() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePaymentTermsType
+         * @var TradePaymentTermsType
          */
         $documentPaymentTerm = $documentPaymentTerms[InvoiceSuitePointerUtils::getValue('documentpaymentterm')];
 
@@ -8131,12 +8148,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxDueCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeTaxType>
+         * @var array<TradeTaxType>
          */
         $documentTaxes = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getApplicableTradeTax() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeTaxType
+         * @var TradeTaxType
          */
         $documentTax = $documentTaxes[InvoiceSuitePointerUtils::getValue('documenttax')];
 
@@ -8226,12 +8243,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newAllowanceChargePercent
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType>
+         * @var array<TradeAllowanceChargeType>
          */
         $documentAllowanceCharges = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradeAllowanceCharge() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType
+         * @var TradeAllowanceChargeType
          */
         $documentAllowanceCharge = $documentAllowanceCharges[InvoiceSuitePointerUtils::getValue('documentallowancecharge')];
 
@@ -8407,14 +8424,14 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
     protected function resolveCurrentDocumentPosition(): SupplyChainTradeLineItemType
     {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SupplyChainTradeLineItemType>
+         * @var array<SupplyChainTradeLineItemType>
          */
         $documentPositions = InvoiceSuiteArrayUtils::ensure(
             $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getIncludedSupplyChainTradeLineItem() ?? []
         );
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SupplyChainTradeLineItemType
+         * @var SupplyChainTradeLineItemType
          */
         $documentPosition = $documentPositions[InvoiceSuitePointerUtils::getValue('documentposition')];
 
@@ -8537,12 +8554,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newSubjectCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType>
+         * @var array<NoteType>
          */
         $documentPositionNotes = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getAssociatedDocumentLineDocument()?->getIncludedNote() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType
+         * @var NoteType
          */
         $documentPositionNote = $documentPositionNotes[InvoiceSuitePointerUtils::getValue('documentpositionnote')];
 
@@ -8601,7 +8618,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductOriginTradeCountry
     ): self {
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeProductType|null
+         * @var TradeProductType|null
          */
         $documentPositionProduct = $this->resolveCurrentDocumentPosition()->getSpecifiedTradeProduct();
 
@@ -8672,12 +8689,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductCharacteristicMeasureUnit
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProductCharacteristicType>
+         * @var array<ProductCharacteristicType>
          */
         $documentPositionProductCharacteristics = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedTradeProduct()?->getApplicableProductCharacteristic() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProductCharacteristicType
+         * @var ProductCharacteristicType
          */
         $documentPositionProductCharacteristic = $documentPositionProductCharacteristics[InvoiceSuitePointerUtils::getValue('documentpositionproductcharacteristic')];
 
@@ -8737,12 +8754,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductClassificationCodeClassname
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProductClassificationType>
+         * @var array<ProductClassificationType>
          */
         $documentPositionProductClassifications = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedTradeProduct()?->getDesignatedProductClassification() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ProductClassificationType
+         * @var ProductClassificationType
          */
         $documentPositionProductClassification = $documentPositionProductClassifications[InvoiceSuitePointerUtils::getValue('documentpositionproductclassification')];
 
@@ -8914,12 +8931,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newReferenceDate = null
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType>
+         * @var array<ReferencedDocumentType>
          */
         $documentPositionBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getBuyerOrderReferencedDocument() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+         * @var ReferencedDocumentType
          */
         $documentPositionBuyerOrderReference = $documentPositionBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentpositionbuyerorderreference')];
 
@@ -9392,12 +9409,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGrossPriceAllowanceChargeReasonCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType>
+         * @var array<TradeAllowanceChargeType>
          */
         $positionGrossPriceAllowanceCharges = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeAgreement()?->getGrossPriceProductTradePrice()?->getAppliedTradeAllowanceCharge() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType
+         * @var TradeAllowanceChargeType
          */
         $positionGrossPriceAllowanceCharge = $positionGrossPriceAllowanceCharges[InvoiceSuitePointerUtils::getValue('documentpositiongrosspriceallowancecharge')];
 
@@ -10241,12 +10258,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newDescription,
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SpecifiedPeriodType>
+         * @var array<SpecifiedPeriodType>
          */
         $positionBillingPeriods = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getBillingSpecifiedPeriod() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SpecifiedPeriodType
+         * @var SpecifiedPeriodType
          */
         $positionBillingPeriod = $positionBillingPeriods[InvoiceSuitePointerUtils::getValue('documentpositionbillingperiod')];
 
@@ -10320,12 +10337,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newExemptionReasonCode,
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeTaxType>
+         * @var array<TradeTaxType>
          */
         $positionTaxes = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getApplicableTradeTax() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeTaxType
+         * @var TradeTaxType
          */
         $positionTax = $positionTaxes[InvoiceSuitePointerUtils::getValue('documentpositiontax')];
 
@@ -10396,12 +10413,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newAllowanceChargePercent
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType>
+         * @var array<TradeAllowanceChargeType>
          */
         $positionAllowanceCharges = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getSpecifiedTradeAllowanceCharge() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType
+         * @var TradeAllowanceChargeType
          */
         $positionAllowanceCharge = $positionAllowanceCharges[InvoiceSuitePointerUtils::getValue('documentpositionallowancecharge')];
 
@@ -10504,12 +10521,12 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newAccountId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAccountingAccountType>
+         * @var array<TradeAccountingAccountType>
          */
         $positionPostingReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getReceivableSpecifiedTradeAccountingAccount() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAccountingAccountType
+         * @var TradeAccountingAccountType
          */
         $positionPostingReference = $positionPostingReferences[InvoiceSuitePointerUtils::getValue('documentpositionpostingreference')];
 

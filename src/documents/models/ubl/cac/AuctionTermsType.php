@@ -27,7 +27,7 @@ class AuctionTermsType
     private $auctionConstraintIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription>|null
+     * @var array<JustificationDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class AuctionTermsType
     private $justificationDescription;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class AuctionTermsType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription>|null
+     * @var array<ProcessDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription>")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class AuctionTermsType
     private $processDescription;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription>|null
+     * @var array<ConditionsDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription>")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class AuctionTermsType
     private $conditionsDescription;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription>|null
+     * @var array<ElectronicDeviceDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription>")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class AuctionTermsType
     private $electronicDeviceDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI|null
+     * @var AuctionURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI")
      * @JMS\Expose
@@ -127,7 +127,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription>|null
+     * @return array<JustificationDescription>|null
      */
     public function getJustificationDescription(): ?array
     {
@@ -135,7 +135,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription>|null $justificationDescription
+     * @param array<JustificationDescription>|null $justificationDescription
      * @return self
      */
     public function setJustificationDescription(?array $justificationDescription = null): self
@@ -166,7 +166,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription|null
+     * @return JustificationDescription|null
      */
     public function firstJustificationDescription(): ?JustificationDescription
     {
@@ -181,7 +181,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription|null
+     * @return JustificationDescription|null
      */
     public function lastJustificationDescription(): ?JustificationDescription
     {
@@ -196,7 +196,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription $justificationDescription
+     * @param JustificationDescription $justificationDescription
      * @return self
      */
     public function addToJustificationDescription(JustificationDescription $justificationDescription): self
@@ -207,7 +207,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription
+     * @return JustificationDescription
      */
     public function addToJustificationDescriptionWithCreate(): JustificationDescription
     {
@@ -217,7 +217,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription $justificationDescription
+     * @param JustificationDescription $justificationDescription
      * @return self
      */
     public function addOnceToJustificationDescription(JustificationDescription $justificationDescription): self
@@ -232,7 +232,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription
+     * @return JustificationDescription
      */
     public function addOnceToJustificationDescriptionWithCreate(): JustificationDescription
     {
@@ -248,7 +248,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -256,7 +256,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -287,7 +287,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -302,7 +302,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -317,7 +317,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -328,7 +328,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -338,7 +338,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -353,7 +353,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -369,7 +369,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription>|null
+     * @return array<ProcessDescription>|null
      */
     public function getProcessDescription(): ?array
     {
@@ -377,7 +377,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription>|null $processDescription
+     * @param array<ProcessDescription>|null $processDescription
      * @return self
      */
     public function setProcessDescription(?array $processDescription = null): self
@@ -408,7 +408,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription|null
+     * @return ProcessDescription|null
      */
     public function firstProcessDescription(): ?ProcessDescription
     {
@@ -423,7 +423,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription|null
+     * @return ProcessDescription|null
      */
     public function lastProcessDescription(): ?ProcessDescription
     {
@@ -438,7 +438,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription $processDescription
+     * @param ProcessDescription $processDescription
      * @return self
      */
     public function addToProcessDescription(ProcessDescription $processDescription): self
@@ -449,7 +449,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription
+     * @return ProcessDescription
      */
     public function addToProcessDescriptionWithCreate(): ProcessDescription
     {
@@ -459,7 +459,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription $processDescription
+     * @param ProcessDescription $processDescription
      * @return self
      */
     public function addOnceToProcessDescription(ProcessDescription $processDescription): self
@@ -474,7 +474,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription
+     * @return ProcessDescription
      */
     public function addOnceToProcessDescriptionWithCreate(): ProcessDescription
     {
@@ -490,7 +490,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription>|null
+     * @return array<ConditionsDescription>|null
      */
     public function getConditionsDescription(): ?array
     {
@@ -498,7 +498,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription>|null $conditionsDescription
+     * @param array<ConditionsDescription>|null $conditionsDescription
      * @return self
      */
     public function setConditionsDescription(?array $conditionsDescription = null): self
@@ -529,7 +529,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription|null
+     * @return ConditionsDescription|null
      */
     public function firstConditionsDescription(): ?ConditionsDescription
     {
@@ -544,7 +544,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription|null
+     * @return ConditionsDescription|null
      */
     public function lastConditionsDescription(): ?ConditionsDescription
     {
@@ -559,7 +559,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription $conditionsDescription
+     * @param ConditionsDescription $conditionsDescription
      * @return self
      */
     public function addToConditionsDescription(ConditionsDescription $conditionsDescription): self
@@ -570,7 +570,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription
+     * @return ConditionsDescription
      */
     public function addToConditionsDescriptionWithCreate(): ConditionsDescription
     {
@@ -580,7 +580,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription $conditionsDescription
+     * @param ConditionsDescription $conditionsDescription
      * @return self
      */
     public function addOnceToConditionsDescription(ConditionsDescription $conditionsDescription): self
@@ -595,7 +595,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription
+     * @return ConditionsDescription
      */
     public function addOnceToConditionsDescriptionWithCreate(): ConditionsDescription
     {
@@ -611,7 +611,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription>|null
+     * @return array<ElectronicDeviceDescription>|null
      */
     public function getElectronicDeviceDescription(): ?array
     {
@@ -619,7 +619,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription>|null $electronicDeviceDescription
+     * @param array<ElectronicDeviceDescription>|null $electronicDeviceDescription
      * @return self
      */
     public function setElectronicDeviceDescription(?array $electronicDeviceDescription = null): self
@@ -650,7 +650,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription|null
+     * @return ElectronicDeviceDescription|null
      */
     public function firstElectronicDeviceDescription(): ?ElectronicDeviceDescription
     {
@@ -665,7 +665,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription|null
+     * @return ElectronicDeviceDescription|null
      */
     public function lastElectronicDeviceDescription(): ?ElectronicDeviceDescription
     {
@@ -680,7 +680,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription $electronicDeviceDescription
+     * @param ElectronicDeviceDescription $electronicDeviceDescription
      * @return self
      */
     public function addToElectronicDeviceDescription(ElectronicDeviceDescription $electronicDeviceDescription): self
@@ -691,7 +691,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription
+     * @return ElectronicDeviceDescription
      */
     public function addToElectronicDeviceDescriptionWithCreate(): ElectronicDeviceDescription
     {
@@ -701,7 +701,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription $electronicDeviceDescription
+     * @param ElectronicDeviceDescription $electronicDeviceDescription
      * @return self
      */
     public function addOnceToElectronicDeviceDescription(
@@ -717,7 +717,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription
+     * @return ElectronicDeviceDescription
      */
     public function addOnceToElectronicDeviceDescriptionWithCreate(): ElectronicDeviceDescription
     {
@@ -733,7 +733,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI|null
+     * @return AuctionURI|null
      */
     public function getAuctionURI(): ?AuctionURI
     {
@@ -741,7 +741,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI
+     * @return AuctionURI
      */
     public function getAuctionURIWithCreate(): AuctionURI
     {
@@ -751,7 +751,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI|null $auctionURI
+     * @param AuctionURI|null $auctionURI
      * @return self
      */
     public function setAuctionURI(?AuctionURI $auctionURI = null): self

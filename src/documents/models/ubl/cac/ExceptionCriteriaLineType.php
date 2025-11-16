@@ -19,7 +19,7 @@ class ExceptionCriteriaLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class ExceptionCriteriaLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class ExceptionCriteriaLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode|null
+     * @var ThresholdValueComparisonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class ExceptionCriteriaLineType
     private $thresholdValueComparisonCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity|null
+     * @var ThresholdQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class ExceptionCriteriaLineType
     private $thresholdQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode|null
+     * @var ExceptionStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class ExceptionCriteriaLineType
     private $exceptionStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode|null
+     * @var CollaborationPriorityCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class ExceptionCriteriaLineType
     private $collaborationPriorityCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode|null
+     * @var ExceptionResolutionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class ExceptionCriteriaLineType
     private $exceptionResolutionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null
+     * @var SupplyChainActivityTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class ExceptionCriteriaLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode|null
+     * @var PerformanceMetricTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ExceptionCriteriaLineType
     private $performanceMetricTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod|null
+     * @var EffectivePeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class ExceptionCriteriaLineType
     private $effectivePeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem>|null
+     * @var array<SupplyItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem>")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class ExceptionCriteriaLineType
     private $supplyItem;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastExceptionCriterionLine|null
+     * @var ForecastExceptionCriterionLine|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastExceptionCriterionLine")
      * @JMS\Expose
@@ -153,7 +153,7 @@ class ExceptionCriteriaLineType
     private $forecastExceptionCriterionLine;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -161,7 +161,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -171,7 +171,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -192,7 +192,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -200,7 +200,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -231,7 +231,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -246,7 +246,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -261,7 +261,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -272,7 +272,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -282,7 +282,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -297,7 +297,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -313,7 +313,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode|null
+     * @return ThresholdValueComparisonCode|null
      */
     public function getThresholdValueComparisonCode(): ?ThresholdValueComparisonCode
     {
@@ -321,7 +321,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode
+     * @return ThresholdValueComparisonCode
      */
     public function getThresholdValueComparisonCodeWithCreate(): ThresholdValueComparisonCode
     {
@@ -331,7 +331,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode|null $thresholdValueComparisonCode
+     * @param ThresholdValueComparisonCode|null $thresholdValueComparisonCode
      * @return self
      */
     public function setThresholdValueComparisonCode(
@@ -353,7 +353,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity|null
+     * @return ThresholdQuantity|null
      */
     public function getThresholdQuantity(): ?ThresholdQuantity
     {
@@ -361,7 +361,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity
+     * @return ThresholdQuantity
      */
     public function getThresholdQuantityWithCreate(): ThresholdQuantity
     {
@@ -371,7 +371,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity|null $thresholdQuantity
+     * @param ThresholdQuantity|null $thresholdQuantity
      * @return self
      */
     public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): self
@@ -392,7 +392,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode|null
+     * @return ExceptionStatusCode|null
      */
     public function getExceptionStatusCode(): ?ExceptionStatusCode
     {
@@ -400,7 +400,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode
+     * @return ExceptionStatusCode
      */
     public function getExceptionStatusCodeWithCreate(): ExceptionStatusCode
     {
@@ -410,7 +410,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode|null $exceptionStatusCode
+     * @param ExceptionStatusCode|null $exceptionStatusCode
      * @return self
      */
     public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): self
@@ -431,7 +431,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode|null
+     * @return CollaborationPriorityCode|null
      */
     public function getCollaborationPriorityCode(): ?CollaborationPriorityCode
     {
@@ -439,7 +439,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode
+     * @return CollaborationPriorityCode
      */
     public function getCollaborationPriorityCodeWithCreate(): CollaborationPriorityCode
     {
@@ -449,7 +449,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode|null $collaborationPriorityCode
+     * @param CollaborationPriorityCode|null $collaborationPriorityCode
      * @return self
      */
     public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): self
@@ -470,7 +470,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode|null
+     * @return ExceptionResolutionCode|null
      */
     public function getExceptionResolutionCode(): ?ExceptionResolutionCode
     {
@@ -478,7 +478,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode
+     * @return ExceptionResolutionCode
      */
     public function getExceptionResolutionCodeWithCreate(): ExceptionResolutionCode
     {
@@ -488,7 +488,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode|null $exceptionResolutionCode
+     * @param ExceptionResolutionCode|null $exceptionResolutionCode
      * @return self
      */
     public function setExceptionResolutionCode(?ExceptionResolutionCode $exceptionResolutionCode = null): self
@@ -509,7 +509,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null
+     * @return SupplyChainActivityTypeCode|null
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -517,7 +517,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode
+     * @return SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCodeWithCreate(): SupplyChainActivityTypeCode
     {
@@ -527,7 +527,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(
@@ -549,7 +549,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode|null
+     * @return PerformanceMetricTypeCode|null
      */
     public function getPerformanceMetricTypeCode(): ?PerformanceMetricTypeCode
     {
@@ -557,7 +557,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode
+     * @return PerformanceMetricTypeCode
      */
     public function getPerformanceMetricTypeCodeWithCreate(): PerformanceMetricTypeCode
     {
@@ -567,7 +567,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode|null $performanceMetricTypeCode
+     * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
      * @return self
      */
     public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): self
@@ -588,7 +588,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod|null
+     * @return EffectivePeriod|null
      */
     public function getEffectivePeriod(): ?EffectivePeriod
     {
@@ -596,7 +596,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod
+     * @return EffectivePeriod
      */
     public function getEffectivePeriodWithCreate(): EffectivePeriod
     {
@@ -606,7 +606,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod|null $effectivePeriod
+     * @param EffectivePeriod|null $effectivePeriod
      * @return self
      */
     public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): self
@@ -627,7 +627,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem>|null
+     * @return array<SupplyItem>|null
      */
     public function getSupplyItem(): ?array
     {
@@ -635,7 +635,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem>|null $supplyItem
+     * @param array<SupplyItem>|null $supplyItem
      * @return self
      */
     public function setSupplyItem(?array $supplyItem = null): self
@@ -666,7 +666,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem|null
+     * @return SupplyItem|null
      */
     public function firstSupplyItem(): ?SupplyItem
     {
@@ -681,7 +681,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem|null
+     * @return SupplyItem|null
      */
     public function lastSupplyItem(): ?SupplyItem
     {
@@ -696,7 +696,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem $supplyItem
+     * @param SupplyItem $supplyItem
      * @return self
      */
     public function addToSupplyItem(SupplyItem $supplyItem): self
@@ -707,7 +707,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem
+     * @return SupplyItem
      */
     public function addToSupplyItemWithCreate(): SupplyItem
     {
@@ -717,7 +717,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem $supplyItem
+     * @param SupplyItem $supplyItem
      * @return self
      */
     public function addOnceToSupplyItem(SupplyItem $supplyItem): self
@@ -732,7 +732,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem
+     * @return SupplyItem
      */
     public function addOnceToSupplyItemWithCreate(): SupplyItem
     {
@@ -748,7 +748,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastExceptionCriterionLine|null
+     * @return ForecastExceptionCriterionLine|null
      */
     public function getForecastExceptionCriterionLine(): ?ForecastExceptionCriterionLine
     {
@@ -756,7 +756,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastExceptionCriterionLine
+     * @return ForecastExceptionCriterionLine
      */
     public function getForecastExceptionCriterionLineWithCreate(): ForecastExceptionCriterionLine
     {
@@ -766,7 +766,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastExceptionCriterionLine|null $forecastExceptionCriterionLine
+     * @param ForecastExceptionCriterionLine|null $forecastExceptionCriterionLine
      * @return self
      */
     public function setForecastExceptionCriterionLine(

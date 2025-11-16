@@ -13,7 +13,7 @@ class ClassificationCategoryType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ClassificationCategoryType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue|null
+     * @var CodeValue|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ClassificationCategoryType
     private $codeValue;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ClassificationCategoryType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory>|null
+     * @var array<CategorizesClassificationCategory>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class ClassificationCategoryType
     private $categorizesClassificationCategory;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -67,7 +67,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -77,7 +77,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -98,7 +98,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue|null
+     * @return CodeValue|null
      */
     public function getCodeValue(): ?CodeValue
     {
@@ -106,7 +106,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue
+     * @return CodeValue
      */
     public function getCodeValueWithCreate(): CodeValue
     {
@@ -116,7 +116,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue|null $codeValue
+     * @param CodeValue|null $codeValue
      * @return self
      */
     public function setCodeValue(?CodeValue $codeValue = null): self
@@ -137,7 +137,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -145,7 +145,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -176,7 +176,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -191,7 +191,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -206,7 +206,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -217,7 +217,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -227,7 +227,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -242,7 +242,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -258,7 +258,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory>|null
+     * @return array<CategorizesClassificationCategory>|null
      */
     public function getCategorizesClassificationCategory(): ?array
     {
@@ -266,7 +266,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory>|null $categorizesClassificationCategory
+     * @param array<CategorizesClassificationCategory>|null $categorizesClassificationCategory
      * @return self
      */
     public function setCategorizesClassificationCategory(?array $categorizesClassificationCategory = null): self
@@ -297,7 +297,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory|null
+     * @return CategorizesClassificationCategory|null
      */
     public function firstCategorizesClassificationCategory(): ?CategorizesClassificationCategory
     {
@@ -312,7 +312,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory|null
+     * @return CategorizesClassificationCategory|null
      */
     public function lastCategorizesClassificationCategory(): ?CategorizesClassificationCategory
     {
@@ -327,7 +327,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory $categorizesClassificationCategory
+     * @param CategorizesClassificationCategory $categorizesClassificationCategory
      * @return self
      */
     public function addToCategorizesClassificationCategory(
@@ -339,7 +339,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory
+     * @return CategorizesClassificationCategory
      */
     public function addToCategorizesClassificationCategoryWithCreate(): CategorizesClassificationCategory
     {
@@ -349,7 +349,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory $categorizesClassificationCategory
+     * @param CategorizesClassificationCategory $categorizesClassificationCategory
      * @return self
      */
     public function addOnceToCategorizesClassificationCategory(
@@ -365,7 +365,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory
+     * @return CategorizesClassificationCategory
      */
     public function addOnceToCategorizesClassificationCategoryWithCreate(): CategorizesClassificationCategory
     {

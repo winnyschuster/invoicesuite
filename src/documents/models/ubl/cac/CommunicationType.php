@@ -13,7 +13,7 @@ class CommunicationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode|null
+     * @var ChannelCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CommunicationType
     private $channelCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Channel|null
+     * @var Channel|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Channel")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CommunicationType
     private $channel;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @var Value|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class CommunicationType
     private $value;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode|null
+     * @return ChannelCode|null
      */
     public function getChannelCode(): ?ChannelCode
     {
@@ -54,7 +54,7 @@ class CommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode
+     * @return ChannelCode
      */
     public function getChannelCodeWithCreate(): ChannelCode
     {
@@ -64,7 +64,7 @@ class CommunicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode|null $channelCode
+     * @param ChannelCode|null $channelCode
      * @return self
      */
     public function setChannelCode(?ChannelCode $channelCode = null): self
@@ -85,7 +85,7 @@ class CommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Channel|null
+     * @return Channel|null
      */
     public function getChannel(): ?Channel
     {
@@ -93,7 +93,7 @@ class CommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Channel
+     * @return Channel
      */
     public function getChannelWithCreate(): Channel
     {
@@ -103,7 +103,7 @@ class CommunicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Channel|null $channel
+     * @param Channel|null $channel
      * @return self
      */
     public function setChannel(?Channel $channel = null): self
@@ -124,7 +124,7 @@ class CommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @return Value|null
      */
     public function getValue(): ?Value
     {
@@ -132,7 +132,7 @@ class CommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value
+     * @return Value
      */
     public function getValueWithCreate(): Value
     {
@@ -142,7 +142,7 @@ class CommunicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null $value
+     * @param Value|null $value
      * @return self
      */
     public function setValue(?Value $value = null): self

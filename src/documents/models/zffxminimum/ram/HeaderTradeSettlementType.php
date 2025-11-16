@@ -11,7 +11,7 @@ class HeaderTradeSettlementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType|null
+     * @var CurrencyCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class HeaderTradeSettlementType
     private $invoiceCurrencyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeSettlementHeaderMonetarySummationType|null
+     * @var TradeSettlementHeaderMonetarySummationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeSettlementHeaderMonetarySummationType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class HeaderTradeSettlementType
     private $specifiedTradeSettlementHeaderMonetarySummation;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType|null
+     * @return CurrencyCodeType|null
      */
     public function getInvoiceCurrencyCode(): ?CurrencyCodeType
     {
@@ -41,7 +41,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType
+     * @return CurrencyCodeType
      */
     public function getInvoiceCurrencyCodeWithCreate(): CurrencyCodeType
     {
@@ -51,7 +51,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType|null $invoiceCurrencyCode
+     * @param CurrencyCodeType|null $invoiceCurrencyCode
      * @return self
      */
     public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): self
@@ -72,7 +72,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeSettlementHeaderMonetarySummationType|null
+     * @return TradeSettlementHeaderMonetarySummationType|null
      */
     public function getSpecifiedTradeSettlementHeaderMonetarySummation(): ?TradeSettlementHeaderMonetarySummationType
     {
@@ -80,7 +80,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeSettlementHeaderMonetarySummationType
+     * @return TradeSettlementHeaderMonetarySummationType
      */
     public function getSpecifiedTradeSettlementHeaderMonetarySummationWithCreate(): TradeSettlementHeaderMonetarySummationType
     {
@@ -90,7 +90,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeSettlementHeaderMonetarySummationType|null $specifiedTradeSettlementHeaderMonetarySummation
+     * @param TradeSettlementHeaderMonetarySummationType|null $specifiedTradeSettlementHeaderMonetarySummation
      * @return self
      */
     public function setSpecifiedTradeSettlementHeaderMonetarySummation(

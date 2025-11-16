@@ -14,7 +14,7 @@ class EconomicOperatorShortListType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription>|null
+     * @var array<LimitationDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription>")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class EconomicOperatorShortListType
     private $limitationDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity|null
+     * @var ExpectedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class EconomicOperatorShortListType
     private $expectedQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @var MaximumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class EconomicOperatorShortListType
     private $maximumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @var MinimumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class EconomicOperatorShortListType
     private $minimumQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty>|null
+     * @var array<PreSelectedParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class EconomicOperatorShortListType
     private $preSelectedParty;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription>|null
+     * @return array<LimitationDescription>|null
      */
     public function getLimitationDescription(): ?array
     {
@@ -79,7 +79,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription>|null $limitationDescription
+     * @param array<LimitationDescription>|null $limitationDescription
      * @return self
      */
     public function setLimitationDescription(?array $limitationDescription = null): self
@@ -110,7 +110,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription|null
+     * @return LimitationDescription|null
      */
     public function firstLimitationDescription(): ?LimitationDescription
     {
@@ -125,7 +125,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription|null
+     * @return LimitationDescription|null
      */
     public function lastLimitationDescription(): ?LimitationDescription
     {
@@ -140,7 +140,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription $limitationDescription
+     * @param LimitationDescription $limitationDescription
      * @return self
      */
     public function addToLimitationDescription(LimitationDescription $limitationDescription): self
@@ -151,7 +151,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription
+     * @return LimitationDescription
      */
     public function addToLimitationDescriptionWithCreate(): LimitationDescription
     {
@@ -161,7 +161,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription $limitationDescription
+     * @param LimitationDescription $limitationDescription
      * @return self
      */
     public function addOnceToLimitationDescription(LimitationDescription $limitationDescription): self
@@ -176,7 +176,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription
+     * @return LimitationDescription
      */
     public function addOnceToLimitationDescriptionWithCreate(): LimitationDescription
     {
@@ -192,7 +192,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity|null
+     * @return ExpectedQuantity|null
      */
     public function getExpectedQuantity(): ?ExpectedQuantity
     {
@@ -200,7 +200,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity
+     * @return ExpectedQuantity
      */
     public function getExpectedQuantityWithCreate(): ExpectedQuantity
     {
@@ -210,7 +210,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity|null $expectedQuantity
+     * @param ExpectedQuantity|null $expectedQuantity
      * @return self
      */
     public function setExpectedQuantity(?ExpectedQuantity $expectedQuantity = null): self
@@ -231,7 +231,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @return MaximumQuantity|null
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -239,7 +239,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity
+     * @return MaximumQuantity
      */
     public function getMaximumQuantityWithCreate(): MaximumQuantity
     {
@@ -249,7 +249,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null $maximumQuantity
+     * @param MaximumQuantity|null $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
@@ -270,7 +270,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @return MinimumQuantity|null
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -278,7 +278,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity
+     * @return MinimumQuantity
      */
     public function getMinimumQuantityWithCreate(): MinimumQuantity
     {
@@ -288,7 +288,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null $minimumQuantity
+     * @param MinimumQuantity|null $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
@@ -309,7 +309,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty>|null
+     * @return array<PreSelectedParty>|null
      */
     public function getPreSelectedParty(): ?array
     {
@@ -317,7 +317,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty>|null $preSelectedParty
+     * @param array<PreSelectedParty>|null $preSelectedParty
      * @return self
      */
     public function setPreSelectedParty(?array $preSelectedParty = null): self
@@ -348,7 +348,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty|null
+     * @return PreSelectedParty|null
      */
     public function firstPreSelectedParty(): ?PreSelectedParty
     {
@@ -363,7 +363,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty|null
+     * @return PreSelectedParty|null
      */
     public function lastPreSelectedParty(): ?PreSelectedParty
     {
@@ -378,7 +378,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty $preSelectedParty
+     * @param PreSelectedParty $preSelectedParty
      * @return self
      */
     public function addToPreSelectedParty(PreSelectedParty $preSelectedParty): self
@@ -389,7 +389,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty
+     * @return PreSelectedParty
      */
     public function addToPreSelectedPartyWithCreate(): PreSelectedParty
     {
@@ -399,7 +399,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty $preSelectedParty
+     * @param PreSelectedParty $preSelectedParty
      * @return self
      */
     public function addOnceToPreSelectedParty(PreSelectedParty $preSelectedParty): self
@@ -414,7 +414,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty
+     * @return PreSelectedParty
      */
     public function addOnceToPreSelectedPartyWithCreate(): PreSelectedParty
     {

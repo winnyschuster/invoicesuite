@@ -12,7 +12,7 @@ class BillingReferenceLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class BillingReferenceLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class BillingReferenceLineType
     private $amount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class BillingReferenceLineType
     private $allowanceCharge;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -54,7 +54,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -64,7 +64,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -85,7 +85,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -93,7 +93,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -103,7 +103,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -124,7 +124,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -132,7 +132,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -163,7 +163,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -178,7 +178,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -193,7 +193,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -204,7 +204,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -214,7 +214,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -229,7 +229,7 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {

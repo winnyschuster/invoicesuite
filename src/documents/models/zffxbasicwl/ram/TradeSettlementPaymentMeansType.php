@@ -11,7 +11,7 @@ class TradeSettlementPaymentMeansType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\PaymentMeansCodeType|null
+     * @var PaymentMeansCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\PaymentMeansCodeType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TradeSettlementPaymentMeansType
     private $typeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DebtorFinancialAccountType|null
+     * @var DebtorFinancialAccountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DebtorFinancialAccountType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class TradeSettlementPaymentMeansType
     private $payerPartyDebtorFinancialAccount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\CreditorFinancialAccountType|null
+     * @var CreditorFinancialAccountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\CreditorFinancialAccountType")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class TradeSettlementPaymentMeansType
     private $payeePartyCreditorFinancialAccount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\PaymentMeansCodeType|null
+     * @return PaymentMeansCodeType|null
      */
     public function getTypeCode(): ?PaymentMeansCodeType
     {
@@ -52,7 +52,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\PaymentMeansCodeType
+     * @return PaymentMeansCodeType
      */
     public function getTypeCodeWithCreate(): PaymentMeansCodeType
     {
@@ -62,7 +62,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\PaymentMeansCodeType|null $typeCode
+     * @param PaymentMeansCodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?PaymentMeansCodeType $typeCode = null): self
@@ -83,7 +83,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DebtorFinancialAccountType|null
+     * @return DebtorFinancialAccountType|null
      */
     public function getPayerPartyDebtorFinancialAccount(): ?DebtorFinancialAccountType
     {
@@ -91,7 +91,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DebtorFinancialAccountType
+     * @return DebtorFinancialAccountType
      */
     public function getPayerPartyDebtorFinancialAccountWithCreate(): DebtorFinancialAccountType
     {
@@ -101,7 +101,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DebtorFinancialAccountType|null $payerPartyDebtorFinancialAccount
+     * @param DebtorFinancialAccountType|null $payerPartyDebtorFinancialAccount
      * @return self
      */
     public function setPayerPartyDebtorFinancialAccount(
@@ -123,7 +123,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\CreditorFinancialAccountType|null
+     * @return CreditorFinancialAccountType|null
      */
     public function getPayeePartyCreditorFinancialAccount(): ?CreditorFinancialAccountType
     {
@@ -131,7 +131,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\CreditorFinancialAccountType
+     * @return CreditorFinancialAccountType
      */
     public function getPayeePartyCreditorFinancialAccountWithCreate(): CreditorFinancialAccountType
     {
@@ -141,7 +141,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\CreditorFinancialAccountType|null $payeePartyCreditorFinancialAccount
+     * @param CreditorFinancialAccountType|null $payeePartyCreditorFinancialAccount
      * @return self
      */
     public function setPayeePartyCreditorFinancialAccount(

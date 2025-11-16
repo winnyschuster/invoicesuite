@@ -13,7 +13,7 @@ class ReferencedProductType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ReferencedProductType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>|null
+     * @var array<IDType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ReferencedProductType
     private $globalID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ReferencedProductType
     private $sellerAssignedID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ReferencedProductType
     private $buyerAssignedID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ReferencedProductType
     private $industryAssignedID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class ReferencedProductType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class ReferencedProductType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType|null
+     * @var QuantityType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class ReferencedProductType
     private $unitQuantity;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -110,7 +110,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -120,7 +120,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self
@@ -141,7 +141,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>|null
+     * @return array<IDType>|null
      */
     public function getGlobalID(): ?array
     {
@@ -149,7 +149,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>|null $globalID
+     * @param array<IDType>|null $globalID
      * @return self
      */
     public function setGlobalID(?array $globalID = null): self
@@ -180,7 +180,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType $globalID
+     * @param IDType $globalID
      * @return self
      */
     public function addToGlobalID(IDType $globalID): self
@@ -191,7 +191,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function addToGlobalIDWithCreate(): IDType
     {
@@ -201,7 +201,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType $globalID
+     * @param IDType $globalID
      * @return self
      */
     public function addOnceToGlobalID(IDType $globalID): self
@@ -216,7 +216,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function addOnceToGlobalIDWithCreate(): IDType
     {
@@ -232,7 +232,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getSellerAssignedID(): ?IDType
     {
@@ -240,7 +240,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getSellerAssignedIDWithCreate(): IDType
     {
@@ -250,7 +250,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $sellerAssignedID
+     * @param IDType|null $sellerAssignedID
      * @return self
      */
     public function setSellerAssignedID(?IDType $sellerAssignedID = null): self
@@ -271,7 +271,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getBuyerAssignedID(): ?IDType
     {
@@ -279,7 +279,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getBuyerAssignedIDWithCreate(): IDType
     {
@@ -289,7 +289,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $buyerAssignedID
+     * @param IDType|null $buyerAssignedID
      * @return self
      */
     public function setBuyerAssignedID(?IDType $buyerAssignedID = null): self
@@ -310,7 +310,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getIndustryAssignedID(): ?IDType
     {
@@ -318,7 +318,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getIndustryAssignedIDWithCreate(): IDType
     {
@@ -328,7 +328,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $industryAssignedID
+     * @param IDType|null $industryAssignedID
      * @return self
      */
     public function setIndustryAssignedID(?IDType $industryAssignedID = null): self
@@ -349,7 +349,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getName(): ?TextType
     {
@@ -357,7 +357,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getNameWithCreate(): TextType
     {
@@ -367,7 +367,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $name
+     * @param TextType|null $name
      * @return self
      */
     public function setName(?TextType $name = null): self
@@ -388,7 +388,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getDescription(): ?TextType
     {
@@ -396,7 +396,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getDescriptionWithCreate(): TextType
     {
@@ -406,7 +406,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $description
+     * @param TextType|null $description
      * @return self
      */
     public function setDescription(?TextType $description = null): self
@@ -427,7 +427,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType|null
+     * @return QuantityType|null
      */
     public function getUnitQuantity(): ?QuantityType
     {
@@ -435,7 +435,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType
+     * @return QuantityType
      */
     public function getUnitQuantityWithCreate(): QuantityType
     {
@@ -445,7 +445,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType|null $unitQuantity
+     * @param QuantityType|null $unitQuantity
      * @return self
      */
     public function setUnitQuantity(?QuantityType $unitQuantity = null): self

@@ -14,7 +14,7 @@ class TaxSchemeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TaxSchemeType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TaxSchemeType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode|null
+     * @var TaxTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TaxSchemeType
     private $taxTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode|null
+     * @var CurrencyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TaxSchemeType
     private $currencyCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress>|null
+     * @var array<JurisdictionRegionAddress>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class TaxSchemeType
     private $jurisdictionRegionAddress;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -78,7 +78,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -88,7 +88,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -109,7 +109,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -117,7 +117,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -127,7 +127,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -148,7 +148,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode|null
+     * @return TaxTypeCode|null
      */
     public function getTaxTypeCode(): ?TaxTypeCode
     {
@@ -156,7 +156,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode
+     * @return TaxTypeCode
      */
     public function getTaxTypeCodeWithCreate(): TaxTypeCode
     {
@@ -166,7 +166,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode|null $taxTypeCode
+     * @param TaxTypeCode|null $taxTypeCode
      * @return self
      */
     public function setTaxTypeCode(?TaxTypeCode $taxTypeCode = null): self
@@ -187,7 +187,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode|null
+     * @return CurrencyCode|null
      */
     public function getCurrencyCode(): ?CurrencyCode
     {
@@ -195,7 +195,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode
+     * @return CurrencyCode
      */
     public function getCurrencyCodeWithCreate(): CurrencyCode
     {
@@ -205,7 +205,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode|null $currencyCode
+     * @param CurrencyCode|null $currencyCode
      * @return self
      */
     public function setCurrencyCode(?CurrencyCode $currencyCode = null): self
@@ -226,7 +226,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress>|null
+     * @return array<JurisdictionRegionAddress>|null
      */
     public function getJurisdictionRegionAddress(): ?array
     {
@@ -234,7 +234,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress>|null $jurisdictionRegionAddress
+     * @param array<JurisdictionRegionAddress>|null $jurisdictionRegionAddress
      * @return self
      */
     public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): self
@@ -265,7 +265,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress|null
+     * @return JurisdictionRegionAddress|null
      */
     public function firstJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
@@ -280,7 +280,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress|null
+     * @return JurisdictionRegionAddress|null
      */
     public function lastJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
@@ -295,7 +295,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return self
      */
     public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): self
@@ -306,7 +306,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress
+     * @return JurisdictionRegionAddress
      */
     public function addToJurisdictionRegionAddressWithCreate(): JurisdictionRegionAddress
     {
@@ -316,7 +316,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return self
      */
     public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): self
@@ -331,7 +331,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress
+     * @return JurisdictionRegionAddress
      */
     public function addOnceToJurisdictionRegionAddressWithCreate(): JurisdictionRegionAddress
     {

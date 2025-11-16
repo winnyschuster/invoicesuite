@@ -12,7 +12,7 @@ class ActivityPropertyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ActivityPropertyType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @var Value|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ActivityPropertyType
     private $value;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -42,7 +42,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -52,7 +52,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -73,7 +73,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @return Value|null
      */
     public function getValue(): ?Value
     {
@@ -81,7 +81,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value
+     * @return Value
      */
     public function getValueWithCreate(): Value
     {
@@ -91,7 +91,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null $value
+     * @param Value|null $value
      * @return self
      */
     public function setValue(?Value $value = null): self

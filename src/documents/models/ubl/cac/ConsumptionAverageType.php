@@ -12,7 +12,7 @@ class ConsumptionAverageType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount|null
+     * @var AverageAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ConsumptionAverageType
     private $averageAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ConsumptionAverageType
     private $description;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount|null
+     * @return AverageAmount|null
      */
     public function getAverageAmount(): ?AverageAmount
     {
@@ -43,7 +43,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount
+     * @return AverageAmount
      */
     public function getAverageAmountWithCreate(): AverageAmount
     {
@@ -53,7 +53,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount|null $averageAmount
+     * @param AverageAmount|null $averageAmount
      * @return self
      */
     public function setAverageAmount(?AverageAmount $averageAmount = null): self
@@ -74,7 +74,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -82,7 +82,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -113,7 +113,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -128,7 +128,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -143,7 +143,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -154,7 +154,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -164,7 +164,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -179,7 +179,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

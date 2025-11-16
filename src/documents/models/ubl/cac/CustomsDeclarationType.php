@@ -11,7 +11,7 @@ class CustomsDeclarationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class CustomsDeclarationType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class CustomsDeclarationType
     private $issuerParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -41,7 +41,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -51,7 +51,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -72,7 +72,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -80,7 +80,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -90,7 +90,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self

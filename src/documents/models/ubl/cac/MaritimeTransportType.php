@@ -16,7 +16,7 @@ class MaritimeTransportType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID|null
+     * @var VesselID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class MaritimeTransportType
     private $vesselID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName|null
+     * @var VesselName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class MaritimeTransportType
     private $vesselName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID|null
+     * @var RadioCallSignID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class MaritimeTransportType
     private $radioCallSignID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements>|null
+     * @var array<ShipsRequirements>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class MaritimeTransportType
     private $shipsRequirements;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure|null
+     * @var GrossTonnageMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class MaritimeTransportType
     private $grossTonnageMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure|null
+     * @var NetTonnageMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class MaritimeTransportType
     private $netTonnageMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryCertificateDocumentReference|null
+     * @var RegistryCertificateDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistryCertificateDocumentReference")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class MaritimeTransportType
     private $registryCertificateDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryPortLocation|null
+     * @var RegistryPortLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistryPortLocation")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class MaritimeTransportType
     private $registryPortLocation;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID|null
+     * @return VesselID|null
      */
     public function getVesselID(): ?VesselID
     {
@@ -113,7 +113,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID
+     * @return VesselID
      */
     public function getVesselIDWithCreate(): VesselID
     {
@@ -123,7 +123,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID|null $vesselID
+     * @param VesselID|null $vesselID
      * @return self
      */
     public function setVesselID(?VesselID $vesselID = null): self
@@ -144,7 +144,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName|null
+     * @return VesselName|null
      */
     public function getVesselName(): ?VesselName
     {
@@ -152,7 +152,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName
+     * @return VesselName
      */
     public function getVesselNameWithCreate(): VesselName
     {
@@ -162,7 +162,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName|null $vesselName
+     * @param VesselName|null $vesselName
      * @return self
      */
     public function setVesselName(?VesselName $vesselName = null): self
@@ -183,7 +183,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID|null
+     * @return RadioCallSignID|null
      */
     public function getRadioCallSignID(): ?RadioCallSignID
     {
@@ -191,7 +191,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID
+     * @return RadioCallSignID
      */
     public function getRadioCallSignIDWithCreate(): RadioCallSignID
     {
@@ -201,7 +201,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID|null $radioCallSignID
+     * @param RadioCallSignID|null $radioCallSignID
      * @return self
      */
     public function setRadioCallSignID(?RadioCallSignID $radioCallSignID = null): self
@@ -222,7 +222,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements>|null
+     * @return array<ShipsRequirements>|null
      */
     public function getShipsRequirements(): ?array
     {
@@ -230,7 +230,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements>|null $shipsRequirements
+     * @param array<ShipsRequirements>|null $shipsRequirements
      * @return self
      */
     public function setShipsRequirements(?array $shipsRequirements = null): self
@@ -261,7 +261,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements|null
+     * @return ShipsRequirements|null
      */
     public function firstShipsRequirements(): ?ShipsRequirements
     {
@@ -276,7 +276,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements|null
+     * @return ShipsRequirements|null
      */
     public function lastShipsRequirements(): ?ShipsRequirements
     {
@@ -291,7 +291,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements $shipsRequirements
+     * @param ShipsRequirements $shipsRequirements
      * @return self
      */
     public function addToShipsRequirements(ShipsRequirements $shipsRequirements): self
@@ -302,7 +302,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements
+     * @return ShipsRequirements
      */
     public function addToShipsRequirementsWithCreate(): ShipsRequirements
     {
@@ -312,7 +312,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements $shipsRequirements
+     * @param ShipsRequirements $shipsRequirements
      * @return self
      */
     public function addOnceToShipsRequirements(ShipsRequirements $shipsRequirements): self
@@ -327,7 +327,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements
+     * @return ShipsRequirements
      */
     public function addOnceToShipsRequirementsWithCreate(): ShipsRequirements
     {
@@ -343,7 +343,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure|null
+     * @return GrossTonnageMeasure|null
      */
     public function getGrossTonnageMeasure(): ?GrossTonnageMeasure
     {
@@ -351,7 +351,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure
+     * @return GrossTonnageMeasure
      */
     public function getGrossTonnageMeasureWithCreate(): GrossTonnageMeasure
     {
@@ -361,7 +361,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure|null $grossTonnageMeasure
+     * @param GrossTonnageMeasure|null $grossTonnageMeasure
      * @return self
      */
     public function setGrossTonnageMeasure(?GrossTonnageMeasure $grossTonnageMeasure = null): self
@@ -382,7 +382,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure|null
+     * @return NetTonnageMeasure|null
      */
     public function getNetTonnageMeasure(): ?NetTonnageMeasure
     {
@@ -390,7 +390,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure
+     * @return NetTonnageMeasure
      */
     public function getNetTonnageMeasureWithCreate(): NetTonnageMeasure
     {
@@ -400,7 +400,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure|null $netTonnageMeasure
+     * @param NetTonnageMeasure|null $netTonnageMeasure
      * @return self
      */
     public function setNetTonnageMeasure(?NetTonnageMeasure $netTonnageMeasure = null): self
@@ -421,7 +421,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryCertificateDocumentReference|null
+     * @return RegistryCertificateDocumentReference|null
      */
     public function getRegistryCertificateDocumentReference(): ?RegistryCertificateDocumentReference
     {
@@ -429,7 +429,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryCertificateDocumentReference
+     * @return RegistryCertificateDocumentReference
      */
     public function getRegistryCertificateDocumentReferenceWithCreate(): RegistryCertificateDocumentReference
     {
@@ -439,7 +439,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryCertificateDocumentReference|null $registryCertificateDocumentReference
+     * @param RegistryCertificateDocumentReference|null $registryCertificateDocumentReference
      * @return self
      */
     public function setRegistryCertificateDocumentReference(
@@ -461,7 +461,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryPortLocation|null
+     * @return RegistryPortLocation|null
      */
     public function getRegistryPortLocation(): ?RegistryPortLocation
     {
@@ -469,7 +469,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryPortLocation
+     * @return RegistryPortLocation
      */
     public function getRegistryPortLocationWithCreate(): RegistryPortLocation
     {
@@ -479,7 +479,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RegistryPortLocation|null $registryPortLocation
+     * @param RegistryPortLocation|null $registryPortLocation
      * @return self
      */
     public function setRegistryPortLocation(?RegistryPortLocation $registryPortLocation = null): self

@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode;
@@ -15,7 +16,7 @@ class ForecastRevisionLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +27,7 @@ class ForecastRevisionLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class ForecastRevisionLineType
     private $note;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +51,7 @@ class ForecastRevisionLineType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID|null
+     * @var RevisedForecastLineID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID")
      * @JMS\Expose
@@ -61,7 +62,7 @@ class ForecastRevisionLineType
     private $revisedForecastLineID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -72,7 +73,7 @@ class ForecastRevisionLineType
     private $sourceForecastIssueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -83,7 +84,7 @@ class ForecastRevisionLineType
     private $sourceForecastIssueTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode|null
+     * @var AdjustmentReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode")
      * @JMS\Expose
@@ -94,7 +95,7 @@ class ForecastRevisionLineType
     private $adjustmentReasonCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod|null
+     * @var ForecastPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod")
      * @JMS\Expose
@@ -105,7 +106,7 @@ class ForecastRevisionLineType
     private $forecastPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @var SalesItem|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem")
      * @JMS\Expose
@@ -116,7 +117,7 @@ class ForecastRevisionLineType
     private $salesItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -124,7 +125,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -134,7 +135,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -155,7 +156,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -163,7 +164,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -194,7 +195,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -209,7 +210,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -224,7 +225,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -235,7 +236,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -245,7 +246,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -260,7 +261,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -276,7 +277,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -284,7 +285,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -315,7 +316,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -330,7 +331,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -345,7 +346,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -356,7 +357,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -366,7 +367,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -381,7 +382,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -397,7 +398,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID|null
+     * @return RevisedForecastLineID|null
      */
     public function getRevisedForecastLineID(): ?RevisedForecastLineID
     {
@@ -405,7 +406,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID
+     * @return RevisedForecastLineID
      */
     public function getRevisedForecastLineIDWithCreate(): RevisedForecastLineID
     {
@@ -415,7 +416,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID|null $revisedForecastLineID
+     * @param RevisedForecastLineID|null $revisedForecastLineID
      * @return self
      */
     public function setRevisedForecastLineID(?RevisedForecastLineID $revisedForecastLineID = null): self
@@ -436,18 +437,18 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getSourceForecastIssueDate(): ?\DateTimeInterface
+    public function getSourceForecastIssueDate(): ?DateTimeInterface
     {
         return $this->sourceForecastIssueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $sourceForecastIssueDate
+     * @param DateTimeInterface|null $sourceForecastIssueDate
      * @return self
      */
-    public function setSourceForecastIssueDate(?\DateTimeInterface $sourceForecastIssueDate = null): self
+    public function setSourceForecastIssueDate(?DateTimeInterface $sourceForecastIssueDate = null): self
     {
         $this->sourceForecastIssueDate = $sourceForecastIssueDate;
 
@@ -465,18 +466,18 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getSourceForecastIssueTime(): ?\DateTimeInterface
+    public function getSourceForecastIssueTime(): ?DateTimeInterface
     {
         return $this->sourceForecastIssueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $sourceForecastIssueTime
+     * @param DateTimeInterface|null $sourceForecastIssueTime
      * @return self
      */
-    public function setSourceForecastIssueTime(?\DateTimeInterface $sourceForecastIssueTime = null): self
+    public function setSourceForecastIssueTime(?DateTimeInterface $sourceForecastIssueTime = null): self
     {
         $this->sourceForecastIssueTime = $sourceForecastIssueTime;
 
@@ -494,7 +495,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode|null
+     * @return AdjustmentReasonCode|null
      */
     public function getAdjustmentReasonCode(): ?AdjustmentReasonCode
     {
@@ -502,7 +503,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode
+     * @return AdjustmentReasonCode
      */
     public function getAdjustmentReasonCodeWithCreate(): AdjustmentReasonCode
     {
@@ -512,7 +513,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode|null $adjustmentReasonCode
+     * @param AdjustmentReasonCode|null $adjustmentReasonCode
      * @return self
      */
     public function setAdjustmentReasonCode(?AdjustmentReasonCode $adjustmentReasonCode = null): self
@@ -533,7 +534,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod|null
+     * @return ForecastPeriod|null
      */
     public function getForecastPeriod(): ?ForecastPeriod
     {
@@ -541,7 +542,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod
+     * @return ForecastPeriod
      */
     public function getForecastPeriodWithCreate(): ForecastPeriod
     {
@@ -551,7 +552,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod|null $forecastPeriod
+     * @param ForecastPeriod|null $forecastPeriod
      * @return self
      */
     public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): self
@@ -572,7 +573,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @return SalesItem|null
      */
     public function getSalesItem(): ?SalesItem
     {
@@ -580,7 +581,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem
+     * @return SalesItem
      */
     public function getSalesItemWithCreate(): SalesItem
     {
@@ -590,7 +591,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null $salesItem
+     * @param SalesItem|null $salesItem
      * @return self
      */
     public function setSalesItem(?SalesItem $salesItem = null): self

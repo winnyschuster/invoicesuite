@@ -15,7 +15,7 @@ class MeterType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null
+     * @var MeterNumber|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class MeterType
     private $meterNumber;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName|null
+     * @var MeterName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class MeterType
     private $meterName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant|null
+     * @var MeterConstant|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class MeterType
     private $meterConstant;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode|null
+     * @var MeterConstantCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class MeterType
     private $meterConstantCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity|null
+     * @var TotalDeliveredQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class MeterType
     private $totalDeliveredQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading>|null
+     * @var array<MeterReading>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class MeterType
     private $meterReading;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty>|null
+     * @var array<MeterProperty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class MeterType
     private $meterProperty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null
+     * @return MeterNumber|null
      */
     public function getMeterNumber(): ?MeterNumber
     {
@@ -102,7 +102,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber
+     * @return MeterNumber
      */
     public function getMeterNumberWithCreate(): MeterNumber
     {
@@ -112,7 +112,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null $meterNumber
+     * @param MeterNumber|null $meterNumber
      * @return self
      */
     public function setMeterNumber(?MeterNumber $meterNumber = null): self
@@ -133,7 +133,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName|null
+     * @return MeterName|null
      */
     public function getMeterName(): ?MeterName
     {
@@ -141,7 +141,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName
+     * @return MeterName
      */
     public function getMeterNameWithCreate(): MeterName
     {
@@ -151,7 +151,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName|null $meterName
+     * @param MeterName|null $meterName
      * @return self
      */
     public function setMeterName(?MeterName $meterName = null): self
@@ -172,7 +172,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant|null
+     * @return MeterConstant|null
      */
     public function getMeterConstant(): ?MeterConstant
     {
@@ -180,7 +180,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant
+     * @return MeterConstant
      */
     public function getMeterConstantWithCreate(): MeterConstant
     {
@@ -190,7 +190,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant|null $meterConstant
+     * @param MeterConstant|null $meterConstant
      * @return self
      */
     public function setMeterConstant(?MeterConstant $meterConstant = null): self
@@ -211,7 +211,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode|null
+     * @return MeterConstantCode|null
      */
     public function getMeterConstantCode(): ?MeterConstantCode
     {
@@ -219,7 +219,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode
+     * @return MeterConstantCode
      */
     public function getMeterConstantCodeWithCreate(): MeterConstantCode
     {
@@ -229,7 +229,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode|null $meterConstantCode
+     * @param MeterConstantCode|null $meterConstantCode
      * @return self
      */
     public function setMeterConstantCode(?MeterConstantCode $meterConstantCode = null): self
@@ -250,7 +250,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity|null
+     * @return TotalDeliveredQuantity|null
      */
     public function getTotalDeliveredQuantity(): ?TotalDeliveredQuantity
     {
@@ -258,7 +258,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity
+     * @return TotalDeliveredQuantity
      */
     public function getTotalDeliveredQuantityWithCreate(): TotalDeliveredQuantity
     {
@@ -268,7 +268,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity|null $totalDeliveredQuantity
+     * @param TotalDeliveredQuantity|null $totalDeliveredQuantity
      * @return self
      */
     public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): self
@@ -289,7 +289,7 @@ class MeterType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading>|null
+     * @return array<MeterReading>|null
      */
     public function getMeterReading(): ?array
     {
@@ -297,7 +297,7 @@ class MeterType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading>|null $meterReading
+     * @param array<MeterReading>|null $meterReading
      * @return self
      */
     public function setMeterReading(?array $meterReading = null): self
@@ -328,7 +328,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading|null
+     * @return MeterReading|null
      */
     public function firstMeterReading(): ?MeterReading
     {
@@ -343,7 +343,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading|null
+     * @return MeterReading|null
      */
     public function lastMeterReading(): ?MeterReading
     {
@@ -358,7 +358,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading $meterReading
+     * @param MeterReading $meterReading
      * @return self
      */
     public function addToMeterReading(MeterReading $meterReading): self
@@ -369,7 +369,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading
+     * @return MeterReading
      */
     public function addToMeterReadingWithCreate(): MeterReading
     {
@@ -379,7 +379,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading $meterReading
+     * @param MeterReading $meterReading
      * @return self
      */
     public function addOnceToMeterReading(MeterReading $meterReading): self
@@ -394,7 +394,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading
+     * @return MeterReading
      */
     public function addOnceToMeterReadingWithCreate(): MeterReading
     {
@@ -410,7 +410,7 @@ class MeterType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty>|null
+     * @return array<MeterProperty>|null
      */
     public function getMeterProperty(): ?array
     {
@@ -418,7 +418,7 @@ class MeterType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty>|null $meterProperty
+     * @param array<MeterProperty>|null $meterProperty
      * @return self
      */
     public function setMeterProperty(?array $meterProperty = null): self
@@ -449,7 +449,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty|null
+     * @return MeterProperty|null
      */
     public function firstMeterProperty(): ?MeterProperty
     {
@@ -464,7 +464,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty|null
+     * @return MeterProperty|null
      */
     public function lastMeterProperty(): ?MeterProperty
     {
@@ -479,7 +479,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty $meterProperty
+     * @param MeterProperty $meterProperty
      * @return self
      */
     public function addToMeterProperty(MeterProperty $meterProperty): self
@@ -490,7 +490,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty
+     * @return MeterProperty
      */
     public function addToMeterPropertyWithCreate(): MeterProperty
     {
@@ -500,7 +500,7 @@ class MeterType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty $meterProperty
+     * @param MeterProperty $meterProperty
      * @return self
      */
     public function addOnceToMeterProperty(MeterProperty $meterProperty): self
@@ -515,7 +515,7 @@ class MeterType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty
+     * @return MeterProperty
      */
     public function addOnceToMeterPropertyWithCreate(): MeterProperty
     {

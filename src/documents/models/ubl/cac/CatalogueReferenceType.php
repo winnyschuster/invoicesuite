@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -16,7 +17,7 @@ class CatalogueReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +28,7 @@ class CatalogueReferenceType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class CatalogueReferenceType
     private $uUID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class CatalogueReferenceType
     private $issueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class CatalogueReferenceType
     private $issueTime;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class CatalogueReferenceType
     private $revisionDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -82,7 +83,7 @@ class CatalogueReferenceType
     private $revisionTime;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -94,7 +95,7 @@ class CatalogueReferenceType
     private $note;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -106,7 +107,7 @@ class CatalogueReferenceType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @var VersionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -117,7 +118,7 @@ class CatalogueReferenceType
     private $versionID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID|null
+     * @var PreviousVersionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID")
      * @JMS\Expose
@@ -128,7 +129,7 @@ class CatalogueReferenceType
     private $previousVersionID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -136,7 +137,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -146,7 +147,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -167,7 +168,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -175,7 +176,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -185,7 +186,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -206,18 +207,18 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -235,18 +236,18 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueTime(): ?\DateTimeInterface
+    public function getIssueTime(): ?DateTimeInterface
     {
         return $this->issueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueTime
+     * @param DateTimeInterface|null $issueTime
      * @return self
      */
-    public function setIssueTime(?\DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): self
     {
         $this->issueTime = $issueTime;
 
@@ -264,18 +265,18 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getRevisionDate(): ?\DateTimeInterface
+    public function getRevisionDate(): ?DateTimeInterface
     {
         return $this->revisionDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $revisionDate
+     * @param DateTimeInterface|null $revisionDate
      * @return self
      */
-    public function setRevisionDate(?\DateTimeInterface $revisionDate = null): self
+    public function setRevisionDate(?DateTimeInterface $revisionDate = null): self
     {
         $this->revisionDate = $revisionDate;
 
@@ -293,18 +294,18 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getRevisionTime(): ?\DateTimeInterface
+    public function getRevisionTime(): ?DateTimeInterface
     {
         return $this->revisionTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $revisionTime
+     * @param DateTimeInterface|null $revisionTime
      * @return self
      */
-    public function setRevisionTime(?\DateTimeInterface $revisionTime = null): self
+    public function setRevisionTime(?DateTimeInterface $revisionTime = null): self
     {
         $this->revisionTime = $revisionTime;
 
@@ -322,7 +323,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -330,7 +331,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -361,7 +362,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -376,7 +377,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -391,7 +392,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -402,7 +403,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -412,7 +413,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -427,7 +428,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -443,7 +444,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -451,7 +452,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -482,7 +483,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -497,7 +498,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -512,7 +513,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -523,7 +524,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -533,7 +534,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -548,7 +549,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -564,7 +565,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @return VersionID|null
      */
     public function getVersionID(): ?VersionID
     {
@@ -572,7 +573,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID
+     * @return VersionID
      */
     public function getVersionIDWithCreate(): VersionID
     {
@@ -582,7 +583,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null $versionID
+     * @param VersionID|null $versionID
      * @return self
      */
     public function setVersionID(?VersionID $versionID = null): self
@@ -603,7 +604,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID|null
+     * @return PreviousVersionID|null
      */
     public function getPreviousVersionID(): ?PreviousVersionID
     {
@@ -611,7 +612,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID
+     * @return PreviousVersionID
      */
     public function getPreviousVersionIDWithCreate(): PreviousVersionID
     {
@@ -621,7 +622,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID|null $previousVersionID
+     * @param PreviousVersionID|null $previousVersionID
      * @return self
      */
     public function setPreviousVersionID(?PreviousVersionID $previousVersionID = null): self

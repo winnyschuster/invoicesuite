@@ -14,7 +14,7 @@ class PhysicalAttributeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID|null
+     * @var AttributeID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class PhysicalAttributeType
     private $attributeID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode|null
+     * @var PositionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class PhysicalAttributeType
     private $positionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode|null
+     * @var DescriptionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class PhysicalAttributeType
     private $descriptionCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class PhysicalAttributeType
     private $description;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID|null
+     * @return AttributeID|null
      */
     public function getAttributeID(): ?AttributeID
     {
@@ -67,7 +67,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID
+     * @return AttributeID
      */
     public function getAttributeIDWithCreate(): AttributeID
     {
@@ -77,7 +77,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID|null $attributeID
+     * @param AttributeID|null $attributeID
      * @return self
      */
     public function setAttributeID(?AttributeID $attributeID = null): self
@@ -98,7 +98,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode|null
+     * @return PositionCode|null
      */
     public function getPositionCode(): ?PositionCode
     {
@@ -106,7 +106,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode
+     * @return PositionCode
      */
     public function getPositionCodeWithCreate(): PositionCode
     {
@@ -116,7 +116,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode|null $positionCode
+     * @param PositionCode|null $positionCode
      * @return self
      */
     public function setPositionCode(?PositionCode $positionCode = null): self
@@ -137,7 +137,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode|null
+     * @return DescriptionCode|null
      */
     public function getDescriptionCode(): ?DescriptionCode
     {
@@ -145,7 +145,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode
+     * @return DescriptionCode
      */
     public function getDescriptionCodeWithCreate(): DescriptionCode
     {
@@ -155,7 +155,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode|null $descriptionCode
+     * @param DescriptionCode|null $descriptionCode
      * @return self
      */
     public function setDescriptionCode(?DescriptionCode $descriptionCode = null): self
@@ -176,7 +176,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -184,7 +184,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -215,7 +215,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -230,7 +230,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -245,7 +245,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -256,7 +256,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -266,7 +266,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -281,7 +281,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

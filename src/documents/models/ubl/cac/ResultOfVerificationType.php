@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess;
@@ -15,7 +16,7 @@ class ResultOfVerificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID|null
+     * @var ValidatorID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID")
      * @JMS\Expose
@@ -26,7 +27,7 @@ class ResultOfVerificationType
     private $validatorID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode|null
+     * @var ValidationResultCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode")
      * @JMS\Expose
@@ -37,7 +38,7 @@ class ResultOfVerificationType
     private $validationResultCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -48,7 +49,7 @@ class ResultOfVerificationType
     private $validationDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -59,7 +60,7 @@ class ResultOfVerificationType
     private $validationTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess|null
+     * @var ValidateProcess|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess")
      * @JMS\Expose
@@ -70,7 +71,7 @@ class ResultOfVerificationType
     private $validateProcess;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool|null
+     * @var ValidateTool|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool")
      * @JMS\Expose
@@ -81,7 +82,7 @@ class ResultOfVerificationType
     private $validateTool;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion|null
+     * @var ValidateToolVersion|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion")
      * @JMS\Expose
@@ -92,7 +93,7 @@ class ResultOfVerificationType
     private $validateToolVersion;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty|null
+     * @var SignatoryParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty")
      * @JMS\Expose
@@ -103,7 +104,7 @@ class ResultOfVerificationType
     private $signatoryParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID|null
+     * @return ValidatorID|null
      */
     public function getValidatorID(): ?ValidatorID
     {
@@ -111,7 +112,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID
+     * @return ValidatorID
      */
     public function getValidatorIDWithCreate(): ValidatorID
     {
@@ -121,7 +122,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID|null $validatorID
+     * @param ValidatorID|null $validatorID
      * @return self
      */
     public function setValidatorID(?ValidatorID $validatorID = null): self
@@ -142,7 +143,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode|null
+     * @return ValidationResultCode|null
      */
     public function getValidationResultCode(): ?ValidationResultCode
     {
@@ -150,7 +151,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode
+     * @return ValidationResultCode
      */
     public function getValidationResultCodeWithCreate(): ValidationResultCode
     {
@@ -160,7 +161,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode|null $validationResultCode
+     * @param ValidationResultCode|null $validationResultCode
      * @return self
      */
     public function setValidationResultCode(?ValidationResultCode $validationResultCode = null): self
@@ -181,18 +182,18 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getValidationDate(): ?\DateTimeInterface
+    public function getValidationDate(): ?DateTimeInterface
     {
         return $this->validationDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $validationDate
+     * @param DateTimeInterface|null $validationDate
      * @return self
      */
-    public function setValidationDate(?\DateTimeInterface $validationDate = null): self
+    public function setValidationDate(?DateTimeInterface $validationDate = null): self
     {
         $this->validationDate = $validationDate;
 
@@ -210,18 +211,18 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getValidationTime(): ?\DateTimeInterface
+    public function getValidationTime(): ?DateTimeInterface
     {
         return $this->validationTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $validationTime
+     * @param DateTimeInterface|null $validationTime
      * @return self
      */
-    public function setValidationTime(?\DateTimeInterface $validationTime = null): self
+    public function setValidationTime(?DateTimeInterface $validationTime = null): self
     {
         $this->validationTime = $validationTime;
 
@@ -239,7 +240,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess|null
+     * @return ValidateProcess|null
      */
     public function getValidateProcess(): ?ValidateProcess
     {
@@ -247,7 +248,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess
+     * @return ValidateProcess
      */
     public function getValidateProcessWithCreate(): ValidateProcess
     {
@@ -257,7 +258,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess|null $validateProcess
+     * @param ValidateProcess|null $validateProcess
      * @return self
      */
     public function setValidateProcess(?ValidateProcess $validateProcess = null): self
@@ -278,7 +279,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool|null
+     * @return ValidateTool|null
      */
     public function getValidateTool(): ?ValidateTool
     {
@@ -286,7 +287,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool
+     * @return ValidateTool
      */
     public function getValidateToolWithCreate(): ValidateTool
     {
@@ -296,7 +297,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool|null $validateTool
+     * @param ValidateTool|null $validateTool
      * @return self
      */
     public function setValidateTool(?ValidateTool $validateTool = null): self
@@ -317,7 +318,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion|null
+     * @return ValidateToolVersion|null
      */
     public function getValidateToolVersion(): ?ValidateToolVersion
     {
@@ -325,7 +326,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion
+     * @return ValidateToolVersion
      */
     public function getValidateToolVersionWithCreate(): ValidateToolVersion
     {
@@ -335,7 +336,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion|null $validateToolVersion
+     * @param ValidateToolVersion|null $validateToolVersion
      * @return self
      */
     public function setValidateToolVersion(?ValidateToolVersion $validateToolVersion = null): self
@@ -356,7 +357,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty|null
+     * @return SignatoryParty|null
      */
     public function getSignatoryParty(): ?SignatoryParty
     {
@@ -364,7 +365,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty
+     * @return SignatoryParty
      */
     public function getSignatoryPartyWithCreate(): SignatoryParty
     {
@@ -374,7 +375,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty|null $signatoryParty
+     * @param SignatoryParty|null $signatoryParty
      * @return self
      */
     public function setSignatoryParty(?SignatoryParty $signatoryParty = null): self

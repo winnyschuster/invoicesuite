@@ -11,7 +11,7 @@ class CreditAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID|null
+     * @var AccountID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class CreditAccountType
     private $accountID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID|null
+     * @return AccountID|null
      */
     public function getAccountID(): ?AccountID
     {
@@ -30,7 +30,7 @@ class CreditAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID
+     * @return AccountID
      */
     public function getAccountIDWithCreate(): AccountID
     {
@@ -40,7 +40,7 @@ class CreditAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID|null $accountID
+     * @param AccountID|null $accountID
      * @return self
      */
     public function setAccountID(?AccountID $accountID = null): self

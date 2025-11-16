@@ -10,7 +10,7 @@ class SupplyChainTradeLineItemType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentLineDocumentType|null
+     * @var DocumentLineDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentLineDocumentType")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class SupplyChainTradeLineItemType
     private $associatedDocumentLineDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductType|null
+     * @var TradeProductType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductType")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class SupplyChainTradeLineItemType
     private $specifiedTradeProduct;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeAgreementType|null
+     * @var LineTradeAgreementType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeAgreementType")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class SupplyChainTradeLineItemType
     private $specifiedLineTradeAgreement;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeDeliveryType|null
+     * @var LineTradeDeliveryType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeDeliveryType")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class SupplyChainTradeLineItemType
     private $specifiedLineTradeDelivery;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeSettlementType|null
+     * @var LineTradeSettlementType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeSettlementType")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class SupplyChainTradeLineItemType
     private $specifiedLineTradeSettlement;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentLineDocumentType|null
+     * @return DocumentLineDocumentType|null
      */
     public function getAssociatedDocumentLineDocument(): ?DocumentLineDocumentType
     {
@@ -73,7 +73,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentLineDocumentType
+     * @return DocumentLineDocumentType
      */
     public function getAssociatedDocumentLineDocumentWithCreate(): DocumentLineDocumentType
     {
@@ -83,7 +83,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentLineDocumentType|null $associatedDocumentLineDocument
+     * @param DocumentLineDocumentType|null $associatedDocumentLineDocument
      * @return self
      */
     public function setAssociatedDocumentLineDocument(
@@ -105,7 +105,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductType|null
+     * @return TradeProductType|null
      */
     public function getSpecifiedTradeProduct(): ?TradeProductType
     {
@@ -113,7 +113,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductType
+     * @return TradeProductType
      */
     public function getSpecifiedTradeProductWithCreate(): TradeProductType
     {
@@ -123,7 +123,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductType|null $specifiedTradeProduct
+     * @param TradeProductType|null $specifiedTradeProduct
      * @return self
      */
     public function setSpecifiedTradeProduct(?TradeProductType $specifiedTradeProduct = null): self
@@ -144,7 +144,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeAgreementType|null
+     * @return LineTradeAgreementType|null
      */
     public function getSpecifiedLineTradeAgreement(): ?LineTradeAgreementType
     {
@@ -152,7 +152,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeAgreementType
+     * @return LineTradeAgreementType
      */
     public function getSpecifiedLineTradeAgreementWithCreate(): LineTradeAgreementType
     {
@@ -162,7 +162,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeAgreementType|null $specifiedLineTradeAgreement
+     * @param LineTradeAgreementType|null $specifiedLineTradeAgreement
      * @return self
      */
     public function setSpecifiedLineTradeAgreement(?LineTradeAgreementType $specifiedLineTradeAgreement = null): self
@@ -183,7 +183,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeDeliveryType|null
+     * @return LineTradeDeliveryType|null
      */
     public function getSpecifiedLineTradeDelivery(): ?LineTradeDeliveryType
     {
@@ -191,7 +191,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeDeliveryType
+     * @return LineTradeDeliveryType
      */
     public function getSpecifiedLineTradeDeliveryWithCreate(): LineTradeDeliveryType
     {
@@ -201,7 +201,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeDeliveryType|null $specifiedLineTradeDelivery
+     * @param LineTradeDeliveryType|null $specifiedLineTradeDelivery
      * @return self
      */
     public function setSpecifiedLineTradeDelivery(?LineTradeDeliveryType $specifiedLineTradeDelivery = null): self
@@ -222,7 +222,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeSettlementType|null
+     * @return LineTradeSettlementType|null
      */
     public function getSpecifiedLineTradeSettlement(): ?LineTradeSettlementType
     {
@@ -230,7 +230,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeSettlementType
+     * @return LineTradeSettlementType
      */
     public function getSpecifiedLineTradeSettlementWithCreate(): LineTradeSettlementType
     {
@@ -240,7 +240,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeSettlementType|null $specifiedLineTradeSettlement
+     * @param LineTradeSettlementType|null $specifiedLineTradeSettlement
      * @return self
      */
     public function setSpecifiedLineTradeSettlement(

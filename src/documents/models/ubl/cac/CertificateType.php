@@ -14,7 +14,7 @@ class CertificateType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class CertificateType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode|null
+     * @var CertificateTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class CertificateType
     private $certificateType;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null
+     * @var array<Remarks>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class CertificateType
     private $remarks;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class CertificateType
     private $issuerParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class CertificateType
     private $documentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null
+     * @var array<Signature>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class CertificateType
     private $signature;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -102,7 +102,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -112,7 +112,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -133,7 +133,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode|null
+     * @return CertificateTypeCode|null
      */
     public function getCertificateTypeCode(): ?CertificateTypeCode
     {
@@ -141,7 +141,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode
+     * @return CertificateTypeCode
      */
     public function getCertificateTypeCodeWithCreate(): CertificateTypeCode
     {
@@ -151,7 +151,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode|null $certificateTypeCode
+     * @param CertificateTypeCode|null $certificateTypeCode
      * @return self
      */
     public function setCertificateTypeCode(?CertificateTypeCode $certificateTypeCode = null): self
@@ -211,7 +211,7 @@ class CertificateType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null
+     * @return array<Remarks>|null
      */
     public function getRemarks(): ?array
     {
@@ -219,7 +219,7 @@ class CertificateType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null $remarks
+     * @param array<Remarks>|null $remarks
      * @return self
      */
     public function setRemarks(?array $remarks = null): self
@@ -250,7 +250,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks|null
+     * @return Remarks|null
      */
     public function firstRemarks(): ?Remarks
     {
@@ -265,7 +265,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks|null
+     * @return Remarks|null
      */
     public function lastRemarks(): ?Remarks
     {
@@ -280,7 +280,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks $remarks
+     * @param Remarks $remarks
      * @return self
      */
     public function addToRemarks(Remarks $remarks): self
@@ -291,7 +291,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks
+     * @return Remarks
      */
     public function addToRemarksWithCreate(): Remarks
     {
@@ -301,7 +301,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks $remarks
+     * @param Remarks $remarks
      * @return self
      */
     public function addOnceToRemarks(Remarks $remarks): self
@@ -316,7 +316,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks
+     * @return Remarks
      */
     public function addOnceToRemarksWithCreate(): Remarks
     {
@@ -332,7 +332,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -340,7 +340,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -350,7 +350,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self
@@ -371,7 +371,7 @@ class CertificateType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -379,7 +379,7 @@ class CertificateType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -410,7 +410,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -425,7 +425,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -440,7 +440,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -451,7 +451,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -461,7 +461,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -476,7 +476,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -492,7 +492,7 @@ class CertificateType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null
+     * @return array<Signature>|null
      */
     public function getSignature(): ?array
     {
@@ -500,7 +500,7 @@ class CertificateType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null $signature
+     * @param array<Signature>|null $signature
      * @return self
      */
     public function setSignature(?array $signature = null): self
@@ -531,7 +531,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature|null
+     * @return Signature|null
      */
     public function firstSignature(): ?Signature
     {
@@ -546,7 +546,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature|null
+     * @return Signature|null
      */
     public function lastSignature(): ?Signature
     {
@@ -561,7 +561,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Signature $signature
+     * @param Signature $signature
      * @return self
      */
     public function addToSignature(Signature $signature): self
@@ -572,7 +572,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature
+     * @return Signature
      */
     public function addToSignatureWithCreate(): Signature
     {
@@ -582,7 +582,7 @@ class CertificateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Signature $signature
+     * @param Signature $signature
      * @return self
      */
     public function addOnceToSignature(Signature $signature): self
@@ -597,7 +597,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature
+     * @return Signature
      */
     public function addOnceToSignatureWithCreate(): Signature
     {

@@ -10,7 +10,7 @@ class LineTradeSettlementType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>|null
+     * @var array<TradeTaxType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class LineTradeSettlementType
     private $applicableTradeTax;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\SpecifiedPeriodType|null
+     * @var SpecifiedPeriodType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\SpecifiedPeriodType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class LineTradeSettlementType
     private $billingSpecifiedPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType>|null
+     * @var array<TradeAllowanceChargeType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType>")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class LineTradeSettlementType
     private $specifiedTradeAllowanceCharge;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeSettlementLineMonetarySummationType|null
+     * @var TradeSettlementLineMonetarySummationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeSettlementLineMonetarySummationType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class LineTradeSettlementType
     private $specifiedTradeSettlementLineMonetarySummation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class LineTradeSettlementType
     private $invoiceReferencedDocument;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null
+     * @var array<ReferencedDocumentType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class LineTradeSettlementType
     private $additionalReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAccountingAccountType|null
+     * @var TradeAccountingAccountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAccountingAccountType")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class LineTradeSettlementType
     private $receivableSpecifiedTradeAccountingAccount;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>|null
+     * @return array<TradeTaxType>|null
      */
     public function getApplicableTradeTax(): ?array
     {
@@ -98,7 +98,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>|null $applicableTradeTax
+     * @param array<TradeTaxType>|null $applicableTradeTax
      * @return self
      */
     public function setApplicableTradeTax(?array $applicableTradeTax = null): self
@@ -129,7 +129,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType $applicableTradeTax
+     * @param TradeTaxType $applicableTradeTax
      * @return self
      */
     public function addToApplicableTradeTax(TradeTaxType $applicableTradeTax): self
@@ -140,7 +140,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType
+     * @return TradeTaxType
      */
     public function addToApplicableTradeTaxWithCreate(): TradeTaxType
     {
@@ -150,7 +150,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType $applicableTradeTax
+     * @param TradeTaxType $applicableTradeTax
      * @return self
      */
     public function addOnceToApplicableTradeTax(TradeTaxType $applicableTradeTax): self
@@ -165,7 +165,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType
+     * @return TradeTaxType
      */
     public function addOnceToApplicableTradeTaxWithCreate(): TradeTaxType
     {
@@ -181,7 +181,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\SpecifiedPeriodType|null
+     * @return SpecifiedPeriodType|null
      */
     public function getBillingSpecifiedPeriod(): ?SpecifiedPeriodType
     {
@@ -189,7 +189,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\SpecifiedPeriodType
+     * @return SpecifiedPeriodType
      */
     public function getBillingSpecifiedPeriodWithCreate(): SpecifiedPeriodType
     {
@@ -199,7 +199,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\SpecifiedPeriodType|null $billingSpecifiedPeriod
+     * @param SpecifiedPeriodType|null $billingSpecifiedPeriod
      * @return self
      */
     public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): self
@@ -220,7 +220,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType>|null
+     * @return array<TradeAllowanceChargeType>|null
      */
     public function getSpecifiedTradeAllowanceCharge(): ?array
     {
@@ -228,7 +228,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType>|null $specifiedTradeAllowanceCharge
+     * @param array<TradeAllowanceChargeType>|null $specifiedTradeAllowanceCharge
      * @return self
      */
     public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): self
@@ -259,7 +259,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+     * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return self
      */
     public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): self
@@ -270,7 +270,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType
+     * @return TradeAllowanceChargeType
      */
     public function addToSpecifiedTradeAllowanceChargeWithCreate(): TradeAllowanceChargeType
     {
@@ -280,7 +280,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+     * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return self
      */
     public function addOnceToSpecifiedTradeAllowanceCharge(
@@ -296,7 +296,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType
+     * @return TradeAllowanceChargeType
      */
     public function addOnceToSpecifiedTradeAllowanceChargeWithCreate(): TradeAllowanceChargeType
     {
@@ -312,7 +312,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeSettlementLineMonetarySummationType|null
+     * @return TradeSettlementLineMonetarySummationType|null
      */
     public function getSpecifiedTradeSettlementLineMonetarySummation(): ?TradeSettlementLineMonetarySummationType
     {
@@ -320,7 +320,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeSettlementLineMonetarySummationType
+     * @return TradeSettlementLineMonetarySummationType
      */
     public function getSpecifiedTradeSettlementLineMonetarySummationWithCreate(): TradeSettlementLineMonetarySummationType
     {
@@ -330,7 +330,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeSettlementLineMonetarySummationType|null $specifiedTradeSettlementLineMonetarySummation
+     * @param TradeSettlementLineMonetarySummationType|null $specifiedTradeSettlementLineMonetarySummation
      * @return self
      */
     public function setSpecifiedTradeSettlementLineMonetarySummation(
@@ -352,7 +352,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getInvoiceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -360,7 +360,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getInvoiceReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -370,7 +370,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $invoiceReferencedDocument
+     * @param ReferencedDocumentType|null $invoiceReferencedDocument
      * @return self
      */
     public function setInvoiceReferencedDocument(?ReferencedDocumentType $invoiceReferencedDocument = null): self
@@ -391,7 +391,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null
+     * @return array<ReferencedDocumentType>|null
      */
     public function getAdditionalReferencedDocument(): ?array
     {
@@ -399,7 +399,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null $additionalReferencedDocument
+     * @param array<ReferencedDocumentType>|null $additionalReferencedDocument
      * @return self
      */
     public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): self
@@ -430,7 +430,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType $additionalReferencedDocument
+     * @param ReferencedDocumentType $additionalReferencedDocument
      * @return self
      */
     public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): self
@@ -441,7 +441,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function addToAdditionalReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -451,7 +451,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType $additionalReferencedDocument
+     * @param ReferencedDocumentType $additionalReferencedDocument
      * @return self
      */
     public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): self
@@ -466,7 +466,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function addOnceToAdditionalReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -482,7 +482,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAccountingAccountType|null
+     * @return TradeAccountingAccountType|null
      */
     public function getReceivableSpecifiedTradeAccountingAccount(): ?TradeAccountingAccountType
     {
@@ -490,7 +490,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAccountingAccountType
+     * @return TradeAccountingAccountType
      */
     public function getReceivableSpecifiedTradeAccountingAccountWithCreate(): TradeAccountingAccountType
     {
@@ -500,7 +500,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAccountingAccountType|null $receivableSpecifiedTradeAccountingAccount
+     * @param TradeAccountingAccountType|null $receivableSpecifiedTradeAccountingAccount
      * @return self
      */
     public function setReceivableSpecifiedTradeAccountingAccount(

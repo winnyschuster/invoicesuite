@@ -11,7 +11,7 @@ class FormattedDateTimeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType\DateTimeStringAType|null
+     * @var DateTimeStringAType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType\DateTimeStringAType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class FormattedDateTimeType
     private $dateTimeString;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType\DateTimeStringAType|null
+     * @return DateTimeStringAType|null
      */
     public function getDateTimeString(): ?DateTimeStringAType
     {
@@ -30,7 +30,7 @@ class FormattedDateTimeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType\DateTimeStringAType
+     * @return DateTimeStringAType
      */
     public function getDateTimeStringWithCreate(): DateTimeStringAType
     {
@@ -40,7 +40,7 @@ class FormattedDateTimeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType\DateTimeStringAType|null $dateTimeString
+     * @param DateTimeStringAType|null $dateTimeString
      * @return self
      */
     public function setDateTimeString(?DateTimeStringAType $dateTimeString = null): self

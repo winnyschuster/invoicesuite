@@ -17,7 +17,7 @@ final class InvoiceSuiteProductCharacteristicDTOTest extends TestCase
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getDescription());
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getValue());
         $this->assertNull($invoiceSuiteProductCharacteristicDTO->getType());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteMeasureDTO::class, $invoiceSuiteProductCharacteristicDTO->getValueMeasure());
+        $this->assertNotInstanceOf(InvoiceSuiteMeasureDTO::class, $invoiceSuiteProductCharacteristicDTO->getValueMeasure());
     }
 
     public function testDescriptionGetterAndSetter(): void

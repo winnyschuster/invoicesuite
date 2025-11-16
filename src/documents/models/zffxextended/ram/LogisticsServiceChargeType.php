@@ -12,7 +12,7 @@ class LogisticsServiceChargeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LogisticsServiceChargeType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class LogisticsServiceChargeType
     private $appliedAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>|null
+     * @var array<TradeTaxType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class LogisticsServiceChargeType
     private $appliedTradeTax;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getDescription(): ?TextType
     {
@@ -54,7 +54,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getDescriptionWithCreate(): TextType
     {
@@ -64,7 +64,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $description
+     * @param TextType|null $description
      * @return self
      */
     public function setDescription(?TextType $description = null): self
@@ -85,7 +85,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getAppliedAmount(): ?AmountType
     {
@@ -93,7 +93,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType
+     * @return AmountType
      */
     public function getAppliedAmountWithCreate(): AmountType
     {
@@ -103,7 +103,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null $appliedAmount
+     * @param AmountType|null $appliedAmount
      * @return self
      */
     public function setAppliedAmount(?AmountType $appliedAmount = null): self
@@ -124,7 +124,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>|null
+     * @return array<TradeTaxType>|null
      */
     public function getAppliedTradeTax(): ?array
     {
@@ -132,7 +132,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>|null $appliedTradeTax
+     * @param array<TradeTaxType>|null $appliedTradeTax
      * @return self
      */
     public function setAppliedTradeTax(?array $appliedTradeTax = null): self
@@ -163,7 +163,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType $appliedTradeTax
+     * @param TradeTaxType $appliedTradeTax
      * @return self
      */
     public function addToAppliedTradeTax(TradeTaxType $appliedTradeTax): self
@@ -174,7 +174,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType
+     * @return TradeTaxType
      */
     public function addToAppliedTradeTaxWithCreate(): TradeTaxType
     {
@@ -184,7 +184,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType $appliedTradeTax
+     * @param TradeTaxType $appliedTradeTax
      * @return self
      */
     public function addOnceToAppliedTradeTax(TradeTaxType $appliedTradeTax): self
@@ -199,7 +199,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType
+     * @return TradeTaxType
      */
     public function addOnceToAppliedTradeTaxWithCreate(): TradeTaxType
     {

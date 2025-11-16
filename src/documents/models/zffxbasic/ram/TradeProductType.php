@@ -12,7 +12,7 @@ class TradeProductType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TradeProductType
     private $globalID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class TradeProductType
     private $name;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getGlobalID(): ?IDType
     {
@@ -42,7 +42,7 @@ class TradeProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getGlobalIDWithCreate(): IDType
     {
@@ -52,7 +52,7 @@ class TradeProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $globalID
+     * @param IDType|null $globalID
      * @return self
      */
     public function setGlobalID(?IDType $globalID = null): self
@@ -73,7 +73,7 @@ class TradeProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null
+     * @return TextType|null
      */
     public function getName(): ?TextType
     {
@@ -81,7 +81,7 @@ class TradeProductType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType
+     * @return TextType
      */
     public function getNameWithCreate(): TextType
     {
@@ -91,7 +91,7 @@ class TradeProductType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null $name
+     * @param TextType|null $name
      * @return self
      */
     public function setName(?TextType $name = null): self

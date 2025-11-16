@@ -12,7 +12,7 @@ class BudgetAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class BudgetAccountType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric|null
+     * @var BudgetYearNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class BudgetAccountType
     private $budgetYearNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredClassificationScheme|null
+     * @var RequiredClassificationScheme|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequiredClassificationScheme")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class BudgetAccountType
     private $requiredClassificationScheme;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -53,7 +53,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -63,7 +63,7 @@ class BudgetAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -84,7 +84,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric|null
+     * @return BudgetYearNumeric|null
      */
     public function getBudgetYearNumeric(): ?BudgetYearNumeric
     {
@@ -92,7 +92,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric
+     * @return BudgetYearNumeric
      */
     public function getBudgetYearNumericWithCreate(): BudgetYearNumeric
     {
@@ -102,7 +102,7 @@ class BudgetAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric|null $budgetYearNumeric
+     * @param BudgetYearNumeric|null $budgetYearNumeric
      * @return self
      */
     public function setBudgetYearNumeric(?BudgetYearNumeric $budgetYearNumeric = null): self
@@ -123,7 +123,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredClassificationScheme|null
+     * @return RequiredClassificationScheme|null
      */
     public function getRequiredClassificationScheme(): ?RequiredClassificationScheme
     {
@@ -131,7 +131,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredClassificationScheme
+     * @return RequiredClassificationScheme
      */
     public function getRequiredClassificationSchemeWithCreate(): RequiredClassificationScheme
     {
@@ -141,7 +141,7 @@ class BudgetAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredClassificationScheme|null $requiredClassificationScheme
+     * @param RequiredClassificationScheme|null $requiredClassificationScheme
      * @return self
      */
     public function setRequiredClassificationScheme(

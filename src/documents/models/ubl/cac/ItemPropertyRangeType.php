@@ -12,7 +12,7 @@ class ItemPropertyRangeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue|null
+     * @var MinimumValue|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ItemPropertyRangeType
     private $minimumValue;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue|null
+     * @var MaximumValue|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ItemPropertyRangeType
     private $maximumValue;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue|null
+     * @return MinimumValue|null
      */
     public function getMinimumValue(): ?MinimumValue
     {
@@ -42,7 +42,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue
+     * @return MinimumValue
      */
     public function getMinimumValueWithCreate(): MinimumValue
     {
@@ -52,7 +52,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue|null $minimumValue
+     * @param MinimumValue|null $minimumValue
      * @return self
      */
     public function setMinimumValue(?MinimumValue $minimumValue = null): self
@@ -73,7 +73,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue|null
+     * @return MaximumValue|null
      */
     public function getMaximumValue(): ?MaximumValue
     {
@@ -81,7 +81,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue
+     * @return MaximumValue
      */
     public function getMaximumValueWithCreate(): MaximumValue
     {
@@ -91,7 +91,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue|null $maximumValue
+     * @param MaximumValue|null $maximumValue
      * @return self
      */
     public function setMaximumValue(?MaximumValue $maximumValue = null): self

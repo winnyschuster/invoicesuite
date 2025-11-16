@@ -11,7 +11,7 @@ class SupplierConsumptionType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class SupplierConsumptionType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\UtilitySupplierParty|null
+     * @var UtilitySupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UtilitySupplierParty")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class SupplierConsumptionType
     private $utilitySupplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityCustomerParty|null
+     * @var UtilityCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UtilityCustomerParty")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class SupplierConsumptionType
     private $utilityCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Consumption|null
+     * @var Consumption|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Consumption")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class SupplierConsumptionType
     private $consumption;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null
+     * @var Contract|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contract")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class SupplierConsumptionType
     private $contract;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine>|null
+     * @var array<ConsumptionLine>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine>")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class SupplierConsumptionType
     private $consumptionLine;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -87,7 +87,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -118,7 +118,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -133,7 +133,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -148,7 +148,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -159,7 +159,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -169,7 +169,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -184,7 +184,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -200,7 +200,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilitySupplierParty|null
+     * @return UtilitySupplierParty|null
      */
     public function getUtilitySupplierParty(): ?UtilitySupplierParty
     {
@@ -208,7 +208,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilitySupplierParty
+     * @return UtilitySupplierParty
      */
     public function getUtilitySupplierPartyWithCreate(): UtilitySupplierParty
     {
@@ -218,7 +218,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\UtilitySupplierParty|null $utilitySupplierParty
+     * @param UtilitySupplierParty|null $utilitySupplierParty
      * @return self
      */
     public function setUtilitySupplierParty(?UtilitySupplierParty $utilitySupplierParty = null): self
@@ -239,7 +239,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityCustomerParty|null
+     * @return UtilityCustomerParty|null
      */
     public function getUtilityCustomerParty(): ?UtilityCustomerParty
     {
@@ -247,7 +247,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityCustomerParty
+     * @return UtilityCustomerParty
      */
     public function getUtilityCustomerPartyWithCreate(): UtilityCustomerParty
     {
@@ -257,7 +257,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityCustomerParty|null $utilityCustomerParty
+     * @param UtilityCustomerParty|null $utilityCustomerParty
      * @return self
      */
     public function setUtilityCustomerParty(?UtilityCustomerParty $utilityCustomerParty = null): self
@@ -278,7 +278,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Consumption|null
+     * @return Consumption|null
      */
     public function getConsumption(): ?Consumption
     {
@@ -286,7 +286,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Consumption
+     * @return Consumption
      */
     public function getConsumptionWithCreate(): Consumption
     {
@@ -296,7 +296,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Consumption|null $consumption
+     * @param Consumption|null $consumption
      * @return self
      */
     public function setConsumption(?Consumption $consumption = null): self
@@ -317,7 +317,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null
+     * @return Contract|null
      */
     public function getContract(): ?Contract
     {
@@ -325,7 +325,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contract
+     * @return Contract
      */
     public function getContractWithCreate(): Contract
     {
@@ -335,7 +335,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null $contract
+     * @param Contract|null $contract
      * @return self
      */
     public function setContract(?Contract $contract = null): self
@@ -356,7 +356,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine>|null
+     * @return array<ConsumptionLine>|null
      */
     public function getConsumptionLine(): ?array
     {
@@ -364,7 +364,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine>|null $consumptionLine
+     * @param array<ConsumptionLine>|null $consumptionLine
      * @return self
      */
     public function setConsumptionLine(?array $consumptionLine = null): self
@@ -395,7 +395,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine|null
+     * @return ConsumptionLine|null
      */
     public function firstConsumptionLine(): ?ConsumptionLine
     {
@@ -410,7 +410,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine|null
+     * @return ConsumptionLine|null
      */
     public function lastConsumptionLine(): ?ConsumptionLine
     {
@@ -425,7 +425,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine $consumptionLine
+     * @param ConsumptionLine $consumptionLine
      * @return self
      */
     public function addToConsumptionLine(ConsumptionLine $consumptionLine): self
@@ -436,7 +436,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine
+     * @return ConsumptionLine
      */
     public function addToConsumptionLineWithCreate(): ConsumptionLine
     {
@@ -446,7 +446,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine $consumptionLine
+     * @param ConsumptionLine $consumptionLine
      * @return self
      */
     public function addOnceToConsumptionLine(ConsumptionLine $consumptionLine): self
@@ -461,7 +461,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine
+     * @return ConsumptionLine
      */
     public function addOnceToConsumptionLineWithCreate(): ConsumptionLine
     {

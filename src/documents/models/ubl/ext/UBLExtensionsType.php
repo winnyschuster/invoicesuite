@@ -10,7 +10,7 @@ class UBLExtensionsType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension>|null
+     * @var array<UBLExtension>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension>")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class UBLExtensionsType
     private $uBLExtension;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension>|null
+     * @return array<UBLExtension>|null
      */
     public function getUBLExtension(): ?array
     {
@@ -30,7 +30,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension>|null $uBLExtension
+     * @param array<UBLExtension>|null $uBLExtension
      * @return self
      */
     public function setUBLExtension(?array $uBLExtension = null): self
@@ -61,7 +61,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension|null
+     * @return UBLExtension|null
      */
     public function firstUBLExtension(): ?UBLExtension
     {
@@ -76,7 +76,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension|null
+     * @return UBLExtension|null
      */
     public function lastUBLExtension(): ?UBLExtension
     {
@@ -91,7 +91,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension $uBLExtension
+     * @param UBLExtension $uBLExtension
      * @return self
      */
     public function addToUBLExtension(UBLExtension $uBLExtension): self
@@ -102,7 +102,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension
+     * @return UBLExtension
      */
     public function addToUBLExtensionWithCreate(): UBLExtension
     {
@@ -112,7 +112,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension $uBLExtension
+     * @param UBLExtension $uBLExtension
      * @return self
      */
     public function addOnceToUBLExtension(UBLExtension $uBLExtension): self
@@ -127,7 +127,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension
+     * @return UBLExtension
      */
     public function addOnceToUBLExtensionWithCreate(): UBLExtension
     {

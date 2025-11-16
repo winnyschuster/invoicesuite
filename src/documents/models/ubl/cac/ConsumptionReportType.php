@@ -23,7 +23,7 @@ class ConsumptionReportType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ConsumptionReportType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null
+     * @var ConsumptionType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class ConsumptionReportType
     private $consumptionType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null
+     * @var ConsumptionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class ConsumptionReportType
     private $consumptionTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class ConsumptionReportType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity|null
+     * @var TotalConsumedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class ConsumptionReportType
     private $totalConsumedQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity|null
+     * @var BasicConsumedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class ConsumptionReportType
     private $basicConsumedQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric|null
+     * @var ResidentOccupantsNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class ConsumptionReportType
     private $residentOccupantsNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevelCode|null
+     * @var ConsumersEnergyLevelCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevelCode")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class ConsumptionReportType
     private $consumersEnergyLevelCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel|null
+     * @var ConsumersEnergyLevel|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class ConsumptionReportType
     private $consumersEnergyLevel;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType|null
+     * @var ResidenceType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class ConsumptionReportType
     private $residenceType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode|null
+     * @var ResidenceTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class ConsumptionReportType
     private $residenceTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingType|null
+     * @var HeatingType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingType")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class ConsumptionReportType
     private $heatingType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingTypeCode|null
+     * @var HeatingTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingTypeCode")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class ConsumptionReportType
     private $heatingTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @var Period|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class ConsumptionReportType
     private $period;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\GuidanceDocumentReference|null
+     * @var GuidanceDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\GuidanceDocumentReference")
      * @JMS\Expose
@@ -189,7 +189,7 @@ class ConsumptionReportType
     private $guidanceDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @var DocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -200,7 +200,7 @@ class ConsumptionReportType
     private $documentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference>|null
+     * @var array<ConsumptionReportReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference>")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class ConsumptionReportType
     private $consumptionReportReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory>|null
+     * @var array<ConsumptionHistory>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory>")
      * @JMS\Expose
@@ -224,7 +224,7 @@ class ConsumptionReportType
     private $consumptionHistory;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -232,7 +232,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -242,7 +242,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -263,7 +263,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null
+     * @return ConsumptionType|null
      */
     public function getConsumptionType(): ?ConsumptionType
     {
@@ -271,7 +271,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType
+     * @return ConsumptionType
      */
     public function getConsumptionTypeWithCreate(): ConsumptionType
     {
@@ -281,7 +281,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null $consumptionType
+     * @param ConsumptionType|null $consumptionType
      * @return self
      */
     public function setConsumptionType(?ConsumptionType $consumptionType = null): self
@@ -302,7 +302,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null
+     * @return ConsumptionTypeCode|null
      */
     public function getConsumptionTypeCode(): ?ConsumptionTypeCode
     {
@@ -310,7 +310,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode
+     * @return ConsumptionTypeCode
      */
     public function getConsumptionTypeCodeWithCreate(): ConsumptionTypeCode
     {
@@ -320,7 +320,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null $consumptionTypeCode
+     * @param ConsumptionTypeCode|null $consumptionTypeCode
      * @return self
      */
     public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): self
@@ -341,7 +341,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -349,7 +349,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -380,7 +380,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -395,7 +395,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -410,7 +410,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -421,7 +421,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -431,7 +431,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -446,7 +446,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -462,7 +462,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity|null
+     * @return TotalConsumedQuantity|null
      */
     public function getTotalConsumedQuantity(): ?TotalConsumedQuantity
     {
@@ -470,7 +470,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity
+     * @return TotalConsumedQuantity
      */
     public function getTotalConsumedQuantityWithCreate(): TotalConsumedQuantity
     {
@@ -480,7 +480,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity|null $totalConsumedQuantity
+     * @param TotalConsumedQuantity|null $totalConsumedQuantity
      * @return self
      */
     public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): self
@@ -501,7 +501,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity|null
+     * @return BasicConsumedQuantity|null
      */
     public function getBasicConsumedQuantity(): ?BasicConsumedQuantity
     {
@@ -509,7 +509,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity
+     * @return BasicConsumedQuantity
      */
     public function getBasicConsumedQuantityWithCreate(): BasicConsumedQuantity
     {
@@ -519,7 +519,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity|null $basicConsumedQuantity
+     * @param BasicConsumedQuantity|null $basicConsumedQuantity
      * @return self
      */
     public function setBasicConsumedQuantity(?BasicConsumedQuantity $basicConsumedQuantity = null): self
@@ -540,7 +540,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric|null
+     * @return ResidentOccupantsNumeric|null
      */
     public function getResidentOccupantsNumeric(): ?ResidentOccupantsNumeric
     {
@@ -548,7 +548,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric
+     * @return ResidentOccupantsNumeric
      */
     public function getResidentOccupantsNumericWithCreate(): ResidentOccupantsNumeric
     {
@@ -558,7 +558,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric|null $residentOccupantsNumeric
+     * @param ResidentOccupantsNumeric|null $residentOccupantsNumeric
      * @return self
      */
     public function setResidentOccupantsNumeric(?ResidentOccupantsNumeric $residentOccupantsNumeric = null): self
@@ -579,7 +579,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevelCode|null
+     * @return ConsumersEnergyLevelCode|null
      */
     public function getConsumersEnergyLevelCode(): ?ConsumersEnergyLevelCode
     {
@@ -587,7 +587,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevelCode
+     * @return ConsumersEnergyLevelCode
      */
     public function getConsumersEnergyLevelCodeWithCreate(): ConsumersEnergyLevelCode
     {
@@ -597,7 +597,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevelCode|null $consumersEnergyLevelCode
+     * @param ConsumersEnergyLevelCode|null $consumersEnergyLevelCode
      * @return self
      */
     public function setConsumersEnergyLevelCode(?ConsumersEnergyLevelCode $consumersEnergyLevelCode = null): self
@@ -618,7 +618,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel|null
+     * @return ConsumersEnergyLevel|null
      */
     public function getConsumersEnergyLevel(): ?ConsumersEnergyLevel
     {
@@ -626,7 +626,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel
+     * @return ConsumersEnergyLevel
      */
     public function getConsumersEnergyLevelWithCreate(): ConsumersEnergyLevel
     {
@@ -636,7 +636,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel|null $consumersEnergyLevel
+     * @param ConsumersEnergyLevel|null $consumersEnergyLevel
      * @return self
      */
     public function setConsumersEnergyLevel(?ConsumersEnergyLevel $consumersEnergyLevel = null): self
@@ -657,7 +657,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType|null
+     * @return ResidenceType|null
      */
     public function getResidenceType(): ?ResidenceType
     {
@@ -665,7 +665,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType
+     * @return ResidenceType
      */
     public function getResidenceTypeWithCreate(): ResidenceType
     {
@@ -675,7 +675,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType|null $residenceType
+     * @param ResidenceType|null $residenceType
      * @return self
      */
     public function setResidenceType(?ResidenceType $residenceType = null): self
@@ -696,7 +696,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode|null
+     * @return ResidenceTypeCode|null
      */
     public function getResidenceTypeCode(): ?ResidenceTypeCode
     {
@@ -704,7 +704,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode
+     * @return ResidenceTypeCode
      */
     public function getResidenceTypeCodeWithCreate(): ResidenceTypeCode
     {
@@ -714,7 +714,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode|null $residenceTypeCode
+     * @param ResidenceTypeCode|null $residenceTypeCode
      * @return self
      */
     public function setResidenceTypeCode(?ResidenceTypeCode $residenceTypeCode = null): self
@@ -735,7 +735,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingType|null
+     * @return HeatingType|null
      */
     public function getHeatingType(): ?HeatingType
     {
@@ -743,7 +743,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingType
+     * @return HeatingType
      */
     public function getHeatingTypeWithCreate(): HeatingType
     {
@@ -753,7 +753,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingType|null $heatingType
+     * @param HeatingType|null $heatingType
      * @return self
      */
     public function setHeatingType(?HeatingType $heatingType = null): self
@@ -774,7 +774,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingTypeCode|null
+     * @return HeatingTypeCode|null
      */
     public function getHeatingTypeCode(): ?HeatingTypeCode
     {
@@ -782,7 +782,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingTypeCode
+     * @return HeatingTypeCode
      */
     public function getHeatingTypeCodeWithCreate(): HeatingTypeCode
     {
@@ -792,7 +792,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingTypeCode|null $heatingTypeCode
+     * @param HeatingTypeCode|null $heatingTypeCode
      * @return self
      */
     public function setHeatingTypeCode(?HeatingTypeCode $heatingTypeCode = null): self
@@ -813,7 +813,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function getPeriod(): ?Period
     {
@@ -821,7 +821,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function getPeriodWithCreate(): Period
     {
@@ -831,7 +831,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null $period
+     * @param Period|null $period
      * @return self
      */
     public function setPeriod(?Period $period = null): self
@@ -852,7 +852,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GuidanceDocumentReference|null
+     * @return GuidanceDocumentReference|null
      */
     public function getGuidanceDocumentReference(): ?GuidanceDocumentReference
     {
@@ -860,7 +860,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GuidanceDocumentReference
+     * @return GuidanceDocumentReference
      */
     public function getGuidanceDocumentReferenceWithCreate(): GuidanceDocumentReference
     {
@@ -870,7 +870,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\GuidanceDocumentReference|null $guidanceDocumentReference
+     * @param GuidanceDocumentReference|null $guidanceDocumentReference
      * @return self
      */
     public function setGuidanceDocumentReference(?GuidanceDocumentReference $guidanceDocumentReference = null): self
@@ -891,7 +891,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -899,7 +899,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function getDocumentReferenceWithCreate(): DocumentReference
     {
@@ -909,7 +909,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null $documentReference
+     * @param DocumentReference|null $documentReference
      * @return self
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): self
@@ -930,7 +930,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference>|null
+     * @return array<ConsumptionReportReference>|null
      */
     public function getConsumptionReportReference(): ?array
     {
@@ -938,7 +938,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference>|null $consumptionReportReference
+     * @param array<ConsumptionReportReference>|null $consumptionReportReference
      * @return self
      */
     public function setConsumptionReportReference(?array $consumptionReportReference = null): self
@@ -969,7 +969,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference|null
+     * @return ConsumptionReportReference|null
      */
     public function firstConsumptionReportReference(): ?ConsumptionReportReference
     {
@@ -984,7 +984,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference|null
+     * @return ConsumptionReportReference|null
      */
     public function lastConsumptionReportReference(): ?ConsumptionReportReference
     {
@@ -999,7 +999,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference $consumptionReportReference
+     * @param ConsumptionReportReference $consumptionReportReference
      * @return self
      */
     public function addToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): self
@@ -1010,7 +1010,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference
+     * @return ConsumptionReportReference
      */
     public function addToConsumptionReportReferenceWithCreate(): ConsumptionReportReference
     {
@@ -1020,7 +1020,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference $consumptionReportReference
+     * @param ConsumptionReportReference $consumptionReportReference
      * @return self
      */
     public function addOnceToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): self
@@ -1035,7 +1035,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference
+     * @return ConsumptionReportReference
      */
     public function addOnceToConsumptionReportReferenceWithCreate(): ConsumptionReportReference
     {
@@ -1051,7 +1051,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory>|null
+     * @return array<ConsumptionHistory>|null
      */
     public function getConsumptionHistory(): ?array
     {
@@ -1059,7 +1059,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory>|null $consumptionHistory
+     * @param array<ConsumptionHistory>|null $consumptionHistory
      * @return self
      */
     public function setConsumptionHistory(?array $consumptionHistory = null): self
@@ -1090,7 +1090,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory|null
+     * @return ConsumptionHistory|null
      */
     public function firstConsumptionHistory(): ?ConsumptionHistory
     {
@@ -1105,7 +1105,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory|null
+     * @return ConsumptionHistory|null
      */
     public function lastConsumptionHistory(): ?ConsumptionHistory
     {
@@ -1120,7 +1120,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory $consumptionHistory
+     * @param ConsumptionHistory $consumptionHistory
      * @return self
      */
     public function addToConsumptionHistory(ConsumptionHistory $consumptionHistory): self
@@ -1131,7 +1131,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory
+     * @return ConsumptionHistory
      */
     public function addToConsumptionHistoryWithCreate(): ConsumptionHistory
     {
@@ -1141,7 +1141,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory $consumptionHistory
+     * @param ConsumptionHistory $consumptionHistory
      * @return self
      */
     public function addOnceToConsumptionHistory(ConsumptionHistory $consumptionHistory): self
@@ -1156,7 +1156,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory
+     * @return ConsumptionHistory
      */
     public function addOnceToConsumptionHistoryWithCreate(): ConsumptionHistory
     {

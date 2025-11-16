@@ -12,7 +12,7 @@ class TaxTotalType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount|null
+     * @var TaxAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TaxTotalType
     private $taxAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount|null
+     * @var RoundingAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class TaxTotalType
     private $taxIncludedIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal>|null
+     * @var array<TaxSubtotal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal>")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class TaxTotalType
     private $taxSubtotal;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount|null
+     * @return TaxAmount|null
      */
     public function getTaxAmount(): ?TaxAmount
     {
@@ -76,7 +76,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount
+     * @return TaxAmount
      */
     public function getTaxAmountWithCreate(): TaxAmount
     {
@@ -86,7 +86,7 @@ class TaxTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount|null $taxAmount
+     * @param TaxAmount|null $taxAmount
      * @return self
      */
     public function setTaxAmount(?TaxAmount $taxAmount = null): self
@@ -107,7 +107,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount|null
+     * @return RoundingAmount|null
      */
     public function getRoundingAmount(): ?RoundingAmount
     {
@@ -115,7 +115,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount
+     * @return RoundingAmount
      */
     public function getRoundingAmountWithCreate(): RoundingAmount
     {
@@ -125,7 +125,7 @@ class TaxTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount|null $roundingAmount
+     * @param RoundingAmount|null $roundingAmount
      * @return self
      */
     public function setRoundingAmount(?RoundingAmount $roundingAmount = null): self
@@ -204,7 +204,7 @@ class TaxTotalType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal>|null
+     * @return array<TaxSubtotal>|null
      */
     public function getTaxSubtotal(): ?array
     {
@@ -212,7 +212,7 @@ class TaxTotalType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal>|null $taxSubtotal
+     * @param array<TaxSubtotal>|null $taxSubtotal
      * @return self
      */
     public function setTaxSubtotal(?array $taxSubtotal = null): self
@@ -243,7 +243,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal|null
+     * @return TaxSubtotal|null
      */
     public function firstTaxSubtotal(): ?TaxSubtotal
     {
@@ -258,7 +258,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal|null
+     * @return TaxSubtotal|null
      */
     public function lastTaxSubtotal(): ?TaxSubtotal
     {
@@ -273,7 +273,7 @@ class TaxTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal $taxSubtotal
+     * @param TaxSubtotal $taxSubtotal
      * @return self
      */
     public function addToTaxSubtotal(TaxSubtotal $taxSubtotal): self
@@ -284,7 +284,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal
+     * @return TaxSubtotal
      */
     public function addToTaxSubtotalWithCreate(): TaxSubtotal
     {
@@ -294,7 +294,7 @@ class TaxTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal $taxSubtotal
+     * @param TaxSubtotal $taxSubtotal
      * @return self
      */
     public function addOnceToTaxSubtotal(TaxSubtotal $taxSubtotal): self
@@ -309,7 +309,7 @@ class TaxTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal
+     * @return TaxSubtotal
      */
     public function addOnceToTaxSubtotalWithCreate(): TaxSubtotal
     {

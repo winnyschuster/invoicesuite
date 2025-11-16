@@ -20,7 +20,7 @@ class TenderingProcessType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class TenderingProcessType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalContractingSystemID|null
+     * @var OriginalContractingSystemID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalContractingSystemID")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class TenderingProcessType
     private $originalContractingSystemID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class TenderingProcessType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription>|null
+     * @var array<NegotiationDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription>")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class TenderingProcessType
     private $negotiationDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode|null
+     * @var ProcedureCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class TenderingProcessType
     private $procedureCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode|null
+     * @var UrgencyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class TenderingProcessType
     private $urgencyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpenseCode|null
+     * @var ExpenseCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpenseCode")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class TenderingProcessType
     private $expenseCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode|null
+     * @var PartPresentationCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class TenderingProcessType
     private $partPresentationCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode|null
+     * @var ContractingSystemCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class TenderingProcessType
     private $contractingSystemCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode|null
+     * @var SubmissionMethodCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class TenderingProcessType
     private $governmentAgreementConstraintIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentAvailabilityPeriod|null
+     * @var DocumentAvailabilityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentAvailabilityPeriod")
      * @JMS\Expose
@@ -165,7 +165,7 @@ class TenderingProcessType
     private $documentAvailabilityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TenderSubmissionDeadlinePeriod|null
+     * @var TenderSubmissionDeadlinePeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TenderSubmissionDeadlinePeriod")
      * @JMS\Expose
@@ -176,7 +176,7 @@ class TenderingProcessType
     private $tenderSubmissionDeadlinePeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\InvitationSubmissionPeriod|null
+     * @var InvitationSubmissionPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InvitationSubmissionPeriod")
      * @JMS\Expose
@@ -187,7 +187,7 @@ class TenderingProcessType
     private $invitationSubmissionPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipationRequestReceptionPeriod|null
+     * @var ParticipationRequestReceptionPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ParticipationRequestReceptionPeriod")
      * @JMS\Expose
@@ -198,7 +198,7 @@ class TenderingProcessType
     private $participationRequestReceptionPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference>|null
+     * @var array<NoticeDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference>")
      * @JMS\Expose
@@ -210,7 +210,7 @@ class TenderingProcessType
     private $noticeDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>|null
+     * @var array<AdditionalDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>")
      * @JMS\Expose
@@ -222,7 +222,7 @@ class TenderingProcessType
     private $additionalDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification>|null
+     * @var array<ProcessJustification>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification>")
      * @JMS\Expose
@@ -234,7 +234,7 @@ class TenderingProcessType
     private $processJustification;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorShortList|null
+     * @var EconomicOperatorShortList|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorShortList")
      * @JMS\Expose
@@ -245,7 +245,7 @@ class TenderingProcessType
     private $economicOperatorShortList;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent>|null
+     * @var array<OpenTenderEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent>")
      * @JMS\Expose
@@ -257,7 +257,7 @@ class TenderingProcessType
     private $openTenderEvent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AuctionTerms|null
+     * @var AuctionTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AuctionTerms")
      * @JMS\Expose
@@ -268,7 +268,7 @@ class TenderingProcessType
     private $auctionTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FrameworkAgreement|null
+     * @var FrameworkAgreement|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FrameworkAgreement")
      * @JMS\Expose
@@ -279,7 +279,7 @@ class TenderingProcessType
     private $frameworkAgreement;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -287,7 +287,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -297,7 +297,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -318,7 +318,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalContractingSystemID|null
+     * @return OriginalContractingSystemID|null
      */
     public function getOriginalContractingSystemID(): ?OriginalContractingSystemID
     {
@@ -326,7 +326,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalContractingSystemID
+     * @return OriginalContractingSystemID
      */
     public function getOriginalContractingSystemIDWithCreate(): OriginalContractingSystemID
     {
@@ -336,7 +336,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalContractingSystemID|null $originalContractingSystemID
+     * @param OriginalContractingSystemID|null $originalContractingSystemID
      * @return self
      */
     public function setOriginalContractingSystemID(
@@ -358,7 +358,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -366,7 +366,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -397,7 +397,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -412,7 +412,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -427,7 +427,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -438,7 +438,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -448,7 +448,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -463,7 +463,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -479,7 +479,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription>|null
+     * @return array<NegotiationDescription>|null
      */
     public function getNegotiationDescription(): ?array
     {
@@ -487,7 +487,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription>|null $negotiationDescription
+     * @param array<NegotiationDescription>|null $negotiationDescription
      * @return self
      */
     public function setNegotiationDescription(?array $negotiationDescription = null): self
@@ -518,7 +518,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription|null
+     * @return NegotiationDescription|null
      */
     public function firstNegotiationDescription(): ?NegotiationDescription
     {
@@ -533,7 +533,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription|null
+     * @return NegotiationDescription|null
      */
     public function lastNegotiationDescription(): ?NegotiationDescription
     {
@@ -548,7 +548,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription $negotiationDescription
+     * @param NegotiationDescription $negotiationDescription
      * @return self
      */
     public function addToNegotiationDescription(NegotiationDescription $negotiationDescription): self
@@ -559,7 +559,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription
+     * @return NegotiationDescription
      */
     public function addToNegotiationDescriptionWithCreate(): NegotiationDescription
     {
@@ -569,7 +569,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription $negotiationDescription
+     * @param NegotiationDescription $negotiationDescription
      * @return self
      */
     public function addOnceToNegotiationDescription(NegotiationDescription $negotiationDescription): self
@@ -584,7 +584,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription
+     * @return NegotiationDescription
      */
     public function addOnceToNegotiationDescriptionWithCreate(): NegotiationDescription
     {
@@ -600,7 +600,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode|null
+     * @return ProcedureCode|null
      */
     public function getProcedureCode(): ?ProcedureCode
     {
@@ -608,7 +608,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode
+     * @return ProcedureCode
      */
     public function getProcedureCodeWithCreate(): ProcedureCode
     {
@@ -618,7 +618,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode|null $procedureCode
+     * @param ProcedureCode|null $procedureCode
      * @return self
      */
     public function setProcedureCode(?ProcedureCode $procedureCode = null): self
@@ -639,7 +639,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode|null
+     * @return UrgencyCode|null
      */
     public function getUrgencyCode(): ?UrgencyCode
     {
@@ -647,7 +647,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode
+     * @return UrgencyCode
      */
     public function getUrgencyCodeWithCreate(): UrgencyCode
     {
@@ -657,7 +657,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode|null $urgencyCode
+     * @param UrgencyCode|null $urgencyCode
      * @return self
      */
     public function setUrgencyCode(?UrgencyCode $urgencyCode = null): self
@@ -678,7 +678,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpenseCode|null
+     * @return ExpenseCode|null
      */
     public function getExpenseCode(): ?ExpenseCode
     {
@@ -686,7 +686,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpenseCode
+     * @return ExpenseCode
      */
     public function getExpenseCodeWithCreate(): ExpenseCode
     {
@@ -696,7 +696,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpenseCode|null $expenseCode
+     * @param ExpenseCode|null $expenseCode
      * @return self
      */
     public function setExpenseCode(?ExpenseCode $expenseCode = null): self
@@ -717,7 +717,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode|null
+     * @return PartPresentationCode|null
      */
     public function getPartPresentationCode(): ?PartPresentationCode
     {
@@ -725,7 +725,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode
+     * @return PartPresentationCode
      */
     public function getPartPresentationCodeWithCreate(): PartPresentationCode
     {
@@ -735,7 +735,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode|null $partPresentationCode
+     * @param PartPresentationCode|null $partPresentationCode
      * @return self
      */
     public function setPartPresentationCode(?PartPresentationCode $partPresentationCode = null): self
@@ -756,7 +756,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode|null
+     * @return ContractingSystemCode|null
      */
     public function getContractingSystemCode(): ?ContractingSystemCode
     {
@@ -764,7 +764,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode
+     * @return ContractingSystemCode
      */
     public function getContractingSystemCodeWithCreate(): ContractingSystemCode
     {
@@ -774,7 +774,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode|null $contractingSystemCode
+     * @param ContractingSystemCode|null $contractingSystemCode
      * @return self
      */
     public function setContractingSystemCode(?ContractingSystemCode $contractingSystemCode = null): self
@@ -795,7 +795,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode|null
+     * @return SubmissionMethodCode|null
      */
     public function getSubmissionMethodCode(): ?SubmissionMethodCode
     {
@@ -803,7 +803,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode
+     * @return SubmissionMethodCode
      */
     public function getSubmissionMethodCodeWithCreate(): SubmissionMethodCode
     {
@@ -813,7 +813,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode|null $submissionMethodCode
+     * @param SubmissionMethodCode|null $submissionMethodCode
      * @return self
      */
     public function setSubmissionMethodCode(?SubmissionMethodCode $submissionMethodCode = null): self
@@ -894,7 +894,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentAvailabilityPeriod|null
+     * @return DocumentAvailabilityPeriod|null
      */
     public function getDocumentAvailabilityPeriod(): ?DocumentAvailabilityPeriod
     {
@@ -902,7 +902,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentAvailabilityPeriod
+     * @return DocumentAvailabilityPeriod
      */
     public function getDocumentAvailabilityPeriodWithCreate(): DocumentAvailabilityPeriod
     {
@@ -912,7 +912,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentAvailabilityPeriod|null $documentAvailabilityPeriod
+     * @param DocumentAvailabilityPeriod|null $documentAvailabilityPeriod
      * @return self
      */
     public function setDocumentAvailabilityPeriod(
@@ -934,7 +934,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderSubmissionDeadlinePeriod|null
+     * @return TenderSubmissionDeadlinePeriod|null
      */
     public function getTenderSubmissionDeadlinePeriod(): ?TenderSubmissionDeadlinePeriod
     {
@@ -942,7 +942,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderSubmissionDeadlinePeriod
+     * @return TenderSubmissionDeadlinePeriod
      */
     public function getTenderSubmissionDeadlinePeriodWithCreate(): TenderSubmissionDeadlinePeriod
     {
@@ -952,7 +952,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TenderSubmissionDeadlinePeriod|null $tenderSubmissionDeadlinePeriod
+     * @param TenderSubmissionDeadlinePeriod|null $tenderSubmissionDeadlinePeriod
      * @return self
      */
     public function setTenderSubmissionDeadlinePeriod(
@@ -974,7 +974,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvitationSubmissionPeriod|null
+     * @return InvitationSubmissionPeriod|null
      */
     public function getInvitationSubmissionPeriod(): ?InvitationSubmissionPeriod
     {
@@ -982,7 +982,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvitationSubmissionPeriod
+     * @return InvitationSubmissionPeriod
      */
     public function getInvitationSubmissionPeriodWithCreate(): InvitationSubmissionPeriod
     {
@@ -992,7 +992,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InvitationSubmissionPeriod|null $invitationSubmissionPeriod
+     * @param InvitationSubmissionPeriod|null $invitationSubmissionPeriod
      * @return self
      */
     public function setInvitationSubmissionPeriod(
@@ -1014,7 +1014,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipationRequestReceptionPeriod|null
+     * @return ParticipationRequestReceptionPeriod|null
      */
     public function getParticipationRequestReceptionPeriod(): ?ParticipationRequestReceptionPeriod
     {
@@ -1022,7 +1022,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipationRequestReceptionPeriod
+     * @return ParticipationRequestReceptionPeriod
      */
     public function getParticipationRequestReceptionPeriodWithCreate(): ParticipationRequestReceptionPeriod
     {
@@ -1032,7 +1032,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipationRequestReceptionPeriod|null $participationRequestReceptionPeriod
+     * @param ParticipationRequestReceptionPeriod|null $participationRequestReceptionPeriod
      * @return self
      */
     public function setParticipationRequestReceptionPeriod(
@@ -1054,7 +1054,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference>|null
+     * @return array<NoticeDocumentReference>|null
      */
     public function getNoticeDocumentReference(): ?array
     {
@@ -1062,7 +1062,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference>|null $noticeDocumentReference
+     * @param array<NoticeDocumentReference>|null $noticeDocumentReference
      * @return self
      */
     public function setNoticeDocumentReference(?array $noticeDocumentReference = null): self
@@ -1093,7 +1093,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference|null
+     * @return NoticeDocumentReference|null
      */
     public function firstNoticeDocumentReference(): ?NoticeDocumentReference
     {
@@ -1108,7 +1108,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference|null
+     * @return NoticeDocumentReference|null
      */
     public function lastNoticeDocumentReference(): ?NoticeDocumentReference
     {
@@ -1123,7 +1123,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference $noticeDocumentReference
+     * @param NoticeDocumentReference $noticeDocumentReference
      * @return self
      */
     public function addToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): self
@@ -1134,7 +1134,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference
+     * @return NoticeDocumentReference
      */
     public function addToNoticeDocumentReferenceWithCreate(): NoticeDocumentReference
     {
@@ -1144,7 +1144,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference $noticeDocumentReference
+     * @param NoticeDocumentReference $noticeDocumentReference
      * @return self
      */
     public function addOnceToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): self
@@ -1159,7 +1159,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference
+     * @return NoticeDocumentReference
      */
     public function addOnceToNoticeDocumentReferenceWithCreate(): NoticeDocumentReference
     {
@@ -1175,7 +1175,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>|null
+     * @return array<AdditionalDocumentReference>|null
      */
     public function getAdditionalDocumentReference(): ?array
     {
@@ -1183,7 +1183,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>|null $additionalDocumentReference
+     * @param array<AdditionalDocumentReference>|null $additionalDocumentReference
      * @return self
      */
     public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): self
@@ -1214,7 +1214,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference|null
+     * @return AdditionalDocumentReference|null
      */
     public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -1229,7 +1229,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference|null
+     * @return AdditionalDocumentReference|null
      */
     public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -1244,7 +1244,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference $additionalDocumentReference
+     * @param AdditionalDocumentReference $additionalDocumentReference
      * @return self
      */
     public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): self
@@ -1255,7 +1255,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference
+     * @return AdditionalDocumentReference
      */
     public function addToAdditionalDocumentReferenceWithCreate(): AdditionalDocumentReference
     {
@@ -1265,7 +1265,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference $additionalDocumentReference
+     * @param AdditionalDocumentReference $additionalDocumentReference
      * @return self
      */
     public function addOnceToAdditionalDocumentReference(
@@ -1281,7 +1281,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference
+     * @return AdditionalDocumentReference
      */
     public function addOnceToAdditionalDocumentReferenceWithCreate(): AdditionalDocumentReference
     {
@@ -1297,7 +1297,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification>|null
+     * @return array<ProcessJustification>|null
      */
     public function getProcessJustification(): ?array
     {
@@ -1305,7 +1305,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification>|null $processJustification
+     * @param array<ProcessJustification>|null $processJustification
      * @return self
      */
     public function setProcessJustification(?array $processJustification = null): self
@@ -1336,7 +1336,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification|null
+     * @return ProcessJustification|null
      */
     public function firstProcessJustification(): ?ProcessJustification
     {
@@ -1351,7 +1351,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification|null
+     * @return ProcessJustification|null
      */
     public function lastProcessJustification(): ?ProcessJustification
     {
@@ -1366,7 +1366,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification $processJustification
+     * @param ProcessJustification $processJustification
      * @return self
      */
     public function addToProcessJustification(ProcessJustification $processJustification): self
@@ -1377,7 +1377,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification
+     * @return ProcessJustification
      */
     public function addToProcessJustificationWithCreate(): ProcessJustification
     {
@@ -1387,7 +1387,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification $processJustification
+     * @param ProcessJustification $processJustification
      * @return self
      */
     public function addOnceToProcessJustification(ProcessJustification $processJustification): self
@@ -1402,7 +1402,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification
+     * @return ProcessJustification
      */
     public function addOnceToProcessJustificationWithCreate(): ProcessJustification
     {
@@ -1418,7 +1418,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorShortList|null
+     * @return EconomicOperatorShortList|null
      */
     public function getEconomicOperatorShortList(): ?EconomicOperatorShortList
     {
@@ -1426,7 +1426,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorShortList
+     * @return EconomicOperatorShortList
      */
     public function getEconomicOperatorShortListWithCreate(): EconomicOperatorShortList
     {
@@ -1436,7 +1436,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorShortList|null $economicOperatorShortList
+     * @param EconomicOperatorShortList|null $economicOperatorShortList
      * @return self
      */
     public function setEconomicOperatorShortList(?EconomicOperatorShortList $economicOperatorShortList = null): self
@@ -1457,7 +1457,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent>|null
+     * @return array<OpenTenderEvent>|null
      */
     public function getOpenTenderEvent(): ?array
     {
@@ -1465,7 +1465,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent>|null $openTenderEvent
+     * @param array<OpenTenderEvent>|null $openTenderEvent
      * @return self
      */
     public function setOpenTenderEvent(?array $openTenderEvent = null): self
@@ -1496,7 +1496,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent|null
+     * @return OpenTenderEvent|null
      */
     public function firstOpenTenderEvent(): ?OpenTenderEvent
     {
@@ -1511,7 +1511,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent|null
+     * @return OpenTenderEvent|null
      */
     public function lastOpenTenderEvent(): ?OpenTenderEvent
     {
@@ -1526,7 +1526,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent $openTenderEvent
+     * @param OpenTenderEvent $openTenderEvent
      * @return self
      */
     public function addToOpenTenderEvent(OpenTenderEvent $openTenderEvent): self
@@ -1537,7 +1537,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent
+     * @return OpenTenderEvent
      */
     public function addToOpenTenderEventWithCreate(): OpenTenderEvent
     {
@@ -1547,7 +1547,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent $openTenderEvent
+     * @param OpenTenderEvent $openTenderEvent
      * @return self
      */
     public function addOnceToOpenTenderEvent(OpenTenderEvent $openTenderEvent): self
@@ -1562,7 +1562,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent
+     * @return OpenTenderEvent
      */
     public function addOnceToOpenTenderEventWithCreate(): OpenTenderEvent
     {
@@ -1578,7 +1578,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AuctionTerms|null
+     * @return AuctionTerms|null
      */
     public function getAuctionTerms(): ?AuctionTerms
     {
@@ -1586,7 +1586,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AuctionTerms
+     * @return AuctionTerms
      */
     public function getAuctionTermsWithCreate(): AuctionTerms
     {
@@ -1596,7 +1596,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AuctionTerms|null $auctionTerms
+     * @param AuctionTerms|null $auctionTerms
      * @return self
      */
     public function setAuctionTerms(?AuctionTerms $auctionTerms = null): self
@@ -1617,7 +1617,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FrameworkAgreement|null
+     * @return FrameworkAgreement|null
      */
     public function getFrameworkAgreement(): ?FrameworkAgreement
     {
@@ -1625,7 +1625,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FrameworkAgreement
+     * @return FrameworkAgreement
      */
     public function getFrameworkAgreementWithCreate(): FrameworkAgreement
     {
@@ -1635,7 +1635,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FrameworkAgreement|null $frameworkAgreement
+     * @param FrameworkAgreement|null $frameworkAgreement
      * @return self
      */
     public function setFrameworkAgreement(?FrameworkAgreement $frameworkAgreement = null): self

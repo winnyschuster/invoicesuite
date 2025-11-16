@@ -12,7 +12,7 @@ class TradingTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null
+     * @var array<Information>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradingTermsType
     private $information;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Reference|null
+     * @var Reference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Reference")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TradingTermsType
     private $reference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableAddress|null
+     * @var ApplicableAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableAddress")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TradingTermsType
     private $applicableAddress;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null
+     * @return array<Information>|null
      */
     public function getInformation(): ?array
     {
@@ -54,7 +54,7 @@ class TradingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null $information
+     * @param array<Information>|null $information
      * @return self
      */
     public function setInformation(?array $information = null): self
@@ -85,7 +85,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information|null
+     * @return Information|null
      */
     public function firstInformation(): ?Information
     {
@@ -100,7 +100,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information|null
+     * @return Information|null
      */
     public function lastInformation(): ?Information
     {
@@ -115,7 +115,7 @@ class TradingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Information $information
+     * @param Information $information
      * @return self
      */
     public function addToInformation(Information $information): self
@@ -126,7 +126,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information
+     * @return Information
      */
     public function addToInformationWithCreate(): Information
     {
@@ -136,7 +136,7 @@ class TradingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Information $information
+     * @param Information $information
      * @return self
      */
     public function addOnceToInformation(Information $information): self
@@ -151,7 +151,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information
+     * @return Information
      */
     public function addOnceToInformationWithCreate(): Information
     {
@@ -167,7 +167,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Reference|null
+     * @return Reference|null
      */
     public function getReference(): ?Reference
     {
@@ -175,7 +175,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Reference
+     * @return Reference
      */
     public function getReferenceWithCreate(): Reference
     {
@@ -185,7 +185,7 @@ class TradingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Reference|null $reference
+     * @param Reference|null $reference
      * @return self
      */
     public function setReference(?Reference $reference = null): self
@@ -206,7 +206,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableAddress|null
+     * @return ApplicableAddress|null
      */
     public function getApplicableAddress(): ?ApplicableAddress
     {
@@ -214,7 +214,7 @@ class TradingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableAddress
+     * @return ApplicableAddress
      */
     public function getApplicableAddressWithCreate(): ApplicableAddress
     {
@@ -224,7 +224,7 @@ class TradingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableAddress|null $applicableAddress
+     * @param ApplicableAddress|null $applicableAddress
      * @return self
      */
     public function setApplicableAddress(?ApplicableAddress $applicableAddress = null): self

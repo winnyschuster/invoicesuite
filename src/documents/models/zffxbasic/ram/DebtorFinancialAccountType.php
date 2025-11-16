@@ -11,7 +11,7 @@ class DebtorFinancialAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class DebtorFinancialAccountType
     private $iBANID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getIBANID(): ?IDType
     {
@@ -30,7 +30,7 @@ class DebtorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getIBANIDWithCreate(): IDType
     {
@@ -40,7 +40,7 @@ class DebtorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $iBANID
+     * @param IDType|null $iBANID
      * @return self
      */
     public function setIBANID(?IDType $iBANID = null): self

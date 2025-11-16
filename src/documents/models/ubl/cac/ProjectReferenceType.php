@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -12,7 +13,7 @@ class ProjectReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +24,7 @@ class ProjectReferenceType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -34,7 +35,7 @@ class ProjectReferenceType
     private $uUID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -45,7 +46,7 @@ class ProjectReferenceType
     private $issueDate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference>|null
+     * @var array<WorkPhaseReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference>")
      * @JMS\Expose
@@ -57,7 +58,7 @@ class ProjectReferenceType
     private $workPhaseReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -65,7 +66,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -75,7 +76,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -96,7 +97,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -104,7 +105,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -114,7 +115,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -135,18 +136,18 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -164,7 +165,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference>|null
+     * @return array<WorkPhaseReference>|null
      */
     public function getWorkPhaseReference(): ?array
     {
@@ -172,7 +173,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference>|null $workPhaseReference
+     * @param array<WorkPhaseReference>|null $workPhaseReference
      * @return self
      */
     public function setWorkPhaseReference(?array $workPhaseReference = null): self
@@ -203,7 +204,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference|null
+     * @return WorkPhaseReference|null
      */
     public function firstWorkPhaseReference(): ?WorkPhaseReference
     {
@@ -218,7 +219,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference|null
+     * @return WorkPhaseReference|null
      */
     public function lastWorkPhaseReference(): ?WorkPhaseReference
     {
@@ -233,7 +234,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference $workPhaseReference
+     * @param WorkPhaseReference $workPhaseReference
      * @return self
      */
     public function addToWorkPhaseReference(WorkPhaseReference $workPhaseReference): self
@@ -244,7 +245,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference
+     * @return WorkPhaseReference
      */
     public function addToWorkPhaseReferenceWithCreate(): WorkPhaseReference
     {
@@ -254,7 +255,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference $workPhaseReference
+     * @param WorkPhaseReference $workPhaseReference
      * @return self
      */
     public function addOnceToWorkPhaseReference(WorkPhaseReference $workPhaseReference): self
@@ -269,7 +270,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference
+     * @return WorkPhaseReference
      */
     public function addOnceToWorkPhaseReferenceWithCreate(): WorkPhaseReference
     {

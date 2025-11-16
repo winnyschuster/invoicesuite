@@ -11,7 +11,7 @@ class SpecifiedPeriodType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null
+     * @var DateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class SpecifiedPeriodType
     private $startDateTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null
+     * @var DateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class SpecifiedPeriodType
     private $endDateTime;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null
+     * @return DateTimeType|null
      */
     public function getStartDateTime(): ?DateTimeType
     {
@@ -41,7 +41,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType
+     * @return DateTimeType
      */
     public function getStartDateTimeWithCreate(): DateTimeType
     {
@@ -51,7 +51,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null $startDateTime
+     * @param DateTimeType|null $startDateTime
      * @return self
      */
     public function setStartDateTime(?DateTimeType $startDateTime = null): self
@@ -72,7 +72,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null
+     * @return DateTimeType|null
      */
     public function getEndDateTime(): ?DateTimeType
     {
@@ -80,7 +80,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType
+     * @return DateTimeType
      */
     public function getEndDateTimeWithCreate(): DateTimeType
     {
@@ -90,7 +90,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null $endDateTime
+     * @param DateTimeType|null $endDateTime
      * @return self
      */
     public function setEndDateTime(?DateTimeType $endDateTime = null): self

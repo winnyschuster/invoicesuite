@@ -18,7 +18,7 @@ class LocationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class LocationType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class LocationType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions>|null
+     * @var array<Conditions>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions>")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class LocationType
     private $conditions;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity|null
+     * @var CountrySubentity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class LocationType
     private $countrySubentity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode|null
+     * @var CountrySubentityCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class LocationType
     private $countrySubentityCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode|null
+     * @var LocationTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class LocationType
     private $locationTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI|null
+     * @var InformationURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class LocationType
     private $informationURI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class LocationType
     private $name;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null
+     * @var array<ValidityPeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class LocationType
     private $validityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @var Address|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class LocationType
     private $address;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation>|null
+     * @var array<SubsidiaryLocation>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation>")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class LocationType
     private $subsidiaryLocation;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>|null
+     * @var array<LocationCoordinate>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class LocationType
     private $locationCoordinate;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -163,7 +163,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -173,7 +173,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -194,7 +194,7 @@ class LocationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -202,7 +202,7 @@ class LocationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -233,7 +233,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -248,7 +248,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -263,7 +263,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -274,7 +274,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -284,7 +284,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -299,7 +299,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -315,7 +315,7 @@ class LocationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions>|null
+     * @return array<Conditions>|null
      */
     public function getConditions(): ?array
     {
@@ -323,7 +323,7 @@ class LocationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions>|null $conditions
+     * @param array<Conditions>|null $conditions
      * @return self
      */
     public function setConditions(?array $conditions = null): self
@@ -354,7 +354,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions|null
+     * @return Conditions|null
      */
     public function firstConditions(): ?Conditions
     {
@@ -369,7 +369,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions|null
+     * @return Conditions|null
      */
     public function lastConditions(): ?Conditions
     {
@@ -384,7 +384,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions $conditions
+     * @param Conditions $conditions
      * @return self
      */
     public function addToConditions(Conditions $conditions): self
@@ -395,7 +395,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions
+     * @return Conditions
      */
     public function addToConditionsWithCreate(): Conditions
     {
@@ -405,7 +405,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions $conditions
+     * @param Conditions $conditions
      * @return self
      */
     public function addOnceToConditions(Conditions $conditions): self
@@ -420,7 +420,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions
+     * @return Conditions
      */
     public function addOnceToConditionsWithCreate(): Conditions
     {
@@ -436,7 +436,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity|null
+     * @return CountrySubentity|null
      */
     public function getCountrySubentity(): ?CountrySubentity
     {
@@ -444,7 +444,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity
+     * @return CountrySubentity
      */
     public function getCountrySubentityWithCreate(): CountrySubentity
     {
@@ -454,7 +454,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity|null $countrySubentity
+     * @param CountrySubentity|null $countrySubentity
      * @return self
      */
     public function setCountrySubentity(?CountrySubentity $countrySubentity = null): self
@@ -475,7 +475,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode|null
+     * @return CountrySubentityCode|null
      */
     public function getCountrySubentityCode(): ?CountrySubentityCode
     {
@@ -483,7 +483,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode
+     * @return CountrySubentityCode
      */
     public function getCountrySubentityCodeWithCreate(): CountrySubentityCode
     {
@@ -493,7 +493,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode|null $countrySubentityCode
+     * @param CountrySubentityCode|null $countrySubentityCode
      * @return self
      */
     public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): self
@@ -514,7 +514,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode|null
+     * @return LocationTypeCode|null
      */
     public function getLocationTypeCode(): ?LocationTypeCode
     {
@@ -522,7 +522,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode
+     * @return LocationTypeCode
      */
     public function getLocationTypeCodeWithCreate(): LocationTypeCode
     {
@@ -532,7 +532,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode|null $locationTypeCode
+     * @param LocationTypeCode|null $locationTypeCode
      * @return self
      */
     public function setLocationTypeCode(?LocationTypeCode $locationTypeCode = null): self
@@ -553,7 +553,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI|null
+     * @return InformationURI|null
      */
     public function getInformationURI(): ?InformationURI
     {
@@ -561,7 +561,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI
+     * @return InformationURI
      */
     public function getInformationURIWithCreate(): InformationURI
     {
@@ -571,7 +571,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI|null $informationURI
+     * @param InformationURI|null $informationURI
      * @return self
      */
     public function setInformationURI(?InformationURI $informationURI = null): self
@@ -592,7 +592,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -600,7 +600,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -610,7 +610,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -631,7 +631,7 @@ class LocationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null
+     * @return array<ValidityPeriod>|null
      */
     public function getValidityPeriod(): ?array
     {
@@ -639,7 +639,7 @@ class LocationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null $validityPeriod
+     * @param array<ValidityPeriod>|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?array $validityPeriod = null): self
@@ -670,7 +670,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function firstValidityPeriod(): ?ValidityPeriod
     {
@@ -685,7 +685,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function lastValidityPeriod(): ?ValidityPeriod
     {
@@ -700,7 +700,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @param ValidityPeriod $validityPeriod
      * @return self
      */
     public function addToValidityPeriod(ValidityPeriod $validityPeriod): self
@@ -711,7 +711,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function addToValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -721,7 +721,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @param ValidityPeriod $validityPeriod
      * @return self
      */
     public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): self
@@ -736,7 +736,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function addOnceToValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -752,7 +752,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @return Address|null
      */
     public function getAddress(): ?Address
     {
@@ -760,7 +760,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address
+     * @return Address
      */
     public function getAddressWithCreate(): Address
     {
@@ -770,7 +770,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null $address
+     * @param Address|null $address
      * @return self
      */
     public function setAddress(?Address $address = null): self
@@ -791,7 +791,7 @@ class LocationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation>|null
+     * @return array<SubsidiaryLocation>|null
      */
     public function getSubsidiaryLocation(): ?array
     {
@@ -799,7 +799,7 @@ class LocationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation>|null $subsidiaryLocation
+     * @param array<SubsidiaryLocation>|null $subsidiaryLocation
      * @return self
      */
     public function setSubsidiaryLocation(?array $subsidiaryLocation = null): self
@@ -830,7 +830,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation|null
+     * @return SubsidiaryLocation|null
      */
     public function firstSubsidiaryLocation(): ?SubsidiaryLocation
     {
@@ -845,7 +845,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation|null
+     * @return SubsidiaryLocation|null
      */
     public function lastSubsidiaryLocation(): ?SubsidiaryLocation
     {
@@ -860,7 +860,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation $subsidiaryLocation
+     * @param SubsidiaryLocation $subsidiaryLocation
      * @return self
      */
     public function addToSubsidiaryLocation(SubsidiaryLocation $subsidiaryLocation): self
@@ -871,7 +871,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation
+     * @return SubsidiaryLocation
      */
     public function addToSubsidiaryLocationWithCreate(): SubsidiaryLocation
     {
@@ -881,7 +881,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation $subsidiaryLocation
+     * @param SubsidiaryLocation $subsidiaryLocation
      * @return self
      */
     public function addOnceToSubsidiaryLocation(SubsidiaryLocation $subsidiaryLocation): self
@@ -896,7 +896,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation
+     * @return SubsidiaryLocation
      */
     public function addOnceToSubsidiaryLocationWithCreate(): SubsidiaryLocation
     {
@@ -912,7 +912,7 @@ class LocationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>|null
+     * @return array<LocationCoordinate>|null
      */
     public function getLocationCoordinate(): ?array
     {
@@ -920,7 +920,7 @@ class LocationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>|null $locationCoordinate
+     * @param array<LocationCoordinate>|null $locationCoordinate
      * @return self
      */
     public function setLocationCoordinate(?array $locationCoordinate = null): self
@@ -951,7 +951,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate|null
+     * @return LocationCoordinate|null
      */
     public function firstLocationCoordinate(): ?LocationCoordinate
     {
@@ -966,7 +966,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate|null
+     * @return LocationCoordinate|null
      */
     public function lastLocationCoordinate(): ?LocationCoordinate
     {
@@ -981,7 +981,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate $locationCoordinate
+     * @param LocationCoordinate $locationCoordinate
      * @return self
      */
     public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): self
@@ -992,7 +992,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate
+     * @return LocationCoordinate
      */
     public function addToLocationCoordinateWithCreate(): LocationCoordinate
     {
@@ -1002,7 +1002,7 @@ class LocationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate $locationCoordinate
+     * @param LocationCoordinate $locationCoordinate
      * @return self
      */
     public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): self
@@ -1017,7 +1017,7 @@ class LocationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate
+     * @return LocationCoordinate
      */
     public function addOnceToLocationCoordinateWithCreate(): LocationCoordinate
     {

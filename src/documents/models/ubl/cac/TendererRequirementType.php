@@ -14,7 +14,7 @@ class TendererRequirementType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @var array<Name>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TendererRequirementType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode|null
+     * @var TendererRequirementTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TendererRequirementType
     private $tendererRequirementTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TendererRequirementType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference|null
+     * @var LegalReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TendererRequirementType
     private $legalReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>|null
+     * @var array<SuggestedEvidence>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TendererRequirementType
     private $suggestedEvidence;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @return array<Name>|null
      */
     public function getName(): ?array
     {
@@ -80,7 +80,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null $name
+     * @param array<Name>|null $name
      * @return self
      */
     public function setName(?array $name = null): self
@@ -111,7 +111,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function firstName(): ?Name
     {
@@ -126,7 +126,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function lastName(): ?Name
     {
@@ -141,7 +141,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addToName(Name $name): self
@@ -152,7 +152,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addToNameWithCreate(): Name
     {
@@ -162,7 +162,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addOnceToName(Name $name): self
@@ -177,7 +177,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addOnceToNameWithCreate(): Name
     {
@@ -193,7 +193,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode|null
+     * @return TendererRequirementTypeCode|null
      */
     public function getTendererRequirementTypeCode(): ?TendererRequirementTypeCode
     {
@@ -201,7 +201,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode
+     * @return TendererRequirementTypeCode
      */
     public function getTendererRequirementTypeCodeWithCreate(): TendererRequirementTypeCode
     {
@@ -211,7 +211,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode|null $tendererRequirementTypeCode
+     * @param TendererRequirementTypeCode|null $tendererRequirementTypeCode
      * @return self
      */
     public function setTendererRequirementTypeCode(
@@ -233,7 +233,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -241,7 +241,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -272,7 +272,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -287,7 +287,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -302,7 +302,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -313,7 +313,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -323,7 +323,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -338,7 +338,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -354,7 +354,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference|null
+     * @return LegalReference|null
      */
     public function getLegalReference(): ?LegalReference
     {
@@ -362,7 +362,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference
+     * @return LegalReference
      */
     public function getLegalReferenceWithCreate(): LegalReference
     {
@@ -372,7 +372,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference|null $legalReference
+     * @param LegalReference|null $legalReference
      * @return self
      */
     public function setLegalReference(?LegalReference $legalReference = null): self
@@ -393,7 +393,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>|null
+     * @return array<SuggestedEvidence>|null
      */
     public function getSuggestedEvidence(): ?array
     {
@@ -401,7 +401,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>|null $suggestedEvidence
+     * @param array<SuggestedEvidence>|null $suggestedEvidence
      * @return self
      */
     public function setSuggestedEvidence(?array $suggestedEvidence = null): self
@@ -432,7 +432,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence|null
+     * @return SuggestedEvidence|null
      */
     public function firstSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -447,7 +447,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence|null
+     * @return SuggestedEvidence|null
      */
     public function lastSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -462,7 +462,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence $suggestedEvidence
+     * @param SuggestedEvidence $suggestedEvidence
      * @return self
      */
     public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
@@ -473,7 +473,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence
+     * @return SuggestedEvidence
      */
     public function addToSuggestedEvidenceWithCreate(): SuggestedEvidence
     {
@@ -483,7 +483,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence $suggestedEvidence
+     * @param SuggestedEvidence $suggestedEvidence
      * @return self
      */
     public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
@@ -498,7 +498,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence
+     * @return SuggestedEvidence
      */
     public function addOnceToSuggestedEvidenceWithCreate(): SuggestedEvidence
     {

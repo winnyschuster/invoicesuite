@@ -20,7 +20,7 @@ class AllowanceChargeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class AllowanceChargeType
     private $chargeIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReasonCode|null
+     * @var AllowanceChargeReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReasonCode")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class AllowanceChargeType
     private $allowanceChargeReasonCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason>|null
+     * @var array<AllowanceChargeReason>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason>")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class AllowanceChargeType
     private $allowanceChargeReason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric|null
+     * @var MultiplierFactorNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class AllowanceChargeType
     private $prepaidIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric|null
+     * @var SequenceNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class AllowanceChargeType
     private $sequenceNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class AllowanceChargeType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseAmount|null
+     * @var BaseAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseAmount")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class AllowanceChargeType
     private $baseAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null
+     * @var AccountingCostCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class AllowanceChargeType
     private $accountingCostCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null
+     * @var AccountingCost|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class AllowanceChargeType
     private $accountingCost;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount|null
+     * @var PerUnitAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount")
      * @JMS\Expose
@@ -153,7 +153,7 @@ class AllowanceChargeType
     private $perUnitAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory>|null
+     * @var array<TaxCategory>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory>")
      * @JMS\Expose
@@ -165,7 +165,7 @@ class AllowanceChargeType
     private $taxCategory;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @var TaxTotal|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal")
      * @JMS\Expose
@@ -176,7 +176,7 @@ class AllowanceChargeType
     private $taxTotal;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>|null
+     * @var array<PaymentMeans>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class AllowanceChargeType
     private $paymentMeans;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -196,7 +196,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -206,7 +206,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -256,7 +256,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReasonCode|null
+     * @return AllowanceChargeReasonCode|null
      */
     public function getAllowanceChargeReasonCode(): ?AllowanceChargeReasonCode
     {
@@ -264,7 +264,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReasonCode
+     * @return AllowanceChargeReasonCode
      */
     public function getAllowanceChargeReasonCodeWithCreate(): AllowanceChargeReasonCode
     {
@@ -274,7 +274,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReasonCode|null $allowanceChargeReasonCode
+     * @param AllowanceChargeReasonCode|null $allowanceChargeReasonCode
      * @return self
      */
     public function setAllowanceChargeReasonCode(?AllowanceChargeReasonCode $allowanceChargeReasonCode = null): self
@@ -295,7 +295,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason>|null
+     * @return array<AllowanceChargeReason>|null
      */
     public function getAllowanceChargeReason(): ?array
     {
@@ -303,7 +303,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason>|null $allowanceChargeReason
+     * @param array<AllowanceChargeReason>|null $allowanceChargeReason
      * @return self
      */
     public function setAllowanceChargeReason(?array $allowanceChargeReason = null): self
@@ -334,7 +334,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason|null
+     * @return AllowanceChargeReason|null
      */
     public function firstAllowanceChargeReason(): ?AllowanceChargeReason
     {
@@ -349,7 +349,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason|null
+     * @return AllowanceChargeReason|null
      */
     public function lastAllowanceChargeReason(): ?AllowanceChargeReason
     {
@@ -364,7 +364,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason $allowanceChargeReason
+     * @param AllowanceChargeReason $allowanceChargeReason
      * @return self
      */
     public function addToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): self
@@ -375,7 +375,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason
+     * @return AllowanceChargeReason
      */
     public function addToAllowanceChargeReasonWithCreate(): AllowanceChargeReason
     {
@@ -385,7 +385,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason $allowanceChargeReason
+     * @param AllowanceChargeReason $allowanceChargeReason
      * @return self
      */
     public function addOnceToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): self
@@ -400,7 +400,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason
+     * @return AllowanceChargeReason
      */
     public function addOnceToAllowanceChargeReasonWithCreate(): AllowanceChargeReason
     {
@@ -416,7 +416,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric|null
+     * @return MultiplierFactorNumeric|null
      */
     public function getMultiplierFactorNumeric(): ?MultiplierFactorNumeric
     {
@@ -424,7 +424,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric
+     * @return MultiplierFactorNumeric
      */
     public function getMultiplierFactorNumericWithCreate(): MultiplierFactorNumeric
     {
@@ -434,7 +434,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric|null $multiplierFactorNumeric
+     * @param MultiplierFactorNumeric|null $multiplierFactorNumeric
      * @return self
      */
     public function setMultiplierFactorNumeric(?MultiplierFactorNumeric $multiplierFactorNumeric = null): self
@@ -484,7 +484,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric|null
+     * @return SequenceNumeric|null
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -492,7 +492,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric
+     * @return SequenceNumeric
      */
     public function getSequenceNumericWithCreate(): SequenceNumeric
     {
@@ -502,7 +502,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric|null $sequenceNumeric
+     * @param SequenceNumeric|null $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
@@ -523,7 +523,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -531,7 +531,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -541,7 +541,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -562,7 +562,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseAmount|null
+     * @return BaseAmount|null
      */
     public function getBaseAmount(): ?BaseAmount
     {
@@ -570,7 +570,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseAmount
+     * @return BaseAmount
      */
     public function getBaseAmountWithCreate(): BaseAmount
     {
@@ -580,7 +580,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseAmount|null $baseAmount
+     * @param BaseAmount|null $baseAmount
      * @return self
      */
     public function setBaseAmount(?BaseAmount $baseAmount = null): self
@@ -601,7 +601,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null
+     * @return AccountingCostCode|null
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -609,7 +609,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode
+     * @return AccountingCostCode
      */
     public function getAccountingCostCodeWithCreate(): AccountingCostCode
     {
@@ -619,7 +619,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null $accountingCostCode
+     * @param AccountingCostCode|null $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
@@ -640,7 +640,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null
+     * @return AccountingCost|null
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -648,7 +648,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost
+     * @return AccountingCost
      */
     public function getAccountingCostWithCreate(): AccountingCost
     {
@@ -658,7 +658,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null $accountingCost
+     * @param AccountingCost|null $accountingCost
      * @return self
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): self
@@ -679,7 +679,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount|null
+     * @return PerUnitAmount|null
      */
     public function getPerUnitAmount(): ?PerUnitAmount
     {
@@ -687,7 +687,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount
+     * @return PerUnitAmount
      */
     public function getPerUnitAmountWithCreate(): PerUnitAmount
     {
@@ -697,7 +697,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount|null $perUnitAmount
+     * @param PerUnitAmount|null $perUnitAmount
      * @return self
      */
     public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): self
@@ -718,7 +718,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory>|null
+     * @return array<TaxCategory>|null
      */
     public function getTaxCategory(): ?array
     {
@@ -726,7 +726,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory>|null $taxCategory
+     * @param array<TaxCategory>|null $taxCategory
      * @return self
      */
     public function setTaxCategory(?array $taxCategory = null): self
@@ -757,7 +757,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @return TaxCategory|null
      */
     public function firstTaxCategory(): ?TaxCategory
     {
@@ -772,7 +772,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @return TaxCategory|null
      */
     public function lastTaxCategory(): ?TaxCategory
     {
@@ -787,7 +787,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory $taxCategory
+     * @param TaxCategory $taxCategory
      * @return self
      */
     public function addToTaxCategory(TaxCategory $taxCategory): self
@@ -798,7 +798,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory
+     * @return TaxCategory
      */
     public function addToTaxCategoryWithCreate(): TaxCategory
     {
@@ -808,7 +808,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory $taxCategory
+     * @param TaxCategory $taxCategory
      * @return self
      */
     public function addOnceToTaxCategory(TaxCategory $taxCategory): self
@@ -823,7 +823,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory
+     * @return TaxCategory
      */
     public function addOnceToTaxCategoryWithCreate(): TaxCategory
     {
@@ -839,7 +839,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function getTaxTotal(): ?TaxTotal
     {
@@ -847,7 +847,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function getTaxTotalWithCreate(): TaxTotal
     {
@@ -857,7 +857,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null $taxTotal
+     * @param TaxTotal|null $taxTotal
      * @return self
      */
     public function setTaxTotal(?TaxTotal $taxTotal = null): self
@@ -878,7 +878,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>|null
+     * @return array<PaymentMeans>|null
      */
     public function getPaymentMeans(): ?array
     {
@@ -886,7 +886,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>|null $paymentMeans
+     * @param array<PaymentMeans>|null $paymentMeans
      * @return self
      */
     public function setPaymentMeans(?array $paymentMeans = null): self
@@ -917,7 +917,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans|null
+     * @return PaymentMeans|null
      */
     public function firstPaymentMeans(): ?PaymentMeans
     {
@@ -932,7 +932,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans|null
+     * @return PaymentMeans|null
      */
     public function lastPaymentMeans(): ?PaymentMeans
     {
@@ -947,7 +947,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans $paymentMeans
+     * @param PaymentMeans $paymentMeans
      * @return self
      */
     public function addToPaymentMeans(PaymentMeans $paymentMeans): self
@@ -958,7 +958,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans
+     * @return PaymentMeans
      */
     public function addToPaymentMeansWithCreate(): PaymentMeans
     {
@@ -968,7 +968,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans $paymentMeans
+     * @param PaymentMeans $paymentMeans
      * @return self
      */
     public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): self
@@ -983,7 +983,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans
+     * @return PaymentMeans
      */
     public function addOnceToPaymentMeansWithCreate(): PaymentMeans
     {

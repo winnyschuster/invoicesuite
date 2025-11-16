@@ -11,7 +11,7 @@ class LogisticsTransportMovementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType|null
+     * @var TransportModeCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class LogisticsTransportMovementType
     private $modeCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType|null
+     * @return TransportModeCodeType|null
      */
     public function getModeCode(): ?TransportModeCodeType
     {
@@ -30,7 +30,7 @@ class LogisticsTransportMovementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType
+     * @return TransportModeCodeType
      */
     public function getModeCodeWithCreate(): TransportModeCodeType
     {
@@ -40,7 +40,7 @@ class LogisticsTransportMovementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType|null $modeCode
+     * @param TransportModeCodeType|null $modeCode
      * @return self
      */
     public function setModeCode(?TransportModeCodeType $modeCode = null): self

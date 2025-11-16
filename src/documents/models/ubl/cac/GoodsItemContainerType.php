@@ -12,7 +12,7 @@ class GoodsItemContainerType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class GoodsItemContainerType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class GoodsItemContainerType
     private $quantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment>|null
+     * @var array<TransportEquipment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class GoodsItemContainerType
     private $transportEquipment;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -54,7 +54,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -64,7 +64,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -85,7 +85,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -93,7 +93,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -103,7 +103,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -124,7 +124,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment>|null
+     * @return array<TransportEquipment>|null
      */
     public function getTransportEquipment(): ?array
     {
@@ -132,7 +132,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment>|null $transportEquipment
+     * @param array<TransportEquipment>|null $transportEquipment
      * @return self
      */
     public function setTransportEquipment(?array $transportEquipment = null): self
@@ -163,7 +163,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment|null
+     * @return TransportEquipment|null
      */
     public function firstTransportEquipment(): ?TransportEquipment
     {
@@ -178,7 +178,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment|null
+     * @return TransportEquipment|null
      */
     public function lastTransportEquipment(): ?TransportEquipment
     {
@@ -193,7 +193,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment $transportEquipment
+     * @param TransportEquipment $transportEquipment
      * @return self
      */
     public function addToTransportEquipment(TransportEquipment $transportEquipment): self
@@ -204,7 +204,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment
+     * @return TransportEquipment
      */
     public function addToTransportEquipmentWithCreate(): TransportEquipment
     {
@@ -214,7 +214,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment $transportEquipment
+     * @param TransportEquipment $transportEquipment
      * @return self
      */
     public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): self
@@ -229,7 +229,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment
+     * @return TransportEquipment
      */
     public function addOnceToTransportEquipmentWithCreate(): TransportEquipment
     {

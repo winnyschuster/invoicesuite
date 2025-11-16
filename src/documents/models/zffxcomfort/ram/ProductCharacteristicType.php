@@ -11,7 +11,7 @@ class ProductCharacteristicType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ProductCharacteristicType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ProductCharacteristicType
     private $value;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getDescription(): ?TextType
     {
@@ -41,7 +41,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getDescriptionWithCreate(): TextType
     {
@@ -51,7 +51,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $description
+     * @param TextType|null $description
      * @return self
      */
     public function setDescription(?TextType $description = null): self
@@ -72,7 +72,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getValue(): ?TextType
     {
@@ -80,7 +80,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getValueWithCreate(): TextType
     {
@@ -90,7 +90,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $value
+     * @param TextType|null $value
      * @return self
      */
     public function setValue(?TextType $value = null): self

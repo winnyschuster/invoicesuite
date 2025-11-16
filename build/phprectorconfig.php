@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
+use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Config\RectorConfig;
-use Rector\Set\ValueObject\SetList;
-use Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
-use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
+use Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
+use Rector\Set\ValueObject\SetList;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -38,5 +38,9 @@ return RectorConfig::configure()
         //RenameParamToMatchTypeRector::class,
         //RenameVariableToMatchNewTypeRector::class,
     ])
-    ->withoutParallel()
+    ->withImportNames(
+        importShortClasses: true,
+        removeUnusedImports: true
+    )
+    ->withParallel(60 * 5, 10, 32)
     ->withTypeCoverageLevel(0);

@@ -17,7 +17,7 @@ class FinancialAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class FinancialAccountType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class FinancialAccountType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AliasName|null
+     * @var AliasName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AliasName")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class FinancialAccountType
     private $aliasName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode|null
+     * @var AccountTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class FinancialAccountType
     private $accountTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode|null
+     * @var AccountFormatCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class FinancialAccountType
     private $accountFormatCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode|null
+     * @var CurrencyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class FinancialAccountType
     private $currencyCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote>|null
+     * @var array<PaymentNote>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class FinancialAccountType
     private $paymentNote;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitutionBranch|null
+     * @var FinancialInstitutionBranch|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitutionBranch")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class FinancialAccountType
     private $financialInstitutionBranch;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null
+     * @var Country|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Country")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class FinancialAccountType
     private $country;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -125,7 +125,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -135,7 +135,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -156,7 +156,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -164,7 +164,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -174,7 +174,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -195,7 +195,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AliasName|null
+     * @return AliasName|null
      */
     public function getAliasName(): ?AliasName
     {
@@ -203,7 +203,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AliasName
+     * @return AliasName
      */
     public function getAliasNameWithCreate(): AliasName
     {
@@ -213,7 +213,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AliasName|null $aliasName
+     * @param AliasName|null $aliasName
      * @return self
      */
     public function setAliasName(?AliasName $aliasName = null): self
@@ -234,7 +234,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode|null
+     * @return AccountTypeCode|null
      */
     public function getAccountTypeCode(): ?AccountTypeCode
     {
@@ -242,7 +242,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode
+     * @return AccountTypeCode
      */
     public function getAccountTypeCodeWithCreate(): AccountTypeCode
     {
@@ -252,7 +252,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode|null $accountTypeCode
+     * @param AccountTypeCode|null $accountTypeCode
      * @return self
      */
     public function setAccountTypeCode(?AccountTypeCode $accountTypeCode = null): self
@@ -273,7 +273,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode|null
+     * @return AccountFormatCode|null
      */
     public function getAccountFormatCode(): ?AccountFormatCode
     {
@@ -281,7 +281,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode
+     * @return AccountFormatCode
      */
     public function getAccountFormatCodeWithCreate(): AccountFormatCode
     {
@@ -291,7 +291,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode|null $accountFormatCode
+     * @param AccountFormatCode|null $accountFormatCode
      * @return self
      */
     public function setAccountFormatCode(?AccountFormatCode $accountFormatCode = null): self
@@ -312,7 +312,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode|null
+     * @return CurrencyCode|null
      */
     public function getCurrencyCode(): ?CurrencyCode
     {
@@ -320,7 +320,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode
+     * @return CurrencyCode
      */
     public function getCurrencyCodeWithCreate(): CurrencyCode
     {
@@ -330,7 +330,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode|null $currencyCode
+     * @param CurrencyCode|null $currencyCode
      * @return self
      */
     public function setCurrencyCode(?CurrencyCode $currencyCode = null): self
@@ -351,7 +351,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote>|null
+     * @return array<PaymentNote>|null
      */
     public function getPaymentNote(): ?array
     {
@@ -359,7 +359,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote>|null $paymentNote
+     * @param array<PaymentNote>|null $paymentNote
      * @return self
      */
     public function setPaymentNote(?array $paymentNote = null): self
@@ -390,7 +390,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote|null
+     * @return PaymentNote|null
      */
     public function firstPaymentNote(): ?PaymentNote
     {
@@ -405,7 +405,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote|null
+     * @return PaymentNote|null
      */
     public function lastPaymentNote(): ?PaymentNote
     {
@@ -420,7 +420,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote $paymentNote
+     * @param PaymentNote $paymentNote
      * @return self
      */
     public function addToPaymentNote(PaymentNote $paymentNote): self
@@ -431,7 +431,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote
+     * @return PaymentNote
      */
     public function addToPaymentNoteWithCreate(): PaymentNote
     {
@@ -441,7 +441,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote $paymentNote
+     * @param PaymentNote $paymentNote
      * @return self
      */
     public function addOnceToPaymentNote(PaymentNote $paymentNote): self
@@ -456,7 +456,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote
+     * @return PaymentNote
      */
     public function addOnceToPaymentNoteWithCreate(): PaymentNote
     {
@@ -472,7 +472,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitutionBranch|null
+     * @return FinancialInstitutionBranch|null
      */
     public function getFinancialInstitutionBranch(): ?FinancialInstitutionBranch
     {
@@ -480,7 +480,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitutionBranch
+     * @return FinancialInstitutionBranch
      */
     public function getFinancialInstitutionBranchWithCreate(): FinancialInstitutionBranch
     {
@@ -490,7 +490,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitutionBranch|null $financialInstitutionBranch
+     * @param FinancialInstitutionBranch|null $financialInstitutionBranch
      * @return self
      */
     public function setFinancialInstitutionBranch(
@@ -512,7 +512,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null
+     * @return Country|null
      */
     public function getCountry(): ?Country
     {
@@ -520,7 +520,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Country
+     * @return Country
      */
     public function getCountryWithCreate(): Country
     {
@@ -530,7 +530,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null $country
+     * @param Country|null $country
      * @return self
      */
     public function setCountry(?Country $country = null): self

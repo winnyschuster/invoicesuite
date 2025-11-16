@@ -12,7 +12,7 @@ class NoteType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class NoteType
     private $contentCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class NoteType
     private $content;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class NoteType
     private $subjectCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getContentCode(): ?CodeType
     {
@@ -53,7 +53,7 @@ class NoteType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType
+     * @return CodeType
      */
     public function getContentCodeWithCreate(): CodeType
     {
@@ -63,7 +63,7 @@ class NoteType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null $contentCode
+     * @param CodeType|null $contentCode
      * @return self
      */
     public function setContentCode(?CodeType $contentCode = null): self
@@ -84,7 +84,7 @@ class NoteType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getContent(): ?TextType
     {
@@ -92,7 +92,7 @@ class NoteType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getContentWithCreate(): TextType
     {
@@ -102,7 +102,7 @@ class NoteType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $content
+     * @param TextType|null $content
      * @return self
      */
     public function setContent(?TextType $content = null): self
@@ -123,7 +123,7 @@ class NoteType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getSubjectCode(): ?CodeType
     {
@@ -131,7 +131,7 @@ class NoteType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType
+     * @return CodeType
      */
     public function getSubjectCodeWithCreate(): CodeType
     {
@@ -141,7 +141,7 @@ class NoteType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null $subjectCode
+     * @param CodeType|null $subjectCode
      * @return self
      */
     public function setSubjectCode(?CodeType $subjectCode = null): self

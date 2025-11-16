@@ -10,7 +10,7 @@ class OrderedShipmentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @var Shipment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Shipment")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class OrderedShipmentType
     private $shipment;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Package>|null
+     * @var array<Package>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Package>")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class OrderedShipmentType
     private $package;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @return Shipment|null
      */
     public function getShipment(): ?Shipment
     {
@@ -41,7 +41,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment
+     * @return Shipment
      */
     public function getShipmentWithCreate(): Shipment
     {
@@ -51,7 +51,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null $shipment
+     * @param Shipment|null $shipment
      * @return self
      */
     public function setShipment(?Shipment $shipment = null): self
@@ -72,7 +72,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Package>|null
+     * @return array<Package>|null
      */
     public function getPackage(): ?array
     {
@@ -80,7 +80,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Package>|null $package
+     * @param array<Package>|null $package
      * @return self
      */
     public function setPackage(?array $package = null): self
@@ -111,7 +111,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null
+     * @return Package|null
      */
     public function firstPackage(): ?Package
     {
@@ -126,7 +126,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null
+     * @return Package|null
      */
     public function lastPackage(): ?Package
     {
@@ -141,7 +141,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Package $package
+     * @param Package $package
      * @return self
      */
     public function addToPackage(Package $package): self
@@ -152,7 +152,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package
+     * @return Package
      */
     public function addToPackageWithCreate(): Package
     {
@@ -162,7 +162,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Package $package
+     * @param Package $package
      * @return self
      */
     public function addOnceToPackage(Package $package): self
@@ -177,7 +177,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package
+     * @return Package
      */
     public function addOnceToPackageWithCreate(): Package
     {

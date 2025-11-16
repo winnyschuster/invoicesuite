@@ -16,7 +16,7 @@ class ConsumptionPointType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ConsumptionPointType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class ConsumptionPointType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID|null
+     * @var SubscriberID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class ConsumptionPointType
     private $subscriberID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType|null
+     * @var SubscriberType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class ConsumptionPointType
     private $subscriberType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode|null
+     * @var SubscriberTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ConsumptionPointType
     private $subscriberTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity|null
+     * @var TotalDeliveredQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class ConsumptionPointType
     private $totalDeliveredQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @var Address|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class ConsumptionPointType
     private $address;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\WebSiteAccess|null
+     * @var WebSiteAccess|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WebSiteAccess")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class ConsumptionPointType
     private $webSiteAccess;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter>|null
+     * @var array<UtilityMeter>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter>")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class ConsumptionPointType
     private $utilityMeter;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -125,7 +125,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -135,7 +135,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -156,7 +156,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -164,7 +164,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -195,7 +195,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -210,7 +210,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -225,7 +225,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -236,7 +236,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -246,7 +246,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -261,7 +261,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -277,7 +277,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID|null
+     * @return SubscriberID|null
      */
     public function getSubscriberID(): ?SubscriberID
     {
@@ -285,7 +285,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID
+     * @return SubscriberID
      */
     public function getSubscriberIDWithCreate(): SubscriberID
     {
@@ -295,7 +295,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID|null $subscriberID
+     * @param SubscriberID|null $subscriberID
      * @return self
      */
     public function setSubscriberID(?SubscriberID $subscriberID = null): self
@@ -316,7 +316,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType|null
+     * @return SubscriberType|null
      */
     public function getSubscriberType(): ?SubscriberType
     {
@@ -324,7 +324,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType
+     * @return SubscriberType
      */
     public function getSubscriberTypeWithCreate(): SubscriberType
     {
@@ -334,7 +334,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType|null $subscriberType
+     * @param SubscriberType|null $subscriberType
      * @return self
      */
     public function setSubscriberType(?SubscriberType $subscriberType = null): self
@@ -355,7 +355,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode|null
+     * @return SubscriberTypeCode|null
      */
     public function getSubscriberTypeCode(): ?SubscriberTypeCode
     {
@@ -363,7 +363,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode
+     * @return SubscriberTypeCode
      */
     public function getSubscriberTypeCodeWithCreate(): SubscriberTypeCode
     {
@@ -373,7 +373,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode|null $subscriberTypeCode
+     * @param SubscriberTypeCode|null $subscriberTypeCode
      * @return self
      */
     public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): self
@@ -394,7 +394,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity|null
+     * @return TotalDeliveredQuantity|null
      */
     public function getTotalDeliveredQuantity(): ?TotalDeliveredQuantity
     {
@@ -402,7 +402,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity
+     * @return TotalDeliveredQuantity
      */
     public function getTotalDeliveredQuantityWithCreate(): TotalDeliveredQuantity
     {
@@ -412,7 +412,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity|null $totalDeliveredQuantity
+     * @param TotalDeliveredQuantity|null $totalDeliveredQuantity
      * @return self
      */
     public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): self
@@ -433,7 +433,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @return Address|null
      */
     public function getAddress(): ?Address
     {
@@ -441,7 +441,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address
+     * @return Address
      */
     public function getAddressWithCreate(): Address
     {
@@ -451,7 +451,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null $address
+     * @param Address|null $address
      * @return self
      */
     public function setAddress(?Address $address = null): self
@@ -472,7 +472,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WebSiteAccess|null
+     * @return WebSiteAccess|null
      */
     public function getWebSiteAccess(): ?WebSiteAccess
     {
@@ -480,7 +480,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WebSiteAccess
+     * @return WebSiteAccess
      */
     public function getWebSiteAccessWithCreate(): WebSiteAccess
     {
@@ -490,7 +490,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WebSiteAccess|null $webSiteAccess
+     * @param WebSiteAccess|null $webSiteAccess
      * @return self
      */
     public function setWebSiteAccess(?WebSiteAccess $webSiteAccess = null): self
@@ -511,7 +511,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter>|null
+     * @return array<UtilityMeter>|null
      */
     public function getUtilityMeter(): ?array
     {
@@ -519,7 +519,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter>|null $utilityMeter
+     * @param array<UtilityMeter>|null $utilityMeter
      * @return self
      */
     public function setUtilityMeter(?array $utilityMeter = null): self
@@ -550,7 +550,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter|null
+     * @return UtilityMeter|null
      */
     public function firstUtilityMeter(): ?UtilityMeter
     {
@@ -565,7 +565,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter|null
+     * @return UtilityMeter|null
      */
     public function lastUtilityMeter(): ?UtilityMeter
     {
@@ -580,7 +580,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter $utilityMeter
+     * @param UtilityMeter $utilityMeter
      * @return self
      */
     public function addToUtilityMeter(UtilityMeter $utilityMeter): self
@@ -591,7 +591,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter
+     * @return UtilityMeter
      */
     public function addToUtilityMeterWithCreate(): UtilityMeter
     {
@@ -601,7 +601,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter $utilityMeter
+     * @param UtilityMeter $utilityMeter
      * @return self
      */
     public function addOnceToUtilityMeter(UtilityMeter $utilityMeter): self
@@ -616,7 +616,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter
+     * @return UtilityMeter
      */
     public function addOnceToUtilityMeterWithCreate(): UtilityMeter
     {

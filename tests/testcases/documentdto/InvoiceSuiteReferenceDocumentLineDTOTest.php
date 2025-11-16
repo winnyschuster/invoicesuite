@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
+use DateTimeInterface;
 use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\tests\TestCase;
@@ -16,7 +17,7 @@ final class InvoiceSuiteReferenceDocumentLineDTOTest extends TestCase
 
         $this->assertNull($invoiceSuiteReferenceDocumentLineDTO->getReferenceNumber());
         $this->assertNull($invoiceSuiteReferenceDocumentLineDTO->getReferenceLineNumber());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteReferenceDocumentLineDTO->getReferenceDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuiteReferenceDocumentLineDTO->getReferenceDate());
     }
 
     public function testReferenceNumberGetterAndSetter(): void

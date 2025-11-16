@@ -15,7 +15,7 @@ class PaymentMandateType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class PaymentMandateType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode|null
+     * @var MandateTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class PaymentMandateType
     private $mandateTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric|null
+     * @var MaximumPaymentInstructionsNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class PaymentMandateType
     private $maximumPaymentInstructionsNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount|null
+     * @var MaximumPaidAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class PaymentMandateType
     private $maximumPaidAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID|null
+     * @var SignatureID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class PaymentMandateType
     private $signatureID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PayerParty|null
+     * @var PayerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayerParty")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class PaymentMandateType
     private $payerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount|null
+     * @var PayerFinancialAccount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount")
      * @JMS\Expose
@@ -92,7 +92,7 @@ class PaymentMandateType
     private $payerFinancialAccount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @var ValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -103,7 +103,7 @@ class PaymentMandateType
     private $validityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentReversalPeriod|null
+     * @var PaymentReversalPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentReversalPeriod")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class PaymentMandateType
     private $paymentReversalPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Clause>|null
+     * @var array<Clause>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Clause>")
      * @JMS\Expose
@@ -126,7 +126,7 @@ class PaymentMandateType
     private $clause;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -134,7 +134,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -144,7 +144,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -165,7 +165,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode|null
+     * @return MandateTypeCode|null
      */
     public function getMandateTypeCode(): ?MandateTypeCode
     {
@@ -173,7 +173,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode
+     * @return MandateTypeCode
      */
     public function getMandateTypeCodeWithCreate(): MandateTypeCode
     {
@@ -183,7 +183,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode|null $mandateTypeCode
+     * @param MandateTypeCode|null $mandateTypeCode
      * @return self
      */
     public function setMandateTypeCode(?MandateTypeCode $mandateTypeCode = null): self
@@ -204,7 +204,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric|null
+     * @return MaximumPaymentInstructionsNumeric|null
      */
     public function getMaximumPaymentInstructionsNumeric(): ?MaximumPaymentInstructionsNumeric
     {
@@ -212,7 +212,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric
+     * @return MaximumPaymentInstructionsNumeric
      */
     public function getMaximumPaymentInstructionsNumericWithCreate(): MaximumPaymentInstructionsNumeric
     {
@@ -222,7 +222,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric|null $maximumPaymentInstructionsNumeric
+     * @param MaximumPaymentInstructionsNumeric|null $maximumPaymentInstructionsNumeric
      * @return self
      */
     public function setMaximumPaymentInstructionsNumeric(
@@ -244,7 +244,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount|null
+     * @return MaximumPaidAmount|null
      */
     public function getMaximumPaidAmount(): ?MaximumPaidAmount
     {
@@ -252,7 +252,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount
+     * @return MaximumPaidAmount
      */
     public function getMaximumPaidAmountWithCreate(): MaximumPaidAmount
     {
@@ -262,7 +262,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount|null $maximumPaidAmount
+     * @param MaximumPaidAmount|null $maximumPaidAmount
      * @return self
      */
     public function setMaximumPaidAmount(?MaximumPaidAmount $maximumPaidAmount = null): self
@@ -283,7 +283,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID|null
+     * @return SignatureID|null
      */
     public function getSignatureID(): ?SignatureID
     {
@@ -291,7 +291,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID
+     * @return SignatureID
      */
     public function getSignatureIDWithCreate(): SignatureID
     {
@@ -301,7 +301,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID|null $signatureID
+     * @param SignatureID|null $signatureID
      * @return self
      */
     public function setSignatureID(?SignatureID $signatureID = null): self
@@ -322,7 +322,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayerParty|null
+     * @return PayerParty|null
      */
     public function getPayerParty(): ?PayerParty
     {
@@ -330,7 +330,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayerParty
+     * @return PayerParty
      */
     public function getPayerPartyWithCreate(): PayerParty
     {
@@ -340,7 +340,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PayerParty|null $payerParty
+     * @param PayerParty|null $payerParty
      * @return self
      */
     public function setPayerParty(?PayerParty $payerParty = null): self
@@ -361,7 +361,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount|null
+     * @return PayerFinancialAccount|null
      */
     public function getPayerFinancialAccount(): ?PayerFinancialAccount
     {
@@ -369,7 +369,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount
+     * @return PayerFinancialAccount
      */
     public function getPayerFinancialAccountWithCreate(): PayerFinancialAccount
     {
@@ -379,7 +379,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount|null $payerFinancialAccount
+     * @param PayerFinancialAccount|null $payerFinancialAccount
      * @return self
      */
     public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): self
@@ -400,7 +400,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -408,7 +408,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function getValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -418,7 +418,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null $validityPeriod
+     * @param ValidityPeriod|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
@@ -439,7 +439,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentReversalPeriod|null
+     * @return PaymentReversalPeriod|null
      */
     public function getPaymentReversalPeriod(): ?PaymentReversalPeriod
     {
@@ -447,7 +447,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentReversalPeriod
+     * @return PaymentReversalPeriod
      */
     public function getPaymentReversalPeriodWithCreate(): PaymentReversalPeriod
     {
@@ -457,7 +457,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentReversalPeriod|null $paymentReversalPeriod
+     * @param PaymentReversalPeriod|null $paymentReversalPeriod
      * @return self
      */
     public function setPaymentReversalPeriod(?PaymentReversalPeriod $paymentReversalPeriod = null): self
@@ -478,7 +478,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Clause>|null
+     * @return array<Clause>|null
      */
     public function getClause(): ?array
     {
@@ -486,7 +486,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Clause>|null $clause
+     * @param array<Clause>|null $clause
      * @return self
      */
     public function setClause(?array $clause = null): self
@@ -517,7 +517,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause|null
+     * @return Clause|null
      */
     public function firstClause(): ?Clause
     {
@@ -532,7 +532,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause|null
+     * @return Clause|null
      */
     public function lastClause(): ?Clause
     {
@@ -547,7 +547,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Clause $clause
+     * @param Clause $clause
      * @return self
      */
     public function addToClause(Clause $clause): self
@@ -558,7 +558,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause
+     * @return Clause
      */
     public function addToClauseWithCreate(): Clause
     {
@@ -568,7 +568,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Clause $clause
+     * @param Clause $clause
      * @return self
      */
     public function addOnceToClause(Clause $clause): self
@@ -583,7 +583,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause
+     * @return Clause
      */
     public function addOnceToClauseWithCreate(): Clause
     {

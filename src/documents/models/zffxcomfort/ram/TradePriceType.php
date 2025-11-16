@@ -12,7 +12,7 @@ class TradePriceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TradePriceType
     private $chargeAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\QuantityType|null
+     * @var QuantityType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\QuantityType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class TradePriceType
     private $basisQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType|null
+     * @var TradeAllowanceChargeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class TradePriceType
     private $appliedTradeAllowanceCharge;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getChargeAmount(): ?AmountType
     {
@@ -53,7 +53,7 @@ class TradePriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType
+     * @return AmountType
      */
     public function getChargeAmountWithCreate(): AmountType
     {
@@ -63,7 +63,7 @@ class TradePriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType|null $chargeAmount
+     * @param AmountType|null $chargeAmount
      * @return self
      */
     public function setChargeAmount(?AmountType $chargeAmount = null): self
@@ -84,7 +84,7 @@ class TradePriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\QuantityType|null
+     * @return QuantityType|null
      */
     public function getBasisQuantity(): ?QuantityType
     {
@@ -92,7 +92,7 @@ class TradePriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\QuantityType
+     * @return QuantityType
      */
     public function getBasisQuantityWithCreate(): QuantityType
     {
@@ -102,7 +102,7 @@ class TradePriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\QuantityType|null $basisQuantity
+     * @param QuantityType|null $basisQuantity
      * @return self
      */
     public function setBasisQuantity(?QuantityType $basisQuantity = null): self
@@ -123,7 +123,7 @@ class TradePriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType|null
+     * @return TradeAllowanceChargeType|null
      */
     public function getAppliedTradeAllowanceCharge(): ?TradeAllowanceChargeType
     {
@@ -131,7 +131,7 @@ class TradePriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType
+     * @return TradeAllowanceChargeType
      */
     public function getAppliedTradeAllowanceChargeWithCreate(): TradeAllowanceChargeType
     {
@@ -141,7 +141,7 @@ class TradePriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType|null $appliedTradeAllowanceCharge
+     * @param TradeAllowanceChargeType|null $appliedTradeAllowanceCharge
      * @return self
      */
     public function setAppliedTradeAllowanceCharge(

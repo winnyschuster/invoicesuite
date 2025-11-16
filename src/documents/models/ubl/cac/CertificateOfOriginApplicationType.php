@@ -16,7 +16,7 @@ class CertificateOfOriginApplicationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID|null
+     * @var ReferenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class CertificateOfOriginApplicationType
     private $referenceID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null
+     * @var CertificateType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class CertificateOfOriginApplicationType
     private $certificateType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode|null
+     * @var ApplicationStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class CertificateOfOriginApplicationType
     private $applicationStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID|null
+     * @var OriginalJobID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class CertificateOfOriginApplicationType
     private $originalJobID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID|null
+     * @var PreviousJobID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class CertificateOfOriginApplicationType
     private $previousJobID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null
+     * @var array<Remarks>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class CertificateOfOriginApplicationType
     private $remarks;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @var Shipment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Shipment")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class CertificateOfOriginApplicationType
     private $shipment;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty>|null
+     * @var array<EndorserParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty>")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class CertificateOfOriginApplicationType
     private $endorserParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PreparationParty|null
+     * @var PreparationParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PreparationParty")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class CertificateOfOriginApplicationType
     private $preparationParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class CertificateOfOriginApplicationType
     private $issuerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty|null
+     * @var ExporterParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty")
      * @JMS\Expose
@@ -139,7 +139,7 @@ class CertificateOfOriginApplicationType
     private $exporterParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty|null
+     * @var ImporterParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty")
      * @JMS\Expose
@@ -150,7 +150,7 @@ class CertificateOfOriginApplicationType
     private $importerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuingCountry|null
+     * @var IssuingCountry|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuingCountry")
      * @JMS\Expose
@@ -161,7 +161,7 @@ class CertificateOfOriginApplicationType
     private $issuingCountry;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution>|null
+     * @var array<DocumentDistribution>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution>")
      * @JMS\Expose
@@ -173,7 +173,7 @@ class CertificateOfOriginApplicationType
     private $documentDistribution;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference>|null
+     * @var array<SupportingDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference>")
      * @JMS\Expose
@@ -185,7 +185,7 @@ class CertificateOfOriginApplicationType
     private $supportingDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null
+     * @var array<Signature>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -197,7 +197,7 @@ class CertificateOfOriginApplicationType
     private $signature;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID|null
+     * @return ReferenceID|null
      */
     public function getReferenceID(): ?ReferenceID
     {
@@ -205,7 +205,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID
+     * @return ReferenceID
      */
     public function getReferenceIDWithCreate(): ReferenceID
     {
@@ -215,7 +215,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID|null $referenceID
+     * @param ReferenceID|null $referenceID
      * @return self
      */
     public function setReferenceID(?ReferenceID $referenceID = null): self
@@ -236,7 +236,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null
+     * @return CertificateType|null
      */
     public function getCertificateType(): ?CertificateType
     {
@@ -244,7 +244,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType
+     * @return CertificateType
      */
     public function getCertificateTypeWithCreate(): CertificateType
     {
@@ -254,7 +254,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null $certificateType
+     * @param CertificateType|null $certificateType
      * @return self
      */
     public function setCertificateType(?CertificateType $certificateType = null): self
@@ -275,7 +275,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode|null
+     * @return ApplicationStatusCode|null
      */
     public function getApplicationStatusCode(): ?ApplicationStatusCode
     {
@@ -283,7 +283,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode
+     * @return ApplicationStatusCode
      */
     public function getApplicationStatusCodeWithCreate(): ApplicationStatusCode
     {
@@ -293,7 +293,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode|null $applicationStatusCode
+     * @param ApplicationStatusCode|null $applicationStatusCode
      * @return self
      */
     public function setApplicationStatusCode(?ApplicationStatusCode $applicationStatusCode = null): self
@@ -314,7 +314,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID|null
+     * @return OriginalJobID|null
      */
     public function getOriginalJobID(): ?OriginalJobID
     {
@@ -322,7 +322,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID
+     * @return OriginalJobID
      */
     public function getOriginalJobIDWithCreate(): OriginalJobID
     {
@@ -332,7 +332,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID|null $originalJobID
+     * @param OriginalJobID|null $originalJobID
      * @return self
      */
     public function setOriginalJobID(?OriginalJobID $originalJobID = null): self
@@ -353,7 +353,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID|null
+     * @return PreviousJobID|null
      */
     public function getPreviousJobID(): ?PreviousJobID
     {
@@ -361,7 +361,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID
+     * @return PreviousJobID
      */
     public function getPreviousJobIDWithCreate(): PreviousJobID
     {
@@ -371,7 +371,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID|null $previousJobID
+     * @param PreviousJobID|null $previousJobID
      * @return self
      */
     public function setPreviousJobID(?PreviousJobID $previousJobID = null): self
@@ -392,7 +392,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null
+     * @return array<Remarks>|null
      */
     public function getRemarks(): ?array
     {
@@ -400,7 +400,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null $remarks
+     * @param array<Remarks>|null $remarks
      * @return self
      */
     public function setRemarks(?array $remarks = null): self
@@ -431,7 +431,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks|null
+     * @return Remarks|null
      */
     public function firstRemarks(): ?Remarks
     {
@@ -446,7 +446,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks|null
+     * @return Remarks|null
      */
     public function lastRemarks(): ?Remarks
     {
@@ -461,7 +461,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks $remarks
+     * @param Remarks $remarks
      * @return self
      */
     public function addToRemarks(Remarks $remarks): self
@@ -472,7 +472,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks
+     * @return Remarks
      */
     public function addToRemarksWithCreate(): Remarks
     {
@@ -482,7 +482,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks $remarks
+     * @param Remarks $remarks
      * @return self
      */
     public function addOnceToRemarks(Remarks $remarks): self
@@ -497,7 +497,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks
+     * @return Remarks
      */
     public function addOnceToRemarksWithCreate(): Remarks
     {
@@ -513,7 +513,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @return Shipment|null
      */
     public function getShipment(): ?Shipment
     {
@@ -521,7 +521,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment
+     * @return Shipment
      */
     public function getShipmentWithCreate(): Shipment
     {
@@ -531,7 +531,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null $shipment
+     * @param Shipment|null $shipment
      * @return self
      */
     public function setShipment(?Shipment $shipment = null): self
@@ -552,7 +552,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty>|null
+     * @return array<EndorserParty>|null
      */
     public function getEndorserParty(): ?array
     {
@@ -560,7 +560,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty>|null $endorserParty
+     * @param array<EndorserParty>|null $endorserParty
      * @return self
      */
     public function setEndorserParty(?array $endorserParty = null): self
@@ -591,7 +591,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty|null
+     * @return EndorserParty|null
      */
     public function firstEndorserParty(): ?EndorserParty
     {
@@ -606,7 +606,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty|null
+     * @return EndorserParty|null
      */
     public function lastEndorserParty(): ?EndorserParty
     {
@@ -621,7 +621,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty $endorserParty
+     * @param EndorserParty $endorserParty
      * @return self
      */
     public function addToEndorserParty(EndorserParty $endorserParty): self
@@ -632,7 +632,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty
+     * @return EndorserParty
      */
     public function addToEndorserPartyWithCreate(): EndorserParty
     {
@@ -642,7 +642,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty $endorserParty
+     * @param EndorserParty $endorserParty
      * @return self
      */
     public function addOnceToEndorserParty(EndorserParty $endorserParty): self
@@ -657,7 +657,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty
+     * @return EndorserParty
      */
     public function addOnceToEndorserPartyWithCreate(): EndorserParty
     {
@@ -673,7 +673,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreparationParty|null
+     * @return PreparationParty|null
      */
     public function getPreparationParty(): ?PreparationParty
     {
@@ -681,7 +681,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreparationParty
+     * @return PreparationParty
      */
     public function getPreparationPartyWithCreate(): PreparationParty
     {
@@ -691,7 +691,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PreparationParty|null $preparationParty
+     * @param PreparationParty|null $preparationParty
      * @return self
      */
     public function setPreparationParty(?PreparationParty $preparationParty = null): self
@@ -712,7 +712,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -720,7 +720,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -730,7 +730,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self
@@ -751,7 +751,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty|null
+     * @return ExporterParty|null
      */
     public function getExporterParty(): ?ExporterParty
     {
@@ -759,7 +759,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty
+     * @return ExporterParty
      */
     public function getExporterPartyWithCreate(): ExporterParty
     {
@@ -769,7 +769,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty|null $exporterParty
+     * @param ExporterParty|null $exporterParty
      * @return self
      */
     public function setExporterParty(?ExporterParty $exporterParty = null): self
@@ -790,7 +790,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty|null
+     * @return ImporterParty|null
      */
     public function getImporterParty(): ?ImporterParty
     {
@@ -798,7 +798,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty
+     * @return ImporterParty
      */
     public function getImporterPartyWithCreate(): ImporterParty
     {
@@ -808,7 +808,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty|null $importerParty
+     * @param ImporterParty|null $importerParty
      * @return self
      */
     public function setImporterParty(?ImporterParty $importerParty = null): self
@@ -829,7 +829,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuingCountry|null
+     * @return IssuingCountry|null
      */
     public function getIssuingCountry(): ?IssuingCountry
     {
@@ -837,7 +837,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuingCountry
+     * @return IssuingCountry
      */
     public function getIssuingCountryWithCreate(): IssuingCountry
     {
@@ -847,7 +847,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuingCountry|null $issuingCountry
+     * @param IssuingCountry|null $issuingCountry
      * @return self
      */
     public function setIssuingCountry(?IssuingCountry $issuingCountry = null): self
@@ -868,7 +868,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution>|null
+     * @return array<DocumentDistribution>|null
      */
     public function getDocumentDistribution(): ?array
     {
@@ -876,7 +876,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution>|null $documentDistribution
+     * @param array<DocumentDistribution>|null $documentDistribution
      * @return self
      */
     public function setDocumentDistribution(?array $documentDistribution = null): self
@@ -907,7 +907,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution|null
+     * @return DocumentDistribution|null
      */
     public function firstDocumentDistribution(): ?DocumentDistribution
     {
@@ -922,7 +922,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution|null
+     * @return DocumentDistribution|null
      */
     public function lastDocumentDistribution(): ?DocumentDistribution
     {
@@ -937,7 +937,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution $documentDistribution
+     * @param DocumentDistribution $documentDistribution
      * @return self
      */
     public function addToDocumentDistribution(DocumentDistribution $documentDistribution): self
@@ -948,7 +948,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution
+     * @return DocumentDistribution
      */
     public function addToDocumentDistributionWithCreate(): DocumentDistribution
     {
@@ -958,7 +958,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution $documentDistribution
+     * @param DocumentDistribution $documentDistribution
      * @return self
      */
     public function addOnceToDocumentDistribution(DocumentDistribution $documentDistribution): self
@@ -973,7 +973,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution
+     * @return DocumentDistribution
      */
     public function addOnceToDocumentDistributionWithCreate(): DocumentDistribution
     {
@@ -989,7 +989,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference>|null
+     * @return array<SupportingDocumentReference>|null
      */
     public function getSupportingDocumentReference(): ?array
     {
@@ -997,7 +997,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference>|null $supportingDocumentReference
+     * @param array<SupportingDocumentReference>|null $supportingDocumentReference
      * @return self
      */
     public function setSupportingDocumentReference(?array $supportingDocumentReference = null): self
@@ -1028,7 +1028,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference|null
+     * @return SupportingDocumentReference|null
      */
     public function firstSupportingDocumentReference(): ?SupportingDocumentReference
     {
@@ -1043,7 +1043,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference|null
+     * @return SupportingDocumentReference|null
      */
     public function lastSupportingDocumentReference(): ?SupportingDocumentReference
     {
@@ -1058,7 +1058,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference $supportingDocumentReference
+     * @param SupportingDocumentReference $supportingDocumentReference
      * @return self
      */
     public function addToSupportingDocumentReference(SupportingDocumentReference $supportingDocumentReference): self
@@ -1069,7 +1069,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference
+     * @return SupportingDocumentReference
      */
     public function addToSupportingDocumentReferenceWithCreate(): SupportingDocumentReference
     {
@@ -1079,7 +1079,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference $supportingDocumentReference
+     * @param SupportingDocumentReference $supportingDocumentReference
      * @return self
      */
     public function addOnceToSupportingDocumentReference(
@@ -1095,7 +1095,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference
+     * @return SupportingDocumentReference
      */
     public function addOnceToSupportingDocumentReferenceWithCreate(): SupportingDocumentReference
     {
@@ -1111,7 +1111,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null
+     * @return array<Signature>|null
      */
     public function getSignature(): ?array
     {
@@ -1119,7 +1119,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null $signature
+     * @param array<Signature>|null $signature
      * @return self
      */
     public function setSignature(?array $signature = null): self
@@ -1150,7 +1150,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature|null
+     * @return Signature|null
      */
     public function firstSignature(): ?Signature
     {
@@ -1165,7 +1165,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature|null
+     * @return Signature|null
      */
     public function lastSignature(): ?Signature
     {
@@ -1180,7 +1180,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Signature $signature
+     * @param Signature $signature
      * @return self
      */
     public function addToSignature(Signature $signature): self
@@ -1191,7 +1191,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature
+     * @return Signature
      */
     public function addToSignatureWithCreate(): Signature
     {
@@ -1201,7 +1201,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Signature $signature
+     * @param Signature $signature
      * @return self
      */
     public function addOnceToSignature(Signature $signature): self
@@ -1216,7 +1216,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature
+     * @return Signature
      */
     public function addOnceToSignatureWithCreate(): Signature
     {

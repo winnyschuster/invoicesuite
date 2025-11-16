@@ -11,7 +11,7 @@ class TaxRegistrationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TaxRegistrationType
     private $iD;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -30,7 +30,7 @@ class TaxRegistrationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -40,7 +40,7 @@ class TaxRegistrationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self

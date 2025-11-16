@@ -12,7 +12,7 @@ class DocumentDistributionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier|null
+     * @var PrintQualifier|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class DocumentDistributionType
     private $printQualifier;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric|null
+     * @var MaximumCopiesNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class DocumentDistributionType
     private $maximumCopiesNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @var Party|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class DocumentDistributionType
     private $party;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier|null
+     * @return PrintQualifier|null
      */
     public function getPrintQualifier(): ?PrintQualifier
     {
@@ -53,7 +53,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier
+     * @return PrintQualifier
      */
     public function getPrintQualifierWithCreate(): PrintQualifier
     {
@@ -63,7 +63,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier|null $printQualifier
+     * @param PrintQualifier|null $printQualifier
      * @return self
      */
     public function setPrintQualifier(?PrintQualifier $printQualifier = null): self
@@ -84,7 +84,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric|null
+     * @return MaximumCopiesNumeric|null
      */
     public function getMaximumCopiesNumeric(): ?MaximumCopiesNumeric
     {
@@ -92,7 +92,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric
+     * @return MaximumCopiesNumeric
      */
     public function getMaximumCopiesNumericWithCreate(): MaximumCopiesNumeric
     {
@@ -102,7 +102,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric|null $maximumCopiesNumeric
+     * @param MaximumCopiesNumeric|null $maximumCopiesNumeric
      * @return self
      */
     public function setMaximumCopiesNumeric(?MaximumCopiesNumeric $maximumCopiesNumeric = null): self
@@ -123,7 +123,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @return Party|null
      */
     public function getParty(): ?Party
     {
@@ -131,7 +131,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party
+     * @return Party
      */
     public function getPartyWithCreate(): Party
     {
@@ -141,7 +141,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null $party
+     * @param Party|null $party
      * @return self
      */
     public function setParty(?Party $party = null): self

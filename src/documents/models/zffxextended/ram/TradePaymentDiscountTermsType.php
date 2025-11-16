@@ -14,7 +14,7 @@ class TradePaymentDiscountTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType|null
+     * @var DateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradePaymentDiscountTermsType
     private $basisDateTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType|null
+     * @var MeasureType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradePaymentDiscountTermsType
     private $basisPeriodMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradePaymentDiscountTermsType
     private $basisAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType|null
+     * @var PercentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TradePaymentDiscountTermsType
     private $calculationPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class TradePaymentDiscountTermsType
     private $actualDiscountAmount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType|null
+     * @return DateTimeType|null
      */
     public function getBasisDateTime(): ?DateTimeType
     {
@@ -77,7 +77,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType
+     * @return DateTimeType
      */
     public function getBasisDateTimeWithCreate(): DateTimeType
     {
@@ -87,7 +87,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType|null $basisDateTime
+     * @param DateTimeType|null $basisDateTime
      * @return self
      */
     public function setBasisDateTime(?DateTimeType $basisDateTime = null): self
@@ -108,7 +108,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType|null
+     * @return MeasureType|null
      */
     public function getBasisPeriodMeasure(): ?MeasureType
     {
@@ -116,7 +116,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType
+     * @return MeasureType
      */
     public function getBasisPeriodMeasureWithCreate(): MeasureType
     {
@@ -126,7 +126,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType|null $basisPeriodMeasure
+     * @param MeasureType|null $basisPeriodMeasure
      * @return self
      */
     public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): self
@@ -147,7 +147,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getBasisAmount(): ?AmountType
     {
@@ -155,7 +155,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType
+     * @return AmountType
      */
     public function getBasisAmountWithCreate(): AmountType
     {
@@ -165,7 +165,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null $basisAmount
+     * @param AmountType|null $basisAmount
      * @return self
      */
     public function setBasisAmount(?AmountType $basisAmount = null): self
@@ -186,7 +186,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType|null
+     * @return PercentType|null
      */
     public function getCalculationPercent(): ?PercentType
     {
@@ -194,7 +194,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType
+     * @return PercentType
      */
     public function getCalculationPercentWithCreate(): PercentType
     {
@@ -204,7 +204,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType|null $calculationPercent
+     * @param PercentType|null $calculationPercent
      * @return self
      */
     public function setCalculationPercent(?PercentType $calculationPercent = null): self
@@ -225,7 +225,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getActualDiscountAmount(): ?AmountType
     {
@@ -233,7 +233,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType
+     * @return AmountType
      */
     public function getActualDiscountAmountWithCreate(): AmountType
     {
@@ -243,7 +243,7 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null $actualDiscountAmount
+     * @param AmountType|null $actualDiscountAmount
      * @return self
      */
     public function setActualDiscountAmount(?AmountType $actualDiscountAmount = null): self

@@ -14,7 +14,7 @@ class EventTacticEnumerationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode|null
+     * @var ConsumerIncentiveTacticTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EventTacticEnumerationType
     private $consumerIncentiveTacticTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode|null
+     * @var DisplayTacticTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EventTacticEnumerationType
     private $displayTacticTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode|null
+     * @var FeatureTacticTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EventTacticEnumerationType
     private $featureTacticTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode|null
+     * @var TradeItemPackingLabelingTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EventTacticEnumerationType
     private $tradeItemPackingLabelingTypeCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode|null
+     * @return ConsumerIncentiveTacticTypeCode|null
      */
     public function getConsumerIncentiveTacticTypeCode(): ?ConsumerIncentiveTacticTypeCode
     {
@@ -66,7 +66,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode
+     * @return ConsumerIncentiveTacticTypeCode
      */
     public function getConsumerIncentiveTacticTypeCodeWithCreate(): ConsumerIncentiveTacticTypeCode
     {
@@ -76,7 +76,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode|null $consumerIncentiveTacticTypeCode
+     * @param ConsumerIncentiveTacticTypeCode|null $consumerIncentiveTacticTypeCode
      * @return self
      */
     public function setConsumerIncentiveTacticTypeCode(
@@ -98,7 +98,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode|null
+     * @return DisplayTacticTypeCode|null
      */
     public function getDisplayTacticTypeCode(): ?DisplayTacticTypeCode
     {
@@ -106,7 +106,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode
+     * @return DisplayTacticTypeCode
      */
     public function getDisplayTacticTypeCodeWithCreate(): DisplayTacticTypeCode
     {
@@ -116,7 +116,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode|null $displayTacticTypeCode
+     * @param DisplayTacticTypeCode|null $displayTacticTypeCode
      * @return self
      */
     public function setDisplayTacticTypeCode(?DisplayTacticTypeCode $displayTacticTypeCode = null): self
@@ -137,7 +137,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode|null
+     * @return FeatureTacticTypeCode|null
      */
     public function getFeatureTacticTypeCode(): ?FeatureTacticTypeCode
     {
@@ -145,7 +145,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode
+     * @return FeatureTacticTypeCode
      */
     public function getFeatureTacticTypeCodeWithCreate(): FeatureTacticTypeCode
     {
@@ -155,7 +155,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode|null $featureTacticTypeCode
+     * @param FeatureTacticTypeCode|null $featureTacticTypeCode
      * @return self
      */
     public function setFeatureTacticTypeCode(?FeatureTacticTypeCode $featureTacticTypeCode = null): self
@@ -176,7 +176,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode|null
+     * @return TradeItemPackingLabelingTypeCode|null
      */
     public function getTradeItemPackingLabelingTypeCode(): ?TradeItemPackingLabelingTypeCode
     {
@@ -184,7 +184,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode
+     * @return TradeItemPackingLabelingTypeCode
      */
     public function getTradeItemPackingLabelingTypeCodeWithCreate(): TradeItemPackingLabelingTypeCode
     {
@@ -194,7 +194,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode|null $tradeItemPackingLabelingTypeCode
+     * @param TradeItemPackingLabelingTypeCode|null $tradeItemPackingLabelingTypeCode
      * @return self
      */
     public function setTradeItemPackingLabelingTypeCode(

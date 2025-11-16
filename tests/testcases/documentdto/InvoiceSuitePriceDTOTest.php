@@ -15,7 +15,7 @@ final class InvoiceSuitePriceDTOTest extends TestCase
         $invoiceSuitePriceDTO = new InvoiceSuitePriceDTO();
 
         $this->assertNull($invoiceSuitePriceDTO->getAmount());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuitePriceDTO->getPriceQuantity());
+        $this->assertNotInstanceOf(InvoiceSuiteQuantityDTO::class, $invoiceSuitePriceDTO->getPriceQuantity());
     }
 
     public function testAmountGetterAndSetter(): void

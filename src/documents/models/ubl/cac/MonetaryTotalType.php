@@ -19,7 +19,7 @@ class MonetaryTotalType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @var LineExtensionAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class MonetaryTotalType
     private $lineExtensionAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount|null
+     * @var TaxExclusiveAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class MonetaryTotalType
     private $taxExclusiveAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount|null
+     * @var TaxInclusiveAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class MonetaryTotalType
     private $taxInclusiveAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount|null
+     * @var AllowanceTotalAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class MonetaryTotalType
     private $allowanceTotalAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount|null
+     * @var ChargeTotalAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class MonetaryTotalType
     private $chargeTotalAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount|null
+     * @var PrepaidAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class MonetaryTotalType
     private $prepaidAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount|null
+     * @var PayableRoundingAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class MonetaryTotalType
     private $payableRoundingAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAmount|null
+     * @var PayableAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAmount")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class MonetaryTotalType
     private $payableAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAlternativeAmount|null
+     * @var PayableAlternativeAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAlternativeAmount")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class MonetaryTotalType
     private $payableAlternativeAmount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @return LineExtensionAmount|null
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -126,7 +126,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount
+     * @return LineExtensionAmount
      */
     public function getLineExtensionAmountWithCreate(): LineExtensionAmount
     {
@@ -136,7 +136,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null $lineExtensionAmount
+     * @param LineExtensionAmount|null $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
@@ -157,7 +157,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount|null
+     * @return TaxExclusiveAmount|null
      */
     public function getTaxExclusiveAmount(): ?TaxExclusiveAmount
     {
@@ -165,7 +165,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount
+     * @return TaxExclusiveAmount
      */
     public function getTaxExclusiveAmountWithCreate(): TaxExclusiveAmount
     {
@@ -175,7 +175,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount|null $taxExclusiveAmount
+     * @param TaxExclusiveAmount|null $taxExclusiveAmount
      * @return self
      */
     public function setTaxExclusiveAmount(?TaxExclusiveAmount $taxExclusiveAmount = null): self
@@ -196,7 +196,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount|null
+     * @return TaxInclusiveAmount|null
      */
     public function getTaxInclusiveAmount(): ?TaxInclusiveAmount
     {
@@ -204,7 +204,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount
+     * @return TaxInclusiveAmount
      */
     public function getTaxInclusiveAmountWithCreate(): TaxInclusiveAmount
     {
@@ -214,7 +214,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount|null $taxInclusiveAmount
+     * @param TaxInclusiveAmount|null $taxInclusiveAmount
      * @return self
      */
     public function setTaxInclusiveAmount(?TaxInclusiveAmount $taxInclusiveAmount = null): self
@@ -235,7 +235,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount|null
+     * @return AllowanceTotalAmount|null
      */
     public function getAllowanceTotalAmount(): ?AllowanceTotalAmount
     {
@@ -243,7 +243,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount
+     * @return AllowanceTotalAmount
      */
     public function getAllowanceTotalAmountWithCreate(): AllowanceTotalAmount
     {
@@ -253,7 +253,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount|null $allowanceTotalAmount
+     * @param AllowanceTotalAmount|null $allowanceTotalAmount
      * @return self
      */
     public function setAllowanceTotalAmount(?AllowanceTotalAmount $allowanceTotalAmount = null): self
@@ -274,7 +274,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount|null
+     * @return ChargeTotalAmount|null
      */
     public function getChargeTotalAmount(): ?ChargeTotalAmount
     {
@@ -282,7 +282,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount
+     * @return ChargeTotalAmount
      */
     public function getChargeTotalAmountWithCreate(): ChargeTotalAmount
     {
@@ -292,7 +292,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount|null $chargeTotalAmount
+     * @param ChargeTotalAmount|null $chargeTotalAmount
      * @return self
      */
     public function setChargeTotalAmount(?ChargeTotalAmount $chargeTotalAmount = null): self
@@ -313,7 +313,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount|null
+     * @return PrepaidAmount|null
      */
     public function getPrepaidAmount(): ?PrepaidAmount
     {
@@ -321,7 +321,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount
+     * @return PrepaidAmount
      */
     public function getPrepaidAmountWithCreate(): PrepaidAmount
     {
@@ -331,7 +331,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount|null $prepaidAmount
+     * @param PrepaidAmount|null $prepaidAmount
      * @return self
      */
     public function setPrepaidAmount(?PrepaidAmount $prepaidAmount = null): self
@@ -352,7 +352,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount|null
+     * @return PayableRoundingAmount|null
      */
     public function getPayableRoundingAmount(): ?PayableRoundingAmount
     {
@@ -360,7 +360,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount
+     * @return PayableRoundingAmount
      */
     public function getPayableRoundingAmountWithCreate(): PayableRoundingAmount
     {
@@ -370,7 +370,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount|null $payableRoundingAmount
+     * @param PayableRoundingAmount|null $payableRoundingAmount
      * @return self
      */
     public function setPayableRoundingAmount(?PayableRoundingAmount $payableRoundingAmount = null): self
@@ -391,7 +391,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAmount|null
+     * @return PayableAmount|null
      */
     public function getPayableAmount(): ?PayableAmount
     {
@@ -399,7 +399,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAmount
+     * @return PayableAmount
      */
     public function getPayableAmountWithCreate(): PayableAmount
     {
@@ -409,7 +409,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAmount|null $payableAmount
+     * @param PayableAmount|null $payableAmount
      * @return self
      */
     public function setPayableAmount(?PayableAmount $payableAmount = null): self
@@ -430,7 +430,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAlternativeAmount|null
+     * @return PayableAlternativeAmount|null
      */
     public function getPayableAlternativeAmount(): ?PayableAlternativeAmount
     {
@@ -438,7 +438,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAlternativeAmount
+     * @return PayableAlternativeAmount
      */
     public function getPayableAlternativeAmountWithCreate(): PayableAlternativeAmount
     {
@@ -448,7 +448,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAlternativeAmount|null $payableAlternativeAmount
+     * @param PayableAlternativeAmount|null $payableAlternativeAmount
      * @return self
      */
     public function setPayableAlternativeAmount(?PayableAlternativeAmount $payableAlternativeAmount = null): self

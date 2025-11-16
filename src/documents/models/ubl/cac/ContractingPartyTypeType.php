@@ -12,7 +12,7 @@ class ContractingPartyTypeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode|null
+     * @var PartyTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ContractingPartyTypeType
     private $partyTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType|null
+     * @var PartyType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ContractingPartyTypeType
     private $partyType;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode|null
+     * @return PartyTypeCode|null
      */
     public function getPartyTypeCode(): ?PartyTypeCode
     {
@@ -42,7 +42,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode
+     * @return PartyTypeCode
      */
     public function getPartyTypeCodeWithCreate(): PartyTypeCode
     {
@@ -52,7 +52,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode|null $partyTypeCode
+     * @param PartyTypeCode|null $partyTypeCode
      * @return self
      */
     public function setPartyTypeCode(?PartyTypeCode $partyTypeCode = null): self
@@ -73,7 +73,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType|null
+     * @return PartyType|null
      */
     public function getPartyType(): ?PartyType
     {
@@ -81,7 +81,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType
+     * @return PartyType
      */
     public function getPartyTypeWithCreate(): PartyType
     {
@@ -91,7 +91,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType|null $partyType
+     * @param PartyType|null $partyType
      * @return self
      */
     public function setPartyType(?PartyType $partyType = null): self

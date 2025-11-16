@@ -22,7 +22,7 @@ class AwardingCriterionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class AwardingCriterionType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode|null
+     * @var AwardingCriterionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class AwardingCriterionType
     private $awardingCriterionTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class AwardingCriterionType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric|null
+     * @var WeightNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class AwardingCriterionType
     private $weightNumeric;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Weight>|null
+     * @var array<Weight>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Weight>")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class AwardingCriterionType
     private $weight;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression>|null
+     * @var array<CalculationExpression>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression>")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class AwardingCriterionType
     private $calculationExpression;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpressionCode|null
+     * @var CalculationExpressionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpressionCode")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class AwardingCriterionType
     private $calculationExpressionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @var MinimumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class AwardingCriterionType
     private $minimumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @var MaximumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class AwardingCriterionType
     private $maximumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null
+     * @var MinimumAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class AwardingCriterionType
     private $minimumAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null
+     * @var MaximumAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class AwardingCriterionType
     private $maximumAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid>|null
+     * @var array<MinimumImprovementBid>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid>")
      * @JMS\Expose
@@ -158,7 +158,7 @@ class AwardingCriterionType
     private $minimumImprovementBid;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion>|null
+     * @var array<SubordinateAwardingCriterion>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion>")
      * @JMS\Expose
@@ -170,7 +170,7 @@ class AwardingCriterionType
     private $subordinateAwardingCriterion;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -178,7 +178,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -188,7 +188,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -209,7 +209,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode|null
+     * @return AwardingCriterionTypeCode|null
      */
     public function getAwardingCriterionTypeCode(): ?AwardingCriterionTypeCode
     {
@@ -217,7 +217,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode
+     * @return AwardingCriterionTypeCode
      */
     public function getAwardingCriterionTypeCodeWithCreate(): AwardingCriterionTypeCode
     {
@@ -227,7 +227,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode|null $awardingCriterionTypeCode
+     * @param AwardingCriterionTypeCode|null $awardingCriterionTypeCode
      * @return self
      */
     public function setAwardingCriterionTypeCode(?AwardingCriterionTypeCode $awardingCriterionTypeCode = null): self
@@ -248,7 +248,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -256,7 +256,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -287,7 +287,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -302,7 +302,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -317,7 +317,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -328,7 +328,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -338,7 +338,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -353,7 +353,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -369,7 +369,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric|null
+     * @return WeightNumeric|null
      */
     public function getWeightNumeric(): ?WeightNumeric
     {
@@ -377,7 +377,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric
+     * @return WeightNumeric
      */
     public function getWeightNumericWithCreate(): WeightNumeric
     {
@@ -387,7 +387,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric|null $weightNumeric
+     * @param WeightNumeric|null $weightNumeric
      * @return self
      */
     public function setWeightNumeric(?WeightNumeric $weightNumeric = null): self
@@ -408,7 +408,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Weight>|null
+     * @return array<Weight>|null
      */
     public function getWeight(): ?array
     {
@@ -416,7 +416,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Weight>|null $weight
+     * @param array<Weight>|null $weight
      * @return self
      */
     public function setWeight(?array $weight = null): self
@@ -447,7 +447,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Weight|null
+     * @return Weight|null
      */
     public function firstWeight(): ?Weight
     {
@@ -462,7 +462,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Weight|null
+     * @return Weight|null
      */
     public function lastWeight(): ?Weight
     {
@@ -477,7 +477,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Weight $weight
+     * @param Weight $weight
      * @return self
      */
     public function addToWeight(Weight $weight): self
@@ -488,7 +488,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Weight
+     * @return Weight
      */
     public function addToWeightWithCreate(): Weight
     {
@@ -498,7 +498,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Weight $weight
+     * @param Weight $weight
      * @return self
      */
     public function addOnceToWeight(Weight $weight): self
@@ -513,7 +513,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Weight
+     * @return Weight
      */
     public function addOnceToWeightWithCreate(): Weight
     {
@@ -529,7 +529,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression>|null
+     * @return array<CalculationExpression>|null
      */
     public function getCalculationExpression(): ?array
     {
@@ -537,7 +537,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression>|null $calculationExpression
+     * @param array<CalculationExpression>|null $calculationExpression
      * @return self
      */
     public function setCalculationExpression(?array $calculationExpression = null): self
@@ -568,7 +568,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression|null
+     * @return CalculationExpression|null
      */
     public function firstCalculationExpression(): ?CalculationExpression
     {
@@ -583,7 +583,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression|null
+     * @return CalculationExpression|null
      */
     public function lastCalculationExpression(): ?CalculationExpression
     {
@@ -598,7 +598,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression $calculationExpression
+     * @param CalculationExpression $calculationExpression
      * @return self
      */
     public function addToCalculationExpression(CalculationExpression $calculationExpression): self
@@ -609,7 +609,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression
+     * @return CalculationExpression
      */
     public function addToCalculationExpressionWithCreate(): CalculationExpression
     {
@@ -619,7 +619,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression $calculationExpression
+     * @param CalculationExpression $calculationExpression
      * @return self
      */
     public function addOnceToCalculationExpression(CalculationExpression $calculationExpression): self
@@ -634,7 +634,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression
+     * @return CalculationExpression
      */
     public function addOnceToCalculationExpressionWithCreate(): CalculationExpression
     {
@@ -650,7 +650,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpressionCode|null
+     * @return CalculationExpressionCode|null
      */
     public function getCalculationExpressionCode(): ?CalculationExpressionCode
     {
@@ -658,7 +658,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpressionCode
+     * @return CalculationExpressionCode
      */
     public function getCalculationExpressionCodeWithCreate(): CalculationExpressionCode
     {
@@ -668,7 +668,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpressionCode|null $calculationExpressionCode
+     * @param CalculationExpressionCode|null $calculationExpressionCode
      * @return self
      */
     public function setCalculationExpressionCode(?CalculationExpressionCode $calculationExpressionCode = null): self
@@ -689,7 +689,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @return MinimumQuantity|null
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -697,7 +697,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity
+     * @return MinimumQuantity
      */
     public function getMinimumQuantityWithCreate(): MinimumQuantity
     {
@@ -707,7 +707,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null $minimumQuantity
+     * @param MinimumQuantity|null $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
@@ -728,7 +728,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @return MaximumQuantity|null
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -736,7 +736,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity
+     * @return MaximumQuantity
      */
     public function getMaximumQuantityWithCreate(): MaximumQuantity
     {
@@ -746,7 +746,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null $maximumQuantity
+     * @param MaximumQuantity|null $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
@@ -767,7 +767,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null
+     * @return MinimumAmount|null
      */
     public function getMinimumAmount(): ?MinimumAmount
     {
@@ -775,7 +775,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount
+     * @return MinimumAmount
      */
     public function getMinimumAmountWithCreate(): MinimumAmount
     {
@@ -785,7 +785,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null $minimumAmount
+     * @param MinimumAmount|null $minimumAmount
      * @return self
      */
     public function setMinimumAmount(?MinimumAmount $minimumAmount = null): self
@@ -806,7 +806,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null
+     * @return MaximumAmount|null
      */
     public function getMaximumAmount(): ?MaximumAmount
     {
@@ -814,7 +814,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount
+     * @return MaximumAmount
      */
     public function getMaximumAmountWithCreate(): MaximumAmount
     {
@@ -824,7 +824,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null $maximumAmount
+     * @param MaximumAmount|null $maximumAmount
      * @return self
      */
     public function setMaximumAmount(?MaximumAmount $maximumAmount = null): self
@@ -845,7 +845,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid>|null
+     * @return array<MinimumImprovementBid>|null
      */
     public function getMinimumImprovementBid(): ?array
     {
@@ -853,7 +853,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid>|null $minimumImprovementBid
+     * @param array<MinimumImprovementBid>|null $minimumImprovementBid
      * @return self
      */
     public function setMinimumImprovementBid(?array $minimumImprovementBid = null): self
@@ -884,7 +884,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid|null
+     * @return MinimumImprovementBid|null
      */
     public function firstMinimumImprovementBid(): ?MinimumImprovementBid
     {
@@ -899,7 +899,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid|null
+     * @return MinimumImprovementBid|null
      */
     public function lastMinimumImprovementBid(): ?MinimumImprovementBid
     {
@@ -914,7 +914,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid $minimumImprovementBid
+     * @param MinimumImprovementBid $minimumImprovementBid
      * @return self
      */
     public function addToMinimumImprovementBid(MinimumImprovementBid $minimumImprovementBid): self
@@ -925,7 +925,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid
+     * @return MinimumImprovementBid
      */
     public function addToMinimumImprovementBidWithCreate(): MinimumImprovementBid
     {
@@ -935,7 +935,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid $minimumImprovementBid
+     * @param MinimumImprovementBid $minimumImprovementBid
      * @return self
      */
     public function addOnceToMinimumImprovementBid(MinimumImprovementBid $minimumImprovementBid): self
@@ -950,7 +950,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid
+     * @return MinimumImprovementBid
      */
     public function addOnceToMinimumImprovementBidWithCreate(): MinimumImprovementBid
     {
@@ -966,7 +966,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion>|null
+     * @return array<SubordinateAwardingCriterion>|null
      */
     public function getSubordinateAwardingCriterion(): ?array
     {
@@ -974,7 +974,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion>|null $subordinateAwardingCriterion
+     * @param array<SubordinateAwardingCriterion>|null $subordinateAwardingCriterion
      * @return self
      */
     public function setSubordinateAwardingCriterion(?array $subordinateAwardingCriterion = null): self
@@ -1005,7 +1005,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion|null
+     * @return SubordinateAwardingCriterion|null
      */
     public function firstSubordinateAwardingCriterion(): ?SubordinateAwardingCriterion
     {
@@ -1020,7 +1020,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion|null
+     * @return SubordinateAwardingCriterion|null
      */
     public function lastSubordinateAwardingCriterion(): ?SubordinateAwardingCriterion
     {
@@ -1035,7 +1035,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion $subordinateAwardingCriterion
+     * @param SubordinateAwardingCriterion $subordinateAwardingCriterion
      * @return self
      */
     public function addToSubordinateAwardingCriterion(
@@ -1047,7 +1047,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion
+     * @return SubordinateAwardingCriterion
      */
     public function addToSubordinateAwardingCriterionWithCreate(): SubordinateAwardingCriterion
     {
@@ -1057,7 +1057,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion $subordinateAwardingCriterion
+     * @param SubordinateAwardingCriterion $subordinateAwardingCriterion
      * @return self
      */
     public function addOnceToSubordinateAwardingCriterion(
@@ -1073,7 +1073,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion
+     * @return SubordinateAwardingCriterion
      */
     public function addOnceToSubordinateAwardingCriterionWithCreate(): SubordinateAwardingCriterion
     {

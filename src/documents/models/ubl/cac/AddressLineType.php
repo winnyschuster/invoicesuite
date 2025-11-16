@@ -11,7 +11,7 @@ class AddressLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Line|null
+     * @var Line|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Line")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class AddressLineType
     private $line;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Line|null
+     * @return Line|null
      */
     public function getLine(): ?Line
     {
@@ -30,7 +30,7 @@ class AddressLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Line
+     * @return Line
      */
     public function getLineWithCreate(): Line
     {
@@ -40,7 +40,7 @@ class AddressLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Line|null $line
+     * @param Line|null $line
      * @return self
      */
     public function setLine(?Line $line = null): self

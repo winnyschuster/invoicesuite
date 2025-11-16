@@ -42,7 +42,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * The PDF constructor instance
      *
-     * @var \horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor
+     * @var InvoiceSuiteAbstractPdfConstructor
      */
     private $currentPdfConstructor;
 

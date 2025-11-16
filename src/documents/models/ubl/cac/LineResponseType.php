@@ -10,7 +10,7 @@ class LineResponseType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference|null
+     * @var LineReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineReference")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class LineResponseType
     private $lineReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Response>|null
+     * @var array<Response>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Response>")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class LineResponseType
     private $response;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference|null
+     * @return LineReference|null
      */
     public function getLineReference(): ?LineReference
     {
@@ -41,7 +41,7 @@ class LineResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference
+     * @return LineReference
      */
     public function getLineReferenceWithCreate(): LineReference
     {
@@ -51,7 +51,7 @@ class LineResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference|null $lineReference
+     * @param LineReference|null $lineReference
      * @return self
      */
     public function setLineReference(?LineReference $lineReference = null): self
@@ -72,7 +72,7 @@ class LineResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Response>|null
+     * @return array<Response>|null
      */
     public function getResponse(): ?array
     {
@@ -80,7 +80,7 @@ class LineResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Response>|null $response
+     * @param array<Response>|null $response
      * @return self
      */
     public function setResponse(?array $response = null): self
@@ -111,7 +111,7 @@ class LineResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Response|null
+     * @return Response|null
      */
     public function firstResponse(): ?Response
     {
@@ -126,7 +126,7 @@ class LineResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Response|null
+     * @return Response|null
      */
     public function lastResponse(): ?Response
     {
@@ -141,7 +141,7 @@ class LineResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Response $response
+     * @param Response $response
      * @return self
      */
     public function addToResponse(Response $response): self
@@ -152,7 +152,7 @@ class LineResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Response
+     * @return Response
      */
     public function addToResponseWithCreate(): Response
     {
@@ -162,7 +162,7 @@ class LineResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Response $response
+     * @param Response $response
      * @return self
      */
     public function addOnceToResponse(Response $response): self
@@ -177,7 +177,7 @@ class LineResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Response
+     * @return Response
      */
     public function addOnceToResponseWithCreate(): Response
     {

@@ -11,7 +11,7 @@ class AppealTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class AppealTermsType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PresentationPeriod|null
+     * @var PresentationPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PresentationPeriod")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class AppealTermsType
     private $presentationPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AppealInformationParty|null
+     * @var AppealInformationParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AppealInformationParty")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class AppealTermsType
     private $appealInformationParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AppealReceiverParty|null
+     * @var AppealReceiverParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AppealReceiverParty")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class AppealTermsType
     private $appealReceiverParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MediationParty|null
+     * @var MediationParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MediationParty")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class AppealTermsType
     private $mediationParty;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -75,7 +75,7 @@ class AppealTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -106,7 +106,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -121,7 +121,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -136,7 +136,7 @@ class AppealTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -147,7 +147,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -157,7 +157,7 @@ class AppealTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -172,7 +172,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -188,7 +188,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PresentationPeriod|null
+     * @return PresentationPeriod|null
      */
     public function getPresentationPeriod(): ?PresentationPeriod
     {
@@ -196,7 +196,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PresentationPeriod
+     * @return PresentationPeriod
      */
     public function getPresentationPeriodWithCreate(): PresentationPeriod
     {
@@ -206,7 +206,7 @@ class AppealTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PresentationPeriod|null $presentationPeriod
+     * @param PresentationPeriod|null $presentationPeriod
      * @return self
      */
     public function setPresentationPeriod(?PresentationPeriod $presentationPeriod = null): self
@@ -227,7 +227,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AppealInformationParty|null
+     * @return AppealInformationParty|null
      */
     public function getAppealInformationParty(): ?AppealInformationParty
     {
@@ -235,7 +235,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AppealInformationParty
+     * @return AppealInformationParty
      */
     public function getAppealInformationPartyWithCreate(): AppealInformationParty
     {
@@ -245,7 +245,7 @@ class AppealTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AppealInformationParty|null $appealInformationParty
+     * @param AppealInformationParty|null $appealInformationParty
      * @return self
      */
     public function setAppealInformationParty(?AppealInformationParty $appealInformationParty = null): self
@@ -266,7 +266,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AppealReceiverParty|null
+     * @return AppealReceiverParty|null
      */
     public function getAppealReceiverParty(): ?AppealReceiverParty
     {
@@ -274,7 +274,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AppealReceiverParty
+     * @return AppealReceiverParty
      */
     public function getAppealReceiverPartyWithCreate(): AppealReceiverParty
     {
@@ -284,7 +284,7 @@ class AppealTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AppealReceiverParty|null $appealReceiverParty
+     * @param AppealReceiverParty|null $appealReceiverParty
      * @return self
      */
     public function setAppealReceiverParty(?AppealReceiverParty $appealReceiverParty = null): self
@@ -305,7 +305,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MediationParty|null
+     * @return MediationParty|null
      */
     public function getMediationParty(): ?MediationParty
     {
@@ -313,7 +313,7 @@ class AppealTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MediationParty
+     * @return MediationParty
      */
     public function getMediationPartyWithCreate(): MediationParty
     {
@@ -323,7 +323,7 @@ class AppealTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MediationParty|null $mediationParty
+     * @param MediationParty|null $mediationParty
      * @return self
      */
     public function setMediationParty(?MediationParty $mediationParty = null): self

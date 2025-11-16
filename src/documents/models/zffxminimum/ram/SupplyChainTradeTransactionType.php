@@ -10,7 +10,7 @@ class SupplyChainTradeTransactionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeAgreementType|null
+     * @var HeaderTradeAgreementType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeAgreementType")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class SupplyChainTradeTransactionType
     private $applicableHeaderTradeAgreement;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeDeliveryType|null
+     * @var HeaderTradeDeliveryType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeDeliveryType")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class SupplyChainTradeTransactionType
     private $applicableHeaderTradeDelivery;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeSettlementType|null
+     * @var HeaderTradeSettlementType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeSettlementType")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class SupplyChainTradeTransactionType
     private $applicableHeaderTradeSettlement;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeAgreementType|null
+     * @return HeaderTradeAgreementType|null
      */
     public function getApplicableHeaderTradeAgreement(): ?HeaderTradeAgreementType
     {
@@ -51,7 +51,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeAgreementType
+     * @return HeaderTradeAgreementType
      */
     public function getApplicableHeaderTradeAgreementWithCreate(): HeaderTradeAgreementType
     {
@@ -61,7 +61,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeAgreementType|null $applicableHeaderTradeAgreement
+     * @param HeaderTradeAgreementType|null $applicableHeaderTradeAgreement
      * @return self
      */
     public function setApplicableHeaderTradeAgreement(
@@ -83,7 +83,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeDeliveryType|null
+     * @return HeaderTradeDeliveryType|null
      */
     public function getApplicableHeaderTradeDelivery(): ?HeaderTradeDeliveryType
     {
@@ -91,7 +91,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeDeliveryType
+     * @return HeaderTradeDeliveryType
      */
     public function getApplicableHeaderTradeDeliveryWithCreate(): HeaderTradeDeliveryType
     {
@@ -101,7 +101,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeDeliveryType|null $applicableHeaderTradeDelivery
+     * @param HeaderTradeDeliveryType|null $applicableHeaderTradeDelivery
      * @return self
      */
     public function setApplicableHeaderTradeDelivery(
@@ -123,7 +123,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeSettlementType|null
+     * @return HeaderTradeSettlementType|null
      */
     public function getApplicableHeaderTradeSettlement(): ?HeaderTradeSettlementType
     {
@@ -131,7 +131,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeSettlementType
+     * @return HeaderTradeSettlementType
      */
     public function getApplicableHeaderTradeSettlementWithCreate(): HeaderTradeSettlementType
     {
@@ -141,7 +141,7 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\HeaderTradeSettlementType|null $applicableHeaderTradeSettlement
+     * @param HeaderTradeSettlementType|null $applicableHeaderTradeSettlement
      * @return self
      */
     public function setApplicableHeaderTradeSettlement(

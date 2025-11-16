@@ -16,7 +16,7 @@ class TransportMeansType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID|null
+     * @var JourneyID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TransportMeansType
     private $journeyID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID|null
+     * @var RegistrationNationalityID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TransportMeansType
     private $registrationNationalityID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality>|null
+     * @var array<RegistrationNationality>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TransportMeansType
     private $registrationNationality;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode|null
+     * @var DirectionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TransportMeansType
     private $directionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode|null
+     * @var TransportMeansTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TransportMeansType
     private $transportMeansTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode|null
+     * @var TradeServiceCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TransportMeansType
     private $tradeServiceCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Stowage|null
+     * @var Stowage|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Stowage")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TransportMeansType
     private $stowage;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AirTransport|null
+     * @var AirTransport|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AirTransport")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class TransportMeansType
     private $airTransport;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RoadTransport|null
+     * @var RoadTransport|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RoadTransport")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class TransportMeansType
     private $roadTransport;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RailTransport|null
+     * @var RailTransport|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RailTransport")
      * @JMS\Expose
@@ -127,7 +127,7 @@ class TransportMeansType
     private $railTransport;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MaritimeTransport|null
+     * @var MaritimeTransport|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaritimeTransport")
      * @JMS\Expose
@@ -138,7 +138,7 @@ class TransportMeansType
     private $maritimeTransport;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty|null
+     * @var OwnerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty")
      * @JMS\Expose
@@ -149,7 +149,7 @@ class TransportMeansType
     private $ownerParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @var array<MeasurementDimension>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -161,7 +161,7 @@ class TransportMeansType
     private $measurementDimension;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID|null
+     * @return JourneyID|null
      */
     public function getJourneyID(): ?JourneyID
     {
@@ -169,7 +169,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID
+     * @return JourneyID
      */
     public function getJourneyIDWithCreate(): JourneyID
     {
@@ -179,7 +179,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID|null $journeyID
+     * @param JourneyID|null $journeyID
      * @return self
      */
     public function setJourneyID(?JourneyID $journeyID = null): self
@@ -200,7 +200,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID|null
+     * @return RegistrationNationalityID|null
      */
     public function getRegistrationNationalityID(): ?RegistrationNationalityID
     {
@@ -208,7 +208,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID
+     * @return RegistrationNationalityID
      */
     public function getRegistrationNationalityIDWithCreate(): RegistrationNationalityID
     {
@@ -218,7 +218,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID|null $registrationNationalityID
+     * @param RegistrationNationalityID|null $registrationNationalityID
      * @return self
      */
     public function setRegistrationNationalityID(?RegistrationNationalityID $registrationNationalityID = null): self
@@ -239,7 +239,7 @@ class TransportMeansType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality>|null
+     * @return array<RegistrationNationality>|null
      */
     public function getRegistrationNationality(): ?array
     {
@@ -247,7 +247,7 @@ class TransportMeansType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality>|null $registrationNationality
+     * @param array<RegistrationNationality>|null $registrationNationality
      * @return self
      */
     public function setRegistrationNationality(?array $registrationNationality = null): self
@@ -278,7 +278,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality|null
+     * @return RegistrationNationality|null
      */
     public function firstRegistrationNationality(): ?RegistrationNationality
     {
@@ -293,7 +293,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality|null
+     * @return RegistrationNationality|null
      */
     public function lastRegistrationNationality(): ?RegistrationNationality
     {
@@ -308,7 +308,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality $registrationNationality
+     * @param RegistrationNationality $registrationNationality
      * @return self
      */
     public function addToRegistrationNationality(RegistrationNationality $registrationNationality): self
@@ -319,7 +319,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality
+     * @return RegistrationNationality
      */
     public function addToRegistrationNationalityWithCreate(): RegistrationNationality
     {
@@ -329,7 +329,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality $registrationNationality
+     * @param RegistrationNationality $registrationNationality
      * @return self
      */
     public function addOnceToRegistrationNationality(RegistrationNationality $registrationNationality): self
@@ -344,7 +344,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality
+     * @return RegistrationNationality
      */
     public function addOnceToRegistrationNationalityWithCreate(): RegistrationNationality
     {
@@ -360,7 +360,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode|null
+     * @return DirectionCode|null
      */
     public function getDirectionCode(): ?DirectionCode
     {
@@ -368,7 +368,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode
+     * @return DirectionCode
      */
     public function getDirectionCodeWithCreate(): DirectionCode
     {
@@ -378,7 +378,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode|null $directionCode
+     * @param DirectionCode|null $directionCode
      * @return self
      */
     public function setDirectionCode(?DirectionCode $directionCode = null): self
@@ -399,7 +399,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode|null
+     * @return TransportMeansTypeCode|null
      */
     public function getTransportMeansTypeCode(): ?TransportMeansTypeCode
     {
@@ -407,7 +407,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode
+     * @return TransportMeansTypeCode
      */
     public function getTransportMeansTypeCodeWithCreate(): TransportMeansTypeCode
     {
@@ -417,7 +417,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode|null $transportMeansTypeCode
+     * @param TransportMeansTypeCode|null $transportMeansTypeCode
      * @return self
      */
     public function setTransportMeansTypeCode(?TransportMeansTypeCode $transportMeansTypeCode = null): self
@@ -438,7 +438,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode|null
+     * @return TradeServiceCode|null
      */
     public function getTradeServiceCode(): ?TradeServiceCode
     {
@@ -446,7 +446,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode
+     * @return TradeServiceCode
      */
     public function getTradeServiceCodeWithCreate(): TradeServiceCode
     {
@@ -456,7 +456,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode|null $tradeServiceCode
+     * @param TradeServiceCode|null $tradeServiceCode
      * @return self
      */
     public function setTradeServiceCode(?TradeServiceCode $tradeServiceCode = null): self
@@ -477,7 +477,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Stowage|null
+     * @return Stowage|null
      */
     public function getStowage(): ?Stowage
     {
@@ -485,7 +485,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Stowage
+     * @return Stowage
      */
     public function getStowageWithCreate(): Stowage
     {
@@ -495,7 +495,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Stowage|null $stowage
+     * @param Stowage|null $stowage
      * @return self
      */
     public function setStowage(?Stowage $stowage = null): self
@@ -516,7 +516,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AirTransport|null
+     * @return AirTransport|null
      */
     public function getAirTransport(): ?AirTransport
     {
@@ -524,7 +524,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AirTransport
+     * @return AirTransport
      */
     public function getAirTransportWithCreate(): AirTransport
     {
@@ -534,7 +534,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AirTransport|null $airTransport
+     * @param AirTransport|null $airTransport
      * @return self
      */
     public function setAirTransport(?AirTransport $airTransport = null): self
@@ -555,7 +555,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RoadTransport|null
+     * @return RoadTransport|null
      */
     public function getRoadTransport(): ?RoadTransport
     {
@@ -563,7 +563,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RoadTransport
+     * @return RoadTransport
      */
     public function getRoadTransportWithCreate(): RoadTransport
     {
@@ -573,7 +573,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RoadTransport|null $roadTransport
+     * @param RoadTransport|null $roadTransport
      * @return self
      */
     public function setRoadTransport(?RoadTransport $roadTransport = null): self
@@ -594,7 +594,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RailTransport|null
+     * @return RailTransport|null
      */
     public function getRailTransport(): ?RailTransport
     {
@@ -602,7 +602,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RailTransport
+     * @return RailTransport
      */
     public function getRailTransportWithCreate(): RailTransport
     {
@@ -612,7 +612,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RailTransport|null $railTransport
+     * @param RailTransport|null $railTransport
      * @return self
      */
     public function setRailTransport(?RailTransport $railTransport = null): self
@@ -633,7 +633,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MaritimeTransport|null
+     * @return MaritimeTransport|null
      */
     public function getMaritimeTransport(): ?MaritimeTransport
     {
@@ -641,7 +641,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MaritimeTransport
+     * @return MaritimeTransport
      */
     public function getMaritimeTransportWithCreate(): MaritimeTransport
     {
@@ -651,7 +651,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MaritimeTransport|null $maritimeTransport
+     * @param MaritimeTransport|null $maritimeTransport
      * @return self
      */
     public function setMaritimeTransport(?MaritimeTransport $maritimeTransport = null): self
@@ -672,7 +672,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty|null
+     * @return OwnerParty|null
      */
     public function getOwnerParty(): ?OwnerParty
     {
@@ -680,7 +680,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty
+     * @return OwnerParty
      */
     public function getOwnerPartyWithCreate(): OwnerParty
     {
@@ -690,7 +690,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty|null $ownerParty
+     * @param OwnerParty|null $ownerParty
      * @return self
      */
     public function setOwnerParty(?OwnerParty $ownerParty = null): self
@@ -711,7 +711,7 @@ class TransportMeansType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @return array<MeasurementDimension>|null
      */
     public function getMeasurementDimension(): ?array
     {
@@ -719,7 +719,7 @@ class TransportMeansType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null $measurementDimension
+     * @param array<MeasurementDimension>|null $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(?array $measurementDimension = null): self
@@ -750,7 +750,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -765,7 +765,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -780,7 +780,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -791,7 +791,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addToMeasurementDimensionWithCreate(): MeasurementDimension
     {
@@ -801,7 +801,7 @@ class TransportMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -816,7 +816,7 @@ class TransportMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addOnceToMeasurementDimensionWithCreate(): MeasurementDimension
     {

@@ -18,7 +18,7 @@ class RemittanceAdviceLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class RemittanceAdviceLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class RemittanceAdviceLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class RemittanceAdviceLineType
     private $uUID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null
+     * @var DebitLineAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class RemittanceAdviceLineType
     private $debitLineAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null
+     * @var CreditLineAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class RemittanceAdviceLineType
     private $creditLineAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount|null
+     * @var BalanceAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class RemittanceAdviceLineType
     private $balanceAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null
+     * @var PaymentPurposeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class RemittanceAdviceLineType
     private $paymentPurposeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference|null
+     * @var InvoicingPartyReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class RemittanceAdviceLineType
     private $invoicingPartyReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty|null
+     * @var AccountingSupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class RemittanceAdviceLineType
     private $accountingSupplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty|null
+     * @var AccountingCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class RemittanceAdviceLineType
     private $accountingCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null
+     * @var BuyerCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class RemittanceAdviceLineType
     private $buyerCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @var SellerSupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class RemittanceAdviceLineType
     private $sellerSupplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty|null
+     * @var OriginatorCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty")
      * @JMS\Expose
@@ -162,7 +162,7 @@ class RemittanceAdviceLineType
     private $originatorCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty|null
+     * @var PayeeParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty")
      * @JMS\Expose
@@ -173,7 +173,7 @@ class RemittanceAdviceLineType
     private $payeeParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>|null
+     * @var array<InvoicePeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>")
      * @JMS\Expose
@@ -185,7 +185,7 @@ class RemittanceAdviceLineType
     private $invoicePeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null
+     * @var array<BillingReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -197,7 +197,7 @@ class RemittanceAdviceLineType
     private $billingReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -209,7 +209,7 @@ class RemittanceAdviceLineType
     private $documentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @var ExchangeRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -220,7 +220,7 @@ class RemittanceAdviceLineType
     private $exchangeRate;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -228,7 +228,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -238,7 +238,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -259,7 +259,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -267,7 +267,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -298,7 +298,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -313,7 +313,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -328,7 +328,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -339,7 +339,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -349,7 +349,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -364,7 +364,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -380,7 +380,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -388,7 +388,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -398,7 +398,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -419,7 +419,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null
+     * @return DebitLineAmount|null
      */
     public function getDebitLineAmount(): ?DebitLineAmount
     {
@@ -427,7 +427,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount
+     * @return DebitLineAmount
      */
     public function getDebitLineAmountWithCreate(): DebitLineAmount
     {
@@ -437,7 +437,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null $debitLineAmount
+     * @param DebitLineAmount|null $debitLineAmount
      * @return self
      */
     public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): self
@@ -458,7 +458,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null
+     * @return CreditLineAmount|null
      */
     public function getCreditLineAmount(): ?CreditLineAmount
     {
@@ -466,7 +466,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount
+     * @return CreditLineAmount
      */
     public function getCreditLineAmountWithCreate(): CreditLineAmount
     {
@@ -476,7 +476,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null $creditLineAmount
+     * @param CreditLineAmount|null $creditLineAmount
      * @return self
      */
     public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): self
@@ -497,7 +497,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount|null
+     * @return BalanceAmount|null
      */
     public function getBalanceAmount(): ?BalanceAmount
     {
@@ -505,7 +505,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount
+     * @return BalanceAmount
      */
     public function getBalanceAmountWithCreate(): BalanceAmount
     {
@@ -515,7 +515,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount|null $balanceAmount
+     * @param BalanceAmount|null $balanceAmount
      * @return self
      */
     public function setBalanceAmount(?BalanceAmount $balanceAmount = null): self
@@ -536,7 +536,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null
+     * @return PaymentPurposeCode|null
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -544,7 +544,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode
+     * @return PaymentPurposeCode
      */
     public function getPaymentPurposeCodeWithCreate(): PaymentPurposeCode
     {
@@ -554,7 +554,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null $paymentPurposeCode
+     * @param PaymentPurposeCode|null $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): self
@@ -575,7 +575,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference|null
+     * @return InvoicingPartyReference|null
      */
     public function getInvoicingPartyReference(): ?InvoicingPartyReference
     {
@@ -583,7 +583,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference
+     * @return InvoicingPartyReference
      */
     public function getInvoicingPartyReferenceWithCreate(): InvoicingPartyReference
     {
@@ -593,7 +593,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference|null $invoicingPartyReference
+     * @param InvoicingPartyReference|null $invoicingPartyReference
      * @return self
      */
     public function setInvoicingPartyReference(?InvoicingPartyReference $invoicingPartyReference = null): self
@@ -614,7 +614,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty|null
+     * @return AccountingSupplierParty|null
      */
     public function getAccountingSupplierParty(): ?AccountingSupplierParty
     {
@@ -622,7 +622,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty
+     * @return AccountingSupplierParty
      */
     public function getAccountingSupplierPartyWithCreate(): AccountingSupplierParty
     {
@@ -632,7 +632,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty|null $accountingSupplierParty
+     * @param AccountingSupplierParty|null $accountingSupplierParty
      * @return self
      */
     public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): self
@@ -653,7 +653,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty|null
+     * @return AccountingCustomerParty|null
      */
     public function getAccountingCustomerParty(): ?AccountingCustomerParty
     {
@@ -661,7 +661,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty
+     * @return AccountingCustomerParty
      */
     public function getAccountingCustomerPartyWithCreate(): AccountingCustomerParty
     {
@@ -671,7 +671,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty|null $accountingCustomerParty
+     * @param AccountingCustomerParty|null $accountingCustomerParty
      * @return self
      */
     public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): self
@@ -692,7 +692,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null
+     * @return BuyerCustomerParty|null
      */
     public function getBuyerCustomerParty(): ?BuyerCustomerParty
     {
@@ -700,7 +700,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty
+     * @return BuyerCustomerParty
      */
     public function getBuyerCustomerPartyWithCreate(): BuyerCustomerParty
     {
@@ -710,7 +710,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null $buyerCustomerParty
+     * @param BuyerCustomerParty|null $buyerCustomerParty
      * @return self
      */
     public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): self
@@ -731,7 +731,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @return SellerSupplierParty|null
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -739,7 +739,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty
+     * @return SellerSupplierParty
      */
     public function getSellerSupplierPartyWithCreate(): SellerSupplierParty
     {
@@ -749,7 +749,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null $sellerSupplierParty
+     * @param SellerSupplierParty|null $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
@@ -770,7 +770,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty|null
+     * @return OriginatorCustomerParty|null
      */
     public function getOriginatorCustomerParty(): ?OriginatorCustomerParty
     {
@@ -778,7 +778,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty
+     * @return OriginatorCustomerParty
      */
     public function getOriginatorCustomerPartyWithCreate(): OriginatorCustomerParty
     {
@@ -788,7 +788,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty|null $originatorCustomerParty
+     * @param OriginatorCustomerParty|null $originatorCustomerParty
      * @return self
      */
     public function setOriginatorCustomerParty(?OriginatorCustomerParty $originatorCustomerParty = null): self
@@ -809,7 +809,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty|null
+     * @return PayeeParty|null
      */
     public function getPayeeParty(): ?PayeeParty
     {
@@ -817,7 +817,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty
+     * @return PayeeParty
      */
     public function getPayeePartyWithCreate(): PayeeParty
     {
@@ -827,7 +827,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty|null $payeeParty
+     * @param PayeeParty|null $payeeParty
      * @return self
      */
     public function setPayeeParty(?PayeeParty $payeeParty = null): self
@@ -848,7 +848,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>|null
+     * @return array<InvoicePeriod>|null
      */
     public function getInvoicePeriod(): ?array
     {
@@ -856,7 +856,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>|null $invoicePeriod
+     * @param array<InvoicePeriod>|null $invoicePeriod
      * @return self
      */
     public function setInvoicePeriod(?array $invoicePeriod = null): self
@@ -887,7 +887,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod|null
+     * @return InvoicePeriod|null
      */
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
@@ -902,7 +902,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod|null
+     * @return InvoicePeriod|null
      */
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
@@ -917,7 +917,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod $invoicePeriod
+     * @param InvoicePeriod $invoicePeriod
      * @return self
      */
     public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): self
@@ -928,7 +928,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod
+     * @return InvoicePeriod
      */
     public function addToInvoicePeriodWithCreate(): InvoicePeriod
     {
@@ -938,7 +938,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod $invoicePeriod
+     * @param InvoicePeriod $invoicePeriod
      * @return self
      */
     public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): self
@@ -953,7 +953,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod
+     * @return InvoicePeriod
      */
     public function addOnceToInvoicePeriodWithCreate(): InvoicePeriod
     {
@@ -969,7 +969,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null
+     * @return array<BillingReference>|null
      */
     public function getBillingReference(): ?array
     {
@@ -977,7 +977,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null $billingReference
+     * @param array<BillingReference>|null $billingReference
      * @return self
      */
     public function setBillingReference(?array $billingReference = null): self
@@ -1008,7 +1008,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference|null
+     * @return BillingReference|null
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -1023,7 +1023,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference|null
+     * @return BillingReference|null
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -1038,7 +1038,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference $billingReference
+     * @param BillingReference $billingReference
      * @return self
      */
     public function addToBillingReference(BillingReference $billingReference): self
@@ -1049,7 +1049,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+     * @return BillingReference
      */
     public function addToBillingReferenceWithCreate(): BillingReference
     {
@@ -1059,7 +1059,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference $billingReference
+     * @param BillingReference $billingReference
      * @return self
      */
     public function addOnceToBillingReference(BillingReference $billingReference): self
@@ -1074,7 +1074,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+     * @return BillingReference
      */
     public function addOnceToBillingReferenceWithCreate(): BillingReference
     {
@@ -1090,7 +1090,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -1098,7 +1098,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -1129,7 +1129,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1144,7 +1144,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1159,7 +1159,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -1170,7 +1170,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -1180,7 +1180,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -1195,7 +1195,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -1211,7 +1211,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -1219,7 +1219,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function getExchangeRateWithCreate(): ExchangeRate
     {
@@ -1229,7 +1229,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null $exchangeRate
+     * @param ExchangeRate|null $exchangeRate
      * @return self
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): self

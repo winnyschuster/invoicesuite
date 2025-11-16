@@ -11,7 +11,7 @@ class SupplyChainEventType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType|null
+     * @var DateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class SupplyChainEventType
     private $occurrenceDateTime;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType|null
+     * @return DateTimeType|null
      */
     public function getOccurrenceDateTime(): ?DateTimeType
     {
@@ -30,7 +30,7 @@ class SupplyChainEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType
+     * @return DateTimeType
      */
     public function getOccurrenceDateTimeWithCreate(): DateTimeType
     {
@@ -40,7 +40,7 @@ class SupplyChainEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType|null $occurrenceDateTime
+     * @param DateTimeType|null $occurrenceDateTime
      * @return self
      */
     public function setOccurrenceDateTime(?DateTimeType $occurrenceDateTime = null): self

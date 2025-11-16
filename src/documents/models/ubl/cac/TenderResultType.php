@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount;
@@ -18,7 +19,7 @@ class TenderResultType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode|null
+     * @var TenderResultCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode")
      * @JMS\Expose
@@ -29,7 +30,7 @@ class TenderResultType
     private $tenderResultCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -41,7 +42,7 @@ class TenderResultType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount|null
+     * @var AdvertisementAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount")
      * @JMS\Expose
@@ -52,7 +53,7 @@ class TenderResultType
     private $advertisementAmount;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -63,7 +64,7 @@ class TenderResultType
     private $awardDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -74,7 +75,7 @@ class TenderResultType
     private $awardTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity|null
+     * @var ReceivedTenderQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity")
      * @JMS\Expose
@@ -85,7 +86,7 @@ class TenderResultType
     private $receivedTenderQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LowerTenderAmount|null
+     * @var LowerTenderAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LowerTenderAmount")
      * @JMS\Expose
@@ -96,7 +97,7 @@ class TenderResultType
     private $lowerTenderAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HigherTenderAmount|null
+     * @var HigherTenderAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HigherTenderAmount")
      * @JMS\Expose
@@ -107,7 +108,7 @@ class TenderResultType
     private $higherTenderAmount;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -118,7 +119,7 @@ class TenderResultType
     private $startDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuantity|null
+     * @var ReceivedElectronicTenderQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuantity")
      * @JMS\Expose
@@ -129,7 +130,7 @@ class TenderResultType
     private $receivedElectronicTenderQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity|null
+     * @var ReceivedForeignTenderQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity")
      * @JMS\Expose
@@ -140,7 +141,7 @@ class TenderResultType
     private $receivedForeignTenderQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null
+     * @var Contract|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contract")
      * @JMS\Expose
@@ -151,7 +152,7 @@ class TenderResultType
     private $contract;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AwardedTenderedProject|null
+     * @var AwardedTenderedProject|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AwardedTenderedProject")
      * @JMS\Expose
@@ -162,7 +163,7 @@ class TenderResultType
     private $awardedTenderedProject;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ContractFormalizationPeriod|null
+     * @var ContractFormalizationPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractFormalizationPeriod")
      * @JMS\Expose
@@ -173,7 +174,7 @@ class TenderResultType
     private $contractFormalizationPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms>|null
+     * @var array<SubcontractTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms>")
      * @JMS\Expose
@@ -185,7 +186,7 @@ class TenderResultType
     private $subcontractTerms;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty>|null
+     * @var array<WinningParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty>")
      * @JMS\Expose
@@ -197,7 +198,7 @@ class TenderResultType
     private $winningParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode|null
+     * @return TenderResultCode|null
      */
     public function getTenderResultCode(): ?TenderResultCode
     {
@@ -205,7 +206,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode
+     * @return TenderResultCode
      */
     public function getTenderResultCodeWithCreate(): TenderResultCode
     {
@@ -215,7 +216,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode|null $tenderResultCode
+     * @param TenderResultCode|null $tenderResultCode
      * @return self
      */
     public function setTenderResultCode(?TenderResultCode $tenderResultCode = null): self
@@ -236,7 +237,7 @@ class TenderResultType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -244,7 +245,7 @@ class TenderResultType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -275,7 +276,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -290,7 +291,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -305,7 +306,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -316,7 +317,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -326,7 +327,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -341,7 +342,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -357,7 +358,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount|null
+     * @return AdvertisementAmount|null
      */
     public function getAdvertisementAmount(): ?AdvertisementAmount
     {
@@ -365,7 +366,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount
+     * @return AdvertisementAmount
      */
     public function getAdvertisementAmountWithCreate(): AdvertisementAmount
     {
@@ -375,7 +376,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount|null $advertisementAmount
+     * @param AdvertisementAmount|null $advertisementAmount
      * @return self
      */
     public function setAdvertisementAmount(?AdvertisementAmount $advertisementAmount = null): self
@@ -396,18 +397,18 @@ class TenderResultType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getAwardDate(): ?\DateTimeInterface
+    public function getAwardDate(): ?DateTimeInterface
     {
         return $this->awardDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $awardDate
+     * @param DateTimeInterface|null $awardDate
      * @return self
      */
-    public function setAwardDate(?\DateTimeInterface $awardDate = null): self
+    public function setAwardDate(?DateTimeInterface $awardDate = null): self
     {
         $this->awardDate = $awardDate;
 
@@ -425,18 +426,18 @@ class TenderResultType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getAwardTime(): ?\DateTimeInterface
+    public function getAwardTime(): ?DateTimeInterface
     {
         return $this->awardTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $awardTime
+     * @param DateTimeInterface|null $awardTime
      * @return self
      */
-    public function setAwardTime(?\DateTimeInterface $awardTime = null): self
+    public function setAwardTime(?DateTimeInterface $awardTime = null): self
     {
         $this->awardTime = $awardTime;
 
@@ -454,7 +455,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity|null
+     * @return ReceivedTenderQuantity|null
      */
     public function getReceivedTenderQuantity(): ?ReceivedTenderQuantity
     {
@@ -462,7 +463,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity
+     * @return ReceivedTenderQuantity
      */
     public function getReceivedTenderQuantityWithCreate(): ReceivedTenderQuantity
     {
@@ -472,7 +473,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity|null $receivedTenderQuantity
+     * @param ReceivedTenderQuantity|null $receivedTenderQuantity
      * @return self
      */
     public function setReceivedTenderQuantity(?ReceivedTenderQuantity $receivedTenderQuantity = null): self
@@ -493,7 +494,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LowerTenderAmount|null
+     * @return LowerTenderAmount|null
      */
     public function getLowerTenderAmount(): ?LowerTenderAmount
     {
@@ -501,7 +502,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LowerTenderAmount
+     * @return LowerTenderAmount
      */
     public function getLowerTenderAmountWithCreate(): LowerTenderAmount
     {
@@ -511,7 +512,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LowerTenderAmount|null $lowerTenderAmount
+     * @param LowerTenderAmount|null $lowerTenderAmount
      * @return self
      */
     public function setLowerTenderAmount(?LowerTenderAmount $lowerTenderAmount = null): self
@@ -532,7 +533,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HigherTenderAmount|null
+     * @return HigherTenderAmount|null
      */
     public function getHigherTenderAmount(): ?HigherTenderAmount
     {
@@ -540,7 +541,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HigherTenderAmount
+     * @return HigherTenderAmount
      */
     public function getHigherTenderAmountWithCreate(): HigherTenderAmount
     {
@@ -550,7 +551,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HigherTenderAmount|null $higherTenderAmount
+     * @param HigherTenderAmount|null $higherTenderAmount
      * @return self
      */
     public function setHigherTenderAmount(?HigherTenderAmount $higherTenderAmount = null): self
@@ -571,18 +572,18 @@ class TenderResultType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $startDate
+     * @param DateTimeInterface|null $startDate
      * @return self
      */
-    public function setStartDate(?\DateTimeInterface $startDate = null): self
+    public function setStartDate(?DateTimeInterface $startDate = null): self
     {
         $this->startDate = $startDate;
 
@@ -600,7 +601,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuantity|null
+     * @return ReceivedElectronicTenderQuantity|null
      */
     public function getReceivedElectronicTenderQuantity(): ?ReceivedElectronicTenderQuantity
     {
@@ -608,7 +609,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuantity
+     * @return ReceivedElectronicTenderQuantity
      */
     public function getReceivedElectronicTenderQuantityWithCreate(): ReceivedElectronicTenderQuantity
     {
@@ -618,7 +619,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuantity|null $receivedElectronicTenderQuantity
+     * @param ReceivedElectronicTenderQuantity|null $receivedElectronicTenderQuantity
      * @return self
      */
     public function setReceivedElectronicTenderQuantity(
@@ -640,7 +641,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity|null
+     * @return ReceivedForeignTenderQuantity|null
      */
     public function getReceivedForeignTenderQuantity(): ?ReceivedForeignTenderQuantity
     {
@@ -648,7 +649,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity
+     * @return ReceivedForeignTenderQuantity
      */
     public function getReceivedForeignTenderQuantityWithCreate(): ReceivedForeignTenderQuantity
     {
@@ -658,7 +659,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity|null $receivedForeignTenderQuantity
+     * @param ReceivedForeignTenderQuantity|null $receivedForeignTenderQuantity
      * @return self
      */
     public function setReceivedForeignTenderQuantity(
@@ -680,7 +681,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null
+     * @return Contract|null
      */
     public function getContract(): ?Contract
     {
@@ -688,7 +689,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contract
+     * @return Contract
      */
     public function getContractWithCreate(): Contract
     {
@@ -698,7 +699,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null $contract
+     * @param Contract|null $contract
      * @return self
      */
     public function setContract(?Contract $contract = null): self
@@ -719,7 +720,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardedTenderedProject|null
+     * @return AwardedTenderedProject|null
      */
     public function getAwardedTenderedProject(): ?AwardedTenderedProject
     {
@@ -727,7 +728,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardedTenderedProject
+     * @return AwardedTenderedProject
      */
     public function getAwardedTenderedProjectWithCreate(): AwardedTenderedProject
     {
@@ -737,7 +738,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AwardedTenderedProject|null $awardedTenderedProject
+     * @param AwardedTenderedProject|null $awardedTenderedProject
      * @return self
      */
     public function setAwardedTenderedProject(?AwardedTenderedProject $awardedTenderedProject = null): self
@@ -758,7 +759,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractFormalizationPeriod|null
+     * @return ContractFormalizationPeriod|null
      */
     public function getContractFormalizationPeriod(): ?ContractFormalizationPeriod
     {
@@ -766,7 +767,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractFormalizationPeriod
+     * @return ContractFormalizationPeriod
      */
     public function getContractFormalizationPeriodWithCreate(): ContractFormalizationPeriod
     {
@@ -776,7 +777,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractFormalizationPeriod|null $contractFormalizationPeriod
+     * @param ContractFormalizationPeriod|null $contractFormalizationPeriod
      * @return self
      */
     public function setContractFormalizationPeriod(
@@ -798,7 +799,7 @@ class TenderResultType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms>|null
+     * @return array<SubcontractTerms>|null
      */
     public function getSubcontractTerms(): ?array
     {
@@ -806,7 +807,7 @@ class TenderResultType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms>|null $subcontractTerms
+     * @param array<SubcontractTerms>|null $subcontractTerms
      * @return self
      */
     public function setSubcontractTerms(?array $subcontractTerms = null): self
@@ -837,7 +838,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms|null
+     * @return SubcontractTerms|null
      */
     public function firstSubcontractTerms(): ?SubcontractTerms
     {
@@ -852,7 +853,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms|null
+     * @return SubcontractTerms|null
      */
     public function lastSubcontractTerms(): ?SubcontractTerms
     {
@@ -867,7 +868,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms $subcontractTerms
+     * @param SubcontractTerms $subcontractTerms
      * @return self
      */
     public function addToSubcontractTerms(SubcontractTerms $subcontractTerms): self
@@ -878,7 +879,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms
+     * @return SubcontractTerms
      */
     public function addToSubcontractTermsWithCreate(): SubcontractTerms
     {
@@ -888,7 +889,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms $subcontractTerms
+     * @param SubcontractTerms $subcontractTerms
      * @return self
      */
     public function addOnceToSubcontractTerms(SubcontractTerms $subcontractTerms): self
@@ -903,7 +904,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms
+     * @return SubcontractTerms
      */
     public function addOnceToSubcontractTermsWithCreate(): SubcontractTerms
     {
@@ -919,7 +920,7 @@ class TenderResultType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty>|null
+     * @return array<WinningParty>|null
      */
     public function getWinningParty(): ?array
     {
@@ -927,7 +928,7 @@ class TenderResultType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty>|null $winningParty
+     * @param array<WinningParty>|null $winningParty
      * @return self
      */
     public function setWinningParty(?array $winningParty = null): self
@@ -958,7 +959,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty|null
+     * @return WinningParty|null
      */
     public function firstWinningParty(): ?WinningParty
     {
@@ -973,7 +974,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty|null
+     * @return WinningParty|null
      */
     public function lastWinningParty(): ?WinningParty
     {
@@ -988,7 +989,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty $winningParty
+     * @param WinningParty $winningParty
      * @return self
      */
     public function addToWinningParty(WinningParty $winningParty): self
@@ -999,7 +1000,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty
+     * @return WinningParty
      */
     public function addToWinningPartyWithCreate(): WinningParty
     {
@@ -1009,7 +1010,7 @@ class TenderResultType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty $winningParty
+     * @param WinningParty $winningParty
      * @return self
      */
     public function addOnceToWinningParty(WinningParty $winningParty): self
@@ -1024,7 +1025,7 @@ class TenderResultType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty
+     * @return WinningParty
      */
     public function addOnceToWinningPartyWithCreate(): WinningParty
     {

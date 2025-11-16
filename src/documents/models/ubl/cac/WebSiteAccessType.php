@@ -13,7 +13,7 @@ class WebSiteAccessType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null
+     * @var URI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\URI")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class WebSiteAccessType
     private $uRI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Password|null
+     * @var Password|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Password")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class WebSiteAccessType
     private $password;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Login|null
+     * @var Login|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Login")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class WebSiteAccessType
     private $login;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null
+     * @return URI|null
      */
     public function getURI(): ?URI
     {
@@ -54,7 +54,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\URI
+     * @return URI
      */
     public function getURIWithCreate(): URI
     {
@@ -64,7 +64,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null $uRI
+     * @param URI|null $uRI
      * @return self
      */
     public function setURI(?URI $uRI = null): self
@@ -85,7 +85,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Password|null
+     * @return Password|null
      */
     public function getPassword(): ?Password
     {
@@ -93,7 +93,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Password
+     * @return Password
      */
     public function getPasswordWithCreate(): Password
     {
@@ -103,7 +103,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Password|null $password
+     * @param Password|null $password
      * @return self
      */
     public function setPassword(?Password $password = null): self
@@ -124,7 +124,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Login|null
+     * @return Login|null
      */
     public function getLogin(): ?Login
     {
@@ -132,7 +132,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Login
+     * @return Login
      */
     public function getLoginWithCreate(): Login
     {
@@ -142,7 +142,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Login|null $login
+     * @param Login|null $login
      * @return self
      */
     public function setLogin(?Login $login = null): self

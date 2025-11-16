@@ -12,7 +12,7 @@ class OnAccountPaymentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity|null
+     * @var EstimatedConsumedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class OnAccountPaymentType
     private $estimatedConsumedQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class OnAccountPaymentType
     private $note;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null
+     * @var array<PaymentTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class OnAccountPaymentType
     private $paymentTerms;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity|null
+     * @return EstimatedConsumedQuantity|null
      */
     public function getEstimatedConsumedQuantity(): ?EstimatedConsumedQuantity
     {
@@ -55,7 +55,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity
+     * @return EstimatedConsumedQuantity
      */
     public function getEstimatedConsumedQuantityWithCreate(): EstimatedConsumedQuantity
     {
@@ -65,7 +65,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity|null $estimatedConsumedQuantity
+     * @param EstimatedConsumedQuantity|null $estimatedConsumedQuantity
      * @return self
      */
     public function setEstimatedConsumedQuantity(?EstimatedConsumedQuantity $estimatedConsumedQuantity = null): self
@@ -86,7 +86,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -94,7 +94,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -125,7 +125,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -140,7 +140,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -155,7 +155,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -166,7 +166,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -176,7 +176,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -191,7 +191,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -207,7 +207,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null
+     * @return array<PaymentTerms>|null
      */
     public function getPaymentTerms(): ?array
     {
@@ -215,7 +215,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null $paymentTerms
+     * @param array<PaymentTerms>|null $paymentTerms
      * @return self
      */
     public function setPaymentTerms(?array $paymentTerms = null): self
@@ -246,7 +246,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms|null
+     * @return PaymentTerms|null
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -261,7 +261,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms|null
+     * @return PaymentTerms|null
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -276,7 +276,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms $paymentTerms
+     * @param PaymentTerms $paymentTerms
      * @return self
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): self
@@ -287,7 +287,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+     * @return PaymentTerms
      */
     public function addToPaymentTermsWithCreate(): PaymentTerms
     {
@@ -297,7 +297,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms $paymentTerms
+     * @param PaymentTerms $paymentTerms
      * @return self
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): self
@@ -312,7 +312,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+     * @return PaymentTerms
      */
     public function addOnceToPaymentTermsWithCreate(): PaymentTerms
     {

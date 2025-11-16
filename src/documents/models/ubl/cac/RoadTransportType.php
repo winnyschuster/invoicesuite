@@ -11,7 +11,7 @@ class RoadTransportType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID|null
+     * @var LicensePlateID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class RoadTransportType
     private $licensePlateID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID|null
+     * @return LicensePlateID|null
      */
     public function getLicensePlateID(): ?LicensePlateID
     {
@@ -30,7 +30,7 @@ class RoadTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID
+     * @return LicensePlateID
      */
     public function getLicensePlateIDWithCreate(): LicensePlateID
     {
@@ -40,7 +40,7 @@ class RoadTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID|null $licensePlateID
+     * @param LicensePlateID|null $licensePlateID
      * @return self
      */
     public function setLicensePlateID(?LicensePlateID $licensePlateID = null): self

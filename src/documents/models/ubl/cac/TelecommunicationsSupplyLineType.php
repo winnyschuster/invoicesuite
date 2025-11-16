@@ -14,7 +14,7 @@ class TelecommunicationsSupplyLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TelecommunicationsSupplyLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber|null
+     * @var PhoneNumber|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TelecommunicationsSupplyLineType
     private $phoneNumber;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TelecommunicationsSupplyLineType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @var LineExtensionAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TelecommunicationsSupplyLineType
     private $lineExtensionAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>|null
+     * @var array<ExchangeRate>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class TelecommunicationsSupplyLineType
     private $exchangeRate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TelecommunicationsSupplyLineType
     private $allowanceCharge;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @var array<TaxTotal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class TelecommunicationsSupplyLineType
     private $taxTotal;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService>|null
+     * @var array<TelecommunicationsService>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService>")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class TelecommunicationsSupplyLineType
     private $telecommunicationsService;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -115,7 +115,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -125,7 +125,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -146,7 +146,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber|null
+     * @return PhoneNumber|null
      */
     public function getPhoneNumber(): ?PhoneNumber
     {
@@ -154,7 +154,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber
+     * @return PhoneNumber
      */
     public function getPhoneNumberWithCreate(): PhoneNumber
     {
@@ -164,7 +164,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber|null $phoneNumber
+     * @param PhoneNumber|null $phoneNumber
      * @return self
      */
     public function setPhoneNumber(?PhoneNumber $phoneNumber = null): self
@@ -185,7 +185,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -193,7 +193,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -224,7 +224,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -239,7 +239,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -254,7 +254,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -265,7 +265,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -275,7 +275,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -290,7 +290,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -306,7 +306,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @return LineExtensionAmount|null
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -314,7 +314,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount
+     * @return LineExtensionAmount
      */
     public function getLineExtensionAmountWithCreate(): LineExtensionAmount
     {
@@ -324,7 +324,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null $lineExtensionAmount
+     * @param LineExtensionAmount|null $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
@@ -345,7 +345,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>|null
+     * @return array<ExchangeRate>|null
      */
     public function getExchangeRate(): ?array
     {
@@ -353,7 +353,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>|null $exchangeRate
+     * @param array<ExchangeRate>|null $exchangeRate
      * @return self
      */
     public function setExchangeRate(?array $exchangeRate = null): self
@@ -384,7 +384,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function firstExchangeRate(): ?ExchangeRate
     {
@@ -399,7 +399,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function lastExchangeRate(): ?ExchangeRate
     {
@@ -414,7 +414,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate $exchangeRate
+     * @param ExchangeRate $exchangeRate
      * @return self
      */
     public function addToExchangeRate(ExchangeRate $exchangeRate): self
@@ -425,7 +425,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function addToExchangeRateWithCreate(): ExchangeRate
     {
@@ -435,7 +435,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate $exchangeRate
+     * @param ExchangeRate $exchangeRate
      * @return self
      */
     public function addOnceToExchangeRate(ExchangeRate $exchangeRate): self
@@ -450,7 +450,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function addOnceToExchangeRateWithCreate(): ExchangeRate
     {
@@ -466,7 +466,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -474,7 +474,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -505,7 +505,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -520,7 +520,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -535,7 +535,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -546,7 +546,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -556,7 +556,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -571,7 +571,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -587,7 +587,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @return array<TaxTotal>|null
      */
     public function getTaxTotal(): ?array
     {
@@ -595,7 +595,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null $taxTotal
+     * @param array<TaxTotal>|null $taxTotal
      * @return self
      */
     public function setTaxTotal(?array $taxTotal = null): self
@@ -626,7 +626,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -641,7 +641,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -656,7 +656,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addToTaxTotal(TaxTotal $taxTotal): self
@@ -667,7 +667,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addToTaxTotalWithCreate(): TaxTotal
     {
@@ -677,7 +677,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): self
@@ -692,7 +692,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addOnceToTaxTotalWithCreate(): TaxTotal
     {
@@ -708,7 +708,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService>|null
+     * @return array<TelecommunicationsService>|null
      */
     public function getTelecommunicationsService(): ?array
     {
@@ -716,7 +716,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService>|null $telecommunicationsService
+     * @param array<TelecommunicationsService>|null $telecommunicationsService
      * @return self
      */
     public function setTelecommunicationsService(?array $telecommunicationsService = null): self
@@ -747,7 +747,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService|null
+     * @return TelecommunicationsService|null
      */
     public function firstTelecommunicationsService(): ?TelecommunicationsService
     {
@@ -762,7 +762,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService|null
+     * @return TelecommunicationsService|null
      */
     public function lastTelecommunicationsService(): ?TelecommunicationsService
     {
@@ -777,7 +777,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService $telecommunicationsService
+     * @param TelecommunicationsService $telecommunicationsService
      * @return self
      */
     public function addToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): self
@@ -788,7 +788,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService
+     * @return TelecommunicationsService
      */
     public function addToTelecommunicationsServiceWithCreate(): TelecommunicationsService
     {
@@ -798,7 +798,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService $telecommunicationsService
+     * @param TelecommunicationsService $telecommunicationsService
      * @return self
      */
     public function addOnceToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): self
@@ -813,7 +813,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService
+     * @return TelecommunicationsService
      */
     public function addOnceToTelecommunicationsServiceWithCreate(): TelecommunicationsService
     {

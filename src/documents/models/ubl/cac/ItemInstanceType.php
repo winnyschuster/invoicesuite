@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID;
@@ -13,7 +14,7 @@ class ItemInstanceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID|null
+     * @var ProductTraceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID")
      * @JMS\Expose
@@ -24,7 +25,7 @@ class ItemInstanceType
     private $productTraceID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -35,7 +36,7 @@ class ItemInstanceType
     private $manufactureDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -46,7 +47,7 @@ class ItemInstanceType
     private $manufactureTime;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -57,7 +58,7 @@ class ItemInstanceType
     private $bestBeforeDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID|null
+     * @var RegistrationID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID")
      * @JMS\Expose
@@ -68,7 +69,7 @@ class ItemInstanceType
     private $registrationID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID|null
+     * @var SerialID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID")
      * @JMS\Expose
@@ -79,7 +80,7 @@ class ItemInstanceType
     private $serialID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>|null
+     * @var array<AdditionalItemProperty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>")
      * @JMS\Expose
@@ -91,7 +92,7 @@ class ItemInstanceType
     private $additionalItemProperty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LotIdentification|null
+     * @var LotIdentification|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LotIdentification")
      * @JMS\Expose
@@ -102,7 +103,7 @@ class ItemInstanceType
     private $lotIdentification;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID|null
+     * @return ProductTraceID|null
      */
     public function getProductTraceID(): ?ProductTraceID
     {
@@ -110,7 +111,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID
+     * @return ProductTraceID
      */
     public function getProductTraceIDWithCreate(): ProductTraceID
     {
@@ -120,7 +121,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID|null $productTraceID
+     * @param ProductTraceID|null $productTraceID
      * @return self
      */
     public function setProductTraceID(?ProductTraceID $productTraceID = null): self
@@ -141,18 +142,18 @@ class ItemInstanceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getManufactureDate(): ?\DateTimeInterface
+    public function getManufactureDate(): ?DateTimeInterface
     {
         return $this->manufactureDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $manufactureDate
+     * @param DateTimeInterface|null $manufactureDate
      * @return self
      */
-    public function setManufactureDate(?\DateTimeInterface $manufactureDate = null): self
+    public function setManufactureDate(?DateTimeInterface $manufactureDate = null): self
     {
         $this->manufactureDate = $manufactureDate;
 
@@ -170,18 +171,18 @@ class ItemInstanceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getManufactureTime(): ?\DateTimeInterface
+    public function getManufactureTime(): ?DateTimeInterface
     {
         return $this->manufactureTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $manufactureTime
+     * @param DateTimeInterface|null $manufactureTime
      * @return self
      */
-    public function setManufactureTime(?\DateTimeInterface $manufactureTime = null): self
+    public function setManufactureTime(?DateTimeInterface $manufactureTime = null): self
     {
         $this->manufactureTime = $manufactureTime;
 
@@ -199,18 +200,18 @@ class ItemInstanceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getBestBeforeDate(): ?\DateTimeInterface
+    public function getBestBeforeDate(): ?DateTimeInterface
     {
         return $this->bestBeforeDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $bestBeforeDate
+     * @param DateTimeInterface|null $bestBeforeDate
      * @return self
      */
-    public function setBestBeforeDate(?\DateTimeInterface $bestBeforeDate = null): self
+    public function setBestBeforeDate(?DateTimeInterface $bestBeforeDate = null): self
     {
         $this->bestBeforeDate = $bestBeforeDate;
 
@@ -228,7 +229,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID|null
+     * @return RegistrationID|null
      */
     public function getRegistrationID(): ?RegistrationID
     {
@@ -236,7 +237,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID
+     * @return RegistrationID
      */
     public function getRegistrationIDWithCreate(): RegistrationID
     {
@@ -246,7 +247,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID|null $registrationID
+     * @param RegistrationID|null $registrationID
      * @return self
      */
     public function setRegistrationID(?RegistrationID $registrationID = null): self
@@ -267,7 +268,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID|null
+     * @return SerialID|null
      */
     public function getSerialID(): ?SerialID
     {
@@ -275,7 +276,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID
+     * @return SerialID
      */
     public function getSerialIDWithCreate(): SerialID
     {
@@ -285,7 +286,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID|null $serialID
+     * @param SerialID|null $serialID
      * @return self
      */
     public function setSerialID(?SerialID $serialID = null): self
@@ -306,7 +307,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>|null
+     * @return array<AdditionalItemProperty>|null
      */
     public function getAdditionalItemProperty(): ?array
     {
@@ -314,7 +315,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>|null $additionalItemProperty
+     * @param array<AdditionalItemProperty>|null $additionalItemProperty
      * @return self
      */
     public function setAdditionalItemProperty(?array $additionalItemProperty = null): self
@@ -345,7 +346,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty|null
+     * @return AdditionalItemProperty|null
      */
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -360,7 +361,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty|null
+     * @return AdditionalItemProperty|null
      */
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -375,7 +376,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @param AdditionalItemProperty $additionalItemProperty
      * @return self
      */
     public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
@@ -386,7 +387,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty
+     * @return AdditionalItemProperty
      */
     public function addToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
     {
@@ -396,7 +397,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @param AdditionalItemProperty $additionalItemProperty
      * @return self
      */
     public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
@@ -411,7 +412,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty
+     * @return AdditionalItemProperty
      */
     public function addOnceToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
     {
@@ -427,7 +428,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LotIdentification|null
+     * @return LotIdentification|null
      */
     public function getLotIdentification(): ?LotIdentification
     {
@@ -435,7 +436,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LotIdentification
+     * @return LotIdentification
      */
     public function getLotIdentificationWithCreate(): LotIdentification
     {
@@ -445,7 +446,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LotIdentification|null $lotIdentification
+     * @param LotIdentification|null $lotIdentification
      * @return self
      */
     public function setLotIdentification(?LotIdentification $lotIdentification = null): self

@@ -10,7 +10,7 @@ class DocumentResponseType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Response|null
+     * @var Response|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Response")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class DocumentResponseType
     private $response;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class DocumentResponseType
     private $documentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class DocumentResponseType
     private $issuerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientParty|null
+     * @var RecipientParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RecipientParty")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class DocumentResponseType
     private $recipientParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse>|null
+     * @var array<LineResponse>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse>")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class DocumentResponseType
     private $lineResponse;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Response|null
+     * @return Response|null
      */
     public function getResponse(): ?Response
     {
@@ -75,7 +75,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Response
+     * @return Response
      */
     public function getResponseWithCreate(): Response
     {
@@ -85,7 +85,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Response|null $response
+     * @param Response|null $response
      * @return self
      */
     public function setResponse(?Response $response = null): self
@@ -106,7 +106,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -114,7 +114,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -145,7 +145,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -160,7 +160,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -175,7 +175,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -186,7 +186,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -196,7 +196,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -211,7 +211,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -227,7 +227,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -235,7 +235,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -245,7 +245,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self
@@ -266,7 +266,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientParty|null
+     * @return RecipientParty|null
      */
     public function getRecipientParty(): ?RecipientParty
     {
@@ -274,7 +274,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientParty
+     * @return RecipientParty
      */
     public function getRecipientPartyWithCreate(): RecipientParty
     {
@@ -284,7 +284,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientParty|null $recipientParty
+     * @param RecipientParty|null $recipientParty
      * @return self
      */
     public function setRecipientParty(?RecipientParty $recipientParty = null): self
@@ -305,7 +305,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse>|null
+     * @return array<LineResponse>|null
      */
     public function getLineResponse(): ?array
     {
@@ -313,7 +313,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse>|null $lineResponse
+     * @param array<LineResponse>|null $lineResponse
      * @return self
      */
     public function setLineResponse(?array $lineResponse = null): self
@@ -344,7 +344,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse|null
+     * @return LineResponse|null
      */
     public function firstLineResponse(): ?LineResponse
     {
@@ -359,7 +359,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse|null
+     * @return LineResponse|null
      */
     public function lastLineResponse(): ?LineResponse
     {
@@ -374,7 +374,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse $lineResponse
+     * @param LineResponse $lineResponse
      * @return self
      */
     public function addToLineResponse(LineResponse $lineResponse): self
@@ -385,7 +385,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse
+     * @return LineResponse
      */
     public function addToLineResponseWithCreate(): LineResponse
     {
@@ -395,7 +395,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse $lineResponse
+     * @param LineResponse $lineResponse
      * @return self
      */
     public function addOnceToLineResponse(LineResponse $lineResponse): self
@@ -410,7 +410,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse
+     * @return LineResponse
      */
     public function addOnceToLineResponseWithCreate(): LineResponse
     {

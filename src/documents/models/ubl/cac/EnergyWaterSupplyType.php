@@ -10,7 +10,7 @@ class EnergyWaterSupplyType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport>|null
+     * @var array<ConsumptionReport>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport>")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class EnergyWaterSupplyType
     private $consumptionReport;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport>|null
+     * @var array<EnergyTaxReport>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport>")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class EnergyWaterSupplyType
     private $energyTaxReport;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage>|null
+     * @var array<ConsumptionAverage>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class EnergyWaterSupplyType
     private $consumptionAverage;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection>|null
+     * @var array<EnergyWaterConsumptionCorrection>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EnergyWaterSupplyType
     private $energyWaterConsumptionCorrection;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport>|null
+     * @return array<ConsumptionReport>|null
      */
     public function getConsumptionReport(): ?array
     {
@@ -66,7 +66,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport>|null $consumptionReport
+     * @param array<ConsumptionReport>|null $consumptionReport
      * @return self
      */
     public function setConsumptionReport(?array $consumptionReport = null): self
@@ -97,7 +97,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport|null
+     * @return ConsumptionReport|null
      */
     public function firstConsumptionReport(): ?ConsumptionReport
     {
@@ -112,7 +112,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport|null
+     * @return ConsumptionReport|null
      */
     public function lastConsumptionReport(): ?ConsumptionReport
     {
@@ -127,7 +127,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport $consumptionReport
+     * @param ConsumptionReport $consumptionReport
      * @return self
      */
     public function addToConsumptionReport(ConsumptionReport $consumptionReport): self
@@ -138,7 +138,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport
+     * @return ConsumptionReport
      */
     public function addToConsumptionReportWithCreate(): ConsumptionReport
     {
@@ -148,7 +148,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport $consumptionReport
+     * @param ConsumptionReport $consumptionReport
      * @return self
      */
     public function addOnceToConsumptionReport(ConsumptionReport $consumptionReport): self
@@ -163,7 +163,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport
+     * @return ConsumptionReport
      */
     public function addOnceToConsumptionReportWithCreate(): ConsumptionReport
     {
@@ -179,7 +179,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport>|null
+     * @return array<EnergyTaxReport>|null
      */
     public function getEnergyTaxReport(): ?array
     {
@@ -187,7 +187,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport>|null $energyTaxReport
+     * @param array<EnergyTaxReport>|null $energyTaxReport
      * @return self
      */
     public function setEnergyTaxReport(?array $energyTaxReport = null): self
@@ -218,7 +218,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport|null
+     * @return EnergyTaxReport|null
      */
     public function firstEnergyTaxReport(): ?EnergyTaxReport
     {
@@ -233,7 +233,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport|null
+     * @return EnergyTaxReport|null
      */
     public function lastEnergyTaxReport(): ?EnergyTaxReport
     {
@@ -248,7 +248,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport $energyTaxReport
+     * @param EnergyTaxReport $energyTaxReport
      * @return self
      */
     public function addToEnergyTaxReport(EnergyTaxReport $energyTaxReport): self
@@ -259,7 +259,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport
+     * @return EnergyTaxReport
      */
     public function addToEnergyTaxReportWithCreate(): EnergyTaxReport
     {
@@ -269,7 +269,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport $energyTaxReport
+     * @param EnergyTaxReport $energyTaxReport
      * @return self
      */
     public function addOnceToEnergyTaxReport(EnergyTaxReport $energyTaxReport): self
@@ -284,7 +284,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport
+     * @return EnergyTaxReport
      */
     public function addOnceToEnergyTaxReportWithCreate(): EnergyTaxReport
     {
@@ -300,7 +300,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage>|null
+     * @return array<ConsumptionAverage>|null
      */
     public function getConsumptionAverage(): ?array
     {
@@ -308,7 +308,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage>|null $consumptionAverage
+     * @param array<ConsumptionAverage>|null $consumptionAverage
      * @return self
      */
     public function setConsumptionAverage(?array $consumptionAverage = null): self
@@ -339,7 +339,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage|null
+     * @return ConsumptionAverage|null
      */
     public function firstConsumptionAverage(): ?ConsumptionAverage
     {
@@ -354,7 +354,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage|null
+     * @return ConsumptionAverage|null
      */
     public function lastConsumptionAverage(): ?ConsumptionAverage
     {
@@ -369,7 +369,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage $consumptionAverage
+     * @param ConsumptionAverage $consumptionAverage
      * @return self
      */
     public function addToConsumptionAverage(ConsumptionAverage $consumptionAverage): self
@@ -380,7 +380,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage
+     * @return ConsumptionAverage
      */
     public function addToConsumptionAverageWithCreate(): ConsumptionAverage
     {
@@ -390,7 +390,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage $consumptionAverage
+     * @param ConsumptionAverage $consumptionAverage
      * @return self
      */
     public function addOnceToConsumptionAverage(ConsumptionAverage $consumptionAverage): self
@@ -405,7 +405,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage
+     * @return ConsumptionAverage
      */
     public function addOnceToConsumptionAverageWithCreate(): ConsumptionAverage
     {
@@ -421,7 +421,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection>|null
+     * @return array<EnergyWaterConsumptionCorrection>|null
      */
     public function getEnergyWaterConsumptionCorrection(): ?array
     {
@@ -429,7 +429,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection>|null $energyWaterConsumptionCorrection
+     * @param array<EnergyWaterConsumptionCorrection>|null $energyWaterConsumptionCorrection
      * @return self
      */
     public function setEnergyWaterConsumptionCorrection(?array $energyWaterConsumptionCorrection = null): self
@@ -460,7 +460,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection|null
+     * @return EnergyWaterConsumptionCorrection|null
      */
     public function firstEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
     {
@@ -475,7 +475,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection|null
+     * @return EnergyWaterConsumptionCorrection|null
      */
     public function lastEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
     {
@@ -490,7 +490,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
+     * @param EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
      * @return self
      */
     public function addToEnergyWaterConsumptionCorrection(
@@ -502,7 +502,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection
+     * @return EnergyWaterConsumptionCorrection
      */
     public function addToEnergyWaterConsumptionCorrectionWithCreate(): EnergyWaterConsumptionCorrection
     {
@@ -512,7 +512,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
+     * @param EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
      * @return self
      */
     public function addOnceToEnergyWaterConsumptionCorrection(
@@ -528,7 +528,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection
+     * @return EnergyWaterConsumptionCorrection
      */
     public function addOnceToEnergyWaterConsumptionCorrectionWithCreate(): EnergyWaterConsumptionCorrection
     {

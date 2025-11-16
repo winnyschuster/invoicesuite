@@ -15,7 +15,7 @@ class DeliveryTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class DeliveryTermsType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms>|null
+     * @var array<SpecialTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms>")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class DeliveryTermsType
     private $specialTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode|null
+     * @var LossRiskResponsibilityCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class DeliveryTermsType
     private $lossRiskResponsibilityCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk>|null
+     * @var array<LossRisk>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class DeliveryTermsType
     private $lossRisk;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class DeliveryTermsType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation|null
+     * @var DeliveryLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class DeliveryTermsType
     private $deliveryLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @var AllowanceCharge|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class DeliveryTermsType
     private $allowanceCharge;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -102,7 +102,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -112,7 +112,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -133,7 +133,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms>|null
+     * @return array<SpecialTerms>|null
      */
     public function getSpecialTerms(): ?array
     {
@@ -141,7 +141,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms>|null $specialTerms
+     * @param array<SpecialTerms>|null $specialTerms
      * @return self
      */
     public function setSpecialTerms(?array $specialTerms = null): self
@@ -172,7 +172,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms|null
+     * @return SpecialTerms|null
      */
     public function firstSpecialTerms(): ?SpecialTerms
     {
@@ -187,7 +187,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms|null
+     * @return SpecialTerms|null
      */
     public function lastSpecialTerms(): ?SpecialTerms
     {
@@ -202,7 +202,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms $specialTerms
+     * @param SpecialTerms $specialTerms
      * @return self
      */
     public function addToSpecialTerms(SpecialTerms $specialTerms): self
@@ -213,7 +213,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms
+     * @return SpecialTerms
      */
     public function addToSpecialTermsWithCreate(): SpecialTerms
     {
@@ -223,7 +223,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms $specialTerms
+     * @param SpecialTerms $specialTerms
      * @return self
      */
     public function addOnceToSpecialTerms(SpecialTerms $specialTerms): self
@@ -238,7 +238,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms
+     * @return SpecialTerms
      */
     public function addOnceToSpecialTermsWithCreate(): SpecialTerms
     {
@@ -254,7 +254,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode|null
+     * @return LossRiskResponsibilityCode|null
      */
     public function getLossRiskResponsibilityCode(): ?LossRiskResponsibilityCode
     {
@@ -262,7 +262,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode
+     * @return LossRiskResponsibilityCode
      */
     public function getLossRiskResponsibilityCodeWithCreate(): LossRiskResponsibilityCode
     {
@@ -272,7 +272,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode|null $lossRiskResponsibilityCode
+     * @param LossRiskResponsibilityCode|null $lossRiskResponsibilityCode
      * @return self
      */
     public function setLossRiskResponsibilityCode(
@@ -294,7 +294,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk>|null
+     * @return array<LossRisk>|null
      */
     public function getLossRisk(): ?array
     {
@@ -302,7 +302,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk>|null $lossRisk
+     * @param array<LossRisk>|null $lossRisk
      * @return self
      */
     public function setLossRisk(?array $lossRisk = null): self
@@ -333,7 +333,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk|null
+     * @return LossRisk|null
      */
     public function firstLossRisk(): ?LossRisk
     {
@@ -348,7 +348,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk|null
+     * @return LossRisk|null
      */
     public function lastLossRisk(): ?LossRisk
     {
@@ -363,7 +363,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk $lossRisk
+     * @param LossRisk $lossRisk
      * @return self
      */
     public function addToLossRisk(LossRisk $lossRisk): self
@@ -374,7 +374,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk
+     * @return LossRisk
      */
     public function addToLossRiskWithCreate(): LossRisk
     {
@@ -384,7 +384,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk $lossRisk
+     * @param LossRisk $lossRisk
      * @return self
      */
     public function addOnceToLossRisk(LossRisk $lossRisk): self
@@ -399,7 +399,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk
+     * @return LossRisk
      */
     public function addOnceToLossRiskWithCreate(): LossRisk
     {
@@ -415,7 +415,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -423,7 +423,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -433,7 +433,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -454,7 +454,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation|null
+     * @return DeliveryLocation|null
      */
     public function getDeliveryLocation(): ?DeliveryLocation
     {
@@ -462,7 +462,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation
+     * @return DeliveryLocation
      */
     public function getDeliveryLocationWithCreate(): DeliveryLocation
     {
@@ -472,7 +472,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation|null $deliveryLocation
+     * @param DeliveryLocation|null $deliveryLocation
      * @return self
      */
     public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): self
@@ -493,7 +493,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function getAllowanceCharge(): ?AllowanceCharge
     {
@@ -501,7 +501,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function getAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -511,7 +511,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null $allowanceCharge
+     * @param AllowanceCharge|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?AllowanceCharge $allowanceCharge = null): self

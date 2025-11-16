@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
+use DateTimeInterface;
 use DateTimeImmutable;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
@@ -32,8 +33,8 @@ final class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getType());
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getDescription());
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getLanguage());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteDocumentHeaderDTO->getDate());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteDocumentHeaderDTO->getCompleteDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuiteDocumentHeaderDTO->getDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuiteDocumentHeaderDTO->getCompleteDate());
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getSupplyChainEvents());
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getCurrency());
         $this->assertNull($invoiceSuiteDocumentHeaderDTO->getTaxCurrency());
@@ -53,16 +54,16 @@ final class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getDespatchAdviceReferences());
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getReceivingAdviceReferences());
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getDeliveryNoteReferences());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getSellerParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getBuyerParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getTaxRepresentativeParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getProductEndUserParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getShipToParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getUltimateShipToParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getShipFromParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getInvoicerParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getInvoiceeParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getPayeeParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getSellerParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getBuyerParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getTaxRepresentativeParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getProductEndUserParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getShipToParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getUltimateShipToParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getShipFromParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getInvoicerParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getInvoiceeParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getPayeeParty());
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getPaymentMeans());
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getPaymentTerms());
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getCreditorReferences());

@@ -17,7 +17,7 @@ class StatementLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class StatementLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class StatementLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class StatementLineType
     private $balanceBroughtForwardIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null
+     * @var DebitLineAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class StatementLineType
     private $debitLineAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null
+     * @var CreditLineAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class StatementLineType
     private $creditLineAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount|null
+     * @var BalanceAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class StatementLineType
     private $balanceAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null
+     * @var PaymentPurposeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class StatementLineType
     private $paymentPurposeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans|null
+     * @var PaymentMeans|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class StatementLineType
     private $paymentMeans;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null
+     * @var array<PaymentTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class StatementLineType
     private $paymentTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null
+     * @var BuyerCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class StatementLineType
     private $buyerCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @var SellerSupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class StatementLineType
     private $sellerSupplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty|null
+     * @var OriginatorCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty")
      * @JMS\Expose
@@ -162,7 +162,7 @@ class StatementLineType
     private $originatorCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty|null
+     * @var AccountingCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty")
      * @JMS\Expose
@@ -173,7 +173,7 @@ class StatementLineType
     private $accountingCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty|null
+     * @var AccountingSupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty")
      * @JMS\Expose
@@ -184,7 +184,7 @@ class StatementLineType
     private $accountingSupplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty|null
+     * @var PayeeParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty")
      * @JMS\Expose
@@ -195,7 +195,7 @@ class StatementLineType
     private $payeeParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>|null
+     * @var array<InvoicePeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>")
      * @JMS\Expose
@@ -207,7 +207,7 @@ class StatementLineType
     private $invoicePeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null
+     * @var array<BillingReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -219,7 +219,7 @@ class StatementLineType
     private $billingReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -231,7 +231,7 @@ class StatementLineType
     private $documentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @var ExchangeRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -242,7 +242,7 @@ class StatementLineType
     private $exchangeRate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -254,7 +254,7 @@ class StatementLineType
     private $allowanceCharge;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment>|null
+     * @var array<CollectedPayment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment>")
      * @JMS\Expose
@@ -266,7 +266,7 @@ class StatementLineType
     private $collectedPayment;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -274,7 +274,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -284,7 +284,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -305,7 +305,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -313,7 +313,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -344,7 +344,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -359,7 +359,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -374,7 +374,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -385,7 +385,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -395,7 +395,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -410,7 +410,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -426,7 +426,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -434,7 +434,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -444,7 +444,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -494,7 +494,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null
+     * @return DebitLineAmount|null
      */
     public function getDebitLineAmount(): ?DebitLineAmount
     {
@@ -502,7 +502,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount
+     * @return DebitLineAmount
      */
     public function getDebitLineAmountWithCreate(): DebitLineAmount
     {
@@ -512,7 +512,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null $debitLineAmount
+     * @param DebitLineAmount|null $debitLineAmount
      * @return self
      */
     public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): self
@@ -533,7 +533,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null
+     * @return CreditLineAmount|null
      */
     public function getCreditLineAmount(): ?CreditLineAmount
     {
@@ -541,7 +541,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount
+     * @return CreditLineAmount
      */
     public function getCreditLineAmountWithCreate(): CreditLineAmount
     {
@@ -551,7 +551,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null $creditLineAmount
+     * @param CreditLineAmount|null $creditLineAmount
      * @return self
      */
     public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): self
@@ -572,7 +572,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount|null
+     * @return BalanceAmount|null
      */
     public function getBalanceAmount(): ?BalanceAmount
     {
@@ -580,7 +580,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount
+     * @return BalanceAmount
      */
     public function getBalanceAmountWithCreate(): BalanceAmount
     {
@@ -590,7 +590,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount|null $balanceAmount
+     * @param BalanceAmount|null $balanceAmount
      * @return self
      */
     public function setBalanceAmount(?BalanceAmount $balanceAmount = null): self
@@ -611,7 +611,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null
+     * @return PaymentPurposeCode|null
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -619,7 +619,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode
+     * @return PaymentPurposeCode
      */
     public function getPaymentPurposeCodeWithCreate(): PaymentPurposeCode
     {
@@ -629,7 +629,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null $paymentPurposeCode
+     * @param PaymentPurposeCode|null $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): self
@@ -650,7 +650,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans|null
+     * @return PaymentMeans|null
      */
     public function getPaymentMeans(): ?PaymentMeans
     {
@@ -658,7 +658,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans
+     * @return PaymentMeans
      */
     public function getPaymentMeansWithCreate(): PaymentMeans
     {
@@ -668,7 +668,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans|null $paymentMeans
+     * @param PaymentMeans|null $paymentMeans
      * @return self
      */
     public function setPaymentMeans(?PaymentMeans $paymentMeans = null): self
@@ -689,7 +689,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null
+     * @return array<PaymentTerms>|null
      */
     public function getPaymentTerms(): ?array
     {
@@ -697,7 +697,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null $paymentTerms
+     * @param array<PaymentTerms>|null $paymentTerms
      * @return self
      */
     public function setPaymentTerms(?array $paymentTerms = null): self
@@ -728,7 +728,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms|null
+     * @return PaymentTerms|null
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -743,7 +743,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms|null
+     * @return PaymentTerms|null
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -758,7 +758,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms $paymentTerms
+     * @param PaymentTerms $paymentTerms
      * @return self
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): self
@@ -769,7 +769,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+     * @return PaymentTerms
      */
     public function addToPaymentTermsWithCreate(): PaymentTerms
     {
@@ -779,7 +779,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms $paymentTerms
+     * @param PaymentTerms $paymentTerms
      * @return self
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): self
@@ -794,7 +794,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+     * @return PaymentTerms
      */
     public function addOnceToPaymentTermsWithCreate(): PaymentTerms
     {
@@ -810,7 +810,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null
+     * @return BuyerCustomerParty|null
      */
     public function getBuyerCustomerParty(): ?BuyerCustomerParty
     {
@@ -818,7 +818,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty
+     * @return BuyerCustomerParty
      */
     public function getBuyerCustomerPartyWithCreate(): BuyerCustomerParty
     {
@@ -828,7 +828,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null $buyerCustomerParty
+     * @param BuyerCustomerParty|null $buyerCustomerParty
      * @return self
      */
     public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): self
@@ -849,7 +849,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @return SellerSupplierParty|null
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -857,7 +857,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty
+     * @return SellerSupplierParty
      */
     public function getSellerSupplierPartyWithCreate(): SellerSupplierParty
     {
@@ -867,7 +867,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null $sellerSupplierParty
+     * @param SellerSupplierParty|null $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
@@ -888,7 +888,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty|null
+     * @return OriginatorCustomerParty|null
      */
     public function getOriginatorCustomerParty(): ?OriginatorCustomerParty
     {
@@ -896,7 +896,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty
+     * @return OriginatorCustomerParty
      */
     public function getOriginatorCustomerPartyWithCreate(): OriginatorCustomerParty
     {
@@ -906,7 +906,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty|null $originatorCustomerParty
+     * @param OriginatorCustomerParty|null $originatorCustomerParty
      * @return self
      */
     public function setOriginatorCustomerParty(?OriginatorCustomerParty $originatorCustomerParty = null): self
@@ -927,7 +927,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty|null
+     * @return AccountingCustomerParty|null
      */
     public function getAccountingCustomerParty(): ?AccountingCustomerParty
     {
@@ -935,7 +935,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty
+     * @return AccountingCustomerParty
      */
     public function getAccountingCustomerPartyWithCreate(): AccountingCustomerParty
     {
@@ -945,7 +945,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty|null $accountingCustomerParty
+     * @param AccountingCustomerParty|null $accountingCustomerParty
      * @return self
      */
     public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): self
@@ -966,7 +966,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty|null
+     * @return AccountingSupplierParty|null
      */
     public function getAccountingSupplierParty(): ?AccountingSupplierParty
     {
@@ -974,7 +974,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty
+     * @return AccountingSupplierParty
      */
     public function getAccountingSupplierPartyWithCreate(): AccountingSupplierParty
     {
@@ -984,7 +984,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty|null $accountingSupplierParty
+     * @param AccountingSupplierParty|null $accountingSupplierParty
      * @return self
      */
     public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): self
@@ -1005,7 +1005,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty|null
+     * @return PayeeParty|null
      */
     public function getPayeeParty(): ?PayeeParty
     {
@@ -1013,7 +1013,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty
+     * @return PayeeParty
      */
     public function getPayeePartyWithCreate(): PayeeParty
     {
@@ -1023,7 +1023,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty|null $payeeParty
+     * @param PayeeParty|null $payeeParty
      * @return self
      */
     public function setPayeeParty(?PayeeParty $payeeParty = null): self
@@ -1044,7 +1044,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>|null
+     * @return array<InvoicePeriod>|null
      */
     public function getInvoicePeriod(): ?array
     {
@@ -1052,7 +1052,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>|null $invoicePeriod
+     * @param array<InvoicePeriod>|null $invoicePeriod
      * @return self
      */
     public function setInvoicePeriod(?array $invoicePeriod = null): self
@@ -1083,7 +1083,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod|null
+     * @return InvoicePeriod|null
      */
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
@@ -1098,7 +1098,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod|null
+     * @return InvoicePeriod|null
      */
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
@@ -1113,7 +1113,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod $invoicePeriod
+     * @param InvoicePeriod $invoicePeriod
      * @return self
      */
     public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): self
@@ -1124,7 +1124,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod
+     * @return InvoicePeriod
      */
     public function addToInvoicePeriodWithCreate(): InvoicePeriod
     {
@@ -1134,7 +1134,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod $invoicePeriod
+     * @param InvoicePeriod $invoicePeriod
      * @return self
      */
     public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): self
@@ -1149,7 +1149,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod
+     * @return InvoicePeriod
      */
     public function addOnceToInvoicePeriodWithCreate(): InvoicePeriod
     {
@@ -1165,7 +1165,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null
+     * @return array<BillingReference>|null
      */
     public function getBillingReference(): ?array
     {
@@ -1173,7 +1173,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null $billingReference
+     * @param array<BillingReference>|null $billingReference
      * @return self
      */
     public function setBillingReference(?array $billingReference = null): self
@@ -1204,7 +1204,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference|null
+     * @return BillingReference|null
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -1219,7 +1219,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference|null
+     * @return BillingReference|null
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -1234,7 +1234,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference $billingReference
+     * @param BillingReference $billingReference
      * @return self
      */
     public function addToBillingReference(BillingReference $billingReference): self
@@ -1245,7 +1245,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+     * @return BillingReference
      */
     public function addToBillingReferenceWithCreate(): BillingReference
     {
@@ -1255,7 +1255,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference $billingReference
+     * @param BillingReference $billingReference
      * @return self
      */
     public function addOnceToBillingReference(BillingReference $billingReference): self
@@ -1270,7 +1270,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+     * @return BillingReference
      */
     public function addOnceToBillingReferenceWithCreate(): BillingReference
     {
@@ -1286,7 +1286,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -1294,7 +1294,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -1325,7 +1325,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1340,7 +1340,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1355,7 +1355,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -1366,7 +1366,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -1376,7 +1376,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -1391,7 +1391,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -1407,7 +1407,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -1415,7 +1415,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function getExchangeRateWithCreate(): ExchangeRate
     {
@@ -1425,7 +1425,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null $exchangeRate
+     * @param ExchangeRate|null $exchangeRate
      * @return self
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): self
@@ -1446,7 +1446,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -1454,7 +1454,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -1485,7 +1485,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -1500,7 +1500,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -1515,7 +1515,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -1526,7 +1526,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -1536,7 +1536,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -1551,7 +1551,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -1567,7 +1567,7 @@ class StatementLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment>|null
+     * @return array<CollectedPayment>|null
      */
     public function getCollectedPayment(): ?array
     {
@@ -1575,7 +1575,7 @@ class StatementLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment>|null $collectedPayment
+     * @param array<CollectedPayment>|null $collectedPayment
      * @return self
      */
     public function setCollectedPayment(?array $collectedPayment = null): self
@@ -1606,7 +1606,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment|null
+     * @return CollectedPayment|null
      */
     public function firstCollectedPayment(): ?CollectedPayment
     {
@@ -1621,7 +1621,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment|null
+     * @return CollectedPayment|null
      */
     public function lastCollectedPayment(): ?CollectedPayment
     {
@@ -1636,7 +1636,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment $collectedPayment
+     * @param CollectedPayment $collectedPayment
      * @return self
      */
     public function addToCollectedPayment(CollectedPayment $collectedPayment): self
@@ -1647,7 +1647,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment
+     * @return CollectedPayment
      */
     public function addToCollectedPaymentWithCreate(): CollectedPayment
     {
@@ -1657,7 +1657,7 @@ class StatementLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment $collectedPayment
+     * @param CollectedPayment $collectedPayment
      * @return self
      */
     public function addOnceToCollectedPayment(CollectedPayment $collectedPayment): self
@@ -1672,7 +1672,7 @@ class StatementLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CollectedPayment
+     * @return CollectedPayment
      */
     public function addOnceToCollectedPaymentWithCreate(): CollectedPayment
     {

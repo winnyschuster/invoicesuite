@@ -12,7 +12,7 @@ class EconomicOperatorRoleType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode|null
+     * @var RoleCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class EconomicOperatorRoleType
     private $roleCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription>|null
+     * @var array<RoleDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class EconomicOperatorRoleType
     private $roleDescription;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode|null
+     * @return RoleCode|null
      */
     public function getRoleCode(): ?RoleCode
     {
@@ -43,7 +43,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode
+     * @return RoleCode
      */
     public function getRoleCodeWithCreate(): RoleCode
     {
@@ -53,7 +53,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode|null $roleCode
+     * @param RoleCode|null $roleCode
      * @return self
      */
     public function setRoleCode(?RoleCode $roleCode = null): self
@@ -74,7 +74,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription>|null
+     * @return array<RoleDescription>|null
      */
     public function getRoleDescription(): ?array
     {
@@ -82,7 +82,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription>|null $roleDescription
+     * @param array<RoleDescription>|null $roleDescription
      * @return self
      */
     public function setRoleDescription(?array $roleDescription = null): self
@@ -113,7 +113,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription|null
+     * @return RoleDescription|null
      */
     public function firstRoleDescription(): ?RoleDescription
     {
@@ -128,7 +128,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription|null
+     * @return RoleDescription|null
      */
     public function lastRoleDescription(): ?RoleDescription
     {
@@ -143,7 +143,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription $roleDescription
+     * @param RoleDescription $roleDescription
      * @return self
      */
     public function addToRoleDescription(RoleDescription $roleDescription): self
@@ -154,7 +154,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription
+     * @return RoleDescription
      */
     public function addToRoleDescriptionWithCreate(): RoleDescription
     {
@@ -164,7 +164,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription $roleDescription
+     * @param RoleDescription $roleDescription
      * @return self
      */
     public function addOnceToRoleDescription(RoleDescription $roleDescription): self
@@ -179,7 +179,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription
+     * @return RoleDescription
      */
     public function addOnceToRoleDescriptionWithCreate(): RoleDescription
     {

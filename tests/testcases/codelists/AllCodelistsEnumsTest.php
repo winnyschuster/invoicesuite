@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\codelists;
 
+use ValueError;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistAllowanceChargeCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCountryCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
@@ -5547,7 +5548,7 @@ final class AllCodelistsEnumsTest extends TestCase
     {
         $this->assertNull($enumClass::tryFrom($invalid));
 
-        $this->expectException(\ValueError::class);
+        $this->expectException(ValueError::class);
 
         $enumClass::from($invalid);
     }

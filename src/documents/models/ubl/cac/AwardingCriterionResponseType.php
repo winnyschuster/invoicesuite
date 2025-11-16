@@ -16,7 +16,7 @@ class AwardingCriterionResponseType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class AwardingCriterionResponseType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID|null
+     * @var AwardingCriterionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class AwardingCriterionResponseType
     private $awardingCriterionID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription>|null
+     * @var array<AwardingCriterionDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class AwardingCriterionResponseType
     private $awardingCriterionDescription;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class AwardingCriterionResponseType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class AwardingCriterionResponseType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class AwardingCriterionResponseType
     private $amount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse>|null
+     * @var array<SubordinateAwardingCriterionResponse>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse>")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class AwardingCriterionResponseType
     private $subordinateAwardingCriterionResponse;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -104,7 +104,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -114,7 +114,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -135,7 +135,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID|null
+     * @return AwardingCriterionID|null
      */
     public function getAwardingCriterionID(): ?AwardingCriterionID
     {
@@ -143,7 +143,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID
+     * @return AwardingCriterionID
      */
     public function getAwardingCriterionIDWithCreate(): AwardingCriterionID
     {
@@ -153,7 +153,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID|null $awardingCriterionID
+     * @param AwardingCriterionID|null $awardingCriterionID
      * @return self
      */
     public function setAwardingCriterionID(?AwardingCriterionID $awardingCriterionID = null): self
@@ -174,7 +174,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription>|null
+     * @return array<AwardingCriterionDescription>|null
      */
     public function getAwardingCriterionDescription(): ?array
     {
@@ -182,7 +182,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription>|null $awardingCriterionDescription
+     * @param array<AwardingCriterionDescription>|null $awardingCriterionDescription
      * @return self
      */
     public function setAwardingCriterionDescription(?array $awardingCriterionDescription = null): self
@@ -213,7 +213,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription|null
+     * @return AwardingCriterionDescription|null
      */
     public function firstAwardingCriterionDescription(): ?AwardingCriterionDescription
     {
@@ -228,7 +228,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription|null
+     * @return AwardingCriterionDescription|null
      */
     public function lastAwardingCriterionDescription(): ?AwardingCriterionDescription
     {
@@ -243,7 +243,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription $awardingCriterionDescription
+     * @param AwardingCriterionDescription $awardingCriterionDescription
      * @return self
      */
     public function addToAwardingCriterionDescription(
@@ -255,7 +255,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription
+     * @return AwardingCriterionDescription
      */
     public function addToAwardingCriterionDescriptionWithCreate(): AwardingCriterionDescription
     {
@@ -265,7 +265,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription $awardingCriterionDescription
+     * @param AwardingCriterionDescription $awardingCriterionDescription
      * @return self
      */
     public function addOnceToAwardingCriterionDescription(
@@ -281,7 +281,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription
+     * @return AwardingCriterionDescription
      */
     public function addOnceToAwardingCriterionDescriptionWithCreate(): AwardingCriterionDescription
     {
@@ -297,7 +297,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -305,7 +305,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -336,7 +336,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -351,7 +351,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -366,7 +366,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -377,7 +377,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -387,7 +387,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -402,7 +402,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -418,7 +418,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -426,7 +426,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -436,7 +436,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -457,7 +457,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -465,7 +465,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -475,7 +475,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -496,7 +496,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse>|null
+     * @return array<SubordinateAwardingCriterionResponse>|null
      */
     public function getSubordinateAwardingCriterionResponse(): ?array
     {
@@ -504,7 +504,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse>|null $subordinateAwardingCriterionResponse
+     * @param array<SubordinateAwardingCriterionResponse>|null $subordinateAwardingCriterionResponse
      * @return self
      */
     public function setSubordinateAwardingCriterionResponse(?array $subordinateAwardingCriterionResponse = null): self
@@ -535,7 +535,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse|null
+     * @return SubordinateAwardingCriterionResponse|null
      */
     public function firstSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
     {
@@ -550,7 +550,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse|null
+     * @return SubordinateAwardingCriterionResponse|null
      */
     public function lastSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
     {
@@ -565,7 +565,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
+     * @param SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
      * @return self
      */
     public function addToSubordinateAwardingCriterionResponse(
@@ -577,7 +577,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse
+     * @return SubordinateAwardingCriterionResponse
      */
     public function addToSubordinateAwardingCriterionResponseWithCreate(): SubordinateAwardingCriterionResponse
     {
@@ -587,7 +587,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
+     * @param SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
      * @return self
      */
     public function addOnceToSubordinateAwardingCriterionResponse(
@@ -603,7 +603,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse
+     * @return SubordinateAwardingCriterionResponse
      */
     public function addOnceToSubordinateAwardingCriterionResponseWithCreate(): SubordinateAwardingCriterionResponse
     {

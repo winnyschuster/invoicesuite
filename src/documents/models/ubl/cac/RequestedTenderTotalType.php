@@ -16,7 +16,7 @@ class RequestedTenderTotalType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount|null
+     * @var EstimatedOverallContractAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class RequestedTenderTotalType
     private $estimatedOverallContractAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount|null
+     * @var TotalAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class RequestedTenderTotalType
     private $taxIncludedIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null
+     * @var MinimumAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class RequestedTenderTotalType
     private $minimumAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null
+     * @var MaximumAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class RequestedTenderTotalType
     private $maximumAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope>|null
+     * @var array<MonetaryScope>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class RequestedTenderTotalType
     private $monetaryScope;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount|null
+     * @var AverageSubsequentContractAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class RequestedTenderTotalType
     private $averageSubsequentContractAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>|null
+     * @var array<ApplicableTaxCategory>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class RequestedTenderTotalType
     private $applicableTaxCategory;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount|null
+     * @return EstimatedOverallContractAmount|null
      */
     public function getEstimatedOverallContractAmount(): ?EstimatedOverallContractAmount
     {
@@ -114,7 +114,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount
+     * @return EstimatedOverallContractAmount
      */
     public function getEstimatedOverallContractAmountWithCreate(): EstimatedOverallContractAmount
     {
@@ -124,7 +124,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount|null $estimatedOverallContractAmount
+     * @param EstimatedOverallContractAmount|null $estimatedOverallContractAmount
      * @return self
      */
     public function setEstimatedOverallContractAmount(
@@ -146,7 +146,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount|null
+     * @return TotalAmount|null
      */
     public function getTotalAmount(): ?TotalAmount
     {
@@ -154,7 +154,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount
+     * @return TotalAmount
      */
     public function getTotalAmountWithCreate(): TotalAmount
     {
@@ -164,7 +164,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount|null $totalAmount
+     * @param TotalAmount|null $totalAmount
      * @return self
      */
     public function setTotalAmount(?TotalAmount $totalAmount = null): self
@@ -214,7 +214,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null
+     * @return MinimumAmount|null
      */
     public function getMinimumAmount(): ?MinimumAmount
     {
@@ -222,7 +222,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount
+     * @return MinimumAmount
      */
     public function getMinimumAmountWithCreate(): MinimumAmount
     {
@@ -232,7 +232,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null $minimumAmount
+     * @param MinimumAmount|null $minimumAmount
      * @return self
      */
     public function setMinimumAmount(?MinimumAmount $minimumAmount = null): self
@@ -253,7 +253,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null
+     * @return MaximumAmount|null
      */
     public function getMaximumAmount(): ?MaximumAmount
     {
@@ -261,7 +261,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount
+     * @return MaximumAmount
      */
     public function getMaximumAmountWithCreate(): MaximumAmount
     {
@@ -271,7 +271,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null $maximumAmount
+     * @param MaximumAmount|null $maximumAmount
      * @return self
      */
     public function setMaximumAmount(?MaximumAmount $maximumAmount = null): self
@@ -292,7 +292,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope>|null
+     * @return array<MonetaryScope>|null
      */
     public function getMonetaryScope(): ?array
     {
@@ -300,7 +300,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope>|null $monetaryScope
+     * @param array<MonetaryScope>|null $monetaryScope
      * @return self
      */
     public function setMonetaryScope(?array $monetaryScope = null): self
@@ -331,7 +331,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope|null
+     * @return MonetaryScope|null
      */
     public function firstMonetaryScope(): ?MonetaryScope
     {
@@ -346,7 +346,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope|null
+     * @return MonetaryScope|null
      */
     public function lastMonetaryScope(): ?MonetaryScope
     {
@@ -361,7 +361,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope $monetaryScope
+     * @param MonetaryScope $monetaryScope
      * @return self
      */
     public function addToMonetaryScope(MonetaryScope $monetaryScope): self
@@ -372,7 +372,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope
+     * @return MonetaryScope
      */
     public function addToMonetaryScopeWithCreate(): MonetaryScope
     {
@@ -382,7 +382,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope $monetaryScope
+     * @param MonetaryScope $monetaryScope
      * @return self
      */
     public function addOnceToMonetaryScope(MonetaryScope $monetaryScope): self
@@ -397,7 +397,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope
+     * @return MonetaryScope
      */
     public function addOnceToMonetaryScopeWithCreate(): MonetaryScope
     {
@@ -413,7 +413,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount|null
+     * @return AverageSubsequentContractAmount|null
      */
     public function getAverageSubsequentContractAmount(): ?AverageSubsequentContractAmount
     {
@@ -421,7 +421,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount
+     * @return AverageSubsequentContractAmount
      */
     public function getAverageSubsequentContractAmountWithCreate(): AverageSubsequentContractAmount
     {
@@ -431,7 +431,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount|null $averageSubsequentContractAmount
+     * @param AverageSubsequentContractAmount|null $averageSubsequentContractAmount
      * @return self
      */
     public function setAverageSubsequentContractAmount(
@@ -453,7 +453,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>|null
+     * @return array<ApplicableTaxCategory>|null
      */
     public function getApplicableTaxCategory(): ?array
     {
@@ -461,7 +461,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>|null $applicableTaxCategory
+     * @param array<ApplicableTaxCategory>|null $applicableTaxCategory
      * @return self
      */
     public function setApplicableTaxCategory(?array $applicableTaxCategory = null): self
@@ -492,7 +492,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory|null
+     * @return ApplicableTaxCategory|null
      */
     public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -507,7 +507,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory|null
+     * @return ApplicableTaxCategory|null
      */
     public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -522,7 +522,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @param ApplicableTaxCategory $applicableTaxCategory
      * @return self
      */
     public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
@@ -533,7 +533,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory
+     * @return ApplicableTaxCategory
      */
     public function addToApplicableTaxCategoryWithCreate(): ApplicableTaxCategory
     {
@@ -543,7 +543,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @param ApplicableTaxCategory $applicableTaxCategory
      * @return self
      */
     public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
@@ -558,7 +558,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory
+     * @return ApplicableTaxCategory
      */
     public function addOnceToApplicableTaxCategoryWithCreate(): ApplicableTaxCategory
     {

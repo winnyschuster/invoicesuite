@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PromotionalEventTypeCode;
@@ -11,7 +12,7 @@ class PromotionalEventType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PromotionalEventTypeCode|null
+     * @var PromotionalEventTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PromotionalEventTypeCode")
      * @JMS\Expose
@@ -22,7 +23,7 @@ class PromotionalEventType
     private $promotionalEventTypeCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -33,7 +34,7 @@ class PromotionalEventType
     private $submissionDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -44,7 +45,7 @@ class PromotionalEventType
     private $firstShipmentAvailibilityDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -55,7 +56,7 @@ class PromotionalEventType
     private $latestProposalAcceptanceDate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification>|null
+     * @var array<PromotionalSpecification>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification>")
      * @JMS\Expose
@@ -67,7 +68,7 @@ class PromotionalEventType
     private $promotionalSpecification;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PromotionalEventTypeCode|null
+     * @return PromotionalEventTypeCode|null
      */
     public function getPromotionalEventTypeCode(): ?PromotionalEventTypeCode
     {
@@ -75,7 +76,7 @@ class PromotionalEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PromotionalEventTypeCode
+     * @return PromotionalEventTypeCode
      */
     public function getPromotionalEventTypeCodeWithCreate(): PromotionalEventTypeCode
     {
@@ -85,7 +86,7 @@ class PromotionalEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PromotionalEventTypeCode|null $promotionalEventTypeCode
+     * @param PromotionalEventTypeCode|null $promotionalEventTypeCode
      * @return self
      */
     public function setPromotionalEventTypeCode(?PromotionalEventTypeCode $promotionalEventTypeCode = null): self
@@ -106,18 +107,18 @@ class PromotionalEventType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getSubmissionDate(): ?\DateTimeInterface
+    public function getSubmissionDate(): ?DateTimeInterface
     {
         return $this->submissionDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $submissionDate
+     * @param DateTimeInterface|null $submissionDate
      * @return self
      */
-    public function setSubmissionDate(?\DateTimeInterface $submissionDate = null): self
+    public function setSubmissionDate(?DateTimeInterface $submissionDate = null): self
     {
         $this->submissionDate = $submissionDate;
 
@@ -135,18 +136,18 @@ class PromotionalEventType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getFirstShipmentAvailibilityDate(): ?\DateTimeInterface
+    public function getFirstShipmentAvailibilityDate(): ?DateTimeInterface
     {
         return $this->firstShipmentAvailibilityDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $firstShipmentAvailibilityDate
+     * @param DateTimeInterface|null $firstShipmentAvailibilityDate
      * @return self
      */
-    public function setFirstShipmentAvailibilityDate(?\DateTimeInterface $firstShipmentAvailibilityDate = null): self
+    public function setFirstShipmentAvailibilityDate(?DateTimeInterface $firstShipmentAvailibilityDate = null): self
     {
         $this->firstShipmentAvailibilityDate = $firstShipmentAvailibilityDate;
 
@@ -164,18 +165,18 @@ class PromotionalEventType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getLatestProposalAcceptanceDate(): ?\DateTimeInterface
+    public function getLatestProposalAcceptanceDate(): ?DateTimeInterface
     {
         return $this->latestProposalAcceptanceDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $latestProposalAcceptanceDate
+     * @param DateTimeInterface|null $latestProposalAcceptanceDate
      * @return self
      */
-    public function setLatestProposalAcceptanceDate(?\DateTimeInterface $latestProposalAcceptanceDate = null): self
+    public function setLatestProposalAcceptanceDate(?DateTimeInterface $latestProposalAcceptanceDate = null): self
     {
         $this->latestProposalAcceptanceDate = $latestProposalAcceptanceDate;
 
@@ -193,7 +194,7 @@ class PromotionalEventType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification>|null
+     * @return array<PromotionalSpecification>|null
      */
     public function getPromotionalSpecification(): ?array
     {
@@ -201,7 +202,7 @@ class PromotionalEventType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification>|null $promotionalSpecification
+     * @param array<PromotionalSpecification>|null $promotionalSpecification
      * @return self
      */
     public function setPromotionalSpecification(?array $promotionalSpecification = null): self
@@ -232,7 +233,7 @@ class PromotionalEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification|null
+     * @return PromotionalSpecification|null
      */
     public function firstPromotionalSpecification(): ?PromotionalSpecification
     {
@@ -247,7 +248,7 @@ class PromotionalEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification|null
+     * @return PromotionalSpecification|null
      */
     public function lastPromotionalSpecification(): ?PromotionalSpecification
     {
@@ -262,7 +263,7 @@ class PromotionalEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification $promotionalSpecification
+     * @param PromotionalSpecification $promotionalSpecification
      * @return self
      */
     public function addToPromotionalSpecification(PromotionalSpecification $promotionalSpecification): self
@@ -273,7 +274,7 @@ class PromotionalEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification
+     * @return PromotionalSpecification
      */
     public function addToPromotionalSpecificationWithCreate(): PromotionalSpecification
     {
@@ -283,7 +284,7 @@ class PromotionalEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification $promotionalSpecification
+     * @param PromotionalSpecification $promotionalSpecification
      * @return self
      */
     public function addOnceToPromotionalSpecification(PromotionalSpecification $promotionalSpecification): self
@@ -298,7 +299,7 @@ class PromotionalEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalSpecification
+     * @return PromotionalSpecification
      */
     public function addOnceToPromotionalSpecificationWithCreate(): PromotionalSpecification
     {

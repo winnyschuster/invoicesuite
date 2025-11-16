@@ -14,7 +14,7 @@ class ItemInformationRequestLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode|null
+     * @var TimeFrequencyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ItemInformationRequestLineType
     private $timeFrequencyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null
+     * @var SupplyChainActivityTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ItemInformationRequestLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @var ForecastTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ItemInformationRequestLineType
     private $forecastTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode|null
+     * @var PerformanceMetricTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ItemInformationRequestLineType
     private $performanceMetricTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Period>|null
+     * @var array<Period>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Period>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class ItemInformationRequestLineType
     private $period;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>|null
+     * @var array<SalesItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class ItemInformationRequestLineType
     private $salesItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode|null
+     * @return TimeFrequencyCode|null
      */
     public function getTimeFrequencyCode(): ?TimeFrequencyCode
     {
@@ -90,7 +90,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode
+     * @return TimeFrequencyCode
      */
     public function getTimeFrequencyCodeWithCreate(): TimeFrequencyCode
     {
@@ -100,7 +100,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode|null $timeFrequencyCode
+     * @param TimeFrequencyCode|null $timeFrequencyCode
      * @return self
      */
     public function setTimeFrequencyCode(?TimeFrequencyCode $timeFrequencyCode = null): self
@@ -121,7 +121,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null
+     * @return SupplyChainActivityTypeCode|null
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -129,7 +129,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode
+     * @return SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCodeWithCreate(): SupplyChainActivityTypeCode
     {
@@ -139,7 +139,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(
@@ -161,7 +161,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @return ForecastTypeCode|null
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -169,7 +169,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode
+     * @return ForecastTypeCode
      */
     public function getForecastTypeCodeWithCreate(): ForecastTypeCode
     {
@@ -179,7 +179,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null $forecastTypeCode
+     * @param ForecastTypeCode|null $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
@@ -200,7 +200,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode|null
+     * @return PerformanceMetricTypeCode|null
      */
     public function getPerformanceMetricTypeCode(): ?PerformanceMetricTypeCode
     {
@@ -208,7 +208,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode
+     * @return PerformanceMetricTypeCode
      */
     public function getPerformanceMetricTypeCodeWithCreate(): PerformanceMetricTypeCode
     {
@@ -218,7 +218,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode|null $performanceMetricTypeCode
+     * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
      * @return self
      */
     public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): self
@@ -239,7 +239,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Period>|null
+     * @return array<Period>|null
      */
     public function getPeriod(): ?array
     {
@@ -247,7 +247,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Period>|null $period
+     * @param array<Period>|null $period
      * @return self
      */
     public function setPeriod(?array $period = null): self
@@ -278,7 +278,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function firstPeriod(): ?Period
     {
@@ -293,7 +293,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function lastPeriod(): ?Period
     {
@@ -308,7 +308,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period $period
+     * @param Period $period
      * @return self
      */
     public function addToPeriod(Period $period): self
@@ -319,7 +319,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function addToPeriodWithCreate(): Period
     {
@@ -329,7 +329,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period $period
+     * @param Period $period
      * @return self
      */
     public function addOnceToPeriod(Period $period): self
@@ -344,7 +344,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function addOnceToPeriodWithCreate(): Period
     {
@@ -360,7 +360,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>|null
+     * @return array<SalesItem>|null
      */
     public function getSalesItem(): ?array
     {
@@ -368,7 +368,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>|null $salesItem
+     * @param array<SalesItem>|null $salesItem
      * @return self
      */
     public function setSalesItem(?array $salesItem = null): self
@@ -399,7 +399,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @return SalesItem|null
      */
     public function firstSalesItem(): ?SalesItem
     {
@@ -414,7 +414,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @return SalesItem|null
      */
     public function lastSalesItem(): ?SalesItem
     {
@@ -429,7 +429,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem $salesItem
+     * @param SalesItem $salesItem
      * @return self
      */
     public function addToSalesItem(SalesItem $salesItem): self
@@ -440,7 +440,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem
+     * @return SalesItem
      */
     public function addToSalesItemWithCreate(): SalesItem
     {
@@ -450,7 +450,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem $salesItem
+     * @param SalesItem $salesItem
      * @return self
      */
     public function addOnceToSalesItem(SalesItem $salesItem): self
@@ -465,7 +465,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem
+     * @return SalesItem
      */
     public function addOnceToSalesItemWithCreate(): SalesItem
     {

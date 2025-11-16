@@ -13,7 +13,7 @@ class LanguageType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class LanguageType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class LanguageType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode|null
+     * @var LocaleCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class LanguageType
     private $localeCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -54,7 +54,7 @@ class LanguageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -64,7 +64,7 @@ class LanguageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -85,7 +85,7 @@ class LanguageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -93,7 +93,7 @@ class LanguageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -103,7 +103,7 @@ class LanguageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -124,7 +124,7 @@ class LanguageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode|null
+     * @return LocaleCode|null
      */
     public function getLocaleCode(): ?LocaleCode
     {
@@ -132,7 +132,7 @@ class LanguageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode
+     * @return LocaleCode
      */
     public function getLocaleCodeWithCreate(): LocaleCode
     {
@@ -142,7 +142,7 @@ class LanguageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode|null $localeCode
+     * @param LocaleCode|null $localeCode
      * @return self
      */
     public function setLocaleCode(?LocaleCode $localeCode = null): self

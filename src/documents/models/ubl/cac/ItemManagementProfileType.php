@@ -17,7 +17,7 @@ class ItemManagementProfileType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric|null
+     * @var FrozenPeriodDaysNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class ItemManagementProfileType
     private $frozenPeriodDaysNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity|null
+     * @var MinimumInventoryQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class ItemManagementProfileType
     private $minimumInventoryQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MultipleOrderQuantity|null
+     * @var MultipleOrderQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MultipleOrderQuantity")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class ItemManagementProfileType
     private $multipleOrderQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric|null
+     * @var OrderIntervalDaysNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class ItemManagementProfileType
     private $orderIntervalDaysNumeric;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription>|null
+     * @var array<ReplenishmentOwnerDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class ItemManagementProfileType
     private $replenishmentOwnerDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent|null
+     * @var TargetServicePercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ItemManagementProfileType
     private $targetServicePercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity|null
+     * @var TargetInventoryQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class ItemManagementProfileType
     private $targetInventoryQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod|null
+     * @var EffectivePeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class ItemManagementProfileType
     private $effectivePeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @var Item|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class ItemManagementProfileType
     private $item;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ItemLocationQuantity|null
+     * @var ItemLocationQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemLocationQuantity")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class ItemManagementProfileType
     private $itemLocationQuantity;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric|null
+     * @return FrozenPeriodDaysNumeric|null
      */
     public function getFrozenPeriodDaysNumeric(): ?FrozenPeriodDaysNumeric
     {
@@ -136,7 +136,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric
+     * @return FrozenPeriodDaysNumeric
      */
     public function getFrozenPeriodDaysNumericWithCreate(): FrozenPeriodDaysNumeric
     {
@@ -146,7 +146,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric|null $frozenPeriodDaysNumeric
+     * @param FrozenPeriodDaysNumeric|null $frozenPeriodDaysNumeric
      * @return self
      */
     public function setFrozenPeriodDaysNumeric(?FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric = null): self
@@ -167,7 +167,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity|null
+     * @return MinimumInventoryQuantity|null
      */
     public function getMinimumInventoryQuantity(): ?MinimumInventoryQuantity
     {
@@ -175,7 +175,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity
+     * @return MinimumInventoryQuantity
      */
     public function getMinimumInventoryQuantityWithCreate(): MinimumInventoryQuantity
     {
@@ -185,7 +185,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity|null $minimumInventoryQuantity
+     * @param MinimumInventoryQuantity|null $minimumInventoryQuantity
      * @return self
      */
     public function setMinimumInventoryQuantity(?MinimumInventoryQuantity $minimumInventoryQuantity = null): self
@@ -206,7 +206,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MultipleOrderQuantity|null
+     * @return MultipleOrderQuantity|null
      */
     public function getMultipleOrderQuantity(): ?MultipleOrderQuantity
     {
@@ -214,7 +214,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MultipleOrderQuantity
+     * @return MultipleOrderQuantity
      */
     public function getMultipleOrderQuantityWithCreate(): MultipleOrderQuantity
     {
@@ -224,7 +224,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MultipleOrderQuantity|null $multipleOrderQuantity
+     * @param MultipleOrderQuantity|null $multipleOrderQuantity
      * @return self
      */
     public function setMultipleOrderQuantity(?MultipleOrderQuantity $multipleOrderQuantity = null): self
@@ -245,7 +245,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric|null
+     * @return OrderIntervalDaysNumeric|null
      */
     public function getOrderIntervalDaysNumeric(): ?OrderIntervalDaysNumeric
     {
@@ -253,7 +253,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric
+     * @return OrderIntervalDaysNumeric
      */
     public function getOrderIntervalDaysNumericWithCreate(): OrderIntervalDaysNumeric
     {
@@ -263,7 +263,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric|null $orderIntervalDaysNumeric
+     * @param OrderIntervalDaysNumeric|null $orderIntervalDaysNumeric
      * @return self
      */
     public function setOrderIntervalDaysNumeric(?OrderIntervalDaysNumeric $orderIntervalDaysNumeric = null): self
@@ -284,7 +284,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription>|null
+     * @return array<ReplenishmentOwnerDescription>|null
      */
     public function getReplenishmentOwnerDescription(): ?array
     {
@@ -292,7 +292,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription>|null $replenishmentOwnerDescription
+     * @param array<ReplenishmentOwnerDescription>|null $replenishmentOwnerDescription
      * @return self
      */
     public function setReplenishmentOwnerDescription(?array $replenishmentOwnerDescription = null): self
@@ -323,7 +323,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription|null
+     * @return ReplenishmentOwnerDescription|null
      */
     public function firstReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
     {
@@ -338,7 +338,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription|null
+     * @return ReplenishmentOwnerDescription|null
      */
     public function lastReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
     {
@@ -353,7 +353,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription $replenishmentOwnerDescription
+     * @param ReplenishmentOwnerDescription $replenishmentOwnerDescription
      * @return self
      */
     public function addToReplenishmentOwnerDescription(
@@ -365,7 +365,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription
+     * @return ReplenishmentOwnerDescription
      */
     public function addToReplenishmentOwnerDescriptionWithCreate(): ReplenishmentOwnerDescription
     {
@@ -375,7 +375,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription $replenishmentOwnerDescription
+     * @param ReplenishmentOwnerDescription $replenishmentOwnerDescription
      * @return self
      */
     public function addOnceToReplenishmentOwnerDescription(
@@ -391,7 +391,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription
+     * @return ReplenishmentOwnerDescription
      */
     public function addOnceToReplenishmentOwnerDescriptionWithCreate(): ReplenishmentOwnerDescription
     {
@@ -407,7 +407,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent|null
+     * @return TargetServicePercent|null
      */
     public function getTargetServicePercent(): ?TargetServicePercent
     {
@@ -415,7 +415,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent
+     * @return TargetServicePercent
      */
     public function getTargetServicePercentWithCreate(): TargetServicePercent
     {
@@ -425,7 +425,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent|null $targetServicePercent
+     * @param TargetServicePercent|null $targetServicePercent
      * @return self
      */
     public function setTargetServicePercent(?TargetServicePercent $targetServicePercent = null): self
@@ -446,7 +446,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity|null
+     * @return TargetInventoryQuantity|null
      */
     public function getTargetInventoryQuantity(): ?TargetInventoryQuantity
     {
@@ -454,7 +454,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity
+     * @return TargetInventoryQuantity
      */
     public function getTargetInventoryQuantityWithCreate(): TargetInventoryQuantity
     {
@@ -464,7 +464,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity|null $targetInventoryQuantity
+     * @param TargetInventoryQuantity|null $targetInventoryQuantity
      * @return self
      */
     public function setTargetInventoryQuantity(?TargetInventoryQuantity $targetInventoryQuantity = null): self
@@ -485,7 +485,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod|null
+     * @return EffectivePeriod|null
      */
     public function getEffectivePeriod(): ?EffectivePeriod
     {
@@ -493,7 +493,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod
+     * @return EffectivePeriod
      */
     public function getEffectivePeriodWithCreate(): EffectivePeriod
     {
@@ -503,7 +503,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod|null $effectivePeriod
+     * @param EffectivePeriod|null $effectivePeriod
      * @return self
      */
     public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): self
@@ -524,7 +524,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function getItem(): ?Item
     {
@@ -532,7 +532,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function getItemWithCreate(): Item
     {
@@ -542,7 +542,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null $item
+     * @param Item|null $item
      * @return self
      */
     public function setItem(?Item $item = null): self
@@ -563,7 +563,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemLocationQuantity|null
+     * @return ItemLocationQuantity|null
      */
     public function getItemLocationQuantity(): ?ItemLocationQuantity
     {
@@ -571,7 +571,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemLocationQuantity
+     * @return ItemLocationQuantity
      */
     public function getItemLocationQuantityWithCreate(): ItemLocationQuantity
     {
@@ -581,7 +581,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ItemLocationQuantity|null $itemLocationQuantity
+     * @param ItemLocationQuantity|null $itemLocationQuantity
      * @return self
      */
     public function setItemLocationQuantity(?ItemLocationQuantity $itemLocationQuantity = null): self

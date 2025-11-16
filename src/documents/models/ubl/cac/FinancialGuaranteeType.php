@@ -14,7 +14,7 @@ class FinancialGuaranteeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode|null
+     * @var GuaranteeTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class FinancialGuaranteeType
     private $guaranteeTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class FinancialGuaranteeType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount|null
+     * @var LiabilityAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class FinancialGuaranteeType
     private $liabilityAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate|null
+     * @var AmountRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class FinancialGuaranteeType
     private $amountRate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ConstitutionPeriod|null
+     * @var ConstitutionPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ConstitutionPeriod")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class FinancialGuaranteeType
     private $constitutionPeriod;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode|null
+     * @return GuaranteeTypeCode|null
      */
     public function getGuaranteeTypeCode(): ?GuaranteeTypeCode
     {
@@ -78,7 +78,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode
+     * @return GuaranteeTypeCode
      */
     public function getGuaranteeTypeCodeWithCreate(): GuaranteeTypeCode
     {
@@ -88,7 +88,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode|null $guaranteeTypeCode
+     * @param GuaranteeTypeCode|null $guaranteeTypeCode
      * @return self
      */
     public function setGuaranteeTypeCode(?GuaranteeTypeCode $guaranteeTypeCode = null): self
@@ -109,7 +109,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -117,7 +117,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -148,7 +148,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -163,7 +163,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -178,7 +178,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -189,7 +189,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -199,7 +199,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -214,7 +214,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -230,7 +230,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount|null
+     * @return LiabilityAmount|null
      */
     public function getLiabilityAmount(): ?LiabilityAmount
     {
@@ -238,7 +238,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount
+     * @return LiabilityAmount
      */
     public function getLiabilityAmountWithCreate(): LiabilityAmount
     {
@@ -248,7 +248,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount|null $liabilityAmount
+     * @param LiabilityAmount|null $liabilityAmount
      * @return self
      */
     public function setLiabilityAmount(?LiabilityAmount $liabilityAmount = null): self
@@ -269,7 +269,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate|null
+     * @return AmountRate|null
      */
     public function getAmountRate(): ?AmountRate
     {
@@ -277,7 +277,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate
+     * @return AmountRate
      */
     public function getAmountRateWithCreate(): AmountRate
     {
@@ -287,7 +287,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate|null $amountRate
+     * @param AmountRate|null $amountRate
      * @return self
      */
     public function setAmountRate(?AmountRate $amountRate = null): self
@@ -308,7 +308,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConstitutionPeriod|null
+     * @return ConstitutionPeriod|null
      */
     public function getConstitutionPeriod(): ?ConstitutionPeriod
     {
@@ -316,7 +316,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ConstitutionPeriod
+     * @return ConstitutionPeriod
      */
     public function getConstitutionPeriodWithCreate(): ConstitutionPeriod
     {
@@ -326,7 +326,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ConstitutionPeriod|null $constitutionPeriod
+     * @param ConstitutionPeriod|null $constitutionPeriod
      * @return self
      */
     public function setConstitutionPeriod(?ConstitutionPeriod $constitutionPeriod = null): self

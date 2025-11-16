@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cbc;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 
@@ -10,7 +11,7 @@ class CallTimeType
     use HandlesObjectFlags;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -21,18 +22,18 @@ class CallTimeType
     private $value;
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getValue(): ?\DateTimeInterface
+    public function getValue(): ?DateTimeInterface
     {
         return $this->value;
     }
 
     /**
-     * @param \DateTimeInterface|null $value
+     * @param DateTimeInterface|null $value
      * @return self
      */
-    public function setValue(?\DateTimeInterface $value = null): self
+    public function setValue(?DateTimeInterface $value = null): self
     {
         $this->value = $value;
 

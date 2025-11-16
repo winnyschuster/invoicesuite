@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
@@ -23,7 +24,7 @@ class PaymentTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +35,7 @@ class PaymentTermsType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID>|null
+     * @var array<PaymentMeansID>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID>")
      * @JMS\Expose
@@ -46,7 +47,7 @@ class PaymentTermsType
     private $paymentMeansID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID|null
+     * @var PrepaidPaymentReferenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID")
      * @JMS\Expose
@@ -57,7 +58,7 @@ class PaymentTermsType
     private $prepaidPaymentReferenceID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -69,7 +70,7 @@ class PaymentTermsType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode|null
+     * @var ReferenceEventCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode")
      * @JMS\Expose
@@ -80,7 +81,7 @@ class PaymentTermsType
     private $referenceEventCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent|null
+     * @var SettlementDiscountPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent")
      * @JMS\Expose
@@ -91,7 +92,7 @@ class PaymentTermsType
     private $settlementDiscountPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent|null
+     * @var PenaltySurchargePercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent")
      * @JMS\Expose
@@ -102,7 +103,7 @@ class PaymentTermsType
     private $penaltySurchargePercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPercent|null
+     * @var PaymentPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPercent")
      * @JMS\Expose
@@ -113,7 +114,7 @@ class PaymentTermsType
     private $paymentPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -124,7 +125,7 @@ class PaymentTermsType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount|null
+     * @var SettlementDiscountAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount")
      * @JMS\Expose
@@ -135,7 +136,7 @@ class PaymentTermsType
     private $settlementDiscountAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltyAmount|null
+     * @var PenaltyAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltyAmount")
      * @JMS\Expose
@@ -146,7 +147,7 @@ class PaymentTermsType
     private $penaltyAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentTermsDetailsURI|null
+     * @var PaymentTermsDetailsURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentTermsDetailsURI")
      * @JMS\Expose
@@ -157,7 +158,7 @@ class PaymentTermsType
     private $paymentTermsDetailsURI;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -168,7 +169,7 @@ class PaymentTermsType
     private $paymentDueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -179,7 +180,7 @@ class PaymentTermsType
     private $installmentDueDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference|null
+     * @var InvoicingPartyReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference")
      * @JMS\Expose
@@ -190,7 +191,7 @@ class PaymentTermsType
     private $invoicingPartyReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SettlementPeriod|null
+     * @var SettlementPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SettlementPeriod")
      * @JMS\Expose
@@ -201,7 +202,7 @@ class PaymentTermsType
     private $settlementPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPeriod|null
+     * @var PenaltyPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPeriod")
      * @JMS\Expose
@@ -212,7 +213,7 @@ class PaymentTermsType
     private $penaltyPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @var ExchangeRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -223,7 +224,7 @@ class PaymentTermsType
     private $exchangeRate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @var ValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -234,7 +235,7 @@ class PaymentTermsType
     private $validityPeriod;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -242,7 +243,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -252,7 +253,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -273,7 +274,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID>|null
+     * @return array<PaymentMeansID>|null
      */
     public function getPaymentMeansID(): ?array
     {
@@ -281,7 +282,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID>|null $paymentMeansID
+     * @param array<PaymentMeansID>|null $paymentMeansID
      * @return self
      */
     public function setPaymentMeansID(?array $paymentMeansID = null): self
@@ -312,7 +313,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID|null
+     * @return PaymentMeansID|null
      */
     public function firstPaymentMeansID(): ?PaymentMeansID
     {
@@ -327,7 +328,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID|null
+     * @return PaymentMeansID|null
      */
     public function lastPaymentMeansID(): ?PaymentMeansID
     {
@@ -342,7 +343,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID $paymentMeansID
+     * @param PaymentMeansID $paymentMeansID
      * @return self
      */
     public function addToPaymentMeansID(PaymentMeansID $paymentMeansID): self
@@ -353,7 +354,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID
+     * @return PaymentMeansID
      */
     public function addToPaymentMeansIDWithCreate(): PaymentMeansID
     {
@@ -363,7 +364,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID $paymentMeansID
+     * @param PaymentMeansID $paymentMeansID
      * @return self
      */
     public function addOnceToPaymentMeansID(PaymentMeansID $paymentMeansID): self
@@ -378,7 +379,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID
+     * @return PaymentMeansID
      */
     public function addOnceToPaymentMeansIDWithCreate(): PaymentMeansID
     {
@@ -394,7 +395,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID|null
+     * @return PrepaidPaymentReferenceID|null
      */
     public function getPrepaidPaymentReferenceID(): ?PrepaidPaymentReferenceID
     {
@@ -402,7 +403,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID
+     * @return PrepaidPaymentReferenceID
      */
     public function getPrepaidPaymentReferenceIDWithCreate(): PrepaidPaymentReferenceID
     {
@@ -412,7 +413,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID|null $prepaidPaymentReferenceID
+     * @param PrepaidPaymentReferenceID|null $prepaidPaymentReferenceID
      * @return self
      */
     public function setPrepaidPaymentReferenceID(?PrepaidPaymentReferenceID $prepaidPaymentReferenceID = null): self
@@ -433,7 +434,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -441,7 +442,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -472,7 +473,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -487,7 +488,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -502,7 +503,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -513,7 +514,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -523,7 +524,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -538,7 +539,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -554,7 +555,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode|null
+     * @return ReferenceEventCode|null
      */
     public function getReferenceEventCode(): ?ReferenceEventCode
     {
@@ -562,7 +563,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode
+     * @return ReferenceEventCode
      */
     public function getReferenceEventCodeWithCreate(): ReferenceEventCode
     {
@@ -572,7 +573,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode|null $referenceEventCode
+     * @param ReferenceEventCode|null $referenceEventCode
      * @return self
      */
     public function setReferenceEventCode(?ReferenceEventCode $referenceEventCode = null): self
@@ -593,7 +594,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent|null
+     * @return SettlementDiscountPercent|null
      */
     public function getSettlementDiscountPercent(): ?SettlementDiscountPercent
     {
@@ -601,7 +602,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent
+     * @return SettlementDiscountPercent
      */
     public function getSettlementDiscountPercentWithCreate(): SettlementDiscountPercent
     {
@@ -611,7 +612,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent|null $settlementDiscountPercent
+     * @param SettlementDiscountPercent|null $settlementDiscountPercent
      * @return self
      */
     public function setSettlementDiscountPercent(?SettlementDiscountPercent $settlementDiscountPercent = null): self
@@ -632,7 +633,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent|null
+     * @return PenaltySurchargePercent|null
      */
     public function getPenaltySurchargePercent(): ?PenaltySurchargePercent
     {
@@ -640,7 +641,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent
+     * @return PenaltySurchargePercent
      */
     public function getPenaltySurchargePercentWithCreate(): PenaltySurchargePercent
     {
@@ -650,7 +651,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent|null $penaltySurchargePercent
+     * @param PenaltySurchargePercent|null $penaltySurchargePercent
      * @return self
      */
     public function setPenaltySurchargePercent(?PenaltySurchargePercent $penaltySurchargePercent = null): self
@@ -671,7 +672,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPercent|null
+     * @return PaymentPercent|null
      */
     public function getPaymentPercent(): ?PaymentPercent
     {
@@ -679,7 +680,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPercent
+     * @return PaymentPercent
      */
     public function getPaymentPercentWithCreate(): PaymentPercent
     {
@@ -689,7 +690,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPercent|null $paymentPercent
+     * @param PaymentPercent|null $paymentPercent
      * @return self
      */
     public function setPaymentPercent(?PaymentPercent $paymentPercent = null): self
@@ -710,7 +711,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -718,7 +719,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -728,7 +729,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -749,7 +750,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount|null
+     * @return SettlementDiscountAmount|null
      */
     public function getSettlementDiscountAmount(): ?SettlementDiscountAmount
     {
@@ -757,7 +758,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount
+     * @return SettlementDiscountAmount
      */
     public function getSettlementDiscountAmountWithCreate(): SettlementDiscountAmount
     {
@@ -767,7 +768,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount|null $settlementDiscountAmount
+     * @param SettlementDiscountAmount|null $settlementDiscountAmount
      * @return self
      */
     public function setSettlementDiscountAmount(?SettlementDiscountAmount $settlementDiscountAmount = null): self
@@ -788,7 +789,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltyAmount|null
+     * @return PenaltyAmount|null
      */
     public function getPenaltyAmount(): ?PenaltyAmount
     {
@@ -796,7 +797,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltyAmount
+     * @return PenaltyAmount
      */
     public function getPenaltyAmountWithCreate(): PenaltyAmount
     {
@@ -806,7 +807,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltyAmount|null $penaltyAmount
+     * @param PenaltyAmount|null $penaltyAmount
      * @return self
      */
     public function setPenaltyAmount(?PenaltyAmount $penaltyAmount = null): self
@@ -827,7 +828,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentTermsDetailsURI|null
+     * @return PaymentTermsDetailsURI|null
      */
     public function getPaymentTermsDetailsURI(): ?PaymentTermsDetailsURI
     {
@@ -835,7 +836,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentTermsDetailsURI
+     * @return PaymentTermsDetailsURI
      */
     public function getPaymentTermsDetailsURIWithCreate(): PaymentTermsDetailsURI
     {
@@ -845,7 +846,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentTermsDetailsURI|null $paymentTermsDetailsURI
+     * @param PaymentTermsDetailsURI|null $paymentTermsDetailsURI
      * @return self
      */
     public function setPaymentTermsDetailsURI(?PaymentTermsDetailsURI $paymentTermsDetailsURI = null): self
@@ -866,18 +867,18 @@ class PaymentTermsType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getPaymentDueDate(): ?\DateTimeInterface
+    public function getPaymentDueDate(): ?DateTimeInterface
     {
         return $this->paymentDueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $paymentDueDate
+     * @param DateTimeInterface|null $paymentDueDate
      * @return self
      */
-    public function setPaymentDueDate(?\DateTimeInterface $paymentDueDate = null): self
+    public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): self
     {
         $this->paymentDueDate = $paymentDueDate;
 
@@ -895,18 +896,18 @@ class PaymentTermsType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getInstallmentDueDate(): ?\DateTimeInterface
+    public function getInstallmentDueDate(): ?DateTimeInterface
     {
         return $this->installmentDueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $installmentDueDate
+     * @param DateTimeInterface|null $installmentDueDate
      * @return self
      */
-    public function setInstallmentDueDate(?\DateTimeInterface $installmentDueDate = null): self
+    public function setInstallmentDueDate(?DateTimeInterface $installmentDueDate = null): self
     {
         $this->installmentDueDate = $installmentDueDate;
 
@@ -924,7 +925,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference|null
+     * @return InvoicingPartyReference|null
      */
     public function getInvoicingPartyReference(): ?InvoicingPartyReference
     {
@@ -932,7 +933,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference
+     * @return InvoicingPartyReference
      */
     public function getInvoicingPartyReferenceWithCreate(): InvoicingPartyReference
     {
@@ -942,7 +943,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference|null $invoicingPartyReference
+     * @param InvoicingPartyReference|null $invoicingPartyReference
      * @return self
      */
     public function setInvoicingPartyReference(?InvoicingPartyReference $invoicingPartyReference = null): self
@@ -963,7 +964,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SettlementPeriod|null
+     * @return SettlementPeriod|null
      */
     public function getSettlementPeriod(): ?SettlementPeriod
     {
@@ -971,7 +972,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SettlementPeriod
+     * @return SettlementPeriod
      */
     public function getSettlementPeriodWithCreate(): SettlementPeriod
     {
@@ -981,7 +982,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SettlementPeriod|null $settlementPeriod
+     * @param SettlementPeriod|null $settlementPeriod
      * @return self
      */
     public function setSettlementPeriod(?SettlementPeriod $settlementPeriod = null): self
@@ -1002,7 +1003,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPeriod|null
+     * @return PenaltyPeriod|null
      */
     public function getPenaltyPeriod(): ?PenaltyPeriod
     {
@@ -1010,7 +1011,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPeriod
+     * @return PenaltyPeriod
      */
     public function getPenaltyPeriodWithCreate(): PenaltyPeriod
     {
@@ -1020,7 +1021,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPeriod|null $penaltyPeriod
+     * @param PenaltyPeriod|null $penaltyPeriod
      * @return self
      */
     public function setPenaltyPeriod(?PenaltyPeriod $penaltyPeriod = null): self
@@ -1041,7 +1042,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -1049,7 +1050,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function getExchangeRateWithCreate(): ExchangeRate
     {
@@ -1059,7 +1060,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null $exchangeRate
+     * @param ExchangeRate|null $exchangeRate
      * @return self
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): self
@@ -1080,7 +1081,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -1088,7 +1089,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function getValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -1098,7 +1099,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null $validityPeriod
+     * @param ValidityPeriod|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self

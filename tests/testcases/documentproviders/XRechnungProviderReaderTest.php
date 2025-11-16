@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use DateTimeInterface;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatReader;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
@@ -75,7 +76,7 @@ final class XRechnungProviderReaderTest extends TestCase
     {
         self::$document->getDocumentCompleteDate($newCompleteDate);
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newCompleteDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newCompleteDate);
     }
 
     public function testGetDocumentCurrency(): void
@@ -203,7 +204,7 @@ final class XRechnungProviderReaderTest extends TestCase
         self::$document->getDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentQuotationReference());
     }
@@ -242,7 +243,7 @@ final class XRechnungProviderReaderTest extends TestCase
         $this->assertSame('typecode', $newTypeCode);
         $this->assertSame('reftypecode', $newReferenceTypeCode);
         $this->assertSame('description', $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertTrue(self::$document->nextDocumentAdditionalReference());
 
@@ -260,7 +261,7 @@ final class XRechnungProviderReaderTest extends TestCase
         $this->assertSame('typecode2', $newTypeCode);
         $this->assertSame('reftypecode2', $newReferenceTypeCode);
         $this->assertSame('description2', $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentAdditionalReference());
 
@@ -324,14 +325,14 @@ final class XRechnungProviderReaderTest extends TestCase
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
 
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
     }
@@ -375,7 +376,7 @@ final class XRechnungProviderReaderTest extends TestCase
         self::$document->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentDeliveryNoteReference());
     }
@@ -1888,7 +1889,7 @@ final class XRechnungProviderReaderTest extends TestCase
         $this->assertEqualsWithDelta(0.0, $newDiscountPercent, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(0.0, $newBasePeriod, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newBasePeriodUnit);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newBaseDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newBaseDate);
 
         $this->assertFalse(self::$document->nextDocumentPaymentPenaltyTermsInLastPaymentTerm());
 
@@ -1908,7 +1909,7 @@ final class XRechnungProviderReaderTest extends TestCase
         $this->assertEqualsWithDelta(0.0, $newDiscountPercent, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(0.0, $newBasePeriod, PHP_FLOAT_EPSILON);
         $this->assertSame("", $newBasePeriodUnit);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newBaseDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newBaseDate);
 
         $this->assertFalse(self::$document->nextDocumentPaymentDiscountTermsInLastPaymentTerm());
     }
@@ -2340,7 +2341,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionSellerOrderReference());
 
@@ -2390,7 +2391,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionQuotationReference());
 
@@ -2415,7 +2416,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionContractReference());
 
@@ -2444,11 +2445,11 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
         $this->assertSame("", $newReferenceTypeCode);
         $this->assertSame("", $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentPositionAdditionalReference());
 
@@ -2473,7 +2474,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionUltimateCustomerOrderReference());
 
@@ -2498,7 +2499,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDespatchAdviceReference());
 
@@ -2523,7 +2524,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionReceivingAdviceReference());
 
@@ -2548,7 +2549,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDeliveryNoteReference());
 
@@ -2574,7 +2575,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
 
         $this->assertFalse(self::$document->nextDocumentPositionInvoiceReference());
@@ -2947,7 +2948,7 @@ final class XRechnungProviderReaderTest extends TestCase
 
         self::$document->getDocumentPositionSupplyChainEvent($newDate);
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newDate);
 
         // Second position
 

@@ -11,7 +11,7 @@ class DateType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType\DateStringAType|null
+     * @var DateStringAType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType\DateStringAType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class DateType
     private $dateString;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType\DateStringAType|null
+     * @return DateStringAType|null
      */
     public function getDateString(): ?DateStringAType
     {
@@ -30,7 +30,7 @@ class DateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType\DateStringAType
+     * @return DateStringAType
      */
     public function getDateStringWithCreate(): DateStringAType
     {
@@ -40,7 +40,7 @@ class DateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType\DateStringAType|null $dateString
+     * @param DateStringAType|null $dateString
      * @return self
      */
     public function setDateString(?DateStringAType $dateString = null): self

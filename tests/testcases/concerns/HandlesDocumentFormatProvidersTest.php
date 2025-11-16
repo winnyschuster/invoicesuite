@@ -60,7 +60,7 @@ final class HandlesDocumentFormatProvidersTest extends TestCase
         $this->registerDocumentFormatProvider($provider2);
 
         $this->assertInstanceOf(InvoiceSuiteAbstractDocumentFormatProvider::class, $this->findDocumentFormatProviderByUniqueId('zffxextended'));
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider::class, $this->findDocumentFormatProviderByUniqueId('__unknownprovider__'));
+        $this->assertNotInstanceOf(InvoiceSuiteAbstractDocumentFormatProvider::class, $this->findDocumentFormatProviderByUniqueId('__unknownprovider__'));
     }
 
     public function testFindFormatProviderByUniqueIdOrfail(): void

@@ -11,7 +11,7 @@ class PromotionalSpecificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID|null
+     * @var SpecificationID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class PromotionalSpecificationType
     private $specificationID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem>|null
+     * @var array<PromotionalEventLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem>")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class PromotionalSpecificationType
     private $promotionalEventLineItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic>|null
+     * @var array<EventTactic>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class PromotionalSpecificationType
     private $eventTactic;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID|null
+     * @return SpecificationID|null
      */
     public function getSpecificationID(): ?SpecificationID
     {
@@ -54,7 +54,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID
+     * @return SpecificationID
      */
     public function getSpecificationIDWithCreate(): SpecificationID
     {
@@ -64,7 +64,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID|null $specificationID
+     * @param SpecificationID|null $specificationID
      * @return self
      */
     public function setSpecificationID(?SpecificationID $specificationID = null): self
@@ -85,7 +85,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem>|null
+     * @return array<PromotionalEventLineItem>|null
      */
     public function getPromotionalEventLineItem(): ?array
     {
@@ -93,7 +93,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem>|null $promotionalEventLineItem
+     * @param array<PromotionalEventLineItem>|null $promotionalEventLineItem
      * @return self
      */
     public function setPromotionalEventLineItem(?array $promotionalEventLineItem = null): self
@@ -124,7 +124,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem|null
+     * @return PromotionalEventLineItem|null
      */
     public function firstPromotionalEventLineItem(): ?PromotionalEventLineItem
     {
@@ -139,7 +139,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem|null
+     * @return PromotionalEventLineItem|null
      */
     public function lastPromotionalEventLineItem(): ?PromotionalEventLineItem
     {
@@ -154,7 +154,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem $promotionalEventLineItem
+     * @param PromotionalEventLineItem $promotionalEventLineItem
      * @return self
      */
     public function addToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): self
@@ -165,7 +165,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem
+     * @return PromotionalEventLineItem
      */
     public function addToPromotionalEventLineItemWithCreate(): PromotionalEventLineItem
     {
@@ -175,7 +175,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem $promotionalEventLineItem
+     * @param PromotionalEventLineItem $promotionalEventLineItem
      * @return self
      */
     public function addOnceToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): self
@@ -190,7 +190,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem
+     * @return PromotionalEventLineItem
      */
     public function addOnceToPromotionalEventLineItemWithCreate(): PromotionalEventLineItem
     {
@@ -206,7 +206,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic>|null
+     * @return array<EventTactic>|null
      */
     public function getEventTactic(): ?array
     {
@@ -214,7 +214,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic>|null $eventTactic
+     * @param array<EventTactic>|null $eventTactic
      * @return self
      */
     public function setEventTactic(?array $eventTactic = null): self
@@ -245,7 +245,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic|null
+     * @return EventTactic|null
      */
     public function firstEventTactic(): ?EventTactic
     {
@@ -260,7 +260,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic|null
+     * @return EventTactic|null
      */
     public function lastEventTactic(): ?EventTactic
     {
@@ -275,7 +275,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic $eventTactic
+     * @param EventTactic $eventTactic
      * @return self
      */
     public function addToEventTactic(EventTactic $eventTactic): self
@@ -286,7 +286,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic
+     * @return EventTactic
      */
     public function addToEventTacticWithCreate(): EventTactic
     {
@@ -296,7 +296,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic $eventTactic
+     * @param EventTactic $eventTactic
      * @return self
      */
     public function addOnceToEventTactic(EventTactic $eventTactic): self
@@ -311,7 +311,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic
+     * @return EventTactic
      */
     public function addOnceToEventTacticWithCreate(): EventTactic
     {

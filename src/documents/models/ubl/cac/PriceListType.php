@@ -12,7 +12,7 @@ class PriceListType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class PriceListType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode|null
+     * @var StatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class PriceListType
     private $statusCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null
+     * @var array<ValidityPeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class PriceListType
     private $validityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PreviousPriceList|null
+     * @var PreviousPriceList|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PreviousPriceList")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class PriceListType
     private $previousPriceList;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -65,7 +65,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -75,7 +75,7 @@ class PriceListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -96,7 +96,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode|null
+     * @return StatusCode|null
      */
     public function getStatusCode(): ?StatusCode
     {
@@ -104,7 +104,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode
+     * @return StatusCode
      */
     public function getStatusCodeWithCreate(): StatusCode
     {
@@ -114,7 +114,7 @@ class PriceListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode|null $statusCode
+     * @param StatusCode|null $statusCode
      * @return self
      */
     public function setStatusCode(?StatusCode $statusCode = null): self
@@ -135,7 +135,7 @@ class PriceListType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null
+     * @return array<ValidityPeriod>|null
      */
     public function getValidityPeriod(): ?array
     {
@@ -143,7 +143,7 @@ class PriceListType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null $validityPeriod
+     * @param array<ValidityPeriod>|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?array $validityPeriod = null): self
@@ -174,7 +174,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function firstValidityPeriod(): ?ValidityPeriod
     {
@@ -189,7 +189,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function lastValidityPeriod(): ?ValidityPeriod
     {
@@ -204,7 +204,7 @@ class PriceListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @param ValidityPeriod $validityPeriod
      * @return self
      */
     public function addToValidityPeriod(ValidityPeriod $validityPeriod): self
@@ -215,7 +215,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function addToValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -225,7 +225,7 @@ class PriceListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @param ValidityPeriod $validityPeriod
      * @return self
      */
     public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): self
@@ -240,7 +240,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function addOnceToValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -256,7 +256,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreviousPriceList|null
+     * @return PreviousPriceList|null
      */
     public function getPreviousPriceList(): ?PreviousPriceList
     {
@@ -264,7 +264,7 @@ class PriceListType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PreviousPriceList
+     * @return PreviousPriceList
      */
     public function getPreviousPriceListWithCreate(): PreviousPriceList
     {
@@ -274,7 +274,7 @@ class PriceListType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PreviousPriceList|null $previousPriceList
+     * @param PreviousPriceList|null $previousPriceList
      * @return self
      */
     public function setPreviousPriceList(?PreviousPriceList $previousPriceList = null): self

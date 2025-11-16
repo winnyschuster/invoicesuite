@@ -12,7 +12,7 @@ class ItemComparisonType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null
+     * @var PriceAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ItemComparisonType
     private $priceAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ItemComparisonType
     private $quantity;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null
+     * @return PriceAmount|null
      */
     public function getPriceAmount(): ?PriceAmount
     {
@@ -42,7 +42,7 @@ class ItemComparisonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount
+     * @return PriceAmount
      */
     public function getPriceAmountWithCreate(): PriceAmount
     {
@@ -52,7 +52,7 @@ class ItemComparisonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null $priceAmount
+     * @param PriceAmount|null $priceAmount
      * @return self
      */
     public function setPriceAmount(?PriceAmount $priceAmount = null): self
@@ -73,7 +73,7 @@ class ItemComparisonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -81,7 +81,7 @@ class ItemComparisonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -91,7 +91,7 @@ class ItemComparisonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self

@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -24,7 +25,7 @@ class ReceiptLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -35,7 +36,7 @@ class ReceiptLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -46,7 +47,7 @@ class ReceiptLineType
     private $uUID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -58,7 +59,7 @@ class ReceiptLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity|null
+     * @var ReceivedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity")
      * @JMS\Expose
@@ -69,7 +70,7 @@ class ReceiptLineType
     private $receivedQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity|null
+     * @var ShortQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity")
      * @JMS\Expose
@@ -80,7 +81,7 @@ class ReceiptLineType
     private $shortQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode|null
+     * @var ShortageActionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode")
      * @JMS\Expose
@@ -91,7 +92,7 @@ class ReceiptLineType
     private $shortageActionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity|null
+     * @var RejectedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity")
      * @JMS\Expose
@@ -102,7 +103,7 @@ class ReceiptLineType
     private $rejectedQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode|null
+     * @var RejectReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode")
      * @JMS\Expose
@@ -113,7 +114,7 @@ class ReceiptLineType
     private $rejectReasonCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason>|null
+     * @var array<RejectReason>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason>")
      * @JMS\Expose
@@ -125,7 +126,7 @@ class ReceiptLineType
     private $rejectReason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode|null
+     * @var RejectActionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode")
      * @JMS\Expose
@@ -136,7 +137,7 @@ class ReceiptLineType
     private $rejectActionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode|null
+     * @var QuantityDiscrepancyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode")
      * @JMS\Expose
@@ -147,7 +148,7 @@ class ReceiptLineType
     private $quantityDiscrepancyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity|null
+     * @var OversupplyQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity")
      * @JMS\Expose
@@ -158,7 +159,7 @@ class ReceiptLineType
     private $oversupplyQuantity;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -169,7 +170,7 @@ class ReceiptLineType
     private $receivedDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode|null
+     * @var TimingComplaintCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode")
      * @JMS\Expose
@@ -180,7 +181,7 @@ class ReceiptLineType
     private $timingComplaintCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint|null
+     * @var TimingComplaint|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint")
      * @JMS\Expose
@@ -191,7 +192,7 @@ class ReceiptLineType
     private $timingComplaint;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference|null
+     * @var OrderLineReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference")
      * @JMS\Expose
@@ -202,7 +203,7 @@ class ReceiptLineType
     private $orderLineReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>|null
+     * @var array<DespatchLineReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>")
      * @JMS\Expose
@@ -214,7 +215,7 @@ class ReceiptLineType
     private $despatchLineReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -226,7 +227,7 @@ class ReceiptLineType
     private $documentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Item>|null
+     * @var array<Item>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Item>")
      * @JMS\Expose
@@ -238,7 +239,7 @@ class ReceiptLineType
     private $item;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Shipment>|null
+     * @var array<Shipment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Shipment>")
      * @JMS\Expose
@@ -250,7 +251,7 @@ class ReceiptLineType
     private $shipment;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -258,7 +259,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -268,7 +269,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -289,7 +290,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -297,7 +298,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -307,7 +308,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -328,7 +329,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -336,7 +337,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -367,7 +368,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -382,7 +383,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -397,7 +398,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -408,7 +409,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -418,7 +419,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -433,7 +434,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -449,7 +450,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity|null
+     * @return ReceivedQuantity|null
      */
     public function getReceivedQuantity(): ?ReceivedQuantity
     {
@@ -457,7 +458,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity
+     * @return ReceivedQuantity
      */
     public function getReceivedQuantityWithCreate(): ReceivedQuantity
     {
@@ -467,7 +468,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity|null $receivedQuantity
+     * @param ReceivedQuantity|null $receivedQuantity
      * @return self
      */
     public function setReceivedQuantity(?ReceivedQuantity $receivedQuantity = null): self
@@ -488,7 +489,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity|null
+     * @return ShortQuantity|null
      */
     public function getShortQuantity(): ?ShortQuantity
     {
@@ -496,7 +497,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity
+     * @return ShortQuantity
      */
     public function getShortQuantityWithCreate(): ShortQuantity
     {
@@ -506,7 +507,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity|null $shortQuantity
+     * @param ShortQuantity|null $shortQuantity
      * @return self
      */
     public function setShortQuantity(?ShortQuantity $shortQuantity = null): self
@@ -527,7 +528,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode|null
+     * @return ShortageActionCode|null
      */
     public function getShortageActionCode(): ?ShortageActionCode
     {
@@ -535,7 +536,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode
+     * @return ShortageActionCode
      */
     public function getShortageActionCodeWithCreate(): ShortageActionCode
     {
@@ -545,7 +546,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode|null $shortageActionCode
+     * @param ShortageActionCode|null $shortageActionCode
      * @return self
      */
     public function setShortageActionCode(?ShortageActionCode $shortageActionCode = null): self
@@ -566,7 +567,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity|null
+     * @return RejectedQuantity|null
      */
     public function getRejectedQuantity(): ?RejectedQuantity
     {
@@ -574,7 +575,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity
+     * @return RejectedQuantity
      */
     public function getRejectedQuantityWithCreate(): RejectedQuantity
     {
@@ -584,7 +585,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity|null $rejectedQuantity
+     * @param RejectedQuantity|null $rejectedQuantity
      * @return self
      */
     public function setRejectedQuantity(?RejectedQuantity $rejectedQuantity = null): self
@@ -605,7 +606,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode|null
+     * @return RejectReasonCode|null
      */
     public function getRejectReasonCode(): ?RejectReasonCode
     {
@@ -613,7 +614,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode
+     * @return RejectReasonCode
      */
     public function getRejectReasonCodeWithCreate(): RejectReasonCode
     {
@@ -623,7 +624,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode|null $rejectReasonCode
+     * @param RejectReasonCode|null $rejectReasonCode
      * @return self
      */
     public function setRejectReasonCode(?RejectReasonCode $rejectReasonCode = null): self
@@ -644,7 +645,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason>|null
+     * @return array<RejectReason>|null
      */
     public function getRejectReason(): ?array
     {
@@ -652,7 +653,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason>|null $rejectReason
+     * @param array<RejectReason>|null $rejectReason
      * @return self
      */
     public function setRejectReason(?array $rejectReason = null): self
@@ -683,7 +684,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason|null
+     * @return RejectReason|null
      */
     public function firstRejectReason(): ?RejectReason
     {
@@ -698,7 +699,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason|null
+     * @return RejectReason|null
      */
     public function lastRejectReason(): ?RejectReason
     {
@@ -713,7 +714,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason $rejectReason
+     * @param RejectReason $rejectReason
      * @return self
      */
     public function addToRejectReason(RejectReason $rejectReason): self
@@ -724,7 +725,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason
+     * @return RejectReason
      */
     public function addToRejectReasonWithCreate(): RejectReason
     {
@@ -734,7 +735,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason $rejectReason
+     * @param RejectReason $rejectReason
      * @return self
      */
     public function addOnceToRejectReason(RejectReason $rejectReason): self
@@ -749,7 +750,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason
+     * @return RejectReason
      */
     public function addOnceToRejectReasonWithCreate(): RejectReason
     {
@@ -765,7 +766,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode|null
+     * @return RejectActionCode|null
      */
     public function getRejectActionCode(): ?RejectActionCode
     {
@@ -773,7 +774,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode
+     * @return RejectActionCode
      */
     public function getRejectActionCodeWithCreate(): RejectActionCode
     {
@@ -783,7 +784,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode|null $rejectActionCode
+     * @param RejectActionCode|null $rejectActionCode
      * @return self
      */
     public function setRejectActionCode(?RejectActionCode $rejectActionCode = null): self
@@ -804,7 +805,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode|null
+     * @return QuantityDiscrepancyCode|null
      */
     public function getQuantityDiscrepancyCode(): ?QuantityDiscrepancyCode
     {
@@ -812,7 +813,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode
+     * @return QuantityDiscrepancyCode
      */
     public function getQuantityDiscrepancyCodeWithCreate(): QuantityDiscrepancyCode
     {
@@ -822,7 +823,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode|null $quantityDiscrepancyCode
+     * @param QuantityDiscrepancyCode|null $quantityDiscrepancyCode
      * @return self
      */
     public function setQuantityDiscrepancyCode(?QuantityDiscrepancyCode $quantityDiscrepancyCode = null): self
@@ -843,7 +844,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity|null
+     * @return OversupplyQuantity|null
      */
     public function getOversupplyQuantity(): ?OversupplyQuantity
     {
@@ -851,7 +852,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity
+     * @return OversupplyQuantity
      */
     public function getOversupplyQuantityWithCreate(): OversupplyQuantity
     {
@@ -861,7 +862,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity|null $oversupplyQuantity
+     * @param OversupplyQuantity|null $oversupplyQuantity
      * @return self
      */
     public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): self
@@ -882,18 +883,18 @@ class ReceiptLineType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getReceivedDate(): ?\DateTimeInterface
+    public function getReceivedDate(): ?DateTimeInterface
     {
         return $this->receivedDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $receivedDate
+     * @param DateTimeInterface|null $receivedDate
      * @return self
      */
-    public function setReceivedDate(?\DateTimeInterface $receivedDate = null): self
+    public function setReceivedDate(?DateTimeInterface $receivedDate = null): self
     {
         $this->receivedDate = $receivedDate;
 
@@ -911,7 +912,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode|null
+     * @return TimingComplaintCode|null
      */
     public function getTimingComplaintCode(): ?TimingComplaintCode
     {
@@ -919,7 +920,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode
+     * @return TimingComplaintCode
      */
     public function getTimingComplaintCodeWithCreate(): TimingComplaintCode
     {
@@ -929,7 +930,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode|null $timingComplaintCode
+     * @param TimingComplaintCode|null $timingComplaintCode
      * @return self
      */
     public function setTimingComplaintCode(?TimingComplaintCode $timingComplaintCode = null): self
@@ -950,7 +951,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint|null
+     * @return TimingComplaint|null
      */
     public function getTimingComplaint(): ?TimingComplaint
     {
@@ -958,7 +959,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint
+     * @return TimingComplaint
      */
     public function getTimingComplaintWithCreate(): TimingComplaint
     {
@@ -968,7 +969,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint|null $timingComplaint
+     * @param TimingComplaint|null $timingComplaint
      * @return self
      */
     public function setTimingComplaint(?TimingComplaint $timingComplaint = null): self
@@ -989,7 +990,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference|null
+     * @return OrderLineReference|null
      */
     public function getOrderLineReference(): ?OrderLineReference
     {
@@ -997,7 +998,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference
+     * @return OrderLineReference
      */
     public function getOrderLineReferenceWithCreate(): OrderLineReference
     {
@@ -1007,7 +1008,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference|null $orderLineReference
+     * @param OrderLineReference|null $orderLineReference
      * @return self
      */
     public function setOrderLineReference(?OrderLineReference $orderLineReference = null): self
@@ -1028,7 +1029,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>|null
+     * @return array<DespatchLineReference>|null
      */
     public function getDespatchLineReference(): ?array
     {
@@ -1036,7 +1037,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>|null $despatchLineReference
+     * @param array<DespatchLineReference>|null $despatchLineReference
      * @return self
      */
     public function setDespatchLineReference(?array $despatchLineReference = null): self
@@ -1067,7 +1068,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference|null
+     * @return DespatchLineReference|null
      */
     public function firstDespatchLineReference(): ?DespatchLineReference
     {
@@ -1082,7 +1083,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference|null
+     * @return DespatchLineReference|null
      */
     public function lastDespatchLineReference(): ?DespatchLineReference
     {
@@ -1097,7 +1098,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference $despatchLineReference
+     * @param DespatchLineReference $despatchLineReference
      * @return self
      */
     public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): self
@@ -1108,7 +1109,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference
+     * @return DespatchLineReference
      */
     public function addToDespatchLineReferenceWithCreate(): DespatchLineReference
     {
@@ -1118,7 +1119,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference $despatchLineReference
+     * @param DespatchLineReference $despatchLineReference
      * @return self
      */
     public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): self
@@ -1133,7 +1134,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference
+     * @return DespatchLineReference
      */
     public function addOnceToDespatchLineReferenceWithCreate(): DespatchLineReference
     {
@@ -1149,7 +1150,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -1157,7 +1158,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -1188,7 +1189,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1203,7 +1204,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1218,7 +1219,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -1229,7 +1230,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -1239,7 +1240,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -1254,7 +1255,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -1270,7 +1271,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Item>|null
+     * @return array<Item>|null
      */
     public function getItem(): ?array
     {
@@ -1278,7 +1279,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Item>|null $item
+     * @param array<Item>|null $item
      * @return self
      */
     public function setItem(?array $item = null): self
@@ -1309,7 +1310,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function firstItem(): ?Item
     {
@@ -1324,7 +1325,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function lastItem(): ?Item
     {
@@ -1339,7 +1340,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item $item
+     * @param Item $item
      * @return self
      */
     public function addToItem(Item $item): self
@@ -1350,7 +1351,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function addToItemWithCreate(): Item
     {
@@ -1360,7 +1361,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item $item
+     * @param Item $item
      * @return self
      */
     public function addOnceToItem(Item $item): self
@@ -1375,7 +1376,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function addOnceToItemWithCreate(): Item
     {
@@ -1391,7 +1392,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Shipment>|null
+     * @return array<Shipment>|null
      */
     public function getShipment(): ?array
     {
@@ -1399,7 +1400,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Shipment>|null $shipment
+     * @param array<Shipment>|null $shipment
      * @return self
      */
     public function setShipment(?array $shipment = null): self
@@ -1430,7 +1431,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @return Shipment|null
      */
     public function firstShipment(): ?Shipment
     {
@@ -1445,7 +1446,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @return Shipment|null
      */
     public function lastShipment(): ?Shipment
     {
@@ -1460,7 +1461,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment $shipment
+     * @param Shipment $shipment
      * @return self
      */
     public function addToShipment(Shipment $shipment): self
@@ -1471,7 +1472,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment
+     * @return Shipment
      */
     public function addToShipmentWithCreate(): Shipment
     {
@@ -1481,7 +1482,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment $shipment
+     * @param Shipment $shipment
      * @return self
      */
     public function addOnceToShipment(Shipment $shipment): self
@@ -1496,7 +1497,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment
+     * @return Shipment
      */
     public function addOnceToShipmentWithCreate(): Shipment
     {

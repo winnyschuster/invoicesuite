@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode;
@@ -15,7 +16,7 @@ class InventoryReportLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +27,7 @@ class InventoryReportLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class InventoryReportLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class InventoryReportLineType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount|null
+     * @var InventoryValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class InventoryReportLineType
     private $inventoryValueAmount;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class InventoryReportLineType
     private $availabilityDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode|null
+     * @var AvailabilityStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode")
      * @JMS\Expose
@@ -82,7 +83,7 @@ class InventoryReportLineType
     private $availabilityStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @var Item|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class InventoryReportLineType
     private $item;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\InventoryLocation|null
+     * @var InventoryLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InventoryLocation")
      * @JMS\Expose
@@ -104,7 +105,7 @@ class InventoryReportLineType
     private $inventoryLocation;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -112,7 +113,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -122,7 +123,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -143,7 +144,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -151,7 +152,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -182,7 +183,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -197,7 +198,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -212,7 +213,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -223,7 +224,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -233,7 +234,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -248,7 +249,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -264,7 +265,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -272,7 +273,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -282,7 +283,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -303,7 +304,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount|null
+     * @return InventoryValueAmount|null
      */
     public function getInventoryValueAmount(): ?InventoryValueAmount
     {
@@ -311,7 +312,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount
+     * @return InventoryValueAmount
      */
     public function getInventoryValueAmountWithCreate(): InventoryValueAmount
     {
@@ -321,7 +322,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount|null $inventoryValueAmount
+     * @param InventoryValueAmount|null $inventoryValueAmount
      * @return self
      */
     public function setInventoryValueAmount(?InventoryValueAmount $inventoryValueAmount = null): self
@@ -342,18 +343,18 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getAvailabilityDate(): ?\DateTimeInterface
+    public function getAvailabilityDate(): ?DateTimeInterface
     {
         return $this->availabilityDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $availabilityDate
+     * @param DateTimeInterface|null $availabilityDate
      * @return self
      */
-    public function setAvailabilityDate(?\DateTimeInterface $availabilityDate = null): self
+    public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): self
     {
         $this->availabilityDate = $availabilityDate;
 
@@ -371,7 +372,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode|null
+     * @return AvailabilityStatusCode|null
      */
     public function getAvailabilityStatusCode(): ?AvailabilityStatusCode
     {
@@ -379,7 +380,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode
+     * @return AvailabilityStatusCode
      */
     public function getAvailabilityStatusCodeWithCreate(): AvailabilityStatusCode
     {
@@ -389,7 +390,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode|null $availabilityStatusCode
+     * @param AvailabilityStatusCode|null $availabilityStatusCode
      * @return self
      */
     public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): self
@@ -410,7 +411,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function getItem(): ?Item
     {
@@ -418,7 +419,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function getItemWithCreate(): Item
     {
@@ -428,7 +429,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null $item
+     * @param Item|null $item
      * @return self
      */
     public function setItem(?Item $item = null): self
@@ -449,7 +450,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InventoryLocation|null
+     * @return InventoryLocation|null
      */
     public function getInventoryLocation(): ?InventoryLocation
     {
@@ -457,7 +458,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InventoryLocation
+     * @return InventoryLocation
      */
     public function getInventoryLocationWithCreate(): InventoryLocation
     {
@@ -467,7 +468,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InventoryLocation|null $inventoryLocation
+     * @param InventoryLocation|null $inventoryLocation
      * @return self
      */
     public function setInventoryLocation(?InventoryLocation $inventoryLocation = null): self

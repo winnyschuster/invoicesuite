@@ -14,7 +14,7 @@ class TenderPreparationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID|null
+     * @var TenderEnvelopeID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TenderPreparationType
     private $tenderEnvelopeID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode|null
+     * @var TenderEnvelopeTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TenderPreparationType
     private $tenderEnvelopeTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TenderPreparationType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID|null
+     * @var OpenTenderID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TenderPreparationType
     private $openTenderID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot>|null
+     * @var array<ProcurementProjectLot>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class TenderPreparationType
     private $procurementProjectLot;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement>|null
+     * @var array<DocumentTenderRequirement>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TenderPreparationType
     private $documentTenderRequirement;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID|null
+     * @return TenderEnvelopeID|null
      */
     public function getTenderEnvelopeID(): ?TenderEnvelopeID
     {
@@ -91,7 +91,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID
+     * @return TenderEnvelopeID
      */
     public function getTenderEnvelopeIDWithCreate(): TenderEnvelopeID
     {
@@ -101,7 +101,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID|null $tenderEnvelopeID
+     * @param TenderEnvelopeID|null $tenderEnvelopeID
      * @return self
      */
     public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): self
@@ -122,7 +122,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode|null
+     * @return TenderEnvelopeTypeCode|null
      */
     public function getTenderEnvelopeTypeCode(): ?TenderEnvelopeTypeCode
     {
@@ -130,7 +130,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode
+     * @return TenderEnvelopeTypeCode
      */
     public function getTenderEnvelopeTypeCodeWithCreate(): TenderEnvelopeTypeCode
     {
@@ -140,7 +140,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
+     * @param TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
      * @return self
      */
     public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): self
@@ -161,7 +161,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -169,7 +169,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -200,7 +200,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -215,7 +215,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -230,7 +230,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -241,7 +241,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -251,7 +251,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -266,7 +266,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -282,7 +282,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID|null
+     * @return OpenTenderID|null
      */
     public function getOpenTenderID(): ?OpenTenderID
     {
@@ -290,7 +290,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID
+     * @return OpenTenderID
      */
     public function getOpenTenderIDWithCreate(): OpenTenderID
     {
@@ -300,7 +300,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID|null $openTenderID
+     * @param OpenTenderID|null $openTenderID
      * @return self
      */
     public function setOpenTenderID(?OpenTenderID $openTenderID = null): self
@@ -321,7 +321,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot>|null
+     * @return array<ProcurementProjectLot>|null
      */
     public function getProcurementProjectLot(): ?array
     {
@@ -329,7 +329,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot>|null $procurementProjectLot
+     * @param array<ProcurementProjectLot>|null $procurementProjectLot
      * @return self
      */
     public function setProcurementProjectLot(?array $procurementProjectLot = null): self
@@ -360,7 +360,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null
+     * @return ProcurementProjectLot|null
      */
     public function firstProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -375,7 +375,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null
+     * @return ProcurementProjectLot|null
      */
     public function lastProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -390,7 +390,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot $procurementProjectLot
+     * @param ProcurementProjectLot $procurementProjectLot
      * @return self
      */
     public function addToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): self
@@ -401,7 +401,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot
+     * @return ProcurementProjectLot
      */
     public function addToProcurementProjectLotWithCreate(): ProcurementProjectLot
     {
@@ -411,7 +411,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot $procurementProjectLot
+     * @param ProcurementProjectLot $procurementProjectLot
      * @return self
      */
     public function addOnceToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): self
@@ -426,7 +426,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot
+     * @return ProcurementProjectLot
      */
     public function addOnceToProcurementProjectLotWithCreate(): ProcurementProjectLot
     {
@@ -442,7 +442,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement>|null
+     * @return array<DocumentTenderRequirement>|null
      */
     public function getDocumentTenderRequirement(): ?array
     {
@@ -450,7 +450,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement>|null $documentTenderRequirement
+     * @param array<DocumentTenderRequirement>|null $documentTenderRequirement
      * @return self
      */
     public function setDocumentTenderRequirement(?array $documentTenderRequirement = null): self
@@ -481,7 +481,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement|null
+     * @return DocumentTenderRequirement|null
      */
     public function firstDocumentTenderRequirement(): ?DocumentTenderRequirement
     {
@@ -496,7 +496,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement|null
+     * @return DocumentTenderRequirement|null
      */
     public function lastDocumentTenderRequirement(): ?DocumentTenderRequirement
     {
@@ -511,7 +511,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement $documentTenderRequirement
+     * @param DocumentTenderRequirement $documentTenderRequirement
      * @return self
      */
     public function addToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): self
@@ -522,7 +522,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement
+     * @return DocumentTenderRequirement
      */
     public function addToDocumentTenderRequirementWithCreate(): DocumentTenderRequirement
     {
@@ -532,7 +532,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement $documentTenderRequirement
+     * @param DocumentTenderRequirement $documentTenderRequirement
      * @return self
      */
     public function addOnceToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): self
@@ -547,7 +547,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement
+     * @return DocumentTenderRequirement
      */
     public function addOnceToDocumentTenderRequirementWithCreate(): DocumentTenderRequirement
     {

@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -13,7 +14,7 @@ class PeriodType
     use HandlesObjectFlags;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -24,7 +25,7 @@ class PeriodType
     private $startDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -35,7 +36,7 @@ class PeriodType
     private $startTime;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -46,7 +47,7 @@ class PeriodType
     private $endDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -57,7 +58,7 @@ class PeriodType
     private $endTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure|null
+     * @var DurationMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure")
      * @JMS\Expose
@@ -68,7 +69,7 @@ class PeriodType
     private $durationMeasure;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode>|null
+     * @var array<DescriptionCode>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode>")
      * @JMS\Expose
@@ -80,7 +81,7 @@ class PeriodType
     private $descriptionCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -92,18 +93,18 @@ class PeriodType
     private $description;
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $startDate
+     * @param DateTimeInterface|null $startDate
      * @return self
      */
-    public function setStartDate(?\DateTimeInterface $startDate = null): self
+    public function setStartDate(?DateTimeInterface $startDate = null): self
     {
         $this->startDate = $startDate;
 
@@ -121,18 +122,18 @@ class PeriodType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getStartTime(): ?\DateTimeInterface
+    public function getStartTime(): ?DateTimeInterface
     {
         return $this->startTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $startTime
+     * @param DateTimeInterface|null $startTime
      * @return self
      */
-    public function setStartTime(?\DateTimeInterface $startTime = null): self
+    public function setStartTime(?DateTimeInterface $startTime = null): self
     {
         $this->startTime = $startTime;
 
@@ -150,18 +151,18 @@ class PeriodType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getEndDate(): ?\DateTimeInterface
+    public function getEndDate(): ?DateTimeInterface
     {
         return $this->endDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $endDate
+     * @param DateTimeInterface|null $endDate
      * @return self
      */
-    public function setEndDate(?\DateTimeInterface $endDate = null): self
+    public function setEndDate(?DateTimeInterface $endDate = null): self
     {
         $this->endDate = $endDate;
 
@@ -179,18 +180,18 @@ class PeriodType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getEndTime(): ?\DateTimeInterface
+    public function getEndTime(): ?DateTimeInterface
     {
         return $this->endTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $endTime
+     * @param DateTimeInterface|null $endTime
      * @return self
      */
-    public function setEndTime(?\DateTimeInterface $endTime = null): self
+    public function setEndTime(?DateTimeInterface $endTime = null): self
     {
         $this->endTime = $endTime;
 
@@ -208,7 +209,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure|null
+     * @return DurationMeasure|null
      */
     public function getDurationMeasure(): ?DurationMeasure
     {
@@ -216,7 +217,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure
+     * @return DurationMeasure
      */
     public function getDurationMeasureWithCreate(): DurationMeasure
     {
@@ -226,7 +227,7 @@ class PeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure|null $durationMeasure
+     * @param DurationMeasure|null $durationMeasure
      * @return self
      */
     public function setDurationMeasure(?DurationMeasure $durationMeasure = null): self
@@ -247,7 +248,7 @@ class PeriodType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode>|null
+     * @return array<DescriptionCode>|null
      */
     public function getDescriptionCode(): ?array
     {
@@ -255,7 +256,7 @@ class PeriodType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode>|null $descriptionCode
+     * @param array<DescriptionCode>|null $descriptionCode
      * @return self
      */
     public function setDescriptionCode(?array $descriptionCode = null): self
@@ -286,7 +287,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode|null
+     * @return DescriptionCode|null
      */
     public function firstDescriptionCode(): ?DescriptionCode
     {
@@ -301,7 +302,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode|null
+     * @return DescriptionCode|null
      */
     public function lastDescriptionCode(): ?DescriptionCode
     {
@@ -316,7 +317,7 @@ class PeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode $descriptionCode
+     * @param DescriptionCode $descriptionCode
      * @return self
      */
     public function addToDescriptionCode(DescriptionCode $descriptionCode): self
@@ -327,7 +328,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode
+     * @return DescriptionCode
      */
     public function addToDescriptionCodeWithCreate(): DescriptionCode
     {
@@ -337,7 +338,7 @@ class PeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode $descriptionCode
+     * @param DescriptionCode $descriptionCode
      * @return self
      */
     public function addOnceToDescriptionCode(DescriptionCode $descriptionCode): self
@@ -352,7 +353,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode
+     * @return DescriptionCode
      */
     public function addOnceToDescriptionCodeWithCreate(): DescriptionCode
     {
@@ -368,7 +369,7 @@ class PeriodType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -376,7 +377,7 @@ class PeriodType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -407,7 +408,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -422,7 +423,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -437,7 +438,7 @@ class PeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -448,7 +449,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -458,7 +459,7 @@ class PeriodType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -473,7 +474,7 @@ class PeriodType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

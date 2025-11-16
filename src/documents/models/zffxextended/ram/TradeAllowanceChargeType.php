@@ -17,7 +17,7 @@ class TradeAllowanceChargeType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType|null
+     * @var IndicatorType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class TradeAllowanceChargeType
     private $chargeIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType|null
+     * @var NumericType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TradeAllowanceChargeType
     private $sequenceNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType|null
+     * @var PercentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TradeAllowanceChargeType
     private $calculationPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TradeAllowanceChargeType
     private $basisAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType|null
+     * @var QuantityType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TradeAllowanceChargeType
     private $basisQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TradeAllowanceChargeType
     private $actualAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType|null
+     * @var AllowanceChargeReasonCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TradeAllowanceChargeType
     private $reasonCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class TradeAllowanceChargeType
     private $reason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType|null
+     * @var TradeTaxType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class TradeAllowanceChargeType
     private $categoryTradeTax;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType|null
+     * @return IndicatorType|null
      */
     public function getChargeIndicator(): ?IndicatorType
     {
@@ -124,7 +124,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType
+     * @return IndicatorType
      */
     public function getChargeIndicatorWithCreate(): IndicatorType
     {
@@ -134,7 +134,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType|null $chargeIndicator
+     * @param IndicatorType|null $chargeIndicator
      * @return self
      */
     public function setChargeIndicator(?IndicatorType $chargeIndicator = null): self
@@ -155,7 +155,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType|null
+     * @return NumericType|null
      */
     public function getSequenceNumeric(): ?NumericType
     {
@@ -163,7 +163,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType
+     * @return NumericType
      */
     public function getSequenceNumericWithCreate(): NumericType
     {
@@ -173,7 +173,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType|null $sequenceNumeric
+     * @param NumericType|null $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(?NumericType $sequenceNumeric = null): self
@@ -194,7 +194,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType|null
+     * @return PercentType|null
      */
     public function getCalculationPercent(): ?PercentType
     {
@@ -202,7 +202,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType
+     * @return PercentType
      */
     public function getCalculationPercentWithCreate(): PercentType
     {
@@ -212,7 +212,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType|null $calculationPercent
+     * @param PercentType|null $calculationPercent
      * @return self
      */
     public function setCalculationPercent(?PercentType $calculationPercent = null): self
@@ -233,7 +233,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getBasisAmount(): ?AmountType
     {
@@ -241,7 +241,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType
+     * @return AmountType
      */
     public function getBasisAmountWithCreate(): AmountType
     {
@@ -251,7 +251,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null $basisAmount
+     * @param AmountType|null $basisAmount
      * @return self
      */
     public function setBasisAmount(?AmountType $basisAmount = null): self
@@ -272,7 +272,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType|null
+     * @return QuantityType|null
      */
     public function getBasisQuantity(): ?QuantityType
     {
@@ -280,7 +280,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType
+     * @return QuantityType
      */
     public function getBasisQuantityWithCreate(): QuantityType
     {
@@ -290,7 +290,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType|null $basisQuantity
+     * @param QuantityType|null $basisQuantity
      * @return self
      */
     public function setBasisQuantity(?QuantityType $basisQuantity = null): self
@@ -311,7 +311,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getActualAmount(): ?AmountType
     {
@@ -319,7 +319,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType
+     * @return AmountType
      */
     public function getActualAmountWithCreate(): AmountType
     {
@@ -329,7 +329,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType|null $actualAmount
+     * @param AmountType|null $actualAmount
      * @return self
      */
     public function setActualAmount(?AmountType $actualAmount = null): self
@@ -350,7 +350,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType|null
+     * @return AllowanceChargeReasonCodeType|null
      */
     public function getReasonCode(): ?AllowanceChargeReasonCodeType
     {
@@ -358,7 +358,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType
+     * @return AllowanceChargeReasonCodeType
      */
     public function getReasonCodeWithCreate(): AllowanceChargeReasonCodeType
     {
@@ -368,7 +368,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType|null $reasonCode
+     * @param AllowanceChargeReasonCodeType|null $reasonCode
      * @return self
      */
     public function setReasonCode(?AllowanceChargeReasonCodeType $reasonCode = null): self
@@ -389,7 +389,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getReason(): ?TextType
     {
@@ -397,7 +397,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getReasonWithCreate(): TextType
     {
@@ -407,7 +407,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $reason
+     * @param TextType|null $reason
      * @return self
      */
     public function setReason(?TextType $reason = null): self
@@ -428,7 +428,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType|null
+     * @return TradeTaxType|null
      */
     public function getCategoryTradeTax(): ?TradeTaxType
     {
@@ -436,7 +436,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType
+     * @return TradeTaxType
      */
     public function getCategoryTradeTaxWithCreate(): TradeTaxType
     {
@@ -446,7 +446,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType|null $categoryTradeTax
+     * @param TradeTaxType|null $categoryTradeTax
      * @return self
      */
     public function setCategoryTradeTax(?TradeTaxType $categoryTradeTax = null): self

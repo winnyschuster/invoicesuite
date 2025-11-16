@@ -16,7 +16,7 @@ class ConsumptionHistoryType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null
+     * @var MeterNumber|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ConsumptionHistoryType
     private $meterNumber;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ConsumptionHistoryType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ConsumptionHistoryType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode|null
+     * @var ConsumptionLevelCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ConsumptionHistoryType
     private $consumptionLevelCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel|null
+     * @var ConsumptionLevel|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ConsumptionHistoryType
     private $consumptionLevel;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class ConsumptionHistoryType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @var Period|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class ConsumptionHistoryType
     private $period;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null
+     * @return MeterNumber|null
      */
     public function getMeterNumber(): ?MeterNumber
     {
@@ -102,7 +102,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber
+     * @return MeterNumber
      */
     public function getMeterNumberWithCreate(): MeterNumber
     {
@@ -112,7 +112,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null $meterNumber
+     * @param MeterNumber|null $meterNumber
      * @return self
      */
     public function setMeterNumber(?MeterNumber $meterNumber = null): self
@@ -133,7 +133,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -141,7 +141,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -151,7 +151,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -172,7 +172,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -180,7 +180,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -190,7 +190,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -211,7 +211,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode|null
+     * @return ConsumptionLevelCode|null
      */
     public function getConsumptionLevelCode(): ?ConsumptionLevelCode
     {
@@ -219,7 +219,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode
+     * @return ConsumptionLevelCode
      */
     public function getConsumptionLevelCodeWithCreate(): ConsumptionLevelCode
     {
@@ -229,7 +229,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode|null $consumptionLevelCode
+     * @param ConsumptionLevelCode|null $consumptionLevelCode
      * @return self
      */
     public function setConsumptionLevelCode(?ConsumptionLevelCode $consumptionLevelCode = null): self
@@ -250,7 +250,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel|null
+     * @return ConsumptionLevel|null
      */
     public function getConsumptionLevel(): ?ConsumptionLevel
     {
@@ -258,7 +258,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel
+     * @return ConsumptionLevel
      */
     public function getConsumptionLevelWithCreate(): ConsumptionLevel
     {
@@ -268,7 +268,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel|null $consumptionLevel
+     * @param ConsumptionLevel|null $consumptionLevel
      * @return self
      */
     public function setConsumptionLevel(?ConsumptionLevel $consumptionLevel = null): self
@@ -289,7 +289,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -297,7 +297,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -328,7 +328,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -343,7 +343,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -358,7 +358,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -369,7 +369,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -379,7 +379,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -394,7 +394,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -410,7 +410,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function getPeriod(): ?Period
     {
@@ -418,7 +418,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function getPeriodWithCreate(): Period
     {
@@ -428,7 +428,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null $period
+     * @param Period|null $period
      * @return self
      */
     public function setPeriod(?Period $period = null): self

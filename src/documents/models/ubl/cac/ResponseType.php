@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -13,7 +14,7 @@ class ResponseType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID|null
+     * @var ReferenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID")
      * @JMS\Expose
@@ -24,7 +25,7 @@ class ResponseType
     private $referenceID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode|null
+     * @var ResponseCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode")
      * @JMS\Expose
@@ -35,7 +36,7 @@ class ResponseType
     private $responseCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -47,7 +48,7 @@ class ResponseType
     private $description;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -58,7 +59,7 @@ class ResponseType
     private $effectiveDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -69,7 +70,7 @@ class ResponseType
     private $effectiveTime;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Status>|null
+     * @var array<Status>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Status>")
      * @JMS\Expose
@@ -81,7 +82,7 @@ class ResponseType
     private $status;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID|null
+     * @return ReferenceID|null
      */
     public function getReferenceID(): ?ReferenceID
     {
@@ -89,7 +90,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID
+     * @return ReferenceID
      */
     public function getReferenceIDWithCreate(): ReferenceID
     {
@@ -99,7 +100,7 @@ class ResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID|null $referenceID
+     * @param ReferenceID|null $referenceID
      * @return self
      */
     public function setReferenceID(?ReferenceID $referenceID = null): self
@@ -120,7 +121,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode|null
+     * @return ResponseCode|null
      */
     public function getResponseCode(): ?ResponseCode
     {
@@ -128,7 +129,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode
+     * @return ResponseCode
      */
     public function getResponseCodeWithCreate(): ResponseCode
     {
@@ -138,7 +139,7 @@ class ResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode|null $responseCode
+     * @param ResponseCode|null $responseCode
      * @return self
      */
     public function setResponseCode(?ResponseCode $responseCode = null): self
@@ -159,7 +160,7 @@ class ResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -167,7 +168,7 @@ class ResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -198,7 +199,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -213,7 +214,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -228,7 +229,7 @@ class ResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -239,7 +240,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -249,7 +250,7 @@ class ResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -264,7 +265,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -280,18 +281,18 @@ class ResponseType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getEffectiveDate(): ?\DateTimeInterface
+    public function getEffectiveDate(): ?DateTimeInterface
     {
         return $this->effectiveDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $effectiveDate
+     * @param DateTimeInterface|null $effectiveDate
      * @return self
      */
-    public function setEffectiveDate(?\DateTimeInterface $effectiveDate = null): self
+    public function setEffectiveDate(?DateTimeInterface $effectiveDate = null): self
     {
         $this->effectiveDate = $effectiveDate;
 
@@ -309,18 +310,18 @@ class ResponseType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getEffectiveTime(): ?\DateTimeInterface
+    public function getEffectiveTime(): ?DateTimeInterface
     {
         return $this->effectiveTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $effectiveTime
+     * @param DateTimeInterface|null $effectiveTime
      * @return self
      */
-    public function setEffectiveTime(?\DateTimeInterface $effectiveTime = null): self
+    public function setEffectiveTime(?DateTimeInterface $effectiveTime = null): self
     {
         $this->effectiveTime = $effectiveTime;
 
@@ -338,7 +339,7 @@ class ResponseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Status>|null
+     * @return array<Status>|null
      */
     public function getStatus(): ?array
     {
@@ -346,7 +347,7 @@ class ResponseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Status>|null $status
+     * @param array<Status>|null $status
      * @return self
      */
     public function setStatus(?array $status = null): self
@@ -377,7 +378,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Status|null
+     * @return Status|null
      */
     public function firstStatus(): ?Status
     {
@@ -392,7 +393,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Status|null
+     * @return Status|null
      */
     public function lastStatus(): ?Status
     {
@@ -407,7 +408,7 @@ class ResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Status $status
+     * @param Status $status
      * @return self
      */
     public function addToStatus(Status $status): self
@@ -418,7 +419,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Status
+     * @return Status
      */
     public function addToStatusWithCreate(): Status
     {
@@ -428,7 +429,7 @@ class ResponseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Status $status
+     * @param Status $status
      * @return self
      */
     public function addOnceToStatus(Status $status): self
@@ -443,7 +444,7 @@ class ResponseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Status
+     * @return Status
      */
     public function addOnceToStatusWithCreate(): Status
     {

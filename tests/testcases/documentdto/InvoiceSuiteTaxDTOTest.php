@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
+use DateTimeInterface;
 use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\tests\TestCase;
@@ -21,7 +22,7 @@ final class InvoiceSuiteTaxDTOTest extends TestCase
         $this->assertNull($invoiceSuiteTaxDTO->getPercent());
         $this->assertNull($invoiceSuiteTaxDTO->getExemptionReason());
         $this->assertNull($invoiceSuiteTaxDTO->getExemptionReasonCode());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteTaxDTO->getDueDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuiteTaxDTO->getDueDate());
         $this->assertNull($invoiceSuiteTaxDTO->getDueCode());
     }
 

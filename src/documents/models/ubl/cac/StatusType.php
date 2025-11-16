@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode;
@@ -18,7 +19,7 @@ class StatusType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode|null
+     * @var ConditionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode")
      * @JMS\Expose
@@ -29,7 +30,7 @@ class StatusType
     private $conditionCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -40,7 +41,7 @@ class StatusType
     private $referenceDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -51,7 +52,7 @@ class StatusType
     private $referenceTime;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -63,7 +64,7 @@ class StatusType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode|null
+     * @var StatusReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode")
      * @JMS\Expose
@@ -74,7 +75,7 @@ class StatusType
     private $statusReasonCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason>|null
+     * @var array<StatusReason>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason>")
      * @JMS\Expose
@@ -86,7 +87,7 @@ class StatusType
     private $statusReason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID|null
+     * @var SequenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID")
      * @JMS\Expose
@@ -97,7 +98,7 @@ class StatusType
     private $sequenceID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Text>|null
+     * @var array<Text>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Text>")
      * @JMS\Expose
@@ -120,7 +121,7 @@ class StatusType
     private $indicationIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null
+     * @var Percent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -131,7 +132,7 @@ class StatusType
     private $percent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent|null
+     * @var ReliabilityPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent")
      * @JMS\Expose
@@ -142,7 +143,7 @@ class StatusType
     private $reliabilityPercent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Condition>|null
+     * @var array<Condition>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Condition>")
      * @JMS\Expose
@@ -154,7 +155,7 @@ class StatusType
     private $condition;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode|null
+     * @return ConditionCode|null
      */
     public function getConditionCode(): ?ConditionCode
     {
@@ -162,7 +163,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode
+     * @return ConditionCode
      */
     public function getConditionCodeWithCreate(): ConditionCode
     {
@@ -172,7 +173,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode|null $conditionCode
+     * @param ConditionCode|null $conditionCode
      * @return self
      */
     public function setConditionCode(?ConditionCode $conditionCode = null): self
@@ -193,18 +194,18 @@ class StatusType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getReferenceDate(): ?\DateTimeInterface
+    public function getReferenceDate(): ?DateTimeInterface
     {
         return $this->referenceDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $referenceDate
+     * @param DateTimeInterface|null $referenceDate
      * @return self
      */
-    public function setReferenceDate(?\DateTimeInterface $referenceDate = null): self
+    public function setReferenceDate(?DateTimeInterface $referenceDate = null): self
     {
         $this->referenceDate = $referenceDate;
 
@@ -222,18 +223,18 @@ class StatusType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getReferenceTime(): ?\DateTimeInterface
+    public function getReferenceTime(): ?DateTimeInterface
     {
         return $this->referenceTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $referenceTime
+     * @param DateTimeInterface|null $referenceTime
      * @return self
      */
-    public function setReferenceTime(?\DateTimeInterface $referenceTime = null): self
+    public function setReferenceTime(?DateTimeInterface $referenceTime = null): self
     {
         $this->referenceTime = $referenceTime;
 
@@ -251,7 +252,7 @@ class StatusType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -259,7 +260,7 @@ class StatusType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -290,7 +291,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -305,7 +306,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -320,7 +321,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -331,7 +332,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -341,7 +342,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -356,7 +357,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -372,7 +373,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode|null
+     * @return StatusReasonCode|null
      */
     public function getStatusReasonCode(): ?StatusReasonCode
     {
@@ -380,7 +381,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode
+     * @return StatusReasonCode
      */
     public function getStatusReasonCodeWithCreate(): StatusReasonCode
     {
@@ -390,7 +391,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode|null $statusReasonCode
+     * @param StatusReasonCode|null $statusReasonCode
      * @return self
      */
     public function setStatusReasonCode(?StatusReasonCode $statusReasonCode = null): self
@@ -411,7 +412,7 @@ class StatusType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason>|null
+     * @return array<StatusReason>|null
      */
     public function getStatusReason(): ?array
     {
@@ -419,7 +420,7 @@ class StatusType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason>|null $statusReason
+     * @param array<StatusReason>|null $statusReason
      * @return self
      */
     public function setStatusReason(?array $statusReason = null): self
@@ -450,7 +451,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason|null
+     * @return StatusReason|null
      */
     public function firstStatusReason(): ?StatusReason
     {
@@ -465,7 +466,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason|null
+     * @return StatusReason|null
      */
     public function lastStatusReason(): ?StatusReason
     {
@@ -480,7 +481,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason $statusReason
+     * @param StatusReason $statusReason
      * @return self
      */
     public function addToStatusReason(StatusReason $statusReason): self
@@ -491,7 +492,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason
+     * @return StatusReason
      */
     public function addToStatusReasonWithCreate(): StatusReason
     {
@@ -501,7 +502,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason $statusReason
+     * @param StatusReason $statusReason
      * @return self
      */
     public function addOnceToStatusReason(StatusReason $statusReason): self
@@ -516,7 +517,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason
+     * @return StatusReason
      */
     public function addOnceToStatusReasonWithCreate(): StatusReason
     {
@@ -532,7 +533,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID|null
+     * @return SequenceID|null
      */
     public function getSequenceID(): ?SequenceID
     {
@@ -540,7 +541,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID
+     * @return SequenceID
      */
     public function getSequenceIDWithCreate(): SequenceID
     {
@@ -550,7 +551,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID|null $sequenceID
+     * @param SequenceID|null $sequenceID
      * @return self
      */
     public function setSequenceID(?SequenceID $sequenceID = null): self
@@ -571,7 +572,7 @@ class StatusType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Text>|null
+     * @return array<Text>|null
      */
     public function getText(): ?array
     {
@@ -579,7 +580,7 @@ class StatusType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Text>|null $text
+     * @param array<Text>|null $text
      * @return self
      */
     public function setText(?array $text = null): self
@@ -610,7 +611,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Text|null
+     * @return Text|null
      */
     public function firstText(): ?Text
     {
@@ -625,7 +626,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Text|null
+     * @return Text|null
      */
     public function lastText(): ?Text
     {
@@ -640,7 +641,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Text $text
+     * @param Text $text
      * @return self
      */
     public function addToText(Text $text): self
@@ -651,7 +652,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Text
+     * @return Text
      */
     public function addToTextWithCreate(): Text
     {
@@ -661,7 +662,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Text $text
+     * @param Text $text
      * @return self
      */
     public function addOnceToText(Text $text): self
@@ -676,7 +677,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Text
+     * @return Text
      */
     public function addOnceToTextWithCreate(): Text
     {
@@ -721,7 +722,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null
+     * @return Percent|null
      */
     public function getPercent(): ?Percent
     {
@@ -729,7 +730,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent
+     * @return Percent
      */
     public function getPercentWithCreate(): Percent
     {
@@ -739,7 +740,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null $percent
+     * @param Percent|null $percent
      * @return self
      */
     public function setPercent(?Percent $percent = null): self
@@ -760,7 +761,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent|null
+     * @return ReliabilityPercent|null
      */
     public function getReliabilityPercent(): ?ReliabilityPercent
     {
@@ -768,7 +769,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent
+     * @return ReliabilityPercent
      */
     public function getReliabilityPercentWithCreate(): ReliabilityPercent
     {
@@ -778,7 +779,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent|null $reliabilityPercent
+     * @param ReliabilityPercent|null $reliabilityPercent
      * @return self
      */
     public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): self
@@ -799,7 +800,7 @@ class StatusType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Condition>|null
+     * @return array<Condition>|null
      */
     public function getCondition(): ?array
     {
@@ -807,7 +808,7 @@ class StatusType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Condition>|null $condition
+     * @param array<Condition>|null $condition
      * @return self
      */
     public function setCondition(?array $condition = null): self
@@ -838,7 +839,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Condition|null
+     * @return Condition|null
      */
     public function firstCondition(): ?Condition
     {
@@ -853,7 +854,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Condition|null
+     * @return Condition|null
      */
     public function lastCondition(): ?Condition
     {
@@ -868,7 +869,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Condition $condition
+     * @param Condition $condition
      * @return self
      */
     public function addToCondition(Condition $condition): self
@@ -879,7 +880,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Condition
+     * @return Condition
      */
     public function addToConditionWithCreate(): Condition
     {
@@ -889,7 +890,7 @@ class StatusType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Condition $condition
+     * @param Condition $condition
      * @return self
      */
     public function addOnceToCondition(Condition $condition): self
@@ -904,7 +905,7 @@ class StatusType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Condition
+     * @return Condition
      */
     public function addOnceToConditionWithCreate(): Condition
     {

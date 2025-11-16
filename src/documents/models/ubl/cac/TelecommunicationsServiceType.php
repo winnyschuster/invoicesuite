@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount;
@@ -22,7 +23,7 @@ class TelecommunicationsServiceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +34,7 @@ class TelecommunicationsServiceType
     private $iD;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -44,7 +45,7 @@ class TelecommunicationsServiceType
     private $callDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -55,7 +56,7 @@ class TelecommunicationsServiceType
     private $callTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceNumberCalled|null
+     * @var ServiceNumberCalled|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceNumberCalled")
      * @JMS\Expose
@@ -66,7 +67,7 @@ class TelecommunicationsServiceType
     private $serviceNumberCalled;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory|null
+     * @var TelecommunicationsServiceCategory|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory")
      * @JMS\Expose
@@ -77,7 +78,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCategory;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode|null
+     * @var TelecommunicationsServiceCategoryCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode")
      * @JMS\Expose
@@ -88,7 +89,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCategoryCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MovieTitle|null
+     * @var MovieTitle|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MovieTitle")
      * @JMS\Expose
@@ -99,7 +100,7 @@ class TelecommunicationsServiceType
     private $movieTitle;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RoamingPartnerName|null
+     * @var RoamingPartnerName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoamingPartnerName")
      * @JMS\Expose
@@ -110,7 +111,7 @@ class TelecommunicationsServiceType
     private $roamingPartnerName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PayPerView|null
+     * @var PayPerView|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayPerView")
      * @JMS\Expose
@@ -121,7 +122,7 @@ class TelecommunicationsServiceType
     private $payPerView;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -132,7 +133,7 @@ class TelecommunicationsServiceType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCall|null
+     * @var TelecommunicationsServiceCall|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCall")
      * @JMS\Expose
@@ -143,7 +144,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCall;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode|null
+     * @var TelecommunicationsServiceCallCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode")
      * @JMS\Expose
@@ -154,7 +155,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCallCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount|null
+     * @var CallBaseAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount")
      * @JMS\Expose
@@ -165,7 +166,7 @@ class TelecommunicationsServiceType
     private $callBaseAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount|null
+     * @var CallExtensionAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount")
      * @JMS\Expose
@@ -176,7 +177,7 @@ class TelecommunicationsServiceType
     private $callExtensionAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null
+     * @var Price|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -187,7 +188,7 @@ class TelecommunicationsServiceType
     private $price;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null
+     * @var Country|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Country")
      * @JMS\Expose
@@ -198,7 +199,7 @@ class TelecommunicationsServiceType
     private $country;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>|null
+     * @var array<ExchangeRate>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>")
      * @JMS\Expose
@@ -210,7 +211,7 @@ class TelecommunicationsServiceType
     private $exchangeRate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -222,7 +223,7 @@ class TelecommunicationsServiceType
     private $allowanceCharge;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @var array<TaxTotal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -234,7 +235,7 @@ class TelecommunicationsServiceType
     private $taxTotal;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty>|null
+     * @var array<CallDuty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty>")
      * @JMS\Expose
@@ -246,7 +247,7 @@ class TelecommunicationsServiceType
     private $callDuty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty>|null
+     * @var array<TimeDuty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty>")
      * @JMS\Expose
@@ -258,7 +259,7 @@ class TelecommunicationsServiceType
     private $timeDuty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -266,7 +267,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -276,7 +277,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -297,18 +298,18 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getCallDate(): ?\DateTimeInterface
+    public function getCallDate(): ?DateTimeInterface
     {
         return $this->callDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $callDate
+     * @param DateTimeInterface|null $callDate
      * @return self
      */
-    public function setCallDate(?\DateTimeInterface $callDate = null): self
+    public function setCallDate(?DateTimeInterface $callDate = null): self
     {
         $this->callDate = $callDate;
 
@@ -326,18 +327,18 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getCallTime(): ?\DateTimeInterface
+    public function getCallTime(): ?DateTimeInterface
     {
         return $this->callTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $callTime
+     * @param DateTimeInterface|null $callTime
      * @return self
      */
-    public function setCallTime(?\DateTimeInterface $callTime = null): self
+    public function setCallTime(?DateTimeInterface $callTime = null): self
     {
         $this->callTime = $callTime;
 
@@ -355,7 +356,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceNumberCalled|null
+     * @return ServiceNumberCalled|null
      */
     public function getServiceNumberCalled(): ?ServiceNumberCalled
     {
@@ -363,7 +364,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceNumberCalled
+     * @return ServiceNumberCalled
      */
     public function getServiceNumberCalledWithCreate(): ServiceNumberCalled
     {
@@ -373,7 +374,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceNumberCalled|null $serviceNumberCalled
+     * @param ServiceNumberCalled|null $serviceNumberCalled
      * @return self
      */
     public function setServiceNumberCalled(?ServiceNumberCalled $serviceNumberCalled = null): self
@@ -394,7 +395,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory|null
+     * @return TelecommunicationsServiceCategory|null
      */
     public function getTelecommunicationsServiceCategory(): ?TelecommunicationsServiceCategory
     {
@@ -402,7 +403,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory
+     * @return TelecommunicationsServiceCategory
      */
     public function getTelecommunicationsServiceCategoryWithCreate(): TelecommunicationsServiceCategory
     {
@@ -412,7 +413,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory|null $telecommunicationsServiceCategory
+     * @param TelecommunicationsServiceCategory|null $telecommunicationsServiceCategory
      * @return self
      */
     public function setTelecommunicationsServiceCategory(
@@ -434,7 +435,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode|null
+     * @return TelecommunicationsServiceCategoryCode|null
      */
     public function getTelecommunicationsServiceCategoryCode(): ?TelecommunicationsServiceCategoryCode
     {
@@ -442,7 +443,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode
+     * @return TelecommunicationsServiceCategoryCode
      */
     public function getTelecommunicationsServiceCategoryCodeWithCreate(): TelecommunicationsServiceCategoryCode
     {
@@ -452,7 +453,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode|null $telecommunicationsServiceCategoryCode
+     * @param TelecommunicationsServiceCategoryCode|null $telecommunicationsServiceCategoryCode
      * @return self
      */
     public function setTelecommunicationsServiceCategoryCode(
@@ -474,7 +475,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MovieTitle|null
+     * @return MovieTitle|null
      */
     public function getMovieTitle(): ?MovieTitle
     {
@@ -482,7 +483,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MovieTitle
+     * @return MovieTitle
      */
     public function getMovieTitleWithCreate(): MovieTitle
     {
@@ -492,7 +493,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MovieTitle|null $movieTitle
+     * @param MovieTitle|null $movieTitle
      * @return self
      */
     public function setMovieTitle(?MovieTitle $movieTitle = null): self
@@ -513,7 +514,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoamingPartnerName|null
+     * @return RoamingPartnerName|null
      */
     public function getRoamingPartnerName(): ?RoamingPartnerName
     {
@@ -521,7 +522,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoamingPartnerName
+     * @return RoamingPartnerName
      */
     public function getRoamingPartnerNameWithCreate(): RoamingPartnerName
     {
@@ -531,7 +532,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RoamingPartnerName|null $roamingPartnerName
+     * @param RoamingPartnerName|null $roamingPartnerName
      * @return self
      */
     public function setRoamingPartnerName(?RoamingPartnerName $roamingPartnerName = null): self
@@ -552,7 +553,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayPerView|null
+     * @return PayPerView|null
      */
     public function getPayPerView(): ?PayPerView
     {
@@ -560,7 +561,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PayPerView
+     * @return PayPerView
      */
     public function getPayPerViewWithCreate(): PayPerView
     {
@@ -570,7 +571,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PayPerView|null $payPerView
+     * @param PayPerView|null $payPerView
      * @return self
      */
     public function setPayPerView(?PayPerView $payPerView = null): self
@@ -591,7 +592,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -599,7 +600,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -609,7 +610,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -630,7 +631,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCall|null
+     * @return TelecommunicationsServiceCall|null
      */
     public function getTelecommunicationsServiceCall(): ?TelecommunicationsServiceCall
     {
@@ -638,7 +639,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCall
+     * @return TelecommunicationsServiceCall
      */
     public function getTelecommunicationsServiceCallWithCreate(): TelecommunicationsServiceCall
     {
@@ -648,7 +649,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCall|null $telecommunicationsServiceCall
+     * @param TelecommunicationsServiceCall|null $telecommunicationsServiceCall
      * @return self
      */
     public function setTelecommunicationsServiceCall(
@@ -670,7 +671,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode|null
+     * @return TelecommunicationsServiceCallCode|null
      */
     public function getTelecommunicationsServiceCallCode(): ?TelecommunicationsServiceCallCode
     {
@@ -678,7 +679,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode
+     * @return TelecommunicationsServiceCallCode
      */
     public function getTelecommunicationsServiceCallCodeWithCreate(): TelecommunicationsServiceCallCode
     {
@@ -688,7 +689,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode|null $telecommunicationsServiceCallCode
+     * @param TelecommunicationsServiceCallCode|null $telecommunicationsServiceCallCode
      * @return self
      */
     public function setTelecommunicationsServiceCallCode(
@@ -710,7 +711,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount|null
+     * @return CallBaseAmount|null
      */
     public function getCallBaseAmount(): ?CallBaseAmount
     {
@@ -718,7 +719,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount
+     * @return CallBaseAmount
      */
     public function getCallBaseAmountWithCreate(): CallBaseAmount
     {
@@ -728,7 +729,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount|null $callBaseAmount
+     * @param CallBaseAmount|null $callBaseAmount
      * @return self
      */
     public function setCallBaseAmount(?CallBaseAmount $callBaseAmount = null): self
@@ -749,7 +750,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount|null
+     * @return CallExtensionAmount|null
      */
     public function getCallExtensionAmount(): ?CallExtensionAmount
     {
@@ -757,7 +758,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount
+     * @return CallExtensionAmount
      */
     public function getCallExtensionAmountWithCreate(): CallExtensionAmount
     {
@@ -767,7 +768,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount|null $callExtensionAmount
+     * @param CallExtensionAmount|null $callExtensionAmount
      * @return self
      */
     public function setCallExtensionAmount(?CallExtensionAmount $callExtensionAmount = null): self
@@ -788,7 +789,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null
+     * @return Price|null
      */
     public function getPrice(): ?Price
     {
@@ -796,7 +797,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Price
+     * @return Price
      */
     public function getPriceWithCreate(): Price
     {
@@ -806,7 +807,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null $price
+     * @param Price|null $price
      * @return self
      */
     public function setPrice(?Price $price = null): self
@@ -827,7 +828,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null
+     * @return Country|null
      */
     public function getCountry(): ?Country
     {
@@ -835,7 +836,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Country
+     * @return Country
      */
     public function getCountryWithCreate(): Country
     {
@@ -845,7 +846,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null $country
+     * @param Country|null $country
      * @return self
      */
     public function setCountry(?Country $country = null): self
@@ -866,7 +867,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>|null
+     * @return array<ExchangeRate>|null
      */
     public function getExchangeRate(): ?array
     {
@@ -874,7 +875,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>|null $exchangeRate
+     * @param array<ExchangeRate>|null $exchangeRate
      * @return self
      */
     public function setExchangeRate(?array $exchangeRate = null): self
@@ -905,7 +906,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function firstExchangeRate(): ?ExchangeRate
     {
@@ -920,7 +921,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function lastExchangeRate(): ?ExchangeRate
     {
@@ -935,7 +936,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate $exchangeRate
+     * @param ExchangeRate $exchangeRate
      * @return self
      */
     public function addToExchangeRate(ExchangeRate $exchangeRate): self
@@ -946,7 +947,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function addToExchangeRateWithCreate(): ExchangeRate
     {
@@ -956,7 +957,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate $exchangeRate
+     * @param ExchangeRate $exchangeRate
      * @return self
      */
     public function addOnceToExchangeRate(ExchangeRate $exchangeRate): self
@@ -971,7 +972,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function addOnceToExchangeRateWithCreate(): ExchangeRate
     {
@@ -987,7 +988,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -995,7 +996,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -1026,7 +1027,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -1041,7 +1042,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -1056,7 +1057,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -1067,7 +1068,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -1077,7 +1078,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -1092,7 +1093,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -1108,7 +1109,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @return array<TaxTotal>|null
      */
     public function getTaxTotal(): ?array
     {
@@ -1116,7 +1117,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null $taxTotal
+     * @param array<TaxTotal>|null $taxTotal
      * @return self
      */
     public function setTaxTotal(?array $taxTotal = null): self
@@ -1147,7 +1148,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -1162,7 +1163,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -1177,7 +1178,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addToTaxTotal(TaxTotal $taxTotal): self
@@ -1188,7 +1189,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addToTaxTotalWithCreate(): TaxTotal
     {
@@ -1198,7 +1199,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): self
@@ -1213,7 +1214,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addOnceToTaxTotalWithCreate(): TaxTotal
     {
@@ -1229,7 +1230,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty>|null
+     * @return array<CallDuty>|null
      */
     public function getCallDuty(): ?array
     {
@@ -1237,7 +1238,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty>|null $callDuty
+     * @param array<CallDuty>|null $callDuty
      * @return self
      */
     public function setCallDuty(?array $callDuty = null): self
@@ -1268,7 +1269,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty|null
+     * @return CallDuty|null
      */
     public function firstCallDuty(): ?CallDuty
     {
@@ -1283,7 +1284,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty|null
+     * @return CallDuty|null
      */
     public function lastCallDuty(): ?CallDuty
     {
@@ -1298,7 +1299,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty $callDuty
+     * @param CallDuty $callDuty
      * @return self
      */
     public function addToCallDuty(CallDuty $callDuty): self
@@ -1309,7 +1310,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty
+     * @return CallDuty
      */
     public function addToCallDutyWithCreate(): CallDuty
     {
@@ -1319,7 +1320,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty $callDuty
+     * @param CallDuty $callDuty
      * @return self
      */
     public function addOnceToCallDuty(CallDuty $callDuty): self
@@ -1334,7 +1335,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty
+     * @return CallDuty
      */
     public function addOnceToCallDutyWithCreate(): CallDuty
     {
@@ -1350,7 +1351,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty>|null
+     * @return array<TimeDuty>|null
      */
     public function getTimeDuty(): ?array
     {
@@ -1358,7 +1359,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty>|null $timeDuty
+     * @param array<TimeDuty>|null $timeDuty
      * @return self
      */
     public function setTimeDuty(?array $timeDuty = null): self
@@ -1389,7 +1390,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty|null
+     * @return TimeDuty|null
      */
     public function firstTimeDuty(): ?TimeDuty
     {
@@ -1404,7 +1405,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty|null
+     * @return TimeDuty|null
      */
     public function lastTimeDuty(): ?TimeDuty
     {
@@ -1419,7 +1420,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty $timeDuty
+     * @param TimeDuty $timeDuty
      * @return self
      */
     public function addToTimeDuty(TimeDuty $timeDuty): self
@@ -1430,7 +1431,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty
+     * @return TimeDuty
      */
     public function addToTimeDutyWithCreate(): TimeDuty
     {
@@ -1440,7 +1441,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty $timeDuty
+     * @param TimeDuty $timeDuty
      * @return self
      */
     public function addOnceToTimeDuty(TimeDuty $timeDuty): self
@@ -1455,7 +1456,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty
+     * @return TimeDuty
      */
     public function addOnceToTimeDutyWithCreate(): TimeDuty
     {

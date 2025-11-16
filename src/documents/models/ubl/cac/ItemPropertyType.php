@@ -19,7 +19,7 @@ class ItemPropertyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class ItemPropertyType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class ItemPropertyType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode|null
+     * @var NameCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class ItemPropertyType
     private $nameCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod|null
+     * @var TestMethod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class ItemPropertyType
     private $testMethod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @var Value|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class ItemPropertyType
     private $value;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null
+     * @var ValueQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class ItemPropertyType
     private $valueQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>|null
+     * @var array<ValueQualifier>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class ItemPropertyType
     private $valueQualifier;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode|null
+     * @var ImportanceCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class ItemPropertyType
     private $importanceCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue>|null
+     * @var array<ListValue>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class ItemPropertyType
     private $listValue;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\UsabilityPeriod|null
+     * @var UsabilityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UsabilityPeriod")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class ItemPropertyType
     private $usabilityPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup>|null
+     * @var array<ItemPropertyGroup>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup>")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class ItemPropertyType
     private $itemPropertyGroup;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RangeDimension|null
+     * @var RangeDimension|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RangeDimension")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class ItemPropertyType
     private $rangeDimension;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyRange|null
+     * @var ItemPropertyRange|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyRange")
      * @JMS\Expose
@@ -165,7 +165,7 @@ class ItemPropertyType
     private $itemPropertyRange;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -173,7 +173,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -183,7 +183,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -204,7 +204,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -212,7 +212,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -222,7 +222,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -243,7 +243,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode|null
+     * @return NameCode|null
      */
     public function getNameCode(): ?NameCode
     {
@@ -251,7 +251,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode
+     * @return NameCode
      */
     public function getNameCodeWithCreate(): NameCode
     {
@@ -261,7 +261,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode|null $nameCode
+     * @param NameCode|null $nameCode
      * @return self
      */
     public function setNameCode(?NameCode $nameCode = null): self
@@ -282,7 +282,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod|null
+     * @return TestMethod|null
      */
     public function getTestMethod(): ?TestMethod
     {
@@ -290,7 +290,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod
+     * @return TestMethod
      */
     public function getTestMethodWithCreate(): TestMethod
     {
@@ -300,7 +300,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod|null $testMethod
+     * @param TestMethod|null $testMethod
      * @return self
      */
     public function setTestMethod(?TestMethod $testMethod = null): self
@@ -321,7 +321,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @return Value|null
      */
     public function getValue(): ?Value
     {
@@ -329,7 +329,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value
+     * @return Value
      */
     public function getValueWithCreate(): Value
     {
@@ -339,7 +339,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null $value
+     * @param Value|null $value
      * @return self
      */
     public function setValue(?Value $value = null): self
@@ -360,7 +360,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null
+     * @return ValueQuantity|null
      */
     public function getValueQuantity(): ?ValueQuantity
     {
@@ -368,7 +368,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity
+     * @return ValueQuantity
      */
     public function getValueQuantityWithCreate(): ValueQuantity
     {
@@ -378,7 +378,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null $valueQuantity
+     * @param ValueQuantity|null $valueQuantity
      * @return self
      */
     public function setValueQuantity(?ValueQuantity $valueQuantity = null): self
@@ -399,7 +399,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>|null
+     * @return array<ValueQualifier>|null
      */
     public function getValueQualifier(): ?array
     {
@@ -407,7 +407,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>|null $valueQualifier
+     * @param array<ValueQualifier>|null $valueQualifier
      * @return self
      */
     public function setValueQualifier(?array $valueQualifier = null): self
@@ -438,7 +438,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier|null
+     * @return ValueQualifier|null
      */
     public function firstValueQualifier(): ?ValueQualifier
     {
@@ -453,7 +453,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier|null
+     * @return ValueQualifier|null
      */
     public function lastValueQualifier(): ?ValueQualifier
     {
@@ -468,7 +468,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier $valueQualifier
+     * @param ValueQualifier $valueQualifier
      * @return self
      */
     public function addToValueQualifier(ValueQualifier $valueQualifier): self
@@ -479,7 +479,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier
+     * @return ValueQualifier
      */
     public function addToValueQualifierWithCreate(): ValueQualifier
     {
@@ -489,7 +489,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier $valueQualifier
+     * @param ValueQualifier $valueQualifier
      * @return self
      */
     public function addOnceToValueQualifier(ValueQualifier $valueQualifier): self
@@ -504,7 +504,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier
+     * @return ValueQualifier
      */
     public function addOnceToValueQualifierWithCreate(): ValueQualifier
     {
@@ -520,7 +520,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode|null
+     * @return ImportanceCode|null
      */
     public function getImportanceCode(): ?ImportanceCode
     {
@@ -528,7 +528,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode
+     * @return ImportanceCode
      */
     public function getImportanceCodeWithCreate(): ImportanceCode
     {
@@ -538,7 +538,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode|null $importanceCode
+     * @param ImportanceCode|null $importanceCode
      * @return self
      */
     public function setImportanceCode(?ImportanceCode $importanceCode = null): self
@@ -559,7 +559,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue>|null
+     * @return array<ListValue>|null
      */
     public function getListValue(): ?array
     {
@@ -567,7 +567,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue>|null $listValue
+     * @param array<ListValue>|null $listValue
      * @return self
      */
     public function setListValue(?array $listValue = null): self
@@ -598,7 +598,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue|null
+     * @return ListValue|null
      */
     public function firstListValue(): ?ListValue
     {
@@ -613,7 +613,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue|null
+     * @return ListValue|null
      */
     public function lastListValue(): ?ListValue
     {
@@ -628,7 +628,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue $listValue
+     * @param ListValue $listValue
      * @return self
      */
     public function addToListValue(ListValue $listValue): self
@@ -639,7 +639,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue
+     * @return ListValue
      */
     public function addToListValueWithCreate(): ListValue
     {
@@ -649,7 +649,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue $listValue
+     * @param ListValue $listValue
      * @return self
      */
     public function addOnceToListValue(ListValue $listValue): self
@@ -664,7 +664,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue
+     * @return ListValue
      */
     public function addOnceToListValueWithCreate(): ListValue
     {
@@ -680,7 +680,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UsabilityPeriod|null
+     * @return UsabilityPeriod|null
      */
     public function getUsabilityPeriod(): ?UsabilityPeriod
     {
@@ -688,7 +688,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UsabilityPeriod
+     * @return UsabilityPeriod
      */
     public function getUsabilityPeriodWithCreate(): UsabilityPeriod
     {
@@ -698,7 +698,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\UsabilityPeriod|null $usabilityPeriod
+     * @param UsabilityPeriod|null $usabilityPeriod
      * @return self
      */
     public function setUsabilityPeriod(?UsabilityPeriod $usabilityPeriod = null): self
@@ -719,7 +719,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup>|null
+     * @return array<ItemPropertyGroup>|null
      */
     public function getItemPropertyGroup(): ?array
     {
@@ -727,7 +727,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup>|null $itemPropertyGroup
+     * @param array<ItemPropertyGroup>|null $itemPropertyGroup
      * @return self
      */
     public function setItemPropertyGroup(?array $itemPropertyGroup = null): self
@@ -758,7 +758,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup|null
+     * @return ItemPropertyGroup|null
      */
     public function firstItemPropertyGroup(): ?ItemPropertyGroup
     {
@@ -773,7 +773,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup|null
+     * @return ItemPropertyGroup|null
      */
     public function lastItemPropertyGroup(): ?ItemPropertyGroup
     {
@@ -788,7 +788,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup $itemPropertyGroup
+     * @param ItemPropertyGroup $itemPropertyGroup
      * @return self
      */
     public function addToItemPropertyGroup(ItemPropertyGroup $itemPropertyGroup): self
@@ -799,7 +799,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup
+     * @return ItemPropertyGroup
      */
     public function addToItemPropertyGroupWithCreate(): ItemPropertyGroup
     {
@@ -809,7 +809,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup $itemPropertyGroup
+     * @param ItemPropertyGroup $itemPropertyGroup
      * @return self
      */
     public function addOnceToItemPropertyGroup(ItemPropertyGroup $itemPropertyGroup): self
@@ -824,7 +824,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup
+     * @return ItemPropertyGroup
      */
     public function addOnceToItemPropertyGroupWithCreate(): ItemPropertyGroup
     {
@@ -840,7 +840,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RangeDimension|null
+     * @return RangeDimension|null
      */
     public function getRangeDimension(): ?RangeDimension
     {
@@ -848,7 +848,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RangeDimension
+     * @return RangeDimension
      */
     public function getRangeDimensionWithCreate(): RangeDimension
     {
@@ -858,7 +858,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RangeDimension|null $rangeDimension
+     * @param RangeDimension|null $rangeDimension
      * @return self
      */
     public function setRangeDimension(?RangeDimension $rangeDimension = null): self
@@ -879,7 +879,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyRange|null
+     * @return ItemPropertyRange|null
      */
     public function getItemPropertyRange(): ?ItemPropertyRange
     {
@@ -887,7 +887,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyRange
+     * @return ItemPropertyRange
      */
     public function getItemPropertyRangeWithCreate(): ItemPropertyRange
     {
@@ -897,7 +897,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyRange|null $itemPropertyRange
+     * @param ItemPropertyRange|null $itemPropertyRange
      * @return self
      */
     public function setItemPropertyRange(?ItemPropertyRange $itemPropertyRange = null): self

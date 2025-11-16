@@ -10,7 +10,7 @@ class SupplyChainConsignmentType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>|null
+     * @var array<LogisticsTransportMovementType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class SupplyChainConsignmentType
     private $specifiedLogisticsTransportMovement;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>|null
+     * @return array<LogisticsTransportMovementType>|null
      */
     public function getSpecifiedLogisticsTransportMovement(): ?array
     {
@@ -30,7 +30,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>|null $specifiedLogisticsTransportMovement
+     * @param array<LogisticsTransportMovementType>|null $specifiedLogisticsTransportMovement
      * @return self
      */
     public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): self
@@ -61,7 +61,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement
+     * @param LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      * @return self
      */
     public function addToSpecifiedLogisticsTransportMovement(
@@ -73,7 +73,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType
+     * @return LogisticsTransportMovementType
      */
     public function addToSpecifiedLogisticsTransportMovementWithCreate(): LogisticsTransportMovementType
     {
@@ -83,7 +83,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType $specifiedLogisticsTransportMovement
+     * @param LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      * @return self
      */
     public function addOnceToSpecifiedLogisticsTransportMovement(
@@ -99,7 +99,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType
+     * @return LogisticsTransportMovementType
      */
     public function addOnceToSpecifiedLogisticsTransportMovementWithCreate(): LogisticsTransportMovementType
     {

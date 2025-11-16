@@ -14,7 +14,7 @@ class CompletedTaskType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount|null
+     * @var AnnualAverageAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class CompletedTaskType
     private $annualAverageAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount|null
+     * @var TotalTaskAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class CompletedTaskType
     private $totalTaskAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount|null
+     * @var PartyCapacityAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class CompletedTaskType
     private $partyCapacityAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class CompletedTaskType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null
+     * @var array<EvidenceSupplied>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class CompletedTaskType
     private $evidenceSupplied;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @var Period|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class CompletedTaskType
     private $period;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientCustomerParty|null
+     * @var RecipientCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RecipientCustomerParty")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class CompletedTaskType
     private $recipientCustomerParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount|null
+     * @return AnnualAverageAmount|null
      */
     public function getAnnualAverageAmount(): ?AnnualAverageAmount
     {
@@ -101,7 +101,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount
+     * @return AnnualAverageAmount
      */
     public function getAnnualAverageAmountWithCreate(): AnnualAverageAmount
     {
@@ -111,7 +111,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount|null $annualAverageAmount
+     * @param AnnualAverageAmount|null $annualAverageAmount
      * @return self
      */
     public function setAnnualAverageAmount(?AnnualAverageAmount $annualAverageAmount = null): self
@@ -132,7 +132,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount|null
+     * @return TotalTaskAmount|null
      */
     public function getTotalTaskAmount(): ?TotalTaskAmount
     {
@@ -140,7 +140,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount
+     * @return TotalTaskAmount
      */
     public function getTotalTaskAmountWithCreate(): TotalTaskAmount
     {
@@ -150,7 +150,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount|null $totalTaskAmount
+     * @param TotalTaskAmount|null $totalTaskAmount
      * @return self
      */
     public function setTotalTaskAmount(?TotalTaskAmount $totalTaskAmount = null): self
@@ -171,7 +171,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount|null
+     * @return PartyCapacityAmount|null
      */
     public function getPartyCapacityAmount(): ?PartyCapacityAmount
     {
@@ -179,7 +179,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount
+     * @return PartyCapacityAmount
      */
     public function getPartyCapacityAmountWithCreate(): PartyCapacityAmount
     {
@@ -189,7 +189,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount|null $partyCapacityAmount
+     * @param PartyCapacityAmount|null $partyCapacityAmount
      * @return self
      */
     public function setPartyCapacityAmount(?PartyCapacityAmount $partyCapacityAmount = null): self
@@ -210,7 +210,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -218,7 +218,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -249,7 +249,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -264,7 +264,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -279,7 +279,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -290,7 +290,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -300,7 +300,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -315,7 +315,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -331,7 +331,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null
+     * @return array<EvidenceSupplied>|null
      */
     public function getEvidenceSupplied(): ?array
     {
@@ -339,7 +339,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null $evidenceSupplied
+     * @param array<EvidenceSupplied>|null $evidenceSupplied
      * @return self
      */
     public function setEvidenceSupplied(?array $evidenceSupplied = null): self
@@ -370,7 +370,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied|null
+     * @return EvidenceSupplied|null
      */
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -385,7 +385,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied|null
+     * @return EvidenceSupplied|null
      */
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -400,7 +400,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied $evidenceSupplied
+     * @param EvidenceSupplied $evidenceSupplied
      * @return self
      */
     public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
@@ -411,7 +411,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied
+     * @return EvidenceSupplied
      */
     public function addToEvidenceSuppliedWithCreate(): EvidenceSupplied
     {
@@ -421,7 +421,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied $evidenceSupplied
+     * @param EvidenceSupplied $evidenceSupplied
      * @return self
      */
     public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
@@ -436,7 +436,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied
+     * @return EvidenceSupplied
      */
     public function addOnceToEvidenceSuppliedWithCreate(): EvidenceSupplied
     {
@@ -452,7 +452,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function getPeriod(): ?Period
     {
@@ -460,7 +460,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function getPeriodWithCreate(): Period
     {
@@ -470,7 +470,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null $period
+     * @param Period|null $period
      * @return self
      */
     public function setPeriod(?Period $period = null): self
@@ -491,7 +491,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientCustomerParty|null
+     * @return RecipientCustomerParty|null
      */
     public function getRecipientCustomerParty(): ?RecipientCustomerParty
     {
@@ -499,7 +499,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientCustomerParty
+     * @return RecipientCustomerParty
      */
     public function getRecipientCustomerPartyWithCreate(): RecipientCustomerParty
     {
@@ -509,7 +509,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RecipientCustomerParty|null $recipientCustomerParty
+     * @param RecipientCustomerParty|null $recipientCustomerParty
      * @return self
      */
     public function setRecipientCustomerParty(?RecipientCustomerParty $recipientCustomerParty = null): self

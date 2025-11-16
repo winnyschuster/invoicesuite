@@ -14,7 +14,7 @@ class ConsumptionReportReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID|null
+     * @var ConsumptionReportID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ConsumptionReportReferenceType
     private $consumptionReportID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null
+     * @var ConsumptionType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ConsumptionReportReferenceType
     private $consumptionType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null
+     * @var ConsumptionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ConsumptionReportReferenceType
     private $consumptionTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity|null
+     * @var TotalConsumedQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ConsumptionReportReferenceType
     private $totalConsumedQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @var Period|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ConsumptionReportReferenceType
     private $period;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID|null
+     * @return ConsumptionReportID|null
      */
     public function getConsumptionReportID(): ?ConsumptionReportID
     {
@@ -77,7 +77,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID
+     * @return ConsumptionReportID
      */
     public function getConsumptionReportIDWithCreate(): ConsumptionReportID
     {
@@ -87,7 +87,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID|null $consumptionReportID
+     * @param ConsumptionReportID|null $consumptionReportID
      * @return self
      */
     public function setConsumptionReportID(?ConsumptionReportID $consumptionReportID = null): self
@@ -108,7 +108,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null
+     * @return ConsumptionType|null
      */
     public function getConsumptionType(): ?ConsumptionType
     {
@@ -116,7 +116,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType
+     * @return ConsumptionType
      */
     public function getConsumptionTypeWithCreate(): ConsumptionType
     {
@@ -126,7 +126,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null $consumptionType
+     * @param ConsumptionType|null $consumptionType
      * @return self
      */
     public function setConsumptionType(?ConsumptionType $consumptionType = null): self
@@ -147,7 +147,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null
+     * @return ConsumptionTypeCode|null
      */
     public function getConsumptionTypeCode(): ?ConsumptionTypeCode
     {
@@ -155,7 +155,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode
+     * @return ConsumptionTypeCode
      */
     public function getConsumptionTypeCodeWithCreate(): ConsumptionTypeCode
     {
@@ -165,7 +165,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null $consumptionTypeCode
+     * @param ConsumptionTypeCode|null $consumptionTypeCode
      * @return self
      */
     public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): self
@@ -186,7 +186,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity|null
+     * @return TotalConsumedQuantity|null
      */
     public function getTotalConsumedQuantity(): ?TotalConsumedQuantity
     {
@@ -194,7 +194,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity
+     * @return TotalConsumedQuantity
      */
     public function getTotalConsumedQuantityWithCreate(): TotalConsumedQuantity
     {
@@ -204,7 +204,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity|null $totalConsumedQuantity
+     * @param TotalConsumedQuantity|null $totalConsumedQuantity
      * @return self
      */
     public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): self
@@ -225,7 +225,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function getPeriod(): ?Period
     {
@@ -233,7 +233,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function getPeriodWithCreate(): Period
     {
@@ -243,7 +243,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null $period
+     * @param Period|null $period
      * @return self
      */
     public function setPeriod(?Period $period = null): self

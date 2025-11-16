@@ -11,7 +11,7 @@ class TradeSettlementLineMonetarySummationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TradeSettlementLineMonetarySummationType
     private $lineTotalAmount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getLineTotalAmount(): ?AmountType
     {
@@ -30,7 +30,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType
+     * @return AmountType
      */
     public function getLineTotalAmountWithCreate(): AmountType
     {
@@ -40,7 +40,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null $lineTotalAmount
+     * @param AmountType|null $lineTotalAmount
      * @return self
      */
     public function setLineTotalAmount(?AmountType $lineTotalAmount = null): self

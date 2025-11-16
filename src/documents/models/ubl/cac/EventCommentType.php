@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Comment;
@@ -11,7 +12,7 @@ class EventCommentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment|null
+     * @var Comment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Comment")
      * @JMS\Expose
@@ -22,7 +23,7 @@ class EventCommentType
     private $comment;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -33,7 +34,7 @@ class EventCommentType
     private $issueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -44,7 +45,7 @@ class EventCommentType
     private $issueTime;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment|null
+     * @return Comment|null
      */
     public function getComment(): ?Comment
     {
@@ -52,7 +53,7 @@ class EventCommentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment
+     * @return Comment
      */
     public function getCommentWithCreate(): Comment
     {
@@ -62,7 +63,7 @@ class EventCommentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Comment|null $comment
+     * @param Comment|null $comment
      * @return self
      */
     public function setComment(?Comment $comment = null): self
@@ -83,18 +84,18 @@ class EventCommentType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -112,18 +113,18 @@ class EventCommentType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueTime(): ?\DateTimeInterface
+    public function getIssueTime(): ?DateTimeInterface
     {
         return $this->issueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueTime
+     * @param DateTimeInterface|null $issueTime
      * @return self
      */
-    public function setIssueTime(?\DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): self
     {
         $this->issueTime = $issueTime;
 

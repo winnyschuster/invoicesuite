@@ -11,7 +11,7 @@ class ServiceFrequencyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode|null
+     * @var WeekDayCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ServiceFrequencyType
     private $weekDayCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode|null
+     * @return WeekDayCode|null
      */
     public function getWeekDayCode(): ?WeekDayCode
     {
@@ -30,7 +30,7 @@ class ServiceFrequencyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode
+     * @return WeekDayCode
      */
     public function getWeekDayCodeWithCreate(): WeekDayCode
     {
@@ -40,7 +40,7 @@ class ServiceFrequencyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode|null $weekDayCode
+     * @param WeekDayCode|null $weekDayCode
      * @return self
      */
     public function setWeekDayCode(?WeekDayCode $weekDayCode = null): self

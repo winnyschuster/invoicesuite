@@ -12,7 +12,7 @@ class BudgetAccountLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class BudgetAccountLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount|null
+     * @var TotalAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class BudgetAccountLineType
     private $totalAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount>|null
+     * @var array<BudgetAccount>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class BudgetAccountLineType
     private $budgetAccount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -54,7 +54,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -64,7 +64,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -85,7 +85,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount|null
+     * @return TotalAmount|null
      */
     public function getTotalAmount(): ?TotalAmount
     {
@@ -93,7 +93,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount
+     * @return TotalAmount
      */
     public function getTotalAmountWithCreate(): TotalAmount
     {
@@ -103,7 +103,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount|null $totalAmount
+     * @param TotalAmount|null $totalAmount
      * @return self
      */
     public function setTotalAmount(?TotalAmount $totalAmount = null): self
@@ -124,7 +124,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount>|null
+     * @return array<BudgetAccount>|null
      */
     public function getBudgetAccount(): ?array
     {
@@ -132,7 +132,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount>|null $budgetAccount
+     * @param array<BudgetAccount>|null $budgetAccount
      * @return self
      */
     public function setBudgetAccount(?array $budgetAccount = null): self
@@ -163,7 +163,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount|null
+     * @return BudgetAccount|null
      */
     public function firstBudgetAccount(): ?BudgetAccount
     {
@@ -178,7 +178,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount|null
+     * @return BudgetAccount|null
      */
     public function lastBudgetAccount(): ?BudgetAccount
     {
@@ -193,7 +193,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount $budgetAccount
+     * @param BudgetAccount $budgetAccount
      * @return self
      */
     public function addToBudgetAccount(BudgetAccount $budgetAccount): self
@@ -204,7 +204,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount
+     * @return BudgetAccount
      */
     public function addToBudgetAccountWithCreate(): BudgetAccount
     {
@@ -214,7 +214,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount $budgetAccount
+     * @param BudgetAccount $budgetAccount
      * @return self
      */
     public function addOnceToBudgetAccount(BudgetAccount $budgetAccount): self
@@ -229,7 +229,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount
+     * @return BudgetAccount
      */
     public function addOnceToBudgetAccountWithCreate(): BudgetAccount
     {

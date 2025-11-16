@@ -12,7 +12,7 @@ class OrderLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode|null
+     * @var SubstitutionStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class OrderLineType
     private $substitutionStatusCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class OrderLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem|null
+     * @var LineItem|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineItem")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class OrderLineType
     private $lineItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>|null
+     * @var array<SellerProposedSubstituteLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class OrderLineType
     private $sellerProposedSubstituteLineItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem>|null
+     * @var array<SellerSubstitutedLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class OrderLineType
     private $sellerSubstitutedLineItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem>|null
+     * @var array<BuyerProposedSubstituteLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class OrderLineType
     private $buyerProposedSubstituteLineItem;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueLineReference|null
+     * @var CatalogueLineReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueLineReference")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class OrderLineType
     private $catalogueLineReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\QuotationLineReference|null
+     * @var QuotationLineReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\QuotationLineReference")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class OrderLineType
     private $quotationLineReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>|null
+     * @var array<OrderLineReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class OrderLineType
     private $orderLineReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class OrderLineType
     private $documentReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode|null
+     * @return SubstitutionStatusCode|null
      */
     public function getSubstitutionStatusCode(): ?SubstitutionStatusCode
     {
@@ -136,7 +136,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode
+     * @return SubstitutionStatusCode
      */
     public function getSubstitutionStatusCodeWithCreate(): SubstitutionStatusCode
     {
@@ -146,7 +146,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode|null $substitutionStatusCode
+     * @param SubstitutionStatusCode|null $substitutionStatusCode
      * @return self
      */
     public function setSubstitutionStatusCode(?SubstitutionStatusCode $substitutionStatusCode = null): self
@@ -167,7 +167,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -175,7 +175,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -206,7 +206,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -221,7 +221,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -236,7 +236,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -247,7 +247,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -257,7 +257,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -272,7 +272,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -288,7 +288,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem|null
+     * @return LineItem|null
      */
     public function getLineItem(): ?LineItem
     {
@@ -296,7 +296,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem
+     * @return LineItem
      */
     public function getLineItemWithCreate(): LineItem
     {
@@ -306,7 +306,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem|null $lineItem
+     * @param LineItem|null $lineItem
      * @return self
      */
     public function setLineItem(?LineItem $lineItem = null): self
@@ -327,7 +327,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>|null
+     * @return array<SellerProposedSubstituteLineItem>|null
      */
     public function getSellerProposedSubstituteLineItem(): ?array
     {
@@ -335,7 +335,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
+     * @param array<SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
      * @return self
      */
     public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): self
@@ -366,7 +366,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem|null
+     * @return SellerProposedSubstituteLineItem|null
      */
     public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -381,7 +381,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem|null
+     * @return SellerProposedSubstituteLineItem|null
      */
     public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -396,7 +396,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return self
      */
     public function addToSellerProposedSubstituteLineItem(
@@ -408,7 +408,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem
+     * @return SellerProposedSubstituteLineItem
      */
     public function addToSellerProposedSubstituteLineItemWithCreate(): SellerProposedSubstituteLineItem
     {
@@ -418,7 +418,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return self
      */
     public function addOnceToSellerProposedSubstituteLineItem(
@@ -434,7 +434,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem
+     * @return SellerProposedSubstituteLineItem
      */
     public function addOnceToSellerProposedSubstituteLineItemWithCreate(): SellerProposedSubstituteLineItem
     {
@@ -450,7 +450,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem>|null
+     * @return array<SellerSubstitutedLineItem>|null
      */
     public function getSellerSubstitutedLineItem(): ?array
     {
@@ -458,7 +458,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem>|null $sellerSubstitutedLineItem
+     * @param array<SellerSubstitutedLineItem>|null $sellerSubstitutedLineItem
      * @return self
      */
     public function setSellerSubstitutedLineItem(?array $sellerSubstitutedLineItem = null): self
@@ -489,7 +489,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem|null
+     * @return SellerSubstitutedLineItem|null
      */
     public function firstSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
     {
@@ -504,7 +504,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem|null
+     * @return SellerSubstitutedLineItem|null
      */
     public function lastSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
     {
@@ -519,7 +519,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem $sellerSubstitutedLineItem
+     * @param SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return self
      */
     public function addToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): self
@@ -530,7 +530,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem
+     * @return SellerSubstitutedLineItem
      */
     public function addToSellerSubstitutedLineItemWithCreate(): SellerSubstitutedLineItem
     {
@@ -540,7 +540,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem $sellerSubstitutedLineItem
+     * @param SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return self
      */
     public function addOnceToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): self
@@ -555,7 +555,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem
+     * @return SellerSubstitutedLineItem
      */
     public function addOnceToSellerSubstitutedLineItemWithCreate(): SellerSubstitutedLineItem
     {
@@ -571,7 +571,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem>|null
+     * @return array<BuyerProposedSubstituteLineItem>|null
      */
     public function getBuyerProposedSubstituteLineItem(): ?array
     {
@@ -579,7 +579,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem>|null $buyerProposedSubstituteLineItem
+     * @param array<BuyerProposedSubstituteLineItem>|null $buyerProposedSubstituteLineItem
      * @return self
      */
     public function setBuyerProposedSubstituteLineItem(?array $buyerProposedSubstituteLineItem = null): self
@@ -610,7 +610,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem|null
+     * @return BuyerProposedSubstituteLineItem|null
      */
     public function firstBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
     {
@@ -625,7 +625,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem|null
+     * @return BuyerProposedSubstituteLineItem|null
      */
     public function lastBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
     {
@@ -640,7 +640,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
+     * @param BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
      * @return self
      */
     public function addToBuyerProposedSubstituteLineItem(
@@ -652,7 +652,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem
+     * @return BuyerProposedSubstituteLineItem
      */
     public function addToBuyerProposedSubstituteLineItemWithCreate(): BuyerProposedSubstituteLineItem
     {
@@ -662,7 +662,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
+     * @param BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
      * @return self
      */
     public function addOnceToBuyerProposedSubstituteLineItem(
@@ -678,7 +678,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem
+     * @return BuyerProposedSubstituteLineItem
      */
     public function addOnceToBuyerProposedSubstituteLineItemWithCreate(): BuyerProposedSubstituteLineItem
     {
@@ -694,7 +694,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueLineReference|null
+     * @return CatalogueLineReference|null
      */
     public function getCatalogueLineReference(): ?CatalogueLineReference
     {
@@ -702,7 +702,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueLineReference
+     * @return CatalogueLineReference
      */
     public function getCatalogueLineReferenceWithCreate(): CatalogueLineReference
     {
@@ -712,7 +712,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueLineReference|null $catalogueLineReference
+     * @param CatalogueLineReference|null $catalogueLineReference
      * @return self
      */
     public function setCatalogueLineReference(?CatalogueLineReference $catalogueLineReference = null): self
@@ -733,7 +733,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\QuotationLineReference|null
+     * @return QuotationLineReference|null
      */
     public function getQuotationLineReference(): ?QuotationLineReference
     {
@@ -741,7 +741,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\QuotationLineReference
+     * @return QuotationLineReference
      */
     public function getQuotationLineReferenceWithCreate(): QuotationLineReference
     {
@@ -751,7 +751,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\QuotationLineReference|null $quotationLineReference
+     * @param QuotationLineReference|null $quotationLineReference
      * @return self
      */
     public function setQuotationLineReference(?QuotationLineReference $quotationLineReference = null): self
@@ -772,7 +772,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>|null
+     * @return array<OrderLineReference>|null
      */
     public function getOrderLineReference(): ?array
     {
@@ -780,7 +780,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>|null $orderLineReference
+     * @param array<OrderLineReference>|null $orderLineReference
      * @return self
      */
     public function setOrderLineReference(?array $orderLineReference = null): self
@@ -811,7 +811,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference|null
+     * @return OrderLineReference|null
      */
     public function firstOrderLineReference(): ?OrderLineReference
     {
@@ -826,7 +826,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference|null
+     * @return OrderLineReference|null
      */
     public function lastOrderLineReference(): ?OrderLineReference
     {
@@ -841,7 +841,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference $orderLineReference
+     * @param OrderLineReference $orderLineReference
      * @return self
      */
     public function addToOrderLineReference(OrderLineReference $orderLineReference): self
@@ -852,7 +852,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference
+     * @return OrderLineReference
      */
     public function addToOrderLineReferenceWithCreate(): OrderLineReference
     {
@@ -862,7 +862,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference $orderLineReference
+     * @param OrderLineReference $orderLineReference
      * @return self
      */
     public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): self
@@ -877,7 +877,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference
+     * @return OrderLineReference
      */
     public function addOnceToOrderLineReferenceWithCreate(): OrderLineReference
     {
@@ -893,7 +893,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -901,7 +901,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -932,7 +932,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -947,7 +947,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -962,7 +962,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -973,7 +973,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -983,7 +983,7 @@ class OrderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -998,7 +998,7 @@ class OrderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {

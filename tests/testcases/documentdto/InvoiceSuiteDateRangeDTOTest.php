@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
+use DateTimeInterface;
 use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\tests\TestCase;
@@ -14,8 +15,8 @@ final class InvoiceSuiteDateRangeDTOTest extends TestCase
     {
         $invoiceSuiteDateRangeDTO = new InvoiceSuiteDateRangeDTO();
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteDateRangeDTO->getStartDate());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuiteDateRangeDTO->getEndDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuiteDateRangeDTO->getStartDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuiteDateRangeDTO->getEndDate());
         $this->assertNull($invoiceSuiteDateRangeDTO->getDescription());
     }
 

@@ -10,7 +10,7 @@ class BillingReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceDocumentReference|null
+     * @var InvoiceDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceDocumentReference")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class BillingReferenceType
     private $invoiceDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledInvoiceDocumentReference|null
+     * @var SelfBilledInvoiceDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledInvoiceDocumentReference")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class BillingReferenceType
     private $selfBilledInvoiceDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\CreditNoteDocumentReference|null
+     * @var CreditNoteDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CreditNoteDocumentReference")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class BillingReferenceType
     private $creditNoteDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledCreditNoteDocumentReference|null
+     * @var SelfBilledCreditNoteDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledCreditNoteDocumentReference")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class BillingReferenceType
     private $selfBilledCreditNoteDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DebitNoteDocumentReference|null
+     * @var DebitNoteDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DebitNoteDocumentReference")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class BillingReferenceType
     private $debitNoteDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderDocumentReference|null
+     * @var ReminderDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReminderDocumentReference")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class BillingReferenceType
     private $reminderDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference|null
+     * @var AdditionalDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class BillingReferenceType
     private $additionalDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine>|null
+     * @var array<BillingReferenceLine>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine>")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class BillingReferenceType
     private $billingReferenceLine;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceDocumentReference|null
+     * @return InvoiceDocumentReference|null
      */
     public function getInvoiceDocumentReference(): ?InvoiceDocumentReference
     {
@@ -107,7 +107,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceDocumentReference
+     * @return InvoiceDocumentReference
      */
     public function getInvoiceDocumentReferenceWithCreate(): InvoiceDocumentReference
     {
@@ -117,7 +117,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceDocumentReference|null $invoiceDocumentReference
+     * @param InvoiceDocumentReference|null $invoiceDocumentReference
      * @return self
      */
     public function setInvoiceDocumentReference(?InvoiceDocumentReference $invoiceDocumentReference = null): self
@@ -138,7 +138,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledInvoiceDocumentReference|null
+     * @return SelfBilledInvoiceDocumentReference|null
      */
     public function getSelfBilledInvoiceDocumentReference(): ?SelfBilledInvoiceDocumentReference
     {
@@ -146,7 +146,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledInvoiceDocumentReference
+     * @return SelfBilledInvoiceDocumentReference
      */
     public function getSelfBilledInvoiceDocumentReferenceWithCreate(): SelfBilledInvoiceDocumentReference
     {
@@ -156,7 +156,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledInvoiceDocumentReference|null $selfBilledInvoiceDocumentReference
+     * @param SelfBilledInvoiceDocumentReference|null $selfBilledInvoiceDocumentReference
      * @return self
      */
     public function setSelfBilledInvoiceDocumentReference(
@@ -178,7 +178,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CreditNoteDocumentReference|null
+     * @return CreditNoteDocumentReference|null
      */
     public function getCreditNoteDocumentReference(): ?CreditNoteDocumentReference
     {
@@ -186,7 +186,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CreditNoteDocumentReference
+     * @return CreditNoteDocumentReference
      */
     public function getCreditNoteDocumentReferenceWithCreate(): CreditNoteDocumentReference
     {
@@ -196,7 +196,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CreditNoteDocumentReference|null $creditNoteDocumentReference
+     * @param CreditNoteDocumentReference|null $creditNoteDocumentReference
      * @return self
      */
     public function setCreditNoteDocumentReference(
@@ -218,7 +218,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledCreditNoteDocumentReference|null
+     * @return SelfBilledCreditNoteDocumentReference|null
      */
     public function getSelfBilledCreditNoteDocumentReference(): ?SelfBilledCreditNoteDocumentReference
     {
@@ -226,7 +226,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledCreditNoteDocumentReference
+     * @return SelfBilledCreditNoteDocumentReference
      */
     public function getSelfBilledCreditNoteDocumentReferenceWithCreate(): SelfBilledCreditNoteDocumentReference
     {
@@ -236,7 +236,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledCreditNoteDocumentReference|null $selfBilledCreditNoteDocumentReference
+     * @param SelfBilledCreditNoteDocumentReference|null $selfBilledCreditNoteDocumentReference
      * @return self
      */
     public function setSelfBilledCreditNoteDocumentReference(
@@ -258,7 +258,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DebitNoteDocumentReference|null
+     * @return DebitNoteDocumentReference|null
      */
     public function getDebitNoteDocumentReference(): ?DebitNoteDocumentReference
     {
@@ -266,7 +266,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DebitNoteDocumentReference
+     * @return DebitNoteDocumentReference
      */
     public function getDebitNoteDocumentReferenceWithCreate(): DebitNoteDocumentReference
     {
@@ -276,7 +276,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DebitNoteDocumentReference|null $debitNoteDocumentReference
+     * @param DebitNoteDocumentReference|null $debitNoteDocumentReference
      * @return self
      */
     public function setDebitNoteDocumentReference(
@@ -298,7 +298,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderDocumentReference|null
+     * @return ReminderDocumentReference|null
      */
     public function getReminderDocumentReference(): ?ReminderDocumentReference
     {
@@ -306,7 +306,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderDocumentReference
+     * @return ReminderDocumentReference
      */
     public function getReminderDocumentReferenceWithCreate(): ReminderDocumentReference
     {
@@ -316,7 +316,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderDocumentReference|null $reminderDocumentReference
+     * @param ReminderDocumentReference|null $reminderDocumentReference
      * @return self
      */
     public function setReminderDocumentReference(?ReminderDocumentReference $reminderDocumentReference = null): self
@@ -337,7 +337,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference|null
+     * @return AdditionalDocumentReference|null
      */
     public function getAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -345,7 +345,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference
+     * @return AdditionalDocumentReference
      */
     public function getAdditionalDocumentReferenceWithCreate(): AdditionalDocumentReference
     {
@@ -355,7 +355,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference|null $additionalDocumentReference
+     * @param AdditionalDocumentReference|null $additionalDocumentReference
      * @return self
      */
     public function setAdditionalDocumentReference(
@@ -377,7 +377,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine>|null
+     * @return array<BillingReferenceLine>|null
      */
     public function getBillingReferenceLine(): ?array
     {
@@ -385,7 +385,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine>|null $billingReferenceLine
+     * @param array<BillingReferenceLine>|null $billingReferenceLine
      * @return self
      */
     public function setBillingReferenceLine(?array $billingReferenceLine = null): self
@@ -416,7 +416,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine|null
+     * @return BillingReferenceLine|null
      */
     public function firstBillingReferenceLine(): ?BillingReferenceLine
     {
@@ -431,7 +431,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine|null
+     * @return BillingReferenceLine|null
      */
     public function lastBillingReferenceLine(): ?BillingReferenceLine
     {
@@ -446,7 +446,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine $billingReferenceLine
+     * @param BillingReferenceLine $billingReferenceLine
      * @return self
      */
     public function addToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): self
@@ -457,7 +457,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine
+     * @return BillingReferenceLine
      */
     public function addToBillingReferenceLineWithCreate(): BillingReferenceLine
     {
@@ -467,7 +467,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine $billingReferenceLine
+     * @param BillingReferenceLine $billingReferenceLine
      * @return self
      */
     public function addOnceToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): self
@@ -482,7 +482,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine
+     * @return BillingReferenceLine
      */
     public function addOnceToBillingReferenceLineWithCreate(): BillingReferenceLine
     {

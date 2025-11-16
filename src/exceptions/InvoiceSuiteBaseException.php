@@ -9,6 +9,8 @@
 
 namespace horstoeko\invoicesuite\exceptions;
 
+use Exception;
+
 /**
  * Class representing the base exception
  *
@@ -18,6 +20,6 @@ namespace horstoeko\invoicesuite\exceptions;
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuiteBaseException extends \Exception
+class InvoiceSuiteBaseException extends Exception
 {
 }

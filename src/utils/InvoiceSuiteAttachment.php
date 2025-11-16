@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\utils;
 
+use finfo;
 use horstoeko\mimedb\MimeDb;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
@@ -229,7 +230,7 @@ class InvoiceSuiteAttachment
             return false;
         }
 
-        $tempFileInfo = new \finfo(FILEINFO_MIME_TYPE);
+        $tempFileInfo = new finfo(FILEINFO_MIME_TYPE);
         $tempFilename = tempnam(sys_get_temp_dir(), 'b64');
         file_put_contents($tempFilename, $this->internalContent);
         $mime = $tempFileInfo->file($tempFilename);

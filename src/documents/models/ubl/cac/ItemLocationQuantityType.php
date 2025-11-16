@@ -14,7 +14,7 @@ class ItemLocationQuantityType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure|null
+     * @var LeadTimeMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ItemLocationQuantityType
     private $leadTimeMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @var MinimumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ItemLocationQuantityType
     private $minimumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @var MaximumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ItemLocationQuantityType
     private $hazardousRiskIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions>|null
+     * @var array<TradingRestrictions>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class ItemLocationQuantityType
     private $tradingRestrictions;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress>|null
+     * @var array<ApplicableTerritoryAddress>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class ItemLocationQuantityType
     private $applicableTerritoryAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null
+     * @var Price|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class ItemLocationQuantityType
     private $price;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit>|null
+     * @var array<DeliveryUnit>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit>")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class ItemLocationQuantityType
     private $deliveryUnit;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>|null
+     * @var array<ApplicableTaxCategory>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class ItemLocationQuantityType
     private $applicableTaxCategory;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null
+     * @var Package|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Package")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class ItemLocationQuantityType
     private $package;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class ItemLocationQuantityType
     private $allowanceCharge;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DependentPriceReference|null
+     * @var DependentPriceReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DependentPriceReference")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class ItemLocationQuantityType
     private $dependentPriceReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure|null
+     * @return LeadTimeMeasure|null
      */
     public function getLeadTimeMeasure(): ?LeadTimeMeasure
     {
@@ -159,7 +159,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure
+     * @return LeadTimeMeasure
      */
     public function getLeadTimeMeasureWithCreate(): LeadTimeMeasure
     {
@@ -169,7 +169,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure|null $leadTimeMeasure
+     * @param LeadTimeMeasure|null $leadTimeMeasure
      * @return self
      */
     public function setLeadTimeMeasure(?LeadTimeMeasure $leadTimeMeasure = null): self
@@ -190,7 +190,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @return MinimumQuantity|null
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -198,7 +198,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity
+     * @return MinimumQuantity
      */
     public function getMinimumQuantityWithCreate(): MinimumQuantity
     {
@@ -208,7 +208,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null $minimumQuantity
+     * @param MinimumQuantity|null $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
@@ -229,7 +229,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @return MaximumQuantity|null
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -237,7 +237,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity
+     * @return MaximumQuantity
      */
     public function getMaximumQuantityWithCreate(): MaximumQuantity
     {
@@ -247,7 +247,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null $maximumQuantity
+     * @param MaximumQuantity|null $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
@@ -297,7 +297,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions>|null
+     * @return array<TradingRestrictions>|null
      */
     public function getTradingRestrictions(): ?array
     {
@@ -305,7 +305,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions>|null $tradingRestrictions
+     * @param array<TradingRestrictions>|null $tradingRestrictions
      * @return self
      */
     public function setTradingRestrictions(?array $tradingRestrictions = null): self
@@ -336,7 +336,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions|null
+     * @return TradingRestrictions|null
      */
     public function firstTradingRestrictions(): ?TradingRestrictions
     {
@@ -351,7 +351,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions|null
+     * @return TradingRestrictions|null
      */
     public function lastTradingRestrictions(): ?TradingRestrictions
     {
@@ -366,7 +366,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions $tradingRestrictions
+     * @param TradingRestrictions $tradingRestrictions
      * @return self
      */
     public function addToTradingRestrictions(TradingRestrictions $tradingRestrictions): self
@@ -377,7 +377,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions
+     * @return TradingRestrictions
      */
     public function addToTradingRestrictionsWithCreate(): TradingRestrictions
     {
@@ -387,7 +387,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions $tradingRestrictions
+     * @param TradingRestrictions $tradingRestrictions
      * @return self
      */
     public function addOnceToTradingRestrictions(TradingRestrictions $tradingRestrictions): self
@@ -402,7 +402,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions
+     * @return TradingRestrictions
      */
     public function addOnceToTradingRestrictionsWithCreate(): TradingRestrictions
     {
@@ -418,7 +418,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress>|null
+     * @return array<ApplicableTerritoryAddress>|null
      */
     public function getApplicableTerritoryAddress(): ?array
     {
@@ -426,7 +426,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress>|null $applicableTerritoryAddress
+     * @param array<ApplicableTerritoryAddress>|null $applicableTerritoryAddress
      * @return self
      */
     public function setApplicableTerritoryAddress(?array $applicableTerritoryAddress = null): self
@@ -457,7 +457,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress|null
+     * @return ApplicableTerritoryAddress|null
      */
     public function firstApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
     {
@@ -472,7 +472,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress|null
+     * @return ApplicableTerritoryAddress|null
      */
     public function lastApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
     {
@@ -487,7 +487,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress $applicableTerritoryAddress
+     * @param ApplicableTerritoryAddress $applicableTerritoryAddress
      * @return self
      */
     public function addToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): self
@@ -498,7 +498,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress
+     * @return ApplicableTerritoryAddress
      */
     public function addToApplicableTerritoryAddressWithCreate(): ApplicableTerritoryAddress
     {
@@ -508,7 +508,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress $applicableTerritoryAddress
+     * @param ApplicableTerritoryAddress $applicableTerritoryAddress
      * @return self
      */
     public function addOnceToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): self
@@ -523,7 +523,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress
+     * @return ApplicableTerritoryAddress
      */
     public function addOnceToApplicableTerritoryAddressWithCreate(): ApplicableTerritoryAddress
     {
@@ -539,7 +539,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null
+     * @return Price|null
      */
     public function getPrice(): ?Price
     {
@@ -547,7 +547,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Price
+     * @return Price
      */
     public function getPriceWithCreate(): Price
     {
@@ -557,7 +557,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null $price
+     * @param Price|null $price
      * @return self
      */
     public function setPrice(?Price $price = null): self
@@ -578,7 +578,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit>|null
+     * @return array<DeliveryUnit>|null
      */
     public function getDeliveryUnit(): ?array
     {
@@ -586,7 +586,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit>|null $deliveryUnit
+     * @param array<DeliveryUnit>|null $deliveryUnit
      * @return self
      */
     public function setDeliveryUnit(?array $deliveryUnit = null): self
@@ -617,7 +617,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit|null
+     * @return DeliveryUnit|null
      */
     public function firstDeliveryUnit(): ?DeliveryUnit
     {
@@ -632,7 +632,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit|null
+     * @return DeliveryUnit|null
      */
     public function lastDeliveryUnit(): ?DeliveryUnit
     {
@@ -647,7 +647,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit $deliveryUnit
+     * @param DeliveryUnit $deliveryUnit
      * @return self
      */
     public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): self
@@ -658,7 +658,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit
+     * @return DeliveryUnit
      */
     public function addToDeliveryUnitWithCreate(): DeliveryUnit
     {
@@ -668,7 +668,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit $deliveryUnit
+     * @param DeliveryUnit $deliveryUnit
      * @return self
      */
     public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): self
@@ -683,7 +683,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit
+     * @return DeliveryUnit
      */
     public function addOnceToDeliveryUnitWithCreate(): DeliveryUnit
     {
@@ -699,7 +699,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>|null
+     * @return array<ApplicableTaxCategory>|null
      */
     public function getApplicableTaxCategory(): ?array
     {
@@ -707,7 +707,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>|null $applicableTaxCategory
+     * @param array<ApplicableTaxCategory>|null $applicableTaxCategory
      * @return self
      */
     public function setApplicableTaxCategory(?array $applicableTaxCategory = null): self
@@ -738,7 +738,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory|null
+     * @return ApplicableTaxCategory|null
      */
     public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -753,7 +753,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory|null
+     * @return ApplicableTaxCategory|null
      */
     public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -768,7 +768,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @param ApplicableTaxCategory $applicableTaxCategory
      * @return self
      */
     public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
@@ -779,7 +779,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory
+     * @return ApplicableTaxCategory
      */
     public function addToApplicableTaxCategoryWithCreate(): ApplicableTaxCategory
     {
@@ -789,7 +789,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory $applicableTaxCategory
+     * @param ApplicableTaxCategory $applicableTaxCategory
      * @return self
      */
     public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
@@ -804,7 +804,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory
+     * @return ApplicableTaxCategory
      */
     public function addOnceToApplicableTaxCategoryWithCreate(): ApplicableTaxCategory
     {
@@ -820,7 +820,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null
+     * @return Package|null
      */
     public function getPackage(): ?Package
     {
@@ -828,7 +828,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package
+     * @return Package
      */
     public function getPackageWithCreate(): Package
     {
@@ -838,7 +838,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null $package
+     * @param Package|null $package
      * @return self
      */
     public function setPackage(?Package $package = null): self
@@ -859,7 +859,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -867,7 +867,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -898,7 +898,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -913,7 +913,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -928,7 +928,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -939,7 +939,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -949,7 +949,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -964,7 +964,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -980,7 +980,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DependentPriceReference|null
+     * @return DependentPriceReference|null
      */
     public function getDependentPriceReference(): ?DependentPriceReference
     {
@@ -988,7 +988,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DependentPriceReference
+     * @return DependentPriceReference
      */
     public function getDependentPriceReferenceWithCreate(): DependentPriceReference
     {
@@ -998,7 +998,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DependentPriceReference|null $dependentPriceReference
+     * @param DependentPriceReference|null $dependentPriceReference
      * @return self
      */
     public function setDependentPriceReference(?DependentPriceReference $dependentPriceReference = null): self

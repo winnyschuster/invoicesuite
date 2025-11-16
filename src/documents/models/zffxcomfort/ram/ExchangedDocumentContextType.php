@@ -10,7 +10,7 @@ class ExchangedDocumentContextType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType|null
+     * @var DocumentContextParameterType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class ExchangedDocumentContextType
     private $businessProcessSpecifiedDocumentContextParameter;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType|null
+     * @var DocumentContextParameterType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class ExchangedDocumentContextType
     private $guidelineSpecifiedDocumentContextParameter;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType|null
+     * @return DocumentContextParameterType|null
      */
     public function getBusinessProcessSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -40,7 +40,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType
+     * @return DocumentContextParameterType
      */
     public function getBusinessProcessSpecifiedDocumentContextParameterWithCreate(): DocumentContextParameterType
     {
@@ -50,7 +50,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
+     * @param DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
      * @return self
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
@@ -72,7 +72,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType|null
+     * @return DocumentContextParameterType|null
      */
     public function getGuidelineSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -80,7 +80,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType
+     * @return DocumentContextParameterType
      */
     public function getGuidelineSpecifiedDocumentContextParameterWithCreate(): DocumentContextParameterType
     {
@@ -90,7 +90,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
+     * @param DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
      * @return self
      */
     public function setGuidelineSpecifiedDocumentContextParameter(

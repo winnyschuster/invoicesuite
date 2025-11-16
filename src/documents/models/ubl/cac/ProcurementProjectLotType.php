@@ -11,7 +11,7 @@ class ProcurementProjectLotType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ProcurementProjectLotType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TenderingTerms|null
+     * @var TenderingTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TenderingTerms")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ProcurementProjectLotType
     private $tenderingTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProject|null
+     * @var ProcurementProject|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProject")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class ProcurementProjectLotType
     private $procurementProject;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -52,7 +52,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -62,7 +62,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -83,7 +83,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderingTerms|null
+     * @return TenderingTerms|null
      */
     public function getTenderingTerms(): ?TenderingTerms
     {
@@ -91,7 +91,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderingTerms
+     * @return TenderingTerms
      */
     public function getTenderingTermsWithCreate(): TenderingTerms
     {
@@ -101,7 +101,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TenderingTerms|null $tenderingTerms
+     * @param TenderingTerms|null $tenderingTerms
      * @return self
      */
     public function setTenderingTerms(?TenderingTerms $tenderingTerms = null): self
@@ -122,7 +122,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProject|null
+     * @return ProcurementProject|null
      */
     public function getProcurementProject(): ?ProcurementProject
     {
@@ -130,7 +130,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProject
+     * @return ProcurementProject
      */
     public function getProcurementProjectWithCreate(): ProcurementProject
     {
@@ -140,7 +140,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProject|null $procurementProject
+     * @param ProcurementProject|null $procurementProject
      * @return self
      */
     public function setProcurementProject(?ProcurementProject $procurementProject = null): self

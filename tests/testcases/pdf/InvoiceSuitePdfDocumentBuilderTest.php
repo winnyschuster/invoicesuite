@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\pdf;
 
+use Iterator;
 use Closure;
 use DateTime;
 use DateTimeInterface;
@@ -30,7 +31,7 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         return InvoiceSuitePathUtils::combinePathWithFile($this->getAssetPath(), "pdf_plain.pdf");
     }
 
-    public static function zffxProfileProvider(): \Iterator
+    public static function zffxProfileProvider(): Iterator
     {
         // 1.
         yield 'zffxminimum' => ['zffxminimum', '<ram:ID>urn:factur-x.eu:1p0:minimum</ram:ID>', false, false, 'MINIMUM', '1.0', 1];

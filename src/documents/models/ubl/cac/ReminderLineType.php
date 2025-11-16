@@ -20,7 +20,7 @@ class ReminderLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class ReminderLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class ReminderLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class ReminderLineType
     private $balanceBroughtForwardIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null
+     * @var DebitLineAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class ReminderLineType
     private $debitLineAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null
+     * @var CreditLineAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class ReminderLineType
     private $creditLineAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null
+     * @var AccountingCostCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class ReminderLineType
     private $accountingCostCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null
+     * @var AccountingCost|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class ReminderLineType
     private $accountingCost;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent|null
+     * @var PenaltySurchargePercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class ReminderLineType
     private $penaltySurchargePercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class ReminderLineType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null
+     * @var PaymentPurposeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class ReminderLineType
     private $paymentPurposeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod>|null
+     * @var array<ReminderPeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod>")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class ReminderLineType
     private $reminderPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null
+     * @var array<BillingReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -166,7 +166,7 @@ class ReminderLineType
     private $billingReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @var ExchangeRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -177,7 +177,7 @@ class ReminderLineType
     private $exchangeRate;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -185,7 +185,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -195,7 +195,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -216,7 +216,7 @@ class ReminderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -224,7 +224,7 @@ class ReminderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -255,7 +255,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -270,7 +270,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -285,7 +285,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -296,7 +296,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -306,7 +306,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -321,7 +321,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -337,7 +337,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -345,7 +345,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -355,7 +355,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -405,7 +405,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null
+     * @return DebitLineAmount|null
      */
     public function getDebitLineAmount(): ?DebitLineAmount
     {
@@ -413,7 +413,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount
+     * @return DebitLineAmount
      */
     public function getDebitLineAmountWithCreate(): DebitLineAmount
     {
@@ -423,7 +423,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount|null $debitLineAmount
+     * @param DebitLineAmount|null $debitLineAmount
      * @return self
      */
     public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): self
@@ -444,7 +444,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null
+     * @return CreditLineAmount|null
      */
     public function getCreditLineAmount(): ?CreditLineAmount
     {
@@ -452,7 +452,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount
+     * @return CreditLineAmount
      */
     public function getCreditLineAmountWithCreate(): CreditLineAmount
     {
@@ -462,7 +462,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount|null $creditLineAmount
+     * @param CreditLineAmount|null $creditLineAmount
      * @return self
      */
     public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): self
@@ -483,7 +483,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null
+     * @return AccountingCostCode|null
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -491,7 +491,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode
+     * @return AccountingCostCode
      */
     public function getAccountingCostCodeWithCreate(): AccountingCostCode
     {
@@ -501,7 +501,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null $accountingCostCode
+     * @param AccountingCostCode|null $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
@@ -522,7 +522,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null
+     * @return AccountingCost|null
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -530,7 +530,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost
+     * @return AccountingCost
      */
     public function getAccountingCostWithCreate(): AccountingCost
     {
@@ -540,7 +540,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null $accountingCost
+     * @param AccountingCost|null $accountingCost
      * @return self
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): self
@@ -561,7 +561,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent|null
+     * @return PenaltySurchargePercent|null
      */
     public function getPenaltySurchargePercent(): ?PenaltySurchargePercent
     {
@@ -569,7 +569,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent
+     * @return PenaltySurchargePercent
      */
     public function getPenaltySurchargePercentWithCreate(): PenaltySurchargePercent
     {
@@ -579,7 +579,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent|null $penaltySurchargePercent
+     * @param PenaltySurchargePercent|null $penaltySurchargePercent
      * @return self
      */
     public function setPenaltySurchargePercent(?PenaltySurchargePercent $penaltySurchargePercent = null): self
@@ -600,7 +600,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -608,7 +608,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -618,7 +618,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -639,7 +639,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null
+     * @return PaymentPurposeCode|null
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -647,7 +647,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode
+     * @return PaymentPurposeCode
      */
     public function getPaymentPurposeCodeWithCreate(): PaymentPurposeCode
     {
@@ -657,7 +657,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode|null $paymentPurposeCode
+     * @param PaymentPurposeCode|null $paymentPurposeCode
      * @return self
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): self
@@ -678,7 +678,7 @@ class ReminderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod>|null
+     * @return array<ReminderPeriod>|null
      */
     public function getReminderPeriod(): ?array
     {
@@ -686,7 +686,7 @@ class ReminderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod>|null $reminderPeriod
+     * @param array<ReminderPeriod>|null $reminderPeriod
      * @return self
      */
     public function setReminderPeriod(?array $reminderPeriod = null): self
@@ -717,7 +717,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod|null
+     * @return ReminderPeriod|null
      */
     public function firstReminderPeriod(): ?ReminderPeriod
     {
@@ -732,7 +732,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod|null
+     * @return ReminderPeriod|null
      */
     public function lastReminderPeriod(): ?ReminderPeriod
     {
@@ -747,7 +747,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod $reminderPeriod
+     * @param ReminderPeriod $reminderPeriod
      * @return self
      */
     public function addToReminderPeriod(ReminderPeriod $reminderPeriod): self
@@ -758,7 +758,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod
+     * @return ReminderPeriod
      */
     public function addToReminderPeriodWithCreate(): ReminderPeriod
     {
@@ -768,7 +768,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod $reminderPeriod
+     * @param ReminderPeriod $reminderPeriod
      * @return self
      */
     public function addOnceToReminderPeriod(ReminderPeriod $reminderPeriod): self
@@ -783,7 +783,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod
+     * @return ReminderPeriod
      */
     public function addOnceToReminderPeriodWithCreate(): ReminderPeriod
     {
@@ -799,7 +799,7 @@ class ReminderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null
+     * @return array<BillingReference>|null
      */
     public function getBillingReference(): ?array
     {
@@ -807,7 +807,7 @@ class ReminderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>|null $billingReference
+     * @param array<BillingReference>|null $billingReference
      * @return self
      */
     public function setBillingReference(?array $billingReference = null): self
@@ -838,7 +838,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference|null
+     * @return BillingReference|null
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -853,7 +853,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference|null
+     * @return BillingReference|null
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -868,7 +868,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference $billingReference
+     * @param BillingReference $billingReference
      * @return self
      */
     public function addToBillingReference(BillingReference $billingReference): self
@@ -879,7 +879,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+     * @return BillingReference
      */
     public function addToBillingReferenceWithCreate(): BillingReference
     {
@@ -889,7 +889,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference $billingReference
+     * @param BillingReference $billingReference
      * @return self
      */
     public function addOnceToBillingReference(BillingReference $billingReference): self
@@ -904,7 +904,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+     * @return BillingReference
      */
     public function addOnceToBillingReferenceWithCreate(): BillingReference
     {
@@ -920,7 +920,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null
+     * @return ExchangeRate|null
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -928,7 +928,7 @@ class ReminderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate
+     * @return ExchangeRate
      */
     public function getExchangeRateWithCreate(): ExchangeRate
     {
@@ -938,7 +938,7 @@ class ReminderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate|null $exchangeRate
+     * @param ExchangeRate|null $exchangeRate
      * @return self
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): self

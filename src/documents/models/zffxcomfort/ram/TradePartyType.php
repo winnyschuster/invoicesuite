@@ -12,7 +12,7 @@ class TradePartyType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>|null
+     * @var array<IDType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradePartyType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>|null
+     * @var array<IDType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradePartyType
     private $globalID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradePartyType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TradePartyType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType|null
+     * @var LegalOrganizationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class TradePartyType
     private $specifiedLegalOrganization;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType|null
+     * @var TradeContactType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class TradePartyType
     private $definedTradeContact;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType|null
+     * @var TradeAddressType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class TradePartyType
     private $postalTradeAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null
+     * @var UniversalCommunicationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class TradePartyType
     private $uRIUniversalCommunication;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>|null
+     * @var array<TaxRegistrationType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class TradePartyType
     private $specifiedTaxRegistration;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>|null
+     * @return array<IDType>|null
      */
     public function getID(): ?array
     {
@@ -122,7 +122,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>|null $iD
+     * @param array<IDType>|null $iD
      * @return self
      */
     public function setID(?array $iD = null): self
@@ -153,7 +153,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType $iD
+     * @param IDType $iD
      * @return self
      */
     public function addToID(IDType $iD): self
@@ -164,7 +164,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function addToIDWithCreate(): IDType
     {
@@ -174,7 +174,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType $iD
+     * @param IDType $iD
      * @return self
      */
     public function addOnceToID(IDType $iD): self
@@ -189,7 +189,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function addOnceToIDWithCreate(): IDType
     {
@@ -205,7 +205,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>|null
+     * @return array<IDType>|null
      */
     public function getGlobalID(): ?array
     {
@@ -213,7 +213,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType>|null $globalID
+     * @param array<IDType>|null $globalID
      * @return self
      */
     public function setGlobalID(?array $globalID = null): self
@@ -244,7 +244,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType $globalID
+     * @param IDType $globalID
      * @return self
      */
     public function addToGlobalID(IDType $globalID): self
@@ -255,7 +255,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function addToGlobalIDWithCreate(): IDType
     {
@@ -265,7 +265,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType $globalID
+     * @param IDType $globalID
      * @return self
      */
     public function addOnceToGlobalID(IDType $globalID): self
@@ -280,7 +280,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function addOnceToGlobalIDWithCreate(): IDType
     {
@@ -296,7 +296,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getName(): ?TextType
     {
@@ -304,7 +304,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getNameWithCreate(): TextType
     {
@@ -314,7 +314,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $name
+     * @param TextType|null $name
      * @return self
      */
     public function setName(?TextType $name = null): self
@@ -335,7 +335,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getDescription(): ?TextType
     {
@@ -343,7 +343,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getDescriptionWithCreate(): TextType
     {
@@ -353,7 +353,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $description
+     * @param TextType|null $description
      * @return self
      */
     public function setDescription(?TextType $description = null): self
@@ -374,7 +374,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType|null
+     * @return LegalOrganizationType|null
      */
     public function getSpecifiedLegalOrganization(): ?LegalOrganizationType
     {
@@ -382,7 +382,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType
+     * @return LegalOrganizationType
      */
     public function getSpecifiedLegalOrganizationWithCreate(): LegalOrganizationType
     {
@@ -392,7 +392,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\LegalOrganizationType|null $specifiedLegalOrganization
+     * @param LegalOrganizationType|null $specifiedLegalOrganization
      * @return self
      */
     public function setSpecifiedLegalOrganization(?LegalOrganizationType $specifiedLegalOrganization = null): self
@@ -413,7 +413,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType|null
+     * @return TradeContactType|null
      */
     public function getDefinedTradeContact(): ?TradeContactType
     {
@@ -421,7 +421,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType
+     * @return TradeContactType
      */
     public function getDefinedTradeContactWithCreate(): TradeContactType
     {
@@ -431,7 +431,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeContactType|null $definedTradeContact
+     * @param TradeContactType|null $definedTradeContact
      * @return self
      */
     public function setDefinedTradeContact(?TradeContactType $definedTradeContact = null): self
@@ -452,7 +452,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType|null
+     * @return TradeAddressType|null
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
@@ -460,7 +460,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType
+     * @return TradeAddressType
      */
     public function getPostalTradeAddressWithCreate(): TradeAddressType
     {
@@ -470,7 +470,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAddressType|null $postalTradeAddress
+     * @param TradeAddressType|null $postalTradeAddress
      * @return self
      */
     public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): self
@@ -491,7 +491,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null
+     * @return UniversalCommunicationType|null
      */
     public function getURIUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -499,7 +499,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+     * @return UniversalCommunicationType
      */
     public function getURIUniversalCommunicationWithCreate(): UniversalCommunicationType
     {
@@ -509,7 +509,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null $uRIUniversalCommunication
+     * @param UniversalCommunicationType|null $uRIUniversalCommunication
      * @return self
      */
     public function setURIUniversalCommunication(?UniversalCommunicationType $uRIUniversalCommunication = null): self
@@ -530,7 +530,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>|null
+     * @return array<TaxRegistrationType>|null
      */
     public function getSpecifiedTaxRegistration(): ?array
     {
@@ -538,7 +538,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType>|null $specifiedTaxRegistration
+     * @param array<TaxRegistrationType>|null $specifiedTaxRegistration
      * @return self
      */
     public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
@@ -569,7 +569,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType $specifiedTaxRegistration
+     * @param TaxRegistrationType $specifiedTaxRegistration
      * @return self
      */
     public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
@@ -580,7 +580,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+     * @return TaxRegistrationType
      */
     public function addToSpecifiedTaxRegistrationWithCreate(): TaxRegistrationType
     {
@@ -590,7 +590,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType $specifiedTaxRegistration
+     * @param TaxRegistrationType $specifiedTaxRegistration
      * @return self
      */
     public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
@@ -605,7 +605,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TaxRegistrationType
+     * @return TaxRegistrationType
      */
     public function addOnceToSpecifiedTaxRegistrationWithCreate(): TaxRegistrationType
     {

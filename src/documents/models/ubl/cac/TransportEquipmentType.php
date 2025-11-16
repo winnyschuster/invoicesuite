@@ -30,7 +30,7 @@ class TransportEquipmentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class TransportEquipmentType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID>|null
+     * @var array<ReferencedConsignmentID>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID>")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class TransportEquipmentType
     private $referencedConsignmentID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode|null
+     * @var TransportEquipmentTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class TransportEquipmentType
     private $transportEquipmentTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProviderTypeCode|null
+     * @var ProviderTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProviderTypeCode")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class TransportEquipmentType
     private $providerTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OwnerTypeCode|null
+     * @var OwnerTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OwnerTypeCode")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class TransportEquipmentType
     private $ownerTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SizeTypeCode|null
+     * @var SizeTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SizeTypeCode")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class TransportEquipmentType
     private $sizeTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DispositionCode|null
+     * @var DispositionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DispositionCode")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class TransportEquipmentType
     private $dispositionCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode|null
+     * @var FullnessIndicationCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class TransportEquipmentType
     private $refrigerationOnIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null
+     * @var array<Information>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -164,7 +164,7 @@ class TransportEquipmentType
     private $legalStatusIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent|null
+     * @var AirFlowPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent")
      * @JMS\Expose
@@ -175,7 +175,7 @@ class TransportEquipmentType
     private $airFlowPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HumidityPercent|null
+     * @var HumidityPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HumidityPercent")
      * @JMS\Expose
@@ -230,7 +230,7 @@ class TransportEquipmentType
     private $refrigeratedIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics|null
+     * @var Characteristics|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics")
      * @JMS\Expose
@@ -241,7 +241,7 @@ class TransportEquipmentType
     private $characteristics;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks>|null
+     * @var array<DamageRemarks>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks>")
      * @JMS\Expose
@@ -253,7 +253,7 @@ class TransportEquipmentType
     private $damageRemarks;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -265,7 +265,7 @@ class TransportEquipmentType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements>|null
+     * @var array<SpecialTransportRequirements>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements>")
      * @JMS\Expose
@@ -277,7 +277,7 @@ class TransportEquipmentType
     private $specialTransportRequirements;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure|null
+     * @var GrossWeightMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure")
      * @JMS\Expose
@@ -288,7 +288,7 @@ class TransportEquipmentType
     private $grossWeightMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure|null
+     * @var GrossVolumeMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure")
      * @JMS\Expose
@@ -299,7 +299,7 @@ class TransportEquipmentType
     private $grossVolumeMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure|null
+     * @var TareWeightMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure")
      * @JMS\Expose
@@ -310,7 +310,7 @@ class TransportEquipmentType
     private $tareWeightMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode|null
+     * @var TrackingDeviceCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode")
      * @JMS\Expose
@@ -332,7 +332,7 @@ class TransportEquipmentType
     private $powerIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID|null
+     * @var TraceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID")
      * @JMS\Expose
@@ -343,7 +343,7 @@ class TransportEquipmentType
     private $traceID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @var array<MeasurementDimension>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -355,7 +355,7 @@ class TransportEquipmentType
     private $measurementDimension;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal>|null
+     * @var array<TransportEquipmentSeal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal>")
      * @JMS\Expose
@@ -367,7 +367,7 @@ class TransportEquipmentType
     private $transportEquipmentSeal;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature|null
+     * @var MinimumTemperature|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature")
      * @JMS\Expose
@@ -378,7 +378,7 @@ class TransportEquipmentType
     private $minimumTemperature;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature|null
+     * @var MaximumTemperature|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature")
      * @JMS\Expose
@@ -389,7 +389,7 @@ class TransportEquipmentType
     private $maximumTemperature;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ProviderParty|null
+     * @var ProviderParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProviderParty")
      * @JMS\Expose
@@ -400,7 +400,7 @@ class TransportEquipmentType
     private $providerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingProofParty|null
+     * @var LoadingProofParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LoadingProofParty")
      * @JMS\Expose
@@ -411,7 +411,7 @@ class TransportEquipmentType
     private $loadingProofParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SupplierParty|null
+     * @var SupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SupplierParty")
      * @JMS\Expose
@@ -422,7 +422,7 @@ class TransportEquipmentType
     private $supplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty|null
+     * @var OwnerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty")
      * @JMS\Expose
@@ -433,7 +433,7 @@ class TransportEquipmentType
     private $ownerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OperatingParty|null
+     * @var OperatingParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OperatingParty")
      * @JMS\Expose
@@ -444,7 +444,7 @@ class TransportEquipmentType
     private $operatingParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingLocation|null
+     * @var LoadingLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LoadingLocation")
      * @JMS\Expose
@@ -455,7 +455,7 @@ class TransportEquipmentType
     private $loadingLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingLocation|null
+     * @var UnloadingLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingLocation")
      * @JMS\Expose
@@ -466,7 +466,7 @@ class TransportEquipmentType
     private $unloadingLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\StorageLocation|null
+     * @var StorageLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\StorageLocation")
      * @JMS\Expose
@@ -477,7 +477,7 @@ class TransportEquipmentType
     private $storageLocation;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent>|null
+     * @var array<PositioningTransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent>")
      * @JMS\Expose
@@ -489,7 +489,7 @@ class TransportEquipmentType
     private $positioningTransportEvent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent>|null
+     * @var array<QuarantineTransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent>")
      * @JMS\Expose
@@ -501,7 +501,7 @@ class TransportEquipmentType
     private $quarantineTransportEvent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent>|null
+     * @var array<DeliveryTransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent>")
      * @JMS\Expose
@@ -513,7 +513,7 @@ class TransportEquipmentType
     private $deliveryTransportEvent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent>|null
+     * @var array<PickupTransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent>")
      * @JMS\Expose
@@ -525,7 +525,7 @@ class TransportEquipmentType
     private $pickupTransportEvent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent>|null
+     * @var array<HandlingTransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent>")
      * @JMS\Expose
@@ -537,7 +537,7 @@ class TransportEquipmentType
     private $handlingTransportEvent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent>|null
+     * @var array<LoadingTransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent>")
      * @JMS\Expose
@@ -549,7 +549,7 @@ class TransportEquipmentType
     private $loadingTransportEvent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>|null
+     * @var array<TransportEvent>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>")
      * @JMS\Expose
@@ -561,7 +561,7 @@ class TransportEquipmentType
     private $transportEvent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTransportMeans|null
+     * @var ApplicableTransportMeans|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTransportMeans")
      * @JMS\Expose
@@ -572,7 +572,7 @@ class TransportEquipmentType
     private $applicableTransportMeans;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms>|null
+     * @var array<HaulageTradingTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms>")
      * @JMS\Expose
@@ -584,7 +584,7 @@ class TransportEquipmentType
     private $haulageTradingTerms;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit>|null
+     * @var array<HazardousGoodsTransit>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit>")
      * @JMS\Expose
@@ -596,7 +596,7 @@ class TransportEquipmentType
     private $hazardousGoodsTransit;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit>|null
+     * @var array<PackagedTransportHandlingUnit>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit>")
      * @JMS\Expose
@@ -608,7 +608,7 @@ class TransportEquipmentType
     private $packagedTransportHandlingUnit;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge>|null
+     * @var array<ServiceAllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge>")
      * @JMS\Expose
@@ -620,7 +620,7 @@ class TransportEquipmentType
     private $serviceAllowanceCharge;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>|null
+     * @var array<FreightAllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -632,7 +632,7 @@ class TransportEquipmentType
     private $freightAllowanceCharge;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment>|null
+     * @var array<AttachedTransportEquipment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment>")
      * @JMS\Expose
@@ -644,7 +644,7 @@ class TransportEquipmentType
     private $attachedTransportEquipment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null
+     * @var Delivery|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Delivery")
      * @JMS\Expose
@@ -655,7 +655,7 @@ class TransportEquipmentType
     private $delivery;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Pickup|null
+     * @var Pickup|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Pickup")
      * @JMS\Expose
@@ -666,7 +666,7 @@ class TransportEquipmentType
     private $pickup;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch|null
+     * @var Despatch|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Despatch")
      * @JMS\Expose
@@ -677,7 +677,7 @@ class TransportEquipmentType
     private $despatch;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference>|null
+     * @var array<ShipmentDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference>")
      * @JMS\Expose
@@ -689,7 +689,7 @@ class TransportEquipmentType
     private $shipmentDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment>|null
+     * @var array<ContainedInTransportEquipment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment>")
      * @JMS\Expose
@@ -701,7 +701,7 @@ class TransportEquipmentType
     private $containedInTransportEquipment;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Package>|null
+     * @var array<Package>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Package>")
      * @JMS\Expose
@@ -713,7 +713,7 @@ class TransportEquipmentType
     private $package;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>|null
+     * @var array<GoodsItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>")
      * @JMS\Expose
@@ -725,7 +725,7 @@ class TransportEquipmentType
     private $goodsItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -733,7 +733,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -743,7 +743,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -764,7 +764,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID>|null
+     * @return array<ReferencedConsignmentID>|null
      */
     public function getReferencedConsignmentID(): ?array
     {
@@ -772,7 +772,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID>|null $referencedConsignmentID
+     * @param array<ReferencedConsignmentID>|null $referencedConsignmentID
      * @return self
      */
     public function setReferencedConsignmentID(?array $referencedConsignmentID = null): self
@@ -803,7 +803,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID|null
+     * @return ReferencedConsignmentID|null
      */
     public function firstReferencedConsignmentID(): ?ReferencedConsignmentID
     {
@@ -818,7 +818,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID|null
+     * @return ReferencedConsignmentID|null
      */
     public function lastReferencedConsignmentID(): ?ReferencedConsignmentID
     {
@@ -833,7 +833,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID $referencedConsignmentID
+     * @param ReferencedConsignmentID $referencedConsignmentID
      * @return self
      */
     public function addToReferencedConsignmentID(ReferencedConsignmentID $referencedConsignmentID): self
@@ -844,7 +844,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID
+     * @return ReferencedConsignmentID
      */
     public function addToReferencedConsignmentIDWithCreate(): ReferencedConsignmentID
     {
@@ -854,7 +854,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID $referencedConsignmentID
+     * @param ReferencedConsignmentID $referencedConsignmentID
      * @return self
      */
     public function addOnceToReferencedConsignmentID(ReferencedConsignmentID $referencedConsignmentID): self
@@ -869,7 +869,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID
+     * @return ReferencedConsignmentID
      */
     public function addOnceToReferencedConsignmentIDWithCreate(): ReferencedConsignmentID
     {
@@ -885,7 +885,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode|null
+     * @return TransportEquipmentTypeCode|null
      */
     public function getTransportEquipmentTypeCode(): ?TransportEquipmentTypeCode
     {
@@ -893,7 +893,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode
+     * @return TransportEquipmentTypeCode
      */
     public function getTransportEquipmentTypeCodeWithCreate(): TransportEquipmentTypeCode
     {
@@ -903,7 +903,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode|null $transportEquipmentTypeCode
+     * @param TransportEquipmentTypeCode|null $transportEquipmentTypeCode
      * @return self
      */
     public function setTransportEquipmentTypeCode(
@@ -925,7 +925,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProviderTypeCode|null
+     * @return ProviderTypeCode|null
      */
     public function getProviderTypeCode(): ?ProviderTypeCode
     {
@@ -933,7 +933,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProviderTypeCode
+     * @return ProviderTypeCode
      */
     public function getProviderTypeCodeWithCreate(): ProviderTypeCode
     {
@@ -943,7 +943,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProviderTypeCode|null $providerTypeCode
+     * @param ProviderTypeCode|null $providerTypeCode
      * @return self
      */
     public function setProviderTypeCode(?ProviderTypeCode $providerTypeCode = null): self
@@ -964,7 +964,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OwnerTypeCode|null
+     * @return OwnerTypeCode|null
      */
     public function getOwnerTypeCode(): ?OwnerTypeCode
     {
@@ -972,7 +972,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OwnerTypeCode
+     * @return OwnerTypeCode
      */
     public function getOwnerTypeCodeWithCreate(): OwnerTypeCode
     {
@@ -982,7 +982,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OwnerTypeCode|null $ownerTypeCode
+     * @param OwnerTypeCode|null $ownerTypeCode
      * @return self
      */
     public function setOwnerTypeCode(?OwnerTypeCode $ownerTypeCode = null): self
@@ -1003,7 +1003,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SizeTypeCode|null
+     * @return SizeTypeCode|null
      */
     public function getSizeTypeCode(): ?SizeTypeCode
     {
@@ -1011,7 +1011,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SizeTypeCode
+     * @return SizeTypeCode
      */
     public function getSizeTypeCodeWithCreate(): SizeTypeCode
     {
@@ -1021,7 +1021,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SizeTypeCode|null $sizeTypeCode
+     * @param SizeTypeCode|null $sizeTypeCode
      * @return self
      */
     public function setSizeTypeCode(?SizeTypeCode $sizeTypeCode = null): self
@@ -1042,7 +1042,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DispositionCode|null
+     * @return DispositionCode|null
      */
     public function getDispositionCode(): ?DispositionCode
     {
@@ -1050,7 +1050,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DispositionCode
+     * @return DispositionCode
      */
     public function getDispositionCodeWithCreate(): DispositionCode
     {
@@ -1060,7 +1060,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DispositionCode|null $dispositionCode
+     * @param DispositionCode|null $dispositionCode
      * @return self
      */
     public function setDispositionCode(?DispositionCode $dispositionCode = null): self
@@ -1081,7 +1081,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode|null
+     * @return FullnessIndicationCode|null
      */
     public function getFullnessIndicationCode(): ?FullnessIndicationCode
     {
@@ -1089,7 +1089,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode
+     * @return FullnessIndicationCode
      */
     public function getFullnessIndicationCodeWithCreate(): FullnessIndicationCode
     {
@@ -1099,7 +1099,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode|null $fullnessIndicationCode
+     * @param FullnessIndicationCode|null $fullnessIndicationCode
      * @return self
      */
     public function setFullnessIndicationCode(?FullnessIndicationCode $fullnessIndicationCode = null): self
@@ -1149,7 +1149,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null
+     * @return array<Information>|null
      */
     public function getInformation(): ?array
     {
@@ -1157,7 +1157,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null $information
+     * @param array<Information>|null $information
      * @return self
      */
     public function setInformation(?array $information = null): self
@@ -1188,7 +1188,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information|null
+     * @return Information|null
      */
     public function firstInformation(): ?Information
     {
@@ -1203,7 +1203,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information|null
+     * @return Information|null
      */
     public function lastInformation(): ?Information
     {
@@ -1218,7 +1218,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Information $information
+     * @param Information $information
      * @return self
      */
     public function addToInformation(Information $information): self
@@ -1229,7 +1229,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information
+     * @return Information
      */
     public function addToInformationWithCreate(): Information
     {
@@ -1239,7 +1239,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Information $information
+     * @param Information $information
      * @return self
      */
     public function addOnceToInformation(Information $information): self
@@ -1254,7 +1254,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information
+     * @return Information
      */
     public function addOnceToInformationWithCreate(): Information
     {
@@ -1328,7 +1328,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent|null
+     * @return AirFlowPercent|null
      */
     public function getAirFlowPercent(): ?AirFlowPercent
     {
@@ -1336,7 +1336,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent
+     * @return AirFlowPercent
      */
     public function getAirFlowPercentWithCreate(): AirFlowPercent
     {
@@ -1346,7 +1346,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent|null $airFlowPercent
+     * @param AirFlowPercent|null $airFlowPercent
      * @return self
      */
     public function setAirFlowPercent(?AirFlowPercent $airFlowPercent = null): self
@@ -1367,7 +1367,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HumidityPercent|null
+     * @return HumidityPercent|null
      */
     public function getHumidityPercent(): ?HumidityPercent
     {
@@ -1375,7 +1375,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HumidityPercent
+     * @return HumidityPercent
      */
     public function getHumidityPercentWithCreate(): HumidityPercent
     {
@@ -1385,7 +1385,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HumidityPercent|null $humidityPercent
+     * @param HumidityPercent|null $humidityPercent
      * @return self
      */
     public function setHumidityPercent(?HumidityPercent $humidityPercent = null): self
@@ -1522,7 +1522,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics|null
+     * @return Characteristics|null
      */
     public function getCharacteristics(): ?Characteristics
     {
@@ -1530,7 +1530,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics
+     * @return Characteristics
      */
     public function getCharacteristicsWithCreate(): Characteristics
     {
@@ -1540,7 +1540,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics|null $characteristics
+     * @param Characteristics|null $characteristics
      * @return self
      */
     public function setCharacteristics(?Characteristics $characteristics = null): self
@@ -1561,7 +1561,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks>|null
+     * @return array<DamageRemarks>|null
      */
     public function getDamageRemarks(): ?array
     {
@@ -1569,7 +1569,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks>|null $damageRemarks
+     * @param array<DamageRemarks>|null $damageRemarks
      * @return self
      */
     public function setDamageRemarks(?array $damageRemarks = null): self
@@ -1600,7 +1600,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks|null
+     * @return DamageRemarks|null
      */
     public function firstDamageRemarks(): ?DamageRemarks
     {
@@ -1615,7 +1615,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks|null
+     * @return DamageRemarks|null
      */
     public function lastDamageRemarks(): ?DamageRemarks
     {
@@ -1630,7 +1630,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks $damageRemarks
+     * @param DamageRemarks $damageRemarks
      * @return self
      */
     public function addToDamageRemarks(DamageRemarks $damageRemarks): self
@@ -1641,7 +1641,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks
+     * @return DamageRemarks
      */
     public function addToDamageRemarksWithCreate(): DamageRemarks
     {
@@ -1651,7 +1651,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks $damageRemarks
+     * @param DamageRemarks $damageRemarks
      * @return self
      */
     public function addOnceToDamageRemarks(DamageRemarks $damageRemarks): self
@@ -1666,7 +1666,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks
+     * @return DamageRemarks
      */
     public function addOnceToDamageRemarksWithCreate(): DamageRemarks
     {
@@ -1682,7 +1682,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -1690,7 +1690,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -1721,7 +1721,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -1736,7 +1736,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -1751,7 +1751,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -1762,7 +1762,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -1772,7 +1772,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -1787,7 +1787,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -1803,7 +1803,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements>|null
+     * @return array<SpecialTransportRequirements>|null
      */
     public function getSpecialTransportRequirements(): ?array
     {
@@ -1811,7 +1811,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements>|null $specialTransportRequirements
+     * @param array<SpecialTransportRequirements>|null $specialTransportRequirements
      * @return self
      */
     public function setSpecialTransportRequirements(?array $specialTransportRequirements = null): self
@@ -1842,7 +1842,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements|null
+     * @return SpecialTransportRequirements|null
      */
     public function firstSpecialTransportRequirements(): ?SpecialTransportRequirements
     {
@@ -1857,7 +1857,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements|null
+     * @return SpecialTransportRequirements|null
      */
     public function lastSpecialTransportRequirements(): ?SpecialTransportRequirements
     {
@@ -1872,7 +1872,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements $specialTransportRequirements
+     * @param SpecialTransportRequirements $specialTransportRequirements
      * @return self
      */
     public function addToSpecialTransportRequirements(
@@ -1884,7 +1884,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements
+     * @return SpecialTransportRequirements
      */
     public function addToSpecialTransportRequirementsWithCreate(): SpecialTransportRequirements
     {
@@ -1894,7 +1894,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements $specialTransportRequirements
+     * @param SpecialTransportRequirements $specialTransportRequirements
      * @return self
      */
     public function addOnceToSpecialTransportRequirements(
@@ -1910,7 +1910,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements
+     * @return SpecialTransportRequirements
      */
     public function addOnceToSpecialTransportRequirementsWithCreate(): SpecialTransportRequirements
     {
@@ -1926,7 +1926,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure|null
+     * @return GrossWeightMeasure|null
      */
     public function getGrossWeightMeasure(): ?GrossWeightMeasure
     {
@@ -1934,7 +1934,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure
+     * @return GrossWeightMeasure
      */
     public function getGrossWeightMeasureWithCreate(): GrossWeightMeasure
     {
@@ -1944,7 +1944,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure|null $grossWeightMeasure
+     * @param GrossWeightMeasure|null $grossWeightMeasure
      * @return self
      */
     public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): self
@@ -1965,7 +1965,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure|null
+     * @return GrossVolumeMeasure|null
      */
     public function getGrossVolumeMeasure(): ?GrossVolumeMeasure
     {
@@ -1973,7 +1973,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure
+     * @return GrossVolumeMeasure
      */
     public function getGrossVolumeMeasureWithCreate(): GrossVolumeMeasure
     {
@@ -1983,7 +1983,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure|null $grossVolumeMeasure
+     * @param GrossVolumeMeasure|null $grossVolumeMeasure
      * @return self
      */
     public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): self
@@ -2004,7 +2004,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure|null
+     * @return TareWeightMeasure|null
      */
     public function getTareWeightMeasure(): ?TareWeightMeasure
     {
@@ -2012,7 +2012,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure
+     * @return TareWeightMeasure
      */
     public function getTareWeightMeasureWithCreate(): TareWeightMeasure
     {
@@ -2022,7 +2022,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure|null $tareWeightMeasure
+     * @param TareWeightMeasure|null $tareWeightMeasure
      * @return self
      */
     public function setTareWeightMeasure(?TareWeightMeasure $tareWeightMeasure = null): self
@@ -2043,7 +2043,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode|null
+     * @return TrackingDeviceCode|null
      */
     public function getTrackingDeviceCode(): ?TrackingDeviceCode
     {
@@ -2051,7 +2051,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode
+     * @return TrackingDeviceCode
      */
     public function getTrackingDeviceCodeWithCreate(): TrackingDeviceCode
     {
@@ -2061,7 +2061,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode|null $trackingDeviceCode
+     * @param TrackingDeviceCode|null $trackingDeviceCode
      * @return self
      */
     public function setTrackingDeviceCode(?TrackingDeviceCode $trackingDeviceCode = null): self
@@ -2111,7 +2111,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID|null
+     * @return TraceID|null
      */
     public function getTraceID(): ?TraceID
     {
@@ -2119,7 +2119,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID
+     * @return TraceID
      */
     public function getTraceIDWithCreate(): TraceID
     {
@@ -2129,7 +2129,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID|null $traceID
+     * @param TraceID|null $traceID
      * @return self
      */
     public function setTraceID(?TraceID $traceID = null): self
@@ -2150,7 +2150,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @return array<MeasurementDimension>|null
      */
     public function getMeasurementDimension(): ?array
     {
@@ -2158,7 +2158,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null $measurementDimension
+     * @param array<MeasurementDimension>|null $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(?array $measurementDimension = null): self
@@ -2189,7 +2189,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -2204,7 +2204,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -2219,7 +2219,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -2230,7 +2230,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addToMeasurementDimensionWithCreate(): MeasurementDimension
     {
@@ -2240,7 +2240,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -2255,7 +2255,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addOnceToMeasurementDimensionWithCreate(): MeasurementDimension
     {
@@ -2271,7 +2271,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal>|null
+     * @return array<TransportEquipmentSeal>|null
      */
     public function getTransportEquipmentSeal(): ?array
     {
@@ -2279,7 +2279,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal>|null $transportEquipmentSeal
+     * @param array<TransportEquipmentSeal>|null $transportEquipmentSeal
      * @return self
      */
     public function setTransportEquipmentSeal(?array $transportEquipmentSeal = null): self
@@ -2310,7 +2310,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal|null
+     * @return TransportEquipmentSeal|null
      */
     public function firstTransportEquipmentSeal(): ?TransportEquipmentSeal
     {
@@ -2325,7 +2325,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal|null
+     * @return TransportEquipmentSeal|null
      */
     public function lastTransportEquipmentSeal(): ?TransportEquipmentSeal
     {
@@ -2340,7 +2340,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal $transportEquipmentSeal
+     * @param TransportEquipmentSeal $transportEquipmentSeal
      * @return self
      */
     public function addToTransportEquipmentSeal(TransportEquipmentSeal $transportEquipmentSeal): self
@@ -2351,7 +2351,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal
+     * @return TransportEquipmentSeal
      */
     public function addToTransportEquipmentSealWithCreate(): TransportEquipmentSeal
     {
@@ -2361,7 +2361,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal $transportEquipmentSeal
+     * @param TransportEquipmentSeal $transportEquipmentSeal
      * @return self
      */
     public function addOnceToTransportEquipmentSeal(TransportEquipmentSeal $transportEquipmentSeal): self
@@ -2376,7 +2376,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal
+     * @return TransportEquipmentSeal
      */
     public function addOnceToTransportEquipmentSealWithCreate(): TransportEquipmentSeal
     {
@@ -2392,7 +2392,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature|null
+     * @return MinimumTemperature|null
      */
     public function getMinimumTemperature(): ?MinimumTemperature
     {
@@ -2400,7 +2400,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature
+     * @return MinimumTemperature
      */
     public function getMinimumTemperatureWithCreate(): MinimumTemperature
     {
@@ -2410,7 +2410,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature|null $minimumTemperature
+     * @param MinimumTemperature|null $minimumTemperature
      * @return self
      */
     public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): self
@@ -2431,7 +2431,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature|null
+     * @return MaximumTemperature|null
      */
     public function getMaximumTemperature(): ?MaximumTemperature
     {
@@ -2439,7 +2439,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature
+     * @return MaximumTemperature
      */
     public function getMaximumTemperatureWithCreate(): MaximumTemperature
     {
@@ -2449,7 +2449,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature|null $maximumTemperature
+     * @param MaximumTemperature|null $maximumTemperature
      * @return self
      */
     public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): self
@@ -2470,7 +2470,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProviderParty|null
+     * @return ProviderParty|null
      */
     public function getProviderParty(): ?ProviderParty
     {
@@ -2478,7 +2478,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProviderParty
+     * @return ProviderParty
      */
     public function getProviderPartyWithCreate(): ProviderParty
     {
@@ -2488,7 +2488,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProviderParty|null $providerParty
+     * @param ProviderParty|null $providerParty
      * @return self
      */
     public function setProviderParty(?ProviderParty $providerParty = null): self
@@ -2509,7 +2509,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingProofParty|null
+     * @return LoadingProofParty|null
      */
     public function getLoadingProofParty(): ?LoadingProofParty
     {
@@ -2517,7 +2517,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingProofParty
+     * @return LoadingProofParty
      */
     public function getLoadingProofPartyWithCreate(): LoadingProofParty
     {
@@ -2527,7 +2527,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingProofParty|null $loadingProofParty
+     * @param LoadingProofParty|null $loadingProofParty
      * @return self
      */
     public function setLoadingProofParty(?LoadingProofParty $loadingProofParty = null): self
@@ -2548,7 +2548,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplierParty|null
+     * @return SupplierParty|null
      */
     public function getSupplierParty(): ?SupplierParty
     {
@@ -2556,7 +2556,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplierParty
+     * @return SupplierParty
      */
     public function getSupplierPartyWithCreate(): SupplierParty
     {
@@ -2566,7 +2566,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SupplierParty|null $supplierParty
+     * @param SupplierParty|null $supplierParty
      * @return self
      */
     public function setSupplierParty(?SupplierParty $supplierParty = null): self
@@ -2587,7 +2587,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty|null
+     * @return OwnerParty|null
      */
     public function getOwnerParty(): ?OwnerParty
     {
@@ -2595,7 +2595,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty
+     * @return OwnerParty
      */
     public function getOwnerPartyWithCreate(): OwnerParty
     {
@@ -2605,7 +2605,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty|null $ownerParty
+     * @param OwnerParty|null $ownerParty
      * @return self
      */
     public function setOwnerParty(?OwnerParty $ownerParty = null): self
@@ -2626,7 +2626,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OperatingParty|null
+     * @return OperatingParty|null
      */
     public function getOperatingParty(): ?OperatingParty
     {
@@ -2634,7 +2634,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OperatingParty
+     * @return OperatingParty
      */
     public function getOperatingPartyWithCreate(): OperatingParty
     {
@@ -2644,7 +2644,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OperatingParty|null $operatingParty
+     * @param OperatingParty|null $operatingParty
      * @return self
      */
     public function setOperatingParty(?OperatingParty $operatingParty = null): self
@@ -2665,7 +2665,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingLocation|null
+     * @return LoadingLocation|null
      */
     public function getLoadingLocation(): ?LoadingLocation
     {
@@ -2673,7 +2673,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingLocation
+     * @return LoadingLocation
      */
     public function getLoadingLocationWithCreate(): LoadingLocation
     {
@@ -2683,7 +2683,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingLocation|null $loadingLocation
+     * @param LoadingLocation|null $loadingLocation
      * @return self
      */
     public function setLoadingLocation(?LoadingLocation $loadingLocation = null): self
@@ -2704,7 +2704,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingLocation|null
+     * @return UnloadingLocation|null
      */
     public function getUnloadingLocation(): ?UnloadingLocation
     {
@@ -2712,7 +2712,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingLocation
+     * @return UnloadingLocation
      */
     public function getUnloadingLocationWithCreate(): UnloadingLocation
     {
@@ -2722,7 +2722,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingLocation|null $unloadingLocation
+     * @param UnloadingLocation|null $unloadingLocation
      * @return self
      */
     public function setUnloadingLocation(?UnloadingLocation $unloadingLocation = null): self
@@ -2743,7 +2743,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\StorageLocation|null
+     * @return StorageLocation|null
      */
     public function getStorageLocation(): ?StorageLocation
     {
@@ -2751,7 +2751,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\StorageLocation
+     * @return StorageLocation
      */
     public function getStorageLocationWithCreate(): StorageLocation
     {
@@ -2761,7 +2761,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\StorageLocation|null $storageLocation
+     * @param StorageLocation|null $storageLocation
      * @return self
      */
     public function setStorageLocation(?StorageLocation $storageLocation = null): self
@@ -2782,7 +2782,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent>|null
+     * @return array<PositioningTransportEvent>|null
      */
     public function getPositioningTransportEvent(): ?array
     {
@@ -2790,7 +2790,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent>|null $positioningTransportEvent
+     * @param array<PositioningTransportEvent>|null $positioningTransportEvent
      * @return self
      */
     public function setPositioningTransportEvent(?array $positioningTransportEvent = null): self
@@ -2821,7 +2821,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent|null
+     * @return PositioningTransportEvent|null
      */
     public function firstPositioningTransportEvent(): ?PositioningTransportEvent
     {
@@ -2836,7 +2836,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent|null
+     * @return PositioningTransportEvent|null
      */
     public function lastPositioningTransportEvent(): ?PositioningTransportEvent
     {
@@ -2851,7 +2851,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent $positioningTransportEvent
+     * @param PositioningTransportEvent $positioningTransportEvent
      * @return self
      */
     public function addToPositioningTransportEvent(PositioningTransportEvent $positioningTransportEvent): self
@@ -2862,7 +2862,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent
+     * @return PositioningTransportEvent
      */
     public function addToPositioningTransportEventWithCreate(): PositioningTransportEvent
     {
@@ -2872,7 +2872,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent $positioningTransportEvent
+     * @param PositioningTransportEvent $positioningTransportEvent
      * @return self
      */
     public function addOnceToPositioningTransportEvent(PositioningTransportEvent $positioningTransportEvent): self
@@ -2887,7 +2887,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent
+     * @return PositioningTransportEvent
      */
     public function addOnceToPositioningTransportEventWithCreate(): PositioningTransportEvent
     {
@@ -2903,7 +2903,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent>|null
+     * @return array<QuarantineTransportEvent>|null
      */
     public function getQuarantineTransportEvent(): ?array
     {
@@ -2911,7 +2911,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent>|null $quarantineTransportEvent
+     * @param array<QuarantineTransportEvent>|null $quarantineTransportEvent
      * @return self
      */
     public function setQuarantineTransportEvent(?array $quarantineTransportEvent = null): self
@@ -2942,7 +2942,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent|null
+     * @return QuarantineTransportEvent|null
      */
     public function firstQuarantineTransportEvent(): ?QuarantineTransportEvent
     {
@@ -2957,7 +2957,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent|null
+     * @return QuarantineTransportEvent|null
      */
     public function lastQuarantineTransportEvent(): ?QuarantineTransportEvent
     {
@@ -2972,7 +2972,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent $quarantineTransportEvent
+     * @param QuarantineTransportEvent $quarantineTransportEvent
      * @return self
      */
     public function addToQuarantineTransportEvent(QuarantineTransportEvent $quarantineTransportEvent): self
@@ -2983,7 +2983,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent
+     * @return QuarantineTransportEvent
      */
     public function addToQuarantineTransportEventWithCreate(): QuarantineTransportEvent
     {
@@ -2993,7 +2993,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent $quarantineTransportEvent
+     * @param QuarantineTransportEvent $quarantineTransportEvent
      * @return self
      */
     public function addOnceToQuarantineTransportEvent(QuarantineTransportEvent $quarantineTransportEvent): self
@@ -3008,7 +3008,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent
+     * @return QuarantineTransportEvent
      */
     public function addOnceToQuarantineTransportEventWithCreate(): QuarantineTransportEvent
     {
@@ -3024,7 +3024,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent>|null
+     * @return array<DeliveryTransportEvent>|null
      */
     public function getDeliveryTransportEvent(): ?array
     {
@@ -3032,7 +3032,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent>|null $deliveryTransportEvent
+     * @param array<DeliveryTransportEvent>|null $deliveryTransportEvent
      * @return self
      */
     public function setDeliveryTransportEvent(?array $deliveryTransportEvent = null): self
@@ -3063,7 +3063,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent|null
+     * @return DeliveryTransportEvent|null
      */
     public function firstDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
@@ -3078,7 +3078,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent|null
+     * @return DeliveryTransportEvent|null
      */
     public function lastDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
@@ -3093,7 +3093,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent $deliveryTransportEvent
+     * @param DeliveryTransportEvent $deliveryTransportEvent
      * @return self
      */
     public function addToDeliveryTransportEvent(DeliveryTransportEvent $deliveryTransportEvent): self
@@ -3104,7 +3104,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent
+     * @return DeliveryTransportEvent
      */
     public function addToDeliveryTransportEventWithCreate(): DeliveryTransportEvent
     {
@@ -3114,7 +3114,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent $deliveryTransportEvent
+     * @param DeliveryTransportEvent $deliveryTransportEvent
      * @return self
      */
     public function addOnceToDeliveryTransportEvent(DeliveryTransportEvent $deliveryTransportEvent): self
@@ -3129,7 +3129,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent
+     * @return DeliveryTransportEvent
      */
     public function addOnceToDeliveryTransportEventWithCreate(): DeliveryTransportEvent
     {
@@ -3145,7 +3145,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent>|null
+     * @return array<PickupTransportEvent>|null
      */
     public function getPickupTransportEvent(): ?array
     {
@@ -3153,7 +3153,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent>|null $pickupTransportEvent
+     * @param array<PickupTransportEvent>|null $pickupTransportEvent
      * @return self
      */
     public function setPickupTransportEvent(?array $pickupTransportEvent = null): self
@@ -3184,7 +3184,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent|null
+     * @return PickupTransportEvent|null
      */
     public function firstPickupTransportEvent(): ?PickupTransportEvent
     {
@@ -3199,7 +3199,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent|null
+     * @return PickupTransportEvent|null
      */
     public function lastPickupTransportEvent(): ?PickupTransportEvent
     {
@@ -3214,7 +3214,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent $pickupTransportEvent
+     * @param PickupTransportEvent $pickupTransportEvent
      * @return self
      */
     public function addToPickupTransportEvent(PickupTransportEvent $pickupTransportEvent): self
@@ -3225,7 +3225,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent
+     * @return PickupTransportEvent
      */
     public function addToPickupTransportEventWithCreate(): PickupTransportEvent
     {
@@ -3235,7 +3235,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent $pickupTransportEvent
+     * @param PickupTransportEvent $pickupTransportEvent
      * @return self
      */
     public function addOnceToPickupTransportEvent(PickupTransportEvent $pickupTransportEvent): self
@@ -3250,7 +3250,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent
+     * @return PickupTransportEvent
      */
     public function addOnceToPickupTransportEventWithCreate(): PickupTransportEvent
     {
@@ -3266,7 +3266,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent>|null
+     * @return array<HandlingTransportEvent>|null
      */
     public function getHandlingTransportEvent(): ?array
     {
@@ -3274,7 +3274,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent>|null $handlingTransportEvent
+     * @param array<HandlingTransportEvent>|null $handlingTransportEvent
      * @return self
      */
     public function setHandlingTransportEvent(?array $handlingTransportEvent = null): self
@@ -3305,7 +3305,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent|null
+     * @return HandlingTransportEvent|null
      */
     public function firstHandlingTransportEvent(): ?HandlingTransportEvent
     {
@@ -3320,7 +3320,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent|null
+     * @return HandlingTransportEvent|null
      */
     public function lastHandlingTransportEvent(): ?HandlingTransportEvent
     {
@@ -3335,7 +3335,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent $handlingTransportEvent
+     * @param HandlingTransportEvent $handlingTransportEvent
      * @return self
      */
     public function addToHandlingTransportEvent(HandlingTransportEvent $handlingTransportEvent): self
@@ -3346,7 +3346,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent
+     * @return HandlingTransportEvent
      */
     public function addToHandlingTransportEventWithCreate(): HandlingTransportEvent
     {
@@ -3356,7 +3356,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent $handlingTransportEvent
+     * @param HandlingTransportEvent $handlingTransportEvent
      * @return self
      */
     public function addOnceToHandlingTransportEvent(HandlingTransportEvent $handlingTransportEvent): self
@@ -3371,7 +3371,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent
+     * @return HandlingTransportEvent
      */
     public function addOnceToHandlingTransportEventWithCreate(): HandlingTransportEvent
     {
@@ -3387,7 +3387,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent>|null
+     * @return array<LoadingTransportEvent>|null
      */
     public function getLoadingTransportEvent(): ?array
     {
@@ -3395,7 +3395,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent>|null $loadingTransportEvent
+     * @param array<LoadingTransportEvent>|null $loadingTransportEvent
      * @return self
      */
     public function setLoadingTransportEvent(?array $loadingTransportEvent = null): self
@@ -3426,7 +3426,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent|null
+     * @return LoadingTransportEvent|null
      */
     public function firstLoadingTransportEvent(): ?LoadingTransportEvent
     {
@@ -3441,7 +3441,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent|null
+     * @return LoadingTransportEvent|null
      */
     public function lastLoadingTransportEvent(): ?LoadingTransportEvent
     {
@@ -3456,7 +3456,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent $loadingTransportEvent
+     * @param LoadingTransportEvent $loadingTransportEvent
      * @return self
      */
     public function addToLoadingTransportEvent(LoadingTransportEvent $loadingTransportEvent): self
@@ -3467,7 +3467,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent
+     * @return LoadingTransportEvent
      */
     public function addToLoadingTransportEventWithCreate(): LoadingTransportEvent
     {
@@ -3477,7 +3477,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent $loadingTransportEvent
+     * @param LoadingTransportEvent $loadingTransportEvent
      * @return self
      */
     public function addOnceToLoadingTransportEvent(LoadingTransportEvent $loadingTransportEvent): self
@@ -3492,7 +3492,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent
+     * @return LoadingTransportEvent
      */
     public function addOnceToLoadingTransportEventWithCreate(): LoadingTransportEvent
     {
@@ -3508,7 +3508,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>|null
+     * @return array<TransportEvent>|null
      */
     public function getTransportEvent(): ?array
     {
@@ -3516,7 +3516,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>|null $transportEvent
+     * @param array<TransportEvent>|null $transportEvent
      * @return self
      */
     public function setTransportEvent(?array $transportEvent = null): self
@@ -3547,7 +3547,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent|null
+     * @return TransportEvent|null
      */
     public function firstTransportEvent(): ?TransportEvent
     {
@@ -3562,7 +3562,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent|null
+     * @return TransportEvent|null
      */
     public function lastTransportEvent(): ?TransportEvent
     {
@@ -3577,7 +3577,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent $transportEvent
+     * @param TransportEvent $transportEvent
      * @return self
      */
     public function addToTransportEvent(TransportEvent $transportEvent): self
@@ -3588,7 +3588,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent
+     * @return TransportEvent
      */
     public function addToTransportEventWithCreate(): TransportEvent
     {
@@ -3598,7 +3598,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent $transportEvent
+     * @param TransportEvent $transportEvent
      * @return self
      */
     public function addOnceToTransportEvent(TransportEvent $transportEvent): self
@@ -3613,7 +3613,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent
+     * @return TransportEvent
      */
     public function addOnceToTransportEventWithCreate(): TransportEvent
     {
@@ -3629,7 +3629,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTransportMeans|null
+     * @return ApplicableTransportMeans|null
      */
     public function getApplicableTransportMeans(): ?ApplicableTransportMeans
     {
@@ -3637,7 +3637,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTransportMeans
+     * @return ApplicableTransportMeans
      */
     public function getApplicableTransportMeansWithCreate(): ApplicableTransportMeans
     {
@@ -3647,7 +3647,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTransportMeans|null $applicableTransportMeans
+     * @param ApplicableTransportMeans|null $applicableTransportMeans
      * @return self
      */
     public function setApplicableTransportMeans(?ApplicableTransportMeans $applicableTransportMeans = null): self
@@ -3668,7 +3668,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms>|null
+     * @return array<HaulageTradingTerms>|null
      */
     public function getHaulageTradingTerms(): ?array
     {
@@ -3676,7 +3676,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms>|null $haulageTradingTerms
+     * @param array<HaulageTradingTerms>|null $haulageTradingTerms
      * @return self
      */
     public function setHaulageTradingTerms(?array $haulageTradingTerms = null): self
@@ -3707,7 +3707,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms|null
+     * @return HaulageTradingTerms|null
      */
     public function firstHaulageTradingTerms(): ?HaulageTradingTerms
     {
@@ -3722,7 +3722,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms|null
+     * @return HaulageTradingTerms|null
      */
     public function lastHaulageTradingTerms(): ?HaulageTradingTerms
     {
@@ -3737,7 +3737,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms $haulageTradingTerms
+     * @param HaulageTradingTerms $haulageTradingTerms
      * @return self
      */
     public function addToHaulageTradingTerms(HaulageTradingTerms $haulageTradingTerms): self
@@ -3748,7 +3748,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms
+     * @return HaulageTradingTerms
      */
     public function addToHaulageTradingTermsWithCreate(): HaulageTradingTerms
     {
@@ -3758,7 +3758,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms $haulageTradingTerms
+     * @param HaulageTradingTerms $haulageTradingTerms
      * @return self
      */
     public function addOnceToHaulageTradingTerms(HaulageTradingTerms $haulageTradingTerms): self
@@ -3773,7 +3773,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms
+     * @return HaulageTradingTerms
      */
     public function addOnceToHaulageTradingTermsWithCreate(): HaulageTradingTerms
     {
@@ -3789,7 +3789,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit>|null
+     * @return array<HazardousGoodsTransit>|null
      */
     public function getHazardousGoodsTransit(): ?array
     {
@@ -3797,7 +3797,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit>|null $hazardousGoodsTransit
+     * @param array<HazardousGoodsTransit>|null $hazardousGoodsTransit
      * @return self
      */
     public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): self
@@ -3828,7 +3828,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit|null
+     * @return HazardousGoodsTransit|null
      */
     public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
@@ -3843,7 +3843,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit|null
+     * @return HazardousGoodsTransit|null
      */
     public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
@@ -3858,7 +3858,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit $hazardousGoodsTransit
+     * @param HazardousGoodsTransit $hazardousGoodsTransit
      * @return self
      */
     public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): self
@@ -3869,7 +3869,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit
+     * @return HazardousGoodsTransit
      */
     public function addToHazardousGoodsTransitWithCreate(): HazardousGoodsTransit
     {
@@ -3879,7 +3879,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit $hazardousGoodsTransit
+     * @param HazardousGoodsTransit $hazardousGoodsTransit
      * @return self
      */
     public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): self
@@ -3894,7 +3894,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit
+     * @return HazardousGoodsTransit
      */
     public function addOnceToHazardousGoodsTransitWithCreate(): HazardousGoodsTransit
     {
@@ -3910,7 +3910,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit>|null
+     * @return array<PackagedTransportHandlingUnit>|null
      */
     public function getPackagedTransportHandlingUnit(): ?array
     {
@@ -3918,7 +3918,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit>|null $packagedTransportHandlingUnit
+     * @param array<PackagedTransportHandlingUnit>|null $packagedTransportHandlingUnit
      * @return self
      */
     public function setPackagedTransportHandlingUnit(?array $packagedTransportHandlingUnit = null): self
@@ -3949,7 +3949,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit|null
+     * @return PackagedTransportHandlingUnit|null
      */
     public function firstPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
     {
@@ -3964,7 +3964,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit|null
+     * @return PackagedTransportHandlingUnit|null
      */
     public function lastPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
     {
@@ -3979,7 +3979,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit $packagedTransportHandlingUnit
+     * @param PackagedTransportHandlingUnit $packagedTransportHandlingUnit
      * @return self
      */
     public function addToPackagedTransportHandlingUnit(
@@ -3991,7 +3991,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit
+     * @return PackagedTransportHandlingUnit
      */
     public function addToPackagedTransportHandlingUnitWithCreate(): PackagedTransportHandlingUnit
     {
@@ -4001,7 +4001,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit $packagedTransportHandlingUnit
+     * @param PackagedTransportHandlingUnit $packagedTransportHandlingUnit
      * @return self
      */
     public function addOnceToPackagedTransportHandlingUnit(
@@ -4017,7 +4017,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit
+     * @return PackagedTransportHandlingUnit
      */
     public function addOnceToPackagedTransportHandlingUnitWithCreate(): PackagedTransportHandlingUnit
     {
@@ -4033,7 +4033,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge>|null
+     * @return array<ServiceAllowanceCharge>|null
      */
     public function getServiceAllowanceCharge(): ?array
     {
@@ -4041,7 +4041,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge>|null $serviceAllowanceCharge
+     * @param array<ServiceAllowanceCharge>|null $serviceAllowanceCharge
      * @return self
      */
     public function setServiceAllowanceCharge(?array $serviceAllowanceCharge = null): self
@@ -4072,7 +4072,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge|null
+     * @return ServiceAllowanceCharge|null
      */
     public function firstServiceAllowanceCharge(): ?ServiceAllowanceCharge
     {
@@ -4087,7 +4087,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge|null
+     * @return ServiceAllowanceCharge|null
      */
     public function lastServiceAllowanceCharge(): ?ServiceAllowanceCharge
     {
@@ -4102,7 +4102,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge $serviceAllowanceCharge
+     * @param ServiceAllowanceCharge $serviceAllowanceCharge
      * @return self
      */
     public function addToServiceAllowanceCharge(ServiceAllowanceCharge $serviceAllowanceCharge): self
@@ -4113,7 +4113,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge
+     * @return ServiceAllowanceCharge
      */
     public function addToServiceAllowanceChargeWithCreate(): ServiceAllowanceCharge
     {
@@ -4123,7 +4123,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge $serviceAllowanceCharge
+     * @param ServiceAllowanceCharge $serviceAllowanceCharge
      * @return self
      */
     public function addOnceToServiceAllowanceCharge(ServiceAllowanceCharge $serviceAllowanceCharge): self
@@ -4138,7 +4138,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge
+     * @return ServiceAllowanceCharge
      */
     public function addOnceToServiceAllowanceChargeWithCreate(): ServiceAllowanceCharge
     {
@@ -4154,7 +4154,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>|null
+     * @return array<FreightAllowanceCharge>|null
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -4162,7 +4162,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
      * @return self
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): self
@@ -4193,7 +4193,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge|null
+     * @return FreightAllowanceCharge|null
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -4208,7 +4208,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge|null
+     * @return FreightAllowanceCharge|null
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -4223,7 +4223,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
+     * @param FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
@@ -4234,7 +4234,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge
+     * @return FreightAllowanceCharge
      */
     public function addToFreightAllowanceChargeWithCreate(): FreightAllowanceCharge
     {
@@ -4244,7 +4244,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
+     * @param FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
@@ -4259,7 +4259,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge
+     * @return FreightAllowanceCharge
      */
     public function addOnceToFreightAllowanceChargeWithCreate(): FreightAllowanceCharge
     {
@@ -4275,7 +4275,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment>|null
+     * @return array<AttachedTransportEquipment>|null
      */
     public function getAttachedTransportEquipment(): ?array
     {
@@ -4283,7 +4283,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment>|null $attachedTransportEquipment
+     * @param array<AttachedTransportEquipment>|null $attachedTransportEquipment
      * @return self
      */
     public function setAttachedTransportEquipment(?array $attachedTransportEquipment = null): self
@@ -4314,7 +4314,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment|null
+     * @return AttachedTransportEquipment|null
      */
     public function firstAttachedTransportEquipment(): ?AttachedTransportEquipment
     {
@@ -4329,7 +4329,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment|null
+     * @return AttachedTransportEquipment|null
      */
     public function lastAttachedTransportEquipment(): ?AttachedTransportEquipment
     {
@@ -4344,7 +4344,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment $attachedTransportEquipment
+     * @param AttachedTransportEquipment $attachedTransportEquipment
      * @return self
      */
     public function addToAttachedTransportEquipment(AttachedTransportEquipment $attachedTransportEquipment): self
@@ -4355,7 +4355,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment
+     * @return AttachedTransportEquipment
      */
     public function addToAttachedTransportEquipmentWithCreate(): AttachedTransportEquipment
     {
@@ -4365,7 +4365,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment $attachedTransportEquipment
+     * @param AttachedTransportEquipment $attachedTransportEquipment
      * @return self
      */
     public function addOnceToAttachedTransportEquipment(AttachedTransportEquipment $attachedTransportEquipment): self
@@ -4380,7 +4380,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment
+     * @return AttachedTransportEquipment
      */
     public function addOnceToAttachedTransportEquipmentWithCreate(): AttachedTransportEquipment
     {
@@ -4396,7 +4396,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null
+     * @return Delivery|null
      */
     public function getDelivery(): ?Delivery
     {
@@ -4404,7 +4404,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery
+     * @return Delivery
      */
     public function getDeliveryWithCreate(): Delivery
     {
@@ -4414,7 +4414,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null $delivery
+     * @param Delivery|null $delivery
      * @return self
      */
     public function setDelivery(?Delivery $delivery = null): self
@@ -4435,7 +4435,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Pickup|null
+     * @return Pickup|null
      */
     public function getPickup(): ?Pickup
     {
@@ -4443,7 +4443,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Pickup
+     * @return Pickup
      */
     public function getPickupWithCreate(): Pickup
     {
@@ -4453,7 +4453,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Pickup|null $pickup
+     * @param Pickup|null $pickup
      * @return self
      */
     public function setPickup(?Pickup $pickup = null): self
@@ -4474,7 +4474,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch|null
+     * @return Despatch|null
      */
     public function getDespatch(): ?Despatch
     {
@@ -4482,7 +4482,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch
+     * @return Despatch
      */
     public function getDespatchWithCreate(): Despatch
     {
@@ -4492,7 +4492,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch|null $despatch
+     * @param Despatch|null $despatch
      * @return self
      */
     public function setDespatch(?Despatch $despatch = null): self
@@ -4513,7 +4513,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference>|null
+     * @return array<ShipmentDocumentReference>|null
      */
     public function getShipmentDocumentReference(): ?array
     {
@@ -4521,7 +4521,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference>|null $shipmentDocumentReference
+     * @param array<ShipmentDocumentReference>|null $shipmentDocumentReference
      * @return self
      */
     public function setShipmentDocumentReference(?array $shipmentDocumentReference = null): self
@@ -4552,7 +4552,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference|null
+     * @return ShipmentDocumentReference|null
      */
     public function firstShipmentDocumentReference(): ?ShipmentDocumentReference
     {
@@ -4567,7 +4567,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference|null
+     * @return ShipmentDocumentReference|null
      */
     public function lastShipmentDocumentReference(): ?ShipmentDocumentReference
     {
@@ -4582,7 +4582,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference $shipmentDocumentReference
+     * @param ShipmentDocumentReference $shipmentDocumentReference
      * @return self
      */
     public function addToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): self
@@ -4593,7 +4593,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference
+     * @return ShipmentDocumentReference
      */
     public function addToShipmentDocumentReferenceWithCreate(): ShipmentDocumentReference
     {
@@ -4603,7 +4603,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference $shipmentDocumentReference
+     * @param ShipmentDocumentReference $shipmentDocumentReference
      * @return self
      */
     public function addOnceToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): self
@@ -4618,7 +4618,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference
+     * @return ShipmentDocumentReference
      */
     public function addOnceToShipmentDocumentReferenceWithCreate(): ShipmentDocumentReference
     {
@@ -4634,7 +4634,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment>|null
+     * @return array<ContainedInTransportEquipment>|null
      */
     public function getContainedInTransportEquipment(): ?array
     {
@@ -4642,7 +4642,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment>|null $containedInTransportEquipment
+     * @param array<ContainedInTransportEquipment>|null $containedInTransportEquipment
      * @return self
      */
     public function setContainedInTransportEquipment(?array $containedInTransportEquipment = null): self
@@ -4673,7 +4673,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment|null
+     * @return ContainedInTransportEquipment|null
      */
     public function firstContainedInTransportEquipment(): ?ContainedInTransportEquipment
     {
@@ -4688,7 +4688,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment|null
+     * @return ContainedInTransportEquipment|null
      */
     public function lastContainedInTransportEquipment(): ?ContainedInTransportEquipment
     {
@@ -4703,7 +4703,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment $containedInTransportEquipment
+     * @param ContainedInTransportEquipment $containedInTransportEquipment
      * @return self
      */
     public function addToContainedInTransportEquipment(
@@ -4715,7 +4715,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment
+     * @return ContainedInTransportEquipment
      */
     public function addToContainedInTransportEquipmentWithCreate(): ContainedInTransportEquipment
     {
@@ -4725,7 +4725,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment $containedInTransportEquipment
+     * @param ContainedInTransportEquipment $containedInTransportEquipment
      * @return self
      */
     public function addOnceToContainedInTransportEquipment(
@@ -4741,7 +4741,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment
+     * @return ContainedInTransportEquipment
      */
     public function addOnceToContainedInTransportEquipmentWithCreate(): ContainedInTransportEquipment
     {
@@ -4757,7 +4757,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Package>|null
+     * @return array<Package>|null
      */
     public function getPackage(): ?array
     {
@@ -4765,7 +4765,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Package>|null $package
+     * @param array<Package>|null $package
      * @return self
      */
     public function setPackage(?array $package = null): self
@@ -4796,7 +4796,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null
+     * @return Package|null
      */
     public function firstPackage(): ?Package
     {
@@ -4811,7 +4811,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package|null
+     * @return Package|null
      */
     public function lastPackage(): ?Package
     {
@@ -4826,7 +4826,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Package $package
+     * @param Package $package
      * @return self
      */
     public function addToPackage(Package $package): self
@@ -4837,7 +4837,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package
+     * @return Package
      */
     public function addToPackageWithCreate(): Package
     {
@@ -4847,7 +4847,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Package $package
+     * @param Package $package
      * @return self
      */
     public function addOnceToPackage(Package $package): self
@@ -4862,7 +4862,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Package
+     * @return Package
      */
     public function addOnceToPackageWithCreate(): Package
     {
@@ -4878,7 +4878,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>|null
+     * @return array<GoodsItem>|null
      */
     public function getGoodsItem(): ?array
     {
@@ -4886,7 +4886,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>|null $goodsItem
+     * @param array<GoodsItem>|null $goodsItem
      * @return self
      */
     public function setGoodsItem(?array $goodsItem = null): self
@@ -4917,7 +4917,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem|null
+     * @return GoodsItem|null
      */
     public function firstGoodsItem(): ?GoodsItem
     {
@@ -4932,7 +4932,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem|null
+     * @return GoodsItem|null
      */
     public function lastGoodsItem(): ?GoodsItem
     {
@@ -4947,7 +4947,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem $goodsItem
+     * @param GoodsItem $goodsItem
      * @return self
      */
     public function addToGoodsItem(GoodsItem $goodsItem): self
@@ -4958,7 +4958,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem
+     * @return GoodsItem
      */
     public function addToGoodsItemWithCreate(): GoodsItem
     {
@@ -4968,7 +4968,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem $goodsItem
+     * @param GoodsItem $goodsItem
      * @return self
      */
     public function addOnceToGoodsItem(GoodsItem $goodsItem): self
@@ -4983,7 +4983,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem
+     * @return GoodsItem
      */
     public function addOnceToGoodsItemWithCreate(): GoodsItem
     {

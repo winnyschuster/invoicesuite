@@ -14,7 +14,7 @@ class OrderLineReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID|null
+     * @var LineID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class OrderLineReferenceType
     private $lineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID|null
+     * @var SalesOrderLineID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class OrderLineReferenceType
     private $salesOrderLineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class OrderLineReferenceType
     private $uUID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null
+     * @var LineStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class OrderLineReferenceType
     private $lineStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference|null
+     * @var OrderReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class OrderLineReferenceType
     private $orderReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID|null
+     * @return LineID|null
      */
     public function getLineID(): ?LineID
     {
@@ -77,7 +77,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID
+     * @return LineID
      */
     public function getLineIDWithCreate(): LineID
     {
@@ -87,7 +87,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID|null $lineID
+     * @param LineID|null $lineID
      * @return self
      */
     public function setLineID(?LineID $lineID = null): self
@@ -108,7 +108,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID|null
+     * @return SalesOrderLineID|null
      */
     public function getSalesOrderLineID(): ?SalesOrderLineID
     {
@@ -116,7 +116,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID
+     * @return SalesOrderLineID
      */
     public function getSalesOrderLineIDWithCreate(): SalesOrderLineID
     {
@@ -126,7 +126,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID|null $salesOrderLineID
+     * @param SalesOrderLineID|null $salesOrderLineID
      * @return self
      */
     public function setSalesOrderLineID(?SalesOrderLineID $salesOrderLineID = null): self
@@ -147,7 +147,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -155,7 +155,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -165,7 +165,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -186,7 +186,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null
+     * @return LineStatusCode|null
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -194,7 +194,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode
+     * @return LineStatusCode
      */
     public function getLineStatusCodeWithCreate(): LineStatusCode
     {
@@ -204,7 +204,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null $lineStatusCode
+     * @param LineStatusCode|null $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
@@ -225,7 +225,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference|null
+     * @return OrderReference|null
      */
     public function getOrderReference(): ?OrderReference
     {
@@ -233,7 +233,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference
+     * @return OrderReference
      */
     public function getOrderReferenceWithCreate(): OrderReference
     {
@@ -243,7 +243,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference|null $orderReference
+     * @param OrderReference|null $orderReference
      * @return self
      */
     public function setOrderReference(?OrderReference $orderReference = null): self

@@ -12,7 +12,7 @@ class TradeFinancingType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TradeFinancingType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode|null
+     * @var FinancingInstrumentCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class TradeFinancingType
     private $financingInstrumentCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference|null
+     * @var ContractDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class TradeFinancingType
     private $contractDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class TradeFinancingType
     private $documentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingParty|null
+     * @var FinancingParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancingParty")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class TradeFinancingType
     private $financingParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingFinancialAccount|null
+     * @var FinancingFinancialAccount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancingFinancialAccount")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class TradeFinancingType
     private $financingFinancialAccount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Clause>|null
+     * @var array<Clause>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Clause>")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class TradeFinancingType
     private $clause;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -99,7 +99,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -109,7 +109,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -130,7 +130,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode|null
+     * @return FinancingInstrumentCode|null
      */
     public function getFinancingInstrumentCode(): ?FinancingInstrumentCode
     {
@@ -138,7 +138,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode
+     * @return FinancingInstrumentCode
      */
     public function getFinancingInstrumentCodeWithCreate(): FinancingInstrumentCode
     {
@@ -148,7 +148,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode|null $financingInstrumentCode
+     * @param FinancingInstrumentCode|null $financingInstrumentCode
      * @return self
      */
     public function setFinancingInstrumentCode(?FinancingInstrumentCode $financingInstrumentCode = null): self
@@ -169,7 +169,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference|null
+     * @return ContractDocumentReference|null
      */
     public function getContractDocumentReference(): ?ContractDocumentReference
     {
@@ -177,7 +177,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference
+     * @return ContractDocumentReference
      */
     public function getContractDocumentReferenceWithCreate(): ContractDocumentReference
     {
@@ -187,7 +187,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference|null $contractDocumentReference
+     * @param ContractDocumentReference|null $contractDocumentReference
      * @return self
      */
     public function setContractDocumentReference(?ContractDocumentReference $contractDocumentReference = null): self
@@ -208,7 +208,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -216,7 +216,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -247,7 +247,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -262,7 +262,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -277,7 +277,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -288,7 +288,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -298,7 +298,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -313,7 +313,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -329,7 +329,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingParty|null
+     * @return FinancingParty|null
      */
     public function getFinancingParty(): ?FinancingParty
     {
@@ -337,7 +337,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingParty
+     * @return FinancingParty
      */
     public function getFinancingPartyWithCreate(): FinancingParty
     {
@@ -347,7 +347,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingParty|null $financingParty
+     * @param FinancingParty|null $financingParty
      * @return self
      */
     public function setFinancingParty(?FinancingParty $financingParty = null): self
@@ -368,7 +368,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingFinancialAccount|null
+     * @return FinancingFinancialAccount|null
      */
     public function getFinancingFinancialAccount(): ?FinancingFinancialAccount
     {
@@ -376,7 +376,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingFinancialAccount
+     * @return FinancingFinancialAccount
      */
     public function getFinancingFinancialAccountWithCreate(): FinancingFinancialAccount
     {
@@ -386,7 +386,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancingFinancialAccount|null $financingFinancialAccount
+     * @param FinancingFinancialAccount|null $financingFinancialAccount
      * @return self
      */
     public function setFinancingFinancialAccount(?FinancingFinancialAccount $financingFinancialAccount = null): self
@@ -407,7 +407,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Clause>|null
+     * @return array<Clause>|null
      */
     public function getClause(): ?array
     {
@@ -415,7 +415,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Clause>|null $clause
+     * @param array<Clause>|null $clause
      * @return self
      */
     public function setClause(?array $clause = null): self
@@ -446,7 +446,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause|null
+     * @return Clause|null
      */
     public function firstClause(): ?Clause
     {
@@ -461,7 +461,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause|null
+     * @return Clause|null
      */
     public function lastClause(): ?Clause
     {
@@ -476,7 +476,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Clause $clause
+     * @param Clause $clause
      * @return self
      */
     public function addToClause(Clause $clause): self
@@ -487,7 +487,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause
+     * @return Clause
      */
     public function addToClauseWithCreate(): Clause
     {
@@ -497,7 +497,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Clause $clause
+     * @param Clause $clause
      * @return self
      */
     public function addOnceToClause(Clause $clause): self
@@ -512,7 +512,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Clause
+     * @return Clause
      */
     public function addOnceToClauseWithCreate(): Clause
     {

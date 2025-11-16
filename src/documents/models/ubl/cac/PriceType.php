@@ -16,7 +16,7 @@ class PriceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null
+     * @var PriceAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class PriceType
     private $priceAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity|null
+     * @var BaseQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class PriceType
     private $baseQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason>|null
+     * @var array<PriceChangeReason>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class PriceType
     private $priceChangeReason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode|null
+     * @var PriceTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class PriceType
     private $priceType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate|null
+     * @var OrderableUnitFactorRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class PriceType
     private $orderableUnitFactorRate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null
+     * @var array<ValidityPeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class PriceType
     private $validityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PriceList|null
+     * @var PriceList|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PriceList")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class PriceType
     private $priceList;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class PriceType
     private $allowanceCharge;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate|null
+     * @var PricingExchangeRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class PriceType
     private $pricingExchangeRate;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null
+     * @return PriceAmount|null
      */
     public function getPriceAmount(): ?PriceAmount
     {
@@ -137,7 +137,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount
+     * @return PriceAmount
      */
     public function getPriceAmountWithCreate(): PriceAmount
     {
@@ -147,7 +147,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null $priceAmount
+     * @param PriceAmount|null $priceAmount
      * @return self
      */
     public function setPriceAmount(?PriceAmount $priceAmount = null): self
@@ -168,7 +168,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity|null
+     * @return BaseQuantity|null
      */
     public function getBaseQuantity(): ?BaseQuantity
     {
@@ -176,7 +176,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity
+     * @return BaseQuantity
      */
     public function getBaseQuantityWithCreate(): BaseQuantity
     {
@@ -186,7 +186,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity|null $baseQuantity
+     * @param BaseQuantity|null $baseQuantity
      * @return self
      */
     public function setBaseQuantity(?BaseQuantity $baseQuantity = null): self
@@ -207,7 +207,7 @@ class PriceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason>|null
+     * @return array<PriceChangeReason>|null
      */
     public function getPriceChangeReason(): ?array
     {
@@ -215,7 +215,7 @@ class PriceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason>|null $priceChangeReason
+     * @param array<PriceChangeReason>|null $priceChangeReason
      * @return self
      */
     public function setPriceChangeReason(?array $priceChangeReason = null): self
@@ -246,7 +246,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason|null
+     * @return PriceChangeReason|null
      */
     public function firstPriceChangeReason(): ?PriceChangeReason
     {
@@ -261,7 +261,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason|null
+     * @return PriceChangeReason|null
      */
     public function lastPriceChangeReason(): ?PriceChangeReason
     {
@@ -276,7 +276,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason $priceChangeReason
+     * @param PriceChangeReason $priceChangeReason
      * @return self
      */
     public function addToPriceChangeReason(PriceChangeReason $priceChangeReason): self
@@ -287,7 +287,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason
+     * @return PriceChangeReason
      */
     public function addToPriceChangeReasonWithCreate(): PriceChangeReason
     {
@@ -297,7 +297,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason $priceChangeReason
+     * @param PriceChangeReason $priceChangeReason
      * @return self
      */
     public function addOnceToPriceChangeReason(PriceChangeReason $priceChangeReason): self
@@ -312,7 +312,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason
+     * @return PriceChangeReason
      */
     public function addOnceToPriceChangeReasonWithCreate(): PriceChangeReason
     {
@@ -328,7 +328,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode|null
+     * @return PriceTypeCode|null
      */
     public function getPriceTypeCode(): ?PriceTypeCode
     {
@@ -336,7 +336,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode
+     * @return PriceTypeCode
      */
     public function getPriceTypeCodeWithCreate(): PriceTypeCode
     {
@@ -346,7 +346,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode|null $priceTypeCode
+     * @param PriceTypeCode|null $priceTypeCode
      * @return self
      */
     public function setPriceTypeCode(?PriceTypeCode $priceTypeCode = null): self
@@ -406,7 +406,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate|null
+     * @return OrderableUnitFactorRate|null
      */
     public function getOrderableUnitFactorRate(): ?OrderableUnitFactorRate
     {
@@ -414,7 +414,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate
+     * @return OrderableUnitFactorRate
      */
     public function getOrderableUnitFactorRateWithCreate(): OrderableUnitFactorRate
     {
@@ -424,7 +424,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate|null $orderableUnitFactorRate
+     * @param OrderableUnitFactorRate|null $orderableUnitFactorRate
      * @return self
      */
     public function setOrderableUnitFactorRate(?OrderableUnitFactorRate $orderableUnitFactorRate = null): self
@@ -445,7 +445,7 @@ class PriceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null
+     * @return array<ValidityPeriod>|null
      */
     public function getValidityPeriod(): ?array
     {
@@ -453,7 +453,7 @@ class PriceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>|null $validityPeriod
+     * @param array<ValidityPeriod>|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?array $validityPeriod = null): self
@@ -484,7 +484,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function firstValidityPeriod(): ?ValidityPeriod
     {
@@ -499,7 +499,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function lastValidityPeriod(): ?ValidityPeriod
     {
@@ -514,7 +514,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @param ValidityPeriod $validityPeriod
      * @return self
      */
     public function addToValidityPeriod(ValidityPeriod $validityPeriod): self
@@ -525,7 +525,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function addToValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -535,7 +535,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod $validityPeriod
+     * @param ValidityPeriod $validityPeriod
      * @return self
      */
     public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): self
@@ -550,7 +550,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function addOnceToValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -566,7 +566,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PriceList|null
+     * @return PriceList|null
      */
     public function getPriceList(): ?PriceList
     {
@@ -574,7 +574,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PriceList
+     * @return PriceList
      */
     public function getPriceListWithCreate(): PriceList
     {
@@ -584,7 +584,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PriceList|null $priceList
+     * @param PriceList|null $priceList
      * @return self
      */
     public function setPriceList(?PriceList $priceList = null): self
@@ -605,7 +605,7 @@ class PriceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -613,7 +613,7 @@ class PriceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -644,7 +644,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -659,7 +659,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -674,7 +674,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -685,7 +685,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -695,7 +695,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -710,7 +710,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -726,7 +726,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate|null
+     * @return PricingExchangeRate|null
      */
     public function getPricingExchangeRate(): ?PricingExchangeRate
     {
@@ -734,7 +734,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate
+     * @return PricingExchangeRate
      */
     public function getPricingExchangeRateWithCreate(): PricingExchangeRate
     {
@@ -744,7 +744,7 @@ class PriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate|null $pricingExchangeRate
+     * @param PricingExchangeRate|null $pricingExchangeRate
      * @return self
      */
     public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): self

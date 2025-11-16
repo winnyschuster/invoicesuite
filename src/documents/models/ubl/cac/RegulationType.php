@@ -13,7 +13,7 @@ class RegulationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class RegulationType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference|null
+     * @var LegalReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class RegulationType
     private $legalReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI|null
+     * @var OntologyURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class RegulationType
     private $ontologyURI;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -54,7 +54,7 @@ class RegulationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -64,7 +64,7 @@ class RegulationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -85,7 +85,7 @@ class RegulationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference|null
+     * @return LegalReference|null
      */
     public function getLegalReference(): ?LegalReference
     {
@@ -93,7 +93,7 @@ class RegulationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference
+     * @return LegalReference
      */
     public function getLegalReferenceWithCreate(): LegalReference
     {
@@ -103,7 +103,7 @@ class RegulationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference|null $legalReference
+     * @param LegalReference|null $legalReference
      * @return self
      */
     public function setLegalReference(?LegalReference $legalReference = null): self
@@ -124,7 +124,7 @@ class RegulationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI|null
+     * @return OntologyURI|null
      */
     public function getOntologyURI(): ?OntologyURI
     {
@@ -132,7 +132,7 @@ class RegulationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI
+     * @return OntologyURI
      */
     public function getOntologyURIWithCreate(): OntologyURI
     {
@@ -142,7 +142,7 @@ class RegulationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI|null $ontologyURI
+     * @param OntologyURI|null $ontologyURI
      * @return self
      */
     public function setOntologyURI(?OntologyURI $ontologyURI = null): self

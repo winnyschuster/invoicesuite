@@ -13,7 +13,7 @@ class RetailPlannedImpactType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class RetailPlannedImpactType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode|null
+     * @var ForecastPurposeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class RetailPlannedImpactType
     private $forecastPurposeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @var ForecastTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class RetailPlannedImpactType
     private $forecastTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @var Period|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class RetailPlannedImpactType
     private $period;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -65,7 +65,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -75,7 +75,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -96,7 +96,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode|null
+     * @return ForecastPurposeCode|null
      */
     public function getForecastPurposeCode(): ?ForecastPurposeCode
     {
@@ -104,7 +104,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode
+     * @return ForecastPurposeCode
      */
     public function getForecastPurposeCodeWithCreate(): ForecastPurposeCode
     {
@@ -114,7 +114,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode|null $forecastPurposeCode
+     * @param ForecastPurposeCode|null $forecastPurposeCode
      * @return self
      */
     public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): self
@@ -135,7 +135,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @return ForecastTypeCode|null
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -143,7 +143,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode
+     * @return ForecastTypeCode
      */
     public function getForecastTypeCodeWithCreate(): ForecastTypeCode
     {
@@ -153,7 +153,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null $forecastTypeCode
+     * @param ForecastTypeCode|null $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
@@ -174,7 +174,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null
+     * @return Period|null
      */
     public function getPeriod(): ?Period
     {
@@ -182,7 +182,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Period
+     * @return Period
      */
     public function getPeriodWithCreate(): Period
     {
@@ -192,7 +192,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Period|null $period
+     * @param Period|null $period
      * @return self
      */
     public function setPeriod(?Period $period = null): self

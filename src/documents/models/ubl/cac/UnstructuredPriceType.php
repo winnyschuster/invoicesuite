@@ -12,7 +12,7 @@ class UnstructuredPriceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null
+     * @var PriceAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class UnstructuredPriceType
     private $priceAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount|null
+     * @var TimeAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class UnstructuredPriceType
     private $timeAmount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null
+     * @return PriceAmount|null
      */
     public function getPriceAmount(): ?PriceAmount
     {
@@ -42,7 +42,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount
+     * @return PriceAmount
      */
     public function getPriceAmountWithCreate(): PriceAmount
     {
@@ -52,7 +52,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount|null $priceAmount
+     * @param PriceAmount|null $priceAmount
      * @return self
      */
     public function setPriceAmount(?PriceAmount $priceAmount = null): self
@@ -73,7 +73,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount|null
+     * @return TimeAmount|null
      */
     public function getTimeAmount(): ?TimeAmount
     {
@@ -81,7 +81,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount
+     * @return TimeAmount
      */
     public function getTimeAmountWithCreate(): TimeAmount
     {
@@ -91,7 +91,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount|null $timeAmount
+     * @param TimeAmount|null $timeAmount
      * @return self
      */
     public function setTimeAmount(?TimeAmount $timeAmount = null): self

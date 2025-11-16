@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID;
@@ -16,7 +17,7 @@ class PartyLegalEntityType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName|null
+     * @var RegistrationName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName")
      * @JMS\Expose
@@ -27,7 +28,7 @@ class PartyLegalEntityType
     private $registrationName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID|null
+     * @var CompanyID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class PartyLegalEntityType
     private $companyID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class PartyLegalEntityType
     private $registrationDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class PartyLegalEntityType
     private $registrationExpirationDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode|null
+     * @var CompanyLegalFormCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class PartyLegalEntityType
     private $companyLegalFormCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm|null
+     * @var CompanyLegalForm|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class PartyLegalEntityType
     private $soleProprietorshipIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode|null
+     * @var CompanyLiquidationStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode")
      * @JMS\Expose
@@ -104,7 +105,7 @@ class PartyLegalEntityType
     private $companyLiquidationStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount|null
+     * @var CorporateStockAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount")
      * @JMS\Expose
@@ -126,7 +127,7 @@ class PartyLegalEntityType
     private $fullyPaidSharesIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress|null
+     * @var RegistrationAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress")
      * @JMS\Expose
@@ -137,7 +138,7 @@ class PartyLegalEntityType
     private $registrationAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\CorporateRegistrationScheme|null
+     * @var CorporateRegistrationScheme|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CorporateRegistrationScheme")
      * @JMS\Expose
@@ -148,7 +149,7 @@ class PartyLegalEntityType
     private $corporateRegistrationScheme;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\HeadOfficeParty|null
+     * @var HeadOfficeParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\HeadOfficeParty")
      * @JMS\Expose
@@ -159,7 +160,7 @@ class PartyLegalEntityType
     private $headOfficeParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty>|null
+     * @var array<ShareholderParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty>")
      * @JMS\Expose
@@ -171,7 +172,7 @@ class PartyLegalEntityType
     private $shareholderParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName|null
+     * @return RegistrationName|null
      */
     public function getRegistrationName(): ?RegistrationName
     {
@@ -179,7 +180,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName
+     * @return RegistrationName
      */
     public function getRegistrationNameWithCreate(): RegistrationName
     {
@@ -189,7 +190,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName|null $registrationName
+     * @param RegistrationName|null $registrationName
      * @return self
      */
     public function setRegistrationName(?RegistrationName $registrationName = null): self
@@ -210,7 +211,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID|null
+     * @return CompanyID|null
      */
     public function getCompanyID(): ?CompanyID
     {
@@ -218,7 +219,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID
+     * @return CompanyID
      */
     public function getCompanyIDWithCreate(): CompanyID
     {
@@ -228,7 +229,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID|null $companyID
+     * @param CompanyID|null $companyID
      * @return self
      */
     public function setCompanyID(?CompanyID $companyID = null): self
@@ -249,18 +250,18 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getRegistrationDate(): ?\DateTimeInterface
+    public function getRegistrationDate(): ?DateTimeInterface
     {
         return $this->registrationDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $registrationDate
+     * @param DateTimeInterface|null $registrationDate
      * @return self
      */
-    public function setRegistrationDate(?\DateTimeInterface $registrationDate = null): self
+    public function setRegistrationDate(?DateTimeInterface $registrationDate = null): self
     {
         $this->registrationDate = $registrationDate;
 
@@ -278,18 +279,18 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getRegistrationExpirationDate(): ?\DateTimeInterface
+    public function getRegistrationExpirationDate(): ?DateTimeInterface
     {
         return $this->registrationExpirationDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $registrationExpirationDate
+     * @param DateTimeInterface|null $registrationExpirationDate
      * @return self
      */
-    public function setRegistrationExpirationDate(?\DateTimeInterface $registrationExpirationDate = null): self
+    public function setRegistrationExpirationDate(?DateTimeInterface $registrationExpirationDate = null): self
     {
         $this->registrationExpirationDate = $registrationExpirationDate;
 
@@ -307,7 +308,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode|null
+     * @return CompanyLegalFormCode|null
      */
     public function getCompanyLegalFormCode(): ?CompanyLegalFormCode
     {
@@ -315,7 +316,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode
+     * @return CompanyLegalFormCode
      */
     public function getCompanyLegalFormCodeWithCreate(): CompanyLegalFormCode
     {
@@ -325,7 +326,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode|null $companyLegalFormCode
+     * @param CompanyLegalFormCode|null $companyLegalFormCode
      * @return self
      */
     public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): self
@@ -346,7 +347,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm|null
+     * @return CompanyLegalForm|null
      */
     public function getCompanyLegalForm(): ?CompanyLegalForm
     {
@@ -354,7 +355,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm
+     * @return CompanyLegalForm
      */
     public function getCompanyLegalFormWithCreate(): CompanyLegalForm
     {
@@ -364,7 +365,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm|null $companyLegalForm
+     * @param CompanyLegalForm|null $companyLegalForm
      * @return self
      */
     public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): self
@@ -414,7 +415,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode|null
+     * @return CompanyLiquidationStatusCode|null
      */
     public function getCompanyLiquidationStatusCode(): ?CompanyLiquidationStatusCode
     {
@@ -422,7 +423,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode
+     * @return CompanyLiquidationStatusCode
      */
     public function getCompanyLiquidationStatusCodeWithCreate(): CompanyLiquidationStatusCode
     {
@@ -432,7 +433,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode|null $companyLiquidationStatusCode
+     * @param CompanyLiquidationStatusCode|null $companyLiquidationStatusCode
      * @return self
      */
     public function setCompanyLiquidationStatusCode(
@@ -454,7 +455,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount|null
+     * @return CorporateStockAmount|null
      */
     public function getCorporateStockAmount(): ?CorporateStockAmount
     {
@@ -462,7 +463,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount
+     * @return CorporateStockAmount
      */
     public function getCorporateStockAmountWithCreate(): CorporateStockAmount
     {
@@ -472,7 +473,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount|null $corporateStockAmount
+     * @param CorporateStockAmount|null $corporateStockAmount
      * @return self
      */
     public function setCorporateStockAmount(?CorporateStockAmount $corporateStockAmount = null): self
@@ -522,7 +523,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress|null
+     * @return RegistrationAddress|null
      */
     public function getRegistrationAddress(): ?RegistrationAddress
     {
@@ -530,7 +531,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress
+     * @return RegistrationAddress
      */
     public function getRegistrationAddressWithCreate(): RegistrationAddress
     {
@@ -540,7 +541,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress|null $registrationAddress
+     * @param RegistrationAddress|null $registrationAddress
      * @return self
      */
     public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): self
@@ -561,7 +562,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CorporateRegistrationScheme|null
+     * @return CorporateRegistrationScheme|null
      */
     public function getCorporateRegistrationScheme(): ?CorporateRegistrationScheme
     {
@@ -569,7 +570,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CorporateRegistrationScheme
+     * @return CorporateRegistrationScheme
      */
     public function getCorporateRegistrationSchemeWithCreate(): CorporateRegistrationScheme
     {
@@ -579,7 +580,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CorporateRegistrationScheme|null $corporateRegistrationScheme
+     * @param CorporateRegistrationScheme|null $corporateRegistrationScheme
      * @return self
      */
     public function setCorporateRegistrationScheme(
@@ -601,7 +602,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HeadOfficeParty|null
+     * @return HeadOfficeParty|null
      */
     public function getHeadOfficeParty(): ?HeadOfficeParty
     {
@@ -609,7 +610,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\HeadOfficeParty
+     * @return HeadOfficeParty
      */
     public function getHeadOfficePartyWithCreate(): HeadOfficeParty
     {
@@ -619,7 +620,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\HeadOfficeParty|null $headOfficeParty
+     * @param HeadOfficeParty|null $headOfficeParty
      * @return self
      */
     public function setHeadOfficeParty(?HeadOfficeParty $headOfficeParty = null): self
@@ -640,7 +641,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty>|null
+     * @return array<ShareholderParty>|null
      */
     public function getShareholderParty(): ?array
     {
@@ -648,7 +649,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty>|null $shareholderParty
+     * @param array<ShareholderParty>|null $shareholderParty
      * @return self
      */
     public function setShareholderParty(?array $shareholderParty = null): self
@@ -679,7 +680,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty|null
+     * @return ShareholderParty|null
      */
     public function firstShareholderParty(): ?ShareholderParty
     {
@@ -694,7 +695,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty|null
+     * @return ShareholderParty|null
      */
     public function lastShareholderParty(): ?ShareholderParty
     {
@@ -709,7 +710,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty $shareholderParty
+     * @param ShareholderParty $shareholderParty
      * @return self
      */
     public function addToShareholderParty(ShareholderParty $shareholderParty): self
@@ -720,7 +721,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty
+     * @return ShareholderParty
      */
     public function addToShareholderPartyWithCreate(): ShareholderParty
     {
@@ -730,7 +731,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty $shareholderParty
+     * @param ShareholderParty $shareholderParty
      * @return self
      */
     public function addOnceToShareholderParty(ShareholderParty $shareholderParty): self
@@ -745,7 +746,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty
+     * @return ShareholderParty
      */
     public function addOnceToShareholderPartyWithCreate(): ShareholderParty
     {

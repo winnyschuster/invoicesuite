@@ -12,7 +12,7 @@ class ClauseType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ClauseType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Content>|null
+     * @var array<Content>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Content>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ClauseType
     private $content;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -43,7 +43,7 @@ class ClauseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -53,7 +53,7 @@ class ClauseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -74,7 +74,7 @@ class ClauseType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Content>|null
+     * @return array<Content>|null
      */
     public function getContent(): ?array
     {
@@ -82,7 +82,7 @@ class ClauseType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Content>|null $content
+     * @param array<Content>|null $content
      * @return self
      */
     public function setContent(?array $content = null): self
@@ -113,7 +113,7 @@ class ClauseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Content|null
+     * @return Content|null
      */
     public function firstContent(): ?Content
     {
@@ -128,7 +128,7 @@ class ClauseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Content|null
+     * @return Content|null
      */
     public function lastContent(): ?Content
     {
@@ -143,7 +143,7 @@ class ClauseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Content $content
+     * @param Content $content
      * @return self
      */
     public function addToContent(Content $content): self
@@ -154,7 +154,7 @@ class ClauseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Content
+     * @return Content
      */
     public function addToContentWithCreate(): Content
     {
@@ -164,7 +164,7 @@ class ClauseType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Content $content
+     * @param Content $content
      * @return self
      */
     public function addOnceToContent(Content $content): self
@@ -179,7 +179,7 @@ class ClauseType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Content
+     * @return Content
      */
     public function addOnceToContentWithCreate(): Content
     {

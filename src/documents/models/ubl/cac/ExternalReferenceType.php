@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode;
@@ -19,7 +20,7 @@ class ExternalReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null
+     * @var URI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\URI")
      * @JMS\Expose
@@ -30,7 +31,7 @@ class ExternalReferenceType
     private $uRI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentHash|null
+     * @var DocumentHash|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentHash")
      * @JMS\Expose
@@ -41,7 +42,7 @@ class ExternalReferenceType
     private $documentHash;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod|null
+     * @var HashAlgorithmMethod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod")
      * @JMS\Expose
@@ -52,7 +53,7 @@ class ExternalReferenceType
     private $hashAlgorithmMethod;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -63,7 +64,7 @@ class ExternalReferenceType
     private $expiryDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -74,7 +75,7 @@ class ExternalReferenceType
     private $expiryTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode|null
+     * @var MimeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode")
      * @JMS\Expose
@@ -85,7 +86,7 @@ class ExternalReferenceType
     private $mimeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode|null
+     * @var FormatCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode")
      * @JMS\Expose
@@ -96,7 +97,7 @@ class ExternalReferenceType
     private $formatCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EncodingCode|null
+     * @var EncodingCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EncodingCode")
      * @JMS\Expose
@@ -107,7 +108,7 @@ class ExternalReferenceType
     private $encodingCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode|null
+     * @var CharacterSetCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode")
      * @JMS\Expose
@@ -118,7 +119,7 @@ class ExternalReferenceType
     private $characterSetCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FileName|null
+     * @var FileName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FileName")
      * @JMS\Expose
@@ -129,7 +130,7 @@ class ExternalReferenceType
     private $fileName;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -141,7 +142,7 @@ class ExternalReferenceType
     private $description;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null
+     * @return URI|null
      */
     public function getURI(): ?URI
     {
@@ -149,7 +150,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\URI
+     * @return URI
      */
     public function getURIWithCreate(): URI
     {
@@ -159,7 +160,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\URI|null $uRI
+     * @param URI|null $uRI
      * @return self
      */
     public function setURI(?URI $uRI = null): self
@@ -180,7 +181,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentHash|null
+     * @return DocumentHash|null
      */
     public function getDocumentHash(): ?DocumentHash
     {
@@ -188,7 +189,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentHash
+     * @return DocumentHash
      */
     public function getDocumentHashWithCreate(): DocumentHash
     {
@@ -198,7 +199,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentHash|null $documentHash
+     * @param DocumentHash|null $documentHash
      * @return self
      */
     public function setDocumentHash(?DocumentHash $documentHash = null): self
@@ -219,7 +220,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod|null
+     * @return HashAlgorithmMethod|null
      */
     public function getHashAlgorithmMethod(): ?HashAlgorithmMethod
     {
@@ -227,7 +228,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod
+     * @return HashAlgorithmMethod
      */
     public function getHashAlgorithmMethodWithCreate(): HashAlgorithmMethod
     {
@@ -237,7 +238,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod|null $hashAlgorithmMethod
+     * @param HashAlgorithmMethod|null $hashAlgorithmMethod
      * @return self
      */
     public function setHashAlgorithmMethod(?HashAlgorithmMethod $hashAlgorithmMethod = null): self
@@ -258,18 +259,18 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getExpiryDate(): ?\DateTimeInterface
+    public function getExpiryDate(): ?DateTimeInterface
     {
         return $this->expiryDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $expiryDate
+     * @param DateTimeInterface|null $expiryDate
      * @return self
      */
-    public function setExpiryDate(?\DateTimeInterface $expiryDate = null): self
+    public function setExpiryDate(?DateTimeInterface $expiryDate = null): self
     {
         $this->expiryDate = $expiryDate;
 
@@ -287,18 +288,18 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getExpiryTime(): ?\DateTimeInterface
+    public function getExpiryTime(): ?DateTimeInterface
     {
         return $this->expiryTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $expiryTime
+     * @param DateTimeInterface|null $expiryTime
      * @return self
      */
-    public function setExpiryTime(?\DateTimeInterface $expiryTime = null): self
+    public function setExpiryTime(?DateTimeInterface $expiryTime = null): self
     {
         $this->expiryTime = $expiryTime;
 
@@ -316,7 +317,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode|null
+     * @return MimeCode|null
      */
     public function getMimeCode(): ?MimeCode
     {
@@ -324,7 +325,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode
+     * @return MimeCode
      */
     public function getMimeCodeWithCreate(): MimeCode
     {
@@ -334,7 +335,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode|null $mimeCode
+     * @param MimeCode|null $mimeCode
      * @return self
      */
     public function setMimeCode(?MimeCode $mimeCode = null): self
@@ -355,7 +356,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode|null
+     * @return FormatCode|null
      */
     public function getFormatCode(): ?FormatCode
     {
@@ -363,7 +364,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode
+     * @return FormatCode
      */
     public function getFormatCodeWithCreate(): FormatCode
     {
@@ -373,7 +374,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode|null $formatCode
+     * @param FormatCode|null $formatCode
      * @return self
      */
     public function setFormatCode(?FormatCode $formatCode = null): self
@@ -394,7 +395,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EncodingCode|null
+     * @return EncodingCode|null
      */
     public function getEncodingCode(): ?EncodingCode
     {
@@ -402,7 +403,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EncodingCode
+     * @return EncodingCode
      */
     public function getEncodingCodeWithCreate(): EncodingCode
     {
@@ -412,7 +413,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EncodingCode|null $encodingCode
+     * @param EncodingCode|null $encodingCode
      * @return self
      */
     public function setEncodingCode(?EncodingCode $encodingCode = null): self
@@ -433,7 +434,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode|null
+     * @return CharacterSetCode|null
      */
     public function getCharacterSetCode(): ?CharacterSetCode
     {
@@ -441,7 +442,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode
+     * @return CharacterSetCode
      */
     public function getCharacterSetCodeWithCreate(): CharacterSetCode
     {
@@ -451,7 +452,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode|null $characterSetCode
+     * @param CharacterSetCode|null $characterSetCode
      * @return self
      */
     public function setCharacterSetCode(?CharacterSetCode $characterSetCode = null): self
@@ -472,7 +473,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FileName|null
+     * @return FileName|null
      */
     public function getFileName(): ?FileName
     {
@@ -480,7 +481,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FileName
+     * @return FileName
      */
     public function getFileNameWithCreate(): FileName
     {
@@ -490,7 +491,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FileName|null $fileName
+     * @param FileName|null $fileName
      * @return self
      */
     public function setFileName(?FileName $fileName = null): self
@@ -511,7 +512,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -519,7 +520,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -550,7 +551,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -565,7 +566,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -580,7 +581,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -591,7 +592,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -601,7 +602,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -616,7 +617,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

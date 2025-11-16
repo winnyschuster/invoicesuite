@@ -12,7 +12,7 @@ class ActivityDataLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ActivityDataLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null
+     * @var SupplyChainActivityTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ActivityDataLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null
+     * @var BuyerCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class ActivityDataLineType
     private $buyerCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @var SellerSupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class ActivityDataLineType
     private $sellerSupplierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityPeriod|null
+     * @var ActivityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActivityPeriod")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class ActivityDataLineType
     private $activityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityOriginLocation|null
+     * @var ActivityOriginLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActivityOriginLocation")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class ActivityDataLineType
     private $activityOriginLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityFinalLocation|null
+     * @var ActivityFinalLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActivityFinalLocation")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class ActivityDataLineType
     private $activityFinalLocation;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>|null
+     * @var array<SalesItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class ActivityDataLineType
     private $salesItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -109,7 +109,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -119,7 +119,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -140,7 +140,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null
+     * @return SupplyChainActivityTypeCode|null
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -148,7 +148,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode
+     * @return SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCodeWithCreate(): SupplyChainActivityTypeCode
     {
@@ -158,7 +158,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
      * @return self
      */
     public function setSupplyChainActivityTypeCode(
@@ -180,7 +180,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null
+     * @return BuyerCustomerParty|null
      */
     public function getBuyerCustomerParty(): ?BuyerCustomerParty
     {
@@ -188,7 +188,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty
+     * @return BuyerCustomerParty
      */
     public function getBuyerCustomerPartyWithCreate(): BuyerCustomerParty
     {
@@ -198,7 +198,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty|null $buyerCustomerParty
+     * @param BuyerCustomerParty|null $buyerCustomerParty
      * @return self
      */
     public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): self
@@ -219,7 +219,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @return SellerSupplierParty|null
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -227,7 +227,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty
+     * @return SellerSupplierParty
      */
     public function getSellerSupplierPartyWithCreate(): SellerSupplierParty
     {
@@ -237,7 +237,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null $sellerSupplierParty
+     * @param SellerSupplierParty|null $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
@@ -258,7 +258,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityPeriod|null
+     * @return ActivityPeriod|null
      */
     public function getActivityPeriod(): ?ActivityPeriod
     {
@@ -266,7 +266,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityPeriod
+     * @return ActivityPeriod
      */
     public function getActivityPeriodWithCreate(): ActivityPeriod
     {
@@ -276,7 +276,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityPeriod|null $activityPeriod
+     * @param ActivityPeriod|null $activityPeriod
      * @return self
      */
     public function setActivityPeriod(?ActivityPeriod $activityPeriod = null): self
@@ -297,7 +297,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityOriginLocation|null
+     * @return ActivityOriginLocation|null
      */
     public function getActivityOriginLocation(): ?ActivityOriginLocation
     {
@@ -305,7 +305,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityOriginLocation
+     * @return ActivityOriginLocation
      */
     public function getActivityOriginLocationWithCreate(): ActivityOriginLocation
     {
@@ -315,7 +315,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityOriginLocation|null $activityOriginLocation
+     * @param ActivityOriginLocation|null $activityOriginLocation
      * @return self
      */
     public function setActivityOriginLocation(?ActivityOriginLocation $activityOriginLocation = null): self
@@ -336,7 +336,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityFinalLocation|null
+     * @return ActivityFinalLocation|null
      */
     public function getActivityFinalLocation(): ?ActivityFinalLocation
     {
@@ -344,7 +344,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityFinalLocation
+     * @return ActivityFinalLocation
      */
     public function getActivityFinalLocationWithCreate(): ActivityFinalLocation
     {
@@ -354,7 +354,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityFinalLocation|null $activityFinalLocation
+     * @param ActivityFinalLocation|null $activityFinalLocation
      * @return self
      */
     public function setActivityFinalLocation(?ActivityFinalLocation $activityFinalLocation = null): self
@@ -375,7 +375,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>|null
+     * @return array<SalesItem>|null
      */
     public function getSalesItem(): ?array
     {
@@ -383,7 +383,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>|null $salesItem
+     * @param array<SalesItem>|null $salesItem
      * @return self
      */
     public function setSalesItem(?array $salesItem = null): self
@@ -414,7 +414,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @return SalesItem|null
      */
     public function firstSalesItem(): ?SalesItem
     {
@@ -429,7 +429,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @return SalesItem|null
      */
     public function lastSalesItem(): ?SalesItem
     {
@@ -444,7 +444,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem $salesItem
+     * @param SalesItem $salesItem
      * @return self
      */
     public function addToSalesItem(SalesItem $salesItem): self
@@ -455,7 +455,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem
+     * @return SalesItem
      */
     public function addToSalesItemWithCreate(): SalesItem
     {
@@ -465,7 +465,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem $salesItem
+     * @param SalesItem $salesItem
      * @return self
      */
     public function addOnceToSalesItem(SalesItem $salesItem): self
@@ -480,7 +480,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem
+     * @return SalesItem
      */
     public function addOnceToSalesItemWithCreate(): SalesItem
     {

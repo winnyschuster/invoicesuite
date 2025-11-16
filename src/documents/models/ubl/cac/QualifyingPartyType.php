@@ -17,7 +17,7 @@ class QualifyingPartyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent|null
+     * @var ParticipationPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class QualifyingPartyType
     private $participationPercent;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation>|null
+     * @var array<PersonalSituation>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation>")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class QualifyingPartyType
     private $personalSituation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity|null
+     * @var OperatingYearsQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class QualifyingPartyType
     private $operatingYearsQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity|null
+     * @var EmployeeQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class QualifyingPartyType
     private $employeeQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID|null
+     * @var BusinessClassificationEvidenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class QualifyingPartyType
     private $businessClassificationEvidenceID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID|null
+     * @var BusinessIdentityEvidenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class QualifyingPartyType
     private $businessIdentityEvidenceID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode|null
+     * @var TendererRoleCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class QualifyingPartyType
     private $tendererRoleCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\BusinessClassificationScheme|null
+     * @var BusinessClassificationScheme|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BusinessClassificationScheme")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class QualifyingPartyType
     private $businessClassificationScheme;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability>|null
+     * @var array<TechnicalCapability>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class QualifyingPartyType
     private $technicalCapability;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability>|null
+     * @var array<FinancialCapability>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability>")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class QualifyingPartyType
     private $financialCapability;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask>|null
+     * @var array<CompletedTask>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask>")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class QualifyingPartyType
     private $completedTask;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Declaration>|null
+     * @var array<Declaration>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Declaration>")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class QualifyingPartyType
     private $declaration;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @var Party|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -165,7 +165,7 @@ class QualifyingPartyType
     private $party;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole|null
+     * @var EconomicOperatorRole|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole")
      * @JMS\Expose
@@ -176,7 +176,7 @@ class QualifyingPartyType
     private $economicOperatorRole;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent|null
+     * @return ParticipationPercent|null
      */
     public function getParticipationPercent(): ?ParticipationPercent
     {
@@ -184,7 +184,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent
+     * @return ParticipationPercent
      */
     public function getParticipationPercentWithCreate(): ParticipationPercent
     {
@@ -194,7 +194,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent|null $participationPercent
+     * @param ParticipationPercent|null $participationPercent
      * @return self
      */
     public function setParticipationPercent(?ParticipationPercent $participationPercent = null): self
@@ -215,7 +215,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation>|null
+     * @return array<PersonalSituation>|null
      */
     public function getPersonalSituation(): ?array
     {
@@ -223,7 +223,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation>|null $personalSituation
+     * @param array<PersonalSituation>|null $personalSituation
      * @return self
      */
     public function setPersonalSituation(?array $personalSituation = null): self
@@ -254,7 +254,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation|null
+     * @return PersonalSituation|null
      */
     public function firstPersonalSituation(): ?PersonalSituation
     {
@@ -269,7 +269,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation|null
+     * @return PersonalSituation|null
      */
     public function lastPersonalSituation(): ?PersonalSituation
     {
@@ -284,7 +284,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation $personalSituation
+     * @param PersonalSituation $personalSituation
      * @return self
      */
     public function addToPersonalSituation(PersonalSituation $personalSituation): self
@@ -295,7 +295,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation
+     * @return PersonalSituation
      */
     public function addToPersonalSituationWithCreate(): PersonalSituation
     {
@@ -305,7 +305,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation $personalSituation
+     * @param PersonalSituation $personalSituation
      * @return self
      */
     public function addOnceToPersonalSituation(PersonalSituation $personalSituation): self
@@ -320,7 +320,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation
+     * @return PersonalSituation
      */
     public function addOnceToPersonalSituationWithCreate(): PersonalSituation
     {
@@ -336,7 +336,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity|null
+     * @return OperatingYearsQuantity|null
      */
     public function getOperatingYearsQuantity(): ?OperatingYearsQuantity
     {
@@ -344,7 +344,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity
+     * @return OperatingYearsQuantity
      */
     public function getOperatingYearsQuantityWithCreate(): OperatingYearsQuantity
     {
@@ -354,7 +354,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity|null $operatingYearsQuantity
+     * @param OperatingYearsQuantity|null $operatingYearsQuantity
      * @return self
      */
     public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): self
@@ -375,7 +375,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity|null
+     * @return EmployeeQuantity|null
      */
     public function getEmployeeQuantity(): ?EmployeeQuantity
     {
@@ -383,7 +383,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity
+     * @return EmployeeQuantity
      */
     public function getEmployeeQuantityWithCreate(): EmployeeQuantity
     {
@@ -393,7 +393,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity|null $employeeQuantity
+     * @param EmployeeQuantity|null $employeeQuantity
      * @return self
      */
     public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): self
@@ -414,7 +414,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID|null
+     * @return BusinessClassificationEvidenceID|null
      */
     public function getBusinessClassificationEvidenceID(): ?BusinessClassificationEvidenceID
     {
@@ -422,7 +422,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID
+     * @return BusinessClassificationEvidenceID
      */
     public function getBusinessClassificationEvidenceIDWithCreate(): BusinessClassificationEvidenceID
     {
@@ -432,7 +432,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID|null $businessClassificationEvidenceID
+     * @param BusinessClassificationEvidenceID|null $businessClassificationEvidenceID
      * @return self
      */
     public function setBusinessClassificationEvidenceID(
@@ -454,7 +454,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID|null
+     * @return BusinessIdentityEvidenceID|null
      */
     public function getBusinessIdentityEvidenceID(): ?BusinessIdentityEvidenceID
     {
@@ -462,7 +462,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID
+     * @return BusinessIdentityEvidenceID
      */
     public function getBusinessIdentityEvidenceIDWithCreate(): BusinessIdentityEvidenceID
     {
@@ -472,7 +472,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID|null $businessIdentityEvidenceID
+     * @param BusinessIdentityEvidenceID|null $businessIdentityEvidenceID
      * @return self
      */
     public function setBusinessIdentityEvidenceID(
@@ -494,7 +494,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode|null
+     * @return TendererRoleCode|null
      */
     public function getTendererRoleCode(): ?TendererRoleCode
     {
@@ -502,7 +502,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode
+     * @return TendererRoleCode
      */
     public function getTendererRoleCodeWithCreate(): TendererRoleCode
     {
@@ -512,7 +512,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode|null $tendererRoleCode
+     * @param TendererRoleCode|null $tendererRoleCode
      * @return self
      */
     public function setTendererRoleCode(?TendererRoleCode $tendererRoleCode = null): self
@@ -533,7 +533,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BusinessClassificationScheme|null
+     * @return BusinessClassificationScheme|null
      */
     public function getBusinessClassificationScheme(): ?BusinessClassificationScheme
     {
@@ -541,7 +541,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BusinessClassificationScheme
+     * @return BusinessClassificationScheme
      */
     public function getBusinessClassificationSchemeWithCreate(): BusinessClassificationScheme
     {
@@ -551,7 +551,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BusinessClassificationScheme|null $businessClassificationScheme
+     * @param BusinessClassificationScheme|null $businessClassificationScheme
      * @return self
      */
     public function setBusinessClassificationScheme(
@@ -573,7 +573,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability>|null
+     * @return array<TechnicalCapability>|null
      */
     public function getTechnicalCapability(): ?array
     {
@@ -581,7 +581,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability>|null $technicalCapability
+     * @param array<TechnicalCapability>|null $technicalCapability
      * @return self
      */
     public function setTechnicalCapability(?array $technicalCapability = null): self
@@ -612,7 +612,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability|null
+     * @return TechnicalCapability|null
      */
     public function firstTechnicalCapability(): ?TechnicalCapability
     {
@@ -627,7 +627,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability|null
+     * @return TechnicalCapability|null
      */
     public function lastTechnicalCapability(): ?TechnicalCapability
     {
@@ -642,7 +642,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability $technicalCapability
+     * @param TechnicalCapability $technicalCapability
      * @return self
      */
     public function addToTechnicalCapability(TechnicalCapability $technicalCapability): self
@@ -653,7 +653,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability
+     * @return TechnicalCapability
      */
     public function addToTechnicalCapabilityWithCreate(): TechnicalCapability
     {
@@ -663,7 +663,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability $technicalCapability
+     * @param TechnicalCapability $technicalCapability
      * @return self
      */
     public function addOnceToTechnicalCapability(TechnicalCapability $technicalCapability): self
@@ -678,7 +678,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability
+     * @return TechnicalCapability
      */
     public function addOnceToTechnicalCapabilityWithCreate(): TechnicalCapability
     {
@@ -694,7 +694,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability>|null
+     * @return array<FinancialCapability>|null
      */
     public function getFinancialCapability(): ?array
     {
@@ -702,7 +702,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability>|null $financialCapability
+     * @param array<FinancialCapability>|null $financialCapability
      * @return self
      */
     public function setFinancialCapability(?array $financialCapability = null): self
@@ -733,7 +733,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability|null
+     * @return FinancialCapability|null
      */
     public function firstFinancialCapability(): ?FinancialCapability
     {
@@ -748,7 +748,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability|null
+     * @return FinancialCapability|null
      */
     public function lastFinancialCapability(): ?FinancialCapability
     {
@@ -763,7 +763,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability $financialCapability
+     * @param FinancialCapability $financialCapability
      * @return self
      */
     public function addToFinancialCapability(FinancialCapability $financialCapability): self
@@ -774,7 +774,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability
+     * @return FinancialCapability
      */
     public function addToFinancialCapabilityWithCreate(): FinancialCapability
     {
@@ -784,7 +784,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability $financialCapability
+     * @param FinancialCapability $financialCapability
      * @return self
      */
     public function addOnceToFinancialCapability(FinancialCapability $financialCapability): self
@@ -799,7 +799,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability
+     * @return FinancialCapability
      */
     public function addOnceToFinancialCapabilityWithCreate(): FinancialCapability
     {
@@ -815,7 +815,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask>|null
+     * @return array<CompletedTask>|null
      */
     public function getCompletedTask(): ?array
     {
@@ -823,7 +823,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask>|null $completedTask
+     * @param array<CompletedTask>|null $completedTask
      * @return self
      */
     public function setCompletedTask(?array $completedTask = null): self
@@ -854,7 +854,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask|null
+     * @return CompletedTask|null
      */
     public function firstCompletedTask(): ?CompletedTask
     {
@@ -869,7 +869,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask|null
+     * @return CompletedTask|null
      */
     public function lastCompletedTask(): ?CompletedTask
     {
@@ -884,7 +884,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask $completedTask
+     * @param CompletedTask $completedTask
      * @return self
      */
     public function addToCompletedTask(CompletedTask $completedTask): self
@@ -895,7 +895,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask
+     * @return CompletedTask
      */
     public function addToCompletedTaskWithCreate(): CompletedTask
     {
@@ -905,7 +905,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask $completedTask
+     * @param CompletedTask $completedTask
      * @return self
      */
     public function addOnceToCompletedTask(CompletedTask $completedTask): self
@@ -920,7 +920,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask
+     * @return CompletedTask
      */
     public function addOnceToCompletedTaskWithCreate(): CompletedTask
     {
@@ -936,7 +936,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Declaration>|null
+     * @return array<Declaration>|null
      */
     public function getDeclaration(): ?array
     {
@@ -944,7 +944,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Declaration>|null $declaration
+     * @param array<Declaration>|null $declaration
      * @return self
      */
     public function setDeclaration(?array $declaration = null): self
@@ -975,7 +975,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Declaration|null
+     * @return Declaration|null
      */
     public function firstDeclaration(): ?Declaration
     {
@@ -990,7 +990,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Declaration|null
+     * @return Declaration|null
      */
     public function lastDeclaration(): ?Declaration
     {
@@ -1005,7 +1005,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Declaration $declaration
+     * @param Declaration $declaration
      * @return self
      */
     public function addToDeclaration(Declaration $declaration): self
@@ -1016,7 +1016,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Declaration
+     * @return Declaration
      */
     public function addToDeclarationWithCreate(): Declaration
     {
@@ -1026,7 +1026,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Declaration $declaration
+     * @param Declaration $declaration
      * @return self
      */
     public function addOnceToDeclaration(Declaration $declaration): self
@@ -1041,7 +1041,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Declaration
+     * @return Declaration
      */
     public function addOnceToDeclarationWithCreate(): Declaration
     {
@@ -1057,7 +1057,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @return Party|null
      */
     public function getParty(): ?Party
     {
@@ -1065,7 +1065,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party
+     * @return Party
      */
     public function getPartyWithCreate(): Party
     {
@@ -1075,7 +1075,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null $party
+     * @param Party|null $party
      * @return self
      */
     public function setParty(?Party $party = null): self
@@ -1096,7 +1096,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole|null
+     * @return EconomicOperatorRole|null
      */
     public function getEconomicOperatorRole(): ?EconomicOperatorRole
     {
@@ -1104,7 +1104,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole
+     * @return EconomicOperatorRole
      */
     public function getEconomicOperatorRoleWithCreate(): EconomicOperatorRole
     {
@@ -1114,7 +1114,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole|null $economicOperatorRole
+     * @param EconomicOperatorRole|null $economicOperatorRole
      * @return self
      */
     public function setEconomicOperatorRole(?EconomicOperatorRole $economicOperatorRole = null): self

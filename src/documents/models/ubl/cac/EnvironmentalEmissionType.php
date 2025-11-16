@@ -13,7 +13,7 @@ class EnvironmentalEmissionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode|null
+     * @var EnvironmentalEmissionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class EnvironmentalEmissionType
     private $environmentalEmissionTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure|null
+     * @var ValueMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class EnvironmentalEmissionType
     private $valueMeasure;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EnvironmentalEmissionType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod>|null
+     * @var array<EmissionCalculationMethod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class EnvironmentalEmissionType
     private $emissionCalculationMethod;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode|null
+     * @return EnvironmentalEmissionTypeCode|null
      */
     public function getEnvironmentalEmissionTypeCode(): ?EnvironmentalEmissionTypeCode
     {
@@ -67,7 +67,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode
+     * @return EnvironmentalEmissionTypeCode
      */
     public function getEnvironmentalEmissionTypeCodeWithCreate(): EnvironmentalEmissionTypeCode
     {
@@ -77,7 +77,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode|null $environmentalEmissionTypeCode
+     * @param EnvironmentalEmissionTypeCode|null $environmentalEmissionTypeCode
      * @return self
      */
     public function setEnvironmentalEmissionTypeCode(
@@ -99,7 +99,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure|null
+     * @return ValueMeasure|null
      */
     public function getValueMeasure(): ?ValueMeasure
     {
@@ -107,7 +107,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure
+     * @return ValueMeasure
      */
     public function getValueMeasureWithCreate(): ValueMeasure
     {
@@ -117,7 +117,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure|null $valueMeasure
+     * @param ValueMeasure|null $valueMeasure
      * @return self
      */
     public function setValueMeasure(?ValueMeasure $valueMeasure = null): self
@@ -138,7 +138,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -146,7 +146,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -177,7 +177,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -192,7 +192,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -207,7 +207,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -218,7 +218,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -228,7 +228,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -243,7 +243,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -259,7 +259,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod>|null
+     * @return array<EmissionCalculationMethod>|null
      */
     public function getEmissionCalculationMethod(): ?array
     {
@@ -267,7 +267,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod>|null $emissionCalculationMethod
+     * @param array<EmissionCalculationMethod>|null $emissionCalculationMethod
      * @return self
      */
     public function setEmissionCalculationMethod(?array $emissionCalculationMethod = null): self
@@ -298,7 +298,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod|null
+     * @return EmissionCalculationMethod|null
      */
     public function firstEmissionCalculationMethod(): ?EmissionCalculationMethod
     {
@@ -313,7 +313,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod|null
+     * @return EmissionCalculationMethod|null
      */
     public function lastEmissionCalculationMethod(): ?EmissionCalculationMethod
     {
@@ -328,7 +328,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod $emissionCalculationMethod
+     * @param EmissionCalculationMethod $emissionCalculationMethod
      * @return self
      */
     public function addToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): self
@@ -339,7 +339,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod
+     * @return EmissionCalculationMethod
      */
     public function addToEmissionCalculationMethodWithCreate(): EmissionCalculationMethod
     {
@@ -349,7 +349,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod $emissionCalculationMethod
+     * @param EmissionCalculationMethod $emissionCalculationMethod
      * @return self
      */
     public function addOnceToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): self
@@ -364,7 +364,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod
+     * @return EmissionCalculationMethod
      */
     public function addOnceToEmissionCalculationMethodWithCreate(): EmissionCalculationMethod
     {

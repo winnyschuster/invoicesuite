@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -12,7 +13,7 @@ class PowerOfAttorneyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +24,7 @@ class PowerOfAttorneyType
     private $iD;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -34,7 +35,7 @@ class PowerOfAttorneyType
     private $issueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -45,7 +46,7 @@ class PowerOfAttorneyType
     private $issueTime;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -57,7 +58,7 @@ class PowerOfAttorneyType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\NotaryParty|null
+     * @var NotaryParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\NotaryParty")
      * @JMS\Expose
@@ -68,7 +69,7 @@ class PowerOfAttorneyType
     private $notaryParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty|null
+     * @var AgentParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty")
      * @JMS\Expose
@@ -79,7 +80,7 @@ class PowerOfAttorneyType
     private $agentParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty>|null
+     * @var array<WitnessParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty>")
      * @JMS\Expose
@@ -91,7 +92,7 @@ class PowerOfAttorneyType
     private $witnessParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference>|null
+     * @var array<MandateDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference>")
      * @JMS\Expose
@@ -103,7 +104,7 @@ class PowerOfAttorneyType
     private $mandateDocumentReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -111,7 +112,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -121,7 +122,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -142,18 +143,18 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -171,18 +172,18 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueTime(): ?\DateTimeInterface
+    public function getIssueTime(): ?DateTimeInterface
     {
         return $this->issueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueTime
+     * @param DateTimeInterface|null $issueTime
      * @return self
      */
-    public function setIssueTime(?\DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): self
     {
         $this->issueTime = $issueTime;
 
@@ -200,7 +201,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -208,7 +209,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -239,7 +240,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -254,7 +255,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -269,7 +270,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -280,7 +281,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -290,7 +291,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -305,7 +306,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -321,7 +322,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotaryParty|null
+     * @return NotaryParty|null
      */
     public function getNotaryParty(): ?NotaryParty
     {
@@ -329,7 +330,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotaryParty
+     * @return NotaryParty
      */
     public function getNotaryPartyWithCreate(): NotaryParty
     {
@@ -339,7 +340,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotaryParty|null $notaryParty
+     * @param NotaryParty|null $notaryParty
      * @return self
      */
     public function setNotaryParty(?NotaryParty $notaryParty = null): self
@@ -360,7 +361,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty|null
+     * @return AgentParty|null
      */
     public function getAgentParty(): ?AgentParty
     {
@@ -368,7 +369,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty
+     * @return AgentParty
      */
     public function getAgentPartyWithCreate(): AgentParty
     {
@@ -378,7 +379,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty|null $agentParty
+     * @param AgentParty|null $agentParty
      * @return self
      */
     public function setAgentParty(?AgentParty $agentParty = null): self
@@ -399,7 +400,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty>|null
+     * @return array<WitnessParty>|null
      */
     public function getWitnessParty(): ?array
     {
@@ -407,7 +408,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty>|null $witnessParty
+     * @param array<WitnessParty>|null $witnessParty
      * @return self
      */
     public function setWitnessParty(?array $witnessParty = null): self
@@ -438,7 +439,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty|null
+     * @return WitnessParty|null
      */
     public function firstWitnessParty(): ?WitnessParty
     {
@@ -453,7 +454,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty|null
+     * @return WitnessParty|null
      */
     public function lastWitnessParty(): ?WitnessParty
     {
@@ -468,7 +469,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty $witnessParty
+     * @param WitnessParty $witnessParty
      * @return self
      */
     public function addToWitnessParty(WitnessParty $witnessParty): self
@@ -479,7 +480,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty
+     * @return WitnessParty
      */
     public function addToWitnessPartyWithCreate(): WitnessParty
     {
@@ -489,7 +490,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty $witnessParty
+     * @param WitnessParty $witnessParty
      * @return self
      */
     public function addOnceToWitnessParty(WitnessParty $witnessParty): self
@@ -504,7 +505,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty
+     * @return WitnessParty
      */
     public function addOnceToWitnessPartyWithCreate(): WitnessParty
     {
@@ -520,7 +521,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference>|null
+     * @return array<MandateDocumentReference>|null
      */
     public function getMandateDocumentReference(): ?array
     {
@@ -528,7 +529,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference>|null $mandateDocumentReference
+     * @param array<MandateDocumentReference>|null $mandateDocumentReference
      * @return self
      */
     public function setMandateDocumentReference(?array $mandateDocumentReference = null): self
@@ -559,7 +560,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference|null
+     * @return MandateDocumentReference|null
      */
     public function firstMandateDocumentReference(): ?MandateDocumentReference
     {
@@ -574,7 +575,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference|null
+     * @return MandateDocumentReference|null
      */
     public function lastMandateDocumentReference(): ?MandateDocumentReference
     {
@@ -589,7 +590,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference $mandateDocumentReference
+     * @param MandateDocumentReference $mandateDocumentReference
      * @return self
      */
     public function addToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): self
@@ -600,7 +601,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference
+     * @return MandateDocumentReference
      */
     public function addToMandateDocumentReferenceWithCreate(): MandateDocumentReference
     {
@@ -610,7 +611,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference $mandateDocumentReference
+     * @param MandateDocumentReference $mandateDocumentReference
      * @return self
      */
     public function addOnceToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): self
@@ -625,7 +626,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference
+     * @return MandateDocumentReference
      */
     public function addOnceToMandateDocumentReferenceWithCreate(): MandateDocumentReference
     {

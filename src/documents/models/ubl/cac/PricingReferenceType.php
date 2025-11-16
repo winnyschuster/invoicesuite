@@ -10,7 +10,7 @@ class PricingReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalItemLocationQuantity|null
+     * @var OriginalItemLocationQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalItemLocationQuantity")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class PricingReferenceType
     private $originalItemLocationQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice>|null
+     * @var array<AlternativeConditionPrice>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice>")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class PricingReferenceType
     private $alternativeConditionPrice;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalItemLocationQuantity|null
+     * @return OriginalItemLocationQuantity|null
      */
     public function getOriginalItemLocationQuantity(): ?OriginalItemLocationQuantity
     {
@@ -41,7 +41,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalItemLocationQuantity
+     * @return OriginalItemLocationQuantity
      */
     public function getOriginalItemLocationQuantityWithCreate(): OriginalItemLocationQuantity
     {
@@ -51,7 +51,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalItemLocationQuantity|null $originalItemLocationQuantity
+     * @param OriginalItemLocationQuantity|null $originalItemLocationQuantity
      * @return self
      */
     public function setOriginalItemLocationQuantity(
@@ -73,7 +73,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice>|null
+     * @return array<AlternativeConditionPrice>|null
      */
     public function getAlternativeConditionPrice(): ?array
     {
@@ -81,7 +81,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice>|null $alternativeConditionPrice
+     * @param array<AlternativeConditionPrice>|null $alternativeConditionPrice
      * @return self
      */
     public function setAlternativeConditionPrice(?array $alternativeConditionPrice = null): self
@@ -112,7 +112,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice|null
+     * @return AlternativeConditionPrice|null
      */
     public function firstAlternativeConditionPrice(): ?AlternativeConditionPrice
     {
@@ -127,7 +127,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice|null
+     * @return AlternativeConditionPrice|null
      */
     public function lastAlternativeConditionPrice(): ?AlternativeConditionPrice
     {
@@ -142,7 +142,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice $alternativeConditionPrice
+     * @param AlternativeConditionPrice $alternativeConditionPrice
      * @return self
      */
     public function addToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): self
@@ -153,7 +153,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice
+     * @return AlternativeConditionPrice
      */
     public function addToAlternativeConditionPriceWithCreate(): AlternativeConditionPrice
     {
@@ -163,7 +163,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice $alternativeConditionPrice
+     * @param AlternativeConditionPrice $alternativeConditionPrice
      * @return self
      */
     public function addOnceToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): self
@@ -178,7 +178,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice
+     * @return AlternativeConditionPrice
      */
     public function addOnceToAlternativeConditionPriceWithCreate(): AlternativeConditionPrice
     {

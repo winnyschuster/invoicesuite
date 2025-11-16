@@ -11,7 +11,7 @@ class AirTransportType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID|null
+     * @var AircraftID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class AirTransportType
     private $aircraftID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID|null
+     * @return AircraftID|null
      */
     public function getAircraftID(): ?AircraftID
     {
@@ -30,7 +30,7 @@ class AirTransportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID
+     * @return AircraftID
      */
     public function getAircraftIDWithCreate(): AircraftID
     {
@@ -40,7 +40,7 @@ class AirTransportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID|null $aircraftID
+     * @param AircraftID|null $aircraftID
      * @return self
      */
     public function setAircraftID(?AircraftID $aircraftID = null): self

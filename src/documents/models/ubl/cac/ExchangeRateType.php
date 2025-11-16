@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate;
@@ -17,7 +18,7 @@ class ExchangeRateType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode|null
+     * @var SourceCurrencyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode")
      * @JMS\Expose
@@ -28,7 +29,7 @@ class ExchangeRateType
     private $sourceCurrencyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate|null
+     * @var SourceCurrencyBaseRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate")
      * @JMS\Expose
@@ -39,7 +40,7 @@ class ExchangeRateType
     private $sourceCurrencyBaseRate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode|null
+     * @var TargetCurrencyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode")
      * @JMS\Expose
@@ -50,7 +51,7 @@ class ExchangeRateType
     private $targetCurrencyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate|null
+     * @var TargetCurrencyBaseRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate")
      * @JMS\Expose
@@ -61,7 +62,7 @@ class ExchangeRateType
     private $targetCurrencyBaseRate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID|null
+     * @var ExchangeMarketID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID")
      * @JMS\Expose
@@ -72,7 +73,7 @@ class ExchangeRateType
     private $exchangeMarketID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate|null
+     * @var CalculationRate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate")
      * @JMS\Expose
@@ -83,7 +84,7 @@ class ExchangeRateType
     private $calculationRate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MathematicOperatorCode|null
+     * @var MathematicOperatorCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MathematicOperatorCode")
      * @JMS\Expose
@@ -94,7 +95,7 @@ class ExchangeRateType
     private $mathematicOperatorCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -105,7 +106,7 @@ class ExchangeRateType
     private $date;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ForeignExchangeContract|null
+     * @var ForeignExchangeContract|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForeignExchangeContract")
      * @JMS\Expose
@@ -116,7 +117,7 @@ class ExchangeRateType
     private $foreignExchangeContract;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode|null
+     * @return SourceCurrencyCode|null
      */
     public function getSourceCurrencyCode(): ?SourceCurrencyCode
     {
@@ -124,7 +125,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode
+     * @return SourceCurrencyCode
      */
     public function getSourceCurrencyCodeWithCreate(): SourceCurrencyCode
     {
@@ -134,7 +135,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode|null $sourceCurrencyCode
+     * @param SourceCurrencyCode|null $sourceCurrencyCode
      * @return self
      */
     public function setSourceCurrencyCode(?SourceCurrencyCode $sourceCurrencyCode = null): self
@@ -155,7 +156,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate|null
+     * @return SourceCurrencyBaseRate|null
      */
     public function getSourceCurrencyBaseRate(): ?SourceCurrencyBaseRate
     {
@@ -163,7 +164,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate
+     * @return SourceCurrencyBaseRate
      */
     public function getSourceCurrencyBaseRateWithCreate(): SourceCurrencyBaseRate
     {
@@ -173,7 +174,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate|null $sourceCurrencyBaseRate
+     * @param SourceCurrencyBaseRate|null $sourceCurrencyBaseRate
      * @return self
      */
     public function setSourceCurrencyBaseRate(?SourceCurrencyBaseRate $sourceCurrencyBaseRate = null): self
@@ -194,7 +195,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode|null
+     * @return TargetCurrencyCode|null
      */
     public function getTargetCurrencyCode(): ?TargetCurrencyCode
     {
@@ -202,7 +203,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode
+     * @return TargetCurrencyCode
      */
     public function getTargetCurrencyCodeWithCreate(): TargetCurrencyCode
     {
@@ -212,7 +213,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode|null $targetCurrencyCode
+     * @param TargetCurrencyCode|null $targetCurrencyCode
      * @return self
      */
     public function setTargetCurrencyCode(?TargetCurrencyCode $targetCurrencyCode = null): self
@@ -233,7 +234,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate|null
+     * @return TargetCurrencyBaseRate|null
      */
     public function getTargetCurrencyBaseRate(): ?TargetCurrencyBaseRate
     {
@@ -241,7 +242,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate
+     * @return TargetCurrencyBaseRate
      */
     public function getTargetCurrencyBaseRateWithCreate(): TargetCurrencyBaseRate
     {
@@ -251,7 +252,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate|null $targetCurrencyBaseRate
+     * @param TargetCurrencyBaseRate|null $targetCurrencyBaseRate
      * @return self
      */
     public function setTargetCurrencyBaseRate(?TargetCurrencyBaseRate $targetCurrencyBaseRate = null): self
@@ -272,7 +273,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID|null
+     * @return ExchangeMarketID|null
      */
     public function getExchangeMarketID(): ?ExchangeMarketID
     {
@@ -280,7 +281,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID
+     * @return ExchangeMarketID
      */
     public function getExchangeMarketIDWithCreate(): ExchangeMarketID
     {
@@ -290,7 +291,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID|null $exchangeMarketID
+     * @param ExchangeMarketID|null $exchangeMarketID
      * @return self
      */
     public function setExchangeMarketID(?ExchangeMarketID $exchangeMarketID = null): self
@@ -311,7 +312,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate|null
+     * @return CalculationRate|null
      */
     public function getCalculationRate(): ?CalculationRate
     {
@@ -319,7 +320,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate
+     * @return CalculationRate
      */
     public function getCalculationRateWithCreate(): CalculationRate
     {
@@ -329,7 +330,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate|null $calculationRate
+     * @param CalculationRate|null $calculationRate
      * @return self
      */
     public function setCalculationRate(?CalculationRate $calculationRate = null): self
@@ -350,7 +351,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MathematicOperatorCode|null
+     * @return MathematicOperatorCode|null
      */
     public function getMathematicOperatorCode(): ?MathematicOperatorCode
     {
@@ -358,7 +359,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MathematicOperatorCode
+     * @return MathematicOperatorCode
      */
     public function getMathematicOperatorCodeWithCreate(): MathematicOperatorCode
     {
@@ -368,7 +369,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MathematicOperatorCode|null $mathematicOperatorCode
+     * @param MathematicOperatorCode|null $mathematicOperatorCode
      * @return self
      */
     public function setMathematicOperatorCode(?MathematicOperatorCode $mathematicOperatorCode = null): self
@@ -389,18 +390,18 @@ class ExchangeRateType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?DateTimeInterface
     {
         return $this->date;
     }
 
     /**
-     * @param \DateTimeInterface|null $date
+     * @param DateTimeInterface|null $date
      * @return self
      */
-    public function setDate(?\DateTimeInterface $date = null): self
+    public function setDate(?DateTimeInterface $date = null): self
     {
         $this->date = $date;
 
@@ -418,7 +419,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForeignExchangeContract|null
+     * @return ForeignExchangeContract|null
      */
     public function getForeignExchangeContract(): ?ForeignExchangeContract
     {
@@ -426,7 +427,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForeignExchangeContract
+     * @return ForeignExchangeContract
      */
     public function getForeignExchangeContractWithCreate(): ForeignExchangeContract
     {
@@ -436,7 +437,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ForeignExchangeContract|null $foreignExchangeContract
+     * @param ForeignExchangeContract|null $foreignExchangeContract
      * @return self
      */
     public function setForeignExchangeContract(?ForeignExchangeContract $foreignExchangeContract = null): self

@@ -15,7 +15,7 @@ class MeterPropertyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class MeterPropertyType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode|null
+     * @var NameCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class MeterPropertyType
     private $nameCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @var Value|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class MeterPropertyType
     private $value;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null
+     * @var ValueQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class MeterPropertyType
     private $valueQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>|null
+     * @var array<ValueQualifier>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class MeterPropertyType
     private $valueQualifier;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -79,7 +79,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -89,7 +89,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -110,7 +110,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode|null
+     * @return NameCode|null
      */
     public function getNameCode(): ?NameCode
     {
@@ -118,7 +118,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode
+     * @return NameCode
      */
     public function getNameCodeWithCreate(): NameCode
     {
@@ -128,7 +128,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode|null $nameCode
+     * @param NameCode|null $nameCode
      * @return self
      */
     public function setNameCode(?NameCode $nameCode = null): self
@@ -149,7 +149,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null
+     * @return Value|null
      */
     public function getValue(): ?Value
     {
@@ -157,7 +157,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Value
+     * @return Value
      */
     public function getValueWithCreate(): Value
     {
@@ -167,7 +167,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Value|null $value
+     * @param Value|null $value
      * @return self
      */
     public function setValue(?Value $value = null): self
@@ -188,7 +188,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null
+     * @return ValueQuantity|null
      */
     public function getValueQuantity(): ?ValueQuantity
     {
@@ -196,7 +196,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity
+     * @return ValueQuantity
      */
     public function getValueQuantityWithCreate(): ValueQuantity
     {
@@ -206,7 +206,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null $valueQuantity
+     * @param ValueQuantity|null $valueQuantity
      * @return self
      */
     public function setValueQuantity(?ValueQuantity $valueQuantity = null): self
@@ -227,7 +227,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>|null
+     * @return array<ValueQualifier>|null
      */
     public function getValueQualifier(): ?array
     {
@@ -235,7 +235,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>|null $valueQualifier
+     * @param array<ValueQualifier>|null $valueQualifier
      * @return self
      */
     public function setValueQualifier(?array $valueQualifier = null): self
@@ -266,7 +266,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier|null
+     * @return ValueQualifier|null
      */
     public function firstValueQualifier(): ?ValueQualifier
     {
@@ -281,7 +281,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier|null
+     * @return ValueQualifier|null
      */
     public function lastValueQualifier(): ?ValueQualifier
     {
@@ -296,7 +296,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier $valueQualifier
+     * @param ValueQualifier $valueQualifier
      * @return self
      */
     public function addToValueQualifier(ValueQualifier $valueQualifier): self
@@ -307,7 +307,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier
+     * @return ValueQualifier
      */
     public function addToValueQualifierWithCreate(): ValueQualifier
     {
@@ -317,7 +317,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier $valueQualifier
+     * @param ValueQualifier $valueQualifier
      * @return self
      */
     public function addOnceToValueQualifier(ValueQualifier $valueQualifier): self
@@ -332,7 +332,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier
+     * @return ValueQualifier
      */
     public function addOnceToValueQualifierWithCreate(): ValueQualifier
     {

@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod;
@@ -15,7 +16,7 @@ class SignatureType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +27,7 @@ class SignatureType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class SignatureType
     private $note;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class SignatureType
     private $validationDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class SignatureType
     private $validationTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID|null
+     * @var ValidatorID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class SignatureType
     private $validatorID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod|null
+     * @var CanonicalizationMethod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod")
      * @JMS\Expose
@@ -82,7 +83,7 @@ class SignatureType
     private $canonicalizationMethod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod|null
+     * @var SignatureMethod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class SignatureType
     private $signatureMethod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty|null
+     * @var SignatoryParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty")
      * @JMS\Expose
@@ -104,7 +105,7 @@ class SignatureType
     private $signatoryParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DigitalSignatureAttachment|null
+     * @var DigitalSignatureAttachment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DigitalSignatureAttachment")
      * @JMS\Expose
@@ -115,7 +116,7 @@ class SignatureType
     private $digitalSignatureAttachment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDocumentReference|null
+     * @var OriginalDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDocumentReference")
      * @JMS\Expose
@@ -126,7 +127,7 @@ class SignatureType
     private $originalDocumentReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -134,7 +135,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -144,7 +145,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -165,7 +166,7 @@ class SignatureType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -173,7 +174,7 @@ class SignatureType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -204,7 +205,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -219,7 +220,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -234,7 +235,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -245,7 +246,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -255,7 +256,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -270,7 +271,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -286,18 +287,18 @@ class SignatureType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getValidationDate(): ?\DateTimeInterface
+    public function getValidationDate(): ?DateTimeInterface
     {
         return $this->validationDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $validationDate
+     * @param DateTimeInterface|null $validationDate
      * @return self
      */
-    public function setValidationDate(?\DateTimeInterface $validationDate = null): self
+    public function setValidationDate(?DateTimeInterface $validationDate = null): self
     {
         $this->validationDate = $validationDate;
 
@@ -315,18 +316,18 @@ class SignatureType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getValidationTime(): ?\DateTimeInterface
+    public function getValidationTime(): ?DateTimeInterface
     {
         return $this->validationTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $validationTime
+     * @param DateTimeInterface|null $validationTime
      * @return self
      */
-    public function setValidationTime(?\DateTimeInterface $validationTime = null): self
+    public function setValidationTime(?DateTimeInterface $validationTime = null): self
     {
         $this->validationTime = $validationTime;
 
@@ -344,7 +345,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID|null
+     * @return ValidatorID|null
      */
     public function getValidatorID(): ?ValidatorID
     {
@@ -352,7 +353,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID
+     * @return ValidatorID
      */
     public function getValidatorIDWithCreate(): ValidatorID
     {
@@ -362,7 +363,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID|null $validatorID
+     * @param ValidatorID|null $validatorID
      * @return self
      */
     public function setValidatorID(?ValidatorID $validatorID = null): self
@@ -383,7 +384,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod|null
+     * @return CanonicalizationMethod|null
      */
     public function getCanonicalizationMethod(): ?CanonicalizationMethod
     {
@@ -391,7 +392,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod
+     * @return CanonicalizationMethod
      */
     public function getCanonicalizationMethodWithCreate(): CanonicalizationMethod
     {
@@ -401,7 +402,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod|null $canonicalizationMethod
+     * @param CanonicalizationMethod|null $canonicalizationMethod
      * @return self
      */
     public function setCanonicalizationMethod(?CanonicalizationMethod $canonicalizationMethod = null): self
@@ -422,7 +423,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod|null
+     * @return SignatureMethod|null
      */
     public function getSignatureMethod(): ?SignatureMethod
     {
@@ -430,7 +431,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod
+     * @return SignatureMethod
      */
     public function getSignatureMethodWithCreate(): SignatureMethod
     {
@@ -440,7 +441,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod|null $signatureMethod
+     * @param SignatureMethod|null $signatureMethod
      * @return self
      */
     public function setSignatureMethod(?SignatureMethod $signatureMethod = null): self
@@ -461,7 +462,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty|null
+     * @return SignatoryParty|null
      */
     public function getSignatoryParty(): ?SignatoryParty
     {
@@ -469,7 +470,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty
+     * @return SignatoryParty
      */
     public function getSignatoryPartyWithCreate(): SignatoryParty
     {
@@ -479,7 +480,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty|null $signatoryParty
+     * @param SignatoryParty|null $signatoryParty
      * @return self
      */
     public function setSignatoryParty(?SignatoryParty $signatoryParty = null): self
@@ -500,7 +501,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DigitalSignatureAttachment|null
+     * @return DigitalSignatureAttachment|null
      */
     public function getDigitalSignatureAttachment(): ?DigitalSignatureAttachment
     {
@@ -508,7 +509,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DigitalSignatureAttachment
+     * @return DigitalSignatureAttachment
      */
     public function getDigitalSignatureAttachmentWithCreate(): DigitalSignatureAttachment
     {
@@ -518,7 +519,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DigitalSignatureAttachment|null $digitalSignatureAttachment
+     * @param DigitalSignatureAttachment|null $digitalSignatureAttachment
      * @return self
      */
     public function setDigitalSignatureAttachment(
@@ -540,7 +541,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDocumentReference|null
+     * @return OriginalDocumentReference|null
      */
     public function getOriginalDocumentReference(): ?OriginalDocumentReference
     {
@@ -548,7 +549,7 @@ class SignatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDocumentReference
+     * @return OriginalDocumentReference
      */
     public function getOriginalDocumentReferenceWithCreate(): OriginalDocumentReference
     {
@@ -558,7 +559,7 @@ class SignatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDocumentReference|null $originalDocumentReference
+     * @param OriginalDocumentReference|null $originalDocumentReference
      * @return self
      */
     public function setOriginalDocumentReference(?OriginalDocumentReference $originalDocumentReference = null): self

@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription;
@@ -20,7 +21,7 @@ class DocumentReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -42,7 +43,7 @@ class DocumentReferenceType
     private $copyIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -53,7 +54,7 @@ class DocumentReferenceType
     private $uUID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -64,7 +65,7 @@ class DocumentReferenceType
     private $issueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -75,7 +76,7 @@ class DocumentReferenceType
     private $issueTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentTypeCode|null
+     * @var DocumentTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentTypeCode")
      * @JMS\Expose
@@ -86,7 +87,7 @@ class DocumentReferenceType
     private $documentTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentType|null
+     * @var DocumentType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentType")
      * @JMS\Expose
@@ -97,7 +98,7 @@ class DocumentReferenceType
     private $documentType;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\XPath>|null
+     * @var array<XPath>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\XPath>")
      * @JMS\Expose
@@ -109,7 +110,7 @@ class DocumentReferenceType
     private $xPath;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID|null
+     * @var LanguageID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID")
      * @JMS\Expose
@@ -120,7 +121,7 @@ class DocumentReferenceType
     private $languageID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode|null
+     * @var LocaleCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode")
      * @JMS\Expose
@@ -131,7 +132,7 @@ class DocumentReferenceType
     private $localeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @var VersionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -142,7 +143,7 @@ class DocumentReferenceType
     private $versionID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode|null
+     * @var DocumentStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode")
      * @JMS\Expose
@@ -153,7 +154,7 @@ class DocumentReferenceType
     private $documentStatusCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription>|null
+     * @var array<DocumentDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription>")
      * @JMS\Expose
@@ -165,7 +166,7 @@ class DocumentReferenceType
     private $documentDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Attachment|null
+     * @var Attachment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Attachment")
      * @JMS\Expose
@@ -176,7 +177,7 @@ class DocumentReferenceType
     private $attachment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @var ValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -187,7 +188,7 @@ class DocumentReferenceType
     private $validityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -198,7 +199,7 @@ class DocumentReferenceType
     private $issuerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ResultOfVerification|null
+     * @var ResultOfVerification|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ResultOfVerification")
      * @JMS\Expose
@@ -209,7 +210,7 @@ class DocumentReferenceType
     private $resultOfVerification;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -217,7 +218,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -227,7 +228,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -277,7 +278,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -285,7 +286,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -295,7 +296,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -316,18 +317,18 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -345,18 +346,18 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueTime(): ?\DateTimeInterface
+    public function getIssueTime(): ?DateTimeInterface
     {
         return $this->issueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueTime
+     * @param DateTimeInterface|null $issueTime
      * @return self
      */
-    public function setIssueTime(?\DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): self
     {
         $this->issueTime = $issueTime;
 
@@ -374,7 +375,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentTypeCode|null
+     * @return DocumentTypeCode|null
      */
     public function getDocumentTypeCode(): ?DocumentTypeCode
     {
@@ -382,7 +383,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentTypeCode
+     * @return DocumentTypeCode
      */
     public function getDocumentTypeCodeWithCreate(): DocumentTypeCode
     {
@@ -392,7 +393,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentTypeCode|null $documentTypeCode
+     * @param DocumentTypeCode|null $documentTypeCode
      * @return self
      */
     public function setDocumentTypeCode(?DocumentTypeCode $documentTypeCode = null): self
@@ -413,7 +414,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentType|null
+     * @return DocumentType|null
      */
     public function getDocumentType(): ?DocumentType
     {
@@ -421,7 +422,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentType
+     * @return DocumentType
      */
     public function getDocumentTypeWithCreate(): DocumentType
     {
@@ -431,7 +432,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentType|null $documentType
+     * @param DocumentType|null $documentType
      * @return self
      */
     public function setDocumentType(?DocumentType $documentType = null): self
@@ -452,7 +453,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\XPath>|null
+     * @return array<XPath>|null
      */
     public function getXPath(): ?array
     {
@@ -460,7 +461,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\XPath>|null $xPath
+     * @param array<XPath>|null $xPath
      * @return self
      */
     public function setXPath(?array $xPath = null): self
@@ -491,7 +492,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\XPath|null
+     * @return XPath|null
      */
     public function firstXPath(): ?XPath
     {
@@ -506,7 +507,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\XPath|null
+     * @return XPath|null
      */
     public function lastXPath(): ?XPath
     {
@@ -521,7 +522,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\XPath $xPath
+     * @param XPath $xPath
      * @return self
      */
     public function addToXPath(XPath $xPath): self
@@ -532,7 +533,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\XPath
+     * @return XPath
      */
     public function addToXPathWithCreate(): XPath
     {
@@ -542,7 +543,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\XPath $xPath
+     * @param XPath $xPath
      * @return self
      */
     public function addOnceToXPath(XPath $xPath): self
@@ -557,7 +558,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\XPath
+     * @return XPath
      */
     public function addOnceToXPathWithCreate(): XPath
     {
@@ -573,7 +574,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID|null
+     * @return LanguageID|null
      */
     public function getLanguageID(): ?LanguageID
     {
@@ -581,7 +582,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID
+     * @return LanguageID
      */
     public function getLanguageIDWithCreate(): LanguageID
     {
@@ -591,7 +592,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID|null $languageID
+     * @param LanguageID|null $languageID
      * @return self
      */
     public function setLanguageID(?LanguageID $languageID = null): self
@@ -612,7 +613,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode|null
+     * @return LocaleCode|null
      */
     public function getLocaleCode(): ?LocaleCode
     {
@@ -620,7 +621,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode
+     * @return LocaleCode
      */
     public function getLocaleCodeWithCreate(): LocaleCode
     {
@@ -630,7 +631,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode|null $localeCode
+     * @param LocaleCode|null $localeCode
      * @return self
      */
     public function setLocaleCode(?LocaleCode $localeCode = null): self
@@ -651,7 +652,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @return VersionID|null
      */
     public function getVersionID(): ?VersionID
     {
@@ -659,7 +660,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID
+     * @return VersionID
      */
     public function getVersionIDWithCreate(): VersionID
     {
@@ -669,7 +670,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null $versionID
+     * @param VersionID|null $versionID
      * @return self
      */
     public function setVersionID(?VersionID $versionID = null): self
@@ -690,7 +691,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode|null
+     * @return DocumentStatusCode|null
      */
     public function getDocumentStatusCode(): ?DocumentStatusCode
     {
@@ -698,7 +699,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode
+     * @return DocumentStatusCode
      */
     public function getDocumentStatusCodeWithCreate(): DocumentStatusCode
     {
@@ -708,7 +709,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode|null $documentStatusCode
+     * @param DocumentStatusCode|null $documentStatusCode
      * @return self
      */
     public function setDocumentStatusCode(?DocumentStatusCode $documentStatusCode = null): self
@@ -729,7 +730,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription>|null
+     * @return array<DocumentDescription>|null
      */
     public function getDocumentDescription(): ?array
     {
@@ -737,7 +738,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription>|null $documentDescription
+     * @param array<DocumentDescription>|null $documentDescription
      * @return self
      */
     public function setDocumentDescription(?array $documentDescription = null): self
@@ -768,7 +769,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription|null
+     * @return DocumentDescription|null
      */
     public function firstDocumentDescription(): ?DocumentDescription
     {
@@ -783,7 +784,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription|null
+     * @return DocumentDescription|null
      */
     public function lastDocumentDescription(): ?DocumentDescription
     {
@@ -798,7 +799,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription $documentDescription
+     * @param DocumentDescription $documentDescription
      * @return self
      */
     public function addToDocumentDescription(DocumentDescription $documentDescription): self
@@ -809,7 +810,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription
+     * @return DocumentDescription
      */
     public function addToDocumentDescriptionWithCreate(): DocumentDescription
     {
@@ -819,7 +820,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription $documentDescription
+     * @param DocumentDescription $documentDescription
      * @return self
      */
     public function addOnceToDocumentDescription(DocumentDescription $documentDescription): self
@@ -834,7 +835,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription
+     * @return DocumentDescription
      */
     public function addOnceToDocumentDescriptionWithCreate(): DocumentDescription
     {
@@ -850,7 +851,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Attachment|null
+     * @return Attachment|null
      */
     public function getAttachment(): ?Attachment
     {
@@ -858,7 +859,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Attachment
+     * @return Attachment
      */
     public function getAttachmentWithCreate(): Attachment
     {
@@ -868,7 +869,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Attachment|null $attachment
+     * @param Attachment|null $attachment
      * @return self
      */
     public function setAttachment(?Attachment $attachment = null): self
@@ -889,7 +890,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -897,7 +898,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function getValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -907,7 +908,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null $validityPeriod
+     * @param ValidityPeriod|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
@@ -928,7 +929,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -936,7 +937,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -946,7 +947,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self
@@ -967,7 +968,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ResultOfVerification|null
+     * @return ResultOfVerification|null
      */
     public function getResultOfVerification(): ?ResultOfVerification
     {
@@ -975,7 +976,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ResultOfVerification
+     * @return ResultOfVerification
      */
     public function getResultOfVerificationWithCreate(): ResultOfVerification
     {
@@ -985,7 +986,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ResultOfVerification|null $resultOfVerification
+     * @param ResultOfVerification|null $resultOfVerification
      * @return self
      */
     public function setResultOfVerification(?ResultOfVerification $resultOfVerification = null): self

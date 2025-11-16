@@ -11,7 +11,7 @@ class ProductClassificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ProductClassificationType
     private $classCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getClassCode(): ?CodeType
     {
@@ -30,7 +30,7 @@ class ProductClassificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType
+     * @return CodeType
      */
     public function getClassCodeWithCreate(): CodeType
     {
@@ -40,7 +40,7 @@ class ProductClassificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType|null $classCode
+     * @param CodeType|null $classCode
      * @return self
      */
     public function setClassCode(?CodeType $classCode = null): self

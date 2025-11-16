@@ -13,7 +13,7 @@ class DocumentLineDocumentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class DocumentLineDocumentType
     private $lineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class DocumentLineDocumentType
     private $parentLineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType|null
+     * @var LineStatusCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class DocumentLineDocumentType
     private $lineStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class DocumentLineDocumentType
     private $lineStatusReasonCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType>|null
+     * @var array<NoteType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType>")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class DocumentLineDocumentType
     private $includedNote;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getLineID(): ?IDType
     {
@@ -77,7 +77,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getLineIDWithCreate(): IDType
     {
@@ -87,7 +87,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $lineID
+     * @param IDType|null $lineID
      * @return self
      */
     public function setLineID(?IDType $lineID = null): self
@@ -108,7 +108,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getParentLineID(): ?IDType
     {
@@ -116,7 +116,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getParentLineIDWithCreate(): IDType
     {
@@ -126,7 +126,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $parentLineID
+     * @param IDType|null $parentLineID
      * @return self
      */
     public function setParentLineID(?IDType $parentLineID = null): self
@@ -147,7 +147,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType|null
+     * @return LineStatusCodeType|null
      */
     public function getLineStatusCode(): ?LineStatusCodeType
     {
@@ -155,7 +155,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType
+     * @return LineStatusCodeType
      */
     public function getLineStatusCodeWithCreate(): LineStatusCodeType
     {
@@ -165,7 +165,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType|null $lineStatusCode
+     * @param LineStatusCodeType|null $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(?LineStatusCodeType $lineStatusCode = null): self
@@ -186,7 +186,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getLineStatusReasonCode(): ?CodeType
     {
@@ -194,7 +194,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType
+     * @return CodeType
      */
     public function getLineStatusReasonCodeWithCreate(): CodeType
     {
@@ -204,7 +204,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null $lineStatusReasonCode
+     * @param CodeType|null $lineStatusReasonCode
      * @return self
      */
     public function setLineStatusReasonCode(?CodeType $lineStatusReasonCode = null): self
@@ -225,7 +225,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType>|null
+     * @return array<NoteType>|null
      */
     public function getIncludedNote(): ?array
     {
@@ -233,7 +233,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType>|null $includedNote
+     * @param array<NoteType>|null $includedNote
      * @return self
      */
     public function setIncludedNote(?array $includedNote = null): self
@@ -264,7 +264,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType $includedNote
+     * @param NoteType $includedNote
      * @return self
      */
     public function addToIncludedNote(NoteType $includedNote): self
@@ -275,7 +275,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType
+     * @return NoteType
      */
     public function addToIncludedNoteWithCreate(): NoteType
     {
@@ -285,7 +285,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType $includedNote
+     * @param NoteType $includedNote
      * @return self
      */
     public function addOnceToIncludedNote(NoteType $includedNote): self
@@ -300,7 +300,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType
+     * @return NoteType
      */
     public function addOnceToIncludedNoteWithCreate(): NoteType
     {

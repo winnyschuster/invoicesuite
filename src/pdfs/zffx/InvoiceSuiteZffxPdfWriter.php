@@ -9,6 +9,7 @@
 
 namespace horstoeko\invoicesuite\pdfs\zffx;
 
+use setasign\Fpdi\PdfParser\StreamReader;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use setasign\Fpdi\Fpdi as PdfFpdi;
 
@@ -26,7 +27,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     /**
      * Contains all attached files
      *
-     * @var array<int, array{file: \setasign\Fpdi\PdfParser\StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int}>
+     * @var array<int, array{file: StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int}>
      */
     protected $files = [];
 
@@ -222,7 +223,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     /**
      * Put file attachment specification.
      *
-     * @param array{file: \setasign\Fpdi\PdfParser\StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
+     * @param array{file: StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
      * @return void
      */
     protected function putFileSpecification(array $file_info): void
@@ -252,7 +253,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     /**
      * Put file stream.
      *
-     * @param array{file: \setasign\Fpdi\PdfParser\StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
+     * @param array{file: StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
      * @return void
      */
     protected function putFileStream(array $file_info): void

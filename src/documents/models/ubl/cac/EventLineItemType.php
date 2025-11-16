@@ -11,7 +11,7 @@ class EventLineItemType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric|null
+     * @var LineNumberNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class EventLineItemType
     private $lineNumberNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipatingLocationsLocation|null
+     * @var ParticipatingLocationsLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ParticipatingLocationsLocation")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class EventLineItemType
     private $participatingLocationsLocation;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact>|null
+     * @var array<RetailPlannedImpact>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact>")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class EventLineItemType
     private $retailPlannedImpact;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem|null
+     * @var SupplyItem|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class EventLineItemType
     private $supplyItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric|null
+     * @return LineNumberNumeric|null
      */
     public function getLineNumberNumeric(): ?LineNumberNumeric
     {
@@ -64,7 +64,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric
+     * @return LineNumberNumeric
      */
     public function getLineNumberNumericWithCreate(): LineNumberNumeric
     {
@@ -74,7 +74,7 @@ class EventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric|null $lineNumberNumeric
+     * @param LineNumberNumeric|null $lineNumberNumeric
      * @return self
      */
     public function setLineNumberNumeric(?LineNumberNumeric $lineNumberNumeric = null): self
@@ -95,7 +95,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipatingLocationsLocation|null
+     * @return ParticipatingLocationsLocation|null
      */
     public function getParticipatingLocationsLocation(): ?ParticipatingLocationsLocation
     {
@@ -103,7 +103,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipatingLocationsLocation
+     * @return ParticipatingLocationsLocation
      */
     public function getParticipatingLocationsLocationWithCreate(): ParticipatingLocationsLocation
     {
@@ -113,7 +113,7 @@ class EventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ParticipatingLocationsLocation|null $participatingLocationsLocation
+     * @param ParticipatingLocationsLocation|null $participatingLocationsLocation
      * @return self
      */
     public function setParticipatingLocationsLocation(
@@ -135,7 +135,7 @@ class EventLineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact>|null
+     * @return array<RetailPlannedImpact>|null
      */
     public function getRetailPlannedImpact(): ?array
     {
@@ -143,7 +143,7 @@ class EventLineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact>|null $retailPlannedImpact
+     * @param array<RetailPlannedImpact>|null $retailPlannedImpact
      * @return self
      */
     public function setRetailPlannedImpact(?array $retailPlannedImpact = null): self
@@ -174,7 +174,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact|null
+     * @return RetailPlannedImpact|null
      */
     public function firstRetailPlannedImpact(): ?RetailPlannedImpact
     {
@@ -189,7 +189,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact|null
+     * @return RetailPlannedImpact|null
      */
     public function lastRetailPlannedImpact(): ?RetailPlannedImpact
     {
@@ -204,7 +204,7 @@ class EventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact $retailPlannedImpact
+     * @param RetailPlannedImpact $retailPlannedImpact
      * @return self
      */
     public function addToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): self
@@ -215,7 +215,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact
+     * @return RetailPlannedImpact
      */
     public function addToRetailPlannedImpactWithCreate(): RetailPlannedImpact
     {
@@ -225,7 +225,7 @@ class EventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact $retailPlannedImpact
+     * @param RetailPlannedImpact $retailPlannedImpact
      * @return self
      */
     public function addOnceToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): self
@@ -240,7 +240,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact
+     * @return RetailPlannedImpact
      */
     public function addOnceToRetailPlannedImpactWithCreate(): RetailPlannedImpact
     {
@@ -256,7 +256,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem|null
+     * @return SupplyItem|null
      */
     public function getSupplyItem(): ?SupplyItem
     {
@@ -264,7 +264,7 @@ class EventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem
+     * @return SupplyItem
      */
     public function getSupplyItemWithCreate(): SupplyItem
     {
@@ -274,7 +274,7 @@ class EventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem|null $supplyItem
+     * @param SupplyItem|null $supplyItem
      * @return self
      */
     public function setSupplyItem(?SupplyItem $supplyItem = null): self

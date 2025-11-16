@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -20,7 +21,7 @@ class ProcurementProjectType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -31,7 +32,7 @@ class ProcurementProjectType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @var array<Name>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -43,7 +44,7 @@ class ProcurementProjectType
     private $name;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -55,7 +56,7 @@ class ProcurementProjectType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode|null
+     * @var ProcurementTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode")
      * @JMS\Expose
@@ -66,7 +67,7 @@ class ProcurementProjectType
     private $procurementTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode|null
+     * @var ProcurementSubTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode")
      * @JMS\Expose
@@ -77,7 +78,7 @@ class ProcurementProjectType
     private $procurementSubTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode|null
+     * @var QualityControlCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode")
      * @JMS\Expose
@@ -88,7 +89,7 @@ class ProcurementProjectType
     private $qualityControlCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount|null
+     * @var RequiredFeeAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount")
      * @JMS\Expose
@@ -99,7 +100,7 @@ class ProcurementProjectType
     private $requiredFeeAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>|null
+     * @var array<FeeDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>")
      * @JMS\Expose
@@ -111,7 +112,7 @@ class ProcurementProjectType
     private $feeDescription;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -122,7 +123,7 @@ class ProcurementProjectType
     private $requestedDeliveryDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity|null
+     * @var EstimatedOverallContractQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity")
      * @JMS\Expose
@@ -133,7 +134,7 @@ class ProcurementProjectType
     private $estimatedOverallContractQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -145,7 +146,7 @@ class ProcurementProjectType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedTenderTotal|null
+     * @var RequestedTenderTotal|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedTenderTotal")
      * @JMS\Expose
@@ -156,7 +157,7 @@ class ProcurementProjectType
     private $requestedTenderTotal;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MainCommodityClassification|null
+     * @var MainCommodityClassification|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MainCommodityClassification")
      * @JMS\Expose
@@ -167,7 +168,7 @@ class ProcurementProjectType
     private $mainCommodityClassification;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification>|null
+     * @var array<AdditionalCommodityClassification>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification>")
      * @JMS\Expose
@@ -179,7 +180,7 @@ class ProcurementProjectType
     private $additionalCommodityClassification;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation>|null
+     * @var array<RealizedLocation>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation>")
      * @JMS\Expose
@@ -191,7 +192,7 @@ class ProcurementProjectType
     private $realizedLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPeriod|null
+     * @var PlannedPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPeriod")
      * @JMS\Expose
@@ -202,7 +203,7 @@ class ProcurementProjectType
     private $plannedPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ContractExtension|null
+     * @var ContractExtension|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractExtension")
      * @JMS\Expose
@@ -213,7 +214,7 @@ class ProcurementProjectType
     private $contractExtension;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine>|null
+     * @var array<RequestForTenderLine>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine>")
      * @JMS\Expose
@@ -225,7 +226,7 @@ class ProcurementProjectType
     private $requestForTenderLine;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -233,7 +234,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -243,7 +244,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -264,7 +265,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @return array<Name>|null
      */
     public function getName(): ?array
     {
@@ -272,7 +273,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null $name
+     * @param array<Name>|null $name
      * @return self
      */
     public function setName(?array $name = null): self
@@ -303,7 +304,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function firstName(): ?Name
     {
@@ -318,7 +319,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function lastName(): ?Name
     {
@@ -333,7 +334,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addToName(Name $name): self
@@ -344,7 +345,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addToNameWithCreate(): Name
     {
@@ -354,7 +355,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addOnceToName(Name $name): self
@@ -369,7 +370,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addOnceToNameWithCreate(): Name
     {
@@ -385,7 +386,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -393,7 +394,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -424,7 +425,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -439,7 +440,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -454,7 +455,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -465,7 +466,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -475,7 +476,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -490,7 +491,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -506,7 +507,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode|null
+     * @return ProcurementTypeCode|null
      */
     public function getProcurementTypeCode(): ?ProcurementTypeCode
     {
@@ -514,7 +515,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode
+     * @return ProcurementTypeCode
      */
     public function getProcurementTypeCodeWithCreate(): ProcurementTypeCode
     {
@@ -524,7 +525,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode|null $procurementTypeCode
+     * @param ProcurementTypeCode|null $procurementTypeCode
      * @return self
      */
     public function setProcurementTypeCode(?ProcurementTypeCode $procurementTypeCode = null): self
@@ -545,7 +546,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode|null
+     * @return ProcurementSubTypeCode|null
      */
     public function getProcurementSubTypeCode(): ?ProcurementSubTypeCode
     {
@@ -553,7 +554,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode
+     * @return ProcurementSubTypeCode
      */
     public function getProcurementSubTypeCodeWithCreate(): ProcurementSubTypeCode
     {
@@ -563,7 +564,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode|null $procurementSubTypeCode
+     * @param ProcurementSubTypeCode|null $procurementSubTypeCode
      * @return self
      */
     public function setProcurementSubTypeCode(?ProcurementSubTypeCode $procurementSubTypeCode = null): self
@@ -584,7 +585,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode|null
+     * @return QualityControlCode|null
      */
     public function getQualityControlCode(): ?QualityControlCode
     {
@@ -592,7 +593,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode
+     * @return QualityControlCode
      */
     public function getQualityControlCodeWithCreate(): QualityControlCode
     {
@@ -602,7 +603,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode|null $qualityControlCode
+     * @param QualityControlCode|null $qualityControlCode
      * @return self
      */
     public function setQualityControlCode(?QualityControlCode $qualityControlCode = null): self
@@ -623,7 +624,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount|null
+     * @return RequiredFeeAmount|null
      */
     public function getRequiredFeeAmount(): ?RequiredFeeAmount
     {
@@ -631,7 +632,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount
+     * @return RequiredFeeAmount
      */
     public function getRequiredFeeAmountWithCreate(): RequiredFeeAmount
     {
@@ -641,7 +642,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount|null $requiredFeeAmount
+     * @param RequiredFeeAmount|null $requiredFeeAmount
      * @return self
      */
     public function setRequiredFeeAmount(?RequiredFeeAmount $requiredFeeAmount = null): self
@@ -662,7 +663,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>|null
+     * @return array<FeeDescription>|null
      */
     public function getFeeDescription(): ?array
     {
@@ -670,7 +671,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>|null $feeDescription
+     * @param array<FeeDescription>|null $feeDescription
      * @return self
      */
     public function setFeeDescription(?array $feeDescription = null): self
@@ -701,7 +702,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription|null
+     * @return FeeDescription|null
      */
     public function firstFeeDescription(): ?FeeDescription
     {
@@ -716,7 +717,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription|null
+     * @return FeeDescription|null
      */
     public function lastFeeDescription(): ?FeeDescription
     {
@@ -731,7 +732,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription $feeDescription
+     * @param FeeDescription $feeDescription
      * @return self
      */
     public function addToFeeDescription(FeeDescription $feeDescription): self
@@ -742,7 +743,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription
+     * @return FeeDescription
      */
     public function addToFeeDescriptionWithCreate(): FeeDescription
     {
@@ -752,7 +753,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription $feeDescription
+     * @param FeeDescription $feeDescription
      * @return self
      */
     public function addOnceToFeeDescription(FeeDescription $feeDescription): self
@@ -767,7 +768,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription
+     * @return FeeDescription
      */
     public function addOnceToFeeDescriptionWithCreate(): FeeDescription
     {
@@ -783,18 +784,18 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getRequestedDeliveryDate(): ?\DateTimeInterface
+    public function getRequestedDeliveryDate(): ?DateTimeInterface
     {
         return $this->requestedDeliveryDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $requestedDeliveryDate
+     * @param DateTimeInterface|null $requestedDeliveryDate
      * @return self
      */
-    public function setRequestedDeliveryDate(?\DateTimeInterface $requestedDeliveryDate = null): self
+    public function setRequestedDeliveryDate(?DateTimeInterface $requestedDeliveryDate = null): self
     {
         $this->requestedDeliveryDate = $requestedDeliveryDate;
 
@@ -812,7 +813,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity|null
+     * @return EstimatedOverallContractQuantity|null
      */
     public function getEstimatedOverallContractQuantity(): ?EstimatedOverallContractQuantity
     {
@@ -820,7 +821,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity
+     * @return EstimatedOverallContractQuantity
      */
     public function getEstimatedOverallContractQuantityWithCreate(): EstimatedOverallContractQuantity
     {
@@ -830,7 +831,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity|null $estimatedOverallContractQuantity
+     * @param EstimatedOverallContractQuantity|null $estimatedOverallContractQuantity
      * @return self
      */
     public function setEstimatedOverallContractQuantity(
@@ -852,7 +853,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -860,7 +861,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -891,7 +892,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -906,7 +907,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -921,7 +922,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -932,7 +933,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -942,7 +943,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -957,7 +958,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -973,7 +974,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedTenderTotal|null
+     * @return RequestedTenderTotal|null
      */
     public function getRequestedTenderTotal(): ?RequestedTenderTotal
     {
@@ -981,7 +982,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedTenderTotal
+     * @return RequestedTenderTotal
      */
     public function getRequestedTenderTotalWithCreate(): RequestedTenderTotal
     {
@@ -991,7 +992,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedTenderTotal|null $requestedTenderTotal
+     * @param RequestedTenderTotal|null $requestedTenderTotal
      * @return self
      */
     public function setRequestedTenderTotal(?RequestedTenderTotal $requestedTenderTotal = null): self
@@ -1012,7 +1013,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MainCommodityClassification|null
+     * @return MainCommodityClassification|null
      */
     public function getMainCommodityClassification(): ?MainCommodityClassification
     {
@@ -1020,7 +1021,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MainCommodityClassification
+     * @return MainCommodityClassification
      */
     public function getMainCommodityClassificationWithCreate(): MainCommodityClassification
     {
@@ -1030,7 +1031,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MainCommodityClassification|null $mainCommodityClassification
+     * @param MainCommodityClassification|null $mainCommodityClassification
      * @return self
      */
     public function setMainCommodityClassification(
@@ -1052,7 +1053,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification>|null
+     * @return array<AdditionalCommodityClassification>|null
      */
     public function getAdditionalCommodityClassification(): ?array
     {
@@ -1060,7 +1061,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification>|null $additionalCommodityClassification
+     * @param array<AdditionalCommodityClassification>|null $additionalCommodityClassification
      * @return self
      */
     public function setAdditionalCommodityClassification(?array $additionalCommodityClassification = null): self
@@ -1091,7 +1092,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification|null
+     * @return AdditionalCommodityClassification|null
      */
     public function firstAdditionalCommodityClassification(): ?AdditionalCommodityClassification
     {
@@ -1106,7 +1107,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification|null
+     * @return AdditionalCommodityClassification|null
      */
     public function lastAdditionalCommodityClassification(): ?AdditionalCommodityClassification
     {
@@ -1121,7 +1122,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification $additionalCommodityClassification
+     * @param AdditionalCommodityClassification $additionalCommodityClassification
      * @return self
      */
     public function addToAdditionalCommodityClassification(
@@ -1133,7 +1134,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification
+     * @return AdditionalCommodityClassification
      */
     public function addToAdditionalCommodityClassificationWithCreate(): AdditionalCommodityClassification
     {
@@ -1143,7 +1144,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification $additionalCommodityClassification
+     * @param AdditionalCommodityClassification $additionalCommodityClassification
      * @return self
      */
     public function addOnceToAdditionalCommodityClassification(
@@ -1159,7 +1160,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification
+     * @return AdditionalCommodityClassification
      */
     public function addOnceToAdditionalCommodityClassificationWithCreate(): AdditionalCommodityClassification
     {
@@ -1175,7 +1176,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation>|null
+     * @return array<RealizedLocation>|null
      */
     public function getRealizedLocation(): ?array
     {
@@ -1183,7 +1184,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation>|null $realizedLocation
+     * @param array<RealizedLocation>|null $realizedLocation
      * @return self
      */
     public function setRealizedLocation(?array $realizedLocation = null): self
@@ -1214,7 +1215,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation|null
+     * @return RealizedLocation|null
      */
     public function firstRealizedLocation(): ?RealizedLocation
     {
@@ -1229,7 +1230,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation|null
+     * @return RealizedLocation|null
      */
     public function lastRealizedLocation(): ?RealizedLocation
     {
@@ -1244,7 +1245,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation $realizedLocation
+     * @param RealizedLocation $realizedLocation
      * @return self
      */
     public function addToRealizedLocation(RealizedLocation $realizedLocation): self
@@ -1255,7 +1256,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation
+     * @return RealizedLocation
      */
     public function addToRealizedLocationWithCreate(): RealizedLocation
     {
@@ -1265,7 +1266,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation $realizedLocation
+     * @param RealizedLocation $realizedLocation
      * @return self
      */
     public function addOnceToRealizedLocation(RealizedLocation $realizedLocation): self
@@ -1280,7 +1281,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation
+     * @return RealizedLocation
      */
     public function addOnceToRealizedLocationWithCreate(): RealizedLocation
     {
@@ -1296,7 +1297,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPeriod|null
+     * @return PlannedPeriod|null
      */
     public function getPlannedPeriod(): ?PlannedPeriod
     {
@@ -1304,7 +1305,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPeriod
+     * @return PlannedPeriod
      */
     public function getPlannedPeriodWithCreate(): PlannedPeriod
     {
@@ -1314,7 +1315,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPeriod|null $plannedPeriod
+     * @param PlannedPeriod|null $plannedPeriod
      * @return self
      */
     public function setPlannedPeriod(?PlannedPeriod $plannedPeriod = null): self
@@ -1335,7 +1336,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractExtension|null
+     * @return ContractExtension|null
      */
     public function getContractExtension(): ?ContractExtension
     {
@@ -1343,7 +1344,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractExtension
+     * @return ContractExtension
      */
     public function getContractExtensionWithCreate(): ContractExtension
     {
@@ -1353,7 +1354,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractExtension|null $contractExtension
+     * @param ContractExtension|null $contractExtension
      * @return self
      */
     public function setContractExtension(?ContractExtension $contractExtension = null): self
@@ -1374,7 +1375,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine>|null
+     * @return array<RequestForTenderLine>|null
      */
     public function getRequestForTenderLine(): ?array
     {
@@ -1382,7 +1383,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine>|null $requestForTenderLine
+     * @param array<RequestForTenderLine>|null $requestForTenderLine
      * @return self
      */
     public function setRequestForTenderLine(?array $requestForTenderLine = null): self
@@ -1413,7 +1414,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine|null
+     * @return RequestForTenderLine|null
      */
     public function firstRequestForTenderLine(): ?RequestForTenderLine
     {
@@ -1428,7 +1429,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine|null
+     * @return RequestForTenderLine|null
      */
     public function lastRequestForTenderLine(): ?RequestForTenderLine
     {
@@ -1443,7 +1444,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine $requestForTenderLine
+     * @param RequestForTenderLine $requestForTenderLine
      * @return self
      */
     public function addToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): self
@@ -1454,7 +1455,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine
+     * @return RequestForTenderLine
      */
     public function addToRequestForTenderLineWithCreate(): RequestForTenderLine
     {
@@ -1464,7 +1465,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine $requestForTenderLine
+     * @param RequestForTenderLine $requestForTenderLine
      * @return self
      */
     public function addOnceToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): self
@@ -1479,7 +1480,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine
+     * @return RequestForTenderLine
      */
     public function addOnceToRequestForTenderLineWithCreate(): RequestForTenderLine
     {

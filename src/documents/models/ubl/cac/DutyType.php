@@ -13,7 +13,7 @@ class DutyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class DutyType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Duty|null
+     * @var Duty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Duty")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class DutyType
     private $duty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode|null
+     * @var DutyCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class DutyType
     private $dutyCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @var TaxCategory|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class DutyType
     private $taxCategory;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -65,7 +65,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -75,7 +75,7 @@ class DutyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -96,7 +96,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Duty|null
+     * @return Duty|null
      */
     public function getDuty(): ?Duty
     {
@@ -104,7 +104,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Duty
+     * @return Duty
      */
     public function getDutyWithCreate(): Duty
     {
@@ -114,7 +114,7 @@ class DutyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Duty|null $duty
+     * @param Duty|null $duty
      * @return self
      */
     public function setDuty(?Duty $duty = null): self
@@ -135,7 +135,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode|null
+     * @return DutyCode|null
      */
     public function getDutyCode(): ?DutyCode
     {
@@ -143,7 +143,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode
+     * @return DutyCode
      */
     public function getDutyCodeWithCreate(): DutyCode
     {
@@ -153,7 +153,7 @@ class DutyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode|null $dutyCode
+     * @param DutyCode|null $dutyCode
      * @return self
      */
     public function setDutyCode(?DutyCode $dutyCode = null): self
@@ -174,7 +174,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @return TaxCategory|null
      */
     public function getTaxCategory(): ?TaxCategory
     {
@@ -182,7 +182,7 @@ class DutyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory
+     * @return TaxCategory
      */
     public function getTaxCategoryWithCreate(): TaxCategory
     {
@@ -192,7 +192,7 @@ class DutyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null $taxCategory
+     * @param TaxCategory|null $taxCategory
      * @return self
      */
     public function setTaxCategory(?TaxCategory $taxCategory = null): self

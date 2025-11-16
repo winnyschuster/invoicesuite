@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID;
@@ -11,7 +12,7 @@ class LotIdentificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID|null
+     * @var LotNumberID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID")
      * @JMS\Expose
@@ -22,7 +23,7 @@ class LotIdentificationType
     private $lotNumberID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -33,7 +34,7 @@ class LotIdentificationType
     private $expiryDate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>|null
+     * @var array<AdditionalItemProperty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>")
      * @JMS\Expose
@@ -45,7 +46,7 @@ class LotIdentificationType
     private $additionalItemProperty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID|null
+     * @return LotNumberID|null
      */
     public function getLotNumberID(): ?LotNumberID
     {
@@ -53,7 +54,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID
+     * @return LotNumberID
      */
     public function getLotNumberIDWithCreate(): LotNumberID
     {
@@ -63,7 +64,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID|null $lotNumberID
+     * @param LotNumberID|null $lotNumberID
      * @return self
      */
     public function setLotNumberID(?LotNumberID $lotNumberID = null): self
@@ -84,18 +85,18 @@ class LotIdentificationType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getExpiryDate(): ?\DateTimeInterface
+    public function getExpiryDate(): ?DateTimeInterface
     {
         return $this->expiryDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $expiryDate
+     * @param DateTimeInterface|null $expiryDate
      * @return self
      */
-    public function setExpiryDate(?\DateTimeInterface $expiryDate = null): self
+    public function setExpiryDate(?DateTimeInterface $expiryDate = null): self
     {
         $this->expiryDate = $expiryDate;
 
@@ -113,7 +114,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>|null
+     * @return array<AdditionalItemProperty>|null
      */
     public function getAdditionalItemProperty(): ?array
     {
@@ -121,7 +122,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>|null $additionalItemProperty
+     * @param array<AdditionalItemProperty>|null $additionalItemProperty
      * @return self
      */
     public function setAdditionalItemProperty(?array $additionalItemProperty = null): self
@@ -152,7 +153,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty|null
+     * @return AdditionalItemProperty|null
      */
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -167,7 +168,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty|null
+     * @return AdditionalItemProperty|null
      */
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -182,7 +183,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @param AdditionalItemProperty $additionalItemProperty
      * @return self
      */
     public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
@@ -193,7 +194,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty
+     * @return AdditionalItemProperty
      */
     public function addToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
     {
@@ -203,7 +204,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty $additionalItemProperty
+     * @param AdditionalItemProperty $additionalItemProperty
      * @return self
      */
     public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
@@ -218,7 +219,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty
+     * @return AdditionalItemProperty
      */
     public function addOnceToAdditionalItemPropertyWithCreate(): AdditionalItemProperty
     {

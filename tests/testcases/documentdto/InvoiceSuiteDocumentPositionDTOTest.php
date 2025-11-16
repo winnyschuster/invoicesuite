@@ -32,7 +32,7 @@ final class InvoiceSuiteDocumentPositionDTOTest extends TestCase
         $this->assertNull($invoiceSuiteDocumentPositionDTO->getLineStatus());
         $this->assertNull($invoiceSuiteDocumentPositionDTO->getLineStatusReason());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getNote());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO::class, $invoiceSuiteDocumentPositionDTO->getProduct());
+        $this->assertNotInstanceOf(InvoiceSuiteProductDTO::class, $invoiceSuiteDocumentPositionDTO->getProduct());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getSellerOrderReferences());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getBuyerOrderReferences());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getQuotationReferences());
@@ -43,19 +43,19 @@ final class InvoiceSuiteDocumentPositionDTOTest extends TestCase
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getReceivingAdviceReferences());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getDeliveryNoteReferences());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getInvoiceReferences());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceGrossDTO::class, $invoiceSuiteDocumentPositionDTO->getGrossPrice());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO::class, $invoiceSuiteDocumentPositionDTO->getNetPrice());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuiteDocumentPositionDTO->getQuantityBilled());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuiteDocumentPositionDTO->getQuantityChargeFree());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuiteDocumentPositionDTO->getQuantityPackage());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentPositionDTO->getShipToParty());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentPositionDTO->getUltimateShipToParty());
+        $this->assertNotInstanceOf(InvoiceSuitePriceGrossDTO::class, $invoiceSuiteDocumentPositionDTO->getGrossPrice());
+        $this->assertNotInstanceOf(InvoiceSuitePriceNetDTO::class, $invoiceSuiteDocumentPositionDTO->getNetPrice());
+        $this->assertNotInstanceOf(InvoiceSuiteQuantityDTO::class, $invoiceSuiteDocumentPositionDTO->getQuantityBilled());
+        $this->assertNotInstanceOf(InvoiceSuiteQuantityDTO::class, $invoiceSuiteDocumentPositionDTO->getQuantityChargeFree());
+        $this->assertNotInstanceOf(InvoiceSuiteQuantityDTO::class, $invoiceSuiteDocumentPositionDTO->getQuantityPackage());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentPositionDTO->getShipToParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentPositionDTO->getUltimateShipToParty());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getSupplyChainEvents());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getBillingPeriods());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getPostingReferences());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getTaxes());
         $this->assertSame([], $invoiceSuiteDocumentPositionDTO->getAllowanceCharges());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitesummationLineDTO::class, $invoiceSuiteDocumentPositionDTO->getSummation());
+        $this->assertNotInstanceOf(InvoiceSuitesummationLineDTO::class, $invoiceSuiteDocumentPositionDTO->getSummation());
     }
 
     public function testLineIdGetterAndSetter(): void

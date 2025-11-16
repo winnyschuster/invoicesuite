@@ -12,7 +12,7 @@ class ProcuringProjectType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ProcuringProjectType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ProcuringProjectType
     private $name;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -42,7 +42,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -52,7 +52,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self
@@ -73,7 +73,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getName(): ?TextType
     {
@@ -81,7 +81,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getNameWithCreate(): TextType
     {
@@ -91,7 +91,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $name
+     * @param TextType|null $name
      * @return self
      */
     public function setName(?TextType $name = null): self

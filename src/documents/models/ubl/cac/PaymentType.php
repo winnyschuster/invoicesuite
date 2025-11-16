@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -13,7 +14,7 @@ class PaymentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +25,7 @@ class PaymentType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount|null
+     * @var PaidAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount")
      * @JMS\Expose
@@ -35,7 +36,7 @@ class PaymentType
     private $paidAmount;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -46,7 +47,7 @@ class PaymentType
     private $receivedDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -57,7 +58,7 @@ class PaymentType
     private $paidDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -68,7 +69,7 @@ class PaymentType
     private $paidTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID|null
+     * @var InstructionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID")
      * @JMS\Expose
@@ -79,7 +80,7 @@ class PaymentType
     private $instructionID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -87,7 +88,7 @@ class PaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -97,7 +98,7 @@ class PaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -118,7 +119,7 @@ class PaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount|null
+     * @return PaidAmount|null
      */
     public function getPaidAmount(): ?PaidAmount
     {
@@ -126,7 +127,7 @@ class PaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount
+     * @return PaidAmount
      */
     public function getPaidAmountWithCreate(): PaidAmount
     {
@@ -136,7 +137,7 @@ class PaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount|null $paidAmount
+     * @param PaidAmount|null $paidAmount
      * @return self
      */
     public function setPaidAmount(?PaidAmount $paidAmount = null): self
@@ -157,18 +158,18 @@ class PaymentType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getReceivedDate(): ?\DateTimeInterface
+    public function getReceivedDate(): ?DateTimeInterface
     {
         return $this->receivedDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $receivedDate
+     * @param DateTimeInterface|null $receivedDate
      * @return self
      */
-    public function setReceivedDate(?\DateTimeInterface $receivedDate = null): self
+    public function setReceivedDate(?DateTimeInterface $receivedDate = null): self
     {
         $this->receivedDate = $receivedDate;
 
@@ -186,18 +187,18 @@ class PaymentType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getPaidDate(): ?\DateTimeInterface
+    public function getPaidDate(): ?DateTimeInterface
     {
         return $this->paidDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $paidDate
+     * @param DateTimeInterface|null $paidDate
      * @return self
      */
-    public function setPaidDate(?\DateTimeInterface $paidDate = null): self
+    public function setPaidDate(?DateTimeInterface $paidDate = null): self
     {
         $this->paidDate = $paidDate;
 
@@ -215,18 +216,18 @@ class PaymentType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getPaidTime(): ?\DateTimeInterface
+    public function getPaidTime(): ?DateTimeInterface
     {
         return $this->paidTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $paidTime
+     * @param DateTimeInterface|null $paidTime
      * @return self
      */
-    public function setPaidTime(?\DateTimeInterface $paidTime = null): self
+    public function setPaidTime(?DateTimeInterface $paidTime = null): self
     {
         $this->paidTime = $paidTime;
 
@@ -244,7 +245,7 @@ class PaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID|null
+     * @return InstructionID|null
      */
     public function getInstructionID(): ?InstructionID
     {
@@ -252,7 +253,7 @@ class PaymentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID
+     * @return InstructionID
      */
     public function getInstructionIDWithCreate(): InstructionID
     {
@@ -262,7 +263,7 @@ class PaymentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID|null $instructionID
+     * @param InstructionID|null $instructionID
      * @return self
      */
     public function setInstructionID(?InstructionID $instructionID = null): self

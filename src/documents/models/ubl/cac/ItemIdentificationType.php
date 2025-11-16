@@ -13,7 +13,7 @@ class ItemIdentificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ItemIdentificationType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID|null
+     * @var ExtendedID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ItemIdentificationType
     private $extendedID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID|null
+     * @var BarcodeSymbologyID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ItemIdentificationType
     private $barcodeSymbologyID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute>|null
+     * @var array<PhysicalAttribute>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ItemIdentificationType
     private $physicalAttribute;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @var array<MeasurementDimension>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class ItemIdentificationType
     private $measurementDimension;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class ItemIdentificationType
     private $issuerParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -89,7 +89,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -99,7 +99,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -120,7 +120,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID|null
+     * @return ExtendedID|null
      */
     public function getExtendedID(): ?ExtendedID
     {
@@ -128,7 +128,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID
+     * @return ExtendedID
      */
     public function getExtendedIDWithCreate(): ExtendedID
     {
@@ -138,7 +138,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID|null $extendedID
+     * @param ExtendedID|null $extendedID
      * @return self
      */
     public function setExtendedID(?ExtendedID $extendedID = null): self
@@ -159,7 +159,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID|null
+     * @return BarcodeSymbologyID|null
      */
     public function getBarcodeSymbologyID(): ?BarcodeSymbologyID
     {
@@ -167,7 +167,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID
+     * @return BarcodeSymbologyID
      */
     public function getBarcodeSymbologyIDWithCreate(): BarcodeSymbologyID
     {
@@ -177,7 +177,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID|null $barcodeSymbologyID
+     * @param BarcodeSymbologyID|null $barcodeSymbologyID
      * @return self
      */
     public function setBarcodeSymbologyID(?BarcodeSymbologyID $barcodeSymbologyID = null): self
@@ -198,7 +198,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute>|null
+     * @return array<PhysicalAttribute>|null
      */
     public function getPhysicalAttribute(): ?array
     {
@@ -206,7 +206,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute>|null $physicalAttribute
+     * @param array<PhysicalAttribute>|null $physicalAttribute
      * @return self
      */
     public function setPhysicalAttribute(?array $physicalAttribute = null): self
@@ -237,7 +237,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute|null
+     * @return PhysicalAttribute|null
      */
     public function firstPhysicalAttribute(): ?PhysicalAttribute
     {
@@ -252,7 +252,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute|null
+     * @return PhysicalAttribute|null
      */
     public function lastPhysicalAttribute(): ?PhysicalAttribute
     {
@@ -267,7 +267,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute $physicalAttribute
+     * @param PhysicalAttribute $physicalAttribute
      * @return self
      */
     public function addToPhysicalAttribute(PhysicalAttribute $physicalAttribute): self
@@ -278,7 +278,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute
+     * @return PhysicalAttribute
      */
     public function addToPhysicalAttributeWithCreate(): PhysicalAttribute
     {
@@ -288,7 +288,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute $physicalAttribute
+     * @param PhysicalAttribute $physicalAttribute
      * @return self
      */
     public function addOnceToPhysicalAttribute(PhysicalAttribute $physicalAttribute): self
@@ -303,7 +303,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute
+     * @return PhysicalAttribute
      */
     public function addOnceToPhysicalAttributeWithCreate(): PhysicalAttribute
     {
@@ -319,7 +319,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @return array<MeasurementDimension>|null
      */
     public function getMeasurementDimension(): ?array
     {
@@ -327,7 +327,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null $measurementDimension
+     * @param array<MeasurementDimension>|null $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(?array $measurementDimension = null): self
@@ -358,7 +358,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -373,7 +373,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -388,7 +388,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -399,7 +399,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addToMeasurementDimensionWithCreate(): MeasurementDimension
     {
@@ -409,7 +409,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -424,7 +424,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addOnceToMeasurementDimensionWithCreate(): MeasurementDimension
     {
@@ -440,7 +440,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -448,7 +448,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -458,7 +458,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self

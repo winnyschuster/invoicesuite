@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -14,7 +15,7 @@ class WorkPhaseReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +26,7 @@ class WorkPhaseReferenceType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode|null
+     * @var WorkPhaseCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode")
      * @JMS\Expose
@@ -36,7 +37,7 @@ class WorkPhaseReferenceType
     private $workPhaseCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase>|null
+     * @var array<WorkPhase>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase>")
      * @JMS\Expose
@@ -48,7 +49,7 @@ class WorkPhaseReferenceType
     private $workPhase;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent|null
+     * @var ProgressPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent")
      * @JMS\Expose
@@ -59,7 +60,7 @@ class WorkPhaseReferenceType
     private $progressPercent;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -70,7 +71,7 @@ class WorkPhaseReferenceType
     private $startDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -81,7 +82,7 @@ class WorkPhaseReferenceType
     private $endDate;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference>|null
+     * @var array<WorkOrderDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference>")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class WorkPhaseReferenceType
     private $workOrderDocumentReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -101,7 +102,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -111,7 +112,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -132,7 +133,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode|null
+     * @return WorkPhaseCode|null
      */
     public function getWorkPhaseCode(): ?WorkPhaseCode
     {
@@ -140,7 +141,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode
+     * @return WorkPhaseCode
      */
     public function getWorkPhaseCodeWithCreate(): WorkPhaseCode
     {
@@ -150,7 +151,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode|null $workPhaseCode
+     * @param WorkPhaseCode|null $workPhaseCode
      * @return self
      */
     public function setWorkPhaseCode(?WorkPhaseCode $workPhaseCode = null): self
@@ -171,7 +172,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase>|null
+     * @return array<WorkPhase>|null
      */
     public function getWorkPhase(): ?array
     {
@@ -179,7 +180,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase>|null $workPhase
+     * @param array<WorkPhase>|null $workPhase
      * @return self
      */
     public function setWorkPhase(?array $workPhase = null): self
@@ -210,7 +211,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase|null
+     * @return WorkPhase|null
      */
     public function firstWorkPhase(): ?WorkPhase
     {
@@ -225,7 +226,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase|null
+     * @return WorkPhase|null
      */
     public function lastWorkPhase(): ?WorkPhase
     {
@@ -240,7 +241,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase $workPhase
+     * @param WorkPhase $workPhase
      * @return self
      */
     public function addToWorkPhase(WorkPhase $workPhase): self
@@ -251,7 +252,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase
+     * @return WorkPhase
      */
     public function addToWorkPhaseWithCreate(): WorkPhase
     {
@@ -261,7 +262,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase $workPhase
+     * @param WorkPhase $workPhase
      * @return self
      */
     public function addOnceToWorkPhase(WorkPhase $workPhase): self
@@ -276,7 +277,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase
+     * @return WorkPhase
      */
     public function addOnceToWorkPhaseWithCreate(): WorkPhase
     {
@@ -292,7 +293,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent|null
+     * @return ProgressPercent|null
      */
     public function getProgressPercent(): ?ProgressPercent
     {
@@ -300,7 +301,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent
+     * @return ProgressPercent
      */
     public function getProgressPercentWithCreate(): ProgressPercent
     {
@@ -310,7 +311,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent|null $progressPercent
+     * @param ProgressPercent|null $progressPercent
      * @return self
      */
     public function setProgressPercent(?ProgressPercent $progressPercent = null): self
@@ -331,18 +332,18 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $startDate
+     * @param DateTimeInterface|null $startDate
      * @return self
      */
-    public function setStartDate(?\DateTimeInterface $startDate = null): self
+    public function setStartDate(?DateTimeInterface $startDate = null): self
     {
         $this->startDate = $startDate;
 
@@ -360,18 +361,18 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getEndDate(): ?\DateTimeInterface
+    public function getEndDate(): ?DateTimeInterface
     {
         return $this->endDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $endDate
+     * @param DateTimeInterface|null $endDate
      * @return self
      */
-    public function setEndDate(?\DateTimeInterface $endDate = null): self
+    public function setEndDate(?DateTimeInterface $endDate = null): self
     {
         $this->endDate = $endDate;
 
@@ -389,7 +390,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference>|null
+     * @return array<WorkOrderDocumentReference>|null
      */
     public function getWorkOrderDocumentReference(): ?array
     {
@@ -397,7 +398,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference>|null $workOrderDocumentReference
+     * @param array<WorkOrderDocumentReference>|null $workOrderDocumentReference
      * @return self
      */
     public function setWorkOrderDocumentReference(?array $workOrderDocumentReference = null): self
@@ -428,7 +429,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference|null
+     * @return WorkOrderDocumentReference|null
      */
     public function firstWorkOrderDocumentReference(): ?WorkOrderDocumentReference
     {
@@ -443,7 +444,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference|null
+     * @return WorkOrderDocumentReference|null
      */
     public function lastWorkOrderDocumentReference(): ?WorkOrderDocumentReference
     {
@@ -458,7 +459,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference $workOrderDocumentReference
+     * @param WorkOrderDocumentReference $workOrderDocumentReference
      * @return self
      */
     public function addToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): self
@@ -469,7 +470,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference
+     * @return WorkOrderDocumentReference
      */
     public function addToWorkOrderDocumentReferenceWithCreate(): WorkOrderDocumentReference
     {
@@ -479,7 +480,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference $workOrderDocumentReference
+     * @param WorkOrderDocumentReference $workOrderDocumentReference
      * @return self
      */
     public function addOnceToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): self
@@ -494,7 +495,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference
+     * @return WorkOrderDocumentReference
      */
     public function addOnceToWorkOrderDocumentReferenceWithCreate(): WorkOrderDocumentReference
     {

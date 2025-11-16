@@ -12,7 +12,7 @@ class DeliveryUnitType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity|null
+     * @var BatchQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class DeliveryUnitType
     private $batchQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity|null
+     * @var ConsumerUnitQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class DeliveryUnitType
     private $hazardousRiskIndicator;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity|null
+     * @return BatchQuantity|null
      */
     public function getBatchQuantity(): ?BatchQuantity
     {
@@ -53,7 +53,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity
+     * @return BatchQuantity
      */
     public function getBatchQuantityWithCreate(): BatchQuantity
     {
@@ -63,7 +63,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity|null $batchQuantity
+     * @param BatchQuantity|null $batchQuantity
      * @return self
      */
     public function setBatchQuantity(?BatchQuantity $batchQuantity = null): self
@@ -84,7 +84,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity|null
+     * @return ConsumerUnitQuantity|null
      */
     public function getConsumerUnitQuantity(): ?ConsumerUnitQuantity
     {
@@ -92,7 +92,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity
+     * @return ConsumerUnitQuantity
      */
     public function getConsumerUnitQuantityWithCreate(): ConsumerUnitQuantity
     {
@@ -102,7 +102,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity|null $consumerUnitQuantity
+     * @param ConsumerUnitQuantity|null $consumerUnitQuantity
      * @return self
      */
     public function setConsumerUnitQuantity(?ConsumerUnitQuantity $consumerUnitQuantity = null): self

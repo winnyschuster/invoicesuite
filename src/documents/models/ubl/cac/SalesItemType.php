@@ -11,7 +11,7 @@ class SalesItemType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class SalesItemType
     private $quantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty>|null
+     * @var array<ActivityProperty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty>")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class SalesItemType
     private $activityProperty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice>|null
+     * @var array<TaxExclusivePrice>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class SalesItemType
     private $taxExclusivePrice;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice>|null
+     * @var array<TaxInclusivePrice>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class SalesItemType
     private $taxInclusivePrice;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @var Item|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class SalesItemType
     private $item;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -77,7 +77,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -87,7 +87,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -108,7 +108,7 @@ class SalesItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty>|null
+     * @return array<ActivityProperty>|null
      */
     public function getActivityProperty(): ?array
     {
@@ -116,7 +116,7 @@ class SalesItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty>|null $activityProperty
+     * @param array<ActivityProperty>|null $activityProperty
      * @return self
      */
     public function setActivityProperty(?array $activityProperty = null): self
@@ -147,7 +147,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty|null
+     * @return ActivityProperty|null
      */
     public function firstActivityProperty(): ?ActivityProperty
     {
@@ -162,7 +162,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty|null
+     * @return ActivityProperty|null
      */
     public function lastActivityProperty(): ?ActivityProperty
     {
@@ -177,7 +177,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty $activityProperty
+     * @param ActivityProperty $activityProperty
      * @return self
      */
     public function addToActivityProperty(ActivityProperty $activityProperty): self
@@ -188,7 +188,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty
+     * @return ActivityProperty
      */
     public function addToActivityPropertyWithCreate(): ActivityProperty
     {
@@ -198,7 +198,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty $activityProperty
+     * @param ActivityProperty $activityProperty
      * @return self
      */
     public function addOnceToActivityProperty(ActivityProperty $activityProperty): self
@@ -213,7 +213,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty
+     * @return ActivityProperty
      */
     public function addOnceToActivityPropertyWithCreate(): ActivityProperty
     {
@@ -229,7 +229,7 @@ class SalesItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice>|null
+     * @return array<TaxExclusivePrice>|null
      */
     public function getTaxExclusivePrice(): ?array
     {
@@ -237,7 +237,7 @@ class SalesItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice>|null $taxExclusivePrice
+     * @param array<TaxExclusivePrice>|null $taxExclusivePrice
      * @return self
      */
     public function setTaxExclusivePrice(?array $taxExclusivePrice = null): self
@@ -268,7 +268,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice|null
+     * @return TaxExclusivePrice|null
      */
     public function firstTaxExclusivePrice(): ?TaxExclusivePrice
     {
@@ -283,7 +283,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice|null
+     * @return TaxExclusivePrice|null
      */
     public function lastTaxExclusivePrice(): ?TaxExclusivePrice
     {
@@ -298,7 +298,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice $taxExclusivePrice
+     * @param TaxExclusivePrice $taxExclusivePrice
      * @return self
      */
     public function addToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): self
@@ -309,7 +309,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice
+     * @return TaxExclusivePrice
      */
     public function addToTaxExclusivePriceWithCreate(): TaxExclusivePrice
     {
@@ -319,7 +319,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice $taxExclusivePrice
+     * @param TaxExclusivePrice $taxExclusivePrice
      * @return self
      */
     public function addOnceToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): self
@@ -334,7 +334,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice
+     * @return TaxExclusivePrice
      */
     public function addOnceToTaxExclusivePriceWithCreate(): TaxExclusivePrice
     {
@@ -350,7 +350,7 @@ class SalesItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice>|null
+     * @return array<TaxInclusivePrice>|null
      */
     public function getTaxInclusivePrice(): ?array
     {
@@ -358,7 +358,7 @@ class SalesItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice>|null $taxInclusivePrice
+     * @param array<TaxInclusivePrice>|null $taxInclusivePrice
      * @return self
      */
     public function setTaxInclusivePrice(?array $taxInclusivePrice = null): self
@@ -389,7 +389,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice|null
+     * @return TaxInclusivePrice|null
      */
     public function firstTaxInclusivePrice(): ?TaxInclusivePrice
     {
@@ -404,7 +404,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice|null
+     * @return TaxInclusivePrice|null
      */
     public function lastTaxInclusivePrice(): ?TaxInclusivePrice
     {
@@ -419,7 +419,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice $taxInclusivePrice
+     * @param TaxInclusivePrice $taxInclusivePrice
      * @return self
      */
     public function addToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): self
@@ -430,7 +430,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice
+     * @return TaxInclusivePrice
      */
     public function addToTaxInclusivePriceWithCreate(): TaxInclusivePrice
     {
@@ -440,7 +440,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice $taxInclusivePrice
+     * @param TaxInclusivePrice $taxInclusivePrice
      * @return self
      */
     public function addOnceToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): self
@@ -455,7 +455,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice
+     * @return TaxInclusivePrice
      */
     public function addOnceToTaxInclusivePriceWithCreate(): TaxInclusivePrice
     {
@@ -471,7 +471,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function getItem(): ?Item
     {
@@ -479,7 +479,7 @@ class SalesItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function getItemWithCreate(): Item
     {
@@ -489,7 +489,7 @@ class SalesItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null $item
+     * @param Item|null $item
      * @return self
      */
     public function setItem(?Item $item = null): self

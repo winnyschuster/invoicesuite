@@ -12,7 +12,7 @@ class TradeSettlementFinancialCardType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TradeSettlementFinancialCardType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class TradeSettlementFinancialCardType
     private $cardholderName;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -42,7 +42,7 @@ class TradeSettlementFinancialCardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -52,7 +52,7 @@ class TradeSettlementFinancialCardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self
@@ -73,7 +73,7 @@ class TradeSettlementFinancialCardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getCardholderName(): ?TextType
     {
@@ -81,7 +81,7 @@ class TradeSettlementFinancialCardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getCardholderNameWithCreate(): TextType
     {
@@ -91,7 +91,7 @@ class TradeSettlementFinancialCardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $cardholderName
+     * @param TextType|null $cardholderName
      * @return self
      */
     public function setCardholderName(?TextType $cardholderName = null): self

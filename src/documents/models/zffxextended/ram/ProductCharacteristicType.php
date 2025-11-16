@@ -13,7 +13,7 @@ class ProductCharacteristicType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ProductCharacteristicType
     private $typeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ProductCharacteristicType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType|null
+     * @var MeasureType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ProductCharacteristicType
     private $valueMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class ProductCharacteristicType
     private $value;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getTypeCode(): ?CodeType
     {
@@ -65,7 +65,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType
+     * @return CodeType
      */
     public function getTypeCodeWithCreate(): CodeType
     {
@@ -75,7 +75,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null $typeCode
+     * @param CodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?CodeType $typeCode = null): self
@@ -96,7 +96,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getDescription(): ?TextType
     {
@@ -104,7 +104,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getDescriptionWithCreate(): TextType
     {
@@ -114,7 +114,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $description
+     * @param TextType|null $description
      * @return self
      */
     public function setDescription(?TextType $description = null): self
@@ -135,7 +135,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType|null
+     * @return MeasureType|null
      */
     public function getValueMeasure(): ?MeasureType
     {
@@ -143,7 +143,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType
+     * @return MeasureType
      */
     public function getValueMeasureWithCreate(): MeasureType
     {
@@ -153,7 +153,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType|null $valueMeasure
+     * @param MeasureType|null $valueMeasure
      * @return self
      */
     public function setValueMeasure(?MeasureType $valueMeasure = null): self
@@ -174,7 +174,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getValue(): ?TextType
     {
@@ -182,7 +182,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getValueWithCreate(): TextType
     {
@@ -192,7 +192,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $value
+     * @param TextType|null $value
      * @return self
      */
     public function setValue(?TextType $value = null): self

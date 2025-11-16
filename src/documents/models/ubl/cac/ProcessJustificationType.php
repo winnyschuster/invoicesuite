@@ -14,7 +14,7 @@ class ProcessJustificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode|null
+     * @var PreviousCancellationReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ProcessJustificationType
     private $previousCancellationReasonCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode|null
+     * @var ProcessReasonCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ProcessJustificationType
     private $processReasonCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason>|null
+     * @var array<ProcessReason>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ProcessJustificationType
     private $processReason;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ProcessJustificationType
     private $description;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode|null
+     * @return PreviousCancellationReasonCode|null
      */
     public function getPreviousCancellationReasonCode(): ?PreviousCancellationReasonCode
     {
@@ -68,7 +68,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode
+     * @return PreviousCancellationReasonCode
      */
     public function getPreviousCancellationReasonCodeWithCreate(): PreviousCancellationReasonCode
     {
@@ -78,7 +78,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode|null $previousCancellationReasonCode
+     * @param PreviousCancellationReasonCode|null $previousCancellationReasonCode
      * @return self
      */
     public function setPreviousCancellationReasonCode(
@@ -100,7 +100,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode|null
+     * @return ProcessReasonCode|null
      */
     public function getProcessReasonCode(): ?ProcessReasonCode
     {
@@ -108,7 +108,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode
+     * @return ProcessReasonCode
      */
     public function getProcessReasonCodeWithCreate(): ProcessReasonCode
     {
@@ -118,7 +118,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode|null $processReasonCode
+     * @param ProcessReasonCode|null $processReasonCode
      * @return self
      */
     public function setProcessReasonCode(?ProcessReasonCode $processReasonCode = null): self
@@ -139,7 +139,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason>|null
+     * @return array<ProcessReason>|null
      */
     public function getProcessReason(): ?array
     {
@@ -147,7 +147,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason>|null $processReason
+     * @param array<ProcessReason>|null $processReason
      * @return self
      */
     public function setProcessReason(?array $processReason = null): self
@@ -178,7 +178,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason|null
+     * @return ProcessReason|null
      */
     public function firstProcessReason(): ?ProcessReason
     {
@@ -193,7 +193,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason|null
+     * @return ProcessReason|null
      */
     public function lastProcessReason(): ?ProcessReason
     {
@@ -208,7 +208,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason $processReason
+     * @param ProcessReason $processReason
      * @return self
      */
     public function addToProcessReason(ProcessReason $processReason): self
@@ -219,7 +219,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason
+     * @return ProcessReason
      */
     public function addToProcessReasonWithCreate(): ProcessReason
     {
@@ -229,7 +229,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason $processReason
+     * @param ProcessReason $processReason
      * @return self
      */
     public function addOnceToProcessReason(ProcessReason $processReason): self
@@ -244,7 +244,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason
+     * @return ProcessReason
      */
     public function addOnceToProcessReasonWithCreate(): ProcessReason
     {
@@ -260,7 +260,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -268,7 +268,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -299,7 +299,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -314,7 +314,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -329,7 +329,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -340,7 +340,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -350,7 +350,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -365,7 +365,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

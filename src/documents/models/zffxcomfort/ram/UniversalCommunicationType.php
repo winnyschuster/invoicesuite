@@ -12,7 +12,7 @@ class UniversalCommunicationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class UniversalCommunicationType
     private $uRIID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class UniversalCommunicationType
     private $completeNumber;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getURIID(): ?IDType
     {
@@ -42,7 +42,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getURIIDWithCreate(): IDType
     {
@@ -52,7 +52,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $uRIID
+     * @param IDType|null $uRIID
      * @return self
      */
     public function setURIID(?IDType $uRIID = null): self
@@ -73,7 +73,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getCompleteNumber(): ?TextType
     {
@@ -81,7 +81,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getCompleteNumberWithCreate(): TextType
     {
@@ -91,7 +91,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $completeNumber
+     * @param TextType|null $completeNumber
      * @return self
      */
     public function setCompleteNumber(?TextType $completeNumber = null): self

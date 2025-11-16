@@ -12,7 +12,7 @@ class LegalOrganizationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LegalOrganizationType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class LegalOrganizationType
     private $tradingBusinessName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType|null
+     * @var TradeAddressType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class LegalOrganizationType
     private $postalTradeAddress;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -53,7 +53,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -63,7 +63,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self
@@ -84,7 +84,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getTradingBusinessName(): ?TextType
     {
@@ -92,7 +92,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getTradingBusinessNameWithCreate(): TextType
     {
@@ -102,7 +102,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $tradingBusinessName
+     * @param TextType|null $tradingBusinessName
      * @return self
      */
     public function setTradingBusinessName(?TextType $tradingBusinessName = null): self
@@ -123,7 +123,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType|null
+     * @return TradeAddressType|null
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
@@ -131,7 +131,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType
+     * @return TradeAddressType
      */
     public function getPostalTradeAddressWithCreate(): TradeAddressType
     {
@@ -141,7 +141,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType|null $postalTradeAddress
+     * @param TradeAddressType|null $postalTradeAddress
      * @return self
      */
     public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): self

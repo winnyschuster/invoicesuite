@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode;
@@ -13,7 +14,7 @@ class QualificationResolutionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode|null
+     * @var AdmissionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode")
      * @JMS\Expose
@@ -24,7 +25,7 @@ class QualificationResolutionType
     private $admissionCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason>|null
+     * @var array<ExclusionReason>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason>")
      * @JMS\Expose
@@ -36,7 +37,7 @@ class QualificationResolutionType
     private $exclusionReason;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution>|null
+     * @var array<Resolution>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution>")
      * @JMS\Expose
@@ -48,7 +49,7 @@ class QualificationResolutionType
     private $resolution;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -59,7 +60,7 @@ class QualificationResolutionType
     private $resolutionDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -70,7 +71,7 @@ class QualificationResolutionType
     private $resolutionTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null
+     * @var ProcurementProjectLot|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot")
      * @JMS\Expose
@@ -81,7 +82,7 @@ class QualificationResolutionType
     private $procurementProjectLot;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode|null
+     * @return AdmissionCode|null
      */
     public function getAdmissionCode(): ?AdmissionCode
     {
@@ -89,7 +90,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode
+     * @return AdmissionCode
      */
     public function getAdmissionCodeWithCreate(): AdmissionCode
     {
@@ -99,7 +100,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode|null $admissionCode
+     * @param AdmissionCode|null $admissionCode
      * @return self
      */
     public function setAdmissionCode(?AdmissionCode $admissionCode = null): self
@@ -120,7 +121,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason>|null
+     * @return array<ExclusionReason>|null
      */
     public function getExclusionReason(): ?array
     {
@@ -128,7 +129,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason>|null $exclusionReason
+     * @param array<ExclusionReason>|null $exclusionReason
      * @return self
      */
     public function setExclusionReason(?array $exclusionReason = null): self
@@ -159,7 +160,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason|null
+     * @return ExclusionReason|null
      */
     public function firstExclusionReason(): ?ExclusionReason
     {
@@ -174,7 +175,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason|null
+     * @return ExclusionReason|null
      */
     public function lastExclusionReason(): ?ExclusionReason
     {
@@ -189,7 +190,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason $exclusionReason
+     * @param ExclusionReason $exclusionReason
      * @return self
      */
     public function addToExclusionReason(ExclusionReason $exclusionReason): self
@@ -200,7 +201,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason
+     * @return ExclusionReason
      */
     public function addToExclusionReasonWithCreate(): ExclusionReason
     {
@@ -210,7 +211,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason $exclusionReason
+     * @param ExclusionReason $exclusionReason
      * @return self
      */
     public function addOnceToExclusionReason(ExclusionReason $exclusionReason): self
@@ -225,7 +226,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason
+     * @return ExclusionReason
      */
     public function addOnceToExclusionReasonWithCreate(): ExclusionReason
     {
@@ -241,7 +242,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution>|null
+     * @return array<Resolution>|null
      */
     public function getResolution(): ?array
     {
@@ -249,7 +250,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution>|null $resolution
+     * @param array<Resolution>|null $resolution
      * @return self
      */
     public function setResolution(?array $resolution = null): self
@@ -280,7 +281,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution|null
+     * @return Resolution|null
      */
     public function firstResolution(): ?Resolution
     {
@@ -295,7 +296,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution|null
+     * @return Resolution|null
      */
     public function lastResolution(): ?Resolution
     {
@@ -310,7 +311,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution $resolution
+     * @param Resolution $resolution
      * @return self
      */
     public function addToResolution(Resolution $resolution): self
@@ -321,7 +322,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution
+     * @return Resolution
      */
     public function addToResolutionWithCreate(): Resolution
     {
@@ -331,7 +332,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution $resolution
+     * @param Resolution $resolution
      * @return self
      */
     public function addOnceToResolution(Resolution $resolution): self
@@ -346,7 +347,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution
+     * @return Resolution
      */
     public function addOnceToResolutionWithCreate(): Resolution
     {
@@ -362,18 +363,18 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getResolutionDate(): ?\DateTimeInterface
+    public function getResolutionDate(): ?DateTimeInterface
     {
         return $this->resolutionDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $resolutionDate
+     * @param DateTimeInterface|null $resolutionDate
      * @return self
      */
-    public function setResolutionDate(?\DateTimeInterface $resolutionDate = null): self
+    public function setResolutionDate(?DateTimeInterface $resolutionDate = null): self
     {
         $this->resolutionDate = $resolutionDate;
 
@@ -391,18 +392,18 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getResolutionTime(): ?\DateTimeInterface
+    public function getResolutionTime(): ?DateTimeInterface
     {
         return $this->resolutionTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $resolutionTime
+     * @param DateTimeInterface|null $resolutionTime
      * @return self
      */
-    public function setResolutionTime(?\DateTimeInterface $resolutionTime = null): self
+    public function setResolutionTime(?DateTimeInterface $resolutionTime = null): self
     {
         $this->resolutionTime = $resolutionTime;
 
@@ -420,7 +421,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null
+     * @return ProcurementProjectLot|null
      */
     public function getProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -428,7 +429,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot
+     * @return ProcurementProjectLot
      */
     public function getProcurementProjectLotWithCreate(): ProcurementProjectLot
     {
@@ -438,7 +439,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null $procurementProjectLot
+     * @param ProcurementProjectLot|null $procurementProjectLot
      * @return self
      */
     public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): self

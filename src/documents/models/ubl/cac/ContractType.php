@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType as ContractType1;
@@ -16,7 +17,7 @@ class ContractType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +28,7 @@ class ContractType
     private $iD;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class ContractType
     private $issueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class ContractType
     private $issueTime;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class ContractType
     private $nominationDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class ContractType
     private $nominationTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode|null
+     * @var ContractTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class ContractType
     private $contractType;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -105,7 +106,7 @@ class ContractType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @var VersionID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -116,7 +117,7 @@ class ContractType
     private $versionID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -128,7 +129,7 @@ class ContractType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @var ValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -139,7 +140,7 @@ class ContractType
     private $validityPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>|null
+     * @var array<ContractDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>")
      * @JMS\Expose
@@ -151,7 +152,7 @@ class ContractType
     private $contractDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\NominationPeriod|null
+     * @var NominationPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\NominationPeriod")
      * @JMS\Expose
@@ -162,7 +163,7 @@ class ContractType
     private $nominationPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDelivery|null
+     * @var ContractualDelivery|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDelivery")
      * @JMS\Expose
@@ -173,7 +174,7 @@ class ContractType
     private $contractualDelivery;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -181,7 +182,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -191,7 +192,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -212,18 +213,18 @@ class ContractType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -241,18 +242,18 @@ class ContractType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueTime(): ?\DateTimeInterface
+    public function getIssueTime(): ?DateTimeInterface
     {
         return $this->issueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueTime
+     * @param DateTimeInterface|null $issueTime
      * @return self
      */
-    public function setIssueTime(?\DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): self
     {
         $this->issueTime = $issueTime;
 
@@ -270,18 +271,18 @@ class ContractType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getNominationDate(): ?\DateTimeInterface
+    public function getNominationDate(): ?DateTimeInterface
     {
         return $this->nominationDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $nominationDate
+     * @param DateTimeInterface|null $nominationDate
      * @return self
      */
-    public function setNominationDate(?\DateTimeInterface $nominationDate = null): self
+    public function setNominationDate(?DateTimeInterface $nominationDate = null): self
     {
         $this->nominationDate = $nominationDate;
 
@@ -299,18 +300,18 @@ class ContractType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getNominationTime(): ?\DateTimeInterface
+    public function getNominationTime(): ?DateTimeInterface
     {
         return $this->nominationTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $nominationTime
+     * @param DateTimeInterface|null $nominationTime
      * @return self
      */
-    public function setNominationTime(?\DateTimeInterface $nominationTime = null): self
+    public function setNominationTime(?DateTimeInterface $nominationTime = null): self
     {
         $this->nominationTime = $nominationTime;
 
@@ -328,7 +329,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode|null
+     * @return ContractTypeCode|null
      */
     public function getContractTypeCode(): ?ContractTypeCode
     {
@@ -336,7 +337,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode
+     * @return ContractTypeCode
      */
     public function getContractTypeCodeWithCreate(): ContractTypeCode
     {
@@ -346,7 +347,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode|null $contractTypeCode
+     * @param ContractTypeCode|null $contractTypeCode
      * @return self
      */
     public function setContractTypeCode(?ContractTypeCode $contractTypeCode = null): self
@@ -406,7 +407,7 @@ class ContractType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -414,7 +415,7 @@ class ContractType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -445,7 +446,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -460,7 +461,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -475,7 +476,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -486,7 +487,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -496,7 +497,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -511,7 +512,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -527,7 +528,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null
+     * @return VersionID|null
      */
     public function getVersionID(): ?VersionID
     {
@@ -535,7 +536,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID
+     * @return VersionID
      */
     public function getVersionIDWithCreate(): VersionID
     {
@@ -545,7 +546,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID|null $versionID
+     * @param VersionID|null $versionID
      * @return self
      */
     public function setVersionID(?VersionID $versionID = null): self
@@ -566,7 +567,7 @@ class ContractType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -574,7 +575,7 @@ class ContractType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -605,7 +606,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -620,7 +621,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -635,7 +636,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -646,7 +647,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -656,7 +657,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -671,7 +672,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -687,7 +688,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -695,7 +696,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function getValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -705,7 +706,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null $validityPeriod
+     * @param ValidityPeriod|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
@@ -726,7 +727,7 @@ class ContractType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>|null
+     * @return array<ContractDocumentReference>|null
      */
     public function getContractDocumentReference(): ?array
     {
@@ -734,7 +735,7 @@ class ContractType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>|null $contractDocumentReference
+     * @param array<ContractDocumentReference>|null $contractDocumentReference
      * @return self
      */
     public function setContractDocumentReference(?array $contractDocumentReference = null): self
@@ -765,7 +766,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference|null
+     * @return ContractDocumentReference|null
      */
     public function firstContractDocumentReference(): ?ContractDocumentReference
     {
@@ -780,7 +781,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference|null
+     * @return ContractDocumentReference|null
      */
     public function lastContractDocumentReference(): ?ContractDocumentReference
     {
@@ -795,7 +796,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference $contractDocumentReference
+     * @param ContractDocumentReference $contractDocumentReference
      * @return self
      */
     public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
@@ -806,7 +807,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference
+     * @return ContractDocumentReference
      */
     public function addToContractDocumentReferenceWithCreate(): ContractDocumentReference
     {
@@ -816,7 +817,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference $contractDocumentReference
+     * @param ContractDocumentReference $contractDocumentReference
      * @return self
      */
     public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
@@ -831,7 +832,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference
+     * @return ContractDocumentReference
      */
     public function addOnceToContractDocumentReferenceWithCreate(): ContractDocumentReference
     {
@@ -847,7 +848,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NominationPeriod|null
+     * @return NominationPeriod|null
      */
     public function getNominationPeriod(): ?NominationPeriod
     {
@@ -855,7 +856,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NominationPeriod
+     * @return NominationPeriod
      */
     public function getNominationPeriodWithCreate(): NominationPeriod
     {
@@ -865,7 +866,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NominationPeriod|null $nominationPeriod
+     * @param NominationPeriod|null $nominationPeriod
      * @return self
      */
     public function setNominationPeriod(?NominationPeriod $nominationPeriod = null): self
@@ -886,7 +887,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDelivery|null
+     * @return ContractualDelivery|null
      */
     public function getContractualDelivery(): ?ContractualDelivery
     {
@@ -894,7 +895,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDelivery
+     * @return ContractualDelivery
      */
     public function getContractualDeliveryWithCreate(): ContractualDelivery
     {
@@ -904,7 +905,7 @@ class ContractType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDelivery|null $contractualDelivery
+     * @param ContractualDelivery|null $contractualDelivery
      * @return self
      */
     public function setContractualDelivery(?ContractualDelivery $contractualDelivery = null): self

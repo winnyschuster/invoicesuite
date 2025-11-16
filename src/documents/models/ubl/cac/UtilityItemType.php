@@ -23,7 +23,7 @@ class UtilityItemType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class UtilityItemType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID|null
+     * @var SubscriberID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class UtilityItemType
     private $subscriberID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType|null
+     * @var SubscriberType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class UtilityItemType
     private $subscriberType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode|null
+     * @var SubscriberTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class UtilityItemType
     private $subscriberTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class UtilityItemType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity|null
+     * @var PackQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class UtilityItemType
     private $packQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric|null
+     * @var PackSizeNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class UtilityItemType
     private $packSizeNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null
+     * @var ConsumptionType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class UtilityItemType
     private $consumptionType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null
+     * @var ConsumptionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class UtilityItemType
     private $consumptionTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeType|null
+     * @var CurrentChargeType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeType")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class UtilityItemType
     private $currentChargeType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeTypeCode|null
+     * @var CurrentChargeTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeTypeCode")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class UtilityItemType
     private $currentChargeTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeType|null
+     * @var OneTimeChargeType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeType")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class UtilityItemType
     private $oneTimeChargeType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeTypeCode|null
+     * @var OneTimeChargeTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeTypeCode")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class UtilityItemType
     private $oneTimeChargeTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @var TaxCategory|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class UtilityItemType
     private $taxCategory;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null
+     * @var Contract|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contract")
      * @JMS\Expose
@@ -189,7 +189,7 @@ class UtilityItemType
     private $contract;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -197,7 +197,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -207,7 +207,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -228,7 +228,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID|null
+     * @return SubscriberID|null
      */
     public function getSubscriberID(): ?SubscriberID
     {
@@ -236,7 +236,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID
+     * @return SubscriberID
      */
     public function getSubscriberIDWithCreate(): SubscriberID
     {
@@ -246,7 +246,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID|null $subscriberID
+     * @param SubscriberID|null $subscriberID
      * @return self
      */
     public function setSubscriberID(?SubscriberID $subscriberID = null): self
@@ -267,7 +267,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType|null
+     * @return SubscriberType|null
      */
     public function getSubscriberType(): ?SubscriberType
     {
@@ -275,7 +275,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType
+     * @return SubscriberType
      */
     public function getSubscriberTypeWithCreate(): SubscriberType
     {
@@ -285,7 +285,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType|null $subscriberType
+     * @param SubscriberType|null $subscriberType
      * @return self
      */
     public function setSubscriberType(?SubscriberType $subscriberType = null): self
@@ -306,7 +306,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode|null
+     * @return SubscriberTypeCode|null
      */
     public function getSubscriberTypeCode(): ?SubscriberTypeCode
     {
@@ -314,7 +314,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode
+     * @return SubscriberTypeCode
      */
     public function getSubscriberTypeCodeWithCreate(): SubscriberTypeCode
     {
@@ -324,7 +324,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode|null $subscriberTypeCode
+     * @param SubscriberTypeCode|null $subscriberTypeCode
      * @return self
      */
     public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): self
@@ -345,7 +345,7 @@ class UtilityItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -353,7 +353,7 @@ class UtilityItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -384,7 +384,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -399,7 +399,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -414,7 +414,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -425,7 +425,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -435,7 +435,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -450,7 +450,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -466,7 +466,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity|null
+     * @return PackQuantity|null
      */
     public function getPackQuantity(): ?PackQuantity
     {
@@ -474,7 +474,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity
+     * @return PackQuantity
      */
     public function getPackQuantityWithCreate(): PackQuantity
     {
@@ -484,7 +484,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity|null $packQuantity
+     * @param PackQuantity|null $packQuantity
      * @return self
      */
     public function setPackQuantity(?PackQuantity $packQuantity = null): self
@@ -505,7 +505,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric|null
+     * @return PackSizeNumeric|null
      */
     public function getPackSizeNumeric(): ?PackSizeNumeric
     {
@@ -513,7 +513,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric
+     * @return PackSizeNumeric
      */
     public function getPackSizeNumericWithCreate(): PackSizeNumeric
     {
@@ -523,7 +523,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric|null $packSizeNumeric
+     * @param PackSizeNumeric|null $packSizeNumeric
      * @return self
      */
     public function setPackSizeNumeric(?PackSizeNumeric $packSizeNumeric = null): self
@@ -544,7 +544,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null
+     * @return ConsumptionType|null
      */
     public function getConsumptionType(): ?ConsumptionType
     {
@@ -552,7 +552,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType
+     * @return ConsumptionType
      */
     public function getConsumptionTypeWithCreate(): ConsumptionType
     {
@@ -562,7 +562,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType|null $consumptionType
+     * @param ConsumptionType|null $consumptionType
      * @return self
      */
     public function setConsumptionType(?ConsumptionType $consumptionType = null): self
@@ -583,7 +583,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null
+     * @return ConsumptionTypeCode|null
      */
     public function getConsumptionTypeCode(): ?ConsumptionTypeCode
     {
@@ -591,7 +591,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode
+     * @return ConsumptionTypeCode
      */
     public function getConsumptionTypeCodeWithCreate(): ConsumptionTypeCode
     {
@@ -601,7 +601,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode|null $consumptionTypeCode
+     * @param ConsumptionTypeCode|null $consumptionTypeCode
      * @return self
      */
     public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): self
@@ -622,7 +622,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeType|null
+     * @return CurrentChargeType|null
      */
     public function getCurrentChargeType(): ?CurrentChargeType
     {
@@ -630,7 +630,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeType
+     * @return CurrentChargeType
      */
     public function getCurrentChargeTypeWithCreate(): CurrentChargeType
     {
@@ -640,7 +640,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeType|null $currentChargeType
+     * @param CurrentChargeType|null $currentChargeType
      * @return self
      */
     public function setCurrentChargeType(?CurrentChargeType $currentChargeType = null): self
@@ -661,7 +661,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeTypeCode|null
+     * @return CurrentChargeTypeCode|null
      */
     public function getCurrentChargeTypeCode(): ?CurrentChargeTypeCode
     {
@@ -669,7 +669,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeTypeCode
+     * @return CurrentChargeTypeCode
      */
     public function getCurrentChargeTypeCodeWithCreate(): CurrentChargeTypeCode
     {
@@ -679,7 +679,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeTypeCode|null $currentChargeTypeCode
+     * @param CurrentChargeTypeCode|null $currentChargeTypeCode
      * @return self
      */
     public function setCurrentChargeTypeCode(?CurrentChargeTypeCode $currentChargeTypeCode = null): self
@@ -700,7 +700,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeType|null
+     * @return OneTimeChargeType|null
      */
     public function getOneTimeChargeType(): ?OneTimeChargeType
     {
@@ -708,7 +708,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeType
+     * @return OneTimeChargeType
      */
     public function getOneTimeChargeTypeWithCreate(): OneTimeChargeType
     {
@@ -718,7 +718,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeType|null $oneTimeChargeType
+     * @param OneTimeChargeType|null $oneTimeChargeType
      * @return self
      */
     public function setOneTimeChargeType(?OneTimeChargeType $oneTimeChargeType = null): self
@@ -739,7 +739,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeTypeCode|null
+     * @return OneTimeChargeTypeCode|null
      */
     public function getOneTimeChargeTypeCode(): ?OneTimeChargeTypeCode
     {
@@ -747,7 +747,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeTypeCode
+     * @return OneTimeChargeTypeCode
      */
     public function getOneTimeChargeTypeCodeWithCreate(): OneTimeChargeTypeCode
     {
@@ -757,7 +757,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeTypeCode|null $oneTimeChargeTypeCode
+     * @param OneTimeChargeTypeCode|null $oneTimeChargeTypeCode
      * @return self
      */
     public function setOneTimeChargeTypeCode(?OneTimeChargeTypeCode $oneTimeChargeTypeCode = null): self
@@ -778,7 +778,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null
+     * @return TaxCategory|null
      */
     public function getTaxCategory(): ?TaxCategory
     {
@@ -786,7 +786,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory
+     * @return TaxCategory
      */
     public function getTaxCategoryWithCreate(): TaxCategory
     {
@@ -796,7 +796,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory|null $taxCategory
+     * @param TaxCategory|null $taxCategory
      * @return self
      */
     public function setTaxCategory(?TaxCategory $taxCategory = null): self
@@ -817,7 +817,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null
+     * @return Contract|null
      */
     public function getContract(): ?Contract
     {
@@ -825,7 +825,7 @@ class UtilityItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contract
+     * @return Contract
      */
     public function getContractWithCreate(): Contract
     {
@@ -835,7 +835,7 @@ class UtilityItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Contract|null $contract
+     * @param Contract|null $contract
      * @return self
      */
     public function setContract(?Contract $contract = null): self

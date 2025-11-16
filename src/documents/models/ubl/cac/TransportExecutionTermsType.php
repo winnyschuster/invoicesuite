@@ -13,7 +13,7 @@ class TransportExecutionTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms>|null
+     * @var array<TransportUserSpecialTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms>")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TransportExecutionTermsType
     private $transportUserSpecialTerms;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms>|null
+     * @var array<TransportServiceProviderSpecialTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TransportExecutionTermsType
     private $transportServiceProviderSpecialTerms;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions>|null
+     * @var array<ChangeConditions>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TransportExecutionTermsType
     private $changeConditions;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null
+     * @var array<PaymentTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TransportExecutionTermsType
     private $paymentTerms;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>|null
+     * @var array<DeliveryTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class TransportExecutionTermsType
     private $deliveryTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\BonusPaymentTerms|null
+     * @var BonusPaymentTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BonusPaymentTerms")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class TransportExecutionTermsType
     private $bonusPaymentTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\CommissionPaymentTerms|null
+     * @var CommissionPaymentTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CommissionPaymentTerms")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class TransportExecutionTermsType
     private $commissionPaymentTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPaymentTerms|null
+     * @var PenaltyPaymentTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPaymentTerms")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class TransportExecutionTermsType
     private $penaltyPaymentTerms;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission>|null
+     * @var array<EnvironmentalEmission>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class TransportExecutionTermsType
     private $environmentalEmission;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement>|null
+     * @var array<NotificationRequirement>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement>")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class TransportExecutionTermsType
     private $notificationRequirement;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceChargePaymentTerms|null
+     * @var ServiceChargePaymentTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ServiceChargePaymentTerms")
      * @JMS\Expose
@@ -141,7 +141,7 @@ class TransportExecutionTermsType
     private $serviceChargePaymentTerms;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms>|null
+     * @return array<TransportUserSpecialTerms>|null
      */
     public function getTransportUserSpecialTerms(): ?array
     {
@@ -149,7 +149,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms>|null $transportUserSpecialTerms
+     * @param array<TransportUserSpecialTerms>|null $transportUserSpecialTerms
      * @return self
      */
     public function setTransportUserSpecialTerms(?array $transportUserSpecialTerms = null): self
@@ -180,7 +180,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms|null
+     * @return TransportUserSpecialTerms|null
      */
     public function firstTransportUserSpecialTerms(): ?TransportUserSpecialTerms
     {
@@ -195,7 +195,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms|null
+     * @return TransportUserSpecialTerms|null
      */
     public function lastTransportUserSpecialTerms(): ?TransportUserSpecialTerms
     {
@@ -210,7 +210,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms $transportUserSpecialTerms
+     * @param TransportUserSpecialTerms $transportUserSpecialTerms
      * @return self
      */
     public function addToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): self
@@ -221,7 +221,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms
+     * @return TransportUserSpecialTerms
      */
     public function addToTransportUserSpecialTermsWithCreate(): TransportUserSpecialTerms
     {
@@ -231,7 +231,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms $transportUserSpecialTerms
+     * @param TransportUserSpecialTerms $transportUserSpecialTerms
      * @return self
      */
     public function addOnceToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): self
@@ -246,7 +246,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms
+     * @return TransportUserSpecialTerms
      */
     public function addOnceToTransportUserSpecialTermsWithCreate(): TransportUserSpecialTerms
     {
@@ -262,7 +262,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms>|null
+     * @return array<TransportServiceProviderSpecialTerms>|null
      */
     public function getTransportServiceProviderSpecialTerms(): ?array
     {
@@ -270,7 +270,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms>|null $transportServiceProviderSpecialTerms
+     * @param array<TransportServiceProviderSpecialTerms>|null $transportServiceProviderSpecialTerms
      * @return self
      */
     public function setTransportServiceProviderSpecialTerms(?array $transportServiceProviderSpecialTerms = null): self
@@ -301,7 +301,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms|null
+     * @return TransportServiceProviderSpecialTerms|null
      */
     public function firstTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
     {
@@ -316,7 +316,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms|null
+     * @return TransportServiceProviderSpecialTerms|null
      */
     public function lastTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
     {
@@ -331,7 +331,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
+     * @param TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
      * @return self
      */
     public function addToTransportServiceProviderSpecialTerms(
@@ -343,7 +343,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms
+     * @return TransportServiceProviderSpecialTerms
      */
     public function addToTransportServiceProviderSpecialTermsWithCreate(): TransportServiceProviderSpecialTerms
     {
@@ -353,7 +353,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
+     * @param TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
      * @return self
      */
     public function addOnceToTransportServiceProviderSpecialTerms(
@@ -369,7 +369,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms
+     * @return TransportServiceProviderSpecialTerms
      */
     public function addOnceToTransportServiceProviderSpecialTermsWithCreate(): TransportServiceProviderSpecialTerms
     {
@@ -385,7 +385,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions>|null
+     * @return array<ChangeConditions>|null
      */
     public function getChangeConditions(): ?array
     {
@@ -393,7 +393,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions>|null $changeConditions
+     * @param array<ChangeConditions>|null $changeConditions
      * @return self
      */
     public function setChangeConditions(?array $changeConditions = null): self
@@ -424,7 +424,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions|null
+     * @return ChangeConditions|null
      */
     public function firstChangeConditions(): ?ChangeConditions
     {
@@ -439,7 +439,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions|null
+     * @return ChangeConditions|null
      */
     public function lastChangeConditions(): ?ChangeConditions
     {
@@ -454,7 +454,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions $changeConditions
+     * @param ChangeConditions $changeConditions
      * @return self
      */
     public function addToChangeConditions(ChangeConditions $changeConditions): self
@@ -465,7 +465,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions
+     * @return ChangeConditions
      */
     public function addToChangeConditionsWithCreate(): ChangeConditions
     {
@@ -475,7 +475,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions $changeConditions
+     * @param ChangeConditions $changeConditions
      * @return self
      */
     public function addOnceToChangeConditions(ChangeConditions $changeConditions): self
@@ -490,7 +490,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions
+     * @return ChangeConditions
      */
     public function addOnceToChangeConditionsWithCreate(): ChangeConditions
     {
@@ -506,7 +506,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null
+     * @return array<PaymentTerms>|null
      */
     public function getPaymentTerms(): ?array
     {
@@ -514,7 +514,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>|null $paymentTerms
+     * @param array<PaymentTerms>|null $paymentTerms
      * @return self
      */
     public function setPaymentTerms(?array $paymentTerms = null): self
@@ -545,7 +545,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms|null
+     * @return PaymentTerms|null
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -560,7 +560,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms|null
+     * @return PaymentTerms|null
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -575,7 +575,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms $paymentTerms
+     * @param PaymentTerms $paymentTerms
      * @return self
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): self
@@ -586,7 +586,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+     * @return PaymentTerms
      */
     public function addToPaymentTermsWithCreate(): PaymentTerms
     {
@@ -596,7 +596,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms $paymentTerms
+     * @param PaymentTerms $paymentTerms
      * @return self
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): self
@@ -611,7 +611,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+     * @return PaymentTerms
      */
     public function addOnceToPaymentTermsWithCreate(): PaymentTerms
     {
@@ -627,7 +627,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>|null
+     * @return array<DeliveryTerms>|null
      */
     public function getDeliveryTerms(): ?array
     {
@@ -635,7 +635,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>|null $deliveryTerms
+     * @param array<DeliveryTerms>|null $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(?array $deliveryTerms = null): self
@@ -666,7 +666,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null
+     * @return DeliveryTerms|null
      */
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
@@ -681,7 +681,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null
+     * @return DeliveryTerms|null
      */
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
@@ -696,7 +696,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms $deliveryTerms
+     * @param DeliveryTerms $deliveryTerms
      * @return self
      */
     public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): self
@@ -707,7 +707,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms
+     * @return DeliveryTerms
      */
     public function addToDeliveryTermsWithCreate(): DeliveryTerms
     {
@@ -717,7 +717,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms $deliveryTerms
+     * @param DeliveryTerms $deliveryTerms
      * @return self
      */
     public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): self
@@ -732,7 +732,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms
+     * @return DeliveryTerms
      */
     public function addOnceToDeliveryTermsWithCreate(): DeliveryTerms
     {
@@ -748,7 +748,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BonusPaymentTerms|null
+     * @return BonusPaymentTerms|null
      */
     public function getBonusPaymentTerms(): ?BonusPaymentTerms
     {
@@ -756,7 +756,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\BonusPaymentTerms
+     * @return BonusPaymentTerms
      */
     public function getBonusPaymentTermsWithCreate(): BonusPaymentTerms
     {
@@ -766,7 +766,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\BonusPaymentTerms|null $bonusPaymentTerms
+     * @param BonusPaymentTerms|null $bonusPaymentTerms
      * @return self
      */
     public function setBonusPaymentTerms(?BonusPaymentTerms $bonusPaymentTerms = null): self
@@ -787,7 +787,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CommissionPaymentTerms|null
+     * @return CommissionPaymentTerms|null
      */
     public function getCommissionPaymentTerms(): ?CommissionPaymentTerms
     {
@@ -795,7 +795,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CommissionPaymentTerms
+     * @return CommissionPaymentTerms
      */
     public function getCommissionPaymentTermsWithCreate(): CommissionPaymentTerms
     {
@@ -805,7 +805,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CommissionPaymentTerms|null $commissionPaymentTerms
+     * @param CommissionPaymentTerms|null $commissionPaymentTerms
      * @return self
      */
     public function setCommissionPaymentTerms(?CommissionPaymentTerms $commissionPaymentTerms = null): self
@@ -826,7 +826,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPaymentTerms|null
+     * @return PenaltyPaymentTerms|null
      */
     public function getPenaltyPaymentTerms(): ?PenaltyPaymentTerms
     {
@@ -834,7 +834,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPaymentTerms
+     * @return PenaltyPaymentTerms
      */
     public function getPenaltyPaymentTermsWithCreate(): PenaltyPaymentTerms
     {
@@ -844,7 +844,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPaymentTerms|null $penaltyPaymentTerms
+     * @param PenaltyPaymentTerms|null $penaltyPaymentTerms
      * @return self
      */
     public function setPenaltyPaymentTerms(?PenaltyPaymentTerms $penaltyPaymentTerms = null): self
@@ -865,7 +865,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission>|null
+     * @return array<EnvironmentalEmission>|null
      */
     public function getEnvironmentalEmission(): ?array
     {
@@ -873,7 +873,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission>|null $environmentalEmission
+     * @param array<EnvironmentalEmission>|null $environmentalEmission
      * @return self
      */
     public function setEnvironmentalEmission(?array $environmentalEmission = null): self
@@ -904,7 +904,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission|null
+     * @return EnvironmentalEmission|null
      */
     public function firstEnvironmentalEmission(): ?EnvironmentalEmission
     {
@@ -919,7 +919,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission|null
+     * @return EnvironmentalEmission|null
      */
     public function lastEnvironmentalEmission(): ?EnvironmentalEmission
     {
@@ -934,7 +934,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission $environmentalEmission
+     * @param EnvironmentalEmission $environmentalEmission
      * @return self
      */
     public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): self
@@ -945,7 +945,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission
+     * @return EnvironmentalEmission
      */
     public function addToEnvironmentalEmissionWithCreate(): EnvironmentalEmission
     {
@@ -955,7 +955,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission $environmentalEmission
+     * @param EnvironmentalEmission $environmentalEmission
      * @return self
      */
     public function addOnceToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): self
@@ -970,7 +970,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission
+     * @return EnvironmentalEmission
      */
     public function addOnceToEnvironmentalEmissionWithCreate(): EnvironmentalEmission
     {
@@ -986,7 +986,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement>|null
+     * @return array<NotificationRequirement>|null
      */
     public function getNotificationRequirement(): ?array
     {
@@ -994,7 +994,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement>|null $notificationRequirement
+     * @param array<NotificationRequirement>|null $notificationRequirement
      * @return self
      */
     public function setNotificationRequirement(?array $notificationRequirement = null): self
@@ -1025,7 +1025,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement|null
+     * @return NotificationRequirement|null
      */
     public function firstNotificationRequirement(): ?NotificationRequirement
     {
@@ -1040,7 +1040,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement|null
+     * @return NotificationRequirement|null
      */
     public function lastNotificationRequirement(): ?NotificationRequirement
     {
@@ -1055,7 +1055,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement $notificationRequirement
+     * @param NotificationRequirement $notificationRequirement
      * @return self
      */
     public function addToNotificationRequirement(NotificationRequirement $notificationRequirement): self
@@ -1066,7 +1066,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement
+     * @return NotificationRequirement
      */
     public function addToNotificationRequirementWithCreate(): NotificationRequirement
     {
@@ -1076,7 +1076,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement $notificationRequirement
+     * @param NotificationRequirement $notificationRequirement
      * @return self
      */
     public function addOnceToNotificationRequirement(NotificationRequirement $notificationRequirement): self
@@ -1091,7 +1091,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement
+     * @return NotificationRequirement
      */
     public function addOnceToNotificationRequirementWithCreate(): NotificationRequirement
     {
@@ -1107,7 +1107,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceChargePaymentTerms|null
+     * @return ServiceChargePaymentTerms|null
      */
     public function getServiceChargePaymentTerms(): ?ServiceChargePaymentTerms
     {
@@ -1115,7 +1115,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceChargePaymentTerms
+     * @return ServiceChargePaymentTerms
      */
     public function getServiceChargePaymentTermsWithCreate(): ServiceChargePaymentTerms
     {
@@ -1125,7 +1125,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceChargePaymentTerms|null $serviceChargePaymentTerms
+     * @param ServiceChargePaymentTerms|null $serviceChargePaymentTerms
      * @return self
      */
     public function setServiceChargePaymentTerms(?ServiceChargePaymentTerms $serviceChargePaymentTerms = null): self

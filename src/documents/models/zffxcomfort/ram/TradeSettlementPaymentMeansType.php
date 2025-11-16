@@ -12,7 +12,7 @@ class TradeSettlementPaymentMeansType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\PaymentMeansCodeType|null
+     * @var PaymentMeansCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\PaymentMeansCodeType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TradeSettlementPaymentMeansType
     private $typeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class TradeSettlementPaymentMeansType
     private $information;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementFinancialCardType|null
+     * @var TradeSettlementFinancialCardType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementFinancialCardType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class TradeSettlementPaymentMeansType
     private $applicableTradeSettlementFinancialCard;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DebtorFinancialAccountType|null
+     * @var DebtorFinancialAccountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DebtorFinancialAccountType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class TradeSettlementPaymentMeansType
     private $payerPartyDebtorFinancialAccount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialAccountType|null
+     * @var CreditorFinancialAccountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialAccountType")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class TradeSettlementPaymentMeansType
     private $payeePartyCreditorFinancialAccount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialInstitutionType|null
+     * @var CreditorFinancialInstitutionType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialInstitutionType")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class TradeSettlementPaymentMeansType
     private $payeeSpecifiedCreditorFinancialInstitution;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\PaymentMeansCodeType|null
+     * @return PaymentMeansCodeType|null
      */
     public function getTypeCode(): ?PaymentMeansCodeType
     {
@@ -86,7 +86,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\PaymentMeansCodeType
+     * @return PaymentMeansCodeType
      */
     public function getTypeCodeWithCreate(): PaymentMeansCodeType
     {
@@ -96,7 +96,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\PaymentMeansCodeType|null $typeCode
+     * @param PaymentMeansCodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?PaymentMeansCodeType $typeCode = null): self
@@ -117,7 +117,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getInformation(): ?TextType
     {
@@ -125,7 +125,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getInformationWithCreate(): TextType
     {
@@ -135,7 +135,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $information
+     * @param TextType|null $information
      * @return self
      */
     public function setInformation(?TextType $information = null): self
@@ -156,7 +156,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementFinancialCardType|null
+     * @return TradeSettlementFinancialCardType|null
      */
     public function getApplicableTradeSettlementFinancialCard(): ?TradeSettlementFinancialCardType
     {
@@ -164,7 +164,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementFinancialCardType
+     * @return TradeSettlementFinancialCardType
      */
     public function getApplicableTradeSettlementFinancialCardWithCreate(): TradeSettlementFinancialCardType
     {
@@ -174,7 +174,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementFinancialCardType|null $applicableTradeSettlementFinancialCard
+     * @param TradeSettlementFinancialCardType|null $applicableTradeSettlementFinancialCard
      * @return self
      */
     public function setApplicableTradeSettlementFinancialCard(
@@ -196,7 +196,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DebtorFinancialAccountType|null
+     * @return DebtorFinancialAccountType|null
      */
     public function getPayerPartyDebtorFinancialAccount(): ?DebtorFinancialAccountType
     {
@@ -204,7 +204,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DebtorFinancialAccountType
+     * @return DebtorFinancialAccountType
      */
     public function getPayerPartyDebtorFinancialAccountWithCreate(): DebtorFinancialAccountType
     {
@@ -214,7 +214,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\DebtorFinancialAccountType|null $payerPartyDebtorFinancialAccount
+     * @param DebtorFinancialAccountType|null $payerPartyDebtorFinancialAccount
      * @return self
      */
     public function setPayerPartyDebtorFinancialAccount(
@@ -236,7 +236,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialAccountType|null
+     * @return CreditorFinancialAccountType|null
      */
     public function getPayeePartyCreditorFinancialAccount(): ?CreditorFinancialAccountType
     {
@@ -244,7 +244,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialAccountType
+     * @return CreditorFinancialAccountType
      */
     public function getPayeePartyCreditorFinancialAccountWithCreate(): CreditorFinancialAccountType
     {
@@ -254,7 +254,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialAccountType|null $payeePartyCreditorFinancialAccount
+     * @param CreditorFinancialAccountType|null $payeePartyCreditorFinancialAccount
      * @return self
      */
     public function setPayeePartyCreditorFinancialAccount(
@@ -276,7 +276,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialInstitutionType|null
+     * @return CreditorFinancialInstitutionType|null
      */
     public function getPayeeSpecifiedCreditorFinancialInstitution(): ?CreditorFinancialInstitutionType
     {
@@ -284,7 +284,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialInstitutionType
+     * @return CreditorFinancialInstitutionType
      */
     public function getPayeeSpecifiedCreditorFinancialInstitutionWithCreate(): CreditorFinancialInstitutionType
     {
@@ -294,7 +294,7 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\CreditorFinancialInstitutionType|null $payeeSpecifiedCreditorFinancialInstitution
+     * @param CreditorFinancialInstitutionType|null $payeeSpecifiedCreditorFinancialInstitution
      * @return self
      */
     public function setPayeeSpecifiedCreditorFinancialInstitution(

@@ -11,7 +11,7 @@ class DocumentLineDocumentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class DocumentLineDocumentType
     private $lineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType|null
+     * @var NoteType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class DocumentLineDocumentType
     private $includedNote;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getLineID(): ?IDType
     {
@@ -41,7 +41,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getLineIDWithCreate(): IDType
     {
@@ -51,7 +51,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $lineID
+     * @param IDType|null $lineID
      * @return self
      */
     public function setLineID(?IDType $lineID = null): self
@@ -72,7 +72,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType|null
+     * @return NoteType|null
      */
     public function getIncludedNote(): ?NoteType
     {
@@ -80,7 +80,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType
+     * @return NoteType
      */
     public function getIncludedNoteWithCreate(): NoteType
     {
@@ -90,7 +90,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType|null $includedNote
+     * @param NoteType|null $includedNote
      * @return self
      */
     public function setIncludedNote(?NoteType $includedNote = null): self

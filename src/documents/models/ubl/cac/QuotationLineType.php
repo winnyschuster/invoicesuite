@@ -16,7 +16,7 @@ class QuotationLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class QuotationLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class QuotationLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class QuotationLineType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @var LineExtensionAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class QuotationLineType
     private $lineExtensionAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount|null
+     * @var TotalTaxAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class QuotationLineType
     private $totalTaxAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID|null
+     * @var RequestForQuotationLineID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class QuotationLineType
     private $requestForQuotationLineID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class QuotationLineType
     private $documentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem|null
+     * @var LineItem|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineItem")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class QuotationLineType
     private $lineItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>|null
+     * @var array<SellerProposedSubstituteLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class QuotationLineType
     private $sellerProposedSubstituteLineItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem>|null
+     * @var array<AlternativeLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem>")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class QuotationLineType
     private $alternativeLineItem;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RequestLineReference|null
+     * @var RequestLineReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestLineReference")
      * @JMS\Expose
@@ -141,7 +141,7 @@ class QuotationLineType
     private $requestLineReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -149,7 +149,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -159,7 +159,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -180,7 +180,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -188,7 +188,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -219,7 +219,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -234,7 +234,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -249,7 +249,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -260,7 +260,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -270,7 +270,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -285,7 +285,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -301,7 +301,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -309,7 +309,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -319,7 +319,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -340,7 +340,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @return LineExtensionAmount|null
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -348,7 +348,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount
+     * @return LineExtensionAmount
      */
     public function getLineExtensionAmountWithCreate(): LineExtensionAmount
     {
@@ -358,7 +358,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null $lineExtensionAmount
+     * @param LineExtensionAmount|null $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
@@ -379,7 +379,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount|null
+     * @return TotalTaxAmount|null
      */
     public function getTotalTaxAmount(): ?TotalTaxAmount
     {
@@ -387,7 +387,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount
+     * @return TotalTaxAmount
      */
     public function getTotalTaxAmountWithCreate(): TotalTaxAmount
     {
@@ -397,7 +397,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount|null $totalTaxAmount
+     * @param TotalTaxAmount|null $totalTaxAmount
      * @return self
      */
     public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): self
@@ -418,7 +418,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID|null
+     * @return RequestForQuotationLineID|null
      */
     public function getRequestForQuotationLineID(): ?RequestForQuotationLineID
     {
@@ -426,7 +426,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID
+     * @return RequestForQuotationLineID
      */
     public function getRequestForQuotationLineIDWithCreate(): RequestForQuotationLineID
     {
@@ -436,7 +436,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID|null $requestForQuotationLineID
+     * @param RequestForQuotationLineID|null $requestForQuotationLineID
      * @return self
      */
     public function setRequestForQuotationLineID(?RequestForQuotationLineID $requestForQuotationLineID = null): self
@@ -457,7 +457,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -465,7 +465,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -496,7 +496,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -511,7 +511,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -526,7 +526,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -537,7 +537,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -547,7 +547,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -562,7 +562,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -578,7 +578,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem|null
+     * @return LineItem|null
      */
     public function getLineItem(): ?LineItem
     {
@@ -586,7 +586,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem
+     * @return LineItem
      */
     public function getLineItemWithCreate(): LineItem
     {
@@ -596,7 +596,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineItem|null $lineItem
+     * @param LineItem|null $lineItem
      * @return self
      */
     public function setLineItem(?LineItem $lineItem = null): self
@@ -617,7 +617,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>|null
+     * @return array<SellerProposedSubstituteLineItem>|null
      */
     public function getSellerProposedSubstituteLineItem(): ?array
     {
@@ -625,7 +625,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
+     * @param array<SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
      * @return self
      */
     public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): self
@@ -656,7 +656,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem|null
+     * @return SellerProposedSubstituteLineItem|null
      */
     public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -671,7 +671,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem|null
+     * @return SellerProposedSubstituteLineItem|null
      */
     public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -686,7 +686,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return self
      */
     public function addToSellerProposedSubstituteLineItem(
@@ -698,7 +698,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem
+     * @return SellerProposedSubstituteLineItem
      */
     public function addToSellerProposedSubstituteLineItemWithCreate(): SellerProposedSubstituteLineItem
     {
@@ -708,7 +708,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return self
      */
     public function addOnceToSellerProposedSubstituteLineItem(
@@ -724,7 +724,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem
+     * @return SellerProposedSubstituteLineItem
      */
     public function addOnceToSellerProposedSubstituteLineItemWithCreate(): SellerProposedSubstituteLineItem
     {
@@ -740,7 +740,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem>|null
+     * @return array<AlternativeLineItem>|null
      */
     public function getAlternativeLineItem(): ?array
     {
@@ -748,7 +748,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem>|null $alternativeLineItem
+     * @param array<AlternativeLineItem>|null $alternativeLineItem
      * @return self
      */
     public function setAlternativeLineItem(?array $alternativeLineItem = null): self
@@ -779,7 +779,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem|null
+     * @return AlternativeLineItem|null
      */
     public function firstAlternativeLineItem(): ?AlternativeLineItem
     {
@@ -794,7 +794,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem|null
+     * @return AlternativeLineItem|null
      */
     public function lastAlternativeLineItem(): ?AlternativeLineItem
     {
@@ -809,7 +809,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem $alternativeLineItem
+     * @param AlternativeLineItem $alternativeLineItem
      * @return self
      */
     public function addToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): self
@@ -820,7 +820,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem
+     * @return AlternativeLineItem
      */
     public function addToAlternativeLineItemWithCreate(): AlternativeLineItem
     {
@@ -830,7 +830,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem $alternativeLineItem
+     * @param AlternativeLineItem $alternativeLineItem
      * @return self
      */
     public function addOnceToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): self
@@ -845,7 +845,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem
+     * @return AlternativeLineItem
      */
     public function addOnceToAlternativeLineItemWithCreate(): AlternativeLineItem
     {
@@ -861,7 +861,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestLineReference|null
+     * @return RequestLineReference|null
      */
     public function getRequestLineReference(): ?RequestLineReference
     {
@@ -869,7 +869,7 @@ class QuotationLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestLineReference
+     * @return RequestLineReference
      */
     public function getRequestLineReferenceWithCreate(): RequestLineReference
     {
@@ -879,7 +879,7 @@ class QuotationLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequestLineReference|null $requestLineReference
+     * @param RequestLineReference|null $requestLineReference
      * @return self
      */
     public function setRequestLineReference(?RequestLineReference $requestLineReference = null): self

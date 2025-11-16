@@ -16,7 +16,7 @@ class AwardingTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode|null
+     * @var WeightingAlgorithmCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class AwardingTermsType
     private $weightingAlgorithmCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class AwardingTermsType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription>|null
+     * @var array<TechnicalCommitteeDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class AwardingTermsType
     private $technicalCommitteeDescription;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription>|null
+     * @var array<LowTendersDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription>")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class AwardingTermsType
     private $prizeIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription>|null
+     * @var array<PrizeDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription>")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class AwardingTermsType
     private $prizeDescription;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription>|null
+     * @var array<PaymentDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class AwardingTermsType
     private $bindingOnBuyerIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion>|null
+     * @var array<AwardingCriterion>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion>")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class AwardingTermsType
     private $awardingCriterion;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson>|null
+     * @var array<TechnicalCommitteePerson>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class AwardingTermsType
     private $technicalCommitteePerson;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode|null
+     * @return WeightingAlgorithmCode|null
      */
     public function getWeightingAlgorithmCode(): ?WeightingAlgorithmCode
     {
@@ -152,7 +152,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode
+     * @return WeightingAlgorithmCode
      */
     public function getWeightingAlgorithmCodeWithCreate(): WeightingAlgorithmCode
     {
@@ -162,7 +162,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode|null $weightingAlgorithmCode
+     * @param WeightingAlgorithmCode|null $weightingAlgorithmCode
      * @return self
      */
     public function setWeightingAlgorithmCode(?WeightingAlgorithmCode $weightingAlgorithmCode = null): self
@@ -183,7 +183,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -191,7 +191,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -222,7 +222,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -237,7 +237,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -252,7 +252,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -263,7 +263,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -273,7 +273,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -288,7 +288,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -304,7 +304,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription>|null
+     * @return array<TechnicalCommitteeDescription>|null
      */
     public function getTechnicalCommitteeDescription(): ?array
     {
@@ -312,7 +312,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription>|null $technicalCommitteeDescription
+     * @param array<TechnicalCommitteeDescription>|null $technicalCommitteeDescription
      * @return self
      */
     public function setTechnicalCommitteeDescription(?array $technicalCommitteeDescription = null): self
@@ -343,7 +343,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription|null
+     * @return TechnicalCommitteeDescription|null
      */
     public function firstTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
     {
@@ -358,7 +358,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription|null
+     * @return TechnicalCommitteeDescription|null
      */
     public function lastTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
     {
@@ -373,7 +373,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription $technicalCommitteeDescription
+     * @param TechnicalCommitteeDescription $technicalCommitteeDescription
      * @return self
      */
     public function addToTechnicalCommitteeDescription(
@@ -385,7 +385,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription
+     * @return TechnicalCommitteeDescription
      */
     public function addToTechnicalCommitteeDescriptionWithCreate(): TechnicalCommitteeDescription
     {
@@ -395,7 +395,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription $technicalCommitteeDescription
+     * @param TechnicalCommitteeDescription $technicalCommitteeDescription
      * @return self
      */
     public function addOnceToTechnicalCommitteeDescription(
@@ -411,7 +411,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription
+     * @return TechnicalCommitteeDescription
      */
     public function addOnceToTechnicalCommitteeDescriptionWithCreate(): TechnicalCommitteeDescription
     {
@@ -427,7 +427,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription>|null
+     * @return array<LowTendersDescription>|null
      */
     public function getLowTendersDescription(): ?array
     {
@@ -435,7 +435,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription>|null $lowTendersDescription
+     * @param array<LowTendersDescription>|null $lowTendersDescription
      * @return self
      */
     public function setLowTendersDescription(?array $lowTendersDescription = null): self
@@ -466,7 +466,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription|null
+     * @return LowTendersDescription|null
      */
     public function firstLowTendersDescription(): ?LowTendersDescription
     {
@@ -481,7 +481,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription|null
+     * @return LowTendersDescription|null
      */
     public function lastLowTendersDescription(): ?LowTendersDescription
     {
@@ -496,7 +496,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription $lowTendersDescription
+     * @param LowTendersDescription $lowTendersDescription
      * @return self
      */
     public function addToLowTendersDescription(LowTendersDescription $lowTendersDescription): self
@@ -507,7 +507,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription
+     * @return LowTendersDescription
      */
     public function addToLowTendersDescriptionWithCreate(): LowTendersDescription
     {
@@ -517,7 +517,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription $lowTendersDescription
+     * @param LowTendersDescription $lowTendersDescription
      * @return self
      */
     public function addOnceToLowTendersDescription(LowTendersDescription $lowTendersDescription): self
@@ -532,7 +532,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription
+     * @return LowTendersDescription
      */
     public function addOnceToLowTendersDescriptionWithCreate(): LowTendersDescription
     {
@@ -577,7 +577,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription>|null
+     * @return array<PrizeDescription>|null
      */
     public function getPrizeDescription(): ?array
     {
@@ -585,7 +585,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription>|null $prizeDescription
+     * @param array<PrizeDescription>|null $prizeDescription
      * @return self
      */
     public function setPrizeDescription(?array $prizeDescription = null): self
@@ -616,7 +616,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription|null
+     * @return PrizeDescription|null
      */
     public function firstPrizeDescription(): ?PrizeDescription
     {
@@ -631,7 +631,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription|null
+     * @return PrizeDescription|null
      */
     public function lastPrizeDescription(): ?PrizeDescription
     {
@@ -646,7 +646,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription $prizeDescription
+     * @param PrizeDescription $prizeDescription
      * @return self
      */
     public function addToPrizeDescription(PrizeDescription $prizeDescription): self
@@ -657,7 +657,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription
+     * @return PrizeDescription
      */
     public function addToPrizeDescriptionWithCreate(): PrizeDescription
     {
@@ -667,7 +667,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription $prizeDescription
+     * @param PrizeDescription $prizeDescription
      * @return self
      */
     public function addOnceToPrizeDescription(PrizeDescription $prizeDescription): self
@@ -682,7 +682,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription
+     * @return PrizeDescription
      */
     public function addOnceToPrizeDescriptionWithCreate(): PrizeDescription
     {
@@ -698,7 +698,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription>|null
+     * @return array<PaymentDescription>|null
      */
     public function getPaymentDescription(): ?array
     {
@@ -706,7 +706,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription>|null $paymentDescription
+     * @param array<PaymentDescription>|null $paymentDescription
      * @return self
      */
     public function setPaymentDescription(?array $paymentDescription = null): self
@@ -737,7 +737,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription|null
+     * @return PaymentDescription|null
      */
     public function firstPaymentDescription(): ?PaymentDescription
     {
@@ -752,7 +752,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription|null
+     * @return PaymentDescription|null
      */
     public function lastPaymentDescription(): ?PaymentDescription
     {
@@ -767,7 +767,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription $paymentDescription
+     * @param PaymentDescription $paymentDescription
      * @return self
      */
     public function addToPaymentDescription(PaymentDescription $paymentDescription): self
@@ -778,7 +778,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription
+     * @return PaymentDescription
      */
     public function addToPaymentDescriptionWithCreate(): PaymentDescription
     {
@@ -788,7 +788,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription $paymentDescription
+     * @param PaymentDescription $paymentDescription
      * @return self
      */
     public function addOnceToPaymentDescription(PaymentDescription $paymentDescription): self
@@ -803,7 +803,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription
+     * @return PaymentDescription
      */
     public function addOnceToPaymentDescriptionWithCreate(): PaymentDescription
     {
@@ -877,7 +877,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion>|null
+     * @return array<AwardingCriterion>|null
      */
     public function getAwardingCriterion(): ?array
     {
@@ -885,7 +885,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion>|null $awardingCriterion
+     * @param array<AwardingCriterion>|null $awardingCriterion
      * @return self
      */
     public function setAwardingCriterion(?array $awardingCriterion = null): self
@@ -916,7 +916,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion|null
+     * @return AwardingCriterion|null
      */
     public function firstAwardingCriterion(): ?AwardingCriterion
     {
@@ -931,7 +931,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion|null
+     * @return AwardingCriterion|null
      */
     public function lastAwardingCriterion(): ?AwardingCriterion
     {
@@ -946,7 +946,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion $awardingCriterion
+     * @param AwardingCriterion $awardingCriterion
      * @return self
      */
     public function addToAwardingCriterion(AwardingCriterion $awardingCriterion): self
@@ -957,7 +957,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion
+     * @return AwardingCriterion
      */
     public function addToAwardingCriterionWithCreate(): AwardingCriterion
     {
@@ -967,7 +967,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion $awardingCriterion
+     * @param AwardingCriterion $awardingCriterion
      * @return self
      */
     public function addOnceToAwardingCriterion(AwardingCriterion $awardingCriterion): self
@@ -982,7 +982,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion
+     * @return AwardingCriterion
      */
     public function addOnceToAwardingCriterionWithCreate(): AwardingCriterion
     {
@@ -998,7 +998,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson>|null
+     * @return array<TechnicalCommitteePerson>|null
      */
     public function getTechnicalCommitteePerson(): ?array
     {
@@ -1006,7 +1006,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson>|null $technicalCommitteePerson
+     * @param array<TechnicalCommitteePerson>|null $technicalCommitteePerson
      * @return self
      */
     public function setTechnicalCommitteePerson(?array $technicalCommitteePerson = null): self
@@ -1037,7 +1037,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson|null
+     * @return TechnicalCommitteePerson|null
      */
     public function firstTechnicalCommitteePerson(): ?TechnicalCommitteePerson
     {
@@ -1052,7 +1052,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson|null
+     * @return TechnicalCommitteePerson|null
      */
     public function lastTechnicalCommitteePerson(): ?TechnicalCommitteePerson
     {
@@ -1067,7 +1067,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson $technicalCommitteePerson
+     * @param TechnicalCommitteePerson $technicalCommitteePerson
      * @return self
      */
     public function addToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): self
@@ -1078,7 +1078,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson
+     * @return TechnicalCommitteePerson
      */
     public function addToTechnicalCommitteePersonWithCreate(): TechnicalCommitteePerson
     {
@@ -1088,7 +1088,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson $technicalCommitteePerson
+     * @param TechnicalCommitteePerson $technicalCommitteePerson
      * @return self
      */
     public function addOnceToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): self
@@ -1103,7 +1103,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson
+     * @return TechnicalCommitteePerson
      */
     public function addOnceToTechnicalCommitteePersonWithCreate(): TechnicalCommitteePerson
     {

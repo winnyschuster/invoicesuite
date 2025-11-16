@@ -34,7 +34,7 @@ class AddressType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class AddressType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressTypeCode|null
+     * @var AddressTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AddressTypeCode")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class AddressType
     private $addressTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode|null
+     * @var AddressFormatCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class AddressType
     private $addressFormatCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Postbox|null
+     * @var Postbox|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Postbox")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class AddressType
     private $postbox;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Floor|null
+     * @var Floor|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Floor")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class AddressType
     private $floor;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Room|null
+     * @var Room|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Room")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class AddressType
     private $room;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName|null
+     * @var StreetName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class AddressType
     private $streetName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName|null
+     * @var AdditionalStreetName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class AddressType
     private $additionalStreetName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BlockName|null
+     * @var BlockName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BlockName")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class AddressType
     private $blockName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingName|null
+     * @var BuildingName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingName")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class AddressType
     private $buildingName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingNumber|null
+     * @var BuildingNumber|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingNumber")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class AddressType
     private $buildingNumber;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InhouseMail|null
+     * @var InhouseMail|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InhouseMail")
      * @JMS\Expose
@@ -166,7 +166,7 @@ class AddressType
     private $inhouseMail;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Department|null
+     * @var Department|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Department")
      * @JMS\Expose
@@ -177,7 +177,7 @@ class AddressType
     private $department;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkAttention|null
+     * @var MarkAttention|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarkAttention")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class AddressType
     private $markAttention;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkCare|null
+     * @var MarkCare|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarkCare")
      * @JMS\Expose
@@ -199,7 +199,7 @@ class AddressType
     private $markCare;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PlotIdentification|null
+     * @var PlotIdentification|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlotIdentification")
      * @JMS\Expose
@@ -210,7 +210,7 @@ class AddressType
     private $plotIdentification;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CitySubdivisionName|null
+     * @var CitySubdivisionName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CitySubdivisionName")
      * @JMS\Expose
@@ -221,7 +221,7 @@ class AddressType
     private $citySubdivisionName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CityName|null
+     * @var CityName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CityName")
      * @JMS\Expose
@@ -232,7 +232,7 @@ class AddressType
     private $cityName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PostalZone|null
+     * @var PostalZone|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PostalZone")
      * @JMS\Expose
@@ -243,7 +243,7 @@ class AddressType
     private $postalZone;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity|null
+     * @var CountrySubentity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity")
      * @JMS\Expose
@@ -254,7 +254,7 @@ class AddressType
     private $countrySubentity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode|null
+     * @var CountrySubentityCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode")
      * @JMS\Expose
@@ -265,7 +265,7 @@ class AddressType
     private $countrySubentityCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Region|null
+     * @var Region|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Region")
      * @JMS\Expose
@@ -276,7 +276,7 @@ class AddressType
     private $region;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\District|null
+     * @var District|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\District")
      * @JMS\Expose
@@ -287,7 +287,7 @@ class AddressType
     private $district;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset|null
+     * @var TimezoneOffset|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset")
      * @JMS\Expose
@@ -298,7 +298,7 @@ class AddressType
     private $timezoneOffset;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine>|null
+     * @var array<AddressLine>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine>")
      * @JMS\Expose
@@ -310,7 +310,7 @@ class AddressType
     private $addressLine;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null
+     * @var Country|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Country")
      * @JMS\Expose
@@ -321,7 +321,7 @@ class AddressType
     private $country;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>|null
+     * @var array<LocationCoordinate>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>")
      * @JMS\Expose
@@ -333,7 +333,7 @@ class AddressType
     private $locationCoordinate;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -341,7 +341,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -351,7 +351,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -372,7 +372,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressTypeCode|null
+     * @return AddressTypeCode|null
      */
     public function getAddressTypeCode(): ?AddressTypeCode
     {
@@ -380,7 +380,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressTypeCode
+     * @return AddressTypeCode
      */
     public function getAddressTypeCodeWithCreate(): AddressTypeCode
     {
@@ -390,7 +390,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressTypeCode|null $addressTypeCode
+     * @param AddressTypeCode|null $addressTypeCode
      * @return self
      */
     public function setAddressTypeCode(?AddressTypeCode $addressTypeCode = null): self
@@ -411,7 +411,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode|null
+     * @return AddressFormatCode|null
      */
     public function getAddressFormatCode(): ?AddressFormatCode
     {
@@ -419,7 +419,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode
+     * @return AddressFormatCode
      */
     public function getAddressFormatCodeWithCreate(): AddressFormatCode
     {
@@ -429,7 +429,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode|null $addressFormatCode
+     * @param AddressFormatCode|null $addressFormatCode
      * @return self
      */
     public function setAddressFormatCode(?AddressFormatCode $addressFormatCode = null): self
@@ -450,7 +450,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Postbox|null
+     * @return Postbox|null
      */
     public function getPostbox(): ?Postbox
     {
@@ -458,7 +458,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Postbox
+     * @return Postbox
      */
     public function getPostboxWithCreate(): Postbox
     {
@@ -468,7 +468,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Postbox|null $postbox
+     * @param Postbox|null $postbox
      * @return self
      */
     public function setPostbox(?Postbox $postbox = null): self
@@ -489,7 +489,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Floor|null
+     * @return Floor|null
      */
     public function getFloor(): ?Floor
     {
@@ -497,7 +497,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Floor
+     * @return Floor
      */
     public function getFloorWithCreate(): Floor
     {
@@ -507,7 +507,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Floor|null $floor
+     * @param Floor|null $floor
      * @return self
      */
     public function setFloor(?Floor $floor = null): self
@@ -528,7 +528,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Room|null
+     * @return Room|null
      */
     public function getRoom(): ?Room
     {
@@ -536,7 +536,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Room
+     * @return Room
      */
     public function getRoomWithCreate(): Room
     {
@@ -546,7 +546,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Room|null $room
+     * @param Room|null $room
      * @return self
      */
     public function setRoom(?Room $room = null): self
@@ -567,7 +567,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName|null
+     * @return StreetName|null
      */
     public function getStreetName(): ?StreetName
     {
@@ -575,7 +575,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName
+     * @return StreetName
      */
     public function getStreetNameWithCreate(): StreetName
     {
@@ -585,7 +585,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName|null $streetName
+     * @param StreetName|null $streetName
      * @return self
      */
     public function setStreetName(?StreetName $streetName = null): self
@@ -606,7 +606,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName|null
+     * @return AdditionalStreetName|null
      */
     public function getAdditionalStreetName(): ?AdditionalStreetName
     {
@@ -614,7 +614,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName
+     * @return AdditionalStreetName
      */
     public function getAdditionalStreetNameWithCreate(): AdditionalStreetName
     {
@@ -624,7 +624,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName|null $additionalStreetName
+     * @param AdditionalStreetName|null $additionalStreetName
      * @return self
      */
     public function setAdditionalStreetName(?AdditionalStreetName $additionalStreetName = null): self
@@ -645,7 +645,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BlockName|null
+     * @return BlockName|null
      */
     public function getBlockName(): ?BlockName
     {
@@ -653,7 +653,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BlockName
+     * @return BlockName
      */
     public function getBlockNameWithCreate(): BlockName
     {
@@ -663,7 +663,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BlockName|null $blockName
+     * @param BlockName|null $blockName
      * @return self
      */
     public function setBlockName(?BlockName $blockName = null): self
@@ -684,7 +684,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingName|null
+     * @return BuildingName|null
      */
     public function getBuildingName(): ?BuildingName
     {
@@ -692,7 +692,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingName
+     * @return BuildingName
      */
     public function getBuildingNameWithCreate(): BuildingName
     {
@@ -702,7 +702,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingName|null $buildingName
+     * @param BuildingName|null $buildingName
      * @return self
      */
     public function setBuildingName(?BuildingName $buildingName = null): self
@@ -723,7 +723,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingNumber|null
+     * @return BuildingNumber|null
      */
     public function getBuildingNumber(): ?BuildingNumber
     {
@@ -731,7 +731,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingNumber
+     * @return BuildingNumber
      */
     public function getBuildingNumberWithCreate(): BuildingNumber
     {
@@ -741,7 +741,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingNumber|null $buildingNumber
+     * @param BuildingNumber|null $buildingNumber
      * @return self
      */
     public function setBuildingNumber(?BuildingNumber $buildingNumber = null): self
@@ -762,7 +762,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InhouseMail|null
+     * @return InhouseMail|null
      */
     public function getInhouseMail(): ?InhouseMail
     {
@@ -770,7 +770,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InhouseMail
+     * @return InhouseMail
      */
     public function getInhouseMailWithCreate(): InhouseMail
     {
@@ -780,7 +780,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InhouseMail|null $inhouseMail
+     * @param InhouseMail|null $inhouseMail
      * @return self
      */
     public function setInhouseMail(?InhouseMail $inhouseMail = null): self
@@ -801,7 +801,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Department|null
+     * @return Department|null
      */
     public function getDepartment(): ?Department
     {
@@ -809,7 +809,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Department
+     * @return Department
      */
     public function getDepartmentWithCreate(): Department
     {
@@ -819,7 +819,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Department|null $department
+     * @param Department|null $department
      * @return self
      */
     public function setDepartment(?Department $department = null): self
@@ -840,7 +840,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkAttention|null
+     * @return MarkAttention|null
      */
     public function getMarkAttention(): ?MarkAttention
     {
@@ -848,7 +848,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkAttention
+     * @return MarkAttention
      */
     public function getMarkAttentionWithCreate(): MarkAttention
     {
@@ -858,7 +858,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkAttention|null $markAttention
+     * @param MarkAttention|null $markAttention
      * @return self
      */
     public function setMarkAttention(?MarkAttention $markAttention = null): self
@@ -879,7 +879,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkCare|null
+     * @return MarkCare|null
      */
     public function getMarkCare(): ?MarkCare
     {
@@ -887,7 +887,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkCare
+     * @return MarkCare
      */
     public function getMarkCareWithCreate(): MarkCare
     {
@@ -897,7 +897,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MarkCare|null $markCare
+     * @param MarkCare|null $markCare
      * @return self
      */
     public function setMarkCare(?MarkCare $markCare = null): self
@@ -918,7 +918,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PlotIdentification|null
+     * @return PlotIdentification|null
      */
     public function getPlotIdentification(): ?PlotIdentification
     {
@@ -926,7 +926,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PlotIdentification
+     * @return PlotIdentification
      */
     public function getPlotIdentificationWithCreate(): PlotIdentification
     {
@@ -936,7 +936,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PlotIdentification|null $plotIdentification
+     * @param PlotIdentification|null $plotIdentification
      * @return self
      */
     public function setPlotIdentification(?PlotIdentification $plotIdentification = null): self
@@ -957,7 +957,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CitySubdivisionName|null
+     * @return CitySubdivisionName|null
      */
     public function getCitySubdivisionName(): ?CitySubdivisionName
     {
@@ -965,7 +965,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CitySubdivisionName
+     * @return CitySubdivisionName
      */
     public function getCitySubdivisionNameWithCreate(): CitySubdivisionName
     {
@@ -975,7 +975,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CitySubdivisionName|null $citySubdivisionName
+     * @param CitySubdivisionName|null $citySubdivisionName
      * @return self
      */
     public function setCitySubdivisionName(?CitySubdivisionName $citySubdivisionName = null): self
@@ -996,7 +996,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CityName|null
+     * @return CityName|null
      */
     public function getCityName(): ?CityName
     {
@@ -1004,7 +1004,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CityName
+     * @return CityName
      */
     public function getCityNameWithCreate(): CityName
     {
@@ -1014,7 +1014,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CityName|null $cityName
+     * @param CityName|null $cityName
      * @return self
      */
     public function setCityName(?CityName $cityName = null): self
@@ -1035,7 +1035,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PostalZone|null
+     * @return PostalZone|null
      */
     public function getPostalZone(): ?PostalZone
     {
@@ -1043,7 +1043,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PostalZone
+     * @return PostalZone
      */
     public function getPostalZoneWithCreate(): PostalZone
     {
@@ -1053,7 +1053,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PostalZone|null $postalZone
+     * @param PostalZone|null $postalZone
      * @return self
      */
     public function setPostalZone(?PostalZone $postalZone = null): self
@@ -1074,7 +1074,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity|null
+     * @return CountrySubentity|null
      */
     public function getCountrySubentity(): ?CountrySubentity
     {
@@ -1082,7 +1082,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity
+     * @return CountrySubentity
      */
     public function getCountrySubentityWithCreate(): CountrySubentity
     {
@@ -1092,7 +1092,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity|null $countrySubentity
+     * @param CountrySubentity|null $countrySubentity
      * @return self
      */
     public function setCountrySubentity(?CountrySubentity $countrySubentity = null): self
@@ -1113,7 +1113,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode|null
+     * @return CountrySubentityCode|null
      */
     public function getCountrySubentityCode(): ?CountrySubentityCode
     {
@@ -1121,7 +1121,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode
+     * @return CountrySubentityCode
      */
     public function getCountrySubentityCodeWithCreate(): CountrySubentityCode
     {
@@ -1131,7 +1131,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode|null $countrySubentityCode
+     * @param CountrySubentityCode|null $countrySubentityCode
      * @return self
      */
     public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): self
@@ -1152,7 +1152,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Region|null
+     * @return Region|null
      */
     public function getRegion(): ?Region
     {
@@ -1160,7 +1160,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Region
+     * @return Region
      */
     public function getRegionWithCreate(): Region
     {
@@ -1170,7 +1170,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Region|null $region
+     * @param Region|null $region
      * @return self
      */
     public function setRegion(?Region $region = null): self
@@ -1191,7 +1191,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\District|null
+     * @return District|null
      */
     public function getDistrict(): ?District
     {
@@ -1199,7 +1199,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\District
+     * @return District
      */
     public function getDistrictWithCreate(): District
     {
@@ -1209,7 +1209,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\District|null $district
+     * @param District|null $district
      * @return self
      */
     public function setDistrict(?District $district = null): self
@@ -1230,7 +1230,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset|null
+     * @return TimezoneOffset|null
      */
     public function getTimezoneOffset(): ?TimezoneOffset
     {
@@ -1238,7 +1238,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset
+     * @return TimezoneOffset
      */
     public function getTimezoneOffsetWithCreate(): TimezoneOffset
     {
@@ -1248,7 +1248,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset|null $timezoneOffset
+     * @param TimezoneOffset|null $timezoneOffset
      * @return self
      */
     public function setTimezoneOffset(?TimezoneOffset $timezoneOffset = null): self
@@ -1269,7 +1269,7 @@ class AddressType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine>|null
+     * @return array<AddressLine>|null
      */
     public function getAddressLine(): ?array
     {
@@ -1277,7 +1277,7 @@ class AddressType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine>|null $addressLine
+     * @param array<AddressLine>|null $addressLine
      * @return self
      */
     public function setAddressLine(?array $addressLine = null): self
@@ -1308,7 +1308,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine|null
+     * @return AddressLine|null
      */
     public function firstAddressLine(): ?AddressLine
     {
@@ -1323,7 +1323,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine|null
+     * @return AddressLine|null
      */
     public function lastAddressLine(): ?AddressLine
     {
@@ -1338,7 +1338,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine $addressLine
+     * @param AddressLine $addressLine
      * @return self
      */
     public function addToAddressLine(AddressLine $addressLine): self
@@ -1349,7 +1349,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine
+     * @return AddressLine
      */
     public function addToAddressLineWithCreate(): AddressLine
     {
@@ -1359,7 +1359,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine $addressLine
+     * @param AddressLine $addressLine
      * @return self
      */
     public function addOnceToAddressLine(AddressLine $addressLine): self
@@ -1374,7 +1374,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine
+     * @return AddressLine
      */
     public function addOnceToAddressLineWithCreate(): AddressLine
     {
@@ -1390,7 +1390,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null
+     * @return Country|null
      */
     public function getCountry(): ?Country
     {
@@ -1398,7 +1398,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Country
+     * @return Country
      */
     public function getCountryWithCreate(): Country
     {
@@ -1408,7 +1408,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Country|null $country
+     * @param Country|null $country
      * @return self
      */
     public function setCountry(?Country $country = null): self
@@ -1429,7 +1429,7 @@ class AddressType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>|null
+     * @return array<LocationCoordinate>|null
      */
     public function getLocationCoordinate(): ?array
     {
@@ -1437,7 +1437,7 @@ class AddressType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>|null $locationCoordinate
+     * @param array<LocationCoordinate>|null $locationCoordinate
      * @return self
      */
     public function setLocationCoordinate(?array $locationCoordinate = null): self
@@ -1468,7 +1468,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate|null
+     * @return LocationCoordinate|null
      */
     public function firstLocationCoordinate(): ?LocationCoordinate
     {
@@ -1483,7 +1483,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate|null
+     * @return LocationCoordinate|null
      */
     public function lastLocationCoordinate(): ?LocationCoordinate
     {
@@ -1498,7 +1498,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate $locationCoordinate
+     * @param LocationCoordinate $locationCoordinate
      * @return self
      */
     public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): self
@@ -1509,7 +1509,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate
+     * @return LocationCoordinate
      */
     public function addToLocationCoordinateWithCreate(): LocationCoordinate
     {
@@ -1519,7 +1519,7 @@ class AddressType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate $locationCoordinate
+     * @param LocationCoordinate $locationCoordinate
      * @return self
      */
     public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): self
@@ -1534,7 +1534,7 @@ class AddressType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate
+     * @return LocationCoordinate
      */
     public function addOnceToLocationCoordinateWithCreate(): LocationCoordinate
     {

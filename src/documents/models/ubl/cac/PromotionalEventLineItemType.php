@@ -11,7 +11,7 @@ class PromotionalEventLineItemType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class PromotionalEventLineItemType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem|null
+     * @var EventLineItem|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class PromotionalEventLineItemType
     private $eventLineItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -41,7 +41,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -51,7 +51,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -72,7 +72,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem|null
+     * @return EventLineItem|null
      */
     public function getEventLineItem(): ?EventLineItem
     {
@@ -80,7 +80,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem
+     * @return EventLineItem
      */
     public function getEventLineItemWithCreate(): EventLineItem
     {
@@ -90,7 +90,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem|null $eventLineItem
+     * @param EventLineItem|null $eventLineItem
      * @return self
      */
     public function setEventLineItem(?EventLineItem $eventLineItem = null): self

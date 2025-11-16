@@ -15,7 +15,7 @@ class TenderedProjectType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID|null
+     * @var VariantID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TenderedProjectType
     private $variantID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount|null
+     * @var FeeAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TenderedProjectType
     private $feeAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>|null
+     * @var array<FeeDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TenderedProjectType
     private $feeDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID|null
+     * @var TenderEnvelopeID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TenderedProjectType
     private $tenderEnvelopeID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode|null
+     * @var TenderEnvelopeTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class TenderedProjectType
     private $tenderEnvelopeTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null
+     * @var ProcurementProjectLot|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class TenderedProjectType
     private $procurementProjectLot;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference>|null
+     * @var array<EvidenceDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TenderedProjectType
     private $evidenceDocumentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @var array<TaxTotal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class TenderedProjectType
     private $taxTotal;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal|null
+     * @var LegalMonetaryTotal|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class TenderedProjectType
     private $legalMonetaryTotal;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine>|null
+     * @var array<TenderLine>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine>")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class TenderedProjectType
     private $tenderLine;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse>|null
+     * @var array<AwardingCriterionResponse>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse>")
      * @JMS\Expose
@@ -141,7 +141,7 @@ class TenderedProjectType
     private $awardingCriterionResponse;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID|null
+     * @return VariantID|null
      */
     public function getVariantID(): ?VariantID
     {
@@ -149,7 +149,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID
+     * @return VariantID
      */
     public function getVariantIDWithCreate(): VariantID
     {
@@ -159,7 +159,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID|null $variantID
+     * @param VariantID|null $variantID
      * @return self
      */
     public function setVariantID(?VariantID $variantID = null): self
@@ -180,7 +180,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount|null
+     * @return FeeAmount|null
      */
     public function getFeeAmount(): ?FeeAmount
     {
@@ -188,7 +188,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount
+     * @return FeeAmount
      */
     public function getFeeAmountWithCreate(): FeeAmount
     {
@@ -198,7 +198,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount|null $feeAmount
+     * @param FeeAmount|null $feeAmount
      * @return self
      */
     public function setFeeAmount(?FeeAmount $feeAmount = null): self
@@ -219,7 +219,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>|null
+     * @return array<FeeDescription>|null
      */
     public function getFeeDescription(): ?array
     {
@@ -227,7 +227,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>|null $feeDescription
+     * @param array<FeeDescription>|null $feeDescription
      * @return self
      */
     public function setFeeDescription(?array $feeDescription = null): self
@@ -258,7 +258,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription|null
+     * @return FeeDescription|null
      */
     public function firstFeeDescription(): ?FeeDescription
     {
@@ -273,7 +273,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription|null
+     * @return FeeDescription|null
      */
     public function lastFeeDescription(): ?FeeDescription
     {
@@ -288,7 +288,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription $feeDescription
+     * @param FeeDescription $feeDescription
      * @return self
      */
     public function addToFeeDescription(FeeDescription $feeDescription): self
@@ -299,7 +299,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription
+     * @return FeeDescription
      */
     public function addToFeeDescriptionWithCreate(): FeeDescription
     {
@@ -309,7 +309,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription $feeDescription
+     * @param FeeDescription $feeDescription
      * @return self
      */
     public function addOnceToFeeDescription(FeeDescription $feeDescription): self
@@ -324,7 +324,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription
+     * @return FeeDescription
      */
     public function addOnceToFeeDescriptionWithCreate(): FeeDescription
     {
@@ -340,7 +340,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID|null
+     * @return TenderEnvelopeID|null
      */
     public function getTenderEnvelopeID(): ?TenderEnvelopeID
     {
@@ -348,7 +348,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID
+     * @return TenderEnvelopeID
      */
     public function getTenderEnvelopeIDWithCreate(): TenderEnvelopeID
     {
@@ -358,7 +358,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID|null $tenderEnvelopeID
+     * @param TenderEnvelopeID|null $tenderEnvelopeID
      * @return self
      */
     public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): self
@@ -379,7 +379,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode|null
+     * @return TenderEnvelopeTypeCode|null
      */
     public function getTenderEnvelopeTypeCode(): ?TenderEnvelopeTypeCode
     {
@@ -387,7 +387,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode
+     * @return TenderEnvelopeTypeCode
      */
     public function getTenderEnvelopeTypeCodeWithCreate(): TenderEnvelopeTypeCode
     {
@@ -397,7 +397,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
+     * @param TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
      * @return self
      */
     public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): self
@@ -418,7 +418,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null
+     * @return ProcurementProjectLot|null
      */
     public function getProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -426,7 +426,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot
+     * @return ProcurementProjectLot
      */
     public function getProcurementProjectLotWithCreate(): ProcurementProjectLot
     {
@@ -436,7 +436,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot|null $procurementProjectLot
+     * @param ProcurementProjectLot|null $procurementProjectLot
      * @return self
      */
     public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): self
@@ -457,7 +457,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference>|null
+     * @return array<EvidenceDocumentReference>|null
      */
     public function getEvidenceDocumentReference(): ?array
     {
@@ -465,7 +465,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference>|null $evidenceDocumentReference
+     * @param array<EvidenceDocumentReference>|null $evidenceDocumentReference
      * @return self
      */
     public function setEvidenceDocumentReference(?array $evidenceDocumentReference = null): self
@@ -496,7 +496,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference|null
+     * @return EvidenceDocumentReference|null
      */
     public function firstEvidenceDocumentReference(): ?EvidenceDocumentReference
     {
@@ -511,7 +511,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference|null
+     * @return EvidenceDocumentReference|null
      */
     public function lastEvidenceDocumentReference(): ?EvidenceDocumentReference
     {
@@ -526,7 +526,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference $evidenceDocumentReference
+     * @param EvidenceDocumentReference $evidenceDocumentReference
      * @return self
      */
     public function addToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): self
@@ -537,7 +537,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference
+     * @return EvidenceDocumentReference
      */
     public function addToEvidenceDocumentReferenceWithCreate(): EvidenceDocumentReference
     {
@@ -547,7 +547,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference $evidenceDocumentReference
+     * @param EvidenceDocumentReference $evidenceDocumentReference
      * @return self
      */
     public function addOnceToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): self
@@ -562,7 +562,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference
+     * @return EvidenceDocumentReference
      */
     public function addOnceToEvidenceDocumentReferenceWithCreate(): EvidenceDocumentReference
     {
@@ -578,7 +578,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @return array<TaxTotal>|null
      */
     public function getTaxTotal(): ?array
     {
@@ -586,7 +586,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null $taxTotal
+     * @param array<TaxTotal>|null $taxTotal
      * @return self
      */
     public function setTaxTotal(?array $taxTotal = null): self
@@ -617,7 +617,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -632,7 +632,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -647,7 +647,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addToTaxTotal(TaxTotal $taxTotal): self
@@ -658,7 +658,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addToTaxTotalWithCreate(): TaxTotal
     {
@@ -668,7 +668,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): self
@@ -683,7 +683,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addOnceToTaxTotalWithCreate(): TaxTotal
     {
@@ -699,7 +699,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal|null
+     * @return LegalMonetaryTotal|null
      */
     public function getLegalMonetaryTotal(): ?LegalMonetaryTotal
     {
@@ -707,7 +707,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal
+     * @return LegalMonetaryTotal
      */
     public function getLegalMonetaryTotalWithCreate(): LegalMonetaryTotal
     {
@@ -717,7 +717,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal|null $legalMonetaryTotal
+     * @param LegalMonetaryTotal|null $legalMonetaryTotal
      * @return self
      */
     public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): self
@@ -738,7 +738,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine>|null
+     * @return array<TenderLine>|null
      */
     public function getTenderLine(): ?array
     {
@@ -746,7 +746,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine>|null $tenderLine
+     * @param array<TenderLine>|null $tenderLine
      * @return self
      */
     public function setTenderLine(?array $tenderLine = null): self
@@ -777,7 +777,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine|null
+     * @return TenderLine|null
      */
     public function firstTenderLine(): ?TenderLine
     {
@@ -792,7 +792,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine|null
+     * @return TenderLine|null
      */
     public function lastTenderLine(): ?TenderLine
     {
@@ -807,7 +807,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine $tenderLine
+     * @param TenderLine $tenderLine
      * @return self
      */
     public function addToTenderLine(TenderLine $tenderLine): self
@@ -818,7 +818,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine
+     * @return TenderLine
      */
     public function addToTenderLineWithCreate(): TenderLine
     {
@@ -828,7 +828,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine $tenderLine
+     * @param TenderLine $tenderLine
      * @return self
      */
     public function addOnceToTenderLine(TenderLine $tenderLine): self
@@ -843,7 +843,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine
+     * @return TenderLine
      */
     public function addOnceToTenderLineWithCreate(): TenderLine
     {
@@ -859,7 +859,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse>|null
+     * @return array<AwardingCriterionResponse>|null
      */
     public function getAwardingCriterionResponse(): ?array
     {
@@ -867,7 +867,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse>|null $awardingCriterionResponse
+     * @param array<AwardingCriterionResponse>|null $awardingCriterionResponse
      * @return self
      */
     public function setAwardingCriterionResponse(?array $awardingCriterionResponse = null): self
@@ -898,7 +898,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse|null
+     * @return AwardingCriterionResponse|null
      */
     public function firstAwardingCriterionResponse(): ?AwardingCriterionResponse
     {
@@ -913,7 +913,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse|null
+     * @return AwardingCriterionResponse|null
      */
     public function lastAwardingCriterionResponse(): ?AwardingCriterionResponse
     {
@@ -928,7 +928,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse $awardingCriterionResponse
+     * @param AwardingCriterionResponse $awardingCriterionResponse
      * @return self
      */
     public function addToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): self
@@ -939,7 +939,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse
+     * @return AwardingCriterionResponse
      */
     public function addToAwardingCriterionResponseWithCreate(): AwardingCriterionResponse
     {
@@ -949,7 +949,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse $awardingCriterionResponse
+     * @param AwardingCriterionResponse $awardingCriterionResponse
      * @return self
      */
     public function addOnceToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): self
@@ -964,7 +964,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse
+     * @return AwardingCriterionResponse
      */
     public function addOnceToAwardingCriterionResponseWithCreate(): AwardingCriterionResponse
     {

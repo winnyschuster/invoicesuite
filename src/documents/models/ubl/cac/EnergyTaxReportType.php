@@ -13,7 +13,7 @@ class EnergyTaxReportType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount|null
+     * @var TaxEnergyAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class EnergyTaxReportType
     private $taxEnergyAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount|null
+     * @var TaxEnergyOnAccountAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class EnergyTaxReportType
     private $taxEnergyOnAccountAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount|null
+     * @var TaxEnergyBalanceAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class EnergyTaxReportType
     private $taxEnergyBalanceAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme|null
+     * @var TaxScheme|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class EnergyTaxReportType
     private $taxScheme;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount|null
+     * @return TaxEnergyAmount|null
      */
     public function getTaxEnergyAmount(): ?TaxEnergyAmount
     {
@@ -65,7 +65,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount
+     * @return TaxEnergyAmount
      */
     public function getTaxEnergyAmountWithCreate(): TaxEnergyAmount
     {
@@ -75,7 +75,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount|null $taxEnergyAmount
+     * @param TaxEnergyAmount|null $taxEnergyAmount
      * @return self
      */
     public function setTaxEnergyAmount(?TaxEnergyAmount $taxEnergyAmount = null): self
@@ -96,7 +96,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount|null
+     * @return TaxEnergyOnAccountAmount|null
      */
     public function getTaxEnergyOnAccountAmount(): ?TaxEnergyOnAccountAmount
     {
@@ -104,7 +104,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount
+     * @return TaxEnergyOnAccountAmount
      */
     public function getTaxEnergyOnAccountAmountWithCreate(): TaxEnergyOnAccountAmount
     {
@@ -114,7 +114,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount|null $taxEnergyOnAccountAmount
+     * @param TaxEnergyOnAccountAmount|null $taxEnergyOnAccountAmount
      * @return self
      */
     public function setTaxEnergyOnAccountAmount(?TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount = null): self
@@ -135,7 +135,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount|null
+     * @return TaxEnergyBalanceAmount|null
      */
     public function getTaxEnergyBalanceAmount(): ?TaxEnergyBalanceAmount
     {
@@ -143,7 +143,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount
+     * @return TaxEnergyBalanceAmount
      */
     public function getTaxEnergyBalanceAmountWithCreate(): TaxEnergyBalanceAmount
     {
@@ -153,7 +153,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount|null $taxEnergyBalanceAmount
+     * @param TaxEnergyBalanceAmount|null $taxEnergyBalanceAmount
      * @return self
      */
     public function setTaxEnergyBalanceAmount(?TaxEnergyBalanceAmount $taxEnergyBalanceAmount = null): self
@@ -174,7 +174,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme|null
+     * @return TaxScheme|null
      */
     public function getTaxScheme(): ?TaxScheme
     {
@@ -182,7 +182,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme
+     * @return TaxScheme
      */
     public function getTaxSchemeWithCreate(): TaxScheme
     {
@@ -192,7 +192,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme|null $taxScheme
+     * @param TaxScheme|null $taxScheme
      * @return self
      */
     public function setTaxScheme(?TaxScheme $taxScheme = null): self

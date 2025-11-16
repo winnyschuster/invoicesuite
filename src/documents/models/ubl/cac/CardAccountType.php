@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID;
@@ -19,7 +20,7 @@ class CardAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID|null
+     * @var PrimaryAccountNumberID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID")
      * @JMS\Expose
@@ -30,7 +31,7 @@ class CardAccountType
     private $primaryAccountNumberID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID|null
+     * @var NetworkID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID")
      * @JMS\Expose
@@ -41,7 +42,7 @@ class CardAccountType
     private $networkID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode|null
+     * @var CardTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode")
      * @JMS\Expose
@@ -52,7 +53,7 @@ class CardAccountType
     private $cardTypeCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -63,7 +64,7 @@ class CardAccountType
     private $validityStartDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -74,7 +75,7 @@ class CardAccountType
     private $expiryDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID|null
+     * @var IssuerID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID")
      * @JMS\Expose
@@ -85,7 +86,7 @@ class CardAccountType
     private $issuerID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID|null
+     * @var IssueNumberID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID")
      * @JMS\Expose
@@ -96,7 +97,7 @@ class CardAccountType
     private $issueNumberID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID|null
+     * @var CV2ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID")
      * @JMS\Expose
@@ -107,7 +108,7 @@ class CardAccountType
     private $cV2ID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode|null
+     * @var CardChipCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode")
      * @JMS\Expose
@@ -118,7 +119,7 @@ class CardAccountType
     private $cardChipCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID|null
+     * @var ChipApplicationID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID")
      * @JMS\Expose
@@ -129,7 +130,7 @@ class CardAccountType
     private $chipApplicationID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName|null
+     * @var HolderName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName")
      * @JMS\Expose
@@ -140,7 +141,7 @@ class CardAccountType
     private $holderName;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID|null
+     * @return PrimaryAccountNumberID|null
      */
     public function getPrimaryAccountNumberID(): ?PrimaryAccountNumberID
     {
@@ -148,7 +149,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID
+     * @return PrimaryAccountNumberID
      */
     public function getPrimaryAccountNumberIDWithCreate(): PrimaryAccountNumberID
     {
@@ -158,7 +159,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID|null $primaryAccountNumberID
+     * @param PrimaryAccountNumberID|null $primaryAccountNumberID
      * @return self
      */
     public function setPrimaryAccountNumberID(?PrimaryAccountNumberID $primaryAccountNumberID = null): self
@@ -179,7 +180,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID|null
+     * @return NetworkID|null
      */
     public function getNetworkID(): ?NetworkID
     {
@@ -187,7 +188,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID
+     * @return NetworkID
      */
     public function getNetworkIDWithCreate(): NetworkID
     {
@@ -197,7 +198,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID|null $networkID
+     * @param NetworkID|null $networkID
      * @return self
      */
     public function setNetworkID(?NetworkID $networkID = null): self
@@ -218,7 +219,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode|null
+     * @return CardTypeCode|null
      */
     public function getCardTypeCode(): ?CardTypeCode
     {
@@ -226,7 +227,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode
+     * @return CardTypeCode
      */
     public function getCardTypeCodeWithCreate(): CardTypeCode
     {
@@ -236,7 +237,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode|null $cardTypeCode
+     * @param CardTypeCode|null $cardTypeCode
      * @return self
      */
     public function setCardTypeCode(?CardTypeCode $cardTypeCode = null): self
@@ -257,18 +258,18 @@ class CardAccountType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getValidityStartDate(): ?\DateTimeInterface
+    public function getValidityStartDate(): ?DateTimeInterface
     {
         return $this->validityStartDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $validityStartDate
+     * @param DateTimeInterface|null $validityStartDate
      * @return self
      */
-    public function setValidityStartDate(?\DateTimeInterface $validityStartDate = null): self
+    public function setValidityStartDate(?DateTimeInterface $validityStartDate = null): self
     {
         $this->validityStartDate = $validityStartDate;
 
@@ -286,18 +287,18 @@ class CardAccountType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getExpiryDate(): ?\DateTimeInterface
+    public function getExpiryDate(): ?DateTimeInterface
     {
         return $this->expiryDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $expiryDate
+     * @param DateTimeInterface|null $expiryDate
      * @return self
      */
-    public function setExpiryDate(?\DateTimeInterface $expiryDate = null): self
+    public function setExpiryDate(?DateTimeInterface $expiryDate = null): self
     {
         $this->expiryDate = $expiryDate;
 
@@ -315,7 +316,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID|null
+     * @return IssuerID|null
      */
     public function getIssuerID(): ?IssuerID
     {
@@ -323,7 +324,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID
+     * @return IssuerID
      */
     public function getIssuerIDWithCreate(): IssuerID
     {
@@ -333,7 +334,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID|null $issuerID
+     * @param IssuerID|null $issuerID
      * @return self
      */
     public function setIssuerID(?IssuerID $issuerID = null): self
@@ -354,7 +355,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID|null
+     * @return IssueNumberID|null
      */
     public function getIssueNumberID(): ?IssueNumberID
     {
@@ -362,7 +363,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID
+     * @return IssueNumberID
      */
     public function getIssueNumberIDWithCreate(): IssueNumberID
     {
@@ -372,7 +373,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID|null $issueNumberID
+     * @param IssueNumberID|null $issueNumberID
      * @return self
      */
     public function setIssueNumberID(?IssueNumberID $issueNumberID = null): self
@@ -393,7 +394,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID|null
+     * @return CV2ID|null
      */
     public function getCV2ID(): ?CV2ID
     {
@@ -401,7 +402,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID
+     * @return CV2ID
      */
     public function getCV2IDWithCreate(): CV2ID
     {
@@ -411,7 +412,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID|null $cV2ID
+     * @param CV2ID|null $cV2ID
      * @return self
      */
     public function setCV2ID(?CV2ID $cV2ID = null): self
@@ -432,7 +433,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode|null
+     * @return CardChipCode|null
      */
     public function getCardChipCode(): ?CardChipCode
     {
@@ -440,7 +441,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode
+     * @return CardChipCode
      */
     public function getCardChipCodeWithCreate(): CardChipCode
     {
@@ -450,7 +451,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode|null $cardChipCode
+     * @param CardChipCode|null $cardChipCode
      * @return self
      */
     public function setCardChipCode(?CardChipCode $cardChipCode = null): self
@@ -471,7 +472,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID|null
+     * @return ChipApplicationID|null
      */
     public function getChipApplicationID(): ?ChipApplicationID
     {
@@ -479,7 +480,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID
+     * @return ChipApplicationID
      */
     public function getChipApplicationIDWithCreate(): ChipApplicationID
     {
@@ -489,7 +490,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID|null $chipApplicationID
+     * @param ChipApplicationID|null $chipApplicationID
      * @return self
      */
     public function setChipApplicationID(?ChipApplicationID $chipApplicationID = null): self
@@ -510,7 +511,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName|null
+     * @return HolderName|null
      */
     public function getHolderName(): ?HolderName
     {
@@ -518,7 +519,7 @@ class CardAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName
+     * @return HolderName
      */
     public function getHolderNameWithCreate(): HolderName
     {
@@ -528,7 +529,7 @@ class CardAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName|null $holderName
+     * @param HolderName|null $holderName
      * @return self
      */
     public function setHolderName(?HolderName $holderName = null): self

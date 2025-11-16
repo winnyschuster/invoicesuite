@@ -13,7 +13,7 @@ class ContractExtensionType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription>|null
+     * @var array<OptionsDescription>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription>")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ContractExtensionType
     private $optionsDescription;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric|null
+     * @var MinimumNumberNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ContractExtensionType
     private $minimumNumberNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric|null
+     * @var MaximumNumberNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ContractExtensionType
     private $maximumNumberNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OptionValidityPeriod|null
+     * @var OptionValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OptionValidityPeriod")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ContractExtensionType
     private $optionValidityPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Renewal>|null
+     * @var array<Renewal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Renewal>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class ContractExtensionType
     private $renewal;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription>|null
+     * @return array<OptionsDescription>|null
      */
     public function getOptionsDescription(): ?array
     {
@@ -78,7 +78,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription>|null $optionsDescription
+     * @param array<OptionsDescription>|null $optionsDescription
      * @return self
      */
     public function setOptionsDescription(?array $optionsDescription = null): self
@@ -109,7 +109,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription|null
+     * @return OptionsDescription|null
      */
     public function firstOptionsDescription(): ?OptionsDescription
     {
@@ -124,7 +124,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription|null
+     * @return OptionsDescription|null
      */
     public function lastOptionsDescription(): ?OptionsDescription
     {
@@ -139,7 +139,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription $optionsDescription
+     * @param OptionsDescription $optionsDescription
      * @return self
      */
     public function addToOptionsDescription(OptionsDescription $optionsDescription): self
@@ -150,7 +150,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription
+     * @return OptionsDescription
      */
     public function addToOptionsDescriptionWithCreate(): OptionsDescription
     {
@@ -160,7 +160,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription $optionsDescription
+     * @param OptionsDescription $optionsDescription
      * @return self
      */
     public function addOnceToOptionsDescription(OptionsDescription $optionsDescription): self
@@ -175,7 +175,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription
+     * @return OptionsDescription
      */
     public function addOnceToOptionsDescriptionWithCreate(): OptionsDescription
     {
@@ -191,7 +191,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric|null
+     * @return MinimumNumberNumeric|null
      */
     public function getMinimumNumberNumeric(): ?MinimumNumberNumeric
     {
@@ -199,7 +199,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric
+     * @return MinimumNumberNumeric
      */
     public function getMinimumNumberNumericWithCreate(): MinimumNumberNumeric
     {
@@ -209,7 +209,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric|null $minimumNumberNumeric
+     * @param MinimumNumberNumeric|null $minimumNumberNumeric
      * @return self
      */
     public function setMinimumNumberNumeric(?MinimumNumberNumeric $minimumNumberNumeric = null): self
@@ -230,7 +230,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric|null
+     * @return MaximumNumberNumeric|null
      */
     public function getMaximumNumberNumeric(): ?MaximumNumberNumeric
     {
@@ -238,7 +238,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric
+     * @return MaximumNumberNumeric
      */
     public function getMaximumNumberNumericWithCreate(): MaximumNumberNumeric
     {
@@ -248,7 +248,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric|null $maximumNumberNumeric
+     * @param MaximumNumberNumeric|null $maximumNumberNumeric
      * @return self
      */
     public function setMaximumNumberNumeric(?MaximumNumberNumeric $maximumNumberNumeric = null): self
@@ -269,7 +269,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OptionValidityPeriod|null
+     * @return OptionValidityPeriod|null
      */
     public function getOptionValidityPeriod(): ?OptionValidityPeriod
     {
@@ -277,7 +277,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OptionValidityPeriod
+     * @return OptionValidityPeriod
      */
     public function getOptionValidityPeriodWithCreate(): OptionValidityPeriod
     {
@@ -287,7 +287,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OptionValidityPeriod|null $optionValidityPeriod
+     * @param OptionValidityPeriod|null $optionValidityPeriod
      * @return self
      */
     public function setOptionValidityPeriod(?OptionValidityPeriod $optionValidityPeriod = null): self
@@ -308,7 +308,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Renewal>|null
+     * @return array<Renewal>|null
      */
     public function getRenewal(): ?array
     {
@@ -316,7 +316,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Renewal>|null $renewal
+     * @param array<Renewal>|null $renewal
      * @return self
      */
     public function setRenewal(?array $renewal = null): self
@@ -347,7 +347,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Renewal|null
+     * @return Renewal|null
      */
     public function firstRenewal(): ?Renewal
     {
@@ -362,7 +362,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Renewal|null
+     * @return Renewal|null
      */
     public function lastRenewal(): ?Renewal
     {
@@ -377,7 +377,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Renewal $renewal
+     * @param Renewal $renewal
      * @return self
      */
     public function addToRenewal(Renewal $renewal): self
@@ -388,7 +388,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Renewal
+     * @return Renewal
      */
     public function addToRenewalWithCreate(): Renewal
     {
@@ -398,7 +398,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Renewal $renewal
+     * @param Renewal $renewal
      * @return self
      */
     public function addOnceToRenewal(Renewal $renewal): self
@@ -413,7 +413,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Renewal
+     * @return Renewal
      */
     public function addOnceToRenewalWithCreate(): Renewal
     {

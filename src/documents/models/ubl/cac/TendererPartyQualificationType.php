@@ -10,7 +10,7 @@ class TendererPartyQualificationType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot>|null
+     * @var array<InterestedProcurementProjectLot>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot>")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TendererPartyQualificationType
     private $interestedProcurementProjectLot;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MainQualifyingParty|null
+     * @var MainQualifyingParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MainQualifyingParty")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class TendererPartyQualificationType
     private $mainQualifyingParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty>|null
+     * @var array<AdditionalQualifyingParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty>")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class TendererPartyQualificationType
     private $additionalQualifyingParty;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot>|null
+     * @return array<InterestedProcurementProjectLot>|null
      */
     public function getInterestedProcurementProjectLot(): ?array
     {
@@ -53,7 +53,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot>|null $interestedProcurementProjectLot
+     * @param array<InterestedProcurementProjectLot>|null $interestedProcurementProjectLot
      * @return self
      */
     public function setInterestedProcurementProjectLot(?array $interestedProcurementProjectLot = null): self
@@ -84,7 +84,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot|null
+     * @return InterestedProcurementProjectLot|null
      */
     public function firstInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
     {
@@ -99,7 +99,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot|null
+     * @return InterestedProcurementProjectLot|null
      */
     public function lastInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
     {
@@ -114,7 +114,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot $interestedProcurementProjectLot
+     * @param InterestedProcurementProjectLot $interestedProcurementProjectLot
      * @return self
      */
     public function addToInterestedProcurementProjectLot(
@@ -126,7 +126,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot
+     * @return InterestedProcurementProjectLot
      */
     public function addToInterestedProcurementProjectLotWithCreate(): InterestedProcurementProjectLot
     {
@@ -136,7 +136,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot $interestedProcurementProjectLot
+     * @param InterestedProcurementProjectLot $interestedProcurementProjectLot
      * @return self
      */
     public function addOnceToInterestedProcurementProjectLot(
@@ -152,7 +152,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot
+     * @return InterestedProcurementProjectLot
      */
     public function addOnceToInterestedProcurementProjectLotWithCreate(): InterestedProcurementProjectLot
     {
@@ -168,7 +168,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MainQualifyingParty|null
+     * @return MainQualifyingParty|null
      */
     public function getMainQualifyingParty(): ?MainQualifyingParty
     {
@@ -176,7 +176,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MainQualifyingParty
+     * @return MainQualifyingParty
      */
     public function getMainQualifyingPartyWithCreate(): MainQualifyingParty
     {
@@ -186,7 +186,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MainQualifyingParty|null $mainQualifyingParty
+     * @param MainQualifyingParty|null $mainQualifyingParty
      * @return self
      */
     public function setMainQualifyingParty(?MainQualifyingParty $mainQualifyingParty = null): self
@@ -207,7 +207,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty>|null
+     * @return array<AdditionalQualifyingParty>|null
      */
     public function getAdditionalQualifyingParty(): ?array
     {
@@ -215,7 +215,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty>|null $additionalQualifyingParty
+     * @param array<AdditionalQualifyingParty>|null $additionalQualifyingParty
      * @return self
      */
     public function setAdditionalQualifyingParty(?array $additionalQualifyingParty = null): self
@@ -246,7 +246,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty|null
+     * @return AdditionalQualifyingParty|null
      */
     public function firstAdditionalQualifyingParty(): ?AdditionalQualifyingParty
     {
@@ -261,7 +261,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty|null
+     * @return AdditionalQualifyingParty|null
      */
     public function lastAdditionalQualifyingParty(): ?AdditionalQualifyingParty
     {
@@ -276,7 +276,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty $additionalQualifyingParty
+     * @param AdditionalQualifyingParty $additionalQualifyingParty
      * @return self
      */
     public function addToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): self
@@ -287,7 +287,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty
+     * @return AdditionalQualifyingParty
      */
     public function addToAdditionalQualifyingPartyWithCreate(): AdditionalQualifyingParty
     {
@@ -297,7 +297,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty $additionalQualifyingParty
+     * @param AdditionalQualifyingParty $additionalQualifyingParty
      * @return self
      */
     public function addOnceToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): self
@@ -312,7 +312,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty
+     * @return AdditionalQualifyingParty
      */
     public function addOnceToAdditionalQualifyingPartyWithCreate(): AdditionalQualifyingParty
     {

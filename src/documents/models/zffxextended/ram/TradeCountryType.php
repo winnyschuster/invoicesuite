@@ -11,7 +11,7 @@ class TradeCountryType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType|null
+     * @var CountryIDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TradeCountryType
     private $iD;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType|null
+     * @return CountryIDType|null
      */
     public function getID(): ?CountryIDType
     {
@@ -30,7 +30,7 @@ class TradeCountryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType
+     * @return CountryIDType
      */
     public function getIDWithCreate(): CountryIDType
     {
@@ -40,7 +40,7 @@ class TradeCountryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType|null $iD
+     * @param CountryIDType|null $iD
      * @return self
      */
     public function setID(?CountryIDType $iD = null): self

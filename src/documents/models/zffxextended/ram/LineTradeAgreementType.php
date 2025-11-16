@@ -10,7 +10,7 @@ class LineTradeAgreementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class LineTradeAgreementType
     private $sellerOrderReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class LineTradeAgreementType
     private $buyerOrderReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class LineTradeAgreementType
     private $quotationReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class LineTradeAgreementType
     private $contractReferencedDocument;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null
+     * @var array<ReferencedDocumentType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class LineTradeAgreementType
     private $additionalReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType|null
+     * @var TradePriceType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class LineTradeAgreementType
     private $grossPriceProductTradePrice;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType|null
+     * @var TradePriceType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class LineTradeAgreementType
     private $netPriceProductTradePrice;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null
+     * @var array<ReferencedDocumentType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class LineTradeAgreementType
     private $ultimateCustomerOrderReferencedDocument;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getSellerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -108,7 +108,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getSellerOrderReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -118,7 +118,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $sellerOrderReferencedDocument
+     * @param ReferencedDocumentType|null $sellerOrderReferencedDocument
      * @return self
      */
     public function setSellerOrderReferencedDocument(
@@ -140,7 +140,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getBuyerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -148,7 +148,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getBuyerOrderReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -158,7 +158,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $buyerOrderReferencedDocument
+     * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
      * @return self
      */
     public function setBuyerOrderReferencedDocument(
@@ -180,7 +180,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getQuotationReferencedDocument(): ?ReferencedDocumentType
     {
@@ -188,7 +188,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getQuotationReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -198,7 +198,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $quotationReferencedDocument
+     * @param ReferencedDocumentType|null $quotationReferencedDocument
      * @return self
      */
     public function setQuotationReferencedDocument(?ReferencedDocumentType $quotationReferencedDocument = null): self
@@ -219,7 +219,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getContractReferencedDocument(): ?ReferencedDocumentType
     {
@@ -227,7 +227,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getContractReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -237,7 +237,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $contractReferencedDocument
+     * @param ReferencedDocumentType|null $contractReferencedDocument
      * @return self
      */
     public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): self
@@ -258,7 +258,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null
+     * @return array<ReferencedDocumentType>|null
      */
     public function getAdditionalReferencedDocument(): ?array
     {
@@ -266,7 +266,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null $additionalReferencedDocument
+     * @param array<ReferencedDocumentType>|null $additionalReferencedDocument
      * @return self
      */
     public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): self
@@ -297,7 +297,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType $additionalReferencedDocument
+     * @param ReferencedDocumentType $additionalReferencedDocument
      * @return self
      */
     public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): self
@@ -308,7 +308,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function addToAdditionalReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -318,7 +318,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType $additionalReferencedDocument
+     * @param ReferencedDocumentType $additionalReferencedDocument
      * @return self
      */
     public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): self
@@ -333,7 +333,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function addOnceToAdditionalReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -349,7 +349,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType|null
+     * @return TradePriceType|null
      */
     public function getGrossPriceProductTradePrice(): ?TradePriceType
     {
@@ -357,7 +357,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType
+     * @return TradePriceType
      */
     public function getGrossPriceProductTradePriceWithCreate(): TradePriceType
     {
@@ -367,7 +367,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType|null $grossPriceProductTradePrice
+     * @param TradePriceType|null $grossPriceProductTradePrice
      * @return self
      */
     public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): self
@@ -388,7 +388,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType|null
+     * @return TradePriceType|null
      */
     public function getNetPriceProductTradePrice(): ?TradePriceType
     {
@@ -396,7 +396,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType
+     * @return TradePriceType
      */
     public function getNetPriceProductTradePriceWithCreate(): TradePriceType
     {
@@ -406,7 +406,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType|null $netPriceProductTradePrice
+     * @param TradePriceType|null $netPriceProductTradePrice
      * @return self
      */
     public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): self
@@ -427,7 +427,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null
+     * @return array<ReferencedDocumentType>|null
      */
     public function getUltimateCustomerOrderReferencedDocument(): ?array
     {
@@ -435,7 +435,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>|null $ultimateCustomerOrderReferencedDocument
+     * @param array<ReferencedDocumentType>|null $ultimateCustomerOrderReferencedDocument
      * @return self
      */
     public function setUltimateCustomerOrderReferencedDocument(
@@ -467,7 +467,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
+     * @param ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
      * @return self
      */
     public function addToUltimateCustomerOrderReferencedDocument(
@@ -479,7 +479,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function addToUltimateCustomerOrderReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -489,7 +489,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
+     * @param ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
      * @return self
      */
     public function addOnceToUltimateCustomerOrderReferencedDocument(
@@ -505,7 +505,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function addOnceToUltimateCustomerOrderReferencedDocumentWithCreate(): ReferencedDocumentType
     {

@@ -11,7 +11,7 @@ class UniversalCommunicationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class UniversalCommunicationType
     private $uRIID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getURIID(): ?IDType
     {
@@ -30,7 +30,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getURIIDWithCreate(): IDType
     {
@@ -40,7 +40,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $uRIID
+     * @param IDType|null $uRIID
      * @return self
      */
     public function setURIID(?IDType $uRIID = null): self

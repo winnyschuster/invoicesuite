@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode;
@@ -14,7 +15,7 @@ class ForecastExceptionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode|null
+     * @var ForecastPurposeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode")
      * @JMS\Expose
@@ -25,7 +26,7 @@ class ForecastExceptionType
     private $forecastPurposeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @var ForecastTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -36,7 +37,7 @@ class ForecastExceptionType
     private $forecastTypeCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -47,7 +48,7 @@ class ForecastExceptionType
     private $issueDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -58,7 +59,7 @@ class ForecastExceptionType
     private $issueTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode|null
+     * @var DataSourceCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode")
      * @JMS\Expose
@@ -69,7 +70,7 @@ class ForecastExceptionType
     private $dataSourceCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode|null
+     * @var ComparisonDataCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode")
      * @JMS\Expose
@@ -80,7 +81,7 @@ class ForecastExceptionType
     private $comparisonDataCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -91,7 +92,7 @@ class ForecastExceptionType
     private $comparisonForecastIssueTime;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -102,7 +103,7 @@ class ForecastExceptionType
     private $comparisonForecastIssueDate;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode|null
+     * @return ForecastPurposeCode|null
      */
     public function getForecastPurposeCode(): ?ForecastPurposeCode
     {
@@ -110,7 +111,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode
+     * @return ForecastPurposeCode
      */
     public function getForecastPurposeCodeWithCreate(): ForecastPurposeCode
     {
@@ -120,7 +121,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode|null $forecastPurposeCode
+     * @param ForecastPurposeCode|null $forecastPurposeCode
      * @return self
      */
     public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): self
@@ -141,7 +142,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @return ForecastTypeCode|null
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -149,7 +150,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode
+     * @return ForecastTypeCode
      */
     public function getForecastTypeCodeWithCreate(): ForecastTypeCode
     {
@@ -159,7 +160,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null $forecastTypeCode
+     * @param ForecastTypeCode|null $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
@@ -180,18 +181,18 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -209,18 +210,18 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueTime(): ?\DateTimeInterface
+    public function getIssueTime(): ?DateTimeInterface
     {
         return $this->issueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueTime
+     * @param DateTimeInterface|null $issueTime
      * @return self
      */
-    public function setIssueTime(?\DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): self
     {
         $this->issueTime = $issueTime;
 
@@ -238,7 +239,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode|null
+     * @return DataSourceCode|null
      */
     public function getDataSourceCode(): ?DataSourceCode
     {
@@ -246,7 +247,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode
+     * @return DataSourceCode
      */
     public function getDataSourceCodeWithCreate(): DataSourceCode
     {
@@ -256,7 +257,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode|null $dataSourceCode
+     * @param DataSourceCode|null $dataSourceCode
      * @return self
      */
     public function setDataSourceCode(?DataSourceCode $dataSourceCode = null): self
@@ -277,7 +278,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode|null
+     * @return ComparisonDataCode|null
      */
     public function getComparisonDataCode(): ?ComparisonDataCode
     {
@@ -285,7 +286,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode
+     * @return ComparisonDataCode
      */
     public function getComparisonDataCodeWithCreate(): ComparisonDataCode
     {
@@ -295,7 +296,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode|null $comparisonDataCode
+     * @param ComparisonDataCode|null $comparisonDataCode
      * @return self
      */
     public function setComparisonDataCode(?ComparisonDataCode $comparisonDataCode = null): self
@@ -316,18 +317,18 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getComparisonForecastIssueTime(): ?\DateTimeInterface
+    public function getComparisonForecastIssueTime(): ?DateTimeInterface
     {
         return $this->comparisonForecastIssueTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $comparisonForecastIssueTime
+     * @param DateTimeInterface|null $comparisonForecastIssueTime
      * @return self
      */
-    public function setComparisonForecastIssueTime(?\DateTimeInterface $comparisonForecastIssueTime = null): self
+    public function setComparisonForecastIssueTime(?DateTimeInterface $comparisonForecastIssueTime = null): self
     {
         $this->comparisonForecastIssueTime = $comparisonForecastIssueTime;
 
@@ -345,18 +346,18 @@ class ForecastExceptionType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getComparisonForecastIssueDate(): ?\DateTimeInterface
+    public function getComparisonForecastIssueDate(): ?DateTimeInterface
     {
         return $this->comparisonForecastIssueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $comparisonForecastIssueDate
+     * @param DateTimeInterface|null $comparisonForecastIssueDate
      * @return self
      */
-    public function setComparisonForecastIssueDate(?\DateTimeInterface $comparisonForecastIssueDate = null): self
+    public function setComparisonForecastIssueDate(?DateTimeInterface $comparisonForecastIssueDate = null): self
     {
         $this->comparisonForecastIssueDate = $comparisonForecastIssueDate;
 

@@ -14,7 +14,7 @@ class EvidenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EvidenceType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode|null
+     * @var EvidenceTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EvidenceType
     private $evidenceTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class EvidenceType
     private $description;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement>|null
+     * @var array<CandidateStatement>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class EvidenceType
     private $candidateStatement;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceIssuingParty|null
+     * @var EvidenceIssuingParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceIssuingParty")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class EvidenceType
     private $evidenceIssuingParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @var DocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class EvidenceType
     private $documentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Language|null
+     * @var Language|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Language")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class EvidenceType
     private $language;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -101,7 +101,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -111,7 +111,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -132,7 +132,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode|null
+     * @return EvidenceTypeCode|null
      */
     public function getEvidenceTypeCode(): ?EvidenceTypeCode
     {
@@ -140,7 +140,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode
+     * @return EvidenceTypeCode
      */
     public function getEvidenceTypeCodeWithCreate(): EvidenceTypeCode
     {
@@ -150,7 +150,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode|null $evidenceTypeCode
+     * @param EvidenceTypeCode|null $evidenceTypeCode
      * @return self
      */
     public function setEvidenceTypeCode(?EvidenceTypeCode $evidenceTypeCode = null): self
@@ -171,7 +171,7 @@ class EvidenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -179,7 +179,7 @@ class EvidenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -210,7 +210,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -225,7 +225,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -240,7 +240,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -251,7 +251,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -261,7 +261,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -276,7 +276,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -292,7 +292,7 @@ class EvidenceType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement>|null
+     * @return array<CandidateStatement>|null
      */
     public function getCandidateStatement(): ?array
     {
@@ -300,7 +300,7 @@ class EvidenceType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement>|null $candidateStatement
+     * @param array<CandidateStatement>|null $candidateStatement
      * @return self
      */
     public function setCandidateStatement(?array $candidateStatement = null): self
@@ -331,7 +331,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement|null
+     * @return CandidateStatement|null
      */
     public function firstCandidateStatement(): ?CandidateStatement
     {
@@ -346,7 +346,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement|null
+     * @return CandidateStatement|null
      */
     public function lastCandidateStatement(): ?CandidateStatement
     {
@@ -361,7 +361,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement $candidateStatement
+     * @param CandidateStatement $candidateStatement
      * @return self
      */
     public function addToCandidateStatement(CandidateStatement $candidateStatement): self
@@ -372,7 +372,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement
+     * @return CandidateStatement
      */
     public function addToCandidateStatementWithCreate(): CandidateStatement
     {
@@ -382,7 +382,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement $candidateStatement
+     * @param CandidateStatement $candidateStatement
      * @return self
      */
     public function addOnceToCandidateStatement(CandidateStatement $candidateStatement): self
@@ -397,7 +397,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement
+     * @return CandidateStatement
      */
     public function addOnceToCandidateStatementWithCreate(): CandidateStatement
     {
@@ -413,7 +413,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceIssuingParty|null
+     * @return EvidenceIssuingParty|null
      */
     public function getEvidenceIssuingParty(): ?EvidenceIssuingParty
     {
@@ -421,7 +421,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceIssuingParty
+     * @return EvidenceIssuingParty
      */
     public function getEvidenceIssuingPartyWithCreate(): EvidenceIssuingParty
     {
@@ -431,7 +431,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceIssuingParty|null $evidenceIssuingParty
+     * @param EvidenceIssuingParty|null $evidenceIssuingParty
      * @return self
      */
     public function setEvidenceIssuingParty(?EvidenceIssuingParty $evidenceIssuingParty = null): self
@@ -452,7 +452,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -460,7 +460,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function getDocumentReferenceWithCreate(): DocumentReference
     {
@@ -470,7 +470,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null $documentReference
+     * @param DocumentReference|null $documentReference
      * @return self
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): self
@@ -491,7 +491,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Language|null
+     * @return Language|null
      */
     public function getLanguage(): ?Language
     {
@@ -499,7 +499,7 @@ class EvidenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Language
+     * @return Language
      */
     public function getLanguageWithCreate(): Language
     {
@@ -509,7 +509,7 @@ class EvidenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Language|null $language
+     * @param Language|null $language
      * @return self
      */
     public function setLanguage(?Language $language = null): self

@@ -11,7 +11,7 @@ class CreditorFinancialAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class CreditorFinancialAccountType
     private $iBANID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class CreditorFinancialAccountType
     private $proprietaryID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getIBANID(): ?IDType
     {
@@ -41,7 +41,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getIBANIDWithCreate(): IDType
     {
@@ -51,7 +51,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $iBANID
+     * @param IDType|null $iBANID
      * @return self
      */
     public function setIBANID(?IDType $iBANID = null): self
@@ -72,7 +72,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getProprietaryID(): ?IDType
     {
@@ -80,7 +80,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getProprietaryIDWithCreate(): IDType
     {
@@ -90,7 +90,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $proprietaryID
+     * @param IDType|null $proprietaryID
      * @return self
      */
     public function setProprietaryID(?IDType $proprietaryID = null): self

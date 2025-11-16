@@ -13,7 +13,7 @@ class ForecastLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ForecastLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ForecastLineType
     private $frozenDocumentIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @var ForecastTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ForecastLineType
     private $forecastTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod|null
+     * @var ForecastPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ForecastLineType
     private $forecastPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @var SalesItem|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class ForecastLineType
     private $salesItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -88,7 +88,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -98,7 +98,7 @@ class ForecastLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -119,7 +119,7 @@ class ForecastLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -127,7 +127,7 @@ class ForecastLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -158,7 +158,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -173,7 +173,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -188,7 +188,7 @@ class ForecastLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -199,7 +199,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -209,7 +209,7 @@ class ForecastLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -224,7 +224,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -269,7 +269,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null
+     * @return ForecastTypeCode|null
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -277,7 +277,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode
+     * @return ForecastTypeCode
      */
     public function getForecastTypeCodeWithCreate(): ForecastTypeCode
     {
@@ -287,7 +287,7 @@ class ForecastLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode|null $forecastTypeCode
+     * @param ForecastTypeCode|null $forecastTypeCode
      * @return self
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
@@ -308,7 +308,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod|null
+     * @return ForecastPeriod|null
      */
     public function getForecastPeriod(): ?ForecastPeriod
     {
@@ -316,7 +316,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod
+     * @return ForecastPeriod
      */
     public function getForecastPeriodWithCreate(): ForecastPeriod
     {
@@ -326,7 +326,7 @@ class ForecastLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod|null $forecastPeriod
+     * @param ForecastPeriod|null $forecastPeriod
      * @return self
      */
     public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): self
@@ -347,7 +347,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null
+     * @return SalesItem|null
      */
     public function getSalesItem(): ?SalesItem
     {
@@ -355,7 +355,7 @@ class ForecastLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem
+     * @return SalesItem
      */
     public function getSalesItemWithCreate(): SalesItem
     {
@@ -365,7 +365,7 @@ class ForecastLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem|null $salesItem
+     * @param SalesItem|null $salesItem
      * @return self
      */
     public function setSalesItem(?SalesItem $salesItem = null): self

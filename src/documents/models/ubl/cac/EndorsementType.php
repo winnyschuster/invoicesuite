@@ -13,7 +13,7 @@ class EndorsementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID|null
+     * @var DocumentID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class EndorsementType
     private $documentID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus|null
+     * @var ApprovalStatus|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class EndorsementType
     private $approvalStatus;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null
+     * @var array<Remarks>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EndorsementType
     private $remarks;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty|null
+     * @var EndorserParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EndorsementType
     private $endorserParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null
+     * @var array<Signature>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class EndorsementType
     private $signature;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID|null
+     * @return DocumentID|null
      */
     public function getDocumentID(): ?DocumentID
     {
@@ -78,7 +78,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID
+     * @return DocumentID
      */
     public function getDocumentIDWithCreate(): DocumentID
     {
@@ -88,7 +88,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID|null $documentID
+     * @param DocumentID|null $documentID
      * @return self
      */
     public function setDocumentID(?DocumentID $documentID = null): self
@@ -109,7 +109,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus|null
+     * @return ApprovalStatus|null
      */
     public function getApprovalStatus(): ?ApprovalStatus
     {
@@ -117,7 +117,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus
+     * @return ApprovalStatus
      */
     public function getApprovalStatusWithCreate(): ApprovalStatus
     {
@@ -127,7 +127,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus|null $approvalStatus
+     * @param ApprovalStatus|null $approvalStatus
      * @return self
      */
     public function setApprovalStatus(?ApprovalStatus $approvalStatus = null): self
@@ -148,7 +148,7 @@ class EndorsementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null
+     * @return array<Remarks>|null
      */
     public function getRemarks(): ?array
     {
@@ -156,7 +156,7 @@ class EndorsementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>|null $remarks
+     * @param array<Remarks>|null $remarks
      * @return self
      */
     public function setRemarks(?array $remarks = null): self
@@ -187,7 +187,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks|null
+     * @return Remarks|null
      */
     public function firstRemarks(): ?Remarks
     {
@@ -202,7 +202,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks|null
+     * @return Remarks|null
      */
     public function lastRemarks(): ?Remarks
     {
@@ -217,7 +217,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks $remarks
+     * @param Remarks $remarks
      * @return self
      */
     public function addToRemarks(Remarks $remarks): self
@@ -228,7 +228,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks
+     * @return Remarks
      */
     public function addToRemarksWithCreate(): Remarks
     {
@@ -238,7 +238,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks $remarks
+     * @param Remarks $remarks
      * @return self
      */
     public function addOnceToRemarks(Remarks $remarks): self
@@ -253,7 +253,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks
+     * @return Remarks
      */
     public function addOnceToRemarksWithCreate(): Remarks
     {
@@ -269,7 +269,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty|null
+     * @return EndorserParty|null
      */
     public function getEndorserParty(): ?EndorserParty
     {
@@ -277,7 +277,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty
+     * @return EndorserParty
      */
     public function getEndorserPartyWithCreate(): EndorserParty
     {
@@ -287,7 +287,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty|null $endorserParty
+     * @param EndorserParty|null $endorserParty
      * @return self
      */
     public function setEndorserParty(?EndorserParty $endorserParty = null): self
@@ -308,7 +308,7 @@ class EndorsementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null
+     * @return array<Signature>|null
      */
     public function getSignature(): ?array
     {
@@ -316,7 +316,7 @@ class EndorsementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Signature>|null $signature
+     * @param array<Signature>|null $signature
      * @return self
      */
     public function setSignature(?array $signature = null): self
@@ -347,7 +347,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature|null
+     * @return Signature|null
      */
     public function firstSignature(): ?Signature
     {
@@ -362,7 +362,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature|null
+     * @return Signature|null
      */
     public function lastSignature(): ?Signature
     {
@@ -377,7 +377,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Signature $signature
+     * @param Signature $signature
      * @return self
      */
     public function addToSignature(Signature $signature): self
@@ -388,7 +388,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature
+     * @return Signature
      */
     public function addToSignatureWithCreate(): Signature
     {
@@ -398,7 +398,7 @@ class EndorsementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Signature $signature
+     * @param Signature $signature
      * @return self
      */
     public function addOnceToSignature(Signature $signature): self
@@ -413,7 +413,7 @@ class EndorsementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Signature
+     * @return Signature
      */
     public function addOnceToSignatureWithCreate(): Signature
     {

@@ -11,7 +11,7 @@ class TradeProductInstanceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TradeProductInstanceType
     private $batchID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class TradeProductInstanceType
     private $supplierAssignedSerialID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getBatchID(): ?IDType
     {
@@ -41,7 +41,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getBatchIDWithCreate(): IDType
     {
@@ -51,7 +51,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $batchID
+     * @param IDType|null $batchID
      * @return self
      */
     public function setBatchID(?IDType $batchID = null): self
@@ -72,7 +72,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getSupplierAssignedSerialID(): ?IDType
     {
@@ -80,7 +80,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getSupplierAssignedSerialIDWithCreate(): IDType
     {
@@ -90,7 +90,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $supplierAssignedSerialID
+     * @param IDType|null $supplierAssignedSerialID
      * @return self
      */
     public function setSupplierAssignedSerialID(?IDType $supplierAssignedSerialID = null): self

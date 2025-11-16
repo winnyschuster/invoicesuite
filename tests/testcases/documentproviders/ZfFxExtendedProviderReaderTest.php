@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use DateTimeInterface;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatReader;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
@@ -254,7 +255,7 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame('typecode', $newTypeCode);
         $this->assertSame('reftypecode', $newReferenceTypeCode);
         $this->assertSame('description', $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertTrue(self::$document->nextDocumentAdditionalReference());
 
@@ -272,7 +273,7 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame('typecode2', $newTypeCode);
         $this->assertSame('reftypecode2', $newReferenceTypeCode);
         $this->assertSame('description2', $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentAdditionalReference());
 
@@ -2747,7 +2748,7 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame("TYPECODE-1", $newTypeCode);
         $this->assertSame("REFTYPECODE-1", $newReferenceTypeCode);
         $this->assertSame("DESC-1", $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertTrue(self::$document->nextDocumentPositionAdditionalReference());
 
@@ -2767,7 +2768,7 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame("TYPECODE-2", $newTypeCode);
         $this->assertSame("REFTYPECODE-2", $newReferenceTypeCode);
         $this->assertSame("DESC-2", $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentPositionAdditionalReference());
 

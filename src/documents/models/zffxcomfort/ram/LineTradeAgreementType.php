@@ -10,7 +10,7 @@ class LineTradeAgreementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -21,7 +21,7 @@ class LineTradeAgreementType
     private $buyerOrderReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType|null
+     * @var TradePriceType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class LineTradeAgreementType
     private $grossPriceProductTradePrice;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType|null
+     * @var TradePriceType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class LineTradeAgreementType
     private $netPriceProductTradePrice;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getBuyerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -51,7 +51,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getBuyerOrderReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -61,7 +61,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType|null $buyerOrderReferencedDocument
+     * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
      * @return self
      */
     public function setBuyerOrderReferencedDocument(
@@ -83,7 +83,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType|null
+     * @return TradePriceType|null
      */
     public function getGrossPriceProductTradePrice(): ?TradePriceType
     {
@@ -91,7 +91,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType
+     * @return TradePriceType
      */
     public function getGrossPriceProductTradePriceWithCreate(): TradePriceType
     {
@@ -101,7 +101,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType|null $grossPriceProductTradePrice
+     * @param TradePriceType|null $grossPriceProductTradePrice
      * @return self
      */
     public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): self
@@ -122,7 +122,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType|null
+     * @return TradePriceType|null
      */
     public function getNetPriceProductTradePrice(): ?TradePriceType
     {
@@ -130,7 +130,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType
+     * @return TradePriceType
      */
     public function getNetPriceProductTradePriceWithCreate(): TradePriceType
     {
@@ -140,7 +140,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType|null $netPriceProductTradePrice
+     * @param TradePriceType|null $netPriceProductTradePrice
      * @return self
      */
     public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): self

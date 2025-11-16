@@ -11,7 +11,7 @@ class HeaderTradeAgreementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class HeaderTradeAgreementType
     private $buyerReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType|null
+     * @var TradePartyType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class HeaderTradeAgreementType
     private $sellerTradeParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType|null
+     * @var TradePartyType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class HeaderTradeAgreementType
     private $buyerTradeParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class HeaderTradeAgreementType
     private $buyerOrderReferencedDocument;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType|null
+     * @return TextType|null
      */
     public function getBuyerReference(): ?TextType
     {
@@ -63,7 +63,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType
+     * @return TextType
      */
     public function getBuyerReferenceWithCreate(): TextType
     {
@@ -73,7 +73,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType|null $buyerReference
+     * @param TextType|null $buyerReference
      * @return self
      */
     public function setBuyerReference(?TextType $buyerReference = null): self
@@ -94,7 +94,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType|null
+     * @return TradePartyType|null
      */
     public function getSellerTradeParty(): ?TradePartyType
     {
@@ -102,7 +102,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType
+     * @return TradePartyType
      */
     public function getSellerTradePartyWithCreate(): TradePartyType
     {
@@ -112,7 +112,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType|null $sellerTradeParty
+     * @param TradePartyType|null $sellerTradeParty
      * @return self
      */
     public function setSellerTradeParty(?TradePartyType $sellerTradeParty = null): self
@@ -133,7 +133,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType|null
+     * @return TradePartyType|null
      */
     public function getBuyerTradeParty(): ?TradePartyType
     {
@@ -141,7 +141,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType
+     * @return TradePartyType
      */
     public function getBuyerTradePartyWithCreate(): TradePartyType
     {
@@ -151,7 +151,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradePartyType|null $buyerTradeParty
+     * @param TradePartyType|null $buyerTradeParty
      * @return self
      */
     public function setBuyerTradeParty(?TradePartyType $buyerTradeParty = null): self
@@ -172,7 +172,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getBuyerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -180,7 +180,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getBuyerOrderReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -190,7 +190,7 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ReferencedDocumentType|null $buyerOrderReferencedDocument
+     * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
      * @return self
      */
     public function setBuyerOrderReferencedDocument(

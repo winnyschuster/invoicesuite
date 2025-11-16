@@ -15,7 +15,7 @@ class SecondaryHazardType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class SecondaryHazardType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation|null
+     * @var PlacardNotation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class SecondaryHazardType
     private $placardNotation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement|null
+     * @var PlacardEndorsement|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class SecondaryHazardType
     private $placardEndorsement;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode|null
+     * @var EmergencyProceduresCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class SecondaryHazardType
     private $emergencyProceduresCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Extension>|null
+     * @var array<Extension>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Extension>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class SecondaryHazardType
     private $extension;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -79,7 +79,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -89,7 +89,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -110,7 +110,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation|null
+     * @return PlacardNotation|null
      */
     public function getPlacardNotation(): ?PlacardNotation
     {
@@ -118,7 +118,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation
+     * @return PlacardNotation
      */
     public function getPlacardNotationWithCreate(): PlacardNotation
     {
@@ -128,7 +128,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation|null $placardNotation
+     * @param PlacardNotation|null $placardNotation
      * @return self
      */
     public function setPlacardNotation(?PlacardNotation $placardNotation = null): self
@@ -149,7 +149,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement|null
+     * @return PlacardEndorsement|null
      */
     public function getPlacardEndorsement(): ?PlacardEndorsement
     {
@@ -157,7 +157,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement
+     * @return PlacardEndorsement
      */
     public function getPlacardEndorsementWithCreate(): PlacardEndorsement
     {
@@ -167,7 +167,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement|null $placardEndorsement
+     * @param PlacardEndorsement|null $placardEndorsement
      * @return self
      */
     public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): self
@@ -188,7 +188,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode|null
+     * @return EmergencyProceduresCode|null
      */
     public function getEmergencyProceduresCode(): ?EmergencyProceduresCode
     {
@@ -196,7 +196,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode
+     * @return EmergencyProceduresCode
      */
     public function getEmergencyProceduresCodeWithCreate(): EmergencyProceduresCode
     {
@@ -206,7 +206,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode|null $emergencyProceduresCode
+     * @param EmergencyProceduresCode|null $emergencyProceduresCode
      * @return self
      */
     public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): self
@@ -227,7 +227,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Extension>|null
+     * @return array<Extension>|null
      */
     public function getExtension(): ?array
     {
@@ -235,7 +235,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Extension>|null $extension
+     * @param array<Extension>|null $extension
      * @return self
      */
     public function setExtension(?array $extension = null): self
@@ -266,7 +266,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Extension|null
+     * @return Extension|null
      */
     public function firstExtension(): ?Extension
     {
@@ -281,7 +281,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Extension|null
+     * @return Extension|null
      */
     public function lastExtension(): ?Extension
     {
@@ -296,7 +296,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Extension $extension
+     * @param Extension $extension
      * @return self
      */
     public function addToExtension(Extension $extension): self
@@ -307,7 +307,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Extension
+     * @return Extension
      */
     public function addToExtensionWithCreate(): Extension
     {
@@ -317,7 +317,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Extension $extension
+     * @param Extension $extension
      * @return self
      */
     public function addOnceToExtension(Extension $extension): self
@@ -332,7 +332,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Extension
+     * @return Extension
      */
     public function addOnceToExtensionWithCreate(): Extension
     {

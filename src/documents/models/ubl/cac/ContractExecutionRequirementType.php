@@ -13,7 +13,7 @@ class ContractExecutionRequirementType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @var array<Name>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ContractExecutionRequirementType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode|null
+     * @var ExecutionRequirementCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ContractExecutionRequirementType
     private $executionRequirementCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ContractExecutionRequirementType
     private $description;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null
+     * @return array<Name>|null
      */
     public function getName(): ?array
     {
@@ -56,7 +56,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Name>|null $name
+     * @param array<Name>|null $name
      * @return self
      */
     public function setName(?array $name = null): self
@@ -87,7 +87,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function firstName(): ?Name
     {
@@ -102,7 +102,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function lastName(): ?Name
     {
@@ -117,7 +117,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addToName(Name $name): self
@@ -128,7 +128,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addToNameWithCreate(): Name
     {
@@ -138,7 +138,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name $name
+     * @param Name $name
      * @return self
      */
     public function addOnceToName(Name $name): self
@@ -153,7 +153,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function addOnceToNameWithCreate(): Name
     {
@@ -169,7 +169,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode|null
+     * @return ExecutionRequirementCode|null
      */
     public function getExecutionRequirementCode(): ?ExecutionRequirementCode
     {
@@ -177,7 +177,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode
+     * @return ExecutionRequirementCode
      */
     public function getExecutionRequirementCodeWithCreate(): ExecutionRequirementCode
     {
@@ -187,7 +187,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode|null $executionRequirementCode
+     * @param ExecutionRequirementCode|null $executionRequirementCode
      * @return self
      */
     public function setExecutionRequirementCode(?ExecutionRequirementCode $executionRequirementCode = null): self
@@ -208,7 +208,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -216,7 +216,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -247,7 +247,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -262,7 +262,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -277,7 +277,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -288,7 +288,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -298,7 +298,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -313,7 +313,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

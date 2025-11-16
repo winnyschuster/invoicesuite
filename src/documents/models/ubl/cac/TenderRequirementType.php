@@ -12,7 +12,7 @@ class TenderRequirementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TenderRequirementType
     private $name;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TenderRequirementType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TemplateDocumentReference|null
+     * @var TemplateDocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TemplateDocumentReference")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TenderRequirementType
     private $templateDocumentReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -54,7 +54,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -64,7 +64,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -85,7 +85,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -93,7 +93,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -124,7 +124,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -139,7 +139,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -154,7 +154,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -165,7 +165,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -175,7 +175,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -190,7 +190,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -206,7 +206,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TemplateDocumentReference|null
+     * @return TemplateDocumentReference|null
      */
     public function getTemplateDocumentReference(): ?TemplateDocumentReference
     {
@@ -214,7 +214,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TemplateDocumentReference
+     * @return TemplateDocumentReference
      */
     public function getTemplateDocumentReferenceWithCreate(): TemplateDocumentReference
     {
@@ -224,7 +224,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TemplateDocumentReference|null $templateDocumentReference
+     * @param TemplateDocumentReference|null $templateDocumentReference
      * @return self
      */
     public function setTemplateDocumentReference(?TemplateDocumentReference $templateDocumentReference = null): self

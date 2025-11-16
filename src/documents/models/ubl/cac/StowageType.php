@@ -12,7 +12,7 @@ class StowageType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID|null
+     * @var LocationID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class StowageType
     private $locationID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Location>|null
+     * @var array<Location>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Location>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class StowageType
     private $location;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @var array<MeasurementDimension>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class StowageType
     private $measurementDimension;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID|null
+     * @return LocationID|null
      */
     public function getLocationID(): ?LocationID
     {
@@ -55,7 +55,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID
+     * @return LocationID
      */
     public function getLocationIDWithCreate(): LocationID
     {
@@ -65,7 +65,7 @@ class StowageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID|null $locationID
+     * @param LocationID|null $locationID
      * @return self
      */
     public function setLocationID(?LocationID $locationID = null): self
@@ -86,7 +86,7 @@ class StowageType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Location>|null
+     * @return array<Location>|null
      */
     public function getLocation(): ?array
     {
@@ -94,7 +94,7 @@ class StowageType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Location>|null $location
+     * @param array<Location>|null $location
      * @return self
      */
     public function setLocation(?array $location = null): self
@@ -125,7 +125,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Location|null
+     * @return Location|null
      */
     public function firstLocation(): ?Location
     {
@@ -140,7 +140,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Location|null
+     * @return Location|null
      */
     public function lastLocation(): ?Location
     {
@@ -155,7 +155,7 @@ class StowageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Location $location
+     * @param Location $location
      * @return self
      */
     public function addToLocation(Location $location): self
@@ -166,7 +166,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Location
+     * @return Location
      */
     public function addToLocationWithCreate(): Location
     {
@@ -176,7 +176,7 @@ class StowageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Location $location
+     * @param Location $location
      * @return self
      */
     public function addOnceToLocation(Location $location): self
@@ -191,7 +191,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Location
+     * @return Location
      */
     public function addOnceToLocationWithCreate(): Location
     {
@@ -207,7 +207,7 @@ class StowageType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null
+     * @return array<MeasurementDimension>|null
      */
     public function getMeasurementDimension(): ?array
     {
@@ -215,7 +215,7 @@ class StowageType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>|null $measurementDimension
+     * @param array<MeasurementDimension>|null $measurementDimension
      * @return self
      */
     public function setMeasurementDimension(?array $measurementDimension = null): self
@@ -246,7 +246,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -261,7 +261,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension|null
+     * @return MeasurementDimension|null
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -276,7 +276,7 @@ class StowageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -287,7 +287,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addToMeasurementDimensionWithCreate(): MeasurementDimension
     {
@@ -297,7 +297,7 @@ class StowageType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension $measurementDimension
+     * @param MeasurementDimension $measurementDimension
      * @return self
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
@@ -312,7 +312,7 @@ class StowageType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension
+     * @return MeasurementDimension
      */
     public function addOnceToMeasurementDimensionWithCreate(): MeasurementDimension
     {

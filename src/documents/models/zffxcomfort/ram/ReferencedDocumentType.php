@@ -16,7 +16,7 @@ class ReferencedDocumentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ReferencedDocumentType
     private $issuerAssignedID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ReferencedDocumentType
     private $uRIID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ReferencedDocumentType
     private $lineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType|null
+     * @var DocumentCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ReferencedDocumentType
     private $typeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ReferencedDocumentType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\BinaryObjectType|null
+     * @var BinaryObjectType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\BinaryObjectType")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class ReferencedDocumentType
     private $attachmentBinaryObject;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\ReferenceCodeType|null
+     * @var ReferenceCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\ReferenceCodeType")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class ReferencedDocumentType
     private $referenceTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\FormattedDateTimeType|null
+     * @var FormattedDateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\FormattedDateTimeType")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class ReferencedDocumentType
     private $formattedIssueDateTime;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getIssuerAssignedID(): ?IDType
     {
@@ -112,7 +112,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getIssuerAssignedIDWithCreate(): IDType
     {
@@ -122,7 +122,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $issuerAssignedID
+     * @param IDType|null $issuerAssignedID
      * @return self
      */
     public function setIssuerAssignedID(?IDType $issuerAssignedID = null): self
@@ -143,7 +143,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getURIID(): ?IDType
     {
@@ -151,7 +151,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getURIIDWithCreate(): IDType
     {
@@ -161,7 +161,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $uRIID
+     * @param IDType|null $uRIID
      * @return self
      */
     public function setURIID(?IDType $uRIID = null): self
@@ -182,7 +182,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getLineID(): ?IDType
     {
@@ -190,7 +190,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getLineIDWithCreate(): IDType
     {
@@ -200,7 +200,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $lineID
+     * @param IDType|null $lineID
      * @return self
      */
     public function setLineID(?IDType $lineID = null): self
@@ -221,7 +221,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType|null
+     * @return DocumentCodeType|null
      */
     public function getTypeCode(): ?DocumentCodeType
     {
@@ -229,7 +229,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType
+     * @return DocumentCodeType
      */
     public function getTypeCodeWithCreate(): DocumentCodeType
     {
@@ -239,7 +239,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType|null $typeCode
+     * @param DocumentCodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?DocumentCodeType $typeCode = null): self
@@ -260,7 +260,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getName(): ?TextType
     {
@@ -268,7 +268,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getNameWithCreate(): TextType
     {
@@ -278,7 +278,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $name
+     * @param TextType|null $name
      * @return self
      */
     public function setName(?TextType $name = null): self
@@ -299,7 +299,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\BinaryObjectType|null
+     * @return BinaryObjectType|null
      */
     public function getAttachmentBinaryObject(): ?BinaryObjectType
     {
@@ -307,7 +307,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\BinaryObjectType
+     * @return BinaryObjectType
      */
     public function getAttachmentBinaryObjectWithCreate(): BinaryObjectType
     {
@@ -317,7 +317,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\BinaryObjectType|null $attachmentBinaryObject
+     * @param BinaryObjectType|null $attachmentBinaryObject
      * @return self
      */
     public function setAttachmentBinaryObject(?BinaryObjectType $attachmentBinaryObject = null): self
@@ -338,7 +338,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\ReferenceCodeType|null
+     * @return ReferenceCodeType|null
      */
     public function getReferenceTypeCode(): ?ReferenceCodeType
     {
@@ -346,7 +346,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\ReferenceCodeType
+     * @return ReferenceCodeType
      */
     public function getReferenceTypeCodeWithCreate(): ReferenceCodeType
     {
@@ -356,7 +356,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\ReferenceCodeType|null $referenceTypeCode
+     * @param ReferenceCodeType|null $referenceTypeCode
      * @return self
      */
     public function setReferenceTypeCode(?ReferenceCodeType $referenceTypeCode = null): self
@@ -377,7 +377,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\FormattedDateTimeType|null
+     * @return FormattedDateTimeType|null
      */
     public function getFormattedIssueDateTime(): ?FormattedDateTimeType
     {
@@ -385,7 +385,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\FormattedDateTimeType
+     * @return FormattedDateTimeType
      */
     public function getFormattedIssueDateTimeWithCreate(): FormattedDateTimeType
     {
@@ -395,7 +395,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\FormattedDateTimeType|null $formattedIssueDateTime
+     * @param FormattedDateTimeType|null $formattedIssueDateTime
      * @return self
      */
     public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): self

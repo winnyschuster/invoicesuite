@@ -11,7 +11,7 @@ class MiscellaneousEventType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode|null
+     * @var MiscellaneousEventTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class MiscellaneousEventType
     private $miscellaneousEventTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem>|null
+     * @var array<EventLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem>")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class MiscellaneousEventType
     private $eventLineItem;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode|null
+     * @return MiscellaneousEventTypeCode|null
      */
     public function getMiscellaneousEventTypeCode(): ?MiscellaneousEventTypeCode
     {
@@ -42,7 +42,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode
+     * @return MiscellaneousEventTypeCode
      */
     public function getMiscellaneousEventTypeCodeWithCreate(): MiscellaneousEventTypeCode
     {
@@ -52,7 +52,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode|null $miscellaneousEventTypeCode
+     * @param MiscellaneousEventTypeCode|null $miscellaneousEventTypeCode
      * @return self
      */
     public function setMiscellaneousEventTypeCode(
@@ -74,7 +74,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem>|null
+     * @return array<EventLineItem>|null
      */
     public function getEventLineItem(): ?array
     {
@@ -82,7 +82,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem>|null $eventLineItem
+     * @param array<EventLineItem>|null $eventLineItem
      * @return self
      */
     public function setEventLineItem(?array $eventLineItem = null): self
@@ -113,7 +113,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem|null
+     * @return EventLineItem|null
      */
     public function firstEventLineItem(): ?EventLineItem
     {
@@ -128,7 +128,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem|null
+     * @return EventLineItem|null
      */
     public function lastEventLineItem(): ?EventLineItem
     {
@@ -143,7 +143,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem $eventLineItem
+     * @param EventLineItem $eventLineItem
      * @return self
      */
     public function addToEventLineItem(EventLineItem $eventLineItem): self
@@ -154,7 +154,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem
+     * @return EventLineItem
      */
     public function addToEventLineItemWithCreate(): EventLineItem
     {
@@ -164,7 +164,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem $eventLineItem
+     * @param EventLineItem $eventLineItem
      * @return self
      */
     public function addOnceToEventLineItem(EventLineItem $eventLineItem): self
@@ -179,7 +179,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem
+     * @return EventLineItem
      */
     public function addOnceToEventLineItemWithCreate(): EventLineItem
     {

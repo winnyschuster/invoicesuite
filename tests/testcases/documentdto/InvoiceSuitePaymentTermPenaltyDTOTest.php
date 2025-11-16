@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
+use DateTimeInterface;
 use DateTimeImmutable;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermPenaltyDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO;
@@ -18,8 +19,8 @@ final class InvoiceSuitePaymentTermPenaltyDTOTest extends TestCase
         $this->assertNull($invoiceSuitePaymentTermPenaltyDTO->getBaseAmount());
         $this->assertNull($invoiceSuitePaymentTermPenaltyDTO->getPenaltyAmount());
         $this->assertNull($invoiceSuitePaymentTermPenaltyDTO->getPenaltyPercent());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuitePaymentTermPenaltyDTO->getBaseDate());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO::class, $invoiceSuitePaymentTermPenaltyDTO->getPeriod());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuitePaymentTermPenaltyDTO->getBaseDate());
+        $this->assertNotInstanceOf(InvoiceSuitePeriodDTO::class, $invoiceSuitePaymentTermPenaltyDTO->getPeriod());
     }
 
     public function testBaseAmountGetterAndSetter(): void

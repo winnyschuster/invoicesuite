@@ -13,7 +13,7 @@ class ExchangedDocumentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ExchangedDocumentType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType|null
+     * @var DocumentCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ExchangedDocumentType
     private $typeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType|null
+     * @var DateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ExchangedDocumentType
     private $issueDateTime;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -54,7 +54,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -64,7 +64,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self
@@ -85,7 +85,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType|null
+     * @return DocumentCodeType|null
      */
     public function getTypeCode(): ?DocumentCodeType
     {
@@ -93,7 +93,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType
+     * @return DocumentCodeType
      */
     public function getTypeCodeWithCreate(): DocumentCodeType
     {
@@ -103,7 +103,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType|null $typeCode
+     * @param DocumentCodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?DocumentCodeType $typeCode = null): self
@@ -124,7 +124,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType|null
+     * @return DateTimeType|null
      */
     public function getIssueDateTime(): ?DateTimeType
     {
@@ -132,7 +132,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType
+     * @return DateTimeType
      */
     public function getIssueDateTimeWithCreate(): DateTimeType
     {
@@ -142,7 +142,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType|null $issueDateTime
+     * @param DateTimeType|null $issueDateTime
      * @return self
      */
     public function setIssueDateTime(?DateTimeType $issueDateTime = null): self

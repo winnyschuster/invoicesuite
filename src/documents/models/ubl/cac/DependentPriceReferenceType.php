@@ -11,7 +11,7 @@ class DependentPriceReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null
+     * @var Percent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class DependentPriceReferenceType
     private $percent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LocationAddress|null
+     * @var LocationAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LocationAddress")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class DependentPriceReferenceType
     private $locationAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DependentLineReference|null
+     * @var DependentLineReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DependentLineReference")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class DependentPriceReferenceType
     private $dependentLineReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null
+     * @return Percent|null
      */
     public function getPercent(): ?Percent
     {
@@ -52,7 +52,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent
+     * @return Percent
      */
     public function getPercentWithCreate(): Percent
     {
@@ -62,7 +62,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Percent|null $percent
+     * @param Percent|null $percent
      * @return self
      */
     public function setPercent(?Percent $percent = null): self
@@ -83,7 +83,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationAddress|null
+     * @return LocationAddress|null
      */
     public function getLocationAddress(): ?LocationAddress
     {
@@ -91,7 +91,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LocationAddress
+     * @return LocationAddress
      */
     public function getLocationAddressWithCreate(): LocationAddress
     {
@@ -101,7 +101,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LocationAddress|null $locationAddress
+     * @param LocationAddress|null $locationAddress
      * @return self
      */
     public function setLocationAddress(?LocationAddress $locationAddress = null): self
@@ -122,7 +122,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DependentLineReference|null
+     * @return DependentLineReference|null
      */
     public function getDependentLineReference(): ?DependentLineReference
     {
@@ -130,7 +130,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DependentLineReference
+     * @return DependentLineReference
      */
     public function getDependentLineReferenceWithCreate(): DependentLineReference
     {
@@ -140,7 +140,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DependentLineReference|null $dependentLineReference
+     * @param DependentLineReference|null $dependentLineReference
      * @return self
      */
     public function setDependentLineReference(?DependentLineReference $dependentLineReference = null): self

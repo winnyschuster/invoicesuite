@@ -12,7 +12,7 @@ class FinancialInstitutionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class FinancialInstitutionType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class FinancialInstitutionType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @var Address|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class FinancialInstitutionType
     private $address;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -53,7 +53,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -63,7 +63,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -84,7 +84,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -92,7 +92,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -102,7 +102,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -123,7 +123,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @return Address|null
      */
     public function getAddress(): ?Address
     {
@@ -131,7 +131,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address
+     * @return Address
      */
     public function getAddressWithCreate(): Address
     {
@@ -141,7 +141,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null $address
+     * @param Address|null $address
      * @return self
      */
     public function setAddress(?Address $address = null): self

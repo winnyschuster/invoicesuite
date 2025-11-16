@@ -17,7 +17,7 @@ class TradeTaxType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class TradeTaxType
     private $calculatedAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxTypeCodeType|null
+     * @var TaxTypeCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxTypeCodeType")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TradeTaxType
     private $typeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TradeTaxType
     private $exemptionReason;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null
+     * @var AmountType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TradeTaxType
     private $basisAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxCategoryCodeType|null
+     * @var TaxCategoryCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxCategoryCodeType")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TradeTaxType
     private $categoryCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\CodeType")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TradeTaxType
     private $exemptionReasonCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TimeReferenceCodeType|null
+     * @var TimeReferenceCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TimeReferenceCodeType")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TradeTaxType
     private $dueDateTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\PercentType|null
+     * @var PercentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\PercentType")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class TradeTaxType
     private $rateApplicablePercent;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getCalculatedAmount(): ?AmountType
     {
@@ -113,7 +113,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType
+     * @return AmountType
      */
     public function getCalculatedAmountWithCreate(): AmountType
     {
@@ -123,7 +123,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null $calculatedAmount
+     * @param AmountType|null $calculatedAmount
      * @return self
      */
     public function setCalculatedAmount(?AmountType $calculatedAmount = null): self
@@ -144,7 +144,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxTypeCodeType|null
+     * @return TaxTypeCodeType|null
      */
     public function getTypeCode(): ?TaxTypeCodeType
     {
@@ -152,7 +152,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxTypeCodeType
+     * @return TaxTypeCodeType
      */
     public function getTypeCodeWithCreate(): TaxTypeCodeType
     {
@@ -162,7 +162,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxTypeCodeType|null $typeCode
+     * @param TaxTypeCodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?TaxTypeCodeType $typeCode = null): self
@@ -183,7 +183,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null
+     * @return TextType|null
      */
     public function getExemptionReason(): ?TextType
     {
@@ -191,7 +191,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType
+     * @return TextType
      */
     public function getExemptionReasonWithCreate(): TextType
     {
@@ -201,7 +201,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null $exemptionReason
+     * @param TextType|null $exemptionReason
      * @return self
      */
     public function setExemptionReason(?TextType $exemptionReason = null): self
@@ -222,7 +222,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null
+     * @return AmountType|null
      */
     public function getBasisAmount(): ?AmountType
     {
@@ -230,7 +230,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType
+     * @return AmountType
      */
     public function getBasisAmountWithCreate(): AmountType
     {
@@ -240,7 +240,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType|null $basisAmount
+     * @param AmountType|null $basisAmount
      * @return self
      */
     public function setBasisAmount(?AmountType $basisAmount = null): self
@@ -261,7 +261,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxCategoryCodeType|null
+     * @return TaxCategoryCodeType|null
      */
     public function getCategoryCode(): ?TaxCategoryCodeType
     {
@@ -269,7 +269,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxCategoryCodeType
+     * @return TaxCategoryCodeType
      */
     public function getCategoryCodeWithCreate(): TaxCategoryCodeType
     {
@@ -279,7 +279,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TaxCategoryCodeType|null $categoryCode
+     * @param TaxCategoryCodeType|null $categoryCode
      * @return self
      */
     public function setCategoryCode(?TaxCategoryCodeType $categoryCode = null): self
@@ -300,7 +300,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getExemptionReasonCode(): ?CodeType
     {
@@ -308,7 +308,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\CodeType
+     * @return CodeType
      */
     public function getExemptionReasonCodeWithCreate(): CodeType
     {
@@ -318,7 +318,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\CodeType|null $exemptionReasonCode
+     * @param CodeType|null $exemptionReasonCode
      * @return self
      */
     public function setExemptionReasonCode(?CodeType $exemptionReasonCode = null): self
@@ -339,7 +339,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TimeReferenceCodeType|null
+     * @return TimeReferenceCodeType|null
      */
     public function getDueDateTypeCode(): ?TimeReferenceCodeType
     {
@@ -347,7 +347,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TimeReferenceCodeType
+     * @return TimeReferenceCodeType
      */
     public function getDueDateTypeCodeWithCreate(): TimeReferenceCodeType
     {
@@ -357,7 +357,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\TimeReferenceCodeType|null $dueDateTypeCode
+     * @param TimeReferenceCodeType|null $dueDateTypeCode
      * @return self
      */
     public function setDueDateTypeCode(?TimeReferenceCodeType $dueDateTypeCode = null): self
@@ -378,7 +378,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\PercentType|null
+     * @return PercentType|null
      */
     public function getRateApplicablePercent(): ?PercentType
     {
@@ -386,7 +386,7 @@ class TradeTaxType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\PercentType
+     * @return PercentType
      */
     public function getRateApplicablePercentWithCreate(): PercentType
     {
@@ -396,7 +396,7 @@ class TradeTaxType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\PercentType|null $rateApplicablePercent
+     * @param PercentType|null $rateApplicablePercent
      * @return self
      */
     public function setRateApplicablePercent(?PercentType $rateApplicablePercent = null): self

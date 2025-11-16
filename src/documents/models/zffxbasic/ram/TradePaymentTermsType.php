@@ -13,7 +13,7 @@ class TradePaymentTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradePaymentTermsType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null
+     * @var DateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TradePaymentTermsType
     private $dueDateDateTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TradePaymentTermsType
     private $directDebitMandateID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null
+     * @return TextType|null
      */
     public function getDescription(): ?TextType
     {
@@ -54,7 +54,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType
+     * @return TextType
      */
     public function getDescriptionWithCreate(): TextType
     {
@@ -64,7 +64,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType|null $description
+     * @param TextType|null $description
      * @return self
      */
     public function setDescription(?TextType $description = null): self
@@ -85,7 +85,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null
+     * @return DateTimeType|null
      */
     public function getDueDateDateTime(): ?DateTimeType
     {
@@ -93,7 +93,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType
+     * @return DateTimeType
      */
     public function getDueDateDateTimeWithCreate(): DateTimeType
     {
@@ -103,7 +103,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType|null $dueDateDateTime
+     * @param DateTimeType|null $dueDateDateTime
      * @return self
      */
     public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): self
@@ -124,7 +124,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getDirectDebitMandateID(): ?IDType
     {
@@ -132,7 +132,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getDirectDebitMandateIDWithCreate(): IDType
     {
@@ -142,7 +142,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $directDebitMandateID
+     * @param IDType|null $directDebitMandateID
      * @return self
      */
     public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): self

@@ -13,7 +13,7 @@ class ItemPropertyGroupType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ItemPropertyGroupType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ItemPropertyGroupType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode|null
+     * @var ImportanceCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ItemPropertyGroupType
     private $importanceCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -54,7 +54,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -64,7 +64,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -85,7 +85,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -93,7 +93,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -103,7 +103,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -124,7 +124,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode|null
+     * @return ImportanceCode|null
      */
     public function getImportanceCode(): ?ImportanceCode
     {
@@ -132,7 +132,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode
+     * @return ImportanceCode
      */
     public function getImportanceCodeWithCreate(): ImportanceCode
     {
@@ -142,7 +142,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode|null $importanceCode
+     * @param ImportanceCode|null $importanceCode
      * @return self
      */
     public function setImportanceCode(?ImportanceCode $importanceCode = null): self

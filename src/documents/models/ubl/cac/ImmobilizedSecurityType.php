@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount;
@@ -15,7 +16,7 @@ class ImmobilizedSecurityType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID|null
+     * @var ImmobilizationCertificateID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID")
      * @JMS\Expose
@@ -26,7 +27,7 @@ class ImmobilizedSecurityType
     private $immobilizationCertificateID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID|null
+     * @var SecurityID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID")
      * @JMS\Expose
@@ -37,7 +38,7 @@ class ImmobilizedSecurityType
     private $securityID;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -48,7 +49,7 @@ class ImmobilizedSecurityType
     private $issueDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount|null
+     * @var FaceValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount")
      * @JMS\Expose
@@ -59,7 +60,7 @@ class ImmobilizedSecurityType
     private $faceValueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount|null
+     * @var MarketValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount")
      * @JMS\Expose
@@ -70,7 +71,7 @@ class ImmobilizedSecurityType
     private $marketValueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity|null
+     * @var SharesNumberQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity")
      * @JMS\Expose
@@ -81,7 +82,7 @@ class ImmobilizedSecurityType
     private $sharesNumberQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @var IssuerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -92,7 +93,7 @@ class ImmobilizedSecurityType
     private $issuerParty;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID|null
+     * @return ImmobilizationCertificateID|null
      */
     public function getImmobilizationCertificateID(): ?ImmobilizationCertificateID
     {
@@ -100,7 +101,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID
+     * @return ImmobilizationCertificateID
      */
     public function getImmobilizationCertificateIDWithCreate(): ImmobilizationCertificateID
     {
@@ -110,7 +111,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID|null $immobilizationCertificateID
+     * @param ImmobilizationCertificateID|null $immobilizationCertificateID
      * @return self
      */
     public function setImmobilizationCertificateID(
@@ -132,7 +133,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID|null
+     * @return SecurityID|null
      */
     public function getSecurityID(): ?SecurityID
     {
@@ -140,7 +141,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID
+     * @return SecurityID
      */
     public function getSecurityIDWithCreate(): SecurityID
     {
@@ -150,7 +151,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID|null $securityID
+     * @param SecurityID|null $securityID
      * @return self
      */
     public function setSecurityID(?SecurityID $securityID = null): self
@@ -171,18 +172,18 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getIssueDate(): ?\DateTimeInterface
+    public function getIssueDate(): ?DateTimeInterface
     {
         return $this->issueDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $issueDate
+     * @param DateTimeInterface|null $issueDate
      * @return self
      */
-    public function setIssueDate(?\DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): self
     {
         $this->issueDate = $issueDate;
 
@@ -200,7 +201,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount|null
+     * @return FaceValueAmount|null
      */
     public function getFaceValueAmount(): ?FaceValueAmount
     {
@@ -208,7 +209,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount
+     * @return FaceValueAmount
      */
     public function getFaceValueAmountWithCreate(): FaceValueAmount
     {
@@ -218,7 +219,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount|null $faceValueAmount
+     * @param FaceValueAmount|null $faceValueAmount
      * @return self
      */
     public function setFaceValueAmount(?FaceValueAmount $faceValueAmount = null): self
@@ -239,7 +240,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount|null
+     * @return MarketValueAmount|null
      */
     public function getMarketValueAmount(): ?MarketValueAmount
     {
@@ -247,7 +248,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount
+     * @return MarketValueAmount
      */
     public function getMarketValueAmountWithCreate(): MarketValueAmount
     {
@@ -257,7 +258,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount|null $marketValueAmount
+     * @param MarketValueAmount|null $marketValueAmount
      * @return self
      */
     public function setMarketValueAmount(?MarketValueAmount $marketValueAmount = null): self
@@ -278,7 +279,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity|null
+     * @return SharesNumberQuantity|null
      */
     public function getSharesNumberQuantity(): ?SharesNumberQuantity
     {
@@ -286,7 +287,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity
+     * @return SharesNumberQuantity
      */
     public function getSharesNumberQuantityWithCreate(): SharesNumberQuantity
     {
@@ -296,7 +297,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity|null $sharesNumberQuantity
+     * @param SharesNumberQuantity|null $sharesNumberQuantity
      * @return self
      */
     public function setSharesNumberQuantity(?SharesNumberQuantity $sharesNumberQuantity = null): self
@@ -317,7 +318,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null
+     * @return IssuerParty|null
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -325,7 +326,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty
+     * @return IssuerParty
      */
     public function getIssuerPartyWithCreate(): IssuerParty
     {
@@ -335,7 +336,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty|null $issuerParty
+     * @param IssuerParty|null $issuerParty
      * @return self
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): self

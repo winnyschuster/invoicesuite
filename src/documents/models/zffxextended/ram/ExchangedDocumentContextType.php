@@ -11,7 +11,7 @@ class ExchangedDocumentContextType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType|null
+     * @var IndicatorType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ExchangedDocumentContextType
     private $testIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType|null
+     * @var DocumentContextParameterType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ExchangedDocumentContextType
     private $businessProcessSpecifiedDocumentContextParameter;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType|null
+     * @var DocumentContextParameterType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class ExchangedDocumentContextType
     private $guidelineSpecifiedDocumentContextParameter;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType|null
+     * @return IndicatorType|null
      */
     public function getTestIndicator(): ?IndicatorType
     {
@@ -52,7 +52,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType
+     * @return IndicatorType
      */
     public function getTestIndicatorWithCreate(): IndicatorType
     {
@@ -62,7 +62,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType|null $testIndicator
+     * @param IndicatorType|null $testIndicator
      * @return self
      */
     public function setTestIndicator(?IndicatorType $testIndicator = null): self
@@ -83,7 +83,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType|null
+     * @return DocumentContextParameterType|null
      */
     public function getBusinessProcessSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -91,7 +91,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType
+     * @return DocumentContextParameterType
      */
     public function getBusinessProcessSpecifiedDocumentContextParameterWithCreate(): DocumentContextParameterType
     {
@@ -101,7 +101,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
+     * @param DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
      * @return self
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
@@ -123,7 +123,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType|null
+     * @return DocumentContextParameterType|null
      */
     public function getGuidelineSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -131,7 +131,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType
+     * @return DocumentContextParameterType
      */
     public function getGuidelineSpecifiedDocumentContextParameterWithCreate(): DocumentContextParameterType
     {
@@ -141,7 +141,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
+     * @param DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
      * @return self
      */
     public function setGuidelineSpecifiedDocumentContextParameter(

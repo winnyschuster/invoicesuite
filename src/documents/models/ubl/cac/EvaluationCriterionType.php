@@ -16,7 +16,7 @@ class EvaluationCriterionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode|null
+     * @var EvaluationCriterionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class EvaluationCriterionType
     private $evaluationCriterionTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class EvaluationCriterionType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount|null
+     * @var ThresholdAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class EvaluationCriterionType
     private $thresholdAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity|null
+     * @var ThresholdQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class EvaluationCriterionType
     private $thresholdQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode|null
+     * @var ExpressionCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class EvaluationCriterionType
     private $expressionCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Expression>|null
+     * @var array<Expression>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Expression>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class EvaluationCriterionType
     private $expression;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod|null
+     * @var DurationPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class EvaluationCriterionType
     private $durationPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>|null
+     * @var array<SuggestedEvidence>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class EvaluationCriterionType
     private $suggestedEvidence;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode|null
+     * @return EvaluationCriterionTypeCode|null
      */
     public function getEvaluationCriterionTypeCode(): ?EvaluationCriterionTypeCode
     {
@@ -115,7 +115,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode
+     * @return EvaluationCriterionTypeCode
      */
     public function getEvaluationCriterionTypeCodeWithCreate(): EvaluationCriterionTypeCode
     {
@@ -125,7 +125,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode|null $evaluationCriterionTypeCode
+     * @param EvaluationCriterionTypeCode|null $evaluationCriterionTypeCode
      * @return self
      */
     public function setEvaluationCriterionTypeCode(
@@ -147,7 +147,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -155,7 +155,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -186,7 +186,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -201,7 +201,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -216,7 +216,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -227,7 +227,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -237,7 +237,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -252,7 +252,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -268,7 +268,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount|null
+     * @return ThresholdAmount|null
      */
     public function getThresholdAmount(): ?ThresholdAmount
     {
@@ -276,7 +276,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount
+     * @return ThresholdAmount
      */
     public function getThresholdAmountWithCreate(): ThresholdAmount
     {
@@ -286,7 +286,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount|null $thresholdAmount
+     * @param ThresholdAmount|null $thresholdAmount
      * @return self
      */
     public function setThresholdAmount(?ThresholdAmount $thresholdAmount = null): self
@@ -307,7 +307,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity|null
+     * @return ThresholdQuantity|null
      */
     public function getThresholdQuantity(): ?ThresholdQuantity
     {
@@ -315,7 +315,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity
+     * @return ThresholdQuantity
      */
     public function getThresholdQuantityWithCreate(): ThresholdQuantity
     {
@@ -325,7 +325,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity|null $thresholdQuantity
+     * @param ThresholdQuantity|null $thresholdQuantity
      * @return self
      */
     public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): self
@@ -346,7 +346,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode|null
+     * @return ExpressionCode|null
      */
     public function getExpressionCode(): ?ExpressionCode
     {
@@ -354,7 +354,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode
+     * @return ExpressionCode
      */
     public function getExpressionCodeWithCreate(): ExpressionCode
     {
@@ -364,7 +364,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode|null $expressionCode
+     * @param ExpressionCode|null $expressionCode
      * @return self
      */
     public function setExpressionCode(?ExpressionCode $expressionCode = null): self
@@ -385,7 +385,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Expression>|null
+     * @return array<Expression>|null
      */
     public function getExpression(): ?array
     {
@@ -393,7 +393,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Expression>|null $expression
+     * @param array<Expression>|null $expression
      * @return self
      */
     public function setExpression(?array $expression = null): self
@@ -424,7 +424,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Expression|null
+     * @return Expression|null
      */
     public function firstExpression(): ?Expression
     {
@@ -439,7 +439,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Expression|null
+     * @return Expression|null
      */
     public function lastExpression(): ?Expression
     {
@@ -454,7 +454,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Expression $expression
+     * @param Expression $expression
      * @return self
      */
     public function addToExpression(Expression $expression): self
@@ -465,7 +465,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Expression
+     * @return Expression
      */
     public function addToExpressionWithCreate(): Expression
     {
@@ -475,7 +475,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Expression $expression
+     * @param Expression $expression
      * @return self
      */
     public function addOnceToExpression(Expression $expression): self
@@ -490,7 +490,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Expression
+     * @return Expression
      */
     public function addOnceToExpressionWithCreate(): Expression
     {
@@ -506,7 +506,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod|null
+     * @return DurationPeriod|null
      */
     public function getDurationPeriod(): ?DurationPeriod
     {
@@ -514,7 +514,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod
+     * @return DurationPeriod
      */
     public function getDurationPeriodWithCreate(): DurationPeriod
     {
@@ -524,7 +524,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod|null $durationPeriod
+     * @param DurationPeriod|null $durationPeriod
      * @return self
      */
     public function setDurationPeriod(?DurationPeriod $durationPeriod = null): self
@@ -545,7 +545,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>|null
+     * @return array<SuggestedEvidence>|null
      */
     public function getSuggestedEvidence(): ?array
     {
@@ -553,7 +553,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>|null $suggestedEvidence
+     * @param array<SuggestedEvidence>|null $suggestedEvidence
      * @return self
      */
     public function setSuggestedEvidence(?array $suggestedEvidence = null): self
@@ -584,7 +584,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence|null
+     * @return SuggestedEvidence|null
      */
     public function firstSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -599,7 +599,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence|null
+     * @return SuggestedEvidence|null
      */
     public function lastSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -614,7 +614,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence $suggestedEvidence
+     * @param SuggestedEvidence $suggestedEvidence
      * @return self
      */
     public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
@@ -625,7 +625,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence
+     * @return SuggestedEvidence
      */
     public function addToSuggestedEvidenceWithCreate(): SuggestedEvidence
     {
@@ -635,7 +635,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence $suggestedEvidence
+     * @param SuggestedEvidence $suggestedEvidence
      * @return self
      */
     public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
@@ -650,7 +650,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence
+     * @return SuggestedEvidence
      */
     public function addOnceToSuggestedEvidenceWithCreate(): SuggestedEvidence
     {

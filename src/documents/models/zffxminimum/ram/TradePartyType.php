@@ -11,7 +11,7 @@ class TradePartyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TradePartyType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\LegalOrganizationType|null
+     * @var LegalOrganizationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\LegalOrganizationType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class TradePartyType
     private $specifiedLegalOrganization;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeAddressType|null
+     * @var TradeAddressType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeAddressType")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class TradePartyType
     private $postalTradeAddress;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType>|null
+     * @var array<TaxRegistrationType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType>")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class TradePartyType
     private $specifiedTaxRegistration;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType|null
+     * @return TextType|null
      */
     public function getName(): ?TextType
     {
@@ -64,7 +64,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType
+     * @return TextType
      */
     public function getNameWithCreate(): TextType
     {
@@ -74,7 +74,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType|null $name
+     * @param TextType|null $name
      * @return self
      */
     public function setName(?TextType $name = null): self
@@ -95,7 +95,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\LegalOrganizationType|null
+     * @return LegalOrganizationType|null
      */
     public function getSpecifiedLegalOrganization(): ?LegalOrganizationType
     {
@@ -103,7 +103,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\LegalOrganizationType
+     * @return LegalOrganizationType
      */
     public function getSpecifiedLegalOrganizationWithCreate(): LegalOrganizationType
     {
@@ -113,7 +113,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\LegalOrganizationType|null $specifiedLegalOrganization
+     * @param LegalOrganizationType|null $specifiedLegalOrganization
      * @return self
      */
     public function setSpecifiedLegalOrganization(?LegalOrganizationType $specifiedLegalOrganization = null): self
@@ -134,7 +134,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeAddressType|null
+     * @return TradeAddressType|null
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
@@ -142,7 +142,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeAddressType
+     * @return TradeAddressType
      */
     public function getPostalTradeAddressWithCreate(): TradeAddressType
     {
@@ -152,7 +152,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeAddressType|null $postalTradeAddress
+     * @param TradeAddressType|null $postalTradeAddress
      * @return self
      */
     public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): self
@@ -173,7 +173,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType>|null
+     * @return array<TaxRegistrationType>|null
      */
     public function getSpecifiedTaxRegistration(): ?array
     {
@@ -181,7 +181,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType>|null $specifiedTaxRegistration
+     * @param array<TaxRegistrationType>|null $specifiedTaxRegistration
      * @return self
      */
     public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
@@ -212,7 +212,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType $specifiedTaxRegistration
+     * @param TaxRegistrationType $specifiedTaxRegistration
      * @return self
      */
     public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
@@ -223,7 +223,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType
+     * @return TaxRegistrationType
      */
     public function addToSpecifiedTaxRegistrationWithCreate(): TaxRegistrationType
     {
@@ -233,7 +233,7 @@ class TradePartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType $specifiedTaxRegistration
+     * @param TaxRegistrationType $specifiedTaxRegistration
      * @return self
      */
     public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
@@ -248,7 +248,7 @@ class TradePartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType
+     * @return TaxRegistrationType
      */
     public function addOnceToSpecifiedTaxRegistrationWithCreate(): TaxRegistrationType
     {

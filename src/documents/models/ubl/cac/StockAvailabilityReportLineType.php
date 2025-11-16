@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode;
@@ -15,7 +16,7 @@ class StockAvailabilityReportLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +27,7 @@ class StockAvailabilityReportLineType
     private $iD;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class StockAvailabilityReportLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class StockAvailabilityReportLineType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount|null
+     * @var ValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class StockAvailabilityReportLineType
     private $valueAmount;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class StockAvailabilityReportLineType
     private $availabilityDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode|null
+     * @var AvailabilityStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode")
      * @JMS\Expose
@@ -82,7 +83,7 @@ class StockAvailabilityReportLineType
     private $availabilityStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @var Item|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class StockAvailabilityReportLineType
     private $item;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -101,7 +102,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -111,7 +112,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -132,7 +133,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -140,7 +141,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -171,7 +172,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -186,7 +187,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -201,7 +202,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -212,7 +213,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -222,7 +223,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -237,7 +238,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -253,7 +254,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -261,7 +262,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -271,7 +272,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -292,7 +293,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount|null
+     * @return ValueAmount|null
      */
     public function getValueAmount(): ?ValueAmount
     {
@@ -300,7 +301,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount
+     * @return ValueAmount
      */
     public function getValueAmountWithCreate(): ValueAmount
     {
@@ -310,7 +311,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount|null $valueAmount
+     * @param ValueAmount|null $valueAmount
      * @return self
      */
     public function setValueAmount(?ValueAmount $valueAmount = null): self
@@ -331,18 +332,18 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getAvailabilityDate(): ?\DateTimeInterface
+    public function getAvailabilityDate(): ?DateTimeInterface
     {
         return $this->availabilityDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $availabilityDate
+     * @param DateTimeInterface|null $availabilityDate
      * @return self
      */
-    public function setAvailabilityDate(?\DateTimeInterface $availabilityDate = null): self
+    public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): self
     {
         $this->availabilityDate = $availabilityDate;
 
@@ -360,7 +361,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode|null
+     * @return AvailabilityStatusCode|null
      */
     public function getAvailabilityStatusCode(): ?AvailabilityStatusCode
     {
@@ -368,7 +369,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode
+     * @return AvailabilityStatusCode
      */
     public function getAvailabilityStatusCodeWithCreate(): AvailabilityStatusCode
     {
@@ -378,7 +379,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode|null $availabilityStatusCode
+     * @param AvailabilityStatusCode|null $availabilityStatusCode
      * @return self
      */
     public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): self
@@ -399,7 +400,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function getItem(): ?Item
     {
@@ -407,7 +408,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function getItemWithCreate(): Item
     {
@@ -417,7 +418,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null $item
+     * @param Item|null $item
      * @return self
      */
     public function setItem(?Item $item = null): self

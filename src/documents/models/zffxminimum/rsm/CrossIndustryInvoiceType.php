@@ -21,7 +21,7 @@ class CrossIndustryInvoiceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentContextType|null
+     * @var ExchangedDocumentContextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentContextType")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class CrossIndustryInvoiceType
     private $exchangedDocumentContext;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentType|null
+     * @var ExchangedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentType")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class CrossIndustryInvoiceType
     private $exchangedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxminimum\ram\SupplyChainTradeTransactionType|null
+     * @var SupplyChainTradeTransactionType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\SupplyChainTradeTransactionType")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class CrossIndustryInvoiceType
     private $supplyChainTradeTransaction;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentContextType|null
+     * @return ExchangedDocumentContextType|null
      */
     public function getExchangedDocumentContext(): ?ExchangedDocumentContextType
     {
@@ -62,7 +62,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentContextType
+     * @return ExchangedDocumentContextType
      */
     public function getExchangedDocumentContextWithCreate(): ExchangedDocumentContextType
     {
@@ -72,7 +72,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentContextType|null $exchangedDocumentContext
+     * @param ExchangedDocumentContextType|null $exchangedDocumentContext
      * @return self
      */
     public function setExchangedDocumentContext(?ExchangedDocumentContextType $exchangedDocumentContext = null): self
@@ -93,7 +93,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentType|null
+     * @return ExchangedDocumentType|null
      */
     public function getExchangedDocument(): ?ExchangedDocumentType
     {
@@ -101,7 +101,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentType
+     * @return ExchangedDocumentType
      */
     public function getExchangedDocumentWithCreate(): ExchangedDocumentType
     {
@@ -111,7 +111,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\ExchangedDocumentType|null $exchangedDocument
+     * @param ExchangedDocumentType|null $exchangedDocument
      * @return self
      */
     public function setExchangedDocument(?ExchangedDocumentType $exchangedDocument = null): self
@@ -132,7 +132,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\SupplyChainTradeTransactionType|null
+     * @return SupplyChainTradeTransactionType|null
      */
     public function getSupplyChainTradeTransaction(): ?SupplyChainTradeTransactionType
     {
@@ -140,7 +140,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxminimum\ram\SupplyChainTradeTransactionType
+     * @return SupplyChainTradeTransactionType
      */
     public function getSupplyChainTradeTransactionWithCreate(): SupplyChainTradeTransactionType
     {
@@ -150,7 +150,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxminimum\ram\SupplyChainTradeTransactionType|null $supplyChainTradeTransaction
+     * @param SupplyChainTradeTransactionType|null $supplyChainTradeTransaction
      * @return self
      */
     public function setSupplyChainTradeTransaction(

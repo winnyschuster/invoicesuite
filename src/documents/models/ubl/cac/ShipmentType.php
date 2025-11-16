@@ -30,7 +30,7 @@ class ShipmentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class ShipmentType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode|null
+     * @var ShippingPriorityLevelCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class ShipmentType
     private $shippingPriorityLevelCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode|null
+     * @var HandlingCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class ShipmentType
     private $handlingCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions>|null
+     * @var array<HandlingInstructions>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions>")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class ShipmentType
     private $handlingInstructions;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null
+     * @var array<Information>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class ShipmentType
     private $information;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure|null
+     * @var GrossWeightMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class ShipmentType
     private $grossWeightMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure|null
+     * @var NetWeightMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class ShipmentType
     private $netWeightMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure|null
+     * @var NetNetWeightMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class ShipmentType
     private $netNetWeightMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure|null
+     * @var GrossVolumeMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class ShipmentType
     private $grossVolumeMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure|null
+     * @var NetVolumeMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class ShipmentType
     private $netVolumeMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity|null
+     * @var TotalGoodsItemQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity")
      * @JMS\Expose
@@ -153,7 +153,7 @@ class ShipmentType
     private $totalGoodsItemQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity|null
+     * @var TotalTransportHandlingUnitQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity")
      * @JMS\Expose
@@ -164,7 +164,7 @@ class ShipmentType
     private $totalTransportHandlingUnitQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount|null
+     * @var InsuranceValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount")
      * @JMS\Expose
@@ -175,7 +175,7 @@ class ShipmentType
     private $insuranceValueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount|null
+     * @var DeclaredCustomsValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount")
      * @JMS\Expose
@@ -186,7 +186,7 @@ class ShipmentType
     private $declaredCustomsValueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount|null
+     * @var DeclaredForCarriageValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount")
      * @JMS\Expose
@@ -197,7 +197,7 @@ class ShipmentType
     private $declaredForCarriageValueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount|null
+     * @var DeclaredStatisticsValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount")
      * @JMS\Expose
@@ -208,7 +208,7 @@ class ShipmentType
     private $declaredStatisticsValueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount|null
+     * @var FreeOnBoardValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount")
      * @JMS\Expose
@@ -219,7 +219,7 @@ class ShipmentType
     private $freeOnBoardValueAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions>|null
+     * @var array<SpecialInstructions>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions>")
      * @JMS\Expose
@@ -231,7 +231,7 @@ class ShipmentType
     private $specialInstructions;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions>|null
+     * @var array<DeliveryInstructions>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions>")
      * @JMS\Expose
@@ -254,7 +254,7 @@ class ShipmentType
     private $splitConsignmentIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity|null
+     * @var ConsignmentQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity")
      * @JMS\Expose
@@ -265,7 +265,7 @@ class ShipmentType
     private $consignmentQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Consignment>|null
+     * @var array<Consignment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Consignment>")
      * @JMS\Expose
@@ -277,7 +277,7 @@ class ShipmentType
     private $consignment;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>|null
+     * @var array<GoodsItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>")
      * @JMS\Expose
@@ -289,7 +289,7 @@ class ShipmentType
     private $goodsItem;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>|null
+     * @var array<ShipmentStage>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>")
      * @JMS\Expose
@@ -301,7 +301,7 @@ class ShipmentType
     private $shipmentStage;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null
+     * @var Delivery|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Delivery")
      * @JMS\Expose
@@ -312,7 +312,7 @@ class ShipmentType
     private $delivery;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit>|null
+     * @var array<TransportHandlingUnit>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit>")
      * @JMS\Expose
@@ -324,7 +324,7 @@ class ShipmentType
     private $transportHandlingUnit;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ReturnAddress|null
+     * @var ReturnAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReturnAddress")
      * @JMS\Expose
@@ -335,7 +335,7 @@ class ShipmentType
     private $returnAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress|null
+     * @var OriginAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress")
      * @JMS\Expose
@@ -346,7 +346,7 @@ class ShipmentType
     private $originAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation|null
+     * @var FirstArrivalPortLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation")
      * @JMS\Expose
@@ -357,7 +357,7 @@ class ShipmentType
     private $firstArrivalPortLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation|null
+     * @var LastExitPortLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation")
      * @JMS\Expose
@@ -368,7 +368,7 @@ class ShipmentType
     private $lastExitPortLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExportCountry|null
+     * @var ExportCountry|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExportCountry")
      * @JMS\Expose
@@ -379,7 +379,7 @@ class ShipmentType
     private $exportCountry;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>|null
+     * @var array<FreightAllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -391,7 +391,7 @@ class ShipmentType
     private $freightAllowanceCharge;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -399,7 +399,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -409,7 +409,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -430,7 +430,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode|null
+     * @return ShippingPriorityLevelCode|null
      */
     public function getShippingPriorityLevelCode(): ?ShippingPriorityLevelCode
     {
@@ -438,7 +438,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode
+     * @return ShippingPriorityLevelCode
      */
     public function getShippingPriorityLevelCodeWithCreate(): ShippingPriorityLevelCode
     {
@@ -448,7 +448,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode|null $shippingPriorityLevelCode
+     * @param ShippingPriorityLevelCode|null $shippingPriorityLevelCode
      * @return self
      */
     public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): self
@@ -469,7 +469,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode|null
+     * @return HandlingCode|null
      */
     public function getHandlingCode(): ?HandlingCode
     {
@@ -477,7 +477,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode
+     * @return HandlingCode
      */
     public function getHandlingCodeWithCreate(): HandlingCode
     {
@@ -487,7 +487,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode|null $handlingCode
+     * @param HandlingCode|null $handlingCode
      * @return self
      */
     public function setHandlingCode(?HandlingCode $handlingCode = null): self
@@ -508,7 +508,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions>|null
+     * @return array<HandlingInstructions>|null
      */
     public function getHandlingInstructions(): ?array
     {
@@ -516,7 +516,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions>|null $handlingInstructions
+     * @param array<HandlingInstructions>|null $handlingInstructions
      * @return self
      */
     public function setHandlingInstructions(?array $handlingInstructions = null): self
@@ -547,7 +547,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions|null
+     * @return HandlingInstructions|null
      */
     public function firstHandlingInstructions(): ?HandlingInstructions
     {
@@ -562,7 +562,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions|null
+     * @return HandlingInstructions|null
      */
     public function lastHandlingInstructions(): ?HandlingInstructions
     {
@@ -577,7 +577,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions $handlingInstructions
+     * @param HandlingInstructions $handlingInstructions
      * @return self
      */
     public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): self
@@ -588,7 +588,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions
+     * @return HandlingInstructions
      */
     public function addToHandlingInstructionsWithCreate(): HandlingInstructions
     {
@@ -598,7 +598,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions $handlingInstructions
+     * @param HandlingInstructions $handlingInstructions
      * @return self
      */
     public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): self
@@ -613,7 +613,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions
+     * @return HandlingInstructions
      */
     public function addOnceToHandlingInstructionsWithCreate(): HandlingInstructions
     {
@@ -629,7 +629,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null
+     * @return array<Information>|null
      */
     public function getInformation(): ?array
     {
@@ -637,7 +637,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Information>|null $information
+     * @param array<Information>|null $information
      * @return self
      */
     public function setInformation(?array $information = null): self
@@ -668,7 +668,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information|null
+     * @return Information|null
      */
     public function firstInformation(): ?Information
     {
@@ -683,7 +683,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information|null
+     * @return Information|null
      */
     public function lastInformation(): ?Information
     {
@@ -698,7 +698,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Information $information
+     * @param Information $information
      * @return self
      */
     public function addToInformation(Information $information): self
@@ -709,7 +709,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information
+     * @return Information
      */
     public function addToInformationWithCreate(): Information
     {
@@ -719,7 +719,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Information $information
+     * @param Information $information
      * @return self
      */
     public function addOnceToInformation(Information $information): self
@@ -734,7 +734,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Information
+     * @return Information
      */
     public function addOnceToInformationWithCreate(): Information
     {
@@ -750,7 +750,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure|null
+     * @return GrossWeightMeasure|null
      */
     public function getGrossWeightMeasure(): ?GrossWeightMeasure
     {
@@ -758,7 +758,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure
+     * @return GrossWeightMeasure
      */
     public function getGrossWeightMeasureWithCreate(): GrossWeightMeasure
     {
@@ -768,7 +768,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure|null $grossWeightMeasure
+     * @param GrossWeightMeasure|null $grossWeightMeasure
      * @return self
      */
     public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): self
@@ -789,7 +789,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure|null
+     * @return NetWeightMeasure|null
      */
     public function getNetWeightMeasure(): ?NetWeightMeasure
     {
@@ -797,7 +797,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure
+     * @return NetWeightMeasure
      */
     public function getNetWeightMeasureWithCreate(): NetWeightMeasure
     {
@@ -807,7 +807,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure|null $netWeightMeasure
+     * @param NetWeightMeasure|null $netWeightMeasure
      * @return self
      */
     public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): self
@@ -828,7 +828,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure|null
+     * @return NetNetWeightMeasure|null
      */
     public function getNetNetWeightMeasure(): ?NetNetWeightMeasure
     {
@@ -836,7 +836,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure
+     * @return NetNetWeightMeasure
      */
     public function getNetNetWeightMeasureWithCreate(): NetNetWeightMeasure
     {
@@ -846,7 +846,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure|null $netNetWeightMeasure
+     * @param NetNetWeightMeasure|null $netNetWeightMeasure
      * @return self
      */
     public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): self
@@ -867,7 +867,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure|null
+     * @return GrossVolumeMeasure|null
      */
     public function getGrossVolumeMeasure(): ?GrossVolumeMeasure
     {
@@ -875,7 +875,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure
+     * @return GrossVolumeMeasure
      */
     public function getGrossVolumeMeasureWithCreate(): GrossVolumeMeasure
     {
@@ -885,7 +885,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure|null $grossVolumeMeasure
+     * @param GrossVolumeMeasure|null $grossVolumeMeasure
      * @return self
      */
     public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): self
@@ -906,7 +906,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure|null
+     * @return NetVolumeMeasure|null
      */
     public function getNetVolumeMeasure(): ?NetVolumeMeasure
     {
@@ -914,7 +914,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure
+     * @return NetVolumeMeasure
      */
     public function getNetVolumeMeasureWithCreate(): NetVolumeMeasure
     {
@@ -924,7 +924,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure|null $netVolumeMeasure
+     * @param NetVolumeMeasure|null $netVolumeMeasure
      * @return self
      */
     public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): self
@@ -945,7 +945,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity|null
+     * @return TotalGoodsItemQuantity|null
      */
     public function getTotalGoodsItemQuantity(): ?TotalGoodsItemQuantity
     {
@@ -953,7 +953,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity
+     * @return TotalGoodsItemQuantity
      */
     public function getTotalGoodsItemQuantityWithCreate(): TotalGoodsItemQuantity
     {
@@ -963,7 +963,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity|null $totalGoodsItemQuantity
+     * @param TotalGoodsItemQuantity|null $totalGoodsItemQuantity
      * @return self
      */
     public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): self
@@ -984,7 +984,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity|null
+     * @return TotalTransportHandlingUnitQuantity|null
      */
     public function getTotalTransportHandlingUnitQuantity(): ?TotalTransportHandlingUnitQuantity
     {
@@ -992,7 +992,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity
+     * @return TotalTransportHandlingUnitQuantity
      */
     public function getTotalTransportHandlingUnitQuantityWithCreate(): TotalTransportHandlingUnitQuantity
     {
@@ -1002,7 +1002,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity|null $totalTransportHandlingUnitQuantity
+     * @param TotalTransportHandlingUnitQuantity|null $totalTransportHandlingUnitQuantity
      * @return self
      */
     public function setTotalTransportHandlingUnitQuantity(
@@ -1024,7 +1024,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount|null
+     * @return InsuranceValueAmount|null
      */
     public function getInsuranceValueAmount(): ?InsuranceValueAmount
     {
@@ -1032,7 +1032,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount
+     * @return InsuranceValueAmount
      */
     public function getInsuranceValueAmountWithCreate(): InsuranceValueAmount
     {
@@ -1042,7 +1042,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount|null $insuranceValueAmount
+     * @param InsuranceValueAmount|null $insuranceValueAmount
      * @return self
      */
     public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): self
@@ -1063,7 +1063,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount|null
+     * @return DeclaredCustomsValueAmount|null
      */
     public function getDeclaredCustomsValueAmount(): ?DeclaredCustomsValueAmount
     {
@@ -1071,7 +1071,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount
+     * @return DeclaredCustomsValueAmount
      */
     public function getDeclaredCustomsValueAmountWithCreate(): DeclaredCustomsValueAmount
     {
@@ -1081,7 +1081,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
+     * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
      * @return self
      */
     public function setDeclaredCustomsValueAmount(
@@ -1103,7 +1103,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount|null
+     * @return DeclaredForCarriageValueAmount|null
      */
     public function getDeclaredForCarriageValueAmount(): ?DeclaredForCarriageValueAmount
     {
@@ -1111,7 +1111,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount
+     * @return DeclaredForCarriageValueAmount
      */
     public function getDeclaredForCarriageValueAmountWithCreate(): DeclaredForCarriageValueAmount
     {
@@ -1121,7 +1121,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
+     * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
      * @return self
      */
     public function setDeclaredForCarriageValueAmount(
@@ -1143,7 +1143,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount|null
+     * @return DeclaredStatisticsValueAmount|null
      */
     public function getDeclaredStatisticsValueAmount(): ?DeclaredStatisticsValueAmount
     {
@@ -1151,7 +1151,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount
+     * @return DeclaredStatisticsValueAmount
      */
     public function getDeclaredStatisticsValueAmountWithCreate(): DeclaredStatisticsValueAmount
     {
@@ -1161,7 +1161,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
+     * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
      * @return self
      */
     public function setDeclaredStatisticsValueAmount(
@@ -1183,7 +1183,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount|null
+     * @return FreeOnBoardValueAmount|null
      */
     public function getFreeOnBoardValueAmount(): ?FreeOnBoardValueAmount
     {
@@ -1191,7 +1191,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount
+     * @return FreeOnBoardValueAmount
      */
     public function getFreeOnBoardValueAmountWithCreate(): FreeOnBoardValueAmount
     {
@@ -1201,7 +1201,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount|null $freeOnBoardValueAmount
+     * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
      * @return self
      */
     public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): self
@@ -1222,7 +1222,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions>|null
+     * @return array<SpecialInstructions>|null
      */
     public function getSpecialInstructions(): ?array
     {
@@ -1230,7 +1230,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions>|null $specialInstructions
+     * @param array<SpecialInstructions>|null $specialInstructions
      * @return self
      */
     public function setSpecialInstructions(?array $specialInstructions = null): self
@@ -1261,7 +1261,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions|null
+     * @return SpecialInstructions|null
      */
     public function firstSpecialInstructions(): ?SpecialInstructions
     {
@@ -1276,7 +1276,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions|null
+     * @return SpecialInstructions|null
      */
     public function lastSpecialInstructions(): ?SpecialInstructions
     {
@@ -1291,7 +1291,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions $specialInstructions
+     * @param SpecialInstructions $specialInstructions
      * @return self
      */
     public function addToSpecialInstructions(SpecialInstructions $specialInstructions): self
@@ -1302,7 +1302,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions
+     * @return SpecialInstructions
      */
     public function addToSpecialInstructionsWithCreate(): SpecialInstructions
     {
@@ -1312,7 +1312,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions $specialInstructions
+     * @param SpecialInstructions $specialInstructions
      * @return self
      */
     public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): self
@@ -1327,7 +1327,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions
+     * @return SpecialInstructions
      */
     public function addOnceToSpecialInstructionsWithCreate(): SpecialInstructions
     {
@@ -1343,7 +1343,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions>|null
+     * @return array<DeliveryInstructions>|null
      */
     public function getDeliveryInstructions(): ?array
     {
@@ -1351,7 +1351,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions>|null $deliveryInstructions
+     * @param array<DeliveryInstructions>|null $deliveryInstructions
      * @return self
      */
     public function setDeliveryInstructions(?array $deliveryInstructions = null): self
@@ -1382,7 +1382,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions|null
+     * @return DeliveryInstructions|null
      */
     public function firstDeliveryInstructions(): ?DeliveryInstructions
     {
@@ -1397,7 +1397,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions|null
+     * @return DeliveryInstructions|null
      */
     public function lastDeliveryInstructions(): ?DeliveryInstructions
     {
@@ -1412,7 +1412,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions $deliveryInstructions
+     * @param DeliveryInstructions $deliveryInstructions
      * @return self
      */
     public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): self
@@ -1423,7 +1423,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions
+     * @return DeliveryInstructions
      */
     public function addToDeliveryInstructionsWithCreate(): DeliveryInstructions
     {
@@ -1433,7 +1433,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions $deliveryInstructions
+     * @param DeliveryInstructions $deliveryInstructions
      * @return self
      */
     public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): self
@@ -1448,7 +1448,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions
+     * @return DeliveryInstructions
      */
     public function addOnceToDeliveryInstructionsWithCreate(): DeliveryInstructions
     {
@@ -1493,7 +1493,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity|null
+     * @return ConsignmentQuantity|null
      */
     public function getConsignmentQuantity(): ?ConsignmentQuantity
     {
@@ -1501,7 +1501,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity
+     * @return ConsignmentQuantity
      */
     public function getConsignmentQuantityWithCreate(): ConsignmentQuantity
     {
@@ -1511,7 +1511,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity|null $consignmentQuantity
+     * @param ConsignmentQuantity|null $consignmentQuantity
      * @return self
      */
     public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): self
@@ -1532,7 +1532,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Consignment>|null
+     * @return array<Consignment>|null
      */
     public function getConsignment(): ?array
     {
@@ -1540,7 +1540,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Consignment>|null $consignment
+     * @param array<Consignment>|null $consignment
      * @return self
      */
     public function setConsignment(?array $consignment = null): self
@@ -1571,7 +1571,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Consignment|null
+     * @return Consignment|null
      */
     public function firstConsignment(): ?Consignment
     {
@@ -1586,7 +1586,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Consignment|null
+     * @return Consignment|null
      */
     public function lastConsignment(): ?Consignment
     {
@@ -1601,7 +1601,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Consignment $consignment
+     * @param Consignment $consignment
      * @return self
      */
     public function addToConsignment(Consignment $consignment): self
@@ -1612,7 +1612,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Consignment
+     * @return Consignment
      */
     public function addToConsignmentWithCreate(): Consignment
     {
@@ -1622,7 +1622,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Consignment $consignment
+     * @param Consignment $consignment
      * @return self
      */
     public function addOnceToConsignment(Consignment $consignment): self
@@ -1637,7 +1637,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Consignment
+     * @return Consignment
      */
     public function addOnceToConsignmentWithCreate(): Consignment
     {
@@ -1653,7 +1653,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>|null
+     * @return array<GoodsItem>|null
      */
     public function getGoodsItem(): ?array
     {
@@ -1661,7 +1661,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>|null $goodsItem
+     * @param array<GoodsItem>|null $goodsItem
      * @return self
      */
     public function setGoodsItem(?array $goodsItem = null): self
@@ -1692,7 +1692,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem|null
+     * @return GoodsItem|null
      */
     public function firstGoodsItem(): ?GoodsItem
     {
@@ -1707,7 +1707,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem|null
+     * @return GoodsItem|null
      */
     public function lastGoodsItem(): ?GoodsItem
     {
@@ -1722,7 +1722,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem $goodsItem
+     * @param GoodsItem $goodsItem
      * @return self
      */
     public function addToGoodsItem(GoodsItem $goodsItem): self
@@ -1733,7 +1733,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem
+     * @return GoodsItem
      */
     public function addToGoodsItemWithCreate(): GoodsItem
     {
@@ -1743,7 +1743,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem $goodsItem
+     * @param GoodsItem $goodsItem
      * @return self
      */
     public function addOnceToGoodsItem(GoodsItem $goodsItem): self
@@ -1758,7 +1758,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem
+     * @return GoodsItem
      */
     public function addOnceToGoodsItemWithCreate(): GoodsItem
     {
@@ -1774,7 +1774,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>|null
+     * @return array<ShipmentStage>|null
      */
     public function getShipmentStage(): ?array
     {
@@ -1782,7 +1782,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>|null $shipmentStage
+     * @param array<ShipmentStage>|null $shipmentStage
      * @return self
      */
     public function setShipmentStage(?array $shipmentStage = null): self
@@ -1813,7 +1813,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage|null
+     * @return ShipmentStage|null
      */
     public function firstShipmentStage(): ?ShipmentStage
     {
@@ -1828,7 +1828,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage|null
+     * @return ShipmentStage|null
      */
     public function lastShipmentStage(): ?ShipmentStage
     {
@@ -1843,7 +1843,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage $shipmentStage
+     * @param ShipmentStage $shipmentStage
      * @return self
      */
     public function addToShipmentStage(ShipmentStage $shipmentStage): self
@@ -1854,7 +1854,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage
+     * @return ShipmentStage
      */
     public function addToShipmentStageWithCreate(): ShipmentStage
     {
@@ -1864,7 +1864,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage $shipmentStage
+     * @param ShipmentStage $shipmentStage
      * @return self
      */
     public function addOnceToShipmentStage(ShipmentStage $shipmentStage): self
@@ -1879,7 +1879,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage
+     * @return ShipmentStage
      */
     public function addOnceToShipmentStageWithCreate(): ShipmentStage
     {
@@ -1895,7 +1895,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null
+     * @return Delivery|null
      */
     public function getDelivery(): ?Delivery
     {
@@ -1903,7 +1903,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery
+     * @return Delivery
      */
     public function getDeliveryWithCreate(): Delivery
     {
@@ -1913,7 +1913,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null $delivery
+     * @param Delivery|null $delivery
      * @return self
      */
     public function setDelivery(?Delivery $delivery = null): self
@@ -1934,7 +1934,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit>|null
+     * @return array<TransportHandlingUnit>|null
      */
     public function getTransportHandlingUnit(): ?array
     {
@@ -1942,7 +1942,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit>|null $transportHandlingUnit
+     * @param array<TransportHandlingUnit>|null $transportHandlingUnit
      * @return self
      */
     public function setTransportHandlingUnit(?array $transportHandlingUnit = null): self
@@ -1973,7 +1973,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit|null
+     * @return TransportHandlingUnit|null
      */
     public function firstTransportHandlingUnit(): ?TransportHandlingUnit
     {
@@ -1988,7 +1988,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit|null
+     * @return TransportHandlingUnit|null
      */
     public function lastTransportHandlingUnit(): ?TransportHandlingUnit
     {
@@ -2003,7 +2003,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit $transportHandlingUnit
+     * @param TransportHandlingUnit $transportHandlingUnit
      * @return self
      */
     public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): self
@@ -2014,7 +2014,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit
+     * @return TransportHandlingUnit
      */
     public function addToTransportHandlingUnitWithCreate(): TransportHandlingUnit
     {
@@ -2024,7 +2024,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit $transportHandlingUnit
+     * @param TransportHandlingUnit $transportHandlingUnit
      * @return self
      */
     public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): self
@@ -2039,7 +2039,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit
+     * @return TransportHandlingUnit
      */
     public function addOnceToTransportHandlingUnitWithCreate(): TransportHandlingUnit
     {
@@ -2055,7 +2055,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReturnAddress|null
+     * @return ReturnAddress|null
      */
     public function getReturnAddress(): ?ReturnAddress
     {
@@ -2063,7 +2063,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ReturnAddress
+     * @return ReturnAddress
      */
     public function getReturnAddressWithCreate(): ReturnAddress
     {
@@ -2073,7 +2073,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ReturnAddress|null $returnAddress
+     * @param ReturnAddress|null $returnAddress
      * @return self
      */
     public function setReturnAddress(?ReturnAddress $returnAddress = null): self
@@ -2094,7 +2094,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress|null
+     * @return OriginAddress|null
      */
     public function getOriginAddress(): ?OriginAddress
     {
@@ -2102,7 +2102,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress
+     * @return OriginAddress
      */
     public function getOriginAddressWithCreate(): OriginAddress
     {
@@ -2112,7 +2112,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress|null $originAddress
+     * @param OriginAddress|null $originAddress
      * @return self
      */
     public function setOriginAddress(?OriginAddress $originAddress = null): self
@@ -2133,7 +2133,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation|null
+     * @return FirstArrivalPortLocation|null
      */
     public function getFirstArrivalPortLocation(): ?FirstArrivalPortLocation
     {
@@ -2141,7 +2141,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation
+     * @return FirstArrivalPortLocation
      */
     public function getFirstArrivalPortLocationWithCreate(): FirstArrivalPortLocation
     {
@@ -2151,7 +2151,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation|null $firstArrivalPortLocation
+     * @param FirstArrivalPortLocation|null $firstArrivalPortLocation
      * @return self
      */
     public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): self
@@ -2172,7 +2172,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation|null
+     * @return LastExitPortLocation|null
      */
     public function getLastExitPortLocation(): ?LastExitPortLocation
     {
@@ -2180,7 +2180,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation
+     * @return LastExitPortLocation
      */
     public function getLastExitPortLocationWithCreate(): LastExitPortLocation
     {
@@ -2190,7 +2190,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation|null $lastExitPortLocation
+     * @param LastExitPortLocation|null $lastExitPortLocation
      * @return self
      */
     public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): self
@@ -2211,7 +2211,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExportCountry|null
+     * @return ExportCountry|null
      */
     public function getExportCountry(): ?ExportCountry
     {
@@ -2219,7 +2219,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExportCountry
+     * @return ExportCountry
      */
     public function getExportCountryWithCreate(): ExportCountry
     {
@@ -2229,7 +2229,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExportCountry|null $exportCountry
+     * @param ExportCountry|null $exportCountry
      * @return self
      */
     public function setExportCountry(?ExportCountry $exportCountry = null): self
@@ -2250,7 +2250,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>|null
+     * @return array<FreightAllowanceCharge>|null
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -2258,7 +2258,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
      * @return self
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): self
@@ -2289,7 +2289,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge|null
+     * @return FreightAllowanceCharge|null
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -2304,7 +2304,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge|null
+     * @return FreightAllowanceCharge|null
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -2319,7 +2319,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
+     * @param FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
@@ -2330,7 +2330,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge
+     * @return FreightAllowanceCharge
      */
     public function addToFreightAllowanceChargeWithCreate(): FreightAllowanceCharge
     {
@@ -2340,7 +2340,7 @@ class ShipmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge $freightAllowanceCharge
+     * @param FreightAllowanceCharge $freightAllowanceCharge
      * @return self
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
@@ -2355,7 +2355,7 @@ class ShipmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge
+     * @return FreightAllowanceCharge
      */
     public function addOnceToFreightAllowanceChargeWithCreate(): FreightAllowanceCharge
     {

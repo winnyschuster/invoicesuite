@@ -19,7 +19,7 @@ class RequestForTenderLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class RequestForTenderLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class RequestForTenderLineType
     private $uUID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class RequestForTenderLineType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class RequestForTenderLineType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @var MinimumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class RequestForTenderLineType
     private $minimumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @var MaximumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class RequestForTenderLineType
     private $taxIncludedIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null
+     * @var MinimumAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class RequestForTenderLineType
     private $minimumAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null
+     * @var MaximumAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class RequestForTenderLineType
     private $maximumAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount|null
+     * @var EstimatedAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class RequestForTenderLineType
     private $estimatedAmount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @var array<DocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class RequestForTenderLineType
     private $documentReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod>|null
+     * @var array<DeliveryPeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod>")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class RequestForTenderLineType
     private $deliveryPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>|null
+     * @var array<RequiredItemLocationQuantity>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>")
      * @JMS\Expose
@@ -166,7 +166,7 @@ class RequestForTenderLineType
     private $requiredItemLocationQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod|null
+     * @var WarrantyValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod")
      * @JMS\Expose
@@ -177,7 +177,7 @@ class RequestForTenderLineType
     private $warrantyValidityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @var Item|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class RequestForTenderLineType
     private $item;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine>|null
+     * @var array<SubRequestForTenderLine>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine>")
      * @JMS\Expose
@@ -200,7 +200,7 @@ class RequestForTenderLineType
     private $subRequestForTenderLine;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -208,7 +208,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -218,7 +218,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -239,7 +239,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -247,7 +247,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -257,7 +257,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -278,7 +278,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -286,7 +286,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -317,7 +317,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -332,7 +332,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -347,7 +347,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -358,7 +358,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -368,7 +368,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -383,7 +383,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -399,7 +399,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -407,7 +407,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -417,7 +417,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -438,7 +438,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @return MinimumQuantity|null
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -446,7 +446,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity
+     * @return MinimumQuantity
      */
     public function getMinimumQuantityWithCreate(): MinimumQuantity
     {
@@ -456,7 +456,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null $minimumQuantity
+     * @param MinimumQuantity|null $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
@@ -477,7 +477,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @return MaximumQuantity|null
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -485,7 +485,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity
+     * @return MaximumQuantity
      */
     public function getMaximumQuantityWithCreate(): MaximumQuantity
     {
@@ -495,7 +495,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null $maximumQuantity
+     * @param MaximumQuantity|null $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
@@ -545,7 +545,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null
+     * @return MinimumAmount|null
      */
     public function getMinimumAmount(): ?MinimumAmount
     {
@@ -553,7 +553,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount
+     * @return MinimumAmount
      */
     public function getMinimumAmountWithCreate(): MinimumAmount
     {
@@ -563,7 +563,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount|null $minimumAmount
+     * @param MinimumAmount|null $minimumAmount
      * @return self
      */
     public function setMinimumAmount(?MinimumAmount $minimumAmount = null): self
@@ -584,7 +584,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null
+     * @return MaximumAmount|null
      */
     public function getMaximumAmount(): ?MaximumAmount
     {
@@ -592,7 +592,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount
+     * @return MaximumAmount
      */
     public function getMaximumAmountWithCreate(): MaximumAmount
     {
@@ -602,7 +602,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount|null $maximumAmount
+     * @param MaximumAmount|null $maximumAmount
      * @return self
      */
     public function setMaximumAmount(?MaximumAmount $maximumAmount = null): self
@@ -623,7 +623,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount|null
+     * @return EstimatedAmount|null
      */
     public function getEstimatedAmount(): ?EstimatedAmount
     {
@@ -631,7 +631,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount
+     * @return EstimatedAmount
      */
     public function getEstimatedAmountWithCreate(): EstimatedAmount
     {
@@ -641,7 +641,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount|null $estimatedAmount
+     * @param EstimatedAmount|null $estimatedAmount
      * @return self
      */
     public function setEstimatedAmount(?EstimatedAmount $estimatedAmount = null): self
@@ -662,7 +662,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null
+     * @return array<DocumentReference>|null
      */
     public function getDocumentReference(): ?array
     {
@@ -670,7 +670,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>|null $documentReference
+     * @param array<DocumentReference>|null $documentReference
      * @return self
      */
     public function setDocumentReference(?array $documentReference = null): self
@@ -701,7 +701,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -716,7 +716,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -731,7 +731,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addToDocumentReference(DocumentReference $documentReference): self
@@ -742,7 +742,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -752,7 +752,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference $documentReference
+     * @param DocumentReference $documentReference
      * @return self
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): self
@@ -767,7 +767,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function addOnceToDocumentReferenceWithCreate(): DocumentReference
     {
@@ -783,7 +783,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod>|null
+     * @return array<DeliveryPeriod>|null
      */
     public function getDeliveryPeriod(): ?array
     {
@@ -791,7 +791,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod>|null $deliveryPeriod
+     * @param array<DeliveryPeriod>|null $deliveryPeriod
      * @return self
      */
     public function setDeliveryPeriod(?array $deliveryPeriod = null): self
@@ -822,7 +822,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod|null
+     * @return DeliveryPeriod|null
      */
     public function firstDeliveryPeriod(): ?DeliveryPeriod
     {
@@ -837,7 +837,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod|null
+     * @return DeliveryPeriod|null
      */
     public function lastDeliveryPeriod(): ?DeliveryPeriod
     {
@@ -852,7 +852,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod $deliveryPeriod
+     * @param DeliveryPeriod $deliveryPeriod
      * @return self
      */
     public function addToDeliveryPeriod(DeliveryPeriod $deliveryPeriod): self
@@ -863,7 +863,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod
+     * @return DeliveryPeriod
      */
     public function addToDeliveryPeriodWithCreate(): DeliveryPeriod
     {
@@ -873,7 +873,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod $deliveryPeriod
+     * @param DeliveryPeriod $deliveryPeriod
      * @return self
      */
     public function addOnceToDeliveryPeriod(DeliveryPeriod $deliveryPeriod): self
@@ -888,7 +888,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod
+     * @return DeliveryPeriod
      */
     public function addOnceToDeliveryPeriodWithCreate(): DeliveryPeriod
     {
@@ -904,7 +904,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>|null
+     * @return array<RequiredItemLocationQuantity>|null
      */
     public function getRequiredItemLocationQuantity(): ?array
     {
@@ -912,7 +912,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
+     * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
      * @return self
      */
     public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): self
@@ -943,7 +943,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity|null
+     * @return RequiredItemLocationQuantity|null
      */
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -958,7 +958,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity|null
+     * @return RequiredItemLocationQuantity|null
      */
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -973,7 +973,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return self
      */
     public function addToRequiredItemLocationQuantity(
@@ -985,7 +985,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity
+     * @return RequiredItemLocationQuantity
      */
     public function addToRequiredItemLocationQuantityWithCreate(): RequiredItemLocationQuantity
     {
@@ -995,7 +995,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return self
      */
     public function addOnceToRequiredItemLocationQuantity(
@@ -1011,7 +1011,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity
+     * @return RequiredItemLocationQuantity
      */
     public function addOnceToRequiredItemLocationQuantityWithCreate(): RequiredItemLocationQuantity
     {
@@ -1027,7 +1027,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod|null
+     * @return WarrantyValidityPeriod|null
      */
     public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
     {
@@ -1035,7 +1035,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod
+     * @return WarrantyValidityPeriod
      */
     public function getWarrantyValidityPeriodWithCreate(): WarrantyValidityPeriod
     {
@@ -1045,7 +1045,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod|null $warrantyValidityPeriod
+     * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): self
@@ -1066,7 +1066,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function getItem(): ?Item
     {
@@ -1074,7 +1074,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function getItemWithCreate(): Item
     {
@@ -1084,7 +1084,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null $item
+     * @param Item|null $item
      * @return self
      */
     public function setItem(?Item $item = null): self
@@ -1105,7 +1105,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine>|null
+     * @return array<SubRequestForTenderLine>|null
      */
     public function getSubRequestForTenderLine(): ?array
     {
@@ -1113,7 +1113,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine>|null $subRequestForTenderLine
+     * @param array<SubRequestForTenderLine>|null $subRequestForTenderLine
      * @return self
      */
     public function setSubRequestForTenderLine(?array $subRequestForTenderLine = null): self
@@ -1144,7 +1144,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine|null
+     * @return SubRequestForTenderLine|null
      */
     public function firstSubRequestForTenderLine(): ?SubRequestForTenderLine
     {
@@ -1159,7 +1159,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine|null
+     * @return SubRequestForTenderLine|null
      */
     public function lastSubRequestForTenderLine(): ?SubRequestForTenderLine
     {
@@ -1174,7 +1174,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine $subRequestForTenderLine
+     * @param SubRequestForTenderLine $subRequestForTenderLine
      * @return self
      */
     public function addToSubRequestForTenderLine(SubRequestForTenderLine $subRequestForTenderLine): self
@@ -1185,7 +1185,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine
+     * @return SubRequestForTenderLine
      */
     public function addToSubRequestForTenderLineWithCreate(): SubRequestForTenderLine
     {
@@ -1195,7 +1195,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine $subRequestForTenderLine
+     * @param SubRequestForTenderLine $subRequestForTenderLine
      * @return self
      */
     public function addOnceToSubRequestForTenderLine(SubRequestForTenderLine $subRequestForTenderLine): self
@@ -1210,7 +1210,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine
+     * @return SubRequestForTenderLine
      */
     public function addOnceToSubRequestForTenderLineWithCreate(): SubRequestForTenderLine
     {

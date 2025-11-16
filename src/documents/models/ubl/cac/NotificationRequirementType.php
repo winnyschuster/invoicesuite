@@ -13,7 +13,7 @@ class NotificationRequirementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode|null
+     * @var NotificationTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class NotificationRequirementType
     private $notificationTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure|null
+     * @var PostEventNotificationDurationMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class NotificationRequirementType
     private $postEventNotificationDurationMeasure;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure|null
+     * @var PreEventNotificationDurationMeasure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class NotificationRequirementType
     private $preEventNotificationDurationMeasure;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>|null
+     * @var array<NotifyParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class NotificationRequirementType
     private $notifyParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod>|null
+     * @var array<NotificationPeriod>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class NotificationRequirementType
     private $notificationPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation>|null
+     * @var array<NotificationLocation>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class NotificationRequirementType
     private $notificationLocation;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode|null
+     * @return NotificationTypeCode|null
      */
     public function getNotificationTypeCode(): ?NotificationTypeCode
     {
@@ -90,7 +90,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode
+     * @return NotificationTypeCode
      */
     public function getNotificationTypeCodeWithCreate(): NotificationTypeCode
     {
@@ -100,7 +100,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode|null $notificationTypeCode
+     * @param NotificationTypeCode|null $notificationTypeCode
      * @return self
      */
     public function setNotificationTypeCode(?NotificationTypeCode $notificationTypeCode = null): self
@@ -121,7 +121,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure|null
+     * @return PostEventNotificationDurationMeasure|null
      */
     public function getPostEventNotificationDurationMeasure(): ?PostEventNotificationDurationMeasure
     {
@@ -129,7 +129,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure
+     * @return PostEventNotificationDurationMeasure
      */
     public function getPostEventNotificationDurationMeasureWithCreate(): PostEventNotificationDurationMeasure
     {
@@ -139,7 +139,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure|null $postEventNotificationDurationMeasure
+     * @param PostEventNotificationDurationMeasure|null $postEventNotificationDurationMeasure
      * @return self
      */
     public function setPostEventNotificationDurationMeasure(
@@ -161,7 +161,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure|null
+     * @return PreEventNotificationDurationMeasure|null
      */
     public function getPreEventNotificationDurationMeasure(): ?PreEventNotificationDurationMeasure
     {
@@ -169,7 +169,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure
+     * @return PreEventNotificationDurationMeasure
      */
     public function getPreEventNotificationDurationMeasureWithCreate(): PreEventNotificationDurationMeasure
     {
@@ -179,7 +179,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure|null $preEventNotificationDurationMeasure
+     * @param PreEventNotificationDurationMeasure|null $preEventNotificationDurationMeasure
      * @return self
      */
     public function setPreEventNotificationDurationMeasure(
@@ -201,7 +201,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>|null
+     * @return array<NotifyParty>|null
      */
     public function getNotifyParty(): ?array
     {
@@ -209,7 +209,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>|null $notifyParty
+     * @param array<NotifyParty>|null $notifyParty
      * @return self
      */
     public function setNotifyParty(?array $notifyParty = null): self
@@ -240,7 +240,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty|null
+     * @return NotifyParty|null
      */
     public function firstNotifyParty(): ?NotifyParty
     {
@@ -255,7 +255,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty|null
+     * @return NotifyParty|null
      */
     public function lastNotifyParty(): ?NotifyParty
     {
@@ -270,7 +270,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty $notifyParty
+     * @param NotifyParty $notifyParty
      * @return self
      */
     public function addToNotifyParty(NotifyParty $notifyParty): self
@@ -281,7 +281,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty
+     * @return NotifyParty
      */
     public function addToNotifyPartyWithCreate(): NotifyParty
     {
@@ -291,7 +291,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty $notifyParty
+     * @param NotifyParty $notifyParty
      * @return self
      */
     public function addOnceToNotifyParty(NotifyParty $notifyParty): self
@@ -306,7 +306,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty
+     * @return NotifyParty
      */
     public function addOnceToNotifyPartyWithCreate(): NotifyParty
     {
@@ -322,7 +322,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod>|null
+     * @return array<NotificationPeriod>|null
      */
     public function getNotificationPeriod(): ?array
     {
@@ -330,7 +330,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod>|null $notificationPeriod
+     * @param array<NotificationPeriod>|null $notificationPeriod
      * @return self
      */
     public function setNotificationPeriod(?array $notificationPeriod = null): self
@@ -361,7 +361,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod|null
+     * @return NotificationPeriod|null
      */
     public function firstNotificationPeriod(): ?NotificationPeriod
     {
@@ -376,7 +376,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod|null
+     * @return NotificationPeriod|null
      */
     public function lastNotificationPeriod(): ?NotificationPeriod
     {
@@ -391,7 +391,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod $notificationPeriod
+     * @param NotificationPeriod $notificationPeriod
      * @return self
      */
     public function addToNotificationPeriod(NotificationPeriod $notificationPeriod): self
@@ -402,7 +402,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod
+     * @return NotificationPeriod
      */
     public function addToNotificationPeriodWithCreate(): NotificationPeriod
     {
@@ -412,7 +412,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod $notificationPeriod
+     * @param NotificationPeriod $notificationPeriod
      * @return self
      */
     public function addOnceToNotificationPeriod(NotificationPeriod $notificationPeriod): self
@@ -427,7 +427,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod
+     * @return NotificationPeriod
      */
     public function addOnceToNotificationPeriodWithCreate(): NotificationPeriod
     {
@@ -443,7 +443,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation>|null
+     * @return array<NotificationLocation>|null
      */
     public function getNotificationLocation(): ?array
     {
@@ -451,7 +451,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation>|null $notificationLocation
+     * @param array<NotificationLocation>|null $notificationLocation
      * @return self
      */
     public function setNotificationLocation(?array $notificationLocation = null): self
@@ -482,7 +482,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation|null
+     * @return NotificationLocation|null
      */
     public function firstNotificationLocation(): ?NotificationLocation
     {
@@ -497,7 +497,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation|null
+     * @return NotificationLocation|null
      */
     public function lastNotificationLocation(): ?NotificationLocation
     {
@@ -512,7 +512,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation $notificationLocation
+     * @param NotificationLocation $notificationLocation
      * @return self
      */
     public function addToNotificationLocation(NotificationLocation $notificationLocation): self
@@ -523,7 +523,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation
+     * @return NotificationLocation
      */
     public function addToNotificationLocationWithCreate(): NotificationLocation
     {
@@ -533,7 +533,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation $notificationLocation
+     * @param NotificationLocation $notificationLocation
      * @return self
      */
     public function addOnceToNotificationLocation(NotificationLocation $notificationLocation): self
@@ -548,7 +548,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation
+     * @return NotificationLocation
      */
     public function addOnceToNotificationLocationWithCreate(): NotificationLocation
     {

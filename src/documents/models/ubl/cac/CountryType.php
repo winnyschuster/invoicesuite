@@ -12,7 +12,7 @@ class CountryType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode|null
+     * @var IdentificationCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class CountryType
     private $identificationCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class CountryType
     private $name;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode|null
+     * @return IdentificationCode|null
      */
     public function getIdentificationCode(): ?IdentificationCode
     {
@@ -42,7 +42,7 @@ class CountryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode
+     * @return IdentificationCode
      */
     public function getIdentificationCodeWithCreate(): IdentificationCode
     {
@@ -52,7 +52,7 @@ class CountryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode|null $identificationCode
+     * @param IdentificationCode|null $identificationCode
      * @return self
      */
     public function setIdentificationCode(?IdentificationCode $identificationCode = null): self
@@ -73,7 +73,7 @@ class CountryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -81,7 +81,7 @@ class CountryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -91,7 +91,7 @@ class CountryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self

@@ -90,7 +90,7 @@ final class InvoiceSuitePdfExtractorTest extends TestCase
         $this->assertInstanceOf(InvoiceSuitePdfExtractorAttachment::class, $extractor[1]);
         $this->assertInstanceOf(InvoiceSuitePdfExtractorAttachment::class, $extractor[2]);
 
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment::class, $extractor["abc"]);
+        $this->assertNotInstanceOf(InvoiceSuitePdfExtractorAttachment::class, $extractor["abc"]);
     }
 
     public function testExtractorArrayAccessSetThrows(): void

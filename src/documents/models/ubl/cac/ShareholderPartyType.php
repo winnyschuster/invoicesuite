@@ -11,7 +11,7 @@ class ShareholderPartyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent|null
+     * @var PartecipationPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ShareholderPartyType
     private $partecipationPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @var Party|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ShareholderPartyType
     private $party;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent|null
+     * @return PartecipationPercent|null
      */
     public function getPartecipationPercent(): ?PartecipationPercent
     {
@@ -41,7 +41,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent
+     * @return PartecipationPercent
      */
     public function getPartecipationPercentWithCreate(): PartecipationPercent
     {
@@ -51,7 +51,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent|null $partecipationPercent
+     * @param PartecipationPercent|null $partecipationPercent
      * @return self
      */
     public function setPartecipationPercent(?PartecipationPercent $partecipationPercent = null): self
@@ -72,7 +72,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @return Party|null
      */
     public function getParty(): ?Party
     {
@@ -80,7 +80,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party
+     * @return Party
      */
     public function getPartyWithCreate(): Party
     {
@@ -90,7 +90,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null $party
+     * @param Party|null $party
      * @return self
      */
     public function setParty(?Party $party = null): self

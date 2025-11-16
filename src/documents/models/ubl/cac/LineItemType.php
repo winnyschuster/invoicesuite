@@ -26,7 +26,7 @@ class LineItemType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class LineItemType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID|null
+     * @var SalesOrderID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class LineItemType
     private $salesOrderID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class LineItemType
     private $uUID;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @var array<Note>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class LineItemType
     private $note;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null
+     * @var LineStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class LineItemType
     private $lineStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class LineItemType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @var LineExtensionAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class LineItemType
     private $lineExtensionAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount|null
+     * @var TotalTaxAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount")
      * @JMS\Expose
@@ -115,7 +115,7 @@ class LineItemType
     private $totalTaxAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @var MinimumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -126,7 +126,7 @@ class LineItemType
     private $minimumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @var MaximumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -137,7 +137,7 @@ class LineItemType
     private $maximumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumBackorderQuantity|null
+     * @var MinimumBackorderQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumBackorderQuantity")
      * @JMS\Expose
@@ -148,7 +148,7 @@ class LineItemType
     private $minimumBackorderQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumBackorderQuantity|null
+     * @var MaximumBackorderQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumBackorderQuantity")
      * @JMS\Expose
@@ -159,7 +159,7 @@ class LineItemType
     private $maximumBackorderQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\InspectionMethodCode|null
+     * @var InspectionMethodCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InspectionMethodCode")
      * @JMS\Expose
@@ -192,7 +192,7 @@ class LineItemType
     private $backOrderAllowedIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null
+     * @var AccountingCostCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -203,7 +203,7 @@ class LineItemType
     private $accountingCostCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null
+     * @var AccountingCost|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -214,7 +214,7 @@ class LineItemType
     private $accountingCost;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation>|null
+     * @var array<WarrantyInformation>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation>")
      * @JMS\Expose
@@ -226,7 +226,7 @@ class LineItemType
     private $warrantyInformation;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>|null
+     * @var array<Delivery>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>")
      * @JMS\Expose
@@ -238,7 +238,7 @@ class LineItemType
     private $delivery;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null
+     * @var DeliveryTerms|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms")
      * @JMS\Expose
@@ -249,7 +249,7 @@ class LineItemType
     private $deliveryTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty|null
+     * @var OriginatorParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty")
      * @JMS\Expose
@@ -260,7 +260,7 @@ class LineItemType
     private $originatorParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment>|null
+     * @var array<OrderedShipment>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment>")
      * @JMS\Expose
@@ -272,7 +272,7 @@ class LineItemType
     private $orderedShipment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference|null
+     * @var PricingReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference")
      * @JMS\Expose
@@ -283,7 +283,7 @@ class LineItemType
     private $pricingReference;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -295,7 +295,7 @@ class LineItemType
     private $allowanceCharge;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null
+     * @var Price|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -306,7 +306,7 @@ class LineItemType
     private $price;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @var Item|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -317,7 +317,7 @@ class LineItemType
     private $item;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem>|null
+     * @var array<SubLineItem>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem>")
      * @JMS\Expose
@@ -329,7 +329,7 @@ class LineItemType
     private $subLineItem;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod|null
+     * @var WarrantyValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod")
      * @JMS\Expose
@@ -340,7 +340,7 @@ class LineItemType
     private $warrantyValidityPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty|null
+     * @var WarrantyParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty")
      * @JMS\Expose
@@ -351,7 +351,7 @@ class LineItemType
     private $warrantyParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @var array<TaxTotal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -363,7 +363,7 @@ class LineItemType
     private $taxTotal;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension|null
+     * @var ItemPriceExtension|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension")
      * @JMS\Expose
@@ -374,7 +374,7 @@ class LineItemType
     private $itemPriceExtension;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\LineReference>|null
+     * @var array<LineReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LineReference>")
      * @JMS\Expose
@@ -386,7 +386,7 @@ class LineItemType
     private $lineReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -394,7 +394,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -404,7 +404,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -425,7 +425,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID|null
+     * @return SalesOrderID|null
      */
     public function getSalesOrderID(): ?SalesOrderID
     {
@@ -433,7 +433,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID
+     * @return SalesOrderID
      */
     public function getSalesOrderIDWithCreate(): SalesOrderID
     {
@@ -443,7 +443,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID|null $salesOrderID
+     * @param SalesOrderID|null $salesOrderID
      * @return self
      */
     public function setSalesOrderID(?SalesOrderID $salesOrderID = null): self
@@ -464,7 +464,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -472,7 +472,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -482,7 +482,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -503,7 +503,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null
+     * @return array<Note>|null
      */
     public function getNote(): ?array
     {
@@ -511,7 +511,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>|null $note
+     * @param array<Note>|null $note
      * @return self
      */
     public function setNote(?array $note = null): self
@@ -542,7 +542,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function firstNote(): ?Note
     {
@@ -557,7 +557,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note|null
+     * @return Note|null
      */
     public function lastNote(): ?Note
     {
@@ -572,7 +572,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addToNote(Note $note): self
@@ -583,7 +583,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addToNoteWithCreate(): Note
     {
@@ -593,7 +593,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Note $note
+     * @param Note $note
      * @return self
      */
     public function addOnceToNote(Note $note): self
@@ -608,7 +608,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+     * @return Note
      */
     public function addOnceToNoteWithCreate(): Note
     {
@@ -624,7 +624,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null
+     * @return LineStatusCode|null
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -632,7 +632,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode
+     * @return LineStatusCode
      */
     public function getLineStatusCodeWithCreate(): LineStatusCode
     {
@@ -642,7 +642,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null $lineStatusCode
+     * @param LineStatusCode|null $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
@@ -663,7 +663,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -671,7 +671,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -681,7 +681,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -702,7 +702,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null
+     * @return LineExtensionAmount|null
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -710,7 +710,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount
+     * @return LineExtensionAmount
      */
     public function getLineExtensionAmountWithCreate(): LineExtensionAmount
     {
@@ -720,7 +720,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount|null $lineExtensionAmount
+     * @param LineExtensionAmount|null $lineExtensionAmount
      * @return self
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
@@ -741,7 +741,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount|null
+     * @return TotalTaxAmount|null
      */
     public function getTotalTaxAmount(): ?TotalTaxAmount
     {
@@ -749,7 +749,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount
+     * @return TotalTaxAmount
      */
     public function getTotalTaxAmountWithCreate(): TotalTaxAmount
     {
@@ -759,7 +759,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount|null $totalTaxAmount
+     * @param TotalTaxAmount|null $totalTaxAmount
      * @return self
      */
     public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): self
@@ -780,7 +780,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @return MinimumQuantity|null
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -788,7 +788,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity
+     * @return MinimumQuantity
      */
     public function getMinimumQuantityWithCreate(): MinimumQuantity
     {
@@ -798,7 +798,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null $minimumQuantity
+     * @param MinimumQuantity|null $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
@@ -819,7 +819,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @return MaximumQuantity|null
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -827,7 +827,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity
+     * @return MaximumQuantity
      */
     public function getMaximumQuantityWithCreate(): MaximumQuantity
     {
@@ -837,7 +837,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null $maximumQuantity
+     * @param MaximumQuantity|null $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
@@ -858,7 +858,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumBackorderQuantity|null
+     * @return MinimumBackorderQuantity|null
      */
     public function getMinimumBackorderQuantity(): ?MinimumBackorderQuantity
     {
@@ -866,7 +866,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumBackorderQuantity
+     * @return MinimumBackorderQuantity
      */
     public function getMinimumBackorderQuantityWithCreate(): MinimumBackorderQuantity
     {
@@ -876,7 +876,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumBackorderQuantity|null $minimumBackorderQuantity
+     * @param MinimumBackorderQuantity|null $minimumBackorderQuantity
      * @return self
      */
     public function setMinimumBackorderQuantity(?MinimumBackorderQuantity $minimumBackorderQuantity = null): self
@@ -897,7 +897,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumBackorderQuantity|null
+     * @return MaximumBackorderQuantity|null
      */
     public function getMaximumBackorderQuantity(): ?MaximumBackorderQuantity
     {
@@ -905,7 +905,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumBackorderQuantity
+     * @return MaximumBackorderQuantity
      */
     public function getMaximumBackorderQuantityWithCreate(): MaximumBackorderQuantity
     {
@@ -915,7 +915,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumBackorderQuantity|null $maximumBackorderQuantity
+     * @param MaximumBackorderQuantity|null $maximumBackorderQuantity
      * @return self
      */
     public function setMaximumBackorderQuantity(?MaximumBackorderQuantity $maximumBackorderQuantity = null): self
@@ -936,7 +936,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InspectionMethodCode|null
+     * @return InspectionMethodCode|null
      */
     public function getInspectionMethodCode(): ?InspectionMethodCode
     {
@@ -944,7 +944,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\InspectionMethodCode
+     * @return InspectionMethodCode
      */
     public function getInspectionMethodCodeWithCreate(): InspectionMethodCode
     {
@@ -954,7 +954,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\InspectionMethodCode|null $inspectionMethodCode
+     * @param InspectionMethodCode|null $inspectionMethodCode
      * @return self
      */
     public function setInspectionMethodCode(?InspectionMethodCode $inspectionMethodCode = null): self
@@ -1033,7 +1033,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null
+     * @return AccountingCostCode|null
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -1041,7 +1041,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode
+     * @return AccountingCostCode
      */
     public function getAccountingCostCodeWithCreate(): AccountingCostCode
     {
@@ -1051,7 +1051,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode|null $accountingCostCode
+     * @param AccountingCostCode|null $accountingCostCode
      * @return self
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
@@ -1072,7 +1072,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null
+     * @return AccountingCost|null
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -1080,7 +1080,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost
+     * @return AccountingCost
      */
     public function getAccountingCostWithCreate(): AccountingCost
     {
@@ -1090,7 +1090,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost|null $accountingCost
+     * @param AccountingCost|null $accountingCost
      * @return self
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): self
@@ -1111,7 +1111,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation>|null
+     * @return array<WarrantyInformation>|null
      */
     public function getWarrantyInformation(): ?array
     {
@@ -1119,7 +1119,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation>|null $warrantyInformation
+     * @param array<WarrantyInformation>|null $warrantyInformation
      * @return self
      */
     public function setWarrantyInformation(?array $warrantyInformation = null): self
@@ -1150,7 +1150,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation|null
+     * @return WarrantyInformation|null
      */
     public function firstWarrantyInformation(): ?WarrantyInformation
     {
@@ -1165,7 +1165,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation|null
+     * @return WarrantyInformation|null
      */
     public function lastWarrantyInformation(): ?WarrantyInformation
     {
@@ -1180,7 +1180,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation $warrantyInformation
+     * @param WarrantyInformation $warrantyInformation
      * @return self
      */
     public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): self
@@ -1191,7 +1191,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation
+     * @return WarrantyInformation
      */
     public function addToWarrantyInformationWithCreate(): WarrantyInformation
     {
@@ -1201,7 +1201,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation $warrantyInformation
+     * @param WarrantyInformation $warrantyInformation
      * @return self
      */
     public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): self
@@ -1216,7 +1216,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation
+     * @return WarrantyInformation
      */
     public function addOnceToWarrantyInformationWithCreate(): WarrantyInformation
     {
@@ -1232,7 +1232,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>|null
+     * @return array<Delivery>|null
      */
     public function getDelivery(): ?array
     {
@@ -1240,7 +1240,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>|null $delivery
+     * @param array<Delivery>|null $delivery
      * @return self
      */
     public function setDelivery(?array $delivery = null): self
@@ -1271,7 +1271,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null
+     * @return Delivery|null
      */
     public function firstDelivery(): ?Delivery
     {
@@ -1286,7 +1286,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery|null
+     * @return Delivery|null
      */
     public function lastDelivery(): ?Delivery
     {
@@ -1301,7 +1301,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery $delivery
+     * @param Delivery $delivery
      * @return self
      */
     public function addToDelivery(Delivery $delivery): self
@@ -1312,7 +1312,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery
+     * @return Delivery
      */
     public function addToDeliveryWithCreate(): Delivery
     {
@@ -1322,7 +1322,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery $delivery
+     * @param Delivery $delivery
      * @return self
      */
     public function addOnceToDelivery(Delivery $delivery): self
@@ -1337,7 +1337,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Delivery
+     * @return Delivery
      */
     public function addOnceToDeliveryWithCreate(): Delivery
     {
@@ -1353,7 +1353,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null
+     * @return DeliveryTerms|null
      */
     public function getDeliveryTerms(): ?DeliveryTerms
     {
@@ -1361,7 +1361,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms
+     * @return DeliveryTerms
      */
     public function getDeliveryTermsWithCreate(): DeliveryTerms
     {
@@ -1371,7 +1371,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null $deliveryTerms
+     * @param DeliveryTerms|null $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): self
@@ -1392,7 +1392,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty|null
+     * @return OriginatorParty|null
      */
     public function getOriginatorParty(): ?OriginatorParty
     {
@@ -1400,7 +1400,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty
+     * @return OriginatorParty
      */
     public function getOriginatorPartyWithCreate(): OriginatorParty
     {
@@ -1410,7 +1410,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty|null $originatorParty
+     * @param OriginatorParty|null $originatorParty
      * @return self
      */
     public function setOriginatorParty(?OriginatorParty $originatorParty = null): self
@@ -1431,7 +1431,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment>|null
+     * @return array<OrderedShipment>|null
      */
     public function getOrderedShipment(): ?array
     {
@@ -1439,7 +1439,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment>|null $orderedShipment
+     * @param array<OrderedShipment>|null $orderedShipment
      * @return self
      */
     public function setOrderedShipment(?array $orderedShipment = null): self
@@ -1470,7 +1470,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment|null
+     * @return OrderedShipment|null
      */
     public function firstOrderedShipment(): ?OrderedShipment
     {
@@ -1485,7 +1485,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment|null
+     * @return OrderedShipment|null
      */
     public function lastOrderedShipment(): ?OrderedShipment
     {
@@ -1500,7 +1500,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment $orderedShipment
+     * @param OrderedShipment $orderedShipment
      * @return self
      */
     public function addToOrderedShipment(OrderedShipment $orderedShipment): self
@@ -1511,7 +1511,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment
+     * @return OrderedShipment
      */
     public function addToOrderedShipmentWithCreate(): OrderedShipment
     {
@@ -1521,7 +1521,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment $orderedShipment
+     * @param OrderedShipment $orderedShipment
      * @return self
      */
     public function addOnceToOrderedShipment(OrderedShipment $orderedShipment): self
@@ -1536,7 +1536,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment
+     * @return OrderedShipment
      */
     public function addOnceToOrderedShipmentWithCreate(): OrderedShipment
     {
@@ -1552,7 +1552,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference|null
+     * @return PricingReference|null
      */
     public function getPricingReference(): ?PricingReference
     {
@@ -1560,7 +1560,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference
+     * @return PricingReference
      */
     public function getPricingReferenceWithCreate(): PricingReference
     {
@@ -1570,7 +1570,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference|null $pricingReference
+     * @param PricingReference|null $pricingReference
      * @return self
      */
     public function setPricingReference(?PricingReference $pricingReference = null): self
@@ -1591,7 +1591,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -1599,7 +1599,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -1630,7 +1630,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -1645,7 +1645,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -1660,7 +1660,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -1671,7 +1671,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -1681,7 +1681,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -1696,7 +1696,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -1712,7 +1712,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null
+     * @return Price|null
      */
     public function getPrice(): ?Price
     {
@@ -1720,7 +1720,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Price
+     * @return Price
      */
     public function getPriceWithCreate(): Price
     {
@@ -1730,7 +1730,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Price|null $price
+     * @param Price|null $price
      * @return self
      */
     public function setPrice(?Price $price = null): self
@@ -1751,7 +1751,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+     * @return Item|null
      */
     public function getItem(): ?Item
     {
@@ -1759,7 +1759,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Item
+     * @return Item
      */
     public function getItemWithCreate(): Item
     {
@@ -1769,7 +1769,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null $item
+     * @param Item|null $item
      * @return self
      */
     public function setItem(?Item $item = null): self
@@ -1790,7 +1790,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem>|null
+     * @return array<SubLineItem>|null
      */
     public function getSubLineItem(): ?array
     {
@@ -1798,7 +1798,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem>|null $subLineItem
+     * @param array<SubLineItem>|null $subLineItem
      * @return self
      */
     public function setSubLineItem(?array $subLineItem = null): self
@@ -1829,7 +1829,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem|null
+     * @return SubLineItem|null
      */
     public function firstSubLineItem(): ?SubLineItem
     {
@@ -1844,7 +1844,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem|null
+     * @return SubLineItem|null
      */
     public function lastSubLineItem(): ?SubLineItem
     {
@@ -1859,7 +1859,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem $subLineItem
+     * @param SubLineItem $subLineItem
      * @return self
      */
     public function addToSubLineItem(SubLineItem $subLineItem): self
@@ -1870,7 +1870,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem
+     * @return SubLineItem
      */
     public function addToSubLineItemWithCreate(): SubLineItem
     {
@@ -1880,7 +1880,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem $subLineItem
+     * @param SubLineItem $subLineItem
      * @return self
      */
     public function addOnceToSubLineItem(SubLineItem $subLineItem): self
@@ -1895,7 +1895,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem
+     * @return SubLineItem
      */
     public function addOnceToSubLineItemWithCreate(): SubLineItem
     {
@@ -1911,7 +1911,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod|null
+     * @return WarrantyValidityPeriod|null
      */
     public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
     {
@@ -1919,7 +1919,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod
+     * @return WarrantyValidityPeriod
      */
     public function getWarrantyValidityPeriodWithCreate(): WarrantyValidityPeriod
     {
@@ -1929,7 +1929,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod|null $warrantyValidityPeriod
+     * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
      * @return self
      */
     public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): self
@@ -1950,7 +1950,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty|null
+     * @return WarrantyParty|null
      */
     public function getWarrantyParty(): ?WarrantyParty
     {
@@ -1958,7 +1958,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty
+     * @return WarrantyParty
      */
     public function getWarrantyPartyWithCreate(): WarrantyParty
     {
@@ -1968,7 +1968,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty|null $warrantyParty
+     * @param WarrantyParty|null $warrantyParty
      * @return self
      */
     public function setWarrantyParty(?WarrantyParty $warrantyParty = null): self
@@ -1989,7 +1989,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @return array<TaxTotal>|null
      */
     public function getTaxTotal(): ?array
     {
@@ -1997,7 +1997,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null $taxTotal
+     * @param array<TaxTotal>|null $taxTotal
      * @return self
      */
     public function setTaxTotal(?array $taxTotal = null): self
@@ -2028,7 +2028,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -2043,7 +2043,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -2058,7 +2058,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addToTaxTotal(TaxTotal $taxTotal): self
@@ -2069,7 +2069,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addToTaxTotalWithCreate(): TaxTotal
     {
@@ -2079,7 +2079,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): self
@@ -2094,7 +2094,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addOnceToTaxTotalWithCreate(): TaxTotal
     {
@@ -2110,7 +2110,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension|null
+     * @return ItemPriceExtension|null
      */
     public function getItemPriceExtension(): ?ItemPriceExtension
     {
@@ -2118,7 +2118,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension
+     * @return ItemPriceExtension
      */
     public function getItemPriceExtensionWithCreate(): ItemPriceExtension
     {
@@ -2128,7 +2128,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension|null $itemPriceExtension
+     * @param ItemPriceExtension|null $itemPriceExtension
      * @return self
      */
     public function setItemPriceExtension(?ItemPriceExtension $itemPriceExtension = null): self
@@ -2149,7 +2149,7 @@ class LineItemType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\LineReference>|null
+     * @return array<LineReference>|null
      */
     public function getLineReference(): ?array
     {
@@ -2157,7 +2157,7 @@ class LineItemType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\LineReference>|null $lineReference
+     * @param array<LineReference>|null $lineReference
      * @return self
      */
     public function setLineReference(?array $lineReference = null): self
@@ -2188,7 +2188,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference|null
+     * @return LineReference|null
      */
     public function firstLineReference(): ?LineReference
     {
@@ -2203,7 +2203,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference|null
+     * @return LineReference|null
      */
     public function lastLineReference(): ?LineReference
     {
@@ -2218,7 +2218,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference $lineReference
+     * @param LineReference $lineReference
      * @return self
      */
     public function addToLineReference(LineReference $lineReference): self
@@ -2229,7 +2229,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference
+     * @return LineReference
      */
     public function addToLineReferenceWithCreate(): LineReference
     {
@@ -2239,7 +2239,7 @@ class LineItemType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference $lineReference
+     * @param LineReference $lineReference
      * @return self
      */
     public function addOnceToLineReference(LineReference $lineReference): self
@@ -2254,7 +2254,7 @@ class LineItemType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LineReference
+     * @return LineReference
      */
     public function addOnceToLineReferenceWithCreate(): LineReference
     {

@@ -11,7 +11,7 @@ class WinningPartyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Rank|null
+     * @var Rank|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Rank")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class WinningPartyType
     private $rank;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @var Party|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class WinningPartyType
     private $party;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Rank|null
+     * @return Rank|null
      */
     public function getRank(): ?Rank
     {
@@ -41,7 +41,7 @@ class WinningPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Rank
+     * @return Rank
      */
     public function getRankWithCreate(): Rank
     {
@@ -51,7 +51,7 @@ class WinningPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Rank|null $rank
+     * @param Rank|null $rank
      * @return self
      */
     public function setRank(?Rank $rank = null): self
@@ -72,7 +72,7 @@ class WinningPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @return Party|null
      */
     public function getParty(): ?Party
     {
@@ -80,7 +80,7 @@ class WinningPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party
+     * @return Party
      */
     public function getPartyWithCreate(): Party
     {
@@ -90,7 +90,7 @@ class WinningPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null $party
+     * @param Party|null $party
      * @return self
      */
     public function setParty(?Party $party = null): self

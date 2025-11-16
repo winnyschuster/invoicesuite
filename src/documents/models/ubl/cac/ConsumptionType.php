@@ -11,7 +11,7 @@ class ConsumptionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode|null
+     * @var UtilityStatementTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class ConsumptionType
     private $utilityStatementTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MainPeriod|null
+     * @var MainPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MainPeriod")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ConsumptionType
     private $mainPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @var array<AllowanceCharge>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class ConsumptionType
     private $allowanceCharge;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @var array<TaxTotal>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class ConsumptionType
     private $taxTotal;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterSupply|null
+     * @var EnergyWaterSupply|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterSupply")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class ConsumptionType
     private $energyWaterSupply;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupply|null
+     * @var TelecommunicationsSupply|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupply")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class ConsumptionType
     private $telecommunicationsSupply;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal|null
+     * @var LegalMonetaryTotal|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class ConsumptionType
     private $legalMonetaryTotal;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode|null
+     * @return UtilityStatementTypeCode|null
      */
     public function getUtilityStatementTypeCode(): ?UtilityStatementTypeCode
     {
@@ -98,7 +98,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode
+     * @return UtilityStatementTypeCode
      */
     public function getUtilityStatementTypeCodeWithCreate(): UtilityStatementTypeCode
     {
@@ -108,7 +108,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode|null $utilityStatementTypeCode
+     * @param UtilityStatementTypeCode|null $utilityStatementTypeCode
      * @return self
      */
     public function setUtilityStatementTypeCode(?UtilityStatementTypeCode $utilityStatementTypeCode = null): self
@@ -129,7 +129,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MainPeriod|null
+     * @return MainPeriod|null
      */
     public function getMainPeriod(): ?MainPeriod
     {
@@ -137,7 +137,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MainPeriod
+     * @return MainPeriod
      */
     public function getMainPeriodWithCreate(): MainPeriod
     {
@@ -147,7 +147,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MainPeriod|null $mainPeriod
+     * @param MainPeriod|null $mainPeriod
      * @return self
      */
     public function setMainPeriod(?MainPeriod $mainPeriod = null): self
@@ -168,7 +168,7 @@ class ConsumptionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null
+     * @return array<AllowanceCharge>|null
      */
     public function getAllowanceCharge(): ?array
     {
@@ -176,7 +176,7 @@ class ConsumptionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>|null $allowanceCharge
+     * @param array<AllowanceCharge>|null $allowanceCharge
      * @return self
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): self
@@ -207,7 +207,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -222,7 +222,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge|null
+     * @return AllowanceCharge|null
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -237,7 +237,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -248,7 +248,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -258,7 +258,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge $allowanceCharge
+     * @param AllowanceCharge $allowanceCharge
      * @return self
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
@@ -273,7 +273,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+     * @return AllowanceCharge
      */
     public function addOnceToAllowanceChargeWithCreate(): AllowanceCharge
     {
@@ -289,7 +289,7 @@ class ConsumptionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null
+     * @return array<TaxTotal>|null
      */
     public function getTaxTotal(): ?array
     {
@@ -297,7 +297,7 @@ class ConsumptionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>|null $taxTotal
+     * @param array<TaxTotal>|null $taxTotal
      * @return self
      */
     public function setTaxTotal(?array $taxTotal = null): self
@@ -328,7 +328,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -343,7 +343,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -358,7 +358,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addToTaxTotal(TaxTotal $taxTotal): self
@@ -369,7 +369,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addToTaxTotalWithCreate(): TaxTotal
     {
@@ -379,7 +379,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal $taxTotal
+     * @param TaxTotal $taxTotal
      * @return self
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): self
@@ -394,7 +394,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal
+     * @return TaxTotal
      */
     public function addOnceToTaxTotalWithCreate(): TaxTotal
     {
@@ -410,7 +410,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterSupply|null
+     * @return EnergyWaterSupply|null
      */
     public function getEnergyWaterSupply(): ?EnergyWaterSupply
     {
@@ -418,7 +418,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterSupply
+     * @return EnergyWaterSupply
      */
     public function getEnergyWaterSupplyWithCreate(): EnergyWaterSupply
     {
@@ -428,7 +428,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterSupply|null $energyWaterSupply
+     * @param EnergyWaterSupply|null $energyWaterSupply
      * @return self
      */
     public function setEnergyWaterSupply(?EnergyWaterSupply $energyWaterSupply = null): self
@@ -449,7 +449,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupply|null
+     * @return TelecommunicationsSupply|null
      */
     public function getTelecommunicationsSupply(): ?TelecommunicationsSupply
     {
@@ -457,7 +457,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupply
+     * @return TelecommunicationsSupply
      */
     public function getTelecommunicationsSupplyWithCreate(): TelecommunicationsSupply
     {
@@ -467,7 +467,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupply|null $telecommunicationsSupply
+     * @param TelecommunicationsSupply|null $telecommunicationsSupply
      * @return self
      */
     public function setTelecommunicationsSupply(?TelecommunicationsSupply $telecommunicationsSupply = null): self
@@ -488,7 +488,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal|null
+     * @return LegalMonetaryTotal|null
      */
     public function getLegalMonetaryTotal(): ?LegalMonetaryTotal
     {
@@ -496,7 +496,7 @@ class ConsumptionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal
+     * @return LegalMonetaryTotal
      */
     public function getLegalMonetaryTotalWithCreate(): LegalMonetaryTotal
     {
@@ -506,7 +506,7 @@ class ConsumptionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal|null $legalMonetaryTotal
+     * @param LegalMonetaryTotal|null $legalMonetaryTotal
      * @return self
      */
     public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): self

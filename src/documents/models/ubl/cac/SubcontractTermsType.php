@@ -16,7 +16,7 @@ class SubcontractTermsType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Rate|null
+     * @var Rate|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Rate")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class SubcontractTermsType
     private $unknownPriceIndicator;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class SubcontractTermsType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @var Amount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class SubcontractTermsType
     private $amount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode|null
+     * @var SubcontractingConditionsCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class SubcontractTermsType
     private $subcontractingConditionsCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent|null
+     * @var MaximumPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class SubcontractTermsType
     private $maximumPercent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent|null
+     * @var MinimumPercent|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class SubcontractTermsType
     private $minimumPercent;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Rate|null
+     * @return Rate|null
      */
     public function getRate(): ?Rate
     {
@@ -102,7 +102,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Rate
+     * @return Rate
      */
     public function getRateWithCreate(): Rate
     {
@@ -112,7 +112,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Rate|null $rate
+     * @param Rate|null $rate
      * @return self
      */
     public function setRate(?Rate $rate = null): self
@@ -162,7 +162,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -170,7 +170,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -201,7 +201,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -216,7 +216,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -231,7 +231,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -242,7 +242,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -252,7 +252,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -267,7 +267,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -283,7 +283,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null
+     * @return Amount|null
      */
     public function getAmount(): ?Amount
     {
@@ -291,7 +291,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount
+     * @return Amount
      */
     public function getAmountWithCreate(): Amount
     {
@@ -301,7 +301,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Amount|null $amount
+     * @param Amount|null $amount
      * @return self
      */
     public function setAmount(?Amount $amount = null): self
@@ -322,7 +322,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode|null
+     * @return SubcontractingConditionsCode|null
      */
     public function getSubcontractingConditionsCode(): ?SubcontractingConditionsCode
     {
@@ -330,7 +330,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode
+     * @return SubcontractingConditionsCode
      */
     public function getSubcontractingConditionsCodeWithCreate(): SubcontractingConditionsCode
     {
@@ -340,7 +340,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode|null $subcontractingConditionsCode
+     * @param SubcontractingConditionsCode|null $subcontractingConditionsCode
      * @return self
      */
     public function setSubcontractingConditionsCode(
@@ -362,7 +362,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent|null
+     * @return MaximumPercent|null
      */
     public function getMaximumPercent(): ?MaximumPercent
     {
@@ -370,7 +370,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent
+     * @return MaximumPercent
      */
     public function getMaximumPercentWithCreate(): MaximumPercent
     {
@@ -380,7 +380,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent|null $maximumPercent
+     * @param MaximumPercent|null $maximumPercent
      * @return self
      */
     public function setMaximumPercent(?MaximumPercent $maximumPercent = null): self
@@ -401,7 +401,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent|null
+     * @return MinimumPercent|null
      */
     public function getMinimumPercent(): ?MinimumPercent
     {
@@ -409,7 +409,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent
+     * @return MinimumPercent
      */
     public function getMinimumPercentWithCreate(): MinimumPercent
     {
@@ -419,7 +419,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent|null $minimumPercent
+     * @param MinimumPercent|null $minimumPercent
      * @return self
      */
     public function setMinimumPercent(?MinimumPercent $minimumPercent = null): self

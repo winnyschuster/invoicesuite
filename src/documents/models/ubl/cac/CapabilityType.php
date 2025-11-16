@@ -14,7 +14,7 @@ class CapabilityType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode|null
+     * @var CapabilityTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class CapabilityType
     private $capabilityTypeCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class CapabilityType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount|null
+     * @var ValueAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class CapabilityType
     private $valueAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null
+     * @var ValueQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class CapabilityType
     private $valueQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null
+     * @var array<EvidenceSupplied>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class CapabilityType
     private $evidenceSupplied;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @var ValidityPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class CapabilityType
     private $validityPeriod;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode|null
+     * @return CapabilityTypeCode|null
      */
     public function getCapabilityTypeCode(): ?CapabilityTypeCode
     {
@@ -90,7 +90,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode
+     * @return CapabilityTypeCode
      */
     public function getCapabilityTypeCodeWithCreate(): CapabilityTypeCode
     {
@@ -100,7 +100,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode|null $capabilityTypeCode
+     * @param CapabilityTypeCode|null $capabilityTypeCode
      * @return self
      */
     public function setCapabilityTypeCode(?CapabilityTypeCode $capabilityTypeCode = null): self
@@ -121,7 +121,7 @@ class CapabilityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -129,7 +129,7 @@ class CapabilityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -160,7 +160,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -175,7 +175,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -190,7 +190,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -201,7 +201,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -211,7 +211,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -226,7 +226,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -242,7 +242,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount|null
+     * @return ValueAmount|null
      */
     public function getValueAmount(): ?ValueAmount
     {
@@ -250,7 +250,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount
+     * @return ValueAmount
      */
     public function getValueAmountWithCreate(): ValueAmount
     {
@@ -260,7 +260,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount|null $valueAmount
+     * @param ValueAmount|null $valueAmount
      * @return self
      */
     public function setValueAmount(?ValueAmount $valueAmount = null): self
@@ -281,7 +281,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null
+     * @return ValueQuantity|null
      */
     public function getValueQuantity(): ?ValueQuantity
     {
@@ -289,7 +289,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity
+     * @return ValueQuantity
      */
     public function getValueQuantityWithCreate(): ValueQuantity
     {
@@ -299,7 +299,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity|null $valueQuantity
+     * @param ValueQuantity|null $valueQuantity
      * @return self
      */
     public function setValueQuantity(?ValueQuantity $valueQuantity = null): self
@@ -320,7 +320,7 @@ class CapabilityType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null
+     * @return array<EvidenceSupplied>|null
      */
     public function getEvidenceSupplied(): ?array
     {
@@ -328,7 +328,7 @@ class CapabilityType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>|null $evidenceSupplied
+     * @param array<EvidenceSupplied>|null $evidenceSupplied
      * @return self
      */
     public function setEvidenceSupplied(?array $evidenceSupplied = null): self
@@ -359,7 +359,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied|null
+     * @return EvidenceSupplied|null
      */
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -374,7 +374,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied|null
+     * @return EvidenceSupplied|null
      */
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -389,7 +389,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied $evidenceSupplied
+     * @param EvidenceSupplied $evidenceSupplied
      * @return self
      */
     public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
@@ -400,7 +400,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied
+     * @return EvidenceSupplied
      */
     public function addToEvidenceSuppliedWithCreate(): EvidenceSupplied
     {
@@ -410,7 +410,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied $evidenceSupplied
+     * @param EvidenceSupplied $evidenceSupplied
      * @return self
      */
     public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
@@ -425,7 +425,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied
+     * @return EvidenceSupplied
      */
     public function addOnceToEvidenceSuppliedWithCreate(): EvidenceSupplied
     {
@@ -441,7 +441,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null
+     * @return ValidityPeriod|null
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -449,7 +449,7 @@ class CapabilityType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod
+     * @return ValidityPeriod
      */
     public function getValidityPeriodWithCreate(): ValidityPeriod
     {
@@ -459,7 +459,7 @@ class CapabilityType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod|null $validityPeriod
+     * @param ValidityPeriod|null $validityPeriod
      * @return self
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self

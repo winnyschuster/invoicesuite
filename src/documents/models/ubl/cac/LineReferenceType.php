@@ -13,7 +13,7 @@ class LineReferenceType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID|null
+     * @var LineID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class LineReferenceType
     private $lineID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @var UUID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class LineReferenceType
     private $uUID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null
+     * @var LineStatusCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class LineReferenceType
     private $lineStatusCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @var DocumentReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class LineReferenceType
     private $documentReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID|null
+     * @return LineID|null
      */
     public function getLineID(): ?LineID
     {
@@ -65,7 +65,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID
+     * @return LineID
      */
     public function getLineIDWithCreate(): LineID
     {
@@ -75,7 +75,7 @@ class LineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineID|null $lineID
+     * @param LineID|null $lineID
      * @return self
      */
     public function setLineID(?LineID $lineID = null): self
@@ -96,7 +96,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null
+     * @return UUID|null
      */
     public function getUUID(): ?UUID
     {
@@ -104,7 +104,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID
+     * @return UUID
      */
     public function getUUIDWithCreate(): UUID
     {
@@ -114,7 +114,7 @@ class LineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\UUID|null $uUID
+     * @param UUID|null $uUID
      * @return self
      */
     public function setUUID(?UUID $uUID = null): self
@@ -135,7 +135,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null
+     * @return LineStatusCode|null
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -143,7 +143,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode
+     * @return LineStatusCode
      */
     public function getLineStatusCodeWithCreate(): LineStatusCode
     {
@@ -153,7 +153,7 @@ class LineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode|null $lineStatusCode
+     * @param LineStatusCode|null $lineStatusCode
      * @return self
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
@@ -174,7 +174,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null
+     * @return DocumentReference|null
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -182,7 +182,7 @@ class LineReferenceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference
+     * @return DocumentReference
      */
     public function getDocumentReferenceWithCreate(): DocumentReference
     {
@@ -192,7 +192,7 @@ class LineReferenceType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference|null $documentReference
+     * @param DocumentReference|null $documentReference
      * @return self
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): self

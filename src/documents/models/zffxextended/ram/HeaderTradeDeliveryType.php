@@ -10,7 +10,7 @@ class HeaderTradeDeliveryType
     use HandlesObjectFlags;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>|null
+     * @var array<LogisticsTransportMovementType>|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class HeaderTradeDeliveryType
     private $relatedSupplyChainConsignment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null
+     * @var TradePartyType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class HeaderTradeDeliveryType
     private $shipToTradeParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null
+     * @var TradePartyType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class HeaderTradeDeliveryType
     private $ultimateShipToTradeParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null
+     * @var TradePartyType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class HeaderTradeDeliveryType
     private $shipFromTradeParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\SupplyChainEventType|null
+     * @var SupplyChainEventType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\SupplyChainEventType")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class HeaderTradeDeliveryType
     private $actualDeliverySupplyChainEvent;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class HeaderTradeDeliveryType
     private $despatchAdviceReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class HeaderTradeDeliveryType
     private $receivingAdviceReferencedDocument;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @var ReferencedDocumentType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class HeaderTradeDeliveryType
     private $deliveryNoteReferencedDocument;
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>|null
+     * @return array<LogisticsTransportMovementType>|null
      */
     public function getRelatedSupplyChainConsignment(): ?array
     {
@@ -107,7 +107,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>|null $relatedSupplyChainConsignment
+     * @param array<LogisticsTransportMovementType>|null $relatedSupplyChainConsignment
      * @return self
      */
     public function setRelatedSupplyChainConsignment(?array $relatedSupplyChainConsignment = null): self
@@ -138,7 +138,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType $relatedSupplyChainConsignment
+     * @param LogisticsTransportMovementType $relatedSupplyChainConsignment
      * @return self
      */
     public function addToRelatedSupplyChainConsignment(
@@ -150,7 +150,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType
+     * @return LogisticsTransportMovementType
      */
     public function addToRelatedSupplyChainConsignmentWithCreate(): LogisticsTransportMovementType
     {
@@ -160,7 +160,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType $relatedSupplyChainConsignment
+     * @param LogisticsTransportMovementType $relatedSupplyChainConsignment
      * @return self
      */
     public function addOnceToRelatedSupplyChainConsignment(
@@ -176,7 +176,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType
+     * @return LogisticsTransportMovementType
      */
     public function addOnceToRelatedSupplyChainConsignmentWithCreate(): LogisticsTransportMovementType
     {
@@ -192,7 +192,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null
+     * @return TradePartyType|null
      */
     public function getShipToTradeParty(): ?TradePartyType
     {
@@ -200,7 +200,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType
+     * @return TradePartyType
      */
     public function getShipToTradePartyWithCreate(): TradePartyType
     {
@@ -210,7 +210,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null $shipToTradeParty
+     * @param TradePartyType|null $shipToTradeParty
      * @return self
      */
     public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): self
@@ -231,7 +231,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null
+     * @return TradePartyType|null
      */
     public function getUltimateShipToTradeParty(): ?TradePartyType
     {
@@ -239,7 +239,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType
+     * @return TradePartyType
      */
     public function getUltimateShipToTradePartyWithCreate(): TradePartyType
     {
@@ -249,7 +249,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null $ultimateShipToTradeParty
+     * @param TradePartyType|null $ultimateShipToTradeParty
      * @return self
      */
     public function setUltimateShipToTradeParty(?TradePartyType $ultimateShipToTradeParty = null): self
@@ -270,7 +270,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null
+     * @return TradePartyType|null
      */
     public function getShipFromTradeParty(): ?TradePartyType
     {
@@ -278,7 +278,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType
+     * @return TradePartyType
      */
     public function getShipFromTradePartyWithCreate(): TradePartyType
     {
@@ -288,7 +288,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType|null $shipFromTradeParty
+     * @param TradePartyType|null $shipFromTradeParty
      * @return self
      */
     public function setShipFromTradeParty(?TradePartyType $shipFromTradeParty = null): self
@@ -309,7 +309,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\SupplyChainEventType|null
+     * @return SupplyChainEventType|null
      */
     public function getActualDeliverySupplyChainEvent(): ?SupplyChainEventType
     {
@@ -317,7 +317,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\SupplyChainEventType
+     * @return SupplyChainEventType
      */
     public function getActualDeliverySupplyChainEventWithCreate(): SupplyChainEventType
     {
@@ -327,7 +327,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\SupplyChainEventType|null $actualDeliverySupplyChainEvent
+     * @param SupplyChainEventType|null $actualDeliverySupplyChainEvent
      * @return self
      */
     public function setActualDeliverySupplyChainEvent(
@@ -349,7 +349,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getDespatchAdviceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -357,7 +357,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getDespatchAdviceReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -367,7 +367,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $despatchAdviceReferencedDocument
+     * @param ReferencedDocumentType|null $despatchAdviceReferencedDocument
      * @return self
      */
     public function setDespatchAdviceReferencedDocument(
@@ -389,7 +389,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getReceivingAdviceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -397,7 +397,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getReceivingAdviceReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -407,7 +407,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $receivingAdviceReferencedDocument
+     * @param ReferencedDocumentType|null $receivingAdviceReferencedDocument
      * @return self
      */
     public function setReceivingAdviceReferencedDocument(
@@ -429,7 +429,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null
+     * @return ReferencedDocumentType|null
      */
     public function getDeliveryNoteReferencedDocument(): ?ReferencedDocumentType
     {
@@ -437,7 +437,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType
+     * @return ReferencedDocumentType
      */
     public function getDeliveryNoteReferencedDocumentWithCreate(): ReferencedDocumentType
     {
@@ -447,7 +447,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType|null $deliveryNoteReferencedDocument
+     * @param ReferencedDocumentType|null $deliveryNoteReferencedDocument
      * @return self
      */
     public function setDeliveryNoteReferencedDocument(

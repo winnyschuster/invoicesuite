@@ -12,7 +12,7 @@ class ReferencedDocumentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ReferencedDocumentType
     private $issuerAssignedID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\FormattedDateTimeType|null
+     * @var FormattedDateTimeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\qdt\FormattedDateTimeType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ReferencedDocumentType
     private $formattedIssueDateTime;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null
+     * @return IDType|null
      */
     public function getIssuerAssignedID(): ?IDType
     {
@@ -42,7 +42,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType
+     * @return IDType
      */
     public function getIssuerAssignedIDWithCreate(): IDType
     {
@@ -52,7 +52,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType|null $issuerAssignedID
+     * @param IDType|null $issuerAssignedID
      * @return self
      */
     public function setIssuerAssignedID(?IDType $issuerAssignedID = null): self
@@ -73,7 +73,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\FormattedDateTimeType|null
+     * @return FormattedDateTimeType|null
      */
     public function getFormattedIssueDateTime(): ?FormattedDateTimeType
     {
@@ -81,7 +81,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\FormattedDateTimeType
+     * @return FormattedDateTimeType
      */
     public function getFormattedIssueDateTimeWithCreate(): FormattedDateTimeType
     {
@@ -91,7 +91,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxbasic\qdt\FormattedDateTimeType|null $formattedIssueDateTime
+     * @param FormattedDateTimeType|null $formattedIssueDateTime
      * @return self
      */
     public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): self

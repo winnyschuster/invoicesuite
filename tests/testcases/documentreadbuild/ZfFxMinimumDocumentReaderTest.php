@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentreadbuild;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use DateTimeInterface;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
@@ -76,7 +77,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
     {
         self::$document->getDocumentCompleteDate($newCompleteDate);
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newCompleteDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newCompleteDate);
     }
 
     public function testGetDocumentCurrency(): void
@@ -134,8 +135,8 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         self::$document->getDocumentBillingPeriod($newStartDate, $newEndDate, $newDescription);
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newStartDate);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newEndDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newStartDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newEndDate);
         $this->assertSame('', $newDescription);
 
         $this->assertFalse(self::$document->nextDocumentBillingPeriod());
@@ -160,7 +161,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentSellerOrderReference());
     }
@@ -172,7 +173,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('BO-1', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentBuyerOrderReference());
 
@@ -188,7 +189,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentQuotationReference());
     }
@@ -200,7 +201,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentContractReference());
     }
@@ -219,11 +220,11 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         );
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame('', $newTypeCode);
         $this->assertSame('', $newReferenceTypeCode);
         $this->assertSame('', $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentAdditionalReference());
     }
@@ -239,7 +240,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         );
 
         $this->assertSame("", $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
 
         $this->assertFalse(self::$document->nextDocumentInvoiceReference());
@@ -264,14 +265,14 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
 
         self::$document->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReference());
     }
@@ -283,7 +284,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentDespatchAdviceReference());
     }
@@ -295,7 +296,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentReceivingAdviceReference());
     }
@@ -307,7 +308,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         self::$document->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('', $newReferenceNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentDeliveryNoteReference());
     }
@@ -316,7 +317,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
     {
         self::$document->getDocumentSupplyChainEvent($newDate);
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newDate);
     }
 
     public function testGetDocumentBuyerReference(): void
@@ -1877,7 +1878,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionSellerOrderReference());
 
@@ -1902,7 +1903,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionBuyerOrderReference());
 
@@ -1927,7 +1928,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionQuotationReference());
 
@@ -1952,7 +1953,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionContractReference());
 
@@ -1981,11 +1982,11 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
         $this->assertSame("", $newReferenceTypeCode);
         $this->assertSame("", $newDescription);
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\utils\InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
+        $this->assertNotInstanceOf(InvoiceSuiteAttachment::class, $newInvoiceSuiteAttachment);
 
         $this->assertFalse(self::$document->nextDocumentPositionAdditionalReference());
 
@@ -2010,7 +2011,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionUltimateCustomerOrderReference());
 
@@ -2035,7 +2036,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDespatchAdviceReference());
 
@@ -2060,7 +2061,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionReceivingAdviceReference());
 
@@ -2085,7 +2086,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(self::$document->nextDocumentPositionDeliveryNoteReference());
 
@@ -2111,7 +2112,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         $this->assertSame("", $newReferenceNumber);
         $this->assertSame("", $newReferenceLineNumber);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newReferenceDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame("", $newTypeCode);
 
         $this->assertFalse(self::$document->nextDocumentPositionInvoiceReference());
@@ -2484,7 +2485,7 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
 
         self::$document->getDocumentPositionSupplyChainEvent($newDate);
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newDate);
 
         // Second position
 
@@ -2505,8 +2506,8 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
             $newDescription
         );
 
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newStartDate);
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $newEndDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newStartDate);
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newEndDate);
         $this->assertSame("", $newDescription);
 
         $this->assertFalse(self::$document->nextDocumentPositionBillingPeriod());

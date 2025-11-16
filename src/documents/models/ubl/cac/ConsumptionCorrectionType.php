@@ -22,7 +22,7 @@ class ConsumptionCorrectionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionType|null
+     * @var CorrectionType|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ConsumptionCorrectionType
     private $correctionType;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionTypeCode|null
+     * @var CorrectionTypeCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionTypeCode")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class ConsumptionCorrectionType
     private $correctionTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null
+     * @var MeterNumber|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class ConsumptionCorrectionType
     private $meterNumber;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity|null
+     * @var GasPressureQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class ConsumptionCorrectionType
     private $gasPressureQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity|null
+     * @var ActualTemperatureReductionQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class ConsumptionCorrectionType
     private $actualTemperatureReductionQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity|null
+     * @var NormalTemperatureReductionQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class ConsumptionCorrectionType
     private $normalTemperatureReductionQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReductionQuantity|null
+     * @var DifferenceTemperatureReductionQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReductionQuantity")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class ConsumptionCorrectionType
     private $differenceTemperatureReductionQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class ConsumptionCorrectionType
     private $description;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionUnitAmount|null
+     * @var CorrectionUnitAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionUnitAmount")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class ConsumptionCorrectionType
     private $correctionUnitAmount;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity|null
+     * @var ConsumptionEnergyQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class ConsumptionCorrectionType
     private $consumptionEnergyQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionWaterQuantity|null
+     * @var ConsumptionWaterQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionWaterQuantity")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ConsumptionCorrectionType
     private $consumptionWaterQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionAmount|null
+     * @var CorrectionAmount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionAmount")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class ConsumptionCorrectionType
     private $correctionAmount;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionType|null
+     * @return CorrectionType|null
      */
     public function getCorrectionType(): ?CorrectionType
     {
@@ -163,7 +163,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionType
+     * @return CorrectionType
      */
     public function getCorrectionTypeWithCreate(): CorrectionType
     {
@@ -173,7 +173,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionType|null $correctionType
+     * @param CorrectionType|null $correctionType
      * @return self
      */
     public function setCorrectionType(?CorrectionType $correctionType = null): self
@@ -194,7 +194,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionTypeCode|null
+     * @return CorrectionTypeCode|null
      */
     public function getCorrectionTypeCode(): ?CorrectionTypeCode
     {
@@ -202,7 +202,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionTypeCode
+     * @return CorrectionTypeCode
      */
     public function getCorrectionTypeCodeWithCreate(): CorrectionTypeCode
     {
@@ -212,7 +212,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionTypeCode|null $correctionTypeCode
+     * @param CorrectionTypeCode|null $correctionTypeCode
      * @return self
      */
     public function setCorrectionTypeCode(?CorrectionTypeCode $correctionTypeCode = null): self
@@ -233,7 +233,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null
+     * @return MeterNumber|null
      */
     public function getMeterNumber(): ?MeterNumber
     {
@@ -241,7 +241,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber
+     * @return MeterNumber
      */
     public function getMeterNumberWithCreate(): MeterNumber
     {
@@ -251,7 +251,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber|null $meterNumber
+     * @param MeterNumber|null $meterNumber
      * @return self
      */
     public function setMeterNumber(?MeterNumber $meterNumber = null): self
@@ -272,7 +272,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity|null
+     * @return GasPressureQuantity|null
      */
     public function getGasPressureQuantity(): ?GasPressureQuantity
     {
@@ -280,7 +280,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity
+     * @return GasPressureQuantity
      */
     public function getGasPressureQuantityWithCreate(): GasPressureQuantity
     {
@@ -290,7 +290,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity|null $gasPressureQuantity
+     * @param GasPressureQuantity|null $gasPressureQuantity
      * @return self
      */
     public function setGasPressureQuantity(?GasPressureQuantity $gasPressureQuantity = null): self
@@ -311,7 +311,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity|null
+     * @return ActualTemperatureReductionQuantity|null
      */
     public function getActualTemperatureReductionQuantity(): ?ActualTemperatureReductionQuantity
     {
@@ -319,7 +319,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity
+     * @return ActualTemperatureReductionQuantity
      */
     public function getActualTemperatureReductionQuantityWithCreate(): ActualTemperatureReductionQuantity
     {
@@ -329,7 +329,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity|null $actualTemperatureReductionQuantity
+     * @param ActualTemperatureReductionQuantity|null $actualTemperatureReductionQuantity
      * @return self
      */
     public function setActualTemperatureReductionQuantity(
@@ -351,7 +351,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity|null
+     * @return NormalTemperatureReductionQuantity|null
      */
     public function getNormalTemperatureReductionQuantity(): ?NormalTemperatureReductionQuantity
     {
@@ -359,7 +359,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity
+     * @return NormalTemperatureReductionQuantity
      */
     public function getNormalTemperatureReductionQuantityWithCreate(): NormalTemperatureReductionQuantity
     {
@@ -369,7 +369,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity|null $normalTemperatureReductionQuantity
+     * @param NormalTemperatureReductionQuantity|null $normalTemperatureReductionQuantity
      * @return self
      */
     public function setNormalTemperatureReductionQuantity(
@@ -391,7 +391,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReductionQuantity|null
+     * @return DifferenceTemperatureReductionQuantity|null
      */
     public function getDifferenceTemperatureReductionQuantity(): ?DifferenceTemperatureReductionQuantity
     {
@@ -399,7 +399,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReductionQuantity
+     * @return DifferenceTemperatureReductionQuantity
      */
     public function getDifferenceTemperatureReductionQuantityWithCreate(): DifferenceTemperatureReductionQuantity
     {
@@ -409,7 +409,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReductionQuantity|null $differenceTemperatureReductionQuantity
+     * @param DifferenceTemperatureReductionQuantity|null $differenceTemperatureReductionQuantity
      * @return self
      */
     public function setDifferenceTemperatureReductionQuantity(
@@ -431,7 +431,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -439,7 +439,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -470,7 +470,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -485,7 +485,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -500,7 +500,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -511,7 +511,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -521,7 +521,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -536,7 +536,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {
@@ -552,7 +552,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionUnitAmount|null
+     * @return CorrectionUnitAmount|null
      */
     public function getCorrectionUnitAmount(): ?CorrectionUnitAmount
     {
@@ -560,7 +560,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionUnitAmount
+     * @return CorrectionUnitAmount
      */
     public function getCorrectionUnitAmountWithCreate(): CorrectionUnitAmount
     {
@@ -570,7 +570,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionUnitAmount|null $correctionUnitAmount
+     * @param CorrectionUnitAmount|null $correctionUnitAmount
      * @return self
      */
     public function setCorrectionUnitAmount(?CorrectionUnitAmount $correctionUnitAmount = null): self
@@ -591,7 +591,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity|null
+     * @return ConsumptionEnergyQuantity|null
      */
     public function getConsumptionEnergyQuantity(): ?ConsumptionEnergyQuantity
     {
@@ -599,7 +599,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity
+     * @return ConsumptionEnergyQuantity
      */
     public function getConsumptionEnergyQuantityWithCreate(): ConsumptionEnergyQuantity
     {
@@ -609,7 +609,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity|null $consumptionEnergyQuantity
+     * @param ConsumptionEnergyQuantity|null $consumptionEnergyQuantity
      * @return self
      */
     public function setConsumptionEnergyQuantity(?ConsumptionEnergyQuantity $consumptionEnergyQuantity = null): self
@@ -630,7 +630,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionWaterQuantity|null
+     * @return ConsumptionWaterQuantity|null
      */
     public function getConsumptionWaterQuantity(): ?ConsumptionWaterQuantity
     {
@@ -638,7 +638,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionWaterQuantity
+     * @return ConsumptionWaterQuantity
      */
     public function getConsumptionWaterQuantityWithCreate(): ConsumptionWaterQuantity
     {
@@ -648,7 +648,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionWaterQuantity|null $consumptionWaterQuantity
+     * @param ConsumptionWaterQuantity|null $consumptionWaterQuantity
      * @return self
      */
     public function setConsumptionWaterQuantity(?ConsumptionWaterQuantity $consumptionWaterQuantity = null): self
@@ -669,7 +669,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionAmount|null
+     * @return CorrectionAmount|null
      */
     public function getCorrectionAmount(): ?CorrectionAmount
     {
@@ -677,7 +677,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionAmount
+     * @return CorrectionAmount
      */
     public function getCorrectionAmountWithCreate(): CorrectionAmount
     {
@@ -687,7 +687,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionAmount|null $correctionAmount
+     * @param CorrectionAmount|null $correctionAmount
      * @return self
      */
     public function setCorrectionAmount(?CorrectionAmount $correctionAmount = null): self

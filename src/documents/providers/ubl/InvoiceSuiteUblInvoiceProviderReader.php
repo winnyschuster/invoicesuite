@@ -9,6 +9,33 @@
 
 namespace horstoeko\invoicesuite\documents\providers\ubl;
 
+use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
+use horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID;
+use horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\ProjectReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\DespatchDocumentReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptDocumentReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme;
+use horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress;
+use horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity;
+use horstoeko\invoicesuite\documents\models\ubl\cac\Contact;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID;
+use horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans;
+use horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms;
+use horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal;
+use horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal;
+use horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge;
+use horstoeko\invoicesuite\documents\models\ubl\cac\Item;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
+use horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty;
+use horstoeko\invoicesuite\documents\models\ubl\cac\CommodityClassification;
+use horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference;
+use horstoeko\invoicesuite\documents\models\ubl\cac\ClassifiedTaxCategory;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode;
 use DateTime;
 use DateTimeInterface;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatReader;
@@ -2851,12 +2878,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubjectCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>
+         * @var array<Note>
          */
         $documentNotes = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getNote() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+         * @var Note
          */
         $documentNote = $documentNotes[InvoiceSuitePointerUtils::getValue('documentnote')];
 
@@ -2915,12 +2942,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newDescription,
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>
+         * @var array<InvoicePeriod>
          */
         $billingPeriods = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getInvoicePeriod() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod
+         * @var InvoicePeriod
          */
         $billingPeriod = $billingPeriods[InvoiceSuitePointerUtils::getValue('documentbillingperiod')];
 
@@ -2978,12 +3005,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newAccountId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost>
+         * @var array<AccountingCost>
          */
         $postingReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCost() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost
+         * @var AccountingCost
          */
         $postingReference = $postingReferences[InvoiceSuitePointerUtils::getValue('documentpostingreference')];
 
@@ -3042,12 +3069,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID>
+         * @var array<SalesOrderID>
          */
         $documentSellerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getOrderReference()?->getSalesOrderID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID
+         * @var SalesOrderID
          */
         $documentSellerOrderReference = $documentSellerOrderReferences[InvoiceSuitePointerUtils::getValue('documentsellerorderreference')];
 
@@ -3102,12 +3129,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference>
+         * @var array<OrderReference>
          */
         $documentBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getOrderReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference
+         * @var OrderReference
          */
         $documentBuyerOrderReference = $documentBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentbuyerorderreference')];
 
@@ -3120,7 +3147,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Helper function for getting associated quotations from additional document references
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>
+     * @return array<AdditionalDocumentReference>
      */
     private function resolveQuotationReferences(): array
     {
@@ -3180,12 +3207,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>
+         * @var array<AdditionalDocumentReference>
          */
         $documentQuotationReferences = InvoiceSuiteArrayUtils::ensure($this->resolveQuotationReferences());
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference
+         * @var AdditionalDocumentReference
          */
         $documentQuotationReference = $documentQuotationReferences[InvoiceSuitePointerUtils::getValue('documentquotationreference')];
 
@@ -3240,12 +3267,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>
+         * @var array<ContractDocumentReference>
          */
         $documentContractReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getContractDocumentReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference
+         * @var ContractDocumentReference
          */
         $documentContractReference = $documentContractReferences[InvoiceSuitePointerUtils::getValue('documentcontractreference')];
 
@@ -3312,12 +3339,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>
+         * @var array<AdditionalDocumentReference>
          */
         $documentAdditionalReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAdditionalDocumentReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference
+         * @var AdditionalDocumentReference
          */
         $documentAdditionalReference = $documentAdditionalReferences[InvoiceSuitePointerUtils::getValue('documentadditionalreference')];
 
@@ -3381,12 +3408,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTypeCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>
+         * @var array<BillingReference>
          */
         $documentInvoiceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getBillingReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference
+         * @var BillingReference
          */
         $documentInvoiceReference = $documentInvoiceReferences[InvoiceSuitePointerUtils::getValue('documentinvoicereference')];
 
@@ -3442,12 +3469,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ProjectReference>
+         * @var array<ProjectReference>
          */
         $documentProjectReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getProjectReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ProjectReference
+         * @var ProjectReference
          */
         $documentProjectReference = $documentProjectReferences[InvoiceSuitePointerUtils::getValue('documentprojectreference')];
 
@@ -3460,7 +3487,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get the ultimate customer order references from additional documents filtered by type code 220
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>
+     * @return array<AdditionalDocumentReference>
      */
     private function resolveDocumentUltimateCustomerOrderReferences(): array
     {
@@ -3519,12 +3546,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>
+         * @var array<AdditionalDocumentReference>
          */
         $documentUltimateCustomerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->resolveDocumentUltimateCustomerOrderReferences());
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference
+         * @var AdditionalDocumentReference
          */
         $documentUltimateCustomerOrderReference = $documentUltimateCustomerOrderReferences[InvoiceSuitePointerUtils::getValue('documentultimatecustomerorderreference')];
 
@@ -3579,12 +3606,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DespatchDocumentReference>
+         * @var array<DespatchDocumentReference>
          */
         $documentDespatchAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getDespatchDocumentReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DespatchDocumentReference
+         * @var DespatchDocumentReference
          */
         $documentDespatchAdviceReference = $documentDespatchAdviceReferences[InvoiceSuitePointerUtils::getValue('documentdespatchadvicereference')];
 
@@ -3639,12 +3666,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptDocumentReference>
+         * @var array<ReceiptDocumentReference>
          */
         $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getReceiptDocumentReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptDocumentReference
+         * @var ReceiptDocumentReference
          */
         $documentReceivingAdviceReference = $documentReceivingAdviceReferences[InvoiceSuitePointerUtils::getValue('documentreceivingadvicereference')];
 
@@ -3767,7 +3794,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all seller/supplier IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentSellerIds(): array
     {
@@ -3820,12 +3847,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentSellerIds = $this->resolveDocumentSellerIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentSellerId = $documentSellerIds[InvoiceSuitePointerUtils::getValue('documentsellerid')];
 
@@ -3837,7 +3864,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all seller/supplier global IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentSellerGlobalIds(): array
     {
@@ -3893,12 +3920,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentSellerGlobalIds = $this->resolveDocumentSellerGlobalIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentSellerGlobalId = $documentSellerGlobalIds[InvoiceSuitePointerUtils::getValue('documentsellerglobalid')];
 
@@ -3953,12 +3980,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>
+         * @var array<PartyTaxScheme>
          */
         $documentSellerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+         * @var PartyTaxScheme
          */
         $documentSellerTaxRegistration = $documentSellerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentsellertaxregistration')];
 
@@ -4028,12 +4055,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress>
+         * @var array<PostalAddress>
          */
         $documentSellerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress
+         * @var PostalAddress
          */
         $documentSellerAddress = $documentSellerAddresses[InvoiceSuitePointerUtils::getValue('documentselleraddress')];
 
@@ -4096,12 +4123,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>
+         * @var array<PartyLegalEntity>
          */
         $documentSellerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity
+         * @var PartyLegalEntity
          */
         $documentSellerLegalOrganisation = $documentSellerLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentsellerlegalorganisation')];
 
@@ -4170,12 +4197,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Contact>
+         * @var array<Contact>
          */
         $documentSellerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contact
+         * @var Contact
          */
         $documentSellerContact = $documentSellerContacts[InvoiceSuitePointerUtils::getValue('documentsellercontact')];
 
@@ -4233,12 +4260,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID>
+         * @var array<EndpointID>
          */
         $documentSellerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID
+         * @var EndpointID
          */
         $documentSellerElectronicCommunication = $documentSellerElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentsellerecommunication')];
 
@@ -4280,7 +4307,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all buyer/customer IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentBuyerIds(): array
     {
@@ -4333,12 +4360,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentBuyerIds = $this->resolveDocumentBuyerIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentBuyerId = $documentBuyerIds[InvoiceSuitePointerUtils::getValue('documentbuyerid')];
 
@@ -4350,7 +4377,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all buyer/customer global IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentBuyerGlobalIds(): array
     {
@@ -4406,12 +4433,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentBuyerGlobalIds = $this->resolveDocumentBuyerGlobalIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentBuyerGlobalId = $documentBuyerGlobalIds[InvoiceSuitePointerUtils::getValue('documentbuyerglobalid')];
 
@@ -4466,12 +4493,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>
+         * @var array<PartyTaxScheme>
          */
         $documentBuyerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+         * @var PartyTaxScheme
          */
         $documentBuyerTaxRegistration = $documentBuyerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentbuyertaxregistration')];
 
@@ -4541,12 +4568,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress>
+         * @var array<PostalAddress>
          */
         $documentBuyerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress
+         * @var PostalAddress
          */
         $documentBuyerAddress = $documentBuyerAddresses[InvoiceSuitePointerUtils::getValue('documentbuyeraddress')];
 
@@ -4609,12 +4636,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>
+         * @var array<PartyLegalEntity>
          */
         $documentBuyerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity
+         * @var PartyLegalEntity
          */
         $documentBuyerLegalOrganisation = $documentBuyerLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentbuyerlegalorganisation')];
 
@@ -4683,12 +4710,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Contact>
+         * @var array<Contact>
          */
         $documentBuyerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contact
+         * @var Contact
          */
         $documentBuyerContact = $documentBuyerContacts[InvoiceSuitePointerUtils::getValue('documentbuyercontact')];
 
@@ -4746,12 +4773,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID>
+         * @var array<EndpointID>
          */
         $documentBuyerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID
+         * @var EndpointID
          */
         $documentBuyerElectronicCommunication = $documentBuyerElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentbuyerecommunication')];
 
@@ -4793,7 +4820,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all tax representative IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentTaxRepresentativeIds(): array
     {
@@ -4846,12 +4873,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentTaxRepresentativeIds = $this->resolveDocumentTaxRepresentativeIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
 
@@ -4863,7 +4890,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all tax representative global IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentTaxRepresentativeGlobalIds(): array
     {
@@ -4919,12 +4946,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentTaxRepresentativeGlobalIds = $this->resolveDocumentTaxRepresentativeGlobalIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
 
@@ -4979,12 +5006,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>
+         * @var array<PartyTaxScheme>
          */
         $documentTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+         * @var PartyTaxScheme
          */
         $documentTaxRepresentativeTaxRegistration = $documentTaxRepresentativeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativetaxregistration')];
 
@@ -5054,12 +5081,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress>
+         * @var array<PostalAddress>
          */
         $documentTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress
+         * @var PostalAddress
          */
         $documentTaxRepresentativeAddress = $documentTaxRepresentativeAddresses[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeaddress')];
 
@@ -5122,12 +5149,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>
+         * @var array<PartyLegalEntity>
          */
         $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity
+         * @var PartyLegalEntity
          */
         $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
 
@@ -5195,12 +5222,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Contact>
+         * @var array<Contact>
          */
         $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contact
+         * @var Contact
          */
         $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
 
@@ -5258,12 +5285,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID>
+         * @var array<EndpointID>
          */
         $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID
+         * @var EndpointID
          */
         $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
 
@@ -5654,7 +5681,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all buyer/customer IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentShipToIds(): array
     {
@@ -5707,12 +5734,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ID>
+         * @var array<ID>
          */
         $documentShipToIds = $this->resolveDocumentShipToIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+         * @var ID
          */
         $documentShipToId = $documentShipToIds[InvoiceSuitePointerUtils::getValue('documentshiptoid')];
 
@@ -5724,7 +5751,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all buyer/customer global IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentShipToGlobalIds(): array
     {
@@ -5780,12 +5807,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\ID>
+         * @var array<ID>
          */
         $documentShipToGlobalIds = $this->resolveDocumentShipToGlobalIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+         * @var ID
          */
         $documentShipToGlobalId = $documentShipToGlobalIds[InvoiceSuitePointerUtils::getValue('documentshiptoglobalid')];
 
@@ -5840,12 +5867,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>
+         * @var array<PartyTaxScheme>
          */
         $documentShipToTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->resolveFirstDocumentDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+         * @var PartyTaxScheme
          */
         $documentShipToTaxRegistration = $documentShipToTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentshiptotaxregistration')];
 
@@ -5915,12 +5942,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress>
+         * @var array<PostalAddress>
          */
         $documentShipToAddresses = InvoiceSuiteArrayUtils::ensure($this->resolveFirstDocumentDelivery()?->getDeliveryLocation()?->getAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress
+         * @var PostalAddress
          */
         $documentShipToAddress = $documentShipToAddresses[InvoiceSuitePointerUtils::getValue('documentshiptoaddress')];
 
@@ -7431,7 +7458,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all buyer/customer IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentPayeeIds(): array
     {
@@ -7484,12 +7511,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentPayeeIds = $this->resolveDocumentPayeeIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentPayeeId = $documentPayeeIds[InvoiceSuitePointerUtils::getValue('documentpayeeid')];
 
@@ -7501,7 +7528,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Get all buyer/customer global IDs
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentPayeeGlobalIds(): array
     {
@@ -7557,12 +7584,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newGlobalIdType
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentPayeeGlobalIds = $this->resolveDocumentPayeeGlobalIds();
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentPayeeGlobalId = $documentPayeeGlobalIds[InvoiceSuitePointerUtils::getValue('documentpayeeglobalid')];
 
@@ -7617,12 +7644,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxRegistrationId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>
+         * @var array<PartyTaxScheme>
          */
         $documentPayeeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+         * @var PartyTaxScheme
          */
         $documentPayeeTaxRegistration = $documentPayeeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentpayeetaxregistration')];
 
@@ -7692,12 +7719,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubDivision
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress>
+         * @var array<PostalAddress>
          */
         $documentPayeeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPayeeParty()?->getPostalAddress() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress
+         * @var PostalAddress
          */
         $documentPayeeAddress = $documentPayeeAddresses[InvoiceSuitePointerUtils::getValue('documentpayeeaddress')];
 
@@ -7760,12 +7787,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newName
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>
+         * @var array<PartyLegalEntity>
          */
         $documentPayeeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity
+         * @var PartyLegalEntity
          */
         $documentPayeeLegalOrganisation = $documentPayeeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentpayeelegalorganisation')];
 
@@ -7830,12 +7857,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newEmailAddress
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Contact>
+         * @var array<Contact>
          */
         $documentPayeeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPayeeParty()?->getContact() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contact
+         * @var Contact
          */
         $documentPayeeContact = $documentPayeeContacts[InvoiceSuitePointerUtils::getValue('documentpayeecontact')];
 
@@ -7893,12 +7920,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newUri
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID>
+         * @var array<EndpointID>
          */
         $documentPayeeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPayeeParty()?->getEndpointID() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID
+         * @var EndpointID
          */
         $documentPayeeElectronicCommunication = $documentPayeeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentpayeeecommunication')];
 
@@ -7984,12 +8011,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newMandate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>
+         * @var array<PaymentMeans>
          */
         $documentPaymentMeans = $this->getUblInvoiceRootObject()->getPaymentMeans() ?? [];
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans
+         * @var PaymentMeans
          */
         $documentPaymentMean = $documentPaymentMeans[InvoiceSuitePointerUtils::getValue('documentpaymentmean')];
 
@@ -8014,7 +8041,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     /**
      * Internal helper for resolving payment creditor references
      *
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+     * @return array<PartyIdentification>
      */
     private function resolveDocumentPaymentCreditorReferenceIDs(): array
     {
@@ -8063,12 +8090,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>
+         * @var array<PartyIdentification>
          */
         $documentCreditorReferences = InvoiceSuiteArrayUtils::ensure($this->resolveDocumentPaymentCreditorReferenceIDs());
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+         * @var PartyIdentification
          */
         $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentpaymentcreditorreferences')];
 
@@ -8124,12 +8151,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newMandate
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>
+         * @var array<PaymentTerms>
          */
         $documentPaymentTerms = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getPaymentTerms() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms
+         * @var PaymentTerms
          */
         $documentPaymentTerm = $documentPaymentTerms[InvoiceSuitePointerUtils::getValue('documentpaymentterm')];
 
@@ -8256,13 +8283,11 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     }
 
     #endregion
-
     #region Document Tax
-
     /**
      * Resolve tax total
      *
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal|null
+     * @return TaxTotal|null
      */
     private function resolveTaxTotal()
     {
@@ -8342,12 +8367,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxDueCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal>
+         * @var array<TaxSubtotal>
          */
         $documentTaxes = InvoiceSuiteArrayUtils::ensure($this->resolveTaxTotal()?->getTaxSubtotal() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal
+         * @var TaxSubtotal
          */
         $documentTax = $documentTaxes[InvoiceSuitePointerUtils::getValue('documenttax')];
 
@@ -8437,12 +8462,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newAllowanceChargePercent
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>
+         * @var array<AllowanceCharge>
          */
         $documentAllowanceCharges = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getAllowanceCharge() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+         * @var AllowanceCharge
          */
         $documentAllowanceCharge = $documentAllowanceCharges[InvoiceSuitePointerUtils::getValue('documentallowancecharge')];
 
@@ -8624,12 +8649,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     protected function resolveCurrentDocumentPosition(): InvoiceLine
     {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceLine>
+         * @var array<InvoiceLine>
          */
         $documentPositions = InvoiceSuiteArrayUtils::ensure($this->getUblInvoiceRootObject()->getInvoiceLine() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceLine
+         * @var InvoiceLine
          */
         $documentPosition = $documentPositions[InvoiceSuitePointerUtils::getValue('documentposition')];
 
@@ -8752,12 +8777,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newSubjectCode
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Note>
+         * @var array<Note>
          */
         $documentPositionNotes = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getNote() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Note
+         * @var Note
          */
         $documentPositionNote = $documentPositionNotes[InvoiceSuitePointerUtils::getValue('documentpositionnote')];
 
@@ -8816,17 +8841,17 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductOriginTradeCountry
     ): self {
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Item|null
+         * @var Item|null
          */
         $documentPositionProduct = $this->resolveCurrentDocumentPosition()->getItem();
 
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>
+         * @var array<Description>
          */
         $documentPositionProductDescriptions = $documentPositionProduct?->getDescription() ?? [];
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+         * @var Description
          */
         $documentPositionProductDescription = reset($documentPositionProductDescriptions);
 
@@ -8897,12 +8922,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductCharacteristicMeasureUnit
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>
+         * @var array<AdditionalItemProperty>
          */
         $documentPositionProductCharacteristics = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getItem()?->getAdditionalItemProperty() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty
+         * @var AdditionalItemProperty
          */
         $documentPositionProductCharacteristic = $documentPositionProductCharacteristics[InvoiceSuitePointerUtils::getValue('documentpositionproductcharacteristic')];
 
@@ -8962,12 +8987,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductClassificationCodeClassname
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\CommodityClassification>
+         * @var array<CommodityClassification>
          */
         $documentPositionProductClassifications = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getItem()?->getCommodityClassification() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\CommodityClassification
+         * @var CommodityClassification
          */
         $documentPositionProductClassification = $documentPositionProductClassifications[InvoiceSuitePointerUtils::getValue('documentpositionproductclassification')];
 
@@ -9139,12 +9164,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newReferenceDate = null
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>
+         * @var array<OrderLineReference>
          */
         $documentPositionBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getOrderLineReference() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference
+         * @var OrderLineReference
          */
         $documentPositionBuyerOrderReference = $documentPositionBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentpositionbuyerorderreference')];
 
@@ -10447,12 +10472,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newDescription,
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>
+         * @var array<InvoicePeriod>
          */
         $positionBillingPeriods = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getInvoicePeriod() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod
+         * @var InvoicePeriod
          */
         $positionBillingPeriod = $positionBillingPeriods[InvoiceSuitePointerUtils::getValue('documentpositionbillingperiod')];
 
@@ -10523,12 +10548,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newExemptionReasonCode,
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ClassifiedTaxCategory>
+         * @var array<ClassifiedTaxCategory>
          */
         $positionTaxes = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getItem()?->getClassifiedTaxCategory() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ClassifiedTaxCategory
+         * @var ClassifiedTaxCategory
          */
         $positionTax = $positionTaxes[InvoiceSuitePointerUtils::getValue('documentpositiontax')];
 
@@ -10602,12 +10627,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newAllowanceChargePercent
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>
+         * @var array<AllowanceCharge>
          */
         $positionAllowanceCharges = $this->resolveCurrentDocumentPosition()->getAllowanceCharge() ?? [];
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge
+         * @var AllowanceCharge
          */
         $positionAllowanceCharge = $positionAllowanceCharges[InvoiceSuitePointerUtils::getValue('documentpositionallowancecharge')];
 
@@ -10711,12 +10736,12 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newAccountId
     ): self {
         /**
-         * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode>
+         * @var array<AccountingCostCode>
          */
         $positionPostingReferences = InvoiceSuiteArrayUtils::ensure($this->resolveCurrentDocumentPosition()->getAccountingCostCode() ?? []);
 
         /**
-         * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode
+         * @var AccountingCostCode
          */
         $positionPostingReference = $positionPostingReferences[InvoiceSuitePointerUtils::getValue('documentpositionpostingreference')];
 

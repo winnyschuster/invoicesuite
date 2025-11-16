@@ -9,6 +9,9 @@
 
 namespace horstoeko\invoicesuite\documents\providers\xrechnung;
 
+use DOMDocument;
+use DOMXPath;
+use Throwable;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
@@ -105,9 +108,9 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
         libxml_clear_errors();
 
         try {
-            $contentDomDocument = new \DOMDocument();
+            $contentDomDocument = new DOMDocument();
             $contentDomDocument->loadXML($serializedContent);
-            $contentDomXPath = new \DOMXPath($contentDomDocument);
+            $contentDomXPath = new DOMXPath($contentDomDocument);
             $contentDomXPath->registerNamespace('rsm', 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100');
             $contentDomXPath->registerNamespace('ram', 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100');
 
@@ -132,7 +135,7 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
                     return true;
                 }
             }
-        } catch (\Throwable) {
+        } catch (Throwable) {
             // Do nothing
         } finally {
             libxml_clear_errors();

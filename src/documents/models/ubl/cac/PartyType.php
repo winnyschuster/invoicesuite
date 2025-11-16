@@ -36,7 +36,7 @@ class PartyType
     private $markAttentionIndicator;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI|null
+     * @var WebsiteURI|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class PartyType
     private $websiteURI;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID|null
+     * @var LogoReferenceID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class PartyType
     private $logoReferenceID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID|null
+     * @var EndpointID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class PartyType
     private $endpointID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode|null
+     * @var IndustryClassificationCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class PartyType
     private $industryClassificationCode;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>|null
+     * @var array<PartyIdentification>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>")
      * @JMS\Expose
@@ -92,7 +92,7 @@ class PartyType
     private $partyIdentification;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyName>|null
+     * @var array<PartyName>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyName>")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class PartyType
     private $partyName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Language|null
+     * @var Language|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Language")
      * @JMS\Expose
@@ -115,7 +115,7 @@ class PartyType
     private $language;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress|null
+     * @var PostalAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress")
      * @JMS\Expose
@@ -126,7 +126,7 @@ class PartyType
     private $postalAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalLocation|null
+     * @var PhysicalLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalLocation")
      * @JMS\Expose
@@ -137,7 +137,7 @@ class PartyType
     private $physicalLocation;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>|null
+     * @var array<PartyTaxScheme>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>")
      * @JMS\Expose
@@ -149,7 +149,7 @@ class PartyType
     private $partyTaxScheme;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>|null
+     * @var array<PartyLegalEntity>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>")
      * @JMS\Expose
@@ -161,7 +161,7 @@ class PartyType
     private $partyLegalEntity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contact|null
+     * @var Contact|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contact")
      * @JMS\Expose
@@ -172,7 +172,7 @@ class PartyType
     private $contact;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\Person>|null
+     * @var array<Person>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Person>")
      * @JMS\Expose
@@ -184,7 +184,7 @@ class PartyType
     private $person;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty|null
+     * @var AgentParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty")
      * @JMS\Expose
@@ -195,7 +195,7 @@ class PartyType
     private $agentParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty>|null
+     * @var array<ServiceProviderParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty>")
      * @JMS\Expose
@@ -207,7 +207,7 @@ class PartyType
     private $serviceProviderParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney>|null
+     * @var array<PowerOfAttorney>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney>")
      * @JMS\Expose
@@ -219,7 +219,7 @@ class PartyType
     private $powerOfAttorney;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount|null
+     * @var FinancialAccount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount")
      * @JMS\Expose
@@ -288,7 +288,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI|null
+     * @return WebsiteURI|null
      */
     public function getWebsiteURI(): ?WebsiteURI
     {
@@ -296,7 +296,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI
+     * @return WebsiteURI
      */
     public function getWebsiteURIWithCreate(): WebsiteURI
     {
@@ -306,7 +306,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI|null $websiteURI
+     * @param WebsiteURI|null $websiteURI
      * @return self
      */
     public function setWebsiteURI(?WebsiteURI $websiteURI = null): self
@@ -327,7 +327,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID|null
+     * @return LogoReferenceID|null
      */
     public function getLogoReferenceID(): ?LogoReferenceID
     {
@@ -335,7 +335,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID
+     * @return LogoReferenceID
      */
     public function getLogoReferenceIDWithCreate(): LogoReferenceID
     {
@@ -345,7 +345,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID|null $logoReferenceID
+     * @param LogoReferenceID|null $logoReferenceID
      * @return self
      */
     public function setLogoReferenceID(?LogoReferenceID $logoReferenceID = null): self
@@ -366,7 +366,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID|null
+     * @return EndpointID|null
      */
     public function getEndpointID(): ?EndpointID
     {
@@ -374,7 +374,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID
+     * @return EndpointID
      */
     public function getEndpointIDWithCreate(): EndpointID
     {
@@ -384,7 +384,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID|null $endpointID
+     * @param EndpointID|null $endpointID
      * @return self
      */
     public function setEndpointID(?EndpointID $endpointID = null): self
@@ -405,7 +405,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode|null
+     * @return IndustryClassificationCode|null
      */
     public function getIndustryClassificationCode(): ?IndustryClassificationCode
     {
@@ -413,7 +413,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode
+     * @return IndustryClassificationCode
      */
     public function getIndustryClassificationCodeWithCreate(): IndustryClassificationCode
     {
@@ -423,7 +423,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode|null $industryClassificationCode
+     * @param IndustryClassificationCode|null $industryClassificationCode
      * @return self
      */
     public function setIndustryClassificationCode(
@@ -445,7 +445,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>|null
+     * @return array<PartyIdentification>|null
      */
     public function getPartyIdentification(): ?array
     {
@@ -453,7 +453,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>|null $partyIdentification
+     * @param array<PartyIdentification>|null $partyIdentification
      * @return self
      */
     public function setPartyIdentification(?array $partyIdentification = null): self
@@ -484,7 +484,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification|null
+     * @return PartyIdentification|null
      */
     public function firstPartyIdentification(): ?PartyIdentification
     {
@@ -499,7 +499,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification|null
+     * @return PartyIdentification|null
      */
     public function lastPartyIdentification(): ?PartyIdentification
     {
@@ -514,7 +514,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification $partyIdentification
+     * @param PartyIdentification $partyIdentification
      * @return self
      */
     public function addToPartyIdentification(PartyIdentification $partyIdentification): self
@@ -525,7 +525,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+     * @return PartyIdentification
      */
     public function addToPartyIdentificationWithCreate(): PartyIdentification
     {
@@ -535,7 +535,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification $partyIdentification
+     * @param PartyIdentification $partyIdentification
      * @return self
      */
     public function addOnceToPartyIdentification(PartyIdentification $partyIdentification): self
@@ -550,7 +550,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification
+     * @return PartyIdentification
      */
     public function addOnceToPartyIdentificationWithCreate(): PartyIdentification
     {
@@ -566,7 +566,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyName>|null
+     * @return array<PartyName>|null
      */
     public function getPartyName(): ?array
     {
@@ -574,7 +574,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyName>|null $partyName
+     * @param array<PartyName>|null $partyName
      * @return self
      */
     public function setPartyName(?array $partyName = null): self
@@ -605,7 +605,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyName|null
+     * @return PartyName|null
      */
     public function firstPartyName(): ?PartyName
     {
@@ -620,7 +620,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyName|null
+     * @return PartyName|null
      */
     public function lastPartyName(): ?PartyName
     {
@@ -635,7 +635,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyName $partyName
+     * @param PartyName $partyName
      * @return self
      */
     public function addToPartyName(PartyName $partyName): self
@@ -646,7 +646,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyName
+     * @return PartyName
      */
     public function addToPartyNameWithCreate(): PartyName
     {
@@ -656,7 +656,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyName $partyName
+     * @param PartyName $partyName
      * @return self
      */
     public function addOnceToPartyName(PartyName $partyName): self
@@ -671,7 +671,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyName
+     * @return PartyName
      */
     public function addOnceToPartyNameWithCreate(): PartyName
     {
@@ -687,7 +687,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Language|null
+     * @return Language|null
      */
     public function getLanguage(): ?Language
     {
@@ -695,7 +695,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Language
+     * @return Language
      */
     public function getLanguageWithCreate(): Language
     {
@@ -705,7 +705,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Language|null $language
+     * @param Language|null $language
      * @return self
      */
     public function setLanguage(?Language $language = null): self
@@ -726,7 +726,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress|null
+     * @return PostalAddress|null
      */
     public function getPostalAddress(): ?PostalAddress
     {
@@ -734,7 +734,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress
+     * @return PostalAddress
      */
     public function getPostalAddressWithCreate(): PostalAddress
     {
@@ -744,7 +744,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress|null $postalAddress
+     * @param PostalAddress|null $postalAddress
      * @return self
      */
     public function setPostalAddress(?PostalAddress $postalAddress = null): self
@@ -765,7 +765,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalLocation|null
+     * @return PhysicalLocation|null
      */
     public function getPhysicalLocation(): ?PhysicalLocation
     {
@@ -773,7 +773,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalLocation
+     * @return PhysicalLocation
      */
     public function getPhysicalLocationWithCreate(): PhysicalLocation
     {
@@ -783,7 +783,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalLocation|null $physicalLocation
+     * @param PhysicalLocation|null $physicalLocation
      * @return self
      */
     public function setPhysicalLocation(?PhysicalLocation $physicalLocation = null): self
@@ -804,7 +804,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>|null
+     * @return array<PartyTaxScheme>|null
      */
     public function getPartyTaxScheme(): ?array
     {
@@ -812,7 +812,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>|null $partyTaxScheme
+     * @param array<PartyTaxScheme>|null $partyTaxScheme
      * @return self
      */
     public function setPartyTaxScheme(?array $partyTaxScheme = null): self
@@ -843,7 +843,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme|null
+     * @return PartyTaxScheme|null
      */
     public function firstPartyTaxScheme(): ?PartyTaxScheme
     {
@@ -858,7 +858,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme|null
+     * @return PartyTaxScheme|null
      */
     public function lastPartyTaxScheme(): ?PartyTaxScheme
     {
@@ -873,7 +873,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme $partyTaxScheme
+     * @param PartyTaxScheme $partyTaxScheme
      * @return self
      */
     public function addToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): self
@@ -884,7 +884,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+     * @return PartyTaxScheme
      */
     public function addToPartyTaxSchemeWithCreate(): PartyTaxScheme
     {
@@ -894,7 +894,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme $partyTaxScheme
+     * @param PartyTaxScheme $partyTaxScheme
      * @return self
      */
     public function addOnceToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): self
@@ -909,7 +909,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme
+     * @return PartyTaxScheme
      */
     public function addOnceToPartyTaxSchemeWithCreate(): PartyTaxScheme
     {
@@ -925,7 +925,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>|null
+     * @return array<PartyLegalEntity>|null
      */
     public function getPartyLegalEntity(): ?array
     {
@@ -933,7 +933,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>|null $partyLegalEntity
+     * @param array<PartyLegalEntity>|null $partyLegalEntity
      * @return self
      */
     public function setPartyLegalEntity(?array $partyLegalEntity = null): self
@@ -964,7 +964,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity|null
+     * @return PartyLegalEntity|null
      */
     public function firstPartyLegalEntity(): ?PartyLegalEntity
     {
@@ -979,7 +979,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity|null
+     * @return PartyLegalEntity|null
      */
     public function lastPartyLegalEntity(): ?PartyLegalEntity
     {
@@ -994,7 +994,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity $partyLegalEntity
+     * @param PartyLegalEntity $partyLegalEntity
      * @return self
      */
     public function addToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): self
@@ -1005,7 +1005,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity
+     * @return PartyLegalEntity
      */
     public function addToPartyLegalEntityWithCreate(): PartyLegalEntity
     {
@@ -1015,7 +1015,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity $partyLegalEntity
+     * @param PartyLegalEntity $partyLegalEntity
      * @return self
      */
     public function addOnceToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): self
@@ -1030,7 +1030,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity
+     * @return PartyLegalEntity
      */
     public function addOnceToPartyLegalEntityWithCreate(): PartyLegalEntity
     {
@@ -1046,7 +1046,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contact|null
+     * @return Contact|null
      */
     public function getContact(): ?Contact
     {
@@ -1054,7 +1054,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contact
+     * @return Contact
      */
     public function getContactWithCreate(): Contact
     {
@@ -1064,7 +1064,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Contact|null $contact
+     * @param Contact|null $contact
      * @return self
      */
     public function setContact(?Contact $contact = null): self
@@ -1085,7 +1085,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\Person>|null
+     * @return array<Person>|null
      */
     public function getPerson(): ?array
     {
@@ -1093,7 +1093,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\Person>|null $person
+     * @param array<Person>|null $person
      * @return self
      */
     public function setPerson(?array $person = null): self
@@ -1124,7 +1124,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Person|null
+     * @return Person|null
      */
     public function firstPerson(): ?Person
     {
@@ -1139,7 +1139,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Person|null
+     * @return Person|null
      */
     public function lastPerson(): ?Person
     {
@@ -1154,7 +1154,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Person $person
+     * @param Person $person
      * @return self
      */
     public function addToPerson(Person $person): self
@@ -1165,7 +1165,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Person
+     * @return Person
      */
     public function addToPersonWithCreate(): Person
     {
@@ -1175,7 +1175,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Person $person
+     * @param Person $person
      * @return self
      */
     public function addOnceToPerson(Person $person): self
@@ -1190,7 +1190,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Person
+     * @return Person
      */
     public function addOnceToPersonWithCreate(): Person
     {
@@ -1206,7 +1206,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty|null
+     * @return AgentParty|null
      */
     public function getAgentParty(): ?AgentParty
     {
@@ -1214,7 +1214,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty
+     * @return AgentParty
      */
     public function getAgentPartyWithCreate(): AgentParty
     {
@@ -1224,7 +1224,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty|null $agentParty
+     * @param AgentParty|null $agentParty
      * @return self
      */
     public function setAgentParty(?AgentParty $agentParty = null): self
@@ -1245,7 +1245,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty>|null
+     * @return array<ServiceProviderParty>|null
      */
     public function getServiceProviderParty(): ?array
     {
@@ -1253,7 +1253,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty>|null $serviceProviderParty
+     * @param array<ServiceProviderParty>|null $serviceProviderParty
      * @return self
      */
     public function setServiceProviderParty(?array $serviceProviderParty = null): self
@@ -1284,7 +1284,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty|null
+     * @return ServiceProviderParty|null
      */
     public function firstServiceProviderParty(): ?ServiceProviderParty
     {
@@ -1299,7 +1299,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty|null
+     * @return ServiceProviderParty|null
      */
     public function lastServiceProviderParty(): ?ServiceProviderParty
     {
@@ -1314,7 +1314,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty $serviceProviderParty
+     * @param ServiceProviderParty $serviceProviderParty
      * @return self
      */
     public function addToServiceProviderParty(ServiceProviderParty $serviceProviderParty): self
@@ -1325,7 +1325,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty
+     * @return ServiceProviderParty
      */
     public function addToServiceProviderPartyWithCreate(): ServiceProviderParty
     {
@@ -1335,7 +1335,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty $serviceProviderParty
+     * @param ServiceProviderParty $serviceProviderParty
      * @return self
      */
     public function addOnceToServiceProviderParty(ServiceProviderParty $serviceProviderParty): self
@@ -1350,7 +1350,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty
+     * @return ServiceProviderParty
      */
     public function addOnceToServiceProviderPartyWithCreate(): ServiceProviderParty
     {
@@ -1366,7 +1366,7 @@ class PartyType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney>|null
+     * @return array<PowerOfAttorney>|null
      */
     public function getPowerOfAttorney(): ?array
     {
@@ -1374,7 +1374,7 @@ class PartyType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney>|null $powerOfAttorney
+     * @param array<PowerOfAttorney>|null $powerOfAttorney
      * @return self
      */
     public function setPowerOfAttorney(?array $powerOfAttorney = null): self
@@ -1405,7 +1405,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney|null
+     * @return PowerOfAttorney|null
      */
     public function firstPowerOfAttorney(): ?PowerOfAttorney
     {
@@ -1420,7 +1420,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney|null
+     * @return PowerOfAttorney|null
      */
     public function lastPowerOfAttorney(): ?PowerOfAttorney
     {
@@ -1435,7 +1435,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney $powerOfAttorney
+     * @param PowerOfAttorney $powerOfAttorney
      * @return self
      */
     public function addToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): self
@@ -1446,7 +1446,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney
+     * @return PowerOfAttorney
      */
     public function addToPowerOfAttorneyWithCreate(): PowerOfAttorney
     {
@@ -1456,7 +1456,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney $powerOfAttorney
+     * @param PowerOfAttorney $powerOfAttorney
      * @return self
      */
     public function addOnceToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): self
@@ -1471,7 +1471,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney
+     * @return PowerOfAttorney
      */
     public function addOnceToPowerOfAttorneyWithCreate(): PowerOfAttorney
     {
@@ -1487,7 +1487,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount|null
+     * @return FinancialAccount|null
      */
     public function getFinancialAccount(): ?FinancialAccount
     {
@@ -1495,7 +1495,7 @@ class PartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount
+     * @return FinancialAccount
      */
     public function getFinancialAccountWithCreate(): FinancialAccount
     {
@@ -1505,7 +1505,7 @@ class PartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount|null $financialAccount
+     * @param FinancialAccount|null $financialAccount
      * @return self
      */
     public function setFinancialAccount(?FinancialAccount $financialAccount = null): self

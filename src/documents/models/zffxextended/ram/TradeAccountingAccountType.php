@@ -12,7 +12,7 @@ class TradeAccountingAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class TradeAccountingAccountType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType|null
+     * @var AccountingAccountTypeCodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class TradeAccountingAccountType
     private $typeCode;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getID(): ?IDType
     {
@@ -42,7 +42,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getIDWithCreate(): IDType
     {
@@ -52,7 +52,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $iD
+     * @param IDType|null $iD
      * @return self
      */
     public function setID(?IDType $iD = null): self
@@ -73,7 +73,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType|null
+     * @return AccountingAccountTypeCodeType|null
      */
     public function getTypeCode(): ?AccountingAccountTypeCodeType
     {
@@ -81,7 +81,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType
+     * @return AccountingAccountTypeCodeType
      */
     public function getTypeCodeWithCreate(): AccountingAccountTypeCodeType
     {
@@ -91,7 +91,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType|null $typeCode
+     * @param AccountingAccountTypeCodeType|null $typeCode
      * @return self
      */
     public function setTypeCode(?AccountingAccountTypeCodeType $typeCode = null): self

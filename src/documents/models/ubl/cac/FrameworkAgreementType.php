@@ -14,7 +14,7 @@ class FrameworkAgreementType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity|null
+     * @var ExpectedOperatorQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class FrameworkAgreementType
     private $expectedOperatorQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity|null
+     * @var MaximumOperatorQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class FrameworkAgreementType
     private $maximumOperatorQuantity;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Justification>|null
+     * @var array<Justification>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Justification>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class FrameworkAgreementType
     private $justification;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency>|null
+     * @var array<Frequency>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class FrameworkAgreementType
     private $frequency;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod|null
+     * @var DurationPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class FrameworkAgreementType
     private $durationPeriod;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement>|null
+     * @var array<SubsequentProcessTenderRequirement>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class FrameworkAgreementType
     private $subsequentProcessTenderRequirement;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity|null
+     * @return ExpectedOperatorQuantity|null
      */
     public function getExpectedOperatorQuantity(): ?ExpectedOperatorQuantity
     {
@@ -91,7 +91,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity
+     * @return ExpectedOperatorQuantity
      */
     public function getExpectedOperatorQuantityWithCreate(): ExpectedOperatorQuantity
     {
@@ -101,7 +101,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity|null $expectedOperatorQuantity
+     * @param ExpectedOperatorQuantity|null $expectedOperatorQuantity
      * @return self
      */
     public function setExpectedOperatorQuantity(?ExpectedOperatorQuantity $expectedOperatorQuantity = null): self
@@ -122,7 +122,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity|null
+     * @return MaximumOperatorQuantity|null
      */
     public function getMaximumOperatorQuantity(): ?MaximumOperatorQuantity
     {
@@ -130,7 +130,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity
+     * @return MaximumOperatorQuantity
      */
     public function getMaximumOperatorQuantityWithCreate(): MaximumOperatorQuantity
     {
@@ -140,7 +140,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity|null $maximumOperatorQuantity
+     * @param MaximumOperatorQuantity|null $maximumOperatorQuantity
      * @return self
      */
     public function setMaximumOperatorQuantity(?MaximumOperatorQuantity $maximumOperatorQuantity = null): self
@@ -161,7 +161,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Justification>|null
+     * @return array<Justification>|null
      */
     public function getJustification(): ?array
     {
@@ -169,7 +169,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Justification>|null $justification
+     * @param array<Justification>|null $justification
      * @return self
      */
     public function setJustification(?array $justification = null): self
@@ -200,7 +200,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Justification|null
+     * @return Justification|null
      */
     public function firstJustification(): ?Justification
     {
@@ -215,7 +215,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Justification|null
+     * @return Justification|null
      */
     public function lastJustification(): ?Justification
     {
@@ -230,7 +230,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Justification $justification
+     * @param Justification $justification
      * @return self
      */
     public function addToJustification(Justification $justification): self
@@ -241,7 +241,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Justification
+     * @return Justification
      */
     public function addToJustificationWithCreate(): Justification
     {
@@ -251,7 +251,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Justification $justification
+     * @param Justification $justification
      * @return self
      */
     public function addOnceToJustification(Justification $justification): self
@@ -266,7 +266,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Justification
+     * @return Justification
      */
     public function addOnceToJustificationWithCreate(): Justification
     {
@@ -282,7 +282,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency>|null
+     * @return array<Frequency>|null
      */
     public function getFrequency(): ?array
     {
@@ -290,7 +290,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency>|null $frequency
+     * @param array<Frequency>|null $frequency
      * @return self
      */
     public function setFrequency(?array $frequency = null): self
@@ -321,7 +321,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency|null
+     * @return Frequency|null
      */
     public function firstFrequency(): ?Frequency
     {
@@ -336,7 +336,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency|null
+     * @return Frequency|null
      */
     public function lastFrequency(): ?Frequency
     {
@@ -351,7 +351,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency $frequency
+     * @param Frequency $frequency
      * @return self
      */
     public function addToFrequency(Frequency $frequency): self
@@ -362,7 +362,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency
+     * @return Frequency
      */
     public function addToFrequencyWithCreate(): Frequency
     {
@@ -372,7 +372,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency $frequency
+     * @param Frequency $frequency
      * @return self
      */
     public function addOnceToFrequency(Frequency $frequency): self
@@ -387,7 +387,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency
+     * @return Frequency
      */
     public function addOnceToFrequencyWithCreate(): Frequency
     {
@@ -403,7 +403,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod|null
+     * @return DurationPeriod|null
      */
     public function getDurationPeriod(): ?DurationPeriod
     {
@@ -411,7 +411,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod
+     * @return DurationPeriod
      */
     public function getDurationPeriodWithCreate(): DurationPeriod
     {
@@ -421,7 +421,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod|null $durationPeriod
+     * @param DurationPeriod|null $durationPeriod
      * @return self
      */
     public function setDurationPeriod(?DurationPeriod $durationPeriod = null): self
@@ -442,7 +442,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement>|null
+     * @return array<SubsequentProcessTenderRequirement>|null
      */
     public function getSubsequentProcessTenderRequirement(): ?array
     {
@@ -450,7 +450,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement>|null $subsequentProcessTenderRequirement
+     * @param array<SubsequentProcessTenderRequirement>|null $subsequentProcessTenderRequirement
      * @return self
      */
     public function setSubsequentProcessTenderRequirement(?array $subsequentProcessTenderRequirement = null): self
@@ -481,7 +481,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement|null
+     * @return SubsequentProcessTenderRequirement|null
      */
     public function firstSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
     {
@@ -496,7 +496,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement|null
+     * @return SubsequentProcessTenderRequirement|null
      */
     public function lastSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
     {
@@ -511,7 +511,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
+     * @param SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
      * @return self
      */
     public function addToSubsequentProcessTenderRequirement(
@@ -523,7 +523,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement
+     * @return SubsequentProcessTenderRequirement
      */
     public function addToSubsequentProcessTenderRequirementWithCreate(): SubsequentProcessTenderRequirement
     {
@@ -533,7 +533,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
+     * @param SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
      * @return self
      */
     public function addOnceToSubsequentProcessTenderRequirement(
@@ -549,7 +549,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement
+     * @return SubsequentProcessTenderRequirement
      */
     public function addOnceToSubsequentProcessTenderRequirementWithCreate(): SubsequentProcessTenderRequirement
     {

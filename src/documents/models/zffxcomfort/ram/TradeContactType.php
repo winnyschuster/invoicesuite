@@ -11,7 +11,7 @@ class TradeContactType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class TradeContactType
     private $personName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class TradeContactType
     private $departmentName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null
+     * @var UniversalCommunicationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class TradeContactType
     private $telephoneUniversalCommunication;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null
+     * @var UniversalCommunicationType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class TradeContactType
     private $emailURIUniversalCommunication;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getPersonName(): ?TextType
     {
@@ -63,7 +63,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getPersonNameWithCreate(): TextType
     {
@@ -73,7 +73,7 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $personName
+     * @param TextType|null $personName
      * @return self
      */
     public function setPersonName(?TextType $personName = null): self
@@ -94,7 +94,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getDepartmentName(): ?TextType
     {
@@ -102,7 +102,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getDepartmentNameWithCreate(): TextType
     {
@@ -112,7 +112,7 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $departmentName
+     * @param TextType|null $departmentName
      * @return self
      */
     public function setDepartmentName(?TextType $departmentName = null): self
@@ -133,7 +133,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null
+     * @return UniversalCommunicationType|null
      */
     public function getTelephoneUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -141,7 +141,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+     * @return UniversalCommunicationType
      */
     public function getTelephoneUniversalCommunicationWithCreate(): UniversalCommunicationType
     {
@@ -151,7 +151,7 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null $telephoneUniversalCommunication
+     * @param UniversalCommunicationType|null $telephoneUniversalCommunication
      * @return self
      */
     public function setTelephoneUniversalCommunication(
@@ -173,7 +173,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null
+     * @return UniversalCommunicationType|null
      */
     public function getEmailURIUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -181,7 +181,7 @@ class TradeContactType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType
+     * @return UniversalCommunicationType
      */
     public function getEmailURIUniversalCommunicationWithCreate(): UniversalCommunicationType
     {
@@ -191,7 +191,7 @@ class TradeContactType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType|null $emailURIUniversalCommunication
+     * @param UniversalCommunicationType|null $emailURIUniversalCommunication
      * @return self
      */
     public function setEmailURIUniversalCommunication(

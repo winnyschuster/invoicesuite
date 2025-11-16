@@ -13,7 +13,7 @@ class TemperatureType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID|null
+     * @var AttributeID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TemperatureType
     private $attributeID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Measure|null
+     * @var Measure|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Measure")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TemperatureType
     private $measure;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @var array<Description>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TemperatureType
     private $description;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID|null
+     * @return AttributeID|null
      */
     public function getAttributeID(): ?AttributeID
     {
@@ -55,7 +55,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID
+     * @return AttributeID
      */
     public function getAttributeIDWithCreate(): AttributeID
     {
@@ -65,7 +65,7 @@ class TemperatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID|null $attributeID
+     * @param AttributeID|null $attributeID
      * @return self
      */
     public function setAttributeID(?AttributeID $attributeID = null): self
@@ -86,7 +86,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Measure|null
+     * @return Measure|null
      */
     public function getMeasure(): ?Measure
     {
@@ -94,7 +94,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Measure
+     * @return Measure
      */
     public function getMeasureWithCreate(): Measure
     {
@@ -104,7 +104,7 @@ class TemperatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Measure|null $measure
+     * @param Measure|null $measure
      * @return self
      */
     public function setMeasure(?Measure $measure = null): self
@@ -125,7 +125,7 @@ class TemperatureType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null
+     * @return array<Description>|null
      */
     public function getDescription(): ?array
     {
@@ -133,7 +133,7 @@ class TemperatureType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cbc\Description>|null $description
+     * @param array<Description>|null $description
      * @return self
      */
     public function setDescription(?array $description = null): self
@@ -164,7 +164,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function firstDescription(): ?Description
     {
@@ -179,7 +179,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description|null
+     * @return Description|null
      */
     public function lastDescription(): ?Description
     {
@@ -194,7 +194,7 @@ class TemperatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addToDescription(Description $description): self
@@ -205,7 +205,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addToDescriptionWithCreate(): Description
     {
@@ -215,7 +215,7 @@ class TemperatureType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Description $description
+     * @param Description $description
      * @return self
      */
     public function addOnceToDescription(Description $description): self
@@ -230,7 +230,7 @@ class TemperatureType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Description
+     * @return Description
      */
     public function addOnceToDescriptionWithCreate(): Description
     {

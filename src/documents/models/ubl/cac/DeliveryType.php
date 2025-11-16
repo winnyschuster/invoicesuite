@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -16,7 +17,7 @@ class DeliveryType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +28,7 @@ class DeliveryType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @var Quantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -38,7 +39,7 @@ class DeliveryType
     private $quantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @var MinimumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -49,7 +50,7 @@ class DeliveryType
     private $minimumQuantity;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @var MaximumQuantity|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -60,7 +61,7 @@ class DeliveryType
     private $maximumQuantity;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -71,7 +72,7 @@ class DeliveryType
     private $actualDeliveryDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -82,7 +83,7 @@ class DeliveryType
     private $actualDeliveryTime;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -93,7 +94,7 @@ class DeliveryType
     private $latestDeliveryDate;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -104,7 +105,7 @@ class DeliveryType
     private $latestDeliveryTime;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID|null
+     * @var ReleaseID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID")
      * @JMS\Expose
@@ -115,7 +116,7 @@ class DeliveryType
     private $releaseID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID|null
+     * @var TrackingID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID")
      * @JMS\Expose
@@ -126,7 +127,7 @@ class DeliveryType
     private $trackingID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryAddress|null
+     * @var DeliveryAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryAddress")
      * @JMS\Expose
@@ -137,7 +138,7 @@ class DeliveryType
     private $deliveryAddress;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation|null
+     * @var DeliveryLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation")
      * @JMS\Expose
@@ -148,7 +149,7 @@ class DeliveryType
     private $deliveryLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeDeliveryLocation|null
+     * @var AlternativeDeliveryLocation|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeDeliveryLocation")
      * @JMS\Expose
@@ -159,7 +160,7 @@ class DeliveryType
     private $alternativeDeliveryLocation;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryPeriod|null
+     * @var RequestedDeliveryPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryPeriod")
      * @JMS\Expose
@@ -170,7 +171,7 @@ class DeliveryType
     private $requestedDeliveryPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\PromisedDeliveryPeriod|null
+     * @var PromisedDeliveryPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PromisedDeliveryPeriod")
      * @JMS\Expose
@@ -181,7 +182,7 @@ class DeliveryType
     private $promisedDeliveryPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDeliveryPeriod|null
+     * @var EstimatedDeliveryPeriod|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDeliveryPeriod")
      * @JMS\Expose
@@ -192,7 +193,7 @@ class DeliveryType
     private $estimatedDeliveryPeriod;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty|null
+     * @var CarrierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty")
      * @JMS\Expose
@@ -203,7 +204,7 @@ class DeliveryType
     private $carrierParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryParty|null
+     * @var DeliveryParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryParty")
      * @JMS\Expose
@@ -214,7 +215,7 @@ class DeliveryType
     private $deliveryParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>|null
+     * @var array<NotifyParty>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>")
      * @JMS\Expose
@@ -226,7 +227,7 @@ class DeliveryType
     private $notifyParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch|null
+     * @var Despatch|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Despatch")
      * @JMS\Expose
@@ -237,7 +238,7 @@ class DeliveryType
     private $despatch;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>|null
+     * @var array<DeliveryTerms>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>")
      * @JMS\Expose
@@ -249,7 +250,7 @@ class DeliveryType
     private $deliveryTerms;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumDeliveryUnit|null
+     * @var MinimumDeliveryUnit|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MinimumDeliveryUnit")
      * @JMS\Expose
@@ -260,7 +261,7 @@ class DeliveryType
     private $minimumDeliveryUnit;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumDeliveryUnit|null
+     * @var MaximumDeliveryUnit|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaximumDeliveryUnit")
      * @JMS\Expose
@@ -271,7 +272,7 @@ class DeliveryType
     private $maximumDeliveryUnit;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @var Shipment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Shipment")
      * @JMS\Expose
@@ -282,7 +283,7 @@ class DeliveryType
     private $shipment;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -290,7 +291,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -300,7 +301,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -321,7 +322,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null
+     * @return Quantity|null
      */
     public function getQuantity(): ?Quantity
     {
@@ -329,7 +330,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity
+     * @return Quantity
      */
     public function getQuantityWithCreate(): Quantity
     {
@@ -339,7 +340,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity|null $quantity
+     * @param Quantity|null $quantity
      * @return self
      */
     public function setQuantity(?Quantity $quantity = null): self
@@ -360,7 +361,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null
+     * @return MinimumQuantity|null
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -368,7 +369,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity
+     * @return MinimumQuantity
      */
     public function getMinimumQuantityWithCreate(): MinimumQuantity
     {
@@ -378,7 +379,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity|null $minimumQuantity
+     * @param MinimumQuantity|null $minimumQuantity
      * @return self
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
@@ -399,7 +400,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null
+     * @return MaximumQuantity|null
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -407,7 +408,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity
+     * @return MaximumQuantity
      */
     public function getMaximumQuantityWithCreate(): MaximumQuantity
     {
@@ -417,7 +418,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity|null $maximumQuantity
+     * @param MaximumQuantity|null $maximumQuantity
      * @return self
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
@@ -438,18 +439,18 @@ class DeliveryType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getActualDeliveryDate(): ?\DateTimeInterface
+    public function getActualDeliveryDate(): ?DateTimeInterface
     {
         return $this->actualDeliveryDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $actualDeliveryDate
+     * @param DateTimeInterface|null $actualDeliveryDate
      * @return self
      */
-    public function setActualDeliveryDate(?\DateTimeInterface $actualDeliveryDate = null): self
+    public function setActualDeliveryDate(?DateTimeInterface $actualDeliveryDate = null): self
     {
         $this->actualDeliveryDate = $actualDeliveryDate;
 
@@ -467,18 +468,18 @@ class DeliveryType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getActualDeliveryTime(): ?\DateTimeInterface
+    public function getActualDeliveryTime(): ?DateTimeInterface
     {
         return $this->actualDeliveryTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $actualDeliveryTime
+     * @param DateTimeInterface|null $actualDeliveryTime
      * @return self
      */
-    public function setActualDeliveryTime(?\DateTimeInterface $actualDeliveryTime = null): self
+    public function setActualDeliveryTime(?DateTimeInterface $actualDeliveryTime = null): self
     {
         $this->actualDeliveryTime = $actualDeliveryTime;
 
@@ -496,18 +497,18 @@ class DeliveryType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getLatestDeliveryDate(): ?\DateTimeInterface
+    public function getLatestDeliveryDate(): ?DateTimeInterface
     {
         return $this->latestDeliveryDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $latestDeliveryDate
+     * @param DateTimeInterface|null $latestDeliveryDate
      * @return self
      */
-    public function setLatestDeliveryDate(?\DateTimeInterface $latestDeliveryDate = null): self
+    public function setLatestDeliveryDate(?DateTimeInterface $latestDeliveryDate = null): self
     {
         $this->latestDeliveryDate = $latestDeliveryDate;
 
@@ -525,18 +526,18 @@ class DeliveryType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getLatestDeliveryTime(): ?\DateTimeInterface
+    public function getLatestDeliveryTime(): ?DateTimeInterface
     {
         return $this->latestDeliveryTime;
     }
 
     /**
-     * @param \DateTimeInterface|null $latestDeliveryTime
+     * @param DateTimeInterface|null $latestDeliveryTime
      * @return self
      */
-    public function setLatestDeliveryTime(?\DateTimeInterface $latestDeliveryTime = null): self
+    public function setLatestDeliveryTime(?DateTimeInterface $latestDeliveryTime = null): self
     {
         $this->latestDeliveryTime = $latestDeliveryTime;
 
@@ -554,7 +555,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID|null
+     * @return ReleaseID|null
      */
     public function getReleaseID(): ?ReleaseID
     {
@@ -562,7 +563,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID
+     * @return ReleaseID
      */
     public function getReleaseIDWithCreate(): ReleaseID
     {
@@ -572,7 +573,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID|null $releaseID
+     * @param ReleaseID|null $releaseID
      * @return self
      */
     public function setReleaseID(?ReleaseID $releaseID = null): self
@@ -593,7 +594,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID|null
+     * @return TrackingID|null
      */
     public function getTrackingID(): ?TrackingID
     {
@@ -601,7 +602,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID
+     * @return TrackingID
      */
     public function getTrackingIDWithCreate(): TrackingID
     {
@@ -611,7 +612,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID|null $trackingID
+     * @param TrackingID|null $trackingID
      * @return self
      */
     public function setTrackingID(?TrackingID $trackingID = null): self
@@ -632,7 +633,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryAddress|null
+     * @return DeliveryAddress|null
      */
     public function getDeliveryAddress(): ?DeliveryAddress
     {
@@ -640,7 +641,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryAddress
+     * @return DeliveryAddress
      */
     public function getDeliveryAddressWithCreate(): DeliveryAddress
     {
@@ -650,7 +651,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryAddress|null $deliveryAddress
+     * @param DeliveryAddress|null $deliveryAddress
      * @return self
      */
     public function setDeliveryAddress(?DeliveryAddress $deliveryAddress = null): self
@@ -671,7 +672,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation|null
+     * @return DeliveryLocation|null
      */
     public function getDeliveryLocation(): ?DeliveryLocation
     {
@@ -679,7 +680,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation
+     * @return DeliveryLocation
      */
     public function getDeliveryLocationWithCreate(): DeliveryLocation
     {
@@ -689,7 +690,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation|null $deliveryLocation
+     * @param DeliveryLocation|null $deliveryLocation
      * @return self
      */
     public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): self
@@ -710,7 +711,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeDeliveryLocation|null
+     * @return AlternativeDeliveryLocation|null
      */
     public function getAlternativeDeliveryLocation(): ?AlternativeDeliveryLocation
     {
@@ -718,7 +719,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeDeliveryLocation
+     * @return AlternativeDeliveryLocation
      */
     public function getAlternativeDeliveryLocationWithCreate(): AlternativeDeliveryLocation
     {
@@ -728,7 +729,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeDeliveryLocation|null $alternativeDeliveryLocation
+     * @param AlternativeDeliveryLocation|null $alternativeDeliveryLocation
      * @return self
      */
     public function setAlternativeDeliveryLocation(
@@ -750,7 +751,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryPeriod|null
+     * @return RequestedDeliveryPeriod|null
      */
     public function getRequestedDeliveryPeriod(): ?RequestedDeliveryPeriod
     {
@@ -758,7 +759,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryPeriod
+     * @return RequestedDeliveryPeriod
      */
     public function getRequestedDeliveryPeriodWithCreate(): RequestedDeliveryPeriod
     {
@@ -768,7 +769,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryPeriod|null $requestedDeliveryPeriod
+     * @param RequestedDeliveryPeriod|null $requestedDeliveryPeriod
      * @return self
      */
     public function setRequestedDeliveryPeriod(?RequestedDeliveryPeriod $requestedDeliveryPeriod = null): self
@@ -789,7 +790,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromisedDeliveryPeriod|null
+     * @return PromisedDeliveryPeriod|null
      */
     public function getPromisedDeliveryPeriod(): ?PromisedDeliveryPeriod
     {
@@ -797,7 +798,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\PromisedDeliveryPeriod
+     * @return PromisedDeliveryPeriod
      */
     public function getPromisedDeliveryPeriodWithCreate(): PromisedDeliveryPeriod
     {
@@ -807,7 +808,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\PromisedDeliveryPeriod|null $promisedDeliveryPeriod
+     * @param PromisedDeliveryPeriod|null $promisedDeliveryPeriod
      * @return self
      */
     public function setPromisedDeliveryPeriod(?PromisedDeliveryPeriod $promisedDeliveryPeriod = null): self
@@ -828,7 +829,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDeliveryPeriod|null
+     * @return EstimatedDeliveryPeriod|null
      */
     public function getEstimatedDeliveryPeriod(): ?EstimatedDeliveryPeriod
     {
@@ -836,7 +837,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDeliveryPeriod
+     * @return EstimatedDeliveryPeriod
      */
     public function getEstimatedDeliveryPeriodWithCreate(): EstimatedDeliveryPeriod
     {
@@ -846,7 +847,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDeliveryPeriod|null $estimatedDeliveryPeriod
+     * @param EstimatedDeliveryPeriod|null $estimatedDeliveryPeriod
      * @return self
      */
     public function setEstimatedDeliveryPeriod(?EstimatedDeliveryPeriod $estimatedDeliveryPeriod = null): self
@@ -867,7 +868,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty|null
+     * @return CarrierParty|null
      */
     public function getCarrierParty(): ?CarrierParty
     {
@@ -875,7 +876,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty
+     * @return CarrierParty
      */
     public function getCarrierPartyWithCreate(): CarrierParty
     {
@@ -885,7 +886,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty|null $carrierParty
+     * @param CarrierParty|null $carrierParty
      * @return self
      */
     public function setCarrierParty(?CarrierParty $carrierParty = null): self
@@ -906,7 +907,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryParty|null
+     * @return DeliveryParty|null
      */
     public function getDeliveryParty(): ?DeliveryParty
     {
@@ -914,7 +915,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryParty
+     * @return DeliveryParty
      */
     public function getDeliveryPartyWithCreate(): DeliveryParty
     {
@@ -924,7 +925,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryParty|null $deliveryParty
+     * @param DeliveryParty|null $deliveryParty
      * @return self
      */
     public function setDeliveryParty(?DeliveryParty $deliveryParty = null): self
@@ -945,7 +946,7 @@ class DeliveryType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>|null
+     * @return array<NotifyParty>|null
      */
     public function getNotifyParty(): ?array
     {
@@ -953,7 +954,7 @@ class DeliveryType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>|null $notifyParty
+     * @param array<NotifyParty>|null $notifyParty
      * @return self
      */
     public function setNotifyParty(?array $notifyParty = null): self
@@ -984,7 +985,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty|null
+     * @return NotifyParty|null
      */
     public function firstNotifyParty(): ?NotifyParty
     {
@@ -999,7 +1000,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty|null
+     * @return NotifyParty|null
      */
     public function lastNotifyParty(): ?NotifyParty
     {
@@ -1014,7 +1015,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty $notifyParty
+     * @param NotifyParty $notifyParty
      * @return self
      */
     public function addToNotifyParty(NotifyParty $notifyParty): self
@@ -1025,7 +1026,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty
+     * @return NotifyParty
      */
     public function addToNotifyPartyWithCreate(): NotifyParty
     {
@@ -1035,7 +1036,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty $notifyParty
+     * @param NotifyParty $notifyParty
      * @return self
      */
     public function addOnceToNotifyParty(NotifyParty $notifyParty): self
@@ -1050,7 +1051,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty
+     * @return NotifyParty
      */
     public function addOnceToNotifyPartyWithCreate(): NotifyParty
     {
@@ -1066,7 +1067,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch|null
+     * @return Despatch|null
      */
     public function getDespatch(): ?Despatch
     {
@@ -1074,7 +1075,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch
+     * @return Despatch
      */
     public function getDespatchWithCreate(): Despatch
     {
@@ -1084,7 +1085,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Despatch|null $despatch
+     * @param Despatch|null $despatch
      * @return self
      */
     public function setDespatch(?Despatch $despatch = null): self
@@ -1105,7 +1106,7 @@ class DeliveryType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>|null
+     * @return array<DeliveryTerms>|null
      */
     public function getDeliveryTerms(): ?array
     {
@@ -1113,7 +1114,7 @@ class DeliveryType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>|null $deliveryTerms
+     * @param array<DeliveryTerms>|null $deliveryTerms
      * @return self
      */
     public function setDeliveryTerms(?array $deliveryTerms = null): self
@@ -1144,7 +1145,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null
+     * @return DeliveryTerms|null
      */
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
@@ -1159,7 +1160,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms|null
+     * @return DeliveryTerms|null
      */
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
@@ -1174,7 +1175,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms $deliveryTerms
+     * @param DeliveryTerms $deliveryTerms
      * @return self
      */
     public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): self
@@ -1185,7 +1186,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms
+     * @return DeliveryTerms
      */
     public function addToDeliveryTermsWithCreate(): DeliveryTerms
     {
@@ -1195,7 +1196,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms $deliveryTerms
+     * @param DeliveryTerms $deliveryTerms
      * @return self
      */
     public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): self
@@ -1210,7 +1211,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms
+     * @return DeliveryTerms
      */
     public function addOnceToDeliveryTermsWithCreate(): DeliveryTerms
     {
@@ -1226,7 +1227,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumDeliveryUnit|null
+     * @return MinimumDeliveryUnit|null
      */
     public function getMinimumDeliveryUnit(): ?MinimumDeliveryUnit
     {
@@ -1234,7 +1235,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumDeliveryUnit
+     * @return MinimumDeliveryUnit
      */
     public function getMinimumDeliveryUnitWithCreate(): MinimumDeliveryUnit
     {
@@ -1244,7 +1245,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MinimumDeliveryUnit|null $minimumDeliveryUnit
+     * @param MinimumDeliveryUnit|null $minimumDeliveryUnit
      * @return self
      */
     public function setMinimumDeliveryUnit(?MinimumDeliveryUnit $minimumDeliveryUnit = null): self
@@ -1265,7 +1266,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumDeliveryUnit|null
+     * @return MaximumDeliveryUnit|null
      */
     public function getMaximumDeliveryUnit(): ?MaximumDeliveryUnit
     {
@@ -1273,7 +1274,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumDeliveryUnit
+     * @return MaximumDeliveryUnit
      */
     public function getMaximumDeliveryUnitWithCreate(): MaximumDeliveryUnit
     {
@@ -1283,7 +1284,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\MaximumDeliveryUnit|null $maximumDeliveryUnit
+     * @param MaximumDeliveryUnit|null $maximumDeliveryUnit
      * @return self
      */
     public function setMaximumDeliveryUnit(?MaximumDeliveryUnit $maximumDeliveryUnit = null): self
@@ -1304,7 +1305,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null
+     * @return Shipment|null
      */
     public function getShipment(): ?Shipment
     {
@@ -1312,7 +1313,7 @@ class DeliveryType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment
+     * @return Shipment
      */
     public function getShipmentWithCreate(): Shipment
     {
@@ -1322,7 +1323,7 @@ class DeliveryType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Shipment|null $shipment
+     * @param Shipment|null $shipment
      * @return self
      */
     public function setShipment(?Shipment $shipment = null): self

@@ -11,7 +11,7 @@ class CreditorFinancialInstitutionType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class CreditorFinancialInstitutionType
     private $bICID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null
+     * @return IDType|null
      */
     public function getBICID(): ?IDType
     {
@@ -30,7 +30,7 @@ class CreditorFinancialInstitutionType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType
+     * @return IDType
      */
     public function getBICIDWithCreate(): IDType
     {
@@ -40,7 +40,7 @@ class CreditorFinancialInstitutionType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType|null $bICID
+     * @param IDType|null $bICID
      * @return self
      */
     public function setBICID(?IDType $bICID = null): self

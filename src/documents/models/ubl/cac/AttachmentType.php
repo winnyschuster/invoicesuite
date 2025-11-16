@@ -11,7 +11,7 @@ class AttachmentType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject|null
+     * @var EmbeddedDocumentBinaryObject|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class AttachmentType
     private $embeddedDocumentBinaryObject;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ExternalReference|null
+     * @var ExternalReference|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExternalReference")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class AttachmentType
     private $externalReference;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject|null
+     * @return EmbeddedDocumentBinaryObject|null
      */
     public function getEmbeddedDocumentBinaryObject(): ?EmbeddedDocumentBinaryObject
     {
@@ -41,7 +41,7 @@ class AttachmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject
+     * @return EmbeddedDocumentBinaryObject
      */
     public function getEmbeddedDocumentBinaryObjectWithCreate(): EmbeddedDocumentBinaryObject
     {
@@ -51,7 +51,7 @@ class AttachmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject|null $embeddedDocumentBinaryObject
+     * @param EmbeddedDocumentBinaryObject|null $embeddedDocumentBinaryObject
      * @return self
      */
     public function setEmbeddedDocumentBinaryObject(
@@ -73,7 +73,7 @@ class AttachmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExternalReference|null
+     * @return ExternalReference|null
      */
     public function getExternalReference(): ?ExternalReference
     {
@@ -81,7 +81,7 @@ class AttachmentType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ExternalReference
+     * @return ExternalReference
      */
     public function getExternalReferenceWithCreate(): ExternalReference
     {
@@ -91,7 +91,7 @@ class AttachmentType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ExternalReference|null $externalReference
+     * @param ExternalReference|null $externalReference
      * @return self
      */
     public function setExternalReference(?ExternalReference $externalReference = null): self

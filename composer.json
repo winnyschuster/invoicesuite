@@ -97,7 +97,7 @@
         ],
         "rector": [
             "Composer\\Config::disableProcessTimeout",
-            "vendor/bin/rector --config=./build/phprectorconfig.php --clear-cache"
+            "vendor/bin/rector --config=./build/phprectorconfig.php"
         ],
         "checkstyle": [
             "Composer\\Config::disableProcessTimeout",

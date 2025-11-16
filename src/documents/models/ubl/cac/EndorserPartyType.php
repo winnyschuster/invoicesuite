@@ -12,7 +12,7 @@ class EndorserPartyType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode|null
+     * @var RoleCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class EndorserPartyType
     private $roleCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric|null
+     * @var SequenceNumeric|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class EndorserPartyType
     private $sequenceNumeric;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @var Party|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class EndorserPartyType
     private $party;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryContact|null
+     * @var SignatoryContact|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryContact")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class EndorserPartyType
     private $signatoryContact;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode|null
+     * @return RoleCode|null
      */
     public function getRoleCode(): ?RoleCode
     {
@@ -64,7 +64,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode
+     * @return RoleCode
      */
     public function getRoleCodeWithCreate(): RoleCode
     {
@@ -74,7 +74,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode|null $roleCode
+     * @param RoleCode|null $roleCode
      * @return self
      */
     public function setRoleCode(?RoleCode $roleCode = null): self
@@ -95,7 +95,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric|null
+     * @return SequenceNumeric|null
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -103,7 +103,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric
+     * @return SequenceNumeric
      */
     public function getSequenceNumericWithCreate(): SequenceNumeric
     {
@@ -113,7 +113,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric|null $sequenceNumeric
+     * @param SequenceNumeric|null $sequenceNumeric
      * @return self
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
@@ -134,7 +134,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null
+     * @return Party|null
      */
     public function getParty(): ?Party
     {
@@ -142,7 +142,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Party
+     * @return Party
      */
     public function getPartyWithCreate(): Party
     {
@@ -152,7 +152,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Party|null $party
+     * @param Party|null $party
      * @return self
      */
     public function setParty(?Party $party = null): self
@@ -173,7 +173,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryContact|null
+     * @return SignatoryContact|null
      */
     public function getSignatoryContact(): ?SignatoryContact
     {
@@ -181,7 +181,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryContact
+     * @return SignatoryContact
      */
     public function getSignatoryContactWithCreate(): SignatoryContact
     {
@@ -191,7 +191,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryContact|null $signatoryContact
+     * @param SignatoryContact|null $signatoryContact
      * @return self
      */
     public function setSignatoryContact(?SignatoryContact $signatoryContact = null): self

@@ -12,7 +12,7 @@ class ProductClassificationType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @var CodeType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ProductClassificationType
     private $classCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ProductClassificationType
     private $className;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null
+     * @return CodeType|null
      */
     public function getClassCode(): ?CodeType
     {
@@ -42,7 +42,7 @@ class ProductClassificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType
+     * @return CodeType
      */
     public function getClassCodeWithCreate(): CodeType
     {
@@ -52,7 +52,7 @@ class ProductClassificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType|null $classCode
+     * @param CodeType|null $classCode
      * @return self
      */
     public function setClassCode(?CodeType $classCode = null): self
@@ -73,7 +73,7 @@ class ProductClassificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null
+     * @return TextType|null
      */
     public function getClassName(): ?TextType
     {
@@ -81,7 +81,7 @@ class ProductClassificationType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType
+     * @return TextType
      */
     public function getClassNameWithCreate(): TextType
     {
@@ -91,7 +91,7 @@ class ProductClassificationType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType|null $className
+     * @param TextType|null $className
      * @return self
      */
     public function setClassName(?TextType $className = null): self

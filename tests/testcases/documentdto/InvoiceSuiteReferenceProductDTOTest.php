@@ -20,9 +20,9 @@ final class InvoiceSuiteReferenceProductDTOTest extends TestCase
         $this->assertNull($invoiceSuiteReferenceProductDTO->getDescription());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getSellerId());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getBuyerId());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO::class, $invoiceSuiteReferenceProductDTO->getGlobalId());
+        $this->assertNotInstanceOf(InvoiceSuiteIdDTO::class, $invoiceSuiteReferenceProductDTO->getGlobalId());
         $this->assertNull($invoiceSuiteReferenceProductDTO->getIndustryId());
-        $this->assertNotInstanceOf(\horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO::class, $invoiceSuiteReferenceProductDTO->getUnitQuantity());
+        $this->assertNotInstanceOf(InvoiceSuiteQuantityDTO::class, $invoiceSuiteReferenceProductDTO->getUnitQuantity());
     }
 
     public function testIdGetterAndSetter(): void

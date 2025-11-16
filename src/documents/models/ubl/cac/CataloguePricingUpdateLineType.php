@@ -11,7 +11,7 @@ class CataloguePricingUpdateLineType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -22,7 +22,7 @@ class CataloguePricingUpdateLineType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty|null
+     * @var ContractorCustomerParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class CataloguePricingUpdateLineType
     private $contractorCustomerParty;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @var SellerSupplierParty|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class CataloguePricingUpdateLineType
     private $sellerSupplierParty;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>|null
+     * @var array<RequiredItemLocationQuantity>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class CataloguePricingUpdateLineType
     private $requiredItemLocationQuantity;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -64,7 +64,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -74,7 +74,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -95,7 +95,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty|null
+     * @return ContractorCustomerParty|null
      */
     public function getContractorCustomerParty(): ?ContractorCustomerParty
     {
@@ -103,7 +103,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty
+     * @return ContractorCustomerParty
      */
     public function getContractorCustomerPartyWithCreate(): ContractorCustomerParty
     {
@@ -113,7 +113,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty|null $contractorCustomerParty
+     * @param ContractorCustomerParty|null $contractorCustomerParty
      * @return self
      */
     public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): self
@@ -134,7 +134,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null
+     * @return SellerSupplierParty|null
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -142,7 +142,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty
+     * @return SellerSupplierParty
      */
     public function getSellerSupplierPartyWithCreate(): SellerSupplierParty
     {
@@ -152,7 +152,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty|null $sellerSupplierParty
+     * @param SellerSupplierParty|null $sellerSupplierParty
      * @return self
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
@@ -173,7 +173,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>|null
+     * @return array<RequiredItemLocationQuantity>|null
      */
     public function getRequiredItemLocationQuantity(): ?array
     {
@@ -181,7 +181,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
+     * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
      * @return self
      */
     public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): self
@@ -212,7 +212,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity|null
+     * @return RequiredItemLocationQuantity|null
      */
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -227,7 +227,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity|null
+     * @return RequiredItemLocationQuantity|null
      */
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -242,7 +242,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return self
      */
     public function addToRequiredItemLocationQuantity(
@@ -254,7 +254,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity
+     * @return RequiredItemLocationQuantity
      */
     public function addToRequiredItemLocationQuantityWithCreate(): RequiredItemLocationQuantity
     {
@@ -264,7 +264,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return self
      */
     public function addOnceToRequiredItemLocationQuantity(
@@ -280,7 +280,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity
+     * @return RequiredItemLocationQuantity
      */
     public function addOnceToRequiredItemLocationQuantityWithCreate(): RequiredItemLocationQuantity
     {

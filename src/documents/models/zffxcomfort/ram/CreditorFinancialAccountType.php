@@ -12,7 +12,7 @@ class CreditorFinancialAccountType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class CreditorFinancialAccountType
     private $iBANID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @var TextType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class CreditorFinancialAccountType
     private $accountName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @var IDType|null
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class CreditorFinancialAccountType
     private $proprietaryID;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getIBANID(): ?IDType
     {
@@ -53,7 +53,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getIBANIDWithCreate(): IDType
     {
@@ -63,7 +63,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $iBANID
+     * @param IDType|null $iBANID
      * @return self
      */
     public function setIBANID(?IDType $iBANID = null): self
@@ -84,7 +84,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null
+     * @return TextType|null
      */
     public function getAccountName(): ?TextType
     {
@@ -92,7 +92,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType
+     * @return TextType
      */
     public function getAccountNameWithCreate(): TextType
     {
@@ -102,7 +102,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType|null $accountName
+     * @param TextType|null $accountName
      * @return self
      */
     public function setAccountName(?TextType $accountName = null): self
@@ -123,7 +123,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null
+     * @return IDType|null
      */
     public function getProprietaryID(): ?IDType
     {
@@ -131,7 +131,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType
+     * @return IDType
      */
     public function getProprietaryIDWithCreate(): IDType
     {
@@ -141,7 +141,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType|null $proprietaryID
+     * @param IDType|null $proprietaryID
      * @return self
      */
     public function setProprietaryID(?IDType $proprietaryID = null): self

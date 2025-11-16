@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
+use DateTimeInterface;
 use DateTimeImmutable;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
@@ -17,7 +18,7 @@ final class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO = new InvoiceSuitePaymentTermDTO();
 
         $this->assertNull($invoiceSuitePaymentTermDTO->getDescription());
-        $this->assertNotInstanceOf(\DateTimeInterface::class, $invoiceSuitePaymentTermDTO->getDueDate());
+        $this->assertNotInstanceOf(DateTimeInterface::class, $invoiceSuitePaymentTermDTO->getDueDate());
         $this->assertSame([], $invoiceSuitePaymentTermDTO->getDiscountTerms());
         $this->assertSame([], $invoiceSuitePaymentTermDTO->getPenaltyTerms());
     }

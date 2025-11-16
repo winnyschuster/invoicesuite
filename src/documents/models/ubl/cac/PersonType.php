@@ -2,6 +2,7 @@
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName;
@@ -22,7 +23,7 @@ class PersonType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +34,7 @@ class PersonType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FirstName|null
+     * @var FirstName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FirstName")
      * @JMS\Expose
@@ -44,7 +45,7 @@ class PersonType
     private $firstName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName|null
+     * @var FamilyName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName")
      * @JMS\Expose
@@ -55,7 +56,7 @@ class PersonType
     private $familyName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Title|null
+     * @var Title|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Title")
      * @JMS\Expose
@@ -66,7 +67,7 @@ class PersonType
     private $title;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MiddleName|null
+     * @var MiddleName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MiddleName")
      * @JMS\Expose
@@ -77,7 +78,7 @@ class PersonType
     private $middleName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName|null
+     * @var OtherName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName")
      * @JMS\Expose
@@ -88,7 +89,7 @@ class PersonType
     private $otherName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NameSuffix|null
+     * @var NameSuffix|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NameSuffix")
      * @JMS\Expose
@@ -99,7 +100,7 @@ class PersonType
     private $nameSuffix;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\JobTitle|null
+     * @var JobTitle|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\JobTitle")
      * @JMS\Expose
@@ -110,7 +111,7 @@ class PersonType
     private $jobTitle;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID|null
+     * @var NationalityID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID")
      * @JMS\Expose
@@ -121,7 +122,7 @@ class PersonType
     private $nationalityID;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\GenderCode|null
+     * @var GenderCode|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GenderCode")
      * @JMS\Expose
@@ -132,7 +133,7 @@ class PersonType
     private $genderCode;
 
     /**
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -143,7 +144,7 @@ class PersonType
     private $birthDate;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName|null
+     * @var BirthplaceName|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName")
      * @JMS\Expose
@@ -154,7 +155,7 @@ class PersonType
     private $birthplaceName;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment|null
+     * @var OrganizationDepartment|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment")
      * @JMS\Expose
@@ -165,7 +166,7 @@ class PersonType
     private $organizationDepartment;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Contact|null
+     * @var Contact|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contact")
      * @JMS\Expose
@@ -176,7 +177,7 @@ class PersonType
     private $contact;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount|null
+     * @var FinancialAccount|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount")
      * @JMS\Expose
@@ -187,7 +188,7 @@ class PersonType
     private $financialAccount;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference>|null
+     * @var array<IdentityDocumentReference>|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference>")
      * @JMS\Expose
@@ -199,7 +200,7 @@ class PersonType
     private $identityDocumentReference;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\ResidenceAddress|null
+     * @var ResidenceAddress|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ResidenceAddress")
      * @JMS\Expose
@@ -210,7 +211,7 @@ class PersonType
     private $residenceAddress;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -218,7 +219,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -228,7 +229,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -249,7 +250,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FirstName|null
+     * @return FirstName|null
      */
     public function getFirstName(): ?FirstName
     {
@@ -257,7 +258,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FirstName
+     * @return FirstName
      */
     public function getFirstNameWithCreate(): FirstName
     {
@@ -267,7 +268,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FirstName|null $firstName
+     * @param FirstName|null $firstName
      * @return self
      */
     public function setFirstName(?FirstName $firstName = null): self
@@ -288,7 +289,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName|null
+     * @return FamilyName|null
      */
     public function getFamilyName(): ?FamilyName
     {
@@ -296,7 +297,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName
+     * @return FamilyName
      */
     public function getFamilyNameWithCreate(): FamilyName
     {
@@ -306,7 +307,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName|null $familyName
+     * @param FamilyName|null $familyName
      * @return self
      */
     public function setFamilyName(?FamilyName $familyName = null): self
@@ -327,7 +328,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Title|null
+     * @return Title|null
      */
     public function getTitle(): ?Title
     {
@@ -335,7 +336,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Title
+     * @return Title
      */
     public function getTitleWithCreate(): Title
     {
@@ -345,7 +346,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Title|null $title
+     * @param Title|null $title
      * @return self
      */
     public function setTitle(?Title $title = null): self
@@ -366,7 +367,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MiddleName|null
+     * @return MiddleName|null
      */
     public function getMiddleName(): ?MiddleName
     {
@@ -374,7 +375,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MiddleName
+     * @return MiddleName
      */
     public function getMiddleNameWithCreate(): MiddleName
     {
@@ -384,7 +385,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MiddleName|null $middleName
+     * @param MiddleName|null $middleName
      * @return self
      */
     public function setMiddleName(?MiddleName $middleName = null): self
@@ -405,7 +406,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName|null
+     * @return OtherName|null
      */
     public function getOtherName(): ?OtherName
     {
@@ -413,7 +414,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName
+     * @return OtherName
      */
     public function getOtherNameWithCreate(): OtherName
     {
@@ -423,7 +424,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName|null $otherName
+     * @param OtherName|null $otherName
      * @return self
      */
     public function setOtherName(?OtherName $otherName = null): self
@@ -444,7 +445,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NameSuffix|null
+     * @return NameSuffix|null
      */
     public function getNameSuffix(): ?NameSuffix
     {
@@ -452,7 +453,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NameSuffix
+     * @return NameSuffix
      */
     public function getNameSuffixWithCreate(): NameSuffix
     {
@@ -462,7 +463,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NameSuffix|null $nameSuffix
+     * @param NameSuffix|null $nameSuffix
      * @return self
      */
     public function setNameSuffix(?NameSuffix $nameSuffix = null): self
@@ -483,7 +484,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JobTitle|null
+     * @return JobTitle|null
      */
     public function getJobTitle(): ?JobTitle
     {
@@ -491,7 +492,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\JobTitle
+     * @return JobTitle
      */
     public function getJobTitleWithCreate(): JobTitle
     {
@@ -501,7 +502,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\JobTitle|null $jobTitle
+     * @param JobTitle|null $jobTitle
      * @return self
      */
     public function setJobTitle(?JobTitle $jobTitle = null): self
@@ -522,7 +523,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID|null
+     * @return NationalityID|null
      */
     public function getNationalityID(): ?NationalityID
     {
@@ -530,7 +531,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID
+     * @return NationalityID
      */
     public function getNationalityIDWithCreate(): NationalityID
     {
@@ -540,7 +541,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID|null $nationalityID
+     * @param NationalityID|null $nationalityID
      * @return self
      */
     public function setNationalityID(?NationalityID $nationalityID = null): self
@@ -561,7 +562,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GenderCode|null
+     * @return GenderCode|null
      */
     public function getGenderCode(): ?GenderCode
     {
@@ -569,7 +570,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\GenderCode
+     * @return GenderCode
      */
     public function getGenderCodeWithCreate(): GenderCode
     {
@@ -579,7 +580,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\GenderCode|null $genderCode
+     * @param GenderCode|null $genderCode
      * @return self
      */
     public function setGenderCode(?GenderCode $genderCode = null): self
@@ -600,18 +601,18 @@ class PersonType
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getBirthDate(): ?\DateTimeInterface
+    public function getBirthDate(): ?DateTimeInterface
     {
         return $this->birthDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $birthDate
+     * @param DateTimeInterface|null $birthDate
      * @return self
      */
-    public function setBirthDate(?\DateTimeInterface $birthDate = null): self
+    public function setBirthDate(?DateTimeInterface $birthDate = null): self
     {
         $this->birthDate = $birthDate;
 
@@ -629,7 +630,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName|null
+     * @return BirthplaceName|null
      */
     public function getBirthplaceName(): ?BirthplaceName
     {
@@ -637,7 +638,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName
+     * @return BirthplaceName
      */
     public function getBirthplaceNameWithCreate(): BirthplaceName
     {
@@ -647,7 +648,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName|null $birthplaceName
+     * @param BirthplaceName|null $birthplaceName
      * @return self
      */
     public function setBirthplaceName(?BirthplaceName $birthplaceName = null): self
@@ -668,7 +669,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment|null
+     * @return OrganizationDepartment|null
      */
     public function getOrganizationDepartment(): ?OrganizationDepartment
     {
@@ -676,7 +677,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment
+     * @return OrganizationDepartment
      */
     public function getOrganizationDepartmentWithCreate(): OrganizationDepartment
     {
@@ -686,7 +687,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment|null $organizationDepartment
+     * @param OrganizationDepartment|null $organizationDepartment
      * @return self
      */
     public function setOrganizationDepartment(?OrganizationDepartment $organizationDepartment = null): self
@@ -707,7 +708,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contact|null
+     * @return Contact|null
      */
     public function getContact(): ?Contact
     {
@@ -715,7 +716,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Contact
+     * @return Contact
      */
     public function getContactWithCreate(): Contact
     {
@@ -725,7 +726,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Contact|null $contact
+     * @param Contact|null $contact
      * @return self
      */
     public function setContact(?Contact $contact = null): self
@@ -746,7 +747,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount|null
+     * @return FinancialAccount|null
      */
     public function getFinancialAccount(): ?FinancialAccount
     {
@@ -754,7 +755,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount
+     * @return FinancialAccount
      */
     public function getFinancialAccountWithCreate(): FinancialAccount
     {
@@ -764,7 +765,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount|null $financialAccount
+     * @param FinancialAccount|null $financialAccount
      * @return self
      */
     public function setFinancialAccount(?FinancialAccount $financialAccount = null): self
@@ -785,7 +786,7 @@ class PersonType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference>|null
+     * @return array<IdentityDocumentReference>|null
      */
     public function getIdentityDocumentReference(): ?array
     {
@@ -793,7 +794,7 @@ class PersonType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference>|null $identityDocumentReference
+     * @param array<IdentityDocumentReference>|null $identityDocumentReference
      * @return self
      */
     public function setIdentityDocumentReference(?array $identityDocumentReference = null): self
@@ -824,7 +825,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference|null
+     * @return IdentityDocumentReference|null
      */
     public function firstIdentityDocumentReference(): ?IdentityDocumentReference
     {
@@ -839,7 +840,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference|null
+     * @return IdentityDocumentReference|null
      */
     public function lastIdentityDocumentReference(): ?IdentityDocumentReference
     {
@@ -854,7 +855,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference $identityDocumentReference
+     * @param IdentityDocumentReference $identityDocumentReference
      * @return self
      */
     public function addToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): self
@@ -865,7 +866,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference
+     * @return IdentityDocumentReference
      */
     public function addToIdentityDocumentReferenceWithCreate(): IdentityDocumentReference
     {
@@ -875,7 +876,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference $identityDocumentReference
+     * @param IdentityDocumentReference $identityDocumentReference
      * @return self
      */
     public function addOnceToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): self
@@ -890,7 +891,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference
+     * @return IdentityDocumentReference
      */
     public function addOnceToIdentityDocumentReferenceWithCreate(): IdentityDocumentReference
     {
@@ -906,7 +907,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ResidenceAddress|null
+     * @return ResidenceAddress|null
      */
     public function getResidenceAddress(): ?ResidenceAddress
     {
@@ -914,7 +915,7 @@ class PersonType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ResidenceAddress
+     * @return ResidenceAddress
      */
     public function getResidenceAddressWithCreate(): ResidenceAddress
     {
@@ -924,7 +925,7 @@ class PersonType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ResidenceAddress|null $residenceAddress
+     * @param ResidenceAddress|null $residenceAddress
      * @return self
      */
     public function setResidenceAddress(?ResidenceAddress $residenceAddress = null): self

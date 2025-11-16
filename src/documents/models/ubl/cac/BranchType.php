@@ -12,7 +12,7 @@ class BranchType
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @var ID|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class BranchType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @var Name|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class BranchType
     private $name;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitution|null
+     * @var FinancialInstitution|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitution")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class BranchType
     private $financialInstitution;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @var Address|null
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class BranchType
     private $address;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null
+     * @return ID|null
      */
     public function getID(): ?ID
     {
@@ -64,7 +64,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ID
+     * @return ID
      */
     public function getIDWithCreate(): ID
     {
@@ -74,7 +74,7 @@ class BranchType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ID|null $iD
+     * @param ID|null $iD
      * @return self
      */
     public function setID(?ID $iD = null): self
@@ -95,7 +95,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null
+     * @return Name|null
      */
     public function getName(): ?Name
     {
@@ -103,7 +103,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\Name
+     * @return Name
      */
     public function getNameWithCreate(): Name
     {
@@ -113,7 +113,7 @@ class BranchType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\Name|null $name
+     * @param Name|null $name
      * @return self
      */
     public function setName(?Name $name = null): self
@@ -134,7 +134,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitution|null
+     * @return FinancialInstitution|null
      */
     public function getFinancialInstitution(): ?FinancialInstitution
     {
@@ -142,7 +142,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitution
+     * @return FinancialInstitution
      */
     public function getFinancialInstitutionWithCreate(): FinancialInstitution
     {
@@ -152,7 +152,7 @@ class BranchType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitution|null $financialInstitution
+     * @param FinancialInstitution|null $financialInstitution
      * @return self
      */
     public function setFinancialInstitution(?FinancialInstitution $financialInstitution = null): self
@@ -173,7 +173,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null
+     * @return Address|null
      */
     public function getAddress(): ?Address
     {
@@ -181,7 +181,7 @@ class BranchType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\Address
+     * @return Address
      */
     public function getAddressWithCreate(): Address
     {
@@ -191,7 +191,7 @@ class BranchType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\Address|null $address
+     * @param Address|null $address
      * @return self
      */
     public function setAddress(?Address $address = null): self
