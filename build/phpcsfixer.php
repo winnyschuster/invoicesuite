@@ -69,7 +69,7 @@ return (new Config())
                 'elements' => ['property', 'method', 'const'],
             ],
             'constant_case' => [
-                'case' => 'upper'
+                'case' => 'lower'
             ],
             'self_accessor' => true,
             'static_lambda' => true,
@@ -106,6 +106,11 @@ return (new Config())
             'no_useless_else' => true,
             'yoda_style' => false,
             'no_superfluous_phpdoc_tags' => false,
-            'no_empty_phpdoc' => false
+            'no_empty_phpdoc' => false,
+            'global_namespace_import' => [
+                'import_classes'   => true,
+                'import_constants' => false,
+                'import_functions' => false,
+            ],
         ]
     );
