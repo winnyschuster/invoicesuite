@@ -80,8 +80,12 @@ return (new Config())
             ],
             'phpdoc_align' => [
                 'tags' => [
+                    'method',
                     'param',
+                    'property',
                     'return',
+                    'type',
+                    'var',
                     'throws',
                     'see',
                     'license'
