@@ -1,0 +1,111 @@
+<?php
+
+declare(strict_types=1);
+
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
+
+$rootDir = __DIR__ . '/..';
+
+$finder = (new Finder())
+    ->in([
+        $rootDir . '/src',
+        $rootDir . '/tests',
+    ])
+    ->name('*.php')
+    ->ignoreVCS(true)
+    ->ignoreDotFiles(true)
+    ->exclude(
+        [
+            'vendor',
+            'node_modules',
+            'var',
+            'storage',
+            'cache',
+            'build',
+            '.git',
+            '.idea',
+        ]
+    )
+    ->notPath([
+        'documents/models/',
+    ]);
+
+return (new Config())
+    ->setRiskyAllowed(true)
+    ->setUsingCache(true)
+    ->setCacheFile($rootDir . '/build/.php-cs-fixer.cache')
+    ->setFinder($finder)
+    ->setIndent("    ")
+    ->setLineEnding("\n")
+    ->setParallelConfig(new PhpCsFixer\Runner\Parallel\ParallelConfig(4, 20, 3000))
+    ->setRules(
+        [
+            '@PSR12' => true,
+            '@PhpCsFixer' => true,
+            'ordered_imports' => [
+                'sort_algorithm' => 'alpha',
+                'imports_order'  => [
+                    'class',
+                    'function',
+                    'const'
+                ],
+            ],
+            'no_unused_imports' => true,
+            'single_import_per_statement' => true,
+            'single_line_after_imports' => true,
+            'declare_strict_types' => false,
+            'array_indentation' => true,
+            'array_syntax' => ['syntax' => 'short'],
+            'trailing_comma_in_multiline' => [
+                'elements' => [
+                    'arrays',
+                    'arguments',
+                    'parameters'
+                ],
+            ],
+            'visibility_required' => [
+                'elements' => ['property', 'method', 'const'],
+            ],
+            'constant_case' => [
+                'case' => 'upper'
+            ],
+            'self_accessor' => true,
+            'static_lambda' => true,
+            'function_declaration' => [
+                'closure_function_spacing' => 'one'
+            ],
+            'control_structure_continuation_position' => true,
+            'binary_operator_spaces' => [
+                'default' => 'single_space',
+            ],
+            'phpdoc_align' => [
+                'tags' => [
+                    'param',
+                    'return',
+                    'throws'
+                ],
+            ],
+            'phpdoc_order' => true,
+            'phpdoc_scalar' => true,
+            'phpdoc_trim' => true,
+            'phpdoc_trim_consecutive_blank_line_separation' => true,
+            'phpdoc_summary' => false,
+            'phpdoc_no_empty_return' => false,
+            'elseif' => true,
+            'blank_line_before_statement' => [
+                'statements' => [
+                    'return',
+                    'throw',
+                    'try',
+                    'if'
+                ],
+            ],
+            'no_useless_return' => true,
+            'no_useless_else' => true,
+            'yoda_style' => false,
+            'no_superfluous_phpdoc_tags' => false,
+            'no_empty_phpdoc' => false
+        ]
+    );
