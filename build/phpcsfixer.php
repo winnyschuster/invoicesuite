@@ -60,8 +60,7 @@ return (new Config())
             'array_syntax' => ['syntax' => 'short'],
             'trailing_comma_in_multiline' => [
                 'elements' => [
-                    'arrays',
-                    'arguments'
+                    'arrays'
                 ],
             ],
             'visibility_required' => [
