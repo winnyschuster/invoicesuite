@@ -3194,8 +3194,8 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get an additional invoice document (reference to preceding invoice)
      *
      * @param  null|string            $newReferenceNumber __BT-25, From BASIC WL__ Identification of an invoice previously sent
-     * @param  null|DateTimeInterface $newReferenceDate   __BT-X-555, From EXTENDED__ Date of the previous invoice
-     * @param  null|string            $newTypeCode        __BT-26, From BASIC WL__ Type code of previous invoice
+     * @param  null|DateTimeInterface $newReferenceDate   __BT-26, From BASIC WL__Date of the previous invoice
+     * @param  null|string            $newTypeCode        __BT-X-555, From EXTENDED__ Type code of previous invoice
      * @return self
      *
      * @phpstan-param-out string $newReferenceNumber
