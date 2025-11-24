@@ -220,6 +220,10 @@ final class InvoiceSuiteMessageBagTest extends TestCase
         $this->assertSame('error', $messageBag[2]->getMessageSeverityValue());
         $this->assertInstanceOf(DateTime::class, $messageBag[2]->getMessageTimestamp());
         $this->assertSame('19700102', $messageBag[2]->getMessageTimestamp()->format('Ymd'));
+
+        foreach ($messageBag as $messageBagItem) {
+            $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $messageBagItem);
+        }
     }
 
     public function testInvoiceSuiteMessageBagArrayAccessInvalid1(): void
