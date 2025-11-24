@@ -202,10 +202,10 @@ final class InvoiceSuiteMessageBagTest extends TestCase
         ]);
 
         $this->assertCount(3, $messageBag);
-        $this->assertTrue(isset($messageBag[0]));
-        $this->assertTrue(isset($messageBag[1]));
-        $this->assertTrue(isset($messageBag[2]));
-        $this->assertFalse(isset($messageBag[3]));
+        $this->assertArrayHasKey(0, $messageBag);
+        $this->assertArrayHasKey(1, $messageBag);
+        $this->assertArrayHasKey(2, $messageBag);
+        $this->assertArrayNotHasKey(3, $messageBag);
         $this->assertArrayHasKey(0, $messageBag);
         $this->assertArrayHasKey(1, $messageBag);
         $this->assertArrayHasKey(2, $messageBag);
@@ -241,7 +241,7 @@ final class InvoiceSuiteMessageBagTest extends TestCase
         $this->expectException(InvoiceSuiteInvalidArgumentException::class);
         $this->expectExceptionMessage('Offset must be an int.');
 
-        isset($messageBag['key']);
+        $messageBag['key'];
     }
 
     public function testInvoiceSuiteMessageBagArrayAccessInvalid2(): void
