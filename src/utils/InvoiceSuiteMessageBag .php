@@ -31,7 +31,8 @@ final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Co
     private array $messageBagItems = [];
 
     /**
-     * Constructor. Keys from input are ignored and normalized to consecutive int keys (0..n-1).
+     * Constructor.
+     * Keys from input are ignored and normalized to consecutive int keys (0..n-1).
      *
      * @param  array<int, InvoiceSuiteMessageBagItem> $messageBagItems initial message items
      * @throws InvoiceSuiteInvalidArgumentException   if any message is not an InvoiceSuiteMessageBagItem
@@ -45,8 +46,8 @@ final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Co
      * Add multiple message items to the bag (append).
      * Internally uses add() to keep behaviour in one place.
      *
-     * @param  array<int, InvoiceSuiteMessageBagItem> $messageBagItems the message items to add
-     * @throws InvoiceSuiteInvalidArgumentException   if any message is not an InvoiceSuiteMessageBagItem
+     * @param  array<int, InvoiceSuiteMessageBagItem> $messageBagItems The message items to add
+     * @throws InvoiceSuiteInvalidArgumentException   If any message is not an InvoiceSuiteMessageBagItem
      * @return self
      */
     public function addMessages(array $messageBagItems): self
