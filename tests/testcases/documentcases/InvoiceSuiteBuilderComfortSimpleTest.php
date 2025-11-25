@@ -14,7 +14,7 @@ use horstoeko\invoicesuite\tests\traits\HandlesXmlTests;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-final class InvoiceSuiteComfortSimpleTest extends TestCase
+final class InvoiceSuiteBuilderComfortSimpleTest extends TestCase
 {
     use HandlesXmlTests;
 
