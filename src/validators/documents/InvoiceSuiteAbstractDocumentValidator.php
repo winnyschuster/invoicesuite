@@ -42,16 +42,6 @@ abstract class InvoiceSuiteAbstractDocumentValidator
     }
 
     /**
-     * Some initialization after constructing an instance
-     *
-     * @return static
-     */
-    protected function intializeAfterConstruct(): static
-    {
-        return $this;
-    }
-
-    /**
      * Create a validator instance by a file which contains the document to validate
      *
      * @param  string $fromFilename
@@ -111,4 +101,14 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @return static
      */
     abstract public function validate(): static;
+
+    /**
+     * Some initialization after constructing an instance
+     *
+     * @return static
+     */
+    protected function intializeAfterConstruct(): static
+    {
+        return $this;
+    }
 }

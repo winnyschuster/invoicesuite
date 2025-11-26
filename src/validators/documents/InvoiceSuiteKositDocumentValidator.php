@@ -117,18 +117,6 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
     private $remoteModePort = 0;
 
     /**
-     * Constructor (hidden)
-     *
-     * @param string $newRawDocumentContent
-     */
-    protected function intializeAfterConstruct(): static
-    {
-        $this->baseDirectory = sys_get_temp_dir();
-
-        return parent::intializeAfterConstruct();
-    }
-
-    /**
      * Setup the base directory. In the base directory all files will be downloaded
      * and created
      *
@@ -350,6 +338,18 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         $this->cleanupBaseDirectory();
 
         return $this;
+    }
+
+    /**
+     * Constructor (hidden)
+     *
+     * @param string $newRawDocumentContent
+     */
+    protected function intializeAfterConstruct(): static
+    {
+        $this->baseDirectory = sys_get_temp_dir();
+
+        return parent::intializeAfterConstruct();
     }
 
     /**
