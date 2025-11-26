@@ -69,7 +69,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      */
     public static function createFromDocumentBuilderAsXml(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): self
     {
-        return new static($fromDocumentBuilder->getContentAsXml());
+        return static::createFromContent($fromDocumentBuilder->getContentAsXml());
     }
 
     /**
@@ -80,7 +80,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      */
     public static function createFromDocumentBuilderAsJson(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): self
     {
-        return new static($fromDocumentBuilder->getContentAsJson());
+        return static::createFromContent($fromDocumentBuilder->getContentAsJson());
     }
 
     /**
