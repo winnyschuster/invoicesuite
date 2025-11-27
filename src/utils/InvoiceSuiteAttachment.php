@@ -102,8 +102,8 @@ class InvoiceSuiteAttachment
     /**
      * Create a binary object definition by a string containing binary data
      *
-     * @param  string                 $content
-     * @param  string                 $filename
+     * @param  string $content
+     * @param  string $filename
      * @return static
      */
     public static function fromBinaryString(string $content, string $filename): static

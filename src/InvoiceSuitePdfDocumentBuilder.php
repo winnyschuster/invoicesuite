@@ -146,7 +146,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Save the content of the generated PDF to a file
      *
-     * @param  string                         $toFilename
+     * @param  string $toFilename
      * @return static
      */
     public function generatePdfDocumentAndSaveToFile(string $toFilename): static
@@ -169,7 +169,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the additional creator tool (e.g. the ERP software that called the PHP library)
      *
-     * @param  string                         $newAdditionalCreatorTool
+     * @param  string $newAdditionalCreatorTool
      * @return static
      */
     public function setAdditionalCreatorTool(string $newAdditionalCreatorTool): static
@@ -192,7 +192,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the relationship type of the attached invoice document
      *
-     * @param  string                         $newDocumentRelationshipType
+     * @param  string $newDocumentRelationshipType
      * @return static
      */
     public function setDocumentRelationshipType(string $newDocumentRelationshipType): static
@@ -298,7 +298,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the status of deterministic mode
      *
-     * @param  bool                           $newDeterministicMode
+     * @param  bool   $newDeterministicMode
      * @return static
      */
     public function setDeterministicMode(bool $newDeterministicMode): static
@@ -345,7 +345,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the template for author-metainformation
      *
-     * @param  string                         $newMetaInformationAuthorTemplate
+     * @param  string $newMetaInformationAuthorTemplate
      * @return static
      */
     public function setMetaInformationAuthorTemplate(string $newMetaInformationAuthorTemplate): static
@@ -368,7 +368,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the template for keyword-metainformation
      *
-     * @param  string                         $newMetaInformationKeywordTemplate
+     * @param  string $newMetaInformationKeywordTemplate
      * @return static
      */
     public function setMetaInformationKeywordTemplate(string $newMetaInformationKeywordTemplate): static
@@ -391,7 +391,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the template for title-metainformation
      *
-     * @param  string                         $newMetaInformationTitleTemplate
+     * @param  string $newMetaInformationTitleTemplate
      * @return static
      */
     public function setMetaInformationTitleTemplate(string $newMetaInformationTitleTemplate): static
@@ -414,7 +414,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the template for subject-metainformation
      *
-     * @param  string                         $newMetaInformationSubjectTemplate
+     * @param  string $newMetaInformationSubjectTemplate
      * @return static
      */
     public function setMetaInformationSubjectTemplate(string $newMetaInformationSubjectTemplate): static
@@ -437,7 +437,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the callback for metainformation
      *
-     * @param  null|callable                  $newMetaInformationCallback
+     * @param  null|callable $newMetaInformationCallback
      * @return static
      */
     public function setMetaInformationCallback(?callable $newMetaInformationCallback): static
@@ -460,7 +460,7 @@ class InvoiceSuitePdfDocumentBuilder
     /**
      * Set the attachment pane visibility
      *
-     * @param  bool                           $newAttachmentPaneVisibility
+     * @param  bool   $newAttachmentPaneVisibility
      * @return static
      */
     public function setAttachmentPaneVisibility(bool $newAttachmentPaneVisibility): static

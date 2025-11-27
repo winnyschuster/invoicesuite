@@ -2679,7 +2679,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
     /**
      * Gets the new status of the copy indicator
      *
-     * @param  bool $newDocumentIsCopy __BT-X-1-00, From EXTENDED__ Indicates that the document is a copy
+     * @param  bool   $newDocumentIsCopy __BT-X-1-00, From EXTENDED__ Indicates that the document is a copy
      * @return static
      *
      * @phpstan-param-out boolean $newDocumentIsCopy

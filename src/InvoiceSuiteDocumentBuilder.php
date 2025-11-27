@@ -68,7 +68,7 @@ class InvoiceSuiteDocumentBuilder
     /**
      * Create a new InvoiceDocumentBuilder instance for the given format provider
      *
-     * @param  string                      $formatProviderUniqueId
+     * @param  string $formatProviderUniqueId
      * @return static
      */
     public static function createByProviderUniqueId(

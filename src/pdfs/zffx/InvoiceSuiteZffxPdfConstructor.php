@@ -145,7 +145,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
     /**
      * Save the content of the generated PDF to a file
      *
-     * @param  string                             $toFilename
+     * @param  string    $toFilename
      * @throws Exception
      * @return static
      */

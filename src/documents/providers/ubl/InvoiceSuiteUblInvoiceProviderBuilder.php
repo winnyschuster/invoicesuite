@@ -864,7 +864,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     /**
      * Sets the new status of the test indicator
      *
-     * @param  bool $newDocumentIsTest Indicates that the document is a test
+     * @param  bool   $newDocumentIsTest Indicates that the document is a test
      * @return static
      */
     public function setDocumentIsTest(

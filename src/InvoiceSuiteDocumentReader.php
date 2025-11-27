@@ -103,7 +103,7 @@ class InvoiceSuiteDocumentReader
     /**
      * Create reader by content
      *
-     * @param  string                     $fromContent
+     * @param  string $fromContent
      * @return static
      */
     public static function createFromContent(string $fromContent): static

@@ -52,7 +52,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     /**
      * Deserialize from content (will guess)
      *
-     * @param  string                                   $fromContent
+     * @param  string                              $fromContent
      * @throws InvoiceSuiteUnknownContentException
      * @return static
      */
@@ -4209,7 +4209,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     /**
      * Read from XML content
      *
-     * @param  string                                   $fromContent
+     * @param  string           $fromContent
      * @throws RuntimeException
      * @return static
      */
@@ -4223,7 +4223,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     /**
      * Read from JSON content
      *
-     * @param  string                                   $fromContent
+     * @param  string           $fromContent
      * @throws RuntimeException
      * @return static
      */
@@ -4237,8 +4237,8 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     /**
      * Read from content by type
      *
-     * @param  string                                   $fromContent
-     * @param  string                                   $contentType
+     * @param  string           $fromContent
+     * @param  string           $contentType
      * @throws RuntimeException
      * @return static
      */
