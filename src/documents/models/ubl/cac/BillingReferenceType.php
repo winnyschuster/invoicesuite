@@ -120,9 +120,9 @@ class BillingReferenceType
 
     /**
      * @param InvoiceDocumentReference|null $invoiceDocumentReference
-     * @return self
+     * @return static
      */
-    public function setInvoiceDocumentReference(?InvoiceDocumentReference $invoiceDocumentReference = null): self
+    public function setInvoiceDocumentReference(?InvoiceDocumentReference $invoiceDocumentReference = null): static
     {
         $this->invoiceDocumentReference = $invoiceDocumentReference;
 
@@ -130,9 +130,9 @@ class BillingReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceDocumentReference(): self
+    public function unsetInvoiceDocumentReference(): static
     {
         $this->invoiceDocumentReference = null;
 
@@ -159,20 +159,20 @@ class BillingReferenceType
 
     /**
      * @param SelfBilledInvoiceDocumentReference|null $selfBilledInvoiceDocumentReference
-     * @return self
+     * @return static
      */
     public function setSelfBilledInvoiceDocumentReference(
         ?SelfBilledInvoiceDocumentReference $selfBilledInvoiceDocumentReference = null,
-    ): self {
+    ): static {
         $this->selfBilledInvoiceDocumentReference = $selfBilledInvoiceDocumentReference;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSelfBilledInvoiceDocumentReference(): self
+    public function unsetSelfBilledInvoiceDocumentReference(): static
     {
         $this->selfBilledInvoiceDocumentReference = null;
 
@@ -199,20 +199,20 @@ class BillingReferenceType
 
     /**
      * @param CreditNoteDocumentReference|null $creditNoteDocumentReference
-     * @return self
+     * @return static
      */
     public function setCreditNoteDocumentReference(
         ?CreditNoteDocumentReference $creditNoteDocumentReference = null,
-    ): self {
+    ): static {
         $this->creditNoteDocumentReference = $creditNoteDocumentReference;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCreditNoteDocumentReference(): self
+    public function unsetCreditNoteDocumentReference(): static
     {
         $this->creditNoteDocumentReference = null;
 
@@ -239,20 +239,20 @@ class BillingReferenceType
 
     /**
      * @param SelfBilledCreditNoteDocumentReference|null $selfBilledCreditNoteDocumentReference
-     * @return self
+     * @return static
      */
     public function setSelfBilledCreditNoteDocumentReference(
         ?SelfBilledCreditNoteDocumentReference $selfBilledCreditNoteDocumentReference = null,
-    ): self {
+    ): static {
         $this->selfBilledCreditNoteDocumentReference = $selfBilledCreditNoteDocumentReference;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSelfBilledCreditNoteDocumentReference(): self
+    public function unsetSelfBilledCreditNoteDocumentReference(): static
     {
         $this->selfBilledCreditNoteDocumentReference = null;
 
@@ -279,20 +279,20 @@ class BillingReferenceType
 
     /**
      * @param DebitNoteDocumentReference|null $debitNoteDocumentReference
-     * @return self
+     * @return static
      */
     public function setDebitNoteDocumentReference(
         ?DebitNoteDocumentReference $debitNoteDocumentReference = null,
-    ): self {
+    ): static {
         $this->debitNoteDocumentReference = $debitNoteDocumentReference;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDebitNoteDocumentReference(): self
+    public function unsetDebitNoteDocumentReference(): static
     {
         $this->debitNoteDocumentReference = null;
 
@@ -319,9 +319,9 @@ class BillingReferenceType
 
     /**
      * @param ReminderDocumentReference|null $reminderDocumentReference
-     * @return self
+     * @return static
      */
-    public function setReminderDocumentReference(?ReminderDocumentReference $reminderDocumentReference = null): self
+    public function setReminderDocumentReference(?ReminderDocumentReference $reminderDocumentReference = null): static
     {
         $this->reminderDocumentReference = $reminderDocumentReference;
 
@@ -329,9 +329,9 @@ class BillingReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReminderDocumentReference(): self
+    public function unsetReminderDocumentReference(): static
     {
         $this->reminderDocumentReference = null;
 
@@ -358,20 +358,20 @@ class BillingReferenceType
 
     /**
      * @param AdditionalDocumentReference|null $additionalDocumentReference
-     * @return self
+     * @return static
      */
     public function setAdditionalDocumentReference(
         ?AdditionalDocumentReference $additionalDocumentReference = null,
-    ): self {
+    ): static {
         $this->additionalDocumentReference = $additionalDocumentReference;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalDocumentReference(): self
+    public function unsetAdditionalDocumentReference(): static
     {
         $this->additionalDocumentReference = null;
 
@@ -388,9 +388,9 @@ class BillingReferenceType
 
     /**
      * @param array<BillingReferenceLine>|null $billingReferenceLine
-     * @return self
+     * @return static
      */
-    public function setBillingReferenceLine(?array $billingReferenceLine = null): self
+    public function setBillingReferenceLine(?array $billingReferenceLine = null): static
     {
         $this->billingReferenceLine = $billingReferenceLine;
 
@@ -398,9 +398,9 @@ class BillingReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBillingReferenceLine(): self
+    public function unsetBillingReferenceLine(): static
     {
         $this->billingReferenceLine = null;
 
@@ -408,9 +408,9 @@ class BillingReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBillingReferenceLine(): self
+    public function clearBillingReferenceLine(): static
     {
         $this->billingReferenceLine = [];
 
@@ -449,9 +449,9 @@ class BillingReferenceType
 
     /**
      * @param BillingReferenceLine $billingReferenceLine
-     * @return self
+     * @return static
      */
-    public function addToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): self
+    public function addToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): static
     {
         $this->billingReferenceLine[] = $billingReferenceLine;
 
@@ -470,9 +470,9 @@ class BillingReferenceType
 
     /**
      * @param BillingReferenceLine $billingReferenceLine
-     * @return self
+     * @return static
      */
-    public function addOnceToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): self
+    public function addOnceToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): static
     {
         if (!is_array($this->billingReferenceLine)) {
             $this->billingReferenceLine = [];
