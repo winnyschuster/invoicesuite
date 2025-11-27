@@ -176,9 +176,9 @@ class StatusType
 
     /**
      * @param ConditionCode|null $conditionCode
-     * @return self
+     * @return static
      */
-    public function setConditionCode(?ConditionCode $conditionCode = null): self
+    public function setConditionCode(?ConditionCode $conditionCode = null): static
     {
         $this->conditionCode = $conditionCode;
 
@@ -186,9 +186,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConditionCode(): self
+    public function unsetConditionCode(): static
     {
         $this->conditionCode = null;
 
@@ -205,9 +205,9 @@ class StatusType
 
     /**
      * @param DateTimeInterface|null $referenceDate
-     * @return self
+     * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate = null): self
+    public function setReferenceDate(?DateTimeInterface $referenceDate = null): static
     {
         $this->referenceDate = $referenceDate;
 
@@ -215,9 +215,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferenceDate(): self
+    public function unsetReferenceDate(): static
     {
         $this->referenceDate = null;
 
@@ -234,9 +234,9 @@ class StatusType
 
     /**
      * @param DateTimeInterface|null $referenceTime
-     * @return self
+     * @return static
      */
-    public function setReferenceTime(?DateTimeInterface $referenceTime = null): self
+    public function setReferenceTime(?DateTimeInterface $referenceTime = null): static
     {
         $this->referenceTime = $referenceTime;
 
@@ -244,9 +244,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferenceTime(): self
+    public function unsetReferenceTime(): static
     {
         $this->referenceTime = null;
 
@@ -263,9 +263,9 @@ class StatusType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -273,9 +273,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -283,9 +283,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -324,9 +324,9 @@ class StatusType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -345,9 +345,9 @@ class StatusType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -394,9 +394,9 @@ class StatusType
 
     /**
      * @param StatusReasonCode|null $statusReasonCode
-     * @return self
+     * @return static
      */
-    public function setStatusReasonCode(?StatusReasonCode $statusReasonCode = null): self
+    public function setStatusReasonCode(?StatusReasonCode $statusReasonCode = null): static
     {
         $this->statusReasonCode = $statusReasonCode;
 
@@ -404,9 +404,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatusReasonCode(): self
+    public function unsetStatusReasonCode(): static
     {
         $this->statusReasonCode = null;
 
@@ -423,9 +423,9 @@ class StatusType
 
     /**
      * @param array<StatusReason>|null $statusReason
-     * @return self
+     * @return static
      */
-    public function setStatusReason(?array $statusReason = null): self
+    public function setStatusReason(?array $statusReason = null): static
     {
         $this->statusReason = $statusReason;
 
@@ -433,9 +433,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatusReason(): self
+    public function unsetStatusReason(): static
     {
         $this->statusReason = null;
 
@@ -443,9 +443,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearStatusReason(): self
+    public function clearStatusReason(): static
     {
         $this->statusReason = [];
 
@@ -484,9 +484,9 @@ class StatusType
 
     /**
      * @param StatusReason $statusReason
-     * @return self
+     * @return static
      */
-    public function addToStatusReason(StatusReason $statusReason): self
+    public function addToStatusReason(StatusReason $statusReason): static
     {
         $this->statusReason[] = $statusReason;
 
@@ -505,9 +505,9 @@ class StatusType
 
     /**
      * @param StatusReason $statusReason
-     * @return self
+     * @return static
      */
-    public function addOnceToStatusReason(StatusReason $statusReason): self
+    public function addOnceToStatusReason(StatusReason $statusReason): static
     {
         if (!is_array($this->statusReason)) {
             $this->statusReason = [];
@@ -554,9 +554,9 @@ class StatusType
 
     /**
      * @param SequenceID|null $sequenceID
-     * @return self
+     * @return static
      */
-    public function setSequenceID(?SequenceID $sequenceID = null): self
+    public function setSequenceID(?SequenceID $sequenceID = null): static
     {
         $this->sequenceID = $sequenceID;
 
@@ -564,9 +564,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceID(): self
+    public function unsetSequenceID(): static
     {
         $this->sequenceID = null;
 
@@ -583,9 +583,9 @@ class StatusType
 
     /**
      * @param array<Text>|null $text
-     * @return self
+     * @return static
      */
-    public function setText(?array $text = null): self
+    public function setText(?array $text = null): static
     {
         $this->text = $text;
 
@@ -593,9 +593,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetText(): self
+    public function unsetText(): static
     {
         $this->text = null;
 
@@ -603,9 +603,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearText(): self
+    public function clearText(): static
     {
         $this->text = [];
 
@@ -644,9 +644,9 @@ class StatusType
 
     /**
      * @param Text $text
-     * @return self
+     * @return static
      */
-    public function addToText(Text $text): self
+    public function addToText(Text $text): static
     {
         $this->text[] = $text;
 
@@ -665,9 +665,9 @@ class StatusType
 
     /**
      * @param Text $text
-     * @return self
+     * @return static
      */
-    public function addOnceToText(Text $text): self
+    public function addOnceToText(Text $text): static
     {
         if (!is_array($this->text)) {
             $this->text = [];
@@ -704,9 +704,9 @@ class StatusType
 
     /**
      * @param bool|null $indicationIndicator
-     * @return self
+     * @return static
      */
-    public function setIndicationIndicator(?bool $indicationIndicator = null): self
+    public function setIndicationIndicator(?bool $indicationIndicator = null): static
     {
         $this->indicationIndicator = $indicationIndicator;
 
@@ -714,9 +714,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIndicationIndicator(): self
+    public function unsetIndicationIndicator(): static
     {
         $this->indicationIndicator = null;
 
@@ -743,9 +743,9 @@ class StatusType
 
     /**
      * @param Percent|null $percent
-     * @return self
+     * @return static
      */
-    public function setPercent(?Percent $percent = null): self
+    public function setPercent(?Percent $percent = null): static
     {
         $this->percent = $percent;
 
@@ -753,9 +753,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPercent(): self
+    public function unsetPercent(): static
     {
         $this->percent = null;
 
@@ -782,9 +782,9 @@ class StatusType
 
     /**
      * @param ReliabilityPercent|null $reliabilityPercent
-     * @return self
+     * @return static
      */
-    public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): self
+    public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): static
     {
         $this->reliabilityPercent = $reliabilityPercent;
 
@@ -792,9 +792,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReliabilityPercent(): self
+    public function unsetReliabilityPercent(): static
     {
         $this->reliabilityPercent = null;
 
@@ -811,9 +811,9 @@ class StatusType
 
     /**
      * @param array<Condition>|null $condition
-     * @return self
+     * @return static
      */
-    public function setCondition(?array $condition = null): self
+    public function setCondition(?array $condition = null): static
     {
         $this->condition = $condition;
 
@@ -821,9 +821,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCondition(): self
+    public function unsetCondition(): static
     {
         $this->condition = null;
 
@@ -831,9 +831,9 @@ class StatusType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCondition(): self
+    public function clearCondition(): static
     {
         $this->condition = [];
 
@@ -872,9 +872,9 @@ class StatusType
 
     /**
      * @param Condition $condition
-     * @return self
+     * @return static
      */
-    public function addToCondition(Condition $condition): self
+    public function addToCondition(Condition $condition): static
     {
         $this->condition[] = $condition;
 
@@ -893,9 +893,9 @@ class StatusType
 
     /**
      * @param Condition $condition
-     * @return self
+     * @return static
      */
-    public function addOnceToCondition(Condition $condition): self
+    public function addOnceToCondition(Condition $condition): static
     {
         if (!is_array($this->condition)) {
             $this->condition = [];

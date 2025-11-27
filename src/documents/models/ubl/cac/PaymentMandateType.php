@@ -147,9 +147,9 @@ class PaymentMandateType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -157,9 +157,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -186,9 +186,9 @@ class PaymentMandateType
 
     /**
      * @param MandateTypeCode|null $mandateTypeCode
-     * @return self
+     * @return static
      */
-    public function setMandateTypeCode(?MandateTypeCode $mandateTypeCode = null): self
+    public function setMandateTypeCode(?MandateTypeCode $mandateTypeCode = null): static
     {
         $this->mandateTypeCode = $mandateTypeCode;
 
@@ -196,9 +196,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMandateTypeCode(): self
+    public function unsetMandateTypeCode(): static
     {
         $this->mandateTypeCode = null;
 
@@ -225,20 +225,20 @@ class PaymentMandateType
 
     /**
      * @param MaximumPaymentInstructionsNumeric|null $maximumPaymentInstructionsNumeric
-     * @return self
+     * @return static
      */
     public function setMaximumPaymentInstructionsNumeric(
         ?MaximumPaymentInstructionsNumeric $maximumPaymentInstructionsNumeric = null,
-    ): self {
+    ): static {
         $this->maximumPaymentInstructionsNumeric = $maximumPaymentInstructionsNumeric;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumPaymentInstructionsNumeric(): self
+    public function unsetMaximumPaymentInstructionsNumeric(): static
     {
         $this->maximumPaymentInstructionsNumeric = null;
 
@@ -265,9 +265,9 @@ class PaymentMandateType
 
     /**
      * @param MaximumPaidAmount|null $maximumPaidAmount
-     * @return self
+     * @return static
      */
-    public function setMaximumPaidAmount(?MaximumPaidAmount $maximumPaidAmount = null): self
+    public function setMaximumPaidAmount(?MaximumPaidAmount $maximumPaidAmount = null): static
     {
         $this->maximumPaidAmount = $maximumPaidAmount;
 
@@ -275,9 +275,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumPaidAmount(): self
+    public function unsetMaximumPaidAmount(): static
     {
         $this->maximumPaidAmount = null;
 
@@ -304,9 +304,9 @@ class PaymentMandateType
 
     /**
      * @param SignatureID|null $signatureID
-     * @return self
+     * @return static
      */
-    public function setSignatureID(?SignatureID $signatureID = null): self
+    public function setSignatureID(?SignatureID $signatureID = null): static
     {
         $this->signatureID = $signatureID;
 
@@ -314,9 +314,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignatureID(): self
+    public function unsetSignatureID(): static
     {
         $this->signatureID = null;
 
@@ -343,9 +343,9 @@ class PaymentMandateType
 
     /**
      * @param PayerParty|null $payerParty
-     * @return self
+     * @return static
      */
-    public function setPayerParty(?PayerParty $payerParty = null): self
+    public function setPayerParty(?PayerParty $payerParty = null): static
     {
         $this->payerParty = $payerParty;
 
@@ -353,9 +353,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayerParty(): self
+    public function unsetPayerParty(): static
     {
         $this->payerParty = null;
 
@@ -382,9 +382,9 @@ class PaymentMandateType
 
     /**
      * @param PayerFinancialAccount|null $payerFinancialAccount
-     * @return self
+     * @return static
      */
-    public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): self
+    public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): static
     {
         $this->payerFinancialAccount = $payerFinancialAccount;
 
@@ -392,9 +392,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayerFinancialAccount(): self
+    public function unsetPayerFinancialAccount(): static
     {
         $this->payerFinancialAccount = null;
 
@@ -421,9 +421,9 @@ class PaymentMandateType
 
     /**
      * @param ValidityPeriod|null $validityPeriod
-     * @return self
+     * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
+    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
     {
         $this->validityPeriod = $validityPeriod;
 
@@ -431,9 +431,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityPeriod(): self
+    public function unsetValidityPeriod(): static
     {
         $this->validityPeriod = null;
 
@@ -460,9 +460,9 @@ class PaymentMandateType
 
     /**
      * @param PaymentReversalPeriod|null $paymentReversalPeriod
-     * @return self
+     * @return static
      */
-    public function setPaymentReversalPeriod(?PaymentReversalPeriod $paymentReversalPeriod = null): self
+    public function setPaymentReversalPeriod(?PaymentReversalPeriod $paymentReversalPeriod = null): static
     {
         $this->paymentReversalPeriod = $paymentReversalPeriod;
 
@@ -470,9 +470,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentReversalPeriod(): self
+    public function unsetPaymentReversalPeriod(): static
     {
         $this->paymentReversalPeriod = null;
 
@@ -489,9 +489,9 @@ class PaymentMandateType
 
     /**
      * @param array<Clause>|null $clause
-     * @return self
+     * @return static
      */
-    public function setClause(?array $clause = null): self
+    public function setClause(?array $clause = null): static
     {
         $this->clause = $clause;
 
@@ -499,9 +499,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetClause(): self
+    public function unsetClause(): static
     {
         $this->clause = null;
 
@@ -509,9 +509,9 @@ class PaymentMandateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearClause(): self
+    public function clearClause(): static
     {
         $this->clause = [];
 
@@ -550,9 +550,9 @@ class PaymentMandateType
 
     /**
      * @param Clause $clause
-     * @return self
+     * @return static
      */
-    public function addToClause(Clause $clause): self
+    public function addToClause(Clause $clause): static
     {
         $this->clause[] = $clause;
 
@@ -571,9 +571,9 @@ class PaymentMandateType
 
     /**
      * @param Clause $clause
-     * @return self
+     * @return static
      */
-    public function addOnceToClause(Clause $clause): self
+    public function addOnceToClause(Clause $clause): static
     {
         if (!is_array($this->clause)) {
             $this->clause = [];

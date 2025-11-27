@@ -149,9 +149,9 @@ class ItemManagementProfileType
 
     /**
      * @param FrozenPeriodDaysNumeric|null $frozenPeriodDaysNumeric
-     * @return self
+     * @return static
      */
-    public function setFrozenPeriodDaysNumeric(?FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric = null): self
+    public function setFrozenPeriodDaysNumeric(?FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric = null): static
     {
         $this->frozenPeriodDaysNumeric = $frozenPeriodDaysNumeric;
 
@@ -159,9 +159,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFrozenPeriodDaysNumeric(): self
+    public function unsetFrozenPeriodDaysNumeric(): static
     {
         $this->frozenPeriodDaysNumeric = null;
 
@@ -188,9 +188,9 @@ class ItemManagementProfileType
 
     /**
      * @param MinimumInventoryQuantity|null $minimumInventoryQuantity
-     * @return self
+     * @return static
      */
-    public function setMinimumInventoryQuantity(?MinimumInventoryQuantity $minimumInventoryQuantity = null): self
+    public function setMinimumInventoryQuantity(?MinimumInventoryQuantity $minimumInventoryQuantity = null): static
     {
         $this->minimumInventoryQuantity = $minimumInventoryQuantity;
 
@@ -198,9 +198,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumInventoryQuantity(): self
+    public function unsetMinimumInventoryQuantity(): static
     {
         $this->minimumInventoryQuantity = null;
 
@@ -227,9 +227,9 @@ class ItemManagementProfileType
 
     /**
      * @param MultipleOrderQuantity|null $multipleOrderQuantity
-     * @return self
+     * @return static
      */
-    public function setMultipleOrderQuantity(?MultipleOrderQuantity $multipleOrderQuantity = null): self
+    public function setMultipleOrderQuantity(?MultipleOrderQuantity $multipleOrderQuantity = null): static
     {
         $this->multipleOrderQuantity = $multipleOrderQuantity;
 
@@ -237,9 +237,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMultipleOrderQuantity(): self
+    public function unsetMultipleOrderQuantity(): static
     {
         $this->multipleOrderQuantity = null;
 
@@ -266,9 +266,9 @@ class ItemManagementProfileType
 
     /**
      * @param OrderIntervalDaysNumeric|null $orderIntervalDaysNumeric
-     * @return self
+     * @return static
      */
-    public function setOrderIntervalDaysNumeric(?OrderIntervalDaysNumeric $orderIntervalDaysNumeric = null): self
+    public function setOrderIntervalDaysNumeric(?OrderIntervalDaysNumeric $orderIntervalDaysNumeric = null): static
     {
         $this->orderIntervalDaysNumeric = $orderIntervalDaysNumeric;
 
@@ -276,9 +276,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderIntervalDaysNumeric(): self
+    public function unsetOrderIntervalDaysNumeric(): static
     {
         $this->orderIntervalDaysNumeric = null;
 
@@ -295,9 +295,9 @@ class ItemManagementProfileType
 
     /**
      * @param array<ReplenishmentOwnerDescription>|null $replenishmentOwnerDescription
-     * @return self
+     * @return static
      */
-    public function setReplenishmentOwnerDescription(?array $replenishmentOwnerDescription = null): self
+    public function setReplenishmentOwnerDescription(?array $replenishmentOwnerDescription = null): static
     {
         $this->replenishmentOwnerDescription = $replenishmentOwnerDescription;
 
@@ -305,9 +305,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReplenishmentOwnerDescription(): self
+    public function unsetReplenishmentOwnerDescription(): static
     {
         $this->replenishmentOwnerDescription = null;
 
@@ -315,9 +315,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearReplenishmentOwnerDescription(): self
+    public function clearReplenishmentOwnerDescription(): static
     {
         $this->replenishmentOwnerDescription = [];
 
@@ -356,11 +356,11 @@ class ItemManagementProfileType
 
     /**
      * @param ReplenishmentOwnerDescription $replenishmentOwnerDescription
-     * @return self
+     * @return static
      */
     public function addToReplenishmentOwnerDescription(
         ReplenishmentOwnerDescription $replenishmentOwnerDescription,
-    ): self {
+    ): static {
         $this->replenishmentOwnerDescription[] = $replenishmentOwnerDescription;
 
         return $this;
@@ -378,11 +378,11 @@ class ItemManagementProfileType
 
     /**
      * @param ReplenishmentOwnerDescription $replenishmentOwnerDescription
-     * @return self
+     * @return static
      */
     public function addOnceToReplenishmentOwnerDescription(
         ReplenishmentOwnerDescription $replenishmentOwnerDescription,
-    ): self {
+    ): static {
         if (!is_array($this->replenishmentOwnerDescription)) {
             $this->replenishmentOwnerDescription = [];
         }
@@ -428,9 +428,9 @@ class ItemManagementProfileType
 
     /**
      * @param TargetServicePercent|null $targetServicePercent
-     * @return self
+     * @return static
      */
-    public function setTargetServicePercent(?TargetServicePercent $targetServicePercent = null): self
+    public function setTargetServicePercent(?TargetServicePercent $targetServicePercent = null): static
     {
         $this->targetServicePercent = $targetServicePercent;
 
@@ -438,9 +438,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTargetServicePercent(): self
+    public function unsetTargetServicePercent(): static
     {
         $this->targetServicePercent = null;
 
@@ -467,9 +467,9 @@ class ItemManagementProfileType
 
     /**
      * @param TargetInventoryQuantity|null $targetInventoryQuantity
-     * @return self
+     * @return static
      */
-    public function setTargetInventoryQuantity(?TargetInventoryQuantity $targetInventoryQuantity = null): self
+    public function setTargetInventoryQuantity(?TargetInventoryQuantity $targetInventoryQuantity = null): static
     {
         $this->targetInventoryQuantity = $targetInventoryQuantity;
 
@@ -477,9 +477,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTargetInventoryQuantity(): self
+    public function unsetTargetInventoryQuantity(): static
     {
         $this->targetInventoryQuantity = null;
 
@@ -506,9 +506,9 @@ class ItemManagementProfileType
 
     /**
      * @param EffectivePeriod|null $effectivePeriod
-     * @return self
+     * @return static
      */
-    public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): self
+    public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): static
     {
         $this->effectivePeriod = $effectivePeriod;
 
@@ -516,9 +516,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEffectivePeriod(): self
+    public function unsetEffectivePeriod(): static
     {
         $this->effectivePeriod = null;
 
@@ -545,9 +545,9 @@ class ItemManagementProfileType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -555,9 +555,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -584,9 +584,9 @@ class ItemManagementProfileType
 
     /**
      * @param ItemLocationQuantity|null $itemLocationQuantity
-     * @return self
+     * @return static
      */
-    public function setItemLocationQuantity(?ItemLocationQuantity $itemLocationQuantity = null): self
+    public function setItemLocationQuantity(?ItemLocationQuantity $itemLocationQuantity = null): static
     {
         $this->itemLocationQuantity = $itemLocationQuantity;
 
@@ -594,9 +594,9 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItemLocationQuantity(): self
+    public function unsetItemLocationQuantity(): static
     {
         $this->itemLocationQuantity = null;
 

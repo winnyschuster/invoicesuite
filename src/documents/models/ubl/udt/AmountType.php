@@ -34,9 +34,9 @@ class AmountType extends AmountTypeBase
 
     /**
      * @param string|null $currencyID
-     * @return self
+     * @return static
      */
-    public function setCurrencyID(?string $currencyID = null): self
+    public function setCurrencyID(?string $currencyID = null): static
     {
         $this->currencyID = InvoiceSuiteStringUtils::asNullWhenEmpty($currencyID);
 
@@ -44,9 +44,9 @@ class AmountType extends AmountTypeBase
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrencyID(): self
+    public function unsetCurrencyID(): static
     {
         $this->currencyID = null;
 

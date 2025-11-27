@@ -76,9 +76,9 @@ class CatalogueItemSpecificationUpdateLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -86,9 +86,9 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -115,9 +115,9 @@ class CatalogueItemSpecificationUpdateLineType
 
     /**
      * @param ContractorCustomerParty|null $contractorCustomerParty
-     * @return self
+     * @return static
      */
-    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): self
+    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
     {
         $this->contractorCustomerParty = $contractorCustomerParty;
 
@@ -125,9 +125,9 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractorCustomerParty(): self
+    public function unsetContractorCustomerParty(): static
     {
         $this->contractorCustomerParty = null;
 
@@ -154,9 +154,9 @@ class CatalogueItemSpecificationUpdateLineType
 
     /**
      * @param SellerSupplierParty|null $sellerSupplierParty
-     * @return self
+     * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
+    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
     {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
@@ -164,9 +164,9 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerSupplierParty(): self
+    public function unsetSellerSupplierParty(): static
     {
         $this->sellerSupplierParty = null;
 
@@ -193,9 +193,9 @@ class CatalogueItemSpecificationUpdateLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -203,9 +203,9 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 

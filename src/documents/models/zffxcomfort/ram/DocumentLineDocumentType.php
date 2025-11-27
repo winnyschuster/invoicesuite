@@ -54,9 +54,9 @@ class DocumentLineDocumentType
 
     /**
      * @param IDType|null $lineID
-     * @return self
+     * @return static
      */
-    public function setLineID(?IDType $lineID = null): self
+    public function setLineID(?IDType $lineID = null): static
     {
         $this->lineID = $lineID;
 
@@ -64,9 +64,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineID(): self
+    public function unsetLineID(): static
     {
         $this->lineID = null;
 
@@ -93,9 +93,9 @@ class DocumentLineDocumentType
 
     /**
      * @param NoteType|null $includedNote
-     * @return self
+     * @return static
      */
-    public function setIncludedNote(?NoteType $includedNote = null): self
+    public function setIncludedNote(?NoteType $includedNote = null): static
     {
         $this->includedNote = $includedNote;
 
@@ -103,9 +103,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedNote(): self
+    public function unsetIncludedNote(): static
     {
         $this->includedNote = null;
 

@@ -117,9 +117,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -127,9 +127,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -156,9 +156,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param AwardingCriterionID|null $awardingCriterionID
-     * @return self
+     * @return static
      */
-    public function setAwardingCriterionID(?AwardingCriterionID $awardingCriterionID = null): self
+    public function setAwardingCriterionID(?AwardingCriterionID $awardingCriterionID = null): static
     {
         $this->awardingCriterionID = $awardingCriterionID;
 
@@ -166,9 +166,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardingCriterionID(): self
+    public function unsetAwardingCriterionID(): static
     {
         $this->awardingCriterionID = null;
 
@@ -185,9 +185,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param array<AwardingCriterionDescription>|null $awardingCriterionDescription
-     * @return self
+     * @return static
      */
-    public function setAwardingCriterionDescription(?array $awardingCriterionDescription = null): self
+    public function setAwardingCriterionDescription(?array $awardingCriterionDescription = null): static
     {
         $this->awardingCriterionDescription = $awardingCriterionDescription;
 
@@ -195,9 +195,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardingCriterionDescription(): self
+    public function unsetAwardingCriterionDescription(): static
     {
         $this->awardingCriterionDescription = null;
 
@@ -205,9 +205,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAwardingCriterionDescription(): self
+    public function clearAwardingCriterionDescription(): static
     {
         $this->awardingCriterionDescription = [];
 
@@ -246,11 +246,11 @@ class AwardingCriterionResponseType
 
     /**
      * @param AwardingCriterionDescription $awardingCriterionDescription
-     * @return self
+     * @return static
      */
     public function addToAwardingCriterionDescription(
         AwardingCriterionDescription $awardingCriterionDescription,
-    ): self {
+    ): static {
         $this->awardingCriterionDescription[] = $awardingCriterionDescription;
 
         return $this;
@@ -268,11 +268,11 @@ class AwardingCriterionResponseType
 
     /**
      * @param AwardingCriterionDescription $awardingCriterionDescription
-     * @return self
+     * @return static
      */
     public function addOnceToAwardingCriterionDescription(
         AwardingCriterionDescription $awardingCriterionDescription,
-    ): self {
+    ): static {
         if (!is_array($this->awardingCriterionDescription)) {
             $this->awardingCriterionDescription = [];
         }
@@ -308,9 +308,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -318,9 +318,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -328,9 +328,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -369,9 +369,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -390,9 +390,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -439,9 +439,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -449,9 +449,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -478,9 +478,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -488,9 +488,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -507,9 +507,9 @@ class AwardingCriterionResponseType
 
     /**
      * @param array<SubordinateAwardingCriterionResponse>|null $subordinateAwardingCriterionResponse
-     * @return self
+     * @return static
      */
-    public function setSubordinateAwardingCriterionResponse(?array $subordinateAwardingCriterionResponse = null): self
+    public function setSubordinateAwardingCriterionResponse(?array $subordinateAwardingCriterionResponse = null): static
     {
         $this->subordinateAwardingCriterionResponse = $subordinateAwardingCriterionResponse;
 
@@ -517,9 +517,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubordinateAwardingCriterionResponse(): self
+    public function unsetSubordinateAwardingCriterionResponse(): static
     {
         $this->subordinateAwardingCriterionResponse = null;
 
@@ -527,9 +527,9 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSubordinateAwardingCriterionResponse(): self
+    public function clearSubordinateAwardingCriterionResponse(): static
     {
         $this->subordinateAwardingCriterionResponse = [];
 
@@ -568,11 +568,11 @@ class AwardingCriterionResponseType
 
     /**
      * @param SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
-     * @return self
+     * @return static
      */
     public function addToSubordinateAwardingCriterionResponse(
         SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse,
-    ): self {
+    ): static {
         $this->subordinateAwardingCriterionResponse[] = $subordinateAwardingCriterionResponse;
 
         return $this;
@@ -590,11 +590,11 @@ class AwardingCriterionResponseType
 
     /**
      * @param SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
-     * @return self
+     * @return static
      */
     public function addOnceToSubordinateAwardingCriterionResponse(
         SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse,
-    ): self {
+    ): static {
         if (!is_array($this->subordinateAwardingCriterionResponse)) {
             $this->subordinateAwardingCriterionResponse = [];
         }

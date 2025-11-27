@@ -210,9 +210,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -220,9 +220,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -239,9 +239,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -249,9 +249,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -259,9 +259,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -300,9 +300,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -321,9 +321,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -360,9 +360,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -370,9 +370,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -380,9 +380,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -421,9 +421,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -442,9 +442,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -491,9 +491,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param ExceptionStatusCode|null $exceptionStatusCode
-     * @return self
+     * @return static
      */
-    public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): self
+    public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): static
     {
         $this->exceptionStatusCode = $exceptionStatusCode;
 
@@ -501,9 +501,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExceptionStatusCode(): self
+    public function unsetExceptionStatusCode(): static
     {
         $this->exceptionStatusCode = null;
 
@@ -530,9 +530,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param CollaborationPriorityCode|null $collaborationPriorityCode
-     * @return self
+     * @return static
      */
-    public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): self
+    public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): static
     {
         $this->collaborationPriorityCode = $collaborationPriorityCode;
 
@@ -540,9 +540,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCollaborationPriorityCode(): self
+    public function unsetCollaborationPriorityCode(): static
     {
         $this->collaborationPriorityCode = null;
 
@@ -569,9 +569,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param ResolutionCode|null $resolutionCode
-     * @return self
+     * @return static
      */
-    public function setResolutionCode(?ResolutionCode $resolutionCode = null): self
+    public function setResolutionCode(?ResolutionCode $resolutionCode = null): static
     {
         $this->resolutionCode = $resolutionCode;
 
@@ -579,9 +579,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResolutionCode(): self
+    public function unsetResolutionCode(): static
     {
         $this->resolutionCode = null;
 
@@ -608,9 +608,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param ComparedValueMeasure|null $comparedValueMeasure
-     * @return self
+     * @return static
      */
-    public function setComparedValueMeasure(?ComparedValueMeasure $comparedValueMeasure = null): self
+    public function setComparedValueMeasure(?ComparedValueMeasure $comparedValueMeasure = null): static
     {
         $this->comparedValueMeasure = $comparedValueMeasure;
 
@@ -618,9 +618,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetComparedValueMeasure(): self
+    public function unsetComparedValueMeasure(): static
     {
         $this->comparedValueMeasure = null;
 
@@ -647,9 +647,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param SourceValueMeasure|null $sourceValueMeasure
-     * @return self
+     * @return static
      */
-    public function setSourceValueMeasure(?SourceValueMeasure $sourceValueMeasure = null): self
+    public function setSourceValueMeasure(?SourceValueMeasure $sourceValueMeasure = null): static
     {
         $this->sourceValueMeasure = $sourceValueMeasure;
 
@@ -657,9 +657,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSourceValueMeasure(): self
+    public function unsetSourceValueMeasure(): static
     {
         $this->sourceValueMeasure = null;
 
@@ -686,9 +686,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param VarianceQuantity|null $varianceQuantity
-     * @return self
+     * @return static
      */
-    public function setVarianceQuantity(?VarianceQuantity $varianceQuantity = null): self
+    public function setVarianceQuantity(?VarianceQuantity $varianceQuantity = null): static
     {
         $this->varianceQuantity = $varianceQuantity;
 
@@ -696,9 +696,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVarianceQuantity(): self
+    public function unsetVarianceQuantity(): static
     {
         $this->varianceQuantity = null;
 
@@ -725,20 +725,20 @@ class ExceptionNotificationLineType
 
     /**
      * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
-     * @return self
+     * @return static
      */
     public function setSupplyChainActivityTypeCode(
         ?SupplyChainActivityTypeCode $supplyChainActivityTypeCode = null,
-    ): self {
+    ): static {
         $this->supplyChainActivityTypeCode = $supplyChainActivityTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyChainActivityTypeCode(): self
+    public function unsetSupplyChainActivityTypeCode(): static
     {
         $this->supplyChainActivityTypeCode = null;
 
@@ -765,9 +765,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
-     * @return self
+     * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): self
+    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
     {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
@@ -775,9 +775,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerformanceMetricTypeCode(): self
+    public function unsetPerformanceMetricTypeCode(): static
     {
         $this->performanceMetricTypeCode = null;
 
@@ -804,20 +804,20 @@ class ExceptionNotificationLineType
 
     /**
      * @param ExceptionObservationPeriod|null $exceptionObservationPeriod
-     * @return self
+     * @return static
      */
     public function setExceptionObservationPeriod(
         ?ExceptionObservationPeriod $exceptionObservationPeriod = null,
-    ): self {
+    ): static {
         $this->exceptionObservationPeriod = $exceptionObservationPeriod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExceptionObservationPeriod(): self
+    public function unsetExceptionObservationPeriod(): static
     {
         $this->exceptionObservationPeriod = null;
 
@@ -834,9 +834,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -844,9 +844,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -854,9 +854,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -895,9 +895,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -916,9 +916,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -965,9 +965,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param ForecastException|null $forecastException
-     * @return self
+     * @return static
      */
-    public function setForecastException(?ForecastException $forecastException = null): self
+    public function setForecastException(?ForecastException $forecastException = null): static
     {
         $this->forecastException = $forecastException;
 
@@ -975,9 +975,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastException(): self
+    public function unsetForecastException(): static
     {
         $this->forecastException = null;
 
@@ -1004,9 +1004,9 @@ class ExceptionNotificationLineType
 
     /**
      * @param SupplyItem|null $supplyItem
-     * @return self
+     * @return static
      */
-    public function setSupplyItem(?SupplyItem $supplyItem = null): self
+    public function setSupplyItem(?SupplyItem $supplyItem = null): static
     {
         $this->supplyItem = $supplyItem;
 
@@ -1014,9 +1014,9 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyItem(): self
+    public function unsetSupplyItem(): static
     {
         $this->supplyItem = null;
 

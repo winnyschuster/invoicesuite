@@ -68,9 +68,9 @@ class OnAccountPaymentType
 
     /**
      * @param EstimatedConsumedQuantity|null $estimatedConsumedQuantity
-     * @return self
+     * @return static
      */
-    public function setEstimatedConsumedQuantity(?EstimatedConsumedQuantity $estimatedConsumedQuantity = null): self
+    public function setEstimatedConsumedQuantity(?EstimatedConsumedQuantity $estimatedConsumedQuantity = null): static
     {
         $this->estimatedConsumedQuantity = $estimatedConsumedQuantity;
 
@@ -78,9 +78,9 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedConsumedQuantity(): self
+    public function unsetEstimatedConsumedQuantity(): static
     {
         $this->estimatedConsumedQuantity = null;
 
@@ -97,9 +97,9 @@ class OnAccountPaymentType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -107,9 +107,9 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -117,9 +117,9 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -158,9 +158,9 @@ class OnAccountPaymentType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -179,9 +179,9 @@ class OnAccountPaymentType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -218,9 +218,9 @@ class OnAccountPaymentType
 
     /**
      * @param array<PaymentTerms>|null $paymentTerms
-     * @return self
+     * @return static
      */
-    public function setPaymentTerms(?array $paymentTerms = null): self
+    public function setPaymentTerms(?array $paymentTerms = null): static
     {
         $this->paymentTerms = $paymentTerms;
 
@@ -228,9 +228,9 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentTerms(): self
+    public function unsetPaymentTerms(): static
     {
         $this->paymentTerms = null;
 
@@ -238,9 +238,9 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentTerms(): self
+    public function clearPaymentTerms(): static
     {
         $this->paymentTerms = [];
 
@@ -279,9 +279,9 @@ class OnAccountPaymentType
 
     /**
      * @param PaymentTerms $paymentTerms
-     * @return self
+     * @return static
      */
-    public function addToPaymentTerms(PaymentTerms $paymentTerms): self
+    public function addToPaymentTerms(PaymentTerms $paymentTerms): static
     {
         $this->paymentTerms[] = $paymentTerms;
 
@@ -300,9 +300,9 @@ class OnAccountPaymentType
 
     /**
      * @param PaymentTerms $paymentTerms
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): self
+    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
     {
         if (!is_array($this->paymentTerms)) {
             $this->paymentTerms = [];

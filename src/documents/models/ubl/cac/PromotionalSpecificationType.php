@@ -67,9 +67,9 @@ class PromotionalSpecificationType
 
     /**
      * @param SpecificationID|null $specificationID
-     * @return self
+     * @return static
      */
-    public function setSpecificationID(?SpecificationID $specificationID = null): self
+    public function setSpecificationID(?SpecificationID $specificationID = null): static
     {
         $this->specificationID = $specificationID;
 
@@ -77,9 +77,9 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecificationID(): self
+    public function unsetSpecificationID(): static
     {
         $this->specificationID = null;
 
@@ -96,9 +96,9 @@ class PromotionalSpecificationType
 
     /**
      * @param array<PromotionalEventLineItem>|null $promotionalEventLineItem
-     * @return self
+     * @return static
      */
-    public function setPromotionalEventLineItem(?array $promotionalEventLineItem = null): self
+    public function setPromotionalEventLineItem(?array $promotionalEventLineItem = null): static
     {
         $this->promotionalEventLineItem = $promotionalEventLineItem;
 
@@ -106,9 +106,9 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPromotionalEventLineItem(): self
+    public function unsetPromotionalEventLineItem(): static
     {
         $this->promotionalEventLineItem = null;
 
@@ -116,9 +116,9 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPromotionalEventLineItem(): self
+    public function clearPromotionalEventLineItem(): static
     {
         $this->promotionalEventLineItem = [];
 
@@ -157,9 +157,9 @@ class PromotionalSpecificationType
 
     /**
      * @param PromotionalEventLineItem $promotionalEventLineItem
-     * @return self
+     * @return static
      */
-    public function addToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): self
+    public function addToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): static
     {
         $this->promotionalEventLineItem[] = $promotionalEventLineItem;
 
@@ -178,9 +178,9 @@ class PromotionalSpecificationType
 
     /**
      * @param PromotionalEventLineItem $promotionalEventLineItem
-     * @return self
+     * @return static
      */
-    public function addOnceToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): self
+    public function addOnceToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): static
     {
         if (!is_array($this->promotionalEventLineItem)) {
             $this->promotionalEventLineItem = [];
@@ -217,9 +217,9 @@ class PromotionalSpecificationType
 
     /**
      * @param array<EventTactic>|null $eventTactic
-     * @return self
+     * @return static
      */
-    public function setEventTactic(?array $eventTactic = null): self
+    public function setEventTactic(?array $eventTactic = null): static
     {
         $this->eventTactic = $eventTactic;
 
@@ -227,9 +227,9 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEventTactic(): self
+    public function unsetEventTactic(): static
     {
         $this->eventTactic = null;
 
@@ -237,9 +237,9 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEventTactic(): self
+    public function clearEventTactic(): static
     {
         $this->eventTactic = [];
 
@@ -278,9 +278,9 @@ class PromotionalSpecificationType
 
     /**
      * @param EventTactic $eventTactic
-     * @return self
+     * @return static
      */
-    public function addToEventTactic(EventTactic $eventTactic): self
+    public function addToEventTactic(EventTactic $eventTactic): static
     {
         $this->eventTactic[] = $eventTactic;
 
@@ -299,9 +299,9 @@ class PromotionalSpecificationType
 
     /**
      * @param EventTactic $eventTactic
-     * @return self
+     * @return static
      */
-    public function addOnceToEventTactic(EventTactic $eventTactic): self
+    public function addOnceToEventTactic(EventTactic $eventTactic): static
     {
         if (!is_array($this->eventTactic)) {
             $this->eventTactic = [];

@@ -209,9 +209,9 @@ class AllowanceChargeType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -219,9 +219,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -238,9 +238,9 @@ class AllowanceChargeType
 
     /**
      * @param bool|null $chargeIndicator
-     * @return self
+     * @return static
      */
-    public function setChargeIndicator(?bool $chargeIndicator = null): self
+    public function setChargeIndicator(?bool $chargeIndicator = null): static
     {
         $this->chargeIndicator = $chargeIndicator;
 
@@ -248,9 +248,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeIndicator(): self
+    public function unsetChargeIndicator(): static
     {
         $this->chargeIndicator = null;
 
@@ -277,9 +277,9 @@ class AllowanceChargeType
 
     /**
      * @param AllowanceChargeReasonCode|null $allowanceChargeReasonCode
-     * @return self
+     * @return static
      */
-    public function setAllowanceChargeReasonCode(?AllowanceChargeReasonCode $allowanceChargeReasonCode = null): self
+    public function setAllowanceChargeReasonCode(?AllowanceChargeReasonCode $allowanceChargeReasonCode = null): static
     {
         $this->allowanceChargeReasonCode = $allowanceChargeReasonCode;
 
@@ -287,9 +287,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceChargeReasonCode(): self
+    public function unsetAllowanceChargeReasonCode(): static
     {
         $this->allowanceChargeReasonCode = null;
 
@@ -306,9 +306,9 @@ class AllowanceChargeType
 
     /**
      * @param array<AllowanceChargeReason>|null $allowanceChargeReason
-     * @return self
+     * @return static
      */
-    public function setAllowanceChargeReason(?array $allowanceChargeReason = null): self
+    public function setAllowanceChargeReason(?array $allowanceChargeReason = null): static
     {
         $this->allowanceChargeReason = $allowanceChargeReason;
 
@@ -316,9 +316,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceChargeReason(): self
+    public function unsetAllowanceChargeReason(): static
     {
         $this->allowanceChargeReason = null;
 
@@ -326,9 +326,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceChargeReason(): self
+    public function clearAllowanceChargeReason(): static
     {
         $this->allowanceChargeReason = [];
 
@@ -367,9 +367,9 @@ class AllowanceChargeType
 
     /**
      * @param AllowanceChargeReason $allowanceChargeReason
-     * @return self
+     * @return static
      */
-    public function addToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): self
+    public function addToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): static
     {
         $this->allowanceChargeReason[] = $allowanceChargeReason;
 
@@ -388,9 +388,9 @@ class AllowanceChargeType
 
     /**
      * @param AllowanceChargeReason $allowanceChargeReason
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): self
+    public function addOnceToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): static
     {
         if (!is_array($this->allowanceChargeReason)) {
             $this->allowanceChargeReason = [];
@@ -437,9 +437,9 @@ class AllowanceChargeType
 
     /**
      * @param MultiplierFactorNumeric|null $multiplierFactorNumeric
-     * @return self
+     * @return static
      */
-    public function setMultiplierFactorNumeric(?MultiplierFactorNumeric $multiplierFactorNumeric = null): self
+    public function setMultiplierFactorNumeric(?MultiplierFactorNumeric $multiplierFactorNumeric = null): static
     {
         $this->multiplierFactorNumeric = $multiplierFactorNumeric;
 
@@ -447,9 +447,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMultiplierFactorNumeric(): self
+    public function unsetMultiplierFactorNumeric(): static
     {
         $this->multiplierFactorNumeric = null;
 
@@ -466,9 +466,9 @@ class AllowanceChargeType
 
     /**
      * @param bool|null $prepaidIndicator
-     * @return self
+     * @return static
      */
-    public function setPrepaidIndicator(?bool $prepaidIndicator = null): self
+    public function setPrepaidIndicator(?bool $prepaidIndicator = null): static
     {
         $this->prepaidIndicator = $prepaidIndicator;
 
@@ -476,9 +476,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrepaidIndicator(): self
+    public function unsetPrepaidIndicator(): static
     {
         $this->prepaidIndicator = null;
 
@@ -505,9 +505,9 @@ class AllowanceChargeType
 
     /**
      * @param SequenceNumeric|null $sequenceNumeric
-     * @return self
+     * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
+    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
     {
         $this->sequenceNumeric = $sequenceNumeric;
 
@@ -515,9 +515,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceNumeric(): self
+    public function unsetSequenceNumeric(): static
     {
         $this->sequenceNumeric = null;
 
@@ -544,9 +544,9 @@ class AllowanceChargeType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -554,9 +554,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -583,9 +583,9 @@ class AllowanceChargeType
 
     /**
      * @param BaseAmount|null $baseAmount
-     * @return self
+     * @return static
      */
-    public function setBaseAmount(?BaseAmount $baseAmount = null): self
+    public function setBaseAmount(?BaseAmount $baseAmount = null): static
     {
         $this->baseAmount = $baseAmount;
 
@@ -593,9 +593,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBaseAmount(): self
+    public function unsetBaseAmount(): static
     {
         $this->baseAmount = null;
 
@@ -622,9 +622,9 @@ class AllowanceChargeType
 
     /**
      * @param AccountingCostCode|null $accountingCostCode
-     * @return self
+     * @return static
      */
-    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
+    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
     {
         $this->accountingCostCode = $accountingCostCode;
 
@@ -632,9 +632,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCostCode(): self
+    public function unsetAccountingCostCode(): static
     {
         $this->accountingCostCode = null;
 
@@ -661,9 +661,9 @@ class AllowanceChargeType
 
     /**
      * @param AccountingCost|null $accountingCost
-     * @return self
+     * @return static
      */
-    public function setAccountingCost(?AccountingCost $accountingCost = null): self
+    public function setAccountingCost(?AccountingCost $accountingCost = null): static
     {
         $this->accountingCost = $accountingCost;
 
@@ -671,9 +671,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCost(): self
+    public function unsetAccountingCost(): static
     {
         $this->accountingCost = null;
 
@@ -700,9 +700,9 @@ class AllowanceChargeType
 
     /**
      * @param PerUnitAmount|null $perUnitAmount
-     * @return self
+     * @return static
      */
-    public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): self
+    public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
     {
         $this->perUnitAmount = $perUnitAmount;
 
@@ -710,9 +710,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerUnitAmount(): self
+    public function unsetPerUnitAmount(): static
     {
         $this->perUnitAmount = null;
 
@@ -729,9 +729,9 @@ class AllowanceChargeType
 
     /**
      * @param array<TaxCategory>|null $taxCategory
-     * @return self
+     * @return static
      */
-    public function setTaxCategory(?array $taxCategory = null): self
+    public function setTaxCategory(?array $taxCategory = null): static
     {
         $this->taxCategory = $taxCategory;
 
@@ -739,9 +739,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxCategory(): self
+    public function unsetTaxCategory(): static
     {
         $this->taxCategory = null;
 
@@ -749,9 +749,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxCategory(): self
+    public function clearTaxCategory(): static
     {
         $this->taxCategory = [];
 
@@ -790,9 +790,9 @@ class AllowanceChargeType
 
     /**
      * @param TaxCategory $taxCategory
-     * @return self
+     * @return static
      */
-    public function addToTaxCategory(TaxCategory $taxCategory): self
+    public function addToTaxCategory(TaxCategory $taxCategory): static
     {
         $this->taxCategory[] = $taxCategory;
 
@@ -811,9 +811,9 @@ class AllowanceChargeType
 
     /**
      * @param TaxCategory $taxCategory
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxCategory(TaxCategory $taxCategory): self
+    public function addOnceToTaxCategory(TaxCategory $taxCategory): static
     {
         if (!is_array($this->taxCategory)) {
             $this->taxCategory = [];
@@ -860,9 +860,9 @@ class AllowanceChargeType
 
     /**
      * @param TaxTotal|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?TaxTotal $taxTotal = null): self
+    public function setTaxTotal(?TaxTotal $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -870,9 +870,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -889,9 +889,9 @@ class AllowanceChargeType
 
     /**
      * @param array<PaymentMeans>|null $paymentMeans
-     * @return self
+     * @return static
      */
-    public function setPaymentMeans(?array $paymentMeans = null): self
+    public function setPaymentMeans(?array $paymentMeans = null): static
     {
         $this->paymentMeans = $paymentMeans;
 
@@ -899,9 +899,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentMeans(): self
+    public function unsetPaymentMeans(): static
     {
         $this->paymentMeans = null;
 
@@ -909,9 +909,9 @@ class AllowanceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentMeans(): self
+    public function clearPaymentMeans(): static
     {
         $this->paymentMeans = [];
 
@@ -950,9 +950,9 @@ class AllowanceChargeType
 
     /**
      * @param PaymentMeans $paymentMeans
-     * @return self
+     * @return static
      */
-    public function addToPaymentMeans(PaymentMeans $paymentMeans): self
+    public function addToPaymentMeans(PaymentMeans $paymentMeans): static
     {
         $this->paymentMeans[] = $paymentMeans;
 
@@ -971,9 +971,9 @@ class AllowanceChargeType
 
     /**
      * @param PaymentMeans $paymentMeans
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): self
+    public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): static
     {
         if (!is_array($this->paymentMeans)) {
             $this->paymentMeans = [];

@@ -43,9 +43,9 @@ class ReferencedDocumentType
 
     /**
      * @param IDType|null $issuerAssignedID
-     * @return self
+     * @return static
      */
-    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): self
+    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): static
     {
         $this->issuerAssignedID = $issuerAssignedID;
 
@@ -53,9 +53,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerAssignedID(): self
+    public function unsetIssuerAssignedID(): static
     {
         $this->issuerAssignedID = null;
 

@@ -200,9 +200,9 @@ class ClassificationSchemeType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -210,9 +210,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -239,9 +239,9 @@ class ClassificationSchemeType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -249,9 +249,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -268,9 +268,9 @@ class ClassificationSchemeType
 
     /**
      * @param DateTimeInterface|null $lastRevisionDate
-     * @return self
+     * @return static
      */
-    public function setLastRevisionDate(?DateTimeInterface $lastRevisionDate = null): self
+    public function setLastRevisionDate(?DateTimeInterface $lastRevisionDate = null): static
     {
         $this->lastRevisionDate = $lastRevisionDate;
 
@@ -278,9 +278,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLastRevisionDate(): self
+    public function unsetLastRevisionDate(): static
     {
         $this->lastRevisionDate = null;
 
@@ -297,9 +297,9 @@ class ClassificationSchemeType
 
     /**
      * @param DateTimeInterface|null $lastRevisionTime
-     * @return self
+     * @return static
      */
-    public function setLastRevisionTime(?DateTimeInterface $lastRevisionTime = null): self
+    public function setLastRevisionTime(?DateTimeInterface $lastRevisionTime = null): static
     {
         $this->lastRevisionTime = $lastRevisionTime;
 
@@ -307,9 +307,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLastRevisionTime(): self
+    public function unsetLastRevisionTime(): static
     {
         $this->lastRevisionTime = null;
 
@@ -326,9 +326,9 @@ class ClassificationSchemeType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -336,9 +336,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -346,9 +346,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -387,9 +387,9 @@ class ClassificationSchemeType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -408,9 +408,9 @@ class ClassificationSchemeType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -457,9 +457,9 @@ class ClassificationSchemeType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -467,9 +467,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -486,9 +486,9 @@ class ClassificationSchemeType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -496,9 +496,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -506,9 +506,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -547,9 +547,9 @@ class ClassificationSchemeType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -568,9 +568,9 @@ class ClassificationSchemeType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -617,9 +617,9 @@ class ClassificationSchemeType
 
     /**
      * @param AgencyID|null $agencyID
-     * @return self
+     * @return static
      */
-    public function setAgencyID(?AgencyID $agencyID = null): self
+    public function setAgencyID(?AgencyID $agencyID = null): static
     {
         $this->agencyID = $agencyID;
 
@@ -627,9 +627,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAgencyID(): self
+    public function unsetAgencyID(): static
     {
         $this->agencyID = null;
 
@@ -656,9 +656,9 @@ class ClassificationSchemeType
 
     /**
      * @param AgencyName|null $agencyName
-     * @return self
+     * @return static
      */
-    public function setAgencyName(?AgencyName $agencyName = null): self
+    public function setAgencyName(?AgencyName $agencyName = null): static
     {
         $this->agencyName = $agencyName;
 
@@ -666,9 +666,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAgencyName(): self
+    public function unsetAgencyName(): static
     {
         $this->agencyName = null;
 
@@ -695,9 +695,9 @@ class ClassificationSchemeType
 
     /**
      * @param VersionID|null $versionID
-     * @return self
+     * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): self
+    public function setVersionID(?VersionID $versionID = null): static
     {
         $this->versionID = $versionID;
 
@@ -705,9 +705,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVersionID(): self
+    public function unsetVersionID(): static
     {
         $this->versionID = null;
 
@@ -734,9 +734,9 @@ class ClassificationSchemeType
 
     /**
      * @param URI|null $uRI
-     * @return self
+     * @return static
      */
-    public function setURI(?URI $uRI = null): self
+    public function setURI(?URI $uRI = null): static
     {
         $this->uRI = $uRI;
 
@@ -744,9 +744,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetURI(): self
+    public function unsetURI(): static
     {
         $this->uRI = null;
 
@@ -773,9 +773,9 @@ class ClassificationSchemeType
 
     /**
      * @param SchemeURI|null $schemeURI
-     * @return self
+     * @return static
      */
-    public function setSchemeURI(?SchemeURI $schemeURI = null): self
+    public function setSchemeURI(?SchemeURI $schemeURI = null): static
     {
         $this->schemeURI = $schemeURI;
 
@@ -783,9 +783,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeURI(): self
+    public function unsetSchemeURI(): static
     {
         $this->schemeURI = null;
 
@@ -812,9 +812,9 @@ class ClassificationSchemeType
 
     /**
      * @param LanguageID|null $languageID
-     * @return self
+     * @return static
      */
-    public function setLanguageID(?LanguageID $languageID = null): self
+    public function setLanguageID(?LanguageID $languageID = null): static
     {
         $this->languageID = $languageID;
 
@@ -822,9 +822,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguageID(): self
+    public function unsetLanguageID(): static
     {
         $this->languageID = null;
 
@@ -841,9 +841,9 @@ class ClassificationSchemeType
 
     /**
      * @param array<ClassificationCategory>|null $classificationCategory
-     * @return self
+     * @return static
      */
-    public function setClassificationCategory(?array $classificationCategory = null): self
+    public function setClassificationCategory(?array $classificationCategory = null): static
     {
         $this->classificationCategory = $classificationCategory;
 
@@ -851,9 +851,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetClassificationCategory(): self
+    public function unsetClassificationCategory(): static
     {
         $this->classificationCategory = null;
 
@@ -861,9 +861,9 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearClassificationCategory(): self
+    public function clearClassificationCategory(): static
     {
         $this->classificationCategory = [];
 
@@ -902,9 +902,9 @@ class ClassificationSchemeType
 
     /**
      * @param ClassificationCategory $classificationCategory
-     * @return self
+     * @return static
      */
-    public function addToClassificationCategory(ClassificationCategory $classificationCategory): self
+    public function addToClassificationCategory(ClassificationCategory $classificationCategory): static
     {
         $this->classificationCategory[] = $classificationCategory;
 
@@ -923,9 +923,9 @@ class ClassificationSchemeType
 
     /**
      * @param ClassificationCategory $classificationCategory
-     * @return self
+     * @return static
      */
-    public function addOnceToClassificationCategory(ClassificationCategory $classificationCategory): self
+    public function addOnceToClassificationCategory(ClassificationCategory $classificationCategory): static
     {
         if (!is_array($this->classificationCategory)) {
             $this->classificationCategory = [];

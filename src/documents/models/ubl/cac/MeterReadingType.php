@@ -187,9 +187,9 @@ class MeterReadingType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -197,9 +197,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -226,9 +226,9 @@ class MeterReadingType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingType|null $meterReadingType
-     * @return self
+     * @return static
      */
-    public function setMeterReadingType(?MeterReadingType1 $meterReadingType = null): self
+    public function setMeterReadingType(?MeterReadingType1 $meterReadingType = null): static
     {
         $this->meterReadingType = $meterReadingType;
 
@@ -236,9 +236,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterReadingType(): self
+    public function unsetMeterReadingType(): static
     {
         $this->meterReadingType = null;
 
@@ -265,9 +265,9 @@ class MeterReadingType
 
     /**
      * @param MeterReadingTypeCode|null $meterReadingTypeCode
-     * @return self
+     * @return static
      */
-    public function setMeterReadingTypeCode(?MeterReadingTypeCode $meterReadingTypeCode = null): self
+    public function setMeterReadingTypeCode(?MeterReadingTypeCode $meterReadingTypeCode = null): static
     {
         $this->meterReadingTypeCode = $meterReadingTypeCode;
 
@@ -275,9 +275,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterReadingTypeCode(): self
+    public function unsetMeterReadingTypeCode(): static
     {
         $this->meterReadingTypeCode = null;
 
@@ -294,9 +294,9 @@ class MeterReadingType
 
     /**
      * @param DateTimeInterface|null $previousMeterReadingDate
-     * @return self
+     * @return static
      */
-    public function setPreviousMeterReadingDate(?DateTimeInterface $previousMeterReadingDate = null): self
+    public function setPreviousMeterReadingDate(?DateTimeInterface $previousMeterReadingDate = null): static
     {
         $this->previousMeterReadingDate = $previousMeterReadingDate;
 
@@ -304,9 +304,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousMeterReadingDate(): self
+    public function unsetPreviousMeterReadingDate(): static
     {
         $this->previousMeterReadingDate = null;
 
@@ -333,9 +333,9 @@ class MeterReadingType
 
     /**
      * @param PreviousMeterQuantity|null $previousMeterQuantity
-     * @return self
+     * @return static
      */
-    public function setPreviousMeterQuantity(?PreviousMeterQuantity $previousMeterQuantity = null): self
+    public function setPreviousMeterQuantity(?PreviousMeterQuantity $previousMeterQuantity = null): static
     {
         $this->previousMeterQuantity = $previousMeterQuantity;
 
@@ -343,9 +343,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousMeterQuantity(): self
+    public function unsetPreviousMeterQuantity(): static
     {
         $this->previousMeterQuantity = null;
 
@@ -362,9 +362,9 @@ class MeterReadingType
 
     /**
      * @param DateTimeInterface|null $latestMeterReadingDate
-     * @return self
+     * @return static
      */
-    public function setLatestMeterReadingDate(?DateTimeInterface $latestMeterReadingDate = null): self
+    public function setLatestMeterReadingDate(?DateTimeInterface $latestMeterReadingDate = null): static
     {
         $this->latestMeterReadingDate = $latestMeterReadingDate;
 
@@ -372,9 +372,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestMeterReadingDate(): self
+    public function unsetLatestMeterReadingDate(): static
     {
         $this->latestMeterReadingDate = null;
 
@@ -401,9 +401,9 @@ class MeterReadingType
 
     /**
      * @param LatestMeterQuantity|null $latestMeterQuantity
-     * @return self
+     * @return static
      */
-    public function setLatestMeterQuantity(?LatestMeterQuantity $latestMeterQuantity = null): self
+    public function setLatestMeterQuantity(?LatestMeterQuantity $latestMeterQuantity = null): static
     {
         $this->latestMeterQuantity = $latestMeterQuantity;
 
@@ -411,9 +411,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestMeterQuantity(): self
+    public function unsetLatestMeterQuantity(): static
     {
         $this->latestMeterQuantity = null;
 
@@ -440,20 +440,20 @@ class MeterReadingType
 
     /**
      * @param PreviousMeterReadingMethod|null $previousMeterReadingMethod
-     * @return self
+     * @return static
      */
     public function setPreviousMeterReadingMethod(
         ?PreviousMeterReadingMethod $previousMeterReadingMethod = null,
-    ): self {
+    ): static {
         $this->previousMeterReadingMethod = $previousMeterReadingMethod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousMeterReadingMethod(): self
+    public function unsetPreviousMeterReadingMethod(): static
     {
         $this->previousMeterReadingMethod = null;
 
@@ -480,20 +480,20 @@ class MeterReadingType
 
     /**
      * @param PreviousMeterReadingMethodCode|null $previousMeterReadingMethodCode
-     * @return self
+     * @return static
      */
     public function setPreviousMeterReadingMethodCode(
         ?PreviousMeterReadingMethodCode $previousMeterReadingMethodCode = null,
-    ): self {
+    ): static {
         $this->previousMeterReadingMethodCode = $previousMeterReadingMethodCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousMeterReadingMethodCode(): self
+    public function unsetPreviousMeterReadingMethodCode(): static
     {
         $this->previousMeterReadingMethodCode = null;
 
@@ -520,9 +520,9 @@ class MeterReadingType
 
     /**
      * @param LatestMeterReadingMethod|null $latestMeterReadingMethod
-     * @return self
+     * @return static
      */
-    public function setLatestMeterReadingMethod(?LatestMeterReadingMethod $latestMeterReadingMethod = null): self
+    public function setLatestMeterReadingMethod(?LatestMeterReadingMethod $latestMeterReadingMethod = null): static
     {
         $this->latestMeterReadingMethod = $latestMeterReadingMethod;
 
@@ -530,9 +530,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestMeterReadingMethod(): self
+    public function unsetLatestMeterReadingMethod(): static
     {
         $this->latestMeterReadingMethod = null;
 
@@ -559,20 +559,20 @@ class MeterReadingType
 
     /**
      * @param LatestMeterReadingMethodCode|null $latestMeterReadingMethodCode
-     * @return self
+     * @return static
      */
     public function setLatestMeterReadingMethodCode(
         ?LatestMeterReadingMethodCode $latestMeterReadingMethodCode = null,
-    ): self {
+    ): static {
         $this->latestMeterReadingMethodCode = $latestMeterReadingMethodCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestMeterReadingMethodCode(): self
+    public function unsetLatestMeterReadingMethodCode(): static
     {
         $this->latestMeterReadingMethodCode = null;
 
@@ -589,9 +589,9 @@ class MeterReadingType
 
     /**
      * @param array<MeterReadingComments>|null $meterReadingComments
-     * @return self
+     * @return static
      */
-    public function setMeterReadingComments(?array $meterReadingComments = null): self
+    public function setMeterReadingComments(?array $meterReadingComments = null): static
     {
         $this->meterReadingComments = $meterReadingComments;
 
@@ -599,9 +599,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterReadingComments(): self
+    public function unsetMeterReadingComments(): static
     {
         $this->meterReadingComments = null;
 
@@ -609,9 +609,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeterReadingComments(): self
+    public function clearMeterReadingComments(): static
     {
         $this->meterReadingComments = [];
 
@@ -650,9 +650,9 @@ class MeterReadingType
 
     /**
      * @param MeterReadingComments $meterReadingComments
-     * @return self
+     * @return static
      */
-    public function addToMeterReadingComments(MeterReadingComments $meterReadingComments): self
+    public function addToMeterReadingComments(MeterReadingComments $meterReadingComments): static
     {
         $this->meterReadingComments[] = $meterReadingComments;
 
@@ -671,9 +671,9 @@ class MeterReadingType
 
     /**
      * @param MeterReadingComments $meterReadingComments
-     * @return self
+     * @return static
      */
-    public function addOnceToMeterReadingComments(MeterReadingComments $meterReadingComments): self
+    public function addOnceToMeterReadingComments(MeterReadingComments $meterReadingComments): static
     {
         if (!is_array($this->meterReadingComments)) {
             $this->meterReadingComments = [];
@@ -720,9 +720,9 @@ class MeterReadingType
 
     /**
      * @param DeliveredQuantity|null $deliveredQuantity
-     * @return self
+     * @return static
      */
-    public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): self
+    public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): static
     {
         $this->deliveredQuantity = $deliveredQuantity;
 
@@ -730,9 +730,9 @@ class MeterReadingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveredQuantity(): self
+    public function unsetDeliveredQuantity(): static
     {
         $this->deliveredQuantity = null;
 

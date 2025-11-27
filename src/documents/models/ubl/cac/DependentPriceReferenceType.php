@@ -65,9 +65,9 @@ class DependentPriceReferenceType
 
     /**
      * @param Percent|null $percent
-     * @return self
+     * @return static
      */
-    public function setPercent(?Percent $percent = null): self
+    public function setPercent(?Percent $percent = null): static
     {
         $this->percent = $percent;
 
@@ -75,9 +75,9 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPercent(): self
+    public function unsetPercent(): static
     {
         $this->percent = null;
 
@@ -104,9 +104,9 @@ class DependentPriceReferenceType
 
     /**
      * @param LocationAddress|null $locationAddress
-     * @return self
+     * @return static
      */
-    public function setLocationAddress(?LocationAddress $locationAddress = null): self
+    public function setLocationAddress(?LocationAddress $locationAddress = null): static
     {
         $this->locationAddress = $locationAddress;
 
@@ -114,9 +114,9 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocationAddress(): self
+    public function unsetLocationAddress(): static
     {
         $this->locationAddress = null;
 
@@ -143,9 +143,9 @@ class DependentPriceReferenceType
 
     /**
      * @param DependentLineReference|null $dependentLineReference
-     * @return self
+     * @return static
      */
-    public function setDependentLineReference(?DependentLineReference $dependentLineReference = null): self
+    public function setDependentLineReference(?DependentLineReference $dependentLineReference = null): static
     {
         $this->dependentLineReference = $dependentLineReference;
 
@@ -153,9 +153,9 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDependentLineReference(): self
+    public function unsetDependentLineReference(): static
     {
         $this->dependentLineReference = null;
 

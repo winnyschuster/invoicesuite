@@ -90,9 +90,9 @@ class SalesItemType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -100,9 +100,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -119,9 +119,9 @@ class SalesItemType
 
     /**
      * @param array<ActivityProperty>|null $activityProperty
-     * @return self
+     * @return static
      */
-    public function setActivityProperty(?array $activityProperty = null): self
+    public function setActivityProperty(?array $activityProperty = null): static
     {
         $this->activityProperty = $activityProperty;
 
@@ -129,9 +129,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActivityProperty(): self
+    public function unsetActivityProperty(): static
     {
         $this->activityProperty = null;
 
@@ -139,9 +139,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearActivityProperty(): self
+    public function clearActivityProperty(): static
     {
         $this->activityProperty = [];
 
@@ -180,9 +180,9 @@ class SalesItemType
 
     /**
      * @param ActivityProperty $activityProperty
-     * @return self
+     * @return static
      */
-    public function addToActivityProperty(ActivityProperty $activityProperty): self
+    public function addToActivityProperty(ActivityProperty $activityProperty): static
     {
         $this->activityProperty[] = $activityProperty;
 
@@ -201,9 +201,9 @@ class SalesItemType
 
     /**
      * @param ActivityProperty $activityProperty
-     * @return self
+     * @return static
      */
-    public function addOnceToActivityProperty(ActivityProperty $activityProperty): self
+    public function addOnceToActivityProperty(ActivityProperty $activityProperty): static
     {
         if (!is_array($this->activityProperty)) {
             $this->activityProperty = [];
@@ -240,9 +240,9 @@ class SalesItemType
 
     /**
      * @param array<TaxExclusivePrice>|null $taxExclusivePrice
-     * @return self
+     * @return static
      */
-    public function setTaxExclusivePrice(?array $taxExclusivePrice = null): self
+    public function setTaxExclusivePrice(?array $taxExclusivePrice = null): static
     {
         $this->taxExclusivePrice = $taxExclusivePrice;
 
@@ -250,9 +250,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxExclusivePrice(): self
+    public function unsetTaxExclusivePrice(): static
     {
         $this->taxExclusivePrice = null;
 
@@ -260,9 +260,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxExclusivePrice(): self
+    public function clearTaxExclusivePrice(): static
     {
         $this->taxExclusivePrice = [];
 
@@ -301,9 +301,9 @@ class SalesItemType
 
     /**
      * @param TaxExclusivePrice $taxExclusivePrice
-     * @return self
+     * @return static
      */
-    public function addToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): self
+    public function addToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): static
     {
         $this->taxExclusivePrice[] = $taxExclusivePrice;
 
@@ -322,9 +322,9 @@ class SalesItemType
 
     /**
      * @param TaxExclusivePrice $taxExclusivePrice
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): self
+    public function addOnceToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): static
     {
         if (!is_array($this->taxExclusivePrice)) {
             $this->taxExclusivePrice = [];
@@ -361,9 +361,9 @@ class SalesItemType
 
     /**
      * @param array<TaxInclusivePrice>|null $taxInclusivePrice
-     * @return self
+     * @return static
      */
-    public function setTaxInclusivePrice(?array $taxInclusivePrice = null): self
+    public function setTaxInclusivePrice(?array $taxInclusivePrice = null): static
     {
         $this->taxInclusivePrice = $taxInclusivePrice;
 
@@ -371,9 +371,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxInclusivePrice(): self
+    public function unsetTaxInclusivePrice(): static
     {
         $this->taxInclusivePrice = null;
 
@@ -381,9 +381,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxInclusivePrice(): self
+    public function clearTaxInclusivePrice(): static
     {
         $this->taxInclusivePrice = [];
 
@@ -422,9 +422,9 @@ class SalesItemType
 
     /**
      * @param TaxInclusivePrice $taxInclusivePrice
-     * @return self
+     * @return static
      */
-    public function addToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): self
+    public function addToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): static
     {
         $this->taxInclusivePrice[] = $taxInclusivePrice;
 
@@ -443,9 +443,9 @@ class SalesItemType
 
     /**
      * @param TaxInclusivePrice $taxInclusivePrice
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): self
+    public function addOnceToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): static
     {
         if (!is_array($this->taxInclusivePrice)) {
             $this->taxInclusivePrice = [];
@@ -492,9 +492,9 @@ class SalesItemType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -502,9 +502,9 @@ class SalesItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 

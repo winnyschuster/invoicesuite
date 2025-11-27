@@ -197,9 +197,9 @@ class QualifyingPartyType
 
     /**
      * @param ParticipationPercent|null $participationPercent
-     * @return self
+     * @return static
      */
-    public function setParticipationPercent(?ParticipationPercent $participationPercent = null): self
+    public function setParticipationPercent(?ParticipationPercent $participationPercent = null): static
     {
         $this->participationPercent = $participationPercent;
 
@@ -207,9 +207,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParticipationPercent(): self
+    public function unsetParticipationPercent(): static
     {
         $this->participationPercent = null;
 
@@ -226,9 +226,9 @@ class QualifyingPartyType
 
     /**
      * @param array<PersonalSituation>|null $personalSituation
-     * @return self
+     * @return static
      */
-    public function setPersonalSituation(?array $personalSituation = null): self
+    public function setPersonalSituation(?array $personalSituation = null): static
     {
         $this->personalSituation = $personalSituation;
 
@@ -236,9 +236,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPersonalSituation(): self
+    public function unsetPersonalSituation(): static
     {
         $this->personalSituation = null;
 
@@ -246,9 +246,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPersonalSituation(): self
+    public function clearPersonalSituation(): static
     {
         $this->personalSituation = [];
 
@@ -287,9 +287,9 @@ class QualifyingPartyType
 
     /**
      * @param PersonalSituation $personalSituation
-     * @return self
+     * @return static
      */
-    public function addToPersonalSituation(PersonalSituation $personalSituation): self
+    public function addToPersonalSituation(PersonalSituation $personalSituation): static
     {
         $this->personalSituation[] = $personalSituation;
 
@@ -308,9 +308,9 @@ class QualifyingPartyType
 
     /**
      * @param PersonalSituation $personalSituation
-     * @return self
+     * @return static
      */
-    public function addOnceToPersonalSituation(PersonalSituation $personalSituation): self
+    public function addOnceToPersonalSituation(PersonalSituation $personalSituation): static
     {
         if (!is_array($this->personalSituation)) {
             $this->personalSituation = [];
@@ -357,9 +357,9 @@ class QualifyingPartyType
 
     /**
      * @param OperatingYearsQuantity|null $operatingYearsQuantity
-     * @return self
+     * @return static
      */
-    public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): self
+    public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): static
     {
         $this->operatingYearsQuantity = $operatingYearsQuantity;
 
@@ -367,9 +367,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOperatingYearsQuantity(): self
+    public function unsetOperatingYearsQuantity(): static
     {
         $this->operatingYearsQuantity = null;
 
@@ -396,9 +396,9 @@ class QualifyingPartyType
 
     /**
      * @param EmployeeQuantity|null $employeeQuantity
-     * @return self
+     * @return static
      */
-    public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): self
+    public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): static
     {
         $this->employeeQuantity = $employeeQuantity;
 
@@ -406,9 +406,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmployeeQuantity(): self
+    public function unsetEmployeeQuantity(): static
     {
         $this->employeeQuantity = null;
 
@@ -435,20 +435,20 @@ class QualifyingPartyType
 
     /**
      * @param BusinessClassificationEvidenceID|null $businessClassificationEvidenceID
-     * @return self
+     * @return static
      */
     public function setBusinessClassificationEvidenceID(
         ?BusinessClassificationEvidenceID $businessClassificationEvidenceID = null,
-    ): self {
+    ): static {
         $this->businessClassificationEvidenceID = $businessClassificationEvidenceID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBusinessClassificationEvidenceID(): self
+    public function unsetBusinessClassificationEvidenceID(): static
     {
         $this->businessClassificationEvidenceID = null;
 
@@ -475,20 +475,20 @@ class QualifyingPartyType
 
     /**
      * @param BusinessIdentityEvidenceID|null $businessIdentityEvidenceID
-     * @return self
+     * @return static
      */
     public function setBusinessIdentityEvidenceID(
         ?BusinessIdentityEvidenceID $businessIdentityEvidenceID = null,
-    ): self {
+    ): static {
         $this->businessIdentityEvidenceID = $businessIdentityEvidenceID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBusinessIdentityEvidenceID(): self
+    public function unsetBusinessIdentityEvidenceID(): static
     {
         $this->businessIdentityEvidenceID = null;
 
@@ -515,9 +515,9 @@ class QualifyingPartyType
 
     /**
      * @param TendererRoleCode|null $tendererRoleCode
-     * @return self
+     * @return static
      */
-    public function setTendererRoleCode(?TendererRoleCode $tendererRoleCode = null): self
+    public function setTendererRoleCode(?TendererRoleCode $tendererRoleCode = null): static
     {
         $this->tendererRoleCode = $tendererRoleCode;
 
@@ -525,9 +525,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTendererRoleCode(): self
+    public function unsetTendererRoleCode(): static
     {
         $this->tendererRoleCode = null;
 
@@ -554,20 +554,20 @@ class QualifyingPartyType
 
     /**
      * @param BusinessClassificationScheme|null $businessClassificationScheme
-     * @return self
+     * @return static
      */
     public function setBusinessClassificationScheme(
         ?BusinessClassificationScheme $businessClassificationScheme = null,
-    ): self {
+    ): static {
         $this->businessClassificationScheme = $businessClassificationScheme;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBusinessClassificationScheme(): self
+    public function unsetBusinessClassificationScheme(): static
     {
         $this->businessClassificationScheme = null;
 
@@ -584,9 +584,9 @@ class QualifyingPartyType
 
     /**
      * @param array<TechnicalCapability>|null $technicalCapability
-     * @return self
+     * @return static
      */
-    public function setTechnicalCapability(?array $technicalCapability = null): self
+    public function setTechnicalCapability(?array $technicalCapability = null): static
     {
         $this->technicalCapability = $technicalCapability;
 
@@ -594,9 +594,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTechnicalCapability(): self
+    public function unsetTechnicalCapability(): static
     {
         $this->technicalCapability = null;
 
@@ -604,9 +604,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTechnicalCapability(): self
+    public function clearTechnicalCapability(): static
     {
         $this->technicalCapability = [];
 
@@ -645,9 +645,9 @@ class QualifyingPartyType
 
     /**
      * @param TechnicalCapability $technicalCapability
-     * @return self
+     * @return static
      */
-    public function addToTechnicalCapability(TechnicalCapability $technicalCapability): self
+    public function addToTechnicalCapability(TechnicalCapability $technicalCapability): static
     {
         $this->technicalCapability[] = $technicalCapability;
 
@@ -666,9 +666,9 @@ class QualifyingPartyType
 
     /**
      * @param TechnicalCapability $technicalCapability
-     * @return self
+     * @return static
      */
-    public function addOnceToTechnicalCapability(TechnicalCapability $technicalCapability): self
+    public function addOnceToTechnicalCapability(TechnicalCapability $technicalCapability): static
     {
         if (!is_array($this->technicalCapability)) {
             $this->technicalCapability = [];
@@ -705,9 +705,9 @@ class QualifyingPartyType
 
     /**
      * @param array<FinancialCapability>|null $financialCapability
-     * @return self
+     * @return static
      */
-    public function setFinancialCapability(?array $financialCapability = null): self
+    public function setFinancialCapability(?array $financialCapability = null): static
     {
         $this->financialCapability = $financialCapability;
 
@@ -715,9 +715,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancialCapability(): self
+    public function unsetFinancialCapability(): static
     {
         $this->financialCapability = null;
 
@@ -725,9 +725,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFinancialCapability(): self
+    public function clearFinancialCapability(): static
     {
         $this->financialCapability = [];
 
@@ -766,9 +766,9 @@ class QualifyingPartyType
 
     /**
      * @param FinancialCapability $financialCapability
-     * @return self
+     * @return static
      */
-    public function addToFinancialCapability(FinancialCapability $financialCapability): self
+    public function addToFinancialCapability(FinancialCapability $financialCapability): static
     {
         $this->financialCapability[] = $financialCapability;
 
@@ -787,9 +787,9 @@ class QualifyingPartyType
 
     /**
      * @param FinancialCapability $financialCapability
-     * @return self
+     * @return static
      */
-    public function addOnceToFinancialCapability(FinancialCapability $financialCapability): self
+    public function addOnceToFinancialCapability(FinancialCapability $financialCapability): static
     {
         if (!is_array($this->financialCapability)) {
             $this->financialCapability = [];
@@ -826,9 +826,9 @@ class QualifyingPartyType
 
     /**
      * @param array<CompletedTask>|null $completedTask
-     * @return self
+     * @return static
      */
-    public function setCompletedTask(?array $completedTask = null): self
+    public function setCompletedTask(?array $completedTask = null): static
     {
         $this->completedTask = $completedTask;
 
@@ -836,9 +836,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompletedTask(): self
+    public function unsetCompletedTask(): static
     {
         $this->completedTask = null;
 
@@ -846,9 +846,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCompletedTask(): self
+    public function clearCompletedTask(): static
     {
         $this->completedTask = [];
 
@@ -887,9 +887,9 @@ class QualifyingPartyType
 
     /**
      * @param CompletedTask $completedTask
-     * @return self
+     * @return static
      */
-    public function addToCompletedTask(CompletedTask $completedTask): self
+    public function addToCompletedTask(CompletedTask $completedTask): static
     {
         $this->completedTask[] = $completedTask;
 
@@ -908,9 +908,9 @@ class QualifyingPartyType
 
     /**
      * @param CompletedTask $completedTask
-     * @return self
+     * @return static
      */
-    public function addOnceToCompletedTask(CompletedTask $completedTask): self
+    public function addOnceToCompletedTask(CompletedTask $completedTask): static
     {
         if (!is_array($this->completedTask)) {
             $this->completedTask = [];
@@ -947,9 +947,9 @@ class QualifyingPartyType
 
     /**
      * @param array<Declaration>|null $declaration
-     * @return self
+     * @return static
      */
-    public function setDeclaration(?array $declaration = null): self
+    public function setDeclaration(?array $declaration = null): static
     {
         $this->declaration = $declaration;
 
@@ -957,9 +957,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaration(): self
+    public function unsetDeclaration(): static
     {
         $this->declaration = null;
 
@@ -967,9 +967,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDeclaration(): self
+    public function clearDeclaration(): static
     {
         $this->declaration = [];
 
@@ -1008,9 +1008,9 @@ class QualifyingPartyType
 
     /**
      * @param Declaration $declaration
-     * @return self
+     * @return static
      */
-    public function addToDeclaration(Declaration $declaration): self
+    public function addToDeclaration(Declaration $declaration): static
     {
         $this->declaration[] = $declaration;
 
@@ -1029,9 +1029,9 @@ class QualifyingPartyType
 
     /**
      * @param Declaration $declaration
-     * @return self
+     * @return static
      */
-    public function addOnceToDeclaration(Declaration $declaration): self
+    public function addOnceToDeclaration(Declaration $declaration): static
     {
         if (!is_array($this->declaration)) {
             $this->declaration = [];
@@ -1078,9 +1078,9 @@ class QualifyingPartyType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -1088,9 +1088,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 
@@ -1117,9 +1117,9 @@ class QualifyingPartyType
 
     /**
      * @param EconomicOperatorRole|null $economicOperatorRole
-     * @return self
+     * @return static
      */
-    public function setEconomicOperatorRole(?EconomicOperatorRole $economicOperatorRole = null): self
+    public function setEconomicOperatorRole(?EconomicOperatorRole $economicOperatorRole = null): static
     {
         $this->economicOperatorRole = $economicOperatorRole;
 
@@ -1127,9 +1127,9 @@ class QualifyingPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEconomicOperatorRole(): self
+    public function unsetEconomicOperatorRole(): static
     {
         $this->economicOperatorRole = null;
 

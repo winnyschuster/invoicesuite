@@ -112,9 +112,9 @@ class CustomerPartyType
 
     /**
      * @param CustomerAssignedAccountID|null $customerAssignedAccountID
-     * @return self
+     * @return static
      */
-    public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): self
+    public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): static
     {
         $this->customerAssignedAccountID = $customerAssignedAccountID;
 
@@ -122,9 +122,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomerAssignedAccountID(): self
+    public function unsetCustomerAssignedAccountID(): static
     {
         $this->customerAssignedAccountID = null;
 
@@ -151,9 +151,9 @@ class CustomerPartyType
 
     /**
      * @param SupplierAssignedAccountID|null $supplierAssignedAccountID
-     * @return self
+     * @return static
      */
-    public function setSupplierAssignedAccountID(?SupplierAssignedAccountID $supplierAssignedAccountID = null): self
+    public function setSupplierAssignedAccountID(?SupplierAssignedAccountID $supplierAssignedAccountID = null): static
     {
         $this->supplierAssignedAccountID = $supplierAssignedAccountID;
 
@@ -161,9 +161,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplierAssignedAccountID(): self
+    public function unsetSupplierAssignedAccountID(): static
     {
         $this->supplierAssignedAccountID = null;
 
@@ -180,9 +180,9 @@ class CustomerPartyType
 
     /**
      * @param array<AdditionalAccountID>|null $additionalAccountID
-     * @return self
+     * @return static
      */
-    public function setAdditionalAccountID(?array $additionalAccountID = null): self
+    public function setAdditionalAccountID(?array $additionalAccountID = null): static
     {
         $this->additionalAccountID = $additionalAccountID;
 
@@ -190,9 +190,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalAccountID(): self
+    public function unsetAdditionalAccountID(): static
     {
         $this->additionalAccountID = null;
 
@@ -200,9 +200,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalAccountID(): self
+    public function clearAdditionalAccountID(): static
     {
         $this->additionalAccountID = [];
 
@@ -241,9 +241,9 @@ class CustomerPartyType
 
     /**
      * @param AdditionalAccountID $additionalAccountID
-     * @return self
+     * @return static
      */
-    public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): self
+    public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
     {
         $this->additionalAccountID[] = $additionalAccountID;
 
@@ -262,9 +262,9 @@ class CustomerPartyType
 
     /**
      * @param AdditionalAccountID $additionalAccountID
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): self
+    public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
     {
         if (!is_array($this->additionalAccountID)) {
             $this->additionalAccountID = [];
@@ -311,9 +311,9 @@ class CustomerPartyType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -321,9 +321,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 
@@ -350,9 +350,9 @@ class CustomerPartyType
 
     /**
      * @param DeliveryContact|null $deliveryContact
-     * @return self
+     * @return static
      */
-    public function setDeliveryContact(?DeliveryContact $deliveryContact = null): self
+    public function setDeliveryContact(?DeliveryContact $deliveryContact = null): static
     {
         $this->deliveryContact = $deliveryContact;
 
@@ -360,9 +360,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryContact(): self
+    public function unsetDeliveryContact(): static
     {
         $this->deliveryContact = null;
 
@@ -389,9 +389,9 @@ class CustomerPartyType
 
     /**
      * @param AccountingContact|null $accountingContact
-     * @return self
+     * @return static
      */
-    public function setAccountingContact(?AccountingContact $accountingContact = null): self
+    public function setAccountingContact(?AccountingContact $accountingContact = null): static
     {
         $this->accountingContact = $accountingContact;
 
@@ -399,9 +399,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingContact(): self
+    public function unsetAccountingContact(): static
     {
         $this->accountingContact = null;
 
@@ -428,9 +428,9 @@ class CustomerPartyType
 
     /**
      * @param BuyerContact|null $buyerContact
-     * @return self
+     * @return static
      */
-    public function setBuyerContact(?BuyerContact $buyerContact = null): self
+    public function setBuyerContact(?BuyerContact $buyerContact = null): static
     {
         $this->buyerContact = $buyerContact;
 
@@ -438,9 +438,9 @@ class CustomerPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerContact(): self
+    public function unsetBuyerContact(): static
     {
         $this->buyerContact = null;
 

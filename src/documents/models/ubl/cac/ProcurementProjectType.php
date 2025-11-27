@@ -247,9 +247,9 @@ class ProcurementProjectType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -257,9 +257,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -276,9 +276,9 @@ class ProcurementProjectType
 
     /**
      * @param array<Name>|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?array $name = null): self
+    public function setName(?array $name = null): static
     {
         $this->name = $name;
 
@@ -286,9 +286,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -296,9 +296,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearName(): self
+    public function clearName(): static
     {
         $this->name = [];
 
@@ -337,9 +337,9 @@ class ProcurementProjectType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addToName(Name $name): self
+    public function addToName(Name $name): static
     {
         $this->name[] = $name;
 
@@ -358,9 +358,9 @@ class ProcurementProjectType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addOnceToName(Name $name): self
+    public function addOnceToName(Name $name): static
     {
         if (!is_array($this->name)) {
             $this->name = [];
@@ -397,9 +397,9 @@ class ProcurementProjectType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -407,9 +407,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -417,9 +417,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -458,9 +458,9 @@ class ProcurementProjectType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -479,9 +479,9 @@ class ProcurementProjectType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -528,9 +528,9 @@ class ProcurementProjectType
 
     /**
      * @param ProcurementTypeCode|null $procurementTypeCode
-     * @return self
+     * @return static
      */
-    public function setProcurementTypeCode(?ProcurementTypeCode $procurementTypeCode = null): self
+    public function setProcurementTypeCode(?ProcurementTypeCode $procurementTypeCode = null): static
     {
         $this->procurementTypeCode = $procurementTypeCode;
 
@@ -538,9 +538,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcurementTypeCode(): self
+    public function unsetProcurementTypeCode(): static
     {
         $this->procurementTypeCode = null;
 
@@ -567,9 +567,9 @@ class ProcurementProjectType
 
     /**
      * @param ProcurementSubTypeCode|null $procurementSubTypeCode
-     * @return self
+     * @return static
      */
-    public function setProcurementSubTypeCode(?ProcurementSubTypeCode $procurementSubTypeCode = null): self
+    public function setProcurementSubTypeCode(?ProcurementSubTypeCode $procurementSubTypeCode = null): static
     {
         $this->procurementSubTypeCode = $procurementSubTypeCode;
 
@@ -577,9 +577,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcurementSubTypeCode(): self
+    public function unsetProcurementSubTypeCode(): static
     {
         $this->procurementSubTypeCode = null;
 
@@ -606,9 +606,9 @@ class ProcurementProjectType
 
     /**
      * @param QualityControlCode|null $qualityControlCode
-     * @return self
+     * @return static
      */
-    public function setQualityControlCode(?QualityControlCode $qualityControlCode = null): self
+    public function setQualityControlCode(?QualityControlCode $qualityControlCode = null): static
     {
         $this->qualityControlCode = $qualityControlCode;
 
@@ -616,9 +616,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQualityControlCode(): self
+    public function unsetQualityControlCode(): static
     {
         $this->qualityControlCode = null;
 
@@ -645,9 +645,9 @@ class ProcurementProjectType
 
     /**
      * @param RequiredFeeAmount|null $requiredFeeAmount
-     * @return self
+     * @return static
      */
-    public function setRequiredFeeAmount(?RequiredFeeAmount $requiredFeeAmount = null): self
+    public function setRequiredFeeAmount(?RequiredFeeAmount $requiredFeeAmount = null): static
     {
         $this->requiredFeeAmount = $requiredFeeAmount;
 
@@ -655,9 +655,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredFeeAmount(): self
+    public function unsetRequiredFeeAmount(): static
     {
         $this->requiredFeeAmount = null;
 
@@ -674,9 +674,9 @@ class ProcurementProjectType
 
     /**
      * @param array<FeeDescription>|null $feeDescription
-     * @return self
+     * @return static
      */
-    public function setFeeDescription(?array $feeDescription = null): self
+    public function setFeeDescription(?array $feeDescription = null): static
     {
         $this->feeDescription = $feeDescription;
 
@@ -684,9 +684,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFeeDescription(): self
+    public function unsetFeeDescription(): static
     {
         $this->feeDescription = null;
 
@@ -694,9 +694,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFeeDescription(): self
+    public function clearFeeDescription(): static
     {
         $this->feeDescription = [];
 
@@ -735,9 +735,9 @@ class ProcurementProjectType
 
     /**
      * @param FeeDescription $feeDescription
-     * @return self
+     * @return static
      */
-    public function addToFeeDescription(FeeDescription $feeDescription): self
+    public function addToFeeDescription(FeeDescription $feeDescription): static
     {
         $this->feeDescription[] = $feeDescription;
 
@@ -756,9 +756,9 @@ class ProcurementProjectType
 
     /**
      * @param FeeDescription $feeDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToFeeDescription(FeeDescription $feeDescription): self
+    public function addOnceToFeeDescription(FeeDescription $feeDescription): static
     {
         if (!is_array($this->feeDescription)) {
             $this->feeDescription = [];
@@ -795,9 +795,9 @@ class ProcurementProjectType
 
     /**
      * @param DateTimeInterface|null $requestedDeliveryDate
-     * @return self
+     * @return static
      */
-    public function setRequestedDeliveryDate(?DateTimeInterface $requestedDeliveryDate = null): self
+    public function setRequestedDeliveryDate(?DateTimeInterface $requestedDeliveryDate = null): static
     {
         $this->requestedDeliveryDate = $requestedDeliveryDate;
 
@@ -805,9 +805,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedDeliveryDate(): self
+    public function unsetRequestedDeliveryDate(): static
     {
         $this->requestedDeliveryDate = null;
 
@@ -834,20 +834,20 @@ class ProcurementProjectType
 
     /**
      * @param EstimatedOverallContractQuantity|null $estimatedOverallContractQuantity
-     * @return self
+     * @return static
      */
     public function setEstimatedOverallContractQuantity(
         ?EstimatedOverallContractQuantity $estimatedOverallContractQuantity = null,
-    ): self {
+    ): static {
         $this->estimatedOverallContractQuantity = $estimatedOverallContractQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedOverallContractQuantity(): self
+    public function unsetEstimatedOverallContractQuantity(): static
     {
         $this->estimatedOverallContractQuantity = null;
 
@@ -864,9 +864,9 @@ class ProcurementProjectType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -874,9 +874,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -884,9 +884,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -925,9 +925,9 @@ class ProcurementProjectType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -946,9 +946,9 @@ class ProcurementProjectType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -995,9 +995,9 @@ class ProcurementProjectType
 
     /**
      * @param RequestedTenderTotal|null $requestedTenderTotal
-     * @return self
+     * @return static
      */
-    public function setRequestedTenderTotal(?RequestedTenderTotal $requestedTenderTotal = null): self
+    public function setRequestedTenderTotal(?RequestedTenderTotal $requestedTenderTotal = null): static
     {
         $this->requestedTenderTotal = $requestedTenderTotal;
 
@@ -1005,9 +1005,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedTenderTotal(): self
+    public function unsetRequestedTenderTotal(): static
     {
         $this->requestedTenderTotal = null;
 
@@ -1034,20 +1034,20 @@ class ProcurementProjectType
 
     /**
      * @param MainCommodityClassification|null $mainCommodityClassification
-     * @return self
+     * @return static
      */
     public function setMainCommodityClassification(
         ?MainCommodityClassification $mainCommodityClassification = null,
-    ): self {
+    ): static {
         $this->mainCommodityClassification = $mainCommodityClassification;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMainCommodityClassification(): self
+    public function unsetMainCommodityClassification(): static
     {
         $this->mainCommodityClassification = null;
 
@@ -1064,9 +1064,9 @@ class ProcurementProjectType
 
     /**
      * @param array<AdditionalCommodityClassification>|null $additionalCommodityClassification
-     * @return self
+     * @return static
      */
-    public function setAdditionalCommodityClassification(?array $additionalCommodityClassification = null): self
+    public function setAdditionalCommodityClassification(?array $additionalCommodityClassification = null): static
     {
         $this->additionalCommodityClassification = $additionalCommodityClassification;
 
@@ -1074,9 +1074,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalCommodityClassification(): self
+    public function unsetAdditionalCommodityClassification(): static
     {
         $this->additionalCommodityClassification = null;
 
@@ -1084,9 +1084,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalCommodityClassification(): self
+    public function clearAdditionalCommodityClassification(): static
     {
         $this->additionalCommodityClassification = [];
 
@@ -1125,11 +1125,11 @@ class ProcurementProjectType
 
     /**
      * @param AdditionalCommodityClassification $additionalCommodityClassification
-     * @return self
+     * @return static
      */
     public function addToAdditionalCommodityClassification(
         AdditionalCommodityClassification $additionalCommodityClassification,
-    ): self {
+    ): static {
         $this->additionalCommodityClassification[] = $additionalCommodityClassification;
 
         return $this;
@@ -1147,11 +1147,11 @@ class ProcurementProjectType
 
     /**
      * @param AdditionalCommodityClassification $additionalCommodityClassification
-     * @return self
+     * @return static
      */
     public function addOnceToAdditionalCommodityClassification(
         AdditionalCommodityClassification $additionalCommodityClassification,
-    ): self {
+    ): static {
         if (!is_array($this->additionalCommodityClassification)) {
             $this->additionalCommodityClassification = [];
         }
@@ -1187,9 +1187,9 @@ class ProcurementProjectType
 
     /**
      * @param array<RealizedLocation>|null $realizedLocation
-     * @return self
+     * @return static
      */
-    public function setRealizedLocation(?array $realizedLocation = null): self
+    public function setRealizedLocation(?array $realizedLocation = null): static
     {
         $this->realizedLocation = $realizedLocation;
 
@@ -1197,9 +1197,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRealizedLocation(): self
+    public function unsetRealizedLocation(): static
     {
         $this->realizedLocation = null;
 
@@ -1207,9 +1207,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRealizedLocation(): self
+    public function clearRealizedLocation(): static
     {
         $this->realizedLocation = [];
 
@@ -1248,9 +1248,9 @@ class ProcurementProjectType
 
     /**
      * @param RealizedLocation $realizedLocation
-     * @return self
+     * @return static
      */
-    public function addToRealizedLocation(RealizedLocation $realizedLocation): self
+    public function addToRealizedLocation(RealizedLocation $realizedLocation): static
     {
         $this->realizedLocation[] = $realizedLocation;
 
@@ -1269,9 +1269,9 @@ class ProcurementProjectType
 
     /**
      * @param RealizedLocation $realizedLocation
-     * @return self
+     * @return static
      */
-    public function addOnceToRealizedLocation(RealizedLocation $realizedLocation): self
+    public function addOnceToRealizedLocation(RealizedLocation $realizedLocation): static
     {
         if (!is_array($this->realizedLocation)) {
             $this->realizedLocation = [];
@@ -1318,9 +1318,9 @@ class ProcurementProjectType
 
     /**
      * @param PlannedPeriod|null $plannedPeriod
-     * @return self
+     * @return static
      */
-    public function setPlannedPeriod(?PlannedPeriod $plannedPeriod = null): self
+    public function setPlannedPeriod(?PlannedPeriod $plannedPeriod = null): static
     {
         $this->plannedPeriod = $plannedPeriod;
 
@@ -1328,9 +1328,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedPeriod(): self
+    public function unsetPlannedPeriod(): static
     {
         $this->plannedPeriod = null;
 
@@ -1357,9 +1357,9 @@ class ProcurementProjectType
 
     /**
      * @param ContractExtension|null $contractExtension
-     * @return self
+     * @return static
      */
-    public function setContractExtension(?ContractExtension $contractExtension = null): self
+    public function setContractExtension(?ContractExtension $contractExtension = null): static
     {
         $this->contractExtension = $contractExtension;
 
@@ -1367,9 +1367,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractExtension(): self
+    public function unsetContractExtension(): static
     {
         $this->contractExtension = null;
 
@@ -1386,9 +1386,9 @@ class ProcurementProjectType
 
     /**
      * @param array<RequestForTenderLine>|null $requestForTenderLine
-     * @return self
+     * @return static
      */
-    public function setRequestForTenderLine(?array $requestForTenderLine = null): self
+    public function setRequestForTenderLine(?array $requestForTenderLine = null): static
     {
         $this->requestForTenderLine = $requestForTenderLine;
 
@@ -1396,9 +1396,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestForTenderLine(): self
+    public function unsetRequestForTenderLine(): static
     {
         $this->requestForTenderLine = null;
 
@@ -1406,9 +1406,9 @@ class ProcurementProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRequestForTenderLine(): self
+    public function clearRequestForTenderLine(): static
     {
         $this->requestForTenderLine = [];
 
@@ -1447,9 +1447,9 @@ class ProcurementProjectType
 
     /**
      * @param RequestForTenderLine $requestForTenderLine
-     * @return self
+     * @return static
      */
-    public function addToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): self
+    public function addToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): static
     {
         $this->requestForTenderLine[] = $requestForTenderLine;
 
@@ -1468,9 +1468,9 @@ class ProcurementProjectType
 
     /**
      * @param RequestForTenderLine $requestForTenderLine
-     * @return self
+     * @return static
      */
-    public function addOnceToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): self
+    public function addOnceToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): static
     {
         if (!is_array($this->requestForTenderLine)) {
             $this->requestForTenderLine = [];

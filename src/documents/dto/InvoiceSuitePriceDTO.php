@@ -61,9 +61,9 @@ class InvoiceSuitePriceDTO
      * Sets the price value
      *
      * @param  null|float $amount The price value
-     * @return self
+     * @return static
      */
-    public function setAmount(?float $amount): self
+    public function setAmount(?float $amount): static
     {
         $this->amount = $amount;
 
@@ -84,9 +84,9 @@ class InvoiceSuitePriceDTO
      * Sets the number of item units for which the price applies
      *
      * @param  null|InvoiceSuiteQuantityDTO $priceQuantity The number of item units for which the price applies
-     * @return self
+     * @return static
      */
-    public function setPriceQuantity(?InvoiceSuiteQuantityDTO $priceQuantity): self
+    public function setPriceQuantity(?InvoiceSuiteQuantityDTO $priceQuantity): static
     {
         $this->priceQuantity = $priceQuantity;
 

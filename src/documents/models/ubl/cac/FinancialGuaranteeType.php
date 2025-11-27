@@ -91,9 +91,9 @@ class FinancialGuaranteeType
 
     /**
      * @param GuaranteeTypeCode|null $guaranteeTypeCode
-     * @return self
+     * @return static
      */
-    public function setGuaranteeTypeCode(?GuaranteeTypeCode $guaranteeTypeCode = null): self
+    public function setGuaranteeTypeCode(?GuaranteeTypeCode $guaranteeTypeCode = null): static
     {
         $this->guaranteeTypeCode = $guaranteeTypeCode;
 
@@ -101,9 +101,9 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGuaranteeTypeCode(): self
+    public function unsetGuaranteeTypeCode(): static
     {
         $this->guaranteeTypeCode = null;
 
@@ -120,9 +120,9 @@ class FinancialGuaranteeType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -130,9 +130,9 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -140,9 +140,9 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -181,9 +181,9 @@ class FinancialGuaranteeType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -202,9 +202,9 @@ class FinancialGuaranteeType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -251,9 +251,9 @@ class FinancialGuaranteeType
 
     /**
      * @param LiabilityAmount|null $liabilityAmount
-     * @return self
+     * @return static
      */
-    public function setLiabilityAmount(?LiabilityAmount $liabilityAmount = null): self
+    public function setLiabilityAmount(?LiabilityAmount $liabilityAmount = null): static
     {
         $this->liabilityAmount = $liabilityAmount;
 
@@ -261,9 +261,9 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLiabilityAmount(): self
+    public function unsetLiabilityAmount(): static
     {
         $this->liabilityAmount = null;
 
@@ -290,9 +290,9 @@ class FinancialGuaranteeType
 
     /**
      * @param AmountRate|null $amountRate
-     * @return self
+     * @return static
      */
-    public function setAmountRate(?AmountRate $amountRate = null): self
+    public function setAmountRate(?AmountRate $amountRate = null): static
     {
         $this->amountRate = $amountRate;
 
@@ -300,9 +300,9 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmountRate(): self
+    public function unsetAmountRate(): static
     {
         $this->amountRate = null;
 
@@ -329,9 +329,9 @@ class FinancialGuaranteeType
 
     /**
      * @param ConstitutionPeriod|null $constitutionPeriod
-     * @return self
+     * @return static
      */
-    public function setConstitutionPeriod(?ConstitutionPeriod $constitutionPeriod = null): self
+    public function setConstitutionPeriod(?ConstitutionPeriod $constitutionPeriod = null): static
     {
         $this->constitutionPeriod = $constitutionPeriod;
 
@@ -339,9 +339,9 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConstitutionPeriod(): self
+    public function unsetConstitutionPeriod(): static
     {
         $this->constitutionPeriod = null;
 

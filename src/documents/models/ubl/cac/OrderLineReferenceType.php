@@ -90,9 +90,9 @@ class OrderLineReferenceType
 
     /**
      * @param LineID|null $lineID
-     * @return self
+     * @return static
      */
-    public function setLineID(?LineID $lineID = null): self
+    public function setLineID(?LineID $lineID = null): static
     {
         $this->lineID = $lineID;
 
@@ -100,9 +100,9 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineID(): self
+    public function unsetLineID(): static
     {
         $this->lineID = null;
 
@@ -129,9 +129,9 @@ class OrderLineReferenceType
 
     /**
      * @param SalesOrderLineID|null $salesOrderLineID
-     * @return self
+     * @return static
      */
-    public function setSalesOrderLineID(?SalesOrderLineID $salesOrderLineID = null): self
+    public function setSalesOrderLineID(?SalesOrderLineID $salesOrderLineID = null): static
     {
         $this->salesOrderLineID = $salesOrderLineID;
 
@@ -139,9 +139,9 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSalesOrderLineID(): self
+    public function unsetSalesOrderLineID(): static
     {
         $this->salesOrderLineID = null;
 
@@ -168,9 +168,9 @@ class OrderLineReferenceType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -178,9 +178,9 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -207,9 +207,9 @@ class OrderLineReferenceType
 
     /**
      * @param LineStatusCode|null $lineStatusCode
-     * @return self
+     * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
+    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
     {
         $this->lineStatusCode = $lineStatusCode;
 
@@ -217,9 +217,9 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineStatusCode(): self
+    public function unsetLineStatusCode(): static
     {
         $this->lineStatusCode = null;
 
@@ -246,9 +246,9 @@ class OrderLineReferenceType
 
     /**
      * @param OrderReference|null $orderReference
-     * @return self
+     * @return static
      */
-    public function setOrderReference(?OrderReference $orderReference = null): self
+    public function setOrderReference(?OrderReference $orderReference = null): static
     {
         $this->orderReference = $orderReference;
 
@@ -256,9 +256,9 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderReference(): self
+    public function unsetOrderReference(): static
     {
         $this->orderReference = null;
 

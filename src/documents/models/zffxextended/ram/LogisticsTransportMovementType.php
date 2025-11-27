@@ -43,9 +43,9 @@ class LogisticsTransportMovementType
 
     /**
      * @param TransportModeCodeType|null $modeCode
-     * @return self
+     * @return static
      */
-    public function setModeCode(?TransportModeCodeType $modeCode = null): self
+    public function setModeCode(?TransportModeCodeType $modeCode = null): static
     {
         $this->modeCode = $modeCode;
 
@@ -53,9 +53,9 @@ class LogisticsTransportMovementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetModeCode(): self
+    public function unsetModeCode(): static
     {
         $this->modeCode = null;
 

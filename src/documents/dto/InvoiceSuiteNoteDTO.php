@@ -70,9 +70,9 @@ class InvoiceSuiteNoteDTO
      * Sets free text containing unstructured information that is relevant to the invoice as a whole
      *
      * @param  null|string $content Free text containing unstructured information that is relevant to the invoice as a whole
-     * @return self
+     * @return static
      */
-    public function setContent(?string $content): self
+    public function setContent(?string $content): static
     {
         $this->content = $content;
 
@@ -93,9 +93,9 @@ class InvoiceSuiteNoteDTO
      * Sets code to classify the content of the free text of the invoice
      *
      * @param  null|string $contentCode Code to classify the content of the free text of the invoice
-     * @return self
+     * @return static
      */
-    public function setContentCode(?string $contentCode): self
+    public function setContentCode(?string $contentCode): static
     {
         $this->contentCode = $contentCode;
 
@@ -116,9 +116,9 @@ class InvoiceSuiteNoteDTO
      * Sets qualification of the free text for the invoice
      *
      * @param  null|string $subjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
-    public function setSubjectCode(?string $subjectCode): self
+    public function setSubjectCode(?string $subjectCode): static
     {
         $this->subjectCode = $subjectCode;
 

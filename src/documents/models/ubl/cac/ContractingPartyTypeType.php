@@ -55,9 +55,9 @@ class ContractingPartyTypeType
 
     /**
      * @param PartyTypeCode|null $partyTypeCode
-     * @return self
+     * @return static
      */
-    public function setPartyTypeCode(?PartyTypeCode $partyTypeCode = null): self
+    public function setPartyTypeCode(?PartyTypeCode $partyTypeCode = null): static
     {
         $this->partyTypeCode = $partyTypeCode;
 
@@ -65,9 +65,9 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyTypeCode(): self
+    public function unsetPartyTypeCode(): static
     {
         $this->partyTypeCode = null;
 
@@ -94,9 +94,9 @@ class ContractingPartyTypeType
 
     /**
      * @param PartyType|null $partyType
-     * @return self
+     * @return static
      */
-    public function setPartyType(?PartyType $partyType = null): self
+    public function setPartyType(?PartyType $partyType = null): static
     {
         $this->partyType = $partyType;
 
@@ -104,9 +104,9 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyType(): self
+    public function unsetPartyType(): static
     {
         $this->partyType = null;
 

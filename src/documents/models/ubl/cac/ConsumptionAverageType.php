@@ -56,9 +56,9 @@ class ConsumptionAverageType
 
     /**
      * @param AverageAmount|null $averageAmount
-     * @return self
+     * @return static
      */
-    public function setAverageAmount(?AverageAmount $averageAmount = null): self
+    public function setAverageAmount(?AverageAmount $averageAmount = null): static
     {
         $this->averageAmount = $averageAmount;
 
@@ -66,9 +66,9 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAverageAmount(): self
+    public function unsetAverageAmount(): static
     {
         $this->averageAmount = null;
 
@@ -85,9 +85,9 @@ class ConsumptionAverageType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -95,9 +95,9 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -105,9 +105,9 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -146,9 +146,9 @@ class ConsumptionAverageType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -167,9 +167,9 @@ class ConsumptionAverageType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];

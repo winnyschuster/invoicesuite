@@ -103,9 +103,9 @@ class InvoiceSuitePdfDocumentReader
      * @param  string                               $fromFile
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
-     * @return InvoiceSuitePdfDocumentReader
+     * @return static
      */
-    public static function createFromFile(string $fromFile): self
+    public static function createFromFile(string $fromFile): static
     {
         if (!file_exists($fromFile)) {
             throw new InvoiceSuiteFileNotFoundException($fromFile);
@@ -124,9 +124,9 @@ class InvoiceSuitePdfDocumentReader
      * Create PDF reader by content
      *
      * @param  string $fromContent
-     * @return self
+     * @return static
      */
-    public static function createFromContent(string $fromContent): self
+    public static function createFromContent(string $fromContent): static
     {
         return new static($fromContent);
     }
@@ -165,9 +165,9 @@ class InvoiceSuitePdfDocumentReader
      * Internal method to set the invoice document attachment
      *
      * @param  InvoiceSuitePdfExtractorAttachment $attachment
-     * @return InvoiceSuitePdfDocumentReader
+     * @return static
      */
-    protected function setInvoiceDocumentAttachment(InvoiceSuitePdfExtractorAttachment $attachment): self
+    protected function setInvoiceDocumentAttachment(InvoiceSuitePdfExtractorAttachment $attachment): static
     {
         $this->invoiceDocumentAttachment = $attachment;
 
@@ -178,9 +178,9 @@ class InvoiceSuitePdfDocumentReader
      * Internal method to add a single additional attachments
      *
      * @param  InvoiceSuitePdfExtractorAttachment $attachment
-     * @return InvoiceSuitePdfDocumentReader
+     * @return static
      */
-    protected function addAdditionalDocumentAttachments(InvoiceSuitePdfExtractorAttachment $attachment): self
+    protected function addAdditionalDocumentAttachments(InvoiceSuitePdfExtractorAttachment $attachment): static
     {
         $this->additionalDocumentAttachments[] = $attachment;
 

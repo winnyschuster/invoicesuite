@@ -163,9 +163,9 @@ class ExternalReferenceType
 
     /**
      * @param URI|null $uRI
-     * @return self
+     * @return static
      */
-    public function setURI(?URI $uRI = null): self
+    public function setURI(?URI $uRI = null): static
     {
         $this->uRI = $uRI;
 
@@ -173,9 +173,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetURI(): self
+    public function unsetURI(): static
     {
         $this->uRI = null;
 
@@ -202,9 +202,9 @@ class ExternalReferenceType
 
     /**
      * @param DocumentHash|null $documentHash
-     * @return self
+     * @return static
      */
-    public function setDocumentHash(?DocumentHash $documentHash = null): self
+    public function setDocumentHash(?DocumentHash $documentHash = null): static
     {
         $this->documentHash = $documentHash;
 
@@ -212,9 +212,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentHash(): self
+    public function unsetDocumentHash(): static
     {
         $this->documentHash = null;
 
@@ -241,9 +241,9 @@ class ExternalReferenceType
 
     /**
      * @param HashAlgorithmMethod|null $hashAlgorithmMethod
-     * @return self
+     * @return static
      */
-    public function setHashAlgorithmMethod(?HashAlgorithmMethod $hashAlgorithmMethod = null): self
+    public function setHashAlgorithmMethod(?HashAlgorithmMethod $hashAlgorithmMethod = null): static
     {
         $this->hashAlgorithmMethod = $hashAlgorithmMethod;
 
@@ -251,9 +251,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHashAlgorithmMethod(): self
+    public function unsetHashAlgorithmMethod(): static
     {
         $this->hashAlgorithmMethod = null;
 
@@ -270,9 +270,9 @@ class ExternalReferenceType
 
     /**
      * @param DateTimeInterface|null $expiryDate
-     * @return self
+     * @return static
      */
-    public function setExpiryDate(?DateTimeInterface $expiryDate = null): self
+    public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
     {
         $this->expiryDate = $expiryDate;
 
@@ -280,9 +280,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpiryDate(): self
+    public function unsetExpiryDate(): static
     {
         $this->expiryDate = null;
 
@@ -299,9 +299,9 @@ class ExternalReferenceType
 
     /**
      * @param DateTimeInterface|null $expiryTime
-     * @return self
+     * @return static
      */
-    public function setExpiryTime(?DateTimeInterface $expiryTime = null): self
+    public function setExpiryTime(?DateTimeInterface $expiryTime = null): static
     {
         $this->expiryTime = $expiryTime;
 
@@ -309,9 +309,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpiryTime(): self
+    public function unsetExpiryTime(): static
     {
         $this->expiryTime = null;
 
@@ -338,9 +338,9 @@ class ExternalReferenceType
 
     /**
      * @param MimeCode|null $mimeCode
-     * @return self
+     * @return static
      */
-    public function setMimeCode(?MimeCode $mimeCode = null): self
+    public function setMimeCode(?MimeCode $mimeCode = null): static
     {
         $this->mimeCode = $mimeCode;
 
@@ -348,9 +348,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMimeCode(): self
+    public function unsetMimeCode(): static
     {
         $this->mimeCode = null;
 
@@ -377,9 +377,9 @@ class ExternalReferenceType
 
     /**
      * @param FormatCode|null $formatCode
-     * @return self
+     * @return static
      */
-    public function setFormatCode(?FormatCode $formatCode = null): self
+    public function setFormatCode(?FormatCode $formatCode = null): static
     {
         $this->formatCode = $formatCode;
 
@@ -387,9 +387,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFormatCode(): self
+    public function unsetFormatCode(): static
     {
         $this->formatCode = null;
 
@@ -416,9 +416,9 @@ class ExternalReferenceType
 
     /**
      * @param EncodingCode|null $encodingCode
-     * @return self
+     * @return static
      */
-    public function setEncodingCode(?EncodingCode $encodingCode = null): self
+    public function setEncodingCode(?EncodingCode $encodingCode = null): static
     {
         $this->encodingCode = $encodingCode;
 
@@ -426,9 +426,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEncodingCode(): self
+    public function unsetEncodingCode(): static
     {
         $this->encodingCode = null;
 
@@ -455,9 +455,9 @@ class ExternalReferenceType
 
     /**
      * @param CharacterSetCode|null $characterSetCode
-     * @return self
+     * @return static
      */
-    public function setCharacterSetCode(?CharacterSetCode $characterSetCode = null): self
+    public function setCharacterSetCode(?CharacterSetCode $characterSetCode = null): static
     {
         $this->characterSetCode = $characterSetCode;
 
@@ -465,9 +465,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCharacterSetCode(): self
+    public function unsetCharacterSetCode(): static
     {
         $this->characterSetCode = null;
 
@@ -494,9 +494,9 @@ class ExternalReferenceType
 
     /**
      * @param FileName|null $fileName
-     * @return self
+     * @return static
      */
-    public function setFileName(?FileName $fileName = null): self
+    public function setFileName(?FileName $fileName = null): static
     {
         $this->fileName = $fileName;
 
@@ -504,9 +504,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFileName(): self
+    public function unsetFileName(): static
     {
         $this->fileName = null;
 
@@ -523,9 +523,9 @@ class ExternalReferenceType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -533,9 +533,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -543,9 +543,9 @@ class ExternalReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -584,9 +584,9 @@ class ExternalReferenceType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -605,9 +605,9 @@ class ExternalReferenceType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];

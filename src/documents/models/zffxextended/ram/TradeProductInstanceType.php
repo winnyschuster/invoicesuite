@@ -54,9 +54,9 @@ class TradeProductInstanceType
 
     /**
      * @param IDType|null $batchID
-     * @return self
+     * @return static
      */
-    public function setBatchID(?IDType $batchID = null): self
+    public function setBatchID(?IDType $batchID = null): static
     {
         $this->batchID = $batchID;
 
@@ -64,9 +64,9 @@ class TradeProductInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBatchID(): self
+    public function unsetBatchID(): static
     {
         $this->batchID = null;
 
@@ -93,9 +93,9 @@ class TradeProductInstanceType
 
     /**
      * @param IDType|null $supplierAssignedSerialID
-     * @return self
+     * @return static
      */
-    public function setSupplierAssignedSerialID(?IDType $supplierAssignedSerialID = null): self
+    public function setSupplierAssignedSerialID(?IDType $supplierAssignedSerialID = null): static
     {
         $this->supplierAssignedSerialID = $supplierAssignedSerialID;
 
@@ -103,9 +103,9 @@ class TradeProductInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplierAssignedSerialID(): self
+    public function unsetSupplierAssignedSerialID(): static
     {
         $this->supplierAssignedSerialID = null;
 

@@ -110,9 +110,9 @@ class IdentifierType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -120,9 +120,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -139,9 +139,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeID
-     * @return self
+     * @return static
      */
-    public function setSchemeID(?string $schemeID = null): self
+    public function setSchemeID(?string $schemeID = null): static
     {
         $this->schemeID = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeID);
 
@@ -149,9 +149,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeID(): self
+    public function unsetSchemeID(): static
     {
         $this->schemeID = null;
 
@@ -168,9 +168,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeName
-     * @return self
+     * @return static
      */
-    public function setSchemeName(?string $schemeName = null): self
+    public function setSchemeName(?string $schemeName = null): static
     {
         $this->schemeName = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeName);
 
@@ -178,9 +178,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeName(): self
+    public function unsetSchemeName(): static
     {
         $this->schemeName = null;
 
@@ -197,9 +197,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeAgencyID
-     * @return self
+     * @return static
      */
-    public function setSchemeAgencyID(?string $schemeAgencyID = null): self
+    public function setSchemeAgencyID(?string $schemeAgencyID = null): static
     {
         $this->schemeAgencyID = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeAgencyID);
 
@@ -207,9 +207,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeAgencyID(): self
+    public function unsetSchemeAgencyID(): static
     {
         $this->schemeAgencyID = null;
 
@@ -226,9 +226,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeAgencyName
-     * @return self
+     * @return static
      */
-    public function setSchemeAgencyName(?string $schemeAgencyName = null): self
+    public function setSchemeAgencyName(?string $schemeAgencyName = null): static
     {
         $this->schemeAgencyName = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeAgencyName);
 
@@ -236,9 +236,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeAgencyName(): self
+    public function unsetSchemeAgencyName(): static
     {
         $this->schemeAgencyName = null;
 
@@ -255,9 +255,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeVersionID
-     * @return self
+     * @return static
      */
-    public function setSchemeVersionID(?string $schemeVersionID = null): self
+    public function setSchemeVersionID(?string $schemeVersionID = null): static
     {
         $this->schemeVersionID = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeVersionID);
 
@@ -265,9 +265,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeVersionID(): self
+    public function unsetSchemeVersionID(): static
     {
         $this->schemeVersionID = null;
 
@@ -284,9 +284,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeDataURI
-     * @return self
+     * @return static
      */
-    public function setSchemeDataURI(?string $schemeDataURI = null): self
+    public function setSchemeDataURI(?string $schemeDataURI = null): static
     {
         $this->schemeDataURI = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeDataURI);
 
@@ -294,9 +294,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeDataURI(): self
+    public function unsetSchemeDataURI(): static
     {
         $this->schemeDataURI = null;
 
@@ -313,9 +313,9 @@ class IdentifierType
 
     /**
      * @param string|null $schemeURI
-     * @return self
+     * @return static
      */
-    public function setSchemeURI(?string $schemeURI = null): self
+    public function setSchemeURI(?string $schemeURI = null): static
     {
         $this->schemeURI = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeURI);
 
@@ -323,9 +323,9 @@ class IdentifierType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeURI(): self
+    public function unsetSchemeURI(): static
     {
         $this->schemeURI = null;
 

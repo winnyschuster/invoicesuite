@@ -55,9 +55,9 @@ class ItemPropertyRangeType
 
     /**
      * @param MinimumValue|null $minimumValue
-     * @return self
+     * @return static
      */
-    public function setMinimumValue(?MinimumValue $minimumValue = null): self
+    public function setMinimumValue(?MinimumValue $minimumValue = null): static
     {
         $this->minimumValue = $minimumValue;
 
@@ -65,9 +65,9 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumValue(): self
+    public function unsetMinimumValue(): static
     {
         $this->minimumValue = null;
 
@@ -94,9 +94,9 @@ class ItemPropertyRangeType
 
     /**
      * @param MaximumValue|null $maximumValue
-     * @return self
+     * @return static
      */
-    public function setMaximumValue(?MaximumValue $maximumValue = null): self
+    public function setMaximumValue(?MaximumValue $maximumValue = null): static
     {
         $this->maximumValue = $maximumValue;
 
@@ -104,9 +104,9 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumValue(): self
+    public function unsetMaximumValue(): static
     {
         $this->maximumValue = null;
 

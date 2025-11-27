@@ -125,9 +125,9 @@ class ExchangedDocumentType
 
     /**
      * @param IDType|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?IDType $iD = null): self
+    public function setID(?IDType $iD = null): static
     {
         $this->iD = $iD;
 
@@ -135,9 +135,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -164,9 +164,9 @@ class ExchangedDocumentType
 
     /**
      * @param TextType|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?TextType $name = null): self
+    public function setName(?TextType $name = null): static
     {
         $this->name = $name;
 
@@ -174,9 +174,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -203,9 +203,9 @@ class ExchangedDocumentType
 
     /**
      * @param DocumentCodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?DocumentCodeType $typeCode = null): self
+    public function setTypeCode(?DocumentCodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -213,9 +213,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -242,9 +242,9 @@ class ExchangedDocumentType
 
     /**
      * @param DateTimeType|null $issueDateTime
-     * @return self
+     * @return static
      */
-    public function setIssueDateTime(?DateTimeType $issueDateTime = null): self
+    public function setIssueDateTime(?DateTimeType $issueDateTime = null): static
     {
         $this->issueDateTime = $issueDateTime;
 
@@ -252,9 +252,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDateTime(): self
+    public function unsetIssueDateTime(): static
     {
         $this->issueDateTime = null;
 
@@ -281,9 +281,9 @@ class ExchangedDocumentType
 
     /**
      * @param IndicatorType|null $copyIndicator
-     * @return self
+     * @return static
      */
-    public function setCopyIndicator(?IndicatorType $copyIndicator = null): self
+    public function setCopyIndicator(?IndicatorType $copyIndicator = null): static
     {
         $this->copyIndicator = $copyIndicator;
 
@@ -291,9 +291,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCopyIndicator(): self
+    public function unsetCopyIndicator(): static
     {
         $this->copyIndicator = null;
 
@@ -320,9 +320,9 @@ class ExchangedDocumentType
 
     /**
      * @param IDType|null $languageID
-     * @return self
+     * @return static
      */
-    public function setLanguageID(?IDType $languageID = null): self
+    public function setLanguageID(?IDType $languageID = null): static
     {
         $this->languageID = $languageID;
 
@@ -330,9 +330,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguageID(): self
+    public function unsetLanguageID(): static
     {
         $this->languageID = null;
 
@@ -349,9 +349,9 @@ class ExchangedDocumentType
 
     /**
      * @param array<NoteType>|null $includedNote
-     * @return self
+     * @return static
      */
-    public function setIncludedNote(?array $includedNote = null): self
+    public function setIncludedNote(?array $includedNote = null): static
     {
         $this->includedNote = $includedNote;
 
@@ -359,9 +359,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedNote(): self
+    public function unsetIncludedNote(): static
     {
         $this->includedNote = null;
 
@@ -369,9 +369,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIncludedNote(): self
+    public function clearIncludedNote(): static
     {
         $this->includedNote = [];
 
@@ -380,9 +380,9 @@ class ExchangedDocumentType
 
     /**
      * @param NoteType $includedNote
-     * @return self
+     * @return static
      */
-    public function addToIncludedNote(NoteType $includedNote): self
+    public function addToIncludedNote(NoteType $includedNote): static
     {
         $this->includedNote[] = $includedNote;
 
@@ -401,9 +401,9 @@ class ExchangedDocumentType
 
     /**
      * @param NoteType $includedNote
-     * @return self
+     * @return static
      */
-    public function addOnceToIncludedNote(NoteType $includedNote): self
+    public function addOnceToIncludedNote(NoteType $includedNote): static
     {
         if (!is_array($this->includedNote)) {
             $this->includedNote = [];
@@ -450,9 +450,9 @@ class ExchangedDocumentType
 
     /**
      * @param SpecifiedPeriodType|null $effectiveSpecifiedPeriod
-     * @return self
+     * @return static
      */
-    public function setEffectiveSpecifiedPeriod(?SpecifiedPeriodType $effectiveSpecifiedPeriod = null): self
+    public function setEffectiveSpecifiedPeriod(?SpecifiedPeriodType $effectiveSpecifiedPeriod = null): static
     {
         $this->effectiveSpecifiedPeriod = $effectiveSpecifiedPeriod;
 
@@ -460,9 +460,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEffectiveSpecifiedPeriod(): self
+    public function unsetEffectiveSpecifiedPeriod(): static
     {
         $this->effectiveSpecifiedPeriod = null;
 

@@ -171,9 +171,9 @@ class TransportEventType
 
     /**
      * @param IdentificationID|null $identificationID
-     * @return self
+     * @return static
      */
-    public function setIdentificationID(?IdentificationID $identificationID = null): self
+    public function setIdentificationID(?IdentificationID $identificationID = null): static
     {
         $this->identificationID = $identificationID;
 
@@ -181,9 +181,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIdentificationID(): self
+    public function unsetIdentificationID(): static
     {
         $this->identificationID = null;
 
@@ -200,9 +200,9 @@ class TransportEventType
 
     /**
      * @param DateTimeInterface|null $occurrenceDate
-     * @return self
+     * @return static
      */
-    public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): self
+    public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): static
     {
         $this->occurrenceDate = $occurrenceDate;
 
@@ -210,9 +210,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOccurrenceDate(): self
+    public function unsetOccurrenceDate(): static
     {
         $this->occurrenceDate = null;
 
@@ -229,9 +229,9 @@ class TransportEventType
 
     /**
      * @param DateTimeInterface|null $occurrenceTime
-     * @return self
+     * @return static
      */
-    public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): self
+    public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): static
     {
         $this->occurrenceTime = $occurrenceTime;
 
@@ -239,9 +239,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOccurrenceTime(): self
+    public function unsetOccurrenceTime(): static
     {
         $this->occurrenceTime = null;
 
@@ -268,9 +268,9 @@ class TransportEventType
 
     /**
      * @param TransportEventTypeCode|null $transportEventTypeCode
-     * @return self
+     * @return static
      */
-    public function setTransportEventTypeCode(?TransportEventTypeCode $transportEventTypeCode = null): self
+    public function setTransportEventTypeCode(?TransportEventTypeCode $transportEventTypeCode = null): static
     {
         $this->transportEventTypeCode = $transportEventTypeCode;
 
@@ -278,9 +278,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEventTypeCode(): self
+    public function unsetTransportEventTypeCode(): static
     {
         $this->transportEventTypeCode = null;
 
@@ -297,9 +297,9 @@ class TransportEventType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -307,9 +307,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -317,9 +317,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -358,9 +358,9 @@ class TransportEventType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -379,9 +379,9 @@ class TransportEventType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -418,9 +418,9 @@ class TransportEventType
 
     /**
      * @param bool|null $completionIndicator
-     * @return self
+     * @return static
      */
-    public function setCompletionIndicator(?bool $completionIndicator = null): self
+    public function setCompletionIndicator(?bool $completionIndicator = null): static
     {
         $this->completionIndicator = $completionIndicator;
 
@@ -428,9 +428,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompletionIndicator(): self
+    public function unsetCompletionIndicator(): static
     {
         $this->completionIndicator = null;
 
@@ -457,9 +457,9 @@ class TransportEventType
 
     /**
      * @param ReportedShipment|null $reportedShipment
-     * @return self
+     * @return static
      */
-    public function setReportedShipment(?ReportedShipment $reportedShipment = null): self
+    public function setReportedShipment(?ReportedShipment $reportedShipment = null): static
     {
         $this->reportedShipment = $reportedShipment;
 
@@ -467,9 +467,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReportedShipment(): self
+    public function unsetReportedShipment(): static
     {
         $this->reportedShipment = null;
 
@@ -486,9 +486,9 @@ class TransportEventType
 
     /**
      * @param array<CurrentStatus>|null $currentStatus
-     * @return self
+     * @return static
      */
-    public function setCurrentStatus(?array $currentStatus = null): self
+    public function setCurrentStatus(?array $currentStatus = null): static
     {
         $this->currentStatus = $currentStatus;
 
@@ -496,9 +496,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrentStatus(): self
+    public function unsetCurrentStatus(): static
     {
         $this->currentStatus = null;
 
@@ -506,9 +506,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCurrentStatus(): self
+    public function clearCurrentStatus(): static
     {
         $this->currentStatus = [];
 
@@ -547,9 +547,9 @@ class TransportEventType
 
     /**
      * @param CurrentStatus $currentStatus
-     * @return self
+     * @return static
      */
-    public function addToCurrentStatus(CurrentStatus $currentStatus): self
+    public function addToCurrentStatus(CurrentStatus $currentStatus): static
     {
         $this->currentStatus[] = $currentStatus;
 
@@ -568,9 +568,9 @@ class TransportEventType
 
     /**
      * @param CurrentStatus $currentStatus
-     * @return self
+     * @return static
      */
-    public function addOnceToCurrentStatus(CurrentStatus $currentStatus): self
+    public function addOnceToCurrentStatus(CurrentStatus $currentStatus): static
     {
         if (!is_array($this->currentStatus)) {
             $this->currentStatus = [];
@@ -607,9 +607,9 @@ class TransportEventType
 
     /**
      * @param array<Contact>|null $contact
-     * @return self
+     * @return static
      */
-    public function setContact(?array $contact = null): self
+    public function setContact(?array $contact = null): static
     {
         $this->contact = $contact;
 
@@ -617,9 +617,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContact(): self
+    public function unsetContact(): static
     {
         $this->contact = null;
 
@@ -627,9 +627,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContact(): self
+    public function clearContact(): static
     {
         $this->contact = [];
 
@@ -668,9 +668,9 @@ class TransportEventType
 
     /**
      * @param Contact $contact
-     * @return self
+     * @return static
      */
-    public function addToContact(Contact $contact): self
+    public function addToContact(Contact $contact): static
     {
         $this->contact[] = $contact;
 
@@ -689,9 +689,9 @@ class TransportEventType
 
     /**
      * @param Contact $contact
-     * @return self
+     * @return static
      */
-    public function addOnceToContact(Contact $contact): self
+    public function addOnceToContact(Contact $contact): static
     {
         if (!is_array($this->contact)) {
             $this->contact = [];
@@ -738,9 +738,9 @@ class TransportEventType
 
     /**
      * @param Location|null $location
-     * @return self
+     * @return static
      */
-    public function setLocation(?Location $location = null): self
+    public function setLocation(?Location $location = null): static
     {
         $this->location = $location;
 
@@ -748,9 +748,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocation(): self
+    public function unsetLocation(): static
     {
         $this->location = null;
 
@@ -777,9 +777,9 @@ class TransportEventType
 
     /**
      * @param Signature|null $signature
-     * @return self
+     * @return static
      */
-    public function setSignature(?Signature $signature = null): self
+    public function setSignature(?Signature $signature = null): static
     {
         $this->signature = $signature;
 
@@ -787,9 +787,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignature(): self
+    public function unsetSignature(): static
     {
         $this->signature = null;
 
@@ -806,9 +806,9 @@ class TransportEventType
 
     /**
      * @param array<Period>|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?array $period = null): self
+    public function setPeriod(?array $period = null): static
     {
         $this->period = $period;
 
@@ -816,9 +816,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 
@@ -826,9 +826,9 @@ class TransportEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPeriod(): self
+    public function clearPeriod(): static
     {
         $this->period = [];
 
@@ -867,9 +867,9 @@ class TransportEventType
 
     /**
      * @param Period $period
-     * @return self
+     * @return static
      */
-    public function addToPeriod(Period $period): self
+    public function addToPeriod(Period $period): static
     {
         $this->period[] = $period;
 
@@ -888,9 +888,9 @@ class TransportEventType
 
     /**
      * @param Period $period
-     * @return self
+     * @return static
      */
-    public function addOnceToPeriod(Period $period): self
+    public function addOnceToPeriod(Period $period): static
     {
         if (!is_array($this->period)) {
             $this->period = [];

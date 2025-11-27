@@ -75,9 +75,9 @@ class InvoiceSuiteDateRangeDTO
      * Sets start of the period
      *
      * @param  null|DateTimeInterface $startDate Start of the period
-     * @return self
+     * @return static
      */
-    public function setStartDate(?DateTimeInterface $startDate): self
+    public function setStartDate(?DateTimeInterface $startDate): static
     {
         $this->startDate = $startDate;
 
@@ -98,9 +98,9 @@ class InvoiceSuiteDateRangeDTO
      * Sets end of the period
      *
      * @param  null|DateTimeInterface $endDate End of the period
-     * @return self
+     * @return static
      */
-    public function setEndDate(?DateTimeInterface $endDate): self
+    public function setEndDate(?DateTimeInterface $endDate): static
     {
         $this->endDate = $endDate;
 
@@ -121,9 +121,9 @@ class InvoiceSuiteDateRangeDTO
      * Sets further information of the period
      *
      * @param  null|string $description Further information of the period
-     * @return self
+     * @return static
      */
-    public function setDescription(?string $description): self
+    public function setDescription(?string $description): static
     {
         $this->description = $description;
 

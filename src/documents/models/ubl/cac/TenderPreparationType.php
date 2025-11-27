@@ -104,9 +104,9 @@ class TenderPreparationType
 
     /**
      * @param TenderEnvelopeID|null $tenderEnvelopeID
-     * @return self
+     * @return static
      */
-    public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): self
+    public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): static
     {
         $this->tenderEnvelopeID = $tenderEnvelopeID;
 
@@ -114,9 +114,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderEnvelopeID(): self
+    public function unsetTenderEnvelopeID(): static
     {
         $this->tenderEnvelopeID = null;
 
@@ -143,9 +143,9 @@ class TenderPreparationType
 
     /**
      * @param TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
-     * @return self
+     * @return static
      */
-    public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): self
+    public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): static
     {
         $this->tenderEnvelopeTypeCode = $tenderEnvelopeTypeCode;
 
@@ -153,9 +153,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderEnvelopeTypeCode(): self
+    public function unsetTenderEnvelopeTypeCode(): static
     {
         $this->tenderEnvelopeTypeCode = null;
 
@@ -172,9 +172,9 @@ class TenderPreparationType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -182,9 +182,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -192,9 +192,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -233,9 +233,9 @@ class TenderPreparationType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -254,9 +254,9 @@ class TenderPreparationType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -303,9 +303,9 @@ class TenderPreparationType
 
     /**
      * @param OpenTenderID|null $openTenderID
-     * @return self
+     * @return static
      */
-    public function setOpenTenderID(?OpenTenderID $openTenderID = null): self
+    public function setOpenTenderID(?OpenTenderID $openTenderID = null): static
     {
         $this->openTenderID = $openTenderID;
 
@@ -313,9 +313,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOpenTenderID(): self
+    public function unsetOpenTenderID(): static
     {
         $this->openTenderID = null;
 
@@ -332,9 +332,9 @@ class TenderPreparationType
 
     /**
      * @param array<ProcurementProjectLot>|null $procurementProjectLot
-     * @return self
+     * @return static
      */
-    public function setProcurementProjectLot(?array $procurementProjectLot = null): self
+    public function setProcurementProjectLot(?array $procurementProjectLot = null): static
     {
         $this->procurementProjectLot = $procurementProjectLot;
 
@@ -342,9 +342,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcurementProjectLot(): self
+    public function unsetProcurementProjectLot(): static
     {
         $this->procurementProjectLot = null;
 
@@ -352,9 +352,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearProcurementProjectLot(): self
+    public function clearProcurementProjectLot(): static
     {
         $this->procurementProjectLot = [];
 
@@ -393,9 +393,9 @@ class TenderPreparationType
 
     /**
      * @param ProcurementProjectLot $procurementProjectLot
-     * @return self
+     * @return static
      */
-    public function addToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): self
+    public function addToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): static
     {
         $this->procurementProjectLot[] = $procurementProjectLot;
 
@@ -414,9 +414,9 @@ class TenderPreparationType
 
     /**
      * @param ProcurementProjectLot $procurementProjectLot
-     * @return self
+     * @return static
      */
-    public function addOnceToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): self
+    public function addOnceToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): static
     {
         if (!is_array($this->procurementProjectLot)) {
             $this->procurementProjectLot = [];
@@ -453,9 +453,9 @@ class TenderPreparationType
 
     /**
      * @param array<DocumentTenderRequirement>|null $documentTenderRequirement
-     * @return self
+     * @return static
      */
-    public function setDocumentTenderRequirement(?array $documentTenderRequirement = null): self
+    public function setDocumentTenderRequirement(?array $documentTenderRequirement = null): static
     {
         $this->documentTenderRequirement = $documentTenderRequirement;
 
@@ -463,9 +463,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentTenderRequirement(): self
+    public function unsetDocumentTenderRequirement(): static
     {
         $this->documentTenderRequirement = null;
 
@@ -473,9 +473,9 @@ class TenderPreparationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentTenderRequirement(): self
+    public function clearDocumentTenderRequirement(): static
     {
         $this->documentTenderRequirement = [];
 
@@ -514,9 +514,9 @@ class TenderPreparationType
 
     /**
      * @param DocumentTenderRequirement $documentTenderRequirement
-     * @return self
+     * @return static
      */
-    public function addToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): self
+    public function addToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): static
     {
         $this->documentTenderRequirement[] = $documentTenderRequirement;
 
@@ -535,9 +535,9 @@ class TenderPreparationType
 
     /**
      * @param DocumentTenderRequirement $documentTenderRequirement
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): self
+    public function addOnceToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): static
     {
         if (!is_array($this->documentTenderRequirement)) {
             $this->documentTenderRequirement = [];

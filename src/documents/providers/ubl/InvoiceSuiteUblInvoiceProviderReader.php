@@ -94,13 +94,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Create a DTO from this document
      *
      * @param  null|InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
-     * @return self
+     * @return static
      *
      * @phpstan-param-out InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
      */
     public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
-    ): self {
+    ): static {
         // Initialize
 
         $this->resetCurrentDocumentSubPointers();
@@ -2564,7 +2564,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      */
     public function getDocumentNo(
         ?string &$newDocumentNo
-    ): self {
+    ): static {
         $newDocumentNo = $this->getUblInvoiceRootObject()->getID()?->getValue() ?? '';
 
         return $this;
@@ -2580,7 +2580,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      */
     public function getDocumentType(
         ?string &$newDocumentType
-    ): self {
+    ): static {
         $newDocumentType = $this->getUblInvoiceRootObject()->getInvoiceTypeCode()?->getValue() ?? '';
 
         return $this;
@@ -2590,13 +2590,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the document description
      *
      * @param  null|string $newDocumentDescription The documenttype as free text
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentDescription
      */
     public function getDocumentDescription(
         ?string &$newDocumentDescription
-    ): self {
+    ): static {
         $newDocumentDescription = $this->getUblInvoiceRootObject()->getInvoiceTypeCode()?->getName() ?? '';
 
         return $this;
@@ -2606,13 +2606,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the document language
      *
      * @param  null|string $newDocumentLanguage Language indicator. The language code in which the document was written
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentLanguage
      */
     public function getDocumentLanguage(
         ?string &$newDocumentLanguage
-    ): self {
+    ): static {
         $newDocumentLanguage = $this->getUblInvoiceRootObject()->getInvoiceTypeCode()?->getLanguageID() ?? '';
 
         return $this;
@@ -2622,13 +2622,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the document date (e.g. invoice date)
      *
      * @param  null|DateTimeInterface $newDocumentDate Date of the document. The date when the document was issued by the seller
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface $newDocumentDate
      */
     public function getDocumentDate(
         ?DateTimeInterface &$newDocumentDate
-    ): self {
+    ): static {
         $newDocumentDate = $this->getUblInvoiceRootObject()->getIssueDate() ?? new DateTime();
 
         return $this;
@@ -2638,13 +2638,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the document period
      *
      * @param  null|DateTimeInterface $newCompleteDate Contractual due date of the document
-     * @return self
+     * @return static
      *
      * @phpstan-param-out null $newCompleteDate
      */
     public function getDocumentCompleteDate(
         ?DateTimeInterface &$newCompleteDate
-    ): self {
+    ): static {
         $newCompleteDate = null;
 
         return $this;
@@ -2654,13 +2654,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the document currency
      *
      * @param  null|string $newDocumentCurrency Code for the invoice currency
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentCurrency
      */
     public function getDocumentCurrency(
         ?string &$newDocumentCurrency
-    ): self {
+    ): static {
         $newDocumentCurrency = $this->getUblInvoiceRootObject()->getDocumentCurrencyCode()?->getValue() ?? '';
 
         return $this;
@@ -2670,13 +2670,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the new document tax currency
      *
      * @param  null|string $newDocumentTaxCurrency Code for the tax currency
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentTaxCurrency
      */
     public function getDocumentTaxCurrency(
         ?string &$newDocumentTaxCurrency
-    ): self {
+    ): static {
         $newDocumentTaxCurrency = $this->getUblInvoiceRootObject()->getTaxCurrencyCode()?->getValue() ?? '';
 
         return $this;
@@ -2686,13 +2686,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the new status of the copy indicator
      *
      * @param  null|bool $newDocumentIsCopy Indicates that the document is a copy
-     * @return self
+     * @return static
      *
      * @phpstan-param-out boolean $newDocumentIsCopy
      */
     public function getDocumentIsCopy(
         ?bool &$newDocumentIsCopy = null
-    ): self {
+    ): static {
         $newDocumentIsCopy = $this->getUblInvoiceRootObject()->getCopyIndicator() ?? false;
 
         return $this;
@@ -2702,13 +2702,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Gets the status of the test indicator
      *
      * @param  null|bool $newDocumentIsTest Indicates that the document is a test
-     * @return self
+     * @return static
      *
      * @phpstan-param-out boolean $newDocumentIsTest
      */
     public function getDocumentIsTest(
         ?bool &$newDocumentIsTest
-    ): self {
+    ): static {
         $newDocumentIsTest = false;
 
         return $this;
@@ -2750,7 +2750,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newContent
      * @phpstan-param-out string $newContentCode
@@ -2760,7 +2760,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self {
+    ): static {
         /**
          * @var array<Note>
          */
@@ -2814,7 +2814,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface|null $newStartDate
      * @phpstan-param-out DateTimeInterface|null $newEndDate
@@ -2824,7 +2824,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self {
+    ): static {
         /**
          * @var array<InvoicePeriod>
          */
@@ -2879,7 +2879,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newAccountId
@@ -2887,7 +2887,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self {
+    ): static {
         /**
          * @var array<AccountingCost>
          */
@@ -2943,7 +2943,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -2951,7 +2951,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentSellerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<SalesOrderID>
          */
@@ -3003,7 +3003,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Buyer's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3011,7 +3011,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentBuyerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<OrderReference>
          */
@@ -3059,7 +3059,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Quotation number
      * @param  null|DateTimeInterface $newReferenceDate   Quotation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3067,7 +3067,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentQuotationReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<AdditionalDocumentReference>
          */
@@ -3119,7 +3119,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  string                 $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3127,7 +3127,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentContractReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<ContractDocumentReference>
          */
@@ -3183,7 +3183,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3199,7 +3199,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self {
+    ): static {
         /**
          * @var array<AdditionalDocumentReference>
          */
@@ -3258,7 +3258,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3268,7 +3268,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self {
+    ): static {
         /**
          * @var array<BillingReference>
          */
@@ -3321,7 +3321,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newName
@@ -3329,7 +3329,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentProjectReference(
         ?string &$newReferenceNumber,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<ProjectReference>
          */
@@ -3377,7 +3377,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Ultimate customer order number
      * @param  null|DateTimeInterface $newReferenceDate   Ultimate customer order date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3385,7 +3385,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentUltimateCustomerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<AdditionalDocumentReference>
          */
@@ -3437,7 +3437,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3445,7 +3445,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentDespatchAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<DespatchDocumentReference>
          */
@@ -3497,7 +3497,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3505,7 +3505,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentReceivingAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<ReceiptDocumentReference>
          */
@@ -3547,7 +3547,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -3555,7 +3555,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentDeliveryNoteReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
 
@@ -3566,13 +3566,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate Actual delivery date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface|null $newDate
      */
     public function getDocumentSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self {
+    ): static {
         $newDate = null;
 
         $deliveries = $this->getUblInvoiceRootObject()->getDelivery();
@@ -3591,13 +3591,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the identifier assigned by the buyer and used for internal routing
      *
      * @param  null|string $newBuyerReference An identifier assigned by the buyer and used for internal routing
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newBuyerReference
      */
     public function getDocumentBuyerReference(
         ?string &$newBuyerReference
-    ): self {
+    ): static {
         $newBuyerReference = $this->getUblInvoiceRootObject()->getBuyerReference()?->getValue() ?? '';
 
         return $this;
@@ -3611,13 +3611,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the seller/supplier party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentSellerName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         $sellerLegalEntities = $this->getUblInvoiceRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? [];
@@ -3662,13 +3662,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentSellerId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -3715,7 +3715,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -3723,7 +3723,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentSellerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -3775,7 +3775,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -3783,7 +3783,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentSellerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<PartyTaxScheme>
          */
@@ -3840,7 +3840,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -3858,7 +3858,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<PostalAddress>
          */
@@ -3916,7 +3916,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -3926,7 +3926,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<PartyLegalEntity>
          */
@@ -3986,7 +3986,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -4000,7 +4000,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         /**
          * @var array<Contact>
          */
@@ -4055,7 +4055,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -4063,7 +4063,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentSellerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<EndpointID>
          */
@@ -4088,13 +4088,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentBuyerName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         $buyerLegalEntities = $this->getUblInvoiceRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? [];
@@ -4139,13 +4139,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentBuyerId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -4192,7 +4192,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -4200,7 +4200,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentBuyerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -4252,7 +4252,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -4260,7 +4260,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentBuyerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<PartyTaxScheme>
          */
@@ -4317,7 +4317,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -4335,7 +4335,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<PostalAddress>
          */
@@ -4393,7 +4393,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -4403,7 +4403,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<PartyLegalEntity>
          */
@@ -4463,7 +4463,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -4477,7 +4477,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         /**
          * @var array<Contact>
          */
@@ -4532,7 +4532,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -4540,7 +4540,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentBuyerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<EndpointID>
          */
@@ -4565,13 +4565,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentTaxRepresentativeName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         $taxRepresentativeMames = $this->getUblInvoiceRootObject()->getTaxRepresentativeParty()?->getPartyName() ?? [];
@@ -4616,13 +4616,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -4669,7 +4669,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -4677,7 +4677,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -4729,7 +4729,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -4737,7 +4737,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<PartyTaxScheme>
          */
@@ -4794,7 +4794,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -4812,7 +4812,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<PostalAddress>
          */
@@ -4870,7 +4870,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -4880,7 +4880,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<PartyLegalEntity>
          */
@@ -4939,7 +4939,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -4953,7 +4953,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         /**
          * @var array<Contact>
          */
@@ -5008,7 +5008,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -5016,7 +5016,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<EndpointID>
          */
@@ -5041,13 +5041,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentProductEndUserName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -5077,13 +5077,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentProductEndUserId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -5114,7 +5114,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -5122,7 +5122,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentProductEndUserGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -5154,7 +5154,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -5162,7 +5162,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentProductEndUserTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -5199,7 +5199,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -5217,7 +5217,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -5255,7 +5255,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -5265,7 +5265,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -5301,7 +5301,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -5315,7 +5315,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -5350,7 +5350,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -5358,7 +5358,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentProductEndUserCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -5369,13 +5369,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         $shipToMames = $this->resolveFirstDocumentDelivery()?->getDeliveryParty()?->getPartyName() ?? [];
@@ -5420,13 +5420,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<ID>
          */
@@ -5473,7 +5473,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -5481,7 +5481,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<ID>
          */
@@ -5533,7 +5533,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -5541,7 +5541,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<PartyTaxScheme>
          */
@@ -5598,7 +5598,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -5616,7 +5616,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<PostalAddress>
          */
@@ -5664,7 +5664,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -5674,7 +5674,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -5710,7 +5710,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -5724,7 +5724,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -5759,7 +5759,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -5767,7 +5767,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -5782,13 +5782,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentUltimateShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -5818,13 +5818,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentUltimateShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -5855,7 +5855,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -5863,7 +5863,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -5895,7 +5895,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -5903,7 +5903,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -5940,7 +5940,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -5958,7 +5958,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -5996,7 +5996,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -6006,7 +6006,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -6042,7 +6042,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -6056,7 +6056,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -6091,7 +6091,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -6099,7 +6099,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -6114,13 +6114,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentShipFromName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -6150,13 +6150,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentShipFromId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -6187,7 +6187,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -6195,7 +6195,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentShipFromGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -6227,7 +6227,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -6235,7 +6235,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentShipFromTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -6272,7 +6272,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -6290,7 +6290,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6328,7 +6328,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -6338,7 +6338,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -6374,7 +6374,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -6388,7 +6388,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -6423,7 +6423,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -6431,7 +6431,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentShipFromCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -6446,13 +6446,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentInvoicerName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -6482,13 +6482,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentInvoicerId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -6519,7 +6519,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -6527,7 +6527,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentInvoicerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -6559,7 +6559,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -6567,7 +6567,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentInvoicerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -6604,7 +6604,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -6622,7 +6622,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6660,7 +6660,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -6670,7 +6670,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -6706,7 +6706,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -6720,7 +6720,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -6755,7 +6755,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -6763,7 +6763,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentInvoicerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -6778,13 +6778,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentInvoiceeName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -6814,13 +6814,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentInvoiceeId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -6851,7 +6851,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -6859,7 +6859,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentInvoiceeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -6891,7 +6891,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -6899,7 +6899,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentInvoiceeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -6936,7 +6936,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -6954,7 +6954,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6992,7 +6992,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -7002,7 +7002,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -7038,7 +7038,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -7052,7 +7052,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -7087,7 +7087,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -7095,7 +7095,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentInvoiceeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -7110,13 +7110,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentPayeeName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         $documentPayeeNames = $this->getUblInvoiceRootObject()->getPayeeParty()?->getPartyName() ?? [];
@@ -7161,13 +7161,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPayeeId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -7214,7 +7214,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -7222,7 +7222,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPayeeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -7274,7 +7274,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -7282,7 +7282,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPayeeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<PartyTaxScheme>
          */
@@ -7339,7 +7339,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -7357,7 +7357,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<PostalAddress>
          */
@@ -7415,7 +7415,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -7425,7 +7425,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<PartyLegalEntity>
          */
@@ -7481,7 +7481,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -7495,7 +7495,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         /**
          * @var array<Contact>
          */
@@ -7550,7 +7550,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -7558,7 +7558,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPayeeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<EndpointID>
          */
@@ -7623,7 +7623,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTypeCode
      * @phpstan-param-out string $newName
@@ -7649,7 +7649,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPayeeBic,
         ?string &$newPaymentReference,
         ?string &$newMandate
-    ): self {
+    ): static {
         /**
          * @var array<PaymentMeans>
          */
@@ -7708,13 +7708,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<PartyIdentification>
          */
@@ -7766,7 +7766,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
      * @param  null|string            $newMandate     Identification of the mandate reference
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDescription
      * @phpstan-param-out string $newMandate
@@ -7775,7 +7775,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newDescription,
         ?DateTimeInterface &$newDueDate,
         ?string &$newMandate
-    ): self {
+    ): static {
         /**
          * @var array<PaymentTerms>
          */
@@ -7825,7 +7825,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newBaseAmount
      * @phpstan-param-out float $newDiscountAmount
@@ -7841,7 +7841,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self {
+    ): static {
         $newBaseAmount = 0.0;
         $newDiscountAmount = 0.0;
         $newDiscountPercent = 0.0;
@@ -7881,7 +7881,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newBaseAmount
      * @phpstan-param-out float $newPenaltyAmount
@@ -7897,7 +7897,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self {
+    ): static {
         $newBaseAmount = 0.0;
         $newPenaltyAmount = 0.0;
         $newPenaltyPercent = 0.0;
@@ -7950,7 +7950,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxCategory
      * @phpstan-param-out string $newTaxType
@@ -7972,7 +7972,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newExemptionReasonCode,
         ?DateTimeInterface &$newTaxDueDate,
         ?string &$newTaxDueCode
-    ): self {
+    ): static {
         /**
          * @var array<TaxSubtotal>
          */
@@ -8045,7 +8045,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      *
      * @phpstan-param-out bool $newChargeIndicator
      * @phpstan-param-out float $newAllowanceChargeAmount
@@ -8067,7 +8067,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self {
+    ): static {
         /**
          * @var array<AllowanceCharge>
          */
@@ -8125,7 +8125,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newChargeAmount
      * @phpstan-param-out string $newDescription
@@ -8139,7 +8139,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newTaxCategory,
         ?string &$newTaxType,
         ?float &$newTaxPercent
-    ): self {
+    ): static {
         $newChargeAmount = 0.0;
         $newDescription = '';
         $newTaxCategory = '';
@@ -8165,7 +8165,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float $newDueAmount           Payment amount due
      * @param  null|float $newPrepaidAmount       Prepayment amount
      * @param  null|float $newRoungingAmount      Rounding amount
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newNetAmount
      * @phpstan-param-out float $newChargeTotalAmount
@@ -8189,7 +8189,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newDueAmount,
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
-    ): self {
+    ): static {
         $documentSummation = $this->getUblInvoiceRootObject()->getLegalMonetaryTotal();
 
         $taxTotalAmounts = $this->getUblInvoiceRootObject()->getTaxTotal() ?? [];
@@ -8255,7 +8255,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newParentPositionId     Identification of the parent position
      * @param  null|string $newLineStatusCode       Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
      * @param  null|string $newLineStatusReasonCode Type to specify whether the invoice line is
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPositionId
      * @phpstan-param-out string $newParentPositionId
@@ -8267,7 +8267,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newParentPositionId,
         ?string &$newLineStatusCode,
         ?string &$newLineStatusReasonCode
-    ): self {
+    ): static {
         $documentPosition = $this->resolveCurrentDocumentPosition();
 
         $newPositionId = $documentPosition->getID()?->getValue() ?? '';
@@ -8310,7 +8310,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newContent
      * @phpstan-param-out string $newContentCode
@@ -8320,7 +8320,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self {
+    ): static {
         /**
          * @var array<Note>
          */
@@ -8354,7 +8354,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductBrandName          Brand name of the product
      * @param  null|string $newProductModelName          Model name of the product
      * @param  null|string $newProductOriginTradeCountry Code indicating the country the goods came from
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductId
      * @phpstan-param-out string $newProductName
@@ -8384,7 +8384,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductBrandName,
         ?string &$newProductModelName,
         ?string &$newProductOriginTradeCountry
-    ): self {
+    ): static {
         /**
          * @var null|Item
          */
@@ -8451,7 +8451,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductCharacteristicDescription
      * @phpstan-param-out string $newProductCharacteristicValue
@@ -8465,7 +8465,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductCharacteristicType,
         ?float &$newProductCharacteristicMeasureValue,
         ?string &$newProductCharacteristicMeasureUnit
-    ): self {
+    ): static {
         /**
          * @var array<AdditionalItemProperty>
          */
@@ -8518,7 +8518,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductClassificationCode
      * @phpstan-param-out string $newProductClassificationListId
@@ -8530,7 +8530,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductClassificationListId,
         ?string &$newProductClassificationListVersionId,
         ?string &$newProductClassificationCodeClassname
-    ): self {
+    ): static {
         /**
          * @var array<CommodityClassification>
          */
@@ -8582,7 +8582,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductId
      * @phpstan-param-out string $newProductName
@@ -8606,7 +8606,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newProductIndustryId,
         ?float &$newProductUnitQuantity,
         ?string &$newProductUnitQuantityUnit
-    ): self {
+    ): static {
         $newProductId = '';
         $newProductName = '';
         $newProductDescription = '';
@@ -8647,7 +8647,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8657,7 +8657,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8697,7 +8697,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8707,7 +8707,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber = null,
         ?string &$newReferenceLineNumber = null,
         ?DateTimeInterface &$newReferenceDate = null
-    ): self {
+    ): static {
         /**
          * @var array<OrderLineReference>
          */
@@ -8751,7 +8751,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8761,7 +8761,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8795,7 +8795,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8805,7 +8805,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8843,7 +8843,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8861,7 +8861,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8899,7 +8899,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8909,7 +8909,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8943,7 +8943,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8953,7 +8953,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8987,7 +8987,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8997,7 +8997,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -9031,7 +9031,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -9041,7 +9041,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -9076,7 +9076,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -9088,7 +9088,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -9113,7 +9113,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newGrossPrice                  Unit price excluding sales tax before deduction of the discount on the item price
      * @param  null|float  $newGrossPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newGrossPrice
      * @phpstan-param-out float $newGrossPriceBasisQuantity
@@ -9123,7 +9123,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newGrossPrice,
         ?float &$newGrossPriceBasisQuantity,
         ?string &$newGrossPriceBasisQuantityUnit
-    ): self {
+    ): static {
         $newGrossPrice = 0.0;
         $newGrossPriceBasisQuantity = 0.0;
         $newGrossPriceBasisQuantityUnit = '';
@@ -9160,7 +9160,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newGrossPriceAllowanceChargeAmount
      * @phpstan-param-out bool $newIsCharge
@@ -9176,7 +9176,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newGrossPriceAllowanceChargeBasisAmount,
         ?string &$newGrossPriceAllowanceChargeReason,
         ?string &$newGrossPriceAllowanceChargeReasonCode
-    ): self {
+    ): static {
         $newGrossPriceAllowanceChargeAmount = 0.0;
         $newIsCharge = false;
         $newGrossPriceAllowanceChargePercent = 0.0;
@@ -9203,7 +9203,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newNetPrice                  Unit price excluding sales tax after deduction of the discount on the item price
      * @param  null|float  $newNetPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newNetPrice
      * @phpstan-param-out float $newNetPriceBasisQuantity
@@ -9213,7 +9213,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newNetPrice,
         ?float &$newNetPriceBasisQuantity,
         ?string &$newNetPriceBasisQuantityUnit
-    ): self {
+    ): static {
         $documentPosition = $this->resolveCurrentDocumentPosition();
 
         $newNetPrice = $documentPosition->getPrice()?->getPriceAmount()?->getValue() ?? 0.0;
@@ -9232,7 +9232,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxCategory
      * @phpstan-param-out string $newTaxType
@@ -9248,7 +9248,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode
-    ): self {
+    ): static {
         $newTaxCategory = '';
         $newTaxType = '';
         $newTaxAmount = 0.0;
@@ -9268,7 +9268,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newChargeFreeQuantityUnit Charge Free quantity unit
      * @param  null|float  $newPackageQuantity        Package quantity
      * @param  null|string $newPackageQuantityUnit    Package quantity unit
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newQuantity
      * @phpstan-param-out string $newQuantityUnit
@@ -9284,7 +9284,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newChargeFreeQuantityUnit,
         ?float &$newPackageQuantity,
         ?string &$newPackageQuantityUnit
-    ): self {
+    ): static {
         $documentPosition = $this->resolveCurrentDocumentPosition();
 
         $newQuantity = $documentPosition->getInvoicedQuantity()?->getValue() ?? 0.0;
@@ -9301,13 +9301,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the Ship-To party from latest position
      *
      * @param  string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentPositionShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -9337,13 +9337,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPositionShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -9374,7 +9374,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -9382,7 +9382,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -9414,7 +9414,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -9422,7 +9422,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -9459,7 +9459,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -9477,7 +9477,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -9515,7 +9515,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -9525,7 +9525,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -9561,7 +9561,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -9575,7 +9575,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -9610,7 +9610,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -9618,7 +9618,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -9629,13 +9629,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the name of the ultimate Ship-To party from latest position
      *
      * @param  string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentPositionUltimateShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -9665,13 +9665,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPositionUltimateShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -9702,7 +9702,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -9710,7 +9710,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -9742,7 +9742,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -9750,7 +9750,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -9787,7 +9787,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -9805,7 +9805,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -9843,7 +9843,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -9853,7 +9853,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -9889,7 +9889,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -9903,7 +9903,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -9938,7 +9938,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -9946,7 +9946,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -9957,13 +9957,13 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * Get the date of the delivery from latest position
      *
      * @param  null|DateTimeInterface $newDate
-     * @return self
+     * @return static
      *
      * @phpstan-param-out null $newDate
      */
     public function getDocumentPositionSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self {
+    ): static {
         $newDate = null;
 
         return $this;
@@ -10005,7 +10005,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface|null $newStartDate
      * @phpstan-param-out DateTimeInterface|null $newEndDate
@@ -10015,7 +10015,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self {
+    ): static {
         /**
          * @var array<InvoicePeriod>
          */
@@ -10075,7 +10075,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxCategory
      * @phpstan-param-out string $newTaxType
@@ -10091,7 +10091,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode,
-    ): self {
+    ): static {
         /**
          * @var array<ClassifiedTaxCategory>
          */
@@ -10154,7 +10154,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      *
      * @phpstan-param-out bool $newChargeIndicator
      * @phpstan-param-out float $newAllowanceChargeAmount
@@ -10170,7 +10170,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self {
+    ): static {
         /**
          * @var array<AllowanceCharge>
          */
@@ -10212,7 +10212,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      * @param  null|float $newDiscountTotalAmount Sum of the discounts
      * @param  null|float $newTaxTotalAmount      Total amount of the line (in the invoice currency)
      * @param  null|float $newGrossAmount         Total invoice line amount including sales tax
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newNetAmount
      * @phpstan-param-out float $newChargeTotalAmount
@@ -10226,7 +10226,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
         ?float &$newDiscountTotalAmount,
         ?float &$newTaxTotalAmount,
         ?float &$newGrossAmount
-    ): self {
+    ): static {
         $newNetAmount = $this->resolveCurrentDocumentPosition()->getLineExtensionAmount()?->getValue() ?? 0.0;
         $newChargeTotalAmount = 0.0;
         $newDiscountTotalAmount = 0.0;
@@ -10271,7 +10271,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newAccountId
@@ -10279,7 +10279,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentPositionPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self {
+    ): static {
         /**
          * @var array<AccountingCostCode>
          */

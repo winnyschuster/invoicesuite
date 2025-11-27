@@ -123,9 +123,9 @@ class ReferencedProductType
 
     /**
      * @param IDType|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?IDType $iD = null): self
+    public function setID(?IDType $iD = null): static
     {
         $this->iD = $iD;
 
@@ -133,9 +133,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -152,9 +152,9 @@ class ReferencedProductType
 
     /**
      * @param array<IDType>|null $globalID
-     * @return self
+     * @return static
      */
-    public function setGlobalID(?array $globalID = null): self
+    public function setGlobalID(?array $globalID = null): static
     {
         $this->globalID = $globalID;
 
@@ -162,9 +162,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGlobalID(): self
+    public function unsetGlobalID(): static
     {
         $this->globalID = null;
 
@@ -172,9 +172,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearGlobalID(): self
+    public function clearGlobalID(): static
     {
         $this->globalID = [];
 
@@ -183,9 +183,9 @@ class ReferencedProductType
 
     /**
      * @param IDType $globalID
-     * @return self
+     * @return static
      */
-    public function addToGlobalID(IDType $globalID): self
+    public function addToGlobalID(IDType $globalID): static
     {
         $this->globalID[] = $globalID;
 
@@ -204,9 +204,9 @@ class ReferencedProductType
 
     /**
      * @param IDType $globalID
-     * @return self
+     * @return static
      */
-    public function addOnceToGlobalID(IDType $globalID): self
+    public function addOnceToGlobalID(IDType $globalID): static
     {
         if (!is_array($this->globalID)) {
             $this->globalID = [];
@@ -253,9 +253,9 @@ class ReferencedProductType
 
     /**
      * @param IDType|null $sellerAssignedID
-     * @return self
+     * @return static
      */
-    public function setSellerAssignedID(?IDType $sellerAssignedID = null): self
+    public function setSellerAssignedID(?IDType $sellerAssignedID = null): static
     {
         $this->sellerAssignedID = $sellerAssignedID;
 
@@ -263,9 +263,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerAssignedID(): self
+    public function unsetSellerAssignedID(): static
     {
         $this->sellerAssignedID = null;
 
@@ -292,9 +292,9 @@ class ReferencedProductType
 
     /**
      * @param IDType|null $buyerAssignedID
-     * @return self
+     * @return static
      */
-    public function setBuyerAssignedID(?IDType $buyerAssignedID = null): self
+    public function setBuyerAssignedID(?IDType $buyerAssignedID = null): static
     {
         $this->buyerAssignedID = $buyerAssignedID;
 
@@ -302,9 +302,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerAssignedID(): self
+    public function unsetBuyerAssignedID(): static
     {
         $this->buyerAssignedID = null;
 
@@ -331,9 +331,9 @@ class ReferencedProductType
 
     /**
      * @param IDType|null $industryAssignedID
-     * @return self
+     * @return static
      */
-    public function setIndustryAssignedID(?IDType $industryAssignedID = null): self
+    public function setIndustryAssignedID(?IDType $industryAssignedID = null): static
     {
         $this->industryAssignedID = $industryAssignedID;
 
@@ -341,9 +341,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIndustryAssignedID(): self
+    public function unsetIndustryAssignedID(): static
     {
         $this->industryAssignedID = null;
 
@@ -370,9 +370,9 @@ class ReferencedProductType
 
     /**
      * @param TextType|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?TextType $name = null): self
+    public function setName(?TextType $name = null): static
     {
         $this->name = $name;
 
@@ -380,9 +380,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -409,9 +409,9 @@ class ReferencedProductType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -419,9 +419,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -448,9 +448,9 @@ class ReferencedProductType
 
     /**
      * @param QuantityType|null $unitQuantity
-     * @return self
+     * @return static
      */
-    public function setUnitQuantity(?QuantityType $unitQuantity = null): self
+    public function setUnitQuantity(?QuantityType $unitQuantity = null): static
     {
         $this->unitQuantity = $unitQuantity;
 
@@ -458,9 +458,9 @@ class ReferencedProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitQuantity(): self
+    public function unsetUnitQuantity(): static
     {
         $this->unitQuantity = null;
 

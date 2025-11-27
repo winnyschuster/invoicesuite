@@ -75,9 +75,9 @@ class InvoiceSuiteReferenceDocumentLineDTO
      * Sets reference number
      *
      * @param  null|string $referenceNumber Reference number
-     * @return self
+     * @return static
      */
-    public function setReferenceNumber(?string $referenceNumber): self
+    public function setReferenceNumber(?string $referenceNumber): static
     {
         $this->referenceNumber = $referenceNumber;
 
@@ -98,9 +98,9 @@ class InvoiceSuiteReferenceDocumentLineDTO
      * Sets reference line number
      *
      * @param  null|string $referenceLineNumber Reference line number
-     * @return self
+     * @return static
      */
-    public function setReferenceLineNumber(?string $referenceLineNumber): self
+    public function setReferenceLineNumber(?string $referenceLineNumber): static
     {
         $this->referenceLineNumber = $referenceLineNumber;
 
@@ -121,9 +121,9 @@ class InvoiceSuiteReferenceDocumentLineDTO
      * Sets issue date of the reference
      *
      * @param  null|DateTimeInterface $referenceDate Issue date of the reference
-     * @return self
+     * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate): self
+    public function setReferenceDate(?DateTimeInterface $referenceDate): static
     {
         $this->referenceDate = $referenceDate;
 

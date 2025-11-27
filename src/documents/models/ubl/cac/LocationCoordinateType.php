@@ -127,9 +127,9 @@ class LocationCoordinateType
 
     /**
      * @param CoordinateSystemCode|null $coordinateSystemCode
-     * @return self
+     * @return static
      */
-    public function setCoordinateSystemCode(?CoordinateSystemCode $coordinateSystemCode = null): self
+    public function setCoordinateSystemCode(?CoordinateSystemCode $coordinateSystemCode = null): static
     {
         $this->coordinateSystemCode = $coordinateSystemCode;
 
@@ -137,9 +137,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCoordinateSystemCode(): self
+    public function unsetCoordinateSystemCode(): static
     {
         $this->coordinateSystemCode = null;
 
@@ -166,9 +166,9 @@ class LocationCoordinateType
 
     /**
      * @param LatitudeDegreesMeasure|null $latitudeDegreesMeasure
-     * @return self
+     * @return static
      */
-    public function setLatitudeDegreesMeasure(?LatitudeDegreesMeasure $latitudeDegreesMeasure = null): self
+    public function setLatitudeDegreesMeasure(?LatitudeDegreesMeasure $latitudeDegreesMeasure = null): static
     {
         $this->latitudeDegreesMeasure = $latitudeDegreesMeasure;
 
@@ -176,9 +176,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatitudeDegreesMeasure(): self
+    public function unsetLatitudeDegreesMeasure(): static
     {
         $this->latitudeDegreesMeasure = null;
 
@@ -205,9 +205,9 @@ class LocationCoordinateType
 
     /**
      * @param LatitudeMinutesMeasure|null $latitudeMinutesMeasure
-     * @return self
+     * @return static
      */
-    public function setLatitudeMinutesMeasure(?LatitudeMinutesMeasure $latitudeMinutesMeasure = null): self
+    public function setLatitudeMinutesMeasure(?LatitudeMinutesMeasure $latitudeMinutesMeasure = null): static
     {
         $this->latitudeMinutesMeasure = $latitudeMinutesMeasure;
 
@@ -215,9 +215,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatitudeMinutesMeasure(): self
+    public function unsetLatitudeMinutesMeasure(): static
     {
         $this->latitudeMinutesMeasure = null;
 
@@ -244,9 +244,9 @@ class LocationCoordinateType
 
     /**
      * @param LatitudeDirectionCode|null $latitudeDirectionCode
-     * @return self
+     * @return static
      */
-    public function setLatitudeDirectionCode(?LatitudeDirectionCode $latitudeDirectionCode = null): self
+    public function setLatitudeDirectionCode(?LatitudeDirectionCode $latitudeDirectionCode = null): static
     {
         $this->latitudeDirectionCode = $latitudeDirectionCode;
 
@@ -254,9 +254,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatitudeDirectionCode(): self
+    public function unsetLatitudeDirectionCode(): static
     {
         $this->latitudeDirectionCode = null;
 
@@ -283,9 +283,9 @@ class LocationCoordinateType
 
     /**
      * @param LongitudeDegreesMeasure|null $longitudeDegreesMeasure
-     * @return self
+     * @return static
      */
-    public function setLongitudeDegreesMeasure(?LongitudeDegreesMeasure $longitudeDegreesMeasure = null): self
+    public function setLongitudeDegreesMeasure(?LongitudeDegreesMeasure $longitudeDegreesMeasure = null): static
     {
         $this->longitudeDegreesMeasure = $longitudeDegreesMeasure;
 
@@ -293,9 +293,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLongitudeDegreesMeasure(): self
+    public function unsetLongitudeDegreesMeasure(): static
     {
         $this->longitudeDegreesMeasure = null;
 
@@ -322,9 +322,9 @@ class LocationCoordinateType
 
     /**
      * @param LongitudeMinutesMeasure|null $longitudeMinutesMeasure
-     * @return self
+     * @return static
      */
-    public function setLongitudeMinutesMeasure(?LongitudeMinutesMeasure $longitudeMinutesMeasure = null): self
+    public function setLongitudeMinutesMeasure(?LongitudeMinutesMeasure $longitudeMinutesMeasure = null): static
     {
         $this->longitudeMinutesMeasure = $longitudeMinutesMeasure;
 
@@ -332,9 +332,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLongitudeMinutesMeasure(): self
+    public function unsetLongitudeMinutesMeasure(): static
     {
         $this->longitudeMinutesMeasure = null;
 
@@ -361,9 +361,9 @@ class LocationCoordinateType
 
     /**
      * @param LongitudeDirectionCode|null $longitudeDirectionCode
-     * @return self
+     * @return static
      */
-    public function setLongitudeDirectionCode(?LongitudeDirectionCode $longitudeDirectionCode = null): self
+    public function setLongitudeDirectionCode(?LongitudeDirectionCode $longitudeDirectionCode = null): static
     {
         $this->longitudeDirectionCode = $longitudeDirectionCode;
 
@@ -371,9 +371,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLongitudeDirectionCode(): self
+    public function unsetLongitudeDirectionCode(): static
     {
         $this->longitudeDirectionCode = null;
 
@@ -400,9 +400,9 @@ class LocationCoordinateType
 
     /**
      * @param AltitudeMeasure|null $altitudeMeasure
-     * @return self
+     * @return static
      */
-    public function setAltitudeMeasure(?AltitudeMeasure $altitudeMeasure = null): self
+    public function setAltitudeMeasure(?AltitudeMeasure $altitudeMeasure = null): static
     {
         $this->altitudeMeasure = $altitudeMeasure;
 
@@ -410,9 +410,9 @@ class LocationCoordinateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAltitudeMeasure(): self
+    public function unsetAltitudeMeasure(): static
     {
         $this->altitudeMeasure = null;
 

@@ -82,9 +82,9 @@ class InvoiceSuiteAttachment
      * @param  string                               $filename
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
-     * @return InvoiceSuiteAttachment
+     * @return static
      */
-    public static function fromFile(string $filename): self
+    public static function fromFile(string $filename): static
     {
         if (!file_exists($filename)) {
             throw new InvoiceSuiteFileNotFoundException($filename);
@@ -104,9 +104,9 @@ class InvoiceSuiteAttachment
      *
      * @param  string                 $content
      * @param  string                 $filename
-     * @return InvoiceSuiteAttachment
+     * @return static
      */
-    public static function fromBinaryString(string $content, string $filename): self
+    public static function fromBinaryString(string $content, string $filename): static
     {
         return new static($content, $filename, static::IS_FROM_BINARY_STRING);
     }
@@ -117,9 +117,9 @@ class InvoiceSuiteAttachment
      * @param  string                               $content
      * @param  string                               $filename
      * @throws InvoiceSuiteInvalidArgumentException
-     * @return InvoiceSuiteAttachment
+     * @return static
      */
-    public static function fromBase64String(string $content, string $filename): self
+    public static function fromBase64String(string $content, string $filename): static
     {
         $content = base64_decode($content, true);
 
@@ -135,9 +135,9 @@ class InvoiceSuiteAttachment
      *
      * @param  string                               $url
      * @throws InvoiceSuiteInvalidArgumentException
-     * @return InvoiceSuiteAttachment
+     * @return static
      */
-    public static function fromUrl(string $url): self
+    public static function fromUrl(string $url): static
     {
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
             throw new InvoiceSuiteInvalidArgumentException(sprintf('Not a valid URL: %s', $url));

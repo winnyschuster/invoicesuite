@@ -353,9 +353,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -363,9 +363,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -392,20 +392,20 @@ class TransportHandlingUnitType
 
     /**
      * @param TransportHandlingUnitTypeCode|null $transportHandlingUnitTypeCode
-     * @return self
+     * @return static
      */
     public function setTransportHandlingUnitTypeCode(
         ?TransportHandlingUnitTypeCode $transportHandlingUnitTypeCode = null,
-    ): self {
+    ): static {
         $this->transportHandlingUnitTypeCode = $transportHandlingUnitTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportHandlingUnitTypeCode(): self
+    public function unsetTransportHandlingUnitTypeCode(): static
     {
         $this->transportHandlingUnitTypeCode = null;
 
@@ -432,9 +432,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HandlingCode|null $handlingCode
-     * @return self
+     * @return static
      */
-    public function setHandlingCode(?HandlingCode $handlingCode = null): self
+    public function setHandlingCode(?HandlingCode $handlingCode = null): static
     {
         $this->handlingCode = $handlingCode;
 
@@ -442,9 +442,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingCode(): self
+    public function unsetHandlingCode(): static
     {
         $this->handlingCode = null;
 
@@ -461,9 +461,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<HandlingInstructions>|null $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function setHandlingInstructions(?array $handlingInstructions = null): self
+    public function setHandlingInstructions(?array $handlingInstructions = null): static
     {
         $this->handlingInstructions = $handlingInstructions;
 
@@ -471,9 +471,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingInstructions(): self
+    public function unsetHandlingInstructions(): static
     {
         $this->handlingInstructions = null;
 
@@ -481,9 +481,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHandlingInstructions(): self
+    public function clearHandlingInstructions(): static
     {
         $this->handlingInstructions = [];
 
@@ -522,9 +522,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HandlingInstructions $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): self
+    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
     {
         $this->handlingInstructions[] = $handlingInstructions;
 
@@ -543,9 +543,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HandlingInstructions $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): self
+    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
     {
         if (!is_array($this->handlingInstructions)) {
             $this->handlingInstructions = [];
@@ -582,9 +582,9 @@ class TransportHandlingUnitType
 
     /**
      * @param bool|null $hazardousRiskIndicator
-     * @return self
+     * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): self
+    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
     {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
@@ -592,9 +592,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousRiskIndicator(): self
+    public function unsetHazardousRiskIndicator(): static
     {
         $this->hazardousRiskIndicator = null;
 
@@ -621,9 +621,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TotalGoodsItemQuantity|null $totalGoodsItemQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): self
+    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
     {
         $this->totalGoodsItemQuantity = $totalGoodsItemQuantity;
 
@@ -631,9 +631,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalGoodsItemQuantity(): self
+    public function unsetTotalGoodsItemQuantity(): static
     {
         $this->totalGoodsItemQuantity = null;
 
@@ -660,9 +660,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TotalPackageQuantity|null $totalPackageQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalPackageQuantity(?TotalPackageQuantity $totalPackageQuantity = null): self
+    public function setTotalPackageQuantity(?TotalPackageQuantity $totalPackageQuantity = null): static
     {
         $this->totalPackageQuantity = $totalPackageQuantity;
 
@@ -670,9 +670,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalPackageQuantity(): self
+    public function unsetTotalPackageQuantity(): static
     {
         $this->totalPackageQuantity = null;
 
@@ -689,9 +689,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<DamageRemarks>|null $damageRemarks
-     * @return self
+     * @return static
      */
-    public function setDamageRemarks(?array $damageRemarks = null): self
+    public function setDamageRemarks(?array $damageRemarks = null): static
     {
         $this->damageRemarks = $damageRemarks;
 
@@ -699,9 +699,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDamageRemarks(): self
+    public function unsetDamageRemarks(): static
     {
         $this->damageRemarks = null;
 
@@ -709,9 +709,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDamageRemarks(): self
+    public function clearDamageRemarks(): static
     {
         $this->damageRemarks = [];
 
@@ -750,9 +750,9 @@ class TransportHandlingUnitType
 
     /**
      * @param DamageRemarks $damageRemarks
-     * @return self
+     * @return static
      */
-    public function addToDamageRemarks(DamageRemarks $damageRemarks): self
+    public function addToDamageRemarks(DamageRemarks $damageRemarks): static
     {
         $this->damageRemarks[] = $damageRemarks;
 
@@ -771,9 +771,9 @@ class TransportHandlingUnitType
 
     /**
      * @param DamageRemarks $damageRemarks
-     * @return self
+     * @return static
      */
-    public function addOnceToDamageRemarks(DamageRemarks $damageRemarks): self
+    public function addOnceToDamageRemarks(DamageRemarks $damageRemarks): static
     {
         if (!is_array($this->damageRemarks)) {
             $this->damageRemarks = [];
@@ -810,9 +810,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<ShippingMarks>|null $shippingMarks
-     * @return self
+     * @return static
      */
-    public function setShippingMarks(?array $shippingMarks = null): self
+    public function setShippingMarks(?array $shippingMarks = null): static
     {
         $this->shippingMarks = $shippingMarks;
 
@@ -820,9 +820,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShippingMarks(): self
+    public function unsetShippingMarks(): static
     {
         $this->shippingMarks = null;
 
@@ -830,9 +830,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShippingMarks(): self
+    public function clearShippingMarks(): static
     {
         $this->shippingMarks = [];
 
@@ -871,9 +871,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ShippingMarks $shippingMarks
-     * @return self
+     * @return static
      */
-    public function addToShippingMarks(ShippingMarks $shippingMarks): self
+    public function addToShippingMarks(ShippingMarks $shippingMarks): static
     {
         $this->shippingMarks[] = $shippingMarks;
 
@@ -892,9 +892,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ShippingMarks $shippingMarks
-     * @return self
+     * @return static
      */
-    public function addOnceToShippingMarks(ShippingMarks $shippingMarks): self
+    public function addOnceToShippingMarks(ShippingMarks $shippingMarks): static
     {
         if (!is_array($this->shippingMarks)) {
             $this->shippingMarks = [];
@@ -941,9 +941,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TraceID|null $traceID
-     * @return self
+     * @return static
      */
-    public function setTraceID(?TraceID $traceID = null): self
+    public function setTraceID(?TraceID $traceID = null): static
     {
         $this->traceID = $traceID;
 
@@ -951,9 +951,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTraceID(): self
+    public function unsetTraceID(): static
     {
         $this->traceID = null;
 
@@ -970,9 +970,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<HandlingUnitDespatchLine>|null $handlingUnitDespatchLine
-     * @return self
+     * @return static
      */
-    public function setHandlingUnitDespatchLine(?array $handlingUnitDespatchLine = null): self
+    public function setHandlingUnitDespatchLine(?array $handlingUnitDespatchLine = null): static
     {
         $this->handlingUnitDespatchLine = $handlingUnitDespatchLine;
 
@@ -980,9 +980,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingUnitDespatchLine(): self
+    public function unsetHandlingUnitDespatchLine(): static
     {
         $this->handlingUnitDespatchLine = null;
 
@@ -990,9 +990,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHandlingUnitDespatchLine(): self
+    public function clearHandlingUnitDespatchLine(): static
     {
         $this->handlingUnitDespatchLine = [];
 
@@ -1031,9 +1031,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HandlingUnitDespatchLine $handlingUnitDespatchLine
-     * @return self
+     * @return static
      */
-    public function addToHandlingUnitDespatchLine(HandlingUnitDespatchLine $handlingUnitDespatchLine): self
+    public function addToHandlingUnitDespatchLine(HandlingUnitDespatchLine $handlingUnitDespatchLine): static
     {
         $this->handlingUnitDespatchLine[] = $handlingUnitDespatchLine;
 
@@ -1052,9 +1052,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HandlingUnitDespatchLine $handlingUnitDespatchLine
-     * @return self
+     * @return static
      */
-    public function addOnceToHandlingUnitDespatchLine(HandlingUnitDespatchLine $handlingUnitDespatchLine): self
+    public function addOnceToHandlingUnitDespatchLine(HandlingUnitDespatchLine $handlingUnitDespatchLine): static
     {
         if (!is_array($this->handlingUnitDespatchLine)) {
             $this->handlingUnitDespatchLine = [];
@@ -1091,9 +1091,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<ActualPackage>|null $actualPackage
-     * @return self
+     * @return static
      */
-    public function setActualPackage(?array $actualPackage = null): self
+    public function setActualPackage(?array $actualPackage = null): static
     {
         $this->actualPackage = $actualPackage;
 
@@ -1101,9 +1101,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualPackage(): self
+    public function unsetActualPackage(): static
     {
         $this->actualPackage = null;
 
@@ -1111,9 +1111,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearActualPackage(): self
+    public function clearActualPackage(): static
     {
         $this->actualPackage = [];
 
@@ -1152,9 +1152,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ActualPackage $actualPackage
-     * @return self
+     * @return static
      */
-    public function addToActualPackage(ActualPackage $actualPackage): self
+    public function addToActualPackage(ActualPackage $actualPackage): static
     {
         $this->actualPackage[] = $actualPackage;
 
@@ -1173,9 +1173,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ActualPackage $actualPackage
-     * @return self
+     * @return static
      */
-    public function addOnceToActualPackage(ActualPackage $actualPackage): self
+    public function addOnceToActualPackage(ActualPackage $actualPackage): static
     {
         if (!is_array($this->actualPackage)) {
             $this->actualPackage = [];
@@ -1212,9 +1212,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<ReceivedHandlingUnitReceiptLine>|null $receivedHandlingUnitReceiptLine
-     * @return self
+     * @return static
      */
-    public function setReceivedHandlingUnitReceiptLine(?array $receivedHandlingUnitReceiptLine = null): self
+    public function setReceivedHandlingUnitReceiptLine(?array $receivedHandlingUnitReceiptLine = null): static
     {
         $this->receivedHandlingUnitReceiptLine = $receivedHandlingUnitReceiptLine;
 
@@ -1222,9 +1222,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedHandlingUnitReceiptLine(): self
+    public function unsetReceivedHandlingUnitReceiptLine(): static
     {
         $this->receivedHandlingUnitReceiptLine = null;
 
@@ -1232,9 +1232,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearReceivedHandlingUnitReceiptLine(): self
+    public function clearReceivedHandlingUnitReceiptLine(): static
     {
         $this->receivedHandlingUnitReceiptLine = [];
 
@@ -1273,11 +1273,11 @@ class TransportHandlingUnitType
 
     /**
      * @param ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine
-     * @return self
+     * @return static
      */
     public function addToReceivedHandlingUnitReceiptLine(
         ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine,
-    ): self {
+    ): static {
         $this->receivedHandlingUnitReceiptLine[] = $receivedHandlingUnitReceiptLine;
 
         return $this;
@@ -1295,11 +1295,11 @@ class TransportHandlingUnitType
 
     /**
      * @param ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine
-     * @return self
+     * @return static
      */
     public function addOnceToReceivedHandlingUnitReceiptLine(
         ReceivedHandlingUnitReceiptLine $receivedHandlingUnitReceiptLine,
-    ): self {
+    ): static {
         if (!is_array($this->receivedHandlingUnitReceiptLine)) {
             $this->receivedHandlingUnitReceiptLine = [];
         }
@@ -1335,9 +1335,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<TransportEquipment>|null $transportEquipment
-     * @return self
+     * @return static
      */
-    public function setTransportEquipment(?array $transportEquipment = null): self
+    public function setTransportEquipment(?array $transportEquipment = null): static
     {
         $this->transportEquipment = $transportEquipment;
 
@@ -1345,9 +1345,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEquipment(): self
+    public function unsetTransportEquipment(): static
     {
         $this->transportEquipment = null;
 
@@ -1355,9 +1355,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportEquipment(): self
+    public function clearTransportEquipment(): static
     {
         $this->transportEquipment = [];
 
@@ -1396,9 +1396,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TransportEquipment $transportEquipment
-     * @return self
+     * @return static
      */
-    public function addToTransportEquipment(TransportEquipment $transportEquipment): self
+    public function addToTransportEquipment(TransportEquipment $transportEquipment): static
     {
         $this->transportEquipment[] = $transportEquipment;
 
@@ -1417,9 +1417,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TransportEquipment $transportEquipment
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): self
+    public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): static
     {
         if (!is_array($this->transportEquipment)) {
             $this->transportEquipment = [];
@@ -1456,9 +1456,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<TransportMeans>|null $transportMeans
-     * @return self
+     * @return static
      */
-    public function setTransportMeans(?array $transportMeans = null): self
+    public function setTransportMeans(?array $transportMeans = null): static
     {
         $this->transportMeans = $transportMeans;
 
@@ -1466,9 +1466,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportMeans(): self
+    public function unsetTransportMeans(): static
     {
         $this->transportMeans = null;
 
@@ -1476,9 +1476,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportMeans(): self
+    public function clearTransportMeans(): static
     {
         $this->transportMeans = [];
 
@@ -1517,9 +1517,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TransportMeans $transportMeans
-     * @return self
+     * @return static
      */
-    public function addToTransportMeans(TransportMeans $transportMeans): self
+    public function addToTransportMeans(TransportMeans $transportMeans): static
     {
         $this->transportMeans[] = $transportMeans;
 
@@ -1538,9 +1538,9 @@ class TransportHandlingUnitType
 
     /**
      * @param TransportMeans $transportMeans
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportMeans(TransportMeans $transportMeans): self
+    public function addOnceToTransportMeans(TransportMeans $transportMeans): static
     {
         if (!is_array($this->transportMeans)) {
             $this->transportMeans = [];
@@ -1577,9 +1577,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<HazardousGoodsTransit>|null $hazardousGoodsTransit
-     * @return self
+     * @return static
      */
-    public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): self
+    public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): static
     {
         $this->hazardousGoodsTransit = $hazardousGoodsTransit;
 
@@ -1587,9 +1587,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousGoodsTransit(): self
+    public function unsetHazardousGoodsTransit(): static
     {
         $this->hazardousGoodsTransit = null;
 
@@ -1597,9 +1597,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHazardousGoodsTransit(): self
+    public function clearHazardousGoodsTransit(): static
     {
         $this->hazardousGoodsTransit = [];
 
@@ -1638,9 +1638,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HazardousGoodsTransit $hazardousGoodsTransit
-     * @return self
+     * @return static
      */
-    public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): self
+    public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
     {
         $this->hazardousGoodsTransit[] = $hazardousGoodsTransit;
 
@@ -1659,9 +1659,9 @@ class TransportHandlingUnitType
 
     /**
      * @param HazardousGoodsTransit $hazardousGoodsTransit
-     * @return self
+     * @return static
      */
-    public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): self
+    public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
     {
         if (!is_array($this->hazardousGoodsTransit)) {
             $this->hazardousGoodsTransit = [];
@@ -1698,9 +1698,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<MeasurementDimension>|null $measurementDimension
-     * @return self
+     * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): self
+    public function setMeasurementDimension(?array $measurementDimension = null): static
     {
         $this->measurementDimension = $measurementDimension;
 
@@ -1708,9 +1708,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementDimension(): self
+    public function unsetMeasurementDimension(): static
     {
         $this->measurementDimension = null;
 
@@ -1718,9 +1718,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeasurementDimension(): self
+    public function clearMeasurementDimension(): static
     {
         $this->measurementDimension = [];
 
@@ -1759,9 +1759,9 @@ class TransportHandlingUnitType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         $this->measurementDimension[] = $measurementDimension;
 
@@ -1780,9 +1780,9 @@ class TransportHandlingUnitType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
@@ -1829,9 +1829,9 @@ class TransportHandlingUnitType
 
     /**
      * @param MinimumTemperature|null $minimumTemperature
-     * @return self
+     * @return static
      */
-    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): self
+    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
     {
         $this->minimumTemperature = $minimumTemperature;
 
@@ -1839,9 +1839,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumTemperature(): self
+    public function unsetMinimumTemperature(): static
     {
         $this->minimumTemperature = null;
 
@@ -1868,9 +1868,9 @@ class TransportHandlingUnitType
 
     /**
      * @param MaximumTemperature|null $maximumTemperature
-     * @return self
+     * @return static
      */
-    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): self
+    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
     {
         $this->maximumTemperature = $maximumTemperature;
 
@@ -1878,9 +1878,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumTemperature(): self
+    public function unsetMaximumTemperature(): static
     {
         $this->maximumTemperature = null;
 
@@ -1897,9 +1897,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<GoodsItem>|null $goodsItem
-     * @return self
+     * @return static
      */
-    public function setGoodsItem(?array $goodsItem = null): self
+    public function setGoodsItem(?array $goodsItem = null): static
     {
         $this->goodsItem = $goodsItem;
 
@@ -1907,9 +1907,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGoodsItem(): self
+    public function unsetGoodsItem(): static
     {
         $this->goodsItem = null;
 
@@ -1917,9 +1917,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearGoodsItem(): self
+    public function clearGoodsItem(): static
     {
         $this->goodsItem = [];
 
@@ -1958,9 +1958,9 @@ class TransportHandlingUnitType
 
     /**
      * @param GoodsItem $goodsItem
-     * @return self
+     * @return static
      */
-    public function addToGoodsItem(GoodsItem $goodsItem): self
+    public function addToGoodsItem(GoodsItem $goodsItem): static
     {
         $this->goodsItem[] = $goodsItem;
 
@@ -1979,9 +1979,9 @@ class TransportHandlingUnitType
 
     /**
      * @param GoodsItem $goodsItem
-     * @return self
+     * @return static
      */
-    public function addOnceToGoodsItem(GoodsItem $goodsItem): self
+    public function addOnceToGoodsItem(GoodsItem $goodsItem): static
     {
         if (!is_array($this->goodsItem)) {
             $this->goodsItem = [];
@@ -2028,20 +2028,20 @@ class TransportHandlingUnitType
 
     /**
      * @param FloorSpaceMeasurementDimension|null $floorSpaceMeasurementDimension
-     * @return self
+     * @return static
      */
     public function setFloorSpaceMeasurementDimension(
         ?FloorSpaceMeasurementDimension $floorSpaceMeasurementDimension = null,
-    ): self {
+    ): static {
         $this->floorSpaceMeasurementDimension = $floorSpaceMeasurementDimension;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFloorSpaceMeasurementDimension(): self
+    public function unsetFloorSpaceMeasurementDimension(): static
     {
         $this->floorSpaceMeasurementDimension = null;
 
@@ -2068,20 +2068,20 @@ class TransportHandlingUnitType
 
     /**
      * @param PalletSpaceMeasurementDimension|null $palletSpaceMeasurementDimension
-     * @return self
+     * @return static
      */
     public function setPalletSpaceMeasurementDimension(
         ?PalletSpaceMeasurementDimension $palletSpaceMeasurementDimension = null,
-    ): self {
+    ): static {
         $this->palletSpaceMeasurementDimension = $palletSpaceMeasurementDimension;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPalletSpaceMeasurementDimension(): self
+    public function unsetPalletSpaceMeasurementDimension(): static
     {
         $this->palletSpaceMeasurementDimension = null;
 
@@ -2098,9 +2098,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<ShipmentDocumentReference>|null $shipmentDocumentReference
-     * @return self
+     * @return static
      */
-    public function setShipmentDocumentReference(?array $shipmentDocumentReference = null): self
+    public function setShipmentDocumentReference(?array $shipmentDocumentReference = null): static
     {
         $this->shipmentDocumentReference = $shipmentDocumentReference;
 
@@ -2108,9 +2108,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipmentDocumentReference(): self
+    public function unsetShipmentDocumentReference(): static
     {
         $this->shipmentDocumentReference = null;
 
@@ -2118,9 +2118,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipmentDocumentReference(): self
+    public function clearShipmentDocumentReference(): static
     {
         $this->shipmentDocumentReference = [];
 
@@ -2159,9 +2159,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ShipmentDocumentReference $shipmentDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): self
+    public function addToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): static
     {
         $this->shipmentDocumentReference[] = $shipmentDocumentReference;
 
@@ -2180,9 +2180,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ShipmentDocumentReference $shipmentDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): self
+    public function addOnceToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): static
     {
         if (!is_array($this->shipmentDocumentReference)) {
             $this->shipmentDocumentReference = [];
@@ -2219,9 +2219,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<Status>|null $status
-     * @return self
+     * @return static
      */
-    public function setStatus(?array $status = null): self
+    public function setStatus(?array $status = null): static
     {
         $this->status = $status;
 
@@ -2229,9 +2229,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatus(): self
+    public function unsetStatus(): static
     {
         $this->status = null;
 
@@ -2239,9 +2239,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearStatus(): self
+    public function clearStatus(): static
     {
         $this->status = [];
 
@@ -2280,9 +2280,9 @@ class TransportHandlingUnitType
 
     /**
      * @param Status $status
-     * @return self
+     * @return static
      */
-    public function addToStatus(Status $status): self
+    public function addToStatus(Status $status): static
     {
         $this->status[] = $status;
 
@@ -2301,9 +2301,9 @@ class TransportHandlingUnitType
 
     /**
      * @param Status $status
-     * @return self
+     * @return static
      */
-    public function addOnceToStatus(Status $status): self
+    public function addOnceToStatus(Status $status): static
     {
         if (!is_array($this->status)) {
             $this->status = [];
@@ -2340,9 +2340,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<CustomsDeclaration>|null $customsDeclaration
-     * @return self
+     * @return static
      */
-    public function setCustomsDeclaration(?array $customsDeclaration = null): self
+    public function setCustomsDeclaration(?array $customsDeclaration = null): static
     {
         $this->customsDeclaration = $customsDeclaration;
 
@@ -2350,9 +2350,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsDeclaration(): self
+    public function unsetCustomsDeclaration(): static
     {
         $this->customsDeclaration = null;
 
@@ -2360,9 +2360,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCustomsDeclaration(): self
+    public function clearCustomsDeclaration(): static
     {
         $this->customsDeclaration = [];
 
@@ -2401,9 +2401,9 @@ class TransportHandlingUnitType
 
     /**
      * @param CustomsDeclaration $customsDeclaration
-     * @return self
+     * @return static
      */
-    public function addToCustomsDeclaration(CustomsDeclaration $customsDeclaration): self
+    public function addToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
     {
         $this->customsDeclaration[] = $customsDeclaration;
 
@@ -2422,9 +2422,9 @@ class TransportHandlingUnitType
 
     /**
      * @param CustomsDeclaration $customsDeclaration
-     * @return self
+     * @return static
      */
-    public function addOnceToCustomsDeclaration(CustomsDeclaration $customsDeclaration): self
+    public function addOnceToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
     {
         if (!is_array($this->customsDeclaration)) {
             $this->customsDeclaration = [];
@@ -2461,9 +2461,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<ReferencedShipment>|null $referencedShipment
-     * @return self
+     * @return static
      */
-    public function setReferencedShipment(?array $referencedShipment = null): self
+    public function setReferencedShipment(?array $referencedShipment = null): static
     {
         $this->referencedShipment = $referencedShipment;
 
@@ -2471,9 +2471,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferencedShipment(): self
+    public function unsetReferencedShipment(): static
     {
         $this->referencedShipment = null;
 
@@ -2481,9 +2481,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearReferencedShipment(): self
+    public function clearReferencedShipment(): static
     {
         $this->referencedShipment = [];
 
@@ -2522,9 +2522,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ReferencedShipment $referencedShipment
-     * @return self
+     * @return static
      */
-    public function addToReferencedShipment(ReferencedShipment $referencedShipment): self
+    public function addToReferencedShipment(ReferencedShipment $referencedShipment): static
     {
         $this->referencedShipment[] = $referencedShipment;
 
@@ -2543,9 +2543,9 @@ class TransportHandlingUnitType
 
     /**
      * @param ReferencedShipment $referencedShipment
-     * @return self
+     * @return static
      */
-    public function addOnceToReferencedShipment(ReferencedShipment $referencedShipment): self
+    public function addOnceToReferencedShipment(ReferencedShipment $referencedShipment): static
     {
         if (!is_array($this->referencedShipment)) {
             $this->referencedShipment = [];
@@ -2582,9 +2582,9 @@ class TransportHandlingUnitType
 
     /**
      * @param array<Package>|null $package
-     * @return self
+     * @return static
      */
-    public function setPackage(?array $package = null): self
+    public function setPackage(?array $package = null): static
     {
         $this->package = $package;
 
@@ -2592,9 +2592,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackage(): self
+    public function unsetPackage(): static
     {
         $this->package = null;
 
@@ -2602,9 +2602,9 @@ class TransportHandlingUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPackage(): self
+    public function clearPackage(): static
     {
         $this->package = [];
 
@@ -2643,9 +2643,9 @@ class TransportHandlingUnitType
 
     /**
      * @param Package $package
-     * @return self
+     * @return static
      */
-    public function addToPackage(Package $package): self
+    public function addToPackage(Package $package): static
     {
         $this->package[] = $package;
 
@@ -2664,9 +2664,9 @@ class TransportHandlingUnitType
 
     /**
      * @param Package $package
-     * @return self
+     * @return static
      */
-    public function addOnceToPackage(Package $package): self
+    public function addOnceToPackage(Package $package): static
     {
         if (!is_array($this->package)) {
             $this->package = [];

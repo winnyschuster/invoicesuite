@@ -103,9 +103,9 @@ class CapabilityType
 
     /**
      * @param CapabilityTypeCode|null $capabilityTypeCode
-     * @return self
+     * @return static
      */
-    public function setCapabilityTypeCode(?CapabilityTypeCode $capabilityTypeCode = null): self
+    public function setCapabilityTypeCode(?CapabilityTypeCode $capabilityTypeCode = null): static
     {
         $this->capabilityTypeCode = $capabilityTypeCode;
 
@@ -113,9 +113,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCapabilityTypeCode(): self
+    public function unsetCapabilityTypeCode(): static
     {
         $this->capabilityTypeCode = null;
 
@@ -132,9 +132,9 @@ class CapabilityType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -142,9 +142,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -152,9 +152,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -193,9 +193,9 @@ class CapabilityType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -214,9 +214,9 @@ class CapabilityType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -263,9 +263,9 @@ class CapabilityType
 
     /**
      * @param ValueAmount|null $valueAmount
-     * @return self
+     * @return static
      */
-    public function setValueAmount(?ValueAmount $valueAmount = null): self
+    public function setValueAmount(?ValueAmount $valueAmount = null): static
     {
         $this->valueAmount = $valueAmount;
 
@@ -273,9 +273,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueAmount(): self
+    public function unsetValueAmount(): static
     {
         $this->valueAmount = null;
 
@@ -302,9 +302,9 @@ class CapabilityType
 
     /**
      * @param ValueQuantity|null $valueQuantity
-     * @return self
+     * @return static
      */
-    public function setValueQuantity(?ValueQuantity $valueQuantity = null): self
+    public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
     {
         $this->valueQuantity = $valueQuantity;
 
@@ -312,9 +312,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueQuantity(): self
+    public function unsetValueQuantity(): static
     {
         $this->valueQuantity = null;
 
@@ -331,9 +331,9 @@ class CapabilityType
 
     /**
      * @param array<EvidenceSupplied>|null $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function setEvidenceSupplied(?array $evidenceSupplied = null): self
+    public function setEvidenceSupplied(?array $evidenceSupplied = null): static
     {
         $this->evidenceSupplied = $evidenceSupplied;
 
@@ -341,9 +341,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvidenceSupplied(): self
+    public function unsetEvidenceSupplied(): static
     {
         $this->evidenceSupplied = null;
 
@@ -351,9 +351,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEvidenceSupplied(): self
+    public function clearEvidenceSupplied(): static
     {
         $this->evidenceSupplied = [];
 
@@ -392,9 +392,9 @@ class CapabilityType
 
     /**
      * @param EvidenceSupplied $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
+    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
     {
         $this->evidenceSupplied[] = $evidenceSupplied;
 
@@ -413,9 +413,9 @@ class CapabilityType
 
     /**
      * @param EvidenceSupplied $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
+    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
     {
         if (!is_array($this->evidenceSupplied)) {
             $this->evidenceSupplied = [];
@@ -462,9 +462,9 @@ class CapabilityType
 
     /**
      * @param ValidityPeriod|null $validityPeriod
-     * @return self
+     * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
+    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
     {
         $this->validityPeriod = $validityPeriod;
 
@@ -472,9 +472,9 @@ class CapabilityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityPeriod(): self
+    public function unsetValidityPeriod(): static
     {
         $this->validityPeriod = null;
 

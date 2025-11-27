@@ -149,9 +149,9 @@ class OrderLineType
 
     /**
      * @param SubstitutionStatusCode|null $substitutionStatusCode
-     * @return self
+     * @return static
      */
-    public function setSubstitutionStatusCode(?SubstitutionStatusCode $substitutionStatusCode = null): self
+    public function setSubstitutionStatusCode(?SubstitutionStatusCode $substitutionStatusCode = null): static
     {
         $this->substitutionStatusCode = $substitutionStatusCode;
 
@@ -159,9 +159,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubstitutionStatusCode(): self
+    public function unsetSubstitutionStatusCode(): static
     {
         $this->substitutionStatusCode = null;
 
@@ -178,9 +178,9 @@ class OrderLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -188,9 +188,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -198,9 +198,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -239,9 +239,9 @@ class OrderLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -260,9 +260,9 @@ class OrderLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -309,9 +309,9 @@ class OrderLineType
 
     /**
      * @param LineItem|null $lineItem
-     * @return self
+     * @return static
      */
-    public function setLineItem(?LineItem $lineItem = null): self
+    public function setLineItem(?LineItem $lineItem = null): static
     {
         $this->lineItem = $lineItem;
 
@@ -319,9 +319,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineItem(): self
+    public function unsetLineItem(): static
     {
         $this->lineItem = null;
 
@@ -338,9 +338,9 @@ class OrderLineType
 
     /**
      * @param array<SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
-    public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): self
+    public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): static
     {
         $this->sellerProposedSubstituteLineItem = $sellerProposedSubstituteLineItem;
 
@@ -348,9 +348,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerProposedSubstituteLineItem(): self
+    public function unsetSellerProposedSubstituteLineItem(): static
     {
         $this->sellerProposedSubstituteLineItem = null;
 
@@ -358,9 +358,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSellerProposedSubstituteLineItem(): self
+    public function clearSellerProposedSubstituteLineItem(): static
     {
         $this->sellerProposedSubstituteLineItem = [];
 
@@ -399,11 +399,11 @@ class OrderLineType
 
     /**
      * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
     public function addToSellerProposedSubstituteLineItem(
         SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem,
-    ): self {
+    ): static {
         $this->sellerProposedSubstituteLineItem[] = $sellerProposedSubstituteLineItem;
 
         return $this;
@@ -421,11 +421,11 @@ class OrderLineType
 
     /**
      * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
     public function addOnceToSellerProposedSubstituteLineItem(
         SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem,
-    ): self {
+    ): static {
         if (!is_array($this->sellerProposedSubstituteLineItem)) {
             $this->sellerProposedSubstituteLineItem = [];
         }
@@ -461,9 +461,9 @@ class OrderLineType
 
     /**
      * @param array<SellerSubstitutedLineItem>|null $sellerSubstitutedLineItem
-     * @return self
+     * @return static
      */
-    public function setSellerSubstitutedLineItem(?array $sellerSubstitutedLineItem = null): self
+    public function setSellerSubstitutedLineItem(?array $sellerSubstitutedLineItem = null): static
     {
         $this->sellerSubstitutedLineItem = $sellerSubstitutedLineItem;
 
@@ -471,9 +471,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerSubstitutedLineItem(): self
+    public function unsetSellerSubstitutedLineItem(): static
     {
         $this->sellerSubstitutedLineItem = null;
 
@@ -481,9 +481,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSellerSubstitutedLineItem(): self
+    public function clearSellerSubstitutedLineItem(): static
     {
         $this->sellerSubstitutedLineItem = [];
 
@@ -522,9 +522,9 @@ class OrderLineType
 
     /**
      * @param SellerSubstitutedLineItem $sellerSubstitutedLineItem
-     * @return self
+     * @return static
      */
-    public function addToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): self
+    public function addToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): static
     {
         $this->sellerSubstitutedLineItem[] = $sellerSubstitutedLineItem;
 
@@ -543,9 +543,9 @@ class OrderLineType
 
     /**
      * @param SellerSubstitutedLineItem $sellerSubstitutedLineItem
-     * @return self
+     * @return static
      */
-    public function addOnceToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): self
+    public function addOnceToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): static
     {
         if (!is_array($this->sellerSubstitutedLineItem)) {
             $this->sellerSubstitutedLineItem = [];
@@ -582,9 +582,9 @@ class OrderLineType
 
     /**
      * @param array<BuyerProposedSubstituteLineItem>|null $buyerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
-    public function setBuyerProposedSubstituteLineItem(?array $buyerProposedSubstituteLineItem = null): self
+    public function setBuyerProposedSubstituteLineItem(?array $buyerProposedSubstituteLineItem = null): static
     {
         $this->buyerProposedSubstituteLineItem = $buyerProposedSubstituteLineItem;
 
@@ -592,9 +592,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerProposedSubstituteLineItem(): self
+    public function unsetBuyerProposedSubstituteLineItem(): static
     {
         $this->buyerProposedSubstituteLineItem = null;
 
@@ -602,9 +602,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBuyerProposedSubstituteLineItem(): self
+    public function clearBuyerProposedSubstituteLineItem(): static
     {
         $this->buyerProposedSubstituteLineItem = [];
 
@@ -643,11 +643,11 @@ class OrderLineType
 
     /**
      * @param BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
     public function addToBuyerProposedSubstituteLineItem(
         BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem,
-    ): self {
+    ): static {
         $this->buyerProposedSubstituteLineItem[] = $buyerProposedSubstituteLineItem;
 
         return $this;
@@ -665,11 +665,11 @@ class OrderLineType
 
     /**
      * @param BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
     public function addOnceToBuyerProposedSubstituteLineItem(
         BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem,
-    ): self {
+    ): static {
         if (!is_array($this->buyerProposedSubstituteLineItem)) {
             $this->buyerProposedSubstituteLineItem = [];
         }
@@ -715,9 +715,9 @@ class OrderLineType
 
     /**
      * @param CatalogueLineReference|null $catalogueLineReference
-     * @return self
+     * @return static
      */
-    public function setCatalogueLineReference(?CatalogueLineReference $catalogueLineReference = null): self
+    public function setCatalogueLineReference(?CatalogueLineReference $catalogueLineReference = null): static
     {
         $this->catalogueLineReference = $catalogueLineReference;
 
@@ -725,9 +725,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCatalogueLineReference(): self
+    public function unsetCatalogueLineReference(): static
     {
         $this->catalogueLineReference = null;
 
@@ -754,9 +754,9 @@ class OrderLineType
 
     /**
      * @param QuotationLineReference|null $quotationLineReference
-     * @return self
+     * @return static
      */
-    public function setQuotationLineReference(?QuotationLineReference $quotationLineReference = null): self
+    public function setQuotationLineReference(?QuotationLineReference $quotationLineReference = null): static
     {
         $this->quotationLineReference = $quotationLineReference;
 
@@ -764,9 +764,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuotationLineReference(): self
+    public function unsetQuotationLineReference(): static
     {
         $this->quotationLineReference = null;
 
@@ -783,9 +783,9 @@ class OrderLineType
 
     /**
      * @param array<OrderLineReference>|null $orderLineReference
-     * @return self
+     * @return static
      */
-    public function setOrderLineReference(?array $orderLineReference = null): self
+    public function setOrderLineReference(?array $orderLineReference = null): static
     {
         $this->orderLineReference = $orderLineReference;
 
@@ -793,9 +793,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderLineReference(): self
+    public function unsetOrderLineReference(): static
     {
         $this->orderLineReference = null;
 
@@ -803,9 +803,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOrderLineReference(): self
+    public function clearOrderLineReference(): static
     {
         $this->orderLineReference = [];
 
@@ -844,9 +844,9 @@ class OrderLineType
 
     /**
      * @param OrderLineReference $orderLineReference
-     * @return self
+     * @return static
      */
-    public function addToOrderLineReference(OrderLineReference $orderLineReference): self
+    public function addToOrderLineReference(OrderLineReference $orderLineReference): static
     {
         $this->orderLineReference[] = $orderLineReference;
 
@@ -865,9 +865,9 @@ class OrderLineType
 
     /**
      * @param OrderLineReference $orderLineReference
-     * @return self
+     * @return static
      */
-    public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): self
+    public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): static
     {
         if (!is_array($this->orderLineReference)) {
             $this->orderLineReference = [];
@@ -904,9 +904,9 @@ class OrderLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -914,9 +914,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -924,9 +924,9 @@ class OrderLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -965,9 +965,9 @@ class OrderLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -986,9 +986,9 @@ class OrderLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];

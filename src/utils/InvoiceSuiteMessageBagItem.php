@@ -80,9 +80,9 @@ final class InvoiceSuiteMessageBagItem
      * Set the message text.
      *
      * @param  string $newMessageContent the message to store
-     * @return self   returns the current instance for fluent calls
+     * @return static returns the current instance for fluent calls
      */
-    public function setMessageContent(string $newMessageContent): self
+    public function setMessageContent(string $newMessageContent): static
     {
         $this->messageContent = $newMessageContent;
 
@@ -103,9 +103,9 @@ final class InvoiceSuiteMessageBagItem
      * Set the message severity.
      *
      * @param  InvoiceSuiteMessageSeverity $newMessageSeverity the severity to store
-     * @return self                        returns the current instance for fluent calls
+     * @return static                      returns the current instance for fluent calls
      */
-    public function setMessageSeverity(InvoiceSuiteMessageSeverity $newMessageSeverity): self
+    public function setMessageSeverity(InvoiceSuiteMessageSeverity $newMessageSeverity): static
     {
         $this->messageSeverity = $newMessageSeverity;
 
@@ -126,9 +126,9 @@ final class InvoiceSuiteMessageBagItem
      * Set the message timestamp.
      *
      * @param  DateTimeInterface $newMessageTimestamp the timestamp to store
-     * @return self              returns the current instance for fluent calls
+     * @return static            returns the current instance for fluent calls
      */
-    public function setMessageTimestamp(DateTimeInterface $newMessageTimestamp): self
+    public function setMessageTimestamp(DateTimeInterface $newMessageTimestamp): static
     {
         $this->messageTimestamp = $newMessageTimestamp;
 

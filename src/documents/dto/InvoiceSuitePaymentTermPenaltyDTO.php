@@ -95,9 +95,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * Sets the base amount of the payment penalty
      *
      * @param  null|float $baseAmount The base amount of the payment penalty
-     * @return self
+     * @return static
      */
-    public function setBaseAmount(?float $baseAmount): self
+    public function setBaseAmount(?float $baseAmount): static
     {
         $this->baseAmount = $baseAmount;
 
@@ -118,9 +118,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * Sets the amount of the payment penalty
      *
      * @param  null|float $penaltyAmount The amount of the payment penalty
-     * @return self
+     * @return static
      */
-    public function setPenaltyAmount(?float $penaltyAmount): self
+    public function setPenaltyAmount(?float $penaltyAmount): static
     {
         $this->penaltyAmount = $penaltyAmount;
 
@@ -141,9 +141,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * Sets the percentage of the payment penalty
      *
      * @param  null|float $penaltyPercent The percentage of the payment penalty
-     * @return self
+     * @return static
      */
-    public function setPenaltyPercent(?float $penaltyPercent): self
+    public function setPenaltyPercent(?float $penaltyPercent): static
     {
         $this->penaltyPercent = $penaltyPercent;
 
@@ -164,9 +164,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * Sets the due date reference date
      *
      * @param  null|DateTimeInterface $baseDate The due date reference date
-     * @return self
+     * @return static
      */
-    public function setBaseDate(?DateTimeInterface $baseDate): self
+    public function setBaseDate(?DateTimeInterface $baseDate): static
     {
         $this->baseDate = $baseDate;
 
@@ -187,9 +187,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * Sets the maturity period (basis)
      *
      * @param  null|InvoiceSuitePeriodDTO $period The maturity period (basis)
-     * @return self
+     * @return static
      */
-    public function setPeriod(?InvoiceSuitePeriodDTO $period): self
+    public function setPeriod(?InvoiceSuitePeriodDTO $period): static
     {
         $this->period = $period;
 

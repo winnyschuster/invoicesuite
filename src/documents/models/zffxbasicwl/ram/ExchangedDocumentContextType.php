@@ -53,20 +53,20 @@ class ExchangedDocumentContextType
 
     /**
      * @param DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
-     * @return self
+     * @return static
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
         ?DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter = null,
-    ): self {
+    ): static {
         $this->businessProcessSpecifiedDocumentContextParameter = $businessProcessSpecifiedDocumentContextParameter;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBusinessProcessSpecifiedDocumentContextParameter(): self
+    public function unsetBusinessProcessSpecifiedDocumentContextParameter(): static
     {
         $this->businessProcessSpecifiedDocumentContextParameter = null;
 
@@ -93,20 +93,20 @@ class ExchangedDocumentContextType
 
     /**
      * @param DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
-     * @return self
+     * @return static
      */
     public function setGuidelineSpecifiedDocumentContextParameter(
         ?DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter = null,
-    ): self {
+    ): static {
         $this->guidelineSpecifiedDocumentContextParameter = $guidelineSpecifiedDocumentContextParameter;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGuidelineSpecifiedDocumentContextParameter(): self
+    public function unsetGuidelineSpecifiedDocumentContextParameter(): static
     {
         $this->guidelineSpecifiedDocumentContextParameter = null;
 

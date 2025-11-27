@@ -102,9 +102,9 @@ class PerformanceDataLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -112,9 +112,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -131,9 +131,9 @@ class PerformanceDataLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -141,9 +141,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -151,9 +151,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -192,9 +192,9 @@ class PerformanceDataLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -213,9 +213,9 @@ class PerformanceDataLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -262,9 +262,9 @@ class PerformanceDataLineType
 
     /**
      * @param PerformanceValueQuantity|null $performanceValueQuantity
-     * @return self
+     * @return static
      */
-    public function setPerformanceValueQuantity(?PerformanceValueQuantity $performanceValueQuantity = null): self
+    public function setPerformanceValueQuantity(?PerformanceValueQuantity $performanceValueQuantity = null): static
     {
         $this->performanceValueQuantity = $performanceValueQuantity;
 
@@ -272,9 +272,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerformanceValueQuantity(): self
+    public function unsetPerformanceValueQuantity(): static
     {
         $this->performanceValueQuantity = null;
 
@@ -301,9 +301,9 @@ class PerformanceDataLineType
 
     /**
      * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
-     * @return self
+     * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): self
+    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
     {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
@@ -311,9 +311,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerformanceMetricTypeCode(): self
+    public function unsetPerformanceMetricTypeCode(): static
     {
         $this->performanceMetricTypeCode = null;
 
@@ -340,9 +340,9 @@ class PerformanceDataLineType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -350,9 +350,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 
@@ -379,9 +379,9 @@ class PerformanceDataLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -389,9 +389,9 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 

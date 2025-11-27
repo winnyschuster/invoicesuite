@@ -138,9 +138,9 @@ class ForecastRevisionLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -148,9 +148,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -167,9 +167,9 @@ class ForecastRevisionLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -177,9 +177,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -187,9 +187,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -228,9 +228,9 @@ class ForecastRevisionLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -249,9 +249,9 @@ class ForecastRevisionLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -288,9 +288,9 @@ class ForecastRevisionLineType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -298,9 +298,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -308,9 +308,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -349,9 +349,9 @@ class ForecastRevisionLineType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -370,9 +370,9 @@ class ForecastRevisionLineType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -419,9 +419,9 @@ class ForecastRevisionLineType
 
     /**
      * @param RevisedForecastLineID|null $revisedForecastLineID
-     * @return self
+     * @return static
      */
-    public function setRevisedForecastLineID(?RevisedForecastLineID $revisedForecastLineID = null): self
+    public function setRevisedForecastLineID(?RevisedForecastLineID $revisedForecastLineID = null): static
     {
         $this->revisedForecastLineID = $revisedForecastLineID;
 
@@ -429,9 +429,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRevisedForecastLineID(): self
+    public function unsetRevisedForecastLineID(): static
     {
         $this->revisedForecastLineID = null;
 
@@ -448,9 +448,9 @@ class ForecastRevisionLineType
 
     /**
      * @param DateTimeInterface|null $sourceForecastIssueDate
-     * @return self
+     * @return static
      */
-    public function setSourceForecastIssueDate(?DateTimeInterface $sourceForecastIssueDate = null): self
+    public function setSourceForecastIssueDate(?DateTimeInterface $sourceForecastIssueDate = null): static
     {
         $this->sourceForecastIssueDate = $sourceForecastIssueDate;
 
@@ -458,9 +458,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSourceForecastIssueDate(): self
+    public function unsetSourceForecastIssueDate(): static
     {
         $this->sourceForecastIssueDate = null;
 
@@ -477,9 +477,9 @@ class ForecastRevisionLineType
 
     /**
      * @param DateTimeInterface|null $sourceForecastIssueTime
-     * @return self
+     * @return static
      */
-    public function setSourceForecastIssueTime(?DateTimeInterface $sourceForecastIssueTime = null): self
+    public function setSourceForecastIssueTime(?DateTimeInterface $sourceForecastIssueTime = null): static
     {
         $this->sourceForecastIssueTime = $sourceForecastIssueTime;
 
@@ -487,9 +487,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSourceForecastIssueTime(): self
+    public function unsetSourceForecastIssueTime(): static
     {
         $this->sourceForecastIssueTime = null;
 
@@ -516,9 +516,9 @@ class ForecastRevisionLineType
 
     /**
      * @param AdjustmentReasonCode|null $adjustmentReasonCode
-     * @return self
+     * @return static
      */
-    public function setAdjustmentReasonCode(?AdjustmentReasonCode $adjustmentReasonCode = null): self
+    public function setAdjustmentReasonCode(?AdjustmentReasonCode $adjustmentReasonCode = null): static
     {
         $this->adjustmentReasonCode = $adjustmentReasonCode;
 
@@ -526,9 +526,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdjustmentReasonCode(): self
+    public function unsetAdjustmentReasonCode(): static
     {
         $this->adjustmentReasonCode = null;
 
@@ -555,9 +555,9 @@ class ForecastRevisionLineType
 
     /**
      * @param ForecastPeriod|null $forecastPeriod
-     * @return self
+     * @return static
      */
-    public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): self
+    public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): static
     {
         $this->forecastPeriod = $forecastPeriod;
 
@@ -565,9 +565,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastPeriod(): self
+    public function unsetForecastPeriod(): static
     {
         $this->forecastPeriod = null;
 
@@ -594,9 +594,9 @@ class ForecastRevisionLineType
 
     /**
      * @param SalesItem|null $salesItem
-     * @return self
+     * @return static
      */
-    public function setSalesItem(?SalesItem $salesItem = null): self
+    public function setSalesItem(?SalesItem $salesItem = null): static
     {
         $this->salesItem = $salesItem;
 
@@ -604,9 +604,9 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSalesItem(): self
+    public function unsetSalesItem(): static
     {
         $this->salesItem = null;
 

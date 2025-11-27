@@ -132,9 +132,9 @@ class CodeType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -142,9 +142,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -161,9 +161,9 @@ class CodeType
 
     /**
      * @param string|null $listID
-     * @return self
+     * @return static
      */
-    public function setListID(?string $listID = null): self
+    public function setListID(?string $listID = null): static
     {
         $this->listID = InvoiceSuiteStringUtils::asNullWhenEmpty($listID);
 
@@ -171,9 +171,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListID(): self
+    public function unsetListID(): static
     {
         $this->listID = null;
 
@@ -190,9 +190,9 @@ class CodeType
 
     /**
      * @param string|null $listAgencyID
-     * @return self
+     * @return static
      */
-    public function setListAgencyID(?string $listAgencyID = null): self
+    public function setListAgencyID(?string $listAgencyID = null): static
     {
         $this->listAgencyID = InvoiceSuiteStringUtils::asNullWhenEmpty($listAgencyID);
 
@@ -200,9 +200,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListAgencyID(): self
+    public function unsetListAgencyID(): static
     {
         $this->listAgencyID = null;
 
@@ -219,9 +219,9 @@ class CodeType
 
     /**
      * @param string|null $listAgencyName
-     * @return self
+     * @return static
      */
-    public function setListAgencyName(?string $listAgencyName = null): self
+    public function setListAgencyName(?string $listAgencyName = null): static
     {
         $this->listAgencyName = InvoiceSuiteStringUtils::asNullWhenEmpty($listAgencyName);
 
@@ -229,9 +229,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListAgencyName(): self
+    public function unsetListAgencyName(): static
     {
         $this->listAgencyName = null;
 
@@ -248,9 +248,9 @@ class CodeType
 
     /**
      * @param string|null $listName
-     * @return self
+     * @return static
      */
-    public function setListName(?string $listName = null): self
+    public function setListName(?string $listName = null): static
     {
         $this->listName = InvoiceSuiteStringUtils::asNullWhenEmpty($listName);
 
@@ -258,9 +258,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListName(): self
+    public function unsetListName(): static
     {
         $this->listName = null;
 
@@ -277,9 +277,9 @@ class CodeType
 
     /**
      * @param string|null $listVersionID
-     * @return self
+     * @return static
      */
-    public function setListVersionID(?string $listVersionID = null): self
+    public function setListVersionID(?string $listVersionID = null): static
     {
         $this->listVersionID = InvoiceSuiteStringUtils::asNullWhenEmpty($listVersionID);
 
@@ -287,9 +287,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListVersionID(): self
+    public function unsetListVersionID(): static
     {
         $this->listVersionID = null;
 
@@ -306,9 +306,9 @@ class CodeType
 
     /**
      * @param string|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?string $name = null): self
+    public function setName(?string $name = null): static
     {
         $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
@@ -316,9 +316,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -335,9 +335,9 @@ class CodeType
 
     /**
      * @param string|null $languageID
-     * @return self
+     * @return static
      */
-    public function setLanguageID(?string $languageID = null): self
+    public function setLanguageID(?string $languageID = null): static
     {
         $this->languageID = InvoiceSuiteStringUtils::asNullWhenEmpty($languageID);
 
@@ -345,9 +345,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguageID(): self
+    public function unsetLanguageID(): static
     {
         $this->languageID = null;
 
@@ -364,9 +364,9 @@ class CodeType
 
     /**
      * @param string|null $listURI
-     * @return self
+     * @return static
      */
-    public function setListURI(?string $listURI = null): self
+    public function setListURI(?string $listURI = null): static
     {
         $this->listURI = InvoiceSuiteStringUtils::asNullWhenEmpty($listURI);
 
@@ -374,9 +374,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListURI(): self
+    public function unsetListURI(): static
     {
         $this->listURI = null;
 
@@ -393,9 +393,9 @@ class CodeType
 
     /**
      * @param string|null $listSchemeURI
-     * @return self
+     * @return static
      */
-    public function setListSchemeURI(?string $listSchemeURI = null): self
+    public function setListSchemeURI(?string $listSchemeURI = null): static
     {
         $this->listSchemeURI = InvoiceSuiteStringUtils::asNullWhenEmpty($listSchemeURI);
 
@@ -403,9 +403,9 @@ class CodeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetListSchemeURI(): self
+    public function unsetListSchemeURI(): static
     {
         $this->listSchemeURI = null;
 

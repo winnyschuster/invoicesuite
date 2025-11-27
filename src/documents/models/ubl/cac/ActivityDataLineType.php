@@ -122,9 +122,9 @@ class ActivityDataLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -132,9 +132,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -161,20 +161,20 @@ class ActivityDataLineType
 
     /**
      * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
-     * @return self
+     * @return static
      */
     public function setSupplyChainActivityTypeCode(
         ?SupplyChainActivityTypeCode $supplyChainActivityTypeCode = null,
-    ): self {
+    ): static {
         $this->supplyChainActivityTypeCode = $supplyChainActivityTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyChainActivityTypeCode(): self
+    public function unsetSupplyChainActivityTypeCode(): static
     {
         $this->supplyChainActivityTypeCode = null;
 
@@ -201,9 +201,9 @@ class ActivityDataLineType
 
     /**
      * @param BuyerCustomerParty|null $buyerCustomerParty
-     * @return self
+     * @return static
      */
-    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): self
+    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
     {
         $this->buyerCustomerParty = $buyerCustomerParty;
 
@@ -211,9 +211,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerCustomerParty(): self
+    public function unsetBuyerCustomerParty(): static
     {
         $this->buyerCustomerParty = null;
 
@@ -240,9 +240,9 @@ class ActivityDataLineType
 
     /**
      * @param SellerSupplierParty|null $sellerSupplierParty
-     * @return self
+     * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
+    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
     {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
@@ -250,9 +250,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerSupplierParty(): self
+    public function unsetSellerSupplierParty(): static
     {
         $this->sellerSupplierParty = null;
 
@@ -279,9 +279,9 @@ class ActivityDataLineType
 
     /**
      * @param ActivityPeriod|null $activityPeriod
-     * @return self
+     * @return static
      */
-    public function setActivityPeriod(?ActivityPeriod $activityPeriod = null): self
+    public function setActivityPeriod(?ActivityPeriod $activityPeriod = null): static
     {
         $this->activityPeriod = $activityPeriod;
 
@@ -289,9 +289,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActivityPeriod(): self
+    public function unsetActivityPeriod(): static
     {
         $this->activityPeriod = null;
 
@@ -318,9 +318,9 @@ class ActivityDataLineType
 
     /**
      * @param ActivityOriginLocation|null $activityOriginLocation
-     * @return self
+     * @return static
      */
-    public function setActivityOriginLocation(?ActivityOriginLocation $activityOriginLocation = null): self
+    public function setActivityOriginLocation(?ActivityOriginLocation $activityOriginLocation = null): static
     {
         $this->activityOriginLocation = $activityOriginLocation;
 
@@ -328,9 +328,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActivityOriginLocation(): self
+    public function unsetActivityOriginLocation(): static
     {
         $this->activityOriginLocation = null;
 
@@ -357,9 +357,9 @@ class ActivityDataLineType
 
     /**
      * @param ActivityFinalLocation|null $activityFinalLocation
-     * @return self
+     * @return static
      */
-    public function setActivityFinalLocation(?ActivityFinalLocation $activityFinalLocation = null): self
+    public function setActivityFinalLocation(?ActivityFinalLocation $activityFinalLocation = null): static
     {
         $this->activityFinalLocation = $activityFinalLocation;
 
@@ -367,9 +367,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActivityFinalLocation(): self
+    public function unsetActivityFinalLocation(): static
     {
         $this->activityFinalLocation = null;
 
@@ -386,9 +386,9 @@ class ActivityDataLineType
 
     /**
      * @param array<SalesItem>|null $salesItem
-     * @return self
+     * @return static
      */
-    public function setSalesItem(?array $salesItem = null): self
+    public function setSalesItem(?array $salesItem = null): static
     {
         $this->salesItem = $salesItem;
 
@@ -396,9 +396,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSalesItem(): self
+    public function unsetSalesItem(): static
     {
         $this->salesItem = null;
 
@@ -406,9 +406,9 @@ class ActivityDataLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSalesItem(): self
+    public function clearSalesItem(): static
     {
         $this->salesItem = [];
 
@@ -447,9 +447,9 @@ class ActivityDataLineType
 
     /**
      * @param SalesItem $salesItem
-     * @return self
+     * @return static
      */
-    public function addToSalesItem(SalesItem $salesItem): self
+    public function addToSalesItem(SalesItem $salesItem): static
     {
         $this->salesItem[] = $salesItem;
 
@@ -468,9 +468,9 @@ class ActivityDataLineType
 
     /**
      * @param SalesItem $salesItem
-     * @return self
+     * @return static
      */
-    public function addOnceToSalesItem(SalesItem $salesItem): self
+    public function addOnceToSalesItem(SalesItem $salesItem): static
     {
         if (!is_array($this->salesItem)) {
             $this->salesItem = [];

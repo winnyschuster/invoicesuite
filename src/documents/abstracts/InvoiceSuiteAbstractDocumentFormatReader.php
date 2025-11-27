@@ -54,9 +54,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  string                                   $fromContent
      * @throws InvoiceSuiteUnknownContentException
-     * @return InvoiceSuiteAbstractDocumentFormatReader
+     * @return static
      */
-    public function deserializeFromContent(string $fromContent): self
+    public function deserializeFromContent(string $fromContent): static
     {
         if (InvoiceSuiteContentTypeResolver::resolveContentType($fromContent) === InvoiceSuiteContentTypeResolver::JSON) {
             return $this->deserializeFromJsonContent($fromContent);
@@ -77,11 +77,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Create a DTO from this document
      *
      * @param  null|InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
-     * @return self
+     * @return static
      */
     abstract public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
-    ): self;
+    ): static;
 
     // endregion
 
@@ -95,7 +95,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      */
     abstract public function getDocumentNo(
         ?string &$newDocumentNo
-    ): self;
+    ): static;
 
     /**
      * Gets the document type code
@@ -105,87 +105,87 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      */
     abstract public function getDocumentType(
         ?string &$newDocumentType
-    ): self;
+    ): static;
 
     /**
      * Gets the document description
      *
      * @param  null|string $newDocumentDescription The documenttype as free text
-     * @return self
+     * @return static
      */
     abstract public function getDocumentDescription(
         ?string &$newDocumentDescription
-    ): self;
+    ): static;
 
     /**
      * Gets the document language
      *
      * @param  null|string $newDocumentLanguage Language indicator. The language code in which the document was written
-     * @return self
+     * @return static
      */
     abstract public function getDocumentLanguage(
         ?string &$newDocumentLanguage
-    ): self;
+    ): static;
 
     /**
      * Gets the document date (e.g. invoice date)
      *
      * @param  null|DateTimeInterface $newDocumentDate Date of the document. The date when the document was issued by the seller
-     * @return self
+     * @return static
      */
     abstract public function getDocumentDate(
         ?DateTimeInterface &$newDocumentDate
-    ): self;
+    ): static;
 
     /**
      * Gets the document period
      *
      * @param  null|DateTimeInterface $newCompleteDate Contractual due date of the document
-     * @return self
+     * @return static
      */
     abstract public function getDocumentCompleteDate(
         ?DateTimeInterface &$newCompleteDate
-    ): self;
+    ): static;
 
     /**
      * Gets the document currency
      *
      * @param  null|string $newDocumentCurrency Code for the invoice currency
-     * @return self
+     * @return static
      */
     abstract public function getDocumentCurrency(
         ?string &$newDocumentCurrency
-    ): self;
+    ): static;
 
     /**
      * Gets the document tax currency
      *
      * @param  null|string $newDocumentTaxCurrency Code for the tax currency
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxCurrency(
         ?string &$newDocumentTaxCurrency
-    ): self;
+    ): static;
 
     /**
      * Gets the status of the copy indicator
      *
      * @param  null|bool $newDocumentIsCopy Indicates that the document is a copy
-     * @return self
+     * @return static
      */
     abstract public function getDocumentIsCopy(
         ?bool &$newDocumentIsCopy
-    ): self;
+    ): static;
 
     /**
      * Gets the status of the test indicator
      *
      * @param  null|bool $newDocumentIsTest Indicates that the document is a test
-     * @return self
+     * @return static
      */
     abstract public function getDocumentIsTest(
         ?bool &$newDocumentIsTest
-    ): self;
+    ): static;
 
     /**
      * Go to the first document of the document
@@ -207,13 +207,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
     abstract public function getDocumentNote(
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self;
+    ): static;
 
     /**
      * Go to the first billing period
@@ -235,13 +235,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBillingPeriod(
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self;
+    ): static;
 
     /**
      * Go to the first posting reference
@@ -262,12 +262,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self;
+    ): static;
 
     // endregion
 
@@ -292,12 +292,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated buyer's order confirmation
@@ -318,12 +318,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Buyer's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated quotation
@@ -344,12 +344,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Quotation number
      * @param  null|DateTimeInterface $newReferenceDate   Quotation date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentQuotationReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated contract
@@ -370,12 +370,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentContractReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional associated document
@@ -400,7 +400,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     abstract public function getDocumentAdditionalReference(
         ?string &$newReferenceNumber,
@@ -409,7 +409,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional invoice document (reference to preceding invoice)
@@ -431,13 +431,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional project reference
@@ -458,12 +458,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProjectReference(
         ?string &$newReferenceNumber,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional ultimate customer order reference
@@ -484,12 +484,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Ultimate customer order number
      * @param  null|DateTimeInterface $newReferenceDate   Ultimate customer order date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateCustomerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional despatch advice reference
@@ -510,12 +510,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentDespatchAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional receiving advice reference
@@ -536,12 +536,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentReceivingAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional delivery note reference
@@ -562,32 +562,32 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentDeliveryNoteReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Get the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate Actual delivery date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self;
+    ): static;
 
     /**
      * Get the identifier assigned by the buyer and used for internal routing
      *
      * @param  null|string $newBuyerReference An identifier assigned by the buyer and used for internal routing
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerReference(
         ?string &$newBuyerReference
-    ): self;
+    ): static;
 
     // endregion
 
@@ -597,11 +597,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the seller/supplier party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the seller/supplier party
@@ -621,11 +621,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the seller/supplier party
@@ -646,12 +646,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the seller/supplier party
@@ -672,12 +672,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the seller/supplier party
@@ -703,7 +703,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerAddress(
         ?string &$newAddressLine1,
@@ -713,7 +713,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the seller/supplier party
@@ -735,13 +735,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the seller/supplier party
@@ -765,7 +765,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerContact(
         ?string &$newPersonName,
@@ -773,7 +773,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the seller/supplier party
@@ -794,12 +794,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSellerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -809,11 +809,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the buyer/customer party
@@ -833,11 +833,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the buyer/customer party
@@ -858,12 +858,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the buyer/customer party
@@ -884,12 +884,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the buyer/customer party
@@ -915,7 +915,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerAddress(
         ?string &$newAddressLine1,
@@ -925,7 +925,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the buyer/customer party
@@ -947,13 +947,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the buyer/customer party
@@ -977,7 +977,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerContact(
         ?string &$newPersonName,
@@ -985,7 +985,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the buyer/customer party
@@ -1006,12 +1006,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentBuyerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -1021,11 +1021,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the tax representative party
@@ -1045,11 +1045,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the tax representative party
@@ -1070,12 +1070,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the tax representative party
@@ -1096,12 +1096,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the tax representative party
@@ -1127,7 +1127,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeAddress(
         ?string &$newAddressLine1,
@@ -1137,7 +1137,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the tax representative party
@@ -1159,13 +1159,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the tax representative party
@@ -1189,7 +1189,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeContact(
         ?string &$newPersonName,
@@ -1197,7 +1197,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the tax representative party
@@ -1218,12 +1218,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -1233,11 +1233,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the product end-user party
@@ -1257,11 +1257,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the product end-user party
@@ -1282,12 +1282,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the product end-user party
@@ -1308,12 +1308,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the product end-user party
@@ -1339,7 +1339,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserAddress(
         ?string &$newAddressLine1,
@@ -1349,7 +1349,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the product end-user party
@@ -1371,13 +1371,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the product end-user party
@@ -1401,7 +1401,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserContact(
         ?string &$newPersonName,
@@ -1409,7 +1409,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the product end-user party
@@ -1430,12 +1430,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentProductEndUserCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -1445,11 +1445,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Ship-To party
@@ -1469,11 +1469,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the Ship-To party
@@ -1494,12 +1494,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the Ship-To party
@@ -1520,12 +1520,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the Ship-To party
@@ -1551,7 +1551,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToAddress(
         ?string &$newAddressLine1,
@@ -1561,7 +1561,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the Ship-To party
@@ -1583,13 +1583,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the Ship-To party
@@ -1613,7 +1613,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToContact(
         ?string &$newPersonName,
@@ -1621,7 +1621,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the Ship-To party
@@ -1642,12 +1642,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -1657,11 +1657,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the ultimate Ship-To party
@@ -1681,11 +1681,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the ultimate Ship-To party
@@ -1706,12 +1706,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the ultimate Ship-To party
@@ -1732,12 +1732,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the ultimate Ship-To party
@@ -1763,7 +1763,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToAddress(
         ?string &$newAddressLine1,
@@ -1773,7 +1773,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the ultimate Ship-To party
@@ -1795,13 +1795,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the ultimate Ship-To party
@@ -1825,7 +1825,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToContact(
         ?string &$newPersonName,
@@ -1833,7 +1833,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the ultimate Ship-To party
@@ -1854,12 +1854,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -1869,11 +1869,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Ship-From party
@@ -1893,11 +1893,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the Ship-From party
@@ -1918,12 +1918,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the Ship-From party
@@ -1944,12 +1944,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the Ship-From party
@@ -1975,7 +1975,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromAddress(
         ?string &$newAddressLine1,
@@ -1985,7 +1985,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the Ship-From party
@@ -2007,13 +2007,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the Ship-From party
@@ -2037,7 +2037,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromContact(
         ?string &$newPersonName,
@@ -2045,7 +2045,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the Ship-From party
@@ -2066,12 +2066,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentShipFromCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -2081,11 +2081,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Invoicer party
@@ -2105,11 +2105,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the Invoicer party
@@ -2130,12 +2130,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the Invoicer party
@@ -2156,12 +2156,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the Invoicer party
@@ -2187,7 +2187,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerAddress(
         ?string &$newAddressLine1,
@@ -2197,7 +2197,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the Invoicer party
@@ -2219,13 +2219,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the Invoicer party
@@ -2249,7 +2249,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerContact(
         ?string &$newPersonName,
@@ -2257,7 +2257,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the Invoicer party
@@ -2278,12 +2278,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoicerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -2293,11 +2293,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Invoicee party
@@ -2317,11 +2317,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the Invoicee party
@@ -2342,12 +2342,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the Invoicee party
@@ -2368,12 +2368,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the Invoicee party
@@ -2399,7 +2399,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeAddress(
         ?string &$newAddressLine1,
@@ -2409,7 +2409,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the Invoicee party
@@ -2431,13 +2431,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the Invoicee party
@@ -2461,7 +2461,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeContact(
         ?string &$newPersonName,
@@ -2469,7 +2469,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the Invoicee party
@@ -2490,12 +2490,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentInvoiceeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -2505,11 +2505,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Payee party
@@ -2529,11 +2529,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first global ID of the Payee party
@@ -2554,12 +2554,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the Payee party
@@ -2580,12 +2580,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the Payee party
@@ -2611,7 +2611,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeAddress(
         ?string &$newAddressLine1,
@@ -2621,7 +2621,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the Payee party
@@ -2643,13 +2643,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the Payee party
@@ -2673,7 +2673,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeContact(
         ?string &$newPersonName,
@@ -2681,7 +2681,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the Payee party
@@ -2702,12 +2702,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPayeeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     // endregion
 
@@ -2741,7 +2741,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPaymentMean(
         ?string &$newTypeCode,
@@ -2755,7 +2755,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPayeeBic,
         ?string &$newPaymentReference,
         ?string &$newMandate
-    ): self;
+    ): static;
 
     /**
      * Go to the first Unique bank details of the payee or the seller
@@ -2775,11 +2775,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first payment term
@@ -2800,13 +2800,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPaymentTerm(
         ?string &$newDescription,
         ?DateTimeInterface &$newDueDate,
         ?string &$newMandate
-    ): self;
+    ): static;
 
     /**
      * Go to the first payment discount term in latest resolved payment term
@@ -2831,7 +2831,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPaymentDiscountTermsInLastPaymentTerm(
         ?float &$newBaseAmount,
@@ -2840,7 +2840,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self;
+    ): static;
 
     /**
      * Go to the first payment penalty term in latest resolved payment term
@@ -2865,7 +2865,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPaymentPenaltyTermsInLastPaymentTerm(
         ?float &$newBaseAmount,
@@ -2874,7 +2874,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self;
+    ): static;
 
     // endregion
 
@@ -2906,7 +2906,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      */
     abstract public function getDocumentTax(
         ?string &$newTaxCategory,
@@ -2918,7 +2918,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newExemptionReasonCode,
         ?DateTimeInterface &$newTaxDueDate,
         ?string &$newTaxDueCode
-    ): self;
+    ): static;
 
     // endregion
 
@@ -2950,7 +2950,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     abstract public function getDocumentAllowanceCharge(
         ?bool &$newChargeIndicator,
@@ -2962,7 +2962,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self;
+    ): static;
 
     /**
      * Go to the first Document Logistic Service Charge
@@ -2986,7 +2986,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentLogisticServiceCharge(
         ?float &$newChargeAmount,
@@ -2994,7 +2994,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newTaxCategory,
         ?string &$newTaxType,
         ?float &$newTaxPercent
-    ): self;
+    ): static;
 
     // endregion
 
@@ -3012,7 +3012,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float $newDueAmount           Payment amount due
      * @param  null|float $newPrepaidAmount       Prepayment amount
      * @param  null|float $newRoungingAmount      Rounding amount
-     * @return self
+     * @return static
      */
     abstract public function getDocumentSummation(
         ?float &$newNetAmount,
@@ -3025,7 +3025,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newDueAmount,
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
-    ): self;
+    ): static;
 
     // endregion
 
@@ -3052,14 +3052,14 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newParentPositionId     Identification of the parent position
      * @param  null|string $newLineStatusCode       Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
      * @param  null|string $newLineStatusReasonCode Type to specify whether the invoice line is
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPosition(
         ?string &$newPositionId,
         ?string &$newParentPositionId,
         ?string &$newLineStatusCode,
         ?string &$newLineStatusReasonCode
-    ): self;
+    ): static;
 
     /**
      * Go to the first text information of the latest position
@@ -3081,13 +3081,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionNote(
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self;
+    ): static;
 
     /**
      * Get product details from latest position
@@ -3105,7 +3105,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newProductBrandName          Brand name of the product
      * @param  null|string $newProductModelName          Model name of the product
      * @param  null|string $newProductOriginTradeCountry Code indicating the country the goods came from
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionProductDetails(
         ?string &$newProductId,
@@ -3121,7 +3121,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newProductBrandName,
         ?string &$newProductModelName,
         ?string &$newProductOriginTradeCountry
-    ): self;
+    ): static;
 
     /**
      * Go to the first product characteristics from latest position
@@ -3145,7 +3145,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionProductCharacteristic(
         ?string &$newProductCharacteristicDescription,
@@ -3153,7 +3153,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newProductCharacteristicType,
         ?float &$newProductCharacteristicMeasureValue,
         ?string &$newProductCharacteristicMeasureUnit
-    ): self;
+    ): static;
 
     /**
      * Go to the first product classification from latest position
@@ -3176,14 +3176,14 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionProductClassification(
         ?string &$newProductClassificationCode,
         ?string &$newProductClassificationListId,
         ?string &$newProductClassificationListVersionId,
         ?string &$newProductClassificationCodeClassname
-    ): self;
+    ): static;
 
     /**
      * Go to the first referenced product in latest position
@@ -3212,7 +3212,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionReferencedProduct(
         ?string &$newProductId,
@@ -3225,7 +3225,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newProductIndustryId,
         ?float &$newProductUnitQuantity,
         ?string &$newProductUnitQuantityUnit
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated seller's order confirmation (line reference) from latest position
@@ -3247,13 +3247,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionSellerOrderReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated buyer's order confirmation (line reference) from latest position
@@ -3275,13 +3275,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionBuyerOrderReference(
         ?string &$newReferenceNumber = null,
         ?string &$newReferenceLineNumber = null,
         ?DateTimeInterface &$newReferenceDate = null
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated quotation (line reference) from latest position
@@ -3303,13 +3303,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionQuotationReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first associated contract (line reference) from latest position
@@ -3331,13 +3331,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionContractReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to first additional associated document (line reference) from latest position
@@ -3363,7 +3363,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string                 $newReferenceTypeCode       Additional document reference-type code
      * @param  null|string                 $newDescription             Additional document description
      * @param  null|InvoiceSuiteAttachment &$newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionAdditionalReference(
         ?string &$newReferenceNumber,
@@ -3373,7 +3373,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self;
+    ): static;
 
     /**
      * Go to the first an additional ultimate customer order reference (line reference) from latest position
@@ -3395,13 +3395,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateCustomerOrderReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional despatch advice reference (line reference) from latest position
@@ -3423,13 +3423,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionDespatchAdviceReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional receiving advice reference (line reference) from latest position
@@ -3451,13 +3451,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionReceivingAdviceReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional delivery note reference (line reference) from latest position
@@ -3479,13 +3479,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionDeliveryNoteReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first additional invoice document (reference to preceding invoice) (line reference) from latest position
@@ -3508,14 +3508,14 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionInvoiceReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self;
+    ): static;
 
     /**
      * Returns true if a gross price was specified
@@ -3530,13 +3530,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float  $newGrossPrice                  Unit price excluding sales tax before deduction of the discount on the item price
      * @param  null|float  $newGrossPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionGrossPrice(
         ?float &$newGrossPrice,
         ?float &$newGrossPriceBasisQuantity,
         ?string &$newGrossPriceBasisQuantityUnit
-    ): self;
+    ): static;
 
     /**
      * Go to the first discount or charge from the gross price from latest position
@@ -3561,7 +3561,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionGrossPriceAllowanceCharge(
         ?float &$newGrossPriceAllowanceChargeAmount,
@@ -3570,7 +3570,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newGrossPriceAllowanceChargeBasisAmount,
         ?string &$newGrossPriceAllowanceChargeReason,
         ?string &$newGrossPriceAllowanceChargeReasonCode
-    ): self;
+    ): static;
 
     /**
      * Returns true if a net price was specified
@@ -3585,13 +3585,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float  $newNetPrice                  Unit price excluding sales tax after deduction of the discount on the item price
      * @param  null|float  $newNetPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionNetPrice(
         ?float &$newNetPrice,
         ?float &$newNetPriceBasisQuantity,
         ?string &$newNetPriceBasisQuantityUnit
-    ): self;
+    ): static;
 
     /**
      * Get the position's net price included tax from latest position
@@ -3602,7 +3602,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionNetPriceTax(
         ?string &$newTaxCategory,
@@ -3611,7 +3611,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode
-    ): self;
+    ): static;
 
     /**
      * Get the position's quantities from latest position
@@ -3622,7 +3622,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newChargeFreeQuantityUnit Charge Free quantity unit
      * @param  null|float  $newPackageQuantity        Package quantity
      * @param  null|string $newPackageQuantityUnit    Package quantity unit
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionQuantities(
         ?float &$newQuantity,
@@ -3631,17 +3631,17 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newChargeFreeQuantityUnit,
         ?float &$newPackageQuantity,
         ?string &$newPackageQuantityUnit
-    ): self;
+    ): static;
 
     /**
      * Get the name of the Ship-To party from latest position
      *
      * @param  string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Ship-To party from latest position
@@ -3661,11 +3661,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the Ship-To party from latest position
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the Ship-To party from latest position
@@ -3686,12 +3686,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the Ship-To party from latest position
@@ -3712,12 +3712,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the Ship-To party from latest position
@@ -3743,7 +3743,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToAddress(
         ?string &$newAddressLine1,
@@ -3753,7 +3753,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the Ship-To party from latest position
@@ -3775,13 +3775,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the Ship-To party from latest position
@@ -3805,7 +3805,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToContact(
         ?string &$newPersonName,
@@ -3813,7 +3813,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the Ship-To party from latest position
@@ -3834,22 +3834,22 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     /**
      * Get the name of the ultimate Ship-To party from latest position
      *
      * @param  string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToName(
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the ultimate Ship-To party from latest position
@@ -3869,11 +3869,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * Get the ID of the ultimate Ship-To party from latest position
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToId(
         ?string &$newId
-    ): self;
+    ): static;
 
     /**
      * Go to the first ID of the ultimate Ship-To party from latest position
@@ -3894,12 +3894,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self;
+    ): static;
 
     /**
      * Go to the first Tax Registration of the ultimate Ship-To party from latest position
@@ -3920,12 +3920,12 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self;
+    ): static;
 
     /**
      * Go to the first address of the ultimate Ship-To party from latest position
@@ -3951,7 +3951,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToAddress(
         ?string &$newAddressLine1,
@@ -3961,7 +3961,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self;
+    ): static;
 
     /**
      * Go to the first the legal information of the ultimate Ship-To party from latest position
@@ -3983,13 +3983,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self;
+    ): static;
 
     /**
      * Go to the first contact information of the ultimate Ship-To party from latest position
@@ -4013,7 +4013,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToContact(
         ?string &$newPersonName,
@@ -4021,7 +4021,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self;
+    ): static;
 
     /**
      * Go to the first communication information of the ultimate Ship-To party from latest position
@@ -4042,22 +4042,22 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self;
+    ): static;
 
     /**
      * Get the date of the delivery from latest position
      *
      * @param  null|DateTimeInterface $newDate
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self;
+    ): static;
 
     /**
      * Go to the first billing period
@@ -4079,13 +4079,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionBillingPeriod(
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self;
+    ): static;
 
     /**
      * Go to the first position's tax information from latest position
@@ -4110,7 +4110,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionTax(
         ?string &$newTaxCategory,
@@ -4119,7 +4119,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode,
-    ): self;
+    ): static;
 
     /**
      * Go to the first Document position Allowance/Charge from latest position
@@ -4144,7 +4144,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionAllowanceCharge(
         ?bool &$newChargeIndicator,
@@ -4153,7 +4153,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self;
+    ): static;
 
     /**
      * Returns true if a position summation exists
@@ -4170,7 +4170,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  null|float $newDiscountTotalAmount Sum of the discounts
      * @param  null|float $newTaxTotalAmount      Total amount of the line (in the invoice currency)
      * @param  null|float $newGrossAmount         Total invoice line amount including sales tax
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionSummation(
         ?float &$newNetAmount,
@@ -4178,7 +4178,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newDiscountTotalAmount,
         ?float &$newTaxTotalAmount,
         ?float &$newGrossAmount
-    ): self;
+    ): static;
 
     /**
      * Go to the first posting reference from latest position
@@ -4199,21 +4199,21 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
     abstract public function getDocumentPositionPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self;
+    ): static;
 
     /**
      * Read from XML content
      *
      * @param  string                                   $fromContent
      * @throws RuntimeException
-     * @return InvoiceSuiteAbstractDocumentFormatReader
+     * @return static
      */
-    protected function deserializeFromXmlContent(string $fromContent): self
+    protected function deserializeFromXmlContent(string $fromContent): static
     {
         $this->deserializeFromContentByContentType($fromContent, InvoiceSuiteContentTypeResolver::XML);
 
@@ -4225,9 +4225,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param  string                                   $fromContent
      * @throws RuntimeException
-     * @return InvoiceSuiteAbstractDocumentFormatReader
+     * @return static
      */
-    protected function deserializeFromJsonContent(string $fromContent): self
+    protected function deserializeFromJsonContent(string $fromContent): static
     {
         $this->deserializeFromContentByContentType($fromContent, InvoiceSuiteContentTypeResolver::JSON);
 
@@ -4240,9 +4240,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @param  string                                   $fromContent
      * @param  string                                   $contentType
      * @throws RuntimeException
-     * @return InvoiceSuiteAbstractDocumentFormatReader
+     * @return static
      */
-    protected function deserializeFromContentByContentType(string $fromContent, string $contentType): self
+    protected function deserializeFromContentByContentType(string $fromContent, string $contentType): static
     {
         $this->setDocumentRootObject(
             $this->documentSerializer->deserialize(

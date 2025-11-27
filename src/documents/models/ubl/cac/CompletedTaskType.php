@@ -114,9 +114,9 @@ class CompletedTaskType
 
     /**
      * @param AnnualAverageAmount|null $annualAverageAmount
-     * @return self
+     * @return static
      */
-    public function setAnnualAverageAmount(?AnnualAverageAmount $annualAverageAmount = null): self
+    public function setAnnualAverageAmount(?AnnualAverageAmount $annualAverageAmount = null): static
     {
         $this->annualAverageAmount = $annualAverageAmount;
 
@@ -124,9 +124,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAnnualAverageAmount(): self
+    public function unsetAnnualAverageAmount(): static
     {
         $this->annualAverageAmount = null;
 
@@ -153,9 +153,9 @@ class CompletedTaskType
 
     /**
      * @param TotalTaskAmount|null $totalTaskAmount
-     * @return self
+     * @return static
      */
-    public function setTotalTaskAmount(?TotalTaskAmount $totalTaskAmount = null): self
+    public function setTotalTaskAmount(?TotalTaskAmount $totalTaskAmount = null): static
     {
         $this->totalTaskAmount = $totalTaskAmount;
 
@@ -163,9 +163,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalTaskAmount(): self
+    public function unsetTotalTaskAmount(): static
     {
         $this->totalTaskAmount = null;
 
@@ -192,9 +192,9 @@ class CompletedTaskType
 
     /**
      * @param PartyCapacityAmount|null $partyCapacityAmount
-     * @return self
+     * @return static
      */
-    public function setPartyCapacityAmount(?PartyCapacityAmount $partyCapacityAmount = null): self
+    public function setPartyCapacityAmount(?PartyCapacityAmount $partyCapacityAmount = null): static
     {
         $this->partyCapacityAmount = $partyCapacityAmount;
 
@@ -202,9 +202,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyCapacityAmount(): self
+    public function unsetPartyCapacityAmount(): static
     {
         $this->partyCapacityAmount = null;
 
@@ -221,9 +221,9 @@ class CompletedTaskType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -231,9 +231,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -241,9 +241,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -282,9 +282,9 @@ class CompletedTaskType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -303,9 +303,9 @@ class CompletedTaskType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -342,9 +342,9 @@ class CompletedTaskType
 
     /**
      * @param array<EvidenceSupplied>|null $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function setEvidenceSupplied(?array $evidenceSupplied = null): self
+    public function setEvidenceSupplied(?array $evidenceSupplied = null): static
     {
         $this->evidenceSupplied = $evidenceSupplied;
 
@@ -352,9 +352,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvidenceSupplied(): self
+    public function unsetEvidenceSupplied(): static
     {
         $this->evidenceSupplied = null;
 
@@ -362,9 +362,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEvidenceSupplied(): self
+    public function clearEvidenceSupplied(): static
     {
         $this->evidenceSupplied = [];
 
@@ -403,9 +403,9 @@ class CompletedTaskType
 
     /**
      * @param EvidenceSupplied $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
+    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
     {
         $this->evidenceSupplied[] = $evidenceSupplied;
 
@@ -424,9 +424,9 @@ class CompletedTaskType
 
     /**
      * @param EvidenceSupplied $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
+    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
     {
         if (!is_array($this->evidenceSupplied)) {
             $this->evidenceSupplied = [];
@@ -473,9 +473,9 @@ class CompletedTaskType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -483,9 +483,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 
@@ -512,9 +512,9 @@ class CompletedTaskType
 
     /**
      * @param RecipientCustomerParty|null $recipientCustomerParty
-     * @return self
+     * @return static
      */
-    public function setRecipientCustomerParty(?RecipientCustomerParty $recipientCustomerParty = null): self
+    public function setRecipientCustomerParty(?RecipientCustomerParty $recipientCustomerParty = null): static
     {
         $this->recipientCustomerParty = $recipientCustomerParty;
 
@@ -522,9 +522,9 @@ class CompletedTaskType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRecipientCustomerParty(): self
+    public function unsetRecipientCustomerParty(): static
     {
         $this->recipientCustomerParty = null;
 

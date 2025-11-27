@@ -66,9 +66,9 @@ class FinancialInstitutionType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -76,9 +76,9 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -105,9 +105,9 @@ class FinancialInstitutionType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -115,9 +115,9 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -144,9 +144,9 @@ class FinancialInstitutionType
 
     /**
      * @param Address|null $address
-     * @return self
+     * @return static
      */
-    public function setAddress(?Address $address = null): self
+    public function setAddress(?Address $address = null): static
     {
         $this->address = $address;
 
@@ -154,9 +154,9 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAddress(): self
+    public function unsetAddress(): static
     {
         $this->address = null;
 

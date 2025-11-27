@@ -78,9 +78,9 @@ class EnergyTaxReportType
 
     /**
      * @param TaxEnergyAmount|null $taxEnergyAmount
-     * @return self
+     * @return static
      */
-    public function setTaxEnergyAmount(?TaxEnergyAmount $taxEnergyAmount = null): self
+    public function setTaxEnergyAmount(?TaxEnergyAmount $taxEnergyAmount = null): static
     {
         $this->taxEnergyAmount = $taxEnergyAmount;
 
@@ -88,9 +88,9 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxEnergyAmount(): self
+    public function unsetTaxEnergyAmount(): static
     {
         $this->taxEnergyAmount = null;
 
@@ -117,9 +117,9 @@ class EnergyTaxReportType
 
     /**
      * @param TaxEnergyOnAccountAmount|null $taxEnergyOnAccountAmount
-     * @return self
+     * @return static
      */
-    public function setTaxEnergyOnAccountAmount(?TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount = null): self
+    public function setTaxEnergyOnAccountAmount(?TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount = null): static
     {
         $this->taxEnergyOnAccountAmount = $taxEnergyOnAccountAmount;
 
@@ -127,9 +127,9 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxEnergyOnAccountAmount(): self
+    public function unsetTaxEnergyOnAccountAmount(): static
     {
         $this->taxEnergyOnAccountAmount = null;
 
@@ -156,9 +156,9 @@ class EnergyTaxReportType
 
     /**
      * @param TaxEnergyBalanceAmount|null $taxEnergyBalanceAmount
-     * @return self
+     * @return static
      */
-    public function setTaxEnergyBalanceAmount(?TaxEnergyBalanceAmount $taxEnergyBalanceAmount = null): self
+    public function setTaxEnergyBalanceAmount(?TaxEnergyBalanceAmount $taxEnergyBalanceAmount = null): static
     {
         $this->taxEnergyBalanceAmount = $taxEnergyBalanceAmount;
 
@@ -166,9 +166,9 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxEnergyBalanceAmount(): self
+    public function unsetTaxEnergyBalanceAmount(): static
     {
         $this->taxEnergyBalanceAmount = null;
 
@@ -195,9 +195,9 @@ class EnergyTaxReportType
 
     /**
      * @param TaxScheme|null $taxScheme
-     * @return self
+     * @return static
      */
-    public function setTaxScheme(?TaxScheme $taxScheme = null): self
+    public function setTaxScheme(?TaxScheme $taxScheme = null): static
     {
         $this->taxScheme = $taxScheme;
 
@@ -205,9 +205,9 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxScheme(): self
+    public function unsetTaxScheme(): static
     {
         $this->taxScheme = null;
 

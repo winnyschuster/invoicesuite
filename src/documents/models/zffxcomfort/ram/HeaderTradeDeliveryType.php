@@ -75,9 +75,9 @@ class HeaderTradeDeliveryType
 
     /**
      * @param TradePartyType|null $shipToTradeParty
-     * @return self
+     * @return static
      */
-    public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): self
+    public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): static
     {
         $this->shipToTradeParty = $shipToTradeParty;
 
@@ -85,9 +85,9 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipToTradeParty(): self
+    public function unsetShipToTradeParty(): static
     {
         $this->shipToTradeParty = null;
 
@@ -114,20 +114,20 @@ class HeaderTradeDeliveryType
 
     /**
      * @param SupplyChainEventType|null $actualDeliverySupplyChainEvent
-     * @return self
+     * @return static
      */
     public function setActualDeliverySupplyChainEvent(
         ?SupplyChainEventType $actualDeliverySupplyChainEvent = null,
-    ): self {
+    ): static {
         $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualDeliverySupplyChainEvent(): self
+    public function unsetActualDeliverySupplyChainEvent(): static
     {
         $this->actualDeliverySupplyChainEvent = null;
 
@@ -154,20 +154,20 @@ class HeaderTradeDeliveryType
 
     /**
      * @param ReferencedDocumentType|null $despatchAdviceReferencedDocument
-     * @return self
+     * @return static
      */
     public function setDespatchAdviceReferencedDocument(
         ?ReferencedDocumentType $despatchAdviceReferencedDocument = null,
-    ): self {
+    ): static {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatchAdviceReferencedDocument(): self
+    public function unsetDespatchAdviceReferencedDocument(): static
     {
         $this->despatchAdviceReferencedDocument = null;
 
@@ -194,20 +194,20 @@ class HeaderTradeDeliveryType
 
     /**
      * @param ReferencedDocumentType|null $receivingAdviceReferencedDocument
-     * @return self
+     * @return static
      */
     public function setReceivingAdviceReferencedDocument(
         ?ReferencedDocumentType $receivingAdviceReferencedDocument = null,
-    ): self {
+    ): static {
         $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivingAdviceReferencedDocument(): self
+    public function unsetReceivingAdviceReferencedDocument(): static
     {
         $this->receivingAdviceReferencedDocument = null;
 

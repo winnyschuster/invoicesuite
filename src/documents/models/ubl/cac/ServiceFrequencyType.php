@@ -43,9 +43,9 @@ class ServiceFrequencyType
 
     /**
      * @param WeekDayCode|null $weekDayCode
-     * @return self
+     * @return static
      */
-    public function setWeekDayCode(?WeekDayCode $weekDayCode = null): self
+    public function setWeekDayCode(?WeekDayCode $weekDayCode = null): static
     {
         $this->weekDayCode = $weekDayCode;
 
@@ -53,9 +53,9 @@ class ServiceFrequencyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWeekDayCode(): self
+    public function unsetWeekDayCode(): static
     {
         $this->weekDayCode = null;
 

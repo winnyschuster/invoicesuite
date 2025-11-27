@@ -43,9 +43,9 @@ class TradeAddressType
 
     /**
      * @param CountryIDType|null $countryID
-     * @return self
+     * @return static
      */
-    public function setCountryID(?CountryIDType $countryID = null): self
+    public function setCountryID(?CountryIDType $countryID = null): static
     {
         $this->countryID = $countryID;
 
@@ -53,9 +53,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountryID(): self
+    public function unsetCountryID(): static
     {
         $this->countryID = null;
 

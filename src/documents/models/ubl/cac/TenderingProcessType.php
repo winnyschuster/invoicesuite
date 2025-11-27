@@ -300,9 +300,9 @@ class TenderingProcessType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -310,9 +310,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -339,20 +339,20 @@ class TenderingProcessType
 
     /**
      * @param OriginalContractingSystemID|null $originalContractingSystemID
-     * @return self
+     * @return static
      */
     public function setOriginalContractingSystemID(
         ?OriginalContractingSystemID $originalContractingSystemID = null,
-    ): self {
+    ): static {
         $this->originalContractingSystemID = $originalContractingSystemID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginalContractingSystemID(): self
+    public function unsetOriginalContractingSystemID(): static
     {
         $this->originalContractingSystemID = null;
 
@@ -369,9 +369,9 @@ class TenderingProcessType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -379,9 +379,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -389,9 +389,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -430,9 +430,9 @@ class TenderingProcessType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -451,9 +451,9 @@ class TenderingProcessType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -490,9 +490,9 @@ class TenderingProcessType
 
     /**
      * @param array<NegotiationDescription>|null $negotiationDescription
-     * @return self
+     * @return static
      */
-    public function setNegotiationDescription(?array $negotiationDescription = null): self
+    public function setNegotiationDescription(?array $negotiationDescription = null): static
     {
         $this->negotiationDescription = $negotiationDescription;
 
@@ -500,9 +500,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNegotiationDescription(): self
+    public function unsetNegotiationDescription(): static
     {
         $this->negotiationDescription = null;
 
@@ -510,9 +510,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNegotiationDescription(): self
+    public function clearNegotiationDescription(): static
     {
         $this->negotiationDescription = [];
 
@@ -551,9 +551,9 @@ class TenderingProcessType
 
     /**
      * @param NegotiationDescription $negotiationDescription
-     * @return self
+     * @return static
      */
-    public function addToNegotiationDescription(NegotiationDescription $negotiationDescription): self
+    public function addToNegotiationDescription(NegotiationDescription $negotiationDescription): static
     {
         $this->negotiationDescription[] = $negotiationDescription;
 
@@ -572,9 +572,9 @@ class TenderingProcessType
 
     /**
      * @param NegotiationDescription $negotiationDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToNegotiationDescription(NegotiationDescription $negotiationDescription): self
+    public function addOnceToNegotiationDescription(NegotiationDescription $negotiationDescription): static
     {
         if (!is_array($this->negotiationDescription)) {
             $this->negotiationDescription = [];
@@ -621,9 +621,9 @@ class TenderingProcessType
 
     /**
      * @param ProcedureCode|null $procedureCode
-     * @return self
+     * @return static
      */
-    public function setProcedureCode(?ProcedureCode $procedureCode = null): self
+    public function setProcedureCode(?ProcedureCode $procedureCode = null): static
     {
         $this->procedureCode = $procedureCode;
 
@@ -631,9 +631,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcedureCode(): self
+    public function unsetProcedureCode(): static
     {
         $this->procedureCode = null;
 
@@ -660,9 +660,9 @@ class TenderingProcessType
 
     /**
      * @param UrgencyCode|null $urgencyCode
-     * @return self
+     * @return static
      */
-    public function setUrgencyCode(?UrgencyCode $urgencyCode = null): self
+    public function setUrgencyCode(?UrgencyCode $urgencyCode = null): static
     {
         $this->urgencyCode = $urgencyCode;
 
@@ -670,9 +670,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUrgencyCode(): self
+    public function unsetUrgencyCode(): static
     {
         $this->urgencyCode = null;
 
@@ -699,9 +699,9 @@ class TenderingProcessType
 
     /**
      * @param ExpenseCode|null $expenseCode
-     * @return self
+     * @return static
      */
-    public function setExpenseCode(?ExpenseCode $expenseCode = null): self
+    public function setExpenseCode(?ExpenseCode $expenseCode = null): static
     {
         $this->expenseCode = $expenseCode;
 
@@ -709,9 +709,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpenseCode(): self
+    public function unsetExpenseCode(): static
     {
         $this->expenseCode = null;
 
@@ -738,9 +738,9 @@ class TenderingProcessType
 
     /**
      * @param PartPresentationCode|null $partPresentationCode
-     * @return self
+     * @return static
      */
-    public function setPartPresentationCode(?PartPresentationCode $partPresentationCode = null): self
+    public function setPartPresentationCode(?PartPresentationCode $partPresentationCode = null): static
     {
         $this->partPresentationCode = $partPresentationCode;
 
@@ -748,9 +748,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartPresentationCode(): self
+    public function unsetPartPresentationCode(): static
     {
         $this->partPresentationCode = null;
 
@@ -777,9 +777,9 @@ class TenderingProcessType
 
     /**
      * @param ContractingSystemCode|null $contractingSystemCode
-     * @return self
+     * @return static
      */
-    public function setContractingSystemCode(?ContractingSystemCode $contractingSystemCode = null): self
+    public function setContractingSystemCode(?ContractingSystemCode $contractingSystemCode = null): static
     {
         $this->contractingSystemCode = $contractingSystemCode;
 
@@ -787,9 +787,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractingSystemCode(): self
+    public function unsetContractingSystemCode(): static
     {
         $this->contractingSystemCode = null;
 
@@ -816,9 +816,9 @@ class TenderingProcessType
 
     /**
      * @param SubmissionMethodCode|null $submissionMethodCode
-     * @return self
+     * @return static
      */
-    public function setSubmissionMethodCode(?SubmissionMethodCode $submissionMethodCode = null): self
+    public function setSubmissionMethodCode(?SubmissionMethodCode $submissionMethodCode = null): static
     {
         $this->submissionMethodCode = $submissionMethodCode;
 
@@ -826,9 +826,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubmissionMethodCode(): self
+    public function unsetSubmissionMethodCode(): static
     {
         $this->submissionMethodCode = null;
 
@@ -845,20 +845,20 @@ class TenderingProcessType
 
     /**
      * @param bool|null $candidateReductionConstraintIndicator
-     * @return self
+     * @return static
      */
     public function setCandidateReductionConstraintIndicator(
         ?bool $candidateReductionConstraintIndicator = null,
-    ): self {
+    ): static {
         $this->candidateReductionConstraintIndicator = $candidateReductionConstraintIndicator;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCandidateReductionConstraintIndicator(): self
+    public function unsetCandidateReductionConstraintIndicator(): static
     {
         $this->candidateReductionConstraintIndicator = null;
 
@@ -875,20 +875,20 @@ class TenderingProcessType
 
     /**
      * @param bool|null $governmentAgreementConstraintIndicator
-     * @return self
+     * @return static
      */
     public function setGovernmentAgreementConstraintIndicator(
         ?bool $governmentAgreementConstraintIndicator = null,
-    ): self {
+    ): static {
         $this->governmentAgreementConstraintIndicator = $governmentAgreementConstraintIndicator;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGovernmentAgreementConstraintIndicator(): self
+    public function unsetGovernmentAgreementConstraintIndicator(): static
     {
         $this->governmentAgreementConstraintIndicator = null;
 
@@ -915,20 +915,20 @@ class TenderingProcessType
 
     /**
      * @param DocumentAvailabilityPeriod|null $documentAvailabilityPeriod
-     * @return self
+     * @return static
      */
     public function setDocumentAvailabilityPeriod(
         ?DocumentAvailabilityPeriod $documentAvailabilityPeriod = null,
-    ): self {
+    ): static {
         $this->documentAvailabilityPeriod = $documentAvailabilityPeriod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentAvailabilityPeriod(): self
+    public function unsetDocumentAvailabilityPeriod(): static
     {
         $this->documentAvailabilityPeriod = null;
 
@@ -955,20 +955,20 @@ class TenderingProcessType
 
     /**
      * @param TenderSubmissionDeadlinePeriod|null $tenderSubmissionDeadlinePeriod
-     * @return self
+     * @return static
      */
     public function setTenderSubmissionDeadlinePeriod(
         ?TenderSubmissionDeadlinePeriod $tenderSubmissionDeadlinePeriod = null,
-    ): self {
+    ): static {
         $this->tenderSubmissionDeadlinePeriod = $tenderSubmissionDeadlinePeriod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderSubmissionDeadlinePeriod(): self
+    public function unsetTenderSubmissionDeadlinePeriod(): static
     {
         $this->tenderSubmissionDeadlinePeriod = null;
 
@@ -995,20 +995,20 @@ class TenderingProcessType
 
     /**
      * @param InvitationSubmissionPeriod|null $invitationSubmissionPeriod
-     * @return self
+     * @return static
      */
     public function setInvitationSubmissionPeriod(
         ?InvitationSubmissionPeriod $invitationSubmissionPeriod = null,
-    ): self {
+    ): static {
         $this->invitationSubmissionPeriod = $invitationSubmissionPeriod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvitationSubmissionPeriod(): self
+    public function unsetInvitationSubmissionPeriod(): static
     {
         $this->invitationSubmissionPeriod = null;
 
@@ -1035,20 +1035,20 @@ class TenderingProcessType
 
     /**
      * @param ParticipationRequestReceptionPeriod|null $participationRequestReceptionPeriod
-     * @return self
+     * @return static
      */
     public function setParticipationRequestReceptionPeriod(
         ?ParticipationRequestReceptionPeriod $participationRequestReceptionPeriod = null,
-    ): self {
+    ): static {
         $this->participationRequestReceptionPeriod = $participationRequestReceptionPeriod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParticipationRequestReceptionPeriod(): self
+    public function unsetParticipationRequestReceptionPeriod(): static
     {
         $this->participationRequestReceptionPeriod = null;
 
@@ -1065,9 +1065,9 @@ class TenderingProcessType
 
     /**
      * @param array<NoticeDocumentReference>|null $noticeDocumentReference
-     * @return self
+     * @return static
      */
-    public function setNoticeDocumentReference(?array $noticeDocumentReference = null): self
+    public function setNoticeDocumentReference(?array $noticeDocumentReference = null): static
     {
         $this->noticeDocumentReference = $noticeDocumentReference;
 
@@ -1075,9 +1075,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNoticeDocumentReference(): self
+    public function unsetNoticeDocumentReference(): static
     {
         $this->noticeDocumentReference = null;
 
@@ -1085,9 +1085,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNoticeDocumentReference(): self
+    public function clearNoticeDocumentReference(): static
     {
         $this->noticeDocumentReference = [];
 
@@ -1126,9 +1126,9 @@ class TenderingProcessType
 
     /**
      * @param NoticeDocumentReference $noticeDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): self
+    public function addToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): static
     {
         $this->noticeDocumentReference[] = $noticeDocumentReference;
 
@@ -1147,9 +1147,9 @@ class TenderingProcessType
 
     /**
      * @param NoticeDocumentReference $noticeDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): self
+    public function addOnceToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): static
     {
         if (!is_array($this->noticeDocumentReference)) {
             $this->noticeDocumentReference = [];
@@ -1186,9 +1186,9 @@ class TenderingProcessType
 
     /**
      * @param array<AdditionalDocumentReference>|null $additionalDocumentReference
-     * @return self
+     * @return static
      */
-    public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): self
+    public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): static
     {
         $this->additionalDocumentReference = $additionalDocumentReference;
 
@@ -1196,9 +1196,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalDocumentReference(): self
+    public function unsetAdditionalDocumentReference(): static
     {
         $this->additionalDocumentReference = null;
 
@@ -1206,9 +1206,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalDocumentReference(): self
+    public function clearAdditionalDocumentReference(): static
     {
         $this->additionalDocumentReference = [];
 
@@ -1247,9 +1247,9 @@ class TenderingProcessType
 
     /**
      * @param AdditionalDocumentReference $additionalDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): self
+    public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): static
     {
         $this->additionalDocumentReference[] = $additionalDocumentReference;
 
@@ -1268,11 +1268,11 @@ class TenderingProcessType
 
     /**
      * @param AdditionalDocumentReference $additionalDocumentReference
-     * @return self
+     * @return static
      */
     public function addOnceToAdditionalDocumentReference(
         AdditionalDocumentReference $additionalDocumentReference,
-    ): self {
+    ): static {
         if (!is_array($this->additionalDocumentReference)) {
             $this->additionalDocumentReference = [];
         }
@@ -1308,9 +1308,9 @@ class TenderingProcessType
 
     /**
      * @param array<ProcessJustification>|null $processJustification
-     * @return self
+     * @return static
      */
-    public function setProcessJustification(?array $processJustification = null): self
+    public function setProcessJustification(?array $processJustification = null): static
     {
         $this->processJustification = $processJustification;
 
@@ -1318,9 +1318,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcessJustification(): self
+    public function unsetProcessJustification(): static
     {
         $this->processJustification = null;
 
@@ -1328,9 +1328,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearProcessJustification(): self
+    public function clearProcessJustification(): static
     {
         $this->processJustification = [];
 
@@ -1369,9 +1369,9 @@ class TenderingProcessType
 
     /**
      * @param ProcessJustification $processJustification
-     * @return self
+     * @return static
      */
-    public function addToProcessJustification(ProcessJustification $processJustification): self
+    public function addToProcessJustification(ProcessJustification $processJustification): static
     {
         $this->processJustification[] = $processJustification;
 
@@ -1390,9 +1390,9 @@ class TenderingProcessType
 
     /**
      * @param ProcessJustification $processJustification
-     * @return self
+     * @return static
      */
-    public function addOnceToProcessJustification(ProcessJustification $processJustification): self
+    public function addOnceToProcessJustification(ProcessJustification $processJustification): static
     {
         if (!is_array($this->processJustification)) {
             $this->processJustification = [];
@@ -1439,9 +1439,9 @@ class TenderingProcessType
 
     /**
      * @param EconomicOperatorShortList|null $economicOperatorShortList
-     * @return self
+     * @return static
      */
-    public function setEconomicOperatorShortList(?EconomicOperatorShortList $economicOperatorShortList = null): self
+    public function setEconomicOperatorShortList(?EconomicOperatorShortList $economicOperatorShortList = null): static
     {
         $this->economicOperatorShortList = $economicOperatorShortList;
 
@@ -1449,9 +1449,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEconomicOperatorShortList(): self
+    public function unsetEconomicOperatorShortList(): static
     {
         $this->economicOperatorShortList = null;
 
@@ -1468,9 +1468,9 @@ class TenderingProcessType
 
     /**
      * @param array<OpenTenderEvent>|null $openTenderEvent
-     * @return self
+     * @return static
      */
-    public function setOpenTenderEvent(?array $openTenderEvent = null): self
+    public function setOpenTenderEvent(?array $openTenderEvent = null): static
     {
         $this->openTenderEvent = $openTenderEvent;
 
@@ -1478,9 +1478,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOpenTenderEvent(): self
+    public function unsetOpenTenderEvent(): static
     {
         $this->openTenderEvent = null;
 
@@ -1488,9 +1488,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOpenTenderEvent(): self
+    public function clearOpenTenderEvent(): static
     {
         $this->openTenderEvent = [];
 
@@ -1529,9 +1529,9 @@ class TenderingProcessType
 
     /**
      * @param OpenTenderEvent $openTenderEvent
-     * @return self
+     * @return static
      */
-    public function addToOpenTenderEvent(OpenTenderEvent $openTenderEvent): self
+    public function addToOpenTenderEvent(OpenTenderEvent $openTenderEvent): static
     {
         $this->openTenderEvent[] = $openTenderEvent;
 
@@ -1550,9 +1550,9 @@ class TenderingProcessType
 
     /**
      * @param OpenTenderEvent $openTenderEvent
-     * @return self
+     * @return static
      */
-    public function addOnceToOpenTenderEvent(OpenTenderEvent $openTenderEvent): self
+    public function addOnceToOpenTenderEvent(OpenTenderEvent $openTenderEvent): static
     {
         if (!is_array($this->openTenderEvent)) {
             $this->openTenderEvent = [];
@@ -1599,9 +1599,9 @@ class TenderingProcessType
 
     /**
      * @param AuctionTerms|null $auctionTerms
-     * @return self
+     * @return static
      */
-    public function setAuctionTerms(?AuctionTerms $auctionTerms = null): self
+    public function setAuctionTerms(?AuctionTerms $auctionTerms = null): static
     {
         $this->auctionTerms = $auctionTerms;
 
@@ -1609,9 +1609,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAuctionTerms(): self
+    public function unsetAuctionTerms(): static
     {
         $this->auctionTerms = null;
 
@@ -1638,9 +1638,9 @@ class TenderingProcessType
 
     /**
      * @param FrameworkAgreement|null $frameworkAgreement
-     * @return self
+     * @return static
      */
-    public function setFrameworkAgreement(?FrameworkAgreement $frameworkAgreement = null): self
+    public function setFrameworkAgreement(?FrameworkAgreement $frameworkAgreement = null): static
     {
         $this->frameworkAgreement = $frameworkAgreement;
 
@@ -1648,9 +1648,9 @@ class TenderingProcessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFrameworkAgreement(): self
+    public function unsetFrameworkAgreement(): static
     {
         $this->frameworkAgreement = null;
 

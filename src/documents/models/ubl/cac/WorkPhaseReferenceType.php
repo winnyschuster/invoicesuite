@@ -115,9 +115,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -125,9 +125,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -154,9 +154,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param WorkPhaseCode|null $workPhaseCode
-     * @return self
+     * @return static
      */
-    public function setWorkPhaseCode(?WorkPhaseCode $workPhaseCode = null): self
+    public function setWorkPhaseCode(?WorkPhaseCode $workPhaseCode = null): static
     {
         $this->workPhaseCode = $workPhaseCode;
 
@@ -164,9 +164,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWorkPhaseCode(): self
+    public function unsetWorkPhaseCode(): static
     {
         $this->workPhaseCode = null;
 
@@ -183,9 +183,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param array<WorkPhase>|null $workPhase
-     * @return self
+     * @return static
      */
-    public function setWorkPhase(?array $workPhase = null): self
+    public function setWorkPhase(?array $workPhase = null): static
     {
         $this->workPhase = $workPhase;
 
@@ -193,9 +193,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWorkPhase(): self
+    public function unsetWorkPhase(): static
     {
         $this->workPhase = null;
 
@@ -203,9 +203,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearWorkPhase(): self
+    public function clearWorkPhase(): static
     {
         $this->workPhase = [];
 
@@ -244,9 +244,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param WorkPhase $workPhase
-     * @return self
+     * @return static
      */
-    public function addToWorkPhase(WorkPhase $workPhase): self
+    public function addToWorkPhase(WorkPhase $workPhase): static
     {
         $this->workPhase[] = $workPhase;
 
@@ -265,9 +265,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param WorkPhase $workPhase
-     * @return self
+     * @return static
      */
-    public function addOnceToWorkPhase(WorkPhase $workPhase): self
+    public function addOnceToWorkPhase(WorkPhase $workPhase): static
     {
         if (!is_array($this->workPhase)) {
             $this->workPhase = [];
@@ -314,9 +314,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param ProgressPercent|null $progressPercent
-     * @return self
+     * @return static
      */
-    public function setProgressPercent(?ProgressPercent $progressPercent = null): self
+    public function setProgressPercent(?ProgressPercent $progressPercent = null): static
     {
         $this->progressPercent = $progressPercent;
 
@@ -324,9 +324,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProgressPercent(): self
+    public function unsetProgressPercent(): static
     {
         $this->progressPercent = null;
 
@@ -343,9 +343,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param DateTimeInterface|null $startDate
-     * @return self
+     * @return static
      */
-    public function setStartDate(?DateTimeInterface $startDate = null): self
+    public function setStartDate(?DateTimeInterface $startDate = null): static
     {
         $this->startDate = $startDate;
 
@@ -353,9 +353,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStartDate(): self
+    public function unsetStartDate(): static
     {
         $this->startDate = null;
 
@@ -372,9 +372,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param DateTimeInterface|null $endDate
-     * @return self
+     * @return static
      */
-    public function setEndDate(?DateTimeInterface $endDate = null): self
+    public function setEndDate(?DateTimeInterface $endDate = null): static
     {
         $this->endDate = $endDate;
 
@@ -382,9 +382,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEndDate(): self
+    public function unsetEndDate(): static
     {
         $this->endDate = null;
 
@@ -401,9 +401,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param array<WorkOrderDocumentReference>|null $workOrderDocumentReference
-     * @return self
+     * @return static
      */
-    public function setWorkOrderDocumentReference(?array $workOrderDocumentReference = null): self
+    public function setWorkOrderDocumentReference(?array $workOrderDocumentReference = null): static
     {
         $this->workOrderDocumentReference = $workOrderDocumentReference;
 
@@ -411,9 +411,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWorkOrderDocumentReference(): self
+    public function unsetWorkOrderDocumentReference(): static
     {
         $this->workOrderDocumentReference = null;
 
@@ -421,9 +421,9 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearWorkOrderDocumentReference(): self
+    public function clearWorkOrderDocumentReference(): static
     {
         $this->workOrderDocumentReference = [];
 
@@ -462,9 +462,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param WorkOrderDocumentReference $workOrderDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): self
+    public function addToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): static
     {
         $this->workOrderDocumentReference[] = $workOrderDocumentReference;
 
@@ -483,9 +483,9 @@ class WorkPhaseReferenceType
 
     /**
      * @param WorkOrderDocumentReference $workOrderDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): self
+    public function addOnceToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): static
     {
         if (!is_array($this->workOrderDocumentReference)) {
             $this->workOrderDocumentReference = [];

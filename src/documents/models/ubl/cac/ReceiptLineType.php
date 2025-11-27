@@ -272,9 +272,9 @@ class ReceiptLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -282,9 +282,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -311,9 +311,9 @@ class ReceiptLineType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -321,9 +321,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -340,9 +340,9 @@ class ReceiptLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -350,9 +350,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -360,9 +360,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -401,9 +401,9 @@ class ReceiptLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -422,9 +422,9 @@ class ReceiptLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -471,9 +471,9 @@ class ReceiptLineType
 
     /**
      * @param ReceivedQuantity|null $receivedQuantity
-     * @return self
+     * @return static
      */
-    public function setReceivedQuantity(?ReceivedQuantity $receivedQuantity = null): self
+    public function setReceivedQuantity(?ReceivedQuantity $receivedQuantity = null): static
     {
         $this->receivedQuantity = $receivedQuantity;
 
@@ -481,9 +481,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedQuantity(): self
+    public function unsetReceivedQuantity(): static
     {
         $this->receivedQuantity = null;
 
@@ -510,9 +510,9 @@ class ReceiptLineType
 
     /**
      * @param ShortQuantity|null $shortQuantity
-     * @return self
+     * @return static
      */
-    public function setShortQuantity(?ShortQuantity $shortQuantity = null): self
+    public function setShortQuantity(?ShortQuantity $shortQuantity = null): static
     {
         $this->shortQuantity = $shortQuantity;
 
@@ -520,9 +520,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShortQuantity(): self
+    public function unsetShortQuantity(): static
     {
         $this->shortQuantity = null;
 
@@ -549,9 +549,9 @@ class ReceiptLineType
 
     /**
      * @param ShortageActionCode|null $shortageActionCode
-     * @return self
+     * @return static
      */
-    public function setShortageActionCode(?ShortageActionCode $shortageActionCode = null): self
+    public function setShortageActionCode(?ShortageActionCode $shortageActionCode = null): static
     {
         $this->shortageActionCode = $shortageActionCode;
 
@@ -559,9 +559,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShortageActionCode(): self
+    public function unsetShortageActionCode(): static
     {
         $this->shortageActionCode = null;
 
@@ -588,9 +588,9 @@ class ReceiptLineType
 
     /**
      * @param RejectedQuantity|null $rejectedQuantity
-     * @return self
+     * @return static
      */
-    public function setRejectedQuantity(?RejectedQuantity $rejectedQuantity = null): self
+    public function setRejectedQuantity(?RejectedQuantity $rejectedQuantity = null): static
     {
         $this->rejectedQuantity = $rejectedQuantity;
 
@@ -598,9 +598,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRejectedQuantity(): self
+    public function unsetRejectedQuantity(): static
     {
         $this->rejectedQuantity = null;
 
@@ -627,9 +627,9 @@ class ReceiptLineType
 
     /**
      * @param RejectReasonCode|null $rejectReasonCode
-     * @return self
+     * @return static
      */
-    public function setRejectReasonCode(?RejectReasonCode $rejectReasonCode = null): self
+    public function setRejectReasonCode(?RejectReasonCode $rejectReasonCode = null): static
     {
         $this->rejectReasonCode = $rejectReasonCode;
 
@@ -637,9 +637,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRejectReasonCode(): self
+    public function unsetRejectReasonCode(): static
     {
         $this->rejectReasonCode = null;
 
@@ -656,9 +656,9 @@ class ReceiptLineType
 
     /**
      * @param array<RejectReason>|null $rejectReason
-     * @return self
+     * @return static
      */
-    public function setRejectReason(?array $rejectReason = null): self
+    public function setRejectReason(?array $rejectReason = null): static
     {
         $this->rejectReason = $rejectReason;
 
@@ -666,9 +666,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRejectReason(): self
+    public function unsetRejectReason(): static
     {
         $this->rejectReason = null;
 
@@ -676,9 +676,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRejectReason(): self
+    public function clearRejectReason(): static
     {
         $this->rejectReason = [];
 
@@ -717,9 +717,9 @@ class ReceiptLineType
 
     /**
      * @param RejectReason $rejectReason
-     * @return self
+     * @return static
      */
-    public function addToRejectReason(RejectReason $rejectReason): self
+    public function addToRejectReason(RejectReason $rejectReason): static
     {
         $this->rejectReason[] = $rejectReason;
 
@@ -738,9 +738,9 @@ class ReceiptLineType
 
     /**
      * @param RejectReason $rejectReason
-     * @return self
+     * @return static
      */
-    public function addOnceToRejectReason(RejectReason $rejectReason): self
+    public function addOnceToRejectReason(RejectReason $rejectReason): static
     {
         if (!is_array($this->rejectReason)) {
             $this->rejectReason = [];
@@ -787,9 +787,9 @@ class ReceiptLineType
 
     /**
      * @param RejectActionCode|null $rejectActionCode
-     * @return self
+     * @return static
      */
-    public function setRejectActionCode(?RejectActionCode $rejectActionCode = null): self
+    public function setRejectActionCode(?RejectActionCode $rejectActionCode = null): static
     {
         $this->rejectActionCode = $rejectActionCode;
 
@@ -797,9 +797,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRejectActionCode(): self
+    public function unsetRejectActionCode(): static
     {
         $this->rejectActionCode = null;
 
@@ -826,9 +826,9 @@ class ReceiptLineType
 
     /**
      * @param QuantityDiscrepancyCode|null $quantityDiscrepancyCode
-     * @return self
+     * @return static
      */
-    public function setQuantityDiscrepancyCode(?QuantityDiscrepancyCode $quantityDiscrepancyCode = null): self
+    public function setQuantityDiscrepancyCode(?QuantityDiscrepancyCode $quantityDiscrepancyCode = null): static
     {
         $this->quantityDiscrepancyCode = $quantityDiscrepancyCode;
 
@@ -836,9 +836,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantityDiscrepancyCode(): self
+    public function unsetQuantityDiscrepancyCode(): static
     {
         $this->quantityDiscrepancyCode = null;
 
@@ -865,9 +865,9 @@ class ReceiptLineType
 
     /**
      * @param OversupplyQuantity|null $oversupplyQuantity
-     * @return self
+     * @return static
      */
-    public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): self
+    public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): static
     {
         $this->oversupplyQuantity = $oversupplyQuantity;
 
@@ -875,9 +875,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOversupplyQuantity(): self
+    public function unsetOversupplyQuantity(): static
     {
         $this->oversupplyQuantity = null;
 
@@ -894,9 +894,9 @@ class ReceiptLineType
 
     /**
      * @param DateTimeInterface|null $receivedDate
-     * @return self
+     * @return static
      */
-    public function setReceivedDate(?DateTimeInterface $receivedDate = null): self
+    public function setReceivedDate(?DateTimeInterface $receivedDate = null): static
     {
         $this->receivedDate = $receivedDate;
 
@@ -904,9 +904,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedDate(): self
+    public function unsetReceivedDate(): static
     {
         $this->receivedDate = null;
 
@@ -933,9 +933,9 @@ class ReceiptLineType
 
     /**
      * @param TimingComplaintCode|null $timingComplaintCode
-     * @return self
+     * @return static
      */
-    public function setTimingComplaintCode(?TimingComplaintCode $timingComplaintCode = null): self
+    public function setTimingComplaintCode(?TimingComplaintCode $timingComplaintCode = null): static
     {
         $this->timingComplaintCode = $timingComplaintCode;
 
@@ -943,9 +943,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTimingComplaintCode(): self
+    public function unsetTimingComplaintCode(): static
     {
         $this->timingComplaintCode = null;
 
@@ -972,9 +972,9 @@ class ReceiptLineType
 
     /**
      * @param TimingComplaint|null $timingComplaint
-     * @return self
+     * @return static
      */
-    public function setTimingComplaint(?TimingComplaint $timingComplaint = null): self
+    public function setTimingComplaint(?TimingComplaint $timingComplaint = null): static
     {
         $this->timingComplaint = $timingComplaint;
 
@@ -982,9 +982,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTimingComplaint(): self
+    public function unsetTimingComplaint(): static
     {
         $this->timingComplaint = null;
 
@@ -1011,9 +1011,9 @@ class ReceiptLineType
 
     /**
      * @param OrderLineReference|null $orderLineReference
-     * @return self
+     * @return static
      */
-    public function setOrderLineReference(?OrderLineReference $orderLineReference = null): self
+    public function setOrderLineReference(?OrderLineReference $orderLineReference = null): static
     {
         $this->orderLineReference = $orderLineReference;
 
@@ -1021,9 +1021,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderLineReference(): self
+    public function unsetOrderLineReference(): static
     {
         $this->orderLineReference = null;
 
@@ -1040,9 +1040,9 @@ class ReceiptLineType
 
     /**
      * @param array<DespatchLineReference>|null $despatchLineReference
-     * @return self
+     * @return static
      */
-    public function setDespatchLineReference(?array $despatchLineReference = null): self
+    public function setDespatchLineReference(?array $despatchLineReference = null): static
     {
         $this->despatchLineReference = $despatchLineReference;
 
@@ -1050,9 +1050,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatchLineReference(): self
+    public function unsetDespatchLineReference(): static
     {
         $this->despatchLineReference = null;
 
@@ -1060,9 +1060,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDespatchLineReference(): self
+    public function clearDespatchLineReference(): static
     {
         $this->despatchLineReference = [];
 
@@ -1101,9 +1101,9 @@ class ReceiptLineType
 
     /**
      * @param DespatchLineReference $despatchLineReference
-     * @return self
+     * @return static
      */
-    public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): self
+    public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): static
     {
         $this->despatchLineReference[] = $despatchLineReference;
 
@@ -1122,9 +1122,9 @@ class ReceiptLineType
 
     /**
      * @param DespatchLineReference $despatchLineReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): self
+    public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): static
     {
         if (!is_array($this->despatchLineReference)) {
             $this->despatchLineReference = [];
@@ -1161,9 +1161,9 @@ class ReceiptLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -1171,9 +1171,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -1181,9 +1181,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -1222,9 +1222,9 @@ class ReceiptLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -1243,9 +1243,9 @@ class ReceiptLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -1282,9 +1282,9 @@ class ReceiptLineType
 
     /**
      * @param array<Item>|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?array $item = null): self
+    public function setItem(?array $item = null): static
     {
         $this->item = $item;
 
@@ -1292,9 +1292,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -1302,9 +1302,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearItem(): self
+    public function clearItem(): static
     {
         $this->item = [];
 
@@ -1343,9 +1343,9 @@ class ReceiptLineType
 
     /**
      * @param Item $item
-     * @return self
+     * @return static
      */
-    public function addToItem(Item $item): self
+    public function addToItem(Item $item): static
     {
         $this->item[] = $item;
 
@@ -1364,9 +1364,9 @@ class ReceiptLineType
 
     /**
      * @param Item $item
-     * @return self
+     * @return static
      */
-    public function addOnceToItem(Item $item): self
+    public function addOnceToItem(Item $item): static
     {
         if (!is_array($this->item)) {
             $this->item = [];
@@ -1403,9 +1403,9 @@ class ReceiptLineType
 
     /**
      * @param array<Shipment>|null $shipment
-     * @return self
+     * @return static
      */
-    public function setShipment(?array $shipment = null): self
+    public function setShipment(?array $shipment = null): static
     {
         $this->shipment = $shipment;
 
@@ -1413,9 +1413,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipment(): self
+    public function unsetShipment(): static
     {
         $this->shipment = null;
 
@@ -1423,9 +1423,9 @@ class ReceiptLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipment(): self
+    public function clearShipment(): static
     {
         $this->shipment = [];
 
@@ -1464,9 +1464,9 @@ class ReceiptLineType
 
     /**
      * @param Shipment $shipment
-     * @return self
+     * @return static
      */
-    public function addToShipment(Shipment $shipment): self
+    public function addToShipment(Shipment $shipment): static
     {
         $this->shipment[] = $shipment;
 
@@ -1485,9 +1485,9 @@ class ReceiptLineType
 
     /**
      * @param Shipment $shipment
-     * @return self
+     * @return static
      */
-    public function addOnceToShipment(Shipment $shipment): self
+    public function addOnceToShipment(Shipment $shipment): static
     {
         if (!is_array($this->shipment)) {
             $this->shipment = [];

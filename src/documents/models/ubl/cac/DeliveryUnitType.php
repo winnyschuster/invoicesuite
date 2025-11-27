@@ -66,9 +66,9 @@ class DeliveryUnitType
 
     /**
      * @param BatchQuantity|null $batchQuantity
-     * @return self
+     * @return static
      */
-    public function setBatchQuantity(?BatchQuantity $batchQuantity = null): self
+    public function setBatchQuantity(?BatchQuantity $batchQuantity = null): static
     {
         $this->batchQuantity = $batchQuantity;
 
@@ -76,9 +76,9 @@ class DeliveryUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBatchQuantity(): self
+    public function unsetBatchQuantity(): static
     {
         $this->batchQuantity = null;
 
@@ -105,9 +105,9 @@ class DeliveryUnitType
 
     /**
      * @param ConsumerUnitQuantity|null $consumerUnitQuantity
-     * @return self
+     * @return static
      */
-    public function setConsumerUnitQuantity(?ConsumerUnitQuantity $consumerUnitQuantity = null): self
+    public function setConsumerUnitQuantity(?ConsumerUnitQuantity $consumerUnitQuantity = null): static
     {
         $this->consumerUnitQuantity = $consumerUnitQuantity;
 
@@ -115,9 +115,9 @@ class DeliveryUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumerUnitQuantity(): self
+    public function unsetConsumerUnitQuantity(): static
     {
         $this->consumerUnitQuantity = null;
 
@@ -134,9 +134,9 @@ class DeliveryUnitType
 
     /**
      * @param bool|null $hazardousRiskIndicator
-     * @return self
+     * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): self
+    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
     {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
@@ -144,9 +144,9 @@ class DeliveryUnitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousRiskIndicator(): self
+    public function unsetHazardousRiskIndicator(): static
     {
         $this->hazardousRiskIndicator = null;
 

@@ -55,9 +55,9 @@ class MeasureType
 
     /**
      * @param float|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?float $value = null): self
+    public function setValue(?float $value = null): static
     {
         $this->value = $value;
 
@@ -65,9 +65,9 @@ class MeasureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -84,9 +84,9 @@ class MeasureType
 
     /**
      * @param string|null $unitCode
-     * @return self
+     * @return static
      */
-    public function setUnitCode(?string $unitCode = null): self
+    public function setUnitCode(?string $unitCode = null): static
     {
         $this->unitCode = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCode);
 
@@ -94,9 +94,9 @@ class MeasureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCode(): self
+    public function unsetUnitCode(): static
     {
         $this->unitCode = null;
 
@@ -113,9 +113,9 @@ class MeasureType
 
     /**
      * @param string|null $unitCodeListVersionID
-     * @return self
+     * @return static
      */
-    public function setUnitCodeListVersionID(?string $unitCodeListVersionID = null): self
+    public function setUnitCodeListVersionID(?string $unitCodeListVersionID = null): static
     {
         $this->unitCodeListVersionID = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCodeListVersionID);
 
@@ -123,9 +123,9 @@ class MeasureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCodeListVersionID(): self
+    public function unsetUnitCodeListVersionID(): static
     {
         $this->unitCodeListVersionID = null;
 

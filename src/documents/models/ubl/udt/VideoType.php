@@ -34,9 +34,9 @@ class VideoType extends BinaryObjectType
 
     /**
      * @param string|null $mimeCode
-     * @return self
+     * @return static
      */
-    public function setMimeCode(?string $mimeCode = null): self
+    public function setMimeCode(?string $mimeCode = null): static
     {
         $this->mimeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($mimeCode);
 
@@ -44,9 +44,9 @@ class VideoType extends BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMimeCode(): self
+    public function unsetMimeCode(): static
     {
         $this->mimeCode = null;
 

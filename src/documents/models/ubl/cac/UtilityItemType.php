@@ -210,9 +210,9 @@ class UtilityItemType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -220,9 +220,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -249,9 +249,9 @@ class UtilityItemType
 
     /**
      * @param SubscriberID|null $subscriberID
-     * @return self
+     * @return static
      */
-    public function setSubscriberID(?SubscriberID $subscriberID = null): self
+    public function setSubscriberID(?SubscriberID $subscriberID = null): static
     {
         $this->subscriberID = $subscriberID;
 
@@ -259,9 +259,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberID(): self
+    public function unsetSubscriberID(): static
     {
         $this->subscriberID = null;
 
@@ -288,9 +288,9 @@ class UtilityItemType
 
     /**
      * @param SubscriberType|null $subscriberType
-     * @return self
+     * @return static
      */
-    public function setSubscriberType(?SubscriberType $subscriberType = null): self
+    public function setSubscriberType(?SubscriberType $subscriberType = null): static
     {
         $this->subscriberType = $subscriberType;
 
@@ -298,9 +298,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberType(): self
+    public function unsetSubscriberType(): static
     {
         $this->subscriberType = null;
 
@@ -327,9 +327,9 @@ class UtilityItemType
 
     /**
      * @param SubscriberTypeCode|null $subscriberTypeCode
-     * @return self
+     * @return static
      */
-    public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): self
+    public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): static
     {
         $this->subscriberTypeCode = $subscriberTypeCode;
 
@@ -337,9 +337,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberTypeCode(): self
+    public function unsetSubscriberTypeCode(): static
     {
         $this->subscriberTypeCode = null;
 
@@ -356,9 +356,9 @@ class UtilityItemType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -366,9 +366,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -376,9 +376,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -417,9 +417,9 @@ class UtilityItemType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -438,9 +438,9 @@ class UtilityItemType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -487,9 +487,9 @@ class UtilityItemType
 
     /**
      * @param PackQuantity|null $packQuantity
-     * @return self
+     * @return static
      */
-    public function setPackQuantity(?PackQuantity $packQuantity = null): self
+    public function setPackQuantity(?PackQuantity $packQuantity = null): static
     {
         $this->packQuantity = $packQuantity;
 
@@ -497,9 +497,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackQuantity(): self
+    public function unsetPackQuantity(): static
     {
         $this->packQuantity = null;
 
@@ -526,9 +526,9 @@ class UtilityItemType
 
     /**
      * @param PackSizeNumeric|null $packSizeNumeric
-     * @return self
+     * @return static
      */
-    public function setPackSizeNumeric(?PackSizeNumeric $packSizeNumeric = null): self
+    public function setPackSizeNumeric(?PackSizeNumeric $packSizeNumeric = null): static
     {
         $this->packSizeNumeric = $packSizeNumeric;
 
@@ -536,9 +536,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackSizeNumeric(): self
+    public function unsetPackSizeNumeric(): static
     {
         $this->packSizeNumeric = null;
 
@@ -565,9 +565,9 @@ class UtilityItemType
 
     /**
      * @param ConsumptionType|null $consumptionType
-     * @return self
+     * @return static
      */
-    public function setConsumptionType(?ConsumptionType $consumptionType = null): self
+    public function setConsumptionType(?ConsumptionType $consumptionType = null): static
     {
         $this->consumptionType = $consumptionType;
 
@@ -575,9 +575,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionType(): self
+    public function unsetConsumptionType(): static
     {
         $this->consumptionType = null;
 
@@ -604,9 +604,9 @@ class UtilityItemType
 
     /**
      * @param ConsumptionTypeCode|null $consumptionTypeCode
-     * @return self
+     * @return static
      */
-    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): self
+    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
     {
         $this->consumptionTypeCode = $consumptionTypeCode;
 
@@ -614,9 +614,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionTypeCode(): self
+    public function unsetConsumptionTypeCode(): static
     {
         $this->consumptionTypeCode = null;
 
@@ -643,9 +643,9 @@ class UtilityItemType
 
     /**
      * @param CurrentChargeType|null $currentChargeType
-     * @return self
+     * @return static
      */
-    public function setCurrentChargeType(?CurrentChargeType $currentChargeType = null): self
+    public function setCurrentChargeType(?CurrentChargeType $currentChargeType = null): static
     {
         $this->currentChargeType = $currentChargeType;
 
@@ -653,9 +653,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrentChargeType(): self
+    public function unsetCurrentChargeType(): static
     {
         $this->currentChargeType = null;
 
@@ -682,9 +682,9 @@ class UtilityItemType
 
     /**
      * @param CurrentChargeTypeCode|null $currentChargeTypeCode
-     * @return self
+     * @return static
      */
-    public function setCurrentChargeTypeCode(?CurrentChargeTypeCode $currentChargeTypeCode = null): self
+    public function setCurrentChargeTypeCode(?CurrentChargeTypeCode $currentChargeTypeCode = null): static
     {
         $this->currentChargeTypeCode = $currentChargeTypeCode;
 
@@ -692,9 +692,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrentChargeTypeCode(): self
+    public function unsetCurrentChargeTypeCode(): static
     {
         $this->currentChargeTypeCode = null;
 
@@ -721,9 +721,9 @@ class UtilityItemType
 
     /**
      * @param OneTimeChargeType|null $oneTimeChargeType
-     * @return self
+     * @return static
      */
-    public function setOneTimeChargeType(?OneTimeChargeType $oneTimeChargeType = null): self
+    public function setOneTimeChargeType(?OneTimeChargeType $oneTimeChargeType = null): static
     {
         $this->oneTimeChargeType = $oneTimeChargeType;
 
@@ -731,9 +731,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOneTimeChargeType(): self
+    public function unsetOneTimeChargeType(): static
     {
         $this->oneTimeChargeType = null;
 
@@ -760,9 +760,9 @@ class UtilityItemType
 
     /**
      * @param OneTimeChargeTypeCode|null $oneTimeChargeTypeCode
-     * @return self
+     * @return static
      */
-    public function setOneTimeChargeTypeCode(?OneTimeChargeTypeCode $oneTimeChargeTypeCode = null): self
+    public function setOneTimeChargeTypeCode(?OneTimeChargeTypeCode $oneTimeChargeTypeCode = null): static
     {
         $this->oneTimeChargeTypeCode = $oneTimeChargeTypeCode;
 
@@ -770,9 +770,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOneTimeChargeTypeCode(): self
+    public function unsetOneTimeChargeTypeCode(): static
     {
         $this->oneTimeChargeTypeCode = null;
 
@@ -799,9 +799,9 @@ class UtilityItemType
 
     /**
      * @param TaxCategory|null $taxCategory
-     * @return self
+     * @return static
      */
-    public function setTaxCategory(?TaxCategory $taxCategory = null): self
+    public function setTaxCategory(?TaxCategory $taxCategory = null): static
     {
         $this->taxCategory = $taxCategory;
 
@@ -809,9 +809,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxCategory(): self
+    public function unsetTaxCategory(): static
     {
         $this->taxCategory = null;
 
@@ -838,9 +838,9 @@ class UtilityItemType
 
     /**
      * @param Contract|null $contract
-     * @return self
+     * @return static
      */
-    public function setContract(?Contract $contract = null): self
+    public function setContract(?Contract $contract = null): static
     {
         $this->contract = $contract;
 
@@ -848,9 +848,9 @@ class UtilityItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContract(): self
+    public function unsetContract(): static
     {
         $this->contract = null;
 

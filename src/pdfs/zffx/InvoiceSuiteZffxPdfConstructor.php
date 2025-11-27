@@ -52,7 +52,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $newProvider
      * @param  string                                     $newRawDocumentContent
      * @param  string                                     $newRawPdfContent
-     * @return self
+     * @return static
      */
     public function __construct(
         InvoiceSuiteAbstractDocumentFormatProvider $newProvider,
@@ -74,9 +74,9 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * @throws PdfReaderException
      * @throws BadMethodCallException
      * @throws RandomException
-     * @return InvoiceSuiteAbstractPdfConstructor
+     * @return static
      */
-    protected function generatePdfDocument(): InvoiceSuiteAbstractPdfConstructor
+    protected function generatePdfDocument(): static
     {
         // Set deterministic mode
 
@@ -147,9 +147,9 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      *
      * @param  string                             $toFilename
      * @throws Exception
-     * @return InvoiceSuiteAbstractPdfConstructor
+     * @return static
      */
-    protected function saveGeneratedPdfDocumentToFile(string $toFilename): InvoiceSuiteAbstractPdfConstructor
+    protected function saveGeneratedPdfDocumentToFile(string $toFilename): static
     {
         $this->pdfWriter->Output('F', $toFilename);
 

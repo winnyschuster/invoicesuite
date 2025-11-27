@@ -195,9 +195,9 @@ class ContractType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -205,9 +205,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -224,9 +224,9 @@ class ContractType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -234,9 +234,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -253,9 +253,9 @@ class ContractType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -263,9 +263,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 
@@ -282,9 +282,9 @@ class ContractType
 
     /**
      * @param DateTimeInterface|null $nominationDate
-     * @return self
+     * @return static
      */
-    public function setNominationDate(?DateTimeInterface $nominationDate = null): self
+    public function setNominationDate(?DateTimeInterface $nominationDate = null): static
     {
         $this->nominationDate = $nominationDate;
 
@@ -292,9 +292,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNominationDate(): self
+    public function unsetNominationDate(): static
     {
         $this->nominationDate = null;
 
@@ -311,9 +311,9 @@ class ContractType
 
     /**
      * @param DateTimeInterface|null $nominationTime
-     * @return self
+     * @return static
      */
-    public function setNominationTime(?DateTimeInterface $nominationTime = null): self
+    public function setNominationTime(?DateTimeInterface $nominationTime = null): static
     {
         $this->nominationTime = $nominationTime;
 
@@ -321,9 +321,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNominationTime(): self
+    public function unsetNominationTime(): static
     {
         $this->nominationTime = null;
 
@@ -350,9 +350,9 @@ class ContractType
 
     /**
      * @param ContractTypeCode|null $contractTypeCode
-     * @return self
+     * @return static
      */
-    public function setContractTypeCode(?ContractTypeCode $contractTypeCode = null): self
+    public function setContractTypeCode(?ContractTypeCode $contractTypeCode = null): static
     {
         $this->contractTypeCode = $contractTypeCode;
 
@@ -360,9 +360,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractTypeCode(): self
+    public function unsetContractTypeCode(): static
     {
         $this->contractTypeCode = null;
 
@@ -389,9 +389,9 @@ class ContractType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType|null $contractType
-     * @return self
+     * @return static
      */
-    public function setContractType(?ContractType1 $contractType = null): self
+    public function setContractType(?ContractType1 $contractType = null): static
     {
         $this->contractType = $contractType;
 
@@ -399,9 +399,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractType(): self
+    public function unsetContractType(): static
     {
         $this->contractType = null;
 
@@ -418,9 +418,9 @@ class ContractType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -428,9 +428,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -438,9 +438,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -479,9 +479,9 @@ class ContractType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -500,9 +500,9 @@ class ContractType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -549,9 +549,9 @@ class ContractType
 
     /**
      * @param VersionID|null $versionID
-     * @return self
+     * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): self
+    public function setVersionID(?VersionID $versionID = null): static
     {
         $this->versionID = $versionID;
 
@@ -559,9 +559,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVersionID(): self
+    public function unsetVersionID(): static
     {
         $this->versionID = null;
 
@@ -578,9 +578,9 @@ class ContractType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -588,9 +588,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -598,9 +598,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -639,9 +639,9 @@ class ContractType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -660,9 +660,9 @@ class ContractType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -709,9 +709,9 @@ class ContractType
 
     /**
      * @param ValidityPeriod|null $validityPeriod
-     * @return self
+     * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
+    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
     {
         $this->validityPeriod = $validityPeriod;
 
@@ -719,9 +719,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityPeriod(): self
+    public function unsetValidityPeriod(): static
     {
         $this->validityPeriod = null;
 
@@ -738,9 +738,9 @@ class ContractType
 
     /**
      * @param array<ContractDocumentReference>|null $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function setContractDocumentReference(?array $contractDocumentReference = null): self
+    public function setContractDocumentReference(?array $contractDocumentReference = null): static
     {
         $this->contractDocumentReference = $contractDocumentReference;
 
@@ -748,9 +748,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractDocumentReference(): self
+    public function unsetContractDocumentReference(): static
     {
         $this->contractDocumentReference = null;
 
@@ -758,9 +758,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContractDocumentReference(): self
+    public function clearContractDocumentReference(): static
     {
         $this->contractDocumentReference = [];
 
@@ -799,9 +799,9 @@ class ContractType
 
     /**
      * @param ContractDocumentReference $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
+    public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
     {
         $this->contractDocumentReference[] = $contractDocumentReference;
 
@@ -820,9 +820,9 @@ class ContractType
 
     /**
      * @param ContractDocumentReference $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
+    public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
     {
         if (!is_array($this->contractDocumentReference)) {
             $this->contractDocumentReference = [];
@@ -869,9 +869,9 @@ class ContractType
 
     /**
      * @param NominationPeriod|null $nominationPeriod
-     * @return self
+     * @return static
      */
-    public function setNominationPeriod(?NominationPeriod $nominationPeriod = null): self
+    public function setNominationPeriod(?NominationPeriod $nominationPeriod = null): static
     {
         $this->nominationPeriod = $nominationPeriod;
 
@@ -879,9 +879,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNominationPeriod(): self
+    public function unsetNominationPeriod(): static
     {
         $this->nominationPeriod = null;
 
@@ -908,9 +908,9 @@ class ContractType
 
     /**
      * @param ContractualDelivery|null $contractualDelivery
-     * @return self
+     * @return static
      */
-    public function setContractualDelivery(?ContractualDelivery $contractualDelivery = null): self
+    public function setContractualDelivery(?ContractualDelivery $contractualDelivery = null): static
     {
         $this->contractualDelivery = $contractualDelivery;
 
@@ -918,9 +918,9 @@ class ContractType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractualDelivery(): self
+    public function unsetContractualDelivery(): static
     {
         $this->contractualDelivery = null;
 

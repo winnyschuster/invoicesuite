@@ -34,9 +34,9 @@ class MeasureType extends MeasureTypeBase
 
     /**
      * @param string|null $unitCode
-     * @return self
+     * @return static
      */
-    public function setUnitCode(?string $unitCode = null): self
+    public function setUnitCode(?string $unitCode = null): static
     {
         $this->unitCode = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCode);
 
@@ -44,9 +44,9 @@ class MeasureType extends MeasureTypeBase
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCode(): self
+    public function unsetUnitCode(): static
     {
         $this->unitCode = null;
 

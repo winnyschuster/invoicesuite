@@ -155,9 +155,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the expected or used means of payment expressed as a code
      *
      * @param  null|string $typeCode The expected or used means of payment expressed as a code
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?string $typeCode): self
+    public function setTypeCode(?string $typeCode): static
     {
         $this->typeCode = $typeCode;
 
@@ -178,9 +178,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the expected or used means of payment expressed in text form
      *
      * @param  null|string $name The expected or used means of payment expressed in text form
-     * @return self
+     * @return static
      */
-    public function setName(?string $name): self
+    public function setName(?string $name): static
     {
         $this->name = $name;
 
@@ -201,9 +201,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the primary account number (PAN) of the payment card
      *
      * @param  null|string $financialCardId The primary account number (PAN) of the payment card
-     * @return self
+     * @return static
      */
-    public function setFinancialCardId(?string $financialCardId): self
+    public function setFinancialCardId(?string $financialCardId): static
     {
         $this->financialCardId = $financialCardId;
 
@@ -224,9 +224,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the name of the payment card holder
      *
      * @param  null|string $financialCardHolder The name of the payment card holder
-     * @return self
+     * @return static
      */
-    public function setFinancialCardHolder(?string $financialCardHolder): self
+    public function setFinancialCardHolder(?string $financialCardHolder): static
     {
         $this->financialCardHolder = $financialCardHolder;
 
@@ -247,9 +247,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the identifier of the account to be debited
      *
      * @param  null|string $buyerIban The identifier of the account to be debited
-     * @return self
+     * @return static
      */
-    public function setBuyerIban(?string $buyerIban): self
+    public function setBuyerIban(?string $buyerIban): static
     {
         $this->buyerIban = $buyerIban;
 
@@ -270,9 +270,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the payment account identifier
      *
      * @param  null|string $payeeIban The payment account identifier
-     * @return self
+     * @return static
      */
-    public function setPayeeIban(?string $payeeIban): self
+    public function setPayeeIban(?string $payeeIban): static
     {
         $this->payeeIban = $payeeIban;
 
@@ -293,9 +293,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the name of the payment account
      *
      * @param  null|string $payeeAccountName The name of the payment account
-     * @return self
+     * @return static
      */
-    public function setPayeeAccountName(?string $payeeAccountName): self
+    public function setPayeeAccountName(?string $payeeAccountName): static
     {
         $this->payeeAccountName = $payeeAccountName;
 
@@ -316,9 +316,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the national account number (not for SEPA)
      *
      * @param  null|string $payeeProprietaryId The national account number (not for SEPA)
-     * @return self
+     * @return static
      */
-    public function setPayeeProprietaryId(?string $payeeProprietaryId): self
+    public function setPayeeProprietaryId(?string $payeeProprietaryId): static
     {
         $this->payeeProprietaryId = $payeeProprietaryId;
 
@@ -339,9 +339,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the identifier of the payment service provider
      *
      * @param  null|string $payeeBic The identifier of the payment service provider
-     * @return self
+     * @return static
      */
-    public function setPayeeBic(?string $payeeBic): self
+    public function setPayeeBic(?string $payeeBic): static
     {
         $this->payeeBic = $payeeBic;
 
@@ -362,9 +362,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the Text value used to link the payment to the invoice issued by the seller
      *
      * @param  null|string $paymentReference The Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
-    public function setPaymentReference(?string $paymentReference): self
+    public function setPaymentReference(?string $paymentReference): static
     {
         $this->paymentReference = $paymentReference;
 
@@ -385,9 +385,9 @@ class InvoiceSuitePaymentMeanDTO
      * Sets the identification of the mandate reference
      *
      * @param  null|string $mandate The identification of the mandate reference
-     * @return self
+     * @return static
      */
-    public function setMandate(?string $mandate): self
+    public function setMandate(?string $mandate): static
     {
         $this->mandate = $mandate;
 
@@ -402,7 +402,7 @@ class InvoiceSuitePaymentMeanDTO
      * @param  null|string $payeeProprietaryId National account number (not for SEPA)
      * @param  null|string $payeeBic           Identifier of the payment service provider
      * @param  null|string $paymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public static function createAsCreditTransferSepa(
         ?string $payeeIban = null,
@@ -410,8 +410,9 @@ class InvoiceSuitePaymentMeanDTO
         ?string $payeeProprietaryId = null,
         ?string $payeeBic = null,
         ?string $paymentReference = null,
-    ): self {
-        return new self(
+    ): static {
+        // @phpstan-ignore new.static
+        return new static(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             payeeIban: $payeeIban,
             payeeAccountName: $payeeAccountName,
@@ -429,7 +430,7 @@ class InvoiceSuitePaymentMeanDTO
      * @param  null|string $payeeProprietaryId National account number (not for SEPA)
      * @param  null|string $payeeBic           Identifier of the payment service provider
      * @param  null|string $paymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public static function createAsCreditTransferNoSepa(
         ?string $payeeIban = null,
@@ -437,8 +438,9 @@ class InvoiceSuitePaymentMeanDTO
         ?string $payeeProprietaryId = null,
         ?string $payeeBic = null,
         ?string $paymentReference = null,
-    ): self {
-        return new self(
+    ): static {
+        // @phpstan-ignore new.static
+        return new static(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             payeeIban: $payeeIban,
             payeeAccountName: $payeeAccountName,
@@ -453,11 +455,12 @@ class InvoiceSuitePaymentMeanDTO
      *
      * @param  null|string $buyerIban Identifier of the account to be debited
      * @param  null|string $mandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
-    public static function createAsDirectDebitSepa(?string $buyerIban = null, ?string $mandate = null): self
+    public static function createAsDirectDebitSepa(?string $buyerIban = null, ?string $mandate = null): static
     {
-        return new self(
+        // @phpstan-ignore new.static
+        return new static(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             buyerIban: $buyerIban,
             mandate: $mandate,
@@ -469,11 +472,12 @@ class InvoiceSuitePaymentMeanDTO
      *
      * @param  null|string $buyerIban Identifier of the account to be debited
      * @param  null|string $mandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
-    public static function createAsDirectDebitNoSepa(?string $buyerIban = null, ?string $mandate = null): self
+    public static function createAsDirectDebitNoSepa(?string $buyerIban = null, ?string $mandate = null): static
     {
-        return new self(
+        // @phpstan-ignore new.static
+        return new static(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             buyerIban: $buyerIban,
             mandate: $mandate,
@@ -485,13 +489,14 @@ class InvoiceSuitePaymentMeanDTO
      *
      * @param  null|string $financialCardId     Primary account number (PAN) of the payment card
      * @param  null|string $financialCardHolder Name of the payment card holder
-     * @return self
+     * @return static
      */
     public static function createAsPaymentCardPayment(
         ?string $financialCardId = null,
         ?string $financialCardHolder = null,
-    ): self {
-        return new self(
+    ): static {
+        // @phpstan-ignore new.static
+        return new static(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             financialCardId: $financialCardId,
             financialCardHolder: $financialCardHolder,

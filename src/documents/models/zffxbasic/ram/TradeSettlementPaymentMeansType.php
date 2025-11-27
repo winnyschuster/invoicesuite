@@ -65,9 +65,9 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param PaymentMeansCodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?PaymentMeansCodeType $typeCode = null): self
+    public function setTypeCode(?PaymentMeansCodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -75,9 +75,9 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -104,20 +104,20 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param DebtorFinancialAccountType|null $payerPartyDebtorFinancialAccount
-     * @return self
+     * @return static
      */
     public function setPayerPartyDebtorFinancialAccount(
         ?DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null,
-    ): self {
+    ): static {
         $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayerPartyDebtorFinancialAccount(): self
+    public function unsetPayerPartyDebtorFinancialAccount(): static
     {
         $this->payerPartyDebtorFinancialAccount = null;
 
@@ -144,20 +144,20 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param CreditorFinancialAccountType|null $payeePartyCreditorFinancialAccount
-     * @return self
+     * @return static
      */
     public function setPayeePartyCreditorFinancialAccount(
         ?CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null,
-    ): self {
+    ): static {
         $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeePartyCreditorFinancialAccount(): self
+    public function unsetPayeePartyCreditorFinancialAccount(): static
     {
         $this->payeePartyCreditorFinancialAccount = null;
 

@@ -116,9 +116,9 @@ class ContactType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -126,9 +126,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -155,9 +155,9 @@ class ContactType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -165,9 +165,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -194,9 +194,9 @@ class ContactType
 
     /**
      * @param Telephone|null $telephone
-     * @return self
+     * @return static
      */
-    public function setTelephone(?Telephone $telephone = null): self
+    public function setTelephone(?Telephone $telephone = null): static
     {
         $this->telephone = $telephone;
 
@@ -204,9 +204,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelephone(): self
+    public function unsetTelephone(): static
     {
         $this->telephone = null;
 
@@ -233,9 +233,9 @@ class ContactType
 
     /**
      * @param Telefax|null $telefax
-     * @return self
+     * @return static
      */
-    public function setTelefax(?Telefax $telefax = null): self
+    public function setTelefax(?Telefax $telefax = null): static
     {
         $this->telefax = $telefax;
 
@@ -243,9 +243,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelefax(): self
+    public function unsetTelefax(): static
     {
         $this->telefax = null;
 
@@ -272,9 +272,9 @@ class ContactType
 
     /**
      * @param ElectronicMail|null $electronicMail
-     * @return self
+     * @return static
      */
-    public function setElectronicMail(?ElectronicMail $electronicMail = null): self
+    public function setElectronicMail(?ElectronicMail $electronicMail = null): static
     {
         $this->electronicMail = $electronicMail;
 
@@ -282,9 +282,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetElectronicMail(): self
+    public function unsetElectronicMail(): static
     {
         $this->electronicMail = null;
 
@@ -301,9 +301,9 @@ class ContactType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -311,9 +311,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -321,9 +321,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -362,9 +362,9 @@ class ContactType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -383,9 +383,9 @@ class ContactType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -422,9 +422,9 @@ class ContactType
 
     /**
      * @param array<OtherCommunication>|null $otherCommunication
-     * @return self
+     * @return static
      */
-    public function setOtherCommunication(?array $otherCommunication = null): self
+    public function setOtherCommunication(?array $otherCommunication = null): static
     {
         $this->otherCommunication = $otherCommunication;
 
@@ -432,9 +432,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOtherCommunication(): self
+    public function unsetOtherCommunication(): static
     {
         $this->otherCommunication = null;
 
@@ -442,9 +442,9 @@ class ContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOtherCommunication(): self
+    public function clearOtherCommunication(): static
     {
         $this->otherCommunication = [];
 
@@ -483,9 +483,9 @@ class ContactType
 
     /**
      * @param OtherCommunication $otherCommunication
-     * @return self
+     * @return static
      */
-    public function addToOtherCommunication(OtherCommunication $otherCommunication): self
+    public function addToOtherCommunication(OtherCommunication $otherCommunication): static
     {
         $this->otherCommunication[] = $otherCommunication;
 
@@ -504,9 +504,9 @@ class ContactType
 
     /**
      * @param OtherCommunication $otherCommunication
-     * @return self
+     * @return static
      */
-    public function addOnceToOtherCommunication(OtherCommunication $otherCommunication): self
+    public function addOnceToOtherCommunication(OtherCommunication $otherCommunication): static
     {
         if (!is_array($this->otherCommunication)) {
             $this->otherCommunication = [];

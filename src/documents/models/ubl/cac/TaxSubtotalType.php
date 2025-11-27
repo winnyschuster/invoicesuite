@@ -150,9 +150,9 @@ class TaxSubtotalType
 
     /**
      * @param TaxableAmount|null $taxableAmount
-     * @return self
+     * @return static
      */
-    public function setTaxableAmount(?TaxableAmount $taxableAmount = null): self
+    public function setTaxableAmount(?TaxableAmount $taxableAmount = null): static
     {
         $this->taxableAmount = $taxableAmount;
 
@@ -160,9 +160,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxableAmount(): self
+    public function unsetTaxableAmount(): static
     {
         $this->taxableAmount = null;
 
@@ -189,9 +189,9 @@ class TaxSubtotalType
 
     /**
      * @param TaxAmount|null $taxAmount
-     * @return self
+     * @return static
      */
-    public function setTaxAmount(?TaxAmount $taxAmount = null): self
+    public function setTaxAmount(?TaxAmount $taxAmount = null): static
     {
         $this->taxAmount = $taxAmount;
 
@@ -199,9 +199,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxAmount(): self
+    public function unsetTaxAmount(): static
     {
         $this->taxAmount = null;
 
@@ -228,20 +228,20 @@ class TaxSubtotalType
 
     /**
      * @param CalculationSequenceNumeric|null $calculationSequenceNumeric
-     * @return self
+     * @return static
      */
     public function setCalculationSequenceNumeric(
         ?CalculationSequenceNumeric $calculationSequenceNumeric = null,
-    ): self {
+    ): static {
         $this->calculationSequenceNumeric = $calculationSequenceNumeric;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCalculationSequenceNumeric(): self
+    public function unsetCalculationSequenceNumeric(): static
     {
         $this->calculationSequenceNumeric = null;
 
@@ -268,20 +268,20 @@ class TaxSubtotalType
 
     /**
      * @param TransactionCurrencyTaxAmount|null $transactionCurrencyTaxAmount
-     * @return self
+     * @return static
      */
     public function setTransactionCurrencyTaxAmount(
         ?TransactionCurrencyTaxAmount $transactionCurrencyTaxAmount = null,
-    ): self {
+    ): static {
         $this->transactionCurrencyTaxAmount = $transactionCurrencyTaxAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransactionCurrencyTaxAmount(): self
+    public function unsetTransactionCurrencyTaxAmount(): static
     {
         $this->transactionCurrencyTaxAmount = null;
 
@@ -308,9 +308,9 @@ class TaxSubtotalType
 
     /**
      * @param Percent|null $percent
-     * @return self
+     * @return static
      */
-    public function setPercent(?Percent $percent = null): self
+    public function setPercent(?Percent $percent = null): static
     {
         $this->percent = $percent;
 
@@ -318,9 +318,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPercent(): self
+    public function unsetPercent(): static
     {
         $this->percent = null;
 
@@ -347,9 +347,9 @@ class TaxSubtotalType
 
     /**
      * @param BaseUnitMeasure|null $baseUnitMeasure
-     * @return self
+     * @return static
      */
-    public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): self
+    public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): static
     {
         $this->baseUnitMeasure = $baseUnitMeasure;
 
@@ -357,9 +357,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBaseUnitMeasure(): self
+    public function unsetBaseUnitMeasure(): static
     {
         $this->baseUnitMeasure = null;
 
@@ -386,9 +386,9 @@ class TaxSubtotalType
 
     /**
      * @param PerUnitAmount|null $perUnitAmount
-     * @return self
+     * @return static
      */
-    public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): self
+    public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
     {
         $this->perUnitAmount = $perUnitAmount;
 
@@ -396,9 +396,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerUnitAmount(): self
+    public function unsetPerUnitAmount(): static
     {
         $this->perUnitAmount = null;
 
@@ -425,9 +425,9 @@ class TaxSubtotalType
 
     /**
      * @param TierRange|null $tierRange
-     * @return self
+     * @return static
      */
-    public function setTierRange(?TierRange $tierRange = null): self
+    public function setTierRange(?TierRange $tierRange = null): static
     {
         $this->tierRange = $tierRange;
 
@@ -435,9 +435,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTierRange(): self
+    public function unsetTierRange(): static
     {
         $this->tierRange = null;
 
@@ -464,9 +464,9 @@ class TaxSubtotalType
 
     /**
      * @param TierRatePercent|null $tierRatePercent
-     * @return self
+     * @return static
      */
-    public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): self
+    public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): static
     {
         $this->tierRatePercent = $tierRatePercent;
 
@@ -474,9 +474,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTierRatePercent(): self
+    public function unsetTierRatePercent(): static
     {
         $this->tierRatePercent = null;
 
@@ -503,9 +503,9 @@ class TaxSubtotalType
 
     /**
      * @param TaxCategory|null $taxCategory
-     * @return self
+     * @return static
      */
-    public function setTaxCategory(?TaxCategory $taxCategory = null): self
+    public function setTaxCategory(?TaxCategory $taxCategory = null): static
     {
         $this->taxCategory = $taxCategory;
 
@@ -513,9 +513,9 @@ class TaxSubtotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxCategory(): self
+    public function unsetTaxCategory(): static
     {
         $this->taxCategory = null;
 

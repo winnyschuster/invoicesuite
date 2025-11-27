@@ -59,9 +59,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * Sets the discounts or charges to the gross price
      *
      * @param  array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The discounts or charges to the gross price
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharges(array $allowanceCharges): self
+    public function setAllowanceCharges(array $allowanceCharges): static
     {
         $this->allowanceCharges = $allowanceCharges;
 
@@ -72,9 +72,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * Add single The discounts or charges to the gross price
      *
      * @param  InvoiceSuiteAllowanceChargeDTO $allowanceCharge The discounts or charges to the gross price
-     * @return self
+     * @return static
      */
-    public function addAllowanceCharge(InvoiceSuiteAllowanceChargeDTO $allowanceCharge): self
+    public function addAllowanceCharge(InvoiceSuiteAllowanceChargeDTO $allowanceCharge): static
     {
         $this->allowanceCharges[] = $allowanceCharge;
 
@@ -86,9 +86,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function firstAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    public function firstAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
     {
         if (($allowanceCharge = reset($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
@@ -104,9 +104,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function nextAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    public function nextAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
     {
         if (($allowanceCharge = next($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
@@ -122,9 +122,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function previousAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    public function previousAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
     {
         if (($allowanceCharge = prev($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
@@ -140,9 +140,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function lastAllowanceCharge(callable $callback, ?callable $callbackElse = null): self
+    public function lastAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
     {
         if (($allowanceCharge = end($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
@@ -159,13 +159,13 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  callable      $callback     Callback to execute for each item
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @param  null|int      $limit        Maximum number of loops
-     * @return self
+     * @return static
      */
     public function forEachAllowanceCharge(
         callable $callback,
         ?callable $callbackElse = null,
         ?int $limit = null,
-    ): self {
+    ): static {
         $count = 0;
 
         foreach ($this->allowanceCharges as $allowanceCharge) {

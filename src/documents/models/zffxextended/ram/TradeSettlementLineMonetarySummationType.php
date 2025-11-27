@@ -98,9 +98,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $lineTotalAmount
-     * @return self
+     * @return static
      */
-    public function setLineTotalAmount(?AmountType $lineTotalAmount = null): self
+    public function setLineTotalAmount(?AmountType $lineTotalAmount = null): static
     {
         $this->lineTotalAmount = $lineTotalAmount;
 
@@ -108,9 +108,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineTotalAmount(): self
+    public function unsetLineTotalAmount(): static
     {
         $this->lineTotalAmount = null;
 
@@ -137,9 +137,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $chargeTotalAmount
-     * @return self
+     * @return static
      */
-    public function setChargeTotalAmount(?AmountType $chargeTotalAmount = null): self
+    public function setChargeTotalAmount(?AmountType $chargeTotalAmount = null): static
     {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
@@ -147,9 +147,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeTotalAmount(): self
+    public function unsetChargeTotalAmount(): static
     {
         $this->chargeTotalAmount = null;
 
@@ -176,9 +176,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $allowanceTotalAmount
-     * @return self
+     * @return static
      */
-    public function setAllowanceTotalAmount(?AmountType $allowanceTotalAmount = null): self
+    public function setAllowanceTotalAmount(?AmountType $allowanceTotalAmount = null): static
     {
         $this->allowanceTotalAmount = $allowanceTotalAmount;
 
@@ -186,9 +186,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceTotalAmount(): self
+    public function unsetAllowanceTotalAmount(): static
     {
         $this->allowanceTotalAmount = null;
 
@@ -215,9 +215,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $taxTotalAmount
-     * @return self
+     * @return static
      */
-    public function setTaxTotalAmount(?AmountType $taxTotalAmount = null): self
+    public function setTaxTotalAmount(?AmountType $taxTotalAmount = null): static
     {
         $this->taxTotalAmount = $taxTotalAmount;
 
@@ -225,9 +225,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotalAmount(): self
+    public function unsetTaxTotalAmount(): static
     {
         $this->taxTotalAmount = null;
 
@@ -254,9 +254,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $grandTotalAmount
-     * @return self
+     * @return static
      */
-    public function setGrandTotalAmount(?AmountType $grandTotalAmount = null): self
+    public function setGrandTotalAmount(?AmountType $grandTotalAmount = null): static
     {
         $this->grandTotalAmount = $grandTotalAmount;
 
@@ -264,9 +264,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrandTotalAmount(): self
+    public function unsetGrandTotalAmount(): static
     {
         $this->grandTotalAmount = null;
 
@@ -293,9 +293,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $totalAllowanceChargeAmount
-     * @return self
+     * @return static
      */
-    public function setTotalAllowanceChargeAmount(?AmountType $totalAllowanceChargeAmount = null): self
+    public function setTotalAllowanceChargeAmount(?AmountType $totalAllowanceChargeAmount = null): static
     {
         $this->totalAllowanceChargeAmount = $totalAllowanceChargeAmount;
 
@@ -303,9 +303,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalAllowanceChargeAmount(): self
+    public function unsetTotalAllowanceChargeAmount(): static
     {
         $this->totalAllowanceChargeAmount = null;
 

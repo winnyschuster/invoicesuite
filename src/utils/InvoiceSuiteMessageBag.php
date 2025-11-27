@@ -31,7 +31,7 @@ use Traversable;
  * @implements ArrayAccess<int, InvoiceSuiteMessageBagItem>
  * @implements IteratorAggregate<int, InvoiceSuiteMessageBagItem>
  */
-final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countable
+class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countable
 {
     /**
      * Stored message items.
@@ -55,9 +55,9 @@ final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Co
     /**
      * Clears the internal message container
      *
-     * @return InvoiceSuiteMessageBag
+     * @return static
      */
-    public function clear(): self
+    public function clear(): static
     {
         $this->messageBagItems = [];
 
@@ -70,9 +70,9 @@ final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Co
      *
      * @param  array<int, InvoiceSuiteMessageBagItem> $newMessageBagItems The message items to add
      * @throws InvoiceSuiteInvalidArgumentException   If any message is not an InvoiceSuiteMessageBagItem
-     * @return self
+     * @return static
      */
-    public function addMessages(array $newMessageBagItems): self
+    public function addMessages(array $newMessageBagItems): static
     {
         foreach ($newMessageBagItems as $messageBagItem) {
             if (!$messageBagItem instanceof InvoiceSuiteMessageBagItem) {
@@ -91,9 +91,9 @@ final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Co
      * Add a message to the bag.
      *
      * @param  InvoiceSuiteMessageBagItem $newMessageBagItem the message to add
-     * @return self
+     * @return static
      */
-    public function add(InvoiceSuiteMessageBagItem $newMessageBagItem): self
+    public function add(InvoiceSuiteMessageBagItem $newMessageBagItem): static
     {
         $this->messageBagItems[] = $newMessageBagItem;
 
@@ -109,13 +109,13 @@ final class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Co
      * @param  string                           $newMessageContent   the message text
      * @param  null|InvoiceSuiteMessageSeverity $newMessageSeverity  the message severity (default INFO)
      * @param  null|DateTimeInterface           $newMessageTimestamp the message timestamp (default now)
-     * @return self
+     * @return static
      */
     public function addNewMessage(
         string $newMessageContent,
         ?InvoiceSuiteMessageSeverity $newMessageSeverity = null,
         ?DateTimeInterface $newMessageTimestamp = null
-    ): self {
+    ): static {
         return $this->add(
             new InvoiceSuiteMessageBagItem($newMessageContent, $newMessageSeverity, $newMessageTimestamp)
         );

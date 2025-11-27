@@ -67,9 +67,9 @@ class LotIdentificationType
 
     /**
      * @param LotNumberID|null $lotNumberID
-     * @return self
+     * @return static
      */
-    public function setLotNumberID(?LotNumberID $lotNumberID = null): self
+    public function setLotNumberID(?LotNumberID $lotNumberID = null): static
     {
         $this->lotNumberID = $lotNumberID;
 
@@ -77,9 +77,9 @@ class LotIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLotNumberID(): self
+    public function unsetLotNumberID(): static
     {
         $this->lotNumberID = null;
 
@@ -96,9 +96,9 @@ class LotIdentificationType
 
     /**
      * @param DateTimeInterface|null $expiryDate
-     * @return self
+     * @return static
      */
-    public function setExpiryDate(?DateTimeInterface $expiryDate = null): self
+    public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
     {
         $this->expiryDate = $expiryDate;
 
@@ -106,9 +106,9 @@ class LotIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpiryDate(): self
+    public function unsetExpiryDate(): static
     {
         $this->expiryDate = null;
 
@@ -125,9 +125,9 @@ class LotIdentificationType
 
     /**
      * @param array<AdditionalItemProperty>|null $additionalItemProperty
-     * @return self
+     * @return static
      */
-    public function setAdditionalItemProperty(?array $additionalItemProperty = null): self
+    public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
     {
         $this->additionalItemProperty = $additionalItemProperty;
 
@@ -135,9 +135,9 @@ class LotIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalItemProperty(): self
+    public function unsetAdditionalItemProperty(): static
     {
         $this->additionalItemProperty = null;
 
@@ -145,9 +145,9 @@ class LotIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalItemProperty(): self
+    public function clearAdditionalItemProperty(): static
     {
         $this->additionalItemProperty = [];
 
@@ -186,9 +186,9 @@ class LotIdentificationType
 
     /**
      * @param AdditionalItemProperty $additionalItemProperty
-     * @return self
+     * @return static
      */
-    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
     {
         $this->additionalItemProperty[] = $additionalItemProperty;
 
@@ -207,9 +207,9 @@ class LotIdentificationType
 
     /**
      * @param AdditionalItemProperty $additionalItemProperty
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
     {
         if (!is_array($this->additionalItemProperty)) {
             $this->additionalItemProperty = [];

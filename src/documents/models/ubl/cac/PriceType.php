@@ -150,9 +150,9 @@ class PriceType
 
     /**
      * @param PriceAmount|null $priceAmount
-     * @return self
+     * @return static
      */
-    public function setPriceAmount(?PriceAmount $priceAmount = null): self
+    public function setPriceAmount(?PriceAmount $priceAmount = null): static
     {
         $this->priceAmount = $priceAmount;
 
@@ -160,9 +160,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceAmount(): self
+    public function unsetPriceAmount(): static
     {
         $this->priceAmount = null;
 
@@ -189,9 +189,9 @@ class PriceType
 
     /**
      * @param BaseQuantity|null $baseQuantity
-     * @return self
+     * @return static
      */
-    public function setBaseQuantity(?BaseQuantity $baseQuantity = null): self
+    public function setBaseQuantity(?BaseQuantity $baseQuantity = null): static
     {
         $this->baseQuantity = $baseQuantity;
 
@@ -199,9 +199,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBaseQuantity(): self
+    public function unsetBaseQuantity(): static
     {
         $this->baseQuantity = null;
 
@@ -218,9 +218,9 @@ class PriceType
 
     /**
      * @param array<PriceChangeReason>|null $priceChangeReason
-     * @return self
+     * @return static
      */
-    public function setPriceChangeReason(?array $priceChangeReason = null): self
+    public function setPriceChangeReason(?array $priceChangeReason = null): static
     {
         $this->priceChangeReason = $priceChangeReason;
 
@@ -228,9 +228,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceChangeReason(): self
+    public function unsetPriceChangeReason(): static
     {
         $this->priceChangeReason = null;
 
@@ -238,9 +238,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPriceChangeReason(): self
+    public function clearPriceChangeReason(): static
     {
         $this->priceChangeReason = [];
 
@@ -279,9 +279,9 @@ class PriceType
 
     /**
      * @param PriceChangeReason $priceChangeReason
-     * @return self
+     * @return static
      */
-    public function addToPriceChangeReason(PriceChangeReason $priceChangeReason): self
+    public function addToPriceChangeReason(PriceChangeReason $priceChangeReason): static
     {
         $this->priceChangeReason[] = $priceChangeReason;
 
@@ -300,9 +300,9 @@ class PriceType
 
     /**
      * @param PriceChangeReason $priceChangeReason
-     * @return self
+     * @return static
      */
-    public function addOnceToPriceChangeReason(PriceChangeReason $priceChangeReason): self
+    public function addOnceToPriceChangeReason(PriceChangeReason $priceChangeReason): static
     {
         if (!is_array($this->priceChangeReason)) {
             $this->priceChangeReason = [];
@@ -349,9 +349,9 @@ class PriceType
 
     /**
      * @param PriceTypeCode|null $priceTypeCode
-     * @return self
+     * @return static
      */
-    public function setPriceTypeCode(?PriceTypeCode $priceTypeCode = null): self
+    public function setPriceTypeCode(?PriceTypeCode $priceTypeCode = null): static
     {
         $this->priceTypeCode = $priceTypeCode;
 
@@ -359,9 +359,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceTypeCode(): self
+    public function unsetPriceTypeCode(): static
     {
         $this->priceTypeCode = null;
 
@@ -388,9 +388,9 @@ class PriceType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType|null $priceType
-     * @return self
+     * @return static
      */
-    public function setPriceType(?PriceType1 $priceType = null): self
+    public function setPriceType(?PriceType1 $priceType = null): static
     {
         $this->priceType = $priceType;
 
@@ -398,9 +398,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceType(): self
+    public function unsetPriceType(): static
     {
         $this->priceType = null;
 
@@ -427,9 +427,9 @@ class PriceType
 
     /**
      * @param OrderableUnitFactorRate|null $orderableUnitFactorRate
-     * @return self
+     * @return static
      */
-    public function setOrderableUnitFactorRate(?OrderableUnitFactorRate $orderableUnitFactorRate = null): self
+    public function setOrderableUnitFactorRate(?OrderableUnitFactorRate $orderableUnitFactorRate = null): static
     {
         $this->orderableUnitFactorRate = $orderableUnitFactorRate;
 
@@ -437,9 +437,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderableUnitFactorRate(): self
+    public function unsetOrderableUnitFactorRate(): static
     {
         $this->orderableUnitFactorRate = null;
 
@@ -456,9 +456,9 @@ class PriceType
 
     /**
      * @param array<ValidityPeriod>|null $validityPeriod
-     * @return self
+     * @return static
      */
-    public function setValidityPeriod(?array $validityPeriod = null): self
+    public function setValidityPeriod(?array $validityPeriod = null): static
     {
         $this->validityPeriod = $validityPeriod;
 
@@ -466,9 +466,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityPeriod(): self
+    public function unsetValidityPeriod(): static
     {
         $this->validityPeriod = null;
 
@@ -476,9 +476,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearValidityPeriod(): self
+    public function clearValidityPeriod(): static
     {
         $this->validityPeriod = [];
 
@@ -517,9 +517,9 @@ class PriceType
 
     /**
      * @param ValidityPeriod $validityPeriod
-     * @return self
+     * @return static
      */
-    public function addToValidityPeriod(ValidityPeriod $validityPeriod): self
+    public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
     {
         $this->validityPeriod[] = $validityPeriod;
 
@@ -538,9 +538,9 @@ class PriceType
 
     /**
      * @param ValidityPeriod $validityPeriod
-     * @return self
+     * @return static
      */
-    public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): self
+    public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
     {
         if (!is_array($this->validityPeriod)) {
             $this->validityPeriod = [];
@@ -587,9 +587,9 @@ class PriceType
 
     /**
      * @param PriceList|null $priceList
-     * @return self
+     * @return static
      */
-    public function setPriceList(?PriceList $priceList = null): self
+    public function setPriceList(?PriceList $priceList = null): static
     {
         $this->priceList = $priceList;
 
@@ -597,9 +597,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceList(): self
+    public function unsetPriceList(): static
     {
         $this->priceList = null;
 
@@ -616,9 +616,9 @@ class PriceType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -626,9 +626,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -636,9 +636,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -677,9 +677,9 @@ class PriceType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -698,9 +698,9 @@ class PriceType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -747,9 +747,9 @@ class PriceType
 
     /**
      * @param PricingExchangeRate|null $pricingExchangeRate
-     * @return self
+     * @return static
      */
-    public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): self
+    public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): static
     {
         $this->pricingExchangeRate = $pricingExchangeRate;
 
@@ -757,9 +757,9 @@ class PriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPricingExchangeRate(): self
+    public function unsetPricingExchangeRate(): static
     {
         $this->pricingExchangeRate = null;
 

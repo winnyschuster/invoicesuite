@@ -183,9 +183,9 @@ class PaymentMeansType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -193,9 +193,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -222,9 +222,9 @@ class PaymentMeansType
 
     /**
      * @param PaymentMeansCode|null $paymentMeansCode
-     * @return self
+     * @return static
      */
-    public function setPaymentMeansCode(?PaymentMeansCode $paymentMeansCode = null): self
+    public function setPaymentMeansCode(?PaymentMeansCode $paymentMeansCode = null): static
     {
         $this->paymentMeansCode = $paymentMeansCode;
 
@@ -232,9 +232,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentMeansCode(): self
+    public function unsetPaymentMeansCode(): static
     {
         $this->paymentMeansCode = null;
 
@@ -251,9 +251,9 @@ class PaymentMeansType
 
     /**
      * @param DateTimeInterface|null $paymentDueDate
-     * @return self
+     * @return static
      */
-    public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): self
+    public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): static
     {
         $this->paymentDueDate = $paymentDueDate;
 
@@ -261,9 +261,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentDueDate(): self
+    public function unsetPaymentDueDate(): static
     {
         $this->paymentDueDate = null;
 
@@ -290,9 +290,9 @@ class PaymentMeansType
 
     /**
      * @param PaymentChannelCode|null $paymentChannelCode
-     * @return self
+     * @return static
      */
-    public function setPaymentChannelCode(?PaymentChannelCode $paymentChannelCode = null): self
+    public function setPaymentChannelCode(?PaymentChannelCode $paymentChannelCode = null): static
     {
         $this->paymentChannelCode = $paymentChannelCode;
 
@@ -300,9 +300,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentChannelCode(): self
+    public function unsetPaymentChannelCode(): static
     {
         $this->paymentChannelCode = null;
 
@@ -329,9 +329,9 @@ class PaymentMeansType
 
     /**
      * @param InstructionID|null $instructionID
-     * @return self
+     * @return static
      */
-    public function setInstructionID(?InstructionID $instructionID = null): self
+    public function setInstructionID(?InstructionID $instructionID = null): static
     {
         $this->instructionID = $instructionID;
 
@@ -339,9 +339,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInstructionID(): self
+    public function unsetInstructionID(): static
     {
         $this->instructionID = null;
 
@@ -358,9 +358,9 @@ class PaymentMeansType
 
     /**
      * @param array<InstructionNote>|null $instructionNote
-     * @return self
+     * @return static
      */
-    public function setInstructionNote(?array $instructionNote = null): self
+    public function setInstructionNote(?array $instructionNote = null): static
     {
         $this->instructionNote = $instructionNote;
 
@@ -368,9 +368,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInstructionNote(): self
+    public function unsetInstructionNote(): static
     {
         $this->instructionNote = null;
 
@@ -378,9 +378,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInstructionNote(): self
+    public function clearInstructionNote(): static
     {
         $this->instructionNote = [];
 
@@ -419,9 +419,9 @@ class PaymentMeansType
 
     /**
      * @param InstructionNote $instructionNote
-     * @return self
+     * @return static
      */
-    public function addToInstructionNote(InstructionNote $instructionNote): self
+    public function addToInstructionNote(InstructionNote $instructionNote): static
     {
         $this->instructionNote[] = $instructionNote;
 
@@ -440,9 +440,9 @@ class PaymentMeansType
 
     /**
      * @param InstructionNote $instructionNote
-     * @return self
+     * @return static
      */
-    public function addOnceToInstructionNote(InstructionNote $instructionNote): self
+    public function addOnceToInstructionNote(InstructionNote $instructionNote): static
     {
         if (!is_array($this->instructionNote)) {
             $this->instructionNote = [];
@@ -479,9 +479,9 @@ class PaymentMeansType
 
     /**
      * @param array<PaymentID>|null $paymentID
-     * @return self
+     * @return static
      */
-    public function setPaymentID(?array $paymentID = null): self
+    public function setPaymentID(?array $paymentID = null): static
     {
         $this->paymentID = $paymentID;
 
@@ -489,9 +489,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentID(): self
+    public function unsetPaymentID(): static
     {
         $this->paymentID = null;
 
@@ -499,9 +499,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentID(): self
+    public function clearPaymentID(): static
     {
         $this->paymentID = [];
 
@@ -540,9 +540,9 @@ class PaymentMeansType
 
     /**
      * @param PaymentID $paymentID
-     * @return self
+     * @return static
      */
-    public function addToPaymentID(PaymentID $paymentID): self
+    public function addToPaymentID(PaymentID $paymentID): static
     {
         $this->paymentID[] = $paymentID;
 
@@ -561,9 +561,9 @@ class PaymentMeansType
 
     /**
      * @param PaymentID $paymentID
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentID(PaymentID $paymentID): self
+    public function addOnceToPaymentID(PaymentID $paymentID): static
     {
         if (!is_array($this->paymentID)) {
             $this->paymentID = [];
@@ -610,9 +610,9 @@ class PaymentMeansType
 
     /**
      * @param CardAccount|null $cardAccount
-     * @return self
+     * @return static
      */
-    public function setCardAccount(?CardAccount $cardAccount = null): self
+    public function setCardAccount(?CardAccount $cardAccount = null): static
     {
         $this->cardAccount = $cardAccount;
 
@@ -620,9 +620,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCardAccount(): self
+    public function unsetCardAccount(): static
     {
         $this->cardAccount = null;
 
@@ -649,9 +649,9 @@ class PaymentMeansType
 
     /**
      * @param PayerFinancialAccount|null $payerFinancialAccount
-     * @return self
+     * @return static
      */
-    public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): self
+    public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): static
     {
         $this->payerFinancialAccount = $payerFinancialAccount;
 
@@ -659,9 +659,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayerFinancialAccount(): self
+    public function unsetPayerFinancialAccount(): static
     {
         $this->payerFinancialAccount = null;
 
@@ -688,9 +688,9 @@ class PaymentMeansType
 
     /**
      * @param PayeeFinancialAccount|null $payeeFinancialAccount
-     * @return self
+     * @return static
      */
-    public function setPayeeFinancialAccount(?PayeeFinancialAccount $payeeFinancialAccount = null): self
+    public function setPayeeFinancialAccount(?PayeeFinancialAccount $payeeFinancialAccount = null): static
     {
         $this->payeeFinancialAccount = $payeeFinancialAccount;
 
@@ -698,9 +698,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeeFinancialAccount(): self
+    public function unsetPayeeFinancialAccount(): static
     {
         $this->payeeFinancialAccount = null;
 
@@ -727,9 +727,9 @@ class PaymentMeansType
 
     /**
      * @param CreditAccount|null $creditAccount
-     * @return self
+     * @return static
      */
-    public function setCreditAccount(?CreditAccount $creditAccount = null): self
+    public function setCreditAccount(?CreditAccount $creditAccount = null): static
     {
         $this->creditAccount = $creditAccount;
 
@@ -737,9 +737,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCreditAccount(): self
+    public function unsetCreditAccount(): static
     {
         $this->creditAccount = null;
 
@@ -766,9 +766,9 @@ class PaymentMeansType
 
     /**
      * @param PaymentMandate|null $paymentMandate
-     * @return self
+     * @return static
      */
-    public function setPaymentMandate(?PaymentMandate $paymentMandate = null): self
+    public function setPaymentMandate(?PaymentMandate $paymentMandate = null): static
     {
         $this->paymentMandate = $paymentMandate;
 
@@ -776,9 +776,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentMandate(): self
+    public function unsetPaymentMandate(): static
     {
         $this->paymentMandate = null;
 
@@ -805,9 +805,9 @@ class PaymentMeansType
 
     /**
      * @param TradeFinancing|null $tradeFinancing
-     * @return self
+     * @return static
      */
-    public function setTradeFinancing(?TradeFinancing $tradeFinancing = null): self
+    public function setTradeFinancing(?TradeFinancing $tradeFinancing = null): static
     {
         $this->tradeFinancing = $tradeFinancing;
 
@@ -815,9 +815,9 @@ class PaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTradeFinancing(): self
+    public function unsetTradeFinancing(): static
     {
         $this->tradeFinancing = null;
 

@@ -91,9 +91,9 @@ class TransportEquipmentSealType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -101,9 +101,9 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -130,9 +130,9 @@ class TransportEquipmentSealType
 
     /**
      * @param SealIssuerTypeCode|null $sealIssuerTypeCode
-     * @return self
+     * @return static
      */
-    public function setSealIssuerTypeCode(?SealIssuerTypeCode $sealIssuerTypeCode = null): self
+    public function setSealIssuerTypeCode(?SealIssuerTypeCode $sealIssuerTypeCode = null): static
     {
         $this->sealIssuerTypeCode = $sealIssuerTypeCode;
 
@@ -140,9 +140,9 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSealIssuerTypeCode(): self
+    public function unsetSealIssuerTypeCode(): static
     {
         $this->sealIssuerTypeCode = null;
 
@@ -169,9 +169,9 @@ class TransportEquipmentSealType
 
     /**
      * @param Condition|null $condition
-     * @return self
+     * @return static
      */
-    public function setCondition(?Condition $condition = null): self
+    public function setCondition(?Condition $condition = null): static
     {
         $this->condition = $condition;
 
@@ -179,9 +179,9 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCondition(): self
+    public function unsetCondition(): static
     {
         $this->condition = null;
 
@@ -208,9 +208,9 @@ class TransportEquipmentSealType
 
     /**
      * @param SealStatusCode|null $sealStatusCode
-     * @return self
+     * @return static
      */
-    public function setSealStatusCode(?SealStatusCode $sealStatusCode = null): self
+    public function setSealStatusCode(?SealStatusCode $sealStatusCode = null): static
     {
         $this->sealStatusCode = $sealStatusCode;
 
@@ -218,9 +218,9 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSealStatusCode(): self
+    public function unsetSealStatusCode(): static
     {
         $this->sealStatusCode = null;
 
@@ -247,9 +247,9 @@ class TransportEquipmentSealType
 
     /**
      * @param SealingPartyType|null $sealingPartyType
-     * @return self
+     * @return static
      */
-    public function setSealingPartyType(?SealingPartyType $sealingPartyType = null): self
+    public function setSealingPartyType(?SealingPartyType $sealingPartyType = null): static
     {
         $this->sealingPartyType = $sealingPartyType;
 
@@ -257,9 +257,9 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSealingPartyType(): self
+    public function unsetSealingPartyType(): static
     {
         $this->sealingPartyType = null;
 

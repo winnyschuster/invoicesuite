@@ -67,9 +67,9 @@ class BudgetAccountLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -77,9 +77,9 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -106,9 +106,9 @@ class BudgetAccountLineType
 
     /**
      * @param TotalAmount|null $totalAmount
-     * @return self
+     * @return static
      */
-    public function setTotalAmount(?TotalAmount $totalAmount = null): self
+    public function setTotalAmount(?TotalAmount $totalAmount = null): static
     {
         $this->totalAmount = $totalAmount;
 
@@ -116,9 +116,9 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalAmount(): self
+    public function unsetTotalAmount(): static
     {
         $this->totalAmount = null;
 
@@ -135,9 +135,9 @@ class BudgetAccountLineType
 
     /**
      * @param array<BudgetAccount>|null $budgetAccount
-     * @return self
+     * @return static
      */
-    public function setBudgetAccount(?array $budgetAccount = null): self
+    public function setBudgetAccount(?array $budgetAccount = null): static
     {
         $this->budgetAccount = $budgetAccount;
 
@@ -145,9 +145,9 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBudgetAccount(): self
+    public function unsetBudgetAccount(): static
     {
         $this->budgetAccount = null;
 
@@ -155,9 +155,9 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBudgetAccount(): self
+    public function clearBudgetAccount(): static
     {
         $this->budgetAccount = [];
 
@@ -196,9 +196,9 @@ class BudgetAccountLineType
 
     /**
      * @param BudgetAccount $budgetAccount
-     * @return self
+     * @return static
      */
-    public function addToBudgetAccount(BudgetAccount $budgetAccount): self
+    public function addToBudgetAccount(BudgetAccount $budgetAccount): static
     {
         $this->budgetAccount[] = $budgetAccount;
 
@@ -217,9 +217,9 @@ class BudgetAccountLineType
 
     /**
      * @param BudgetAccount $budgetAccount
-     * @return self
+     * @return static
      */
-    public function addOnceToBudgetAccount(BudgetAccount $budgetAccount): self
+    public function addOnceToBudgetAccount(BudgetAccount $budgetAccount): static
     {
         if (!is_array($this->budgetAccount)) {
             $this->budgetAccount = [];

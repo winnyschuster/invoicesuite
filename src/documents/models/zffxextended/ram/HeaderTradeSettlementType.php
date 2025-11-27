@@ -262,9 +262,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param IDType|null $creditorReferenceID
-     * @return self
+     * @return static
      */
-    public function setCreditorReferenceID(?IDType $creditorReferenceID = null): self
+    public function setCreditorReferenceID(?IDType $creditorReferenceID = null): static
     {
         $this->creditorReferenceID = $creditorReferenceID;
 
@@ -272,9 +272,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCreditorReferenceID(): self
+    public function unsetCreditorReferenceID(): static
     {
         $this->creditorReferenceID = null;
 
@@ -301,9 +301,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TextType|null $paymentReference
-     * @return self
+     * @return static
      */
-    public function setPaymentReference(?TextType $paymentReference = null): self
+    public function setPaymentReference(?TextType $paymentReference = null): static
     {
         $this->paymentReference = $paymentReference;
 
@@ -311,9 +311,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentReference(): self
+    public function unsetPaymentReference(): static
     {
         $this->paymentReference = null;
 
@@ -340,9 +340,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param CurrencyCodeType|null $taxCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setTaxCurrencyCode(?CurrencyCodeType $taxCurrencyCode = null): self
+    public function setTaxCurrencyCode(?CurrencyCodeType $taxCurrencyCode = null): static
     {
         $this->taxCurrencyCode = $taxCurrencyCode;
 
@@ -350,9 +350,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxCurrencyCode(): self
+    public function unsetTaxCurrencyCode(): static
     {
         $this->taxCurrencyCode = null;
 
@@ -379,9 +379,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param CurrencyCodeType|null $invoiceCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): self
+    public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): static
     {
         $this->invoiceCurrencyCode = $invoiceCurrencyCode;
 
@@ -389,9 +389,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceCurrencyCode(): self
+    public function unsetInvoiceCurrencyCode(): static
     {
         $this->invoiceCurrencyCode = null;
 
@@ -418,9 +418,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TextType|null $invoiceIssuerReference
-     * @return self
+     * @return static
      */
-    public function setInvoiceIssuerReference(?TextType $invoiceIssuerReference = null): self
+    public function setInvoiceIssuerReference(?TextType $invoiceIssuerReference = null): static
     {
         $this->invoiceIssuerReference = $invoiceIssuerReference;
 
@@ -428,9 +428,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceIssuerReference(): self
+    public function unsetInvoiceIssuerReference(): static
     {
         $this->invoiceIssuerReference = null;
 
@@ -457,9 +457,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradePartyType|null $invoicerTradeParty
-     * @return self
+     * @return static
      */
-    public function setInvoicerTradeParty(?TradePartyType $invoicerTradeParty = null): self
+    public function setInvoicerTradeParty(?TradePartyType $invoicerTradeParty = null): static
     {
         $this->invoicerTradeParty = $invoicerTradeParty;
 
@@ -467,9 +467,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoicerTradeParty(): self
+    public function unsetInvoicerTradeParty(): static
     {
         $this->invoicerTradeParty = null;
 
@@ -496,9 +496,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradePartyType|null $invoiceeTradeParty
-     * @return self
+     * @return static
      */
-    public function setInvoiceeTradeParty(?TradePartyType $invoiceeTradeParty = null): self
+    public function setInvoiceeTradeParty(?TradePartyType $invoiceeTradeParty = null): static
     {
         $this->invoiceeTradeParty = $invoiceeTradeParty;
 
@@ -506,9 +506,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceeTradeParty(): self
+    public function unsetInvoiceeTradeParty(): static
     {
         $this->invoiceeTradeParty = null;
 
@@ -535,9 +535,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradePartyType|null $payeeTradeParty
-     * @return self
+     * @return static
      */
-    public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): self
+    public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): static
     {
         $this->payeeTradeParty = $payeeTradeParty;
 
@@ -545,9 +545,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeeTradeParty(): self
+    public function unsetPayeeTradeParty(): static
     {
         $this->payeeTradeParty = null;
 
@@ -574,9 +574,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradePartyType|null $payerTradeParty
-     * @return self
+     * @return static
      */
-    public function setPayerTradeParty(?TradePartyType $payerTradeParty = null): self
+    public function setPayerTradeParty(?TradePartyType $payerTradeParty = null): static
     {
         $this->payerTradeParty = $payerTradeParty;
 
@@ -584,9 +584,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayerTradeParty(): self
+    public function unsetPayerTradeParty(): static
     {
         $this->payerTradeParty = null;
 
@@ -613,20 +613,20 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeCurrencyExchangeType|null $taxApplicableTradeCurrencyExchange
-     * @return self
+     * @return static
      */
     public function setTaxApplicableTradeCurrencyExchange(
         ?TradeCurrencyExchangeType $taxApplicableTradeCurrencyExchange = null,
-    ): self {
+    ): static {
         $this->taxApplicableTradeCurrencyExchange = $taxApplicableTradeCurrencyExchange;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxApplicableTradeCurrencyExchange(): self
+    public function unsetTaxApplicableTradeCurrencyExchange(): static
     {
         $this->taxApplicableTradeCurrencyExchange = null;
 
@@ -643,9 +643,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<TradeSettlementPaymentMeansType>|null $specifiedTradeSettlementPaymentMeans
-     * @return self
+     * @return static
      */
-    public function setSpecifiedTradeSettlementPaymentMeans(?array $specifiedTradeSettlementPaymentMeans = null): self
+    public function setSpecifiedTradeSettlementPaymentMeans(?array $specifiedTradeSettlementPaymentMeans = null): static
     {
         $this->specifiedTradeSettlementPaymentMeans = $specifiedTradeSettlementPaymentMeans;
 
@@ -653,9 +653,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTradeSettlementPaymentMeans(): self
+    public function unsetSpecifiedTradeSettlementPaymentMeans(): static
     {
         $this->specifiedTradeSettlementPaymentMeans = null;
 
@@ -663,9 +663,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedTradeSettlementPaymentMeans(): self
+    public function clearSpecifiedTradeSettlementPaymentMeans(): static
     {
         $this->specifiedTradeSettlementPaymentMeans = [];
 
@@ -674,11 +674,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
-     * @return self
+     * @return static
      */
     public function addToSpecifiedTradeSettlementPaymentMeans(
         TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans,
-    ): self {
+    ): static {
         $this->specifiedTradeSettlementPaymentMeans[] = $specifiedTradeSettlementPaymentMeans;
 
         return $this;
@@ -696,11 +696,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
-     * @return self
+     * @return static
      */
     public function addOnceToSpecifiedTradeSettlementPaymentMeans(
         TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans,
-    ): self {
+    ): static {
         if (!is_array($this->specifiedTradeSettlementPaymentMeans)) {
             $this->specifiedTradeSettlementPaymentMeans = [];
         }
@@ -736,9 +736,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<TradeTaxType>|null $applicableTradeTax
-     * @return self
+     * @return static
      */
-    public function setApplicableTradeTax(?array $applicableTradeTax = null): self
+    public function setApplicableTradeTax(?array $applicableTradeTax = null): static
     {
         $this->applicableTradeTax = $applicableTradeTax;
 
@@ -746,9 +746,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTradeTax(): self
+    public function unsetApplicableTradeTax(): static
     {
         $this->applicableTradeTax = null;
 
@@ -756,9 +756,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearApplicableTradeTax(): self
+    public function clearApplicableTradeTax(): static
     {
         $this->applicableTradeTax = [];
 
@@ -767,9 +767,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeTaxType $applicableTradeTax
-     * @return self
+     * @return static
      */
-    public function addToApplicableTradeTax(TradeTaxType $applicableTradeTax): self
+    public function addToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
     {
         $this->applicableTradeTax[] = $applicableTradeTax;
 
@@ -788,9 +788,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeTaxType $applicableTradeTax
-     * @return self
+     * @return static
      */
-    public function addOnceToApplicableTradeTax(TradeTaxType $applicableTradeTax): self
+    public function addOnceToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
     {
         if (!is_array($this->applicableTradeTax)) {
             $this->applicableTradeTax = [];
@@ -837,9 +837,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param SpecifiedPeriodType|null $billingSpecifiedPeriod
-     * @return self
+     * @return static
      */
-    public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): self
+    public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): static
     {
         $this->billingSpecifiedPeriod = $billingSpecifiedPeriod;
 
@@ -847,9 +847,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBillingSpecifiedPeriod(): self
+    public function unsetBillingSpecifiedPeriod(): static
     {
         $this->billingSpecifiedPeriod = null;
 
@@ -866,9 +866,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<TradeAllowanceChargeType>|null $specifiedTradeAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): self
+    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): static
     {
         $this->specifiedTradeAllowanceCharge = $specifiedTradeAllowanceCharge;
 
@@ -876,9 +876,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTradeAllowanceCharge(): self
+    public function unsetSpecifiedTradeAllowanceCharge(): static
     {
         $this->specifiedTradeAllowanceCharge = null;
 
@@ -886,9 +886,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedTradeAllowanceCharge(): self
+    public function clearSpecifiedTradeAllowanceCharge(): static
     {
         $this->specifiedTradeAllowanceCharge = [];
 
@@ -897,9 +897,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): self
+    public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): static
     {
         $this->specifiedTradeAllowanceCharge[] = $specifiedTradeAllowanceCharge;
 
@@ -918,11 +918,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
-     * @return self
+     * @return static
      */
     public function addOnceToSpecifiedTradeAllowanceCharge(
         TradeAllowanceChargeType $specifiedTradeAllowanceCharge,
-    ): self {
+    ): static {
         if (!is_array($this->specifiedTradeAllowanceCharge)) {
             $this->specifiedTradeAllowanceCharge = [];
         }
@@ -958,9 +958,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<LogisticsServiceChargeType>|null $specifiedLogisticsServiceCharge
-     * @return self
+     * @return static
      */
-    public function setSpecifiedLogisticsServiceCharge(?array $specifiedLogisticsServiceCharge = null): self
+    public function setSpecifiedLogisticsServiceCharge(?array $specifiedLogisticsServiceCharge = null): static
     {
         $this->specifiedLogisticsServiceCharge = $specifiedLogisticsServiceCharge;
 
@@ -968,9 +968,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedLogisticsServiceCharge(): self
+    public function unsetSpecifiedLogisticsServiceCharge(): static
     {
         $this->specifiedLogisticsServiceCharge = null;
 
@@ -978,9 +978,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedLogisticsServiceCharge(): self
+    public function clearSpecifiedLogisticsServiceCharge(): static
     {
         $this->specifiedLogisticsServiceCharge = [];
 
@@ -989,11 +989,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param LogisticsServiceChargeType $specifiedLogisticsServiceCharge
-     * @return self
+     * @return static
      */
     public function addToSpecifiedLogisticsServiceCharge(
         LogisticsServiceChargeType $specifiedLogisticsServiceCharge,
-    ): self {
+    ): static {
         $this->specifiedLogisticsServiceCharge[] = $specifiedLogisticsServiceCharge;
 
         return $this;
@@ -1011,11 +1011,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param LogisticsServiceChargeType $specifiedLogisticsServiceCharge
-     * @return self
+     * @return static
      */
     public function addOnceToSpecifiedLogisticsServiceCharge(
         LogisticsServiceChargeType $specifiedLogisticsServiceCharge,
-    ): self {
+    ): static {
         if (!is_array($this->specifiedLogisticsServiceCharge)) {
             $this->specifiedLogisticsServiceCharge = [];
         }
@@ -1051,9 +1051,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<TradePaymentTermsType>|null $specifiedTradePaymentTerms
-     * @return self
+     * @return static
      */
-    public function setSpecifiedTradePaymentTerms(?array $specifiedTradePaymentTerms = null): self
+    public function setSpecifiedTradePaymentTerms(?array $specifiedTradePaymentTerms = null): static
     {
         $this->specifiedTradePaymentTerms = $specifiedTradePaymentTerms;
 
@@ -1061,9 +1061,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTradePaymentTerms(): self
+    public function unsetSpecifiedTradePaymentTerms(): static
     {
         $this->specifiedTradePaymentTerms = null;
 
@@ -1071,9 +1071,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedTradePaymentTerms(): self
+    public function clearSpecifiedTradePaymentTerms(): static
     {
         $this->specifiedTradePaymentTerms = [];
 
@@ -1082,9 +1082,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradePaymentTermsType $specifiedTradePaymentTerms
-     * @return self
+     * @return static
      */
-    public function addToSpecifiedTradePaymentTerms(TradePaymentTermsType $specifiedTradePaymentTerms): self
+    public function addToSpecifiedTradePaymentTerms(TradePaymentTermsType $specifiedTradePaymentTerms): static
     {
         $this->specifiedTradePaymentTerms[] = $specifiedTradePaymentTerms;
 
@@ -1103,9 +1103,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradePaymentTermsType $specifiedTradePaymentTerms
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecifiedTradePaymentTerms(TradePaymentTermsType $specifiedTradePaymentTerms): self
+    public function addOnceToSpecifiedTradePaymentTerms(TradePaymentTermsType $specifiedTradePaymentTerms): static
     {
         if (!is_array($this->specifiedTradePaymentTerms)) {
             $this->specifiedTradePaymentTerms = [];
@@ -1152,20 +1152,20 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeSettlementHeaderMonetarySummationType|null $specifiedTradeSettlementHeaderMonetarySummation
-     * @return self
+     * @return static
      */
     public function setSpecifiedTradeSettlementHeaderMonetarySummation(
         ?TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation = null,
-    ): self {
+    ): static {
         $this->specifiedTradeSettlementHeaderMonetarySummation = $specifiedTradeSettlementHeaderMonetarySummation;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTradeSettlementHeaderMonetarySummation(): self
+    public function unsetSpecifiedTradeSettlementHeaderMonetarySummation(): static
     {
         $this->specifiedTradeSettlementHeaderMonetarySummation = null;
 
@@ -1182,9 +1182,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<ReferencedDocumentType>|null $invoiceReferencedDocument
-     * @return self
+     * @return static
      */
-    public function setInvoiceReferencedDocument(?array $invoiceReferencedDocument = null): self
+    public function setInvoiceReferencedDocument(?array $invoiceReferencedDocument = null): static
     {
         $this->invoiceReferencedDocument = $invoiceReferencedDocument;
 
@@ -1192,9 +1192,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceReferencedDocument(): self
+    public function unsetInvoiceReferencedDocument(): static
     {
         $this->invoiceReferencedDocument = null;
 
@@ -1202,9 +1202,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInvoiceReferencedDocument(): self
+    public function clearInvoiceReferencedDocument(): static
     {
         $this->invoiceReferencedDocument = [];
 
@@ -1213,9 +1213,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param ReferencedDocumentType $invoiceReferencedDocument
-     * @return self
+     * @return static
      */
-    public function addToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): self
+    public function addToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): static
     {
         $this->invoiceReferencedDocument[] = $invoiceReferencedDocument;
 
@@ -1234,9 +1234,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param ReferencedDocumentType $invoiceReferencedDocument
-     * @return self
+     * @return static
      */
-    public function addOnceToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): self
+    public function addOnceToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): static
     {
         if (!is_array($this->invoiceReferencedDocument)) {
             $this->invoiceReferencedDocument = [];
@@ -1273,20 +1273,20 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<TradeAccountingAccountType>|null $receivableSpecifiedTradeAccountingAccount
-     * @return self
+     * @return static
      */
     public function setReceivableSpecifiedTradeAccountingAccount(
         ?array $receivableSpecifiedTradeAccountingAccount = null,
-    ): self {
+    ): static {
         $this->receivableSpecifiedTradeAccountingAccount = $receivableSpecifiedTradeAccountingAccount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivableSpecifiedTradeAccountingAccount(): self
+    public function unsetReceivableSpecifiedTradeAccountingAccount(): static
     {
         $this->receivableSpecifiedTradeAccountingAccount = null;
 
@@ -1294,9 +1294,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearReceivableSpecifiedTradeAccountingAccount(): self
+    public function clearReceivableSpecifiedTradeAccountingAccount(): static
     {
         $this->receivableSpecifiedTradeAccountingAccount = [];
 
@@ -1305,11 +1305,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
-     * @return self
+     * @return static
      */
     public function addToReceivableSpecifiedTradeAccountingAccount(
         TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount,
-    ): self {
+    ): static {
         $this->receivableSpecifiedTradeAccountingAccount[] = $receivableSpecifiedTradeAccountingAccount;
 
         return $this;
@@ -1327,11 +1327,11 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
-     * @return self
+     * @return static
      */
     public function addOnceToReceivableSpecifiedTradeAccountingAccount(
         TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount,
-    ): self {
+    ): static {
         if (!is_array($this->receivableSpecifiedTradeAccountingAccount)) {
             $this->receivableSpecifiedTradeAccountingAccount = [];
         }
@@ -1367,9 +1367,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param array<AdvancePaymentType>|null $specifiedAdvancePayment
-     * @return self
+     * @return static
      */
-    public function setSpecifiedAdvancePayment(?array $specifiedAdvancePayment = null): self
+    public function setSpecifiedAdvancePayment(?array $specifiedAdvancePayment = null): static
     {
         $this->specifiedAdvancePayment = $specifiedAdvancePayment;
 
@@ -1377,9 +1377,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedAdvancePayment(): self
+    public function unsetSpecifiedAdvancePayment(): static
     {
         $this->specifiedAdvancePayment = null;
 
@@ -1387,9 +1387,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedAdvancePayment(): self
+    public function clearSpecifiedAdvancePayment(): static
     {
         $this->specifiedAdvancePayment = [];
 
@@ -1398,9 +1398,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param AdvancePaymentType $specifiedAdvancePayment
-     * @return self
+     * @return static
      */
-    public function addToSpecifiedAdvancePayment(AdvancePaymentType $specifiedAdvancePayment): self
+    public function addToSpecifiedAdvancePayment(AdvancePaymentType $specifiedAdvancePayment): static
     {
         $this->specifiedAdvancePayment[] = $specifiedAdvancePayment;
 
@@ -1419,9 +1419,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param AdvancePaymentType $specifiedAdvancePayment
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecifiedAdvancePayment(AdvancePaymentType $specifiedAdvancePayment): self
+    public function addOnceToSpecifiedAdvancePayment(AdvancePaymentType $specifiedAdvancePayment): static
     {
         if (!is_array($this->specifiedAdvancePayment)) {
             $this->specifiedAdvancePayment = [];

@@ -102,9 +102,9 @@ class ItemIdentificationType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -112,9 +112,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -141,9 +141,9 @@ class ItemIdentificationType
 
     /**
      * @param ExtendedID|null $extendedID
-     * @return self
+     * @return static
      */
-    public function setExtendedID(?ExtendedID $extendedID = null): self
+    public function setExtendedID(?ExtendedID $extendedID = null): static
     {
         $this->extendedID = $extendedID;
 
@@ -151,9 +151,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtendedID(): self
+    public function unsetExtendedID(): static
     {
         $this->extendedID = null;
 
@@ -180,9 +180,9 @@ class ItemIdentificationType
 
     /**
      * @param BarcodeSymbologyID|null $barcodeSymbologyID
-     * @return self
+     * @return static
      */
-    public function setBarcodeSymbologyID(?BarcodeSymbologyID $barcodeSymbologyID = null): self
+    public function setBarcodeSymbologyID(?BarcodeSymbologyID $barcodeSymbologyID = null): static
     {
         $this->barcodeSymbologyID = $barcodeSymbologyID;
 
@@ -190,9 +190,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBarcodeSymbologyID(): self
+    public function unsetBarcodeSymbologyID(): static
     {
         $this->barcodeSymbologyID = null;
 
@@ -209,9 +209,9 @@ class ItemIdentificationType
 
     /**
      * @param array<PhysicalAttribute>|null $physicalAttribute
-     * @return self
+     * @return static
      */
-    public function setPhysicalAttribute(?array $physicalAttribute = null): self
+    public function setPhysicalAttribute(?array $physicalAttribute = null): static
     {
         $this->physicalAttribute = $physicalAttribute;
 
@@ -219,9 +219,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPhysicalAttribute(): self
+    public function unsetPhysicalAttribute(): static
     {
         $this->physicalAttribute = null;
 
@@ -229,9 +229,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPhysicalAttribute(): self
+    public function clearPhysicalAttribute(): static
     {
         $this->physicalAttribute = [];
 
@@ -270,9 +270,9 @@ class ItemIdentificationType
 
     /**
      * @param PhysicalAttribute $physicalAttribute
-     * @return self
+     * @return static
      */
-    public function addToPhysicalAttribute(PhysicalAttribute $physicalAttribute): self
+    public function addToPhysicalAttribute(PhysicalAttribute $physicalAttribute): static
     {
         $this->physicalAttribute[] = $physicalAttribute;
 
@@ -291,9 +291,9 @@ class ItemIdentificationType
 
     /**
      * @param PhysicalAttribute $physicalAttribute
-     * @return self
+     * @return static
      */
-    public function addOnceToPhysicalAttribute(PhysicalAttribute $physicalAttribute): self
+    public function addOnceToPhysicalAttribute(PhysicalAttribute $physicalAttribute): static
     {
         if (!is_array($this->physicalAttribute)) {
             $this->physicalAttribute = [];
@@ -330,9 +330,9 @@ class ItemIdentificationType
 
     /**
      * @param array<MeasurementDimension>|null $measurementDimension
-     * @return self
+     * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): self
+    public function setMeasurementDimension(?array $measurementDimension = null): static
     {
         $this->measurementDimension = $measurementDimension;
 
@@ -340,9 +340,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementDimension(): self
+    public function unsetMeasurementDimension(): static
     {
         $this->measurementDimension = null;
 
@@ -350,9 +350,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeasurementDimension(): self
+    public function clearMeasurementDimension(): static
     {
         $this->measurementDimension = [];
 
@@ -391,9 +391,9 @@ class ItemIdentificationType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         $this->measurementDimension[] = $measurementDimension;
 
@@ -412,9 +412,9 @@ class ItemIdentificationType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
@@ -461,9 +461,9 @@ class ItemIdentificationType
 
     /**
      * @param IssuerParty|null $issuerParty
-     * @return self
+     * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): self
+    public function setIssuerParty(?IssuerParty $issuerParty = null): static
     {
         $this->issuerParty = $issuerParty;
 
@@ -471,9 +471,9 @@ class ItemIdentificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerParty(): self
+    public function unsetIssuerParty(): static
     {
         $this->issuerParty = null;
 

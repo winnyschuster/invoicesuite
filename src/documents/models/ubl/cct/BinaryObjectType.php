@@ -99,9 +99,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -109,9 +109,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -128,9 +128,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $format
-     * @return self
+     * @return static
      */
-    public function setFormat(?string $format = null): self
+    public function setFormat(?string $format = null): static
     {
         $this->format = InvoiceSuiteStringUtils::asNullWhenEmpty($format);
 
@@ -138,9 +138,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFormat(): self
+    public function unsetFormat(): static
     {
         $this->format = null;
 
@@ -157,9 +157,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $mimeCode
-     * @return self
+     * @return static
      */
-    public function setMimeCode(?string $mimeCode = null): self
+    public function setMimeCode(?string $mimeCode = null): static
     {
         $this->mimeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($mimeCode);
 
@@ -167,9 +167,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMimeCode(): self
+    public function unsetMimeCode(): static
     {
         $this->mimeCode = null;
 
@@ -186,9 +186,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $encodingCode
-     * @return self
+     * @return static
      */
-    public function setEncodingCode(?string $encodingCode = null): self
+    public function setEncodingCode(?string $encodingCode = null): static
     {
         $this->encodingCode = InvoiceSuiteStringUtils::asNullWhenEmpty($encodingCode);
 
@@ -196,9 +196,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEncodingCode(): self
+    public function unsetEncodingCode(): static
     {
         $this->encodingCode = null;
 
@@ -215,9 +215,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $characterSetCode
-     * @return self
+     * @return static
      */
-    public function setCharacterSetCode(?string $characterSetCode = null): self
+    public function setCharacterSetCode(?string $characterSetCode = null): static
     {
         $this->characterSetCode = InvoiceSuiteStringUtils::asNullWhenEmpty($characterSetCode);
 
@@ -225,9 +225,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCharacterSetCode(): self
+    public function unsetCharacterSetCode(): static
     {
         $this->characterSetCode = null;
 
@@ -244,9 +244,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $uri
-     * @return self
+     * @return static
      */
-    public function setUri(?string $uri = null): self
+    public function setUri(?string $uri = null): static
     {
         $this->uri = InvoiceSuiteStringUtils::asNullWhenEmpty($uri);
 
@@ -254,9 +254,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUri(): self
+    public function unsetUri(): static
     {
         $this->uri = null;
 
@@ -273,9 +273,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $filename
-     * @return self
+     * @return static
      */
-    public function setFilename(?string $filename = null): self
+    public function setFilename(?string $filename = null): static
     {
         $this->filename = InvoiceSuiteStringUtils::asNullWhenEmpty($filename);
 
@@ -283,9 +283,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFilename(): self
+    public function unsetFilename(): static
     {
         $this->filename = null;
 

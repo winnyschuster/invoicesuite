@@ -65,9 +65,9 @@ class ProcurementProjectLotType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -75,9 +75,9 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -104,9 +104,9 @@ class ProcurementProjectLotType
 
     /**
      * @param TenderingTerms|null $tenderingTerms
-     * @return self
+     * @return static
      */
-    public function setTenderingTerms(?TenderingTerms $tenderingTerms = null): self
+    public function setTenderingTerms(?TenderingTerms $tenderingTerms = null): static
     {
         $this->tenderingTerms = $tenderingTerms;
 
@@ -114,9 +114,9 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderingTerms(): self
+    public function unsetTenderingTerms(): static
     {
         $this->tenderingTerms = null;
 
@@ -143,9 +143,9 @@ class ProcurementProjectLotType
 
     /**
      * @param ProcurementProject|null $procurementProject
-     * @return self
+     * @return static
      */
-    public function setProcurementProject(?ProcurementProject $procurementProject = null): self
+    public function setProcurementProject(?ProcurementProject $procurementProject = null): static
     {
         $this->procurementProject = $procurementProject;
 
@@ -153,9 +153,9 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcurementProject(): self
+    public function unsetProcurementProject(): static
     {
         $this->procurementProject = null;
 

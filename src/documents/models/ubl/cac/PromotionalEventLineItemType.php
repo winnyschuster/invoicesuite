@@ -54,9 +54,9 @@ class PromotionalEventLineItemType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -64,9 +64,9 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -93,9 +93,9 @@ class PromotionalEventLineItemType
 
     /**
      * @param EventLineItem|null $eventLineItem
-     * @return self
+     * @return static
      */
-    public function setEventLineItem(?EventLineItem $eventLineItem = null): self
+    public function setEventLineItem(?EventLineItem $eventLineItem = null): static
     {
         $this->eventLineItem = $eventLineItem;
 
@@ -103,9 +103,9 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEventLineItem(): self
+    public function unsetEventLineItem(): static
     {
         $this->eventLineItem = null;
 

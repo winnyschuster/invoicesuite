@@ -44,9 +44,9 @@ class AmountType
 
     /**
      * @param float|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?float $value = null): self
+    public function setValue(?float $value = null): static
     {
         $this->value = $value;
 
@@ -54,9 +54,9 @@ class AmountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -73,9 +73,9 @@ class AmountType
 
     /**
      * @param string|null $currencyID
-     * @return self
+     * @return static
      */
-    public function setCurrencyID(?string $currencyID = null): self
+    public function setCurrencyID(?string $currencyID = null): static
     {
         $this->currencyID = InvoiceSuiteStringUtils::asNullWhenEmpty($currencyID);
 
@@ -83,9 +83,9 @@ class AmountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrencyID(): self
+    public function unsetCurrencyID(): static
     {
         $this->currencyID = null;
 

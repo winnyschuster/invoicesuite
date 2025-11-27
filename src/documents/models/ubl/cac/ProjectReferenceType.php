@@ -79,9 +79,9 @@ class ProjectReferenceType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -89,9 +89,9 @@ class ProjectReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -118,9 +118,9 @@ class ProjectReferenceType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -128,9 +128,9 @@ class ProjectReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -147,9 +147,9 @@ class ProjectReferenceType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -157,9 +157,9 @@ class ProjectReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -176,9 +176,9 @@ class ProjectReferenceType
 
     /**
      * @param array<WorkPhaseReference>|null $workPhaseReference
-     * @return self
+     * @return static
      */
-    public function setWorkPhaseReference(?array $workPhaseReference = null): self
+    public function setWorkPhaseReference(?array $workPhaseReference = null): static
     {
         $this->workPhaseReference = $workPhaseReference;
 
@@ -186,9 +186,9 @@ class ProjectReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWorkPhaseReference(): self
+    public function unsetWorkPhaseReference(): static
     {
         $this->workPhaseReference = null;
 
@@ -196,9 +196,9 @@ class ProjectReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearWorkPhaseReference(): self
+    public function clearWorkPhaseReference(): static
     {
         $this->workPhaseReference = [];
 
@@ -237,9 +237,9 @@ class ProjectReferenceType
 
     /**
      * @param WorkPhaseReference $workPhaseReference
-     * @return self
+     * @return static
      */
-    public function addToWorkPhaseReference(WorkPhaseReference $workPhaseReference): self
+    public function addToWorkPhaseReference(WorkPhaseReference $workPhaseReference): static
     {
         $this->workPhaseReference[] = $workPhaseReference;
 
@@ -258,9 +258,9 @@ class ProjectReferenceType
 
     /**
      * @param WorkPhaseReference $workPhaseReference
-     * @return self
+     * @return static
      */
-    public function addOnceToWorkPhaseReference(WorkPhaseReference $workPhaseReference): self
+    public function addOnceToWorkPhaseReference(WorkPhaseReference $workPhaseReference): static
     {
         if (!is_array($this->workPhaseReference)) {
             $this->workPhaseReference = [];

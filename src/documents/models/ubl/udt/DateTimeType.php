@@ -43,9 +43,9 @@ class DateTimeType
 
     /**
      * @param DateTime|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?DateTime $value = null): self
+    public function setValue(?DateTime $value = null): static
     {
         $this->value = $value;
 
@@ -53,9 +53,9 @@ class DateTimeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

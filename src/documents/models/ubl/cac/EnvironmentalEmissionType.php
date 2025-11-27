@@ -80,20 +80,20 @@ class EnvironmentalEmissionType
 
     /**
      * @param EnvironmentalEmissionTypeCode|null $environmentalEmissionTypeCode
-     * @return self
+     * @return static
      */
     public function setEnvironmentalEmissionTypeCode(
         ?EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode = null,
-    ): self {
+    ): static {
         $this->environmentalEmissionTypeCode = $environmentalEmissionTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEnvironmentalEmissionTypeCode(): self
+    public function unsetEnvironmentalEmissionTypeCode(): static
     {
         $this->environmentalEmissionTypeCode = null;
 
@@ -120,9 +120,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param ValueMeasure|null $valueMeasure
-     * @return self
+     * @return static
      */
-    public function setValueMeasure(?ValueMeasure $valueMeasure = null): self
+    public function setValueMeasure(?ValueMeasure $valueMeasure = null): static
     {
         $this->valueMeasure = $valueMeasure;
 
@@ -130,9 +130,9 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueMeasure(): self
+    public function unsetValueMeasure(): static
     {
         $this->valueMeasure = null;
 
@@ -149,9 +149,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -159,9 +159,9 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -169,9 +169,9 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -210,9 +210,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -231,9 +231,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -270,9 +270,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param array<EmissionCalculationMethod>|null $emissionCalculationMethod
-     * @return self
+     * @return static
      */
-    public function setEmissionCalculationMethod(?array $emissionCalculationMethod = null): self
+    public function setEmissionCalculationMethod(?array $emissionCalculationMethod = null): static
     {
         $this->emissionCalculationMethod = $emissionCalculationMethod;
 
@@ -280,9 +280,9 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmissionCalculationMethod(): self
+    public function unsetEmissionCalculationMethod(): static
     {
         $this->emissionCalculationMethod = null;
 
@@ -290,9 +290,9 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEmissionCalculationMethod(): self
+    public function clearEmissionCalculationMethod(): static
     {
         $this->emissionCalculationMethod = [];
 
@@ -331,9 +331,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param EmissionCalculationMethod $emissionCalculationMethod
-     * @return self
+     * @return static
      */
-    public function addToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): self
+    public function addToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): static
     {
         $this->emissionCalculationMethod[] = $emissionCalculationMethod;
 
@@ -352,9 +352,9 @@ class EnvironmentalEmissionType
 
     /**
      * @param EmissionCalculationMethod $emissionCalculationMethod
-     * @return self
+     * @return static
      */
-    public function addOnceToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): self
+    public function addOnceToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): static
     {
         if (!is_array($this->emissionCalculationMethod)) {
             $this->emissionCalculationMethod = [];

@@ -58,9 +58,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @throws PdfParserException
      * @throws InvalidArgumentException
      * @throws ParseFailureException
-     * @return InvoiceSuitePdfExtractor
+     * @return static
      */
-    public static function fromFile(string $pdfFilename): self
+    public static function fromFile(string $pdfFilename): static
     {
         if (!file_exists($pdfFilename)) {
             throw new InvoiceSuiteFileNotFoundException($pdfFilename);
@@ -82,11 +82,11 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @throws PdfParserException
      * @throws InvalidArgumentException
      * @throws ParseFailureException
-     * @return InvoiceSuitePdfExtractor
+     * @return static
      */
-    public static function fromContent(string $pdfContent): self
+    public static function fromContent(string $pdfContent): static
     {
-        return (new self())->collectAttachmentsFromPdfContent($pdfContent);
+        return (new static())->collectAttachmentsFromPdfContent($pdfContent);
     }
 
     /**
@@ -195,9 +195,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @throws InvalidArgumentException
      * @throws ParseFailureException
      * @throws PdfParserException
-     * @return InvoiceSuitePdfExtractor
+     * @return static
      */
-    protected function collectAttachmentsFromPdfContent(string $pdfContent): self
+    protected function collectAttachmentsFromPdfContent(string $pdfContent): static
     {
         $this->attachmentList = [];
 

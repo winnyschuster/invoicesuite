@@ -55,9 +55,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -65,9 +65,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -84,9 +84,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $mimeCode
-     * @return self
+     * @return static
      */
-    public function setMimeCode(?string $mimeCode = null): self
+    public function setMimeCode(?string $mimeCode = null): static
     {
         $this->mimeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($mimeCode);
 
@@ -94,9 +94,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMimeCode(): self
+    public function unsetMimeCode(): static
     {
         $this->mimeCode = null;
 
@@ -113,9 +113,9 @@ class BinaryObjectType
 
     /**
      * @param string|null $filename
-     * @return self
+     * @return static
      */
-    public function setFilename(?string $filename = null): self
+    public function setFilename(?string $filename = null): static
     {
         $this->filename = InvoiceSuiteStringUtils::asNullWhenEmpty($filename);
 
@@ -123,9 +123,9 @@ class BinaryObjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFilename(): self
+    public function unsetFilename(): static
     {
         $this->filename = null;
 

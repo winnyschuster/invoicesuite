@@ -55,20 +55,20 @@ class MiscellaneousEventType
 
     /**
      * @param MiscellaneousEventTypeCode|null $miscellaneousEventTypeCode
-     * @return self
+     * @return static
      */
     public function setMiscellaneousEventTypeCode(
         ?MiscellaneousEventTypeCode $miscellaneousEventTypeCode = null,
-    ): self {
+    ): static {
         $this->miscellaneousEventTypeCode = $miscellaneousEventTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMiscellaneousEventTypeCode(): self
+    public function unsetMiscellaneousEventTypeCode(): static
     {
         $this->miscellaneousEventTypeCode = null;
 
@@ -85,9 +85,9 @@ class MiscellaneousEventType
 
     /**
      * @param array<EventLineItem>|null $eventLineItem
-     * @return self
+     * @return static
      */
-    public function setEventLineItem(?array $eventLineItem = null): self
+    public function setEventLineItem(?array $eventLineItem = null): static
     {
         $this->eventLineItem = $eventLineItem;
 
@@ -95,9 +95,9 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEventLineItem(): self
+    public function unsetEventLineItem(): static
     {
         $this->eventLineItem = null;
 
@@ -105,9 +105,9 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEventLineItem(): self
+    public function clearEventLineItem(): static
     {
         $this->eventLineItem = [];
 
@@ -146,9 +146,9 @@ class MiscellaneousEventType
 
     /**
      * @param EventLineItem $eventLineItem
-     * @return self
+     * @return static
      */
-    public function addToEventLineItem(EventLineItem $eventLineItem): self
+    public function addToEventLineItem(EventLineItem $eventLineItem): static
     {
         $this->eventLineItem[] = $eventLineItem;
 
@@ -167,9 +167,9 @@ class MiscellaneousEventType
 
     /**
      * @param EventLineItem $eventLineItem
-     * @return self
+     * @return static
      */
-    public function addOnceToEventLineItem(EventLineItem $eventLineItem): self
+    public function addOnceToEventLineItem(EventLineItem $eventLineItem): static
     {
         if (!is_array($this->eventLineItem)) {
             $this->eventLineItem = [];

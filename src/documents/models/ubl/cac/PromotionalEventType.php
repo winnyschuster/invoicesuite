@@ -89,9 +89,9 @@ class PromotionalEventType
 
     /**
      * @param PromotionalEventTypeCode|null $promotionalEventTypeCode
-     * @return self
+     * @return static
      */
-    public function setPromotionalEventTypeCode(?PromotionalEventTypeCode $promotionalEventTypeCode = null): self
+    public function setPromotionalEventTypeCode(?PromotionalEventTypeCode $promotionalEventTypeCode = null): static
     {
         $this->promotionalEventTypeCode = $promotionalEventTypeCode;
 
@@ -99,9 +99,9 @@ class PromotionalEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPromotionalEventTypeCode(): self
+    public function unsetPromotionalEventTypeCode(): static
     {
         $this->promotionalEventTypeCode = null;
 
@@ -118,9 +118,9 @@ class PromotionalEventType
 
     /**
      * @param DateTimeInterface|null $submissionDate
-     * @return self
+     * @return static
      */
-    public function setSubmissionDate(?DateTimeInterface $submissionDate = null): self
+    public function setSubmissionDate(?DateTimeInterface $submissionDate = null): static
     {
         $this->submissionDate = $submissionDate;
 
@@ -128,9 +128,9 @@ class PromotionalEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubmissionDate(): self
+    public function unsetSubmissionDate(): static
     {
         $this->submissionDate = null;
 
@@ -147,9 +147,9 @@ class PromotionalEventType
 
     /**
      * @param DateTimeInterface|null $firstShipmentAvailibilityDate
-     * @return self
+     * @return static
      */
-    public function setFirstShipmentAvailibilityDate(?DateTimeInterface $firstShipmentAvailibilityDate = null): self
+    public function setFirstShipmentAvailibilityDate(?DateTimeInterface $firstShipmentAvailibilityDate = null): static
     {
         $this->firstShipmentAvailibilityDate = $firstShipmentAvailibilityDate;
 
@@ -157,9 +157,9 @@ class PromotionalEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFirstShipmentAvailibilityDate(): self
+    public function unsetFirstShipmentAvailibilityDate(): static
     {
         $this->firstShipmentAvailibilityDate = null;
 
@@ -176,9 +176,9 @@ class PromotionalEventType
 
     /**
      * @param DateTimeInterface|null $latestProposalAcceptanceDate
-     * @return self
+     * @return static
      */
-    public function setLatestProposalAcceptanceDate(?DateTimeInterface $latestProposalAcceptanceDate = null): self
+    public function setLatestProposalAcceptanceDate(?DateTimeInterface $latestProposalAcceptanceDate = null): static
     {
         $this->latestProposalAcceptanceDate = $latestProposalAcceptanceDate;
 
@@ -186,9 +186,9 @@ class PromotionalEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestProposalAcceptanceDate(): self
+    public function unsetLatestProposalAcceptanceDate(): static
     {
         $this->latestProposalAcceptanceDate = null;
 
@@ -205,9 +205,9 @@ class PromotionalEventType
 
     /**
      * @param array<PromotionalSpecification>|null $promotionalSpecification
-     * @return self
+     * @return static
      */
-    public function setPromotionalSpecification(?array $promotionalSpecification = null): self
+    public function setPromotionalSpecification(?array $promotionalSpecification = null): static
     {
         $this->promotionalSpecification = $promotionalSpecification;
 
@@ -215,9 +215,9 @@ class PromotionalEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPromotionalSpecification(): self
+    public function unsetPromotionalSpecification(): static
     {
         $this->promotionalSpecification = null;
 
@@ -225,9 +225,9 @@ class PromotionalEventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPromotionalSpecification(): self
+    public function clearPromotionalSpecification(): static
     {
         $this->promotionalSpecification = [];
 
@@ -266,9 +266,9 @@ class PromotionalEventType
 
     /**
      * @param PromotionalSpecification $promotionalSpecification
-     * @return self
+     * @return static
      */
-    public function addToPromotionalSpecification(PromotionalSpecification $promotionalSpecification): self
+    public function addToPromotionalSpecification(PromotionalSpecification $promotionalSpecification): static
     {
         $this->promotionalSpecification[] = $promotionalSpecification;
 
@@ -287,9 +287,9 @@ class PromotionalEventType
 
     /**
      * @param PromotionalSpecification $promotionalSpecification
-     * @return self
+     * @return static
      */
-    public function addOnceToPromotionalSpecification(PromotionalSpecification $promotionalSpecification): self
+    public function addOnceToPromotionalSpecification(PromotionalSpecification $promotionalSpecification): static
     {
         if (!is_array($this->promotionalSpecification)) {
             $this->promotionalSpecification = [];

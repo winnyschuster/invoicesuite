@@ -231,9 +231,9 @@ class DocumentReferenceType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -241,9 +241,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -260,9 +260,9 @@ class DocumentReferenceType
 
     /**
      * @param bool|null $copyIndicator
-     * @return self
+     * @return static
      */
-    public function setCopyIndicator(?bool $copyIndicator = null): self
+    public function setCopyIndicator(?bool $copyIndicator = null): static
     {
         $this->copyIndicator = $copyIndicator;
 
@@ -270,9 +270,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCopyIndicator(): self
+    public function unsetCopyIndicator(): static
     {
         $this->copyIndicator = null;
 
@@ -299,9 +299,9 @@ class DocumentReferenceType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -309,9 +309,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -328,9 +328,9 @@ class DocumentReferenceType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -338,9 +338,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -357,9 +357,9 @@ class DocumentReferenceType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -367,9 +367,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 
@@ -396,9 +396,9 @@ class DocumentReferenceType
 
     /**
      * @param DocumentTypeCode|null $documentTypeCode
-     * @return self
+     * @return static
      */
-    public function setDocumentTypeCode(?DocumentTypeCode $documentTypeCode = null): self
+    public function setDocumentTypeCode(?DocumentTypeCode $documentTypeCode = null): static
     {
         $this->documentTypeCode = $documentTypeCode;
 
@@ -406,9 +406,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentTypeCode(): self
+    public function unsetDocumentTypeCode(): static
     {
         $this->documentTypeCode = null;
 
@@ -435,9 +435,9 @@ class DocumentReferenceType
 
     /**
      * @param DocumentType|null $documentType
-     * @return self
+     * @return static
      */
-    public function setDocumentType(?DocumentType $documentType = null): self
+    public function setDocumentType(?DocumentType $documentType = null): static
     {
         $this->documentType = $documentType;
 
@@ -445,9 +445,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentType(): self
+    public function unsetDocumentType(): static
     {
         $this->documentType = null;
 
@@ -464,9 +464,9 @@ class DocumentReferenceType
 
     /**
      * @param array<XPath>|null $xPath
-     * @return self
+     * @return static
      */
-    public function setXPath(?array $xPath = null): self
+    public function setXPath(?array $xPath = null): static
     {
         $this->xPath = $xPath;
 
@@ -474,9 +474,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetXPath(): self
+    public function unsetXPath(): static
     {
         $this->xPath = null;
 
@@ -484,9 +484,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearXPath(): self
+    public function clearXPath(): static
     {
         $this->xPath = [];
 
@@ -525,9 +525,9 @@ class DocumentReferenceType
 
     /**
      * @param XPath $xPath
-     * @return self
+     * @return static
      */
-    public function addToXPath(XPath $xPath): self
+    public function addToXPath(XPath $xPath): static
     {
         $this->xPath[] = $xPath;
 
@@ -546,9 +546,9 @@ class DocumentReferenceType
 
     /**
      * @param XPath $xPath
-     * @return self
+     * @return static
      */
-    public function addOnceToXPath(XPath $xPath): self
+    public function addOnceToXPath(XPath $xPath): static
     {
         if (!is_array($this->xPath)) {
             $this->xPath = [];
@@ -595,9 +595,9 @@ class DocumentReferenceType
 
     /**
      * @param LanguageID|null $languageID
-     * @return self
+     * @return static
      */
-    public function setLanguageID(?LanguageID $languageID = null): self
+    public function setLanguageID(?LanguageID $languageID = null): static
     {
         $this->languageID = $languageID;
 
@@ -605,9 +605,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguageID(): self
+    public function unsetLanguageID(): static
     {
         $this->languageID = null;
 
@@ -634,9 +634,9 @@ class DocumentReferenceType
 
     /**
      * @param LocaleCode|null $localeCode
-     * @return self
+     * @return static
      */
-    public function setLocaleCode(?LocaleCode $localeCode = null): self
+    public function setLocaleCode(?LocaleCode $localeCode = null): static
     {
         $this->localeCode = $localeCode;
 
@@ -644,9 +644,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocaleCode(): self
+    public function unsetLocaleCode(): static
     {
         $this->localeCode = null;
 
@@ -673,9 +673,9 @@ class DocumentReferenceType
 
     /**
      * @param VersionID|null $versionID
-     * @return self
+     * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): self
+    public function setVersionID(?VersionID $versionID = null): static
     {
         $this->versionID = $versionID;
 
@@ -683,9 +683,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVersionID(): self
+    public function unsetVersionID(): static
     {
         $this->versionID = null;
 
@@ -712,9 +712,9 @@ class DocumentReferenceType
 
     /**
      * @param DocumentStatusCode|null $documentStatusCode
-     * @return self
+     * @return static
      */
-    public function setDocumentStatusCode(?DocumentStatusCode $documentStatusCode = null): self
+    public function setDocumentStatusCode(?DocumentStatusCode $documentStatusCode = null): static
     {
         $this->documentStatusCode = $documentStatusCode;
 
@@ -722,9 +722,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentStatusCode(): self
+    public function unsetDocumentStatusCode(): static
     {
         $this->documentStatusCode = null;
 
@@ -741,9 +741,9 @@ class DocumentReferenceType
 
     /**
      * @param array<DocumentDescription>|null $documentDescription
-     * @return self
+     * @return static
      */
-    public function setDocumentDescription(?array $documentDescription = null): self
+    public function setDocumentDescription(?array $documentDescription = null): static
     {
         $this->documentDescription = $documentDescription;
 
@@ -751,9 +751,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentDescription(): self
+    public function unsetDocumentDescription(): static
     {
         $this->documentDescription = null;
 
@@ -761,9 +761,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentDescription(): self
+    public function clearDocumentDescription(): static
     {
         $this->documentDescription = [];
 
@@ -802,9 +802,9 @@ class DocumentReferenceType
 
     /**
      * @param DocumentDescription $documentDescription
-     * @return self
+     * @return static
      */
-    public function addToDocumentDescription(DocumentDescription $documentDescription): self
+    public function addToDocumentDescription(DocumentDescription $documentDescription): static
     {
         $this->documentDescription[] = $documentDescription;
 
@@ -823,9 +823,9 @@ class DocumentReferenceType
 
     /**
      * @param DocumentDescription $documentDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentDescription(DocumentDescription $documentDescription): self
+    public function addOnceToDocumentDescription(DocumentDescription $documentDescription): static
     {
         if (!is_array($this->documentDescription)) {
             $this->documentDescription = [];
@@ -872,9 +872,9 @@ class DocumentReferenceType
 
     /**
      * @param Attachment|null $attachment
-     * @return self
+     * @return static
      */
-    public function setAttachment(?Attachment $attachment = null): self
+    public function setAttachment(?Attachment $attachment = null): static
     {
         $this->attachment = $attachment;
 
@@ -882,9 +882,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAttachment(): self
+    public function unsetAttachment(): static
     {
         $this->attachment = null;
 
@@ -911,9 +911,9 @@ class DocumentReferenceType
 
     /**
      * @param ValidityPeriod|null $validityPeriod
-     * @return self
+     * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): self
+    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
     {
         $this->validityPeriod = $validityPeriod;
 
@@ -921,9 +921,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityPeriod(): self
+    public function unsetValidityPeriod(): static
     {
         $this->validityPeriod = null;
 
@@ -950,9 +950,9 @@ class DocumentReferenceType
 
     /**
      * @param IssuerParty|null $issuerParty
-     * @return self
+     * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): self
+    public function setIssuerParty(?IssuerParty $issuerParty = null): static
     {
         $this->issuerParty = $issuerParty;
 
@@ -960,9 +960,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerParty(): self
+    public function unsetIssuerParty(): static
     {
         $this->issuerParty = null;
 
@@ -989,9 +989,9 @@ class DocumentReferenceType
 
     /**
      * @param ResultOfVerification|null $resultOfVerification
-     * @return self
+     * @return static
      */
-    public function setResultOfVerification(?ResultOfVerification $resultOfVerification = null): self
+    public function setResultOfVerification(?ResultOfVerification $resultOfVerification = null): static
     {
         $this->resultOfVerification = $resultOfVerification;
 
@@ -999,9 +999,9 @@ class DocumentReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResultOfVerification(): self
+    public function unsetResultOfVerification(): static
     {
         $this->resultOfVerification = null;
 

@@ -78,9 +78,9 @@ class AdvancePaymentType
 
     /**
      * @param AmountType|null $paidAmount
-     * @return self
+     * @return static
      */
-    public function setPaidAmount(?AmountType $paidAmount = null): self
+    public function setPaidAmount(?AmountType $paidAmount = null): static
     {
         $this->paidAmount = $paidAmount;
 
@@ -88,9 +88,9 @@ class AdvancePaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaidAmount(): self
+    public function unsetPaidAmount(): static
     {
         $this->paidAmount = null;
 
@@ -117,9 +117,9 @@ class AdvancePaymentType
 
     /**
      * @param FormattedDateTimeType|null $formattedReceivedDateTime
-     * @return self
+     * @return static
      */
-    public function setFormattedReceivedDateTime(?FormattedDateTimeType $formattedReceivedDateTime = null): self
+    public function setFormattedReceivedDateTime(?FormattedDateTimeType $formattedReceivedDateTime = null): static
     {
         $this->formattedReceivedDateTime = $formattedReceivedDateTime;
 
@@ -127,9 +127,9 @@ class AdvancePaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFormattedReceivedDateTime(): self
+    public function unsetFormattedReceivedDateTime(): static
     {
         $this->formattedReceivedDateTime = null;
 
@@ -146,9 +146,9 @@ class AdvancePaymentType
 
     /**
      * @param array<TradeTaxType>|null $includedTradeTax
-     * @return self
+     * @return static
      */
-    public function setIncludedTradeTax(?array $includedTradeTax = null): self
+    public function setIncludedTradeTax(?array $includedTradeTax = null): static
     {
         $this->includedTradeTax = $includedTradeTax;
 
@@ -156,9 +156,9 @@ class AdvancePaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedTradeTax(): self
+    public function unsetIncludedTradeTax(): static
     {
         $this->includedTradeTax = null;
 
@@ -166,9 +166,9 @@ class AdvancePaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIncludedTradeTax(): self
+    public function clearIncludedTradeTax(): static
     {
         $this->includedTradeTax = [];
 
@@ -177,9 +177,9 @@ class AdvancePaymentType
 
     /**
      * @param TradeTaxType $includedTradeTax
-     * @return self
+     * @return static
      */
-    public function addToIncludedTradeTax(TradeTaxType $includedTradeTax): self
+    public function addToIncludedTradeTax(TradeTaxType $includedTradeTax): static
     {
         $this->includedTradeTax[] = $includedTradeTax;
 
@@ -198,9 +198,9 @@ class AdvancePaymentType
 
     /**
      * @param TradeTaxType $includedTradeTax
-     * @return self
+     * @return static
      */
-    public function addOnceToIncludedTradeTax(TradeTaxType $includedTradeTax): self
+    public function addOnceToIncludedTradeTax(TradeTaxType $includedTradeTax): static
     {
         if (!is_array($this->includedTradeTax)) {
             $this->includedTradeTax = [];
@@ -247,20 +247,20 @@ class AdvancePaymentType
 
     /**
      * @param ReferencedDocumentType|null $invoiceSpecifiedReferencedDocument
-     * @return self
+     * @return static
      */
     public function setInvoiceSpecifiedReferencedDocument(
         ?ReferencedDocumentType $invoiceSpecifiedReferencedDocument = null,
-    ): self {
+    ): static {
         $this->invoiceSpecifiedReferencedDocument = $invoiceSpecifiedReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceSpecifiedReferencedDocument(): self
+    public function unsetInvoiceSpecifiedReferencedDocument(): static
     {
         $this->invoiceSpecifiedReferencedDocument = null;
 

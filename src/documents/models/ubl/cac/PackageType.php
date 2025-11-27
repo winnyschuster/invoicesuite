@@ -207,9 +207,9 @@ class PackageType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -217,9 +217,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -246,9 +246,9 @@ class PackageType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -256,9 +256,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -275,9 +275,9 @@ class PackageType
 
     /**
      * @param bool|null $returnableMaterialIndicator
-     * @return self
+     * @return static
      */
-    public function setReturnableMaterialIndicator(?bool $returnableMaterialIndicator = null): self
+    public function setReturnableMaterialIndicator(?bool $returnableMaterialIndicator = null): static
     {
         $this->returnableMaterialIndicator = $returnableMaterialIndicator;
 
@@ -285,9 +285,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReturnableMaterialIndicator(): self
+    public function unsetReturnableMaterialIndicator(): static
     {
         $this->returnableMaterialIndicator = null;
 
@@ -314,9 +314,9 @@ class PackageType
 
     /**
      * @param PackageLevelCode|null $packageLevelCode
-     * @return self
+     * @return static
      */
-    public function setPackageLevelCode(?PackageLevelCode $packageLevelCode = null): self
+    public function setPackageLevelCode(?PackageLevelCode $packageLevelCode = null): static
     {
         $this->packageLevelCode = $packageLevelCode;
 
@@ -324,9 +324,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackageLevelCode(): self
+    public function unsetPackageLevelCode(): static
     {
         $this->packageLevelCode = null;
 
@@ -353,9 +353,9 @@ class PackageType
 
     /**
      * @param PackagingTypeCode|null $packagingTypeCode
-     * @return self
+     * @return static
      */
-    public function setPackagingTypeCode(?PackagingTypeCode $packagingTypeCode = null): self
+    public function setPackagingTypeCode(?PackagingTypeCode $packagingTypeCode = null): static
     {
         $this->packagingTypeCode = $packagingTypeCode;
 
@@ -363,9 +363,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackagingTypeCode(): self
+    public function unsetPackagingTypeCode(): static
     {
         $this->packagingTypeCode = null;
 
@@ -382,9 +382,9 @@ class PackageType
 
     /**
      * @param array<PackingMaterial>|null $packingMaterial
-     * @return self
+     * @return static
      */
-    public function setPackingMaterial(?array $packingMaterial = null): self
+    public function setPackingMaterial(?array $packingMaterial = null): static
     {
         $this->packingMaterial = $packingMaterial;
 
@@ -392,9 +392,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackingMaterial(): self
+    public function unsetPackingMaterial(): static
     {
         $this->packingMaterial = null;
 
@@ -402,9 +402,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPackingMaterial(): self
+    public function clearPackingMaterial(): static
     {
         $this->packingMaterial = [];
 
@@ -443,9 +443,9 @@ class PackageType
 
     /**
      * @param PackingMaterial $packingMaterial
-     * @return self
+     * @return static
      */
-    public function addToPackingMaterial(PackingMaterial $packingMaterial): self
+    public function addToPackingMaterial(PackingMaterial $packingMaterial): static
     {
         $this->packingMaterial[] = $packingMaterial;
 
@@ -464,9 +464,9 @@ class PackageType
 
     /**
      * @param PackingMaterial $packingMaterial
-     * @return self
+     * @return static
      */
-    public function addOnceToPackingMaterial(PackingMaterial $packingMaterial): self
+    public function addOnceToPackingMaterial(PackingMaterial $packingMaterial): static
     {
         if (!is_array($this->packingMaterial)) {
             $this->packingMaterial = [];
@@ -513,9 +513,9 @@ class PackageType
 
     /**
      * @param TraceID|null $traceID
-     * @return self
+     * @return static
      */
-    public function setTraceID(?TraceID $traceID = null): self
+    public function setTraceID(?TraceID $traceID = null): static
     {
         $this->traceID = $traceID;
 
@@ -523,9 +523,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTraceID(): self
+    public function unsetTraceID(): static
     {
         $this->traceID = null;
 
@@ -542,9 +542,9 @@ class PackageType
 
     /**
      * @param array<ContainedPackage>|null $containedPackage
-     * @return self
+     * @return static
      */
-    public function setContainedPackage(?array $containedPackage = null): self
+    public function setContainedPackage(?array $containedPackage = null): static
     {
         $this->containedPackage = $containedPackage;
 
@@ -552,9 +552,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContainedPackage(): self
+    public function unsetContainedPackage(): static
     {
         $this->containedPackage = null;
 
@@ -562,9 +562,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContainedPackage(): self
+    public function clearContainedPackage(): static
     {
         $this->containedPackage = [];
 
@@ -603,9 +603,9 @@ class PackageType
 
     /**
      * @param ContainedPackage $containedPackage
-     * @return self
+     * @return static
      */
-    public function addToContainedPackage(ContainedPackage $containedPackage): self
+    public function addToContainedPackage(ContainedPackage $containedPackage): static
     {
         $this->containedPackage[] = $containedPackage;
 
@@ -624,9 +624,9 @@ class PackageType
 
     /**
      * @param ContainedPackage $containedPackage
-     * @return self
+     * @return static
      */
-    public function addOnceToContainedPackage(ContainedPackage $containedPackage): self
+    public function addOnceToContainedPackage(ContainedPackage $containedPackage): static
     {
         if (!is_array($this->containedPackage)) {
             $this->containedPackage = [];
@@ -673,20 +673,20 @@ class PackageType
 
     /**
      * @param ContainingTransportEquipment|null $containingTransportEquipment
-     * @return self
+     * @return static
      */
     public function setContainingTransportEquipment(
         ?ContainingTransportEquipment $containingTransportEquipment = null,
-    ): self {
+    ): static {
         $this->containingTransportEquipment = $containingTransportEquipment;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContainingTransportEquipment(): self
+    public function unsetContainingTransportEquipment(): static
     {
         $this->containingTransportEquipment = null;
 
@@ -703,9 +703,9 @@ class PackageType
 
     /**
      * @param array<GoodsItem>|null $goodsItem
-     * @return self
+     * @return static
      */
-    public function setGoodsItem(?array $goodsItem = null): self
+    public function setGoodsItem(?array $goodsItem = null): static
     {
         $this->goodsItem = $goodsItem;
 
@@ -713,9 +713,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGoodsItem(): self
+    public function unsetGoodsItem(): static
     {
         $this->goodsItem = null;
 
@@ -723,9 +723,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearGoodsItem(): self
+    public function clearGoodsItem(): static
     {
         $this->goodsItem = [];
 
@@ -764,9 +764,9 @@ class PackageType
 
     /**
      * @param GoodsItem $goodsItem
-     * @return self
+     * @return static
      */
-    public function addToGoodsItem(GoodsItem $goodsItem): self
+    public function addToGoodsItem(GoodsItem $goodsItem): static
     {
         $this->goodsItem[] = $goodsItem;
 
@@ -785,9 +785,9 @@ class PackageType
 
     /**
      * @param GoodsItem $goodsItem
-     * @return self
+     * @return static
      */
-    public function addOnceToGoodsItem(GoodsItem $goodsItem): self
+    public function addOnceToGoodsItem(GoodsItem $goodsItem): static
     {
         if (!is_array($this->goodsItem)) {
             $this->goodsItem = [];
@@ -824,9 +824,9 @@ class PackageType
 
     /**
      * @param array<MeasurementDimension>|null $measurementDimension
-     * @return self
+     * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): self
+    public function setMeasurementDimension(?array $measurementDimension = null): static
     {
         $this->measurementDimension = $measurementDimension;
 
@@ -834,9 +834,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementDimension(): self
+    public function unsetMeasurementDimension(): static
     {
         $this->measurementDimension = null;
 
@@ -844,9 +844,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeasurementDimension(): self
+    public function clearMeasurementDimension(): static
     {
         $this->measurementDimension = [];
 
@@ -885,9 +885,9 @@ class PackageType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         $this->measurementDimension[] = $measurementDimension;
 
@@ -906,9 +906,9 @@ class PackageType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
@@ -945,9 +945,9 @@ class PackageType
 
     /**
      * @param array<DeliveryUnit>|null $deliveryUnit
-     * @return self
+     * @return static
      */
-    public function setDeliveryUnit(?array $deliveryUnit = null): self
+    public function setDeliveryUnit(?array $deliveryUnit = null): static
     {
         $this->deliveryUnit = $deliveryUnit;
 
@@ -955,9 +955,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryUnit(): self
+    public function unsetDeliveryUnit(): static
     {
         $this->deliveryUnit = null;
 
@@ -965,9 +965,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDeliveryUnit(): self
+    public function clearDeliveryUnit(): static
     {
         $this->deliveryUnit = [];
 
@@ -1006,9 +1006,9 @@ class PackageType
 
     /**
      * @param DeliveryUnit $deliveryUnit
-     * @return self
+     * @return static
      */
-    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): self
+    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): static
     {
         $this->deliveryUnit[] = $deliveryUnit;
 
@@ -1027,9 +1027,9 @@ class PackageType
 
     /**
      * @param DeliveryUnit $deliveryUnit
-     * @return self
+     * @return static
      */
-    public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): self
+    public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): static
     {
         if (!is_array($this->deliveryUnit)) {
             $this->deliveryUnit = [];
@@ -1076,9 +1076,9 @@ class PackageType
 
     /**
      * @param Delivery|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?Delivery $delivery = null): self
+    public function setDelivery(?Delivery $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -1086,9 +1086,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -1115,9 +1115,9 @@ class PackageType
 
     /**
      * @param Pickup|null $pickup
-     * @return self
+     * @return static
      */
-    public function setPickup(?Pickup $pickup = null): self
+    public function setPickup(?Pickup $pickup = null): static
     {
         $this->pickup = $pickup;
 
@@ -1125,9 +1125,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPickup(): self
+    public function unsetPickup(): static
     {
         $this->pickup = null;
 
@@ -1154,9 +1154,9 @@ class PackageType
 
     /**
      * @param Despatch|null $despatch
-     * @return self
+     * @return static
      */
-    public function setDespatch(?Despatch $despatch = null): self
+    public function setDespatch(?Despatch $despatch = null): static
     {
         $this->despatch = $despatch;
 
@@ -1164,9 +1164,9 @@ class PackageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatch(): self
+    public function unsetDespatch(): static
     {
         $this->despatch = null;
 

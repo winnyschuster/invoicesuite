@@ -55,9 +55,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $globalID
-     * @return self
+     * @return static
      */
-    public function setGlobalID(?IDType $globalID = null): self
+    public function setGlobalID(?IDType $globalID = null): static
     {
         $this->globalID = $globalID;
 
@@ -65,9 +65,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGlobalID(): self
+    public function unsetGlobalID(): static
     {
         $this->globalID = null;
 
@@ -94,9 +94,9 @@ class TradeProductType
 
     /**
      * @param TextType|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?TextType $name = null): self
+    public function setName(?TextType $name = null): static
     {
         $this->name = $name;
 
@@ -104,9 +104,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 

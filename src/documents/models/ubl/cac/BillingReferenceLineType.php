@@ -67,9 +67,9 @@ class BillingReferenceLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -77,9 +77,9 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -106,9 +106,9 @@ class BillingReferenceLineType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -116,9 +116,9 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -135,9 +135,9 @@ class BillingReferenceLineType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -145,9 +145,9 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -155,9 +155,9 @@ class BillingReferenceLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -196,9 +196,9 @@ class BillingReferenceLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -217,9 +217,9 @@ class BillingReferenceLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];

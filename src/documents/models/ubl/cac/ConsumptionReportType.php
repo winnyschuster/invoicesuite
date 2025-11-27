@@ -245,9 +245,9 @@ class ConsumptionReportType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -255,9 +255,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -284,9 +284,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumptionType|null $consumptionType
-     * @return self
+     * @return static
      */
-    public function setConsumptionType(?ConsumptionType $consumptionType = null): self
+    public function setConsumptionType(?ConsumptionType $consumptionType = null): static
     {
         $this->consumptionType = $consumptionType;
 
@@ -294,9 +294,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionType(): self
+    public function unsetConsumptionType(): static
     {
         $this->consumptionType = null;
 
@@ -323,9 +323,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumptionTypeCode|null $consumptionTypeCode
-     * @return self
+     * @return static
      */
-    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): self
+    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
     {
         $this->consumptionTypeCode = $consumptionTypeCode;
 
@@ -333,9 +333,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionTypeCode(): self
+    public function unsetConsumptionTypeCode(): static
     {
         $this->consumptionTypeCode = null;
 
@@ -352,9 +352,9 @@ class ConsumptionReportType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -362,9 +362,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -372,9 +372,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -413,9 +413,9 @@ class ConsumptionReportType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -434,9 +434,9 @@ class ConsumptionReportType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -483,9 +483,9 @@ class ConsumptionReportType
 
     /**
      * @param TotalConsumedQuantity|null $totalConsumedQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): self
+    public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): static
     {
         $this->totalConsumedQuantity = $totalConsumedQuantity;
 
@@ -493,9 +493,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalConsumedQuantity(): self
+    public function unsetTotalConsumedQuantity(): static
     {
         $this->totalConsumedQuantity = null;
 
@@ -522,9 +522,9 @@ class ConsumptionReportType
 
     /**
      * @param BasicConsumedQuantity|null $basicConsumedQuantity
-     * @return self
+     * @return static
      */
-    public function setBasicConsumedQuantity(?BasicConsumedQuantity $basicConsumedQuantity = null): self
+    public function setBasicConsumedQuantity(?BasicConsumedQuantity $basicConsumedQuantity = null): static
     {
         $this->basicConsumedQuantity = $basicConsumedQuantity;
 
@@ -532,9 +532,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasicConsumedQuantity(): self
+    public function unsetBasicConsumedQuantity(): static
     {
         $this->basicConsumedQuantity = null;
 
@@ -561,9 +561,9 @@ class ConsumptionReportType
 
     /**
      * @param ResidentOccupantsNumeric|null $residentOccupantsNumeric
-     * @return self
+     * @return static
      */
-    public function setResidentOccupantsNumeric(?ResidentOccupantsNumeric $residentOccupantsNumeric = null): self
+    public function setResidentOccupantsNumeric(?ResidentOccupantsNumeric $residentOccupantsNumeric = null): static
     {
         $this->residentOccupantsNumeric = $residentOccupantsNumeric;
 
@@ -571,9 +571,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResidentOccupantsNumeric(): self
+    public function unsetResidentOccupantsNumeric(): static
     {
         $this->residentOccupantsNumeric = null;
 
@@ -600,9 +600,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumersEnergyLevelCode|null $consumersEnergyLevelCode
-     * @return self
+     * @return static
      */
-    public function setConsumersEnergyLevelCode(?ConsumersEnergyLevelCode $consumersEnergyLevelCode = null): self
+    public function setConsumersEnergyLevelCode(?ConsumersEnergyLevelCode $consumersEnergyLevelCode = null): static
     {
         $this->consumersEnergyLevelCode = $consumersEnergyLevelCode;
 
@@ -610,9 +610,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumersEnergyLevelCode(): self
+    public function unsetConsumersEnergyLevelCode(): static
     {
         $this->consumersEnergyLevelCode = null;
 
@@ -639,9 +639,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumersEnergyLevel|null $consumersEnergyLevel
-     * @return self
+     * @return static
      */
-    public function setConsumersEnergyLevel(?ConsumersEnergyLevel $consumersEnergyLevel = null): self
+    public function setConsumersEnergyLevel(?ConsumersEnergyLevel $consumersEnergyLevel = null): static
     {
         $this->consumersEnergyLevel = $consumersEnergyLevel;
 
@@ -649,9 +649,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumersEnergyLevel(): self
+    public function unsetConsumersEnergyLevel(): static
     {
         $this->consumersEnergyLevel = null;
 
@@ -678,9 +678,9 @@ class ConsumptionReportType
 
     /**
      * @param ResidenceType|null $residenceType
-     * @return self
+     * @return static
      */
-    public function setResidenceType(?ResidenceType $residenceType = null): self
+    public function setResidenceType(?ResidenceType $residenceType = null): static
     {
         $this->residenceType = $residenceType;
 
@@ -688,9 +688,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResidenceType(): self
+    public function unsetResidenceType(): static
     {
         $this->residenceType = null;
 
@@ -717,9 +717,9 @@ class ConsumptionReportType
 
     /**
      * @param ResidenceTypeCode|null $residenceTypeCode
-     * @return self
+     * @return static
      */
-    public function setResidenceTypeCode(?ResidenceTypeCode $residenceTypeCode = null): self
+    public function setResidenceTypeCode(?ResidenceTypeCode $residenceTypeCode = null): static
     {
         $this->residenceTypeCode = $residenceTypeCode;
 
@@ -727,9 +727,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResidenceTypeCode(): self
+    public function unsetResidenceTypeCode(): static
     {
         $this->residenceTypeCode = null;
 
@@ -756,9 +756,9 @@ class ConsumptionReportType
 
     /**
      * @param HeatingType|null $heatingType
-     * @return self
+     * @return static
      */
-    public function setHeatingType(?HeatingType $heatingType = null): self
+    public function setHeatingType(?HeatingType $heatingType = null): static
     {
         $this->heatingType = $heatingType;
 
@@ -766,9 +766,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHeatingType(): self
+    public function unsetHeatingType(): static
     {
         $this->heatingType = null;
 
@@ -795,9 +795,9 @@ class ConsumptionReportType
 
     /**
      * @param HeatingTypeCode|null $heatingTypeCode
-     * @return self
+     * @return static
      */
-    public function setHeatingTypeCode(?HeatingTypeCode $heatingTypeCode = null): self
+    public function setHeatingTypeCode(?HeatingTypeCode $heatingTypeCode = null): static
     {
         $this->heatingTypeCode = $heatingTypeCode;
 
@@ -805,9 +805,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHeatingTypeCode(): self
+    public function unsetHeatingTypeCode(): static
     {
         $this->heatingTypeCode = null;
 
@@ -834,9 +834,9 @@ class ConsumptionReportType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -844,9 +844,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 
@@ -873,9 +873,9 @@ class ConsumptionReportType
 
     /**
      * @param GuidanceDocumentReference|null $guidanceDocumentReference
-     * @return self
+     * @return static
      */
-    public function setGuidanceDocumentReference(?GuidanceDocumentReference $guidanceDocumentReference = null): self
+    public function setGuidanceDocumentReference(?GuidanceDocumentReference $guidanceDocumentReference = null): static
     {
         $this->guidanceDocumentReference = $guidanceDocumentReference;
 
@@ -883,9 +883,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGuidanceDocumentReference(): self
+    public function unsetGuidanceDocumentReference(): static
     {
         $this->guidanceDocumentReference = null;
 
@@ -912,9 +912,9 @@ class ConsumptionReportType
 
     /**
      * @param DocumentReference|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): self
+    public function setDocumentReference(?DocumentReference $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -922,9 +922,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -941,9 +941,9 @@ class ConsumptionReportType
 
     /**
      * @param array<ConsumptionReportReference>|null $consumptionReportReference
-     * @return self
+     * @return static
      */
-    public function setConsumptionReportReference(?array $consumptionReportReference = null): self
+    public function setConsumptionReportReference(?array $consumptionReportReference = null): static
     {
         $this->consumptionReportReference = $consumptionReportReference;
 
@@ -951,9 +951,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionReportReference(): self
+    public function unsetConsumptionReportReference(): static
     {
         $this->consumptionReportReference = null;
 
@@ -961,9 +961,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearConsumptionReportReference(): self
+    public function clearConsumptionReportReference(): static
     {
         $this->consumptionReportReference = [];
 
@@ -1002,9 +1002,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumptionReportReference $consumptionReportReference
-     * @return self
+     * @return static
      */
-    public function addToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): self
+    public function addToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): static
     {
         $this->consumptionReportReference[] = $consumptionReportReference;
 
@@ -1023,9 +1023,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumptionReportReference $consumptionReportReference
-     * @return self
+     * @return static
      */
-    public function addOnceToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): self
+    public function addOnceToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): static
     {
         if (!is_array($this->consumptionReportReference)) {
             $this->consumptionReportReference = [];
@@ -1062,9 +1062,9 @@ class ConsumptionReportType
 
     /**
      * @param array<ConsumptionHistory>|null $consumptionHistory
-     * @return self
+     * @return static
      */
-    public function setConsumptionHistory(?array $consumptionHistory = null): self
+    public function setConsumptionHistory(?array $consumptionHistory = null): static
     {
         $this->consumptionHistory = $consumptionHistory;
 
@@ -1072,9 +1072,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionHistory(): self
+    public function unsetConsumptionHistory(): static
     {
         $this->consumptionHistory = null;
 
@@ -1082,9 +1082,9 @@ class ConsumptionReportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearConsumptionHistory(): self
+    public function clearConsumptionHistory(): static
     {
         $this->consumptionHistory = [];
 
@@ -1123,9 +1123,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumptionHistory $consumptionHistory
-     * @return self
+     * @return static
      */
-    public function addToConsumptionHistory(ConsumptionHistory $consumptionHistory): self
+    public function addToConsumptionHistory(ConsumptionHistory $consumptionHistory): static
     {
         $this->consumptionHistory[] = $consumptionHistory;
 
@@ -1144,9 +1144,9 @@ class ConsumptionReportType
 
     /**
      * @param ConsumptionHistory $consumptionHistory
-     * @return self
+     * @return static
      */
-    public function addOnceToConsumptionHistory(ConsumptionHistory $consumptionHistory): self
+    public function addOnceToConsumptionHistory(ConsumptionHistory $consumptionHistory): static
     {
         if (!is_array($this->consumptionHistory)) {
             $this->consumptionHistory = [];

@@ -124,9 +124,9 @@ class ItemInstanceType
 
     /**
      * @param ProductTraceID|null $productTraceID
-     * @return self
+     * @return static
      */
-    public function setProductTraceID(?ProductTraceID $productTraceID = null): self
+    public function setProductTraceID(?ProductTraceID $productTraceID = null): static
     {
         $this->productTraceID = $productTraceID;
 
@@ -134,9 +134,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProductTraceID(): self
+    public function unsetProductTraceID(): static
     {
         $this->productTraceID = null;
 
@@ -153,9 +153,9 @@ class ItemInstanceType
 
     /**
      * @param DateTimeInterface|null $manufactureDate
-     * @return self
+     * @return static
      */
-    public function setManufactureDate(?DateTimeInterface $manufactureDate = null): self
+    public function setManufactureDate(?DateTimeInterface $manufactureDate = null): static
     {
         $this->manufactureDate = $manufactureDate;
 
@@ -163,9 +163,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetManufactureDate(): self
+    public function unsetManufactureDate(): static
     {
         $this->manufactureDate = null;
 
@@ -182,9 +182,9 @@ class ItemInstanceType
 
     /**
      * @param DateTimeInterface|null $manufactureTime
-     * @return self
+     * @return static
      */
-    public function setManufactureTime(?DateTimeInterface $manufactureTime = null): self
+    public function setManufactureTime(?DateTimeInterface $manufactureTime = null): static
     {
         $this->manufactureTime = $manufactureTime;
 
@@ -192,9 +192,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetManufactureTime(): self
+    public function unsetManufactureTime(): static
     {
         $this->manufactureTime = null;
 
@@ -211,9 +211,9 @@ class ItemInstanceType
 
     /**
      * @param DateTimeInterface|null $bestBeforeDate
-     * @return self
+     * @return static
      */
-    public function setBestBeforeDate(?DateTimeInterface $bestBeforeDate = null): self
+    public function setBestBeforeDate(?DateTimeInterface $bestBeforeDate = null): static
     {
         $this->bestBeforeDate = $bestBeforeDate;
 
@@ -221,9 +221,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBestBeforeDate(): self
+    public function unsetBestBeforeDate(): static
     {
         $this->bestBeforeDate = null;
 
@@ -250,9 +250,9 @@ class ItemInstanceType
 
     /**
      * @param RegistrationID|null $registrationID
-     * @return self
+     * @return static
      */
-    public function setRegistrationID(?RegistrationID $registrationID = null): self
+    public function setRegistrationID(?RegistrationID $registrationID = null): static
     {
         $this->registrationID = $registrationID;
 
@@ -260,9 +260,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRegistrationID(): self
+    public function unsetRegistrationID(): static
     {
         $this->registrationID = null;
 
@@ -289,9 +289,9 @@ class ItemInstanceType
 
     /**
      * @param SerialID|null $serialID
-     * @return self
+     * @return static
      */
-    public function setSerialID(?SerialID $serialID = null): self
+    public function setSerialID(?SerialID $serialID = null): static
     {
         $this->serialID = $serialID;
 
@@ -299,9 +299,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSerialID(): self
+    public function unsetSerialID(): static
     {
         $this->serialID = null;
 
@@ -318,9 +318,9 @@ class ItemInstanceType
 
     /**
      * @param array<AdditionalItemProperty>|null $additionalItemProperty
-     * @return self
+     * @return static
      */
-    public function setAdditionalItemProperty(?array $additionalItemProperty = null): self
+    public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
     {
         $this->additionalItemProperty = $additionalItemProperty;
 
@@ -328,9 +328,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalItemProperty(): self
+    public function unsetAdditionalItemProperty(): static
     {
         $this->additionalItemProperty = null;
 
@@ -338,9 +338,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalItemProperty(): self
+    public function clearAdditionalItemProperty(): static
     {
         $this->additionalItemProperty = [];
 
@@ -379,9 +379,9 @@ class ItemInstanceType
 
     /**
      * @param AdditionalItemProperty $additionalItemProperty
-     * @return self
+     * @return static
      */
-    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
     {
         $this->additionalItemProperty[] = $additionalItemProperty;
 
@@ -400,9 +400,9 @@ class ItemInstanceType
 
     /**
      * @param AdditionalItemProperty $additionalItemProperty
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): self
+    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
     {
         if (!is_array($this->additionalItemProperty)) {
             $this->additionalItemProperty = [];
@@ -449,9 +449,9 @@ class ItemInstanceType
 
     /**
      * @param LotIdentification|null $lotIdentification
-     * @return self
+     * @return static
      */
-    public function setLotIdentification(?LotIdentification $lotIdentification = null): self
+    public function setLotIdentification(?LotIdentification $lotIdentification = null): static
     {
         $this->lotIdentification = $lotIdentification;
 
@@ -459,9 +459,9 @@ class ItemInstanceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLotIdentification(): self
+    public function unsetLotIdentification(): static
     {
         $this->lotIdentification = null;
 

@@ -83,9 +83,9 @@ class InvoiceSuiteProductClassificationDTO
      * Sets the classification identifier
      *
      * @param  null|string $code The classification identifier
-     * @return self
+     * @return static
      */
-    public function setCode(?string $code): self
+    public function setCode(?string $code): static
     {
         $this->code = $code;
 
@@ -106,9 +106,9 @@ class InvoiceSuiteProductClassificationDTO
      * Sets the name with which an article can be classified according to type or quality
      *
      * @param  null|string $name The name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
-    public function setName(?string $name): self
+    public function setName(?string $name): static
     {
         $this->name = $name;
 
@@ -129,9 +129,9 @@ class InvoiceSuiteProductClassificationDTO
      * Sets the identifier for the identification scheme of the item classification
      *
      * @param  null|string $listId The identifier for the identification scheme of the item classification
-     * @return self
+     * @return static
      */
-    public function setListId(?string $listId): self
+    public function setListId(?string $listId): static
     {
         $this->listId = $listId;
 
@@ -152,9 +152,9 @@ class InvoiceSuiteProductClassificationDTO
      * Sets the version of the identification scheme
      *
      * @param  null|string $listVersionId The version of the identification scheme
-     * @return self
+     * @return static
      */
-    public function setListVersionId(?string $listVersionId): self
+    public function setListVersionId(?string $listVersionId): static
     {
         $this->listVersionId = $listVersionId;
 

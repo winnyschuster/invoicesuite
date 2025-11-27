@@ -93,9 +93,9 @@ class InvoiceSuiteServiceChargeDTO
      * Sets the amount of the service fee
      *
      * @param  null|float $amount The amount of the service fee
-     * @return self
+     * @return static
      */
-    public function setAmount(?float $amount): self
+    public function setAmount(?float $amount): static
     {
         $this->amount = $amount;
 
@@ -116,9 +116,9 @@ class InvoiceSuiteServiceChargeDTO
      * Sets the identification of the service fee
      *
      * @param  null|string $description The identification of the service fee
-     * @return self
+     * @return static
      */
-    public function setDescription(?string $description): self
+    public function setDescription(?string $description): static
     {
         $this->description = $description;
 
@@ -139,9 +139,9 @@ class InvoiceSuiteServiceChargeDTO
      * Sets the coded description of the tax category
      *
      * @param  null|string $taxCategory The coded description of the tax category
-     * @return self
+     * @return static
      */
-    public function setTaxCategory(?string $taxCategory): self
+    public function setTaxCategory(?string $taxCategory): static
     {
         $this->taxCategory = $taxCategory;
 
@@ -162,9 +162,9 @@ class InvoiceSuiteServiceChargeDTO
      * Sets the coded description of the tax type
      *
      * @param  null|string $taxType The coded description of the tax type
-     * @return self
+     * @return static
      */
-    public function setTaxType(?string $taxType): self
+    public function setTaxType(?string $taxType): static
     {
         $this->taxType = $taxType;
 
@@ -185,9 +185,9 @@ class InvoiceSuiteServiceChargeDTO
      * Sets the tax Rate (Percentage)
      *
      * @param  null|float $taxPercent The tax Rate (Percentage)
-     * @return self
+     * @return static
      */
-    public function setTaxPercent(?float $taxPercent): self
+    public function setTaxPercent(?float $taxPercent): static
     {
         $this->taxPercent = $taxPercent;
 

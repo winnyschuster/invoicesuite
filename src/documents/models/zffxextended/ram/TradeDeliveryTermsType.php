@@ -43,9 +43,9 @@ class TradeDeliveryTermsType
 
     /**
      * @param DeliveryTermsCodeType|null $deliveryTypeCode
-     * @return self
+     * @return static
      */
-    public function setDeliveryTypeCode(?DeliveryTermsCodeType $deliveryTypeCode = null): self
+    public function setDeliveryTypeCode(?DeliveryTermsCodeType $deliveryTypeCode = null): static
     {
         $this->deliveryTypeCode = $deliveryTypeCode;
 
@@ -53,9 +53,9 @@ class TradeDeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryTypeCode(): self
+    public function unsetDeliveryTypeCode(): static
     {
         $this->deliveryTypeCode = null;
 

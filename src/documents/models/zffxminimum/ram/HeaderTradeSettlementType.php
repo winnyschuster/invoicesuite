@@ -54,9 +54,9 @@ class HeaderTradeSettlementType
 
     /**
      * @param CurrencyCodeType|null $invoiceCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): self
+    public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): static
     {
         $this->invoiceCurrencyCode = $invoiceCurrencyCode;
 
@@ -64,9 +64,9 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceCurrencyCode(): self
+    public function unsetInvoiceCurrencyCode(): static
     {
         $this->invoiceCurrencyCode = null;
 
@@ -93,20 +93,20 @@ class HeaderTradeSettlementType
 
     /**
      * @param TradeSettlementHeaderMonetarySummationType|null $specifiedTradeSettlementHeaderMonetarySummation
-     * @return self
+     * @return static
      */
     public function setSpecifiedTradeSettlementHeaderMonetarySummation(
         ?TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation = null,
-    ): self {
+    ): static {
         $this->specifiedTradeSettlementHeaderMonetarySummation = $specifiedTradeSettlementHeaderMonetarySummation;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTradeSettlementHeaderMonetarySummation(): self
+    public function unsetSpecifiedTradeSettlementHeaderMonetarySummation(): static
     {
         $this->specifiedTradeSettlementHeaderMonetarySummation = null;
 

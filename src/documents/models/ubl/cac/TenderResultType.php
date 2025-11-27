@@ -219,9 +219,9 @@ class TenderResultType
 
     /**
      * @param TenderResultCode|null $tenderResultCode
-     * @return self
+     * @return static
      */
-    public function setTenderResultCode(?TenderResultCode $tenderResultCode = null): self
+    public function setTenderResultCode(?TenderResultCode $tenderResultCode = null): static
     {
         $this->tenderResultCode = $tenderResultCode;
 
@@ -229,9 +229,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderResultCode(): self
+    public function unsetTenderResultCode(): static
     {
         $this->tenderResultCode = null;
 
@@ -248,9 +248,9 @@ class TenderResultType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -258,9 +258,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -268,9 +268,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -309,9 +309,9 @@ class TenderResultType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -330,9 +330,9 @@ class TenderResultType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -379,9 +379,9 @@ class TenderResultType
 
     /**
      * @param AdvertisementAmount|null $advertisementAmount
-     * @return self
+     * @return static
      */
-    public function setAdvertisementAmount(?AdvertisementAmount $advertisementAmount = null): self
+    public function setAdvertisementAmount(?AdvertisementAmount $advertisementAmount = null): static
     {
         $this->advertisementAmount = $advertisementAmount;
 
@@ -389,9 +389,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdvertisementAmount(): self
+    public function unsetAdvertisementAmount(): static
     {
         $this->advertisementAmount = null;
 
@@ -408,9 +408,9 @@ class TenderResultType
 
     /**
      * @param DateTimeInterface|null $awardDate
-     * @return self
+     * @return static
      */
-    public function setAwardDate(?DateTimeInterface $awardDate = null): self
+    public function setAwardDate(?DateTimeInterface $awardDate = null): static
     {
         $this->awardDate = $awardDate;
 
@@ -418,9 +418,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardDate(): self
+    public function unsetAwardDate(): static
     {
         $this->awardDate = null;
 
@@ -437,9 +437,9 @@ class TenderResultType
 
     /**
      * @param DateTimeInterface|null $awardTime
-     * @return self
+     * @return static
      */
-    public function setAwardTime(?DateTimeInterface $awardTime = null): self
+    public function setAwardTime(?DateTimeInterface $awardTime = null): static
     {
         $this->awardTime = $awardTime;
 
@@ -447,9 +447,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardTime(): self
+    public function unsetAwardTime(): static
     {
         $this->awardTime = null;
 
@@ -476,9 +476,9 @@ class TenderResultType
 
     /**
      * @param ReceivedTenderQuantity|null $receivedTenderQuantity
-     * @return self
+     * @return static
      */
-    public function setReceivedTenderQuantity(?ReceivedTenderQuantity $receivedTenderQuantity = null): self
+    public function setReceivedTenderQuantity(?ReceivedTenderQuantity $receivedTenderQuantity = null): static
     {
         $this->receivedTenderQuantity = $receivedTenderQuantity;
 
@@ -486,9 +486,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedTenderQuantity(): self
+    public function unsetReceivedTenderQuantity(): static
     {
         $this->receivedTenderQuantity = null;
 
@@ -515,9 +515,9 @@ class TenderResultType
 
     /**
      * @param LowerTenderAmount|null $lowerTenderAmount
-     * @return self
+     * @return static
      */
-    public function setLowerTenderAmount(?LowerTenderAmount $lowerTenderAmount = null): self
+    public function setLowerTenderAmount(?LowerTenderAmount $lowerTenderAmount = null): static
     {
         $this->lowerTenderAmount = $lowerTenderAmount;
 
@@ -525,9 +525,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLowerTenderAmount(): self
+    public function unsetLowerTenderAmount(): static
     {
         $this->lowerTenderAmount = null;
 
@@ -554,9 +554,9 @@ class TenderResultType
 
     /**
      * @param HigherTenderAmount|null $higherTenderAmount
-     * @return self
+     * @return static
      */
-    public function setHigherTenderAmount(?HigherTenderAmount $higherTenderAmount = null): self
+    public function setHigherTenderAmount(?HigherTenderAmount $higherTenderAmount = null): static
     {
         $this->higherTenderAmount = $higherTenderAmount;
 
@@ -564,9 +564,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHigherTenderAmount(): self
+    public function unsetHigherTenderAmount(): static
     {
         $this->higherTenderAmount = null;
 
@@ -583,9 +583,9 @@ class TenderResultType
 
     /**
      * @param DateTimeInterface|null $startDate
-     * @return self
+     * @return static
      */
-    public function setStartDate(?DateTimeInterface $startDate = null): self
+    public function setStartDate(?DateTimeInterface $startDate = null): static
     {
         $this->startDate = $startDate;
 
@@ -593,9 +593,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStartDate(): self
+    public function unsetStartDate(): static
     {
         $this->startDate = null;
 
@@ -622,20 +622,20 @@ class TenderResultType
 
     /**
      * @param ReceivedElectronicTenderQuantity|null $receivedElectronicTenderQuantity
-     * @return self
+     * @return static
      */
     public function setReceivedElectronicTenderQuantity(
         ?ReceivedElectronicTenderQuantity $receivedElectronicTenderQuantity = null,
-    ): self {
+    ): static {
         $this->receivedElectronicTenderQuantity = $receivedElectronicTenderQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedElectronicTenderQuantity(): self
+    public function unsetReceivedElectronicTenderQuantity(): static
     {
         $this->receivedElectronicTenderQuantity = null;
 
@@ -662,20 +662,20 @@ class TenderResultType
 
     /**
      * @param ReceivedForeignTenderQuantity|null $receivedForeignTenderQuantity
-     * @return self
+     * @return static
      */
     public function setReceivedForeignTenderQuantity(
         ?ReceivedForeignTenderQuantity $receivedForeignTenderQuantity = null,
-    ): self {
+    ): static {
         $this->receivedForeignTenderQuantity = $receivedForeignTenderQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedForeignTenderQuantity(): self
+    public function unsetReceivedForeignTenderQuantity(): static
     {
         $this->receivedForeignTenderQuantity = null;
 
@@ -702,9 +702,9 @@ class TenderResultType
 
     /**
      * @param Contract|null $contract
-     * @return self
+     * @return static
      */
-    public function setContract(?Contract $contract = null): self
+    public function setContract(?Contract $contract = null): static
     {
         $this->contract = $contract;
 
@@ -712,9 +712,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContract(): self
+    public function unsetContract(): static
     {
         $this->contract = null;
 
@@ -741,9 +741,9 @@ class TenderResultType
 
     /**
      * @param AwardedTenderedProject|null $awardedTenderedProject
-     * @return self
+     * @return static
      */
-    public function setAwardedTenderedProject(?AwardedTenderedProject $awardedTenderedProject = null): self
+    public function setAwardedTenderedProject(?AwardedTenderedProject $awardedTenderedProject = null): static
     {
         $this->awardedTenderedProject = $awardedTenderedProject;
 
@@ -751,9 +751,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardedTenderedProject(): self
+    public function unsetAwardedTenderedProject(): static
     {
         $this->awardedTenderedProject = null;
 
@@ -780,20 +780,20 @@ class TenderResultType
 
     /**
      * @param ContractFormalizationPeriod|null $contractFormalizationPeriod
-     * @return self
+     * @return static
      */
     public function setContractFormalizationPeriod(
         ?ContractFormalizationPeriod $contractFormalizationPeriod = null,
-    ): self {
+    ): static {
         $this->contractFormalizationPeriod = $contractFormalizationPeriod;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractFormalizationPeriod(): self
+    public function unsetContractFormalizationPeriod(): static
     {
         $this->contractFormalizationPeriod = null;
 
@@ -810,9 +810,9 @@ class TenderResultType
 
     /**
      * @param array<SubcontractTerms>|null $subcontractTerms
-     * @return self
+     * @return static
      */
-    public function setSubcontractTerms(?array $subcontractTerms = null): self
+    public function setSubcontractTerms(?array $subcontractTerms = null): static
     {
         $this->subcontractTerms = $subcontractTerms;
 
@@ -820,9 +820,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubcontractTerms(): self
+    public function unsetSubcontractTerms(): static
     {
         $this->subcontractTerms = null;
 
@@ -830,9 +830,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSubcontractTerms(): self
+    public function clearSubcontractTerms(): static
     {
         $this->subcontractTerms = [];
 
@@ -871,9 +871,9 @@ class TenderResultType
 
     /**
      * @param SubcontractTerms $subcontractTerms
-     * @return self
+     * @return static
      */
-    public function addToSubcontractTerms(SubcontractTerms $subcontractTerms): self
+    public function addToSubcontractTerms(SubcontractTerms $subcontractTerms): static
     {
         $this->subcontractTerms[] = $subcontractTerms;
 
@@ -892,9 +892,9 @@ class TenderResultType
 
     /**
      * @param SubcontractTerms $subcontractTerms
-     * @return self
+     * @return static
      */
-    public function addOnceToSubcontractTerms(SubcontractTerms $subcontractTerms): self
+    public function addOnceToSubcontractTerms(SubcontractTerms $subcontractTerms): static
     {
         if (!is_array($this->subcontractTerms)) {
             $this->subcontractTerms = [];
@@ -931,9 +931,9 @@ class TenderResultType
 
     /**
      * @param array<WinningParty>|null $winningParty
-     * @return self
+     * @return static
      */
-    public function setWinningParty(?array $winningParty = null): self
+    public function setWinningParty(?array $winningParty = null): static
     {
         $this->winningParty = $winningParty;
 
@@ -941,9 +941,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWinningParty(): self
+    public function unsetWinningParty(): static
     {
         $this->winningParty = null;
 
@@ -951,9 +951,9 @@ class TenderResultType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearWinningParty(): self
+    public function clearWinningParty(): static
     {
         $this->winningParty = [];
 
@@ -992,9 +992,9 @@ class TenderResultType
 
     /**
      * @param WinningParty $winningParty
-     * @return self
+     * @return static
      */
-    public function addToWinningParty(WinningParty $winningParty): self
+    public function addToWinningParty(WinningParty $winningParty): static
     {
         $this->winningParty[] = $winningParty;
 
@@ -1013,9 +1013,9 @@ class TenderResultType
 
     /**
      * @param WinningParty $winningParty
-     * @return self
+     * @return static
      */
-    public function addOnceToWinningParty(WinningParty $winningParty): self
+    public function addOnceToWinningParty(WinningParty $winningParty): static
     {
         if (!is_array($this->winningParty)) {
             $this->winningParty = [];

@@ -54,9 +54,9 @@ class RenewalType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -64,9 +64,9 @@ class RenewalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -93,9 +93,9 @@ class RenewalType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -103,9 +103,9 @@ class RenewalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 

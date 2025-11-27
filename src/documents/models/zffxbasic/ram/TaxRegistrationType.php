@@ -43,9 +43,9 @@ class TaxRegistrationType
 
     /**
      * @param IDType|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?IDType $iD = null): self
+    public function setID(?IDType $iD = null): static
     {
         $this->iD = $iD;
 
@@ -53,9 +53,9 @@ class TaxRegistrationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 

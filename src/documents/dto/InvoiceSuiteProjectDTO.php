@@ -61,9 +61,9 @@ class InvoiceSuiteProjectDTO
      * Sets the project number
      *
      * @param  null|string $projectNumber The project number
-     * @return self
+     * @return static
      */
-    public function setProjectNumber(?string $projectNumber): self
+    public function setProjectNumber(?string $projectNumber): static
     {
         $this->projectNumber = $projectNumber;
 
@@ -84,9 +84,9 @@ class InvoiceSuiteProjectDTO
      * Sets the project name
      *
      * @param  null|string $projectName The project name
-     * @return self
+     * @return static
      */
-    public function setProjectName(?string $projectName): self
+    public function setProjectName(?string $projectName): static
     {
         $this->projectName = $projectName;
 

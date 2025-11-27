@@ -55,9 +55,9 @@ class ReferencedDocumentType
 
     /**
      * @param IDType|null $issuerAssignedID
-     * @return self
+     * @return static
      */
-    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): self
+    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): static
     {
         $this->issuerAssignedID = $issuerAssignedID;
 
@@ -65,9 +65,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerAssignedID(): self
+    public function unsetIssuerAssignedID(): static
     {
         $this->issuerAssignedID = null;
 
@@ -94,9 +94,9 @@ class ReferencedDocumentType
 
     /**
      * @param FormattedDateTimeType|null $formattedIssueDateTime
-     * @return self
+     * @return static
      */
-    public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): self
+    public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): static
     {
         $this->formattedIssueDateTime = $formattedIssueDateTime;
 
@@ -104,9 +104,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFormattedIssueDateTime(): self
+    public function unsetFormattedIssueDateTime(): static
     {
         $this->formattedIssueDateTime = null;
 

@@ -90,9 +90,9 @@ class ServiceProviderPartyType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -100,9 +100,9 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -129,9 +129,9 @@ class ServiceProviderPartyType
 
     /**
      * @param ServiceTypeCode|null $serviceTypeCode
-     * @return self
+     * @return static
      */
-    public function setServiceTypeCode(?ServiceTypeCode $serviceTypeCode = null): self
+    public function setServiceTypeCode(?ServiceTypeCode $serviceTypeCode = null): static
     {
         $this->serviceTypeCode = $serviceTypeCode;
 
@@ -139,9 +139,9 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetServiceTypeCode(): self
+    public function unsetServiceTypeCode(): static
     {
         $this->serviceTypeCode = null;
 
@@ -158,9 +158,9 @@ class ServiceProviderPartyType
 
     /**
      * @param array<ServiceType>|null $serviceType
-     * @return self
+     * @return static
      */
-    public function setServiceType(?array $serviceType = null): self
+    public function setServiceType(?array $serviceType = null): static
     {
         $this->serviceType = $serviceType;
 
@@ -168,9 +168,9 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetServiceType(): self
+    public function unsetServiceType(): static
     {
         $this->serviceType = null;
 
@@ -178,9 +178,9 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearServiceType(): self
+    public function clearServiceType(): static
     {
         $this->serviceType = [];
 
@@ -219,9 +219,9 @@ class ServiceProviderPartyType
 
     /**
      * @param ServiceType $serviceType
-     * @return self
+     * @return static
      */
-    public function addToServiceType(ServiceType $serviceType): self
+    public function addToServiceType(ServiceType $serviceType): static
     {
         $this->serviceType[] = $serviceType;
 
@@ -240,9 +240,9 @@ class ServiceProviderPartyType
 
     /**
      * @param ServiceType $serviceType
-     * @return self
+     * @return static
      */
-    public function addOnceToServiceType(ServiceType $serviceType): self
+    public function addOnceToServiceType(ServiceType $serviceType): static
     {
         if (!is_array($this->serviceType)) {
             $this->serviceType = [];
@@ -289,9 +289,9 @@ class ServiceProviderPartyType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -299,9 +299,9 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 
@@ -328,9 +328,9 @@ class ServiceProviderPartyType
 
     /**
      * @param SellerContact|null $sellerContact
-     * @return self
+     * @return static
      */
-    public function setSellerContact(?SellerContact $sellerContact = null): self
+    public function setSellerContact(?SellerContact $sellerContact = null): static
     {
         $this->sellerContact = $sellerContact;
 
@@ -338,9 +338,9 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerContact(): self
+    public function unsetSellerContact(): static
     {
         $this->sellerContact = null;
 

@@ -55,9 +55,9 @@ class TextType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -65,9 +65,9 @@ class TextType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -84,9 +84,9 @@ class TextType
 
     /**
      * @param string|null $languageID
-     * @return self
+     * @return static
      */
-    public function setLanguageID(?string $languageID = null): self
+    public function setLanguageID(?string $languageID = null): static
     {
         $this->languageID = InvoiceSuiteStringUtils::asNullWhenEmpty($languageID);
 
@@ -94,9 +94,9 @@ class TextType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguageID(): self
+    public function unsetLanguageID(): static
     {
         $this->languageID = null;
 
@@ -113,9 +113,9 @@ class TextType
 
     /**
      * @param string|null $languageLocaleID
-     * @return self
+     * @return static
      */
-    public function setLanguageLocaleID(?string $languageLocaleID = null): self
+    public function setLanguageLocaleID(?string $languageLocaleID = null): static
     {
         $this->languageLocaleID = InvoiceSuiteStringUtils::asNullWhenEmpty($languageLocaleID);
 
@@ -123,9 +123,9 @@ class TextType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguageLocaleID(): self
+    public function unsetLanguageLocaleID(): static
     {
         $this->languageLocaleID = null;
 

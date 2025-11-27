@@ -89,9 +89,9 @@ class TaxTotalType
 
     /**
      * @param TaxAmount|null $taxAmount
-     * @return self
+     * @return static
      */
-    public function setTaxAmount(?TaxAmount $taxAmount = null): self
+    public function setTaxAmount(?TaxAmount $taxAmount = null): static
     {
         $this->taxAmount = $taxAmount;
 
@@ -99,9 +99,9 @@ class TaxTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxAmount(): self
+    public function unsetTaxAmount(): static
     {
         $this->taxAmount = null;
 
@@ -128,9 +128,9 @@ class TaxTotalType
 
     /**
      * @param RoundingAmount|null $roundingAmount
-     * @return self
+     * @return static
      */
-    public function setRoundingAmount(?RoundingAmount $roundingAmount = null): self
+    public function setRoundingAmount(?RoundingAmount $roundingAmount = null): static
     {
         $this->roundingAmount = $roundingAmount;
 
@@ -138,9 +138,9 @@ class TaxTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRoundingAmount(): self
+    public function unsetRoundingAmount(): static
     {
         $this->roundingAmount = null;
 
@@ -157,9 +157,9 @@ class TaxTotalType
 
     /**
      * @param bool|null $taxEvidenceIndicator
-     * @return self
+     * @return static
      */
-    public function setTaxEvidenceIndicator(?bool $taxEvidenceIndicator = null): self
+    public function setTaxEvidenceIndicator(?bool $taxEvidenceIndicator = null): static
     {
         $this->taxEvidenceIndicator = $taxEvidenceIndicator;
 
@@ -167,9 +167,9 @@ class TaxTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxEvidenceIndicator(): self
+    public function unsetTaxEvidenceIndicator(): static
     {
         $this->taxEvidenceIndicator = null;
 
@@ -186,9 +186,9 @@ class TaxTotalType
 
     /**
      * @param bool|null $taxIncludedIndicator
-     * @return self
+     * @return static
      */
-    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): self
+    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
     {
         $this->taxIncludedIndicator = $taxIncludedIndicator;
 
@@ -196,9 +196,9 @@ class TaxTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxIncludedIndicator(): self
+    public function unsetTaxIncludedIndicator(): static
     {
         $this->taxIncludedIndicator = null;
 
@@ -215,9 +215,9 @@ class TaxTotalType
 
     /**
      * @param array<TaxSubtotal>|null $taxSubtotal
-     * @return self
+     * @return static
      */
-    public function setTaxSubtotal(?array $taxSubtotal = null): self
+    public function setTaxSubtotal(?array $taxSubtotal = null): static
     {
         $this->taxSubtotal = $taxSubtotal;
 
@@ -225,9 +225,9 @@ class TaxTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxSubtotal(): self
+    public function unsetTaxSubtotal(): static
     {
         $this->taxSubtotal = null;
 
@@ -235,9 +235,9 @@ class TaxTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxSubtotal(): self
+    public function clearTaxSubtotal(): static
     {
         $this->taxSubtotal = [];
 
@@ -276,9 +276,9 @@ class TaxTotalType
 
     /**
      * @param TaxSubtotal $taxSubtotal
-     * @return self
+     * @return static
      */
-    public function addToTaxSubtotal(TaxSubtotal $taxSubtotal): self
+    public function addToTaxSubtotal(TaxSubtotal $taxSubtotal): static
     {
         $this->taxSubtotal[] = $taxSubtotal;
 
@@ -297,9 +297,9 @@ class TaxTotalType
 
     /**
      * @param TaxSubtotal $taxSubtotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxSubtotal(TaxSubtotal $taxSubtotal): self
+    public function addOnceToTaxSubtotal(TaxSubtotal $taxSubtotal): static
     {
         if (!is_array($this->taxSubtotal)) {
             $this->taxSubtotal = [];

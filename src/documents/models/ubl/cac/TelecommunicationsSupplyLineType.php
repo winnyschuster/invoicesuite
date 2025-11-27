@@ -128,9 +128,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -138,9 +138,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -167,9 +167,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param PhoneNumber|null $phoneNumber
-     * @return self
+     * @return static
      */
-    public function setPhoneNumber(?PhoneNumber $phoneNumber = null): self
+    public function setPhoneNumber(?PhoneNumber $phoneNumber = null): static
     {
         $this->phoneNumber = $phoneNumber;
 
@@ -177,9 +177,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPhoneNumber(): self
+    public function unsetPhoneNumber(): static
     {
         $this->phoneNumber = null;
 
@@ -196,9 +196,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -206,9 +206,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -216,9 +216,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -257,9 +257,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -278,9 +278,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -327,9 +327,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param LineExtensionAmount|null $lineExtensionAmount
-     * @return self
+     * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
+    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
     {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
@@ -337,9 +337,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineExtensionAmount(): self
+    public function unsetLineExtensionAmount(): static
     {
         $this->lineExtensionAmount = null;
 
@@ -356,9 +356,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param array<ExchangeRate>|null $exchangeRate
-     * @return self
+     * @return static
      */
-    public function setExchangeRate(?array $exchangeRate = null): self
+    public function setExchangeRate(?array $exchangeRate = null): static
     {
         $this->exchangeRate = $exchangeRate;
 
@@ -366,9 +366,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExchangeRate(): self
+    public function unsetExchangeRate(): static
     {
         $this->exchangeRate = null;
 
@@ -376,9 +376,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearExchangeRate(): self
+    public function clearExchangeRate(): static
     {
         $this->exchangeRate = [];
 
@@ -417,9 +417,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param ExchangeRate $exchangeRate
-     * @return self
+     * @return static
      */
-    public function addToExchangeRate(ExchangeRate $exchangeRate): self
+    public function addToExchangeRate(ExchangeRate $exchangeRate): static
     {
         $this->exchangeRate[] = $exchangeRate;
 
@@ -438,9 +438,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param ExchangeRate $exchangeRate
-     * @return self
+     * @return static
      */
-    public function addOnceToExchangeRate(ExchangeRate $exchangeRate): self
+    public function addOnceToExchangeRate(ExchangeRate $exchangeRate): static
     {
         if (!is_array($this->exchangeRate)) {
             $this->exchangeRate = [];
@@ -477,9 +477,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -487,9 +487,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -497,9 +497,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -538,9 +538,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -559,9 +559,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -598,9 +598,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -608,9 +608,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -618,9 +618,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -659,9 +659,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -680,9 +680,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -719,9 +719,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param array<TelecommunicationsService>|null $telecommunicationsService
-     * @return self
+     * @return static
      */
-    public function setTelecommunicationsService(?array $telecommunicationsService = null): self
+    public function setTelecommunicationsService(?array $telecommunicationsService = null): static
     {
         $this->telecommunicationsService = $telecommunicationsService;
 
@@ -729,9 +729,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelecommunicationsService(): self
+    public function unsetTelecommunicationsService(): static
     {
         $this->telecommunicationsService = null;
 
@@ -739,9 +739,9 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTelecommunicationsService(): self
+    public function clearTelecommunicationsService(): static
     {
         $this->telecommunicationsService = [];
 
@@ -780,9 +780,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param TelecommunicationsService $telecommunicationsService
-     * @return self
+     * @return static
      */
-    public function addToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): self
+    public function addToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): static
     {
         $this->telecommunicationsService[] = $telecommunicationsService;
 
@@ -801,9 +801,9 @@ class TelecommunicationsSupplyLineType
 
     /**
      * @param TelecommunicationsService $telecommunicationsService
-     * @return self
+     * @return static
      */
-    public function addOnceToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): self
+    public function addOnceToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): static
     {
         if (!is_array($this->telecommunicationsService)) {
             $this->telecommunicationsService = [];

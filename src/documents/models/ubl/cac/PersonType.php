@@ -232,9 +232,9 @@ class PersonType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -242,9 +242,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -271,9 +271,9 @@ class PersonType
 
     /**
      * @param FirstName|null $firstName
-     * @return self
+     * @return static
      */
-    public function setFirstName(?FirstName $firstName = null): self
+    public function setFirstName(?FirstName $firstName = null): static
     {
         $this->firstName = $firstName;
 
@@ -281,9 +281,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFirstName(): self
+    public function unsetFirstName(): static
     {
         $this->firstName = null;
 
@@ -310,9 +310,9 @@ class PersonType
 
     /**
      * @param FamilyName|null $familyName
-     * @return self
+     * @return static
      */
-    public function setFamilyName(?FamilyName $familyName = null): self
+    public function setFamilyName(?FamilyName $familyName = null): static
     {
         $this->familyName = $familyName;
 
@@ -320,9 +320,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFamilyName(): self
+    public function unsetFamilyName(): static
     {
         $this->familyName = null;
 
@@ -349,9 +349,9 @@ class PersonType
 
     /**
      * @param Title|null $title
-     * @return self
+     * @return static
      */
-    public function setTitle(?Title $title = null): self
+    public function setTitle(?Title $title = null): static
     {
         $this->title = $title;
 
@@ -359,9 +359,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTitle(): self
+    public function unsetTitle(): static
     {
         $this->title = null;
 
@@ -388,9 +388,9 @@ class PersonType
 
     /**
      * @param MiddleName|null $middleName
-     * @return self
+     * @return static
      */
-    public function setMiddleName(?MiddleName $middleName = null): self
+    public function setMiddleName(?MiddleName $middleName = null): static
     {
         $this->middleName = $middleName;
 
@@ -398,9 +398,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMiddleName(): self
+    public function unsetMiddleName(): static
     {
         $this->middleName = null;
 
@@ -427,9 +427,9 @@ class PersonType
 
     /**
      * @param OtherName|null $otherName
-     * @return self
+     * @return static
      */
-    public function setOtherName(?OtherName $otherName = null): self
+    public function setOtherName(?OtherName $otherName = null): static
     {
         $this->otherName = $otherName;
 
@@ -437,9 +437,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOtherName(): self
+    public function unsetOtherName(): static
     {
         $this->otherName = null;
 
@@ -466,9 +466,9 @@ class PersonType
 
     /**
      * @param NameSuffix|null $nameSuffix
-     * @return self
+     * @return static
      */
-    public function setNameSuffix(?NameSuffix $nameSuffix = null): self
+    public function setNameSuffix(?NameSuffix $nameSuffix = null): static
     {
         $this->nameSuffix = $nameSuffix;
 
@@ -476,9 +476,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNameSuffix(): self
+    public function unsetNameSuffix(): static
     {
         $this->nameSuffix = null;
 
@@ -505,9 +505,9 @@ class PersonType
 
     /**
      * @param JobTitle|null $jobTitle
-     * @return self
+     * @return static
      */
-    public function setJobTitle(?JobTitle $jobTitle = null): self
+    public function setJobTitle(?JobTitle $jobTitle = null): static
     {
         $this->jobTitle = $jobTitle;
 
@@ -515,9 +515,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetJobTitle(): self
+    public function unsetJobTitle(): static
     {
         $this->jobTitle = null;
 
@@ -544,9 +544,9 @@ class PersonType
 
     /**
      * @param NationalityID|null $nationalityID
-     * @return self
+     * @return static
      */
-    public function setNationalityID(?NationalityID $nationalityID = null): self
+    public function setNationalityID(?NationalityID $nationalityID = null): static
     {
         $this->nationalityID = $nationalityID;
 
@@ -554,9 +554,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNationalityID(): self
+    public function unsetNationalityID(): static
     {
         $this->nationalityID = null;
 
@@ -583,9 +583,9 @@ class PersonType
 
     /**
      * @param GenderCode|null $genderCode
-     * @return self
+     * @return static
      */
-    public function setGenderCode(?GenderCode $genderCode = null): self
+    public function setGenderCode(?GenderCode $genderCode = null): static
     {
         $this->genderCode = $genderCode;
 
@@ -593,9 +593,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGenderCode(): self
+    public function unsetGenderCode(): static
     {
         $this->genderCode = null;
 
@@ -612,9 +612,9 @@ class PersonType
 
     /**
      * @param DateTimeInterface|null $birthDate
-     * @return self
+     * @return static
      */
-    public function setBirthDate(?DateTimeInterface $birthDate = null): self
+    public function setBirthDate(?DateTimeInterface $birthDate = null): static
     {
         $this->birthDate = $birthDate;
 
@@ -622,9 +622,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBirthDate(): self
+    public function unsetBirthDate(): static
     {
         $this->birthDate = null;
 
@@ -651,9 +651,9 @@ class PersonType
 
     /**
      * @param BirthplaceName|null $birthplaceName
-     * @return self
+     * @return static
      */
-    public function setBirthplaceName(?BirthplaceName $birthplaceName = null): self
+    public function setBirthplaceName(?BirthplaceName $birthplaceName = null): static
     {
         $this->birthplaceName = $birthplaceName;
 
@@ -661,9 +661,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBirthplaceName(): self
+    public function unsetBirthplaceName(): static
     {
         $this->birthplaceName = null;
 
@@ -690,9 +690,9 @@ class PersonType
 
     /**
      * @param OrganizationDepartment|null $organizationDepartment
-     * @return self
+     * @return static
      */
-    public function setOrganizationDepartment(?OrganizationDepartment $organizationDepartment = null): self
+    public function setOrganizationDepartment(?OrganizationDepartment $organizationDepartment = null): static
     {
         $this->organizationDepartment = $organizationDepartment;
 
@@ -700,9 +700,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrganizationDepartment(): self
+    public function unsetOrganizationDepartment(): static
     {
         $this->organizationDepartment = null;
 
@@ -729,9 +729,9 @@ class PersonType
 
     /**
      * @param Contact|null $contact
-     * @return self
+     * @return static
      */
-    public function setContact(?Contact $contact = null): self
+    public function setContact(?Contact $contact = null): static
     {
         $this->contact = $contact;
 
@@ -739,9 +739,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContact(): self
+    public function unsetContact(): static
     {
         $this->contact = null;
 
@@ -768,9 +768,9 @@ class PersonType
 
     /**
      * @param FinancialAccount|null $financialAccount
-     * @return self
+     * @return static
      */
-    public function setFinancialAccount(?FinancialAccount $financialAccount = null): self
+    public function setFinancialAccount(?FinancialAccount $financialAccount = null): static
     {
         $this->financialAccount = $financialAccount;
 
@@ -778,9 +778,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancialAccount(): self
+    public function unsetFinancialAccount(): static
     {
         $this->financialAccount = null;
 
@@ -797,9 +797,9 @@ class PersonType
 
     /**
      * @param array<IdentityDocumentReference>|null $identityDocumentReference
-     * @return self
+     * @return static
      */
-    public function setIdentityDocumentReference(?array $identityDocumentReference = null): self
+    public function setIdentityDocumentReference(?array $identityDocumentReference = null): static
     {
         $this->identityDocumentReference = $identityDocumentReference;
 
@@ -807,9 +807,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIdentityDocumentReference(): self
+    public function unsetIdentityDocumentReference(): static
     {
         $this->identityDocumentReference = null;
 
@@ -817,9 +817,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIdentityDocumentReference(): self
+    public function clearIdentityDocumentReference(): static
     {
         $this->identityDocumentReference = [];
 
@@ -858,9 +858,9 @@ class PersonType
 
     /**
      * @param IdentityDocumentReference $identityDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): self
+    public function addToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): static
     {
         $this->identityDocumentReference[] = $identityDocumentReference;
 
@@ -879,9 +879,9 @@ class PersonType
 
     /**
      * @param IdentityDocumentReference $identityDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): self
+    public function addOnceToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): static
     {
         if (!is_array($this->identityDocumentReference)) {
             $this->identityDocumentReference = [];
@@ -928,9 +928,9 @@ class PersonType
 
     /**
      * @param ResidenceAddress|null $residenceAddress
-     * @return self
+     * @return static
      */
-    public function setResidenceAddress(?ResidenceAddress $residenceAddress = null): self
+    public function setResidenceAddress(?ResidenceAddress $residenceAddress = null): static
     {
         $this->residenceAddress = $residenceAddress;
 
@@ -938,9 +938,9 @@ class PersonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResidenceAddress(): self
+    public function unsetResidenceAddress(): static
     {
         $this->residenceAddress = null;
 

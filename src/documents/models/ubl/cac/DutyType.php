@@ -78,9 +78,9 @@ class DutyType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -88,9 +88,9 @@ class DutyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -117,9 +117,9 @@ class DutyType
 
     /**
      * @param Duty|null $duty
-     * @return self
+     * @return static
      */
-    public function setDuty(?Duty $duty = null): self
+    public function setDuty(?Duty $duty = null): static
     {
         $this->duty = $duty;
 
@@ -127,9 +127,9 @@ class DutyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDuty(): self
+    public function unsetDuty(): static
     {
         $this->duty = null;
 
@@ -156,9 +156,9 @@ class DutyType
 
     /**
      * @param DutyCode|null $dutyCode
-     * @return self
+     * @return static
      */
-    public function setDutyCode(?DutyCode $dutyCode = null): self
+    public function setDutyCode(?DutyCode $dutyCode = null): static
     {
         $this->dutyCode = $dutyCode;
 
@@ -166,9 +166,9 @@ class DutyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDutyCode(): self
+    public function unsetDutyCode(): static
     {
         $this->dutyCode = null;
 
@@ -195,9 +195,9 @@ class DutyType
 
     /**
      * @param TaxCategory|null $taxCategory
-     * @return self
+     * @return static
      */
-    public function setTaxCategory(?TaxCategory $taxCategory = null): self
+    public function setTaxCategory(?TaxCategory $taxCategory = null): static
     {
         $this->taxCategory = $taxCategory;
 
@@ -205,9 +205,9 @@ class DutyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxCategory(): self
+    public function unsetTaxCategory(): static
     {
         $this->taxCategory = null;
 

@@ -90,9 +90,9 @@ class ConsumptionReportReferenceType
 
     /**
      * @param ConsumptionReportID|null $consumptionReportID
-     * @return self
+     * @return static
      */
-    public function setConsumptionReportID(?ConsumptionReportID $consumptionReportID = null): self
+    public function setConsumptionReportID(?ConsumptionReportID $consumptionReportID = null): static
     {
         $this->consumptionReportID = $consumptionReportID;
 
@@ -100,9 +100,9 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionReportID(): self
+    public function unsetConsumptionReportID(): static
     {
         $this->consumptionReportID = null;
 
@@ -129,9 +129,9 @@ class ConsumptionReportReferenceType
 
     /**
      * @param ConsumptionType|null $consumptionType
-     * @return self
+     * @return static
      */
-    public function setConsumptionType(?ConsumptionType $consumptionType = null): self
+    public function setConsumptionType(?ConsumptionType $consumptionType = null): static
     {
         $this->consumptionType = $consumptionType;
 
@@ -139,9 +139,9 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionType(): self
+    public function unsetConsumptionType(): static
     {
         $this->consumptionType = null;
 
@@ -168,9 +168,9 @@ class ConsumptionReportReferenceType
 
     /**
      * @param ConsumptionTypeCode|null $consumptionTypeCode
-     * @return self
+     * @return static
      */
-    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): self
+    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
     {
         $this->consumptionTypeCode = $consumptionTypeCode;
 
@@ -178,9 +178,9 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionTypeCode(): self
+    public function unsetConsumptionTypeCode(): static
     {
         $this->consumptionTypeCode = null;
 
@@ -207,9 +207,9 @@ class ConsumptionReportReferenceType
 
     /**
      * @param TotalConsumedQuantity|null $totalConsumedQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): self
+    public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): static
     {
         $this->totalConsumedQuantity = $totalConsumedQuantity;
 
@@ -217,9 +217,9 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalConsumedQuantity(): self
+    public function unsetTotalConsumedQuantity(): static
     {
         $this->totalConsumedQuantity = null;
 
@@ -246,9 +246,9 @@ class ConsumptionReportReferenceType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -256,9 +256,9 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 

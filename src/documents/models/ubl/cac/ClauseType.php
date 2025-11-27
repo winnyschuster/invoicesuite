@@ -56,9 +56,9 @@ class ClauseType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -66,9 +66,9 @@ class ClauseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -85,9 +85,9 @@ class ClauseType
 
     /**
      * @param array<Content>|null $content
-     * @return self
+     * @return static
      */
-    public function setContent(?array $content = null): self
+    public function setContent(?array $content = null): static
     {
         $this->content = $content;
 
@@ -95,9 +95,9 @@ class ClauseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContent(): self
+    public function unsetContent(): static
     {
         $this->content = null;
 
@@ -105,9 +105,9 @@ class ClauseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContent(): self
+    public function clearContent(): static
     {
         $this->content = [];
 
@@ -146,9 +146,9 @@ class ClauseType
 
     /**
      * @param Content $content
-     * @return self
+     * @return static
      */
-    public function addToContent(Content $content): self
+    public function addToContent(Content $content): static
     {
         $this->content[] = $content;
 
@@ -167,9 +167,9 @@ class ClauseType
 
     /**
      * @param Content $content
-     * @return self
+     * @return static
      */
-    public function addOnceToContent(Content $content): self
+    public function addOnceToContent(Content $content): static
     {
         if (!is_array($this->content)) {
             $this->content = [];

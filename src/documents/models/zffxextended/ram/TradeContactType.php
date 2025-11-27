@@ -99,9 +99,9 @@ class TradeContactType
 
     /**
      * @param TextType|null $personName
-     * @return self
+     * @return static
      */
-    public function setPersonName(?TextType $personName = null): self
+    public function setPersonName(?TextType $personName = null): static
     {
         $this->personName = $personName;
 
@@ -109,9 +109,9 @@ class TradeContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPersonName(): self
+    public function unsetPersonName(): static
     {
         $this->personName = null;
 
@@ -138,9 +138,9 @@ class TradeContactType
 
     /**
      * @param TextType|null $departmentName
-     * @return self
+     * @return static
      */
-    public function setDepartmentName(?TextType $departmentName = null): self
+    public function setDepartmentName(?TextType $departmentName = null): static
     {
         $this->departmentName = $departmentName;
 
@@ -148,9 +148,9 @@ class TradeContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDepartmentName(): self
+    public function unsetDepartmentName(): static
     {
         $this->departmentName = null;
 
@@ -177,9 +177,9 @@ class TradeContactType
 
     /**
      * @param CodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?CodeType $typeCode = null): self
+    public function setTypeCode(?CodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -187,9 +187,9 @@ class TradeContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -216,20 +216,20 @@ class TradeContactType
 
     /**
      * @param UniversalCommunicationType|null $telephoneUniversalCommunication
-     * @return self
+     * @return static
      */
     public function setTelephoneUniversalCommunication(
         ?UniversalCommunicationType $telephoneUniversalCommunication = null,
-    ): self {
+    ): static {
         $this->telephoneUniversalCommunication = $telephoneUniversalCommunication;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelephoneUniversalCommunication(): self
+    public function unsetTelephoneUniversalCommunication(): static
     {
         $this->telephoneUniversalCommunication = null;
 
@@ -256,9 +256,9 @@ class TradeContactType
 
     /**
      * @param UniversalCommunicationType|null $faxUniversalCommunication
-     * @return self
+     * @return static
      */
-    public function setFaxUniversalCommunication(?UniversalCommunicationType $faxUniversalCommunication = null): self
+    public function setFaxUniversalCommunication(?UniversalCommunicationType $faxUniversalCommunication = null): static
     {
         $this->faxUniversalCommunication = $faxUniversalCommunication;
 
@@ -266,9 +266,9 @@ class TradeContactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFaxUniversalCommunication(): self
+    public function unsetFaxUniversalCommunication(): static
     {
         $this->faxUniversalCommunication = null;
 
@@ -295,20 +295,20 @@ class TradeContactType
 
     /**
      * @param UniversalCommunicationType|null $emailURIUniversalCommunication
-     * @return self
+     * @return static
      */
     public function setEmailURIUniversalCommunication(
         ?UniversalCommunicationType $emailURIUniversalCommunication = null,
-    ): self {
+    ): static {
         $this->emailURIUniversalCommunication = $emailURIUniversalCommunication;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmailURIUniversalCommunication(): self
+    public function unsetEmailURIUniversalCommunication(): static
     {
         $this->emailURIUniversalCommunication = null;
 

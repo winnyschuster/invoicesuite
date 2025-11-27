@@ -88,9 +88,9 @@ class DocumentResponseType
 
     /**
      * @param Response|null $response
-     * @return self
+     * @return static
      */
-    public function setResponse(?Response $response = null): self
+    public function setResponse(?Response $response = null): static
     {
         $this->response = $response;
 
@@ -98,9 +98,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResponse(): self
+    public function unsetResponse(): static
     {
         $this->response = null;
 
@@ -117,9 +117,9 @@ class DocumentResponseType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -127,9 +127,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -137,9 +137,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -178,9 +178,9 @@ class DocumentResponseType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -199,9 +199,9 @@ class DocumentResponseType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -248,9 +248,9 @@ class DocumentResponseType
 
     /**
      * @param IssuerParty|null $issuerParty
-     * @return self
+     * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): self
+    public function setIssuerParty(?IssuerParty $issuerParty = null): static
     {
         $this->issuerParty = $issuerParty;
 
@@ -258,9 +258,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerParty(): self
+    public function unsetIssuerParty(): static
     {
         $this->issuerParty = null;
 
@@ -287,9 +287,9 @@ class DocumentResponseType
 
     /**
      * @param RecipientParty|null $recipientParty
-     * @return self
+     * @return static
      */
-    public function setRecipientParty(?RecipientParty $recipientParty = null): self
+    public function setRecipientParty(?RecipientParty $recipientParty = null): static
     {
         $this->recipientParty = $recipientParty;
 
@@ -297,9 +297,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRecipientParty(): self
+    public function unsetRecipientParty(): static
     {
         $this->recipientParty = null;
 
@@ -316,9 +316,9 @@ class DocumentResponseType
 
     /**
      * @param array<LineResponse>|null $lineResponse
-     * @return self
+     * @return static
      */
-    public function setLineResponse(?array $lineResponse = null): self
+    public function setLineResponse(?array $lineResponse = null): static
     {
         $this->lineResponse = $lineResponse;
 
@@ -326,9 +326,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineResponse(): self
+    public function unsetLineResponse(): static
     {
         $this->lineResponse = null;
 
@@ -336,9 +336,9 @@ class DocumentResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLineResponse(): self
+    public function clearLineResponse(): static
     {
         $this->lineResponse = [];
 
@@ -377,9 +377,9 @@ class DocumentResponseType
 
     /**
      * @param LineResponse $lineResponse
-     * @return self
+     * @return static
      */
-    public function addToLineResponse(LineResponse $lineResponse): self
+    public function addToLineResponse(LineResponse $lineResponse): static
     {
         $this->lineResponse[] = $lineResponse;
 
@@ -398,9 +398,9 @@ class DocumentResponseType
 
     /**
      * @param LineResponse $lineResponse
-     * @return self
+     * @return static
      */
-    public function addOnceToLineResponse(LineResponse $lineResponse): self
+    public function addOnceToLineResponse(LineResponse $lineResponse): static
     {
         if (!is_array($this->lineResponse)) {
             $this->lineResponse = [];

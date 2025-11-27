@@ -67,9 +67,9 @@ class TradePaymentTermsType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -77,9 +77,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -106,9 +106,9 @@ class TradePaymentTermsType
 
     /**
      * @param DateTimeType|null $dueDateDateTime
-     * @return self
+     * @return static
      */
-    public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): self
+    public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): static
     {
         $this->dueDateDateTime = $dueDateDateTime;
 
@@ -116,9 +116,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDueDateDateTime(): self
+    public function unsetDueDateDateTime(): static
     {
         $this->dueDateDateTime = null;
 
@@ -145,9 +145,9 @@ class TradePaymentTermsType
 
     /**
      * @param IDType|null $directDebitMandateID
-     * @return self
+     * @return static
      */
-    public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): self
+    public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): static
     {
         $this->directDebitMandateID = $directDebitMandateID;
 
@@ -155,9 +155,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDirectDebitMandateID(): self
+    public function unsetDirectDebitMandateID(): static
     {
         $this->directDebitMandateID = null;
 

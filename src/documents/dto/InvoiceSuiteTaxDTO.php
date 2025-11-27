@@ -135,9 +135,9 @@ class InvoiceSuiteTaxDTO
      * Sets the coded description of the tax category
      *
      * @param  null|string $category The coded description of the tax category
-     * @return self
+     * @return static
      */
-    public function setCategory(?string $category): self
+    public function setCategory(?string $category): static
     {
         $this->category = $category;
 
@@ -158,9 +158,9 @@ class InvoiceSuiteTaxDTO
      * Sets the coded description of the tax type
      *
      * @param  null|string $type The coded description of the tax type
-     * @return self
+     * @return static
      */
-    public function setType(?string $type): self
+    public function setType(?string $type): static
     {
         $this->type = $type;
 
@@ -181,9 +181,9 @@ class InvoiceSuiteTaxDTO
      * Sets the tax base amount
      *
      * @param  null|float $basisAmount The tax base amount
-     * @return self
+     * @return static
      */
-    public function setBasisAmount(?float $basisAmount): self
+    public function setBasisAmount(?float $basisAmount): static
     {
         $this->basisAmount = $basisAmount;
 
@@ -204,9 +204,9 @@ class InvoiceSuiteTaxDTO
      * Sets the tax total amount
      *
      * @param  null|float $amount The tax total amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?float $amount): self
+    public function setAmount(?float $amount): static
     {
         $this->amount = $amount;
 
@@ -227,9 +227,9 @@ class InvoiceSuiteTaxDTO
      * Sets the tax Rate (Percentage)
      *
      * @param  null|float $percent The tax Rate (Percentage)
-     * @return self
+     * @return static
      */
-    public function setPercent(?float $percent): self
+    public function setPercent(?float $percent): static
     {
         $this->percent = $percent;
 
@@ -250,9 +250,9 @@ class InvoiceSuiteTaxDTO
      * Sets the reason for tax exemption (free text)
      *
      * @param  null|string $exemptionReason The reason for tax exemption (free text)
-     * @return self
+     * @return static
      */
-    public function setExemptionReason(?string $exemptionReason): self
+    public function setExemptionReason(?string $exemptionReason): static
     {
         $this->exemptionReason = $exemptionReason;
 
@@ -273,9 +273,9 @@ class InvoiceSuiteTaxDTO
      * Sets the reason for tax exemption (Code)
      *
      * @param  null|string $exemptionReasonCode The reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
-    public function setExemptionReasonCode(?string $exemptionReasonCode): self
+    public function setExemptionReasonCode(?string $exemptionReasonCode): static
     {
         $this->exemptionReasonCode = $exemptionReasonCode;
 
@@ -296,9 +296,9 @@ class InvoiceSuiteTaxDTO
      * Sets the date on which tax is due
      *
      * @param  null|DateTimeInterface $dueDate The date on which tax is due
-     * @return self
+     * @return static
      */
-    public function setDueDate(?DateTimeInterface $dueDate): self
+    public function setDueDate(?DateTimeInterface $dueDate): static
     {
         $this->dueDate = $dueDate;
 
@@ -319,9 +319,9 @@ class InvoiceSuiteTaxDTO
      * Sets the code for the date on which tax is due
      *
      * @param  null|string $dueCode The code for the date on which tax is due
-     * @return self
+     * @return static
      */
-    public function setDueCode(?string $dueCode): self
+    public function setDueCode(?string $dueCode): static
     {
         $this->dueCode = $dueCode;
 

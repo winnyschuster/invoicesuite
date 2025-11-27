@@ -24,9 +24,9 @@ trait HandlesDocumentRootObject
     /**
      * Initialize the root object
      *
-     * @return self
+     * @return static
      */
-    public function createAndInitDocumentRootObjectByFormatProvider(): self
+    public function createAndInitDocumentRootObjectByFormatProvider(): static
     {
         $className = $this->getCurrentDocumentFormatProvider()->getRootClassName();
 
@@ -47,9 +47,9 @@ trait HandlesDocumentRootObject
      * Set the rooot object
      *
      * @param  object $rootObject
-     * @return self
+     * @return static
      */
-    public function setDocumentRootObject(object $rootObject): self
+    public function setDocumentRootObject(object $rootObject): static
     {
         $this->documentRootObject = $rootObject;
 
@@ -59,9 +59,9 @@ trait HandlesDocumentRootObject
     /**
      * Initialize the root object
      *
-     * @return self
+     * @return static
      */
-    public function initDocumentRootObject(): self
+    public function initDocumentRootObject(): static
     {
         return $this;
     }

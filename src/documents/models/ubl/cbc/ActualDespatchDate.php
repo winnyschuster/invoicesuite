@@ -36,9 +36,9 @@ class ActualDespatchDate
 
     /**
      * @param DateTimeInterface|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?DateTimeInterface $value = null): self
+    public function setValue(?DateTimeInterface $value = null): static
     {
         $this->value = $value;
 
@@ -46,9 +46,9 @@ class ActualDespatchDate
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

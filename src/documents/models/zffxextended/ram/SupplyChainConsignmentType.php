@@ -33,9 +33,9 @@ class SupplyChainConsignmentType
 
     /**
      * @param array<LogisticsTransportMovementType>|null $specifiedLogisticsTransportMovement
-     * @return self
+     * @return static
      */
-    public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): self
+    public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): static
     {
         $this->specifiedLogisticsTransportMovement = $specifiedLogisticsTransportMovement;
 
@@ -43,9 +43,9 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedLogisticsTransportMovement(): self
+    public function unsetSpecifiedLogisticsTransportMovement(): static
     {
         $this->specifiedLogisticsTransportMovement = null;
 
@@ -53,9 +53,9 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedLogisticsTransportMovement(): self
+    public function clearSpecifiedLogisticsTransportMovement(): static
     {
         $this->specifiedLogisticsTransportMovement = [];
 
@@ -64,11 +64,11 @@ class SupplyChainConsignmentType
 
     /**
      * @param LogisticsTransportMovementType $specifiedLogisticsTransportMovement
-     * @return self
+     * @return static
      */
     public function addToSpecifiedLogisticsTransportMovement(
         LogisticsTransportMovementType $specifiedLogisticsTransportMovement,
-    ): self {
+    ): static {
         $this->specifiedLogisticsTransportMovement[] = $specifiedLogisticsTransportMovement;
 
         return $this;
@@ -86,11 +86,11 @@ class SupplyChainConsignmentType
 
     /**
      * @param LogisticsTransportMovementType $specifiedLogisticsTransportMovement
-     * @return self
+     * @return static
      */
     public function addOnceToSpecifiedLogisticsTransportMovement(
         LogisticsTransportMovementType $specifiedLogisticsTransportMovement,
-    ): self {
+    ): static {
         if (!is_array($this->specifiedLogisticsTransportMovement)) {
             $this->specifiedLogisticsTransportMovement = [];
         }

@@ -138,9 +138,9 @@ class ConsumptionPointType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -148,9 +148,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -167,9 +167,9 @@ class ConsumptionPointType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -177,9 +177,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -187,9 +187,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -228,9 +228,9 @@ class ConsumptionPointType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -249,9 +249,9 @@ class ConsumptionPointType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -298,9 +298,9 @@ class ConsumptionPointType
 
     /**
      * @param SubscriberID|null $subscriberID
-     * @return self
+     * @return static
      */
-    public function setSubscriberID(?SubscriberID $subscriberID = null): self
+    public function setSubscriberID(?SubscriberID $subscriberID = null): static
     {
         $this->subscriberID = $subscriberID;
 
@@ -308,9 +308,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberID(): self
+    public function unsetSubscriberID(): static
     {
         $this->subscriberID = null;
 
@@ -337,9 +337,9 @@ class ConsumptionPointType
 
     /**
      * @param SubscriberType|null $subscriberType
-     * @return self
+     * @return static
      */
-    public function setSubscriberType(?SubscriberType $subscriberType = null): self
+    public function setSubscriberType(?SubscriberType $subscriberType = null): static
     {
         $this->subscriberType = $subscriberType;
 
@@ -347,9 +347,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberType(): self
+    public function unsetSubscriberType(): static
     {
         $this->subscriberType = null;
 
@@ -376,9 +376,9 @@ class ConsumptionPointType
 
     /**
      * @param SubscriberTypeCode|null $subscriberTypeCode
-     * @return self
+     * @return static
      */
-    public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): self
+    public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): static
     {
         $this->subscriberTypeCode = $subscriberTypeCode;
 
@@ -386,9 +386,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberTypeCode(): self
+    public function unsetSubscriberTypeCode(): static
     {
         $this->subscriberTypeCode = null;
 
@@ -415,9 +415,9 @@ class ConsumptionPointType
 
     /**
      * @param TotalDeliveredQuantity|null $totalDeliveredQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): self
+    public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): static
     {
         $this->totalDeliveredQuantity = $totalDeliveredQuantity;
 
@@ -425,9 +425,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalDeliveredQuantity(): self
+    public function unsetTotalDeliveredQuantity(): static
     {
         $this->totalDeliveredQuantity = null;
 
@@ -454,9 +454,9 @@ class ConsumptionPointType
 
     /**
      * @param Address|null $address
-     * @return self
+     * @return static
      */
-    public function setAddress(?Address $address = null): self
+    public function setAddress(?Address $address = null): static
     {
         $this->address = $address;
 
@@ -464,9 +464,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAddress(): self
+    public function unsetAddress(): static
     {
         $this->address = null;
 
@@ -493,9 +493,9 @@ class ConsumptionPointType
 
     /**
      * @param WebSiteAccess|null $webSiteAccess
-     * @return self
+     * @return static
      */
-    public function setWebSiteAccess(?WebSiteAccess $webSiteAccess = null): self
+    public function setWebSiteAccess(?WebSiteAccess $webSiteAccess = null): static
     {
         $this->webSiteAccess = $webSiteAccess;
 
@@ -503,9 +503,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWebSiteAccess(): self
+    public function unsetWebSiteAccess(): static
     {
         $this->webSiteAccess = null;
 
@@ -522,9 +522,9 @@ class ConsumptionPointType
 
     /**
      * @param array<UtilityMeter>|null $utilityMeter
-     * @return self
+     * @return static
      */
-    public function setUtilityMeter(?array $utilityMeter = null): self
+    public function setUtilityMeter(?array $utilityMeter = null): static
     {
         $this->utilityMeter = $utilityMeter;
 
@@ -532,9 +532,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUtilityMeter(): self
+    public function unsetUtilityMeter(): static
     {
         $this->utilityMeter = null;
 
@@ -542,9 +542,9 @@ class ConsumptionPointType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearUtilityMeter(): self
+    public function clearUtilityMeter(): static
     {
         $this->utilityMeter = [];
 
@@ -583,9 +583,9 @@ class ConsumptionPointType
 
     /**
      * @param UtilityMeter $utilityMeter
-     * @return self
+     * @return static
      */
-    public function addToUtilityMeter(UtilityMeter $utilityMeter): self
+    public function addToUtilityMeter(UtilityMeter $utilityMeter): static
     {
         $this->utilityMeter[] = $utilityMeter;
 
@@ -604,9 +604,9 @@ class ConsumptionPointType
 
     /**
      * @param UtilityMeter $utilityMeter
-     * @return self
+     * @return static
      */
-    public function addOnceToUtilityMeter(UtilityMeter $utilityMeter): self
+    public function addOnceToUtilityMeter(UtilityMeter $utilityMeter): static
     {
         if (!is_array($this->utilityMeter)) {
             $this->utilityMeter = [];

@@ -139,9 +139,9 @@ class MonetaryTotalType
 
     /**
      * @param LineExtensionAmount|null $lineExtensionAmount
-     * @return self
+     * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
+    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
     {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
@@ -149,9 +149,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineExtensionAmount(): self
+    public function unsetLineExtensionAmount(): static
     {
         $this->lineExtensionAmount = null;
 
@@ -178,9 +178,9 @@ class MonetaryTotalType
 
     /**
      * @param TaxExclusiveAmount|null $taxExclusiveAmount
-     * @return self
+     * @return static
      */
-    public function setTaxExclusiveAmount(?TaxExclusiveAmount $taxExclusiveAmount = null): self
+    public function setTaxExclusiveAmount(?TaxExclusiveAmount $taxExclusiveAmount = null): static
     {
         $this->taxExclusiveAmount = $taxExclusiveAmount;
 
@@ -188,9 +188,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxExclusiveAmount(): self
+    public function unsetTaxExclusiveAmount(): static
     {
         $this->taxExclusiveAmount = null;
 
@@ -217,9 +217,9 @@ class MonetaryTotalType
 
     /**
      * @param TaxInclusiveAmount|null $taxInclusiveAmount
-     * @return self
+     * @return static
      */
-    public function setTaxInclusiveAmount(?TaxInclusiveAmount $taxInclusiveAmount = null): self
+    public function setTaxInclusiveAmount(?TaxInclusiveAmount $taxInclusiveAmount = null): static
     {
         $this->taxInclusiveAmount = $taxInclusiveAmount;
 
@@ -227,9 +227,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxInclusiveAmount(): self
+    public function unsetTaxInclusiveAmount(): static
     {
         $this->taxInclusiveAmount = null;
 
@@ -256,9 +256,9 @@ class MonetaryTotalType
 
     /**
      * @param AllowanceTotalAmount|null $allowanceTotalAmount
-     * @return self
+     * @return static
      */
-    public function setAllowanceTotalAmount(?AllowanceTotalAmount $allowanceTotalAmount = null): self
+    public function setAllowanceTotalAmount(?AllowanceTotalAmount $allowanceTotalAmount = null): static
     {
         $this->allowanceTotalAmount = $allowanceTotalAmount;
 
@@ -266,9 +266,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceTotalAmount(): self
+    public function unsetAllowanceTotalAmount(): static
     {
         $this->allowanceTotalAmount = null;
 
@@ -295,9 +295,9 @@ class MonetaryTotalType
 
     /**
      * @param ChargeTotalAmount|null $chargeTotalAmount
-     * @return self
+     * @return static
      */
-    public function setChargeTotalAmount(?ChargeTotalAmount $chargeTotalAmount = null): self
+    public function setChargeTotalAmount(?ChargeTotalAmount $chargeTotalAmount = null): static
     {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
@@ -305,9 +305,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeTotalAmount(): self
+    public function unsetChargeTotalAmount(): static
     {
         $this->chargeTotalAmount = null;
 
@@ -334,9 +334,9 @@ class MonetaryTotalType
 
     /**
      * @param PrepaidAmount|null $prepaidAmount
-     * @return self
+     * @return static
      */
-    public function setPrepaidAmount(?PrepaidAmount $prepaidAmount = null): self
+    public function setPrepaidAmount(?PrepaidAmount $prepaidAmount = null): static
     {
         $this->prepaidAmount = $prepaidAmount;
 
@@ -344,9 +344,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrepaidAmount(): self
+    public function unsetPrepaidAmount(): static
     {
         $this->prepaidAmount = null;
 
@@ -373,9 +373,9 @@ class MonetaryTotalType
 
     /**
      * @param PayableRoundingAmount|null $payableRoundingAmount
-     * @return self
+     * @return static
      */
-    public function setPayableRoundingAmount(?PayableRoundingAmount $payableRoundingAmount = null): self
+    public function setPayableRoundingAmount(?PayableRoundingAmount $payableRoundingAmount = null): static
     {
         $this->payableRoundingAmount = $payableRoundingAmount;
 
@@ -383,9 +383,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayableRoundingAmount(): self
+    public function unsetPayableRoundingAmount(): static
     {
         $this->payableRoundingAmount = null;
 
@@ -412,9 +412,9 @@ class MonetaryTotalType
 
     /**
      * @param PayableAmount|null $payableAmount
-     * @return self
+     * @return static
      */
-    public function setPayableAmount(?PayableAmount $payableAmount = null): self
+    public function setPayableAmount(?PayableAmount $payableAmount = null): static
     {
         $this->payableAmount = $payableAmount;
 
@@ -422,9 +422,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayableAmount(): self
+    public function unsetPayableAmount(): static
     {
         $this->payableAmount = null;
 
@@ -451,9 +451,9 @@ class MonetaryTotalType
 
     /**
      * @param PayableAlternativeAmount|null $payableAlternativeAmount
-     * @return self
+     * @return static
      */
-    public function setPayableAlternativeAmount(?PayableAlternativeAmount $payableAlternativeAmount = null): self
+    public function setPayableAlternativeAmount(?PayableAlternativeAmount $payableAlternativeAmount = null): static
     {
         $this->payableAlternativeAmount = $payableAlternativeAmount;
 
@@ -461,9 +461,9 @@ class MonetaryTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayableAlternativeAmount(): self
+    public function unsetPayableAlternativeAmount(): static
     {
         $this->payableAlternativeAmount = null;
 

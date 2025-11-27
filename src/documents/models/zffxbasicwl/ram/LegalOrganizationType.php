@@ -55,9 +55,9 @@ class LegalOrganizationType
 
     /**
      * @param IDType|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?IDType $iD = null): self
+    public function setID(?IDType $iD = null): static
     {
         $this->iD = $iD;
 
@@ -65,9 +65,9 @@ class LegalOrganizationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -94,9 +94,9 @@ class LegalOrganizationType
 
     /**
      * @param TextType|null $tradingBusinessName
-     * @return self
+     * @return static
      */
-    public function setTradingBusinessName(?TextType $tradingBusinessName = null): self
+    public function setTradingBusinessName(?TextType $tradingBusinessName = null): static
     {
         $this->tradingBusinessName = $tradingBusinessName;
 
@@ -104,9 +104,9 @@ class LegalOrganizationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTradingBusinessName(): self
+    public function unsetTradingBusinessName(): static
     {
         $this->tradingBusinessName = null;
 

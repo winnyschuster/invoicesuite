@@ -77,9 +77,9 @@ class EndorserPartyType
 
     /**
      * @param RoleCode|null $roleCode
-     * @return self
+     * @return static
      */
-    public function setRoleCode(?RoleCode $roleCode = null): self
+    public function setRoleCode(?RoleCode $roleCode = null): static
     {
         $this->roleCode = $roleCode;
 
@@ -87,9 +87,9 @@ class EndorserPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRoleCode(): self
+    public function unsetRoleCode(): static
     {
         $this->roleCode = null;
 
@@ -116,9 +116,9 @@ class EndorserPartyType
 
     /**
      * @param SequenceNumeric|null $sequenceNumeric
-     * @return self
+     * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
+    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
     {
         $this->sequenceNumeric = $sequenceNumeric;
 
@@ -126,9 +126,9 @@ class EndorserPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceNumeric(): self
+    public function unsetSequenceNumeric(): static
     {
         $this->sequenceNumeric = null;
 
@@ -155,9 +155,9 @@ class EndorserPartyType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -165,9 +165,9 @@ class EndorserPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 
@@ -194,9 +194,9 @@ class EndorserPartyType
 
     /**
      * @param SignatoryContact|null $signatoryContact
-     * @return self
+     * @return static
      */
-    public function setSignatoryContact(?SignatoryContact $signatoryContact = null): self
+    public function setSignatoryContact(?SignatoryContact $signatoryContact = null): static
     {
         $this->signatoryContact = $signatoryContact;
 
@@ -204,9 +204,9 @@ class EndorserPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignatoryContact(): self
+    public function unsetSignatoryContact(): static
     {
         $this->signatoryContact = null;
 

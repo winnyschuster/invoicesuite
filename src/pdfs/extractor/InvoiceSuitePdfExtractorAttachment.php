@@ -73,9 +73,9 @@ class InvoiceSuitePdfExtractorAttachment
     /**
      * Set the content of a PDF attachment
      *
-     * @return self
+     * @return static
      */
-    public function setAttachmentContent(string $newAttachmentContent): self
+    public function setAttachmentContent(string $newAttachmentContent): static
     {
         $this->attachmentContent = $newAttachmentContent;
 
@@ -95,9 +95,9 @@ class InvoiceSuitePdfExtractorAttachment
     /**
      * Set the filename of a PDF attachment
      *
-     * @return self
+     * @return static
      */
-    public function setAttachmentFilename(string $newAttachmentFilename): self
+    public function setAttachmentFilename(string $newAttachmentFilename): static
     {
         $this->attachmentFilename = $newAttachmentFilename;
 
@@ -117,9 +117,9 @@ class InvoiceSuitePdfExtractorAttachment
     /**
      * Set the mime type of a PDF attachment
      *
-     * @return self
+     * @return static
      */
-    public function setAttachmentMimeType(string $newAttachmentMimeType): self
+    public function setAttachmentMimeType(string $newAttachmentMimeType): static
     {
         $this->attachmentMimeType = $newAttachmentMimeType;
 

@@ -92,9 +92,9 @@ class ConditionType
 
     /**
      * @param AttributeID|null $attributeID
-     * @return self
+     * @return static
      */
-    public function setAttributeID(?AttributeID $attributeID = null): self
+    public function setAttributeID(?AttributeID $attributeID = null): static
     {
         $this->attributeID = $attributeID;
 
@@ -102,9 +102,9 @@ class ConditionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAttributeID(): self
+    public function unsetAttributeID(): static
     {
         $this->attributeID = null;
 
@@ -131,9 +131,9 @@ class ConditionType
 
     /**
      * @param Measure|null $measure
-     * @return self
+     * @return static
      */
-    public function setMeasure(?Measure $measure = null): self
+    public function setMeasure(?Measure $measure = null): static
     {
         $this->measure = $measure;
 
@@ -141,9 +141,9 @@ class ConditionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasure(): self
+    public function unsetMeasure(): static
     {
         $this->measure = null;
 
@@ -160,9 +160,9 @@ class ConditionType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -170,9 +170,9 @@ class ConditionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -180,9 +180,9 @@ class ConditionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -221,9 +221,9 @@ class ConditionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -242,9 +242,9 @@ class ConditionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -291,9 +291,9 @@ class ConditionType
 
     /**
      * @param MinimumMeasure|null $minimumMeasure
-     * @return self
+     * @return static
      */
-    public function setMinimumMeasure(?MinimumMeasure $minimumMeasure = null): self
+    public function setMinimumMeasure(?MinimumMeasure $minimumMeasure = null): static
     {
         $this->minimumMeasure = $minimumMeasure;
 
@@ -301,9 +301,9 @@ class ConditionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumMeasure(): self
+    public function unsetMinimumMeasure(): static
     {
         $this->minimumMeasure = null;
 
@@ -330,9 +330,9 @@ class ConditionType
 
     /**
      * @param MaximumMeasure|null $maximumMeasure
-     * @return self
+     * @return static
      */
-    public function setMaximumMeasure(?MaximumMeasure $maximumMeasure = null): self
+    public function setMaximumMeasure(?MaximumMeasure $maximumMeasure = null): static
     {
         $this->maximumMeasure = $maximumMeasure;
 
@@ -340,9 +340,9 @@ class ConditionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumMeasure(): self
+    public function unsetMaximumMeasure(): static
     {
         $this->maximumMeasure = null;
 

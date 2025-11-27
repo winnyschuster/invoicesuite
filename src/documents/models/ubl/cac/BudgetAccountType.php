@@ -66,9 +66,9 @@ class BudgetAccountType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -76,9 +76,9 @@ class BudgetAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -105,9 +105,9 @@ class BudgetAccountType
 
     /**
      * @param BudgetYearNumeric|null $budgetYearNumeric
-     * @return self
+     * @return static
      */
-    public function setBudgetYearNumeric(?BudgetYearNumeric $budgetYearNumeric = null): self
+    public function setBudgetYearNumeric(?BudgetYearNumeric $budgetYearNumeric = null): static
     {
         $this->budgetYearNumeric = $budgetYearNumeric;
 
@@ -115,9 +115,9 @@ class BudgetAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBudgetYearNumeric(): self
+    public function unsetBudgetYearNumeric(): static
     {
         $this->budgetYearNumeric = null;
 
@@ -144,20 +144,20 @@ class BudgetAccountType
 
     /**
      * @param RequiredClassificationScheme|null $requiredClassificationScheme
-     * @return self
+     * @return static
      */
     public function setRequiredClassificationScheme(
         ?RequiredClassificationScheme $requiredClassificationScheme = null,
-    ): self {
+    ): static {
         $this->requiredClassificationScheme = $requiredClassificationScheme;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredClassificationScheme(): self
+    public function unsetRequiredClassificationScheme(): static
     {
         $this->requiredClassificationScheme = null;
 

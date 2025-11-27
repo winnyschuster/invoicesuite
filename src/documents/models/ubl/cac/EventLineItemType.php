@@ -77,9 +77,9 @@ class EventLineItemType
 
     /**
      * @param LineNumberNumeric|null $lineNumberNumeric
-     * @return self
+     * @return static
      */
-    public function setLineNumberNumeric(?LineNumberNumeric $lineNumberNumeric = null): self
+    public function setLineNumberNumeric(?LineNumberNumeric $lineNumberNumeric = null): static
     {
         $this->lineNumberNumeric = $lineNumberNumeric;
 
@@ -87,9 +87,9 @@ class EventLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineNumberNumeric(): self
+    public function unsetLineNumberNumeric(): static
     {
         $this->lineNumberNumeric = null;
 
@@ -116,20 +116,20 @@ class EventLineItemType
 
     /**
      * @param ParticipatingLocationsLocation|null $participatingLocationsLocation
-     * @return self
+     * @return static
      */
     public function setParticipatingLocationsLocation(
         ?ParticipatingLocationsLocation $participatingLocationsLocation = null,
-    ): self {
+    ): static {
         $this->participatingLocationsLocation = $participatingLocationsLocation;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParticipatingLocationsLocation(): self
+    public function unsetParticipatingLocationsLocation(): static
     {
         $this->participatingLocationsLocation = null;
 
@@ -146,9 +146,9 @@ class EventLineItemType
 
     /**
      * @param array<RetailPlannedImpact>|null $retailPlannedImpact
-     * @return self
+     * @return static
      */
-    public function setRetailPlannedImpact(?array $retailPlannedImpact = null): self
+    public function setRetailPlannedImpact(?array $retailPlannedImpact = null): static
     {
         $this->retailPlannedImpact = $retailPlannedImpact;
 
@@ -156,9 +156,9 @@ class EventLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRetailPlannedImpact(): self
+    public function unsetRetailPlannedImpact(): static
     {
         $this->retailPlannedImpact = null;
 
@@ -166,9 +166,9 @@ class EventLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRetailPlannedImpact(): self
+    public function clearRetailPlannedImpact(): static
     {
         $this->retailPlannedImpact = [];
 
@@ -207,9 +207,9 @@ class EventLineItemType
 
     /**
      * @param RetailPlannedImpact $retailPlannedImpact
-     * @return self
+     * @return static
      */
-    public function addToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): self
+    public function addToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): static
     {
         $this->retailPlannedImpact[] = $retailPlannedImpact;
 
@@ -228,9 +228,9 @@ class EventLineItemType
 
     /**
      * @param RetailPlannedImpact $retailPlannedImpact
-     * @return self
+     * @return static
      */
-    public function addOnceToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): self
+    public function addOnceToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): static
     {
         if (!is_array($this->retailPlannedImpact)) {
             $this->retailPlannedImpact = [];
@@ -277,9 +277,9 @@ class EventLineItemType
 
     /**
      * @param SupplyItem|null $supplyItem
-     * @return self
+     * @return static
      */
-    public function setSupplyItem(?SupplyItem $supplyItem = null): self
+    public function setSupplyItem(?SupplyItem $supplyItem = null): static
     {
         $this->supplyItem = $supplyItem;
 
@@ -287,9 +287,9 @@ class EventLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyItem(): self
+    public function unsetSupplyItem(): static
     {
         $this->supplyItem = null;
 

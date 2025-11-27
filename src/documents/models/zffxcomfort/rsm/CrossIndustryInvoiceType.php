@@ -75,9 +75,9 @@ class CrossIndustryInvoiceType
 
     /**
      * @param ExchangedDocumentContextType|null $exchangedDocumentContext
-     * @return self
+     * @return static
      */
-    public function setExchangedDocumentContext(?ExchangedDocumentContextType $exchangedDocumentContext = null): self
+    public function setExchangedDocumentContext(?ExchangedDocumentContextType $exchangedDocumentContext = null): static
     {
         $this->exchangedDocumentContext = $exchangedDocumentContext;
 
@@ -85,9 +85,9 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExchangedDocumentContext(): self
+    public function unsetExchangedDocumentContext(): static
     {
         $this->exchangedDocumentContext = null;
 
@@ -114,9 +114,9 @@ class CrossIndustryInvoiceType
 
     /**
      * @param ExchangedDocumentType|null $exchangedDocument
-     * @return self
+     * @return static
      */
-    public function setExchangedDocument(?ExchangedDocumentType $exchangedDocument = null): self
+    public function setExchangedDocument(?ExchangedDocumentType $exchangedDocument = null): static
     {
         $this->exchangedDocument = $exchangedDocument;
 
@@ -124,9 +124,9 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExchangedDocument(): self
+    public function unsetExchangedDocument(): static
     {
         $this->exchangedDocument = null;
 
@@ -153,20 +153,20 @@ class CrossIndustryInvoiceType
 
     /**
      * @param SupplyChainTradeTransactionType|null $supplyChainTradeTransaction
-     * @return self
+     * @return static
      */
     public function setSupplyChainTradeTransaction(
         ?SupplyChainTradeTransactionType $supplyChainTradeTransaction = null,
-    ): self {
+    ): static {
         $this->supplyChainTradeTransaction = $supplyChainTradeTransaction;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyChainTradeTransaction(): self
+    public function unsetSupplyChainTradeTransaction(): static
     {
         $this->supplyChainTradeTransaction = null;
 

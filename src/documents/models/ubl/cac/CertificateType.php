@@ -115,9 +115,9 @@ class CertificateType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -125,9 +125,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -154,9 +154,9 @@ class CertificateType
 
     /**
      * @param CertificateTypeCode|null $certificateTypeCode
-     * @return self
+     * @return static
      */
-    public function setCertificateTypeCode(?CertificateTypeCode $certificateTypeCode = null): self
+    public function setCertificateTypeCode(?CertificateTypeCode $certificateTypeCode = null): static
     {
         $this->certificateTypeCode = $certificateTypeCode;
 
@@ -164,9 +164,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCertificateTypeCode(): self
+    public function unsetCertificateTypeCode(): static
     {
         $this->certificateTypeCode = null;
 
@@ -193,9 +193,9 @@ class CertificateType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null $certificateType
-     * @return self
+     * @return static
      */
-    public function setCertificateType(?CertificateType1 $certificateType = null): self
+    public function setCertificateType(?CertificateType1 $certificateType = null): static
     {
         $this->certificateType = $certificateType;
 
@@ -203,9 +203,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCertificateType(): self
+    public function unsetCertificateType(): static
     {
         $this->certificateType = null;
 
@@ -222,9 +222,9 @@ class CertificateType
 
     /**
      * @param array<Remarks>|null $remarks
-     * @return self
+     * @return static
      */
-    public function setRemarks(?array $remarks = null): self
+    public function setRemarks(?array $remarks = null): static
     {
         $this->remarks = $remarks;
 
@@ -232,9 +232,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRemarks(): self
+    public function unsetRemarks(): static
     {
         $this->remarks = null;
 
@@ -242,9 +242,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRemarks(): self
+    public function clearRemarks(): static
     {
         $this->remarks = [];
 
@@ -283,9 +283,9 @@ class CertificateType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addToRemarks(Remarks $remarks): self
+    public function addToRemarks(Remarks $remarks): static
     {
         $this->remarks[] = $remarks;
 
@@ -304,9 +304,9 @@ class CertificateType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): self
+    public function addOnceToRemarks(Remarks $remarks): static
     {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
@@ -353,9 +353,9 @@ class CertificateType
 
     /**
      * @param IssuerParty|null $issuerParty
-     * @return self
+     * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): self
+    public function setIssuerParty(?IssuerParty $issuerParty = null): static
     {
         $this->issuerParty = $issuerParty;
 
@@ -363,9 +363,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerParty(): self
+    public function unsetIssuerParty(): static
     {
         $this->issuerParty = null;
 
@@ -382,9 +382,9 @@ class CertificateType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -392,9 +392,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -402,9 +402,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -443,9 +443,9 @@ class CertificateType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -464,9 +464,9 @@ class CertificateType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -503,9 +503,9 @@ class CertificateType
 
     /**
      * @param array<Signature>|null $signature
-     * @return self
+     * @return static
      */
-    public function setSignature(?array $signature = null): self
+    public function setSignature(?array $signature = null): static
     {
         $this->signature = $signature;
 
@@ -513,9 +513,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignature(): self
+    public function unsetSignature(): static
     {
         $this->signature = null;
 
@@ -523,9 +523,9 @@ class CertificateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSignature(): self
+    public function clearSignature(): static
     {
         $this->signature = [];
 
@@ -564,9 +564,9 @@ class CertificateType
 
     /**
      * @param Signature $signature
-     * @return self
+     * @return static
      */
-    public function addToSignature(Signature $signature): self
+    public function addToSignature(Signature $signature): static
     {
         $this->signature[] = $signature;
 
@@ -585,9 +585,9 @@ class CertificateType
 
     /**
      * @param Signature $signature
-     * @return self
+     * @return static
      */
-    public function addOnceToSignature(Signature $signature): self
+    public function addOnceToSignature(Signature $signature): static
     {
         if (!is_array($this->signature)) {
             $this->signature = [];

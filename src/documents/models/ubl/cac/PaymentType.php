@@ -101,9 +101,9 @@ class PaymentType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -111,9 +111,9 @@ class PaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -140,9 +140,9 @@ class PaymentType
 
     /**
      * @param PaidAmount|null $paidAmount
-     * @return self
+     * @return static
      */
-    public function setPaidAmount(?PaidAmount $paidAmount = null): self
+    public function setPaidAmount(?PaidAmount $paidAmount = null): static
     {
         $this->paidAmount = $paidAmount;
 
@@ -150,9 +150,9 @@ class PaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaidAmount(): self
+    public function unsetPaidAmount(): static
     {
         $this->paidAmount = null;
 
@@ -169,9 +169,9 @@ class PaymentType
 
     /**
      * @param DateTimeInterface|null $receivedDate
-     * @return self
+     * @return static
      */
-    public function setReceivedDate(?DateTimeInterface $receivedDate = null): self
+    public function setReceivedDate(?DateTimeInterface $receivedDate = null): static
     {
         $this->receivedDate = $receivedDate;
 
@@ -179,9 +179,9 @@ class PaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivedDate(): self
+    public function unsetReceivedDate(): static
     {
         $this->receivedDate = null;
 
@@ -198,9 +198,9 @@ class PaymentType
 
     /**
      * @param DateTimeInterface|null $paidDate
-     * @return self
+     * @return static
      */
-    public function setPaidDate(?DateTimeInterface $paidDate = null): self
+    public function setPaidDate(?DateTimeInterface $paidDate = null): static
     {
         $this->paidDate = $paidDate;
 
@@ -208,9 +208,9 @@ class PaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaidDate(): self
+    public function unsetPaidDate(): static
     {
         $this->paidDate = null;
 
@@ -227,9 +227,9 @@ class PaymentType
 
     /**
      * @param DateTimeInterface|null $paidTime
-     * @return self
+     * @return static
      */
-    public function setPaidTime(?DateTimeInterface $paidTime = null): self
+    public function setPaidTime(?DateTimeInterface $paidTime = null): static
     {
         $this->paidTime = $paidTime;
 
@@ -237,9 +237,9 @@ class PaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaidTime(): self
+    public function unsetPaidTime(): static
     {
         $this->paidTime = null;
 
@@ -266,9 +266,9 @@ class PaymentType
 
     /**
      * @param InstructionID|null $instructionID
-     * @return self
+     * @return static
      */
-    public function setInstructionID(?InstructionID $instructionID = null): self
+    public function setInstructionID(?InstructionID $instructionID = null): static
     {
         $this->instructionID = $instructionID;
 
@@ -276,9 +276,9 @@ class PaymentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInstructionID(): self
+    public function unsetInstructionID(): static
     {
         $this->instructionID = null;
 

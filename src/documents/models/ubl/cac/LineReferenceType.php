@@ -78,9 +78,9 @@ class LineReferenceType
 
     /**
      * @param LineID|null $lineID
-     * @return self
+     * @return static
      */
-    public function setLineID(?LineID $lineID = null): self
+    public function setLineID(?LineID $lineID = null): static
     {
         $this->lineID = $lineID;
 
@@ -88,9 +88,9 @@ class LineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineID(): self
+    public function unsetLineID(): static
     {
         $this->lineID = null;
 
@@ -117,9 +117,9 @@ class LineReferenceType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -127,9 +127,9 @@ class LineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -156,9 +156,9 @@ class LineReferenceType
 
     /**
      * @param LineStatusCode|null $lineStatusCode
-     * @return self
+     * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
+    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
     {
         $this->lineStatusCode = $lineStatusCode;
 
@@ -166,9 +166,9 @@ class LineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineStatusCode(): self
+    public function unsetLineStatusCode(): static
     {
         $this->lineStatusCode = null;
 
@@ -195,9 +195,9 @@ class LineReferenceType
 
     /**
      * @param DocumentReference|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): self
+    public function setDocumentReference(?DocumentReference $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -205,9 +205,9 @@ class LineReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 

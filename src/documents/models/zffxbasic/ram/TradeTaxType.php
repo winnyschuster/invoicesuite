@@ -126,9 +126,9 @@ class TradeTaxType
 
     /**
      * @param AmountType|null $calculatedAmount
-     * @return self
+     * @return static
      */
-    public function setCalculatedAmount(?AmountType $calculatedAmount = null): self
+    public function setCalculatedAmount(?AmountType $calculatedAmount = null): static
     {
         $this->calculatedAmount = $calculatedAmount;
 
@@ -136,9 +136,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCalculatedAmount(): self
+    public function unsetCalculatedAmount(): static
     {
         $this->calculatedAmount = null;
 
@@ -165,9 +165,9 @@ class TradeTaxType
 
     /**
      * @param TaxTypeCodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?TaxTypeCodeType $typeCode = null): self
+    public function setTypeCode(?TaxTypeCodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -175,9 +175,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -204,9 +204,9 @@ class TradeTaxType
 
     /**
      * @param TextType|null $exemptionReason
-     * @return self
+     * @return static
      */
-    public function setExemptionReason(?TextType $exemptionReason = null): self
+    public function setExemptionReason(?TextType $exemptionReason = null): static
     {
         $this->exemptionReason = $exemptionReason;
 
@@ -214,9 +214,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExemptionReason(): self
+    public function unsetExemptionReason(): static
     {
         $this->exemptionReason = null;
 
@@ -243,9 +243,9 @@ class TradeTaxType
 
     /**
      * @param AmountType|null $basisAmount
-     * @return self
+     * @return static
      */
-    public function setBasisAmount(?AmountType $basisAmount = null): self
+    public function setBasisAmount(?AmountType $basisAmount = null): static
     {
         $this->basisAmount = $basisAmount;
 
@@ -253,9 +253,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisAmount(): self
+    public function unsetBasisAmount(): static
     {
         $this->basisAmount = null;
 
@@ -282,9 +282,9 @@ class TradeTaxType
 
     /**
      * @param TaxCategoryCodeType|null $categoryCode
-     * @return self
+     * @return static
      */
-    public function setCategoryCode(?TaxCategoryCodeType $categoryCode = null): self
+    public function setCategoryCode(?TaxCategoryCodeType $categoryCode = null): static
     {
         $this->categoryCode = $categoryCode;
 
@@ -292,9 +292,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCategoryCode(): self
+    public function unsetCategoryCode(): static
     {
         $this->categoryCode = null;
 
@@ -321,9 +321,9 @@ class TradeTaxType
 
     /**
      * @param CodeType|null $exemptionReasonCode
-     * @return self
+     * @return static
      */
-    public function setExemptionReasonCode(?CodeType $exemptionReasonCode = null): self
+    public function setExemptionReasonCode(?CodeType $exemptionReasonCode = null): static
     {
         $this->exemptionReasonCode = $exemptionReasonCode;
 
@@ -331,9 +331,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExemptionReasonCode(): self
+    public function unsetExemptionReasonCode(): static
     {
         $this->exemptionReasonCode = null;
 
@@ -360,9 +360,9 @@ class TradeTaxType
 
     /**
      * @param TimeReferenceCodeType|null $dueDateTypeCode
-     * @return self
+     * @return static
      */
-    public function setDueDateTypeCode(?TimeReferenceCodeType $dueDateTypeCode = null): self
+    public function setDueDateTypeCode(?TimeReferenceCodeType $dueDateTypeCode = null): static
     {
         $this->dueDateTypeCode = $dueDateTypeCode;
 
@@ -370,9 +370,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDueDateTypeCode(): self
+    public function unsetDueDateTypeCode(): static
     {
         $this->dueDateTypeCode = null;
 
@@ -399,9 +399,9 @@ class TradeTaxType
 
     /**
      * @param PercentType|null $rateApplicablePercent
-     * @return self
+     * @return static
      */
-    public function setRateApplicablePercent(?PercentType $rateApplicablePercent = null): self
+    public function setRateApplicablePercent(?PercentType $rateApplicablePercent = null): static
     {
         $this->rateApplicablePercent = $rateApplicablePercent;
 
@@ -409,9 +409,9 @@ class TradeTaxType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRateApplicablePercent(): self
+    public function unsetRateApplicablePercent(): static
     {
         $this->rateApplicablePercent = null;
 

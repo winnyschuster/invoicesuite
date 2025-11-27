@@ -43,9 +43,9 @@ class FormattedDateTimeType
 
     /**
      * @param DateTimeStringAType|null $dateTimeString
-     * @return self
+     * @return static
      */
-    public function setDateTimeString(?DateTimeStringAType $dateTimeString = null): self
+    public function setDateTimeString(?DateTimeStringAType $dateTimeString = null): static
     {
         $this->dateTimeString = $dateTimeString;
 
@@ -53,9 +53,9 @@ class FormattedDateTimeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDateTimeString(): self
+    public function unsetDateTimeString(): static
     {
         $this->dateTimeString = null;
 

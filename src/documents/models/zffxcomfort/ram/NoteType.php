@@ -55,9 +55,9 @@ class NoteType
 
     /**
      * @param TextType|null $content
-     * @return self
+     * @return static
      */
-    public function setContent(?TextType $content = null): self
+    public function setContent(?TextType $content = null): static
     {
         $this->content = $content;
 
@@ -65,9 +65,9 @@ class NoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContent(): self
+    public function unsetContent(): static
     {
         $this->content = null;
 
@@ -94,9 +94,9 @@ class NoteType
 
     /**
      * @param CodeType|null $subjectCode
-     * @return self
+     * @return static
      */
-    public function setSubjectCode(?CodeType $subjectCode = null): self
+    public function setSubjectCode(?CodeType $subjectCode = null): static
     {
         $this->subjectCode = $subjectCode;
 
@@ -104,9 +104,9 @@ class NoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubjectCode(): self
+    public function unsetSubjectCode(): static
     {
         $this->subjectCode = null;
 

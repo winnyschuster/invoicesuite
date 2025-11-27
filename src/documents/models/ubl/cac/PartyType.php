@@ -241,9 +241,9 @@ class PartyType
 
     /**
      * @param bool|null $markCareIndicator
-     * @return self
+     * @return static
      */
-    public function setMarkCareIndicator(?bool $markCareIndicator = null): self
+    public function setMarkCareIndicator(?bool $markCareIndicator = null): static
     {
         $this->markCareIndicator = $markCareIndicator;
 
@@ -251,9 +251,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMarkCareIndicator(): self
+    public function unsetMarkCareIndicator(): static
     {
         $this->markCareIndicator = null;
 
@@ -270,9 +270,9 @@ class PartyType
 
     /**
      * @param bool|null $markAttentionIndicator
-     * @return self
+     * @return static
      */
-    public function setMarkAttentionIndicator(?bool $markAttentionIndicator = null): self
+    public function setMarkAttentionIndicator(?bool $markAttentionIndicator = null): static
     {
         $this->markAttentionIndicator = $markAttentionIndicator;
 
@@ -280,9 +280,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMarkAttentionIndicator(): self
+    public function unsetMarkAttentionIndicator(): static
     {
         $this->markAttentionIndicator = null;
 
@@ -309,9 +309,9 @@ class PartyType
 
     /**
      * @param WebsiteURI|null $websiteURI
-     * @return self
+     * @return static
      */
-    public function setWebsiteURI(?WebsiteURI $websiteURI = null): self
+    public function setWebsiteURI(?WebsiteURI $websiteURI = null): static
     {
         $this->websiteURI = $websiteURI;
 
@@ -319,9 +319,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWebsiteURI(): self
+    public function unsetWebsiteURI(): static
     {
         $this->websiteURI = null;
 
@@ -348,9 +348,9 @@ class PartyType
 
     /**
      * @param LogoReferenceID|null $logoReferenceID
-     * @return self
+     * @return static
      */
-    public function setLogoReferenceID(?LogoReferenceID $logoReferenceID = null): self
+    public function setLogoReferenceID(?LogoReferenceID $logoReferenceID = null): static
     {
         $this->logoReferenceID = $logoReferenceID;
 
@@ -358,9 +358,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLogoReferenceID(): self
+    public function unsetLogoReferenceID(): static
     {
         $this->logoReferenceID = null;
 
@@ -387,9 +387,9 @@ class PartyType
 
     /**
      * @param EndpointID|null $endpointID
-     * @return self
+     * @return static
      */
-    public function setEndpointID(?EndpointID $endpointID = null): self
+    public function setEndpointID(?EndpointID $endpointID = null): static
     {
         $this->endpointID = $endpointID;
 
@@ -397,9 +397,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEndpointID(): self
+    public function unsetEndpointID(): static
     {
         $this->endpointID = null;
 
@@ -426,20 +426,20 @@ class PartyType
 
     /**
      * @param IndustryClassificationCode|null $industryClassificationCode
-     * @return self
+     * @return static
      */
     public function setIndustryClassificationCode(
         ?IndustryClassificationCode $industryClassificationCode = null,
-    ): self {
+    ): static {
         $this->industryClassificationCode = $industryClassificationCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIndustryClassificationCode(): self
+    public function unsetIndustryClassificationCode(): static
     {
         $this->industryClassificationCode = null;
 
@@ -456,9 +456,9 @@ class PartyType
 
     /**
      * @param array<PartyIdentification>|null $partyIdentification
-     * @return self
+     * @return static
      */
-    public function setPartyIdentification(?array $partyIdentification = null): self
+    public function setPartyIdentification(?array $partyIdentification = null): static
     {
         $this->partyIdentification = $partyIdentification;
 
@@ -466,9 +466,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyIdentification(): self
+    public function unsetPartyIdentification(): static
     {
         $this->partyIdentification = null;
 
@@ -476,9 +476,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPartyIdentification(): self
+    public function clearPartyIdentification(): static
     {
         $this->partyIdentification = [];
 
@@ -517,9 +517,9 @@ class PartyType
 
     /**
      * @param PartyIdentification $partyIdentification
-     * @return self
+     * @return static
      */
-    public function addToPartyIdentification(PartyIdentification $partyIdentification): self
+    public function addToPartyIdentification(PartyIdentification $partyIdentification): static
     {
         $this->partyIdentification[] = $partyIdentification;
 
@@ -538,9 +538,9 @@ class PartyType
 
     /**
      * @param PartyIdentification $partyIdentification
-     * @return self
+     * @return static
      */
-    public function addOnceToPartyIdentification(PartyIdentification $partyIdentification): self
+    public function addOnceToPartyIdentification(PartyIdentification $partyIdentification): static
     {
         if (!is_array($this->partyIdentification)) {
             $this->partyIdentification = [];
@@ -577,9 +577,9 @@ class PartyType
 
     /**
      * @param array<PartyName>|null $partyName
-     * @return self
+     * @return static
      */
-    public function setPartyName(?array $partyName = null): self
+    public function setPartyName(?array $partyName = null): static
     {
         $this->partyName = $partyName;
 
@@ -587,9 +587,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyName(): self
+    public function unsetPartyName(): static
     {
         $this->partyName = null;
 
@@ -597,9 +597,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPartyName(): self
+    public function clearPartyName(): static
     {
         $this->partyName = [];
 
@@ -638,9 +638,9 @@ class PartyType
 
     /**
      * @param PartyName $partyName
-     * @return self
+     * @return static
      */
-    public function addToPartyName(PartyName $partyName): self
+    public function addToPartyName(PartyName $partyName): static
     {
         $this->partyName[] = $partyName;
 
@@ -659,9 +659,9 @@ class PartyType
 
     /**
      * @param PartyName $partyName
-     * @return self
+     * @return static
      */
-    public function addOnceToPartyName(PartyName $partyName): self
+    public function addOnceToPartyName(PartyName $partyName): static
     {
         if (!is_array($this->partyName)) {
             $this->partyName = [];
@@ -708,9 +708,9 @@ class PartyType
 
     /**
      * @param Language|null $language
-     * @return self
+     * @return static
      */
-    public function setLanguage(?Language $language = null): self
+    public function setLanguage(?Language $language = null): static
     {
         $this->language = $language;
 
@@ -718,9 +718,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguage(): self
+    public function unsetLanguage(): static
     {
         $this->language = null;
 
@@ -747,9 +747,9 @@ class PartyType
 
     /**
      * @param PostalAddress|null $postalAddress
-     * @return self
+     * @return static
      */
-    public function setPostalAddress(?PostalAddress $postalAddress = null): self
+    public function setPostalAddress(?PostalAddress $postalAddress = null): static
     {
         $this->postalAddress = $postalAddress;
 
@@ -757,9 +757,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPostalAddress(): self
+    public function unsetPostalAddress(): static
     {
         $this->postalAddress = null;
 
@@ -786,9 +786,9 @@ class PartyType
 
     /**
      * @param PhysicalLocation|null $physicalLocation
-     * @return self
+     * @return static
      */
-    public function setPhysicalLocation(?PhysicalLocation $physicalLocation = null): self
+    public function setPhysicalLocation(?PhysicalLocation $physicalLocation = null): static
     {
         $this->physicalLocation = $physicalLocation;
 
@@ -796,9 +796,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPhysicalLocation(): self
+    public function unsetPhysicalLocation(): static
     {
         $this->physicalLocation = null;
 
@@ -815,9 +815,9 @@ class PartyType
 
     /**
      * @param array<PartyTaxScheme>|null $partyTaxScheme
-     * @return self
+     * @return static
      */
-    public function setPartyTaxScheme(?array $partyTaxScheme = null): self
+    public function setPartyTaxScheme(?array $partyTaxScheme = null): static
     {
         $this->partyTaxScheme = $partyTaxScheme;
 
@@ -825,9 +825,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyTaxScheme(): self
+    public function unsetPartyTaxScheme(): static
     {
         $this->partyTaxScheme = null;
 
@@ -835,9 +835,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPartyTaxScheme(): self
+    public function clearPartyTaxScheme(): static
     {
         $this->partyTaxScheme = [];
 
@@ -876,9 +876,9 @@ class PartyType
 
     /**
      * @param PartyTaxScheme $partyTaxScheme
-     * @return self
+     * @return static
      */
-    public function addToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): self
+    public function addToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): static
     {
         $this->partyTaxScheme[] = $partyTaxScheme;
 
@@ -897,9 +897,9 @@ class PartyType
 
     /**
      * @param PartyTaxScheme $partyTaxScheme
-     * @return self
+     * @return static
      */
-    public function addOnceToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): self
+    public function addOnceToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): static
     {
         if (!is_array($this->partyTaxScheme)) {
             $this->partyTaxScheme = [];
@@ -936,9 +936,9 @@ class PartyType
 
     /**
      * @param array<PartyLegalEntity>|null $partyLegalEntity
-     * @return self
+     * @return static
      */
-    public function setPartyLegalEntity(?array $partyLegalEntity = null): self
+    public function setPartyLegalEntity(?array $partyLegalEntity = null): static
     {
         $this->partyLegalEntity = $partyLegalEntity;
 
@@ -946,9 +946,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartyLegalEntity(): self
+    public function unsetPartyLegalEntity(): static
     {
         $this->partyLegalEntity = null;
 
@@ -956,9 +956,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPartyLegalEntity(): self
+    public function clearPartyLegalEntity(): static
     {
         $this->partyLegalEntity = [];
 
@@ -997,9 +997,9 @@ class PartyType
 
     /**
      * @param PartyLegalEntity $partyLegalEntity
-     * @return self
+     * @return static
      */
-    public function addToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): self
+    public function addToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): static
     {
         $this->partyLegalEntity[] = $partyLegalEntity;
 
@@ -1018,9 +1018,9 @@ class PartyType
 
     /**
      * @param PartyLegalEntity $partyLegalEntity
-     * @return self
+     * @return static
      */
-    public function addOnceToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): self
+    public function addOnceToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): static
     {
         if (!is_array($this->partyLegalEntity)) {
             $this->partyLegalEntity = [];
@@ -1067,9 +1067,9 @@ class PartyType
 
     /**
      * @param Contact|null $contact
-     * @return self
+     * @return static
      */
-    public function setContact(?Contact $contact = null): self
+    public function setContact(?Contact $contact = null): static
     {
         $this->contact = $contact;
 
@@ -1077,9 +1077,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContact(): self
+    public function unsetContact(): static
     {
         $this->contact = null;
 
@@ -1096,9 +1096,9 @@ class PartyType
 
     /**
      * @param array<Person>|null $person
-     * @return self
+     * @return static
      */
-    public function setPerson(?array $person = null): self
+    public function setPerson(?array $person = null): static
     {
         $this->person = $person;
 
@@ -1106,9 +1106,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerson(): self
+    public function unsetPerson(): static
     {
         $this->person = null;
 
@@ -1116,9 +1116,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPerson(): self
+    public function clearPerson(): static
     {
         $this->person = [];
 
@@ -1157,9 +1157,9 @@ class PartyType
 
     /**
      * @param Person $person
-     * @return self
+     * @return static
      */
-    public function addToPerson(Person $person): self
+    public function addToPerson(Person $person): static
     {
         $this->person[] = $person;
 
@@ -1178,9 +1178,9 @@ class PartyType
 
     /**
      * @param Person $person
-     * @return self
+     * @return static
      */
-    public function addOnceToPerson(Person $person): self
+    public function addOnceToPerson(Person $person): static
     {
         if (!is_array($this->person)) {
             $this->person = [];
@@ -1227,9 +1227,9 @@ class PartyType
 
     /**
      * @param AgentParty|null $agentParty
-     * @return self
+     * @return static
      */
-    public function setAgentParty(?AgentParty $agentParty = null): self
+    public function setAgentParty(?AgentParty $agentParty = null): static
     {
         $this->agentParty = $agentParty;
 
@@ -1237,9 +1237,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAgentParty(): self
+    public function unsetAgentParty(): static
     {
         $this->agentParty = null;
 
@@ -1256,9 +1256,9 @@ class PartyType
 
     /**
      * @param array<ServiceProviderParty>|null $serviceProviderParty
-     * @return self
+     * @return static
      */
-    public function setServiceProviderParty(?array $serviceProviderParty = null): self
+    public function setServiceProviderParty(?array $serviceProviderParty = null): static
     {
         $this->serviceProviderParty = $serviceProviderParty;
 
@@ -1266,9 +1266,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetServiceProviderParty(): self
+    public function unsetServiceProviderParty(): static
     {
         $this->serviceProviderParty = null;
 
@@ -1276,9 +1276,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearServiceProviderParty(): self
+    public function clearServiceProviderParty(): static
     {
         $this->serviceProviderParty = [];
 
@@ -1317,9 +1317,9 @@ class PartyType
 
     /**
      * @param ServiceProviderParty $serviceProviderParty
-     * @return self
+     * @return static
      */
-    public function addToServiceProviderParty(ServiceProviderParty $serviceProviderParty): self
+    public function addToServiceProviderParty(ServiceProviderParty $serviceProviderParty): static
     {
         $this->serviceProviderParty[] = $serviceProviderParty;
 
@@ -1338,9 +1338,9 @@ class PartyType
 
     /**
      * @param ServiceProviderParty $serviceProviderParty
-     * @return self
+     * @return static
      */
-    public function addOnceToServiceProviderParty(ServiceProviderParty $serviceProviderParty): self
+    public function addOnceToServiceProviderParty(ServiceProviderParty $serviceProviderParty): static
     {
         if (!is_array($this->serviceProviderParty)) {
             $this->serviceProviderParty = [];
@@ -1377,9 +1377,9 @@ class PartyType
 
     /**
      * @param array<PowerOfAttorney>|null $powerOfAttorney
-     * @return self
+     * @return static
      */
-    public function setPowerOfAttorney(?array $powerOfAttorney = null): self
+    public function setPowerOfAttorney(?array $powerOfAttorney = null): static
     {
         $this->powerOfAttorney = $powerOfAttorney;
 
@@ -1387,9 +1387,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPowerOfAttorney(): self
+    public function unsetPowerOfAttorney(): static
     {
         $this->powerOfAttorney = null;
 
@@ -1397,9 +1397,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPowerOfAttorney(): self
+    public function clearPowerOfAttorney(): static
     {
         $this->powerOfAttorney = [];
 
@@ -1438,9 +1438,9 @@ class PartyType
 
     /**
      * @param PowerOfAttorney $powerOfAttorney
-     * @return self
+     * @return static
      */
-    public function addToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): self
+    public function addToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): static
     {
         $this->powerOfAttorney[] = $powerOfAttorney;
 
@@ -1459,9 +1459,9 @@ class PartyType
 
     /**
      * @param PowerOfAttorney $powerOfAttorney
-     * @return self
+     * @return static
      */
-    public function addOnceToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): self
+    public function addOnceToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): static
     {
         if (!is_array($this->powerOfAttorney)) {
             $this->powerOfAttorney = [];
@@ -1508,9 +1508,9 @@ class PartyType
 
     /**
      * @param FinancialAccount|null $financialAccount
-     * @return self
+     * @return static
      */
-    public function setFinancialAccount(?FinancialAccount $financialAccount = null): self
+    public function setFinancialAccount(?FinancialAccount $financialAccount = null): static
     {
         $this->financialAccount = $financialAccount;
 
@@ -1518,9 +1518,9 @@ class PartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancialAccount(): self
+    public function unsetFinancialAccount(): static
     {
         $this->financialAccount = null;
 

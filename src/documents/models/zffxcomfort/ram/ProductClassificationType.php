@@ -43,9 +43,9 @@ class ProductClassificationType
 
     /**
      * @param CodeType|null $classCode
-     * @return self
+     * @return static
      */
-    public function setClassCode(?CodeType $classCode = null): self
+    public function setClassCode(?CodeType $classCode = null): static
     {
         $this->classCode = $classCode;
 
@@ -53,9 +53,9 @@ class ProductClassificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetClassCode(): self
+    public function unsetClassCode(): static
     {
         $this->classCode = null;
 

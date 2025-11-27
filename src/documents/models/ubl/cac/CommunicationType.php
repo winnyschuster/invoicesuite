@@ -67,9 +67,9 @@ class CommunicationType
 
     /**
      * @param ChannelCode|null $channelCode
-     * @return self
+     * @return static
      */
-    public function setChannelCode(?ChannelCode $channelCode = null): self
+    public function setChannelCode(?ChannelCode $channelCode = null): static
     {
         $this->channelCode = $channelCode;
 
@@ -77,9 +77,9 @@ class CommunicationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChannelCode(): self
+    public function unsetChannelCode(): static
     {
         $this->channelCode = null;
 
@@ -106,9 +106,9 @@ class CommunicationType
 
     /**
      * @param Channel|null $channel
-     * @return self
+     * @return static
      */
-    public function setChannel(?Channel $channel = null): self
+    public function setChannel(?Channel $channel = null): static
     {
         $this->channel = $channel;
 
@@ -116,9 +116,9 @@ class CommunicationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChannel(): self
+    public function unsetChannel(): static
     {
         $this->channel = null;
 
@@ -145,9 +145,9 @@ class CommunicationType
 
     /**
      * @param Value|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?Value $value = null): self
+    public function setValue(?Value $value = null): static
     {
         $this->value = $value;
 
@@ -155,9 +155,9 @@ class CommunicationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

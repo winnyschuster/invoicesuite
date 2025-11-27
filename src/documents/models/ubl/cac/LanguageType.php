@@ -67,9 +67,9 @@ class LanguageType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -77,9 +77,9 @@ class LanguageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -106,9 +106,9 @@ class LanguageType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -116,9 +116,9 @@ class LanguageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -145,9 +145,9 @@ class LanguageType
 
     /**
      * @param LocaleCode|null $localeCode
-     * @return self
+     * @return static
      */
-    public function setLocaleCode(?LocaleCode $localeCode = null): self
+    public function setLocaleCode(?LocaleCode $localeCode = null): static
     {
         $this->localeCode = $localeCode;
 
@@ -155,9 +155,9 @@ class LanguageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocaleCode(): self
+    public function unsetLocaleCode(): static
     {
         $this->localeCode = null;
 

@@ -20,7 +20,8 @@ class InvoiceSuiteClassFinder
     /**
      * Instance
      *
-     * @var InvoiceSuiteClassFinder
+     * @var static|null
+     * @phpstan-var static|null
      */
     protected static $invoiceSuiteClassFinder;
 
@@ -42,9 +43,9 @@ class InvoiceSuiteClassFinder
     /**
      * Create a new instance of InvoiceSuiteClassFinder if needed
      *
-     * @return InvoiceSuiteClassFinder
+     * @return static
      */
-    public static function factory(): self
+    public static function factory(): static
     {
         if (is_null(static::$invoiceSuiteClassFinder)) {
             static::$invoiceSuiteClassFinder = new static();
@@ -56,9 +57,9 @@ class InvoiceSuiteClassFinder
     /**
      * Clear
      *
-     * @return InvoiceSuiteClassFinder
+     * @return static
      */
-    public function clear(): self
+    public function clear(): static
     {
         $this->classNames = [];
 
@@ -68,9 +69,9 @@ class InvoiceSuiteClassFinder
     /**
      * Load classes
      *
-     * @return InvoiceSuiteClassFinder
+     * @return static
      */
-    public function init(): self
+    public function init(): static
     {
         $classMaps = array_values(ClassLoader::getRegisteredLoaders())[0]->getClassMap();
 

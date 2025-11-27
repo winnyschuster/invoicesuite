@@ -41,7 +41,7 @@ trait HandlesDocumentFormatProviders
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider
      * @return static
      */
-    public function registerDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider): self
+    public function registerDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider): static
     {
         if (in_array($invoiceSuiteAbstractFormatProvider, $this->registeredDocumentFormatProviders)) {
             return $this;
@@ -58,7 +58,7 @@ trait HandlesDocumentFormatProviders
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $existingProvider
      * @return static
      */
-    public function unregisterDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $existingProvider): self
+    public function unregisterDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $existingProvider): static
     {
         if (($key = array_search($existingProvider, $this->registeredDocumentFormatProviders, true)) === false) {
             return $this;
@@ -109,7 +109,7 @@ trait HandlesDocumentFormatProviders
      *
      * @return static
      */
-    public function resolveAvailableDocumentFormatProviders(): self
+    public function resolveAvailableDocumentFormatProviders(): static
     {
         $classFinder = InvoiceSuiteClassFinder::factory();
         $classesWhichAreFormatProviders = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class);

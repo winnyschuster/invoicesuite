@@ -172,9 +172,9 @@ class ItemLocationQuantityType
 
     /**
      * @param LeadTimeMeasure|null $leadTimeMeasure
-     * @return self
+     * @return static
      */
-    public function setLeadTimeMeasure(?LeadTimeMeasure $leadTimeMeasure = null): self
+    public function setLeadTimeMeasure(?LeadTimeMeasure $leadTimeMeasure = null): static
     {
         $this->leadTimeMeasure = $leadTimeMeasure;
 
@@ -182,9 +182,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLeadTimeMeasure(): self
+    public function unsetLeadTimeMeasure(): static
     {
         $this->leadTimeMeasure = null;
 
@@ -211,9 +211,9 @@ class ItemLocationQuantityType
 
     /**
      * @param MinimumQuantity|null $minimumQuantity
-     * @return self
+     * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
+    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
     {
         $this->minimumQuantity = $minimumQuantity;
 
@@ -221,9 +221,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumQuantity(): self
+    public function unsetMinimumQuantity(): static
     {
         $this->minimumQuantity = null;
 
@@ -250,9 +250,9 @@ class ItemLocationQuantityType
 
     /**
      * @param MaximumQuantity|null $maximumQuantity
-     * @return self
+     * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
+    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
     {
         $this->maximumQuantity = $maximumQuantity;
 
@@ -260,9 +260,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumQuantity(): self
+    public function unsetMaximumQuantity(): static
     {
         $this->maximumQuantity = null;
 
@@ -279,9 +279,9 @@ class ItemLocationQuantityType
 
     /**
      * @param bool|null $hazardousRiskIndicator
-     * @return self
+     * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): self
+    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
     {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
@@ -289,9 +289,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousRiskIndicator(): self
+    public function unsetHazardousRiskIndicator(): static
     {
         $this->hazardousRiskIndicator = null;
 
@@ -308,9 +308,9 @@ class ItemLocationQuantityType
 
     /**
      * @param array<TradingRestrictions>|null $tradingRestrictions
-     * @return self
+     * @return static
      */
-    public function setTradingRestrictions(?array $tradingRestrictions = null): self
+    public function setTradingRestrictions(?array $tradingRestrictions = null): static
     {
         $this->tradingRestrictions = $tradingRestrictions;
 
@@ -318,9 +318,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTradingRestrictions(): self
+    public function unsetTradingRestrictions(): static
     {
         $this->tradingRestrictions = null;
 
@@ -328,9 +328,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTradingRestrictions(): self
+    public function clearTradingRestrictions(): static
     {
         $this->tradingRestrictions = [];
 
@@ -369,9 +369,9 @@ class ItemLocationQuantityType
 
     /**
      * @param TradingRestrictions $tradingRestrictions
-     * @return self
+     * @return static
      */
-    public function addToTradingRestrictions(TradingRestrictions $tradingRestrictions): self
+    public function addToTradingRestrictions(TradingRestrictions $tradingRestrictions): static
     {
         $this->tradingRestrictions[] = $tradingRestrictions;
 
@@ -390,9 +390,9 @@ class ItemLocationQuantityType
 
     /**
      * @param TradingRestrictions $tradingRestrictions
-     * @return self
+     * @return static
      */
-    public function addOnceToTradingRestrictions(TradingRestrictions $tradingRestrictions): self
+    public function addOnceToTradingRestrictions(TradingRestrictions $tradingRestrictions): static
     {
         if (!is_array($this->tradingRestrictions)) {
             $this->tradingRestrictions = [];
@@ -429,9 +429,9 @@ class ItemLocationQuantityType
 
     /**
      * @param array<ApplicableTerritoryAddress>|null $applicableTerritoryAddress
-     * @return self
+     * @return static
      */
-    public function setApplicableTerritoryAddress(?array $applicableTerritoryAddress = null): self
+    public function setApplicableTerritoryAddress(?array $applicableTerritoryAddress = null): static
     {
         $this->applicableTerritoryAddress = $applicableTerritoryAddress;
 
@@ -439,9 +439,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTerritoryAddress(): self
+    public function unsetApplicableTerritoryAddress(): static
     {
         $this->applicableTerritoryAddress = null;
 
@@ -449,9 +449,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearApplicableTerritoryAddress(): self
+    public function clearApplicableTerritoryAddress(): static
     {
         $this->applicableTerritoryAddress = [];
 
@@ -490,9 +490,9 @@ class ItemLocationQuantityType
 
     /**
      * @param ApplicableTerritoryAddress $applicableTerritoryAddress
-     * @return self
+     * @return static
      */
-    public function addToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): self
+    public function addToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): static
     {
         $this->applicableTerritoryAddress[] = $applicableTerritoryAddress;
 
@@ -511,9 +511,9 @@ class ItemLocationQuantityType
 
     /**
      * @param ApplicableTerritoryAddress $applicableTerritoryAddress
-     * @return self
+     * @return static
      */
-    public function addOnceToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): self
+    public function addOnceToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): static
     {
         if (!is_array($this->applicableTerritoryAddress)) {
             $this->applicableTerritoryAddress = [];
@@ -560,9 +560,9 @@ class ItemLocationQuantityType
 
     /**
      * @param Price|null $price
-     * @return self
+     * @return static
      */
-    public function setPrice(?Price $price = null): self
+    public function setPrice(?Price $price = null): static
     {
         $this->price = $price;
 
@@ -570,9 +570,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrice(): self
+    public function unsetPrice(): static
     {
         $this->price = null;
 
@@ -589,9 +589,9 @@ class ItemLocationQuantityType
 
     /**
      * @param array<DeliveryUnit>|null $deliveryUnit
-     * @return self
+     * @return static
      */
-    public function setDeliveryUnit(?array $deliveryUnit = null): self
+    public function setDeliveryUnit(?array $deliveryUnit = null): static
     {
         $this->deliveryUnit = $deliveryUnit;
 
@@ -599,9 +599,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryUnit(): self
+    public function unsetDeliveryUnit(): static
     {
         $this->deliveryUnit = null;
 
@@ -609,9 +609,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDeliveryUnit(): self
+    public function clearDeliveryUnit(): static
     {
         $this->deliveryUnit = [];
 
@@ -650,9 +650,9 @@ class ItemLocationQuantityType
 
     /**
      * @param DeliveryUnit $deliveryUnit
-     * @return self
+     * @return static
      */
-    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): self
+    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): static
     {
         $this->deliveryUnit[] = $deliveryUnit;
 
@@ -671,9 +671,9 @@ class ItemLocationQuantityType
 
     /**
      * @param DeliveryUnit $deliveryUnit
-     * @return self
+     * @return static
      */
-    public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): self
+    public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): static
     {
         if (!is_array($this->deliveryUnit)) {
             $this->deliveryUnit = [];
@@ -710,9 +710,9 @@ class ItemLocationQuantityType
 
     /**
      * @param array<ApplicableTaxCategory>|null $applicableTaxCategory
-     * @return self
+     * @return static
      */
-    public function setApplicableTaxCategory(?array $applicableTaxCategory = null): self
+    public function setApplicableTaxCategory(?array $applicableTaxCategory = null): static
     {
         $this->applicableTaxCategory = $applicableTaxCategory;
 
@@ -720,9 +720,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTaxCategory(): self
+    public function unsetApplicableTaxCategory(): static
     {
         $this->applicableTaxCategory = null;
 
@@ -730,9 +730,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearApplicableTaxCategory(): self
+    public function clearApplicableTaxCategory(): static
     {
         $this->applicableTaxCategory = [];
 
@@ -771,9 +771,9 @@ class ItemLocationQuantityType
 
     /**
      * @param ApplicableTaxCategory $applicableTaxCategory
-     * @return self
+     * @return static
      */
-    public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
+    public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
     {
         $this->applicableTaxCategory[] = $applicableTaxCategory;
 
@@ -792,9 +792,9 @@ class ItemLocationQuantityType
 
     /**
      * @param ApplicableTaxCategory $applicableTaxCategory
-     * @return self
+     * @return static
      */
-    public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
+    public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
     {
         if (!is_array($this->applicableTaxCategory)) {
             $this->applicableTaxCategory = [];
@@ -841,9 +841,9 @@ class ItemLocationQuantityType
 
     /**
      * @param Package|null $package
-     * @return self
+     * @return static
      */
-    public function setPackage(?Package $package = null): self
+    public function setPackage(?Package $package = null): static
     {
         $this->package = $package;
 
@@ -851,9 +851,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackage(): self
+    public function unsetPackage(): static
     {
         $this->package = null;
 
@@ -870,9 +870,9 @@ class ItemLocationQuantityType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -880,9 +880,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -890,9 +890,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -931,9 +931,9 @@ class ItemLocationQuantityType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -952,9 +952,9 @@ class ItemLocationQuantityType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -1001,9 +1001,9 @@ class ItemLocationQuantityType
 
     /**
      * @param DependentPriceReference|null $dependentPriceReference
-     * @return self
+     * @return static
      */
-    public function setDependentPriceReference(?DependentPriceReference $dependentPriceReference = null): self
+    public function setDependentPriceReference(?DependentPriceReference $dependentPriceReference = null): static
     {
         $this->dependentPriceReference = $dependentPriceReference;
 
@@ -1011,9 +1011,9 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDependentPriceReference(): self
+    public function unsetDependentPriceReference(): static
     {
         $this->dependentPriceReference = null;
 

@@ -143,9 +143,9 @@ class InvoiceSuiteSummationDTO
      * Sets the sum of the net amounts of all invoice lines
      *
      * @param  null|float $netAmount The sum of the net amounts of all invoice lines
-     * @return self
+     * @return static
      */
-    public function setNetAmount(?float $netAmount): self
+    public function setNetAmount(?float $netAmount): static
     {
         $this->netAmount = $netAmount;
 
@@ -166,9 +166,9 @@ class InvoiceSuiteSummationDTO
      * Sets the sum of the charges
      *
      * @param  null|float $chargeTotalAmount The sum of the charges
-     * @return self
+     * @return static
      */
-    public function setChargeTotalAmount(?float $chargeTotalAmount): self
+    public function setChargeTotalAmount(?float $chargeTotalAmount): static
     {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
@@ -189,9 +189,9 @@ class InvoiceSuiteSummationDTO
      * Sets the sum of the discounts
      *
      * @param  null|float $discountTotalAmount The sum of the discounts
-     * @return self
+     * @return static
      */
-    public function setDiscountTotalAmount(?float $discountTotalAmount): self
+    public function setDiscountTotalAmount(?float $discountTotalAmount): static
     {
         $this->discountTotalAmount = $discountTotalAmount;
 
@@ -212,9 +212,9 @@ class InvoiceSuiteSummationDTO
      * Sets the total invoice amount excluding sales tax
      *
      * @param  null|float $taxBasisAmount The total invoice amount excluding sales tax
-     * @return self
+     * @return static
      */
-    public function setTaxBasisAmount(?float $taxBasisAmount): self
+    public function setTaxBasisAmount(?float $taxBasisAmount): static
     {
         $this->taxBasisAmount = $taxBasisAmount;
 
@@ -235,9 +235,9 @@ class InvoiceSuiteSummationDTO
      * Sets the total amount of the invoice sales tax (in the invoice currency)
      *
      * @param  null|float $taxTotalAmount The total amount of the invoice sales tax (in the invoice currency)
-     * @return self
+     * @return static
      */
-    public function setTaxTotalAmount(?float $taxTotalAmount): self
+    public function setTaxTotalAmount(?float $taxTotalAmount): static
     {
         $this->taxTotalAmount = $taxTotalAmount;
 
@@ -258,9 +258,9 @@ class InvoiceSuiteSummationDTO
      * Sets the total amount of the invoice sales tax (in the tax currency)
      *
      * @param  null|float $taxTotalAmount2 The total amount of the invoice sales tax (in the tax currency)
-     * @return self
+     * @return static
      */
-    public function setTaxTotalAmount2(?float $taxTotalAmount2): self
+    public function setTaxTotalAmount2(?float $taxTotalAmount2): static
     {
         $this->taxTotalAmount2 = $taxTotalAmount2;
 
@@ -281,9 +281,9 @@ class InvoiceSuiteSummationDTO
      * Sets the total invoice amount including sales tax
      *
      * @param  null|float $grossAmount The total invoice amount including sales tax
-     * @return self
+     * @return static
      */
-    public function setGrossAmount(?float $grossAmount): self
+    public function setGrossAmount(?float $grossAmount): static
     {
         $this->grossAmount = $grossAmount;
 
@@ -304,9 +304,9 @@ class InvoiceSuiteSummationDTO
      * Sets the payment amount due
      *
      * @param  null|float $dueAmount The payment amount due
-     * @return self
+     * @return static
      */
-    public function setDueAmount(?float $dueAmount): self
+    public function setDueAmount(?float $dueAmount): static
     {
         $this->dueAmount = $dueAmount;
 
@@ -327,9 +327,9 @@ class InvoiceSuiteSummationDTO
      * Sets the prepayment amount
      *
      * @param  null|float $prepaidAmount The prepayment amount
-     * @return self
+     * @return static
      */
-    public function setPrepaidAmount(?float $prepaidAmount): self
+    public function setPrepaidAmount(?float $prepaidAmount): static
     {
         $this->prepaidAmount = $prepaidAmount;
 
@@ -350,9 +350,9 @@ class InvoiceSuiteSummationDTO
      * Sets the rounding amount
      *
      * @param  null|float $roungingAmount The rounding amount
-     * @return self
+     * @return static
      */
-    public function setRoungingAmount(?float $roungingAmount): self
+    public function setRoungingAmount(?float $roungingAmount): static
     {
         $this->roungingAmount = $roungingAmount;
 

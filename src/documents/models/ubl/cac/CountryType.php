@@ -55,9 +55,9 @@ class CountryType
 
     /**
      * @param IdentificationCode|null $identificationCode
-     * @return self
+     * @return static
      */
-    public function setIdentificationCode(?IdentificationCode $identificationCode = null): self
+    public function setIdentificationCode(?IdentificationCode $identificationCode = null): static
     {
         $this->identificationCode = $identificationCode;
 
@@ -65,9 +65,9 @@ class CountryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIdentificationCode(): self
+    public function unsetIdentificationCode(): static
     {
         $this->identificationCode = null;
 
@@ -94,9 +94,9 @@ class CountryType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -104,9 +104,9 @@ class CountryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 

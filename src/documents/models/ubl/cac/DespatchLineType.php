@@ -201,9 +201,9 @@ class DespatchLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -211,9 +211,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -240,9 +240,9 @@ class DespatchLineType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -250,9 +250,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -269,9 +269,9 @@ class DespatchLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -279,9 +279,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -289,9 +289,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -330,9 +330,9 @@ class DespatchLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -351,9 +351,9 @@ class DespatchLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -400,9 +400,9 @@ class DespatchLineType
 
     /**
      * @param LineStatusCode|null $lineStatusCode
-     * @return self
+     * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
+    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
     {
         $this->lineStatusCode = $lineStatusCode;
 
@@ -410,9 +410,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineStatusCode(): self
+    public function unsetLineStatusCode(): static
     {
         $this->lineStatusCode = null;
 
@@ -439,9 +439,9 @@ class DespatchLineType
 
     /**
      * @param DeliveredQuantity|null $deliveredQuantity
-     * @return self
+     * @return static
      */
-    public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): self
+    public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): static
     {
         $this->deliveredQuantity = $deliveredQuantity;
 
@@ -449,9 +449,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveredQuantity(): self
+    public function unsetDeliveredQuantity(): static
     {
         $this->deliveredQuantity = null;
 
@@ -478,9 +478,9 @@ class DespatchLineType
 
     /**
      * @param BackorderQuantity|null $backorderQuantity
-     * @return self
+     * @return static
      */
-    public function setBackorderQuantity(?BackorderQuantity $backorderQuantity = null): self
+    public function setBackorderQuantity(?BackorderQuantity $backorderQuantity = null): static
     {
         $this->backorderQuantity = $backorderQuantity;
 
@@ -488,9 +488,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBackorderQuantity(): self
+    public function unsetBackorderQuantity(): static
     {
         $this->backorderQuantity = null;
 
@@ -507,9 +507,9 @@ class DespatchLineType
 
     /**
      * @param array<BackorderReason>|null $backorderReason
-     * @return self
+     * @return static
      */
-    public function setBackorderReason(?array $backorderReason = null): self
+    public function setBackorderReason(?array $backorderReason = null): static
     {
         $this->backorderReason = $backorderReason;
 
@@ -517,9 +517,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBackorderReason(): self
+    public function unsetBackorderReason(): static
     {
         $this->backorderReason = null;
 
@@ -527,9 +527,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBackorderReason(): self
+    public function clearBackorderReason(): static
     {
         $this->backorderReason = [];
 
@@ -568,9 +568,9 @@ class DespatchLineType
 
     /**
      * @param BackorderReason $backorderReason
-     * @return self
+     * @return static
      */
-    public function addToBackorderReason(BackorderReason $backorderReason): self
+    public function addToBackorderReason(BackorderReason $backorderReason): static
     {
         $this->backorderReason[] = $backorderReason;
 
@@ -589,9 +589,9 @@ class DespatchLineType
 
     /**
      * @param BackorderReason $backorderReason
-     * @return self
+     * @return static
      */
-    public function addOnceToBackorderReason(BackorderReason $backorderReason): self
+    public function addOnceToBackorderReason(BackorderReason $backorderReason): static
     {
         if (!is_array($this->backorderReason)) {
             $this->backorderReason = [];
@@ -638,9 +638,9 @@ class DespatchLineType
 
     /**
      * @param OutstandingQuantity|null $outstandingQuantity
-     * @return self
+     * @return static
      */
-    public function setOutstandingQuantity(?OutstandingQuantity $outstandingQuantity = null): self
+    public function setOutstandingQuantity(?OutstandingQuantity $outstandingQuantity = null): static
     {
         $this->outstandingQuantity = $outstandingQuantity;
 
@@ -648,9 +648,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOutstandingQuantity(): self
+    public function unsetOutstandingQuantity(): static
     {
         $this->outstandingQuantity = null;
 
@@ -667,9 +667,9 @@ class DespatchLineType
 
     /**
      * @param array<OutstandingReason>|null $outstandingReason
-     * @return self
+     * @return static
      */
-    public function setOutstandingReason(?array $outstandingReason = null): self
+    public function setOutstandingReason(?array $outstandingReason = null): static
     {
         $this->outstandingReason = $outstandingReason;
 
@@ -677,9 +677,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOutstandingReason(): self
+    public function unsetOutstandingReason(): static
     {
         $this->outstandingReason = null;
 
@@ -687,9 +687,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOutstandingReason(): self
+    public function clearOutstandingReason(): static
     {
         $this->outstandingReason = [];
 
@@ -728,9 +728,9 @@ class DespatchLineType
 
     /**
      * @param OutstandingReason $outstandingReason
-     * @return self
+     * @return static
      */
-    public function addToOutstandingReason(OutstandingReason $outstandingReason): self
+    public function addToOutstandingReason(OutstandingReason $outstandingReason): static
     {
         $this->outstandingReason[] = $outstandingReason;
 
@@ -749,9 +749,9 @@ class DespatchLineType
 
     /**
      * @param OutstandingReason $outstandingReason
-     * @return self
+     * @return static
      */
-    public function addOnceToOutstandingReason(OutstandingReason $outstandingReason): self
+    public function addOnceToOutstandingReason(OutstandingReason $outstandingReason): static
     {
         if (!is_array($this->outstandingReason)) {
             $this->outstandingReason = [];
@@ -798,9 +798,9 @@ class DespatchLineType
 
     /**
      * @param OversupplyQuantity|null $oversupplyQuantity
-     * @return self
+     * @return static
      */
-    public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): self
+    public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): static
     {
         $this->oversupplyQuantity = $oversupplyQuantity;
 
@@ -808,9 +808,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOversupplyQuantity(): self
+    public function unsetOversupplyQuantity(): static
     {
         $this->oversupplyQuantity = null;
 
@@ -827,9 +827,9 @@ class DespatchLineType
 
     /**
      * @param array<OrderLineReference>|null $orderLineReference
-     * @return self
+     * @return static
      */
-    public function setOrderLineReference(?array $orderLineReference = null): self
+    public function setOrderLineReference(?array $orderLineReference = null): static
     {
         $this->orderLineReference = $orderLineReference;
 
@@ -837,9 +837,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderLineReference(): self
+    public function unsetOrderLineReference(): static
     {
         $this->orderLineReference = null;
 
@@ -847,9 +847,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOrderLineReference(): self
+    public function clearOrderLineReference(): static
     {
         $this->orderLineReference = [];
 
@@ -888,9 +888,9 @@ class DespatchLineType
 
     /**
      * @param OrderLineReference $orderLineReference
-     * @return self
+     * @return static
      */
-    public function addToOrderLineReference(OrderLineReference $orderLineReference): self
+    public function addToOrderLineReference(OrderLineReference $orderLineReference): static
     {
         $this->orderLineReference[] = $orderLineReference;
 
@@ -909,9 +909,9 @@ class DespatchLineType
 
     /**
      * @param OrderLineReference $orderLineReference
-     * @return self
+     * @return static
      */
-    public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): self
+    public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): static
     {
         if (!is_array($this->orderLineReference)) {
             $this->orderLineReference = [];
@@ -948,9 +948,9 @@ class DespatchLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -958,9 +958,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -968,9 +968,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -1009,9 +1009,9 @@ class DespatchLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -1030,9 +1030,9 @@ class DespatchLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -1079,9 +1079,9 @@ class DespatchLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -1089,9 +1089,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -1108,9 +1108,9 @@ class DespatchLineType
 
     /**
      * @param array<Shipment>|null $shipment
-     * @return self
+     * @return static
      */
-    public function setShipment(?array $shipment = null): self
+    public function setShipment(?array $shipment = null): static
     {
         $this->shipment = $shipment;
 
@@ -1118,9 +1118,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipment(): self
+    public function unsetShipment(): static
     {
         $this->shipment = null;
 
@@ -1128,9 +1128,9 @@ class DespatchLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipment(): self
+    public function clearShipment(): static
     {
         $this->shipment = [];
 
@@ -1169,9 +1169,9 @@ class DespatchLineType
 
     /**
      * @param Shipment $shipment
-     * @return self
+     * @return static
      */
-    public function addToShipment(Shipment $shipment): self
+    public function addToShipment(Shipment $shipment): static
     {
         $this->shipment[] = $shipment;
 
@@ -1190,9 +1190,9 @@ class DespatchLineType
 
     /**
      * @param Shipment $shipment
-     * @return self
+     * @return static
      */
-    public function addOnceToShipment(Shipment $shipment): self
+    public function addOnceToShipment(Shipment $shipment): static
     {
         if (!is_array($this->shipment)) {
             $this->shipment = [];

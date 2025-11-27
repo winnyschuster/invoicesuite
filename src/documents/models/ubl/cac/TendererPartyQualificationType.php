@@ -56,9 +56,9 @@ class TendererPartyQualificationType
 
     /**
      * @param array<InterestedProcurementProjectLot>|null $interestedProcurementProjectLot
-     * @return self
+     * @return static
      */
-    public function setInterestedProcurementProjectLot(?array $interestedProcurementProjectLot = null): self
+    public function setInterestedProcurementProjectLot(?array $interestedProcurementProjectLot = null): static
     {
         $this->interestedProcurementProjectLot = $interestedProcurementProjectLot;
 
@@ -66,9 +66,9 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInterestedProcurementProjectLot(): self
+    public function unsetInterestedProcurementProjectLot(): static
     {
         $this->interestedProcurementProjectLot = null;
 
@@ -76,9 +76,9 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInterestedProcurementProjectLot(): self
+    public function clearInterestedProcurementProjectLot(): static
     {
         $this->interestedProcurementProjectLot = [];
 
@@ -117,11 +117,11 @@ class TendererPartyQualificationType
 
     /**
      * @param InterestedProcurementProjectLot $interestedProcurementProjectLot
-     * @return self
+     * @return static
      */
     public function addToInterestedProcurementProjectLot(
         InterestedProcurementProjectLot $interestedProcurementProjectLot,
-    ): self {
+    ): static {
         $this->interestedProcurementProjectLot[] = $interestedProcurementProjectLot;
 
         return $this;
@@ -139,11 +139,11 @@ class TendererPartyQualificationType
 
     /**
      * @param InterestedProcurementProjectLot $interestedProcurementProjectLot
-     * @return self
+     * @return static
      */
     public function addOnceToInterestedProcurementProjectLot(
         InterestedProcurementProjectLot $interestedProcurementProjectLot,
-    ): self {
+    ): static {
         if (!is_array($this->interestedProcurementProjectLot)) {
             $this->interestedProcurementProjectLot = [];
         }
@@ -189,9 +189,9 @@ class TendererPartyQualificationType
 
     /**
      * @param MainQualifyingParty|null $mainQualifyingParty
-     * @return self
+     * @return static
      */
-    public function setMainQualifyingParty(?MainQualifyingParty $mainQualifyingParty = null): self
+    public function setMainQualifyingParty(?MainQualifyingParty $mainQualifyingParty = null): static
     {
         $this->mainQualifyingParty = $mainQualifyingParty;
 
@@ -199,9 +199,9 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMainQualifyingParty(): self
+    public function unsetMainQualifyingParty(): static
     {
         $this->mainQualifyingParty = null;
 
@@ -218,9 +218,9 @@ class TendererPartyQualificationType
 
     /**
      * @param array<AdditionalQualifyingParty>|null $additionalQualifyingParty
-     * @return self
+     * @return static
      */
-    public function setAdditionalQualifyingParty(?array $additionalQualifyingParty = null): self
+    public function setAdditionalQualifyingParty(?array $additionalQualifyingParty = null): static
     {
         $this->additionalQualifyingParty = $additionalQualifyingParty;
 
@@ -228,9 +228,9 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalQualifyingParty(): self
+    public function unsetAdditionalQualifyingParty(): static
     {
         $this->additionalQualifyingParty = null;
 
@@ -238,9 +238,9 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalQualifyingParty(): self
+    public function clearAdditionalQualifyingParty(): static
     {
         $this->additionalQualifyingParty = [];
 
@@ -279,9 +279,9 @@ class TendererPartyQualificationType
 
     /**
      * @param AdditionalQualifyingParty $additionalQualifyingParty
-     * @return self
+     * @return static
      */
-    public function addToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): self
+    public function addToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): static
     {
         $this->additionalQualifyingParty[] = $additionalQualifyingParty;
 
@@ -300,9 +300,9 @@ class TendererPartyQualificationType
 
     /**
      * @param AdditionalQualifyingParty $additionalQualifyingParty
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): self
+    public function addOnceToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): static
     {
         if (!is_array($this->additionalQualifyingParty)) {
             $this->additionalQualifyingParty = [];

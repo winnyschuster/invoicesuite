@@ -43,9 +43,9 @@ class LineTradeDeliveryType
 
     /**
      * @param QuantityType|null $billedQuantity
-     * @return self
+     * @return static
      */
-    public function setBilledQuantity(?QuantityType $billedQuantity = null): self
+    public function setBilledQuantity(?QuantityType $billedQuantity = null): static
     {
         $this->billedQuantity = $billedQuantity;
 
@@ -53,9 +53,9 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBilledQuantity(): self
+    public function unsetBilledQuantity(): static
     {
         $this->billedQuantity = null;
 

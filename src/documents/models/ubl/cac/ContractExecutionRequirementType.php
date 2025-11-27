@@ -59,9 +59,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param array<Name>|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?array $name = null): self
+    public function setName(?array $name = null): static
     {
         $this->name = $name;
 
@@ -69,9 +69,9 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -79,9 +79,9 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearName(): self
+    public function clearName(): static
     {
         $this->name = [];
 
@@ -120,9 +120,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addToName(Name $name): self
+    public function addToName(Name $name): static
     {
         $this->name[] = $name;
 
@@ -141,9 +141,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addOnceToName(Name $name): self
+    public function addOnceToName(Name $name): static
     {
         if (!is_array($this->name)) {
             $this->name = [];
@@ -190,9 +190,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param ExecutionRequirementCode|null $executionRequirementCode
-     * @return self
+     * @return static
      */
-    public function setExecutionRequirementCode(?ExecutionRequirementCode $executionRequirementCode = null): self
+    public function setExecutionRequirementCode(?ExecutionRequirementCode $executionRequirementCode = null): static
     {
         $this->executionRequirementCode = $executionRequirementCode;
 
@@ -200,9 +200,9 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExecutionRequirementCode(): self
+    public function unsetExecutionRequirementCode(): static
     {
         $this->executionRequirementCode = null;
 
@@ -219,9 +219,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -229,9 +229,9 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -239,9 +239,9 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -280,9 +280,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -301,9 +301,9 @@ class ContractExecutionRequirementType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];

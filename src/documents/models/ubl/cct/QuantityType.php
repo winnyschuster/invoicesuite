@@ -77,9 +77,9 @@ class QuantityType
 
     /**
      * @param float|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?float $value = null): self
+    public function setValue(?float $value = null): static
     {
         $this->value = $value;
 
@@ -87,9 +87,9 @@ class QuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -106,9 +106,9 @@ class QuantityType
 
     /**
      * @param string|null $unitCode
-     * @return self
+     * @return static
      */
-    public function setUnitCode(?string $unitCode = null): self
+    public function setUnitCode(?string $unitCode = null): static
     {
         $this->unitCode = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCode);
 
@@ -116,9 +116,9 @@ class QuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCode(): self
+    public function unsetUnitCode(): static
     {
         $this->unitCode = null;
 
@@ -135,9 +135,9 @@ class QuantityType
 
     /**
      * @param string|null $unitCodeListID
-     * @return self
+     * @return static
      */
-    public function setUnitCodeListID(?string $unitCodeListID = null): self
+    public function setUnitCodeListID(?string $unitCodeListID = null): static
     {
         $this->unitCodeListID = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCodeListID);
 
@@ -145,9 +145,9 @@ class QuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCodeListID(): self
+    public function unsetUnitCodeListID(): static
     {
         $this->unitCodeListID = null;
 
@@ -164,9 +164,9 @@ class QuantityType
 
     /**
      * @param string|null $unitCodeListAgencyID
-     * @return self
+     * @return static
      */
-    public function setUnitCodeListAgencyID(?string $unitCodeListAgencyID = null): self
+    public function setUnitCodeListAgencyID(?string $unitCodeListAgencyID = null): static
     {
         $this->unitCodeListAgencyID = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCodeListAgencyID);
 
@@ -174,9 +174,9 @@ class QuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCodeListAgencyID(): self
+    public function unsetUnitCodeListAgencyID(): static
     {
         $this->unitCodeListAgencyID = null;
 
@@ -193,9 +193,9 @@ class QuantityType
 
     /**
      * @param string|null $unitCodeListAgencyName
-     * @return self
+     * @return static
      */
-    public function setUnitCodeListAgencyName(?string $unitCodeListAgencyName = null): self
+    public function setUnitCodeListAgencyName(?string $unitCodeListAgencyName = null): static
     {
         $this->unitCodeListAgencyName = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCodeListAgencyName);
 
@@ -203,9 +203,9 @@ class QuantityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnitCodeListAgencyName(): self
+    public function unsetUnitCodeListAgencyName(): static
     {
         $this->unitCodeListAgencyName = null;
 

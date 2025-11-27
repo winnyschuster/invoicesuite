@@ -148,9 +148,9 @@ class SignatureType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -158,9 +158,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -177,9 +177,9 @@ class SignatureType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -187,9 +187,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -197,9 +197,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -238,9 +238,9 @@ class SignatureType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -259,9 +259,9 @@ class SignatureType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -298,9 +298,9 @@ class SignatureType
 
     /**
      * @param DateTimeInterface|null $validationDate
-     * @return self
+     * @return static
      */
-    public function setValidationDate(?DateTimeInterface $validationDate = null): self
+    public function setValidationDate(?DateTimeInterface $validationDate = null): static
     {
         $this->validationDate = $validationDate;
 
@@ -308,9 +308,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidationDate(): self
+    public function unsetValidationDate(): static
     {
         $this->validationDate = null;
 
@@ -327,9 +327,9 @@ class SignatureType
 
     /**
      * @param DateTimeInterface|null $validationTime
-     * @return self
+     * @return static
      */
-    public function setValidationTime(?DateTimeInterface $validationTime = null): self
+    public function setValidationTime(?DateTimeInterface $validationTime = null): static
     {
         $this->validationTime = $validationTime;
 
@@ -337,9 +337,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidationTime(): self
+    public function unsetValidationTime(): static
     {
         $this->validationTime = null;
 
@@ -366,9 +366,9 @@ class SignatureType
 
     /**
      * @param ValidatorID|null $validatorID
-     * @return self
+     * @return static
      */
-    public function setValidatorID(?ValidatorID $validatorID = null): self
+    public function setValidatorID(?ValidatorID $validatorID = null): static
     {
         $this->validatorID = $validatorID;
 
@@ -376,9 +376,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidatorID(): self
+    public function unsetValidatorID(): static
     {
         $this->validatorID = null;
 
@@ -405,9 +405,9 @@ class SignatureType
 
     /**
      * @param CanonicalizationMethod|null $canonicalizationMethod
-     * @return self
+     * @return static
      */
-    public function setCanonicalizationMethod(?CanonicalizationMethod $canonicalizationMethod = null): self
+    public function setCanonicalizationMethod(?CanonicalizationMethod $canonicalizationMethod = null): static
     {
         $this->canonicalizationMethod = $canonicalizationMethod;
 
@@ -415,9 +415,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCanonicalizationMethod(): self
+    public function unsetCanonicalizationMethod(): static
     {
         $this->canonicalizationMethod = null;
 
@@ -444,9 +444,9 @@ class SignatureType
 
     /**
      * @param SignatureMethod|null $signatureMethod
-     * @return self
+     * @return static
      */
-    public function setSignatureMethod(?SignatureMethod $signatureMethod = null): self
+    public function setSignatureMethod(?SignatureMethod $signatureMethod = null): static
     {
         $this->signatureMethod = $signatureMethod;
 
@@ -454,9 +454,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignatureMethod(): self
+    public function unsetSignatureMethod(): static
     {
         $this->signatureMethod = null;
 
@@ -483,9 +483,9 @@ class SignatureType
 
     /**
      * @param SignatoryParty|null $signatoryParty
-     * @return self
+     * @return static
      */
-    public function setSignatoryParty(?SignatoryParty $signatoryParty = null): self
+    public function setSignatoryParty(?SignatoryParty $signatoryParty = null): static
     {
         $this->signatoryParty = $signatoryParty;
 
@@ -493,9 +493,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignatoryParty(): self
+    public function unsetSignatoryParty(): static
     {
         $this->signatoryParty = null;
 
@@ -522,20 +522,20 @@ class SignatureType
 
     /**
      * @param DigitalSignatureAttachment|null $digitalSignatureAttachment
-     * @return self
+     * @return static
      */
     public function setDigitalSignatureAttachment(
         ?DigitalSignatureAttachment $digitalSignatureAttachment = null,
-    ): self {
+    ): static {
         $this->digitalSignatureAttachment = $digitalSignatureAttachment;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDigitalSignatureAttachment(): self
+    public function unsetDigitalSignatureAttachment(): static
     {
         $this->digitalSignatureAttachment = null;
 
@@ -562,9 +562,9 @@ class SignatureType
 
     /**
      * @param OriginalDocumentReference|null $originalDocumentReference
-     * @return self
+     * @return static
      */
-    public function setOriginalDocumentReference(?OriginalDocumentReference $originalDocumentReference = null): self
+    public function setOriginalDocumentReference(?OriginalDocumentReference $originalDocumentReference = null): static
     {
         $this->originalDocumentReference = $originalDocumentReference;
 
@@ -572,9 +572,9 @@ class SignatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginalDocumentReference(): self
+    public function unsetOriginalDocumentReference(): static
     {
         $this->originalDocumentReference = null;
 

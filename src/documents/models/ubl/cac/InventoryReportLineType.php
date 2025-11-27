@@ -126,9 +126,9 @@ class InventoryReportLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -136,9 +136,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -155,9 +155,9 @@ class InventoryReportLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -165,9 +165,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -175,9 +175,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -216,9 +216,9 @@ class InventoryReportLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -237,9 +237,9 @@ class InventoryReportLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -286,9 +286,9 @@ class InventoryReportLineType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -296,9 +296,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -325,9 +325,9 @@ class InventoryReportLineType
 
     /**
      * @param InventoryValueAmount|null $inventoryValueAmount
-     * @return self
+     * @return static
      */
-    public function setInventoryValueAmount(?InventoryValueAmount $inventoryValueAmount = null): self
+    public function setInventoryValueAmount(?InventoryValueAmount $inventoryValueAmount = null): static
     {
         $this->inventoryValueAmount = $inventoryValueAmount;
 
@@ -335,9 +335,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInventoryValueAmount(): self
+    public function unsetInventoryValueAmount(): static
     {
         $this->inventoryValueAmount = null;
 
@@ -354,9 +354,9 @@ class InventoryReportLineType
 
     /**
      * @param DateTimeInterface|null $availabilityDate
-     * @return self
+     * @return static
      */
-    public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): self
+    public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): static
     {
         $this->availabilityDate = $availabilityDate;
 
@@ -364,9 +364,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAvailabilityDate(): self
+    public function unsetAvailabilityDate(): static
     {
         $this->availabilityDate = null;
 
@@ -393,9 +393,9 @@ class InventoryReportLineType
 
     /**
      * @param AvailabilityStatusCode|null $availabilityStatusCode
-     * @return self
+     * @return static
      */
-    public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): self
+    public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): static
     {
         $this->availabilityStatusCode = $availabilityStatusCode;
 
@@ -403,9 +403,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAvailabilityStatusCode(): self
+    public function unsetAvailabilityStatusCode(): static
     {
         $this->availabilityStatusCode = null;
 
@@ -432,9 +432,9 @@ class InventoryReportLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -442,9 +442,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -471,9 +471,9 @@ class InventoryReportLineType
 
     /**
      * @param InventoryLocation|null $inventoryLocation
-     * @return self
+     * @return static
      */
-    public function setInventoryLocation(?InventoryLocation $inventoryLocation = null): self
+    public function setInventoryLocation(?InventoryLocation $inventoryLocation = null): static
     {
         $this->inventoryLocation = $inventoryLocation;
 
@@ -481,9 +481,9 @@ class InventoryReportLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInventoryLocation(): self
+    public function unsetInventoryLocation(): static
     {
         $this->inventoryLocation = null;
 

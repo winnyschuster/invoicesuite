@@ -80,9 +80,9 @@ class TransactionConditionsType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -90,9 +90,9 @@ class TransactionConditionsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -119,9 +119,9 @@ class TransactionConditionsType
 
     /**
      * @param ActionCode|null $actionCode
-     * @return self
+     * @return static
      */
-    public function setActionCode(?ActionCode $actionCode = null): self
+    public function setActionCode(?ActionCode $actionCode = null): static
     {
         $this->actionCode = $actionCode;
 
@@ -129,9 +129,9 @@ class TransactionConditionsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActionCode(): self
+    public function unsetActionCode(): static
     {
         $this->actionCode = null;
 
@@ -148,9 +148,9 @@ class TransactionConditionsType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -158,9 +158,9 @@ class TransactionConditionsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -168,9 +168,9 @@ class TransactionConditionsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -209,9 +209,9 @@ class TransactionConditionsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -230,9 +230,9 @@ class TransactionConditionsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -269,9 +269,9 @@ class TransactionConditionsType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -279,9 +279,9 @@ class TransactionConditionsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -289,9 +289,9 @@ class TransactionConditionsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -330,9 +330,9 @@ class TransactionConditionsType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -351,9 +351,9 @@ class TransactionConditionsType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];

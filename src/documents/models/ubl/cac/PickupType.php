@@ -132,9 +132,9 @@ class PickupType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -142,9 +142,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -161,9 +161,9 @@ class PickupType
 
     /**
      * @param DateTimeInterface|null $actualPickupDate
-     * @return self
+     * @return static
      */
-    public function setActualPickupDate(?DateTimeInterface $actualPickupDate = null): self
+    public function setActualPickupDate(?DateTimeInterface $actualPickupDate = null): static
     {
         $this->actualPickupDate = $actualPickupDate;
 
@@ -171,9 +171,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualPickupDate(): self
+    public function unsetActualPickupDate(): static
     {
         $this->actualPickupDate = null;
 
@@ -190,9 +190,9 @@ class PickupType
 
     /**
      * @param DateTimeInterface|null $actualPickupTime
-     * @return self
+     * @return static
      */
-    public function setActualPickupTime(?DateTimeInterface $actualPickupTime = null): self
+    public function setActualPickupTime(?DateTimeInterface $actualPickupTime = null): static
     {
         $this->actualPickupTime = $actualPickupTime;
 
@@ -200,9 +200,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualPickupTime(): self
+    public function unsetActualPickupTime(): static
     {
         $this->actualPickupTime = null;
 
@@ -219,9 +219,9 @@ class PickupType
 
     /**
      * @param DateTimeInterface|null $earliestPickupDate
-     * @return self
+     * @return static
      */
-    public function setEarliestPickupDate(?DateTimeInterface $earliestPickupDate = null): self
+    public function setEarliestPickupDate(?DateTimeInterface $earliestPickupDate = null): static
     {
         $this->earliestPickupDate = $earliestPickupDate;
 
@@ -229,9 +229,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEarliestPickupDate(): self
+    public function unsetEarliestPickupDate(): static
     {
         $this->earliestPickupDate = null;
 
@@ -248,9 +248,9 @@ class PickupType
 
     /**
      * @param DateTimeInterface|null $earliestPickupTime
-     * @return self
+     * @return static
      */
-    public function setEarliestPickupTime(?DateTimeInterface $earliestPickupTime = null): self
+    public function setEarliestPickupTime(?DateTimeInterface $earliestPickupTime = null): static
     {
         $this->earliestPickupTime = $earliestPickupTime;
 
@@ -258,9 +258,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEarliestPickupTime(): self
+    public function unsetEarliestPickupTime(): static
     {
         $this->earliestPickupTime = null;
 
@@ -277,9 +277,9 @@ class PickupType
 
     /**
      * @param DateTimeInterface|null $latestPickupDate
-     * @return self
+     * @return static
      */
-    public function setLatestPickupDate(?DateTimeInterface $latestPickupDate = null): self
+    public function setLatestPickupDate(?DateTimeInterface $latestPickupDate = null): static
     {
         $this->latestPickupDate = $latestPickupDate;
 
@@ -287,9 +287,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestPickupDate(): self
+    public function unsetLatestPickupDate(): static
     {
         $this->latestPickupDate = null;
 
@@ -306,9 +306,9 @@ class PickupType
 
     /**
      * @param DateTimeInterface|null $latestPickupTime
-     * @return self
+     * @return static
      */
-    public function setLatestPickupTime(?DateTimeInterface $latestPickupTime = null): self
+    public function setLatestPickupTime(?DateTimeInterface $latestPickupTime = null): static
     {
         $this->latestPickupTime = $latestPickupTime;
 
@@ -316,9 +316,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLatestPickupTime(): self
+    public function unsetLatestPickupTime(): static
     {
         $this->latestPickupTime = null;
 
@@ -345,9 +345,9 @@ class PickupType
 
     /**
      * @param PickupLocation|null $pickupLocation
-     * @return self
+     * @return static
      */
-    public function setPickupLocation(?PickupLocation $pickupLocation = null): self
+    public function setPickupLocation(?PickupLocation $pickupLocation = null): static
     {
         $this->pickupLocation = $pickupLocation;
 
@@ -355,9 +355,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPickupLocation(): self
+    public function unsetPickupLocation(): static
     {
         $this->pickupLocation = null;
 
@@ -384,9 +384,9 @@ class PickupType
 
     /**
      * @param PickupParty|null $pickupParty
-     * @return self
+     * @return static
      */
-    public function setPickupParty(?PickupParty $pickupParty = null): self
+    public function setPickupParty(?PickupParty $pickupParty = null): static
     {
         $this->pickupParty = $pickupParty;
 
@@ -394,9 +394,9 @@ class PickupType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPickupParty(): self
+    public function unsetPickupParty(): static
     {
         $this->pickupParty = null;
 

@@ -83,9 +83,9 @@ class InvoiceSuiteDocumentReader
      * @param  string                               $fromFile
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
-     * @return InvoiceSuiteDocumentReader
+     * @return static
      */
-    public static function createFromFile(string $fromFile): self
+    public static function createFromFile(string $fromFile): static
     {
         if (!file_exists($fromFile)) {
             throw new InvoiceSuiteFileNotFoundException($fromFile);
@@ -104,9 +104,9 @@ class InvoiceSuiteDocumentReader
      * Create reader by content
      *
      * @param  string                     $fromContent
-     * @return InvoiceSuiteDocumentReader
+     * @return static
      */
-    public static function createFromContent(string $fromContent): self
+    public static function createFromContent(string $fromContent): static
     {
         return new static($fromContent);
     }
@@ -133,11 +133,11 @@ class InvoiceSuiteDocumentReader
      * Create a DTO from this document
      *
      * @param  null|InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
-     * @return self
+     * @return static
      */
     public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->convertToDTO($newDocumentDTO);
 
         return $this;
@@ -155,7 +155,7 @@ class InvoiceSuiteDocumentReader
      */
     public function getDocumentNo(
         ?string &$newDocumentNo
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentNo($newDocumentNo);
 
         return $this;
@@ -169,7 +169,7 @@ class InvoiceSuiteDocumentReader
      */
     public function getDocumentType(
         ?string &$newDocumentType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentType($newDocumentType);
 
         return $this;
@@ -179,11 +179,11 @@ class InvoiceSuiteDocumentReader
      * Gets the document description
      *
      * @param  null|string $newDocumentDescription The documenttype as free text
-     * @return self
+     * @return static
      */
     public function getDocumentDescription(
         ?string &$newDocumentDescription
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentDescription($newDocumentDescription);
 
         return $this;
@@ -193,11 +193,11 @@ class InvoiceSuiteDocumentReader
      * Gets the document language
      *
      * @param  null|string $newDocumentLanguage Language indicator. The language code in which the document was written
-     * @return self
+     * @return static
      */
     public function getDocumentLanguage(
         ?string &$newDocumentLanguage
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentLanguage($newDocumentLanguage);
 
         return $this;
@@ -207,11 +207,11 @@ class InvoiceSuiteDocumentReader
      * Gets the document date (e.g. invoice date)
      *
      * @param  null|DateTimeInterface $newDocumentDate Date of the document. The date when the document was issued by the seller
-     * @return self
+     * @return static
      */
     public function getDocumentDate(
         ?DateTimeInterface &$newDocumentDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentDate($newDocumentDate);
 
         return $this;
@@ -221,11 +221,11 @@ class InvoiceSuiteDocumentReader
      * Gets the document period
      *
      * @param  null|DateTimeInterface $newCompleteDate Contractual due date of the document
-     * @return self
+     * @return static
      */
     public function getDocumentCompleteDate(
         ?DateTimeInterface &$newCompleteDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentCompleteDate($newCompleteDate);
 
         return $this;
@@ -235,11 +235,11 @@ class InvoiceSuiteDocumentReader
      * Gets the document currency
      *
      * @param  null|string $newDocumentCurrency Code for the invoice currency
-     * @return self
+     * @return static
      */
     public function getDocumentCurrency(
         ?string &$newDocumentCurrency
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentCurrency($newDocumentCurrency);
 
         return $this;
@@ -249,11 +249,11 @@ class InvoiceSuiteDocumentReader
      * Gets the document tax currency
      *
      * @param  null|string $newDocumentTaxCurrency Code for the tax currency
-     * @return self
+     * @return static
      */
     public function getDocumentTaxCurrency(
         ?string &$newDocumentTaxCurrency
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxCurrency($newDocumentTaxCurrency);
 
         return $this;
@@ -263,11 +263,11 @@ class InvoiceSuiteDocumentReader
      * Gets the status of the copy indicator
      *
      * @param  null|bool $newDocumentIsCopy Indicates that the document is a copy
-     * @return self
+     * @return static
      */
     public function getDocumentIsCopy(
         ?bool &$newDocumentIsCopy
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentIsCopy($newDocumentIsCopy);
 
         return $this;
@@ -277,11 +277,11 @@ class InvoiceSuiteDocumentReader
      * Gets the status of the test indicator
      *
      * @param  null|bool $newDocumentIsTest Indicates that the document is a test
-     * @return self
+     * @return static
      */
     public function getDocumentIsTest(
         ?bool &$newDocumentIsTest
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentIsTest($newDocumentIsTest);
 
         return $this;
@@ -313,13 +313,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
     public function getDocumentNote(
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentNote($newContent, $newContentCode, $newSubjectCode);
 
         return $this;
@@ -351,13 +351,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function getDocumentBillingPeriod(
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBillingPeriod($newStartDate, $newEndDate, $newDescription);
 
         return $this;
@@ -388,12 +388,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
     public function getDocumentPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPostingReference($newType, $newAccountId);
 
         return $this;
@@ -428,12 +428,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function getDocumentSellerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -464,12 +464,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Buyer's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -500,12 +500,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Quotation number
      * @param  null|DateTimeInterface $newReferenceDate   Quotation date
-     * @return self
+     * @return static
      */
     public function getDocumentQuotationReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -536,12 +536,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      */
     public function getDocumentContractReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -576,7 +576,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function getDocumentAdditionalReference(
         ?string &$newReferenceNumber,
@@ -585,7 +585,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentAdditionalReference(
             $newReferenceNumber,
             $newReferenceDate,
@@ -624,13 +624,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceReference($newReferenceNumber, $newReferenceDate, $newTypeCode);
 
         return $this;
@@ -661,12 +661,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      */
     public function getDocumentProjectReference(
         ?string &$newReferenceNumber,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProjectReference($newReferenceNumber, $newName);
 
         return $this;
@@ -697,12 +697,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Ultimate customer order number
      * @param  null|DateTimeInterface $newReferenceDate   Ultimate customer order date
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateCustomerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -733,12 +733,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      */
     public function getDocumentDespatchAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -769,12 +769,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      */
     public function getDocumentReceivingAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -805,12 +805,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      */
     public function getDocumentDeliveryNoteReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -820,11 +820,11 @@ class InvoiceSuiteDocumentReader
      * Get the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate Actual delivery date
-     * @return self
+     * @return static
      */
     public function getDocumentSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSupplyChainEvent($newDate);
 
         return $this;
@@ -834,11 +834,11 @@ class InvoiceSuiteDocumentReader
      * Get the identifier assigned by the buyer and used for internal routing
      *
      * @param  null|string $newBuyerReference An identifier assigned by the buyer and used for internal routing
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerReference(
         ?string &$newBuyerReference
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerReference($newBuyerReference);
 
         return $this;
@@ -852,11 +852,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentSellerName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerName($newName);
 
         return $this;
@@ -886,11 +886,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentSellerId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerId($newId);
 
         return $this;
@@ -921,12 +921,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentSellerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -957,12 +957,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentSellerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -998,7 +998,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentSellerAddress(
         ?string &$newAddressLine1,
@@ -1008,7 +1008,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -1048,13 +1048,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentSellerLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1088,7 +1088,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentSellerContact(
         ?string &$newPersonName,
@@ -1096,7 +1096,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerContact(
             $newPersonName,
             $newDepartmentName,
@@ -1133,12 +1133,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentSellerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerCommunication($newType, $newUri);
 
         return $this;
@@ -1152,11 +1152,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerName($newName);
 
         return $this;
@@ -1186,11 +1186,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerId($newId);
 
         return $this;
@@ -1221,12 +1221,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1257,12 +1257,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1298,7 +1298,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerAddress(
         ?string &$newAddressLine1,
@@ -1308,7 +1308,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -1348,13 +1348,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1388,7 +1388,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerContact(
         ?string &$newPersonName,
@@ -1396,7 +1396,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerContact(
             $newPersonName,
             $newDepartmentName,
@@ -1433,12 +1433,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentBuyerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerCommunication($newType, $newUri);
 
         return $this;
@@ -1452,11 +1452,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeName($newName);
 
         return $this;
@@ -1486,11 +1486,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeId($newId);
 
         return $this;
@@ -1521,12 +1521,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1557,12 +1557,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1598,7 +1598,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeAddress(
         ?string &$newAddressLine1,
@@ -1608,7 +1608,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -1648,13 +1648,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1688,7 +1688,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeContact(
         ?string &$newPersonName,
@@ -1696,7 +1696,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeContact(
             $newPersonName,
             $newDepartmentName,
@@ -1733,12 +1733,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeCommunication($newType, $newUri);
 
         return $this;
@@ -1752,11 +1752,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserName($newName);
 
         return $this;
@@ -1786,11 +1786,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserId($newId);
 
         return $this;
@@ -1821,12 +1821,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1857,12 +1857,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1898,7 +1898,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserAddress(
         ?string &$newAddressLine1,
@@ -1908,7 +1908,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -1948,13 +1948,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1988,7 +1988,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserContact(
         ?string &$newPersonName,
@@ -1996,7 +1996,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserContact(
             $newPersonName,
             $newDepartmentName,
@@ -2033,12 +2033,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentProductEndUserCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentProductEndUserCommunication($newType, $newUri);
 
         return $this;
@@ -2052,11 +2052,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToName($newName);
 
         return $this;
@@ -2086,11 +2086,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToId($newId);
 
         return $this;
@@ -2121,12 +2121,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -2157,12 +2157,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2198,7 +2198,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentShipToAddress(
         ?string &$newAddressLine1,
@@ -2208,7 +2208,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -2248,13 +2248,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2288,7 +2288,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentShipToContact(
         ?string &$newPersonName,
@@ -2296,7 +2296,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -2333,12 +2333,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipToCommunication($newType, $newUri);
 
         return $this;
@@ -2352,11 +2352,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToName($newName);
 
         return $this;
@@ -2386,11 +2386,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToId($newId);
 
         return $this;
@@ -2421,12 +2421,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -2457,12 +2457,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2498,7 +2498,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToAddress(
         ?string &$newAddressLine1,
@@ -2508,7 +2508,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -2548,13 +2548,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2588,7 +2588,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToContact(
         ?string &$newPersonName,
@@ -2596,7 +2596,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -2633,12 +2633,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentUltimateShipToCommunication($newType, $newUri);
 
         return $this;
@@ -2652,11 +2652,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromName($newName);
 
         return $this;
@@ -2686,11 +2686,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromId($newId);
 
         return $this;
@@ -2721,12 +2721,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -2757,12 +2757,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2798,7 +2798,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromAddress(
         ?string &$newAddressLine1,
@@ -2808,7 +2808,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -2848,13 +2848,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2888,7 +2888,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromContact(
         ?string &$newPersonName,
@@ -2896,7 +2896,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromContact(
             $newPersonName,
             $newDepartmentName,
@@ -2933,12 +2933,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentShipFromCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentShipFromCommunication($newType, $newUri);
 
         return $this;
@@ -2952,11 +2952,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerName($newName);
 
         return $this;
@@ -2986,11 +2986,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerId($newId);
 
         return $this;
@@ -3021,12 +3021,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -3057,12 +3057,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3098,7 +3098,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerAddress(
         ?string &$newAddressLine1,
@@ -3108,7 +3108,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -3148,13 +3148,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3188,7 +3188,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerContact(
         ?string &$newPersonName,
@@ -3196,7 +3196,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerContact(
             $newPersonName,
             $newDepartmentName,
@@ -3233,12 +3233,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentInvoicerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoicerCommunication($newType, $newUri);
 
         return $this;
@@ -3252,11 +3252,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeName($newName);
 
         return $this;
@@ -3286,11 +3286,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeId($newId);
 
         return $this;
@@ -3321,12 +3321,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -3357,12 +3357,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3398,7 +3398,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeAddress(
         ?string &$newAddressLine1,
@@ -3408,7 +3408,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -3448,13 +3448,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3488,7 +3488,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeContact(
         ?string &$newPersonName,
@@ -3496,7 +3496,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeContact(
             $newPersonName,
             $newDepartmentName,
@@ -3533,12 +3533,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentInvoiceeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentInvoiceeCommunication($newType, $newUri);
 
         return $this;
@@ -3552,11 +3552,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeName($newName);
 
         return $this;
@@ -3586,11 +3586,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeId($newId);
 
         return $this;
@@ -3621,12 +3621,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -3657,12 +3657,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3698,7 +3698,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeAddress(
         ?string &$newAddressLine1,
@@ -3708,7 +3708,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -3748,13 +3748,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3788,7 +3788,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeContact(
         ?string &$newPersonName,
@@ -3796,7 +3796,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeContact(
             $newPersonName,
             $newDepartmentName,
@@ -3833,12 +3833,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentPayeeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPayeeCommunication($newType, $newUri);
 
         return $this;
@@ -3882,7 +3882,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function getDocumentPaymentMean(
         ?string &$newTypeCode,
@@ -3896,7 +3896,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPayeeBic,
         ?string &$newPaymentReference,
         ?string &$newMandate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentMean(
             $newTypeCode,
             $newName,
@@ -3938,11 +3938,11 @@ class InvoiceSuiteDocumentReader
      * Get Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      */
     public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentCreditorReferenceID($newId);
 
         return $this;
@@ -3973,13 +3973,13 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
-     * @return self
+     * @return static
      */
     public function getDocumentPaymentTerm(
         ?string &$newDescription,
         ?DateTimeInterface &$newDueDate,
         ?string &$newMandate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
 
         return $this;
@@ -4014,7 +4014,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function getDocumentPaymentDiscountTermsInLastPaymentTerm(
         ?float &$newBaseAmount,
@@ -4023,7 +4023,7 @@ class InvoiceSuiteDocumentReader
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentDiscountTermsInLastPaymentTerm(
             $newBaseAmount,
             $newDiscountAmount,
@@ -4065,7 +4065,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function getDocumentPaymentPenaltyTermsInLastPaymentTerm(
         ?float &$newBaseAmount,
@@ -4074,7 +4074,7 @@ class InvoiceSuiteDocumentReader
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPaymentPenaltyTermsInLastPaymentTerm(
             $newBaseAmount,
             $newPenaltyAmount,
@@ -4123,7 +4123,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      */
     public function getDocumentTax(
         ?string &$newTaxCategory,
@@ -4135,7 +4135,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newExemptionReasonCode,
         ?DateTimeInterface &$newTaxDueDate,
         ?string &$newTaxDueCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTax(
             $newTaxCategory,
             $newTaxType,
@@ -4187,7 +4187,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function getDocumentAllowanceCharge(
         ?bool &$newChargeIndicator,
@@ -4199,7 +4199,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentAllowanceCharge(
             $newChargeIndicator,
             $newAllowanceChargeAmount,
@@ -4243,7 +4243,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      */
     public function getDocumentLogisticServiceCharge(
         ?float &$newChargeAmount,
@@ -4251,7 +4251,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newTaxCategory,
         ?string &$newTaxType,
         ?float &$newTaxPercent
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentLogisticServiceCharge(
             $newChargeAmount,
             $newDescription,
@@ -4279,7 +4279,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|float $newDueAmount           Payment amount due
      * @param  null|float $newPrepaidAmount       Prepayment amount
      * @param  null|float $newRoungingAmount      Rounding amount
-     * @return self
+     * @return static
      */
     public function getDocumentSummation(
         ?float &$newNetAmount,
@@ -4292,7 +4292,7 @@ class InvoiceSuiteDocumentReader
         ?float &$newDueAmount,
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSummation(
             $newNetAmount,
             $newChargeTotalAmount,
@@ -4340,14 +4340,14 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newParentPositionId     Identification of the parent position
      * @param  null|string $newLineStatusCode       Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
      * @param  null|string $newLineStatusReasonCode Type to specify whether the invoice line is
-     * @return self
+     * @return static
      */
     public function getDocumentPosition(
         ?string &$newPositionId,
         ?string &$newParentPositionId,
         ?string &$newLineStatusCode,
         ?string &$newLineStatusReasonCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPosition(
             $newPositionId,
             $newParentPositionId,
@@ -4384,13 +4384,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      */
     public function getDocumentPositionNote(
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionNote($newContent, $newContentCode, $newSubjectCode);
 
         return $this;
@@ -4412,7 +4412,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newProductBrandName          Brand name of the product
      * @param  null|string $newProductModelName          Model name of the product
      * @param  null|string $newProductOriginTradeCountry Code indicating the country the goods came from
-     * @return self
+     * @return static
      */
     public function getDocumentPositionProductDetails(
         ?string &$newProductId,
@@ -4428,7 +4428,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newProductBrandName,
         ?string &$newProductModelName,
         ?string &$newProductOriginTradeCountry
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionProductDetails(
             $newProductId,
             $newProductName,
@@ -4476,7 +4476,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      */
     public function getDocumentPositionProductCharacteristic(
         ?string &$newProductCharacteristicDescription,
@@ -4484,7 +4484,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newProductCharacteristicType,
         ?float &$newProductCharacteristicMeasureValue,
         ?string &$newProductCharacteristicMeasureUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionProductCharacteristic(
             $newProductCharacteristicDescription,
             $newProductCharacteristicValue,
@@ -4523,14 +4523,14 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
     public function getDocumentPositionProductClassification(
         ?string &$newProductClassificationCode,
         ?string &$newProductClassificationListId,
         ?string &$newProductClassificationListVersionId,
         ?string &$newProductClassificationCodeClassname
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionProductClassification(
             $newProductClassificationCode,
             $newProductClassificationListId,
@@ -4574,7 +4574,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      */
     public function getDocumentPositionReferencedProduct(
         ?string &$newProductId,
@@ -4587,7 +4587,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newProductIndustryId,
         ?float &$newProductUnitQuantity,
         ?string &$newProductUnitQuantityUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionReferencedProduct(
             $newProductId,
             $newProductName,
@@ -4630,13 +4630,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionSellerOrderReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionSellerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4672,13 +4672,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionBuyerOrderReference(
         ?string &$newReferenceNumber = null,
         ?string &$newReferenceLineNumber = null,
         ?DateTimeInterface &$newReferenceDate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionBuyerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4714,13 +4714,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionQuotationReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionQuotationReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4756,13 +4756,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionContractReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionContractReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4802,7 +4802,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function getDocumentPositionAdditionalReference(
         ?string &$newReferenceNumber,
@@ -4812,7 +4812,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionAdditionalReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4852,13 +4852,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateCustomerOrderReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateCustomerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4894,13 +4894,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionDespatchAdviceReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionDespatchAdviceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4936,13 +4936,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionReceivingAdviceReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionReceivingAdviceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4978,13 +4978,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      */
     public function getDocumentPositionDeliveryNoteReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionDeliveryNoteReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5021,14 +5021,14 @@ class InvoiceSuiteDocumentReader
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function getDocumentPositionInvoiceReference(
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionInvoiceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5055,13 +5055,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|float  $newGrossPrice                  Unit price excluding sales tax before deduction of the discount on the item price
      * @param  null|float  $newGrossPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     public function getDocumentPositionGrossPrice(
         ?float &$newGrossPrice,
         ?float &$newGrossPriceBasisQuantity,
         ?string &$newGrossPriceBasisQuantityUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionGrossPrice(
             $newGrossPrice,
             $newGrossPriceBasisQuantity,
@@ -5100,7 +5100,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      */
     public function getDocumentPositionGrossPriceAllowanceCharge(
         ?float &$newGrossPriceAllowanceChargeAmount,
@@ -5109,7 +5109,7 @@ class InvoiceSuiteDocumentReader
         ?float &$newGrossPriceAllowanceChargeBasisAmount,
         ?string &$newGrossPriceAllowanceChargeReason,
         ?string &$newGrossPriceAllowanceChargeReasonCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionGrossPriceAllowanceCharge(
             $newGrossPriceAllowanceChargeAmount,
             $newIsCharge,
@@ -5138,13 +5138,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|float  $newNetPrice                  Unit price excluding sales tax after deduction of the discount on the item price
      * @param  null|float  $newNetPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     public function getDocumentPositionNetPrice(
         ?float &$newNetPrice,
         ?float &$newNetPriceBasisQuantity,
         ?string &$newNetPriceBasisQuantityUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionNetPrice(
             $newNetPrice,
             $newNetPriceBasisQuantity,
@@ -5163,7 +5163,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function getDocumentPositionNetPriceTax(
         ?string &$newTaxCategory,
@@ -5172,7 +5172,7 @@ class InvoiceSuiteDocumentReader
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionNetPriceTax(
             $newTaxCategory,
             $newTaxType,
@@ -5194,7 +5194,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newChargeFreeQuantityUnit Charge Free quantity unit
      * @param  null|float  $newPackageQuantity        Package quantity
      * @param  null|string $newPackageQuantityUnit    Package quantity unit
-     * @return self
+     * @return static
      */
     public function getDocumentPositionQuantities(
         ?float &$newQuantity,
@@ -5203,7 +5203,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newChargeFreeQuantityUnit,
         ?float &$newPackageQuantity,
         ?string &$newPackageQuantityUnit
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionQuantities(
             $newQuantity,
             $newQuantityUnit,
@@ -5220,11 +5220,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the Ship-To party from latest position
      *
      * @param  string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToName($newName);
 
         return $this;
@@ -5254,11 +5254,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToId($newId);
 
         return $this;
@@ -5289,12 +5289,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -5325,12 +5325,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
@@ -5369,7 +5369,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToAddress(
         ?string &$newAddressLine1,
@@ -5379,7 +5379,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -5419,13 +5419,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToLegalOrganisation(
             $newType,
             $newId,
@@ -5463,7 +5463,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToContact(
         ?string &$newPersonName,
@@ -5471,7 +5471,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -5508,12 +5508,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentPositionShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionShipToCommunication(
             $newType,
             $newUri
@@ -5526,11 +5526,11 @@ class InvoiceSuiteDocumentReader
      * Get the name of the ultimate Ship-To party from latest position
      *
      * @param  string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToName($newName);
 
         return $this;
@@ -5560,11 +5560,11 @@ class InvoiceSuiteDocumentReader
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToId($newId);
 
         return $this;
@@ -5595,12 +5595,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -5631,12 +5631,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
@@ -5675,7 +5675,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToAddress(
         ?string &$newAddressLine1,
@@ -5685,7 +5685,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -5725,13 +5725,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToLegalOrganisation(
             $newType,
             $newId,
@@ -5769,7 +5769,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToContact(
         ?string &$newPersonName,
@@ -5777,7 +5777,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -5814,12 +5814,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function getDocumentPositionUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionUltimateShipToCommunication(
             $newType,
             $newUri
@@ -5832,11 +5832,11 @@ class InvoiceSuiteDocumentReader
      * Get the date of the delivery from latest position
      *
      * @param  null|DateTimeInterface $newDate
-     * @return self
+     * @return static
      */
     public function getDocumentPositionSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionSupplyChainEvent($newDate);
 
         return $this;
@@ -5868,13 +5868,13 @@ class InvoiceSuiteDocumentReader
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function getDocumentPositionBillingPeriod(
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionBillingPeriod(
             $newStartDate,
             $newEndDate,
@@ -5913,7 +5913,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function getDocumentPositionTax(
         ?string &$newTaxCategory,
@@ -5922,7 +5922,7 @@ class InvoiceSuiteDocumentReader
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionTax(
             $newTaxCategory,
             $newTaxType,
@@ -5964,7 +5964,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function getDocumentPositionAllowanceCharge(
         ?bool &$newChargeIndicator,
@@ -5973,7 +5973,7 @@ class InvoiceSuiteDocumentReader
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionAllowanceCharge(
             $newChargeIndicator,
             $newAllowanceChargeAmount,
@@ -6004,7 +6004,7 @@ class InvoiceSuiteDocumentReader
      * @param  null|float $newDiscountTotalAmount Sum of the discounts
      * @param  null|float $newTaxTotalAmount      Total amount of the line (in the invoice currency)
      * @param  null|float $newGrossAmount         Total invoice line amount including sales tax
-     * @return self
+     * @return static
      */
     public function getDocumentPositionSummation(
         ?float &$newNetAmount,
@@ -6012,7 +6012,7 @@ class InvoiceSuiteDocumentReader
         ?float &$newDiscountTotalAmount,
         ?float &$newTaxTotalAmount,
         ?float &$newGrossAmount
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionSummation(
             $newNetAmount,
             $newChargeTotalAmount,
@@ -6049,12 +6049,12 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
     public function getDocumentPositionPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentPositionPostingReference(
             $newType,
             $newAccountId

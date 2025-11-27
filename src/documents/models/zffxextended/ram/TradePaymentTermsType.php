@@ -112,9 +112,9 @@ class TradePaymentTermsType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -122,9 +122,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -151,9 +151,9 @@ class TradePaymentTermsType
 
     /**
      * @param DateTimeType|null $dueDateDateTime
-     * @return self
+     * @return static
      */
-    public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): self
+    public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): static
     {
         $this->dueDateDateTime = $dueDateDateTime;
 
@@ -161,9 +161,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDueDateDateTime(): self
+    public function unsetDueDateDateTime(): static
     {
         $this->dueDateDateTime = null;
 
@@ -190,9 +190,9 @@ class TradePaymentTermsType
 
     /**
      * @param IDType|null $directDebitMandateID
-     * @return self
+     * @return static
      */
-    public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): self
+    public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): static
     {
         $this->directDebitMandateID = $directDebitMandateID;
 
@@ -200,9 +200,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDirectDebitMandateID(): self
+    public function unsetDirectDebitMandateID(): static
     {
         $this->directDebitMandateID = null;
 
@@ -229,9 +229,9 @@ class TradePaymentTermsType
 
     /**
      * @param AmountType|null $partialPaymentAmount
-     * @return self
+     * @return static
      */
-    public function setPartialPaymentAmount(?AmountType $partialPaymentAmount = null): self
+    public function setPartialPaymentAmount(?AmountType $partialPaymentAmount = null): static
     {
         $this->partialPaymentAmount = $partialPaymentAmount;
 
@@ -239,9 +239,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartialPaymentAmount(): self
+    public function unsetPartialPaymentAmount(): static
     {
         $this->partialPaymentAmount = null;
 
@@ -268,20 +268,20 @@ class TradePaymentTermsType
 
     /**
      * @param TradePaymentPenaltyTermsType|null $applicableTradePaymentPenaltyTerms
-     * @return self
+     * @return static
      */
     public function setApplicableTradePaymentPenaltyTerms(
         ?TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms = null,
-    ): self {
+    ): static {
         $this->applicableTradePaymentPenaltyTerms = $applicableTradePaymentPenaltyTerms;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTradePaymentPenaltyTerms(): self
+    public function unsetApplicableTradePaymentPenaltyTerms(): static
     {
         $this->applicableTradePaymentPenaltyTerms = null;
 
@@ -308,20 +308,20 @@ class TradePaymentTermsType
 
     /**
      * @param TradePaymentDiscountTermsType|null $applicableTradePaymentDiscountTerms
-     * @return self
+     * @return static
      */
     public function setApplicableTradePaymentDiscountTerms(
         ?TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms = null,
-    ): self {
+    ): static {
         $this->applicableTradePaymentDiscountTerms = $applicableTradePaymentDiscountTerms;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTradePaymentDiscountTerms(): self
+    public function unsetApplicableTradePaymentDiscountTerms(): static
     {
         $this->applicableTradePaymentDiscountTerms = null;
 
@@ -348,9 +348,9 @@ class TradePaymentTermsType
 
     /**
      * @param TradePartyType|null $payeeTradeParty
-     * @return self
+     * @return static
      */
-    public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): self
+    public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): static
     {
         $this->payeeTradeParty = $payeeTradeParty;
 
@@ -358,9 +358,9 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeeTradeParty(): self
+    public function unsetPayeeTradeParty(): static
     {
         $this->payeeTradeParty = null;
 

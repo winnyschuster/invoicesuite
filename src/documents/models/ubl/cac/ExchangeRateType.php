@@ -138,9 +138,9 @@ class ExchangeRateType
 
     /**
      * @param SourceCurrencyCode|null $sourceCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setSourceCurrencyCode(?SourceCurrencyCode $sourceCurrencyCode = null): self
+    public function setSourceCurrencyCode(?SourceCurrencyCode $sourceCurrencyCode = null): static
     {
         $this->sourceCurrencyCode = $sourceCurrencyCode;
 
@@ -148,9 +148,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSourceCurrencyCode(): self
+    public function unsetSourceCurrencyCode(): static
     {
         $this->sourceCurrencyCode = null;
 
@@ -177,9 +177,9 @@ class ExchangeRateType
 
     /**
      * @param SourceCurrencyBaseRate|null $sourceCurrencyBaseRate
-     * @return self
+     * @return static
      */
-    public function setSourceCurrencyBaseRate(?SourceCurrencyBaseRate $sourceCurrencyBaseRate = null): self
+    public function setSourceCurrencyBaseRate(?SourceCurrencyBaseRate $sourceCurrencyBaseRate = null): static
     {
         $this->sourceCurrencyBaseRate = $sourceCurrencyBaseRate;
 
@@ -187,9 +187,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSourceCurrencyBaseRate(): self
+    public function unsetSourceCurrencyBaseRate(): static
     {
         $this->sourceCurrencyBaseRate = null;
 
@@ -216,9 +216,9 @@ class ExchangeRateType
 
     /**
      * @param TargetCurrencyCode|null $targetCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setTargetCurrencyCode(?TargetCurrencyCode $targetCurrencyCode = null): self
+    public function setTargetCurrencyCode(?TargetCurrencyCode $targetCurrencyCode = null): static
     {
         $this->targetCurrencyCode = $targetCurrencyCode;
 
@@ -226,9 +226,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTargetCurrencyCode(): self
+    public function unsetTargetCurrencyCode(): static
     {
         $this->targetCurrencyCode = null;
 
@@ -255,9 +255,9 @@ class ExchangeRateType
 
     /**
      * @param TargetCurrencyBaseRate|null $targetCurrencyBaseRate
-     * @return self
+     * @return static
      */
-    public function setTargetCurrencyBaseRate(?TargetCurrencyBaseRate $targetCurrencyBaseRate = null): self
+    public function setTargetCurrencyBaseRate(?TargetCurrencyBaseRate $targetCurrencyBaseRate = null): static
     {
         $this->targetCurrencyBaseRate = $targetCurrencyBaseRate;
 
@@ -265,9 +265,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTargetCurrencyBaseRate(): self
+    public function unsetTargetCurrencyBaseRate(): static
     {
         $this->targetCurrencyBaseRate = null;
 
@@ -294,9 +294,9 @@ class ExchangeRateType
 
     /**
      * @param ExchangeMarketID|null $exchangeMarketID
-     * @return self
+     * @return static
      */
-    public function setExchangeMarketID(?ExchangeMarketID $exchangeMarketID = null): self
+    public function setExchangeMarketID(?ExchangeMarketID $exchangeMarketID = null): static
     {
         $this->exchangeMarketID = $exchangeMarketID;
 
@@ -304,9 +304,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExchangeMarketID(): self
+    public function unsetExchangeMarketID(): static
     {
         $this->exchangeMarketID = null;
 
@@ -333,9 +333,9 @@ class ExchangeRateType
 
     /**
      * @param CalculationRate|null $calculationRate
-     * @return self
+     * @return static
      */
-    public function setCalculationRate(?CalculationRate $calculationRate = null): self
+    public function setCalculationRate(?CalculationRate $calculationRate = null): static
     {
         $this->calculationRate = $calculationRate;
 
@@ -343,9 +343,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCalculationRate(): self
+    public function unsetCalculationRate(): static
     {
         $this->calculationRate = null;
 
@@ -372,9 +372,9 @@ class ExchangeRateType
 
     /**
      * @param MathematicOperatorCode|null $mathematicOperatorCode
-     * @return self
+     * @return static
      */
-    public function setMathematicOperatorCode(?MathematicOperatorCode $mathematicOperatorCode = null): self
+    public function setMathematicOperatorCode(?MathematicOperatorCode $mathematicOperatorCode = null): static
     {
         $this->mathematicOperatorCode = $mathematicOperatorCode;
 
@@ -382,9 +382,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMathematicOperatorCode(): self
+    public function unsetMathematicOperatorCode(): static
     {
         $this->mathematicOperatorCode = null;
 
@@ -401,9 +401,9 @@ class ExchangeRateType
 
     /**
      * @param DateTimeInterface|null $date
-     * @return self
+     * @return static
      */
-    public function setDate(?DateTimeInterface $date = null): self
+    public function setDate(?DateTimeInterface $date = null): static
     {
         $this->date = $date;
 
@@ -411,9 +411,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDate(): self
+    public function unsetDate(): static
     {
         $this->date = null;
 
@@ -440,9 +440,9 @@ class ExchangeRateType
 
     /**
      * @param ForeignExchangeContract|null $foreignExchangeContract
-     * @return self
+     * @return static
      */
-    public function setForeignExchangeContract(?ForeignExchangeContract $foreignExchangeContract = null): self
+    public function setForeignExchangeContract(?ForeignExchangeContract $foreignExchangeContract = null): static
     {
         $this->foreignExchangeContract = $foreignExchangeContract;
 
@@ -450,9 +450,9 @@ class ExchangeRateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForeignExchangeContract(): self
+    public function unsetForeignExchangeContract(): static
     {
         $this->foreignExchangeContract = null;
 

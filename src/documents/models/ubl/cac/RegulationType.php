@@ -67,9 +67,9 @@ class RegulationType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -77,9 +77,9 @@ class RegulationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -106,9 +106,9 @@ class RegulationType
 
     /**
      * @param LegalReference|null $legalReference
-     * @return self
+     * @return static
      */
-    public function setLegalReference(?LegalReference $legalReference = null): self
+    public function setLegalReference(?LegalReference $legalReference = null): static
     {
         $this->legalReference = $legalReference;
 
@@ -116,9 +116,9 @@ class RegulationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLegalReference(): self
+    public function unsetLegalReference(): static
     {
         $this->legalReference = null;
 
@@ -145,9 +145,9 @@ class RegulationType
 
     /**
      * @param OntologyURI|null $ontologyURI
-     * @return self
+     * @return static
      */
-    public function setOntologyURI(?OntologyURI $ontologyURI = null): self
+    public function setOntologyURI(?OntologyURI $ontologyURI = null): static
     {
         $this->ontologyURI = $ontologyURI;
 
@@ -155,9 +155,9 @@ class RegulationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOntologyURI(): self
+    public function unsetOntologyURI(): static
     {
         $this->ontologyURI = null;
 

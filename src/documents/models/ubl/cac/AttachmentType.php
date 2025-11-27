@@ -54,20 +54,20 @@ class AttachmentType
 
     /**
      * @param EmbeddedDocumentBinaryObject|null $embeddedDocumentBinaryObject
-     * @return self
+     * @return static
      */
     public function setEmbeddedDocumentBinaryObject(
         ?EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject = null,
-    ): self {
+    ): static {
         $this->embeddedDocumentBinaryObject = $embeddedDocumentBinaryObject;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmbeddedDocumentBinaryObject(): self
+    public function unsetEmbeddedDocumentBinaryObject(): static
     {
         $this->embeddedDocumentBinaryObject = null;
 
@@ -94,9 +94,9 @@ class AttachmentType
 
     /**
      * @param ExternalReference|null $externalReference
-     * @return self
+     * @return static
      */
-    public function setExternalReference(?ExternalReference $externalReference = null): self
+    public function setExternalReference(?ExternalReference $externalReference = null): static
     {
         $this->externalReference = $externalReference;
 
@@ -104,9 +104,9 @@ class AttachmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExternalReference(): self
+    public function unsetExternalReference(): static
     {
         $this->externalReference = null;
 

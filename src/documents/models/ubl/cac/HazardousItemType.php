@@ -305,9 +305,9 @@ class HazardousItemType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -315,9 +315,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -344,9 +344,9 @@ class HazardousItemType
 
     /**
      * @param PlacardNotation|null $placardNotation
-     * @return self
+     * @return static
      */
-    public function setPlacardNotation(?PlacardNotation $placardNotation = null): self
+    public function setPlacardNotation(?PlacardNotation $placardNotation = null): static
     {
         $this->placardNotation = $placardNotation;
 
@@ -354,9 +354,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlacardNotation(): self
+    public function unsetPlacardNotation(): static
     {
         $this->placardNotation = null;
 
@@ -383,9 +383,9 @@ class HazardousItemType
 
     /**
      * @param PlacardEndorsement|null $placardEndorsement
-     * @return self
+     * @return static
      */
-    public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): self
+    public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): static
     {
         $this->placardEndorsement = $placardEndorsement;
 
@@ -393,9 +393,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlacardEndorsement(): self
+    public function unsetPlacardEndorsement(): static
     {
         $this->placardEndorsement = null;
 
@@ -412,9 +412,9 @@ class HazardousItemType
 
     /**
      * @param array<AdditionalInformation>|null $additionalInformation
-     * @return self
+     * @return static
      */
-    public function setAdditionalInformation(?array $additionalInformation = null): self
+    public function setAdditionalInformation(?array $additionalInformation = null): static
     {
         $this->additionalInformation = $additionalInformation;
 
@@ -422,9 +422,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalInformation(): self
+    public function unsetAdditionalInformation(): static
     {
         $this->additionalInformation = null;
 
@@ -432,9 +432,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalInformation(): self
+    public function clearAdditionalInformation(): static
     {
         $this->additionalInformation = [];
 
@@ -473,9 +473,9 @@ class HazardousItemType
 
     /**
      * @param AdditionalInformation $additionalInformation
-     * @return self
+     * @return static
      */
-    public function addToAdditionalInformation(AdditionalInformation $additionalInformation): self
+    public function addToAdditionalInformation(AdditionalInformation $additionalInformation): static
     {
         $this->additionalInformation[] = $additionalInformation;
 
@@ -494,9 +494,9 @@ class HazardousItemType
 
     /**
      * @param AdditionalInformation $additionalInformation
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalInformation(AdditionalInformation $additionalInformation): self
+    public function addOnceToAdditionalInformation(AdditionalInformation $additionalInformation): static
     {
         if (!is_array($this->additionalInformation)) {
             $this->additionalInformation = [];
@@ -543,9 +543,9 @@ class HazardousItemType
 
     /**
      * @param UNDGCode|null $uNDGCode
-     * @return self
+     * @return static
      */
-    public function setUNDGCode(?UNDGCode $uNDGCode = null): self
+    public function setUNDGCode(?UNDGCode $uNDGCode = null): static
     {
         $this->uNDGCode = $uNDGCode;
 
@@ -553,9 +553,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUNDGCode(): self
+    public function unsetUNDGCode(): static
     {
         $this->uNDGCode = null;
 
@@ -582,9 +582,9 @@ class HazardousItemType
 
     /**
      * @param EmergencyProceduresCode|null $emergencyProceduresCode
-     * @return self
+     * @return static
      */
-    public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): self
+    public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): static
     {
         $this->emergencyProceduresCode = $emergencyProceduresCode;
 
@@ -592,9 +592,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmergencyProceduresCode(): self
+    public function unsetEmergencyProceduresCode(): static
     {
         $this->emergencyProceduresCode = null;
 
@@ -621,9 +621,9 @@ class HazardousItemType
 
     /**
      * @param MedicalFirstAidGuideCode|null $medicalFirstAidGuideCode
-     * @return self
+     * @return static
      */
-    public function setMedicalFirstAidGuideCode(?MedicalFirstAidGuideCode $medicalFirstAidGuideCode = null): self
+    public function setMedicalFirstAidGuideCode(?MedicalFirstAidGuideCode $medicalFirstAidGuideCode = null): static
     {
         $this->medicalFirstAidGuideCode = $medicalFirstAidGuideCode;
 
@@ -631,9 +631,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMedicalFirstAidGuideCode(): self
+    public function unsetMedicalFirstAidGuideCode(): static
     {
         $this->medicalFirstAidGuideCode = null;
 
@@ -660,9 +660,9 @@ class HazardousItemType
 
     /**
      * @param TechnicalName|null $technicalName
-     * @return self
+     * @return static
      */
-    public function setTechnicalName(?TechnicalName $technicalName = null): self
+    public function setTechnicalName(?TechnicalName $technicalName = null): static
     {
         $this->technicalName = $technicalName;
 
@@ -670,9 +670,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTechnicalName(): self
+    public function unsetTechnicalName(): static
     {
         $this->technicalName = null;
 
@@ -699,9 +699,9 @@ class HazardousItemType
 
     /**
      * @param CategoryName|null $categoryName
-     * @return self
+     * @return static
      */
-    public function setCategoryName(?CategoryName $categoryName = null): self
+    public function setCategoryName(?CategoryName $categoryName = null): static
     {
         $this->categoryName = $categoryName;
 
@@ -709,9 +709,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCategoryName(): self
+    public function unsetCategoryName(): static
     {
         $this->categoryName = null;
 
@@ -738,9 +738,9 @@ class HazardousItemType
 
     /**
      * @param HazardousCategoryCode|null $hazardousCategoryCode
-     * @return self
+     * @return static
      */
-    public function setHazardousCategoryCode(?HazardousCategoryCode $hazardousCategoryCode = null): self
+    public function setHazardousCategoryCode(?HazardousCategoryCode $hazardousCategoryCode = null): static
     {
         $this->hazardousCategoryCode = $hazardousCategoryCode;
 
@@ -748,9 +748,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousCategoryCode(): self
+    public function unsetHazardousCategoryCode(): static
     {
         $this->hazardousCategoryCode = null;
 
@@ -777,20 +777,20 @@ class HazardousItemType
 
     /**
      * @param UpperOrangeHazardPlacardID|null $upperOrangeHazardPlacardID
-     * @return self
+     * @return static
      */
     public function setUpperOrangeHazardPlacardID(
         ?UpperOrangeHazardPlacardID $upperOrangeHazardPlacardID = null,
-    ): self {
+    ): static {
         $this->upperOrangeHazardPlacardID = $upperOrangeHazardPlacardID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUpperOrangeHazardPlacardID(): self
+    public function unsetUpperOrangeHazardPlacardID(): static
     {
         $this->upperOrangeHazardPlacardID = null;
 
@@ -817,20 +817,20 @@ class HazardousItemType
 
     /**
      * @param LowerOrangeHazardPlacardID|null $lowerOrangeHazardPlacardID
-     * @return self
+     * @return static
      */
     public function setLowerOrangeHazardPlacardID(
         ?LowerOrangeHazardPlacardID $lowerOrangeHazardPlacardID = null,
-    ): self {
+    ): static {
         $this->lowerOrangeHazardPlacardID = $lowerOrangeHazardPlacardID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLowerOrangeHazardPlacardID(): self
+    public function unsetLowerOrangeHazardPlacardID(): static
     {
         $this->lowerOrangeHazardPlacardID = null;
 
@@ -857,9 +857,9 @@ class HazardousItemType
 
     /**
      * @param MarkingID|null $markingID
-     * @return self
+     * @return static
      */
-    public function setMarkingID(?MarkingID $markingID = null): self
+    public function setMarkingID(?MarkingID $markingID = null): static
     {
         $this->markingID = $markingID;
 
@@ -867,9 +867,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMarkingID(): self
+    public function unsetMarkingID(): static
     {
         $this->markingID = null;
 
@@ -896,9 +896,9 @@ class HazardousItemType
 
     /**
      * @param HazardClassID|null $hazardClassID
-     * @return self
+     * @return static
      */
-    public function setHazardClassID(?HazardClassID $hazardClassID = null): self
+    public function setHazardClassID(?HazardClassID $hazardClassID = null): static
     {
         $this->hazardClassID = $hazardClassID;
 
@@ -906,9 +906,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardClassID(): self
+    public function unsetHazardClassID(): static
     {
         $this->hazardClassID = null;
 
@@ -935,9 +935,9 @@ class HazardousItemType
 
     /**
      * @param NetWeightMeasure|null $netWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): self
+    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
     {
         $this->netWeightMeasure = $netWeightMeasure;
 
@@ -945,9 +945,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetWeightMeasure(): self
+    public function unsetNetWeightMeasure(): static
     {
         $this->netWeightMeasure = null;
 
@@ -974,9 +974,9 @@ class HazardousItemType
 
     /**
      * @param NetVolumeMeasure|null $netVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): self
+    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
     {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
@@ -984,9 +984,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetVolumeMeasure(): self
+    public function unsetNetVolumeMeasure(): static
     {
         $this->netVolumeMeasure = null;
 
@@ -1013,9 +1013,9 @@ class HazardousItemType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -1023,9 +1023,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -1052,9 +1052,9 @@ class HazardousItemType
 
     /**
      * @param ContactParty|null $contactParty
-     * @return self
+     * @return static
      */
-    public function setContactParty(?ContactParty $contactParty = null): self
+    public function setContactParty(?ContactParty $contactParty = null): static
     {
         $this->contactParty = $contactParty;
 
@@ -1062,9 +1062,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContactParty(): self
+    public function unsetContactParty(): static
     {
         $this->contactParty = null;
 
@@ -1081,9 +1081,9 @@ class HazardousItemType
 
     /**
      * @param array<SecondaryHazard>|null $secondaryHazard
-     * @return self
+     * @return static
      */
-    public function setSecondaryHazard(?array $secondaryHazard = null): self
+    public function setSecondaryHazard(?array $secondaryHazard = null): static
     {
         $this->secondaryHazard = $secondaryHazard;
 
@@ -1091,9 +1091,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSecondaryHazard(): self
+    public function unsetSecondaryHazard(): static
     {
         $this->secondaryHazard = null;
 
@@ -1101,9 +1101,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSecondaryHazard(): self
+    public function clearSecondaryHazard(): static
     {
         $this->secondaryHazard = [];
 
@@ -1142,9 +1142,9 @@ class HazardousItemType
 
     /**
      * @param SecondaryHazard $secondaryHazard
-     * @return self
+     * @return static
      */
-    public function addToSecondaryHazard(SecondaryHazard $secondaryHazard): self
+    public function addToSecondaryHazard(SecondaryHazard $secondaryHazard): static
     {
         $this->secondaryHazard[] = $secondaryHazard;
 
@@ -1163,9 +1163,9 @@ class HazardousItemType
 
     /**
      * @param SecondaryHazard $secondaryHazard
-     * @return self
+     * @return static
      */
-    public function addOnceToSecondaryHazard(SecondaryHazard $secondaryHazard): self
+    public function addOnceToSecondaryHazard(SecondaryHazard $secondaryHazard): static
     {
         if (!is_array($this->secondaryHazard)) {
             $this->secondaryHazard = [];
@@ -1202,9 +1202,9 @@ class HazardousItemType
 
     /**
      * @param array<HazardousGoodsTransit>|null $hazardousGoodsTransit
-     * @return self
+     * @return static
      */
-    public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): self
+    public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): static
     {
         $this->hazardousGoodsTransit = $hazardousGoodsTransit;
 
@@ -1212,9 +1212,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousGoodsTransit(): self
+    public function unsetHazardousGoodsTransit(): static
     {
         $this->hazardousGoodsTransit = null;
 
@@ -1222,9 +1222,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHazardousGoodsTransit(): self
+    public function clearHazardousGoodsTransit(): static
     {
         $this->hazardousGoodsTransit = [];
 
@@ -1263,9 +1263,9 @@ class HazardousItemType
 
     /**
      * @param HazardousGoodsTransit $hazardousGoodsTransit
-     * @return self
+     * @return static
      */
-    public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): self
+    public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
     {
         $this->hazardousGoodsTransit[] = $hazardousGoodsTransit;
 
@@ -1284,9 +1284,9 @@ class HazardousItemType
 
     /**
      * @param HazardousGoodsTransit $hazardousGoodsTransit
-     * @return self
+     * @return static
      */
-    public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): self
+    public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
     {
         if (!is_array($this->hazardousGoodsTransit)) {
             $this->hazardousGoodsTransit = [];
@@ -1333,9 +1333,9 @@ class HazardousItemType
 
     /**
      * @param EmergencyTemperature|null $emergencyTemperature
-     * @return self
+     * @return static
      */
-    public function setEmergencyTemperature(?EmergencyTemperature $emergencyTemperature = null): self
+    public function setEmergencyTemperature(?EmergencyTemperature $emergencyTemperature = null): static
     {
         $this->emergencyTemperature = $emergencyTemperature;
 
@@ -1343,9 +1343,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmergencyTemperature(): self
+    public function unsetEmergencyTemperature(): static
     {
         $this->emergencyTemperature = null;
 
@@ -1372,9 +1372,9 @@ class HazardousItemType
 
     /**
      * @param FlashpointTemperature|null $flashpointTemperature
-     * @return self
+     * @return static
      */
-    public function setFlashpointTemperature(?FlashpointTemperature $flashpointTemperature = null): self
+    public function setFlashpointTemperature(?FlashpointTemperature $flashpointTemperature = null): static
     {
         $this->flashpointTemperature = $flashpointTemperature;
 
@@ -1382,9 +1382,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFlashpointTemperature(): self
+    public function unsetFlashpointTemperature(): static
     {
         $this->flashpointTemperature = null;
 
@@ -1401,9 +1401,9 @@ class HazardousItemType
 
     /**
      * @param array<AdditionalTemperature>|null $additionalTemperature
-     * @return self
+     * @return static
      */
-    public function setAdditionalTemperature(?array $additionalTemperature = null): self
+    public function setAdditionalTemperature(?array $additionalTemperature = null): static
     {
         $this->additionalTemperature = $additionalTemperature;
 
@@ -1411,9 +1411,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalTemperature(): self
+    public function unsetAdditionalTemperature(): static
     {
         $this->additionalTemperature = null;
 
@@ -1421,9 +1421,9 @@ class HazardousItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalTemperature(): self
+    public function clearAdditionalTemperature(): static
     {
         $this->additionalTemperature = [];
 
@@ -1462,9 +1462,9 @@ class HazardousItemType
 
     /**
      * @param AdditionalTemperature $additionalTemperature
-     * @return self
+     * @return static
      */
-    public function addToAdditionalTemperature(AdditionalTemperature $additionalTemperature): self
+    public function addToAdditionalTemperature(AdditionalTemperature $additionalTemperature): static
     {
         $this->additionalTemperature[] = $additionalTemperature;
 
@@ -1483,9 +1483,9 @@ class HazardousItemType
 
     /**
      * @param AdditionalTemperature $additionalTemperature
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalTemperature(AdditionalTemperature $additionalTemperature): self
+    public function addOnceToAdditionalTemperature(AdditionalTemperature $additionalTemperature): static
     {
         if (!is_array($this->additionalTemperature)) {
             $this->additionalTemperature = [];

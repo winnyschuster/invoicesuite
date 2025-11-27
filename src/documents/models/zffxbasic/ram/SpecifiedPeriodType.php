@@ -54,9 +54,9 @@ class SpecifiedPeriodType
 
     /**
      * @param DateTimeType|null $startDateTime
-     * @return self
+     * @return static
      */
-    public function setStartDateTime(?DateTimeType $startDateTime = null): self
+    public function setStartDateTime(?DateTimeType $startDateTime = null): static
     {
         $this->startDateTime = $startDateTime;
 
@@ -64,9 +64,9 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStartDateTime(): self
+    public function unsetStartDateTime(): static
     {
         $this->startDateTime = null;
 
@@ -93,9 +93,9 @@ class SpecifiedPeriodType
 
     /**
      * @param DateTimeType|null $endDateTime
-     * @return self
+     * @return static
      */
-    public function setEndDateTime(?DateTimeType $endDateTime = null): self
+    public function setEndDateTime(?DateTimeType $endDateTime = null): static
     {
         $this->endDateTime = $endDateTime;
 
@@ -103,9 +103,9 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEndDateTime(): self
+    public function unsetEndDateTime(): static
     {
         $this->endDateTime = null;
 

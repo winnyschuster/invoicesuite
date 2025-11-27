@@ -62,9 +62,9 @@ class InvoiceSuiteIdDTO
      * Set the ID
      *
      * @param  null|string $newId
-     * @return self
+     * @return static
      */
-    public function setId(?string $newId): self
+    public function setId(?string $newId): static
     {
         $this->id = $newId;
 
@@ -95,9 +95,9 @@ class InvoiceSuiteIdDTO
      * Set the ID type
      *
      * @param  null|string $newIdType
-     * @return self
+     * @return static
      */
-    public function setIdType(?string $newIdType): self
+    public function setIdType(?string $newIdType): static
     {
         $this->idType = $newIdType;
 

@@ -61,9 +61,9 @@ class InvoiceSuiteQuantityDTO
      * Sets the value
      *
      * @param  null|float $quantity The value
-     * @return self
+     * @return static
      */
-    public function setQuantity(?float $quantity): self
+    public function setQuantity(?float $quantity): static
     {
         $this->quantity = $quantity;
 
@@ -84,9 +84,9 @@ class InvoiceSuiteQuantityDTO
      * Sets the value's unit
      *
      * @param  null|string $quantityUnit The value's unit
-     * @return self
+     * @return static
      */
-    public function setQuantityUnit(?string $quantityUnit): self
+    public function setQuantityUnit(?string $quantityUnit): static
     {
         $this->quantityUnit = $quantityUnit;
 

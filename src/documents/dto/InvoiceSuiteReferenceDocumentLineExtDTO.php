@@ -94,9 +94,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * Sets the additional document type code
      *
      * @param  null|string $typeCode The additional document type code
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?string $typeCode): self
+    public function setTypeCode(?string $typeCode): static
     {
         $this->typeCode = $typeCode;
 
@@ -117,9 +117,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * Sets the additional document reference-type code
      *
      * @param  null|string $referenceTypeCode The additional document reference-type code
-     * @return self
+     * @return static
      */
-    public function setReferenceTypeCode(?string $referenceTypeCode): self
+    public function setReferenceTypeCode(?string $referenceTypeCode): static
     {
         $this->referenceTypeCode = $referenceTypeCode;
 
@@ -140,9 +140,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * Sets the additional document description
      *
      * @param  null|string $description The additional document description
-     * @return self
+     * @return static
      */
-    public function setDescription(?string $description): self
+    public function setDescription(?string $description): static
     {
         $this->description = $description;
 
@@ -163,9 +163,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * Sets the additional document description
      *
      * @param  null|InvoiceSuiteAttachment $attachment The additional document description
-     * @return self
+     * @return static
      */
-    public function setAttachment(?InvoiceSuiteAttachment $attachment): self
+    public function setAttachment(?InvoiceSuiteAttachment $attachment): static
     {
         $this->attachment = $attachment;
 

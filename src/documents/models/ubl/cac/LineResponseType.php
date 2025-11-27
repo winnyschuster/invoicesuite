@@ -54,9 +54,9 @@ class LineResponseType
 
     /**
      * @param LineReference|null $lineReference
-     * @return self
+     * @return static
      */
-    public function setLineReference(?LineReference $lineReference = null): self
+    public function setLineReference(?LineReference $lineReference = null): static
     {
         $this->lineReference = $lineReference;
 
@@ -64,9 +64,9 @@ class LineResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineReference(): self
+    public function unsetLineReference(): static
     {
         $this->lineReference = null;
 
@@ -83,9 +83,9 @@ class LineResponseType
 
     /**
      * @param array<Response>|null $response
-     * @return self
+     * @return static
      */
-    public function setResponse(?array $response = null): self
+    public function setResponse(?array $response = null): static
     {
         $this->response = $response;
 
@@ -93,9 +93,9 @@ class LineResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResponse(): self
+    public function unsetResponse(): static
     {
         $this->response = null;
 
@@ -103,9 +103,9 @@ class LineResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearResponse(): self
+    public function clearResponse(): static
     {
         $this->response = [];
 
@@ -144,9 +144,9 @@ class LineResponseType
 
     /**
      * @param Response $response
-     * @return self
+     * @return static
      */
-    public function addToResponse(Response $response): self
+    public function addToResponse(Response $response): static
     {
         $this->response[] = $response;
 
@@ -165,9 +165,9 @@ class LineResponseType
 
     /**
      * @param Response $response
-     * @return self
+     * @return static
      */
-    public function addOnceToResponse(Response $response): self
+    public function addOnceToResponse(Response $response): static
     {
         if (!is_array($this->response)) {
             $this->response = [];

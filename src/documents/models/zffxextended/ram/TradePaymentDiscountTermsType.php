@@ -90,9 +90,9 @@ class TradePaymentDiscountTermsType
 
     /**
      * @param DateTimeType|null $basisDateTime
-     * @return self
+     * @return static
      */
-    public function setBasisDateTime(?DateTimeType $basisDateTime = null): self
+    public function setBasisDateTime(?DateTimeType $basisDateTime = null): static
     {
         $this->basisDateTime = $basisDateTime;
 
@@ -100,9 +100,9 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisDateTime(): self
+    public function unsetBasisDateTime(): static
     {
         $this->basisDateTime = null;
 
@@ -129,9 +129,9 @@ class TradePaymentDiscountTermsType
 
     /**
      * @param MeasureType|null $basisPeriodMeasure
-     * @return self
+     * @return static
      */
-    public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): self
+    public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): static
     {
         $this->basisPeriodMeasure = $basisPeriodMeasure;
 
@@ -139,9 +139,9 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisPeriodMeasure(): self
+    public function unsetBasisPeriodMeasure(): static
     {
         $this->basisPeriodMeasure = null;
 
@@ -168,9 +168,9 @@ class TradePaymentDiscountTermsType
 
     /**
      * @param AmountType|null $basisAmount
-     * @return self
+     * @return static
      */
-    public function setBasisAmount(?AmountType $basisAmount = null): self
+    public function setBasisAmount(?AmountType $basisAmount = null): static
     {
         $this->basisAmount = $basisAmount;
 
@@ -178,9 +178,9 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisAmount(): self
+    public function unsetBasisAmount(): static
     {
         $this->basisAmount = null;
 
@@ -207,9 +207,9 @@ class TradePaymentDiscountTermsType
 
     /**
      * @param PercentType|null $calculationPercent
-     * @return self
+     * @return static
      */
-    public function setCalculationPercent(?PercentType $calculationPercent = null): self
+    public function setCalculationPercent(?PercentType $calculationPercent = null): static
     {
         $this->calculationPercent = $calculationPercent;
 
@@ -217,9 +217,9 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCalculationPercent(): self
+    public function unsetCalculationPercent(): static
     {
         $this->calculationPercent = null;
 
@@ -246,9 +246,9 @@ class TradePaymentDiscountTermsType
 
     /**
      * @param AmountType|null $actualDiscountAmount
-     * @return self
+     * @return static
      */
-    public function setActualDiscountAmount(?AmountType $actualDiscountAmount = null): self
+    public function setActualDiscountAmount(?AmountType $actualDiscountAmount = null): static
     {
         $this->actualDiscountAmount = $actualDiscountAmount;
 
@@ -256,9 +256,9 @@ class TradePaymentDiscountTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualDiscountAmount(): self
+    public function unsetActualDiscountAmount(): static
     {
         $this->actualDiscountAmount = null;
 

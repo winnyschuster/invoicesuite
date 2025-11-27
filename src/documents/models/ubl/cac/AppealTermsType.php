@@ -78,9 +78,9 @@ class AppealTermsType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -88,9 +88,9 @@ class AppealTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -98,9 +98,9 @@ class AppealTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -139,9 +139,9 @@ class AppealTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -160,9 +160,9 @@ class AppealTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -209,9 +209,9 @@ class AppealTermsType
 
     /**
      * @param PresentationPeriod|null $presentationPeriod
-     * @return self
+     * @return static
      */
-    public function setPresentationPeriod(?PresentationPeriod $presentationPeriod = null): self
+    public function setPresentationPeriod(?PresentationPeriod $presentationPeriod = null): static
     {
         $this->presentationPeriod = $presentationPeriod;
 
@@ -219,9 +219,9 @@ class AppealTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPresentationPeriod(): self
+    public function unsetPresentationPeriod(): static
     {
         $this->presentationPeriod = null;
 
@@ -248,9 +248,9 @@ class AppealTermsType
 
     /**
      * @param AppealInformationParty|null $appealInformationParty
-     * @return self
+     * @return static
      */
-    public function setAppealInformationParty(?AppealInformationParty $appealInformationParty = null): self
+    public function setAppealInformationParty(?AppealInformationParty $appealInformationParty = null): static
     {
         $this->appealInformationParty = $appealInformationParty;
 
@@ -258,9 +258,9 @@ class AppealTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAppealInformationParty(): self
+    public function unsetAppealInformationParty(): static
     {
         $this->appealInformationParty = null;
 
@@ -287,9 +287,9 @@ class AppealTermsType
 
     /**
      * @param AppealReceiverParty|null $appealReceiverParty
-     * @return self
+     * @return static
      */
-    public function setAppealReceiverParty(?AppealReceiverParty $appealReceiverParty = null): self
+    public function setAppealReceiverParty(?AppealReceiverParty $appealReceiverParty = null): static
     {
         $this->appealReceiverParty = $appealReceiverParty;
 
@@ -297,9 +297,9 @@ class AppealTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAppealReceiverParty(): self
+    public function unsetAppealReceiverParty(): static
     {
         $this->appealReceiverParty = null;
 
@@ -326,9 +326,9 @@ class AppealTermsType
 
     /**
      * @param MediationParty|null $mediationParty
-     * @return self
+     * @return static
      */
-    public function setMediationParty(?MediationParty $mediationParty = null): self
+    public function setMediationParty(?MediationParty $mediationParty = null): static
     {
         $this->mediationParty = $mediationParty;
 
@@ -336,9 +336,9 @@ class AppealTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMediationParty(): self
+    public function unsetMediationParty(): static
     {
         $this->mediationParty = null;
 

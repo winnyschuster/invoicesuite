@@ -61,9 +61,9 @@ class InvoiceSuiteMeasureDTO
      * Sets the value
      *
      * @param  null|float $value The value
-     * @return self
+     * @return static
      */
-    public function setValue(?float $value): self
+    public function setValue(?float $value): static
     {
         $this->value = $value;
 
@@ -84,9 +84,9 @@ class InvoiceSuiteMeasureDTO
      * Sets the value's unit
      *
      * @param  null|string $unit The value's unit
-     * @return self
+     * @return static
      */
-    public function setUnit(?string $unit): self
+    public function setUnit(?string $unit): static
     {
         $this->unit = $unit;
 

@@ -73,13 +73,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Create a DTO from this document
      *
      * @param  null|InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
-     * @return self
+     * @return static
      *
      * @phpstan-param-out InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
      */
     public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
-    ): self {
+    ): static {
         // Initialize
 
         $this->resetCurrentDocumentSubPointers();
@@ -2543,7 +2543,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function getDocumentNo(
         ?string &$newDocumentNo
-    ): self {
+    ): static {
         $newDocumentNo = $this->getCrossIndustryRootObject()->getExchangedDocument()?->getID()?->getValue() ?? '';
 
         return $this;
@@ -2559,7 +2559,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function getDocumentType(
         ?string &$newDocumentType
-    ): self {
+    ): static {
         $newDocumentType = $this->getCrossIndustryRootObject()->getExchangedDocument()?->getTypeCode()?->getValue() ?? '';
 
         return $this;
@@ -2569,13 +2569,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the document description
      *
      * @param  null|string $newDocumentDescription __BT-X-2, From EXTENDED__ The documenttype as free text
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentDescription
      */
     public function getDocumentDescription(
         ?string &$newDocumentDescription
-    ): self {
+    ): static {
         $newDocumentDescription = '';
 
         return $this;
@@ -2585,13 +2585,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the document language
      *
      * @param  null|string $newDocumentLanguage __BT-X-4, From EXTENDED__ Language indicator. The language code in which the document was written
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentLanguage
      */
     public function getDocumentLanguage(
         ?string &$newDocumentLanguage
-    ): self {
+    ): static {
         $newDocumentLanguage = '';
 
         return $this;
@@ -2601,13 +2601,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the document date (e.g. invoice date)
      *
      * @param  null|DateTimeInterface $newDocumentDate __BT-2, From MINIMUM__ Date of the document. The date when the document was issued by the seller
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface|null $newDocumentDate
      */
     public function getDocumentDate(
         ?DateTimeInterface &$newDocumentDate
-    ): self {
+    ): static {
         $newDocumentDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
             $this->getCrossIndustryRootObject()->getExchangedDocument()?->getIssueDateTime()?->getDateTimeString()?->getValue() ?? '',
             $this->getCrossIndustryRootObject()->getExchangedDocument()?->getIssueDateTime()?->getDateTimeString()?->getFormat() ?? '',
@@ -2620,13 +2620,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the document period
      *
      * @param  null|DateTimeInterface $newCompleteDate __BT-X-6-000, From EXTENDED__ Contractual due date of the document
-     * @return self
+     * @return static
      *
      * @phpstan-param-out null $newCompleteDate
      */
     public function getDocumentCompleteDate(
         ?DateTimeInterface &$newCompleteDate
-    ): self {
+    ): static {
         $newCompleteDate = null;
 
         return $this;
@@ -2636,13 +2636,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the document currency
      *
      * @param  null|string $newDocumentCurrency __BT-5, From MINIMUM__ Code for the invoice currency
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentCurrency
      */
     public function getDocumentCurrency(
         ?string &$newDocumentCurrency
-    ): self {
+    ): static {
         $newDocumentCurrency = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()
             ?->getApplicableHeaderTradeSettlement()
             ?->getInvoiceCurrencyCode()
@@ -2655,13 +2655,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the new document tax currency
      *
      * @param  null|string $newDocumentTaxCurrency __BT-6, From BASIC WL__ Code for the tax currency
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDocumentTaxCurrency
      */
     public function getDocumentTaxCurrency(
         ?string &$newDocumentTaxCurrency
-    ): self {
+    ): static {
         $newDocumentTaxCurrency = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()
             ?->getApplicableHeaderTradeSettlement()
             ?->getTaxCurrencyCode()
@@ -2674,13 +2674,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the new status of the copy indicator
      *
      * @param  bool $newDocumentIsCopy __BT-X-1-00, From EXTENDED__ Indicates that the document is a copy
-     * @return self
+     * @return static
      *
      * @phpstan-param-out boolean $newDocumentIsCopy
      */
     public function getDocumentIsCopy(
         ?bool &$newDocumentIsCopy = null
-    ): self {
+    ): static {
         $newDocumentIsCopy = false;
 
         return $this;
@@ -2690,13 +2690,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Gets the status of the test indicator
      *
      * @param  null|bool $newDocumentIsTest __BT-X-3-00, From EXTENDED__ Indicates that the document is a test
-     * @return self
+     * @return static
      *
      * @phpstan-param-out boolean $newDocumentIsTest
      */
     public function getDocumentIsTest(
         ?bool &$newDocumentIsTest
-    ): self {
+    ): static {
         $newDocumentIsTest = false;
 
         return $this;
@@ -2738,7 +2738,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newContent     __BT-22, From BASIC WL__ Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode __BT-X-5, From EXTENDED__ Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode __BT-21, From BASIC WL__ Qualification of the free text for the invoice
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newContent
      * @phpstan-param-out string $newContentCode
@@ -2748,7 +2748,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self {
+    ): static {
         /**
          * @var array<NoteType>
          */
@@ -2802,7 +2802,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newStartDate   __BT-73, From BASIC WL__ Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     __BT-74, From BASIC WL__ End of the billing period
      * @param  null|string            $newDescription __BT-X-264, From EXTENDED__ Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface|null $newStartDate
      * @phpstan-param-out DateTimeInterface|null $newEndDate
@@ -2812,7 +2812,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self {
+    ): static {
         /**
          * @var array<SpecifiedPeriodType>
          */
@@ -2871,7 +2871,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType      __BT-X-290, From EXTENDED__ Type of the posting reference
      * @param  null|string $newAccountId __BT-19, From BASIC WL__ Posting reference of the byuer
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newAccountId
@@ -2879,7 +2879,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self {
+    ): static {
         /**
          * @var array<TradeAccountingAccountType>
          */
@@ -2925,7 +2925,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-14, From EN 16931__ Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-146, From EXTENDED__ Seller's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -2933,7 +2933,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentSellerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
 
@@ -2975,7 +2975,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-13, From MINIMUM__ Buyers's order number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-147, From EXTENDED__ Buyer's order date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -2983,7 +2983,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentBuyerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<ReferencedDocumentType>
          */
@@ -3028,7 +3028,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-X-403, From EXTENDED__ Quotation number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-404, From EXTENDED__ Quotation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -3036,7 +3036,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentQuotationReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
 
@@ -3078,7 +3078,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  string                 $newReferenceNumber __BT-12, From BASIC WL__ Contract number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-26, From EXTENDED__ Contract date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3086,7 +3086,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentContractReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<\horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>
          */
@@ -3135,7 +3135,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string                 $newReferenceTypeCode      __BT-18-1, From EN 16931__ Additional document reference-type code
      * @param  null|string                 $newDescription            __BT-123, From EN 16931__ Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -3151,7 +3151,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
         $newTypeCode = '';
@@ -3198,7 +3198,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber __BT-25, From BASIC WL__ Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   __BT-26, From BASIC WL__Date of the previous invoice
      * @param  null|string            $newTypeCode        __BT-X-555, From EXTENDED__ Type code of previous invoice
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3208,7 +3208,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self {
+    ): static {
         /**
          * @var array<ReferencedDocumentType>
          */
@@ -3254,7 +3254,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newReferenceNumber __BT-11, From EN 16931__ Project number
      * @param  null|string $newName            __BT-11-0, From EN 16931__ Project name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newName
@@ -3262,7 +3262,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentProjectReference(
         ?string &$newReferenceNumber,
         ?string &$newName
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newName = '';
 
@@ -3294,7 +3294,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-X-150, From EXTENDED__
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-151, From EXTENDED__
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -3302,7 +3302,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentUltimateCustomerOrderReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
 
@@ -3344,7 +3344,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-16, From BASIC WL__ Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-200, From EXTENDED__ Shipping notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out DateTimeInterface|null $newReferenceDate
@@ -3352,7 +3352,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentDespatchAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         /**
          * @var array<ReferencedDocumentType>
          */
@@ -3397,7 +3397,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-15, From BASIC WL__ Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-201, From EXTENDED__ Receipt notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -3405,7 +3405,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentReceivingAdviceReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
 
@@ -3437,7 +3437,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber __BT-X-202, From EXTENDED__ Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   __BT-X-203, From EXTENDED__ Delivery slip date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out null $newReferenceDate
@@ -3445,7 +3445,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentDeliveryNoteReference(
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceDate = null;
 
@@ -3456,13 +3456,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate __BT-72, From BASIC WL__ Actual delivery date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out DateTimeInterface|null $newDate
      */
     public function getDocumentSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self {
+    ): static {
         $newDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
             $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getActualDeliverySupplyChainEvent()?->getOccurrenceDateTime()?->getDateTimeString()?->getValue(),
             $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getActualDeliverySupplyChainEvent()?->getOccurrenceDateTime()?->getDateTimeString()?->getFormat()
@@ -3475,13 +3475,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the identifier assigned by the buyer and used for internal routing
      *
      * @param  null|string $newBuyerReference __BT-10, From MINIMUM__ An identifier assigned by the buyer and used for internal routing
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newBuyerReference
      */
     public function getDocumentBuyerReference(
         ?string &$newBuyerReference
-    ): self {
+    ): static {
         $newBuyerReference = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerReference()?->getValue() ?? '';
 
         return $this;
@@ -3495,13 +3495,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the seller/supplier party
      *
      * @param  null|string $newName __BT-27, From MINIMUM__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentSellerName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTradeParty()?->getName()?->getValue() ?? '';
 
         return $this;
@@ -3541,13 +3541,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the seller/supplier party
      *
      * @param  null|string $newId __BT-29, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentSellerId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -3598,7 +3598,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-29-0, From BASIC WL__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -3606,7 +3606,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentSellerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -3658,7 +3658,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -3666,7 +3666,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentSellerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<TaxRegistrationType>
          */
@@ -3723,7 +3723,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-37, From BASIC WL__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-40, From MINIMUM__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-39, From BASIC WL__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -3741,7 +3741,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<TradeAddressType>
          */
@@ -3799,7 +3799,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-30-1, From MINIMUM__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-30, From MINIMUM__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-28, From BASIC WL__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -3809,7 +3809,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<LegalOrganizationType>
          */
@@ -3855,7 +3855,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-42, From EN 16931__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-107, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-43, From EN 16931__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -3869,7 +3869,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -3914,7 +3914,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-34-1, From BASIC WL__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-34, From BASIC WL__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -3922,7 +3922,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentSellerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<UniversalCommunicationType>
          */
@@ -3947,13 +3947,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the buyer/customer party
      *
      * @param  null|string $newName __BT-44, From MINIMUM__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentBuyerName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getName()?->getValue() ?? '';
 
         return $this;
@@ -3993,13 +3993,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the buyer/customer party
      *
      * @param  null|string $newId __BT-46, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentBuyerId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -4050,7 +4050,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-46-0, From BASIC WL__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-46-1, From BASIC WL__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -4058,7 +4058,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentBuyerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -4110,7 +4110,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-48-0, From MINIMUM__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-48, From MINIMUM__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -4118,7 +4118,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentBuyerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<TaxRegistrationType>
          */
@@ -4175,7 +4175,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-52, From BASIC WL__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-55, From BASIC WL__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-54, From BASIC WL__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -4193,7 +4193,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<TradeAddressType>
          */
@@ -4251,7 +4251,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-47-1, From MINIMUM__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-47, From MINIMUM__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-45, From BASIC WL__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -4261,7 +4261,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<LegalOrganizationType>
          */
@@ -4307,7 +4307,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-57, From EN 16931__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-115, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-58, From EN 16931__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -4321,7 +4321,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -4366,7 +4366,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-49-1, From BASIC WL__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-49, From BASIC WL__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -4374,7 +4374,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentBuyerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<UniversalCommunicationType>
          */
@@ -4399,13 +4399,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the tax representative party
      *
      * @param  null|string $newName __BT-62, From BASIC WL__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentTaxRepresentativeName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getName()?->getValue() ?? '';
 
         return $this;
@@ -4445,13 +4445,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the tax representative party
      *
      * @param  null|string $newId __BT-X-116, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -4502,7 +4502,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-117, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -4510,7 +4510,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -4562,7 +4562,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-63-0, From BASIC WL__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-63, From BASIC WL__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -4570,7 +4570,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<TaxRegistrationType>
          */
@@ -4627,7 +4627,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-66, From BASIC WL__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-69, From BASIC WL__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-68, From BASIC WL__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -4645,7 +4645,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<TradeAddressType>
          */
@@ -4703,7 +4703,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-, From __ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-, From __ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-, From __ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -4713,7 +4713,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<LegalOrganizationType>
          */
@@ -4759,7 +4759,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-122, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-123, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-124, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -4773,7 +4773,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -4818,7 +4818,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-125-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -4826,7 +4826,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<UniversalCommunicationType>
          */
@@ -4851,13 +4851,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the product end-user party
      *
      * @param  null|string $newName __BT-X-128, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentProductEndUserName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -4887,13 +4887,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the product end-user party
      *
      * @param  null|string $newId __BT-X-126, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentProductEndUserId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -4924,7 +4924,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-127, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-127-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -4932,7 +4932,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentProductEndUserGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -4964,7 +4964,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-, From __ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-, From __ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -4972,7 +4972,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentProductEndUserTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -5009,7 +5009,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-X-400, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-X-401, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-X-402, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -5027,7 +5027,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -5065,7 +5065,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-129-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-129, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-130, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -5075,7 +5075,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -5111,7 +5111,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-133, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-134, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-135, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -5125,7 +5125,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -5160,7 +5160,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-143-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-143, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -5168,7 +5168,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentProductEndUserCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -5183,13 +5183,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the Ship-To party
      *
      * @param  null|string $newName __BT-70, From BASIC WL__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getName()?->getValue() ?? '';
 
         return $this;
@@ -5229,13 +5229,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId __BT-71, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -5286,7 +5286,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-71-0, From BASIC WL__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-71-1, From BASIC WL__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -5294,7 +5294,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -5346,7 +5346,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-161-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-161, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -5354,7 +5354,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<TaxRegistrationType>
          */
@@ -5411,7 +5411,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-77, From BASIC WL__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-80, From BASIC WL__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-79, From BASIC WL__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -5429,7 +5429,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<TradeAddressType>
          */
@@ -5487,7 +5487,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-153-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-153, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-154, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -5497,7 +5497,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<LegalOrganizationType>
          */
@@ -5543,7 +5543,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-157, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-158, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-159, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -5557,7 +5557,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -5602,7 +5602,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-160, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-160-0, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -5610,7 +5610,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<UniversalCommunicationType>
          */
@@ -5635,13 +5635,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the ultimate Ship-To party
      *
      * @param  null|string $newName __BT-X-164, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentUltimateShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -5671,13 +5671,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId __BT-X-162, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentUltimateShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -5708,7 +5708,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-163, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-163-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -5716,7 +5716,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -5748,7 +5748,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-180-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-180, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -5756,7 +5756,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -5793,7 +5793,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-X-176, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-X-177, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-X-178, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -5811,7 +5811,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -5849,7 +5849,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-165-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-165, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-166, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -5859,7 +5859,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -5895,7 +5895,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-169, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-170, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-171, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -5909,7 +5909,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -5944,7 +5944,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-83, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-83-0, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -5952,7 +5952,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -5967,13 +5967,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the Ship-From party
      *
      * @param  null|string $newName __BT-X-183, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentShipFromName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -6003,13 +6003,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the Ship-From party
      *
      * @param  null|string $newId __BT-X-181, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentShipFromId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -6040,7 +6040,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-182, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-182-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -6048,7 +6048,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentShipFromGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -6080,7 +6080,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-199-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-199, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -6088,7 +6088,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentShipFromTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -6125,7 +6125,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-X-195, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-X-196, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-X-197, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -6143,7 +6143,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6181,7 +6181,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-184-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-184, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-185, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -6191,7 +6191,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -6227,7 +6227,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-188, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-189, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-190, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -6241,7 +6241,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -6276,7 +6276,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-199, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-199-0, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -6284,7 +6284,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentShipFromCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -6299,13 +6299,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the Invoicer party
      *
      * @param  null|string $newName __BT-X-207, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentInvoicerName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -6335,13 +6335,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the Invoicer party
      *
      * @param  null|string $newId __BT-X-205, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentInvoicerId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -6372,7 +6372,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-206, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-206-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -6380,7 +6380,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentInvoicerGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -6412,7 +6412,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-223-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-223, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -6420,7 +6420,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentInvoicerTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -6457,7 +6457,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-X-219, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-X-220, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-X-221, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -6475,7 +6475,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6513,7 +6513,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-208-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-208, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-209, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -6523,7 +6523,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -6559,7 +6559,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-212, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-213, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-214, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -6573,7 +6573,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -6608,7 +6608,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-222-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-222, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -6616,7 +6616,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentInvoicerCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -6631,13 +6631,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the Invoicee party
      *
      * @param  null|string $newName __BT-X-226, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentInvoiceeName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -6667,13 +6667,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the Invoicee party
      *
      * @param  null|string $newId __BT-X-224, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentInvoiceeId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -6704,7 +6704,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-225, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-225-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -6712,7 +6712,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentInvoiceeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -6744,7 +6744,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-242-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-242, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -6752,7 +6752,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentInvoiceeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -6789,7 +6789,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-X-238, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-X-239, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-X-240, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -6807,7 +6807,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6845,7 +6845,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-227-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-227, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-228, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -6855,7 +6855,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -6891,7 +6891,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-231, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-232, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-233, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -6905,7 +6905,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -6940,7 +6940,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-241-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-241, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -6948,7 +6948,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentInvoiceeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -6963,13 +6963,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the Payee party
      *
      * @param  null|string $newName __BT-59, From BASIC WL__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentPayeeName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getName()?->getValue() ?? '';
 
         return $this;
@@ -7009,13 +7009,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the Payee party
      *
      * @param  null|string $newId __BT-60, From BASIC WL__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPayeeId(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -7066,7 +7066,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-60-0, From BASIC WL__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-60-1, From BASIC WL__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -7074,7 +7074,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPayeeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -7126,7 +7126,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-257-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-257, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -7134,7 +7134,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPayeeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         /**
          * @var array<TaxRegistrationType>
          */
@@ -7191,7 +7191,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT-X-253, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT-X-254, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT-X-255, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -7209,7 +7209,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         /**
          * @var array<TradeAddressType>
          */
@@ -7267,7 +7267,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-61-1, From BASIC WL__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-61, From BASIC WL__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-243, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -7277,7 +7277,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         /**
          * @var array<LegalOrganizationType>
          */
@@ -7323,7 +7323,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-246, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-247, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-248, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -7337,7 +7337,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -7382,7 +7382,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-256-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-256, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -7390,7 +7390,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPayeeCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         /**
          * @var array<UniversalCommunicationType>
          */
@@ -7455,7 +7455,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeBic            __BT-86, From EN 16931__ Identifier of the payment service provider
      * @param  null|string $newPaymentReference    __BT-83, From BASIC WL__ Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             __BT-89, From BASIC WL__ Identification of the mandate reference
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTypeCode
      * @phpstan-param-out string $newName
@@ -7481,7 +7481,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPayeeBic,
         ?string &$newPaymentReference,
         ?string &$newMandate
-    ): self {
+    ): static {
         /**
          * @var array<TradeSettlementPaymentMeansType>
          */
@@ -7547,13 +7547,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get Unique bank details of the payee or the seller
      *
      * @param  null|string $newId __BT-90, From BASIC WL__ Creditor identifier
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
-    ): self {
+    ): static {
         /**
          * @var array<IDType>
          */
@@ -7611,7 +7611,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newDescription __BT-20, From _BASIC WL__ Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     __BT-9, From BASIC WL__ Date by which payment is due
      * @param  null|string            $newMandate     __BT-89, From BASIC WL__ Identification of the mandate reference
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newDescription
      * @phpstan-param-out string $newMandate
@@ -7620,7 +7620,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newDescription,
         ?DateTimeInterface &$newDueDate,
         ?string &$newMandate
-    ): self {
+    ): static {
         InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentdiscount');
         InvoiceSuitePointerUtils::resetSingle('documentpaymenttermpaymentpenalty');
 
@@ -7673,7 +7673,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null        $newBaseDate        __BT-X-282, From EXTENDED__ Due date reference date
      * @param  null|float  $newBasePeriod      __BT-X-283, From EXTENDED__ Maturity period (basis)
      * @param  null|string $newBasePeriodUnit  __BT-X-284, From EXTENDED__ Maturity period (unit)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newBaseAmount
      * @phpstan-param-out float $newDiscountAmount
@@ -7689,7 +7689,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self {
+    ): static {
         $newBaseAmount = 0.0;
         $newDiscountAmount = 0.0;
         $newDiscountPercent = 0.0;
@@ -7729,7 +7729,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null        $newBaseDate       __BT-X-282, From EXTENDED__ Due date reference date
      * @param  null|float  $newBasePeriod     __BT-X-283, From EXTENDED__ Maturity period (basis)
      * @param  null|string $newBasePeriodUnit __BT-X-284, From EXTENDED__ Maturity period (unit)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newBaseAmount
      * @phpstan-param-out float $newPenaltyAmount
@@ -7745,7 +7745,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newBaseDate,
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
-    ): self {
+    ): static {
         $newBaseAmount = 0.0;
         $newPenaltyAmount = 0.0;
         $newPenaltyPercent = 0.0;
@@ -7802,7 +7802,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newExemptionReasonCode __BT-121, From BASIC WL__ Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          __BT-7-00, From EN 16931__ Date on which tax is due
      * @param  null|string            $newTaxDueCode          __BT-8, From BASIC WL__ Code for the date on which tax is due
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxCategory
      * @phpstan-param-out string $newTaxType
@@ -7824,7 +7824,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newExemptionReasonCode,
         ?DateTimeInterface &$newTaxDueDate,
         ?string &$newTaxDueCode
-    ): self {
+    ): static {
         /**
          * @var array<TradeTaxType>
          */
@@ -7894,7 +7894,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newAllowanceChargeReason     __BT-98/BT-105, From BASIC WL__ Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode __BT-97/BT-104, From BASIC WL__ Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    __BT-94/BT-101, From BASIC WL__ Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      *
      * @phpstan-param-out bool $newChargeIndicator
      * @phpstan-param-out float $newAllowanceChargeAmount
@@ -7916,7 +7916,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self {
+    ): static {
         /**
          * @var array<TradeAllowanceChargeType>
          */
@@ -7968,7 +7968,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newChargeAmount
      * @phpstan-param-out string $newDescription
@@ -7982,7 +7982,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxCategory,
         ?string &$newTaxType,
         ?float &$newTaxPercent
-    ): self {
+    ): static {
         $newChargeAmount = 0.0;
         $newDescription = '';
         $newTaxCategory = '';
@@ -8008,7 +8008,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float $newDueAmount           Payment amount due
      * @param  null|float $newPrepaidAmount       Prepayment amount
      * @param  null|float $newRoungingAmount      Rounding amount
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newNetAmount
      * @phpstan-param-out float $newChargeTotalAmount
@@ -8032,7 +8032,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newDueAmount,
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
-    ): self {
+    ): static {
         $documentSummation = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradeSettlementHeaderMonetarySummation();
 
         $taxTotalAmounts = $documentSummation?->getTaxTotalAmount() ?? [];
@@ -8088,7 +8088,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newParentPositionId     __BT-X-304, From EXTENDED__ Identification of the parent position
      * @param  null|string $newLineStatusCode       __BT-X-7, From EXTENDED__ Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
      * @param  null|string $newLineStatusReasonCode __BT-X-8, From EXTENDED__ Type to specify whether the invoice line is
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPositionId
      * @phpstan-param-out string $newParentPositionId
@@ -8100,7 +8100,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newParentPositionId,
         ?string &$newLineStatusCode,
         ?string &$newLineStatusReasonCode
-    ): self {
+    ): static {
         $newPositionId = '';
         $newParentPositionId = '';
         $newLineStatusCode = '';
@@ -8135,7 +8135,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newContent     __BT-127, From BASIC__ Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode __BT-X-9, From EXTENDED__ Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode __BT-X-10, From EXTENDED__ Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newContent
      * @phpstan-param-out string $newContentCode
@@ -8145,7 +8145,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newContent,
         ?string &$newContentCode,
         ?string &$newSubjectCode
-    ): self {
+    ): static {
         $newContent = '';
         $newContentCode = '';
         $newSubjectCode = '';
@@ -8169,7 +8169,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductBrandName          __BT-X-535. From EXTENDED__ Brand name of the product
      * @param  null|string $newProductModelName          __BT-X-536. From EXTENDED__ Model name of the product
      * @param  null|string $newProductOriginTradeCountry __BT-159, From EN 16931__ Code indicating the country the goods came from
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductId
      * @phpstan-param-out string $newProductName
@@ -8199,7 +8199,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductBrandName,
         ?string &$newProductModelName,
         ?string &$newProductOriginTradeCountry
-    ): self {
+    ): static {
         $newProductId = '';
         $newProductName = '';
         $newProductDescription = '';
@@ -8245,7 +8245,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductCharacteristicType         __BT-X-11, From EXTENDED__ Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue __BT-X-12, From EXTENDED__ Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  __BT-X-12-0, From EXTENDED__ Unit of value of the characteristic
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductCharacteristicDescription
      * @phpstan-param-out string $newProductCharacteristicValue
@@ -8259,7 +8259,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductCharacteristicType,
         ?float &$newProductCharacteristicMeasureValue,
         ?string &$newProductCharacteristicMeasureUnit
-    ): self {
+    ): static {
         $newProductCharacteristicDescription = '';
         $newProductCharacteristicValue = '';
         $newProductCharacteristicType = '';
@@ -8296,7 +8296,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductClassificationListId        __BT-158-1, From EN 16931__ Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId __BT-158-2, From EN 16931__ Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname __BT-X-138, From EXTENDED__ Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductClassificationCode
      * @phpstan-param-out string $newProductClassificationListId
@@ -8308,7 +8308,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductClassificationListId,
         ?string &$newProductClassificationListVersionId,
         ?string &$newProductClassificationCodeClassname
-    ): self {
+    ): static {
         $newProductClassificationCode = '';
         $newProductClassificationListId = '';
         $newProductClassificationListVersionId = '';
@@ -8350,7 +8350,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductIndustryId       __BT-X-309, From EXTENDED__ Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     __BT-X-20, From EXTENDED__ Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit __BT-X-20-1, From EXTENDED__ Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newProductId
      * @phpstan-param-out string $newProductName
@@ -8374,7 +8374,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newProductIndustryId,
         ?float &$newProductUnitQuantity,
         ?string &$newProductUnitQuantityUnit
-    ): self {
+    ): static {
         $newProductId = '';
         $newProductName = '';
         $newProductDescription = '';
@@ -8415,7 +8415,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newReferenceNumber     __BT-X-537, From EXTENDED__ Seller's order confirmation number
      * @param  null|string $newReferenceLineNumber __BT-X-538, From EXTENDED__ Seller's order confirmation line number
      * @param  null        $newReferenceDate       __BT-X-539, From EXTENDED__ Seller's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8425,7 +8425,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8459,7 +8459,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     __BT-X-537, From EXTENDED__ Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber __BT-X-538, From EXTENDED__ Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-539, From EXTENDED__ Buyer's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8469,7 +8469,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber = null,
         ?string &$newReferenceLineNumber = null,
         ?DateTimeInterface &$newReferenceDate = null
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8503,7 +8503,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     __BT-X-310, From EXTENDED__ Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber __BT-X-311, From EXTENDED__ Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-312, From EXTENDED__ Buyer's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8513,7 +8513,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8547,7 +8547,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     __BT-X-24, From EXTENDED__ Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber __BT-X-25, From EXTENDED__ Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-26, From EXTENDED__ Buyer's order confirmation date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8557,7 +8557,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8595,7 +8595,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string                 $newReferenceTypeCode      __BT-X-32, From EXTENDED__ Additional document reference-type code
      * @param  null|string                 $newDescription            __BT-X-299, From EXTENDED__ Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment __BT-X-31, From EXTENDED__ Additional document attachment
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8613,7 +8613,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceTypeCode,
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8651,7 +8651,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     __BT-X-43, From EXTENDED__ Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber __BT-X-44, From EXTENDED__ Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-45, From EXTENDED__ Ultimate customer order date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8661,7 +8661,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8695,7 +8695,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8705,7 +8705,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8739,7 +8739,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     __BT-X-89, From EXTENDED__ Receipt notification number
      * @param  null|string            $newReferenceLineNumber __BT-X-90, From EXTENDED__ Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-91, From EXTENDED__ Receipt notification date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8749,7 +8749,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8783,7 +8783,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     __BT-X-92, From EXTENDED__ Delivery slip number
      * @param  null|string            $newReferenceLineNumber __BT-X-93, From EXTENDED__ Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-94, From EXTENDED__ Delivery slip date
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8793,7 +8793,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceNumber,
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8828,7 +8828,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceLineNumber __BT-X-540, From EXTENDED__ Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       __BT-X-333, From EXTENDED__ Date of the previous invoice
      * @param  null|string            $newTypeCode            __BT-X-332, From EXTENDED__ Type code of previous invoice
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newReferenceNumber
      * @phpstan-param-out string $newReferenceLineNumber
@@ -8840,7 +8840,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
-    ): self {
+    ): static {
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8865,7 +8865,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newGrossPrice                  __BT-148, From BASIC__ Unit price excluding sales tax before deduction of the discount on the item price
      * @param  null|float  $newGrossPriceBasisQuantity     __BT-149-1, From BASIC__ Number of item units for which the price applies
      * @param  null|string $newGrossPriceBasisQuantityUnit __BT-150-1, From BASIC__ Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newGrossPrice
      * @phpstan-param-out float $newGrossPriceBasisQuantity
@@ -8875,7 +8875,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newGrossPrice,
         ?float &$newGrossPriceBasisQuantity,
         ?string &$newGrossPriceBasisQuantityUnit
-    ): self {
+    ): static {
         $newGrossPrice = 0.0;
         $newGrossPriceBasisQuantity = 0.0;
         $newGrossPriceBasisQuantityUnit = '';
@@ -8912,7 +8912,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount __BT-X-35, From EXTENDED__ Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      __BT-X-36, From EXTENDED__ Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  __BT-X-313, From EXTENDED__ Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newGrossPriceAllowanceChargeAmount
      * @phpstan-param-out bool $newIsCharge
@@ -8928,7 +8928,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newGrossPriceAllowanceChargeBasisAmount,
         ?string &$newGrossPriceAllowanceChargeReason,
         ?string &$newGrossPriceAllowanceChargeReasonCode
-    ): self {
+    ): static {
         $newGrossPriceAllowanceChargeAmount = 0.0;
         $newIsCharge = false;
         $newGrossPriceAllowanceChargePercent = 0.0;
@@ -8955,7 +8955,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newNetPrice                  __BT-146, From BASIC__ Unit price excluding sales tax after deduction of the discount on the item price
      * @param  null|float  $newNetPriceBasisQuantity     __BT-149, From BASIC__ Number of item units for which the price applies
      * @param  null|string $newNetPriceBasisQuantityUnit __BT-150, From BASIC__ Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newNetPrice
      * @phpstan-param-out float $newNetPriceBasisQuantity
@@ -8965,7 +8965,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newNetPrice,
         ?float &$newNetPriceBasisQuantity,
         ?string &$newNetPriceBasisQuantityUnit
-    ): self {
+    ): static {
         $newNetPrice = 0.0;
         $newNetPriceBasisQuantity = 0.0;
         $newNetPriceBasisQuantityUnit = '';
@@ -8982,7 +8982,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newTaxPercent          __BT-X-42, From EXTENDED__ Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     __BT-X-39, From EXTENDED__ Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode __BT-X-41, From EXTENDED__ Reason for tax exemption (Code)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxCategory
      * @phpstan-param-out string $newTaxType
@@ -8998,7 +8998,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode
-    ): self {
+    ): static {
         $newTaxCategory = '';
         $newTaxType = '';
         $newTaxAmount = 0.0;
@@ -9018,7 +9018,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newChargeFreeQuantityUnit __BT-X-46-0, From EXTENDED__ Charge Free quantity unit
      * @param  null|float  $newPackageQuantity        __BT-X-47, From EXTENDED__ Package quantity
      * @param  null|string $newPackageQuantityUnit    __BT-X-47-0, From EXTENDED__ Package quantity unit
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newQuantity
      * @phpstan-param-out string $newQuantityUnit
@@ -9034,7 +9034,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newChargeFreeQuantityUnit,
         ?float &$newPackageQuantity,
         ?string &$newPackageQuantityUnit
-    ): self {
+    ): static {
         $newQuantity = 0.0;
         $newQuantityUnit = '';
         $newChargeFreeQuantity = 0.0;
@@ -9049,13 +9049,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the Ship-To party from latest position
      *
      * @param  string $newName __BT-X-50, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentPositionShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -9085,13 +9085,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the Ship-To party
      *
      * @param  null|string $newId __BT-X-48, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPositionShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -9122,7 +9122,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-49, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-49-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -9130,7 +9130,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -9162,7 +9162,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-66-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-66, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -9170,7 +9170,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -9207,7 +9207,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -9225,7 +9225,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -9263,7 +9263,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-51-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-51, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-52, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -9273,7 +9273,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -9309,7 +9309,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT-X-55, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT-X-56, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT-X-57, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -9323,7 +9323,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -9358,7 +9358,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-65-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-65, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -9366,7 +9366,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -9377,13 +9377,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the name of the ultimate Ship-To party from latest position
      *
      * @param  null|string $newName __BT-X-69, From EXTENDED__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newName
      */
     public function getDocumentPositionUltimateShipToName(
         ?string &$newName
-    ): self {
+    ): static {
         $newName = '';
 
         return $this;
@@ -9413,13 +9413,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId __BT-X-67, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newId
      */
     public function getDocumentPositionUltimateShipToId(
         ?string &$newId
-    ): self {
+    ): static {
         $newId = '';
 
         return $this;
@@ -9450,7 +9450,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     __BT-X-68, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-68-0, From EXTENDED__ Type of the global identifier of the party
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
@@ -9458,7 +9458,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionUltimateShipToGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
-    ): self {
+    ): static {
         $newGlobalId = '';
         $newGlobalIdType = '';
 
@@ -9490,7 +9490,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType __BT-X-84-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-X-84, From EXTENDED__ Tax identification number
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
@@ -9498,7 +9498,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionUltimateShipToTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
-    ): self {
+    ): static {
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
 
@@ -9535,7 +9535,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         __BT_X-80, From EXTENDED__ Name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    __BT_X-81, From EXTENDED__ Country in which the party's address is located
      * @param  null|string $newSubDivision  __BT_X-82, From EXTENDED__ Region or federal state in which the party's address is located
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newAddressLine1
      * @phpstan-param-out string $newAddressLine2
@@ -9553,7 +9553,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCity,
         ?string &$newCountryId,
         ?string &$newSubDivision
-    ): self {
+    ): static {
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -9591,7 +9591,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType __BT-X-70-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-70, From EXTENDED__ Identification number of the legal registration of the party
      * @param  null|string $newName __BT-X-71, From EXTENDED__ Name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newId
@@ -9601,7 +9601,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
-    ): self {
+    ): static {
         $newType = '';
         $newId = '';
         $newName = '';
@@ -9637,7 +9637,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    __BT_X-73, From EXTENDED__ Telephone number for the contact point
      * @param  null|string $newFaxNumber      __BT_X-74, From EXTENDED__ Fax number of the contact point
      * @param  null|string $newEmailAddress   __BT_X-75, From EXTENDED__ E-Mail address of the contact point
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newPersonName
      * @phpstan-param-out string $newDepartmentName
@@ -9651,7 +9651,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
-    ): self {
+    ): static {
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
@@ -9686,7 +9686,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType __BT-X-75-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-75, From EXTENDED__ The party's electronic address
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
@@ -9694,7 +9694,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionUltimateShipToCommunication(
         ?string &$newType,
         ?string &$newUri
-    ): self {
+    ): static {
         $newType = '';
         $newUri = '';
 
@@ -9705,13 +9705,13 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * Get the date of the delivery from latest position
      *
      * @param  null|DateTimeInterface $newDate __BT-X-85, From EXTENDED__
-     * @return self
+     * @return static
      *
      * @phpstan-param-out null $newDate
      */
     public function getDocumentPositionSupplyChainEvent(
         ?DateTimeInterface &$newDate
-    ): self {
+    ): static {
         $newDate = null;
 
         return $this;
@@ -9743,7 +9743,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newStartDate   __BT-134, From BASIC__ Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     __BT-135, From BASIC__ End of the billing period
      * @param  null|string            $newDescription __BT-X-264, From EXTENDED__ Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out null $newStartDate
      * @phpstan-param-out null $newEndDate
@@ -9753,7 +9753,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface &$newStartDate,
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
-    ): self {
+    ): static {
         $newStartDate = null;
         $newEndDate = null;
         $newDescription = '';
@@ -9790,7 +9790,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newTaxPercent          __BT-152, From BASIC__ Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     __BT-X-96, From EXTENDED__ Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode __BT-X-97, From EXTENDED__ Reason for tax exemption (Code)
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newTaxCategory
      * @phpstan-param-out string $newTaxType
@@ -9806,7 +9806,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newTaxPercent,
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode,
-    ): self {
+    ): static {
         $newTaxCategory = '';
         $newTaxType = '';
         $newTaxAmount = 0.0;
@@ -9846,7 +9846,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newAllowanceChargeReason     __BT-139/BT-144, From BASIC__ Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode __BT-140/BT-145, From BASIC__ Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    __BT-138, From BASIC__ Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      *
      * @phpstan-param-out bool $newChargeIndicator
      * @phpstan-param-out float $newAllowanceChargeAmount
@@ -9862,7 +9862,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newAllowanceChargeReason,
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
-    ): self {
+    ): static {
         $newChargeIndicator = false;
         $newAllowanceChargeAmount = 0.0;
         $newAllowanceChargeBaseAmount = 0.0;
@@ -9891,7 +9891,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|float $newDiscountTotalAmount __BT-X-328, From EXTENDED__ Sum of the discounts
      * @param  null|float $newTaxTotalAmount      __BT-X-329, From EXTENDED__ Total amount of the line (in the invoice currency)
      * @param  null|float $newGrossAmount         __BT-X-330, From EXTENDED__ Total invoice line amount including sales tax
-     * @return self
+     * @return static
      *
      * @phpstan-param-out float $newNetAmount
      * @phpstan-param-out float $newChargeTotalAmount
@@ -9905,7 +9905,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
         ?float &$newDiscountTotalAmount,
         ?float &$newTaxTotalAmount,
         ?float &$newGrossAmount
-    ): self {
+    ): static {
         $newNetAmount = 0.0;
         $newChargeTotalAmount = 0.0;
         $newDiscountTotalAmount = 0.0;
@@ -9940,7 +9940,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType      __BT-X-99, From EXTENDED__ Type of the posting reference
      * @param  null|string $newAccountId __BT-133, From EN 16931__ Posting reference of the byuer
-     * @return self
+     * @return static
      *
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newAccountId
@@ -9948,7 +9948,7 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentPositionPostingReference(
         ?string &$newType,
         ?string &$newAccountId
-    ): self {
+    ): static {
         $newType = '';
         $newAccountId = '';
 

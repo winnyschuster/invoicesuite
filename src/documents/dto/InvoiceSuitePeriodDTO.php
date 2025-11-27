@@ -61,9 +61,9 @@ class InvoiceSuitePeriodDTO
      * Sets the period value
      *
      * @param  null|float $period The period value
-     * @return self
+     * @return static
      */
-    public function setPeriod(?float $period): self
+    public function setPeriod(?float $period): static
     {
         $this->period = $period;
 
@@ -84,9 +84,9 @@ class InvoiceSuitePeriodDTO
      * Sets the periods's unit
      *
      * @param  null|string $periodUnit The periods's unit
-     * @return self
+     * @return static
      */
-    public function setPeriodUnit(?string $periodUnit): self
+    public function setPeriodUnit(?string $periodUnit): static
     {
         $this->periodUnit = $periodUnit;
 

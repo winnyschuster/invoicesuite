@@ -54,9 +54,9 @@ class ProductCharacteristicType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -64,9 +64,9 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -93,9 +93,9 @@ class ProductCharacteristicType
 
     /**
      * @param TextType|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?TextType $value = null): self
+    public function setValue(?TextType $value = null): static
     {
         $this->value = $value;
 
@@ -103,9 +103,9 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

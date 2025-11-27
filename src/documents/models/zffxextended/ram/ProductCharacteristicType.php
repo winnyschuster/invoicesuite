@@ -78,9 +78,9 @@ class ProductCharacteristicType
 
     /**
      * @param CodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?CodeType $typeCode = null): self
+    public function setTypeCode(?CodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -88,9 +88,9 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -117,9 +117,9 @@ class ProductCharacteristicType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -127,9 +127,9 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -156,9 +156,9 @@ class ProductCharacteristicType
 
     /**
      * @param MeasureType|null $valueMeasure
-     * @return self
+     * @return static
      */
-    public function setValueMeasure(?MeasureType $valueMeasure = null): self
+    public function setValueMeasure(?MeasureType $valueMeasure = null): static
     {
         $this->valueMeasure = $valueMeasure;
 
@@ -166,9 +166,9 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueMeasure(): self
+    public function unsetValueMeasure(): static
     {
         $this->valueMeasure = null;
 
@@ -195,9 +195,9 @@ class ProductCharacteristicType
 
     /**
      * @param TextType|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?TextType $value = null): self
+    public function setValue(?TextType $value = null): static
     {
         $this->value = $value;
 
@@ -205,9 +205,9 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

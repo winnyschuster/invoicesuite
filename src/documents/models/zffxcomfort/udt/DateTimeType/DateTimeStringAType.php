@@ -44,9 +44,9 @@ class DateTimeStringAType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -54,9 +54,9 @@ class DateTimeStringAType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -73,9 +73,9 @@ class DateTimeStringAType
 
     /**
      * @param string|null $format
-     * @return self
+     * @return static
      */
-    public function setFormat(?string $format = null): self
+    public function setFormat(?string $format = null): static
     {
         $this->format = InvoiceSuiteStringUtils::asNullWhenEmpty($format);
 
@@ -83,9 +83,9 @@ class DateTimeStringAType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFormat(): self
+    public function unsetFormat(): static
     {
         $this->format = null;
 

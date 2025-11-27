@@ -112,9 +112,9 @@ class SupplierPartyType
 
     /**
      * @param CustomerAssignedAccountID|null $customerAssignedAccountID
-     * @return self
+     * @return static
      */
-    public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): self
+    public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): static
     {
         $this->customerAssignedAccountID = $customerAssignedAccountID;
 
@@ -122,9 +122,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomerAssignedAccountID(): self
+    public function unsetCustomerAssignedAccountID(): static
     {
         $this->customerAssignedAccountID = null;
 
@@ -141,9 +141,9 @@ class SupplierPartyType
 
     /**
      * @param array<AdditionalAccountID>|null $additionalAccountID
-     * @return self
+     * @return static
      */
-    public function setAdditionalAccountID(?array $additionalAccountID = null): self
+    public function setAdditionalAccountID(?array $additionalAccountID = null): static
     {
         $this->additionalAccountID = $additionalAccountID;
 
@@ -151,9 +151,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalAccountID(): self
+    public function unsetAdditionalAccountID(): static
     {
         $this->additionalAccountID = null;
 
@@ -161,9 +161,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalAccountID(): self
+    public function clearAdditionalAccountID(): static
     {
         $this->additionalAccountID = [];
 
@@ -202,9 +202,9 @@ class SupplierPartyType
 
     /**
      * @param AdditionalAccountID $additionalAccountID
-     * @return self
+     * @return static
      */
-    public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): self
+    public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
     {
         $this->additionalAccountID[] = $additionalAccountID;
 
@@ -223,9 +223,9 @@ class SupplierPartyType
 
     /**
      * @param AdditionalAccountID $additionalAccountID
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): self
+    public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
     {
         if (!is_array($this->additionalAccountID)) {
             $this->additionalAccountID = [];
@@ -272,9 +272,9 @@ class SupplierPartyType
 
     /**
      * @param DataSendingCapability|null $dataSendingCapability
-     * @return self
+     * @return static
      */
-    public function setDataSendingCapability(?DataSendingCapability $dataSendingCapability = null): self
+    public function setDataSendingCapability(?DataSendingCapability $dataSendingCapability = null): static
     {
         $this->dataSendingCapability = $dataSendingCapability;
 
@@ -282,9 +282,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDataSendingCapability(): self
+    public function unsetDataSendingCapability(): static
     {
         $this->dataSendingCapability = null;
 
@@ -311,9 +311,9 @@ class SupplierPartyType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -321,9 +321,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 
@@ -350,9 +350,9 @@ class SupplierPartyType
 
     /**
      * @param DespatchContact|null $despatchContact
-     * @return self
+     * @return static
      */
-    public function setDespatchContact(?DespatchContact $despatchContact = null): self
+    public function setDespatchContact(?DespatchContact $despatchContact = null): static
     {
         $this->despatchContact = $despatchContact;
 
@@ -360,9 +360,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatchContact(): self
+    public function unsetDespatchContact(): static
     {
         $this->despatchContact = null;
 
@@ -389,9 +389,9 @@ class SupplierPartyType
 
     /**
      * @param AccountingContact|null $accountingContact
-     * @return self
+     * @return static
      */
-    public function setAccountingContact(?AccountingContact $accountingContact = null): self
+    public function setAccountingContact(?AccountingContact $accountingContact = null): static
     {
         $this->accountingContact = $accountingContact;
 
@@ -399,9 +399,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingContact(): self
+    public function unsetAccountingContact(): static
     {
         $this->accountingContact = null;
 
@@ -428,9 +428,9 @@ class SupplierPartyType
 
     /**
      * @param SellerContact|null $sellerContact
-     * @return self
+     * @return static
      */
-    public function setSellerContact(?SellerContact $sellerContact = null): self
+    public function setSellerContact(?SellerContact $sellerContact = null): static
     {
         $this->sellerContact = $sellerContact;
 
@@ -438,9 +438,9 @@ class SupplierPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerContact(): self
+    public function unsetSellerContact(): static
     {
         $this->sellerContact = null;
 

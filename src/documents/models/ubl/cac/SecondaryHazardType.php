@@ -92,9 +92,9 @@ class SecondaryHazardType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -102,9 +102,9 @@ class SecondaryHazardType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -131,9 +131,9 @@ class SecondaryHazardType
 
     /**
      * @param PlacardNotation|null $placardNotation
-     * @return self
+     * @return static
      */
-    public function setPlacardNotation(?PlacardNotation $placardNotation = null): self
+    public function setPlacardNotation(?PlacardNotation $placardNotation = null): static
     {
         $this->placardNotation = $placardNotation;
 
@@ -141,9 +141,9 @@ class SecondaryHazardType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlacardNotation(): self
+    public function unsetPlacardNotation(): static
     {
         $this->placardNotation = null;
 
@@ -170,9 +170,9 @@ class SecondaryHazardType
 
     /**
      * @param PlacardEndorsement|null $placardEndorsement
-     * @return self
+     * @return static
      */
-    public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): self
+    public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): static
     {
         $this->placardEndorsement = $placardEndorsement;
 
@@ -180,9 +180,9 @@ class SecondaryHazardType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlacardEndorsement(): self
+    public function unsetPlacardEndorsement(): static
     {
         $this->placardEndorsement = null;
 
@@ -209,9 +209,9 @@ class SecondaryHazardType
 
     /**
      * @param EmergencyProceduresCode|null $emergencyProceduresCode
-     * @return self
+     * @return static
      */
-    public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): self
+    public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): static
     {
         $this->emergencyProceduresCode = $emergencyProceduresCode;
 
@@ -219,9 +219,9 @@ class SecondaryHazardType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmergencyProceduresCode(): self
+    public function unsetEmergencyProceduresCode(): static
     {
         $this->emergencyProceduresCode = null;
 
@@ -238,9 +238,9 @@ class SecondaryHazardType
 
     /**
      * @param array<Extension>|null $extension
-     * @return self
+     * @return static
      */
-    public function setExtension(?array $extension = null): self
+    public function setExtension(?array $extension = null): static
     {
         $this->extension = $extension;
 
@@ -248,9 +248,9 @@ class SecondaryHazardType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtension(): self
+    public function unsetExtension(): static
     {
         $this->extension = null;
 
@@ -258,9 +258,9 @@ class SecondaryHazardType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearExtension(): self
+    public function clearExtension(): static
     {
         $this->extension = [];
 
@@ -299,9 +299,9 @@ class SecondaryHazardType
 
     /**
      * @param Extension $extension
-     * @return self
+     * @return static
      */
-    public function addToExtension(Extension $extension): self
+    public function addToExtension(Extension $extension): static
     {
         $this->extension[] = $extension;
 
@@ -320,9 +320,9 @@ class SecondaryHazardType
 
     /**
      * @param Extension $extension
-     * @return self
+     * @return static
      */
-    public function addOnceToExtension(Extension $extension): self
+    public function addOnceToExtension(Extension $extension): static
     {
         if (!is_array($this->extension)) {
             $this->extension = [];

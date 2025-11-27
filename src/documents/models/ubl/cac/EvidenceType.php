@@ -114,9 +114,9 @@ class EvidenceType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -124,9 +124,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -153,9 +153,9 @@ class EvidenceType
 
     /**
      * @param EvidenceTypeCode|null $evidenceTypeCode
-     * @return self
+     * @return static
      */
-    public function setEvidenceTypeCode(?EvidenceTypeCode $evidenceTypeCode = null): self
+    public function setEvidenceTypeCode(?EvidenceTypeCode $evidenceTypeCode = null): static
     {
         $this->evidenceTypeCode = $evidenceTypeCode;
 
@@ -163,9 +163,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvidenceTypeCode(): self
+    public function unsetEvidenceTypeCode(): static
     {
         $this->evidenceTypeCode = null;
 
@@ -182,9 +182,9 @@ class EvidenceType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -192,9 +192,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -202,9 +202,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -243,9 +243,9 @@ class EvidenceType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -264,9 +264,9 @@ class EvidenceType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -303,9 +303,9 @@ class EvidenceType
 
     /**
      * @param array<CandidateStatement>|null $candidateStatement
-     * @return self
+     * @return static
      */
-    public function setCandidateStatement(?array $candidateStatement = null): self
+    public function setCandidateStatement(?array $candidateStatement = null): static
     {
         $this->candidateStatement = $candidateStatement;
 
@@ -313,9 +313,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCandidateStatement(): self
+    public function unsetCandidateStatement(): static
     {
         $this->candidateStatement = null;
 
@@ -323,9 +323,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCandidateStatement(): self
+    public function clearCandidateStatement(): static
     {
         $this->candidateStatement = [];
 
@@ -364,9 +364,9 @@ class EvidenceType
 
     /**
      * @param CandidateStatement $candidateStatement
-     * @return self
+     * @return static
      */
-    public function addToCandidateStatement(CandidateStatement $candidateStatement): self
+    public function addToCandidateStatement(CandidateStatement $candidateStatement): static
     {
         $this->candidateStatement[] = $candidateStatement;
 
@@ -385,9 +385,9 @@ class EvidenceType
 
     /**
      * @param CandidateStatement $candidateStatement
-     * @return self
+     * @return static
      */
-    public function addOnceToCandidateStatement(CandidateStatement $candidateStatement): self
+    public function addOnceToCandidateStatement(CandidateStatement $candidateStatement): static
     {
         if (!is_array($this->candidateStatement)) {
             $this->candidateStatement = [];
@@ -434,9 +434,9 @@ class EvidenceType
 
     /**
      * @param EvidenceIssuingParty|null $evidenceIssuingParty
-     * @return self
+     * @return static
      */
-    public function setEvidenceIssuingParty(?EvidenceIssuingParty $evidenceIssuingParty = null): self
+    public function setEvidenceIssuingParty(?EvidenceIssuingParty $evidenceIssuingParty = null): static
     {
         $this->evidenceIssuingParty = $evidenceIssuingParty;
 
@@ -444,9 +444,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvidenceIssuingParty(): self
+    public function unsetEvidenceIssuingParty(): static
     {
         $this->evidenceIssuingParty = null;
 
@@ -473,9 +473,9 @@ class EvidenceType
 
     /**
      * @param DocumentReference|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): self
+    public function setDocumentReference(?DocumentReference $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -483,9 +483,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -512,9 +512,9 @@ class EvidenceType
 
     /**
      * @param Language|null $language
-     * @return self
+     * @return static
      */
-    public function setLanguage(?Language $language = null): self
+    public function setLanguage(?Language $language = null): static
     {
         $this->language = $language;
 
@@ -522,9 +522,9 @@ class EvidenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLanguage(): self
+    public function unsetLanguage(): static
     {
         $this->language = null;
 

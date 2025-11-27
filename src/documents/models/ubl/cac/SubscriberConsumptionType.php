@@ -137,9 +137,9 @@ class SubscriberConsumptionType
 
     /**
      * @param ConsumptionID|null $consumptionID
-     * @return self
+     * @return static
      */
-    public function setConsumptionID(?ConsumptionID $consumptionID = null): self
+    public function setConsumptionID(?ConsumptionID $consumptionID = null): static
     {
         $this->consumptionID = $consumptionID;
 
@@ -147,9 +147,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionID(): self
+    public function unsetConsumptionID(): static
     {
         $this->consumptionID = null;
 
@@ -176,9 +176,9 @@ class SubscriberConsumptionType
 
     /**
      * @param SpecificationTypeCode|null $specificationTypeCode
-     * @return self
+     * @return static
      */
-    public function setSpecificationTypeCode(?SpecificationTypeCode $specificationTypeCode = null): self
+    public function setSpecificationTypeCode(?SpecificationTypeCode $specificationTypeCode = null): static
     {
         $this->specificationTypeCode = $specificationTypeCode;
 
@@ -186,9 +186,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecificationTypeCode(): self
+    public function unsetSpecificationTypeCode(): static
     {
         $this->specificationTypeCode = null;
 
@@ -205,9 +205,9 @@ class SubscriberConsumptionType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -215,9 +215,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -225,9 +225,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -266,9 +266,9 @@ class SubscriberConsumptionType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -287,9 +287,9 @@ class SubscriberConsumptionType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -336,9 +336,9 @@ class SubscriberConsumptionType
 
     /**
      * @param TotalMeteredQuantity|null $totalMeteredQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalMeteredQuantity(?TotalMeteredQuantity $totalMeteredQuantity = null): self
+    public function setTotalMeteredQuantity(?TotalMeteredQuantity $totalMeteredQuantity = null): static
     {
         $this->totalMeteredQuantity = $totalMeteredQuantity;
 
@@ -346,9 +346,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalMeteredQuantity(): self
+    public function unsetTotalMeteredQuantity(): static
     {
         $this->totalMeteredQuantity = null;
 
@@ -375,9 +375,9 @@ class SubscriberConsumptionType
 
     /**
      * @param SubscriberParty|null $subscriberParty
-     * @return self
+     * @return static
      */
-    public function setSubscriberParty(?SubscriberParty $subscriberParty = null): self
+    public function setSubscriberParty(?SubscriberParty $subscriberParty = null): static
     {
         $this->subscriberParty = $subscriberParty;
 
@@ -385,9 +385,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubscriberParty(): self
+    public function unsetSubscriberParty(): static
     {
         $this->subscriberParty = null;
 
@@ -414,9 +414,9 @@ class SubscriberConsumptionType
 
     /**
      * @param UtilityConsumptionPoint|null $utilityConsumptionPoint
-     * @return self
+     * @return static
      */
-    public function setUtilityConsumptionPoint(?UtilityConsumptionPoint $utilityConsumptionPoint = null): self
+    public function setUtilityConsumptionPoint(?UtilityConsumptionPoint $utilityConsumptionPoint = null): static
     {
         $this->utilityConsumptionPoint = $utilityConsumptionPoint;
 
@@ -424,9 +424,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUtilityConsumptionPoint(): self
+    public function unsetUtilityConsumptionPoint(): static
     {
         $this->utilityConsumptionPoint = null;
 
@@ -443,9 +443,9 @@ class SubscriberConsumptionType
 
     /**
      * @param array<OnAccountPayment>|null $onAccountPayment
-     * @return self
+     * @return static
      */
-    public function setOnAccountPayment(?array $onAccountPayment = null): self
+    public function setOnAccountPayment(?array $onAccountPayment = null): static
     {
         $this->onAccountPayment = $onAccountPayment;
 
@@ -453,9 +453,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOnAccountPayment(): self
+    public function unsetOnAccountPayment(): static
     {
         $this->onAccountPayment = null;
 
@@ -463,9 +463,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOnAccountPayment(): self
+    public function clearOnAccountPayment(): static
     {
         $this->onAccountPayment = [];
 
@@ -504,9 +504,9 @@ class SubscriberConsumptionType
 
     /**
      * @param OnAccountPayment $onAccountPayment
-     * @return self
+     * @return static
      */
-    public function addToOnAccountPayment(OnAccountPayment $onAccountPayment): self
+    public function addToOnAccountPayment(OnAccountPayment $onAccountPayment): static
     {
         $this->onAccountPayment[] = $onAccountPayment;
 
@@ -525,9 +525,9 @@ class SubscriberConsumptionType
 
     /**
      * @param OnAccountPayment $onAccountPayment
-     * @return self
+     * @return static
      */
-    public function addOnceToOnAccountPayment(OnAccountPayment $onAccountPayment): self
+    public function addOnceToOnAccountPayment(OnAccountPayment $onAccountPayment): static
     {
         if (!is_array($this->onAccountPayment)) {
             $this->onAccountPayment = [];
@@ -574,9 +574,9 @@ class SubscriberConsumptionType
 
     /**
      * @param Consumption|null $consumption
-     * @return self
+     * @return static
      */
-    public function setConsumption(?Consumption $consumption = null): self
+    public function setConsumption(?Consumption $consumption = null): static
     {
         $this->consumption = $consumption;
 
@@ -584,9 +584,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumption(): self
+    public function unsetConsumption(): static
     {
         $this->consumption = null;
 
@@ -603,9 +603,9 @@ class SubscriberConsumptionType
 
     /**
      * @param array<SupplierConsumption>|null $supplierConsumption
-     * @return self
+     * @return static
      */
-    public function setSupplierConsumption(?array $supplierConsumption = null): self
+    public function setSupplierConsumption(?array $supplierConsumption = null): static
     {
         $this->supplierConsumption = $supplierConsumption;
 
@@ -613,9 +613,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplierConsumption(): self
+    public function unsetSupplierConsumption(): static
     {
         $this->supplierConsumption = null;
 
@@ -623,9 +623,9 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSupplierConsumption(): self
+    public function clearSupplierConsumption(): static
     {
         $this->supplierConsumption = [];
 
@@ -664,9 +664,9 @@ class SubscriberConsumptionType
 
     /**
      * @param SupplierConsumption $supplierConsumption
-     * @return self
+     * @return static
      */
-    public function addToSupplierConsumption(SupplierConsumption $supplierConsumption): self
+    public function addToSupplierConsumption(SupplierConsumption $supplierConsumption): static
     {
         $this->supplierConsumption[] = $supplierConsumption;
 
@@ -685,9 +685,9 @@ class SubscriberConsumptionType
 
     /**
      * @param SupplierConsumption $supplierConsumption
-     * @return self
+     * @return static
      */
-    public function addOnceToSupplierConsumption(SupplierConsumption $supplierConsumption): self
+    public function addOnceToSupplierConsumption(SupplierConsumption $supplierConsumption): static
     {
         if (!is_array($this->supplierConsumption)) {
             $this->supplierConsumption = [];

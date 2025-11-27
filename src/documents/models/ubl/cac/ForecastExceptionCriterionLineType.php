@@ -91,9 +91,9 @@ class ForecastExceptionCriterionLineType
 
     /**
      * @param ForecastPurposeCode|null $forecastPurposeCode
-     * @return self
+     * @return static
      */
-    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): self
+    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
     {
         $this->forecastPurposeCode = $forecastPurposeCode;
 
@@ -101,9 +101,9 @@ class ForecastExceptionCriterionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastPurposeCode(): self
+    public function unsetForecastPurposeCode(): static
     {
         $this->forecastPurposeCode = null;
 
@@ -130,9 +130,9 @@ class ForecastExceptionCriterionLineType
 
     /**
      * @param ForecastTypeCode|null $forecastTypeCode
-     * @return self
+     * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
+    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
     {
         $this->forecastTypeCode = $forecastTypeCode;
 
@@ -140,9 +140,9 @@ class ForecastExceptionCriterionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastTypeCode(): self
+    public function unsetForecastTypeCode(): static
     {
         $this->forecastTypeCode = null;
 
@@ -169,9 +169,9 @@ class ForecastExceptionCriterionLineType
 
     /**
      * @param ComparisonDataSourceCode|null $comparisonDataSourceCode
-     * @return self
+     * @return static
      */
-    public function setComparisonDataSourceCode(?ComparisonDataSourceCode $comparisonDataSourceCode = null): self
+    public function setComparisonDataSourceCode(?ComparisonDataSourceCode $comparisonDataSourceCode = null): static
     {
         $this->comparisonDataSourceCode = $comparisonDataSourceCode;
 
@@ -179,9 +179,9 @@ class ForecastExceptionCriterionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetComparisonDataSourceCode(): self
+    public function unsetComparisonDataSourceCode(): static
     {
         $this->comparisonDataSourceCode = null;
 
@@ -208,9 +208,9 @@ class ForecastExceptionCriterionLineType
 
     /**
      * @param DataSourceCode|null $dataSourceCode
-     * @return self
+     * @return static
      */
-    public function setDataSourceCode(?DataSourceCode $dataSourceCode = null): self
+    public function setDataSourceCode(?DataSourceCode $dataSourceCode = null): static
     {
         $this->dataSourceCode = $dataSourceCode;
 
@@ -218,9 +218,9 @@ class ForecastExceptionCriterionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDataSourceCode(): self
+    public function unsetDataSourceCode(): static
     {
         $this->dataSourceCode = null;
 
@@ -247,9 +247,9 @@ class ForecastExceptionCriterionLineType
 
     /**
      * @param TimeDeltaDaysQuantity|null $timeDeltaDaysQuantity
-     * @return self
+     * @return static
      */
-    public function setTimeDeltaDaysQuantity(?TimeDeltaDaysQuantity $timeDeltaDaysQuantity = null): self
+    public function setTimeDeltaDaysQuantity(?TimeDeltaDaysQuantity $timeDeltaDaysQuantity = null): static
     {
         $this->timeDeltaDaysQuantity = $timeDeltaDaysQuantity;
 
@@ -257,9 +257,9 @@ class ForecastExceptionCriterionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTimeDeltaDaysQuantity(): self
+    public function unsetTimeDeltaDaysQuantity(): static
     {
         $this->timeDeltaDaysQuantity = null;
 

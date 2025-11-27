@@ -86,20 +86,20 @@ class SupplyChainTradeLineItemType
 
     /**
      * @param DocumentLineDocumentType|null $associatedDocumentLineDocument
-     * @return self
+     * @return static
      */
     public function setAssociatedDocumentLineDocument(
         ?DocumentLineDocumentType $associatedDocumentLineDocument = null,
-    ): self {
+    ): static {
         $this->associatedDocumentLineDocument = $associatedDocumentLineDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAssociatedDocumentLineDocument(): self
+    public function unsetAssociatedDocumentLineDocument(): static
     {
         $this->associatedDocumentLineDocument = null;
 
@@ -126,9 +126,9 @@ class SupplyChainTradeLineItemType
 
     /**
      * @param TradeProductType|null $specifiedTradeProduct
-     * @return self
+     * @return static
      */
-    public function setSpecifiedTradeProduct(?TradeProductType $specifiedTradeProduct = null): self
+    public function setSpecifiedTradeProduct(?TradeProductType $specifiedTradeProduct = null): static
     {
         $this->specifiedTradeProduct = $specifiedTradeProduct;
 
@@ -136,9 +136,9 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTradeProduct(): self
+    public function unsetSpecifiedTradeProduct(): static
     {
         $this->specifiedTradeProduct = null;
 
@@ -165,9 +165,9 @@ class SupplyChainTradeLineItemType
 
     /**
      * @param LineTradeAgreementType|null $specifiedLineTradeAgreement
-     * @return self
+     * @return static
      */
-    public function setSpecifiedLineTradeAgreement(?LineTradeAgreementType $specifiedLineTradeAgreement = null): self
+    public function setSpecifiedLineTradeAgreement(?LineTradeAgreementType $specifiedLineTradeAgreement = null): static
     {
         $this->specifiedLineTradeAgreement = $specifiedLineTradeAgreement;
 
@@ -175,9 +175,9 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedLineTradeAgreement(): self
+    public function unsetSpecifiedLineTradeAgreement(): static
     {
         $this->specifiedLineTradeAgreement = null;
 
@@ -204,9 +204,9 @@ class SupplyChainTradeLineItemType
 
     /**
      * @param LineTradeDeliveryType|null $specifiedLineTradeDelivery
-     * @return self
+     * @return static
      */
-    public function setSpecifiedLineTradeDelivery(?LineTradeDeliveryType $specifiedLineTradeDelivery = null): self
+    public function setSpecifiedLineTradeDelivery(?LineTradeDeliveryType $specifiedLineTradeDelivery = null): static
     {
         $this->specifiedLineTradeDelivery = $specifiedLineTradeDelivery;
 
@@ -214,9 +214,9 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedLineTradeDelivery(): self
+    public function unsetSpecifiedLineTradeDelivery(): static
     {
         $this->specifiedLineTradeDelivery = null;
 
@@ -243,20 +243,20 @@ class SupplyChainTradeLineItemType
 
     /**
      * @param LineTradeSettlementType|null $specifiedLineTradeSettlement
-     * @return self
+     * @return static
      */
     public function setSpecifiedLineTradeSettlement(
         ?LineTradeSettlementType $specifiedLineTradeSettlement = null,
-    ): self {
+    ): static {
         $this->specifiedLineTradeSettlement = $specifiedLineTradeSettlement;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedLineTradeSettlement(): self
+    public function unsetSpecifiedLineTradeSettlement(): static
     {
         $this->specifiedLineTradeSettlement = null;
 

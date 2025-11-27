@@ -68,9 +68,9 @@ class StowageType
 
     /**
      * @param LocationID|null $locationID
-     * @return self
+     * @return static
      */
-    public function setLocationID(?LocationID $locationID = null): self
+    public function setLocationID(?LocationID $locationID = null): static
     {
         $this->locationID = $locationID;
 
@@ -78,9 +78,9 @@ class StowageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocationID(): self
+    public function unsetLocationID(): static
     {
         $this->locationID = null;
 
@@ -97,9 +97,9 @@ class StowageType
 
     /**
      * @param array<Location>|null $location
-     * @return self
+     * @return static
      */
-    public function setLocation(?array $location = null): self
+    public function setLocation(?array $location = null): static
     {
         $this->location = $location;
 
@@ -107,9 +107,9 @@ class StowageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocation(): self
+    public function unsetLocation(): static
     {
         $this->location = null;
 
@@ -117,9 +117,9 @@ class StowageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLocation(): self
+    public function clearLocation(): static
     {
         $this->location = [];
 
@@ -158,9 +158,9 @@ class StowageType
 
     /**
      * @param Location $location
-     * @return self
+     * @return static
      */
-    public function addToLocation(Location $location): self
+    public function addToLocation(Location $location): static
     {
         $this->location[] = $location;
 
@@ -179,9 +179,9 @@ class StowageType
 
     /**
      * @param Location $location
-     * @return self
+     * @return static
      */
-    public function addOnceToLocation(Location $location): self
+    public function addOnceToLocation(Location $location): static
     {
         if (!is_array($this->location)) {
             $this->location = [];
@@ -218,9 +218,9 @@ class StowageType
 
     /**
      * @param array<MeasurementDimension>|null $measurementDimension
-     * @return self
+     * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): self
+    public function setMeasurementDimension(?array $measurementDimension = null): static
     {
         $this->measurementDimension = $measurementDimension;
 
@@ -228,9 +228,9 @@ class StowageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementDimension(): self
+    public function unsetMeasurementDimension(): static
     {
         $this->measurementDimension = null;
 
@@ -238,9 +238,9 @@ class StowageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeasurementDimension(): self
+    public function clearMeasurementDimension(): static
     {
         $this->measurementDimension = [];
 
@@ -279,9 +279,9 @@ class StowageType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         $this->measurementDimension[] = $measurementDimension;
 
@@ -300,9 +300,9 @@ class StowageType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];

@@ -55,9 +55,9 @@ class UnstructuredPriceType
 
     /**
      * @param PriceAmount|null $priceAmount
-     * @return self
+     * @return static
      */
-    public function setPriceAmount(?PriceAmount $priceAmount = null): self
+    public function setPriceAmount(?PriceAmount $priceAmount = null): static
     {
         $this->priceAmount = $priceAmount;
 
@@ -65,9 +65,9 @@ class UnstructuredPriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceAmount(): self
+    public function unsetPriceAmount(): static
     {
         $this->priceAmount = null;
 
@@ -94,9 +94,9 @@ class UnstructuredPriceType
 
     /**
      * @param TimeAmount|null $timeAmount
-     * @return self
+     * @return static
      */
-    public function setTimeAmount(?TimeAmount $timeAmount = null): self
+    public function setTimeAmount(?TimeAmount $timeAmount = null): static
     {
         $this->timeAmount = $timeAmount;
 
@@ -104,9 +104,9 @@ class UnstructuredPriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTimeAmount(): self
+    public function unsetTimeAmount(): static
     {
         $this->timeAmount = null;
 

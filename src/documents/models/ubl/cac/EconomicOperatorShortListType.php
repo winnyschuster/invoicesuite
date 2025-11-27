@@ -82,9 +82,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param array<LimitationDescription>|null $limitationDescription
-     * @return self
+     * @return static
      */
-    public function setLimitationDescription(?array $limitationDescription = null): self
+    public function setLimitationDescription(?array $limitationDescription = null): static
     {
         $this->limitationDescription = $limitationDescription;
 
@@ -92,9 +92,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLimitationDescription(): self
+    public function unsetLimitationDescription(): static
     {
         $this->limitationDescription = null;
 
@@ -102,9 +102,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLimitationDescription(): self
+    public function clearLimitationDescription(): static
     {
         $this->limitationDescription = [];
 
@@ -143,9 +143,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param LimitationDescription $limitationDescription
-     * @return self
+     * @return static
      */
-    public function addToLimitationDescription(LimitationDescription $limitationDescription): self
+    public function addToLimitationDescription(LimitationDescription $limitationDescription): static
     {
         $this->limitationDescription[] = $limitationDescription;
 
@@ -164,9 +164,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param LimitationDescription $limitationDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToLimitationDescription(LimitationDescription $limitationDescription): self
+    public function addOnceToLimitationDescription(LimitationDescription $limitationDescription): static
     {
         if (!is_array($this->limitationDescription)) {
             $this->limitationDescription = [];
@@ -213,9 +213,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param ExpectedQuantity|null $expectedQuantity
-     * @return self
+     * @return static
      */
-    public function setExpectedQuantity(?ExpectedQuantity $expectedQuantity = null): self
+    public function setExpectedQuantity(?ExpectedQuantity $expectedQuantity = null): static
     {
         $this->expectedQuantity = $expectedQuantity;
 
@@ -223,9 +223,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpectedQuantity(): self
+    public function unsetExpectedQuantity(): static
     {
         $this->expectedQuantity = null;
 
@@ -252,9 +252,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param MaximumQuantity|null $maximumQuantity
-     * @return self
+     * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
+    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
     {
         $this->maximumQuantity = $maximumQuantity;
 
@@ -262,9 +262,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumQuantity(): self
+    public function unsetMaximumQuantity(): static
     {
         $this->maximumQuantity = null;
 
@@ -291,9 +291,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param MinimumQuantity|null $minimumQuantity
-     * @return self
+     * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
+    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
     {
         $this->minimumQuantity = $minimumQuantity;
 
@@ -301,9 +301,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumQuantity(): self
+    public function unsetMinimumQuantity(): static
     {
         $this->minimumQuantity = null;
 
@@ -320,9 +320,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param array<PreSelectedParty>|null $preSelectedParty
-     * @return self
+     * @return static
      */
-    public function setPreSelectedParty(?array $preSelectedParty = null): self
+    public function setPreSelectedParty(?array $preSelectedParty = null): static
     {
         $this->preSelectedParty = $preSelectedParty;
 
@@ -330,9 +330,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreSelectedParty(): self
+    public function unsetPreSelectedParty(): static
     {
         $this->preSelectedParty = null;
 
@@ -340,9 +340,9 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPreSelectedParty(): self
+    public function clearPreSelectedParty(): static
     {
         $this->preSelectedParty = [];
 
@@ -381,9 +381,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param PreSelectedParty $preSelectedParty
-     * @return self
+     * @return static
      */
-    public function addToPreSelectedParty(PreSelectedParty $preSelectedParty): self
+    public function addToPreSelectedParty(PreSelectedParty $preSelectedParty): static
     {
         $this->preSelectedParty[] = $preSelectedParty;
 
@@ -402,9 +402,9 @@ class EconomicOperatorShortListType
 
     /**
      * @param PreSelectedParty $preSelectedParty
-     * @return self
+     * @return static
      */
-    public function addOnceToPreSelectedParty(PreSelectedParty $preSelectedParty): self
+    public function addOnceToPreSelectedParty(PreSelectedParty $preSelectedParty): static
     {
         if (!is_array($this->preSelectedParty)) {
             $this->preSelectedParty = [];

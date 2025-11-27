@@ -71,9 +71,9 @@ class DeclarationType
 
     /**
      * @param array<Name>|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?array $name = null): self
+    public function setName(?array $name = null): static
     {
         $this->name = $name;
 
@@ -81,9 +81,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -91,9 +91,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearName(): self
+    public function clearName(): static
     {
         $this->name = [];
 
@@ -132,9 +132,9 @@ class DeclarationType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addToName(Name $name): self
+    public function addToName(Name $name): static
     {
         $this->name[] = $name;
 
@@ -153,9 +153,9 @@ class DeclarationType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addOnceToName(Name $name): self
+    public function addOnceToName(Name $name): static
     {
         if (!is_array($this->name)) {
             $this->name = [];
@@ -202,9 +202,9 @@ class DeclarationType
 
     /**
      * @param DeclarationTypeCode|null $declarationTypeCode
-     * @return self
+     * @return static
      */
-    public function setDeclarationTypeCode(?DeclarationTypeCode $declarationTypeCode = null): self
+    public function setDeclarationTypeCode(?DeclarationTypeCode $declarationTypeCode = null): static
     {
         $this->declarationTypeCode = $declarationTypeCode;
 
@@ -212,9 +212,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclarationTypeCode(): self
+    public function unsetDeclarationTypeCode(): static
     {
         $this->declarationTypeCode = null;
 
@@ -231,9 +231,9 @@ class DeclarationType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -241,9 +241,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -251,9 +251,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -292,9 +292,9 @@ class DeclarationType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -313,9 +313,9 @@ class DeclarationType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -352,9 +352,9 @@ class DeclarationType
 
     /**
      * @param array<EvidenceSupplied>|null $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function setEvidenceSupplied(?array $evidenceSupplied = null): self
+    public function setEvidenceSupplied(?array $evidenceSupplied = null): static
     {
         $this->evidenceSupplied = $evidenceSupplied;
 
@@ -362,9 +362,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvidenceSupplied(): self
+    public function unsetEvidenceSupplied(): static
     {
         $this->evidenceSupplied = null;
 
@@ -372,9 +372,9 @@ class DeclarationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEvidenceSupplied(): self
+    public function clearEvidenceSupplied(): static
     {
         $this->evidenceSupplied = [];
 
@@ -413,9 +413,9 @@ class DeclarationType
 
     /**
      * @param EvidenceSupplied $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
+    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
     {
         $this->evidenceSupplied[] = $evidenceSupplied;
 
@@ -434,9 +434,9 @@ class DeclarationType
 
     /**
      * @param EvidenceSupplied $evidenceSupplied
-     * @return self
+     * @return static
      */
-    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): self
+    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
     {
         if (!is_array($this->evidenceSupplied)) {
             $this->evidenceSupplied = [];

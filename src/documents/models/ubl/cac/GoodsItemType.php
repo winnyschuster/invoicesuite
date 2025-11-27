@@ -503,9 +503,9 @@ class GoodsItemType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -513,9 +513,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -542,9 +542,9 @@ class GoodsItemType
 
     /**
      * @param SequenceNumberID|null $sequenceNumberID
-     * @return self
+     * @return static
      */
-    public function setSequenceNumberID(?SequenceNumberID $sequenceNumberID = null): self
+    public function setSequenceNumberID(?SequenceNumberID $sequenceNumberID = null): static
     {
         $this->sequenceNumberID = $sequenceNumberID;
 
@@ -552,9 +552,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceNumberID(): self
+    public function unsetSequenceNumberID(): static
     {
         $this->sequenceNumberID = null;
 
@@ -571,9 +571,9 @@ class GoodsItemType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -581,9 +581,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -591,9 +591,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -632,9 +632,9 @@ class GoodsItemType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -653,9 +653,9 @@ class GoodsItemType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -692,9 +692,9 @@ class GoodsItemType
 
     /**
      * @param bool|null $hazardousRiskIndicator
-     * @return self
+     * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): self
+    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
     {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
@@ -702,9 +702,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousRiskIndicator(): self
+    public function unsetHazardousRiskIndicator(): static
     {
         $this->hazardousRiskIndicator = null;
 
@@ -731,20 +731,20 @@ class GoodsItemType
 
     /**
      * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredCustomsValueAmount(
         ?DeclaredCustomsValueAmount $declaredCustomsValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredCustomsValueAmount = $declaredCustomsValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredCustomsValueAmount(): self
+    public function unsetDeclaredCustomsValueAmount(): static
     {
         $this->declaredCustomsValueAmount = null;
 
@@ -771,20 +771,20 @@ class GoodsItemType
 
     /**
      * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredForCarriageValueAmount(
         ?DeclaredForCarriageValueAmount $declaredForCarriageValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredForCarriageValueAmount = $declaredForCarriageValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredForCarriageValueAmount(): self
+    public function unsetDeclaredForCarriageValueAmount(): static
     {
         $this->declaredForCarriageValueAmount = null;
 
@@ -811,20 +811,20 @@ class GoodsItemType
 
     /**
      * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredStatisticsValueAmount(
         ?DeclaredStatisticsValueAmount $declaredStatisticsValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredStatisticsValueAmount = $declaredStatisticsValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredStatisticsValueAmount(): self
+    public function unsetDeclaredStatisticsValueAmount(): static
     {
         $this->declaredStatisticsValueAmount = null;
 
@@ -851,9 +851,9 @@ class GoodsItemType
 
     /**
      * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
-     * @return self
+     * @return static
      */
-    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): self
+    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
     {
         $this->freeOnBoardValueAmount = $freeOnBoardValueAmount;
 
@@ -861,9 +861,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreeOnBoardValueAmount(): self
+    public function unsetFreeOnBoardValueAmount(): static
     {
         $this->freeOnBoardValueAmount = null;
 
@@ -890,9 +890,9 @@ class GoodsItemType
 
     /**
      * @param InsuranceValueAmount|null $insuranceValueAmount
-     * @return self
+     * @return static
      */
-    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): self
+    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
     {
         $this->insuranceValueAmount = $insuranceValueAmount;
 
@@ -900,9 +900,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInsuranceValueAmount(): self
+    public function unsetInsuranceValueAmount(): static
     {
         $this->insuranceValueAmount = null;
 
@@ -929,9 +929,9 @@ class GoodsItemType
 
     /**
      * @param ValueAmount|null $valueAmount
-     * @return self
+     * @return static
      */
-    public function setValueAmount(?ValueAmount $valueAmount = null): self
+    public function setValueAmount(?ValueAmount $valueAmount = null): static
     {
         $this->valueAmount = $valueAmount;
 
@@ -939,9 +939,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueAmount(): self
+    public function unsetValueAmount(): static
     {
         $this->valueAmount = null;
 
@@ -968,9 +968,9 @@ class GoodsItemType
 
     /**
      * @param GrossWeightMeasure|null $grossWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): self
+    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
     {
         $this->grossWeightMeasure = $grossWeightMeasure;
 
@@ -978,9 +978,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossWeightMeasure(): self
+    public function unsetGrossWeightMeasure(): static
     {
         $this->grossWeightMeasure = null;
 
@@ -1007,9 +1007,9 @@ class GoodsItemType
 
     /**
      * @param NetWeightMeasure|null $netWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): self
+    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
     {
         $this->netWeightMeasure = $netWeightMeasure;
 
@@ -1017,9 +1017,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetWeightMeasure(): self
+    public function unsetNetWeightMeasure(): static
     {
         $this->netWeightMeasure = null;
 
@@ -1046,9 +1046,9 @@ class GoodsItemType
 
     /**
      * @param NetNetWeightMeasure|null $netNetWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): self
+    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
     {
         $this->netNetWeightMeasure = $netNetWeightMeasure;
 
@@ -1056,9 +1056,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetNetWeightMeasure(): self
+    public function unsetNetNetWeightMeasure(): static
     {
         $this->netNetWeightMeasure = null;
 
@@ -1085,9 +1085,9 @@ class GoodsItemType
 
     /**
      * @param ChargeableWeightMeasure|null $chargeableWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): self
+    public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): static
     {
         $this->chargeableWeightMeasure = $chargeableWeightMeasure;
 
@@ -1095,9 +1095,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeableWeightMeasure(): self
+    public function unsetChargeableWeightMeasure(): static
     {
         $this->chargeableWeightMeasure = null;
 
@@ -1124,9 +1124,9 @@ class GoodsItemType
 
     /**
      * @param GrossVolumeMeasure|null $grossVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): self
+    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
     {
         $this->grossVolumeMeasure = $grossVolumeMeasure;
 
@@ -1134,9 +1134,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossVolumeMeasure(): self
+    public function unsetGrossVolumeMeasure(): static
     {
         $this->grossVolumeMeasure = null;
 
@@ -1163,9 +1163,9 @@ class GoodsItemType
 
     /**
      * @param NetVolumeMeasure|null $netVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): self
+    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
     {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
@@ -1173,9 +1173,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetVolumeMeasure(): self
+    public function unsetNetVolumeMeasure(): static
     {
         $this->netVolumeMeasure = null;
 
@@ -1202,9 +1202,9 @@ class GoodsItemType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -1212,9 +1212,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -1241,9 +1241,9 @@ class GoodsItemType
 
     /**
      * @param PreferenceCriterionCode|null $preferenceCriterionCode
-     * @return self
+     * @return static
      */
-    public function setPreferenceCriterionCode(?PreferenceCriterionCode $preferenceCriterionCode = null): self
+    public function setPreferenceCriterionCode(?PreferenceCriterionCode $preferenceCriterionCode = null): static
     {
         $this->preferenceCriterionCode = $preferenceCriterionCode;
 
@@ -1251,9 +1251,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreferenceCriterionCode(): self
+    public function unsetPreferenceCriterionCode(): static
     {
         $this->preferenceCriterionCode = null;
 
@@ -1280,9 +1280,9 @@ class GoodsItemType
 
     /**
      * @param RequiredCustomsID|null $requiredCustomsID
-     * @return self
+     * @return static
      */
-    public function setRequiredCustomsID(?RequiredCustomsID $requiredCustomsID = null): self
+    public function setRequiredCustomsID(?RequiredCustomsID $requiredCustomsID = null): static
     {
         $this->requiredCustomsID = $requiredCustomsID;
 
@@ -1290,9 +1290,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredCustomsID(): self
+    public function unsetRequiredCustomsID(): static
     {
         $this->requiredCustomsID = null;
 
@@ -1319,9 +1319,9 @@ class GoodsItemType
 
     /**
      * @param CustomsStatusCode|null $customsStatusCode
-     * @return self
+     * @return static
      */
-    public function setCustomsStatusCode(?CustomsStatusCode $customsStatusCode = null): self
+    public function setCustomsStatusCode(?CustomsStatusCode $customsStatusCode = null): static
     {
         $this->customsStatusCode = $customsStatusCode;
 
@@ -1329,9 +1329,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsStatusCode(): self
+    public function unsetCustomsStatusCode(): static
     {
         $this->customsStatusCode = null;
 
@@ -1358,9 +1358,9 @@ class GoodsItemType
 
     /**
      * @param CustomsTariffQuantity|null $customsTariffQuantity
-     * @return self
+     * @return static
      */
-    public function setCustomsTariffQuantity(?CustomsTariffQuantity $customsTariffQuantity = null): self
+    public function setCustomsTariffQuantity(?CustomsTariffQuantity $customsTariffQuantity = null): static
     {
         $this->customsTariffQuantity = $customsTariffQuantity;
 
@@ -1368,9 +1368,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsTariffQuantity(): self
+    public function unsetCustomsTariffQuantity(): static
     {
         $this->customsTariffQuantity = null;
 
@@ -1387,9 +1387,9 @@ class GoodsItemType
 
     /**
      * @param bool|null $customsImportClassifiedIndicator
-     * @return self
+     * @return static
      */
-    public function setCustomsImportClassifiedIndicator(?bool $customsImportClassifiedIndicator = null): self
+    public function setCustomsImportClassifiedIndicator(?bool $customsImportClassifiedIndicator = null): static
     {
         $this->customsImportClassifiedIndicator = $customsImportClassifiedIndicator;
 
@@ -1397,9 +1397,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsImportClassifiedIndicator(): self
+    public function unsetCustomsImportClassifiedIndicator(): static
     {
         $this->customsImportClassifiedIndicator = null;
 
@@ -1426,9 +1426,9 @@ class GoodsItemType
 
     /**
      * @param ChargeableQuantity|null $chargeableQuantity
-     * @return self
+     * @return static
      */
-    public function setChargeableQuantity(?ChargeableQuantity $chargeableQuantity = null): self
+    public function setChargeableQuantity(?ChargeableQuantity $chargeableQuantity = null): static
     {
         $this->chargeableQuantity = $chargeableQuantity;
 
@@ -1436,9 +1436,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeableQuantity(): self
+    public function unsetChargeableQuantity(): static
     {
         $this->chargeableQuantity = null;
 
@@ -1465,9 +1465,9 @@ class GoodsItemType
 
     /**
      * @param ReturnableQuantity|null $returnableQuantity
-     * @return self
+     * @return static
      */
-    public function setReturnableQuantity(?ReturnableQuantity $returnableQuantity = null): self
+    public function setReturnableQuantity(?ReturnableQuantity $returnableQuantity = null): static
     {
         $this->returnableQuantity = $returnableQuantity;
 
@@ -1475,9 +1475,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReturnableQuantity(): self
+    public function unsetReturnableQuantity(): static
     {
         $this->returnableQuantity = null;
 
@@ -1504,9 +1504,9 @@ class GoodsItemType
 
     /**
      * @param TraceID|null $traceID
-     * @return self
+     * @return static
      */
-    public function setTraceID(?TraceID $traceID = null): self
+    public function setTraceID(?TraceID $traceID = null): static
     {
         $this->traceID = $traceID;
 
@@ -1514,9 +1514,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTraceID(): self
+    public function unsetTraceID(): static
     {
         $this->traceID = null;
 
@@ -1533,9 +1533,9 @@ class GoodsItemType
 
     /**
      * @param array<Item>|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?array $item = null): self
+    public function setItem(?array $item = null): static
     {
         $this->item = $item;
 
@@ -1543,9 +1543,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -1553,9 +1553,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearItem(): self
+    public function clearItem(): static
     {
         $this->item = [];
 
@@ -1594,9 +1594,9 @@ class GoodsItemType
 
     /**
      * @param Item $item
-     * @return self
+     * @return static
      */
-    public function addToItem(Item $item): self
+    public function addToItem(Item $item): static
     {
         $this->item[] = $item;
 
@@ -1615,9 +1615,9 @@ class GoodsItemType
 
     /**
      * @param Item $item
-     * @return self
+     * @return static
      */
-    public function addOnceToItem(Item $item): self
+    public function addOnceToItem(Item $item): static
     {
         if (!is_array($this->item)) {
             $this->item = [];
@@ -1654,9 +1654,9 @@ class GoodsItemType
 
     /**
      * @param array<GoodsItemContainer>|null $goodsItemContainer
-     * @return self
+     * @return static
      */
-    public function setGoodsItemContainer(?array $goodsItemContainer = null): self
+    public function setGoodsItemContainer(?array $goodsItemContainer = null): static
     {
         $this->goodsItemContainer = $goodsItemContainer;
 
@@ -1664,9 +1664,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGoodsItemContainer(): self
+    public function unsetGoodsItemContainer(): static
     {
         $this->goodsItemContainer = null;
 
@@ -1674,9 +1674,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearGoodsItemContainer(): self
+    public function clearGoodsItemContainer(): static
     {
         $this->goodsItemContainer = [];
 
@@ -1715,9 +1715,9 @@ class GoodsItemType
 
     /**
      * @param GoodsItemContainer $goodsItemContainer
-     * @return self
+     * @return static
      */
-    public function addToGoodsItemContainer(GoodsItemContainer $goodsItemContainer): self
+    public function addToGoodsItemContainer(GoodsItemContainer $goodsItemContainer): static
     {
         $this->goodsItemContainer[] = $goodsItemContainer;
 
@@ -1736,9 +1736,9 @@ class GoodsItemType
 
     /**
      * @param GoodsItemContainer $goodsItemContainer
-     * @return self
+     * @return static
      */
-    public function addOnceToGoodsItemContainer(GoodsItemContainer $goodsItemContainer): self
+    public function addOnceToGoodsItemContainer(GoodsItemContainer $goodsItemContainer): static
     {
         if (!is_array($this->goodsItemContainer)) {
             $this->goodsItemContainer = [];
@@ -1775,9 +1775,9 @@ class GoodsItemType
 
     /**
      * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): self
+    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
     {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
@@ -1785,9 +1785,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightAllowanceCharge(): self
+    public function unsetFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = null;
 
@@ -1795,9 +1795,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFreightAllowanceCharge(): self
+    public function clearFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = [];
 
@@ -1836,9 +1836,9 @@ class GoodsItemType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
@@ -1857,9 +1857,9 @@ class GoodsItemType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];
@@ -1896,9 +1896,9 @@ class GoodsItemType
 
     /**
      * @param array<InvoiceLine>|null $invoiceLine
-     * @return self
+     * @return static
      */
-    public function setInvoiceLine(?array $invoiceLine = null): self
+    public function setInvoiceLine(?array $invoiceLine = null): static
     {
         $this->invoiceLine = $invoiceLine;
 
@@ -1906,9 +1906,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoiceLine(): self
+    public function unsetInvoiceLine(): static
     {
         $this->invoiceLine = null;
 
@@ -1916,9 +1916,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInvoiceLine(): self
+    public function clearInvoiceLine(): static
     {
         $this->invoiceLine = [];
 
@@ -1957,9 +1957,9 @@ class GoodsItemType
 
     /**
      * @param InvoiceLine $invoiceLine
-     * @return self
+     * @return static
      */
-    public function addToInvoiceLine(InvoiceLine $invoiceLine): self
+    public function addToInvoiceLine(InvoiceLine $invoiceLine): static
     {
         $this->invoiceLine[] = $invoiceLine;
 
@@ -1978,9 +1978,9 @@ class GoodsItemType
 
     /**
      * @param InvoiceLine $invoiceLine
-     * @return self
+     * @return static
      */
-    public function addOnceToInvoiceLine(InvoiceLine $invoiceLine): self
+    public function addOnceToInvoiceLine(InvoiceLine $invoiceLine): static
     {
         if (!is_array($this->invoiceLine)) {
             $this->invoiceLine = [];
@@ -2017,9 +2017,9 @@ class GoodsItemType
 
     /**
      * @param array<Temperature>|null $temperature
-     * @return self
+     * @return static
      */
-    public function setTemperature(?array $temperature = null): self
+    public function setTemperature(?array $temperature = null): static
     {
         $this->temperature = $temperature;
 
@@ -2027,9 +2027,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTemperature(): self
+    public function unsetTemperature(): static
     {
         $this->temperature = null;
 
@@ -2037,9 +2037,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTemperature(): self
+    public function clearTemperature(): static
     {
         $this->temperature = [];
 
@@ -2078,9 +2078,9 @@ class GoodsItemType
 
     /**
      * @param Temperature $temperature
-     * @return self
+     * @return static
      */
-    public function addToTemperature(Temperature $temperature): self
+    public function addToTemperature(Temperature $temperature): static
     {
         $this->temperature[] = $temperature;
 
@@ -2099,9 +2099,9 @@ class GoodsItemType
 
     /**
      * @param Temperature $temperature
-     * @return self
+     * @return static
      */
-    public function addOnceToTemperature(Temperature $temperature): self
+    public function addOnceToTemperature(Temperature $temperature): static
     {
         if (!is_array($this->temperature)) {
             $this->temperature = [];
@@ -2138,9 +2138,9 @@ class GoodsItemType
 
     /**
      * @param array<ContainedGoodsItem>|null $containedGoodsItem
-     * @return self
+     * @return static
      */
-    public function setContainedGoodsItem(?array $containedGoodsItem = null): self
+    public function setContainedGoodsItem(?array $containedGoodsItem = null): static
     {
         $this->containedGoodsItem = $containedGoodsItem;
 
@@ -2148,9 +2148,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContainedGoodsItem(): self
+    public function unsetContainedGoodsItem(): static
     {
         $this->containedGoodsItem = null;
 
@@ -2158,9 +2158,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContainedGoodsItem(): self
+    public function clearContainedGoodsItem(): static
     {
         $this->containedGoodsItem = [];
 
@@ -2199,9 +2199,9 @@ class GoodsItemType
 
     /**
      * @param ContainedGoodsItem $containedGoodsItem
-     * @return self
+     * @return static
      */
-    public function addToContainedGoodsItem(ContainedGoodsItem $containedGoodsItem): self
+    public function addToContainedGoodsItem(ContainedGoodsItem $containedGoodsItem): static
     {
         $this->containedGoodsItem[] = $containedGoodsItem;
 
@@ -2220,9 +2220,9 @@ class GoodsItemType
 
     /**
      * @param ContainedGoodsItem $containedGoodsItem
-     * @return self
+     * @return static
      */
-    public function addOnceToContainedGoodsItem(ContainedGoodsItem $containedGoodsItem): self
+    public function addOnceToContainedGoodsItem(ContainedGoodsItem $containedGoodsItem): static
     {
         if (!is_array($this->containedGoodsItem)) {
             $this->containedGoodsItem = [];
@@ -2269,9 +2269,9 @@ class GoodsItemType
 
     /**
      * @param OriginAddress|null $originAddress
-     * @return self
+     * @return static
      */
-    public function setOriginAddress(?OriginAddress $originAddress = null): self
+    public function setOriginAddress(?OriginAddress $originAddress = null): static
     {
         $this->originAddress = $originAddress;
 
@@ -2279,9 +2279,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginAddress(): self
+    public function unsetOriginAddress(): static
     {
         $this->originAddress = null;
 
@@ -2308,9 +2308,9 @@ class GoodsItemType
 
     /**
      * @param Delivery|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?Delivery $delivery = null): self
+    public function setDelivery(?Delivery $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -2318,9 +2318,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -2347,9 +2347,9 @@ class GoodsItemType
 
     /**
      * @param Pickup|null $pickup
-     * @return self
+     * @return static
      */
-    public function setPickup(?Pickup $pickup = null): self
+    public function setPickup(?Pickup $pickup = null): static
     {
         $this->pickup = $pickup;
 
@@ -2357,9 +2357,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPickup(): self
+    public function unsetPickup(): static
     {
         $this->pickup = null;
 
@@ -2386,9 +2386,9 @@ class GoodsItemType
 
     /**
      * @param Despatch|null $despatch
-     * @return self
+     * @return static
      */
-    public function setDespatch(?Despatch $despatch = null): self
+    public function setDespatch(?Despatch $despatch = null): static
     {
         $this->despatch = $despatch;
 
@@ -2396,9 +2396,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatch(): self
+    public function unsetDespatch(): static
     {
         $this->despatch = null;
 
@@ -2415,9 +2415,9 @@ class GoodsItemType
 
     /**
      * @param array<MeasurementDimension>|null $measurementDimension
-     * @return self
+     * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): self
+    public function setMeasurementDimension(?array $measurementDimension = null): static
     {
         $this->measurementDimension = $measurementDimension;
 
@@ -2425,9 +2425,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementDimension(): self
+    public function unsetMeasurementDimension(): static
     {
         $this->measurementDimension = null;
 
@@ -2435,9 +2435,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeasurementDimension(): self
+    public function clearMeasurementDimension(): static
     {
         $this->measurementDimension = [];
 
@@ -2476,9 +2476,9 @@ class GoodsItemType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         $this->measurementDimension[] = $measurementDimension;
 
@@ -2497,9 +2497,9 @@ class GoodsItemType
 
     /**
      * @param MeasurementDimension $measurementDimension
-     * @return self
+     * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): self
+    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
     {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
@@ -2536,9 +2536,9 @@ class GoodsItemType
 
     /**
      * @param array<ContainingPackage>|null $containingPackage
-     * @return self
+     * @return static
      */
-    public function setContainingPackage(?array $containingPackage = null): self
+    public function setContainingPackage(?array $containingPackage = null): static
     {
         $this->containingPackage = $containingPackage;
 
@@ -2546,9 +2546,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContainingPackage(): self
+    public function unsetContainingPackage(): static
     {
         $this->containingPackage = null;
 
@@ -2556,9 +2556,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContainingPackage(): self
+    public function clearContainingPackage(): static
     {
         $this->containingPackage = [];
 
@@ -2597,9 +2597,9 @@ class GoodsItemType
 
     /**
      * @param ContainingPackage $containingPackage
-     * @return self
+     * @return static
      */
-    public function addToContainingPackage(ContainingPackage $containingPackage): self
+    public function addToContainingPackage(ContainingPackage $containingPackage): static
     {
         $this->containingPackage[] = $containingPackage;
 
@@ -2618,9 +2618,9 @@ class GoodsItemType
 
     /**
      * @param ContainingPackage $containingPackage
-     * @return self
+     * @return static
      */
-    public function addOnceToContainingPackage(ContainingPackage $containingPackage): self
+    public function addOnceToContainingPackage(ContainingPackage $containingPackage): static
     {
         if (!is_array($this->containingPackage)) {
             $this->containingPackage = [];
@@ -2667,9 +2667,9 @@ class GoodsItemType
 
     /**
      * @param ShipmentDocumentReference|null $shipmentDocumentReference
-     * @return self
+     * @return static
      */
-    public function setShipmentDocumentReference(?ShipmentDocumentReference $shipmentDocumentReference = null): self
+    public function setShipmentDocumentReference(?ShipmentDocumentReference $shipmentDocumentReference = null): static
     {
         $this->shipmentDocumentReference = $shipmentDocumentReference;
 
@@ -2677,9 +2677,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipmentDocumentReference(): self
+    public function unsetShipmentDocumentReference(): static
     {
         $this->shipmentDocumentReference = null;
 
@@ -2706,9 +2706,9 @@ class GoodsItemType
 
     /**
      * @param MinimumTemperature|null $minimumTemperature
-     * @return self
+     * @return static
      */
-    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): self
+    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
     {
         $this->minimumTemperature = $minimumTemperature;
 
@@ -2716,9 +2716,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumTemperature(): self
+    public function unsetMinimumTemperature(): static
     {
         $this->minimumTemperature = null;
 
@@ -2745,9 +2745,9 @@ class GoodsItemType
 
     /**
      * @param MaximumTemperature|null $maximumTemperature
-     * @return self
+     * @return static
      */
-    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): self
+    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
     {
         $this->maximumTemperature = $maximumTemperature;
 
@@ -2755,9 +2755,9 @@ class GoodsItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumTemperature(): self
+    public function unsetMaximumTemperature(): static
     {
         $this->maximumTemperature = null;
 

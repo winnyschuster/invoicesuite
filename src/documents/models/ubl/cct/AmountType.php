@@ -55,9 +55,9 @@ class AmountType
 
     /**
      * @param float|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?float $value = null): self
+    public function setValue(?float $value = null): static
     {
         $this->value = $value;
 
@@ -65,9 +65,9 @@ class AmountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -84,9 +84,9 @@ class AmountType
 
     /**
      * @param string|null $currencyID
-     * @return self
+     * @return static
      */
-    public function setCurrencyID(?string $currencyID = null): self
+    public function setCurrencyID(?string $currencyID = null): static
     {
         $this->currencyID = InvoiceSuiteStringUtils::asNullWhenEmpty($currencyID);
 
@@ -94,9 +94,9 @@ class AmountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrencyID(): self
+    public function unsetCurrencyID(): static
     {
         $this->currencyID = null;
 
@@ -113,9 +113,9 @@ class AmountType
 
     /**
      * @param string|null $currencyCodeListVersionID
-     * @return self
+     * @return static
      */
-    public function setCurrencyCodeListVersionID(?string $currencyCodeListVersionID = null): self
+    public function setCurrencyCodeListVersionID(?string $currencyCodeListVersionID = null): static
     {
         $this->currencyCodeListVersionID = InvoiceSuiteStringUtils::asNullWhenEmpty($currencyCodeListVersionID);
 
@@ -123,9 +123,9 @@ class AmountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrencyCodeListVersionID(): self
+    public function unsetCurrencyCodeListVersionID(): static
     {
         $this->currencyCodeListVersionID = null;
 

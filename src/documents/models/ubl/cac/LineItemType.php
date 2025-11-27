@@ -407,9 +407,9 @@ class LineItemType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -417,9 +417,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -446,9 +446,9 @@ class LineItemType
 
     /**
      * @param SalesOrderID|null $salesOrderID
-     * @return self
+     * @return static
      */
-    public function setSalesOrderID(?SalesOrderID $salesOrderID = null): self
+    public function setSalesOrderID(?SalesOrderID $salesOrderID = null): static
     {
         $this->salesOrderID = $salesOrderID;
 
@@ -456,9 +456,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSalesOrderID(): self
+    public function unsetSalesOrderID(): static
     {
         $this->salesOrderID = null;
 
@@ -485,9 +485,9 @@ class LineItemType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -495,9 +495,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -514,9 +514,9 @@ class LineItemType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -524,9 +524,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -534,9 +534,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -575,9 +575,9 @@ class LineItemType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -596,9 +596,9 @@ class LineItemType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -645,9 +645,9 @@ class LineItemType
 
     /**
      * @param LineStatusCode|null $lineStatusCode
-     * @return self
+     * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): self
+    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
     {
         $this->lineStatusCode = $lineStatusCode;
 
@@ -655,9 +655,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineStatusCode(): self
+    public function unsetLineStatusCode(): static
     {
         $this->lineStatusCode = null;
 
@@ -684,9 +684,9 @@ class LineItemType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -694,9 +694,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -723,9 +723,9 @@ class LineItemType
 
     /**
      * @param LineExtensionAmount|null $lineExtensionAmount
-     * @return self
+     * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
+    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
     {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
@@ -733,9 +733,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineExtensionAmount(): self
+    public function unsetLineExtensionAmount(): static
     {
         $this->lineExtensionAmount = null;
 
@@ -762,9 +762,9 @@ class LineItemType
 
     /**
      * @param TotalTaxAmount|null $totalTaxAmount
-     * @return self
+     * @return static
      */
-    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): self
+    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
     {
         $this->totalTaxAmount = $totalTaxAmount;
 
@@ -772,9 +772,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalTaxAmount(): self
+    public function unsetTotalTaxAmount(): static
     {
         $this->totalTaxAmount = null;
 
@@ -801,9 +801,9 @@ class LineItemType
 
     /**
      * @param MinimumQuantity|null $minimumQuantity
-     * @return self
+     * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): self
+    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
     {
         $this->minimumQuantity = $minimumQuantity;
 
@@ -811,9 +811,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumQuantity(): self
+    public function unsetMinimumQuantity(): static
     {
         $this->minimumQuantity = null;
 
@@ -840,9 +840,9 @@ class LineItemType
 
     /**
      * @param MaximumQuantity|null $maximumQuantity
-     * @return self
+     * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): self
+    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
     {
         $this->maximumQuantity = $maximumQuantity;
 
@@ -850,9 +850,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumQuantity(): self
+    public function unsetMaximumQuantity(): static
     {
         $this->maximumQuantity = null;
 
@@ -879,9 +879,9 @@ class LineItemType
 
     /**
      * @param MinimumBackorderQuantity|null $minimumBackorderQuantity
-     * @return self
+     * @return static
      */
-    public function setMinimumBackorderQuantity(?MinimumBackorderQuantity $minimumBackorderQuantity = null): self
+    public function setMinimumBackorderQuantity(?MinimumBackorderQuantity $minimumBackorderQuantity = null): static
     {
         $this->minimumBackorderQuantity = $minimumBackorderQuantity;
 
@@ -889,9 +889,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumBackorderQuantity(): self
+    public function unsetMinimumBackorderQuantity(): static
     {
         $this->minimumBackorderQuantity = null;
 
@@ -918,9 +918,9 @@ class LineItemType
 
     /**
      * @param MaximumBackorderQuantity|null $maximumBackorderQuantity
-     * @return self
+     * @return static
      */
-    public function setMaximumBackorderQuantity(?MaximumBackorderQuantity $maximumBackorderQuantity = null): self
+    public function setMaximumBackorderQuantity(?MaximumBackorderQuantity $maximumBackorderQuantity = null): static
     {
         $this->maximumBackorderQuantity = $maximumBackorderQuantity;
 
@@ -928,9 +928,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumBackorderQuantity(): self
+    public function unsetMaximumBackorderQuantity(): static
     {
         $this->maximumBackorderQuantity = null;
 
@@ -957,9 +957,9 @@ class LineItemType
 
     /**
      * @param InspectionMethodCode|null $inspectionMethodCode
-     * @return self
+     * @return static
      */
-    public function setInspectionMethodCode(?InspectionMethodCode $inspectionMethodCode = null): self
+    public function setInspectionMethodCode(?InspectionMethodCode $inspectionMethodCode = null): static
     {
         $this->inspectionMethodCode = $inspectionMethodCode;
 
@@ -967,9 +967,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInspectionMethodCode(): self
+    public function unsetInspectionMethodCode(): static
     {
         $this->inspectionMethodCode = null;
 
@@ -986,9 +986,9 @@ class LineItemType
 
     /**
      * @param bool|null $partialDeliveryIndicator
-     * @return self
+     * @return static
      */
-    public function setPartialDeliveryIndicator(?bool $partialDeliveryIndicator = null): self
+    public function setPartialDeliveryIndicator(?bool $partialDeliveryIndicator = null): static
     {
         $this->partialDeliveryIndicator = $partialDeliveryIndicator;
 
@@ -996,9 +996,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartialDeliveryIndicator(): self
+    public function unsetPartialDeliveryIndicator(): static
     {
         $this->partialDeliveryIndicator = null;
 
@@ -1015,9 +1015,9 @@ class LineItemType
 
     /**
      * @param bool|null $backOrderAllowedIndicator
-     * @return self
+     * @return static
      */
-    public function setBackOrderAllowedIndicator(?bool $backOrderAllowedIndicator = null): self
+    public function setBackOrderAllowedIndicator(?bool $backOrderAllowedIndicator = null): static
     {
         $this->backOrderAllowedIndicator = $backOrderAllowedIndicator;
 
@@ -1025,9 +1025,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBackOrderAllowedIndicator(): self
+    public function unsetBackOrderAllowedIndicator(): static
     {
         $this->backOrderAllowedIndicator = null;
 
@@ -1054,9 +1054,9 @@ class LineItemType
 
     /**
      * @param AccountingCostCode|null $accountingCostCode
-     * @return self
+     * @return static
      */
-    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
+    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
     {
         $this->accountingCostCode = $accountingCostCode;
 
@@ -1064,9 +1064,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCostCode(): self
+    public function unsetAccountingCostCode(): static
     {
         $this->accountingCostCode = null;
 
@@ -1093,9 +1093,9 @@ class LineItemType
 
     /**
      * @param AccountingCost|null $accountingCost
-     * @return self
+     * @return static
      */
-    public function setAccountingCost(?AccountingCost $accountingCost = null): self
+    public function setAccountingCost(?AccountingCost $accountingCost = null): static
     {
         $this->accountingCost = $accountingCost;
 
@@ -1103,9 +1103,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCost(): self
+    public function unsetAccountingCost(): static
     {
         $this->accountingCost = null;
 
@@ -1122,9 +1122,9 @@ class LineItemType
 
     /**
      * @param array<WarrantyInformation>|null $warrantyInformation
-     * @return self
+     * @return static
      */
-    public function setWarrantyInformation(?array $warrantyInformation = null): self
+    public function setWarrantyInformation(?array $warrantyInformation = null): static
     {
         $this->warrantyInformation = $warrantyInformation;
 
@@ -1132,9 +1132,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWarrantyInformation(): self
+    public function unsetWarrantyInformation(): static
     {
         $this->warrantyInformation = null;
 
@@ -1142,9 +1142,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearWarrantyInformation(): self
+    public function clearWarrantyInformation(): static
     {
         $this->warrantyInformation = [];
 
@@ -1183,9 +1183,9 @@ class LineItemType
 
     /**
      * @param WarrantyInformation $warrantyInformation
-     * @return self
+     * @return static
      */
-    public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): self
+    public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): static
     {
         $this->warrantyInformation[] = $warrantyInformation;
 
@@ -1204,9 +1204,9 @@ class LineItemType
 
     /**
      * @param WarrantyInformation $warrantyInformation
-     * @return self
+     * @return static
      */
-    public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): self
+    public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): static
     {
         if (!is_array($this->warrantyInformation)) {
             $this->warrantyInformation = [];
@@ -1243,9 +1243,9 @@ class LineItemType
 
     /**
      * @param array<Delivery>|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?array $delivery = null): self
+    public function setDelivery(?array $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -1253,9 +1253,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -1263,9 +1263,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDelivery(): self
+    public function clearDelivery(): static
     {
         $this->delivery = [];
 
@@ -1304,9 +1304,9 @@ class LineItemType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addToDelivery(Delivery $delivery): self
+    public function addToDelivery(Delivery $delivery): static
     {
         $this->delivery[] = $delivery;
 
@@ -1325,9 +1325,9 @@ class LineItemType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addOnceToDelivery(Delivery $delivery): self
+    public function addOnceToDelivery(Delivery $delivery): static
     {
         if (!is_array($this->delivery)) {
             $this->delivery = [];
@@ -1374,9 +1374,9 @@ class LineItemType
 
     /**
      * @param DeliveryTerms|null $deliveryTerms
-     * @return self
+     * @return static
      */
-    public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): self
+    public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
     {
         $this->deliveryTerms = $deliveryTerms;
 
@@ -1384,9 +1384,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryTerms(): self
+    public function unsetDeliveryTerms(): static
     {
         $this->deliveryTerms = null;
 
@@ -1413,9 +1413,9 @@ class LineItemType
 
     /**
      * @param OriginatorParty|null $originatorParty
-     * @return self
+     * @return static
      */
-    public function setOriginatorParty(?OriginatorParty $originatorParty = null): self
+    public function setOriginatorParty(?OriginatorParty $originatorParty = null): static
     {
         $this->originatorParty = $originatorParty;
 
@@ -1423,9 +1423,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginatorParty(): self
+    public function unsetOriginatorParty(): static
     {
         $this->originatorParty = null;
 
@@ -1442,9 +1442,9 @@ class LineItemType
 
     /**
      * @param array<OrderedShipment>|null $orderedShipment
-     * @return self
+     * @return static
      */
-    public function setOrderedShipment(?array $orderedShipment = null): self
+    public function setOrderedShipment(?array $orderedShipment = null): static
     {
         $this->orderedShipment = $orderedShipment;
 
@@ -1452,9 +1452,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderedShipment(): self
+    public function unsetOrderedShipment(): static
     {
         $this->orderedShipment = null;
 
@@ -1462,9 +1462,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOrderedShipment(): self
+    public function clearOrderedShipment(): static
     {
         $this->orderedShipment = [];
 
@@ -1503,9 +1503,9 @@ class LineItemType
 
     /**
      * @param OrderedShipment $orderedShipment
-     * @return self
+     * @return static
      */
-    public function addToOrderedShipment(OrderedShipment $orderedShipment): self
+    public function addToOrderedShipment(OrderedShipment $orderedShipment): static
     {
         $this->orderedShipment[] = $orderedShipment;
 
@@ -1524,9 +1524,9 @@ class LineItemType
 
     /**
      * @param OrderedShipment $orderedShipment
-     * @return self
+     * @return static
      */
-    public function addOnceToOrderedShipment(OrderedShipment $orderedShipment): self
+    public function addOnceToOrderedShipment(OrderedShipment $orderedShipment): static
     {
         if (!is_array($this->orderedShipment)) {
             $this->orderedShipment = [];
@@ -1573,9 +1573,9 @@ class LineItemType
 
     /**
      * @param PricingReference|null $pricingReference
-     * @return self
+     * @return static
      */
-    public function setPricingReference(?PricingReference $pricingReference = null): self
+    public function setPricingReference(?PricingReference $pricingReference = null): static
     {
         $this->pricingReference = $pricingReference;
 
@@ -1583,9 +1583,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPricingReference(): self
+    public function unsetPricingReference(): static
     {
         $this->pricingReference = null;
 
@@ -1602,9 +1602,9 @@ class LineItemType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -1612,9 +1612,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -1622,9 +1622,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -1663,9 +1663,9 @@ class LineItemType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -1684,9 +1684,9 @@ class LineItemType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -1733,9 +1733,9 @@ class LineItemType
 
     /**
      * @param Price|null $price
-     * @return self
+     * @return static
      */
-    public function setPrice(?Price $price = null): self
+    public function setPrice(?Price $price = null): static
     {
         $this->price = $price;
 
@@ -1743,9 +1743,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrice(): self
+    public function unsetPrice(): static
     {
         $this->price = null;
 
@@ -1772,9 +1772,9 @@ class LineItemType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -1782,9 +1782,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -1801,9 +1801,9 @@ class LineItemType
 
     /**
      * @param array<SubLineItem>|null $subLineItem
-     * @return self
+     * @return static
      */
-    public function setSubLineItem(?array $subLineItem = null): self
+    public function setSubLineItem(?array $subLineItem = null): static
     {
         $this->subLineItem = $subLineItem;
 
@@ -1811,9 +1811,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubLineItem(): self
+    public function unsetSubLineItem(): static
     {
         $this->subLineItem = null;
 
@@ -1821,9 +1821,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSubLineItem(): self
+    public function clearSubLineItem(): static
     {
         $this->subLineItem = [];
 
@@ -1862,9 +1862,9 @@ class LineItemType
 
     /**
      * @param SubLineItem $subLineItem
-     * @return self
+     * @return static
      */
-    public function addToSubLineItem(SubLineItem $subLineItem): self
+    public function addToSubLineItem(SubLineItem $subLineItem): static
     {
         $this->subLineItem[] = $subLineItem;
 
@@ -1883,9 +1883,9 @@ class LineItemType
 
     /**
      * @param SubLineItem $subLineItem
-     * @return self
+     * @return static
      */
-    public function addOnceToSubLineItem(SubLineItem $subLineItem): self
+    public function addOnceToSubLineItem(SubLineItem $subLineItem): static
     {
         if (!is_array($this->subLineItem)) {
             $this->subLineItem = [];
@@ -1932,9 +1932,9 @@ class LineItemType
 
     /**
      * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
-     * @return self
+     * @return static
      */
-    public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): self
+    public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
     {
         $this->warrantyValidityPeriod = $warrantyValidityPeriod;
 
@@ -1942,9 +1942,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWarrantyValidityPeriod(): self
+    public function unsetWarrantyValidityPeriod(): static
     {
         $this->warrantyValidityPeriod = null;
 
@@ -1971,9 +1971,9 @@ class LineItemType
 
     /**
      * @param WarrantyParty|null $warrantyParty
-     * @return self
+     * @return static
      */
-    public function setWarrantyParty(?WarrantyParty $warrantyParty = null): self
+    public function setWarrantyParty(?WarrantyParty $warrantyParty = null): static
     {
         $this->warrantyParty = $warrantyParty;
 
@@ -1981,9 +1981,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWarrantyParty(): self
+    public function unsetWarrantyParty(): static
     {
         $this->warrantyParty = null;
 
@@ -2000,9 +2000,9 @@ class LineItemType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -2010,9 +2010,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -2020,9 +2020,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -2061,9 +2061,9 @@ class LineItemType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -2082,9 +2082,9 @@ class LineItemType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -2131,9 +2131,9 @@ class LineItemType
 
     /**
      * @param ItemPriceExtension|null $itemPriceExtension
-     * @return self
+     * @return static
      */
-    public function setItemPriceExtension(?ItemPriceExtension $itemPriceExtension = null): self
+    public function setItemPriceExtension(?ItemPriceExtension $itemPriceExtension = null): static
     {
         $this->itemPriceExtension = $itemPriceExtension;
 
@@ -2141,9 +2141,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItemPriceExtension(): self
+    public function unsetItemPriceExtension(): static
     {
         $this->itemPriceExtension = null;
 
@@ -2160,9 +2160,9 @@ class LineItemType
 
     /**
      * @param array<LineReference>|null $lineReference
-     * @return self
+     * @return static
      */
-    public function setLineReference(?array $lineReference = null): self
+    public function setLineReference(?array $lineReference = null): static
     {
         $this->lineReference = $lineReference;
 
@@ -2170,9 +2170,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineReference(): self
+    public function unsetLineReference(): static
     {
         $this->lineReference = null;
 
@@ -2180,9 +2180,9 @@ class LineItemType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLineReference(): self
+    public function clearLineReference(): static
     {
         $this->lineReference = [];
 
@@ -2221,9 +2221,9 @@ class LineItemType
 
     /**
      * @param LineReference $lineReference
-     * @return self
+     * @return static
      */
-    public function addToLineReference(LineReference $lineReference): self
+    public function addToLineReference(LineReference $lineReference): static
     {
         $this->lineReference[] = $lineReference;
 
@@ -2242,9 +2242,9 @@ class LineItemType
 
     /**
      * @param LineReference $lineReference
-     * @return self
+     * @return static
      */
-    public function addOnceToLineReference(LineReference $lineReference): self
+    public function addOnceToLineReference(LineReference $lineReference): static
     {
         if (!is_array($this->lineReference)) {
             $this->lineReference = [];

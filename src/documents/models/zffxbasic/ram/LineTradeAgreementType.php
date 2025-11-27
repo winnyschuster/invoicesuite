@@ -53,9 +53,9 @@ class LineTradeAgreementType
 
     /**
      * @param TradePriceType|null $grossPriceProductTradePrice
-     * @return self
+     * @return static
      */
-    public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): self
+    public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): static
     {
         $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
 
@@ -63,9 +63,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossPriceProductTradePrice(): self
+    public function unsetGrossPriceProductTradePrice(): static
     {
         $this->grossPriceProductTradePrice = null;
 
@@ -92,9 +92,9 @@ class LineTradeAgreementType
 
     /**
      * @param TradePriceType|null $netPriceProductTradePrice
-     * @return self
+     * @return static
      */
-    public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): self
+    public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): static
     {
         $this->netPriceProductTradePrice = $netPriceProductTradePrice;
 
@@ -102,9 +102,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetPriceProductTradePrice(): self
+    public function unsetNetPriceProductTradePrice(): static
     {
         $this->netPriceProductTradePrice = null;
 

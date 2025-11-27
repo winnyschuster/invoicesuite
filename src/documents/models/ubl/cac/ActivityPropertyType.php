@@ -55,9 +55,9 @@ class ActivityPropertyType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -65,9 +65,9 @@ class ActivityPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -94,9 +94,9 @@ class ActivityPropertyType
 
     /**
      * @param Value|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?Value $value = null): self
+    public function setValue(?Value $value = null): static
     {
         $this->value = $value;
 
@@ -104,9 +104,9 @@ class ActivityPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

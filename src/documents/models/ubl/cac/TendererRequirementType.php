@@ -83,9 +83,9 @@ class TendererRequirementType
 
     /**
      * @param array<Name>|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?array $name = null): self
+    public function setName(?array $name = null): static
     {
         $this->name = $name;
 
@@ -93,9 +93,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -103,9 +103,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearName(): self
+    public function clearName(): static
     {
         $this->name = [];
 
@@ -144,9 +144,9 @@ class TendererRequirementType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addToName(Name $name): self
+    public function addToName(Name $name): static
     {
         $this->name[] = $name;
 
@@ -165,9 +165,9 @@ class TendererRequirementType
 
     /**
      * @param Name $name
-     * @return self
+     * @return static
      */
-    public function addOnceToName(Name $name): self
+    public function addOnceToName(Name $name): static
     {
         if (!is_array($this->name)) {
             $this->name = [];
@@ -214,20 +214,20 @@ class TendererRequirementType
 
     /**
      * @param TendererRequirementTypeCode|null $tendererRequirementTypeCode
-     * @return self
+     * @return static
      */
     public function setTendererRequirementTypeCode(
         ?TendererRequirementTypeCode $tendererRequirementTypeCode = null,
-    ): self {
+    ): static {
         $this->tendererRequirementTypeCode = $tendererRequirementTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTendererRequirementTypeCode(): self
+    public function unsetTendererRequirementTypeCode(): static
     {
         $this->tendererRequirementTypeCode = null;
 
@@ -244,9 +244,9 @@ class TendererRequirementType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -254,9 +254,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -264,9 +264,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -305,9 +305,9 @@ class TendererRequirementType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -326,9 +326,9 @@ class TendererRequirementType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -375,9 +375,9 @@ class TendererRequirementType
 
     /**
      * @param LegalReference|null $legalReference
-     * @return self
+     * @return static
      */
-    public function setLegalReference(?LegalReference $legalReference = null): self
+    public function setLegalReference(?LegalReference $legalReference = null): static
     {
         $this->legalReference = $legalReference;
 
@@ -385,9 +385,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLegalReference(): self
+    public function unsetLegalReference(): static
     {
         $this->legalReference = null;
 
@@ -404,9 +404,9 @@ class TendererRequirementType
 
     /**
      * @param array<SuggestedEvidence>|null $suggestedEvidence
-     * @return self
+     * @return static
      */
-    public function setSuggestedEvidence(?array $suggestedEvidence = null): self
+    public function setSuggestedEvidence(?array $suggestedEvidence = null): static
     {
         $this->suggestedEvidence = $suggestedEvidence;
 
@@ -414,9 +414,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSuggestedEvidence(): self
+    public function unsetSuggestedEvidence(): static
     {
         $this->suggestedEvidence = null;
 
@@ -424,9 +424,9 @@ class TendererRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSuggestedEvidence(): self
+    public function clearSuggestedEvidence(): static
     {
         $this->suggestedEvidence = [];
 
@@ -465,9 +465,9 @@ class TendererRequirementType
 
     /**
      * @param SuggestedEvidence $suggestedEvidence
-     * @return self
+     * @return static
      */
-    public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
+    public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
     {
         $this->suggestedEvidence[] = $suggestedEvidence;
 
@@ -486,9 +486,9 @@ class TendererRequirementType
 
     /**
      * @param SuggestedEvidence $suggestedEvidence
-     * @return self
+     * @return static
      */
-    public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
+    public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
     {
         if (!is_array($this->suggestedEvidence)) {
             $this->suggestedEvidence = [];

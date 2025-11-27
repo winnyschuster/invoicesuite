@@ -56,9 +56,9 @@ class EconomicOperatorRoleType
 
     /**
      * @param RoleCode|null $roleCode
-     * @return self
+     * @return static
      */
-    public function setRoleCode(?RoleCode $roleCode = null): self
+    public function setRoleCode(?RoleCode $roleCode = null): static
     {
         $this->roleCode = $roleCode;
 
@@ -66,9 +66,9 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRoleCode(): self
+    public function unsetRoleCode(): static
     {
         $this->roleCode = null;
 
@@ -85,9 +85,9 @@ class EconomicOperatorRoleType
 
     /**
      * @param array<RoleDescription>|null $roleDescription
-     * @return self
+     * @return static
      */
-    public function setRoleDescription(?array $roleDescription = null): self
+    public function setRoleDescription(?array $roleDescription = null): static
     {
         $this->roleDescription = $roleDescription;
 
@@ -95,9 +95,9 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRoleDescription(): self
+    public function unsetRoleDescription(): static
     {
         $this->roleDescription = null;
 
@@ -105,9 +105,9 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRoleDescription(): self
+    public function clearRoleDescription(): static
     {
         $this->roleDescription = [];
 
@@ -146,9 +146,9 @@ class EconomicOperatorRoleType
 
     /**
      * @param RoleDescription $roleDescription
-     * @return self
+     * @return static
      */
-    public function addToRoleDescription(RoleDescription $roleDescription): self
+    public function addToRoleDescription(RoleDescription $roleDescription): static
     {
         $this->roleDescription[] = $roleDescription;
 
@@ -167,9 +167,9 @@ class EconomicOperatorRoleType
 
     /**
      * @param RoleDescription $roleDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToRoleDescription(RoleDescription $roleDescription): self
+    public function addOnceToRoleDescription(RoleDescription $roleDescription): static
     {
         if (!is_array($this->roleDescription)) {
             $this->roleDescription = [];

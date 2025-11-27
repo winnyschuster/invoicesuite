@@ -126,9 +126,9 @@ class RequestForQuotationLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -136,9 +136,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -165,9 +165,9 @@ class RequestForQuotationLineType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -175,9 +175,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -194,9 +194,9 @@ class RequestForQuotationLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -204,9 +204,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -214,9 +214,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -255,9 +255,9 @@ class RequestForQuotationLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -276,9 +276,9 @@ class RequestForQuotationLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -315,9 +315,9 @@ class RequestForQuotationLineType
 
     /**
      * @param bool|null $optionalLineItemIndicator
-     * @return self
+     * @return static
      */
-    public function setOptionalLineItemIndicator(?bool $optionalLineItemIndicator = null): self
+    public function setOptionalLineItemIndicator(?bool $optionalLineItemIndicator = null): static
     {
         $this->optionalLineItemIndicator = $optionalLineItemIndicator;
 
@@ -325,9 +325,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOptionalLineItemIndicator(): self
+    public function unsetOptionalLineItemIndicator(): static
     {
         $this->optionalLineItemIndicator = null;
 
@@ -354,9 +354,9 @@ class RequestForQuotationLineType
 
     /**
      * @param PrivacyCode|null $privacyCode
-     * @return self
+     * @return static
      */
-    public function setPrivacyCode(?PrivacyCode $privacyCode = null): self
+    public function setPrivacyCode(?PrivacyCode $privacyCode = null): static
     {
         $this->privacyCode = $privacyCode;
 
@@ -364,9 +364,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrivacyCode(): self
+    public function unsetPrivacyCode(): static
     {
         $this->privacyCode = null;
 
@@ -393,20 +393,20 @@ class RequestForQuotationLineType
 
     /**
      * @param SecurityClassificationCode|null $securityClassificationCode
-     * @return self
+     * @return static
      */
     public function setSecurityClassificationCode(
         ?SecurityClassificationCode $securityClassificationCode = null,
-    ): self {
+    ): static {
         $this->securityClassificationCode = $securityClassificationCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSecurityClassificationCode(): self
+    public function unsetSecurityClassificationCode(): static
     {
         $this->securityClassificationCode = null;
 
@@ -423,9 +423,9 @@ class RequestForQuotationLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -433,9 +433,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -443,9 +443,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -484,9 +484,9 @@ class RequestForQuotationLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -505,9 +505,9 @@ class RequestForQuotationLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -554,9 +554,9 @@ class RequestForQuotationLineType
 
     /**
      * @param LineItem|null $lineItem
-     * @return self
+     * @return static
      */
-    public function setLineItem(?LineItem $lineItem = null): self
+    public function setLineItem(?LineItem $lineItem = null): static
     {
         $this->lineItem = $lineItem;
 
@@ -564,9 +564,9 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineItem(): self
+    public function unsetLineItem(): static
     {
         $this->lineItem = null;
 

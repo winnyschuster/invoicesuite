@@ -92,9 +92,9 @@ class MeterPropertyType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -102,9 +102,9 @@ class MeterPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -131,9 +131,9 @@ class MeterPropertyType
 
     /**
      * @param NameCode|null $nameCode
-     * @return self
+     * @return static
      */
-    public function setNameCode(?NameCode $nameCode = null): self
+    public function setNameCode(?NameCode $nameCode = null): static
     {
         $this->nameCode = $nameCode;
 
@@ -141,9 +141,9 @@ class MeterPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNameCode(): self
+    public function unsetNameCode(): static
     {
         $this->nameCode = null;
 
@@ -170,9 +170,9 @@ class MeterPropertyType
 
     /**
      * @param Value|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?Value $value = null): self
+    public function setValue(?Value $value = null): static
     {
         $this->value = $value;
 
@@ -180,9 +180,9 @@ class MeterPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -209,9 +209,9 @@ class MeterPropertyType
 
     /**
      * @param ValueQuantity|null $valueQuantity
-     * @return self
+     * @return static
      */
-    public function setValueQuantity(?ValueQuantity $valueQuantity = null): self
+    public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
     {
         $this->valueQuantity = $valueQuantity;
 
@@ -219,9 +219,9 @@ class MeterPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueQuantity(): self
+    public function unsetValueQuantity(): static
     {
         $this->valueQuantity = null;
 
@@ -238,9 +238,9 @@ class MeterPropertyType
 
     /**
      * @param array<ValueQualifier>|null $valueQualifier
-     * @return self
+     * @return static
      */
-    public function setValueQualifier(?array $valueQualifier = null): self
+    public function setValueQualifier(?array $valueQualifier = null): static
     {
         $this->valueQualifier = $valueQualifier;
 
@@ -248,9 +248,9 @@ class MeterPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValueQualifier(): self
+    public function unsetValueQualifier(): static
     {
         $this->valueQualifier = null;
 
@@ -258,9 +258,9 @@ class MeterPropertyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearValueQualifier(): self
+    public function clearValueQualifier(): static
     {
         $this->valueQualifier = [];
 
@@ -299,9 +299,9 @@ class MeterPropertyType
 
     /**
      * @param ValueQualifier $valueQualifier
-     * @return self
+     * @return static
      */
-    public function addToValueQualifier(ValueQualifier $valueQualifier): self
+    public function addToValueQualifier(ValueQualifier $valueQualifier): static
     {
         $this->valueQualifier[] = $valueQualifier;
 
@@ -320,9 +320,9 @@ class MeterPropertyType
 
     /**
      * @param ValueQualifier $valueQualifier
-     * @return self
+     * @return static
      */
-    public function addOnceToValueQualifier(ValueQualifier $valueQualifier): self
+    public function addOnceToValueQualifier(ValueQualifier $valueQualifier): static
     {
         if (!is_array($this->valueQualifier)) {
             $this->valueQualifier = [];

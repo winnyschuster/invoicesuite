@@ -67,9 +67,9 @@ class LogisticsServiceChargeType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -77,9 +77,9 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -106,9 +106,9 @@ class LogisticsServiceChargeType
 
     /**
      * @param AmountType|null $appliedAmount
-     * @return self
+     * @return static
      */
-    public function setAppliedAmount(?AmountType $appliedAmount = null): self
+    public function setAppliedAmount(?AmountType $appliedAmount = null): static
     {
         $this->appliedAmount = $appliedAmount;
 
@@ -116,9 +116,9 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAppliedAmount(): self
+    public function unsetAppliedAmount(): static
     {
         $this->appliedAmount = null;
 
@@ -135,9 +135,9 @@ class LogisticsServiceChargeType
 
     /**
      * @param array<TradeTaxType>|null $appliedTradeTax
-     * @return self
+     * @return static
      */
-    public function setAppliedTradeTax(?array $appliedTradeTax = null): self
+    public function setAppliedTradeTax(?array $appliedTradeTax = null): static
     {
         $this->appliedTradeTax = $appliedTradeTax;
 
@@ -145,9 +145,9 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAppliedTradeTax(): self
+    public function unsetAppliedTradeTax(): static
     {
         $this->appliedTradeTax = null;
 
@@ -155,9 +155,9 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAppliedTradeTax(): self
+    public function clearAppliedTradeTax(): static
     {
         $this->appliedTradeTax = [];
 
@@ -166,9 +166,9 @@ class LogisticsServiceChargeType
 
     /**
      * @param TradeTaxType $appliedTradeTax
-     * @return self
+     * @return static
      */
-    public function addToAppliedTradeTax(TradeTaxType $appliedTradeTax): self
+    public function addToAppliedTradeTax(TradeTaxType $appliedTradeTax): static
     {
         $this->appliedTradeTax[] = $appliedTradeTax;
 
@@ -187,9 +187,9 @@ class LogisticsServiceChargeType
 
     /**
      * @param TradeTaxType $appliedTradeTax
-     * @return self
+     * @return static
      */
-    public function addOnceToAppliedTradeTax(TradeTaxType $appliedTradeTax): self
+    public function addOnceToAppliedTradeTax(TradeTaxType $appliedTradeTax): static
     {
         if (!is_array($this->appliedTradeTax)) {
             $this->appliedTradeTax = [];

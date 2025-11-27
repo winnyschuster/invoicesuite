@@ -77,9 +77,9 @@ class BranchType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -87,9 +87,9 @@ class BranchType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -116,9 +116,9 @@ class BranchType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -126,9 +126,9 @@ class BranchType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -155,9 +155,9 @@ class BranchType
 
     /**
      * @param FinancialInstitution|null $financialInstitution
-     * @return self
+     * @return static
      */
-    public function setFinancialInstitution(?FinancialInstitution $financialInstitution = null): self
+    public function setFinancialInstitution(?FinancialInstitution $financialInstitution = null): static
     {
         $this->financialInstitution = $financialInstitution;
 
@@ -165,9 +165,9 @@ class BranchType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancialInstitution(): self
+    public function unsetFinancialInstitution(): static
     {
         $this->financialInstitution = null;
 
@@ -194,9 +194,9 @@ class BranchType
 
     /**
      * @param Address|null $address
-     * @return self
+     * @return static
      */
-    public function setAddress(?Address $address = null): self
+    public function setAddress(?Address $address = null): static
     {
         $this->address = $address;
 
@@ -204,9 +204,9 @@ class BranchType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAddress(): self
+    public function unsetAddress(): static
     {
         $this->address = null;
 

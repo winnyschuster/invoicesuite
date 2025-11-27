@@ -354,9 +354,9 @@ class AddressType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -364,9 +364,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -393,9 +393,9 @@ class AddressType
 
     /**
      * @param AddressTypeCode|null $addressTypeCode
-     * @return self
+     * @return static
      */
-    public function setAddressTypeCode(?AddressTypeCode $addressTypeCode = null): self
+    public function setAddressTypeCode(?AddressTypeCode $addressTypeCode = null): static
     {
         $this->addressTypeCode = $addressTypeCode;
 
@@ -403,9 +403,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAddressTypeCode(): self
+    public function unsetAddressTypeCode(): static
     {
         $this->addressTypeCode = null;
 
@@ -432,9 +432,9 @@ class AddressType
 
     /**
      * @param AddressFormatCode|null $addressFormatCode
-     * @return self
+     * @return static
      */
-    public function setAddressFormatCode(?AddressFormatCode $addressFormatCode = null): self
+    public function setAddressFormatCode(?AddressFormatCode $addressFormatCode = null): static
     {
         $this->addressFormatCode = $addressFormatCode;
 
@@ -442,9 +442,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAddressFormatCode(): self
+    public function unsetAddressFormatCode(): static
     {
         $this->addressFormatCode = null;
 
@@ -471,9 +471,9 @@ class AddressType
 
     /**
      * @param Postbox|null $postbox
-     * @return self
+     * @return static
      */
-    public function setPostbox(?Postbox $postbox = null): self
+    public function setPostbox(?Postbox $postbox = null): static
     {
         $this->postbox = $postbox;
 
@@ -481,9 +481,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPostbox(): self
+    public function unsetPostbox(): static
     {
         $this->postbox = null;
 
@@ -510,9 +510,9 @@ class AddressType
 
     /**
      * @param Floor|null $floor
-     * @return self
+     * @return static
      */
-    public function setFloor(?Floor $floor = null): self
+    public function setFloor(?Floor $floor = null): static
     {
         $this->floor = $floor;
 
@@ -520,9 +520,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFloor(): self
+    public function unsetFloor(): static
     {
         $this->floor = null;
 
@@ -549,9 +549,9 @@ class AddressType
 
     /**
      * @param Room|null $room
-     * @return self
+     * @return static
      */
-    public function setRoom(?Room $room = null): self
+    public function setRoom(?Room $room = null): static
     {
         $this->room = $room;
 
@@ -559,9 +559,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRoom(): self
+    public function unsetRoom(): static
     {
         $this->room = null;
 
@@ -588,9 +588,9 @@ class AddressType
 
     /**
      * @param StreetName|null $streetName
-     * @return self
+     * @return static
      */
-    public function setStreetName(?StreetName $streetName = null): self
+    public function setStreetName(?StreetName $streetName = null): static
     {
         $this->streetName = $streetName;
 
@@ -598,9 +598,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStreetName(): self
+    public function unsetStreetName(): static
     {
         $this->streetName = null;
 
@@ -627,9 +627,9 @@ class AddressType
 
     /**
      * @param AdditionalStreetName|null $additionalStreetName
-     * @return self
+     * @return static
      */
-    public function setAdditionalStreetName(?AdditionalStreetName $additionalStreetName = null): self
+    public function setAdditionalStreetName(?AdditionalStreetName $additionalStreetName = null): static
     {
         $this->additionalStreetName = $additionalStreetName;
 
@@ -637,9 +637,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalStreetName(): self
+    public function unsetAdditionalStreetName(): static
     {
         $this->additionalStreetName = null;
 
@@ -666,9 +666,9 @@ class AddressType
 
     /**
      * @param BlockName|null $blockName
-     * @return self
+     * @return static
      */
-    public function setBlockName(?BlockName $blockName = null): self
+    public function setBlockName(?BlockName $blockName = null): static
     {
         $this->blockName = $blockName;
 
@@ -676,9 +676,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBlockName(): self
+    public function unsetBlockName(): static
     {
         $this->blockName = null;
 
@@ -705,9 +705,9 @@ class AddressType
 
     /**
      * @param BuildingName|null $buildingName
-     * @return self
+     * @return static
      */
-    public function setBuildingName(?BuildingName $buildingName = null): self
+    public function setBuildingName(?BuildingName $buildingName = null): static
     {
         $this->buildingName = $buildingName;
 
@@ -715,9 +715,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuildingName(): self
+    public function unsetBuildingName(): static
     {
         $this->buildingName = null;
 
@@ -744,9 +744,9 @@ class AddressType
 
     /**
      * @param BuildingNumber|null $buildingNumber
-     * @return self
+     * @return static
      */
-    public function setBuildingNumber(?BuildingNumber $buildingNumber = null): self
+    public function setBuildingNumber(?BuildingNumber $buildingNumber = null): static
     {
         $this->buildingNumber = $buildingNumber;
 
@@ -754,9 +754,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuildingNumber(): self
+    public function unsetBuildingNumber(): static
     {
         $this->buildingNumber = null;
 
@@ -783,9 +783,9 @@ class AddressType
 
     /**
      * @param InhouseMail|null $inhouseMail
-     * @return self
+     * @return static
      */
-    public function setInhouseMail(?InhouseMail $inhouseMail = null): self
+    public function setInhouseMail(?InhouseMail $inhouseMail = null): static
     {
         $this->inhouseMail = $inhouseMail;
 
@@ -793,9 +793,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInhouseMail(): self
+    public function unsetInhouseMail(): static
     {
         $this->inhouseMail = null;
 
@@ -822,9 +822,9 @@ class AddressType
 
     /**
      * @param Department|null $department
-     * @return self
+     * @return static
      */
-    public function setDepartment(?Department $department = null): self
+    public function setDepartment(?Department $department = null): static
     {
         $this->department = $department;
 
@@ -832,9 +832,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDepartment(): self
+    public function unsetDepartment(): static
     {
         $this->department = null;
 
@@ -861,9 +861,9 @@ class AddressType
 
     /**
      * @param MarkAttention|null $markAttention
-     * @return self
+     * @return static
      */
-    public function setMarkAttention(?MarkAttention $markAttention = null): self
+    public function setMarkAttention(?MarkAttention $markAttention = null): static
     {
         $this->markAttention = $markAttention;
 
@@ -871,9 +871,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMarkAttention(): self
+    public function unsetMarkAttention(): static
     {
         $this->markAttention = null;
 
@@ -900,9 +900,9 @@ class AddressType
 
     /**
      * @param MarkCare|null $markCare
-     * @return self
+     * @return static
      */
-    public function setMarkCare(?MarkCare $markCare = null): self
+    public function setMarkCare(?MarkCare $markCare = null): static
     {
         $this->markCare = $markCare;
 
@@ -910,9 +910,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMarkCare(): self
+    public function unsetMarkCare(): static
     {
         $this->markCare = null;
 
@@ -939,9 +939,9 @@ class AddressType
 
     /**
      * @param PlotIdentification|null $plotIdentification
-     * @return self
+     * @return static
      */
-    public function setPlotIdentification(?PlotIdentification $plotIdentification = null): self
+    public function setPlotIdentification(?PlotIdentification $plotIdentification = null): static
     {
         $this->plotIdentification = $plotIdentification;
 
@@ -949,9 +949,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlotIdentification(): self
+    public function unsetPlotIdentification(): static
     {
         $this->plotIdentification = null;
 
@@ -978,9 +978,9 @@ class AddressType
 
     /**
      * @param CitySubdivisionName|null $citySubdivisionName
-     * @return self
+     * @return static
      */
-    public function setCitySubdivisionName(?CitySubdivisionName $citySubdivisionName = null): self
+    public function setCitySubdivisionName(?CitySubdivisionName $citySubdivisionName = null): static
     {
         $this->citySubdivisionName = $citySubdivisionName;
 
@@ -988,9 +988,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCitySubdivisionName(): self
+    public function unsetCitySubdivisionName(): static
     {
         $this->citySubdivisionName = null;
 
@@ -1017,9 +1017,9 @@ class AddressType
 
     /**
      * @param CityName|null $cityName
-     * @return self
+     * @return static
      */
-    public function setCityName(?CityName $cityName = null): self
+    public function setCityName(?CityName $cityName = null): static
     {
         $this->cityName = $cityName;
 
@@ -1027,9 +1027,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCityName(): self
+    public function unsetCityName(): static
     {
         $this->cityName = null;
 
@@ -1056,9 +1056,9 @@ class AddressType
 
     /**
      * @param PostalZone|null $postalZone
-     * @return self
+     * @return static
      */
-    public function setPostalZone(?PostalZone $postalZone = null): self
+    public function setPostalZone(?PostalZone $postalZone = null): static
     {
         $this->postalZone = $postalZone;
 
@@ -1066,9 +1066,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPostalZone(): self
+    public function unsetPostalZone(): static
     {
         $this->postalZone = null;
 
@@ -1095,9 +1095,9 @@ class AddressType
 
     /**
      * @param CountrySubentity|null $countrySubentity
-     * @return self
+     * @return static
      */
-    public function setCountrySubentity(?CountrySubentity $countrySubentity = null): self
+    public function setCountrySubentity(?CountrySubentity $countrySubentity = null): static
     {
         $this->countrySubentity = $countrySubentity;
 
@@ -1105,9 +1105,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountrySubentity(): self
+    public function unsetCountrySubentity(): static
     {
         $this->countrySubentity = null;
 
@@ -1134,9 +1134,9 @@ class AddressType
 
     /**
      * @param CountrySubentityCode|null $countrySubentityCode
-     * @return self
+     * @return static
      */
-    public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): self
+    public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): static
     {
         $this->countrySubentityCode = $countrySubentityCode;
 
@@ -1144,9 +1144,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountrySubentityCode(): self
+    public function unsetCountrySubentityCode(): static
     {
         $this->countrySubentityCode = null;
 
@@ -1173,9 +1173,9 @@ class AddressType
 
     /**
      * @param Region|null $region
-     * @return self
+     * @return static
      */
-    public function setRegion(?Region $region = null): self
+    public function setRegion(?Region $region = null): static
     {
         $this->region = $region;
 
@@ -1183,9 +1183,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRegion(): self
+    public function unsetRegion(): static
     {
         $this->region = null;
 
@@ -1212,9 +1212,9 @@ class AddressType
 
     /**
      * @param District|null $district
-     * @return self
+     * @return static
      */
-    public function setDistrict(?District $district = null): self
+    public function setDistrict(?District $district = null): static
     {
         $this->district = $district;
 
@@ -1222,9 +1222,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDistrict(): self
+    public function unsetDistrict(): static
     {
         $this->district = null;
 
@@ -1251,9 +1251,9 @@ class AddressType
 
     /**
      * @param TimezoneOffset|null $timezoneOffset
-     * @return self
+     * @return static
      */
-    public function setTimezoneOffset(?TimezoneOffset $timezoneOffset = null): self
+    public function setTimezoneOffset(?TimezoneOffset $timezoneOffset = null): static
     {
         $this->timezoneOffset = $timezoneOffset;
 
@@ -1261,9 +1261,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTimezoneOffset(): self
+    public function unsetTimezoneOffset(): static
     {
         $this->timezoneOffset = null;
 
@@ -1280,9 +1280,9 @@ class AddressType
 
     /**
      * @param array<AddressLine>|null $addressLine
-     * @return self
+     * @return static
      */
-    public function setAddressLine(?array $addressLine = null): self
+    public function setAddressLine(?array $addressLine = null): static
     {
         $this->addressLine = $addressLine;
 
@@ -1290,9 +1290,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAddressLine(): self
+    public function unsetAddressLine(): static
     {
         $this->addressLine = null;
 
@@ -1300,9 +1300,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAddressLine(): self
+    public function clearAddressLine(): static
     {
         $this->addressLine = [];
 
@@ -1341,9 +1341,9 @@ class AddressType
 
     /**
      * @param AddressLine $addressLine
-     * @return self
+     * @return static
      */
-    public function addToAddressLine(AddressLine $addressLine): self
+    public function addToAddressLine(AddressLine $addressLine): static
     {
         $this->addressLine[] = $addressLine;
 
@@ -1362,9 +1362,9 @@ class AddressType
 
     /**
      * @param AddressLine $addressLine
-     * @return self
+     * @return static
      */
-    public function addOnceToAddressLine(AddressLine $addressLine): self
+    public function addOnceToAddressLine(AddressLine $addressLine): static
     {
         if (!is_array($this->addressLine)) {
             $this->addressLine = [];
@@ -1411,9 +1411,9 @@ class AddressType
 
     /**
      * @param Country|null $country
-     * @return self
+     * @return static
      */
-    public function setCountry(?Country $country = null): self
+    public function setCountry(?Country $country = null): static
     {
         $this->country = $country;
 
@@ -1421,9 +1421,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountry(): self
+    public function unsetCountry(): static
     {
         $this->country = null;
 
@@ -1440,9 +1440,9 @@ class AddressType
 
     /**
      * @param array<LocationCoordinate>|null $locationCoordinate
-     * @return self
+     * @return static
      */
-    public function setLocationCoordinate(?array $locationCoordinate = null): self
+    public function setLocationCoordinate(?array $locationCoordinate = null): static
     {
         $this->locationCoordinate = $locationCoordinate;
 
@@ -1450,9 +1450,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLocationCoordinate(): self
+    public function unsetLocationCoordinate(): static
     {
         $this->locationCoordinate = null;
 
@@ -1460,9 +1460,9 @@ class AddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLocationCoordinate(): self
+    public function clearLocationCoordinate(): static
     {
         $this->locationCoordinate = [];
 
@@ -1501,9 +1501,9 @@ class AddressType
 
     /**
      * @param LocationCoordinate $locationCoordinate
-     * @return self
+     * @return static
      */
-    public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): self
+    public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): static
     {
         $this->locationCoordinate[] = $locationCoordinate;
 
@@ -1522,9 +1522,9 @@ class AddressType
 
     /**
      * @param LocationCoordinate $locationCoordinate
-     * @return self
+     * @return static
      */
-    public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): self
+    public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): static
     {
         if (!is_array($this->locationCoordinate)) {
             $this->locationCoordinate = [];

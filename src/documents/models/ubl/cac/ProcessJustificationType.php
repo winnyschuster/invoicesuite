@@ -81,20 +81,20 @@ class ProcessJustificationType
 
     /**
      * @param PreviousCancellationReasonCode|null $previousCancellationReasonCode
-     * @return self
+     * @return static
      */
     public function setPreviousCancellationReasonCode(
         ?PreviousCancellationReasonCode $previousCancellationReasonCode = null,
-    ): self {
+    ): static {
         $this->previousCancellationReasonCode = $previousCancellationReasonCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousCancellationReasonCode(): self
+    public function unsetPreviousCancellationReasonCode(): static
     {
         $this->previousCancellationReasonCode = null;
 
@@ -121,9 +121,9 @@ class ProcessJustificationType
 
     /**
      * @param ProcessReasonCode|null $processReasonCode
-     * @return self
+     * @return static
      */
-    public function setProcessReasonCode(?ProcessReasonCode $processReasonCode = null): self
+    public function setProcessReasonCode(?ProcessReasonCode $processReasonCode = null): static
     {
         $this->processReasonCode = $processReasonCode;
 
@@ -131,9 +131,9 @@ class ProcessJustificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcessReasonCode(): self
+    public function unsetProcessReasonCode(): static
     {
         $this->processReasonCode = null;
 
@@ -150,9 +150,9 @@ class ProcessJustificationType
 
     /**
      * @param array<ProcessReason>|null $processReason
-     * @return self
+     * @return static
      */
-    public function setProcessReason(?array $processReason = null): self
+    public function setProcessReason(?array $processReason = null): static
     {
         $this->processReason = $processReason;
 
@@ -160,9 +160,9 @@ class ProcessJustificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcessReason(): self
+    public function unsetProcessReason(): static
     {
         $this->processReason = null;
 
@@ -170,9 +170,9 @@ class ProcessJustificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearProcessReason(): self
+    public function clearProcessReason(): static
     {
         $this->processReason = [];
 
@@ -211,9 +211,9 @@ class ProcessJustificationType
 
     /**
      * @param ProcessReason $processReason
-     * @return self
+     * @return static
      */
-    public function addToProcessReason(ProcessReason $processReason): self
+    public function addToProcessReason(ProcessReason $processReason): static
     {
         $this->processReason[] = $processReason;
 
@@ -232,9 +232,9 @@ class ProcessJustificationType
 
     /**
      * @param ProcessReason $processReason
-     * @return self
+     * @return static
      */
-    public function addOnceToProcessReason(ProcessReason $processReason): self
+    public function addOnceToProcessReason(ProcessReason $processReason): static
     {
         if (!is_array($this->processReason)) {
             $this->processReason = [];
@@ -271,9 +271,9 @@ class ProcessJustificationType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -281,9 +281,9 @@ class ProcessJustificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -291,9 +291,9 @@ class ProcessJustificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -332,9 +332,9 @@ class ProcessJustificationType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -353,9 +353,9 @@ class ProcessJustificationType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];

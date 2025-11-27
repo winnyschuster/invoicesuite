@@ -81,9 +81,9 @@ class ContractExtensionType
 
     /**
      * @param array<OptionsDescription>|null $optionsDescription
-     * @return self
+     * @return static
      */
-    public function setOptionsDescription(?array $optionsDescription = null): self
+    public function setOptionsDescription(?array $optionsDescription = null): static
     {
         $this->optionsDescription = $optionsDescription;
 
@@ -91,9 +91,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOptionsDescription(): self
+    public function unsetOptionsDescription(): static
     {
         $this->optionsDescription = null;
 
@@ -101,9 +101,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOptionsDescription(): self
+    public function clearOptionsDescription(): static
     {
         $this->optionsDescription = [];
 
@@ -142,9 +142,9 @@ class ContractExtensionType
 
     /**
      * @param OptionsDescription $optionsDescription
-     * @return self
+     * @return static
      */
-    public function addToOptionsDescription(OptionsDescription $optionsDescription): self
+    public function addToOptionsDescription(OptionsDescription $optionsDescription): static
     {
         $this->optionsDescription[] = $optionsDescription;
 
@@ -163,9 +163,9 @@ class ContractExtensionType
 
     /**
      * @param OptionsDescription $optionsDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToOptionsDescription(OptionsDescription $optionsDescription): self
+    public function addOnceToOptionsDescription(OptionsDescription $optionsDescription): static
     {
         if (!is_array($this->optionsDescription)) {
             $this->optionsDescription = [];
@@ -212,9 +212,9 @@ class ContractExtensionType
 
     /**
      * @param MinimumNumberNumeric|null $minimumNumberNumeric
-     * @return self
+     * @return static
      */
-    public function setMinimumNumberNumeric(?MinimumNumberNumeric $minimumNumberNumeric = null): self
+    public function setMinimumNumberNumeric(?MinimumNumberNumeric $minimumNumberNumeric = null): static
     {
         $this->minimumNumberNumeric = $minimumNumberNumeric;
 
@@ -222,9 +222,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumNumberNumeric(): self
+    public function unsetMinimumNumberNumeric(): static
     {
         $this->minimumNumberNumeric = null;
 
@@ -251,9 +251,9 @@ class ContractExtensionType
 
     /**
      * @param MaximumNumberNumeric|null $maximumNumberNumeric
-     * @return self
+     * @return static
      */
-    public function setMaximumNumberNumeric(?MaximumNumberNumeric $maximumNumberNumeric = null): self
+    public function setMaximumNumberNumeric(?MaximumNumberNumeric $maximumNumberNumeric = null): static
     {
         $this->maximumNumberNumeric = $maximumNumberNumeric;
 
@@ -261,9 +261,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumNumberNumeric(): self
+    public function unsetMaximumNumberNumeric(): static
     {
         $this->maximumNumberNumeric = null;
 
@@ -290,9 +290,9 @@ class ContractExtensionType
 
     /**
      * @param OptionValidityPeriod|null $optionValidityPeriod
-     * @return self
+     * @return static
      */
-    public function setOptionValidityPeriod(?OptionValidityPeriod $optionValidityPeriod = null): self
+    public function setOptionValidityPeriod(?OptionValidityPeriod $optionValidityPeriod = null): static
     {
         $this->optionValidityPeriod = $optionValidityPeriod;
 
@@ -300,9 +300,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOptionValidityPeriod(): self
+    public function unsetOptionValidityPeriod(): static
     {
         $this->optionValidityPeriod = null;
 
@@ -319,9 +319,9 @@ class ContractExtensionType
 
     /**
      * @param array<Renewal>|null $renewal
-     * @return self
+     * @return static
      */
-    public function setRenewal(?array $renewal = null): self
+    public function setRenewal(?array $renewal = null): static
     {
         $this->renewal = $renewal;
 
@@ -329,9 +329,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRenewal(): self
+    public function unsetRenewal(): static
     {
         $this->renewal = null;
 
@@ -339,9 +339,9 @@ class ContractExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRenewal(): self
+    public function clearRenewal(): static
     {
         $this->renewal = [];
 
@@ -380,9 +380,9 @@ class ContractExtensionType
 
     /**
      * @param Renewal $renewal
-     * @return self
+     * @return static
      */
-    public function addToRenewal(Renewal $renewal): self
+    public function addToRenewal(Renewal $renewal): static
     {
         $this->renewal[] = $renewal;
 
@@ -401,9 +401,9 @@ class ContractExtensionType
 
     /**
      * @param Renewal $renewal
-     * @return self
+     * @return static
      */
-    public function addOnceToRenewal(Renewal $renewal): self
+    public function addOnceToRenewal(Renewal $renewal): static
     {
         if (!is_array($this->renewal)) {
             $this->renewal = [];

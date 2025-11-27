@@ -126,9 +126,9 @@ class MaritimeTransportType
 
     /**
      * @param VesselID|null $vesselID
-     * @return self
+     * @return static
      */
-    public function setVesselID(?VesselID $vesselID = null): self
+    public function setVesselID(?VesselID $vesselID = null): static
     {
         $this->vesselID = $vesselID;
 
@@ -136,9 +136,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVesselID(): self
+    public function unsetVesselID(): static
     {
         $this->vesselID = null;
 
@@ -165,9 +165,9 @@ class MaritimeTransportType
 
     /**
      * @param VesselName|null $vesselName
-     * @return self
+     * @return static
      */
-    public function setVesselName(?VesselName $vesselName = null): self
+    public function setVesselName(?VesselName $vesselName = null): static
     {
         $this->vesselName = $vesselName;
 
@@ -175,9 +175,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVesselName(): self
+    public function unsetVesselName(): static
     {
         $this->vesselName = null;
 
@@ -204,9 +204,9 @@ class MaritimeTransportType
 
     /**
      * @param RadioCallSignID|null $radioCallSignID
-     * @return self
+     * @return static
      */
-    public function setRadioCallSignID(?RadioCallSignID $radioCallSignID = null): self
+    public function setRadioCallSignID(?RadioCallSignID $radioCallSignID = null): static
     {
         $this->radioCallSignID = $radioCallSignID;
 
@@ -214,9 +214,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRadioCallSignID(): self
+    public function unsetRadioCallSignID(): static
     {
         $this->radioCallSignID = null;
 
@@ -233,9 +233,9 @@ class MaritimeTransportType
 
     /**
      * @param array<ShipsRequirements>|null $shipsRequirements
-     * @return self
+     * @return static
      */
-    public function setShipsRequirements(?array $shipsRequirements = null): self
+    public function setShipsRequirements(?array $shipsRequirements = null): static
     {
         $this->shipsRequirements = $shipsRequirements;
 
@@ -243,9 +243,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipsRequirements(): self
+    public function unsetShipsRequirements(): static
     {
         $this->shipsRequirements = null;
 
@@ -253,9 +253,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipsRequirements(): self
+    public function clearShipsRequirements(): static
     {
         $this->shipsRequirements = [];
 
@@ -294,9 +294,9 @@ class MaritimeTransportType
 
     /**
      * @param ShipsRequirements $shipsRequirements
-     * @return self
+     * @return static
      */
-    public function addToShipsRequirements(ShipsRequirements $shipsRequirements): self
+    public function addToShipsRequirements(ShipsRequirements $shipsRequirements): static
     {
         $this->shipsRequirements[] = $shipsRequirements;
 
@@ -315,9 +315,9 @@ class MaritimeTransportType
 
     /**
      * @param ShipsRequirements $shipsRequirements
-     * @return self
+     * @return static
      */
-    public function addOnceToShipsRequirements(ShipsRequirements $shipsRequirements): self
+    public function addOnceToShipsRequirements(ShipsRequirements $shipsRequirements): static
     {
         if (!is_array($this->shipsRequirements)) {
             $this->shipsRequirements = [];
@@ -364,9 +364,9 @@ class MaritimeTransportType
 
     /**
      * @param GrossTonnageMeasure|null $grossTonnageMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossTonnageMeasure(?GrossTonnageMeasure $grossTonnageMeasure = null): self
+    public function setGrossTonnageMeasure(?GrossTonnageMeasure $grossTonnageMeasure = null): static
     {
         $this->grossTonnageMeasure = $grossTonnageMeasure;
 
@@ -374,9 +374,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossTonnageMeasure(): self
+    public function unsetGrossTonnageMeasure(): static
     {
         $this->grossTonnageMeasure = null;
 
@@ -403,9 +403,9 @@ class MaritimeTransportType
 
     /**
      * @param NetTonnageMeasure|null $netTonnageMeasure
-     * @return self
+     * @return static
      */
-    public function setNetTonnageMeasure(?NetTonnageMeasure $netTonnageMeasure = null): self
+    public function setNetTonnageMeasure(?NetTonnageMeasure $netTonnageMeasure = null): static
     {
         $this->netTonnageMeasure = $netTonnageMeasure;
 
@@ -413,9 +413,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetTonnageMeasure(): self
+    public function unsetNetTonnageMeasure(): static
     {
         $this->netTonnageMeasure = null;
 
@@ -442,20 +442,20 @@ class MaritimeTransportType
 
     /**
      * @param RegistryCertificateDocumentReference|null $registryCertificateDocumentReference
-     * @return self
+     * @return static
      */
     public function setRegistryCertificateDocumentReference(
         ?RegistryCertificateDocumentReference $registryCertificateDocumentReference = null,
-    ): self {
+    ): static {
         $this->registryCertificateDocumentReference = $registryCertificateDocumentReference;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRegistryCertificateDocumentReference(): self
+    public function unsetRegistryCertificateDocumentReference(): static
     {
         $this->registryCertificateDocumentReference = null;
 
@@ -482,9 +482,9 @@ class MaritimeTransportType
 
     /**
      * @param RegistryPortLocation|null $registryPortLocation
-     * @return self
+     * @return static
      */
-    public function setRegistryPortLocation(?RegistryPortLocation $registryPortLocation = null): self
+    public function setRegistryPortLocation(?RegistryPortLocation $registryPortLocation = null): static
     {
         $this->registryPortLocation = $registryPortLocation;
 
@@ -492,9 +492,9 @@ class MaritimeTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRegistryPortLocation(): self
+    public function unsetRegistryPortLocation(): static
     {
         $this->registryPortLocation = null;
 

@@ -101,9 +101,9 @@ class ForecastLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -111,9 +111,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -130,9 +130,9 @@ class ForecastLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -140,9 +140,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -150,9 +150,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -191,9 +191,9 @@ class ForecastLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -212,9 +212,9 @@ class ForecastLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -251,9 +251,9 @@ class ForecastLineType
 
     /**
      * @param bool|null $frozenDocumentIndicator
-     * @return self
+     * @return static
      */
-    public function setFrozenDocumentIndicator(?bool $frozenDocumentIndicator = null): self
+    public function setFrozenDocumentIndicator(?bool $frozenDocumentIndicator = null): static
     {
         $this->frozenDocumentIndicator = $frozenDocumentIndicator;
 
@@ -261,9 +261,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFrozenDocumentIndicator(): self
+    public function unsetFrozenDocumentIndicator(): static
     {
         $this->frozenDocumentIndicator = null;
 
@@ -290,9 +290,9 @@ class ForecastLineType
 
     /**
      * @param ForecastTypeCode|null $forecastTypeCode
-     * @return self
+     * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
+    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
     {
         $this->forecastTypeCode = $forecastTypeCode;
 
@@ -300,9 +300,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastTypeCode(): self
+    public function unsetForecastTypeCode(): static
     {
         $this->forecastTypeCode = null;
 
@@ -329,9 +329,9 @@ class ForecastLineType
 
     /**
      * @param ForecastPeriod|null $forecastPeriod
-     * @return self
+     * @return static
      */
-    public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): self
+    public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): static
     {
         $this->forecastPeriod = $forecastPeriod;
 
@@ -339,9 +339,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastPeriod(): self
+    public function unsetForecastPeriod(): static
     {
         $this->forecastPeriod = null;
 
@@ -368,9 +368,9 @@ class ForecastLineType
 
     /**
      * @param SalesItem|null $salesItem
-     * @return self
+     * @return static
      */
-    public function setSalesItem(?SalesItem $salesItem = null): self
+    public function setSalesItem(?SalesItem $salesItem = null): static
     {
         $this->salesItem = $salesItem;
 
@@ -378,9 +378,9 @@ class ForecastLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSalesItem(): self
+    public function unsetSalesItem(): static
     {
         $this->salesItem = null;
 

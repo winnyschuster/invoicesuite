@@ -32,9 +32,9 @@ class FollowupContractIndicatorType
 
     /**
      * @param bool|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?bool $value = null): self
+    public function setValue(?bool $value = null): static
     {
         $this->value = $value;
 
@@ -42,9 +42,9 @@ class FollowupContractIndicatorType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

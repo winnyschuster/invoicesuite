@@ -91,9 +91,9 @@ class TaxSchemeType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -101,9 +101,9 @@ class TaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -130,9 +130,9 @@ class TaxSchemeType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -140,9 +140,9 @@ class TaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -169,9 +169,9 @@ class TaxSchemeType
 
     /**
      * @param TaxTypeCode|null $taxTypeCode
-     * @return self
+     * @return static
      */
-    public function setTaxTypeCode(?TaxTypeCode $taxTypeCode = null): self
+    public function setTaxTypeCode(?TaxTypeCode $taxTypeCode = null): static
     {
         $this->taxTypeCode = $taxTypeCode;
 
@@ -179,9 +179,9 @@ class TaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTypeCode(): self
+    public function unsetTaxTypeCode(): static
     {
         $this->taxTypeCode = null;
 
@@ -208,9 +208,9 @@ class TaxSchemeType
 
     /**
      * @param CurrencyCode|null $currencyCode
-     * @return self
+     * @return static
      */
-    public function setCurrencyCode(?CurrencyCode $currencyCode = null): self
+    public function setCurrencyCode(?CurrencyCode $currencyCode = null): static
     {
         $this->currencyCode = $currencyCode;
 
@@ -218,9 +218,9 @@ class TaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrencyCode(): self
+    public function unsetCurrencyCode(): static
     {
         $this->currencyCode = null;
 
@@ -237,9 +237,9 @@ class TaxSchemeType
 
     /**
      * @param array<JurisdictionRegionAddress>|null $jurisdictionRegionAddress
-     * @return self
+     * @return static
      */
-    public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): self
+    public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): static
     {
         $this->jurisdictionRegionAddress = $jurisdictionRegionAddress;
 
@@ -247,9 +247,9 @@ class TaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetJurisdictionRegionAddress(): self
+    public function unsetJurisdictionRegionAddress(): static
     {
         $this->jurisdictionRegionAddress = null;
 
@@ -257,9 +257,9 @@ class TaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearJurisdictionRegionAddress(): self
+    public function clearJurisdictionRegionAddress(): static
     {
         $this->jurisdictionRegionAddress = [];
 
@@ -298,9 +298,9 @@ class TaxSchemeType
 
     /**
      * @param JurisdictionRegionAddress $jurisdictionRegionAddress
-     * @return self
+     * @return static
      */
-    public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): self
+    public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
     {
         $this->jurisdictionRegionAddress[] = $jurisdictionRegionAddress;
 
@@ -319,9 +319,9 @@ class TaxSchemeType
 
     /**
      * @param JurisdictionRegionAddress $jurisdictionRegionAddress
-     * @return self
+     * @return static
      */
-    public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): self
+    public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
     {
         if (!is_array($this->jurisdictionRegionAddress)) {
             $this->jurisdictionRegionAddress = [];

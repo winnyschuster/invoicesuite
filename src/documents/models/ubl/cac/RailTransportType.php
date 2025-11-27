@@ -55,9 +55,9 @@ class RailTransportType
 
     /**
      * @param TrainID|null $trainID
-     * @return self
+     * @return static
      */
-    public function setTrainID(?TrainID $trainID = null): self
+    public function setTrainID(?TrainID $trainID = null): static
     {
         $this->trainID = $trainID;
 
@@ -65,9 +65,9 @@ class RailTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTrainID(): self
+    public function unsetTrainID(): static
     {
         $this->trainID = null;
 
@@ -94,9 +94,9 @@ class RailTransportType
 
     /**
      * @param RailCarID|null $railCarID
-     * @return self
+     * @return static
      */
-    public function setRailCarID(?RailCarID $railCarID = null): self
+    public function setRailCarID(?RailCarID $railCarID = null): static
     {
         $this->railCarID = $railCarID;
 
@@ -104,9 +104,9 @@ class RailTransportType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRailCarID(): self
+    public function unsetRailCarID(): static
     {
         $this->railCarID = null;
 

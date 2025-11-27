@@ -102,9 +102,9 @@ class CatalogueRequestLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -112,9 +112,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -141,9 +141,9 @@ class CatalogueRequestLineType
 
     /**
      * @param ContractSubdivision|null $contractSubdivision
-     * @return self
+     * @return static
      */
-    public function setContractSubdivision(?ContractSubdivision $contractSubdivision = null): self
+    public function setContractSubdivision(?ContractSubdivision $contractSubdivision = null): static
     {
         $this->contractSubdivision = $contractSubdivision;
 
@@ -151,9 +151,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractSubdivision(): self
+    public function unsetContractSubdivision(): static
     {
         $this->contractSubdivision = null;
 
@@ -170,9 +170,9 @@ class CatalogueRequestLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -180,9 +180,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -190,9 +190,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -231,9 +231,9 @@ class CatalogueRequestLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -252,9 +252,9 @@ class CatalogueRequestLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -301,9 +301,9 @@ class CatalogueRequestLineType
 
     /**
      * @param LineValidityPeriod|null $lineValidityPeriod
-     * @return self
+     * @return static
      */
-    public function setLineValidityPeriod(?LineValidityPeriod $lineValidityPeriod = null): self
+    public function setLineValidityPeriod(?LineValidityPeriod $lineValidityPeriod = null): static
     {
         $this->lineValidityPeriod = $lineValidityPeriod;
 
@@ -311,9 +311,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineValidityPeriod(): self
+    public function unsetLineValidityPeriod(): static
     {
         $this->lineValidityPeriod = null;
 
@@ -330,9 +330,9 @@ class CatalogueRequestLineType
 
     /**
      * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
-     * @return self
+     * @return static
      */
-    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): self
+    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
     {
         $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
 
@@ -340,9 +340,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredItemLocationQuantity(): self
+    public function unsetRequiredItemLocationQuantity(): static
     {
         $this->requiredItemLocationQuantity = null;
 
@@ -350,9 +350,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRequiredItemLocationQuantity(): self
+    public function clearRequiredItemLocationQuantity(): static
     {
         $this->requiredItemLocationQuantity = [];
 
@@ -391,11 +391,11 @@ class CatalogueRequestLineType
 
     /**
      * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
-     * @return self
+     * @return static
      */
     public function addToRequiredItemLocationQuantity(
         RequiredItemLocationQuantity $requiredItemLocationQuantity,
-    ): self {
+    ): static {
         $this->requiredItemLocationQuantity[] = $requiredItemLocationQuantity;
 
         return $this;
@@ -413,11 +413,11 @@ class CatalogueRequestLineType
 
     /**
      * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
-     * @return self
+     * @return static
      */
     public function addOnceToRequiredItemLocationQuantity(
         RequiredItemLocationQuantity $requiredItemLocationQuantity,
-    ): self {
+    ): static {
         if (!is_array($this->requiredItemLocationQuantity)) {
             $this->requiredItemLocationQuantity = [];
         }
@@ -463,9 +463,9 @@ class CatalogueRequestLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -473,9 +473,9 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 

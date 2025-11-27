@@ -174,9 +174,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -184,9 +184,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -203,9 +203,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -213,9 +213,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -223,9 +223,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -264,9 +264,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -285,9 +285,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -334,20 +334,20 @@ class ExceptionCriteriaLineType
 
     /**
      * @param ThresholdValueComparisonCode|null $thresholdValueComparisonCode
-     * @return self
+     * @return static
      */
     public function setThresholdValueComparisonCode(
         ?ThresholdValueComparisonCode $thresholdValueComparisonCode = null,
-    ): self {
+    ): static {
         $this->thresholdValueComparisonCode = $thresholdValueComparisonCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetThresholdValueComparisonCode(): self
+    public function unsetThresholdValueComparisonCode(): static
     {
         $this->thresholdValueComparisonCode = null;
 
@@ -374,9 +374,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param ThresholdQuantity|null $thresholdQuantity
-     * @return self
+     * @return static
      */
-    public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): self
+    public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): static
     {
         $this->thresholdQuantity = $thresholdQuantity;
 
@@ -384,9 +384,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetThresholdQuantity(): self
+    public function unsetThresholdQuantity(): static
     {
         $this->thresholdQuantity = null;
 
@@ -413,9 +413,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param ExceptionStatusCode|null $exceptionStatusCode
-     * @return self
+     * @return static
      */
-    public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): self
+    public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): static
     {
         $this->exceptionStatusCode = $exceptionStatusCode;
 
@@ -423,9 +423,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExceptionStatusCode(): self
+    public function unsetExceptionStatusCode(): static
     {
         $this->exceptionStatusCode = null;
 
@@ -452,9 +452,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param CollaborationPriorityCode|null $collaborationPriorityCode
-     * @return self
+     * @return static
      */
-    public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): self
+    public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): static
     {
         $this->collaborationPriorityCode = $collaborationPriorityCode;
 
@@ -462,9 +462,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCollaborationPriorityCode(): self
+    public function unsetCollaborationPriorityCode(): static
     {
         $this->collaborationPriorityCode = null;
 
@@ -491,9 +491,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param ExceptionResolutionCode|null $exceptionResolutionCode
-     * @return self
+     * @return static
      */
-    public function setExceptionResolutionCode(?ExceptionResolutionCode $exceptionResolutionCode = null): self
+    public function setExceptionResolutionCode(?ExceptionResolutionCode $exceptionResolutionCode = null): static
     {
         $this->exceptionResolutionCode = $exceptionResolutionCode;
 
@@ -501,9 +501,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExceptionResolutionCode(): self
+    public function unsetExceptionResolutionCode(): static
     {
         $this->exceptionResolutionCode = null;
 
@@ -530,20 +530,20 @@ class ExceptionCriteriaLineType
 
     /**
      * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
-     * @return self
+     * @return static
      */
     public function setSupplyChainActivityTypeCode(
         ?SupplyChainActivityTypeCode $supplyChainActivityTypeCode = null,
-    ): self {
+    ): static {
         $this->supplyChainActivityTypeCode = $supplyChainActivityTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyChainActivityTypeCode(): self
+    public function unsetSupplyChainActivityTypeCode(): static
     {
         $this->supplyChainActivityTypeCode = null;
 
@@ -570,9 +570,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
-     * @return self
+     * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): self
+    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
     {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
@@ -580,9 +580,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerformanceMetricTypeCode(): self
+    public function unsetPerformanceMetricTypeCode(): static
     {
         $this->performanceMetricTypeCode = null;
 
@@ -609,9 +609,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param EffectivePeriod|null $effectivePeriod
-     * @return self
+     * @return static
      */
-    public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): self
+    public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): static
     {
         $this->effectivePeriod = $effectivePeriod;
 
@@ -619,9 +619,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEffectivePeriod(): self
+    public function unsetEffectivePeriod(): static
     {
         $this->effectivePeriod = null;
 
@@ -638,9 +638,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param array<SupplyItem>|null $supplyItem
-     * @return self
+     * @return static
      */
-    public function setSupplyItem(?array $supplyItem = null): self
+    public function setSupplyItem(?array $supplyItem = null): static
     {
         $this->supplyItem = $supplyItem;
 
@@ -648,9 +648,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupplyItem(): self
+    public function unsetSupplyItem(): static
     {
         $this->supplyItem = null;
 
@@ -658,9 +658,9 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSupplyItem(): self
+    public function clearSupplyItem(): static
     {
         $this->supplyItem = [];
 
@@ -699,9 +699,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param SupplyItem $supplyItem
-     * @return self
+     * @return static
      */
-    public function addToSupplyItem(SupplyItem $supplyItem): self
+    public function addToSupplyItem(SupplyItem $supplyItem): static
     {
         $this->supplyItem[] = $supplyItem;
 
@@ -720,9 +720,9 @@ class ExceptionCriteriaLineType
 
     /**
      * @param SupplyItem $supplyItem
-     * @return self
+     * @return static
      */
-    public function addOnceToSupplyItem(SupplyItem $supplyItem): self
+    public function addOnceToSupplyItem(SupplyItem $supplyItem): static
     {
         if (!is_array($this->supplyItem)) {
             $this->supplyItem = [];
@@ -769,20 +769,20 @@ class ExceptionCriteriaLineType
 
     /**
      * @param ForecastExceptionCriterionLine|null $forecastExceptionCriterionLine
-     * @return self
+     * @return static
      */
     public function setForecastExceptionCriterionLine(
         ?ForecastExceptionCriterionLine $forecastExceptionCriterionLine = null,
-    ): self {
+    ): static {
         $this->forecastExceptionCriterionLine = $forecastExceptionCriterionLine;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastExceptionCriterionLine(): self
+    public function unsetForecastExceptionCriterionLine(): static
     {
         $this->forecastExceptionCriterionLine = null;
 

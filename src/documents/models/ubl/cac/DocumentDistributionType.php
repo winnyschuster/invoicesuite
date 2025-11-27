@@ -66,9 +66,9 @@ class DocumentDistributionType
 
     /**
      * @param PrintQualifier|null $printQualifier
-     * @return self
+     * @return static
      */
-    public function setPrintQualifier(?PrintQualifier $printQualifier = null): self
+    public function setPrintQualifier(?PrintQualifier $printQualifier = null): static
     {
         $this->printQualifier = $printQualifier;
 
@@ -76,9 +76,9 @@ class DocumentDistributionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrintQualifier(): self
+    public function unsetPrintQualifier(): static
     {
         $this->printQualifier = null;
 
@@ -105,9 +105,9 @@ class DocumentDistributionType
 
     /**
      * @param MaximumCopiesNumeric|null $maximumCopiesNumeric
-     * @return self
+     * @return static
      */
-    public function setMaximumCopiesNumeric(?MaximumCopiesNumeric $maximumCopiesNumeric = null): self
+    public function setMaximumCopiesNumeric(?MaximumCopiesNumeric $maximumCopiesNumeric = null): static
     {
         $this->maximumCopiesNumeric = $maximumCopiesNumeric;
 
@@ -115,9 +115,9 @@ class DocumentDistributionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumCopiesNumeric(): self
+    public function unsetMaximumCopiesNumeric(): static
     {
         $this->maximumCopiesNumeric = null;
 
@@ -144,9 +144,9 @@ class DocumentDistributionType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -154,9 +154,9 @@ class DocumentDistributionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 

@@ -125,9 +125,9 @@ class ReferencedDocumentType
 
     /**
      * @param IDType|null $issuerAssignedID
-     * @return self
+     * @return static
      */
-    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): self
+    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): static
     {
         $this->issuerAssignedID = $issuerAssignedID;
 
@@ -135,9 +135,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerAssignedID(): self
+    public function unsetIssuerAssignedID(): static
     {
         $this->issuerAssignedID = null;
 
@@ -164,9 +164,9 @@ class ReferencedDocumentType
 
     /**
      * @param IDType|null $uRIID
-     * @return self
+     * @return static
      */
-    public function setURIID(?IDType $uRIID = null): self
+    public function setURIID(?IDType $uRIID = null): static
     {
         $this->uRIID = $uRIID;
 
@@ -174,9 +174,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetURIID(): self
+    public function unsetURIID(): static
     {
         $this->uRIID = null;
 
@@ -203,9 +203,9 @@ class ReferencedDocumentType
 
     /**
      * @param IDType|null $lineID
-     * @return self
+     * @return static
      */
-    public function setLineID(?IDType $lineID = null): self
+    public function setLineID(?IDType $lineID = null): static
     {
         $this->lineID = $lineID;
 
@@ -213,9 +213,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineID(): self
+    public function unsetLineID(): static
     {
         $this->lineID = null;
 
@@ -242,9 +242,9 @@ class ReferencedDocumentType
 
     /**
      * @param DocumentCodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?DocumentCodeType $typeCode = null): self
+    public function setTypeCode(?DocumentCodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -252,9 +252,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -281,9 +281,9 @@ class ReferencedDocumentType
 
     /**
      * @param TextType|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?TextType $name = null): self
+    public function setName(?TextType $name = null): static
     {
         $this->name = $name;
 
@@ -291,9 +291,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -320,9 +320,9 @@ class ReferencedDocumentType
 
     /**
      * @param BinaryObjectType|null $attachmentBinaryObject
-     * @return self
+     * @return static
      */
-    public function setAttachmentBinaryObject(?BinaryObjectType $attachmentBinaryObject = null): self
+    public function setAttachmentBinaryObject(?BinaryObjectType $attachmentBinaryObject = null): static
     {
         $this->attachmentBinaryObject = $attachmentBinaryObject;
 
@@ -330,9 +330,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAttachmentBinaryObject(): self
+    public function unsetAttachmentBinaryObject(): static
     {
         $this->attachmentBinaryObject = null;
 
@@ -359,9 +359,9 @@ class ReferencedDocumentType
 
     /**
      * @param ReferenceCodeType|null $referenceTypeCode
-     * @return self
+     * @return static
      */
-    public function setReferenceTypeCode(?ReferenceCodeType $referenceTypeCode = null): self
+    public function setReferenceTypeCode(?ReferenceCodeType $referenceTypeCode = null): static
     {
         $this->referenceTypeCode = $referenceTypeCode;
 
@@ -369,9 +369,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferenceTypeCode(): self
+    public function unsetReferenceTypeCode(): static
     {
         $this->referenceTypeCode = null;
 
@@ -398,9 +398,9 @@ class ReferencedDocumentType
 
     /**
      * @param FormattedDateTimeType|null $formattedIssueDateTime
-     * @return self
+     * @return static
      */
-    public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): self
+    public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): static
     {
         $this->formattedIssueDateTime = $formattedIssueDateTime;
 
@@ -408,9 +408,9 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFormattedIssueDateTime(): self
+    public function unsetFormattedIssueDateTime(): static
     {
         $this->formattedIssueDateTime = null;
 

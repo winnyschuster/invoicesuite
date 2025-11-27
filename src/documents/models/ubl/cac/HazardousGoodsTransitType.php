@@ -113,20 +113,20 @@ class HazardousGoodsTransitType
 
     /**
      * @param TransportEmergencyCardCode|null $transportEmergencyCardCode
-     * @return self
+     * @return static
      */
     public function setTransportEmergencyCardCode(
         ?TransportEmergencyCardCode $transportEmergencyCardCode = null,
-    ): self {
+    ): static {
         $this->transportEmergencyCardCode = $transportEmergencyCardCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEmergencyCardCode(): self
+    public function unsetTransportEmergencyCardCode(): static
     {
         $this->transportEmergencyCardCode = null;
 
@@ -153,9 +153,9 @@ class HazardousGoodsTransitType
 
     /**
      * @param PackingCriteriaCode|null $packingCriteriaCode
-     * @return self
+     * @return static
      */
-    public function setPackingCriteriaCode(?PackingCriteriaCode $packingCriteriaCode = null): self
+    public function setPackingCriteriaCode(?PackingCriteriaCode $packingCriteriaCode = null): static
     {
         $this->packingCriteriaCode = $packingCriteriaCode;
 
@@ -163,9 +163,9 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackingCriteriaCode(): self
+    public function unsetPackingCriteriaCode(): static
     {
         $this->packingCriteriaCode = null;
 
@@ -192,9 +192,9 @@ class HazardousGoodsTransitType
 
     /**
      * @param HazardousRegulationCode|null $hazardousRegulationCode
-     * @return self
+     * @return static
      */
-    public function setHazardousRegulationCode(?HazardousRegulationCode $hazardousRegulationCode = null): self
+    public function setHazardousRegulationCode(?HazardousRegulationCode $hazardousRegulationCode = null): static
     {
         $this->hazardousRegulationCode = $hazardousRegulationCode;
 
@@ -202,9 +202,9 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousRegulationCode(): self
+    public function unsetHazardousRegulationCode(): static
     {
         $this->hazardousRegulationCode = null;
 
@@ -231,20 +231,20 @@ class HazardousGoodsTransitType
 
     /**
      * @param InhalationToxicityZoneCode|null $inhalationToxicityZoneCode
-     * @return self
+     * @return static
      */
     public function setInhalationToxicityZoneCode(
         ?InhalationToxicityZoneCode $inhalationToxicityZoneCode = null,
-    ): self {
+    ): static {
         $this->inhalationToxicityZoneCode = $inhalationToxicityZoneCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInhalationToxicityZoneCode(): self
+    public function unsetInhalationToxicityZoneCode(): static
     {
         $this->inhalationToxicityZoneCode = null;
 
@@ -271,20 +271,20 @@ class HazardousGoodsTransitType
 
     /**
      * @param TransportAuthorizationCode|null $transportAuthorizationCode
-     * @return self
+     * @return static
      */
     public function setTransportAuthorizationCode(
         ?TransportAuthorizationCode $transportAuthorizationCode = null,
-    ): self {
+    ): static {
         $this->transportAuthorizationCode = $transportAuthorizationCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportAuthorizationCode(): self
+    public function unsetTransportAuthorizationCode(): static
     {
         $this->transportAuthorizationCode = null;
 
@@ -311,9 +311,9 @@ class HazardousGoodsTransitType
 
     /**
      * @param MaximumTemperature|null $maximumTemperature
-     * @return self
+     * @return static
      */
-    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): self
+    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
     {
         $this->maximumTemperature = $maximumTemperature;
 
@@ -321,9 +321,9 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumTemperature(): self
+    public function unsetMaximumTemperature(): static
     {
         $this->maximumTemperature = null;
 
@@ -350,9 +350,9 @@ class HazardousGoodsTransitType
 
     /**
      * @param MinimumTemperature|null $minimumTemperature
-     * @return self
+     * @return static
      */
-    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): self
+    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
     {
         $this->minimumTemperature = $minimumTemperature;
 
@@ -360,9 +360,9 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumTemperature(): self
+    public function unsetMinimumTemperature(): static
     {
         $this->minimumTemperature = null;
 

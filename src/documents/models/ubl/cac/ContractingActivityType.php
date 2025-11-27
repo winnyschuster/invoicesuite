@@ -55,9 +55,9 @@ class ContractingActivityType
 
     /**
      * @param ActivityTypeCode|null $activityTypeCode
-     * @return self
+     * @return static
      */
-    public function setActivityTypeCode(?ActivityTypeCode $activityTypeCode = null): self
+    public function setActivityTypeCode(?ActivityTypeCode $activityTypeCode = null): static
     {
         $this->activityTypeCode = $activityTypeCode;
 
@@ -65,9 +65,9 @@ class ContractingActivityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActivityTypeCode(): self
+    public function unsetActivityTypeCode(): static
     {
         $this->activityTypeCode = null;
 
@@ -94,9 +94,9 @@ class ContractingActivityType
 
     /**
      * @param ActivityType|null $activityType
-     * @return self
+     * @return static
      */
-    public function setActivityType(?ActivityType $activityType = null): self
+    public function setActivityType(?ActivityType $activityType = null): static
     {
         $this->activityType = $activityType;
 
@@ -104,9 +104,9 @@ class ContractingActivityType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActivityType(): self
+    public function unsetActivityType(): static
     {
         $this->activityType = null;
 

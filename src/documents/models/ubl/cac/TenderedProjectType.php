@@ -162,9 +162,9 @@ class TenderedProjectType
 
     /**
      * @param VariantID|null $variantID
-     * @return self
+     * @return static
      */
-    public function setVariantID(?VariantID $variantID = null): self
+    public function setVariantID(?VariantID $variantID = null): static
     {
         $this->variantID = $variantID;
 
@@ -172,9 +172,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVariantID(): self
+    public function unsetVariantID(): static
     {
         $this->variantID = null;
 
@@ -201,9 +201,9 @@ class TenderedProjectType
 
     /**
      * @param FeeAmount|null $feeAmount
-     * @return self
+     * @return static
      */
-    public function setFeeAmount(?FeeAmount $feeAmount = null): self
+    public function setFeeAmount(?FeeAmount $feeAmount = null): static
     {
         $this->feeAmount = $feeAmount;
 
@@ -211,9 +211,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFeeAmount(): self
+    public function unsetFeeAmount(): static
     {
         $this->feeAmount = null;
 
@@ -230,9 +230,9 @@ class TenderedProjectType
 
     /**
      * @param array<FeeDescription>|null $feeDescription
-     * @return self
+     * @return static
      */
-    public function setFeeDescription(?array $feeDescription = null): self
+    public function setFeeDescription(?array $feeDescription = null): static
     {
         $this->feeDescription = $feeDescription;
 
@@ -240,9 +240,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFeeDescription(): self
+    public function unsetFeeDescription(): static
     {
         $this->feeDescription = null;
 
@@ -250,9 +250,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFeeDescription(): self
+    public function clearFeeDescription(): static
     {
         $this->feeDescription = [];
 
@@ -291,9 +291,9 @@ class TenderedProjectType
 
     /**
      * @param FeeDescription $feeDescription
-     * @return self
+     * @return static
      */
-    public function addToFeeDescription(FeeDescription $feeDescription): self
+    public function addToFeeDescription(FeeDescription $feeDescription): static
     {
         $this->feeDescription[] = $feeDescription;
 
@@ -312,9 +312,9 @@ class TenderedProjectType
 
     /**
      * @param FeeDescription $feeDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToFeeDescription(FeeDescription $feeDescription): self
+    public function addOnceToFeeDescription(FeeDescription $feeDescription): static
     {
         if (!is_array($this->feeDescription)) {
             $this->feeDescription = [];
@@ -361,9 +361,9 @@ class TenderedProjectType
 
     /**
      * @param TenderEnvelopeID|null $tenderEnvelopeID
-     * @return self
+     * @return static
      */
-    public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): self
+    public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): static
     {
         $this->tenderEnvelopeID = $tenderEnvelopeID;
 
@@ -371,9 +371,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderEnvelopeID(): self
+    public function unsetTenderEnvelopeID(): static
     {
         $this->tenderEnvelopeID = null;
 
@@ -400,9 +400,9 @@ class TenderedProjectType
 
     /**
      * @param TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
-     * @return self
+     * @return static
      */
-    public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): self
+    public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): static
     {
         $this->tenderEnvelopeTypeCode = $tenderEnvelopeTypeCode;
 
@@ -410,9 +410,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderEnvelopeTypeCode(): self
+    public function unsetTenderEnvelopeTypeCode(): static
     {
         $this->tenderEnvelopeTypeCode = null;
 
@@ -439,9 +439,9 @@ class TenderedProjectType
 
     /**
      * @param ProcurementProjectLot|null $procurementProjectLot
-     * @return self
+     * @return static
      */
-    public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): self
+    public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): static
     {
         $this->procurementProjectLot = $procurementProjectLot;
 
@@ -449,9 +449,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcurementProjectLot(): self
+    public function unsetProcurementProjectLot(): static
     {
         $this->procurementProjectLot = null;
 
@@ -468,9 +468,9 @@ class TenderedProjectType
 
     /**
      * @param array<EvidenceDocumentReference>|null $evidenceDocumentReference
-     * @return self
+     * @return static
      */
-    public function setEvidenceDocumentReference(?array $evidenceDocumentReference = null): self
+    public function setEvidenceDocumentReference(?array $evidenceDocumentReference = null): static
     {
         $this->evidenceDocumentReference = $evidenceDocumentReference;
 
@@ -478,9 +478,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvidenceDocumentReference(): self
+    public function unsetEvidenceDocumentReference(): static
     {
         $this->evidenceDocumentReference = null;
 
@@ -488,9 +488,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEvidenceDocumentReference(): self
+    public function clearEvidenceDocumentReference(): static
     {
         $this->evidenceDocumentReference = [];
 
@@ -529,9 +529,9 @@ class TenderedProjectType
 
     /**
      * @param EvidenceDocumentReference $evidenceDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): self
+    public function addToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): static
     {
         $this->evidenceDocumentReference[] = $evidenceDocumentReference;
 
@@ -550,9 +550,9 @@ class TenderedProjectType
 
     /**
      * @param EvidenceDocumentReference $evidenceDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): self
+    public function addOnceToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): static
     {
         if (!is_array($this->evidenceDocumentReference)) {
             $this->evidenceDocumentReference = [];
@@ -589,9 +589,9 @@ class TenderedProjectType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -599,9 +599,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -609,9 +609,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -650,9 +650,9 @@ class TenderedProjectType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -671,9 +671,9 @@ class TenderedProjectType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -720,9 +720,9 @@ class TenderedProjectType
 
     /**
      * @param LegalMonetaryTotal|null $legalMonetaryTotal
-     * @return self
+     * @return static
      */
-    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): self
+    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
     {
         $this->legalMonetaryTotal = $legalMonetaryTotal;
 
@@ -730,9 +730,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLegalMonetaryTotal(): self
+    public function unsetLegalMonetaryTotal(): static
     {
         $this->legalMonetaryTotal = null;
 
@@ -749,9 +749,9 @@ class TenderedProjectType
 
     /**
      * @param array<TenderLine>|null $tenderLine
-     * @return self
+     * @return static
      */
-    public function setTenderLine(?array $tenderLine = null): self
+    public function setTenderLine(?array $tenderLine = null): static
     {
         $this->tenderLine = $tenderLine;
 
@@ -759,9 +759,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTenderLine(): self
+    public function unsetTenderLine(): static
     {
         $this->tenderLine = null;
 
@@ -769,9 +769,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTenderLine(): self
+    public function clearTenderLine(): static
     {
         $this->tenderLine = [];
 
@@ -810,9 +810,9 @@ class TenderedProjectType
 
     /**
      * @param TenderLine $tenderLine
-     * @return self
+     * @return static
      */
-    public function addToTenderLine(TenderLine $tenderLine): self
+    public function addToTenderLine(TenderLine $tenderLine): static
     {
         $this->tenderLine[] = $tenderLine;
 
@@ -831,9 +831,9 @@ class TenderedProjectType
 
     /**
      * @param TenderLine $tenderLine
-     * @return self
+     * @return static
      */
-    public function addOnceToTenderLine(TenderLine $tenderLine): self
+    public function addOnceToTenderLine(TenderLine $tenderLine): static
     {
         if (!is_array($this->tenderLine)) {
             $this->tenderLine = [];
@@ -870,9 +870,9 @@ class TenderedProjectType
 
     /**
      * @param array<AwardingCriterionResponse>|null $awardingCriterionResponse
-     * @return self
+     * @return static
      */
-    public function setAwardingCriterionResponse(?array $awardingCriterionResponse = null): self
+    public function setAwardingCriterionResponse(?array $awardingCriterionResponse = null): static
     {
         $this->awardingCriterionResponse = $awardingCriterionResponse;
 
@@ -880,9 +880,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardingCriterionResponse(): self
+    public function unsetAwardingCriterionResponse(): static
     {
         $this->awardingCriterionResponse = null;
 
@@ -890,9 +890,9 @@ class TenderedProjectType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAwardingCriterionResponse(): self
+    public function clearAwardingCriterionResponse(): static
     {
         $this->awardingCriterionResponse = [];
 
@@ -931,9 +931,9 @@ class TenderedProjectType
 
     /**
      * @param AwardingCriterionResponse $awardingCriterionResponse
-     * @return self
+     * @return static
      */
-    public function addToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): self
+    public function addToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): static
     {
         $this->awardingCriterionResponse[] = $awardingCriterionResponse;
 
@@ -952,9 +952,9 @@ class TenderedProjectType
 
     /**
      * @param AwardingCriterionResponse $awardingCriterionResponse
-     * @return self
+     * @return static
      */
-    public function addOnceToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): self
+    public function addOnceToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): static
     {
         if (!is_array($this->awardingCriterionResponse)) {
             $this->awardingCriterionResponse = [];

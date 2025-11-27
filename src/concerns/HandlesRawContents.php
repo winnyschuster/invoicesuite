@@ -39,9 +39,9 @@ trait HandlesRawContents
      * Set the invoice document content
      *
      * @param  string $fromDocumentContent
-     * @return self
+     * @return static
      */
-    protected function setRawDocumentContent(string $fromDocumentContent): self
+    protected function setRawDocumentContent(string $fromDocumentContent): static
     {
         $this->rawDocumentContent = $fromDocumentContent;
 
@@ -62,9 +62,9 @@ trait HandlesRawContents
      * Set the PDF content
      *
      * @param  string $fromPdfContent
-     * @return self
+     * @return static
      */
-    protected function setRawPdfContent(string $fromPdfContent): self
+    protected function setRawPdfContent(string $fromPdfContent): static
     {
         $this->rawPdfContent = $fromPdfContent;
 

@@ -57,9 +57,9 @@ class TradingTermsType
 
     /**
      * @param array<Information>|null $information
-     * @return self
+     * @return static
      */
-    public function setInformation(?array $information = null): self
+    public function setInformation(?array $information = null): static
     {
         $this->information = $information;
 
@@ -67,9 +67,9 @@ class TradingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInformation(): self
+    public function unsetInformation(): static
     {
         $this->information = null;
 
@@ -77,9 +77,9 @@ class TradingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInformation(): self
+    public function clearInformation(): static
     {
         $this->information = [];
 
@@ -118,9 +118,9 @@ class TradingTermsType
 
     /**
      * @param Information $information
-     * @return self
+     * @return static
      */
-    public function addToInformation(Information $information): self
+    public function addToInformation(Information $information): static
     {
         $this->information[] = $information;
 
@@ -139,9 +139,9 @@ class TradingTermsType
 
     /**
      * @param Information $information
-     * @return self
+     * @return static
      */
-    public function addOnceToInformation(Information $information): self
+    public function addOnceToInformation(Information $information): static
     {
         if (!is_array($this->information)) {
             $this->information = [];
@@ -188,9 +188,9 @@ class TradingTermsType
 
     /**
      * @param Reference|null $reference
-     * @return self
+     * @return static
      */
-    public function setReference(?Reference $reference = null): self
+    public function setReference(?Reference $reference = null): static
     {
         $this->reference = $reference;
 
@@ -198,9 +198,9 @@ class TradingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReference(): self
+    public function unsetReference(): static
     {
         $this->reference = null;
 
@@ -227,9 +227,9 @@ class TradingTermsType
 
     /**
      * @param ApplicableAddress|null $applicableAddress
-     * @return self
+     * @return static
      */
-    public function setApplicableAddress(?ApplicableAddress $applicableAddress = null): self
+    public function setApplicableAddress(?ApplicableAddress $applicableAddress = null): static
     {
         $this->applicableAddress = $applicableAddress;
 
@@ -237,9 +237,9 @@ class TradingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableAddress(): self
+    public function unsetApplicableAddress(): static
     {
         $this->applicableAddress = null;
 

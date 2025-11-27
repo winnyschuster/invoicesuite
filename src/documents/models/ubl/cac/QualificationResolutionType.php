@@ -103,9 +103,9 @@ class QualificationResolutionType
 
     /**
      * @param AdmissionCode|null $admissionCode
-     * @return self
+     * @return static
      */
-    public function setAdmissionCode(?AdmissionCode $admissionCode = null): self
+    public function setAdmissionCode(?AdmissionCode $admissionCode = null): static
     {
         $this->admissionCode = $admissionCode;
 
@@ -113,9 +113,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdmissionCode(): self
+    public function unsetAdmissionCode(): static
     {
         $this->admissionCode = null;
 
@@ -132,9 +132,9 @@ class QualificationResolutionType
 
     /**
      * @param array<ExclusionReason>|null $exclusionReason
-     * @return self
+     * @return static
      */
-    public function setExclusionReason(?array $exclusionReason = null): self
+    public function setExclusionReason(?array $exclusionReason = null): static
     {
         $this->exclusionReason = $exclusionReason;
 
@@ -142,9 +142,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExclusionReason(): self
+    public function unsetExclusionReason(): static
     {
         $this->exclusionReason = null;
 
@@ -152,9 +152,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearExclusionReason(): self
+    public function clearExclusionReason(): static
     {
         $this->exclusionReason = [];
 
@@ -193,9 +193,9 @@ class QualificationResolutionType
 
     /**
      * @param ExclusionReason $exclusionReason
-     * @return self
+     * @return static
      */
-    public function addToExclusionReason(ExclusionReason $exclusionReason): self
+    public function addToExclusionReason(ExclusionReason $exclusionReason): static
     {
         $this->exclusionReason[] = $exclusionReason;
 
@@ -214,9 +214,9 @@ class QualificationResolutionType
 
     /**
      * @param ExclusionReason $exclusionReason
-     * @return self
+     * @return static
      */
-    public function addOnceToExclusionReason(ExclusionReason $exclusionReason): self
+    public function addOnceToExclusionReason(ExclusionReason $exclusionReason): static
     {
         if (!is_array($this->exclusionReason)) {
             $this->exclusionReason = [];
@@ -253,9 +253,9 @@ class QualificationResolutionType
 
     /**
      * @param array<Resolution>|null $resolution
-     * @return self
+     * @return static
      */
-    public function setResolution(?array $resolution = null): self
+    public function setResolution(?array $resolution = null): static
     {
         $this->resolution = $resolution;
 
@@ -263,9 +263,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResolution(): self
+    public function unsetResolution(): static
     {
         $this->resolution = null;
 
@@ -273,9 +273,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearResolution(): self
+    public function clearResolution(): static
     {
         $this->resolution = [];
 
@@ -314,9 +314,9 @@ class QualificationResolutionType
 
     /**
      * @param Resolution $resolution
-     * @return self
+     * @return static
      */
-    public function addToResolution(Resolution $resolution): self
+    public function addToResolution(Resolution $resolution): static
     {
         $this->resolution[] = $resolution;
 
@@ -335,9 +335,9 @@ class QualificationResolutionType
 
     /**
      * @param Resolution $resolution
-     * @return self
+     * @return static
      */
-    public function addOnceToResolution(Resolution $resolution): self
+    public function addOnceToResolution(Resolution $resolution): static
     {
         if (!is_array($this->resolution)) {
             $this->resolution = [];
@@ -374,9 +374,9 @@ class QualificationResolutionType
 
     /**
      * @param DateTimeInterface|null $resolutionDate
-     * @return self
+     * @return static
      */
-    public function setResolutionDate(?DateTimeInterface $resolutionDate = null): self
+    public function setResolutionDate(?DateTimeInterface $resolutionDate = null): static
     {
         $this->resolutionDate = $resolutionDate;
 
@@ -384,9 +384,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResolutionDate(): self
+    public function unsetResolutionDate(): static
     {
         $this->resolutionDate = null;
 
@@ -403,9 +403,9 @@ class QualificationResolutionType
 
     /**
      * @param DateTimeInterface|null $resolutionTime
-     * @return self
+     * @return static
      */
-    public function setResolutionTime(?DateTimeInterface $resolutionTime = null): self
+    public function setResolutionTime(?DateTimeInterface $resolutionTime = null): static
     {
         $this->resolutionTime = $resolutionTime;
 
@@ -413,9 +413,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResolutionTime(): self
+    public function unsetResolutionTime(): static
     {
         $this->resolutionTime = null;
 
@@ -442,9 +442,9 @@ class QualificationResolutionType
 
     /**
      * @param ProcurementProjectLot|null $procurementProjectLot
-     * @return self
+     * @return static
      */
-    public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): self
+    public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): static
     {
         $this->procurementProjectLot = $procurementProjectLot;
 
@@ -452,9 +452,9 @@ class QualificationResolutionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcurementProjectLot(): self
+    public function unsetProcurementProjectLot(): static
     {
         $this->procurementProjectLot = null;
 

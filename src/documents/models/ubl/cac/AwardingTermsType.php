@@ -165,9 +165,9 @@ class AwardingTermsType
 
     /**
      * @param WeightingAlgorithmCode|null $weightingAlgorithmCode
-     * @return self
+     * @return static
      */
-    public function setWeightingAlgorithmCode(?WeightingAlgorithmCode $weightingAlgorithmCode = null): self
+    public function setWeightingAlgorithmCode(?WeightingAlgorithmCode $weightingAlgorithmCode = null): static
     {
         $this->weightingAlgorithmCode = $weightingAlgorithmCode;
 
@@ -175,9 +175,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWeightingAlgorithmCode(): self
+    public function unsetWeightingAlgorithmCode(): static
     {
         $this->weightingAlgorithmCode = null;
 
@@ -194,9 +194,9 @@ class AwardingTermsType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -204,9 +204,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -214,9 +214,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -255,9 +255,9 @@ class AwardingTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -276,9 +276,9 @@ class AwardingTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -315,9 +315,9 @@ class AwardingTermsType
 
     /**
      * @param array<TechnicalCommitteeDescription>|null $technicalCommitteeDescription
-     * @return self
+     * @return static
      */
-    public function setTechnicalCommitteeDescription(?array $technicalCommitteeDescription = null): self
+    public function setTechnicalCommitteeDescription(?array $technicalCommitteeDescription = null): static
     {
         $this->technicalCommitteeDescription = $technicalCommitteeDescription;
 
@@ -325,9 +325,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTechnicalCommitteeDescription(): self
+    public function unsetTechnicalCommitteeDescription(): static
     {
         $this->technicalCommitteeDescription = null;
 
@@ -335,9 +335,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTechnicalCommitteeDescription(): self
+    public function clearTechnicalCommitteeDescription(): static
     {
         $this->technicalCommitteeDescription = [];
 
@@ -376,11 +376,11 @@ class AwardingTermsType
 
     /**
      * @param TechnicalCommitteeDescription $technicalCommitteeDescription
-     * @return self
+     * @return static
      */
     public function addToTechnicalCommitteeDescription(
         TechnicalCommitteeDescription $technicalCommitteeDescription,
-    ): self {
+    ): static {
         $this->technicalCommitteeDescription[] = $technicalCommitteeDescription;
 
         return $this;
@@ -398,11 +398,11 @@ class AwardingTermsType
 
     /**
      * @param TechnicalCommitteeDescription $technicalCommitteeDescription
-     * @return self
+     * @return static
      */
     public function addOnceToTechnicalCommitteeDescription(
         TechnicalCommitteeDescription $technicalCommitteeDescription,
-    ): self {
+    ): static {
         if (!is_array($this->technicalCommitteeDescription)) {
             $this->technicalCommitteeDescription = [];
         }
@@ -438,9 +438,9 @@ class AwardingTermsType
 
     /**
      * @param array<LowTendersDescription>|null $lowTendersDescription
-     * @return self
+     * @return static
      */
-    public function setLowTendersDescription(?array $lowTendersDescription = null): self
+    public function setLowTendersDescription(?array $lowTendersDescription = null): static
     {
         $this->lowTendersDescription = $lowTendersDescription;
 
@@ -448,9 +448,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLowTendersDescription(): self
+    public function unsetLowTendersDescription(): static
     {
         $this->lowTendersDescription = null;
 
@@ -458,9 +458,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLowTendersDescription(): self
+    public function clearLowTendersDescription(): static
     {
         $this->lowTendersDescription = [];
 
@@ -499,9 +499,9 @@ class AwardingTermsType
 
     /**
      * @param LowTendersDescription $lowTendersDescription
-     * @return self
+     * @return static
      */
-    public function addToLowTendersDescription(LowTendersDescription $lowTendersDescription): self
+    public function addToLowTendersDescription(LowTendersDescription $lowTendersDescription): static
     {
         $this->lowTendersDescription[] = $lowTendersDescription;
 
@@ -520,9 +520,9 @@ class AwardingTermsType
 
     /**
      * @param LowTendersDescription $lowTendersDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToLowTendersDescription(LowTendersDescription $lowTendersDescription): self
+    public function addOnceToLowTendersDescription(LowTendersDescription $lowTendersDescription): static
     {
         if (!is_array($this->lowTendersDescription)) {
             $this->lowTendersDescription = [];
@@ -559,9 +559,9 @@ class AwardingTermsType
 
     /**
      * @param bool|null $prizeIndicator
-     * @return self
+     * @return static
      */
-    public function setPrizeIndicator(?bool $prizeIndicator = null): self
+    public function setPrizeIndicator(?bool $prizeIndicator = null): static
     {
         $this->prizeIndicator = $prizeIndicator;
 
@@ -569,9 +569,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrizeIndicator(): self
+    public function unsetPrizeIndicator(): static
     {
         $this->prizeIndicator = null;
 
@@ -588,9 +588,9 @@ class AwardingTermsType
 
     /**
      * @param array<PrizeDescription>|null $prizeDescription
-     * @return self
+     * @return static
      */
-    public function setPrizeDescription(?array $prizeDescription = null): self
+    public function setPrizeDescription(?array $prizeDescription = null): static
     {
         $this->prizeDescription = $prizeDescription;
 
@@ -598,9 +598,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrizeDescription(): self
+    public function unsetPrizeDescription(): static
     {
         $this->prizeDescription = null;
 
@@ -608,9 +608,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPrizeDescription(): self
+    public function clearPrizeDescription(): static
     {
         $this->prizeDescription = [];
 
@@ -649,9 +649,9 @@ class AwardingTermsType
 
     /**
      * @param PrizeDescription $prizeDescription
-     * @return self
+     * @return static
      */
-    public function addToPrizeDescription(PrizeDescription $prizeDescription): self
+    public function addToPrizeDescription(PrizeDescription $prizeDescription): static
     {
         $this->prizeDescription[] = $prizeDescription;
 
@@ -670,9 +670,9 @@ class AwardingTermsType
 
     /**
      * @param PrizeDescription $prizeDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToPrizeDescription(PrizeDescription $prizeDescription): self
+    public function addOnceToPrizeDescription(PrizeDescription $prizeDescription): static
     {
         if (!is_array($this->prizeDescription)) {
             $this->prizeDescription = [];
@@ -709,9 +709,9 @@ class AwardingTermsType
 
     /**
      * @param array<PaymentDescription>|null $paymentDescription
-     * @return self
+     * @return static
      */
-    public function setPaymentDescription(?array $paymentDescription = null): self
+    public function setPaymentDescription(?array $paymentDescription = null): static
     {
         $this->paymentDescription = $paymentDescription;
 
@@ -719,9 +719,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentDescription(): self
+    public function unsetPaymentDescription(): static
     {
         $this->paymentDescription = null;
 
@@ -729,9 +729,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentDescription(): self
+    public function clearPaymentDescription(): static
     {
         $this->paymentDescription = [];
 
@@ -770,9 +770,9 @@ class AwardingTermsType
 
     /**
      * @param PaymentDescription $paymentDescription
-     * @return self
+     * @return static
      */
-    public function addToPaymentDescription(PaymentDescription $paymentDescription): self
+    public function addToPaymentDescription(PaymentDescription $paymentDescription): static
     {
         $this->paymentDescription[] = $paymentDescription;
 
@@ -791,9 +791,9 @@ class AwardingTermsType
 
     /**
      * @param PaymentDescription $paymentDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentDescription(PaymentDescription $paymentDescription): self
+    public function addOnceToPaymentDescription(PaymentDescription $paymentDescription): static
     {
         if (!is_array($this->paymentDescription)) {
             $this->paymentDescription = [];
@@ -830,9 +830,9 @@ class AwardingTermsType
 
     /**
      * @param bool|null $followupContractIndicator
-     * @return self
+     * @return static
      */
-    public function setFollowupContractIndicator(?bool $followupContractIndicator = null): self
+    public function setFollowupContractIndicator(?bool $followupContractIndicator = null): static
     {
         $this->followupContractIndicator = $followupContractIndicator;
 
@@ -840,9 +840,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFollowupContractIndicator(): self
+    public function unsetFollowupContractIndicator(): static
     {
         $this->followupContractIndicator = null;
 
@@ -859,9 +859,9 @@ class AwardingTermsType
 
     /**
      * @param bool|null $bindingOnBuyerIndicator
-     * @return self
+     * @return static
      */
-    public function setBindingOnBuyerIndicator(?bool $bindingOnBuyerIndicator = null): self
+    public function setBindingOnBuyerIndicator(?bool $bindingOnBuyerIndicator = null): static
     {
         $this->bindingOnBuyerIndicator = $bindingOnBuyerIndicator;
 
@@ -869,9 +869,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBindingOnBuyerIndicator(): self
+    public function unsetBindingOnBuyerIndicator(): static
     {
         $this->bindingOnBuyerIndicator = null;
 
@@ -888,9 +888,9 @@ class AwardingTermsType
 
     /**
      * @param array<AwardingCriterion>|null $awardingCriterion
-     * @return self
+     * @return static
      */
-    public function setAwardingCriterion(?array $awardingCriterion = null): self
+    public function setAwardingCriterion(?array $awardingCriterion = null): static
     {
         $this->awardingCriterion = $awardingCriterion;
 
@@ -898,9 +898,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAwardingCriterion(): self
+    public function unsetAwardingCriterion(): static
     {
         $this->awardingCriterion = null;
 
@@ -908,9 +908,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAwardingCriterion(): self
+    public function clearAwardingCriterion(): static
     {
         $this->awardingCriterion = [];
 
@@ -949,9 +949,9 @@ class AwardingTermsType
 
     /**
      * @param AwardingCriterion $awardingCriterion
-     * @return self
+     * @return static
      */
-    public function addToAwardingCriterion(AwardingCriterion $awardingCriterion): self
+    public function addToAwardingCriterion(AwardingCriterion $awardingCriterion): static
     {
         $this->awardingCriterion[] = $awardingCriterion;
 
@@ -970,9 +970,9 @@ class AwardingTermsType
 
     /**
      * @param AwardingCriterion $awardingCriterion
-     * @return self
+     * @return static
      */
-    public function addOnceToAwardingCriterion(AwardingCriterion $awardingCriterion): self
+    public function addOnceToAwardingCriterion(AwardingCriterion $awardingCriterion): static
     {
         if (!is_array($this->awardingCriterion)) {
             $this->awardingCriterion = [];
@@ -1009,9 +1009,9 @@ class AwardingTermsType
 
     /**
      * @param array<TechnicalCommitteePerson>|null $technicalCommitteePerson
-     * @return self
+     * @return static
      */
-    public function setTechnicalCommitteePerson(?array $technicalCommitteePerson = null): self
+    public function setTechnicalCommitteePerson(?array $technicalCommitteePerson = null): static
     {
         $this->technicalCommitteePerson = $technicalCommitteePerson;
 
@@ -1019,9 +1019,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTechnicalCommitteePerson(): self
+    public function unsetTechnicalCommitteePerson(): static
     {
         $this->technicalCommitteePerson = null;
 
@@ -1029,9 +1029,9 @@ class AwardingTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTechnicalCommitteePerson(): self
+    public function clearTechnicalCommitteePerson(): static
     {
         $this->technicalCommitteePerson = [];
 
@@ -1070,9 +1070,9 @@ class AwardingTermsType
 
     /**
      * @param TechnicalCommitteePerson $technicalCommitteePerson
-     * @return self
+     * @return static
      */
-    public function addToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): self
+    public function addToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): static
     {
         $this->technicalCommitteePerson[] = $technicalCommitteePerson;
 
@@ -1091,9 +1091,9 @@ class AwardingTermsType
 
     /**
      * @param TechnicalCommitteePerson $technicalCommitteePerson
-     * @return self
+     * @return static
      */
-    public function addOnceToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): self
+    public function addOnceToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): static
     {
         if (!is_array($this->technicalCommitteePerson)) {
             $this->technicalCommitteePerson = [];

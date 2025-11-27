@@ -68,9 +68,9 @@ class TemperatureType
 
     /**
      * @param AttributeID|null $attributeID
-     * @return self
+     * @return static
      */
-    public function setAttributeID(?AttributeID $attributeID = null): self
+    public function setAttributeID(?AttributeID $attributeID = null): static
     {
         $this->attributeID = $attributeID;
 
@@ -78,9 +78,9 @@ class TemperatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAttributeID(): self
+    public function unsetAttributeID(): static
     {
         $this->attributeID = null;
 
@@ -107,9 +107,9 @@ class TemperatureType
 
     /**
      * @param Measure|null $measure
-     * @return self
+     * @return static
      */
-    public function setMeasure(?Measure $measure = null): self
+    public function setMeasure(?Measure $measure = null): static
     {
         $this->measure = $measure;
 
@@ -117,9 +117,9 @@ class TemperatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasure(): self
+    public function unsetMeasure(): static
     {
         $this->measure = null;
 
@@ -136,9 +136,9 @@ class TemperatureType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -146,9 +146,9 @@ class TemperatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -156,9 +156,9 @@ class TemperatureType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -197,9 +197,9 @@ class TemperatureType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -218,9 +218,9 @@ class TemperatureType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];

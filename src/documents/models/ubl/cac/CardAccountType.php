@@ -162,9 +162,9 @@ class CardAccountType
 
     /**
      * @param PrimaryAccountNumberID|null $primaryAccountNumberID
-     * @return self
+     * @return static
      */
-    public function setPrimaryAccountNumberID(?PrimaryAccountNumberID $primaryAccountNumberID = null): self
+    public function setPrimaryAccountNumberID(?PrimaryAccountNumberID $primaryAccountNumberID = null): static
     {
         $this->primaryAccountNumberID = $primaryAccountNumberID;
 
@@ -172,9 +172,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrimaryAccountNumberID(): self
+    public function unsetPrimaryAccountNumberID(): static
     {
         $this->primaryAccountNumberID = null;
 
@@ -201,9 +201,9 @@ class CardAccountType
 
     /**
      * @param NetworkID|null $networkID
-     * @return self
+     * @return static
      */
-    public function setNetworkID(?NetworkID $networkID = null): self
+    public function setNetworkID(?NetworkID $networkID = null): static
     {
         $this->networkID = $networkID;
 
@@ -211,9 +211,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetworkID(): self
+    public function unsetNetworkID(): static
     {
         $this->networkID = null;
 
@@ -240,9 +240,9 @@ class CardAccountType
 
     /**
      * @param CardTypeCode|null $cardTypeCode
-     * @return self
+     * @return static
      */
-    public function setCardTypeCode(?CardTypeCode $cardTypeCode = null): self
+    public function setCardTypeCode(?CardTypeCode $cardTypeCode = null): static
     {
         $this->cardTypeCode = $cardTypeCode;
 
@@ -250,9 +250,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCardTypeCode(): self
+    public function unsetCardTypeCode(): static
     {
         $this->cardTypeCode = null;
 
@@ -269,9 +269,9 @@ class CardAccountType
 
     /**
      * @param DateTimeInterface|null $validityStartDate
-     * @return self
+     * @return static
      */
-    public function setValidityStartDate(?DateTimeInterface $validityStartDate = null): self
+    public function setValidityStartDate(?DateTimeInterface $validityStartDate = null): static
     {
         $this->validityStartDate = $validityStartDate;
 
@@ -279,9 +279,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityStartDate(): self
+    public function unsetValidityStartDate(): static
     {
         $this->validityStartDate = null;
 
@@ -298,9 +298,9 @@ class CardAccountType
 
     /**
      * @param DateTimeInterface|null $expiryDate
-     * @return self
+     * @return static
      */
-    public function setExpiryDate(?DateTimeInterface $expiryDate = null): self
+    public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
     {
         $this->expiryDate = $expiryDate;
 
@@ -308,9 +308,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpiryDate(): self
+    public function unsetExpiryDate(): static
     {
         $this->expiryDate = null;
 
@@ -337,9 +337,9 @@ class CardAccountType
 
     /**
      * @param IssuerID|null $issuerID
-     * @return self
+     * @return static
      */
-    public function setIssuerID(?IssuerID $issuerID = null): self
+    public function setIssuerID(?IssuerID $issuerID = null): static
     {
         $this->issuerID = $issuerID;
 
@@ -347,9 +347,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssuerID(): self
+    public function unsetIssuerID(): static
     {
         $this->issuerID = null;
 
@@ -376,9 +376,9 @@ class CardAccountType
 
     /**
      * @param IssueNumberID|null $issueNumberID
-     * @return self
+     * @return static
      */
-    public function setIssueNumberID(?IssueNumberID $issueNumberID = null): self
+    public function setIssueNumberID(?IssueNumberID $issueNumberID = null): static
     {
         $this->issueNumberID = $issueNumberID;
 
@@ -386,9 +386,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueNumberID(): self
+    public function unsetIssueNumberID(): static
     {
         $this->issueNumberID = null;
 
@@ -415,9 +415,9 @@ class CardAccountType
 
     /**
      * @param CV2ID|null $cV2ID
-     * @return self
+     * @return static
      */
-    public function setCV2ID(?CV2ID $cV2ID = null): self
+    public function setCV2ID(?CV2ID $cV2ID = null): static
     {
         $this->cV2ID = $cV2ID;
 
@@ -425,9 +425,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCV2ID(): self
+    public function unsetCV2ID(): static
     {
         $this->cV2ID = null;
 
@@ -454,9 +454,9 @@ class CardAccountType
 
     /**
      * @param CardChipCode|null $cardChipCode
-     * @return self
+     * @return static
      */
-    public function setCardChipCode(?CardChipCode $cardChipCode = null): self
+    public function setCardChipCode(?CardChipCode $cardChipCode = null): static
     {
         $this->cardChipCode = $cardChipCode;
 
@@ -464,9 +464,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCardChipCode(): self
+    public function unsetCardChipCode(): static
     {
         $this->cardChipCode = null;
 
@@ -493,9 +493,9 @@ class CardAccountType
 
     /**
      * @param ChipApplicationID|null $chipApplicationID
-     * @return self
+     * @return static
      */
-    public function setChipApplicationID(?ChipApplicationID $chipApplicationID = null): self
+    public function setChipApplicationID(?ChipApplicationID $chipApplicationID = null): static
     {
         $this->chipApplicationID = $chipApplicationID;
 
@@ -503,9 +503,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChipApplicationID(): self
+    public function unsetChipApplicationID(): static
     {
         $this->chipApplicationID = null;
 
@@ -532,9 +532,9 @@ class CardAccountType
 
     /**
      * @param HolderName|null $holderName
-     * @return self
+     * @return static
      */
-    public function setHolderName(?HolderName $holderName = null): self
+    public function setHolderName(?HolderName $holderName = null): static
     {
         $this->holderName = $holderName;
 
@@ -542,9 +542,9 @@ class CardAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHolderName(): self
+    public function unsetHolderName(): static
     {
         $this->holderName = null;
 

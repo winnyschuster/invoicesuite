@@ -168,9 +168,9 @@ class TransportScheduleType
 
     /**
      * @param SequenceNumeric|null $sequenceNumeric
-     * @return self
+     * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
+    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
     {
         $this->sequenceNumeric = $sequenceNumeric;
 
@@ -178,9 +178,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceNumeric(): self
+    public function unsetSequenceNumeric(): static
     {
         $this->sequenceNumeric = null;
 
@@ -197,9 +197,9 @@ class TransportScheduleType
 
     /**
      * @param DateTimeInterface|null $referenceDate
-     * @return self
+     * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate = null): self
+    public function setReferenceDate(?DateTimeInterface $referenceDate = null): static
     {
         $this->referenceDate = $referenceDate;
 
@@ -207,9 +207,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferenceDate(): self
+    public function unsetReferenceDate(): static
     {
         $this->referenceDate = null;
 
@@ -226,9 +226,9 @@ class TransportScheduleType
 
     /**
      * @param DateTimeInterface|null $referenceTime
-     * @return self
+     * @return static
      */
-    public function setReferenceTime(?DateTimeInterface $referenceTime = null): self
+    public function setReferenceTime(?DateTimeInterface $referenceTime = null): static
     {
         $this->referenceTime = $referenceTime;
 
@@ -236,9 +236,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferenceTime(): self
+    public function unsetReferenceTime(): static
     {
         $this->referenceTime = null;
 
@@ -265,9 +265,9 @@ class TransportScheduleType
 
     /**
      * @param ReliabilityPercent|null $reliabilityPercent
-     * @return self
+     * @return static
      */
-    public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): self
+    public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): static
     {
         $this->reliabilityPercent = $reliabilityPercent;
 
@@ -275,9 +275,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReliabilityPercent(): self
+    public function unsetReliabilityPercent(): static
     {
         $this->reliabilityPercent = null;
 
@@ -294,9 +294,9 @@ class TransportScheduleType
 
     /**
      * @param array<Remarks>|null $remarks
-     * @return self
+     * @return static
      */
-    public function setRemarks(?array $remarks = null): self
+    public function setRemarks(?array $remarks = null): static
     {
         $this->remarks = $remarks;
 
@@ -304,9 +304,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRemarks(): self
+    public function unsetRemarks(): static
     {
         $this->remarks = null;
 
@@ -314,9 +314,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRemarks(): self
+    public function clearRemarks(): static
     {
         $this->remarks = [];
 
@@ -355,9 +355,9 @@ class TransportScheduleType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addToRemarks(Remarks $remarks): self
+    public function addToRemarks(Remarks $remarks): static
     {
         $this->remarks[] = $remarks;
 
@@ -376,9 +376,9 @@ class TransportScheduleType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): self
+    public function addOnceToRemarks(Remarks $remarks): static
     {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
@@ -425,9 +425,9 @@ class TransportScheduleType
 
     /**
      * @param StatusLocation|null $statusLocation
-     * @return self
+     * @return static
      */
-    public function setStatusLocation(?StatusLocation $statusLocation = null): self
+    public function setStatusLocation(?StatusLocation $statusLocation = null): static
     {
         $this->statusLocation = $statusLocation;
 
@@ -435,9 +435,9 @@ class TransportScheduleType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatusLocation(): self
+    public function unsetStatusLocation(): static
     {
         $this->statusLocation = null;
 
@@ -464,20 +464,20 @@ class TransportScheduleType
 
     /**
      * @param ActualArrivalTransportEvent|null $actualArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setActualArrivalTransportEvent(
         ?ActualArrivalTransportEvent $actualArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->actualArrivalTransportEvent = $actualArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualArrivalTransportEvent(): self
+    public function unsetActualArrivalTransportEvent(): static
     {
         $this->actualArrivalTransportEvent = null;
 
@@ -504,20 +504,20 @@ class TransportScheduleType
 
     /**
      * @param ActualDepartureTransportEvent|null $actualDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setActualDepartureTransportEvent(
         ?ActualDepartureTransportEvent $actualDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->actualDepartureTransportEvent = $actualDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualDepartureTransportEvent(): self
+    public function unsetActualDepartureTransportEvent(): static
     {
         $this->actualDepartureTransportEvent = null;
 
@@ -544,20 +544,20 @@ class TransportScheduleType
 
     /**
      * @param EstimatedDepartureTransportEvent|null $estimatedDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setEstimatedDepartureTransportEvent(
         ?EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->estimatedDepartureTransportEvent = $estimatedDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedDepartureTransportEvent(): self
+    public function unsetEstimatedDepartureTransportEvent(): static
     {
         $this->estimatedDepartureTransportEvent = null;
 
@@ -584,20 +584,20 @@ class TransportScheduleType
 
     /**
      * @param EstimatedArrivalTransportEvent|null $estimatedArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setEstimatedArrivalTransportEvent(
         ?EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->estimatedArrivalTransportEvent = $estimatedArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedArrivalTransportEvent(): self
+    public function unsetEstimatedArrivalTransportEvent(): static
     {
         $this->estimatedArrivalTransportEvent = null;
 
@@ -624,20 +624,20 @@ class TransportScheduleType
 
     /**
      * @param PlannedDepartureTransportEvent|null $plannedDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setPlannedDepartureTransportEvent(
         ?PlannedDepartureTransportEvent $plannedDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->plannedDepartureTransportEvent = $plannedDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedDepartureTransportEvent(): self
+    public function unsetPlannedDepartureTransportEvent(): static
     {
         $this->plannedDepartureTransportEvent = null;
 
@@ -664,20 +664,20 @@ class TransportScheduleType
 
     /**
      * @param PlannedArrivalTransportEvent|null $plannedArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setPlannedArrivalTransportEvent(
         ?PlannedArrivalTransportEvent $plannedArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->plannedArrivalTransportEvent = $plannedArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedArrivalTransportEvent(): self
+    public function unsetPlannedArrivalTransportEvent(): static
     {
         $this->plannedArrivalTransportEvent = null;
 

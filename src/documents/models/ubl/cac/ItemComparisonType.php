@@ -55,9 +55,9 @@ class ItemComparisonType
 
     /**
      * @param PriceAmount|null $priceAmount
-     * @return self
+     * @return static
      */
-    public function setPriceAmount(?PriceAmount $priceAmount = null): self
+    public function setPriceAmount(?PriceAmount $priceAmount = null): static
     {
         $this->priceAmount = $priceAmount;
 
@@ -65,9 +65,9 @@ class ItemComparisonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriceAmount(): self
+    public function unsetPriceAmount(): static
     {
         $this->priceAmount = null;
 
@@ -94,9 +94,9 @@ class ItemComparisonType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -104,9 +104,9 @@ class ItemComparisonType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 

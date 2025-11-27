@@ -1199,9 +1199,9 @@ class ConsignmentType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -1209,9 +1209,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -1238,9 +1238,9 @@ class ConsignmentType
 
     /**
      * @param CarrierAssignedID|null $carrierAssignedID
-     * @return self
+     * @return static
      */
-    public function setCarrierAssignedID(?CarrierAssignedID $carrierAssignedID = null): self
+    public function setCarrierAssignedID(?CarrierAssignedID $carrierAssignedID = null): static
     {
         $this->carrierAssignedID = $carrierAssignedID;
 
@@ -1248,9 +1248,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCarrierAssignedID(): self
+    public function unsetCarrierAssignedID(): static
     {
         $this->carrierAssignedID = null;
 
@@ -1277,9 +1277,9 @@ class ConsignmentType
 
     /**
      * @param ConsigneeAssignedID|null $consigneeAssignedID
-     * @return self
+     * @return static
      */
-    public function setConsigneeAssignedID(?ConsigneeAssignedID $consigneeAssignedID = null): self
+    public function setConsigneeAssignedID(?ConsigneeAssignedID $consigneeAssignedID = null): static
     {
         $this->consigneeAssignedID = $consigneeAssignedID;
 
@@ -1287,9 +1287,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsigneeAssignedID(): self
+    public function unsetConsigneeAssignedID(): static
     {
         $this->consigneeAssignedID = null;
 
@@ -1316,9 +1316,9 @@ class ConsignmentType
 
     /**
      * @param ConsignorAssignedID|null $consignorAssignedID
-     * @return self
+     * @return static
      */
-    public function setConsignorAssignedID(?ConsignorAssignedID $consignorAssignedID = null): self
+    public function setConsignorAssignedID(?ConsignorAssignedID $consignorAssignedID = null): static
     {
         $this->consignorAssignedID = $consignorAssignedID;
 
@@ -1326,9 +1326,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsignorAssignedID(): self
+    public function unsetConsignorAssignedID(): static
     {
         $this->consignorAssignedID = null;
 
@@ -1355,20 +1355,20 @@ class ConsignmentType
 
     /**
      * @param FreightForwarderAssignedID|null $freightForwarderAssignedID
-     * @return self
+     * @return static
      */
     public function setFreightForwarderAssignedID(
         ?FreightForwarderAssignedID $freightForwarderAssignedID = null,
-    ): self {
+    ): static {
         $this->freightForwarderAssignedID = $freightForwarderAssignedID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightForwarderAssignedID(): self
+    public function unsetFreightForwarderAssignedID(): static
     {
         $this->freightForwarderAssignedID = null;
 
@@ -1395,9 +1395,9 @@ class ConsignmentType
 
     /**
      * @param BrokerAssignedID|null $brokerAssignedID
-     * @return self
+     * @return static
      */
-    public function setBrokerAssignedID(?BrokerAssignedID $brokerAssignedID = null): self
+    public function setBrokerAssignedID(?BrokerAssignedID $brokerAssignedID = null): static
     {
         $this->brokerAssignedID = $brokerAssignedID;
 
@@ -1405,9 +1405,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBrokerAssignedID(): self
+    public function unsetBrokerAssignedID(): static
     {
         $this->brokerAssignedID = null;
 
@@ -1434,20 +1434,20 @@ class ConsignmentType
 
     /**
      * @param ContractedCarrierAssignedID|null $contractedCarrierAssignedID
-     * @return self
+     * @return static
      */
     public function setContractedCarrierAssignedID(
         ?ContractedCarrierAssignedID $contractedCarrierAssignedID = null,
-    ): self {
+    ): static {
         $this->contractedCarrierAssignedID = $contractedCarrierAssignedID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractedCarrierAssignedID(): self
+    public function unsetContractedCarrierAssignedID(): static
     {
         $this->contractedCarrierAssignedID = null;
 
@@ -1474,20 +1474,20 @@ class ConsignmentType
 
     /**
      * @param PerformingCarrierAssignedID|null $performingCarrierAssignedID
-     * @return self
+     * @return static
      */
     public function setPerformingCarrierAssignedID(
         ?PerformingCarrierAssignedID $performingCarrierAssignedID = null,
-    ): self {
+    ): static {
         $this->performingCarrierAssignedID = $performingCarrierAssignedID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerformingCarrierAssignedID(): self
+    public function unsetPerformingCarrierAssignedID(): static
     {
         $this->performingCarrierAssignedID = null;
 
@@ -1504,9 +1504,9 @@ class ConsignmentType
 
     /**
      * @param array<SummaryDescription>|null $summaryDescription
-     * @return self
+     * @return static
      */
-    public function setSummaryDescription(?array $summaryDescription = null): self
+    public function setSummaryDescription(?array $summaryDescription = null): static
     {
         $this->summaryDescription = $summaryDescription;
 
@@ -1514,9 +1514,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSummaryDescription(): self
+    public function unsetSummaryDescription(): static
     {
         $this->summaryDescription = null;
 
@@ -1524,9 +1524,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSummaryDescription(): self
+    public function clearSummaryDescription(): static
     {
         $this->summaryDescription = [];
 
@@ -1565,9 +1565,9 @@ class ConsignmentType
 
     /**
      * @param SummaryDescription $summaryDescription
-     * @return self
+     * @return static
      */
-    public function addToSummaryDescription(SummaryDescription $summaryDescription): self
+    public function addToSummaryDescription(SummaryDescription $summaryDescription): static
     {
         $this->summaryDescription[] = $summaryDescription;
 
@@ -1586,9 +1586,9 @@ class ConsignmentType
 
     /**
      * @param SummaryDescription $summaryDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToSummaryDescription(SummaryDescription $summaryDescription): self
+    public function addOnceToSummaryDescription(SummaryDescription $summaryDescription): static
     {
         if (!is_array($this->summaryDescription)) {
             $this->summaryDescription = [];
@@ -1635,9 +1635,9 @@ class ConsignmentType
 
     /**
      * @param TotalInvoiceAmount|null $totalInvoiceAmount
-     * @return self
+     * @return static
      */
-    public function setTotalInvoiceAmount(?TotalInvoiceAmount $totalInvoiceAmount = null): self
+    public function setTotalInvoiceAmount(?TotalInvoiceAmount $totalInvoiceAmount = null): static
     {
         $this->totalInvoiceAmount = $totalInvoiceAmount;
 
@@ -1645,9 +1645,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalInvoiceAmount(): self
+    public function unsetTotalInvoiceAmount(): static
     {
         $this->totalInvoiceAmount = null;
 
@@ -1674,20 +1674,20 @@ class ConsignmentType
 
     /**
      * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredCustomsValueAmount(
         ?DeclaredCustomsValueAmount $declaredCustomsValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredCustomsValueAmount = $declaredCustomsValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredCustomsValueAmount(): self
+    public function unsetDeclaredCustomsValueAmount(): static
     {
         $this->declaredCustomsValueAmount = null;
 
@@ -1704,9 +1704,9 @@ class ConsignmentType
 
     /**
      * @param array<TariffDescription>|null $tariffDescription
-     * @return self
+     * @return static
      */
-    public function setTariffDescription(?array $tariffDescription = null): self
+    public function setTariffDescription(?array $tariffDescription = null): static
     {
         $this->tariffDescription = $tariffDescription;
 
@@ -1714,9 +1714,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTariffDescription(): self
+    public function unsetTariffDescription(): static
     {
         $this->tariffDescription = null;
 
@@ -1724,9 +1724,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTariffDescription(): self
+    public function clearTariffDescription(): static
     {
         $this->tariffDescription = [];
 
@@ -1765,9 +1765,9 @@ class ConsignmentType
 
     /**
      * @param TariffDescription $tariffDescription
-     * @return self
+     * @return static
      */
-    public function addToTariffDescription(TariffDescription $tariffDescription): self
+    public function addToTariffDescription(TariffDescription $tariffDescription): static
     {
         $this->tariffDescription[] = $tariffDescription;
 
@@ -1786,9 +1786,9 @@ class ConsignmentType
 
     /**
      * @param TariffDescription $tariffDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToTariffDescription(TariffDescription $tariffDescription): self
+    public function addOnceToTariffDescription(TariffDescription $tariffDescription): static
     {
         if (!is_array($this->tariffDescription)) {
             $this->tariffDescription = [];
@@ -1835,9 +1835,9 @@ class ConsignmentType
 
     /**
      * @param TariffCode|null $tariffCode
-     * @return self
+     * @return static
      */
-    public function setTariffCode(?TariffCode $tariffCode = null): self
+    public function setTariffCode(?TariffCode $tariffCode = null): static
     {
         $this->tariffCode = $tariffCode;
 
@@ -1845,9 +1845,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTariffCode(): self
+    public function unsetTariffCode(): static
     {
         $this->tariffCode = null;
 
@@ -1874,9 +1874,9 @@ class ConsignmentType
 
     /**
      * @param InsurancePremiumAmount|null $insurancePremiumAmount
-     * @return self
+     * @return static
      */
-    public function setInsurancePremiumAmount(?InsurancePremiumAmount $insurancePremiumAmount = null): self
+    public function setInsurancePremiumAmount(?InsurancePremiumAmount $insurancePremiumAmount = null): static
     {
         $this->insurancePremiumAmount = $insurancePremiumAmount;
 
@@ -1884,9 +1884,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInsurancePremiumAmount(): self
+    public function unsetInsurancePremiumAmount(): static
     {
         $this->insurancePremiumAmount = null;
 
@@ -1913,9 +1913,9 @@ class ConsignmentType
 
     /**
      * @param GrossWeightMeasure|null $grossWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): self
+    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
     {
         $this->grossWeightMeasure = $grossWeightMeasure;
 
@@ -1923,9 +1923,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossWeightMeasure(): self
+    public function unsetGrossWeightMeasure(): static
     {
         $this->grossWeightMeasure = null;
 
@@ -1952,9 +1952,9 @@ class ConsignmentType
 
     /**
      * @param NetWeightMeasure|null $netWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): self
+    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
     {
         $this->netWeightMeasure = $netWeightMeasure;
 
@@ -1962,9 +1962,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetWeightMeasure(): self
+    public function unsetNetWeightMeasure(): static
     {
         $this->netWeightMeasure = null;
 
@@ -1991,9 +1991,9 @@ class ConsignmentType
 
     /**
      * @param NetNetWeightMeasure|null $netNetWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): self
+    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
     {
         $this->netNetWeightMeasure = $netNetWeightMeasure;
 
@@ -2001,9 +2001,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetNetWeightMeasure(): self
+    public function unsetNetNetWeightMeasure(): static
     {
         $this->netNetWeightMeasure = null;
 
@@ -2030,9 +2030,9 @@ class ConsignmentType
 
     /**
      * @param ChargeableWeightMeasure|null $chargeableWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): self
+    public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): static
     {
         $this->chargeableWeightMeasure = $chargeableWeightMeasure;
 
@@ -2040,9 +2040,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeableWeightMeasure(): self
+    public function unsetChargeableWeightMeasure(): static
     {
         $this->chargeableWeightMeasure = null;
 
@@ -2069,9 +2069,9 @@ class ConsignmentType
 
     /**
      * @param GrossVolumeMeasure|null $grossVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): self
+    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
     {
         $this->grossVolumeMeasure = $grossVolumeMeasure;
 
@@ -2079,9 +2079,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossVolumeMeasure(): self
+    public function unsetGrossVolumeMeasure(): static
     {
         $this->grossVolumeMeasure = null;
 
@@ -2108,9 +2108,9 @@ class ConsignmentType
 
     /**
      * @param NetVolumeMeasure|null $netVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): self
+    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
     {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
@@ -2118,9 +2118,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetVolumeMeasure(): self
+    public function unsetNetVolumeMeasure(): static
     {
         $this->netVolumeMeasure = null;
 
@@ -2147,9 +2147,9 @@ class ConsignmentType
 
     /**
      * @param LoadingLengthMeasure|null $loadingLengthMeasure
-     * @return self
+     * @return static
      */
-    public function setLoadingLengthMeasure(?LoadingLengthMeasure $loadingLengthMeasure = null): self
+    public function setLoadingLengthMeasure(?LoadingLengthMeasure $loadingLengthMeasure = null): static
     {
         $this->loadingLengthMeasure = $loadingLengthMeasure;
 
@@ -2157,9 +2157,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLoadingLengthMeasure(): self
+    public function unsetLoadingLengthMeasure(): static
     {
         $this->loadingLengthMeasure = null;
 
@@ -2176,9 +2176,9 @@ class ConsignmentType
 
     /**
      * @param array<Remarks>|null $remarks
-     * @return self
+     * @return static
      */
-    public function setRemarks(?array $remarks = null): self
+    public function setRemarks(?array $remarks = null): static
     {
         $this->remarks = $remarks;
 
@@ -2186,9 +2186,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRemarks(): self
+    public function unsetRemarks(): static
     {
         $this->remarks = null;
 
@@ -2196,9 +2196,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRemarks(): self
+    public function clearRemarks(): static
     {
         $this->remarks = [];
 
@@ -2237,9 +2237,9 @@ class ConsignmentType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addToRemarks(Remarks $remarks): self
+    public function addToRemarks(Remarks $remarks): static
     {
         $this->remarks[] = $remarks;
 
@@ -2258,9 +2258,9 @@ class ConsignmentType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): self
+    public function addOnceToRemarks(Remarks $remarks): static
     {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
@@ -2297,9 +2297,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $hazardousRiskIndicator
-     * @return self
+     * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): self
+    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
     {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
@@ -2307,9 +2307,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousRiskIndicator(): self
+    public function unsetHazardousRiskIndicator(): static
     {
         $this->hazardousRiskIndicator = null;
 
@@ -2326,9 +2326,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $animalFoodIndicator
-     * @return self
+     * @return static
      */
-    public function setAnimalFoodIndicator(?bool $animalFoodIndicator = null): self
+    public function setAnimalFoodIndicator(?bool $animalFoodIndicator = null): static
     {
         $this->animalFoodIndicator = $animalFoodIndicator;
 
@@ -2336,9 +2336,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAnimalFoodIndicator(): self
+    public function unsetAnimalFoodIndicator(): static
     {
         $this->animalFoodIndicator = null;
 
@@ -2355,9 +2355,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $humanFoodIndicator
-     * @return self
+     * @return static
      */
-    public function setHumanFoodIndicator(?bool $humanFoodIndicator = null): self
+    public function setHumanFoodIndicator(?bool $humanFoodIndicator = null): static
     {
         $this->humanFoodIndicator = $humanFoodIndicator;
 
@@ -2365,9 +2365,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHumanFoodIndicator(): self
+    public function unsetHumanFoodIndicator(): static
     {
         $this->humanFoodIndicator = null;
 
@@ -2384,9 +2384,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $livestockIndicator
-     * @return self
+     * @return static
      */
-    public function setLivestockIndicator(?bool $livestockIndicator = null): self
+    public function setLivestockIndicator(?bool $livestockIndicator = null): static
     {
         $this->livestockIndicator = $livestockIndicator;
 
@@ -2394,9 +2394,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLivestockIndicator(): self
+    public function unsetLivestockIndicator(): static
     {
         $this->livestockIndicator = null;
 
@@ -2413,9 +2413,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $bulkCargoIndicator
-     * @return self
+     * @return static
      */
-    public function setBulkCargoIndicator(?bool $bulkCargoIndicator = null): self
+    public function setBulkCargoIndicator(?bool $bulkCargoIndicator = null): static
     {
         $this->bulkCargoIndicator = $bulkCargoIndicator;
 
@@ -2423,9 +2423,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBulkCargoIndicator(): self
+    public function unsetBulkCargoIndicator(): static
     {
         $this->bulkCargoIndicator = null;
 
@@ -2442,9 +2442,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $containerizedIndicator
-     * @return self
+     * @return static
      */
-    public function setContainerizedIndicator(?bool $containerizedIndicator = null): self
+    public function setContainerizedIndicator(?bool $containerizedIndicator = null): static
     {
         $this->containerizedIndicator = $containerizedIndicator;
 
@@ -2452,9 +2452,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContainerizedIndicator(): self
+    public function unsetContainerizedIndicator(): static
     {
         $this->containerizedIndicator = null;
 
@@ -2471,9 +2471,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $generalCargoIndicator
-     * @return self
+     * @return static
      */
-    public function setGeneralCargoIndicator(?bool $generalCargoIndicator = null): self
+    public function setGeneralCargoIndicator(?bool $generalCargoIndicator = null): static
     {
         $this->generalCargoIndicator = $generalCargoIndicator;
 
@@ -2481,9 +2481,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGeneralCargoIndicator(): self
+    public function unsetGeneralCargoIndicator(): static
     {
         $this->generalCargoIndicator = null;
 
@@ -2500,9 +2500,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $specialSecurityIndicator
-     * @return self
+     * @return static
      */
-    public function setSpecialSecurityIndicator(?bool $specialSecurityIndicator = null): self
+    public function setSpecialSecurityIndicator(?bool $specialSecurityIndicator = null): static
     {
         $this->specialSecurityIndicator = $specialSecurityIndicator;
 
@@ -2510,9 +2510,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecialSecurityIndicator(): self
+    public function unsetSpecialSecurityIndicator(): static
     {
         $this->specialSecurityIndicator = null;
 
@@ -2529,9 +2529,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $thirdPartyPayerIndicator
-     * @return self
+     * @return static
      */
-    public function setThirdPartyPayerIndicator(?bool $thirdPartyPayerIndicator = null): self
+    public function setThirdPartyPayerIndicator(?bool $thirdPartyPayerIndicator = null): static
     {
         $this->thirdPartyPayerIndicator = $thirdPartyPayerIndicator;
 
@@ -2539,9 +2539,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetThirdPartyPayerIndicator(): self
+    public function unsetThirdPartyPayerIndicator(): static
     {
         $this->thirdPartyPayerIndicator = null;
 
@@ -2558,9 +2558,9 @@ class ConsignmentType
 
     /**
      * @param array<CarrierServiceInstructions>|null $carrierServiceInstructions
-     * @return self
+     * @return static
      */
-    public function setCarrierServiceInstructions(?array $carrierServiceInstructions = null): self
+    public function setCarrierServiceInstructions(?array $carrierServiceInstructions = null): static
     {
         $this->carrierServiceInstructions = $carrierServiceInstructions;
 
@@ -2568,9 +2568,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCarrierServiceInstructions(): self
+    public function unsetCarrierServiceInstructions(): static
     {
         $this->carrierServiceInstructions = null;
 
@@ -2578,9 +2578,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCarrierServiceInstructions(): self
+    public function clearCarrierServiceInstructions(): static
     {
         $this->carrierServiceInstructions = [];
 
@@ -2619,9 +2619,9 @@ class ConsignmentType
 
     /**
      * @param CarrierServiceInstructions $carrierServiceInstructions
-     * @return self
+     * @return static
      */
-    public function addToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): self
+    public function addToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): static
     {
         $this->carrierServiceInstructions[] = $carrierServiceInstructions;
 
@@ -2640,9 +2640,9 @@ class ConsignmentType
 
     /**
      * @param CarrierServiceInstructions $carrierServiceInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): self
+    public function addOnceToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): static
     {
         if (!is_array($this->carrierServiceInstructions)) {
             $this->carrierServiceInstructions = [];
@@ -2679,9 +2679,9 @@ class ConsignmentType
 
     /**
      * @param array<CustomsClearanceServiceInstructions>|null $customsClearanceServiceInstructions
-     * @return self
+     * @return static
      */
-    public function setCustomsClearanceServiceInstructions(?array $customsClearanceServiceInstructions = null): self
+    public function setCustomsClearanceServiceInstructions(?array $customsClearanceServiceInstructions = null): static
     {
         $this->customsClearanceServiceInstructions = $customsClearanceServiceInstructions;
 
@@ -2689,9 +2689,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsClearanceServiceInstructions(): self
+    public function unsetCustomsClearanceServiceInstructions(): static
     {
         $this->customsClearanceServiceInstructions = null;
 
@@ -2699,9 +2699,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCustomsClearanceServiceInstructions(): self
+    public function clearCustomsClearanceServiceInstructions(): static
     {
         $this->customsClearanceServiceInstructions = [];
 
@@ -2740,11 +2740,11 @@ class ConsignmentType
 
     /**
      * @param CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
-     * @return self
+     * @return static
      */
     public function addToCustomsClearanceServiceInstructions(
         CustomsClearanceServiceInstructions $customsClearanceServiceInstructions,
-    ): self {
+    ): static {
         $this->customsClearanceServiceInstructions[] = $customsClearanceServiceInstructions;
 
         return $this;
@@ -2762,11 +2762,11 @@ class ConsignmentType
 
     /**
      * @param CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
-     * @return self
+     * @return static
      */
     public function addOnceToCustomsClearanceServiceInstructions(
         CustomsClearanceServiceInstructions $customsClearanceServiceInstructions,
-    ): self {
+    ): static {
         if (!is_array($this->customsClearanceServiceInstructions)) {
             $this->customsClearanceServiceInstructions = [];
         }
@@ -2802,9 +2802,9 @@ class ConsignmentType
 
     /**
      * @param array<ForwarderServiceInstructions>|null $forwarderServiceInstructions
-     * @return self
+     * @return static
      */
-    public function setForwarderServiceInstructions(?array $forwarderServiceInstructions = null): self
+    public function setForwarderServiceInstructions(?array $forwarderServiceInstructions = null): static
     {
         $this->forwarderServiceInstructions = $forwarderServiceInstructions;
 
@@ -2812,9 +2812,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForwarderServiceInstructions(): self
+    public function unsetForwarderServiceInstructions(): static
     {
         $this->forwarderServiceInstructions = null;
 
@@ -2822,9 +2822,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearForwarderServiceInstructions(): self
+    public function clearForwarderServiceInstructions(): static
     {
         $this->forwarderServiceInstructions = [];
 
@@ -2863,11 +2863,11 @@ class ConsignmentType
 
     /**
      * @param ForwarderServiceInstructions $forwarderServiceInstructions
-     * @return self
+     * @return static
      */
     public function addToForwarderServiceInstructions(
         ForwarderServiceInstructions $forwarderServiceInstructions,
-    ): self {
+    ): static {
         $this->forwarderServiceInstructions[] = $forwarderServiceInstructions;
 
         return $this;
@@ -2885,11 +2885,11 @@ class ConsignmentType
 
     /**
      * @param ForwarderServiceInstructions $forwarderServiceInstructions
-     * @return self
+     * @return static
      */
     public function addOnceToForwarderServiceInstructions(
         ForwarderServiceInstructions $forwarderServiceInstructions,
-    ): self {
+    ): static {
         if (!is_array($this->forwarderServiceInstructions)) {
             $this->forwarderServiceInstructions = [];
         }
@@ -2925,9 +2925,9 @@ class ConsignmentType
 
     /**
      * @param array<SpecialServiceInstructions>|null $specialServiceInstructions
-     * @return self
+     * @return static
      */
-    public function setSpecialServiceInstructions(?array $specialServiceInstructions = null): self
+    public function setSpecialServiceInstructions(?array $specialServiceInstructions = null): static
     {
         $this->specialServiceInstructions = $specialServiceInstructions;
 
@@ -2935,9 +2935,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecialServiceInstructions(): self
+    public function unsetSpecialServiceInstructions(): static
     {
         $this->specialServiceInstructions = null;
 
@@ -2945,9 +2945,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecialServiceInstructions(): self
+    public function clearSpecialServiceInstructions(): static
     {
         $this->specialServiceInstructions = [];
 
@@ -2986,9 +2986,9 @@ class ConsignmentType
 
     /**
      * @param SpecialServiceInstructions $specialServiceInstructions
-     * @return self
+     * @return static
      */
-    public function addToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): self
+    public function addToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): static
     {
         $this->specialServiceInstructions[] = $specialServiceInstructions;
 
@@ -3007,9 +3007,9 @@ class ConsignmentType
 
     /**
      * @param SpecialServiceInstructions $specialServiceInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): self
+    public function addOnceToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): static
     {
         if (!is_array($this->specialServiceInstructions)) {
             $this->specialServiceInstructions = [];
@@ -3056,9 +3056,9 @@ class ConsignmentType
 
     /**
      * @param SequenceID|null $sequenceID
-     * @return self
+     * @return static
      */
-    public function setSequenceID(?SequenceID $sequenceID = null): self
+    public function setSequenceID(?SequenceID $sequenceID = null): static
     {
         $this->sequenceID = $sequenceID;
 
@@ -3066,9 +3066,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceID(): self
+    public function unsetSequenceID(): static
     {
         $this->sequenceID = null;
 
@@ -3095,9 +3095,9 @@ class ConsignmentType
 
     /**
      * @param ShippingPriorityLevelCode|null $shippingPriorityLevelCode
-     * @return self
+     * @return static
      */
-    public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): self
+    public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): static
     {
         $this->shippingPriorityLevelCode = $shippingPriorityLevelCode;
 
@@ -3105,9 +3105,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShippingPriorityLevelCode(): self
+    public function unsetShippingPriorityLevelCode(): static
     {
         $this->shippingPriorityLevelCode = null;
 
@@ -3134,9 +3134,9 @@ class ConsignmentType
 
     /**
      * @param HandlingCode|null $handlingCode
-     * @return self
+     * @return static
      */
-    public function setHandlingCode(?HandlingCode $handlingCode = null): self
+    public function setHandlingCode(?HandlingCode $handlingCode = null): static
     {
         $this->handlingCode = $handlingCode;
 
@@ -3144,9 +3144,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingCode(): self
+    public function unsetHandlingCode(): static
     {
         $this->handlingCode = null;
 
@@ -3163,9 +3163,9 @@ class ConsignmentType
 
     /**
      * @param array<HandlingInstructions>|null $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function setHandlingInstructions(?array $handlingInstructions = null): self
+    public function setHandlingInstructions(?array $handlingInstructions = null): static
     {
         $this->handlingInstructions = $handlingInstructions;
 
@@ -3173,9 +3173,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingInstructions(): self
+    public function unsetHandlingInstructions(): static
     {
         $this->handlingInstructions = null;
 
@@ -3183,9 +3183,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHandlingInstructions(): self
+    public function clearHandlingInstructions(): static
     {
         $this->handlingInstructions = [];
 
@@ -3224,9 +3224,9 @@ class ConsignmentType
 
     /**
      * @param HandlingInstructions $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): self
+    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
     {
         $this->handlingInstructions[] = $handlingInstructions;
 
@@ -3245,9 +3245,9 @@ class ConsignmentType
 
     /**
      * @param HandlingInstructions $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): self
+    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
     {
         if (!is_array($this->handlingInstructions)) {
             $this->handlingInstructions = [];
@@ -3284,9 +3284,9 @@ class ConsignmentType
 
     /**
      * @param array<Information>|null $information
-     * @return self
+     * @return static
      */
-    public function setInformation(?array $information = null): self
+    public function setInformation(?array $information = null): static
     {
         $this->information = $information;
 
@@ -3294,9 +3294,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInformation(): self
+    public function unsetInformation(): static
     {
         $this->information = null;
 
@@ -3304,9 +3304,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInformation(): self
+    public function clearInformation(): static
     {
         $this->information = [];
 
@@ -3345,9 +3345,9 @@ class ConsignmentType
 
     /**
      * @param Information $information
-     * @return self
+     * @return static
      */
-    public function addToInformation(Information $information): self
+    public function addToInformation(Information $information): static
     {
         $this->information[] = $information;
 
@@ -3366,9 +3366,9 @@ class ConsignmentType
 
     /**
      * @param Information $information
-     * @return self
+     * @return static
      */
-    public function addOnceToInformation(Information $information): self
+    public function addOnceToInformation(Information $information): static
     {
         if (!is_array($this->information)) {
             $this->information = [];
@@ -3415,9 +3415,9 @@ class ConsignmentType
 
     /**
      * @param TotalGoodsItemQuantity|null $totalGoodsItemQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): self
+    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
     {
         $this->totalGoodsItemQuantity = $totalGoodsItemQuantity;
 
@@ -3425,9 +3425,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalGoodsItemQuantity(): self
+    public function unsetTotalGoodsItemQuantity(): static
     {
         $this->totalGoodsItemQuantity = null;
 
@@ -3454,20 +3454,20 @@ class ConsignmentType
 
     /**
      * @param TotalTransportHandlingUnitQuantity|null $totalTransportHandlingUnitQuantity
-     * @return self
+     * @return static
      */
     public function setTotalTransportHandlingUnitQuantity(
         ?TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity = null,
-    ): self {
+    ): static {
         $this->totalTransportHandlingUnitQuantity = $totalTransportHandlingUnitQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalTransportHandlingUnitQuantity(): self
+    public function unsetTotalTransportHandlingUnitQuantity(): static
     {
         $this->totalTransportHandlingUnitQuantity = null;
 
@@ -3494,9 +3494,9 @@ class ConsignmentType
 
     /**
      * @param InsuranceValueAmount|null $insuranceValueAmount
-     * @return self
+     * @return static
      */
-    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): self
+    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
     {
         $this->insuranceValueAmount = $insuranceValueAmount;
 
@@ -3504,9 +3504,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInsuranceValueAmount(): self
+    public function unsetInsuranceValueAmount(): static
     {
         $this->insuranceValueAmount = null;
 
@@ -3533,20 +3533,20 @@ class ConsignmentType
 
     /**
      * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredForCarriageValueAmount(
         ?DeclaredForCarriageValueAmount $declaredForCarriageValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredForCarriageValueAmount = $declaredForCarriageValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredForCarriageValueAmount(): self
+    public function unsetDeclaredForCarriageValueAmount(): static
     {
         $this->declaredForCarriageValueAmount = null;
 
@@ -3573,20 +3573,20 @@ class ConsignmentType
 
     /**
      * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredStatisticsValueAmount(
         ?DeclaredStatisticsValueAmount $declaredStatisticsValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredStatisticsValueAmount = $declaredStatisticsValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredStatisticsValueAmount(): self
+    public function unsetDeclaredStatisticsValueAmount(): static
     {
         $this->declaredStatisticsValueAmount = null;
 
@@ -3613,9 +3613,9 @@ class ConsignmentType
 
     /**
      * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
-     * @return self
+     * @return static
      */
-    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): self
+    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
     {
         $this->freeOnBoardValueAmount = $freeOnBoardValueAmount;
 
@@ -3623,9 +3623,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreeOnBoardValueAmount(): self
+    public function unsetFreeOnBoardValueAmount(): static
     {
         $this->freeOnBoardValueAmount = null;
 
@@ -3642,9 +3642,9 @@ class ConsignmentType
 
     /**
      * @param array<SpecialInstructions>|null $specialInstructions
-     * @return self
+     * @return static
      */
-    public function setSpecialInstructions(?array $specialInstructions = null): self
+    public function setSpecialInstructions(?array $specialInstructions = null): static
     {
         $this->specialInstructions = $specialInstructions;
 
@@ -3652,9 +3652,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecialInstructions(): self
+    public function unsetSpecialInstructions(): static
     {
         $this->specialInstructions = null;
 
@@ -3662,9 +3662,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecialInstructions(): self
+    public function clearSpecialInstructions(): static
     {
         $this->specialInstructions = [];
 
@@ -3703,9 +3703,9 @@ class ConsignmentType
 
     /**
      * @param SpecialInstructions $specialInstructions
-     * @return self
+     * @return static
      */
-    public function addToSpecialInstructions(SpecialInstructions $specialInstructions): self
+    public function addToSpecialInstructions(SpecialInstructions $specialInstructions): static
     {
         $this->specialInstructions[] = $specialInstructions;
 
@@ -3724,9 +3724,9 @@ class ConsignmentType
 
     /**
      * @param SpecialInstructions $specialInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): self
+    public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): static
     {
         if (!is_array($this->specialInstructions)) {
             $this->specialInstructions = [];
@@ -3763,9 +3763,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $splitConsignmentIndicator
-     * @return self
+     * @return static
      */
-    public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): self
+    public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): static
     {
         $this->splitConsignmentIndicator = $splitConsignmentIndicator;
 
@@ -3773,9 +3773,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSplitConsignmentIndicator(): self
+    public function unsetSplitConsignmentIndicator(): static
     {
         $this->splitConsignmentIndicator = null;
 
@@ -3792,9 +3792,9 @@ class ConsignmentType
 
     /**
      * @param array<DeliveryInstructions>|null $deliveryInstructions
-     * @return self
+     * @return static
      */
-    public function setDeliveryInstructions(?array $deliveryInstructions = null): self
+    public function setDeliveryInstructions(?array $deliveryInstructions = null): static
     {
         $this->deliveryInstructions = $deliveryInstructions;
 
@@ -3802,9 +3802,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryInstructions(): self
+    public function unsetDeliveryInstructions(): static
     {
         $this->deliveryInstructions = null;
 
@@ -3812,9 +3812,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDeliveryInstructions(): self
+    public function clearDeliveryInstructions(): static
     {
         $this->deliveryInstructions = [];
 
@@ -3853,9 +3853,9 @@ class ConsignmentType
 
     /**
      * @param DeliveryInstructions $deliveryInstructions
-     * @return self
+     * @return static
      */
-    public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): self
+    public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
     {
         $this->deliveryInstructions[] = $deliveryInstructions;
 
@@ -3874,9 +3874,9 @@ class ConsignmentType
 
     /**
      * @param DeliveryInstructions $deliveryInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): self
+    public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
     {
         if (!is_array($this->deliveryInstructions)) {
             $this->deliveryInstructions = [];
@@ -3923,9 +3923,9 @@ class ConsignmentType
 
     /**
      * @param ConsignmentQuantity|null $consignmentQuantity
-     * @return self
+     * @return static
      */
-    public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): self
+    public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): static
     {
         $this->consignmentQuantity = $consignmentQuantity;
 
@@ -3933,9 +3933,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsignmentQuantity(): self
+    public function unsetConsignmentQuantity(): static
     {
         $this->consignmentQuantity = null;
 
@@ -3952,9 +3952,9 @@ class ConsignmentType
 
     /**
      * @param bool|null $consolidatableIndicator
-     * @return self
+     * @return static
      */
-    public function setConsolidatableIndicator(?bool $consolidatableIndicator = null): self
+    public function setConsolidatableIndicator(?bool $consolidatableIndicator = null): static
     {
         $this->consolidatableIndicator = $consolidatableIndicator;
 
@@ -3962,9 +3962,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsolidatableIndicator(): self
+    public function unsetConsolidatableIndicator(): static
     {
         $this->consolidatableIndicator = null;
 
@@ -3981,9 +3981,9 @@ class ConsignmentType
 
     /**
      * @param array<HaulageInstructions>|null $haulageInstructions
-     * @return self
+     * @return static
      */
-    public function setHaulageInstructions(?array $haulageInstructions = null): self
+    public function setHaulageInstructions(?array $haulageInstructions = null): static
     {
         $this->haulageInstructions = $haulageInstructions;
 
@@ -3991,9 +3991,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHaulageInstructions(): self
+    public function unsetHaulageInstructions(): static
     {
         $this->haulageInstructions = null;
 
@@ -4001,9 +4001,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHaulageInstructions(): self
+    public function clearHaulageInstructions(): static
     {
         $this->haulageInstructions = [];
 
@@ -4042,9 +4042,9 @@ class ConsignmentType
 
     /**
      * @param HaulageInstructions $haulageInstructions
-     * @return self
+     * @return static
      */
-    public function addToHaulageInstructions(HaulageInstructions $haulageInstructions): self
+    public function addToHaulageInstructions(HaulageInstructions $haulageInstructions): static
     {
         $this->haulageInstructions[] = $haulageInstructions;
 
@@ -4063,9 +4063,9 @@ class ConsignmentType
 
     /**
      * @param HaulageInstructions $haulageInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToHaulageInstructions(HaulageInstructions $haulageInstructions): self
+    public function addOnceToHaulageInstructions(HaulageInstructions $haulageInstructions): static
     {
         if (!is_array($this->haulageInstructions)) {
             $this->haulageInstructions = [];
@@ -4112,9 +4112,9 @@ class ConsignmentType
 
     /**
      * @param LoadingSequenceID|null $loadingSequenceID
-     * @return self
+     * @return static
      */
-    public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): self
+    public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): static
     {
         $this->loadingSequenceID = $loadingSequenceID;
 
@@ -4122,9 +4122,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLoadingSequenceID(): self
+    public function unsetLoadingSequenceID(): static
     {
         $this->loadingSequenceID = null;
 
@@ -4151,9 +4151,9 @@ class ConsignmentType
 
     /**
      * @param ChildConsignmentQuantity|null $childConsignmentQuantity
-     * @return self
+     * @return static
      */
-    public function setChildConsignmentQuantity(?ChildConsignmentQuantity $childConsignmentQuantity = null): self
+    public function setChildConsignmentQuantity(?ChildConsignmentQuantity $childConsignmentQuantity = null): static
     {
         $this->childConsignmentQuantity = $childConsignmentQuantity;
 
@@ -4161,9 +4161,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChildConsignmentQuantity(): self
+    public function unsetChildConsignmentQuantity(): static
     {
         $this->childConsignmentQuantity = null;
 
@@ -4190,9 +4190,9 @@ class ConsignmentType
 
     /**
      * @param TotalPackagesQuantity|null $totalPackagesQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalPackagesQuantity(?TotalPackagesQuantity $totalPackagesQuantity = null): self
+    public function setTotalPackagesQuantity(?TotalPackagesQuantity $totalPackagesQuantity = null): static
     {
         $this->totalPackagesQuantity = $totalPackagesQuantity;
 
@@ -4200,9 +4200,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalPackagesQuantity(): self
+    public function unsetTotalPackagesQuantity(): static
     {
         $this->totalPackagesQuantity = null;
 
@@ -4219,9 +4219,9 @@ class ConsignmentType
 
     /**
      * @param array<ConsolidatedShipment>|null $consolidatedShipment
-     * @return self
+     * @return static
      */
-    public function setConsolidatedShipment(?array $consolidatedShipment = null): self
+    public function setConsolidatedShipment(?array $consolidatedShipment = null): static
     {
         $this->consolidatedShipment = $consolidatedShipment;
 
@@ -4229,9 +4229,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsolidatedShipment(): self
+    public function unsetConsolidatedShipment(): static
     {
         $this->consolidatedShipment = null;
 
@@ -4239,9 +4239,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearConsolidatedShipment(): self
+    public function clearConsolidatedShipment(): static
     {
         $this->consolidatedShipment = [];
 
@@ -4280,9 +4280,9 @@ class ConsignmentType
 
     /**
      * @param ConsolidatedShipment $consolidatedShipment
-     * @return self
+     * @return static
      */
-    public function addToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): self
+    public function addToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): static
     {
         $this->consolidatedShipment[] = $consolidatedShipment;
 
@@ -4301,9 +4301,9 @@ class ConsignmentType
 
     /**
      * @param ConsolidatedShipment $consolidatedShipment
-     * @return self
+     * @return static
      */
-    public function addOnceToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): self
+    public function addOnceToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): static
     {
         if (!is_array($this->consolidatedShipment)) {
             $this->consolidatedShipment = [];
@@ -4340,9 +4340,9 @@ class ConsignmentType
 
     /**
      * @param array<CustomsDeclaration>|null $customsDeclaration
-     * @return self
+     * @return static
      */
-    public function setCustomsDeclaration(?array $customsDeclaration = null): self
+    public function setCustomsDeclaration(?array $customsDeclaration = null): static
     {
         $this->customsDeclaration = $customsDeclaration;
 
@@ -4350,9 +4350,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsDeclaration(): self
+    public function unsetCustomsDeclaration(): static
     {
         $this->customsDeclaration = null;
 
@@ -4360,9 +4360,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCustomsDeclaration(): self
+    public function clearCustomsDeclaration(): static
     {
         $this->customsDeclaration = [];
 
@@ -4401,9 +4401,9 @@ class ConsignmentType
 
     /**
      * @param CustomsDeclaration $customsDeclaration
-     * @return self
+     * @return static
      */
-    public function addToCustomsDeclaration(CustomsDeclaration $customsDeclaration): self
+    public function addToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
     {
         $this->customsDeclaration[] = $customsDeclaration;
 
@@ -4422,9 +4422,9 @@ class ConsignmentType
 
     /**
      * @param CustomsDeclaration $customsDeclaration
-     * @return self
+     * @return static
      */
-    public function addOnceToCustomsDeclaration(CustomsDeclaration $customsDeclaration): self
+    public function addOnceToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
     {
         if (!is_array($this->customsDeclaration)) {
             $this->customsDeclaration = [];
@@ -4471,20 +4471,20 @@ class ConsignmentType
 
     /**
      * @param RequestedPickupTransportEvent|null $requestedPickupTransportEvent
-     * @return self
+     * @return static
      */
     public function setRequestedPickupTransportEvent(
         ?RequestedPickupTransportEvent $requestedPickupTransportEvent = null,
-    ): self {
+    ): static {
         $this->requestedPickupTransportEvent = $requestedPickupTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedPickupTransportEvent(): self
+    public function unsetRequestedPickupTransportEvent(): static
     {
         $this->requestedPickupTransportEvent = null;
 
@@ -4511,20 +4511,20 @@ class ConsignmentType
 
     /**
      * @param RequestedDeliveryTransportEvent|null $requestedDeliveryTransportEvent
-     * @return self
+     * @return static
      */
     public function setRequestedDeliveryTransportEvent(
         ?RequestedDeliveryTransportEvent $requestedDeliveryTransportEvent = null,
-    ): self {
+    ): static {
         $this->requestedDeliveryTransportEvent = $requestedDeliveryTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedDeliveryTransportEvent(): self
+    public function unsetRequestedDeliveryTransportEvent(): static
     {
         $this->requestedDeliveryTransportEvent = null;
 
@@ -4551,20 +4551,20 @@ class ConsignmentType
 
     /**
      * @param PlannedPickupTransportEvent|null $plannedPickupTransportEvent
-     * @return self
+     * @return static
      */
     public function setPlannedPickupTransportEvent(
         ?PlannedPickupTransportEvent $plannedPickupTransportEvent = null,
-    ): self {
+    ): static {
         $this->plannedPickupTransportEvent = $plannedPickupTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedPickupTransportEvent(): self
+    public function unsetPlannedPickupTransportEvent(): static
     {
         $this->plannedPickupTransportEvent = null;
 
@@ -4591,20 +4591,20 @@ class ConsignmentType
 
     /**
      * @param PlannedDeliveryTransportEvent|null $plannedDeliveryTransportEvent
-     * @return self
+     * @return static
      */
     public function setPlannedDeliveryTransportEvent(
         ?PlannedDeliveryTransportEvent $plannedDeliveryTransportEvent = null,
-    ): self {
+    ): static {
         $this->plannedDeliveryTransportEvent = $plannedDeliveryTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedDeliveryTransportEvent(): self
+    public function unsetPlannedDeliveryTransportEvent(): static
     {
         $this->plannedDeliveryTransportEvent = null;
 
@@ -4621,9 +4621,9 @@ class ConsignmentType
 
     /**
      * @param array<Status>|null $status
-     * @return self
+     * @return static
      */
-    public function setStatus(?array $status = null): self
+    public function setStatus(?array $status = null): static
     {
         $this->status = $status;
 
@@ -4631,9 +4631,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatus(): self
+    public function unsetStatus(): static
     {
         $this->status = null;
 
@@ -4641,9 +4641,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearStatus(): self
+    public function clearStatus(): static
     {
         $this->status = [];
 
@@ -4682,9 +4682,9 @@ class ConsignmentType
 
     /**
      * @param Status $status
-     * @return self
+     * @return static
      */
-    public function addToStatus(Status $status): self
+    public function addToStatus(Status $status): static
     {
         $this->status[] = $status;
 
@@ -4703,9 +4703,9 @@ class ConsignmentType
 
     /**
      * @param Status $status
-     * @return self
+     * @return static
      */
-    public function addOnceToStatus(Status $status): self
+    public function addOnceToStatus(Status $status): static
     {
         if (!is_array($this->status)) {
             $this->status = [];
@@ -4742,9 +4742,9 @@ class ConsignmentType
 
     /**
      * @param array<ChildConsignment>|null $childConsignment
-     * @return self
+     * @return static
      */
-    public function setChildConsignment(?array $childConsignment = null): self
+    public function setChildConsignment(?array $childConsignment = null): static
     {
         $this->childConsignment = $childConsignment;
 
@@ -4752,9 +4752,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChildConsignment(): self
+    public function unsetChildConsignment(): static
     {
         $this->childConsignment = null;
 
@@ -4762,9 +4762,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearChildConsignment(): self
+    public function clearChildConsignment(): static
     {
         $this->childConsignment = [];
 
@@ -4803,9 +4803,9 @@ class ConsignmentType
 
     /**
      * @param ChildConsignment $childConsignment
-     * @return self
+     * @return static
      */
-    public function addToChildConsignment(ChildConsignment $childConsignment): self
+    public function addToChildConsignment(ChildConsignment $childConsignment): static
     {
         $this->childConsignment[] = $childConsignment;
 
@@ -4824,9 +4824,9 @@ class ConsignmentType
 
     /**
      * @param ChildConsignment $childConsignment
-     * @return self
+     * @return static
      */
-    public function addOnceToChildConsignment(ChildConsignment $childConsignment): self
+    public function addOnceToChildConsignment(ChildConsignment $childConsignment): static
     {
         if (!is_array($this->childConsignment)) {
             $this->childConsignment = [];
@@ -4873,9 +4873,9 @@ class ConsignmentType
 
     /**
      * @param ConsigneeParty|null $consigneeParty
-     * @return self
+     * @return static
      */
-    public function setConsigneeParty(?ConsigneeParty $consigneeParty = null): self
+    public function setConsigneeParty(?ConsigneeParty $consigneeParty = null): static
     {
         $this->consigneeParty = $consigneeParty;
 
@@ -4883,9 +4883,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsigneeParty(): self
+    public function unsetConsigneeParty(): static
     {
         $this->consigneeParty = null;
 
@@ -4912,9 +4912,9 @@ class ConsignmentType
 
     /**
      * @param ExporterParty|null $exporterParty
-     * @return self
+     * @return static
      */
-    public function setExporterParty(?ExporterParty $exporterParty = null): self
+    public function setExporterParty(?ExporterParty $exporterParty = null): static
     {
         $this->exporterParty = $exporterParty;
 
@@ -4922,9 +4922,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExporterParty(): self
+    public function unsetExporterParty(): static
     {
         $this->exporterParty = null;
 
@@ -4951,9 +4951,9 @@ class ConsignmentType
 
     /**
      * @param ConsignorParty|null $consignorParty
-     * @return self
+     * @return static
      */
-    public function setConsignorParty(?ConsignorParty $consignorParty = null): self
+    public function setConsignorParty(?ConsignorParty $consignorParty = null): static
     {
         $this->consignorParty = $consignorParty;
 
@@ -4961,9 +4961,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsignorParty(): self
+    public function unsetConsignorParty(): static
     {
         $this->consignorParty = null;
 
@@ -4990,9 +4990,9 @@ class ConsignmentType
 
     /**
      * @param ImporterParty|null $importerParty
-     * @return self
+     * @return static
      */
-    public function setImporterParty(?ImporterParty $importerParty = null): self
+    public function setImporterParty(?ImporterParty $importerParty = null): static
     {
         $this->importerParty = $importerParty;
 
@@ -5000,9 +5000,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetImporterParty(): self
+    public function unsetImporterParty(): static
     {
         $this->importerParty = null;
 
@@ -5029,9 +5029,9 @@ class ConsignmentType
 
     /**
      * @param CarrierParty|null $carrierParty
-     * @return self
+     * @return static
      */
-    public function setCarrierParty(?CarrierParty $carrierParty = null): self
+    public function setCarrierParty(?CarrierParty $carrierParty = null): static
     {
         $this->carrierParty = $carrierParty;
 
@@ -5039,9 +5039,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCarrierParty(): self
+    public function unsetCarrierParty(): static
     {
         $this->carrierParty = null;
 
@@ -5068,9 +5068,9 @@ class ConsignmentType
 
     /**
      * @param FreightForwarderParty|null $freightForwarderParty
-     * @return self
+     * @return static
      */
-    public function setFreightForwarderParty(?FreightForwarderParty $freightForwarderParty = null): self
+    public function setFreightForwarderParty(?FreightForwarderParty $freightForwarderParty = null): static
     {
         $this->freightForwarderParty = $freightForwarderParty;
 
@@ -5078,9 +5078,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightForwarderParty(): self
+    public function unsetFreightForwarderParty(): static
     {
         $this->freightForwarderParty = null;
 
@@ -5107,9 +5107,9 @@ class ConsignmentType
 
     /**
      * @param NotifyParty|null $notifyParty
-     * @return self
+     * @return static
      */
-    public function setNotifyParty(?NotifyParty $notifyParty = null): self
+    public function setNotifyParty(?NotifyParty $notifyParty = null): static
     {
         $this->notifyParty = $notifyParty;
 
@@ -5117,9 +5117,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNotifyParty(): self
+    public function unsetNotifyParty(): static
     {
         $this->notifyParty = null;
 
@@ -5146,9 +5146,9 @@ class ConsignmentType
 
     /**
      * @param OriginalDespatchParty|null $originalDespatchParty
-     * @return self
+     * @return static
      */
-    public function setOriginalDespatchParty(?OriginalDespatchParty $originalDespatchParty = null): self
+    public function setOriginalDespatchParty(?OriginalDespatchParty $originalDespatchParty = null): static
     {
         $this->originalDespatchParty = $originalDespatchParty;
 
@@ -5156,9 +5156,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginalDespatchParty(): self
+    public function unsetOriginalDespatchParty(): static
     {
         $this->originalDespatchParty = null;
 
@@ -5185,9 +5185,9 @@ class ConsignmentType
 
     /**
      * @param FinalDeliveryParty|null $finalDeliveryParty
-     * @return self
+     * @return static
      */
-    public function setFinalDeliveryParty(?FinalDeliveryParty $finalDeliveryParty = null): self
+    public function setFinalDeliveryParty(?FinalDeliveryParty $finalDeliveryParty = null): static
     {
         $this->finalDeliveryParty = $finalDeliveryParty;
 
@@ -5195,9 +5195,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinalDeliveryParty(): self
+    public function unsetFinalDeliveryParty(): static
     {
         $this->finalDeliveryParty = null;
 
@@ -5224,9 +5224,9 @@ class ConsignmentType
 
     /**
      * @param PerformingCarrierParty|null $performingCarrierParty
-     * @return self
+     * @return static
      */
-    public function setPerformingCarrierParty(?PerformingCarrierParty $performingCarrierParty = null): self
+    public function setPerformingCarrierParty(?PerformingCarrierParty $performingCarrierParty = null): static
     {
         $this->performingCarrierParty = $performingCarrierParty;
 
@@ -5234,9 +5234,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPerformingCarrierParty(): self
+    public function unsetPerformingCarrierParty(): static
     {
         $this->performingCarrierParty = null;
 
@@ -5263,9 +5263,9 @@ class ConsignmentType
 
     /**
      * @param SubstituteCarrierParty|null $substituteCarrierParty
-     * @return self
+     * @return static
      */
-    public function setSubstituteCarrierParty(?SubstituteCarrierParty $substituteCarrierParty = null): self
+    public function setSubstituteCarrierParty(?SubstituteCarrierParty $substituteCarrierParty = null): static
     {
         $this->substituteCarrierParty = $substituteCarrierParty;
 
@@ -5273,9 +5273,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubstituteCarrierParty(): self
+    public function unsetSubstituteCarrierParty(): static
     {
         $this->substituteCarrierParty = null;
 
@@ -5302,9 +5302,9 @@ class ConsignmentType
 
     /**
      * @param LogisticsOperatorParty|null $logisticsOperatorParty
-     * @return self
+     * @return static
      */
-    public function setLogisticsOperatorParty(?LogisticsOperatorParty $logisticsOperatorParty = null): self
+    public function setLogisticsOperatorParty(?LogisticsOperatorParty $logisticsOperatorParty = null): static
     {
         $this->logisticsOperatorParty = $logisticsOperatorParty;
 
@@ -5312,9 +5312,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLogisticsOperatorParty(): self
+    public function unsetLogisticsOperatorParty(): static
     {
         $this->logisticsOperatorParty = null;
 
@@ -5341,9 +5341,9 @@ class ConsignmentType
 
     /**
      * @param TransportAdvisorParty|null $transportAdvisorParty
-     * @return self
+     * @return static
      */
-    public function setTransportAdvisorParty(?TransportAdvisorParty $transportAdvisorParty = null): self
+    public function setTransportAdvisorParty(?TransportAdvisorParty $transportAdvisorParty = null): static
     {
         $this->transportAdvisorParty = $transportAdvisorParty;
 
@@ -5351,9 +5351,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportAdvisorParty(): self
+    public function unsetTransportAdvisorParty(): static
     {
         $this->transportAdvisorParty = null;
 
@@ -5380,20 +5380,20 @@ class ConsignmentType
 
     /**
      * @param HazardousItemNotificationParty|null $hazardousItemNotificationParty
-     * @return self
+     * @return static
      */
     public function setHazardousItemNotificationParty(
         ?HazardousItemNotificationParty $hazardousItemNotificationParty = null,
-    ): self {
+    ): static {
         $this->hazardousItemNotificationParty = $hazardousItemNotificationParty;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHazardousItemNotificationParty(): self
+    public function unsetHazardousItemNotificationParty(): static
     {
         $this->hazardousItemNotificationParty = null;
 
@@ -5420,9 +5420,9 @@ class ConsignmentType
 
     /**
      * @param InsuranceParty|null $insuranceParty
-     * @return self
+     * @return static
      */
-    public function setInsuranceParty(?InsuranceParty $insuranceParty = null): self
+    public function setInsuranceParty(?InsuranceParty $insuranceParty = null): static
     {
         $this->insuranceParty = $insuranceParty;
 
@@ -5430,9 +5430,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInsuranceParty(): self
+    public function unsetInsuranceParty(): static
     {
         $this->insuranceParty = null;
 
@@ -5459,9 +5459,9 @@ class ConsignmentType
 
     /**
      * @param MortgageHolderParty|null $mortgageHolderParty
-     * @return self
+     * @return static
      */
-    public function setMortgageHolderParty(?MortgageHolderParty $mortgageHolderParty = null): self
+    public function setMortgageHolderParty(?MortgageHolderParty $mortgageHolderParty = null): static
     {
         $this->mortgageHolderParty = $mortgageHolderParty;
 
@@ -5469,9 +5469,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMortgageHolderParty(): self
+    public function unsetMortgageHolderParty(): static
     {
         $this->mortgageHolderParty = null;
 
@@ -5498,9 +5498,9 @@ class ConsignmentType
 
     /**
      * @param BillOfLadingHolderParty|null $billOfLadingHolderParty
-     * @return self
+     * @return static
      */
-    public function setBillOfLadingHolderParty(?BillOfLadingHolderParty $billOfLadingHolderParty = null): self
+    public function setBillOfLadingHolderParty(?BillOfLadingHolderParty $billOfLadingHolderParty = null): static
     {
         $this->billOfLadingHolderParty = $billOfLadingHolderParty;
 
@@ -5508,9 +5508,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBillOfLadingHolderParty(): self
+    public function unsetBillOfLadingHolderParty(): static
     {
         $this->billOfLadingHolderParty = null;
 
@@ -5537,9 +5537,9 @@ class ConsignmentType
 
     /**
      * @param OriginalDepartureCountry|null $originalDepartureCountry
-     * @return self
+     * @return static
      */
-    public function setOriginalDepartureCountry(?OriginalDepartureCountry $originalDepartureCountry = null): self
+    public function setOriginalDepartureCountry(?OriginalDepartureCountry $originalDepartureCountry = null): static
     {
         $this->originalDepartureCountry = $originalDepartureCountry;
 
@@ -5547,9 +5547,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginalDepartureCountry(): self
+    public function unsetOriginalDepartureCountry(): static
     {
         $this->originalDepartureCountry = null;
 
@@ -5576,9 +5576,9 @@ class ConsignmentType
 
     /**
      * @param FinalDestinationCountry|null $finalDestinationCountry
-     * @return self
+     * @return static
      */
-    public function setFinalDestinationCountry(?FinalDestinationCountry $finalDestinationCountry = null): self
+    public function setFinalDestinationCountry(?FinalDestinationCountry $finalDestinationCountry = null): static
     {
         $this->finalDestinationCountry = $finalDestinationCountry;
 
@@ -5586,9 +5586,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinalDestinationCountry(): self
+    public function unsetFinalDestinationCountry(): static
     {
         $this->finalDestinationCountry = null;
 
@@ -5605,9 +5605,9 @@ class ConsignmentType
 
     /**
      * @param array<TransitCountry>|null $transitCountry
-     * @return self
+     * @return static
      */
-    public function setTransitCountry(?array $transitCountry = null): self
+    public function setTransitCountry(?array $transitCountry = null): static
     {
         $this->transitCountry = $transitCountry;
 
@@ -5615,9 +5615,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransitCountry(): self
+    public function unsetTransitCountry(): static
     {
         $this->transitCountry = null;
 
@@ -5625,9 +5625,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransitCountry(): self
+    public function clearTransitCountry(): static
     {
         $this->transitCountry = [];
 
@@ -5666,9 +5666,9 @@ class ConsignmentType
 
     /**
      * @param TransitCountry $transitCountry
-     * @return self
+     * @return static
      */
-    public function addToTransitCountry(TransitCountry $transitCountry): self
+    public function addToTransitCountry(TransitCountry $transitCountry): static
     {
         $this->transitCountry[] = $transitCountry;
 
@@ -5687,9 +5687,9 @@ class ConsignmentType
 
     /**
      * @param TransitCountry $transitCountry
-     * @return self
+     * @return static
      */
-    public function addOnceToTransitCountry(TransitCountry $transitCountry): self
+    public function addOnceToTransitCountry(TransitCountry $transitCountry): static
     {
         if (!is_array($this->transitCountry)) {
             $this->transitCountry = [];
@@ -5736,9 +5736,9 @@ class ConsignmentType
 
     /**
      * @param TransportContract|null $transportContract
-     * @return self
+     * @return static
      */
-    public function setTransportContract(?TransportContract $transportContract = null): self
+    public function setTransportContract(?TransportContract $transportContract = null): static
     {
         $this->transportContract = $transportContract;
 
@@ -5746,9 +5746,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportContract(): self
+    public function unsetTransportContract(): static
     {
         $this->transportContract = null;
 
@@ -5765,9 +5765,9 @@ class ConsignmentType
 
     /**
      * @param array<TransportEvent>|null $transportEvent
-     * @return self
+     * @return static
      */
-    public function setTransportEvent(?array $transportEvent = null): self
+    public function setTransportEvent(?array $transportEvent = null): static
     {
         $this->transportEvent = $transportEvent;
 
@@ -5775,9 +5775,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEvent(): self
+    public function unsetTransportEvent(): static
     {
         $this->transportEvent = null;
 
@@ -5785,9 +5785,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportEvent(): self
+    public function clearTransportEvent(): static
     {
         $this->transportEvent = [];
 
@@ -5826,9 +5826,9 @@ class ConsignmentType
 
     /**
      * @param TransportEvent $transportEvent
-     * @return self
+     * @return static
      */
-    public function addToTransportEvent(TransportEvent $transportEvent): self
+    public function addToTransportEvent(TransportEvent $transportEvent): static
     {
         $this->transportEvent[] = $transportEvent;
 
@@ -5847,9 +5847,9 @@ class ConsignmentType
 
     /**
      * @param TransportEvent $transportEvent
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportEvent(TransportEvent $transportEvent): self
+    public function addOnceToTransportEvent(TransportEvent $transportEvent): static
     {
         if (!is_array($this->transportEvent)) {
             $this->transportEvent = [];
@@ -5896,20 +5896,20 @@ class ConsignmentType
 
     /**
      * @param OriginalDespatchTransportationService|null $originalDespatchTransportationService
-     * @return self
+     * @return static
      */
     public function setOriginalDespatchTransportationService(
         ?OriginalDespatchTransportationService $originalDespatchTransportationService = null,
-    ): self {
+    ): static {
         $this->originalDespatchTransportationService = $originalDespatchTransportationService;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginalDespatchTransportationService(): self
+    public function unsetOriginalDespatchTransportationService(): static
     {
         $this->originalDespatchTransportationService = null;
 
@@ -5936,20 +5936,20 @@ class ConsignmentType
 
     /**
      * @param FinalDeliveryTransportationService|null $finalDeliveryTransportationService
-     * @return self
+     * @return static
      */
     public function setFinalDeliveryTransportationService(
         ?FinalDeliveryTransportationService $finalDeliveryTransportationService = null,
-    ): self {
+    ): static {
         $this->finalDeliveryTransportationService = $finalDeliveryTransportationService;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinalDeliveryTransportationService(): self
+    public function unsetFinalDeliveryTransportationService(): static
     {
         $this->finalDeliveryTransportationService = null;
 
@@ -5976,9 +5976,9 @@ class ConsignmentType
 
     /**
      * @param DeliveryTerms|null $deliveryTerms
-     * @return self
+     * @return static
      */
-    public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): self
+    public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
     {
         $this->deliveryTerms = $deliveryTerms;
 
@@ -5986,9 +5986,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryTerms(): self
+    public function unsetDeliveryTerms(): static
     {
         $this->deliveryTerms = null;
 
@@ -6015,9 +6015,9 @@ class ConsignmentType
 
     /**
      * @param PaymentTerms|null $paymentTerms
-     * @return self
+     * @return static
      */
-    public function setPaymentTerms(?PaymentTerms $paymentTerms = null): self
+    public function setPaymentTerms(?PaymentTerms $paymentTerms = null): static
     {
         $this->paymentTerms = $paymentTerms;
 
@@ -6025,9 +6025,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentTerms(): self
+    public function unsetPaymentTerms(): static
     {
         $this->paymentTerms = null;
 
@@ -6054,9 +6054,9 @@ class ConsignmentType
 
     /**
      * @param CollectPaymentTerms|null $collectPaymentTerms
-     * @return self
+     * @return static
      */
-    public function setCollectPaymentTerms(?CollectPaymentTerms $collectPaymentTerms = null): self
+    public function setCollectPaymentTerms(?CollectPaymentTerms $collectPaymentTerms = null): static
     {
         $this->collectPaymentTerms = $collectPaymentTerms;
 
@@ -6064,9 +6064,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCollectPaymentTerms(): self
+    public function unsetCollectPaymentTerms(): static
     {
         $this->collectPaymentTerms = null;
 
@@ -6093,9 +6093,9 @@ class ConsignmentType
 
     /**
      * @param DisbursementPaymentTerms|null $disbursementPaymentTerms
-     * @return self
+     * @return static
      */
-    public function setDisbursementPaymentTerms(?DisbursementPaymentTerms $disbursementPaymentTerms = null): self
+    public function setDisbursementPaymentTerms(?DisbursementPaymentTerms $disbursementPaymentTerms = null): static
     {
         $this->disbursementPaymentTerms = $disbursementPaymentTerms;
 
@@ -6103,9 +6103,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDisbursementPaymentTerms(): self
+    public function unsetDisbursementPaymentTerms(): static
     {
         $this->disbursementPaymentTerms = null;
 
@@ -6132,9 +6132,9 @@ class ConsignmentType
 
     /**
      * @param PrepaidPaymentTerms|null $prepaidPaymentTerms
-     * @return self
+     * @return static
      */
-    public function setPrepaidPaymentTerms(?PrepaidPaymentTerms $prepaidPaymentTerms = null): self
+    public function setPrepaidPaymentTerms(?PrepaidPaymentTerms $prepaidPaymentTerms = null): static
     {
         $this->prepaidPaymentTerms = $prepaidPaymentTerms;
 
@@ -6142,9 +6142,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrepaidPaymentTerms(): self
+    public function unsetPrepaidPaymentTerms(): static
     {
         $this->prepaidPaymentTerms = null;
 
@@ -6161,9 +6161,9 @@ class ConsignmentType
 
     /**
      * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): self
+    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
     {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
@@ -6171,9 +6171,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightAllowanceCharge(): self
+    public function unsetFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = null;
 
@@ -6181,9 +6181,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFreightAllowanceCharge(): self
+    public function clearFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = [];
 
@@ -6222,9 +6222,9 @@ class ConsignmentType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
@@ -6243,9 +6243,9 @@ class ConsignmentType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];
@@ -6282,9 +6282,9 @@ class ConsignmentType
 
     /**
      * @param array<ExtraAllowanceCharge>|null $extraAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setExtraAllowanceCharge(?array $extraAllowanceCharge = null): self
+    public function setExtraAllowanceCharge(?array $extraAllowanceCharge = null): static
     {
         $this->extraAllowanceCharge = $extraAllowanceCharge;
 
@@ -6292,9 +6292,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtraAllowanceCharge(): self
+    public function unsetExtraAllowanceCharge(): static
     {
         $this->extraAllowanceCharge = null;
 
@@ -6302,9 +6302,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearExtraAllowanceCharge(): self
+    public function clearExtraAllowanceCharge(): static
     {
         $this->extraAllowanceCharge = [];
 
@@ -6343,9 +6343,9 @@ class ConsignmentType
 
     /**
      * @param ExtraAllowanceCharge $extraAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): self
+    public function addToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): static
     {
         $this->extraAllowanceCharge[] = $extraAllowanceCharge;
 
@@ -6364,9 +6364,9 @@ class ConsignmentType
 
     /**
      * @param ExtraAllowanceCharge $extraAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): self
+    public function addOnceToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): static
     {
         if (!is_array($this->extraAllowanceCharge)) {
             $this->extraAllowanceCharge = [];
@@ -6403,9 +6403,9 @@ class ConsignmentType
 
     /**
      * @param array<MainCarriageShipmentStage>|null $mainCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function setMainCarriageShipmentStage(?array $mainCarriageShipmentStage = null): self
+    public function setMainCarriageShipmentStage(?array $mainCarriageShipmentStage = null): static
     {
         $this->mainCarriageShipmentStage = $mainCarriageShipmentStage;
 
@@ -6413,9 +6413,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMainCarriageShipmentStage(): self
+    public function unsetMainCarriageShipmentStage(): static
     {
         $this->mainCarriageShipmentStage = null;
 
@@ -6423,9 +6423,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMainCarriageShipmentStage(): self
+    public function clearMainCarriageShipmentStage(): static
     {
         $this->mainCarriageShipmentStage = [];
 
@@ -6464,9 +6464,9 @@ class ConsignmentType
 
     /**
      * @param MainCarriageShipmentStage $mainCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function addToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): self
+    public function addToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): static
     {
         $this->mainCarriageShipmentStage[] = $mainCarriageShipmentStage;
 
@@ -6485,9 +6485,9 @@ class ConsignmentType
 
     /**
      * @param MainCarriageShipmentStage $mainCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function addOnceToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): self
+    public function addOnceToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): static
     {
         if (!is_array($this->mainCarriageShipmentStage)) {
             $this->mainCarriageShipmentStage = [];
@@ -6524,9 +6524,9 @@ class ConsignmentType
 
     /**
      * @param array<PreCarriageShipmentStage>|null $preCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function setPreCarriageShipmentStage(?array $preCarriageShipmentStage = null): self
+    public function setPreCarriageShipmentStage(?array $preCarriageShipmentStage = null): static
     {
         $this->preCarriageShipmentStage = $preCarriageShipmentStage;
 
@@ -6534,9 +6534,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreCarriageShipmentStage(): self
+    public function unsetPreCarriageShipmentStage(): static
     {
         $this->preCarriageShipmentStage = null;
 
@@ -6544,9 +6544,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPreCarriageShipmentStage(): self
+    public function clearPreCarriageShipmentStage(): static
     {
         $this->preCarriageShipmentStage = [];
 
@@ -6585,9 +6585,9 @@ class ConsignmentType
 
     /**
      * @param PreCarriageShipmentStage $preCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function addToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): self
+    public function addToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): static
     {
         $this->preCarriageShipmentStage[] = $preCarriageShipmentStage;
 
@@ -6606,9 +6606,9 @@ class ConsignmentType
 
     /**
      * @param PreCarriageShipmentStage $preCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function addOnceToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): self
+    public function addOnceToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): static
     {
         if (!is_array($this->preCarriageShipmentStage)) {
             $this->preCarriageShipmentStage = [];
@@ -6645,9 +6645,9 @@ class ConsignmentType
 
     /**
      * @param array<OnCarriageShipmentStage>|null $onCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function setOnCarriageShipmentStage(?array $onCarriageShipmentStage = null): self
+    public function setOnCarriageShipmentStage(?array $onCarriageShipmentStage = null): static
     {
         $this->onCarriageShipmentStage = $onCarriageShipmentStage;
 
@@ -6655,9 +6655,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOnCarriageShipmentStage(): self
+    public function unsetOnCarriageShipmentStage(): static
     {
         $this->onCarriageShipmentStage = null;
 
@@ -6665,9 +6665,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOnCarriageShipmentStage(): self
+    public function clearOnCarriageShipmentStage(): static
     {
         $this->onCarriageShipmentStage = [];
 
@@ -6706,9 +6706,9 @@ class ConsignmentType
 
     /**
      * @param OnCarriageShipmentStage $onCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function addToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): self
+    public function addToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): static
     {
         $this->onCarriageShipmentStage[] = $onCarriageShipmentStage;
 
@@ -6727,9 +6727,9 @@ class ConsignmentType
 
     /**
      * @param OnCarriageShipmentStage $onCarriageShipmentStage
-     * @return self
+     * @return static
      */
-    public function addOnceToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): self
+    public function addOnceToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): static
     {
         if (!is_array($this->onCarriageShipmentStage)) {
             $this->onCarriageShipmentStage = [];
@@ -6766,9 +6766,9 @@ class ConsignmentType
 
     /**
      * @param array<TransportHandlingUnit>|null $transportHandlingUnit
-     * @return self
+     * @return static
      */
-    public function setTransportHandlingUnit(?array $transportHandlingUnit = null): self
+    public function setTransportHandlingUnit(?array $transportHandlingUnit = null): static
     {
         $this->transportHandlingUnit = $transportHandlingUnit;
 
@@ -6776,9 +6776,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportHandlingUnit(): self
+    public function unsetTransportHandlingUnit(): static
     {
         $this->transportHandlingUnit = null;
 
@@ -6786,9 +6786,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportHandlingUnit(): self
+    public function clearTransportHandlingUnit(): static
     {
         $this->transportHandlingUnit = [];
 
@@ -6827,9 +6827,9 @@ class ConsignmentType
 
     /**
      * @param TransportHandlingUnit $transportHandlingUnit
-     * @return self
+     * @return static
      */
-    public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): self
+    public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
     {
         $this->transportHandlingUnit[] = $transportHandlingUnit;
 
@@ -6848,9 +6848,9 @@ class ConsignmentType
 
     /**
      * @param TransportHandlingUnit $transportHandlingUnit
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): self
+    public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
     {
         if (!is_array($this->transportHandlingUnit)) {
             $this->transportHandlingUnit = [];
@@ -6897,9 +6897,9 @@ class ConsignmentType
 
     /**
      * @param FirstArrivalPortLocation|null $firstArrivalPortLocation
-     * @return self
+     * @return static
      */
-    public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): self
+    public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): static
     {
         $this->firstArrivalPortLocation = $firstArrivalPortLocation;
 
@@ -6907,9 +6907,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFirstArrivalPortLocation(): self
+    public function unsetFirstArrivalPortLocation(): static
     {
         $this->firstArrivalPortLocation = null;
 
@@ -6936,9 +6936,9 @@ class ConsignmentType
 
     /**
      * @param LastExitPortLocation|null $lastExitPortLocation
-     * @return self
+     * @return static
      */
-    public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): self
+    public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): static
     {
         $this->lastExitPortLocation = $lastExitPortLocation;
 
@@ -6946,9 +6946,9 @@ class ConsignmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLastExitPortLocation(): self
+    public function unsetLastExitPortLocation(): static
     {
         $this->lastExitPortLocation = null;
 

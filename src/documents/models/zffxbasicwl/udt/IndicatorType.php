@@ -32,9 +32,9 @@ class IndicatorType
 
     /**
      * @param bool|null $indicator
-     * @return self
+     * @return static
      */
-    public function setIndicator(?bool $indicator = null): self
+    public function setIndicator(?bool $indicator = null): static
     {
         $this->indicator = $indicator;
 
@@ -42,9 +42,9 @@ class IndicatorType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIndicator(): self
+    public function unsetIndicator(): static
     {
         $this->indicator = null;
 

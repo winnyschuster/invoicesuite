@@ -176,9 +176,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param CorrectionType|null $correctionType
-     * @return self
+     * @return static
      */
-    public function setCorrectionType(?CorrectionType $correctionType = null): self
+    public function setCorrectionType(?CorrectionType $correctionType = null): static
     {
         $this->correctionType = $correctionType;
 
@@ -186,9 +186,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCorrectionType(): self
+    public function unsetCorrectionType(): static
     {
         $this->correctionType = null;
 
@@ -215,9 +215,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param CorrectionTypeCode|null $correctionTypeCode
-     * @return self
+     * @return static
      */
-    public function setCorrectionTypeCode(?CorrectionTypeCode $correctionTypeCode = null): self
+    public function setCorrectionTypeCode(?CorrectionTypeCode $correctionTypeCode = null): static
     {
         $this->correctionTypeCode = $correctionTypeCode;
 
@@ -225,9 +225,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCorrectionTypeCode(): self
+    public function unsetCorrectionTypeCode(): static
     {
         $this->correctionTypeCode = null;
 
@@ -254,9 +254,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param MeterNumber|null $meterNumber
-     * @return self
+     * @return static
      */
-    public function setMeterNumber(?MeterNumber $meterNumber = null): self
+    public function setMeterNumber(?MeterNumber $meterNumber = null): static
     {
         $this->meterNumber = $meterNumber;
 
@@ -264,9 +264,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterNumber(): self
+    public function unsetMeterNumber(): static
     {
         $this->meterNumber = null;
 
@@ -293,9 +293,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param GasPressureQuantity|null $gasPressureQuantity
-     * @return self
+     * @return static
      */
-    public function setGasPressureQuantity(?GasPressureQuantity $gasPressureQuantity = null): self
+    public function setGasPressureQuantity(?GasPressureQuantity $gasPressureQuantity = null): static
     {
         $this->gasPressureQuantity = $gasPressureQuantity;
 
@@ -303,9 +303,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGasPressureQuantity(): self
+    public function unsetGasPressureQuantity(): static
     {
         $this->gasPressureQuantity = null;
 
@@ -332,20 +332,20 @@ class ConsumptionCorrectionType
 
     /**
      * @param ActualTemperatureReductionQuantity|null $actualTemperatureReductionQuantity
-     * @return self
+     * @return static
      */
     public function setActualTemperatureReductionQuantity(
         ?ActualTemperatureReductionQuantity $actualTemperatureReductionQuantity = null,
-    ): self {
+    ): static {
         $this->actualTemperatureReductionQuantity = $actualTemperatureReductionQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualTemperatureReductionQuantity(): self
+    public function unsetActualTemperatureReductionQuantity(): static
     {
         $this->actualTemperatureReductionQuantity = null;
 
@@ -372,20 +372,20 @@ class ConsumptionCorrectionType
 
     /**
      * @param NormalTemperatureReductionQuantity|null $normalTemperatureReductionQuantity
-     * @return self
+     * @return static
      */
     public function setNormalTemperatureReductionQuantity(
         ?NormalTemperatureReductionQuantity $normalTemperatureReductionQuantity = null,
-    ): self {
+    ): static {
         $this->normalTemperatureReductionQuantity = $normalTemperatureReductionQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNormalTemperatureReductionQuantity(): self
+    public function unsetNormalTemperatureReductionQuantity(): static
     {
         $this->normalTemperatureReductionQuantity = null;
 
@@ -412,20 +412,20 @@ class ConsumptionCorrectionType
 
     /**
      * @param DifferenceTemperatureReductionQuantity|null $differenceTemperatureReductionQuantity
-     * @return self
+     * @return static
      */
     public function setDifferenceTemperatureReductionQuantity(
         ?DifferenceTemperatureReductionQuantity $differenceTemperatureReductionQuantity = null,
-    ): self {
+    ): static {
         $this->differenceTemperatureReductionQuantity = $differenceTemperatureReductionQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDifferenceTemperatureReductionQuantity(): self
+    public function unsetDifferenceTemperatureReductionQuantity(): static
     {
         $this->differenceTemperatureReductionQuantity = null;
 
@@ -442,9 +442,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -452,9 +452,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -462,9 +462,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -503,9 +503,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -524,9 +524,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -573,9 +573,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param CorrectionUnitAmount|null $correctionUnitAmount
-     * @return self
+     * @return static
      */
-    public function setCorrectionUnitAmount(?CorrectionUnitAmount $correctionUnitAmount = null): self
+    public function setCorrectionUnitAmount(?CorrectionUnitAmount $correctionUnitAmount = null): static
     {
         $this->correctionUnitAmount = $correctionUnitAmount;
 
@@ -583,9 +583,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCorrectionUnitAmount(): self
+    public function unsetCorrectionUnitAmount(): static
     {
         $this->correctionUnitAmount = null;
 
@@ -612,9 +612,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param ConsumptionEnergyQuantity|null $consumptionEnergyQuantity
-     * @return self
+     * @return static
      */
-    public function setConsumptionEnergyQuantity(?ConsumptionEnergyQuantity $consumptionEnergyQuantity = null): self
+    public function setConsumptionEnergyQuantity(?ConsumptionEnergyQuantity $consumptionEnergyQuantity = null): static
     {
         $this->consumptionEnergyQuantity = $consumptionEnergyQuantity;
 
@@ -622,9 +622,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionEnergyQuantity(): self
+    public function unsetConsumptionEnergyQuantity(): static
     {
         $this->consumptionEnergyQuantity = null;
 
@@ -651,9 +651,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param ConsumptionWaterQuantity|null $consumptionWaterQuantity
-     * @return self
+     * @return static
      */
-    public function setConsumptionWaterQuantity(?ConsumptionWaterQuantity $consumptionWaterQuantity = null): self
+    public function setConsumptionWaterQuantity(?ConsumptionWaterQuantity $consumptionWaterQuantity = null): static
     {
         $this->consumptionWaterQuantity = $consumptionWaterQuantity;
 
@@ -661,9 +661,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumptionWaterQuantity(): self
+    public function unsetConsumptionWaterQuantity(): static
     {
         $this->consumptionWaterQuantity = null;
 
@@ -690,9 +690,9 @@ class ConsumptionCorrectionType
 
     /**
      * @param CorrectionAmount|null $correctionAmount
-     * @return self
+     * @return static
      */
-    public function setCorrectionAmount(?CorrectionAmount $correctionAmount = null): self
+    public function setCorrectionAmount(?CorrectionAmount $correctionAmount = null): static
     {
         $this->correctionAmount = $correctionAmount;
 
@@ -700,9 +700,9 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCorrectionAmount(): self
+    public function unsetCorrectionAmount(): static
     {
         $this->correctionAmount = null;
 

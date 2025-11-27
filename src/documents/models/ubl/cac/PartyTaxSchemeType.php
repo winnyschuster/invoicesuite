@@ -114,9 +114,9 @@ class PartyTaxSchemeType
 
     /**
      * @param RegistrationName|null $registrationName
-     * @return self
+     * @return static
      */
-    public function setRegistrationName(?RegistrationName $registrationName = null): self
+    public function setRegistrationName(?RegistrationName $registrationName = null): static
     {
         $this->registrationName = $registrationName;
 
@@ -124,9 +124,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRegistrationName(): self
+    public function unsetRegistrationName(): static
     {
         $this->registrationName = null;
 
@@ -153,9 +153,9 @@ class PartyTaxSchemeType
 
     /**
      * @param CompanyID|null $companyID
-     * @return self
+     * @return static
      */
-    public function setCompanyID(?CompanyID $companyID = null): self
+    public function setCompanyID(?CompanyID $companyID = null): static
     {
         $this->companyID = $companyID;
 
@@ -163,9 +163,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompanyID(): self
+    public function unsetCompanyID(): static
     {
         $this->companyID = null;
 
@@ -192,9 +192,9 @@ class PartyTaxSchemeType
 
     /**
      * @param TaxLevelCode|null $taxLevelCode
-     * @return self
+     * @return static
      */
-    public function setTaxLevelCode(?TaxLevelCode $taxLevelCode = null): self
+    public function setTaxLevelCode(?TaxLevelCode $taxLevelCode = null): static
     {
         $this->taxLevelCode = $taxLevelCode;
 
@@ -202,9 +202,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxLevelCode(): self
+    public function unsetTaxLevelCode(): static
     {
         $this->taxLevelCode = null;
 
@@ -231,9 +231,9 @@ class PartyTaxSchemeType
 
     /**
      * @param ExemptionReasonCode|null $exemptionReasonCode
-     * @return self
+     * @return static
      */
-    public function setExemptionReasonCode(?ExemptionReasonCode $exemptionReasonCode = null): self
+    public function setExemptionReasonCode(?ExemptionReasonCode $exemptionReasonCode = null): static
     {
         $this->exemptionReasonCode = $exemptionReasonCode;
 
@@ -241,9 +241,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExemptionReasonCode(): self
+    public function unsetExemptionReasonCode(): static
     {
         $this->exemptionReasonCode = null;
 
@@ -260,9 +260,9 @@ class PartyTaxSchemeType
 
     /**
      * @param array<ExemptionReason>|null $exemptionReason
-     * @return self
+     * @return static
      */
-    public function setExemptionReason(?array $exemptionReason = null): self
+    public function setExemptionReason(?array $exemptionReason = null): static
     {
         $this->exemptionReason = $exemptionReason;
 
@@ -270,9 +270,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExemptionReason(): self
+    public function unsetExemptionReason(): static
     {
         $this->exemptionReason = null;
 
@@ -280,9 +280,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearExemptionReason(): self
+    public function clearExemptionReason(): static
     {
         $this->exemptionReason = [];
 
@@ -321,9 +321,9 @@ class PartyTaxSchemeType
 
     /**
      * @param ExemptionReason $exemptionReason
-     * @return self
+     * @return static
      */
-    public function addToExemptionReason(ExemptionReason $exemptionReason): self
+    public function addToExemptionReason(ExemptionReason $exemptionReason): static
     {
         $this->exemptionReason[] = $exemptionReason;
 
@@ -342,9 +342,9 @@ class PartyTaxSchemeType
 
     /**
      * @param ExemptionReason $exemptionReason
-     * @return self
+     * @return static
      */
-    public function addOnceToExemptionReason(ExemptionReason $exemptionReason): self
+    public function addOnceToExemptionReason(ExemptionReason $exemptionReason): static
     {
         if (!is_array($this->exemptionReason)) {
             $this->exemptionReason = [];
@@ -391,9 +391,9 @@ class PartyTaxSchemeType
 
     /**
      * @param RegistrationAddress|null $registrationAddress
-     * @return self
+     * @return static
      */
-    public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): self
+    public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): static
     {
         $this->registrationAddress = $registrationAddress;
 
@@ -401,9 +401,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRegistrationAddress(): self
+    public function unsetRegistrationAddress(): static
     {
         $this->registrationAddress = null;
 
@@ -430,9 +430,9 @@ class PartyTaxSchemeType
 
     /**
      * @param TaxScheme|null $taxScheme
-     * @return self
+     * @return static
      */
-    public function setTaxScheme(?TaxScheme $taxScheme = null): self
+    public function setTaxScheme(?TaxScheme $taxScheme = null): static
     {
         $this->taxScheme = $taxScheme;
 
@@ -440,9 +440,9 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxScheme(): self
+    public function unsetTaxScheme(): static
     {
         $this->taxScheme = null;
 

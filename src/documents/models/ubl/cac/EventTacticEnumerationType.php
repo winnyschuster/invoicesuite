@@ -79,20 +79,20 @@ class EventTacticEnumerationType
 
     /**
      * @param ConsumerIncentiveTacticTypeCode|null $consumerIncentiveTacticTypeCode
-     * @return self
+     * @return static
      */
     public function setConsumerIncentiveTacticTypeCode(
         ?ConsumerIncentiveTacticTypeCode $consumerIncentiveTacticTypeCode = null,
-    ): self {
+    ): static {
         $this->consumerIncentiveTacticTypeCode = $consumerIncentiveTacticTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsumerIncentiveTacticTypeCode(): self
+    public function unsetConsumerIncentiveTacticTypeCode(): static
     {
         $this->consumerIncentiveTacticTypeCode = null;
 
@@ -119,9 +119,9 @@ class EventTacticEnumerationType
 
     /**
      * @param DisplayTacticTypeCode|null $displayTacticTypeCode
-     * @return self
+     * @return static
      */
-    public function setDisplayTacticTypeCode(?DisplayTacticTypeCode $displayTacticTypeCode = null): self
+    public function setDisplayTacticTypeCode(?DisplayTacticTypeCode $displayTacticTypeCode = null): static
     {
         $this->displayTacticTypeCode = $displayTacticTypeCode;
 
@@ -129,9 +129,9 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDisplayTacticTypeCode(): self
+    public function unsetDisplayTacticTypeCode(): static
     {
         $this->displayTacticTypeCode = null;
 
@@ -158,9 +158,9 @@ class EventTacticEnumerationType
 
     /**
      * @param FeatureTacticTypeCode|null $featureTacticTypeCode
-     * @return self
+     * @return static
      */
-    public function setFeatureTacticTypeCode(?FeatureTacticTypeCode $featureTacticTypeCode = null): self
+    public function setFeatureTacticTypeCode(?FeatureTacticTypeCode $featureTacticTypeCode = null): static
     {
         $this->featureTacticTypeCode = $featureTacticTypeCode;
 
@@ -168,9 +168,9 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFeatureTacticTypeCode(): self
+    public function unsetFeatureTacticTypeCode(): static
     {
         $this->featureTacticTypeCode = null;
 
@@ -197,20 +197,20 @@ class EventTacticEnumerationType
 
     /**
      * @param TradeItemPackingLabelingTypeCode|null $tradeItemPackingLabelingTypeCode
-     * @return self
+     * @return static
      */
     public function setTradeItemPackingLabelingTypeCode(
         ?TradeItemPackingLabelingTypeCode $tradeItemPackingLabelingTypeCode = null,
-    ): self {
+    ): static {
         $this->tradeItemPackingLabelingTypeCode = $tradeItemPackingLabelingTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTradeItemPackingLabelingTypeCode(): self
+    public function unsetTradeItemPackingLabelingTypeCode(): static
     {
         $this->tradeItemPackingLabelingTypeCode = null;
 

@@ -78,9 +78,9 @@ class RetailPlannedImpactType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -88,9 +88,9 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -117,9 +117,9 @@ class RetailPlannedImpactType
 
     /**
      * @param ForecastPurposeCode|null $forecastPurposeCode
-     * @return self
+     * @return static
      */
-    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): self
+    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
     {
         $this->forecastPurposeCode = $forecastPurposeCode;
 
@@ -127,9 +127,9 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastPurposeCode(): self
+    public function unsetForecastPurposeCode(): static
     {
         $this->forecastPurposeCode = null;
 
@@ -156,9 +156,9 @@ class RetailPlannedImpactType
 
     /**
      * @param ForecastTypeCode|null $forecastTypeCode
-     * @return self
+     * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): self
+    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
     {
         $this->forecastTypeCode = $forecastTypeCode;
 
@@ -166,9 +166,9 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetForecastTypeCode(): self
+    public function unsetForecastTypeCode(): static
     {
         $this->forecastTypeCode = null;
 
@@ -195,9 +195,9 @@ class RetailPlannedImpactType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -205,9 +205,9 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 

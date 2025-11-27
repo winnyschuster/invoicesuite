@@ -90,9 +90,9 @@ class DocumentLineDocumentType
 
     /**
      * @param IDType|null $lineID
-     * @return self
+     * @return static
      */
-    public function setLineID(?IDType $lineID = null): self
+    public function setLineID(?IDType $lineID = null): static
     {
         $this->lineID = $lineID;
 
@@ -100,9 +100,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineID(): self
+    public function unsetLineID(): static
     {
         $this->lineID = null;
 
@@ -129,9 +129,9 @@ class DocumentLineDocumentType
 
     /**
      * @param IDType|null $parentLineID
-     * @return self
+     * @return static
      */
-    public function setParentLineID(?IDType $parentLineID = null): self
+    public function setParentLineID(?IDType $parentLineID = null): static
     {
         $this->parentLineID = $parentLineID;
 
@@ -139,9 +139,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParentLineID(): self
+    public function unsetParentLineID(): static
     {
         $this->parentLineID = null;
 
@@ -168,9 +168,9 @@ class DocumentLineDocumentType
 
     /**
      * @param LineStatusCodeType|null $lineStatusCode
-     * @return self
+     * @return static
      */
-    public function setLineStatusCode(?LineStatusCodeType $lineStatusCode = null): self
+    public function setLineStatusCode(?LineStatusCodeType $lineStatusCode = null): static
     {
         $this->lineStatusCode = $lineStatusCode;
 
@@ -178,9 +178,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineStatusCode(): self
+    public function unsetLineStatusCode(): static
     {
         $this->lineStatusCode = null;
 
@@ -207,9 +207,9 @@ class DocumentLineDocumentType
 
     /**
      * @param CodeType|null $lineStatusReasonCode
-     * @return self
+     * @return static
      */
-    public function setLineStatusReasonCode(?CodeType $lineStatusReasonCode = null): self
+    public function setLineStatusReasonCode(?CodeType $lineStatusReasonCode = null): static
     {
         $this->lineStatusReasonCode = $lineStatusReasonCode;
 
@@ -217,9 +217,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineStatusReasonCode(): self
+    public function unsetLineStatusReasonCode(): static
     {
         $this->lineStatusReasonCode = null;
 
@@ -236,9 +236,9 @@ class DocumentLineDocumentType
 
     /**
      * @param array<NoteType>|null $includedNote
-     * @return self
+     * @return static
      */
-    public function setIncludedNote(?array $includedNote = null): self
+    public function setIncludedNote(?array $includedNote = null): static
     {
         $this->includedNote = $includedNote;
 
@@ -246,9 +246,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedNote(): self
+    public function unsetIncludedNote(): static
     {
         $this->includedNote = null;
 
@@ -256,9 +256,9 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIncludedNote(): self
+    public function clearIncludedNote(): static
     {
         $this->includedNote = [];
 
@@ -267,9 +267,9 @@ class DocumentLineDocumentType
 
     /**
      * @param NoteType $includedNote
-     * @return self
+     * @return static
      */
-    public function addToIncludedNote(NoteType $includedNote): self
+    public function addToIncludedNote(NoteType $includedNote): static
     {
         $this->includedNote[] = $includedNote;
 
@@ -288,9 +288,9 @@ class DocumentLineDocumentType
 
     /**
      * @param NoteType $includedNote
-     * @return self
+     * @return static
      */
-    public function addOnceToIncludedNote(NoteType $includedNote): self
+    public function addOnceToIncludedNote(NoteType $includedNote): static
     {
         if (!is_array($this->includedNote)) {
             $this->includedNote = [];

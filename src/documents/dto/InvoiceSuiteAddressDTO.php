@@ -102,9 +102,9 @@ class InvoiceSuiteAddressDTO
      * Set address line 1
      *
      * @param  null|string $newAddressLine1
-     * @return self
+     * @return static
      */
-    public function setAddressLine1(?string $newAddressLine1): self
+    public function setAddressLine1(?string $newAddressLine1): static
     {
         $this->addressLine1 = $newAddressLine1;
 
@@ -135,9 +135,9 @@ class InvoiceSuiteAddressDTO
      * Set address line 2
      *
      * @param  null|string $newAddressLine2
-     * @return self
+     * @return static
      */
-    public function setAddressLine2(?string $newAddressLine2): self
+    public function setAddressLine2(?string $newAddressLine2): static
     {
         $this->addressLine2 = $newAddressLine2;
 
@@ -168,9 +168,9 @@ class InvoiceSuiteAddressDTO
      * Set address line 3
      *
      * @param  null|string $newAddressLine3
-     * @return self
+     * @return static
      */
-    public function setAddressLine3(?string $newAddressLine3): self
+    public function setAddressLine3(?string $newAddressLine3): static
     {
         $this->addressLine3 = $newAddressLine3;
 
@@ -201,9 +201,9 @@ class InvoiceSuiteAddressDTO
      * Set postcode
      *
      * @param  null|string $newPostcode
-     * @return self
+     * @return static
      */
-    public function setPostcode(?string $newPostcode): self
+    public function setPostcode(?string $newPostcode): static
     {
         $this->postcode = $newPostcode;
 
@@ -234,9 +234,9 @@ class InvoiceSuiteAddressDTO
      * Set city
      *
      * @param  null|string $newCity
-     * @return self
+     * @return static
      */
-    public function setCity(?string $newCity): self
+    public function setCity(?string $newCity): static
     {
         $this->city = $newCity;
 
@@ -267,9 +267,9 @@ class InvoiceSuiteAddressDTO
      * Set country ID
      *
      * @param  null|string $newCountry
-     * @return self
+     * @return static
      */
-    public function setCountry(?string $newCountry): self
+    public function setCountry(?string $newCountry): static
     {
         $this->country = $newCountry;
 
@@ -300,9 +300,9 @@ class InvoiceSuiteAddressDTO
      * Set subdivision
      *
      * @param  null|string $newSubDivision
-     * @return self
+     * @return static
      */
-    public function setSubDivision(?string $newSubDivision): self
+    public function setSubDivision(?string $newSubDivision): static
     {
         $this->subDivision = $newSubDivision;
 

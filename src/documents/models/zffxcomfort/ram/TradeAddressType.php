@@ -111,9 +111,9 @@ class TradeAddressType
 
     /**
      * @param CodeType|null $postcodeCode
-     * @return self
+     * @return static
      */
-    public function setPostcodeCode(?CodeType $postcodeCode = null): self
+    public function setPostcodeCode(?CodeType $postcodeCode = null): static
     {
         $this->postcodeCode = $postcodeCode;
 
@@ -121,9 +121,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPostcodeCode(): self
+    public function unsetPostcodeCode(): static
     {
         $this->postcodeCode = null;
 
@@ -150,9 +150,9 @@ class TradeAddressType
 
     /**
      * @param TextType|null $lineOne
-     * @return self
+     * @return static
      */
-    public function setLineOne(?TextType $lineOne = null): self
+    public function setLineOne(?TextType $lineOne = null): static
     {
         $this->lineOne = $lineOne;
 
@@ -160,9 +160,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineOne(): self
+    public function unsetLineOne(): static
     {
         $this->lineOne = null;
 
@@ -189,9 +189,9 @@ class TradeAddressType
 
     /**
      * @param TextType|null $lineTwo
-     * @return self
+     * @return static
      */
-    public function setLineTwo(?TextType $lineTwo = null): self
+    public function setLineTwo(?TextType $lineTwo = null): static
     {
         $this->lineTwo = $lineTwo;
 
@@ -199,9 +199,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineTwo(): self
+    public function unsetLineTwo(): static
     {
         $this->lineTwo = null;
 
@@ -228,9 +228,9 @@ class TradeAddressType
 
     /**
      * @param TextType|null $lineThree
-     * @return self
+     * @return static
      */
-    public function setLineThree(?TextType $lineThree = null): self
+    public function setLineThree(?TextType $lineThree = null): static
     {
         $this->lineThree = $lineThree;
 
@@ -238,9 +238,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineThree(): self
+    public function unsetLineThree(): static
     {
         $this->lineThree = null;
 
@@ -267,9 +267,9 @@ class TradeAddressType
 
     /**
      * @param TextType|null $cityName
-     * @return self
+     * @return static
      */
-    public function setCityName(?TextType $cityName = null): self
+    public function setCityName(?TextType $cityName = null): static
     {
         $this->cityName = $cityName;
 
@@ -277,9 +277,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCityName(): self
+    public function unsetCityName(): static
     {
         $this->cityName = null;
 
@@ -306,9 +306,9 @@ class TradeAddressType
 
     /**
      * @param CountryIDType|null $countryID
-     * @return self
+     * @return static
      */
-    public function setCountryID(?CountryIDType $countryID = null): self
+    public function setCountryID(?CountryIDType $countryID = null): static
     {
         $this->countryID = $countryID;
 
@@ -316,9 +316,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountryID(): self
+    public function unsetCountryID(): static
     {
         $this->countryID = null;
 
@@ -345,9 +345,9 @@ class TradeAddressType
 
     /**
      * @param TextType|null $countrySubDivisionName
-     * @return self
+     * @return static
      */
-    public function setCountrySubDivisionName(?TextType $countrySubDivisionName = null): self
+    public function setCountrySubDivisionName(?TextType $countrySubDivisionName = null): static
     {
         $this->countrySubDivisionName = $countrySubDivisionName;
 
@@ -355,9 +355,9 @@ class TradeAddressType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountrySubDivisionName(): self
+    public function unsetCountrySubDivisionName(): static
     {
         $this->countrySubDivisionName = null;
 

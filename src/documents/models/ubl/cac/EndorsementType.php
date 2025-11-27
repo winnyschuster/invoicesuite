@@ -91,9 +91,9 @@ class EndorsementType
 
     /**
      * @param DocumentID|null $documentID
-     * @return self
+     * @return static
      */
-    public function setDocumentID(?DocumentID $documentID = null): self
+    public function setDocumentID(?DocumentID $documentID = null): static
     {
         $this->documentID = $documentID;
 
@@ -101,9 +101,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentID(): self
+    public function unsetDocumentID(): static
     {
         $this->documentID = null;
 
@@ -130,9 +130,9 @@ class EndorsementType
 
     /**
      * @param ApprovalStatus|null $approvalStatus
-     * @return self
+     * @return static
      */
-    public function setApprovalStatus(?ApprovalStatus $approvalStatus = null): self
+    public function setApprovalStatus(?ApprovalStatus $approvalStatus = null): static
     {
         $this->approvalStatus = $approvalStatus;
 
@@ -140,9 +140,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApprovalStatus(): self
+    public function unsetApprovalStatus(): static
     {
         $this->approvalStatus = null;
 
@@ -159,9 +159,9 @@ class EndorsementType
 
     /**
      * @param array<Remarks>|null $remarks
-     * @return self
+     * @return static
      */
-    public function setRemarks(?array $remarks = null): self
+    public function setRemarks(?array $remarks = null): static
     {
         $this->remarks = $remarks;
 
@@ -169,9 +169,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRemarks(): self
+    public function unsetRemarks(): static
     {
         $this->remarks = null;
 
@@ -179,9 +179,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRemarks(): self
+    public function clearRemarks(): static
     {
         $this->remarks = [];
 
@@ -220,9 +220,9 @@ class EndorsementType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addToRemarks(Remarks $remarks): self
+    public function addToRemarks(Remarks $remarks): static
     {
         $this->remarks[] = $remarks;
 
@@ -241,9 +241,9 @@ class EndorsementType
 
     /**
      * @param Remarks $remarks
-     * @return self
+     * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): self
+    public function addOnceToRemarks(Remarks $remarks): static
     {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
@@ -290,9 +290,9 @@ class EndorsementType
 
     /**
      * @param EndorserParty|null $endorserParty
-     * @return self
+     * @return static
      */
-    public function setEndorserParty(?EndorserParty $endorserParty = null): self
+    public function setEndorserParty(?EndorserParty $endorserParty = null): static
     {
         $this->endorserParty = $endorserParty;
 
@@ -300,9 +300,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEndorserParty(): self
+    public function unsetEndorserParty(): static
     {
         $this->endorserParty = null;
 
@@ -319,9 +319,9 @@ class EndorsementType
 
     /**
      * @param array<Signature>|null $signature
-     * @return self
+     * @return static
      */
-    public function setSignature(?array $signature = null): self
+    public function setSignature(?array $signature = null): static
     {
         $this->signature = $signature;
 
@@ -329,9 +329,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignature(): self
+    public function unsetSignature(): static
     {
         $this->signature = null;
 
@@ -339,9 +339,9 @@ class EndorsementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSignature(): self
+    public function clearSignature(): static
     {
         $this->signature = [];
 
@@ -380,9 +380,9 @@ class EndorsementType
 
     /**
      * @param Signature $signature
-     * @return self
+     * @return static
      */
-    public function addToSignature(Signature $signature): self
+    public function addToSignature(Signature $signature): static
     {
         $this->signature[] = $signature;
 
@@ -401,9 +401,9 @@ class EndorsementType
 
     /**
      * @param Signature $signature
-     * @return self
+     * @return static
      */
-    public function addOnceToSignature(Signature $signature): self
+    public function addOnceToSignature(Signature $signature): static
     {
         if (!is_array($this->signature)) {
             $this->signature = [];

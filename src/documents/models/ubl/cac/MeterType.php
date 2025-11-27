@@ -115,9 +115,9 @@ class MeterType
 
     /**
      * @param MeterNumber|null $meterNumber
-     * @return self
+     * @return static
      */
-    public function setMeterNumber(?MeterNumber $meterNumber = null): self
+    public function setMeterNumber(?MeterNumber $meterNumber = null): static
     {
         $this->meterNumber = $meterNumber;
 
@@ -125,9 +125,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterNumber(): self
+    public function unsetMeterNumber(): static
     {
         $this->meterNumber = null;
 
@@ -154,9 +154,9 @@ class MeterType
 
     /**
      * @param MeterName|null $meterName
-     * @return self
+     * @return static
      */
-    public function setMeterName(?MeterName $meterName = null): self
+    public function setMeterName(?MeterName $meterName = null): static
     {
         $this->meterName = $meterName;
 
@@ -164,9 +164,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterName(): self
+    public function unsetMeterName(): static
     {
         $this->meterName = null;
 
@@ -193,9 +193,9 @@ class MeterType
 
     /**
      * @param MeterConstant|null $meterConstant
-     * @return self
+     * @return static
      */
-    public function setMeterConstant(?MeterConstant $meterConstant = null): self
+    public function setMeterConstant(?MeterConstant $meterConstant = null): static
     {
         $this->meterConstant = $meterConstant;
 
@@ -203,9 +203,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterConstant(): self
+    public function unsetMeterConstant(): static
     {
         $this->meterConstant = null;
 
@@ -232,9 +232,9 @@ class MeterType
 
     /**
      * @param MeterConstantCode|null $meterConstantCode
-     * @return self
+     * @return static
      */
-    public function setMeterConstantCode(?MeterConstantCode $meterConstantCode = null): self
+    public function setMeterConstantCode(?MeterConstantCode $meterConstantCode = null): static
     {
         $this->meterConstantCode = $meterConstantCode;
 
@@ -242,9 +242,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterConstantCode(): self
+    public function unsetMeterConstantCode(): static
     {
         $this->meterConstantCode = null;
 
@@ -271,9 +271,9 @@ class MeterType
 
     /**
      * @param TotalDeliveredQuantity|null $totalDeliveredQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): self
+    public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): static
     {
         $this->totalDeliveredQuantity = $totalDeliveredQuantity;
 
@@ -281,9 +281,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalDeliveredQuantity(): self
+    public function unsetTotalDeliveredQuantity(): static
     {
         $this->totalDeliveredQuantity = null;
 
@@ -300,9 +300,9 @@ class MeterType
 
     /**
      * @param array<MeterReading>|null $meterReading
-     * @return self
+     * @return static
      */
-    public function setMeterReading(?array $meterReading = null): self
+    public function setMeterReading(?array $meterReading = null): static
     {
         $this->meterReading = $meterReading;
 
@@ -310,9 +310,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterReading(): self
+    public function unsetMeterReading(): static
     {
         $this->meterReading = null;
 
@@ -320,9 +320,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeterReading(): self
+    public function clearMeterReading(): static
     {
         $this->meterReading = [];
 
@@ -361,9 +361,9 @@ class MeterType
 
     /**
      * @param MeterReading $meterReading
-     * @return self
+     * @return static
      */
-    public function addToMeterReading(MeterReading $meterReading): self
+    public function addToMeterReading(MeterReading $meterReading): static
     {
         $this->meterReading[] = $meterReading;
 
@@ -382,9 +382,9 @@ class MeterType
 
     /**
      * @param MeterReading $meterReading
-     * @return self
+     * @return static
      */
-    public function addOnceToMeterReading(MeterReading $meterReading): self
+    public function addOnceToMeterReading(MeterReading $meterReading): static
     {
         if (!is_array($this->meterReading)) {
             $this->meterReading = [];
@@ -421,9 +421,9 @@ class MeterType
 
     /**
      * @param array<MeterProperty>|null $meterProperty
-     * @return self
+     * @return static
      */
-    public function setMeterProperty(?array $meterProperty = null): self
+    public function setMeterProperty(?array $meterProperty = null): static
     {
         $this->meterProperty = $meterProperty;
 
@@ -431,9 +431,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeterProperty(): self
+    public function unsetMeterProperty(): static
     {
         $this->meterProperty = null;
 
@@ -441,9 +441,9 @@ class MeterType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMeterProperty(): self
+    public function clearMeterProperty(): static
     {
         $this->meterProperty = [];
 
@@ -482,9 +482,9 @@ class MeterType
 
     /**
      * @param MeterProperty $meterProperty
-     * @return self
+     * @return static
      */
-    public function addToMeterProperty(MeterProperty $meterProperty): self
+    public function addToMeterProperty(MeterProperty $meterProperty): static
     {
         $this->meterProperty[] = $meterProperty;
 
@@ -503,9 +503,9 @@ class MeterType
 
     /**
      * @param MeterProperty $meterProperty
-     * @return self
+     * @return static
      */
-    public function addOnceToMeterProperty(MeterProperty $meterProperty): self
+    public function addOnceToMeterProperty(MeterProperty $meterProperty): static
     {
         if (!is_array($this->meterProperty)) {
             $this->meterProperty = [];

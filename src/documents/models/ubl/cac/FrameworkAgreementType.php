@@ -104,9 +104,9 @@ class FrameworkAgreementType
 
     /**
      * @param ExpectedOperatorQuantity|null $expectedOperatorQuantity
-     * @return self
+     * @return static
      */
-    public function setExpectedOperatorQuantity(?ExpectedOperatorQuantity $expectedOperatorQuantity = null): self
+    public function setExpectedOperatorQuantity(?ExpectedOperatorQuantity $expectedOperatorQuantity = null): static
     {
         $this->expectedOperatorQuantity = $expectedOperatorQuantity;
 
@@ -114,9 +114,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpectedOperatorQuantity(): self
+    public function unsetExpectedOperatorQuantity(): static
     {
         $this->expectedOperatorQuantity = null;
 
@@ -143,9 +143,9 @@ class FrameworkAgreementType
 
     /**
      * @param MaximumOperatorQuantity|null $maximumOperatorQuantity
-     * @return self
+     * @return static
      */
-    public function setMaximumOperatorQuantity(?MaximumOperatorQuantity $maximumOperatorQuantity = null): self
+    public function setMaximumOperatorQuantity(?MaximumOperatorQuantity $maximumOperatorQuantity = null): static
     {
         $this->maximumOperatorQuantity = $maximumOperatorQuantity;
 
@@ -153,9 +153,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumOperatorQuantity(): self
+    public function unsetMaximumOperatorQuantity(): static
     {
         $this->maximumOperatorQuantity = null;
 
@@ -172,9 +172,9 @@ class FrameworkAgreementType
 
     /**
      * @param array<Justification>|null $justification
-     * @return self
+     * @return static
      */
-    public function setJustification(?array $justification = null): self
+    public function setJustification(?array $justification = null): static
     {
         $this->justification = $justification;
 
@@ -182,9 +182,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetJustification(): self
+    public function unsetJustification(): static
     {
         $this->justification = null;
 
@@ -192,9 +192,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearJustification(): self
+    public function clearJustification(): static
     {
         $this->justification = [];
 
@@ -233,9 +233,9 @@ class FrameworkAgreementType
 
     /**
      * @param Justification $justification
-     * @return self
+     * @return static
      */
-    public function addToJustification(Justification $justification): self
+    public function addToJustification(Justification $justification): static
     {
         $this->justification[] = $justification;
 
@@ -254,9 +254,9 @@ class FrameworkAgreementType
 
     /**
      * @param Justification $justification
-     * @return self
+     * @return static
      */
-    public function addOnceToJustification(Justification $justification): self
+    public function addOnceToJustification(Justification $justification): static
     {
         if (!is_array($this->justification)) {
             $this->justification = [];
@@ -293,9 +293,9 @@ class FrameworkAgreementType
 
     /**
      * @param array<Frequency>|null $frequency
-     * @return self
+     * @return static
      */
-    public function setFrequency(?array $frequency = null): self
+    public function setFrequency(?array $frequency = null): static
     {
         $this->frequency = $frequency;
 
@@ -303,9 +303,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFrequency(): self
+    public function unsetFrequency(): static
     {
         $this->frequency = null;
 
@@ -313,9 +313,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFrequency(): self
+    public function clearFrequency(): static
     {
         $this->frequency = [];
 
@@ -354,9 +354,9 @@ class FrameworkAgreementType
 
     /**
      * @param Frequency $frequency
-     * @return self
+     * @return static
      */
-    public function addToFrequency(Frequency $frequency): self
+    public function addToFrequency(Frequency $frequency): static
     {
         $this->frequency[] = $frequency;
 
@@ -375,9 +375,9 @@ class FrameworkAgreementType
 
     /**
      * @param Frequency $frequency
-     * @return self
+     * @return static
      */
-    public function addOnceToFrequency(Frequency $frequency): self
+    public function addOnceToFrequency(Frequency $frequency): static
     {
         if (!is_array($this->frequency)) {
             $this->frequency = [];
@@ -424,9 +424,9 @@ class FrameworkAgreementType
 
     /**
      * @param DurationPeriod|null $durationPeriod
-     * @return self
+     * @return static
      */
-    public function setDurationPeriod(?DurationPeriod $durationPeriod = null): self
+    public function setDurationPeriod(?DurationPeriod $durationPeriod = null): static
     {
         $this->durationPeriod = $durationPeriod;
 
@@ -434,9 +434,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDurationPeriod(): self
+    public function unsetDurationPeriod(): static
     {
         $this->durationPeriod = null;
 
@@ -453,9 +453,9 @@ class FrameworkAgreementType
 
     /**
      * @param array<SubsequentProcessTenderRequirement>|null $subsequentProcessTenderRequirement
-     * @return self
+     * @return static
      */
-    public function setSubsequentProcessTenderRequirement(?array $subsequentProcessTenderRequirement = null): self
+    public function setSubsequentProcessTenderRequirement(?array $subsequentProcessTenderRequirement = null): static
     {
         $this->subsequentProcessTenderRequirement = $subsequentProcessTenderRequirement;
 
@@ -463,9 +463,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubsequentProcessTenderRequirement(): self
+    public function unsetSubsequentProcessTenderRequirement(): static
     {
         $this->subsequentProcessTenderRequirement = null;
 
@@ -473,9 +473,9 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSubsequentProcessTenderRequirement(): self
+    public function clearSubsequentProcessTenderRequirement(): static
     {
         $this->subsequentProcessTenderRequirement = [];
 
@@ -514,11 +514,11 @@ class FrameworkAgreementType
 
     /**
      * @param SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
-     * @return self
+     * @return static
      */
     public function addToSubsequentProcessTenderRequirement(
         SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement,
-    ): self {
+    ): static {
         $this->subsequentProcessTenderRequirement[] = $subsequentProcessTenderRequirement;
 
         return $this;
@@ -536,11 +536,11 @@ class FrameworkAgreementType
 
     /**
      * @param SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
-     * @return self
+     * @return static
      */
     public function addOnceToSubsequentProcessTenderRequirement(
         SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement,
-    ): self {
+    ): static {
         if (!is_array($this->subsequentProcessTenderRequirement)) {
             $this->subsequentProcessTenderRequirement = [];
         }

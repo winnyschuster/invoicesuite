@@ -103,9 +103,9 @@ class ResponseType
 
     /**
      * @param ReferenceID|null $referenceID
-     * @return self
+     * @return static
      */
-    public function setReferenceID(?ReferenceID $referenceID = null): self
+    public function setReferenceID(?ReferenceID $referenceID = null): static
     {
         $this->referenceID = $referenceID;
 
@@ -113,9 +113,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferenceID(): self
+    public function unsetReferenceID(): static
     {
         $this->referenceID = null;
 
@@ -142,9 +142,9 @@ class ResponseType
 
     /**
      * @param ResponseCode|null $responseCode
-     * @return self
+     * @return static
      */
-    public function setResponseCode(?ResponseCode $responseCode = null): self
+    public function setResponseCode(?ResponseCode $responseCode = null): static
     {
         $this->responseCode = $responseCode;
 
@@ -152,9 +152,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResponseCode(): self
+    public function unsetResponseCode(): static
     {
         $this->responseCode = null;
 
@@ -171,9 +171,9 @@ class ResponseType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -181,9 +181,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -191,9 +191,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -232,9 +232,9 @@ class ResponseType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -253,9 +253,9 @@ class ResponseType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -292,9 +292,9 @@ class ResponseType
 
     /**
      * @param DateTimeInterface|null $effectiveDate
-     * @return self
+     * @return static
      */
-    public function setEffectiveDate(?DateTimeInterface $effectiveDate = null): self
+    public function setEffectiveDate(?DateTimeInterface $effectiveDate = null): static
     {
         $this->effectiveDate = $effectiveDate;
 
@@ -302,9 +302,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEffectiveDate(): self
+    public function unsetEffectiveDate(): static
     {
         $this->effectiveDate = null;
 
@@ -321,9 +321,9 @@ class ResponseType
 
     /**
      * @param DateTimeInterface|null $effectiveTime
-     * @return self
+     * @return static
      */
-    public function setEffectiveTime(?DateTimeInterface $effectiveTime = null): self
+    public function setEffectiveTime(?DateTimeInterface $effectiveTime = null): static
     {
         $this->effectiveTime = $effectiveTime;
 
@@ -331,9 +331,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEffectiveTime(): self
+    public function unsetEffectiveTime(): static
     {
         $this->effectiveTime = null;
 
@@ -350,9 +350,9 @@ class ResponseType
 
     /**
      * @param array<Status>|null $status
-     * @return self
+     * @return static
      */
-    public function setStatus(?array $status = null): self
+    public function setStatus(?array $status = null): static
     {
         $this->status = $status;
 
@@ -360,9 +360,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatus(): self
+    public function unsetStatus(): static
     {
         $this->status = null;
 
@@ -370,9 +370,9 @@ class ResponseType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearStatus(): self
+    public function clearStatus(): static
     {
         $this->status = [];
 
@@ -411,9 +411,9 @@ class ResponseType
 
     /**
      * @param Status $status
-     * @return self
+     * @return static
      */
-    public function addToStatus(Status $status): self
+    public function addToStatus(Status $status): static
     {
         $this->status[] = $status;
 
@@ -432,9 +432,9 @@ class ResponseType
 
     /**
      * @param Status $status
-     * @return self
+     * @return static
      */
-    public function addOnceToStatus(Status $status): self
+    public function addOnceToStatus(Status $status): static
     {
         if (!is_array($this->status)) {
             $this->status = [];

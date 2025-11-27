@@ -90,9 +90,9 @@ class TradePaymentPenaltyTermsType
 
     /**
      * @param DateTimeType|null $basisDateTime
-     * @return self
+     * @return static
      */
-    public function setBasisDateTime(?DateTimeType $basisDateTime = null): self
+    public function setBasisDateTime(?DateTimeType $basisDateTime = null): static
     {
         $this->basisDateTime = $basisDateTime;
 
@@ -100,9 +100,9 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisDateTime(): self
+    public function unsetBasisDateTime(): static
     {
         $this->basisDateTime = null;
 
@@ -129,9 +129,9 @@ class TradePaymentPenaltyTermsType
 
     /**
      * @param MeasureType|null $basisPeriodMeasure
-     * @return self
+     * @return static
      */
-    public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): self
+    public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): static
     {
         $this->basisPeriodMeasure = $basisPeriodMeasure;
 
@@ -139,9 +139,9 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisPeriodMeasure(): self
+    public function unsetBasisPeriodMeasure(): static
     {
         $this->basisPeriodMeasure = null;
 
@@ -168,9 +168,9 @@ class TradePaymentPenaltyTermsType
 
     /**
      * @param AmountType|null $basisAmount
-     * @return self
+     * @return static
      */
-    public function setBasisAmount(?AmountType $basisAmount = null): self
+    public function setBasisAmount(?AmountType $basisAmount = null): static
     {
         $this->basisAmount = $basisAmount;
 
@@ -178,9 +178,9 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisAmount(): self
+    public function unsetBasisAmount(): static
     {
         $this->basisAmount = null;
 
@@ -207,9 +207,9 @@ class TradePaymentPenaltyTermsType
 
     /**
      * @param PercentType|null $calculationPercent
-     * @return self
+     * @return static
      */
-    public function setCalculationPercent(?PercentType $calculationPercent = null): self
+    public function setCalculationPercent(?PercentType $calculationPercent = null): static
     {
         $this->calculationPercent = $calculationPercent;
 
@@ -217,9 +217,9 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCalculationPercent(): self
+    public function unsetCalculationPercent(): static
     {
         $this->calculationPercent = null;
 
@@ -246,9 +246,9 @@ class TradePaymentPenaltyTermsType
 
     /**
      * @param AmountType|null $actualPenaltyAmount
-     * @return self
+     * @return static
      */
-    public function setActualPenaltyAmount(?AmountType $actualPenaltyAmount = null): self
+    public function setActualPenaltyAmount(?AmountType $actualPenaltyAmount = null): static
     {
         $this->actualPenaltyAmount = $actualPenaltyAmount;
 
@@ -256,9 +256,9 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualPenaltyAmount(): self
+    public function unsetActualPenaltyAmount(): static
     {
         $this->actualPenaltyAmount = null;
 

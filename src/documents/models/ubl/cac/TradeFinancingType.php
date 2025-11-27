@@ -112,9 +112,9 @@ class TradeFinancingType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -122,9 +122,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -151,9 +151,9 @@ class TradeFinancingType
 
     /**
      * @param FinancingInstrumentCode|null $financingInstrumentCode
-     * @return self
+     * @return static
      */
-    public function setFinancingInstrumentCode(?FinancingInstrumentCode $financingInstrumentCode = null): self
+    public function setFinancingInstrumentCode(?FinancingInstrumentCode $financingInstrumentCode = null): static
     {
         $this->financingInstrumentCode = $financingInstrumentCode;
 
@@ -161,9 +161,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancingInstrumentCode(): self
+    public function unsetFinancingInstrumentCode(): static
     {
         $this->financingInstrumentCode = null;
 
@@ -190,9 +190,9 @@ class TradeFinancingType
 
     /**
      * @param ContractDocumentReference|null $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function setContractDocumentReference(?ContractDocumentReference $contractDocumentReference = null): self
+    public function setContractDocumentReference(?ContractDocumentReference $contractDocumentReference = null): static
     {
         $this->contractDocumentReference = $contractDocumentReference;
 
@@ -200,9 +200,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractDocumentReference(): self
+    public function unsetContractDocumentReference(): static
     {
         $this->contractDocumentReference = null;
 
@@ -219,9 +219,9 @@ class TradeFinancingType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -229,9 +229,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -239,9 +239,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -280,9 +280,9 @@ class TradeFinancingType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -301,9 +301,9 @@ class TradeFinancingType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -350,9 +350,9 @@ class TradeFinancingType
 
     /**
      * @param FinancingParty|null $financingParty
-     * @return self
+     * @return static
      */
-    public function setFinancingParty(?FinancingParty $financingParty = null): self
+    public function setFinancingParty(?FinancingParty $financingParty = null): static
     {
         $this->financingParty = $financingParty;
 
@@ -360,9 +360,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancingParty(): self
+    public function unsetFinancingParty(): static
     {
         $this->financingParty = null;
 
@@ -389,9 +389,9 @@ class TradeFinancingType
 
     /**
      * @param FinancingFinancialAccount|null $financingFinancialAccount
-     * @return self
+     * @return static
      */
-    public function setFinancingFinancialAccount(?FinancingFinancialAccount $financingFinancialAccount = null): self
+    public function setFinancingFinancialAccount(?FinancingFinancialAccount $financingFinancialAccount = null): static
     {
         $this->financingFinancialAccount = $financingFinancialAccount;
 
@@ -399,9 +399,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancingFinancialAccount(): self
+    public function unsetFinancingFinancialAccount(): static
     {
         $this->financingFinancialAccount = null;
 
@@ -418,9 +418,9 @@ class TradeFinancingType
 
     /**
      * @param array<Clause>|null $clause
-     * @return self
+     * @return static
      */
-    public function setClause(?array $clause = null): self
+    public function setClause(?array $clause = null): static
     {
         $this->clause = $clause;
 
@@ -428,9 +428,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetClause(): self
+    public function unsetClause(): static
     {
         $this->clause = null;
 
@@ -438,9 +438,9 @@ class TradeFinancingType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearClause(): self
+    public function clearClause(): static
     {
         $this->clause = [];
 
@@ -479,9 +479,9 @@ class TradeFinancingType
 
     /**
      * @param Clause $clause
-     * @return self
+     * @return static
      */
-    public function addToClause(Clause $clause): self
+    public function addToClause(Clause $clause): static
     {
         $this->clause[] = $clause;
 
@@ -500,9 +500,9 @@ class TradeFinancingType
 
     /**
      * @param Clause $clause
-     * @return self
+     * @return static
      */
-    public function addOnceToClause(Clause $clause): self
+    public function addOnceToClause(Clause $clause): static
     {
         if (!is_array($this->clause)) {
             $this->clause = [];

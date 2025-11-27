@@ -77,9 +77,9 @@ class EventTacticType
 
     /**
      * @param Comment|null $comment
-     * @return self
+     * @return static
      */
-    public function setComment(?Comment $comment = null): self
+    public function setComment(?Comment $comment = null): static
     {
         $this->comment = $comment;
 
@@ -87,9 +87,9 @@ class EventTacticType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetComment(): self
+    public function unsetComment(): static
     {
         $this->comment = null;
 
@@ -116,9 +116,9 @@ class EventTacticType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -126,9 +126,9 @@ class EventTacticType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -155,9 +155,9 @@ class EventTacticType
 
     /**
      * @param EventTacticEnumeration|null $eventTacticEnumeration
-     * @return self
+     * @return static
      */
-    public function setEventTacticEnumeration(?EventTacticEnumeration $eventTacticEnumeration = null): self
+    public function setEventTacticEnumeration(?EventTacticEnumeration $eventTacticEnumeration = null): static
     {
         $this->eventTacticEnumeration = $eventTacticEnumeration;
 
@@ -165,9 +165,9 @@ class EventTacticType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEventTacticEnumeration(): self
+    public function unsetEventTacticEnumeration(): static
     {
         $this->eventTacticEnumeration = null;
 
@@ -194,9 +194,9 @@ class EventTacticType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -204,9 +204,9 @@ class EventTacticType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 

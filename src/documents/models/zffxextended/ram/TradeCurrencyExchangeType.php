@@ -78,9 +78,9 @@ class TradeCurrencyExchangeType
 
     /**
      * @param CurrencyCodeType|null $sourceCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setSourceCurrencyCode(?CurrencyCodeType $sourceCurrencyCode = null): self
+    public function setSourceCurrencyCode(?CurrencyCodeType $sourceCurrencyCode = null): static
     {
         $this->sourceCurrencyCode = $sourceCurrencyCode;
 
@@ -88,9 +88,9 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSourceCurrencyCode(): self
+    public function unsetSourceCurrencyCode(): static
     {
         $this->sourceCurrencyCode = null;
 
@@ -117,9 +117,9 @@ class TradeCurrencyExchangeType
 
     /**
      * @param CurrencyCodeType|null $targetCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setTargetCurrencyCode(?CurrencyCodeType $targetCurrencyCode = null): self
+    public function setTargetCurrencyCode(?CurrencyCodeType $targetCurrencyCode = null): static
     {
         $this->targetCurrencyCode = $targetCurrencyCode;
 
@@ -127,9 +127,9 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTargetCurrencyCode(): self
+    public function unsetTargetCurrencyCode(): static
     {
         $this->targetCurrencyCode = null;
 
@@ -156,9 +156,9 @@ class TradeCurrencyExchangeType
 
     /**
      * @param RateType|null $conversionRate
-     * @return self
+     * @return static
      */
-    public function setConversionRate(?RateType $conversionRate = null): self
+    public function setConversionRate(?RateType $conversionRate = null): static
     {
         $this->conversionRate = $conversionRate;
 
@@ -166,9 +166,9 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConversionRate(): self
+    public function unsetConversionRate(): static
     {
         $this->conversionRate = null;
 
@@ -195,9 +195,9 @@ class TradeCurrencyExchangeType
 
     /**
      * @param DateTimeType|null $conversionRateDateTime
-     * @return self
+     * @return static
      */
-    public function setConversionRateDateTime(?DateTimeType $conversionRateDateTime = null): self
+    public function setConversionRateDateTime(?DateTimeType $conversionRateDateTime = null): static
     {
         $this->conversionRateDateTime = $conversionRateDateTime;
 
@@ -205,9 +205,9 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConversionRateDateTime(): self
+    public function unsetConversionRateDateTime(): static
     {
         $this->conversionRateDateTime = null;
 

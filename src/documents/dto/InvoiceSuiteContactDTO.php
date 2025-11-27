@@ -86,9 +86,9 @@ class InvoiceSuiteContactDTO
      * Set contact name
      *
      * @param  null|string $newPersonName
-     * @return self
+     * @return static
      */
-    public function setPersonName(?string $newPersonName): self
+    public function setPersonName(?string $newPersonName): static
     {
         $this->personName = $newPersonName;
 
@@ -119,9 +119,9 @@ class InvoiceSuiteContactDTO
      * Set department name
      *
      * @param  null|string $newDepartmentName
-     * @return self
+     * @return static
      */
-    public function setDepartmentName(?string $newDepartmentName): self
+    public function setDepartmentName(?string $newDepartmentName): static
     {
         $this->departmentName = $newDepartmentName;
 
@@ -152,9 +152,9 @@ class InvoiceSuiteContactDTO
      * Set phone number
      *
      * @param  null|string $newPhoneNumber
-     * @return self
+     * @return static
      */
-    public function setPhoneNumber(?string $newPhoneNumber): self
+    public function setPhoneNumber(?string $newPhoneNumber): static
     {
         $this->phoneNumber = $newPhoneNumber;
 
@@ -185,9 +185,9 @@ class InvoiceSuiteContactDTO
      * Set fax number
      *
      * @param  null|string $newFaxNumber
-     * @return self
+     * @return static
      */
-    public function setFaxNumber(?string $newFaxNumber): self
+    public function setFaxNumber(?string $newFaxNumber): static
     {
         $this->faxNumber = $newFaxNumber;
 
@@ -218,9 +218,9 @@ class InvoiceSuiteContactDTO
      * Set email address
      *
      * @param  null|string $newEmailAddress
-     * @return self
+     * @return static
      */
-    public function setEmailAddress(?string $newEmailAddress): self
+    public function setEmailAddress(?string $newEmailAddress): static
     {
         $this->emailAddress = $newEmailAddress;
 

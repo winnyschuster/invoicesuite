@@ -115,9 +115,9 @@ class SubcontractTermsType
 
     /**
      * @param Rate|null $rate
-     * @return self
+     * @return static
      */
-    public function setRate(?Rate $rate = null): self
+    public function setRate(?Rate $rate = null): static
     {
         $this->rate = $rate;
 
@@ -125,9 +125,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRate(): self
+    public function unsetRate(): static
     {
         $this->rate = null;
 
@@ -144,9 +144,9 @@ class SubcontractTermsType
 
     /**
      * @param bool|null $unknownPriceIndicator
-     * @return self
+     * @return static
      */
-    public function setUnknownPriceIndicator(?bool $unknownPriceIndicator = null): self
+    public function setUnknownPriceIndicator(?bool $unknownPriceIndicator = null): static
     {
         $this->unknownPriceIndicator = $unknownPriceIndicator;
 
@@ -154,9 +154,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnknownPriceIndicator(): self
+    public function unsetUnknownPriceIndicator(): static
     {
         $this->unknownPriceIndicator = null;
 
@@ -173,9 +173,9 @@ class SubcontractTermsType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -183,9 +183,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -193,9 +193,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -234,9 +234,9 @@ class SubcontractTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -255,9 +255,9 @@ class SubcontractTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -304,9 +304,9 @@ class SubcontractTermsType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -314,9 +314,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -343,20 +343,20 @@ class SubcontractTermsType
 
     /**
      * @param SubcontractingConditionsCode|null $subcontractingConditionsCode
-     * @return self
+     * @return static
      */
     public function setSubcontractingConditionsCode(
         ?SubcontractingConditionsCode $subcontractingConditionsCode = null,
-    ): self {
+    ): static {
         $this->subcontractingConditionsCode = $subcontractingConditionsCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubcontractingConditionsCode(): self
+    public function unsetSubcontractingConditionsCode(): static
     {
         $this->subcontractingConditionsCode = null;
 
@@ -383,9 +383,9 @@ class SubcontractTermsType
 
     /**
      * @param MaximumPercent|null $maximumPercent
-     * @return self
+     * @return static
      */
-    public function setMaximumPercent(?MaximumPercent $maximumPercent = null): self
+    public function setMaximumPercent(?MaximumPercent $maximumPercent = null): static
     {
         $this->maximumPercent = $maximumPercent;
 
@@ -393,9 +393,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumPercent(): self
+    public function unsetMaximumPercent(): static
     {
         $this->maximumPercent = null;
 
@@ -422,9 +422,9 @@ class SubcontractTermsType
 
     /**
      * @param MinimumPercent|null $minimumPercent
-     * @return self
+     * @return static
      */
-    public function setMinimumPercent(?MinimumPercent $minimumPercent = null): self
+    public function setMinimumPercent(?MinimumPercent $minimumPercent = null): static
     {
         $this->minimumPercent = $minimumPercent;
 
@@ -432,9 +432,9 @@ class SubcontractTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumPercent(): self
+    public function unsetMinimumPercent(): static
     {
         $this->minimumPercent = null;
 

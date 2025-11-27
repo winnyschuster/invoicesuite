@@ -127,20 +127,20 @@ class RequestedTenderTotalType
 
     /**
      * @param EstimatedOverallContractAmount|null $estimatedOverallContractAmount
-     * @return self
+     * @return static
      */
     public function setEstimatedOverallContractAmount(
         ?EstimatedOverallContractAmount $estimatedOverallContractAmount = null,
-    ): self {
+    ): static {
         $this->estimatedOverallContractAmount = $estimatedOverallContractAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedOverallContractAmount(): self
+    public function unsetEstimatedOverallContractAmount(): static
     {
         $this->estimatedOverallContractAmount = null;
 
@@ -167,9 +167,9 @@ class RequestedTenderTotalType
 
     /**
      * @param TotalAmount|null $totalAmount
-     * @return self
+     * @return static
      */
-    public function setTotalAmount(?TotalAmount $totalAmount = null): self
+    public function setTotalAmount(?TotalAmount $totalAmount = null): static
     {
         $this->totalAmount = $totalAmount;
 
@@ -177,9 +177,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalAmount(): self
+    public function unsetTotalAmount(): static
     {
         $this->totalAmount = null;
 
@@ -196,9 +196,9 @@ class RequestedTenderTotalType
 
     /**
      * @param bool|null $taxIncludedIndicator
-     * @return self
+     * @return static
      */
-    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): self
+    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
     {
         $this->taxIncludedIndicator = $taxIncludedIndicator;
 
@@ -206,9 +206,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxIncludedIndicator(): self
+    public function unsetTaxIncludedIndicator(): static
     {
         $this->taxIncludedIndicator = null;
 
@@ -235,9 +235,9 @@ class RequestedTenderTotalType
 
     /**
      * @param MinimumAmount|null $minimumAmount
-     * @return self
+     * @return static
      */
-    public function setMinimumAmount(?MinimumAmount $minimumAmount = null): self
+    public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
     {
         $this->minimumAmount = $minimumAmount;
 
@@ -245,9 +245,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMinimumAmount(): self
+    public function unsetMinimumAmount(): static
     {
         $this->minimumAmount = null;
 
@@ -274,9 +274,9 @@ class RequestedTenderTotalType
 
     /**
      * @param MaximumAmount|null $maximumAmount
-     * @return self
+     * @return static
      */
-    public function setMaximumAmount(?MaximumAmount $maximumAmount = null): self
+    public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
     {
         $this->maximumAmount = $maximumAmount;
 
@@ -284,9 +284,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMaximumAmount(): self
+    public function unsetMaximumAmount(): static
     {
         $this->maximumAmount = null;
 
@@ -303,9 +303,9 @@ class RequestedTenderTotalType
 
     /**
      * @param array<MonetaryScope>|null $monetaryScope
-     * @return self
+     * @return static
      */
-    public function setMonetaryScope(?array $monetaryScope = null): self
+    public function setMonetaryScope(?array $monetaryScope = null): static
     {
         $this->monetaryScope = $monetaryScope;
 
@@ -313,9 +313,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMonetaryScope(): self
+    public function unsetMonetaryScope(): static
     {
         $this->monetaryScope = null;
 
@@ -323,9 +323,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMonetaryScope(): self
+    public function clearMonetaryScope(): static
     {
         $this->monetaryScope = [];
 
@@ -364,9 +364,9 @@ class RequestedTenderTotalType
 
     /**
      * @param MonetaryScope $monetaryScope
-     * @return self
+     * @return static
      */
-    public function addToMonetaryScope(MonetaryScope $monetaryScope): self
+    public function addToMonetaryScope(MonetaryScope $monetaryScope): static
     {
         $this->monetaryScope[] = $monetaryScope;
 
@@ -385,9 +385,9 @@ class RequestedTenderTotalType
 
     /**
      * @param MonetaryScope $monetaryScope
-     * @return self
+     * @return static
      */
-    public function addOnceToMonetaryScope(MonetaryScope $monetaryScope): self
+    public function addOnceToMonetaryScope(MonetaryScope $monetaryScope): static
     {
         if (!is_array($this->monetaryScope)) {
             $this->monetaryScope = [];
@@ -434,20 +434,20 @@ class RequestedTenderTotalType
 
     /**
      * @param AverageSubsequentContractAmount|null $averageSubsequentContractAmount
-     * @return self
+     * @return static
      */
     public function setAverageSubsequentContractAmount(
         ?AverageSubsequentContractAmount $averageSubsequentContractAmount = null,
-    ): self {
+    ): static {
         $this->averageSubsequentContractAmount = $averageSubsequentContractAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAverageSubsequentContractAmount(): self
+    public function unsetAverageSubsequentContractAmount(): static
     {
         $this->averageSubsequentContractAmount = null;
 
@@ -464,9 +464,9 @@ class RequestedTenderTotalType
 
     /**
      * @param array<ApplicableTaxCategory>|null $applicableTaxCategory
-     * @return self
+     * @return static
      */
-    public function setApplicableTaxCategory(?array $applicableTaxCategory = null): self
+    public function setApplicableTaxCategory(?array $applicableTaxCategory = null): static
     {
         $this->applicableTaxCategory = $applicableTaxCategory;
 
@@ -474,9 +474,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTaxCategory(): self
+    public function unsetApplicableTaxCategory(): static
     {
         $this->applicableTaxCategory = null;
 
@@ -484,9 +484,9 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearApplicableTaxCategory(): self
+    public function clearApplicableTaxCategory(): static
     {
         $this->applicableTaxCategory = [];
 
@@ -525,9 +525,9 @@ class RequestedTenderTotalType
 
     /**
      * @param ApplicableTaxCategory $applicableTaxCategory
-     * @return self
+     * @return static
      */
-    public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
+    public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
     {
         $this->applicableTaxCategory[] = $applicableTaxCategory;
 
@@ -546,9 +546,9 @@ class RequestedTenderTotalType
 
     /**
      * @param ApplicableTaxCategory $applicableTaxCategory
-     * @return self
+     * @return static
      */
-    public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): self
+    public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
     {
         if (!is_array($this->applicableTaxCategory)) {
             $this->applicableTaxCategory = [];

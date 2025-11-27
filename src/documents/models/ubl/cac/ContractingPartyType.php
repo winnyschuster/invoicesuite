@@ -79,9 +79,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param BuyerProfileURI|null $buyerProfileURI
-     * @return self
+     * @return static
      */
-    public function setBuyerProfileURI(?BuyerProfileURI $buyerProfileURI = null): self
+    public function setBuyerProfileURI(?BuyerProfileURI $buyerProfileURI = null): static
     {
         $this->buyerProfileURI = $buyerProfileURI;
 
@@ -89,9 +89,9 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerProfileURI(): self
+    public function unsetBuyerProfileURI(): static
     {
         $this->buyerProfileURI = null;
 
@@ -108,9 +108,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType>|null $contractingPartyType
-     * @return self
+     * @return static
      */
-    public function setContractingPartyType(?array $contractingPartyType = null): self
+    public function setContractingPartyType(?array $contractingPartyType = null): static
     {
         $this->contractingPartyType = $contractingPartyType;
 
@@ -118,9 +118,9 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractingPartyType(): self
+    public function unsetContractingPartyType(): static
     {
         $this->contractingPartyType = null;
 
@@ -128,9 +128,9 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContractingPartyType(): self
+    public function clearContractingPartyType(): static
     {
         $this->contractingPartyType = [];
 
@@ -169,9 +169,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType $contractingPartyType
-     * @return self
+     * @return static
      */
-    public function addToContractingPartyType(ContractingPartyType1 $contractingPartyType): self
+    public function addToContractingPartyType(ContractingPartyType1 $contractingPartyType): static
     {
         $this->contractingPartyType[] = $contractingPartyType;
 
@@ -190,9 +190,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType $contractingPartyType
-     * @return self
+     * @return static
      */
-    public function addOnceToContractingPartyType(ContractingPartyType1 $contractingPartyType): self
+    public function addOnceToContractingPartyType(ContractingPartyType1 $contractingPartyType): static
     {
         if (!is_array($this->contractingPartyType)) {
             $this->contractingPartyType = [];
@@ -229,9 +229,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param array<ContractingActivity>|null $contractingActivity
-     * @return self
+     * @return static
      */
-    public function setContractingActivity(?array $contractingActivity = null): self
+    public function setContractingActivity(?array $contractingActivity = null): static
     {
         $this->contractingActivity = $contractingActivity;
 
@@ -239,9 +239,9 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractingActivity(): self
+    public function unsetContractingActivity(): static
     {
         $this->contractingActivity = null;
 
@@ -249,9 +249,9 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContractingActivity(): self
+    public function clearContractingActivity(): static
     {
         $this->contractingActivity = [];
 
@@ -290,9 +290,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param ContractingActivity $contractingActivity
-     * @return self
+     * @return static
      */
-    public function addToContractingActivity(ContractingActivity $contractingActivity): self
+    public function addToContractingActivity(ContractingActivity $contractingActivity): static
     {
         $this->contractingActivity[] = $contractingActivity;
 
@@ -311,9 +311,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param ContractingActivity $contractingActivity
-     * @return self
+     * @return static
      */
-    public function addOnceToContractingActivity(ContractingActivity $contractingActivity): self
+    public function addOnceToContractingActivity(ContractingActivity $contractingActivity): static
     {
         if (!is_array($this->contractingActivity)) {
             $this->contractingActivity = [];
@@ -360,9 +360,9 @@ class ContractingPartyType extends ContractingPartyTypeType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -370,9 +370,9 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 

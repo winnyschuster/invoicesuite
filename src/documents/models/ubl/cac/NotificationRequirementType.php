@@ -103,9 +103,9 @@ class NotificationRequirementType
 
     /**
      * @param NotificationTypeCode|null $notificationTypeCode
-     * @return self
+     * @return static
      */
-    public function setNotificationTypeCode(?NotificationTypeCode $notificationTypeCode = null): self
+    public function setNotificationTypeCode(?NotificationTypeCode $notificationTypeCode = null): static
     {
         $this->notificationTypeCode = $notificationTypeCode;
 
@@ -113,9 +113,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNotificationTypeCode(): self
+    public function unsetNotificationTypeCode(): static
     {
         $this->notificationTypeCode = null;
 
@@ -142,20 +142,20 @@ class NotificationRequirementType
 
     /**
      * @param PostEventNotificationDurationMeasure|null $postEventNotificationDurationMeasure
-     * @return self
+     * @return static
      */
     public function setPostEventNotificationDurationMeasure(
         ?PostEventNotificationDurationMeasure $postEventNotificationDurationMeasure = null,
-    ): self {
+    ): static {
         $this->postEventNotificationDurationMeasure = $postEventNotificationDurationMeasure;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPostEventNotificationDurationMeasure(): self
+    public function unsetPostEventNotificationDurationMeasure(): static
     {
         $this->postEventNotificationDurationMeasure = null;
 
@@ -182,20 +182,20 @@ class NotificationRequirementType
 
     /**
      * @param PreEventNotificationDurationMeasure|null $preEventNotificationDurationMeasure
-     * @return self
+     * @return static
      */
     public function setPreEventNotificationDurationMeasure(
         ?PreEventNotificationDurationMeasure $preEventNotificationDurationMeasure = null,
-    ): self {
+    ): static {
         $this->preEventNotificationDurationMeasure = $preEventNotificationDurationMeasure;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreEventNotificationDurationMeasure(): self
+    public function unsetPreEventNotificationDurationMeasure(): static
     {
         $this->preEventNotificationDurationMeasure = null;
 
@@ -212,9 +212,9 @@ class NotificationRequirementType
 
     /**
      * @param array<NotifyParty>|null $notifyParty
-     * @return self
+     * @return static
      */
-    public function setNotifyParty(?array $notifyParty = null): self
+    public function setNotifyParty(?array $notifyParty = null): static
     {
         $this->notifyParty = $notifyParty;
 
@@ -222,9 +222,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNotifyParty(): self
+    public function unsetNotifyParty(): static
     {
         $this->notifyParty = null;
 
@@ -232,9 +232,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNotifyParty(): self
+    public function clearNotifyParty(): static
     {
         $this->notifyParty = [];
 
@@ -273,9 +273,9 @@ class NotificationRequirementType
 
     /**
      * @param NotifyParty $notifyParty
-     * @return self
+     * @return static
      */
-    public function addToNotifyParty(NotifyParty $notifyParty): self
+    public function addToNotifyParty(NotifyParty $notifyParty): static
     {
         $this->notifyParty[] = $notifyParty;
 
@@ -294,9 +294,9 @@ class NotificationRequirementType
 
     /**
      * @param NotifyParty $notifyParty
-     * @return self
+     * @return static
      */
-    public function addOnceToNotifyParty(NotifyParty $notifyParty): self
+    public function addOnceToNotifyParty(NotifyParty $notifyParty): static
     {
         if (!is_array($this->notifyParty)) {
             $this->notifyParty = [];
@@ -333,9 +333,9 @@ class NotificationRequirementType
 
     /**
      * @param array<NotificationPeriod>|null $notificationPeriod
-     * @return self
+     * @return static
      */
-    public function setNotificationPeriod(?array $notificationPeriod = null): self
+    public function setNotificationPeriod(?array $notificationPeriod = null): static
     {
         $this->notificationPeriod = $notificationPeriod;
 
@@ -343,9 +343,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNotificationPeriod(): self
+    public function unsetNotificationPeriod(): static
     {
         $this->notificationPeriod = null;
 
@@ -353,9 +353,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNotificationPeriod(): self
+    public function clearNotificationPeriod(): static
     {
         $this->notificationPeriod = [];
 
@@ -394,9 +394,9 @@ class NotificationRequirementType
 
     /**
      * @param NotificationPeriod $notificationPeriod
-     * @return self
+     * @return static
      */
-    public function addToNotificationPeriod(NotificationPeriod $notificationPeriod): self
+    public function addToNotificationPeriod(NotificationPeriod $notificationPeriod): static
     {
         $this->notificationPeriod[] = $notificationPeriod;
 
@@ -415,9 +415,9 @@ class NotificationRequirementType
 
     /**
      * @param NotificationPeriod $notificationPeriod
-     * @return self
+     * @return static
      */
-    public function addOnceToNotificationPeriod(NotificationPeriod $notificationPeriod): self
+    public function addOnceToNotificationPeriod(NotificationPeriod $notificationPeriod): static
     {
         if (!is_array($this->notificationPeriod)) {
             $this->notificationPeriod = [];
@@ -454,9 +454,9 @@ class NotificationRequirementType
 
     /**
      * @param array<NotificationLocation>|null $notificationLocation
-     * @return self
+     * @return static
      */
-    public function setNotificationLocation(?array $notificationLocation = null): self
+    public function setNotificationLocation(?array $notificationLocation = null): static
     {
         $this->notificationLocation = $notificationLocation;
 
@@ -464,9 +464,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNotificationLocation(): self
+    public function unsetNotificationLocation(): static
     {
         $this->notificationLocation = null;
 
@@ -474,9 +474,9 @@ class NotificationRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNotificationLocation(): self
+    public function clearNotificationLocation(): static
     {
         $this->notificationLocation = [];
 
@@ -515,9 +515,9 @@ class NotificationRequirementType
 
     /**
      * @param NotificationLocation $notificationLocation
-     * @return self
+     * @return static
      */
-    public function addToNotificationLocation(NotificationLocation $notificationLocation): self
+    public function addToNotificationLocation(NotificationLocation $notificationLocation): static
     {
         $this->notificationLocation[] = $notificationLocation;
 
@@ -536,9 +536,9 @@ class NotificationRequirementType
 
     /**
      * @param NotificationLocation $notificationLocation
-     * @return self
+     * @return static
      */
-    public function addOnceToNotificationLocation(NotificationLocation $notificationLocation): self
+    public function addOnceToNotificationLocation(NotificationLocation $notificationLocation): static
     {
         if (!is_array($this->notificationLocation)) {
             $this->notificationLocation = [];

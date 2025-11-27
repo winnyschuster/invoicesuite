@@ -67,9 +67,9 @@ class ExchangedDocumentType
 
     /**
      * @param IDType|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?IDType $iD = null): self
+    public function setID(?IDType $iD = null): static
     {
         $this->iD = $iD;
 
@@ -77,9 +77,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -106,9 +106,9 @@ class ExchangedDocumentType
 
     /**
      * @param DocumentCodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?DocumentCodeType $typeCode = null): self
+    public function setTypeCode(?DocumentCodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -116,9 +116,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -145,9 +145,9 @@ class ExchangedDocumentType
 
     /**
      * @param DateTimeType|null $issueDateTime
-     * @return self
+     * @return static
      */
-    public function setIssueDateTime(?DateTimeType $issueDateTime = null): self
+    public function setIssueDateTime(?DateTimeType $issueDateTime = null): static
     {
         $this->issueDateTime = $issueDateTime;
 
@@ -155,9 +155,9 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDateTime(): self
+    public function unsetIssueDateTime(): static
     {
         $this->issueDateTime = null;
 

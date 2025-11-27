@@ -159,9 +159,9 @@ class ConsumptionLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -169,9 +169,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -198,20 +198,20 @@ class ConsumptionLineType
 
     /**
      * @param ParentDocumentLineReferenceID|null $parentDocumentLineReferenceID
-     * @return self
+     * @return static
      */
     public function setParentDocumentLineReferenceID(
         ?ParentDocumentLineReferenceID $parentDocumentLineReferenceID = null,
-    ): self {
+    ): static {
         $this->parentDocumentLineReferenceID = $parentDocumentLineReferenceID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParentDocumentLineReferenceID(): self
+    public function unsetParentDocumentLineReferenceID(): static
     {
         $this->parentDocumentLineReferenceID = null;
 
@@ -238,9 +238,9 @@ class ConsumptionLineType
 
     /**
      * @param InvoicedQuantity|null $invoicedQuantity
-     * @return self
+     * @return static
      */
-    public function setInvoicedQuantity(?InvoicedQuantity $invoicedQuantity = null): self
+    public function setInvoicedQuantity(?InvoicedQuantity $invoicedQuantity = null): static
     {
         $this->invoicedQuantity = $invoicedQuantity;
 
@@ -248,9 +248,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoicedQuantity(): self
+    public function unsetInvoicedQuantity(): static
     {
         $this->invoicedQuantity = null;
 
@@ -277,9 +277,9 @@ class ConsumptionLineType
 
     /**
      * @param LineExtensionAmount|null $lineExtensionAmount
-     * @return self
+     * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
+    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
     {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
@@ -287,9 +287,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineExtensionAmount(): self
+    public function unsetLineExtensionAmount(): static
     {
         $this->lineExtensionAmount = null;
 
@@ -316,9 +316,9 @@ class ConsumptionLineType
 
     /**
      * @param Period|null $period
-     * @return self
+     * @return static
      */
-    public function setPeriod(?Period $period = null): self
+    public function setPeriod(?Period $period = null): static
     {
         $this->period = $period;
 
@@ -326,9 +326,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPeriod(): self
+    public function unsetPeriod(): static
     {
         $this->period = null;
 
@@ -345,9 +345,9 @@ class ConsumptionLineType
 
     /**
      * @param array<Delivery>|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?array $delivery = null): self
+    public function setDelivery(?array $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -355,9 +355,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -365,9 +365,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDelivery(): self
+    public function clearDelivery(): static
     {
         $this->delivery = [];
 
@@ -406,9 +406,9 @@ class ConsumptionLineType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addToDelivery(Delivery $delivery): self
+    public function addToDelivery(Delivery $delivery): static
     {
         $this->delivery[] = $delivery;
 
@@ -427,9 +427,9 @@ class ConsumptionLineType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addOnceToDelivery(Delivery $delivery): self
+    public function addOnceToDelivery(Delivery $delivery): static
     {
         if (!is_array($this->delivery)) {
             $this->delivery = [];
@@ -466,9 +466,9 @@ class ConsumptionLineType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -476,9 +476,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -486,9 +486,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -527,9 +527,9 @@ class ConsumptionLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -548,9 +548,9 @@ class ConsumptionLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -587,9 +587,9 @@ class ConsumptionLineType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -597,9 +597,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -607,9 +607,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -648,9 +648,9 @@ class ConsumptionLineType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -669,9 +669,9 @@ class ConsumptionLineType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -718,9 +718,9 @@ class ConsumptionLineType
 
     /**
      * @param UtilityItem|null $utilityItem
-     * @return self
+     * @return static
      */
-    public function setUtilityItem(?UtilityItem $utilityItem = null): self
+    public function setUtilityItem(?UtilityItem $utilityItem = null): static
     {
         $this->utilityItem = $utilityItem;
 
@@ -728,9 +728,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUtilityItem(): self
+    public function unsetUtilityItem(): static
     {
         $this->utilityItem = null;
 
@@ -757,9 +757,9 @@ class ConsumptionLineType
 
     /**
      * @param Price|null $price
-     * @return self
+     * @return static
      */
-    public function setPrice(?Price $price = null): self
+    public function setPrice(?Price $price = null): static
     {
         $this->price = $price;
 
@@ -767,9 +767,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrice(): self
+    public function unsetPrice(): static
     {
         $this->price = null;
 
@@ -796,9 +796,9 @@ class ConsumptionLineType
 
     /**
      * @param UnstructuredPrice|null $unstructuredPrice
-     * @return self
+     * @return static
      */
-    public function setUnstructuredPrice(?UnstructuredPrice $unstructuredPrice = null): self
+    public function setUnstructuredPrice(?UnstructuredPrice $unstructuredPrice = null): static
     {
         $this->unstructuredPrice = $unstructuredPrice;
 
@@ -806,9 +806,9 @@ class ConsumptionLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnstructuredPrice(): self
+    public function unsetUnstructuredPrice(): static
     {
         $this->unstructuredPrice = null;
 

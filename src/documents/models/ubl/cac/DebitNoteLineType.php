@@ -281,9 +281,9 @@ class DebitNoteLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -291,9 +291,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -320,9 +320,9 @@ class DebitNoteLineType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -330,9 +330,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -349,9 +349,9 @@ class DebitNoteLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -359,9 +359,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -369,9 +369,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -410,9 +410,9 @@ class DebitNoteLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -431,9 +431,9 @@ class DebitNoteLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -480,9 +480,9 @@ class DebitNoteLineType
 
     /**
      * @param DebitedQuantity|null $debitedQuantity
-     * @return self
+     * @return static
      */
-    public function setDebitedQuantity(?DebitedQuantity $debitedQuantity = null): self
+    public function setDebitedQuantity(?DebitedQuantity $debitedQuantity = null): static
     {
         $this->debitedQuantity = $debitedQuantity;
 
@@ -490,9 +490,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDebitedQuantity(): self
+    public function unsetDebitedQuantity(): static
     {
         $this->debitedQuantity = null;
 
@@ -519,9 +519,9 @@ class DebitNoteLineType
 
     /**
      * @param LineExtensionAmount|null $lineExtensionAmount
-     * @return self
+     * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
+    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
     {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
@@ -529,9 +529,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineExtensionAmount(): self
+    public function unsetLineExtensionAmount(): static
     {
         $this->lineExtensionAmount = null;
 
@@ -548,9 +548,9 @@ class DebitNoteLineType
 
     /**
      * @param DateTimeInterface|null $taxPointDate
-     * @return self
+     * @return static
      */
-    public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): self
+    public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): static
     {
         $this->taxPointDate = $taxPointDate;
 
@@ -558,9 +558,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxPointDate(): self
+    public function unsetTaxPointDate(): static
     {
         $this->taxPointDate = null;
 
@@ -587,9 +587,9 @@ class DebitNoteLineType
 
     /**
      * @param AccountingCostCode|null $accountingCostCode
-     * @return self
+     * @return static
      */
-    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
+    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
     {
         $this->accountingCostCode = $accountingCostCode;
 
@@ -597,9 +597,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCostCode(): self
+    public function unsetAccountingCostCode(): static
     {
         $this->accountingCostCode = null;
 
@@ -626,9 +626,9 @@ class DebitNoteLineType
 
     /**
      * @param AccountingCost|null $accountingCost
-     * @return self
+     * @return static
      */
-    public function setAccountingCost(?AccountingCost $accountingCost = null): self
+    public function setAccountingCost(?AccountingCost $accountingCost = null): static
     {
         $this->accountingCost = $accountingCost;
 
@@ -636,9 +636,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCost(): self
+    public function unsetAccountingCost(): static
     {
         $this->accountingCost = null;
 
@@ -665,9 +665,9 @@ class DebitNoteLineType
 
     /**
      * @param PaymentPurposeCode|null $paymentPurposeCode
-     * @return self
+     * @return static
      */
-    public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): self
+    public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
     {
         $this->paymentPurposeCode = $paymentPurposeCode;
 
@@ -675,9 +675,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentPurposeCode(): self
+    public function unsetPaymentPurposeCode(): static
     {
         $this->paymentPurposeCode = null;
 
@@ -694,9 +694,9 @@ class DebitNoteLineType
 
     /**
      * @param array<DiscrepancyResponse>|null $discrepancyResponse
-     * @return self
+     * @return static
      */
-    public function setDiscrepancyResponse(?array $discrepancyResponse = null): self
+    public function setDiscrepancyResponse(?array $discrepancyResponse = null): static
     {
         $this->discrepancyResponse = $discrepancyResponse;
 
@@ -704,9 +704,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDiscrepancyResponse(): self
+    public function unsetDiscrepancyResponse(): static
     {
         $this->discrepancyResponse = null;
 
@@ -714,9 +714,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDiscrepancyResponse(): self
+    public function clearDiscrepancyResponse(): static
     {
         $this->discrepancyResponse = [];
 
@@ -755,9 +755,9 @@ class DebitNoteLineType
 
     /**
      * @param DiscrepancyResponse $discrepancyResponse
-     * @return self
+     * @return static
      */
-    public function addToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): self
+    public function addToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
     {
         $this->discrepancyResponse[] = $discrepancyResponse;
 
@@ -776,9 +776,9 @@ class DebitNoteLineType
 
     /**
      * @param DiscrepancyResponse $discrepancyResponse
-     * @return self
+     * @return static
      */
-    public function addOnceToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): self
+    public function addOnceToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
     {
         if (!is_array($this->discrepancyResponse)) {
             $this->discrepancyResponse = [];
@@ -815,9 +815,9 @@ class DebitNoteLineType
 
     /**
      * @param array<DespatchLineReference>|null $despatchLineReference
-     * @return self
+     * @return static
      */
-    public function setDespatchLineReference(?array $despatchLineReference = null): self
+    public function setDespatchLineReference(?array $despatchLineReference = null): static
     {
         $this->despatchLineReference = $despatchLineReference;
 
@@ -825,9 +825,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatchLineReference(): self
+    public function unsetDespatchLineReference(): static
     {
         $this->despatchLineReference = null;
 
@@ -835,9 +835,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDespatchLineReference(): self
+    public function clearDespatchLineReference(): static
     {
         $this->despatchLineReference = [];
 
@@ -876,9 +876,9 @@ class DebitNoteLineType
 
     /**
      * @param DespatchLineReference $despatchLineReference
-     * @return self
+     * @return static
      */
-    public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): self
+    public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): static
     {
         $this->despatchLineReference[] = $despatchLineReference;
 
@@ -897,9 +897,9 @@ class DebitNoteLineType
 
     /**
      * @param DespatchLineReference $despatchLineReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): self
+    public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): static
     {
         if (!is_array($this->despatchLineReference)) {
             $this->despatchLineReference = [];
@@ -936,9 +936,9 @@ class DebitNoteLineType
 
     /**
      * @param array<ReceiptLineReference>|null $receiptLineReference
-     * @return self
+     * @return static
      */
-    public function setReceiptLineReference(?array $receiptLineReference = null): self
+    public function setReceiptLineReference(?array $receiptLineReference = null): static
     {
         $this->receiptLineReference = $receiptLineReference;
 
@@ -946,9 +946,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceiptLineReference(): self
+    public function unsetReceiptLineReference(): static
     {
         $this->receiptLineReference = null;
 
@@ -956,9 +956,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearReceiptLineReference(): self
+    public function clearReceiptLineReference(): static
     {
         $this->receiptLineReference = [];
 
@@ -997,9 +997,9 @@ class DebitNoteLineType
 
     /**
      * @param ReceiptLineReference $receiptLineReference
-     * @return self
+     * @return static
      */
-    public function addToReceiptLineReference(ReceiptLineReference $receiptLineReference): self
+    public function addToReceiptLineReference(ReceiptLineReference $receiptLineReference): static
     {
         $this->receiptLineReference[] = $receiptLineReference;
 
@@ -1018,9 +1018,9 @@ class DebitNoteLineType
 
     /**
      * @param ReceiptLineReference $receiptLineReference
-     * @return self
+     * @return static
      */
-    public function addOnceToReceiptLineReference(ReceiptLineReference $receiptLineReference): self
+    public function addOnceToReceiptLineReference(ReceiptLineReference $receiptLineReference): static
     {
         if (!is_array($this->receiptLineReference)) {
             $this->receiptLineReference = [];
@@ -1057,9 +1057,9 @@ class DebitNoteLineType
 
     /**
      * @param array<BillingReference>|null $billingReference
-     * @return self
+     * @return static
      */
-    public function setBillingReference(?array $billingReference = null): self
+    public function setBillingReference(?array $billingReference = null): static
     {
         $this->billingReference = $billingReference;
 
@@ -1067,9 +1067,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBillingReference(): self
+    public function unsetBillingReference(): static
     {
         $this->billingReference = null;
 
@@ -1077,9 +1077,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBillingReference(): self
+    public function clearBillingReference(): static
     {
         $this->billingReference = [];
 
@@ -1118,9 +1118,9 @@ class DebitNoteLineType
 
     /**
      * @param BillingReference $billingReference
-     * @return self
+     * @return static
      */
-    public function addToBillingReference(BillingReference $billingReference): self
+    public function addToBillingReference(BillingReference $billingReference): static
     {
         $this->billingReference[] = $billingReference;
 
@@ -1139,9 +1139,9 @@ class DebitNoteLineType
 
     /**
      * @param BillingReference $billingReference
-     * @return self
+     * @return static
      */
-    public function addOnceToBillingReference(BillingReference $billingReference): self
+    public function addOnceToBillingReference(BillingReference $billingReference): static
     {
         if (!is_array($this->billingReference)) {
             $this->billingReference = [];
@@ -1178,9 +1178,9 @@ class DebitNoteLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -1188,9 +1188,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -1198,9 +1198,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -1239,9 +1239,9 @@ class DebitNoteLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -1260,9 +1260,9 @@ class DebitNoteLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -1309,9 +1309,9 @@ class DebitNoteLineType
 
     /**
      * @param PricingReference|null $pricingReference
-     * @return self
+     * @return static
      */
-    public function setPricingReference(?PricingReference $pricingReference = null): self
+    public function setPricingReference(?PricingReference $pricingReference = null): static
     {
         $this->pricingReference = $pricingReference;
 
@@ -1319,9 +1319,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPricingReference(): self
+    public function unsetPricingReference(): static
     {
         $this->pricingReference = null;
 
@@ -1338,9 +1338,9 @@ class DebitNoteLineType
 
     /**
      * @param array<Delivery>|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?array $delivery = null): self
+    public function setDelivery(?array $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -1348,9 +1348,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -1358,9 +1358,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDelivery(): self
+    public function clearDelivery(): static
     {
         $this->delivery = [];
 
@@ -1399,9 +1399,9 @@ class DebitNoteLineType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addToDelivery(Delivery $delivery): self
+    public function addToDelivery(Delivery $delivery): static
     {
         $this->delivery[] = $delivery;
 
@@ -1420,9 +1420,9 @@ class DebitNoteLineType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addOnceToDelivery(Delivery $delivery): self
+    public function addOnceToDelivery(Delivery $delivery): static
     {
         if (!is_array($this->delivery)) {
             $this->delivery = [];
@@ -1459,9 +1459,9 @@ class DebitNoteLineType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -1469,9 +1469,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -1479,9 +1479,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -1520,9 +1520,9 @@ class DebitNoteLineType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -1541,9 +1541,9 @@ class DebitNoteLineType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -1580,9 +1580,9 @@ class DebitNoteLineType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -1590,9 +1590,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -1600,9 +1600,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -1641,9 +1641,9 @@ class DebitNoteLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -1662,9 +1662,9 @@ class DebitNoteLineType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -1711,9 +1711,9 @@ class DebitNoteLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -1721,9 +1721,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
@@ -1750,9 +1750,9 @@ class DebitNoteLineType
 
     /**
      * @param Price|null $price
-     * @return self
+     * @return static
      */
-    public function setPrice(?Price $price = null): self
+    public function setPrice(?Price $price = null): static
     {
         $this->price = $price;
 
@@ -1760,9 +1760,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrice(): self
+    public function unsetPrice(): static
     {
         $this->price = null;
 
@@ -1779,9 +1779,9 @@ class DebitNoteLineType
 
     /**
      * @param array<SubDebitNoteLine>|null $subDebitNoteLine
-     * @return self
+     * @return static
      */
-    public function setSubDebitNoteLine(?array $subDebitNoteLine = null): self
+    public function setSubDebitNoteLine(?array $subDebitNoteLine = null): static
     {
         $this->subDebitNoteLine = $subDebitNoteLine;
 
@@ -1789,9 +1789,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSubDebitNoteLine(): self
+    public function unsetSubDebitNoteLine(): static
     {
         $this->subDebitNoteLine = null;
 
@@ -1799,9 +1799,9 @@ class DebitNoteLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSubDebitNoteLine(): self
+    public function clearSubDebitNoteLine(): static
     {
         $this->subDebitNoteLine = [];
 
@@ -1840,9 +1840,9 @@ class DebitNoteLineType
 
     /**
      * @param SubDebitNoteLine $subDebitNoteLine
-     * @return self
+     * @return static
      */
-    public function addToSubDebitNoteLine(SubDebitNoteLine $subDebitNoteLine): self
+    public function addToSubDebitNoteLine(SubDebitNoteLine $subDebitNoteLine): static
     {
         $this->subDebitNoteLine[] = $subDebitNoteLine;
 
@@ -1861,9 +1861,9 @@ class DebitNoteLineType
 
     /**
      * @param SubDebitNoteLine $subDebitNoteLine
-     * @return self
+     * @return static
      */
-    public function addOnceToSubDebitNoteLine(SubDebitNoteLine $subDebitNoteLine): self
+    public function addOnceToSubDebitNoteLine(SubDebitNoteLine $subDebitNoteLine): static
     {
         if (!is_array($this->subDebitNoteLine)) {
             $this->subDebitNoteLine = [];

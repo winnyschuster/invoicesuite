@@ -43,9 +43,9 @@ class DateType
 
     /**
      * @param DateStringAType|null $dateString
-     * @return self
+     * @return static
      */
-    public function setDateString(?DateStringAType $dateString = null): self
+    public function setDateString(?DateStringAType $dateString = null): static
     {
         $this->dateString = $dateString;
 
@@ -53,9 +53,9 @@ class DateType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDateString(): self
+    public function unsetDateString(): static
     {
         $this->dateString = null;
 

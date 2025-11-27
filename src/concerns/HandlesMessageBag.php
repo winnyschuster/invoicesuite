@@ -53,9 +53,9 @@ trait HandlesMessageBag
     /**
      * Clears the internal message container
      *
-     * @return InvoiceSuiteMessageBag
+     * @return static
      */
-    public function clearMessageBag(): self
+    public function clearMessageBag(): static
     {
         $this->getMessageBag()->clear();
 
@@ -66,9 +66,9 @@ trait HandlesMessageBag
      * Add an existing message bag item to internal message bag.
      *
      * @param  InvoiceSuiteMessageBagItem $newMessageBagItem the item to add
-     * @return self
+     * @return static
      */
-    public function addMessageItemToMessageBag(InvoiceSuiteMessageBagItem $newMessageBagItem): self
+    public function addMessageItemToMessageBag(InvoiceSuiteMessageBagItem $newMessageBagItem): static
     {
         $this->getMessageBag()->add($newMessageBagItem);
 
@@ -84,13 +84,13 @@ trait HandlesMessageBag
      * @param  string                           $newMessageContent   the message text
      * @param  null|InvoiceSuiteMessageSeverity $newMessageSeverity  the message severity (default INFO)
      * @param  null|DateTimeInterface           $newMessageTimestamp the timestamp (default now)
-     * @return self
+     * @return static
      */
     public function addMessageToMessageBag(
         string $newMessageContent,
         ?InvoiceSuiteMessageSeverity $newMessageSeverity = null,
         ?DateTimeInterface $newMessageTimestamp = null
-    ): self {
+    ): static {
         $this->getMessageBag()->addNewMessage($newMessageContent, $newMessageSeverity, $newMessageTimestamp);
 
         return $this;
@@ -103,12 +103,12 @@ trait HandlesMessageBag
      *
      * @param  string                 $newMessageContent
      * @param  null|DateTimeInterface $newMessageTimestamp
-     * @return HandlesMessageBag
+     * @return static
      */
     public function addInfoMessageToMessageBag(
         string $newMessageContent,
         ?DateTimeInterface $newMessageTimestamp = null
-    ): self {
+    ): static {
         $this->getMessageBag()->addNewMessage($newMessageContent, InvoiceSuiteMessageSeverity::INFO, $newMessageTimestamp);
 
         return $this;
@@ -121,12 +121,12 @@ trait HandlesMessageBag
      *
      * @param  string                 $newMessageContent
      * @param  null|DateTimeInterface $newMessageTimestamp
-     * @return HandlesMessageBag
+     * @return static
      */
     public function addWarningMessageToMessageBag(
         string $newMessageContent,
         ?DateTimeInterface $newMessageTimestamp = null
-    ): self {
+    ): static {
         $this->getMessageBag()->addNewMessage($newMessageContent, InvoiceSuiteMessageSeverity::WARNING, $newMessageTimestamp);
 
         return $this;
@@ -139,12 +139,12 @@ trait HandlesMessageBag
      *
      * @param  string                 $newMessageContent
      * @param  null|DateTimeInterface $newMessageTimestamp
-     * @return HandlesMessageBag
+     * @return static
      */
     public function addErrorMessageToMessageBag(
         string $newMessageContent,
         ?DateTimeInterface $newMessageTimestamp = null
-    ): self {
+    ): static {
         $this->getMessageBag()->addNewMessage($newMessageContent, InvoiceSuiteMessageSeverity::ERROR, $newMessageTimestamp);
 
         return $this;

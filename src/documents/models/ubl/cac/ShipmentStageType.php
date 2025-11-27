@@ -724,9 +724,9 @@ class ShipmentStageType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -734,9 +734,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -763,9 +763,9 @@ class ShipmentStageType
 
     /**
      * @param TransportModeCode|null $transportModeCode
-     * @return self
+     * @return static
      */
-    public function setTransportModeCode(?TransportModeCode $transportModeCode = null): self
+    public function setTransportModeCode(?TransportModeCode $transportModeCode = null): static
     {
         $this->transportModeCode = $transportModeCode;
 
@@ -773,9 +773,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportModeCode(): self
+    public function unsetTransportModeCode(): static
     {
         $this->transportModeCode = null;
 
@@ -802,9 +802,9 @@ class ShipmentStageType
 
     /**
      * @param TransportMeansTypeCode|null $transportMeansTypeCode
-     * @return self
+     * @return static
      */
-    public function setTransportMeansTypeCode(?TransportMeansTypeCode $transportMeansTypeCode = null): self
+    public function setTransportMeansTypeCode(?TransportMeansTypeCode $transportMeansTypeCode = null): static
     {
         $this->transportMeansTypeCode = $transportMeansTypeCode;
 
@@ -812,9 +812,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportMeansTypeCode(): self
+    public function unsetTransportMeansTypeCode(): static
     {
         $this->transportMeansTypeCode = null;
 
@@ -841,9 +841,9 @@ class ShipmentStageType
 
     /**
      * @param TransitDirectionCode|null $transitDirectionCode
-     * @return self
+     * @return static
      */
-    public function setTransitDirectionCode(?TransitDirectionCode $transitDirectionCode = null): self
+    public function setTransitDirectionCode(?TransitDirectionCode $transitDirectionCode = null): static
     {
         $this->transitDirectionCode = $transitDirectionCode;
 
@@ -851,9 +851,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransitDirectionCode(): self
+    public function unsetTransitDirectionCode(): static
     {
         $this->transitDirectionCode = null;
 
@@ -870,9 +870,9 @@ class ShipmentStageType
 
     /**
      * @param bool|null $preCarriageIndicator
-     * @return self
+     * @return static
      */
-    public function setPreCarriageIndicator(?bool $preCarriageIndicator = null): self
+    public function setPreCarriageIndicator(?bool $preCarriageIndicator = null): static
     {
         $this->preCarriageIndicator = $preCarriageIndicator;
 
@@ -880,9 +880,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreCarriageIndicator(): self
+    public function unsetPreCarriageIndicator(): static
     {
         $this->preCarriageIndicator = null;
 
@@ -899,9 +899,9 @@ class ShipmentStageType
 
     /**
      * @param bool|null $onCarriageIndicator
-     * @return self
+     * @return static
      */
-    public function setOnCarriageIndicator(?bool $onCarriageIndicator = null): self
+    public function setOnCarriageIndicator(?bool $onCarriageIndicator = null): static
     {
         $this->onCarriageIndicator = $onCarriageIndicator;
 
@@ -909,9 +909,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOnCarriageIndicator(): self
+    public function unsetOnCarriageIndicator(): static
     {
         $this->onCarriageIndicator = null;
 
@@ -928,9 +928,9 @@ class ShipmentStageType
 
     /**
      * @param DateTimeInterface|null $estimatedDeliveryDate
-     * @return self
+     * @return static
      */
-    public function setEstimatedDeliveryDate(?DateTimeInterface $estimatedDeliveryDate = null): self
+    public function setEstimatedDeliveryDate(?DateTimeInterface $estimatedDeliveryDate = null): static
     {
         $this->estimatedDeliveryDate = $estimatedDeliveryDate;
 
@@ -938,9 +938,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedDeliveryDate(): self
+    public function unsetEstimatedDeliveryDate(): static
     {
         $this->estimatedDeliveryDate = null;
 
@@ -957,9 +957,9 @@ class ShipmentStageType
 
     /**
      * @param DateTimeInterface|null $estimatedDeliveryTime
-     * @return self
+     * @return static
      */
-    public function setEstimatedDeliveryTime(?DateTimeInterface $estimatedDeliveryTime = null): self
+    public function setEstimatedDeliveryTime(?DateTimeInterface $estimatedDeliveryTime = null): static
     {
         $this->estimatedDeliveryTime = $estimatedDeliveryTime;
 
@@ -967,9 +967,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedDeliveryTime(): self
+    public function unsetEstimatedDeliveryTime(): static
     {
         $this->estimatedDeliveryTime = null;
 
@@ -986,9 +986,9 @@ class ShipmentStageType
 
     /**
      * @param DateTimeInterface|null $requiredDeliveryDate
-     * @return self
+     * @return static
      */
-    public function setRequiredDeliveryDate(?DateTimeInterface $requiredDeliveryDate = null): self
+    public function setRequiredDeliveryDate(?DateTimeInterface $requiredDeliveryDate = null): static
     {
         $this->requiredDeliveryDate = $requiredDeliveryDate;
 
@@ -996,9 +996,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredDeliveryDate(): self
+    public function unsetRequiredDeliveryDate(): static
     {
         $this->requiredDeliveryDate = null;
 
@@ -1015,9 +1015,9 @@ class ShipmentStageType
 
     /**
      * @param DateTimeInterface|null $requiredDeliveryTime
-     * @return self
+     * @return static
      */
-    public function setRequiredDeliveryTime(?DateTimeInterface $requiredDeliveryTime = null): self
+    public function setRequiredDeliveryTime(?DateTimeInterface $requiredDeliveryTime = null): static
     {
         $this->requiredDeliveryTime = $requiredDeliveryTime;
 
@@ -1025,9 +1025,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredDeliveryTime(): self
+    public function unsetRequiredDeliveryTime(): static
     {
         $this->requiredDeliveryTime = null;
 
@@ -1054,9 +1054,9 @@ class ShipmentStageType
 
     /**
      * @param LoadingSequenceID|null $loadingSequenceID
-     * @return self
+     * @return static
      */
-    public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): self
+    public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): static
     {
         $this->loadingSequenceID = $loadingSequenceID;
 
@@ -1064,9 +1064,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLoadingSequenceID(): self
+    public function unsetLoadingSequenceID(): static
     {
         $this->loadingSequenceID = null;
 
@@ -1093,9 +1093,9 @@ class ShipmentStageType
 
     /**
      * @param SuccessiveSequenceID|null $successiveSequenceID
-     * @return self
+     * @return static
      */
-    public function setSuccessiveSequenceID(?SuccessiveSequenceID $successiveSequenceID = null): self
+    public function setSuccessiveSequenceID(?SuccessiveSequenceID $successiveSequenceID = null): static
     {
         $this->successiveSequenceID = $successiveSequenceID;
 
@@ -1103,9 +1103,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSuccessiveSequenceID(): self
+    public function unsetSuccessiveSequenceID(): static
     {
         $this->successiveSequenceID = null;
 
@@ -1122,9 +1122,9 @@ class ShipmentStageType
 
     /**
      * @param array<Instructions>|null $instructions
-     * @return self
+     * @return static
      */
-    public function setInstructions(?array $instructions = null): self
+    public function setInstructions(?array $instructions = null): static
     {
         $this->instructions = $instructions;
 
@@ -1132,9 +1132,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInstructions(): self
+    public function unsetInstructions(): static
     {
         $this->instructions = null;
 
@@ -1142,9 +1142,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInstructions(): self
+    public function clearInstructions(): static
     {
         $this->instructions = [];
 
@@ -1183,9 +1183,9 @@ class ShipmentStageType
 
     /**
      * @param Instructions $instructions
-     * @return self
+     * @return static
      */
-    public function addToInstructions(Instructions $instructions): self
+    public function addToInstructions(Instructions $instructions): static
     {
         $this->instructions[] = $instructions;
 
@@ -1204,9 +1204,9 @@ class ShipmentStageType
 
     /**
      * @param Instructions $instructions
-     * @return self
+     * @return static
      */
-    public function addOnceToInstructions(Instructions $instructions): self
+    public function addOnceToInstructions(Instructions $instructions): static
     {
         if (!is_array($this->instructions)) {
             $this->instructions = [];
@@ -1243,9 +1243,9 @@ class ShipmentStageType
 
     /**
      * @param array<DemurrageInstructions>|null $demurrageInstructions
-     * @return self
+     * @return static
      */
-    public function setDemurrageInstructions(?array $demurrageInstructions = null): self
+    public function setDemurrageInstructions(?array $demurrageInstructions = null): static
     {
         $this->demurrageInstructions = $demurrageInstructions;
 
@@ -1253,9 +1253,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDemurrageInstructions(): self
+    public function unsetDemurrageInstructions(): static
     {
         $this->demurrageInstructions = null;
 
@@ -1263,9 +1263,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDemurrageInstructions(): self
+    public function clearDemurrageInstructions(): static
     {
         $this->demurrageInstructions = [];
 
@@ -1304,9 +1304,9 @@ class ShipmentStageType
 
     /**
      * @param DemurrageInstructions $demurrageInstructions
-     * @return self
+     * @return static
      */
-    public function addToDemurrageInstructions(DemurrageInstructions $demurrageInstructions): self
+    public function addToDemurrageInstructions(DemurrageInstructions $demurrageInstructions): static
     {
         $this->demurrageInstructions[] = $demurrageInstructions;
 
@@ -1325,9 +1325,9 @@ class ShipmentStageType
 
     /**
      * @param DemurrageInstructions $demurrageInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToDemurrageInstructions(DemurrageInstructions $demurrageInstructions): self
+    public function addOnceToDemurrageInstructions(DemurrageInstructions $demurrageInstructions): static
     {
         if (!is_array($this->demurrageInstructions)) {
             $this->demurrageInstructions = [];
@@ -1374,9 +1374,9 @@ class ShipmentStageType
 
     /**
      * @param CrewQuantity|null $crewQuantity
-     * @return self
+     * @return static
      */
-    public function setCrewQuantity(?CrewQuantity $crewQuantity = null): self
+    public function setCrewQuantity(?CrewQuantity $crewQuantity = null): static
     {
         $this->crewQuantity = $crewQuantity;
 
@@ -1384,9 +1384,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCrewQuantity(): self
+    public function unsetCrewQuantity(): static
     {
         $this->crewQuantity = null;
 
@@ -1413,9 +1413,9 @@ class ShipmentStageType
 
     /**
      * @param PassengerQuantity|null $passengerQuantity
-     * @return self
+     * @return static
      */
-    public function setPassengerQuantity(?PassengerQuantity $passengerQuantity = null): self
+    public function setPassengerQuantity(?PassengerQuantity $passengerQuantity = null): static
     {
         $this->passengerQuantity = $passengerQuantity;
 
@@ -1423,9 +1423,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPassengerQuantity(): self
+    public function unsetPassengerQuantity(): static
     {
         $this->passengerQuantity = null;
 
@@ -1452,9 +1452,9 @@ class ShipmentStageType
 
     /**
      * @param TransitPeriod|null $transitPeriod
-     * @return self
+     * @return static
      */
-    public function setTransitPeriod(?TransitPeriod $transitPeriod = null): self
+    public function setTransitPeriod(?TransitPeriod $transitPeriod = null): static
     {
         $this->transitPeriod = $transitPeriod;
 
@@ -1462,9 +1462,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransitPeriod(): self
+    public function unsetTransitPeriod(): static
     {
         $this->transitPeriod = null;
 
@@ -1481,9 +1481,9 @@ class ShipmentStageType
 
     /**
      * @param array<CarrierParty>|null $carrierParty
-     * @return self
+     * @return static
      */
-    public function setCarrierParty(?array $carrierParty = null): self
+    public function setCarrierParty(?array $carrierParty = null): static
     {
         $this->carrierParty = $carrierParty;
 
@@ -1491,9 +1491,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCarrierParty(): self
+    public function unsetCarrierParty(): static
     {
         $this->carrierParty = null;
 
@@ -1501,9 +1501,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCarrierParty(): self
+    public function clearCarrierParty(): static
     {
         $this->carrierParty = [];
 
@@ -1542,9 +1542,9 @@ class ShipmentStageType
 
     /**
      * @param CarrierParty $carrierParty
-     * @return self
+     * @return static
      */
-    public function addToCarrierParty(CarrierParty $carrierParty): self
+    public function addToCarrierParty(CarrierParty $carrierParty): static
     {
         $this->carrierParty[] = $carrierParty;
 
@@ -1563,9 +1563,9 @@ class ShipmentStageType
 
     /**
      * @param CarrierParty $carrierParty
-     * @return self
+     * @return static
      */
-    public function addOnceToCarrierParty(CarrierParty $carrierParty): self
+    public function addOnceToCarrierParty(CarrierParty $carrierParty): static
     {
         if (!is_array($this->carrierParty)) {
             $this->carrierParty = [];
@@ -1612,9 +1612,9 @@ class ShipmentStageType
 
     /**
      * @param TransportMeans|null $transportMeans
-     * @return self
+     * @return static
      */
-    public function setTransportMeans(?TransportMeans $transportMeans = null): self
+    public function setTransportMeans(?TransportMeans $transportMeans = null): static
     {
         $this->transportMeans = $transportMeans;
 
@@ -1622,9 +1622,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportMeans(): self
+    public function unsetTransportMeans(): static
     {
         $this->transportMeans = null;
 
@@ -1651,9 +1651,9 @@ class ShipmentStageType
 
     /**
      * @param LoadingPortLocation|null $loadingPortLocation
-     * @return self
+     * @return static
      */
-    public function setLoadingPortLocation(?LoadingPortLocation $loadingPortLocation = null): self
+    public function setLoadingPortLocation(?LoadingPortLocation $loadingPortLocation = null): static
     {
         $this->loadingPortLocation = $loadingPortLocation;
 
@@ -1661,9 +1661,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLoadingPortLocation(): self
+    public function unsetLoadingPortLocation(): static
     {
         $this->loadingPortLocation = null;
 
@@ -1690,9 +1690,9 @@ class ShipmentStageType
 
     /**
      * @param UnloadingPortLocation|null $unloadingPortLocation
-     * @return self
+     * @return static
      */
-    public function setUnloadingPortLocation(?UnloadingPortLocation $unloadingPortLocation = null): self
+    public function setUnloadingPortLocation(?UnloadingPortLocation $unloadingPortLocation = null): static
     {
         $this->unloadingPortLocation = $unloadingPortLocation;
 
@@ -1700,9 +1700,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnloadingPortLocation(): self
+    public function unsetUnloadingPortLocation(): static
     {
         $this->unloadingPortLocation = null;
 
@@ -1729,9 +1729,9 @@ class ShipmentStageType
 
     /**
      * @param TransshipPortLocation|null $transshipPortLocation
-     * @return self
+     * @return static
      */
-    public function setTransshipPortLocation(?TransshipPortLocation $transshipPortLocation = null): self
+    public function setTransshipPortLocation(?TransshipPortLocation $transshipPortLocation = null): static
     {
         $this->transshipPortLocation = $transshipPortLocation;
 
@@ -1739,9 +1739,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransshipPortLocation(): self
+    public function unsetTransshipPortLocation(): static
     {
         $this->transshipPortLocation = null;
 
@@ -1768,9 +1768,9 @@ class ShipmentStageType
 
     /**
      * @param LoadingTransportEvent|null $loadingTransportEvent
-     * @return self
+     * @return static
      */
-    public function setLoadingTransportEvent(?LoadingTransportEvent $loadingTransportEvent = null): self
+    public function setLoadingTransportEvent(?LoadingTransportEvent $loadingTransportEvent = null): static
     {
         $this->loadingTransportEvent = $loadingTransportEvent;
 
@@ -1778,9 +1778,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLoadingTransportEvent(): self
+    public function unsetLoadingTransportEvent(): static
     {
         $this->loadingTransportEvent = null;
 
@@ -1807,9 +1807,9 @@ class ShipmentStageType
 
     /**
      * @param ExaminationTransportEvent|null $examinationTransportEvent
-     * @return self
+     * @return static
      */
-    public function setExaminationTransportEvent(?ExaminationTransportEvent $examinationTransportEvent = null): self
+    public function setExaminationTransportEvent(?ExaminationTransportEvent $examinationTransportEvent = null): static
     {
         $this->examinationTransportEvent = $examinationTransportEvent;
 
@@ -1817,9 +1817,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExaminationTransportEvent(): self
+    public function unsetExaminationTransportEvent(): static
     {
         $this->examinationTransportEvent = null;
 
@@ -1846,20 +1846,20 @@ class ShipmentStageType
 
     /**
      * @param AvailabilityTransportEvent|null $availabilityTransportEvent
-     * @return self
+     * @return static
      */
     public function setAvailabilityTransportEvent(
         ?AvailabilityTransportEvent $availabilityTransportEvent = null,
-    ): self {
+    ): static {
         $this->availabilityTransportEvent = $availabilityTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAvailabilityTransportEvent(): self
+    public function unsetAvailabilityTransportEvent(): static
     {
         $this->availabilityTransportEvent = null;
 
@@ -1886,9 +1886,9 @@ class ShipmentStageType
 
     /**
      * @param ExportationTransportEvent|null $exportationTransportEvent
-     * @return self
+     * @return static
      */
-    public function setExportationTransportEvent(?ExportationTransportEvent $exportationTransportEvent = null): self
+    public function setExportationTransportEvent(?ExportationTransportEvent $exportationTransportEvent = null): static
     {
         $this->exportationTransportEvent = $exportationTransportEvent;
 
@@ -1896,9 +1896,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExportationTransportEvent(): self
+    public function unsetExportationTransportEvent(): static
     {
         $this->exportationTransportEvent = null;
 
@@ -1925,9 +1925,9 @@ class ShipmentStageType
 
     /**
      * @param DischargeTransportEvent|null $dischargeTransportEvent
-     * @return self
+     * @return static
      */
-    public function setDischargeTransportEvent(?DischargeTransportEvent $dischargeTransportEvent = null): self
+    public function setDischargeTransportEvent(?DischargeTransportEvent $dischargeTransportEvent = null): static
     {
         $this->dischargeTransportEvent = $dischargeTransportEvent;
 
@@ -1935,9 +1935,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDischargeTransportEvent(): self
+    public function unsetDischargeTransportEvent(): static
     {
         $this->dischargeTransportEvent = null;
 
@@ -1964,9 +1964,9 @@ class ShipmentStageType
 
     /**
      * @param WarehousingTransportEvent|null $warehousingTransportEvent
-     * @return self
+     * @return static
      */
-    public function setWarehousingTransportEvent(?WarehousingTransportEvent $warehousingTransportEvent = null): self
+    public function setWarehousingTransportEvent(?WarehousingTransportEvent $warehousingTransportEvent = null): static
     {
         $this->warehousingTransportEvent = $warehousingTransportEvent;
 
@@ -1974,9 +1974,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWarehousingTransportEvent(): self
+    public function unsetWarehousingTransportEvent(): static
     {
         $this->warehousingTransportEvent = null;
 
@@ -2003,9 +2003,9 @@ class ShipmentStageType
 
     /**
      * @param TakeoverTransportEvent|null $takeoverTransportEvent
-     * @return self
+     * @return static
      */
-    public function setTakeoverTransportEvent(?TakeoverTransportEvent $takeoverTransportEvent = null): self
+    public function setTakeoverTransportEvent(?TakeoverTransportEvent $takeoverTransportEvent = null): static
     {
         $this->takeoverTransportEvent = $takeoverTransportEvent;
 
@@ -2013,9 +2013,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTakeoverTransportEvent(): self
+    public function unsetTakeoverTransportEvent(): static
     {
         $this->takeoverTransportEvent = null;
 
@@ -2042,20 +2042,20 @@ class ShipmentStageType
 
     /**
      * @param OptionalTakeoverTransportEvent|null $optionalTakeoverTransportEvent
-     * @return self
+     * @return static
      */
     public function setOptionalTakeoverTransportEvent(
         ?OptionalTakeoverTransportEvent $optionalTakeoverTransportEvent = null,
-    ): self {
+    ): static {
         $this->optionalTakeoverTransportEvent = $optionalTakeoverTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOptionalTakeoverTransportEvent(): self
+    public function unsetOptionalTakeoverTransportEvent(): static
     {
         $this->optionalTakeoverTransportEvent = null;
 
@@ -2082,9 +2082,9 @@ class ShipmentStageType
 
     /**
      * @param DropoffTransportEvent|null $dropoffTransportEvent
-     * @return self
+     * @return static
      */
-    public function setDropoffTransportEvent(?DropoffTransportEvent $dropoffTransportEvent = null): self
+    public function setDropoffTransportEvent(?DropoffTransportEvent $dropoffTransportEvent = null): static
     {
         $this->dropoffTransportEvent = $dropoffTransportEvent;
 
@@ -2092,9 +2092,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDropoffTransportEvent(): self
+    public function unsetDropoffTransportEvent(): static
     {
         $this->dropoffTransportEvent = null;
 
@@ -2121,20 +2121,20 @@ class ShipmentStageType
 
     /**
      * @param ActualPickupTransportEvent|null $actualPickupTransportEvent
-     * @return self
+     * @return static
      */
     public function setActualPickupTransportEvent(
         ?ActualPickupTransportEvent $actualPickupTransportEvent = null,
-    ): self {
+    ): static {
         $this->actualPickupTransportEvent = $actualPickupTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualPickupTransportEvent(): self
+    public function unsetActualPickupTransportEvent(): static
     {
         $this->actualPickupTransportEvent = null;
 
@@ -2161,9 +2161,9 @@ class ShipmentStageType
 
     /**
      * @param DeliveryTransportEvent|null $deliveryTransportEvent
-     * @return self
+     * @return static
      */
-    public function setDeliveryTransportEvent(?DeliveryTransportEvent $deliveryTransportEvent = null): self
+    public function setDeliveryTransportEvent(?DeliveryTransportEvent $deliveryTransportEvent = null): static
     {
         $this->deliveryTransportEvent = $deliveryTransportEvent;
 
@@ -2171,9 +2171,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryTransportEvent(): self
+    public function unsetDeliveryTransportEvent(): static
     {
         $this->deliveryTransportEvent = null;
 
@@ -2200,9 +2200,9 @@ class ShipmentStageType
 
     /**
      * @param ReceiptTransportEvent|null $receiptTransportEvent
-     * @return self
+     * @return static
      */
-    public function setReceiptTransportEvent(?ReceiptTransportEvent $receiptTransportEvent = null): self
+    public function setReceiptTransportEvent(?ReceiptTransportEvent $receiptTransportEvent = null): static
     {
         $this->receiptTransportEvent = $receiptTransportEvent;
 
@@ -2210,9 +2210,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceiptTransportEvent(): self
+    public function unsetReceiptTransportEvent(): static
     {
         $this->receiptTransportEvent = null;
 
@@ -2239,9 +2239,9 @@ class ShipmentStageType
 
     /**
      * @param StorageTransportEvent|null $storageTransportEvent
-     * @return self
+     * @return static
      */
-    public function setStorageTransportEvent(?StorageTransportEvent $storageTransportEvent = null): self
+    public function setStorageTransportEvent(?StorageTransportEvent $storageTransportEvent = null): static
     {
         $this->storageTransportEvent = $storageTransportEvent;
 
@@ -2249,9 +2249,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStorageTransportEvent(): self
+    public function unsetStorageTransportEvent(): static
     {
         $this->storageTransportEvent = null;
 
@@ -2278,9 +2278,9 @@ class ShipmentStageType
 
     /**
      * @param AcceptanceTransportEvent|null $acceptanceTransportEvent
-     * @return self
+     * @return static
      */
-    public function setAcceptanceTransportEvent(?AcceptanceTransportEvent $acceptanceTransportEvent = null): self
+    public function setAcceptanceTransportEvent(?AcceptanceTransportEvent $acceptanceTransportEvent = null): static
     {
         $this->acceptanceTransportEvent = $acceptanceTransportEvent;
 
@@ -2288,9 +2288,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAcceptanceTransportEvent(): self
+    public function unsetAcceptanceTransportEvent(): static
     {
         $this->acceptanceTransportEvent = null;
 
@@ -2317,9 +2317,9 @@ class ShipmentStageType
 
     /**
      * @param TerminalOperatorParty|null $terminalOperatorParty
-     * @return self
+     * @return static
      */
-    public function setTerminalOperatorParty(?TerminalOperatorParty $terminalOperatorParty = null): self
+    public function setTerminalOperatorParty(?TerminalOperatorParty $terminalOperatorParty = null): static
     {
         $this->terminalOperatorParty = $terminalOperatorParty;
 
@@ -2327,9 +2327,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTerminalOperatorParty(): self
+    public function unsetTerminalOperatorParty(): static
     {
         $this->terminalOperatorParty = null;
 
@@ -2356,9 +2356,9 @@ class ShipmentStageType
 
     /**
      * @param CustomsAgentParty|null $customsAgentParty
-     * @return self
+     * @return static
      */
-    public function setCustomsAgentParty(?CustomsAgentParty $customsAgentParty = null): self
+    public function setCustomsAgentParty(?CustomsAgentParty $customsAgentParty = null): static
     {
         $this->customsAgentParty = $customsAgentParty;
 
@@ -2366,9 +2366,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomsAgentParty(): self
+    public function unsetCustomsAgentParty(): static
     {
         $this->customsAgentParty = null;
 
@@ -2395,9 +2395,9 @@ class ShipmentStageType
 
     /**
      * @param EstimatedTransitPeriod|null $estimatedTransitPeriod
-     * @return self
+     * @return static
      */
-    public function setEstimatedTransitPeriod(?EstimatedTransitPeriod $estimatedTransitPeriod = null): self
+    public function setEstimatedTransitPeriod(?EstimatedTransitPeriod $estimatedTransitPeriod = null): static
     {
         $this->estimatedTransitPeriod = $estimatedTransitPeriod;
 
@@ -2405,9 +2405,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedTransitPeriod(): self
+    public function unsetEstimatedTransitPeriod(): static
     {
         $this->estimatedTransitPeriod = null;
 
@@ -2424,9 +2424,9 @@ class ShipmentStageType
 
     /**
      * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): self
+    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
     {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
@@ -2434,9 +2434,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightAllowanceCharge(): self
+    public function unsetFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = null;
 
@@ -2444,9 +2444,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFreightAllowanceCharge(): self
+    public function clearFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = [];
 
@@ -2485,9 +2485,9 @@ class ShipmentStageType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
@@ -2506,9 +2506,9 @@ class ShipmentStageType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];
@@ -2555,9 +2555,9 @@ class ShipmentStageType
 
     /**
      * @param FreightChargeLocation|null $freightChargeLocation
-     * @return self
+     * @return static
      */
-    public function setFreightChargeLocation(?FreightChargeLocation $freightChargeLocation = null): self
+    public function setFreightChargeLocation(?FreightChargeLocation $freightChargeLocation = null): static
     {
         $this->freightChargeLocation = $freightChargeLocation;
 
@@ -2565,9 +2565,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightChargeLocation(): self
+    public function unsetFreightChargeLocation(): static
     {
         $this->freightChargeLocation = null;
 
@@ -2584,9 +2584,9 @@ class ShipmentStageType
 
     /**
      * @param array<DetentionTransportEvent>|null $detentionTransportEvent
-     * @return self
+     * @return static
      */
-    public function setDetentionTransportEvent(?array $detentionTransportEvent = null): self
+    public function setDetentionTransportEvent(?array $detentionTransportEvent = null): static
     {
         $this->detentionTransportEvent = $detentionTransportEvent;
 
@@ -2594,9 +2594,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDetentionTransportEvent(): self
+    public function unsetDetentionTransportEvent(): static
     {
         $this->detentionTransportEvent = null;
 
@@ -2604,9 +2604,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDetentionTransportEvent(): self
+    public function clearDetentionTransportEvent(): static
     {
         $this->detentionTransportEvent = [];
 
@@ -2645,9 +2645,9 @@ class ShipmentStageType
 
     /**
      * @param DetentionTransportEvent $detentionTransportEvent
-     * @return self
+     * @return static
      */
-    public function addToDetentionTransportEvent(DetentionTransportEvent $detentionTransportEvent): self
+    public function addToDetentionTransportEvent(DetentionTransportEvent $detentionTransportEvent): static
     {
         $this->detentionTransportEvent[] = $detentionTransportEvent;
 
@@ -2666,9 +2666,9 @@ class ShipmentStageType
 
     /**
      * @param DetentionTransportEvent $detentionTransportEvent
-     * @return self
+     * @return static
      */
-    public function addOnceToDetentionTransportEvent(DetentionTransportEvent $detentionTransportEvent): self
+    public function addOnceToDetentionTransportEvent(DetentionTransportEvent $detentionTransportEvent): static
     {
         if (!is_array($this->detentionTransportEvent)) {
             $this->detentionTransportEvent = [];
@@ -2715,20 +2715,20 @@ class ShipmentStageType
 
     /**
      * @param RequestedDepartureTransportEvent|null $requestedDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setRequestedDepartureTransportEvent(
         ?RequestedDepartureTransportEvent $requestedDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->requestedDepartureTransportEvent = $requestedDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedDepartureTransportEvent(): self
+    public function unsetRequestedDepartureTransportEvent(): static
     {
         $this->requestedDepartureTransportEvent = null;
 
@@ -2755,20 +2755,20 @@ class ShipmentStageType
 
     /**
      * @param RequestedArrivalTransportEvent|null $requestedArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setRequestedArrivalTransportEvent(
         ?RequestedArrivalTransportEvent $requestedArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->requestedArrivalTransportEvent = $requestedArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedArrivalTransportEvent(): self
+    public function unsetRequestedArrivalTransportEvent(): static
     {
         $this->requestedArrivalTransportEvent = null;
 
@@ -2785,9 +2785,9 @@ class ShipmentStageType
 
     /**
      * @param array<RequestedWaypointTransportEvent>|null $requestedWaypointTransportEvent
-     * @return self
+     * @return static
      */
-    public function setRequestedWaypointTransportEvent(?array $requestedWaypointTransportEvent = null): self
+    public function setRequestedWaypointTransportEvent(?array $requestedWaypointTransportEvent = null): static
     {
         $this->requestedWaypointTransportEvent = $requestedWaypointTransportEvent;
 
@@ -2795,9 +2795,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestedWaypointTransportEvent(): self
+    public function unsetRequestedWaypointTransportEvent(): static
     {
         $this->requestedWaypointTransportEvent = null;
 
@@ -2805,9 +2805,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRequestedWaypointTransportEvent(): self
+    public function clearRequestedWaypointTransportEvent(): static
     {
         $this->requestedWaypointTransportEvent = [];
 
@@ -2846,11 +2846,11 @@ class ShipmentStageType
 
     /**
      * @param RequestedWaypointTransportEvent $requestedWaypointTransportEvent
-     * @return self
+     * @return static
      */
     public function addToRequestedWaypointTransportEvent(
         RequestedWaypointTransportEvent $requestedWaypointTransportEvent,
-    ): self {
+    ): static {
         $this->requestedWaypointTransportEvent[] = $requestedWaypointTransportEvent;
 
         return $this;
@@ -2868,11 +2868,11 @@ class ShipmentStageType
 
     /**
      * @param RequestedWaypointTransportEvent $requestedWaypointTransportEvent
-     * @return self
+     * @return static
      */
     public function addOnceToRequestedWaypointTransportEvent(
         RequestedWaypointTransportEvent $requestedWaypointTransportEvent,
-    ): self {
+    ): static {
         if (!is_array($this->requestedWaypointTransportEvent)) {
             $this->requestedWaypointTransportEvent = [];
         }
@@ -2918,20 +2918,20 @@ class ShipmentStageType
 
     /**
      * @param PlannedDepartureTransportEvent|null $plannedDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setPlannedDepartureTransportEvent(
         ?PlannedDepartureTransportEvent $plannedDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->plannedDepartureTransportEvent = $plannedDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedDepartureTransportEvent(): self
+    public function unsetPlannedDepartureTransportEvent(): static
     {
         $this->plannedDepartureTransportEvent = null;
 
@@ -2958,20 +2958,20 @@ class ShipmentStageType
 
     /**
      * @param PlannedArrivalTransportEvent|null $plannedArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setPlannedArrivalTransportEvent(
         ?PlannedArrivalTransportEvent $plannedArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->plannedArrivalTransportEvent = $plannedArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedArrivalTransportEvent(): self
+    public function unsetPlannedArrivalTransportEvent(): static
     {
         $this->plannedArrivalTransportEvent = null;
 
@@ -2988,9 +2988,9 @@ class ShipmentStageType
 
     /**
      * @param array<PlannedWaypointTransportEvent>|null $plannedWaypointTransportEvent
-     * @return self
+     * @return static
      */
-    public function setPlannedWaypointTransportEvent(?array $plannedWaypointTransportEvent = null): self
+    public function setPlannedWaypointTransportEvent(?array $plannedWaypointTransportEvent = null): static
     {
         $this->plannedWaypointTransportEvent = $plannedWaypointTransportEvent;
 
@@ -2998,9 +2998,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPlannedWaypointTransportEvent(): self
+    public function unsetPlannedWaypointTransportEvent(): static
     {
         $this->plannedWaypointTransportEvent = null;
 
@@ -3008,9 +3008,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPlannedWaypointTransportEvent(): self
+    public function clearPlannedWaypointTransportEvent(): static
     {
         $this->plannedWaypointTransportEvent = [];
 
@@ -3049,11 +3049,11 @@ class ShipmentStageType
 
     /**
      * @param PlannedWaypointTransportEvent $plannedWaypointTransportEvent
-     * @return self
+     * @return static
      */
     public function addToPlannedWaypointTransportEvent(
         PlannedWaypointTransportEvent $plannedWaypointTransportEvent,
-    ): self {
+    ): static {
         $this->plannedWaypointTransportEvent[] = $plannedWaypointTransportEvent;
 
         return $this;
@@ -3071,11 +3071,11 @@ class ShipmentStageType
 
     /**
      * @param PlannedWaypointTransportEvent $plannedWaypointTransportEvent
-     * @return self
+     * @return static
      */
     public function addOnceToPlannedWaypointTransportEvent(
         PlannedWaypointTransportEvent $plannedWaypointTransportEvent,
-    ): self {
+    ): static {
         if (!is_array($this->plannedWaypointTransportEvent)) {
             $this->plannedWaypointTransportEvent = [];
         }
@@ -3121,20 +3121,20 @@ class ShipmentStageType
 
     /**
      * @param ActualDepartureTransportEvent|null $actualDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setActualDepartureTransportEvent(
         ?ActualDepartureTransportEvent $actualDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->actualDepartureTransportEvent = $actualDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualDepartureTransportEvent(): self
+    public function unsetActualDepartureTransportEvent(): static
     {
         $this->actualDepartureTransportEvent = null;
 
@@ -3161,20 +3161,20 @@ class ShipmentStageType
 
     /**
      * @param ActualWaypointTransportEvent|null $actualWaypointTransportEvent
-     * @return self
+     * @return static
      */
     public function setActualWaypointTransportEvent(
         ?ActualWaypointTransportEvent $actualWaypointTransportEvent = null,
-    ): self {
+    ): static {
         $this->actualWaypointTransportEvent = $actualWaypointTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualWaypointTransportEvent(): self
+    public function unsetActualWaypointTransportEvent(): static
     {
         $this->actualWaypointTransportEvent = null;
 
@@ -3201,20 +3201,20 @@ class ShipmentStageType
 
     /**
      * @param ActualArrivalTransportEvent|null $actualArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setActualArrivalTransportEvent(
         ?ActualArrivalTransportEvent $actualArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->actualArrivalTransportEvent = $actualArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualArrivalTransportEvent(): self
+    public function unsetActualArrivalTransportEvent(): static
     {
         $this->actualArrivalTransportEvent = null;
 
@@ -3231,9 +3231,9 @@ class ShipmentStageType
 
     /**
      * @param array<TransportEvent>|null $transportEvent
-     * @return self
+     * @return static
      */
-    public function setTransportEvent(?array $transportEvent = null): self
+    public function setTransportEvent(?array $transportEvent = null): static
     {
         $this->transportEvent = $transportEvent;
 
@@ -3241,9 +3241,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEvent(): self
+    public function unsetTransportEvent(): static
     {
         $this->transportEvent = null;
 
@@ -3251,9 +3251,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportEvent(): self
+    public function clearTransportEvent(): static
     {
         $this->transportEvent = [];
 
@@ -3292,9 +3292,9 @@ class ShipmentStageType
 
     /**
      * @param TransportEvent $transportEvent
-     * @return self
+     * @return static
      */
-    public function addToTransportEvent(TransportEvent $transportEvent): self
+    public function addToTransportEvent(TransportEvent $transportEvent): static
     {
         $this->transportEvent[] = $transportEvent;
 
@@ -3313,9 +3313,9 @@ class ShipmentStageType
 
     /**
      * @param TransportEvent $transportEvent
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportEvent(TransportEvent $transportEvent): self
+    public function addOnceToTransportEvent(TransportEvent $transportEvent): static
     {
         if (!is_array($this->transportEvent)) {
             $this->transportEvent = [];
@@ -3362,20 +3362,20 @@ class ShipmentStageType
 
     /**
      * @param EstimatedDepartureTransportEvent|null $estimatedDepartureTransportEvent
-     * @return self
+     * @return static
      */
     public function setEstimatedDepartureTransportEvent(
         ?EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent = null,
-    ): self {
+    ): static {
         $this->estimatedDepartureTransportEvent = $estimatedDepartureTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedDepartureTransportEvent(): self
+    public function unsetEstimatedDepartureTransportEvent(): static
     {
         $this->estimatedDepartureTransportEvent = null;
 
@@ -3402,20 +3402,20 @@ class ShipmentStageType
 
     /**
      * @param EstimatedArrivalTransportEvent|null $estimatedArrivalTransportEvent
-     * @return self
+     * @return static
      */
     public function setEstimatedArrivalTransportEvent(
         ?EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent = null,
-    ): self {
+    ): static {
         $this->estimatedArrivalTransportEvent = $estimatedArrivalTransportEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedArrivalTransportEvent(): self
+    public function unsetEstimatedArrivalTransportEvent(): static
     {
         $this->estimatedArrivalTransportEvent = null;
 
@@ -3432,9 +3432,9 @@ class ShipmentStageType
 
     /**
      * @param array<PassengerPerson>|null $passengerPerson
-     * @return self
+     * @return static
      */
-    public function setPassengerPerson(?array $passengerPerson = null): self
+    public function setPassengerPerson(?array $passengerPerson = null): static
     {
         $this->passengerPerson = $passengerPerson;
 
@@ -3442,9 +3442,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPassengerPerson(): self
+    public function unsetPassengerPerson(): static
     {
         $this->passengerPerson = null;
 
@@ -3452,9 +3452,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPassengerPerson(): self
+    public function clearPassengerPerson(): static
     {
         $this->passengerPerson = [];
 
@@ -3493,9 +3493,9 @@ class ShipmentStageType
 
     /**
      * @param PassengerPerson $passengerPerson
-     * @return self
+     * @return static
      */
-    public function addToPassengerPerson(PassengerPerson $passengerPerson): self
+    public function addToPassengerPerson(PassengerPerson $passengerPerson): static
     {
         $this->passengerPerson[] = $passengerPerson;
 
@@ -3514,9 +3514,9 @@ class ShipmentStageType
 
     /**
      * @param PassengerPerson $passengerPerson
-     * @return self
+     * @return static
      */
-    public function addOnceToPassengerPerson(PassengerPerson $passengerPerson): self
+    public function addOnceToPassengerPerson(PassengerPerson $passengerPerson): static
     {
         if (!is_array($this->passengerPerson)) {
             $this->passengerPerson = [];
@@ -3553,9 +3553,9 @@ class ShipmentStageType
 
     /**
      * @param array<DriverPerson>|null $driverPerson
-     * @return self
+     * @return static
      */
-    public function setDriverPerson(?array $driverPerson = null): self
+    public function setDriverPerson(?array $driverPerson = null): static
     {
         $this->driverPerson = $driverPerson;
 
@@ -3563,9 +3563,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDriverPerson(): self
+    public function unsetDriverPerson(): static
     {
         $this->driverPerson = null;
 
@@ -3573,9 +3573,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDriverPerson(): self
+    public function clearDriverPerson(): static
     {
         $this->driverPerson = [];
 
@@ -3614,9 +3614,9 @@ class ShipmentStageType
 
     /**
      * @param DriverPerson $driverPerson
-     * @return self
+     * @return static
      */
-    public function addToDriverPerson(DriverPerson $driverPerson): self
+    public function addToDriverPerson(DriverPerson $driverPerson): static
     {
         $this->driverPerson[] = $driverPerson;
 
@@ -3635,9 +3635,9 @@ class ShipmentStageType
 
     /**
      * @param DriverPerson $driverPerson
-     * @return self
+     * @return static
      */
-    public function addOnceToDriverPerson(DriverPerson $driverPerson): self
+    public function addOnceToDriverPerson(DriverPerson $driverPerson): static
     {
         if (!is_array($this->driverPerson)) {
             $this->driverPerson = [];
@@ -3684,9 +3684,9 @@ class ShipmentStageType
 
     /**
      * @param ReportingPerson|null $reportingPerson
-     * @return self
+     * @return static
      */
-    public function setReportingPerson(?ReportingPerson $reportingPerson = null): self
+    public function setReportingPerson(?ReportingPerson $reportingPerson = null): static
     {
         $this->reportingPerson = $reportingPerson;
 
@@ -3694,9 +3694,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReportingPerson(): self
+    public function unsetReportingPerson(): static
     {
         $this->reportingPerson = null;
 
@@ -3713,9 +3713,9 @@ class ShipmentStageType
 
     /**
      * @param array<CrewMemberPerson>|null $crewMemberPerson
-     * @return self
+     * @return static
      */
-    public function setCrewMemberPerson(?array $crewMemberPerson = null): self
+    public function setCrewMemberPerson(?array $crewMemberPerson = null): static
     {
         $this->crewMemberPerson = $crewMemberPerson;
 
@@ -3723,9 +3723,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCrewMemberPerson(): self
+    public function unsetCrewMemberPerson(): static
     {
         $this->crewMemberPerson = null;
 
@@ -3733,9 +3733,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCrewMemberPerson(): self
+    public function clearCrewMemberPerson(): static
     {
         $this->crewMemberPerson = [];
 
@@ -3774,9 +3774,9 @@ class ShipmentStageType
 
     /**
      * @param CrewMemberPerson $crewMemberPerson
-     * @return self
+     * @return static
      */
-    public function addToCrewMemberPerson(CrewMemberPerson $crewMemberPerson): self
+    public function addToCrewMemberPerson(CrewMemberPerson $crewMemberPerson): static
     {
         $this->crewMemberPerson[] = $crewMemberPerson;
 
@@ -3795,9 +3795,9 @@ class ShipmentStageType
 
     /**
      * @param CrewMemberPerson $crewMemberPerson
-     * @return self
+     * @return static
      */
-    public function addOnceToCrewMemberPerson(CrewMemberPerson $crewMemberPerson): self
+    public function addOnceToCrewMemberPerson(CrewMemberPerson $crewMemberPerson): static
     {
         if (!is_array($this->crewMemberPerson)) {
             $this->crewMemberPerson = [];
@@ -3844,9 +3844,9 @@ class ShipmentStageType
 
     /**
      * @param SecurityOfficerPerson|null $securityOfficerPerson
-     * @return self
+     * @return static
      */
-    public function setSecurityOfficerPerson(?SecurityOfficerPerson $securityOfficerPerson = null): self
+    public function setSecurityOfficerPerson(?SecurityOfficerPerson $securityOfficerPerson = null): static
     {
         $this->securityOfficerPerson = $securityOfficerPerson;
 
@@ -3854,9 +3854,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSecurityOfficerPerson(): self
+    public function unsetSecurityOfficerPerson(): static
     {
         $this->securityOfficerPerson = null;
 
@@ -3883,9 +3883,9 @@ class ShipmentStageType
 
     /**
      * @param MasterPerson|null $masterPerson
-     * @return self
+     * @return static
      */
-    public function setMasterPerson(?MasterPerson $masterPerson = null): self
+    public function setMasterPerson(?MasterPerson $masterPerson = null): static
     {
         $this->masterPerson = $masterPerson;
 
@@ -3893,9 +3893,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMasterPerson(): self
+    public function unsetMasterPerson(): static
     {
         $this->masterPerson = null;
 
@@ -3922,9 +3922,9 @@ class ShipmentStageType
 
     /**
      * @param ShipsSurgeonPerson|null $shipsSurgeonPerson
-     * @return self
+     * @return static
      */
-    public function setShipsSurgeonPerson(?ShipsSurgeonPerson $shipsSurgeonPerson = null): self
+    public function setShipsSurgeonPerson(?ShipsSurgeonPerson $shipsSurgeonPerson = null): static
     {
         $this->shipsSurgeonPerson = $shipsSurgeonPerson;
 
@@ -3932,9 +3932,9 @@ class ShipmentStageType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipsSurgeonPerson(): self
+    public function unsetShipsSurgeonPerson(): static
     {
         $this->shipsSurgeonPerson = null;
 

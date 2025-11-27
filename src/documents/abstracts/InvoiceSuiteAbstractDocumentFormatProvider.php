@@ -165,9 +165,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     /**
      * Create a new reader instance
      *
-     * @return InvoiceSuiteAbstractDocumentFormatProvider
+     * @return static
      */
-    public function initReader(): self
+    public function initReader(): static
     {
         $this->readerInstance = new ($this->getReaderClassName())($this);
 
@@ -191,9 +191,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     /**
      * Create a new builder instance
      *
-     * @return InvoiceSuiteAbstractDocumentFormatProvider
+     * @return static
      */
-    public function initBuilder(): self
+    public function initBuilder(): static
     {
         $this->builderInstance = new ($this->getBuilderClassName())($this);
 

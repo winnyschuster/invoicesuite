@@ -654,9 +654,9 @@ class CreditNoteType
 
     /**
      * @param array<UBLExtension>|null $uBLExtensions
-     * @return self
+     * @return static
      */
-    public function setUBLExtensions(?array $uBLExtensions = null): self
+    public function setUBLExtensions(?array $uBLExtensions = null): static
     {
         $this->uBLExtensions = $uBLExtensions;
 
@@ -664,9 +664,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUBLExtensions(): self
+    public function unsetUBLExtensions(): static
     {
         $this->uBLExtensions = null;
 
@@ -674,9 +674,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearUBLExtensions(): self
+    public function clearUBLExtensions(): static
     {
         $this->uBLExtensions = [];
 
@@ -715,9 +715,9 @@ class CreditNoteType
 
     /**
      * @param UBLExtension $uBLExtensions
-     * @return self
+     * @return static
      */
-    public function addToUBLExtensions(UBLExtension $uBLExtensions): self
+    public function addToUBLExtensions(UBLExtension $uBLExtensions): static
     {
         $this->uBLExtensions[] = $uBLExtensions;
 
@@ -736,9 +736,9 @@ class CreditNoteType
 
     /**
      * @param UBLExtension $uBLExtensions
-     * @return self
+     * @return static
      */
-    public function addOnceToUBLExtensions(UBLExtension $uBLExtensions): self
+    public function addOnceToUBLExtensions(UBLExtension $uBLExtensions): static
     {
         if (!is_array($this->uBLExtensions)) {
             $this->uBLExtensions = [];
@@ -785,9 +785,9 @@ class CreditNoteType
 
     /**
      * @param UBLVersionID|null $uBLVersionID
-     * @return self
+     * @return static
      */
-    public function setUBLVersionID(?UBLVersionID $uBLVersionID = null): self
+    public function setUBLVersionID(?UBLVersionID $uBLVersionID = null): static
     {
         $this->uBLVersionID = $uBLVersionID;
 
@@ -795,9 +795,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUBLVersionID(): self
+    public function unsetUBLVersionID(): static
     {
         $this->uBLVersionID = null;
 
@@ -824,9 +824,9 @@ class CreditNoteType
 
     /**
      * @param CustomizationID|null $customizationID
-     * @return self
+     * @return static
      */
-    public function setCustomizationID(?CustomizationID $customizationID = null): self
+    public function setCustomizationID(?CustomizationID $customizationID = null): static
     {
         $this->customizationID = $customizationID;
 
@@ -834,9 +834,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomizationID(): self
+    public function unsetCustomizationID(): static
     {
         $this->customizationID = null;
 
@@ -863,9 +863,9 @@ class CreditNoteType
 
     /**
      * @param ProfileID|null $profileID
-     * @return self
+     * @return static
      */
-    public function setProfileID(?ProfileID $profileID = null): self
+    public function setProfileID(?ProfileID $profileID = null): static
     {
         $this->profileID = $profileID;
 
@@ -873,9 +873,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProfileID(): self
+    public function unsetProfileID(): static
     {
         $this->profileID = null;
 
@@ -902,9 +902,9 @@ class CreditNoteType
 
     /**
      * @param ProfileExecutionID|null $profileExecutionID
-     * @return self
+     * @return static
      */
-    public function setProfileExecutionID(?ProfileExecutionID $profileExecutionID = null): self
+    public function setProfileExecutionID(?ProfileExecutionID $profileExecutionID = null): static
     {
         $this->profileExecutionID = $profileExecutionID;
 
@@ -912,9 +912,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProfileExecutionID(): self
+    public function unsetProfileExecutionID(): static
     {
         $this->profileExecutionID = null;
 
@@ -941,9 +941,9 @@ class CreditNoteType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -951,9 +951,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -970,9 +970,9 @@ class CreditNoteType
 
     /**
      * @param bool|null $copyIndicator
-     * @return self
+     * @return static
      */
-    public function setCopyIndicator(?bool $copyIndicator = null): self
+    public function setCopyIndicator(?bool $copyIndicator = null): static
     {
         $this->copyIndicator = $copyIndicator;
 
@@ -980,9 +980,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCopyIndicator(): self
+    public function unsetCopyIndicator(): static
     {
         $this->copyIndicator = null;
 
@@ -1009,9 +1009,9 @@ class CreditNoteType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -1019,9 +1019,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -1038,9 +1038,9 @@ class CreditNoteType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -1048,9 +1048,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -1067,9 +1067,9 @@ class CreditNoteType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -1077,9 +1077,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 
@@ -1096,9 +1096,9 @@ class CreditNoteType
 
     /**
      * @param DateTimeInterface|null $taxPointDate
-     * @return self
+     * @return static
      */
-    public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): self
+    public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): static
     {
         $this->taxPointDate = $taxPointDate;
 
@@ -1106,9 +1106,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxPointDate(): self
+    public function unsetTaxPointDate(): static
     {
         $this->taxPointDate = null;
 
@@ -1135,9 +1135,9 @@ class CreditNoteType
 
     /**
      * @param CreditNoteTypeCode|null $creditNoteTypeCode
-     * @return self
+     * @return static
      */
-    public function setCreditNoteTypeCode(?CreditNoteTypeCode $creditNoteTypeCode = null): self
+    public function setCreditNoteTypeCode(?CreditNoteTypeCode $creditNoteTypeCode = null): static
     {
         $this->creditNoteTypeCode = $creditNoteTypeCode;
 
@@ -1145,9 +1145,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCreditNoteTypeCode(): self
+    public function unsetCreditNoteTypeCode(): static
     {
         $this->creditNoteTypeCode = null;
 
@@ -1164,9 +1164,9 @@ class CreditNoteType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -1174,9 +1174,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -1184,9 +1184,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -1225,9 +1225,9 @@ class CreditNoteType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -1246,9 +1246,9 @@ class CreditNoteType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -1295,9 +1295,9 @@ class CreditNoteType
 
     /**
      * @param DocumentCurrencyCode|null $documentCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setDocumentCurrencyCode(?DocumentCurrencyCode $documentCurrencyCode = null): self
+    public function setDocumentCurrencyCode(?DocumentCurrencyCode $documentCurrencyCode = null): static
     {
         $this->documentCurrencyCode = $documentCurrencyCode;
 
@@ -1305,9 +1305,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentCurrencyCode(): self
+    public function unsetDocumentCurrencyCode(): static
     {
         $this->documentCurrencyCode = null;
 
@@ -1334,9 +1334,9 @@ class CreditNoteType
 
     /**
      * @param TaxCurrencyCode|null $taxCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setTaxCurrencyCode(?TaxCurrencyCode $taxCurrencyCode = null): self
+    public function setTaxCurrencyCode(?TaxCurrencyCode $taxCurrencyCode = null): static
     {
         $this->taxCurrencyCode = $taxCurrencyCode;
 
@@ -1344,9 +1344,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxCurrencyCode(): self
+    public function unsetTaxCurrencyCode(): static
     {
         $this->taxCurrencyCode = null;
 
@@ -1373,9 +1373,9 @@ class CreditNoteType
 
     /**
      * @param PricingCurrencyCode|null $pricingCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setPricingCurrencyCode(?PricingCurrencyCode $pricingCurrencyCode = null): self
+    public function setPricingCurrencyCode(?PricingCurrencyCode $pricingCurrencyCode = null): static
     {
         $this->pricingCurrencyCode = $pricingCurrencyCode;
 
@@ -1383,9 +1383,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPricingCurrencyCode(): self
+    public function unsetPricingCurrencyCode(): static
     {
         $this->pricingCurrencyCode = null;
 
@@ -1412,9 +1412,9 @@ class CreditNoteType
 
     /**
      * @param PaymentCurrencyCode|null $paymentCurrencyCode
-     * @return self
+     * @return static
      */
-    public function setPaymentCurrencyCode(?PaymentCurrencyCode $paymentCurrencyCode = null): self
+    public function setPaymentCurrencyCode(?PaymentCurrencyCode $paymentCurrencyCode = null): static
     {
         $this->paymentCurrencyCode = $paymentCurrencyCode;
 
@@ -1422,9 +1422,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentCurrencyCode(): self
+    public function unsetPaymentCurrencyCode(): static
     {
         $this->paymentCurrencyCode = null;
 
@@ -1451,20 +1451,20 @@ class CreditNoteType
 
     /**
      * @param PaymentAlternativeCurrencyCode|null $paymentAlternativeCurrencyCode
-     * @return self
+     * @return static
      */
     public function setPaymentAlternativeCurrencyCode(
         ?PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode = null,
-    ): self {
+    ): static {
         $this->paymentAlternativeCurrencyCode = $paymentAlternativeCurrencyCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentAlternativeCurrencyCode(): self
+    public function unsetPaymentAlternativeCurrencyCode(): static
     {
         $this->paymentAlternativeCurrencyCode = null;
 
@@ -1491,9 +1491,9 @@ class CreditNoteType
 
     /**
      * @param AccountingCostCode|null $accountingCostCode
-     * @return self
+     * @return static
      */
-    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): self
+    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
     {
         $this->accountingCostCode = $accountingCostCode;
 
@@ -1501,9 +1501,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCostCode(): self
+    public function unsetAccountingCostCode(): static
     {
         $this->accountingCostCode = null;
 
@@ -1530,9 +1530,9 @@ class CreditNoteType
 
     /**
      * @param AccountingCost|null $accountingCost
-     * @return self
+     * @return static
      */
-    public function setAccountingCost(?AccountingCost $accountingCost = null): self
+    public function setAccountingCost(?AccountingCost $accountingCost = null): static
     {
         $this->accountingCost = $accountingCost;
 
@@ -1540,9 +1540,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCost(): self
+    public function unsetAccountingCost(): static
     {
         $this->accountingCost = null;
 
@@ -1569,9 +1569,9 @@ class CreditNoteType
 
     /**
      * @param LineCountNumeric|null $lineCountNumeric
-     * @return self
+     * @return static
      */
-    public function setLineCountNumeric(?LineCountNumeric $lineCountNumeric = null): self
+    public function setLineCountNumeric(?LineCountNumeric $lineCountNumeric = null): static
     {
         $this->lineCountNumeric = $lineCountNumeric;
 
@@ -1579,9 +1579,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineCountNumeric(): self
+    public function unsetLineCountNumeric(): static
     {
         $this->lineCountNumeric = null;
 
@@ -1608,9 +1608,9 @@ class CreditNoteType
 
     /**
      * @param BuyerReference|null $buyerReference
-     * @return self
+     * @return static
      */
-    public function setBuyerReference(?BuyerReference $buyerReference = null): self
+    public function setBuyerReference(?BuyerReference $buyerReference = null): static
     {
         $this->buyerReference = $buyerReference;
 
@@ -1618,9 +1618,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerReference(): self
+    public function unsetBuyerReference(): static
     {
         $this->buyerReference = null;
 
@@ -1637,9 +1637,9 @@ class CreditNoteType
 
     /**
      * @param array<InvoicePeriod>|null $invoicePeriod
-     * @return self
+     * @return static
      */
-    public function setInvoicePeriod(?array $invoicePeriod = null): self
+    public function setInvoicePeriod(?array $invoicePeriod = null): static
     {
         $this->invoicePeriod = $invoicePeriod;
 
@@ -1647,9 +1647,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInvoicePeriod(): self
+    public function unsetInvoicePeriod(): static
     {
         $this->invoicePeriod = null;
 
@@ -1657,9 +1657,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInvoicePeriod(): self
+    public function clearInvoicePeriod(): static
     {
         $this->invoicePeriod = [];
 
@@ -1698,9 +1698,9 @@ class CreditNoteType
 
     /**
      * @param InvoicePeriod $invoicePeriod
-     * @return self
+     * @return static
      */
-    public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): self
+    public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): static
     {
         $this->invoicePeriod[] = $invoicePeriod;
 
@@ -1719,9 +1719,9 @@ class CreditNoteType
 
     /**
      * @param InvoicePeriod $invoicePeriod
-     * @return self
+     * @return static
      */
-    public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): self
+    public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): static
     {
         if (!is_array($this->invoicePeriod)) {
             $this->invoicePeriod = [];
@@ -1758,9 +1758,9 @@ class CreditNoteType
 
     /**
      * @param array<DiscrepancyResponse>|null $discrepancyResponse
-     * @return self
+     * @return static
      */
-    public function setDiscrepancyResponse(?array $discrepancyResponse = null): self
+    public function setDiscrepancyResponse(?array $discrepancyResponse = null): static
     {
         $this->discrepancyResponse = $discrepancyResponse;
 
@@ -1768,9 +1768,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDiscrepancyResponse(): self
+    public function unsetDiscrepancyResponse(): static
     {
         $this->discrepancyResponse = null;
 
@@ -1778,9 +1778,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDiscrepancyResponse(): self
+    public function clearDiscrepancyResponse(): static
     {
         $this->discrepancyResponse = [];
 
@@ -1819,9 +1819,9 @@ class CreditNoteType
 
     /**
      * @param DiscrepancyResponse $discrepancyResponse
-     * @return self
+     * @return static
      */
-    public function addToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): self
+    public function addToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
     {
         $this->discrepancyResponse[] = $discrepancyResponse;
 
@@ -1840,9 +1840,9 @@ class CreditNoteType
 
     /**
      * @param DiscrepancyResponse $discrepancyResponse
-     * @return self
+     * @return static
      */
-    public function addOnceToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): self
+    public function addOnceToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
     {
         if (!is_array($this->discrepancyResponse)) {
             $this->discrepancyResponse = [];
@@ -1889,9 +1889,9 @@ class CreditNoteType
 
     /**
      * @param OrderReference|null $orderReference
-     * @return self
+     * @return static
      */
-    public function setOrderReference(?OrderReference $orderReference = null): self
+    public function setOrderReference(?OrderReference $orderReference = null): static
     {
         $this->orderReference = $orderReference;
 
@@ -1899,9 +1899,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderReference(): self
+    public function unsetOrderReference(): static
     {
         $this->orderReference = null;
 
@@ -1918,9 +1918,9 @@ class CreditNoteType
 
     /**
      * @param array<BillingReference>|null $billingReference
-     * @return self
+     * @return static
      */
-    public function setBillingReference(?array $billingReference = null): self
+    public function setBillingReference(?array $billingReference = null): static
     {
         $this->billingReference = $billingReference;
 
@@ -1928,9 +1928,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBillingReference(): self
+    public function unsetBillingReference(): static
     {
         $this->billingReference = null;
 
@@ -1938,9 +1938,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBillingReference(): self
+    public function clearBillingReference(): static
     {
         $this->billingReference = [];
 
@@ -1979,9 +1979,9 @@ class CreditNoteType
 
     /**
      * @param BillingReference $billingReference
-     * @return self
+     * @return static
      */
-    public function addToBillingReference(BillingReference $billingReference): self
+    public function addToBillingReference(BillingReference $billingReference): static
     {
         $this->billingReference[] = $billingReference;
 
@@ -2000,9 +2000,9 @@ class CreditNoteType
 
     /**
      * @param BillingReference $billingReference
-     * @return self
+     * @return static
      */
-    public function addOnceToBillingReference(BillingReference $billingReference): self
+    public function addOnceToBillingReference(BillingReference $billingReference): static
     {
         if (!is_array($this->billingReference)) {
             $this->billingReference = [];
@@ -2039,9 +2039,9 @@ class CreditNoteType
 
     /**
      * @param array<DespatchDocumentReference>|null $despatchDocumentReference
-     * @return self
+     * @return static
      */
-    public function setDespatchDocumentReference(?array $despatchDocumentReference = null): self
+    public function setDespatchDocumentReference(?array $despatchDocumentReference = null): static
     {
         $this->despatchDocumentReference = $despatchDocumentReference;
 
@@ -2049,9 +2049,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatchDocumentReference(): self
+    public function unsetDespatchDocumentReference(): static
     {
         $this->despatchDocumentReference = null;
 
@@ -2059,9 +2059,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDespatchDocumentReference(): self
+    public function clearDespatchDocumentReference(): static
     {
         $this->despatchDocumentReference = [];
 
@@ -2100,9 +2100,9 @@ class CreditNoteType
 
     /**
      * @param DespatchDocumentReference $despatchDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToDespatchDocumentReference(DespatchDocumentReference $despatchDocumentReference): self
+    public function addToDespatchDocumentReference(DespatchDocumentReference $despatchDocumentReference): static
     {
         $this->despatchDocumentReference[] = $despatchDocumentReference;
 
@@ -2121,9 +2121,9 @@ class CreditNoteType
 
     /**
      * @param DespatchDocumentReference $despatchDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDespatchDocumentReference(DespatchDocumentReference $despatchDocumentReference): self
+    public function addOnceToDespatchDocumentReference(DespatchDocumentReference $despatchDocumentReference): static
     {
         if (!is_array($this->despatchDocumentReference)) {
             $this->despatchDocumentReference = [];
@@ -2160,9 +2160,9 @@ class CreditNoteType
 
     /**
      * @param array<ReceiptDocumentReference>|null $receiptDocumentReference
-     * @return self
+     * @return static
      */
-    public function setReceiptDocumentReference(?array $receiptDocumentReference = null): self
+    public function setReceiptDocumentReference(?array $receiptDocumentReference = null): static
     {
         $this->receiptDocumentReference = $receiptDocumentReference;
 
@@ -2170,9 +2170,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceiptDocumentReference(): self
+    public function unsetReceiptDocumentReference(): static
     {
         $this->receiptDocumentReference = null;
 
@@ -2180,9 +2180,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearReceiptDocumentReference(): self
+    public function clearReceiptDocumentReference(): static
     {
         $this->receiptDocumentReference = [];
 
@@ -2221,9 +2221,9 @@ class CreditNoteType
 
     /**
      * @param ReceiptDocumentReference $receiptDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToReceiptDocumentReference(ReceiptDocumentReference $receiptDocumentReference): self
+    public function addToReceiptDocumentReference(ReceiptDocumentReference $receiptDocumentReference): static
     {
         $this->receiptDocumentReference[] = $receiptDocumentReference;
 
@@ -2242,9 +2242,9 @@ class CreditNoteType
 
     /**
      * @param ReceiptDocumentReference $receiptDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToReceiptDocumentReference(ReceiptDocumentReference $receiptDocumentReference): self
+    public function addOnceToReceiptDocumentReference(ReceiptDocumentReference $receiptDocumentReference): static
     {
         if (!is_array($this->receiptDocumentReference)) {
             $this->receiptDocumentReference = [];
@@ -2281,9 +2281,9 @@ class CreditNoteType
 
     /**
      * @param array<ContractDocumentReference>|null $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function setContractDocumentReference(?array $contractDocumentReference = null): self
+    public function setContractDocumentReference(?array $contractDocumentReference = null): static
     {
         $this->contractDocumentReference = $contractDocumentReference;
 
@@ -2291,9 +2291,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractDocumentReference(): self
+    public function unsetContractDocumentReference(): static
     {
         $this->contractDocumentReference = null;
 
@@ -2301,9 +2301,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContractDocumentReference(): self
+    public function clearContractDocumentReference(): static
     {
         $this->contractDocumentReference = [];
 
@@ -2342,9 +2342,9 @@ class CreditNoteType
 
     /**
      * @param ContractDocumentReference $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
+    public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
     {
         $this->contractDocumentReference[] = $contractDocumentReference;
 
@@ -2363,9 +2363,9 @@ class CreditNoteType
 
     /**
      * @param ContractDocumentReference $contractDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): self
+    public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
     {
         if (!is_array($this->contractDocumentReference)) {
             $this->contractDocumentReference = [];
@@ -2402,9 +2402,9 @@ class CreditNoteType
 
     /**
      * @param array<AdditionalDocumentReference>|null $additionalDocumentReference
-     * @return self
+     * @return static
      */
-    public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): self
+    public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): static
     {
         $this->additionalDocumentReference = $additionalDocumentReference;
 
@@ -2412,9 +2412,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalDocumentReference(): self
+    public function unsetAdditionalDocumentReference(): static
     {
         $this->additionalDocumentReference = null;
 
@@ -2422,9 +2422,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalDocumentReference(): self
+    public function clearAdditionalDocumentReference(): static
     {
         $this->additionalDocumentReference = [];
 
@@ -2463,9 +2463,9 @@ class CreditNoteType
 
     /**
      * @param AdditionalDocumentReference $additionalDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): self
+    public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): static
     {
         $this->additionalDocumentReference[] = $additionalDocumentReference;
 
@@ -2484,11 +2484,11 @@ class CreditNoteType
 
     /**
      * @param AdditionalDocumentReference $additionalDocumentReference
-     * @return self
+     * @return static
      */
     public function addOnceToAdditionalDocumentReference(
         AdditionalDocumentReference $additionalDocumentReference,
-    ): self {
+    ): static {
         if (!is_array($this->additionalDocumentReference)) {
             $this->additionalDocumentReference = [];
         }
@@ -2524,9 +2524,9 @@ class CreditNoteType
 
     /**
      * @param array<StatementDocumentReference>|null $statementDocumentReference
-     * @return self
+     * @return static
      */
-    public function setStatementDocumentReference(?array $statementDocumentReference = null): self
+    public function setStatementDocumentReference(?array $statementDocumentReference = null): static
     {
         $this->statementDocumentReference = $statementDocumentReference;
 
@@ -2534,9 +2534,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatementDocumentReference(): self
+    public function unsetStatementDocumentReference(): static
     {
         $this->statementDocumentReference = null;
 
@@ -2544,9 +2544,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearStatementDocumentReference(): self
+    public function clearStatementDocumentReference(): static
     {
         $this->statementDocumentReference = [];
 
@@ -2585,9 +2585,9 @@ class CreditNoteType
 
     /**
      * @param StatementDocumentReference $statementDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToStatementDocumentReference(StatementDocumentReference $statementDocumentReference): self
+    public function addToStatementDocumentReference(StatementDocumentReference $statementDocumentReference): static
     {
         $this->statementDocumentReference[] = $statementDocumentReference;
 
@@ -2606,9 +2606,9 @@ class CreditNoteType
 
     /**
      * @param StatementDocumentReference $statementDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToStatementDocumentReference(StatementDocumentReference $statementDocumentReference): self
+    public function addOnceToStatementDocumentReference(StatementDocumentReference $statementDocumentReference): static
     {
         if (!is_array($this->statementDocumentReference)) {
             $this->statementDocumentReference = [];
@@ -2645,9 +2645,9 @@ class CreditNoteType
 
     /**
      * @param array<OriginatorDocumentReference>|null $originatorDocumentReference
-     * @return self
+     * @return static
      */
-    public function setOriginatorDocumentReference(?array $originatorDocumentReference = null): self
+    public function setOriginatorDocumentReference(?array $originatorDocumentReference = null): static
     {
         $this->originatorDocumentReference = $originatorDocumentReference;
 
@@ -2655,9 +2655,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginatorDocumentReference(): self
+    public function unsetOriginatorDocumentReference(): static
     {
         $this->originatorDocumentReference = null;
 
@@ -2665,9 +2665,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearOriginatorDocumentReference(): self
+    public function clearOriginatorDocumentReference(): static
     {
         $this->originatorDocumentReference = [];
 
@@ -2706,9 +2706,9 @@ class CreditNoteType
 
     /**
      * @param OriginatorDocumentReference $originatorDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToOriginatorDocumentReference(OriginatorDocumentReference $originatorDocumentReference): self
+    public function addToOriginatorDocumentReference(OriginatorDocumentReference $originatorDocumentReference): static
     {
         $this->originatorDocumentReference[] = $originatorDocumentReference;
 
@@ -2727,11 +2727,11 @@ class CreditNoteType
 
     /**
      * @param OriginatorDocumentReference $originatorDocumentReference
-     * @return self
+     * @return static
      */
     public function addOnceToOriginatorDocumentReference(
         OriginatorDocumentReference $originatorDocumentReference,
-    ): self {
+    ): static {
         if (!is_array($this->originatorDocumentReference)) {
             $this->originatorDocumentReference = [];
         }
@@ -2767,9 +2767,9 @@ class CreditNoteType
 
     /**
      * @param array<Signature>|null $signature
-     * @return self
+     * @return static
      */
-    public function setSignature(?array $signature = null): self
+    public function setSignature(?array $signature = null): static
     {
         $this->signature = $signature;
 
@@ -2777,9 +2777,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignature(): self
+    public function unsetSignature(): static
     {
         $this->signature = null;
 
@@ -2787,9 +2787,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSignature(): self
+    public function clearSignature(): static
     {
         $this->signature = [];
 
@@ -2828,9 +2828,9 @@ class CreditNoteType
 
     /**
      * @param Signature $signature
-     * @return self
+     * @return static
      */
-    public function addToSignature(Signature $signature): self
+    public function addToSignature(Signature $signature): static
     {
         $this->signature[] = $signature;
 
@@ -2849,9 +2849,9 @@ class CreditNoteType
 
     /**
      * @param Signature $signature
-     * @return self
+     * @return static
      */
-    public function addOnceToSignature(Signature $signature): self
+    public function addOnceToSignature(Signature $signature): static
     {
         if (!is_array($this->signature)) {
             $this->signature = [];
@@ -2898,9 +2898,9 @@ class CreditNoteType
 
     /**
      * @param AccountingSupplierParty|null $accountingSupplierParty
-     * @return self
+     * @return static
      */
-    public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): self
+    public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): static
     {
         $this->accountingSupplierParty = $accountingSupplierParty;
 
@@ -2908,9 +2908,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingSupplierParty(): self
+    public function unsetAccountingSupplierParty(): static
     {
         $this->accountingSupplierParty = null;
 
@@ -2937,9 +2937,9 @@ class CreditNoteType
 
     /**
      * @param AccountingCustomerParty|null $accountingCustomerParty
-     * @return self
+     * @return static
      */
-    public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): self
+    public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): static
     {
         $this->accountingCustomerParty = $accountingCustomerParty;
 
@@ -2947,9 +2947,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountingCustomerParty(): self
+    public function unsetAccountingCustomerParty(): static
     {
         $this->accountingCustomerParty = null;
 
@@ -2976,9 +2976,9 @@ class CreditNoteType
 
     /**
      * @param PayeeParty|null $payeeParty
-     * @return self
+     * @return static
      */
-    public function setPayeeParty(?PayeeParty $payeeParty = null): self
+    public function setPayeeParty(?PayeeParty $payeeParty = null): static
     {
         $this->payeeParty = $payeeParty;
 
@@ -2986,9 +2986,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeeParty(): self
+    public function unsetPayeeParty(): static
     {
         $this->payeeParty = null;
 
@@ -3015,9 +3015,9 @@ class CreditNoteType
 
     /**
      * @param BuyerCustomerParty|null $buyerCustomerParty
-     * @return self
+     * @return static
      */
-    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): self
+    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
     {
         $this->buyerCustomerParty = $buyerCustomerParty;
 
@@ -3025,9 +3025,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerCustomerParty(): self
+    public function unsetBuyerCustomerParty(): static
     {
         $this->buyerCustomerParty = null;
 
@@ -3054,9 +3054,9 @@ class CreditNoteType
 
     /**
      * @param SellerSupplierParty|null $sellerSupplierParty
-     * @return self
+     * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
+    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
     {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
@@ -3064,9 +3064,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerSupplierParty(): self
+    public function unsetSellerSupplierParty(): static
     {
         $this->sellerSupplierParty = null;
 
@@ -3093,9 +3093,9 @@ class CreditNoteType
 
     /**
      * @param TaxRepresentativeParty|null $taxRepresentativeParty
-     * @return self
+     * @return static
      */
-    public function setTaxRepresentativeParty(?TaxRepresentativeParty $taxRepresentativeParty = null): self
+    public function setTaxRepresentativeParty(?TaxRepresentativeParty $taxRepresentativeParty = null): static
     {
         $this->taxRepresentativeParty = $taxRepresentativeParty;
 
@@ -3103,9 +3103,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxRepresentativeParty(): self
+    public function unsetTaxRepresentativeParty(): static
     {
         $this->taxRepresentativeParty = null;
 
@@ -3122,9 +3122,9 @@ class CreditNoteType
 
     /**
      * @param array<Delivery>|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?array $delivery = null): self
+    public function setDelivery(?array $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -3132,9 +3132,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -3142,9 +3142,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDelivery(): self
+    public function clearDelivery(): static
     {
         $this->delivery = [];
 
@@ -3183,9 +3183,9 @@ class CreditNoteType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addToDelivery(Delivery $delivery): self
+    public function addToDelivery(Delivery $delivery): static
     {
         $this->delivery[] = $delivery;
 
@@ -3204,9 +3204,9 @@ class CreditNoteType
 
     /**
      * @param Delivery $delivery
-     * @return self
+     * @return static
      */
-    public function addOnceToDelivery(Delivery $delivery): self
+    public function addOnceToDelivery(Delivery $delivery): static
     {
         if (!is_array($this->delivery)) {
             $this->delivery = [];
@@ -3243,9 +3243,9 @@ class CreditNoteType
 
     /**
      * @param array<DeliveryTerms>|null $deliveryTerms
-     * @return self
+     * @return static
      */
-    public function setDeliveryTerms(?array $deliveryTerms = null): self
+    public function setDeliveryTerms(?array $deliveryTerms = null): static
     {
         $this->deliveryTerms = $deliveryTerms;
 
@@ -3253,9 +3253,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryTerms(): self
+    public function unsetDeliveryTerms(): static
     {
         $this->deliveryTerms = null;
 
@@ -3263,9 +3263,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDeliveryTerms(): self
+    public function clearDeliveryTerms(): static
     {
         $this->deliveryTerms = [];
 
@@ -3304,9 +3304,9 @@ class CreditNoteType
 
     /**
      * @param DeliveryTerms $deliveryTerms
-     * @return self
+     * @return static
      */
-    public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): self
+    public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): static
     {
         $this->deliveryTerms[] = $deliveryTerms;
 
@@ -3325,9 +3325,9 @@ class CreditNoteType
 
     /**
      * @param DeliveryTerms $deliveryTerms
-     * @return self
+     * @return static
      */
-    public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): self
+    public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): static
     {
         if (!is_array($this->deliveryTerms)) {
             $this->deliveryTerms = [];
@@ -3364,9 +3364,9 @@ class CreditNoteType
 
     /**
      * @param array<PaymentMeans>|null $paymentMeans
-     * @return self
+     * @return static
      */
-    public function setPaymentMeans(?array $paymentMeans = null): self
+    public function setPaymentMeans(?array $paymentMeans = null): static
     {
         $this->paymentMeans = $paymentMeans;
 
@@ -3374,9 +3374,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentMeans(): self
+    public function unsetPaymentMeans(): static
     {
         $this->paymentMeans = null;
 
@@ -3384,9 +3384,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentMeans(): self
+    public function clearPaymentMeans(): static
     {
         $this->paymentMeans = [];
 
@@ -3425,9 +3425,9 @@ class CreditNoteType
 
     /**
      * @param PaymentMeans $paymentMeans
-     * @return self
+     * @return static
      */
-    public function addToPaymentMeans(PaymentMeans $paymentMeans): self
+    public function addToPaymentMeans(PaymentMeans $paymentMeans): static
     {
         $this->paymentMeans[] = $paymentMeans;
 
@@ -3446,9 +3446,9 @@ class CreditNoteType
 
     /**
      * @param PaymentMeans $paymentMeans
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): self
+    public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): static
     {
         if (!is_array($this->paymentMeans)) {
             $this->paymentMeans = [];
@@ -3485,9 +3485,9 @@ class CreditNoteType
 
     /**
      * @param array<PaymentTerms>|null $paymentTerms
-     * @return self
+     * @return static
      */
-    public function setPaymentTerms(?array $paymentTerms = null): self
+    public function setPaymentTerms(?array $paymentTerms = null): static
     {
         $this->paymentTerms = $paymentTerms;
 
@@ -3495,9 +3495,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentTerms(): self
+    public function unsetPaymentTerms(): static
     {
         $this->paymentTerms = null;
 
@@ -3505,9 +3505,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentTerms(): self
+    public function clearPaymentTerms(): static
     {
         $this->paymentTerms = [];
 
@@ -3546,9 +3546,9 @@ class CreditNoteType
 
     /**
      * @param PaymentTerms $paymentTerms
-     * @return self
+     * @return static
      */
-    public function addToPaymentTerms(PaymentTerms $paymentTerms): self
+    public function addToPaymentTerms(PaymentTerms $paymentTerms): static
     {
         $this->paymentTerms[] = $paymentTerms;
 
@@ -3567,9 +3567,9 @@ class CreditNoteType
 
     /**
      * @param PaymentTerms $paymentTerms
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): self
+    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
     {
         if (!is_array($this->paymentTerms)) {
             $this->paymentTerms = [];
@@ -3616,9 +3616,9 @@ class CreditNoteType
 
     /**
      * @param TaxExchangeRate|null $taxExchangeRate
-     * @return self
+     * @return static
      */
-    public function setTaxExchangeRate(?TaxExchangeRate $taxExchangeRate = null): self
+    public function setTaxExchangeRate(?TaxExchangeRate $taxExchangeRate = null): static
     {
         $this->taxExchangeRate = $taxExchangeRate;
 
@@ -3626,9 +3626,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxExchangeRate(): self
+    public function unsetTaxExchangeRate(): static
     {
         $this->taxExchangeRate = null;
 
@@ -3655,9 +3655,9 @@ class CreditNoteType
 
     /**
      * @param PricingExchangeRate|null $pricingExchangeRate
-     * @return self
+     * @return static
      */
-    public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): self
+    public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): static
     {
         $this->pricingExchangeRate = $pricingExchangeRate;
 
@@ -3665,9 +3665,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPricingExchangeRate(): self
+    public function unsetPricingExchangeRate(): static
     {
         $this->pricingExchangeRate = null;
 
@@ -3694,9 +3694,9 @@ class CreditNoteType
 
     /**
      * @param PaymentExchangeRate|null $paymentExchangeRate
-     * @return self
+     * @return static
      */
-    public function setPaymentExchangeRate(?PaymentExchangeRate $paymentExchangeRate = null): self
+    public function setPaymentExchangeRate(?PaymentExchangeRate $paymentExchangeRate = null): static
     {
         $this->paymentExchangeRate = $paymentExchangeRate;
 
@@ -3704,9 +3704,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentExchangeRate(): self
+    public function unsetPaymentExchangeRate(): static
     {
         $this->paymentExchangeRate = null;
 
@@ -3733,20 +3733,20 @@ class CreditNoteType
 
     /**
      * @param PaymentAlternativeExchangeRate|null $paymentAlternativeExchangeRate
-     * @return self
+     * @return static
      */
     public function setPaymentAlternativeExchangeRate(
         ?PaymentAlternativeExchangeRate $paymentAlternativeExchangeRate = null,
-    ): self {
+    ): static {
         $this->paymentAlternativeExchangeRate = $paymentAlternativeExchangeRate;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentAlternativeExchangeRate(): self
+    public function unsetPaymentAlternativeExchangeRate(): static
     {
         $this->paymentAlternativeExchangeRate = null;
 
@@ -3763,9 +3763,9 @@ class CreditNoteType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -3773,9 +3773,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -3783,9 +3783,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -3824,9 +3824,9 @@ class CreditNoteType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -3845,9 +3845,9 @@ class CreditNoteType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -3884,9 +3884,9 @@ class CreditNoteType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -3894,9 +3894,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -3904,9 +3904,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -3945,9 +3945,9 @@ class CreditNoteType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -3966,9 +3966,9 @@ class CreditNoteType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -4015,9 +4015,9 @@ class CreditNoteType
 
     /**
      * @param LegalMonetaryTotal|null $legalMonetaryTotal
-     * @return self
+     * @return static
      */
-    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): self
+    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
     {
         $this->legalMonetaryTotal = $legalMonetaryTotal;
 
@@ -4025,9 +4025,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLegalMonetaryTotal(): self
+    public function unsetLegalMonetaryTotal(): static
     {
         $this->legalMonetaryTotal = null;
 
@@ -4044,9 +4044,9 @@ class CreditNoteType
 
     /**
      * @param array<CreditNoteLine>|null $creditNoteLine
-     * @return self
+     * @return static
      */
-    public function setCreditNoteLine(?array $creditNoteLine = null): self
+    public function setCreditNoteLine(?array $creditNoteLine = null): static
     {
         $this->creditNoteLine = $creditNoteLine;
 
@@ -4054,9 +4054,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCreditNoteLine(): self
+    public function unsetCreditNoteLine(): static
     {
         $this->creditNoteLine = null;
 
@@ -4064,9 +4064,9 @@ class CreditNoteType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCreditNoteLine(): self
+    public function clearCreditNoteLine(): static
     {
         $this->creditNoteLine = [];
 
@@ -4105,9 +4105,9 @@ class CreditNoteType
 
     /**
      * @param CreditNoteLine $creditNoteLine
-     * @return self
+     * @return static
      */
-    public function addToCreditNoteLine(CreditNoteLine $creditNoteLine): self
+    public function addToCreditNoteLine(CreditNoteLine $creditNoteLine): static
     {
         $this->creditNoteLine[] = $creditNoteLine;
 
@@ -4126,9 +4126,9 @@ class CreditNoteType
 
     /**
      * @param CreditNoteLine $creditNoteLine
-     * @return self
+     * @return static
      */
-    public function addOnceToCreditNoteLine(CreditNoteLine $creditNoteLine): self
+    public function addOnceToCreditNoteLine(CreditNoteLine $creditNoteLine): static
     {
         if (!is_array($this->creditNoteLine)) {
             $this->creditNoteLine = [];

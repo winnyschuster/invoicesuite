@@ -69,11 +69,11 @@ class InvoiceSuiteDocumentBuilder
      * Create a new InvoiceDocumentBuilder instance for the given format provider
      *
      * @param  string                      $formatProviderUniqueId
-     * @return InvoiceSuiteDocumentBuilder
+     * @return static
      */
     public static function createByProviderUniqueId(
         string $formatProviderUniqueId
-    ): self {
+    ): static {
         return new static($formatProviderUniqueId);
     }
 
@@ -137,11 +137,11 @@ class InvoiceSuiteDocumentBuilder
      * Create a document by a DTO
      *
      * @param  InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
-     * @return self
+     * @return static
      */
     public function createFromDTO(
         InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->createFromDTO($newDocumentDTO);
 
         return $this;
@@ -155,7 +155,7 @@ class InvoiceSuiteDocumentBuilder
      */
     public function setDocumentNo(
         ?string $newDocumentNo = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentNo($newDocumentNo);
 
         return $this;
@@ -169,7 +169,7 @@ class InvoiceSuiteDocumentBuilder
      */
     public function setDocumentType(
         ?string $newDocumentType = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentType($newDocumentType);
 
         return $this;
@@ -179,11 +179,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new document description
      *
      * @param  null|string $newDocumentDescription The documenttype as free text
-     * @return self
+     * @return static
      */
     public function setDocumentDescription(
         ?string $newDocumentDescription = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentDescription($newDocumentDescription);
 
         return $this;
@@ -193,11 +193,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new document language
      *
      * @param  null|string $newDocumentLanguage Language indicator. The language code in which the document was written
-     * @return self
+     * @return static
      */
     public function setDocumentLanguage(
         ?string $newDocumentLanguage = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentLanguage($newDocumentLanguage);
 
         return $this;
@@ -207,11 +207,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new document date (e.g. invoice date)
      *
      * @param  null|DateTimeInterface $newDocumentDate Date of the document. The date when the document was issued by the seller
-     * @return self
+     * @return static
      */
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentDate($newDocumentDate);
 
         return $this;
@@ -221,11 +221,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new document period
      *
      * @param  null|DateTimeInterface $newCompleteDate Contractual due date of the document
-     * @return self
+     * @return static
      */
     public function setDocumentCompleteDate(
         ?DateTimeInterface $newCompleteDate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentCompleteDate($newCompleteDate);
 
         return $this;
@@ -235,11 +235,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new document currency
      *
      * @param  null|string $newDocumentCurrency Code for the invoice currency
-     * @return self
+     * @return static
      */
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentCurrency($newDocumentCurrency);
 
         return $this;
@@ -249,11 +249,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new document tax currency
      *
      * @param  null|string $newDocumentTaxCurrency Code for the tax currency
-     * @return self
+     * @return static
      */
     public function setDocumentTaxCurrency(
         ?string $newDocumentTaxCurrency = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxCurrency($newDocumentTaxCurrency);
 
         return $this;
@@ -263,11 +263,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new status of the copy indicator
      *
      * @param  null|bool $newDocumentIsCopy Indicates that the document is a copy
-     * @return self
+     * @return static
      */
     public function setDocumentIsCopy(
         ?bool $newDocumentIsCopy = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentIsCopy($newDocumentIsCopy);
 
         return $this;
@@ -277,11 +277,11 @@ class InvoiceSuiteDocumentBuilder
      * Sets the new status of the test indicator
      *
      * @param  null|bool $newDocumentIsTest Indicates that the document is a test
-     * @return self
+     * @return static
      */
     public function setDocumentIsTest(
         ?bool $newDocumentIsTest = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentIsTest($newDocumentIsTest);
 
         return $this;
@@ -293,13 +293,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
     public function setDocumentNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentNote($newContent, $newContentCode, $newSubjectCode);
 
         return $this;
@@ -311,13 +311,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
     public function addDocumentNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentNote($newContent, $newContentCode, $newSubjectCode);
 
         return $this;
@@ -329,13 +329,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function setDocumentBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBillingPeriod($newStartDate, $newEndDate, $newDescription);
 
         return $this;
@@ -347,13 +347,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function addDocumentBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBillingPeriod($newStartDate, $newEndDate, $newDescription);
 
         return $this;
@@ -364,9 +364,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPostingReference($newType, $newAccountId);
 
@@ -378,9 +378,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPostingReference($newType, $newAccountId);
 
@@ -392,12 +392,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -408,12 +408,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -424,12 +424,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Buyers's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -440,12 +440,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Buyers's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -456,12 +456,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Quotation number
      * @param  null|DateTimeInterface $newReferenceDate   quotation date
-     * @return self
+     * @return static
      */
     public function setDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -472,12 +472,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber quotation number
      * @param  null|DateTimeInterface $newReferenceDate   quotation date
-     * @return self
+     * @return static
      */
     public function addDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentQuotationReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -488,12 +488,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  string                 $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      */
     public function setDocumentContractReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -504,12 +504,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  string                 $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      */
     public function addDocumentContractReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -524,7 +524,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function setDocumentAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -533,7 +533,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentAdditionalReference(
             $newReferenceNumber,
             $newReferenceDate,
@@ -555,7 +555,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function addDocumentAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -564,7 +564,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentAdditionalReference(
             $newReferenceNumber,
             $newReferenceDate,
@@ -583,13 +583,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceReference(
             $newReferenceNumber,
             $newReferenceDate,
@@ -605,13 +605,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceReference(
             $newReferenceNumber,
             $newReferenceDate,
@@ -626,9 +626,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      */
-    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): self
+    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProjectReference($newReferenceNumber, $newName);
 
@@ -640,9 +640,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      */
-    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): self
+    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProjectReference($newReferenceNumber, $newName);
 
@@ -654,12 +654,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber
      * @param  null|DateTimeInterface $newReferenceDate
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -670,12 +670,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber
      * @param  null|DateTimeInterface $newReferenceDate
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateCustomerOrderReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -686,12 +686,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      */
     public function setDocumentDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -702,12 +702,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      */
     public function addDocumentDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -718,12 +718,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      */
     public function setDocumentReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -734,12 +734,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      */
     public function addDocumentReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -750,12 +750,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      */
     public function setDocumentDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -766,12 +766,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      */
     public function addDocumentDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentDeliveryNoteReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
@@ -781,11 +781,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate Actual delivery date
-     * @return self
+     * @return static
      */
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSupplyChainEvent($newDate);
 
         return $this;
@@ -795,11 +795,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the identifier assigned by the buyer and used for internal routing
      *
      * @param  null|string $newBuyerReference An identifier assigned by the buyer and used for internal routing
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerReference(
         ?string $newBuyerReference = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerReference($newBuyerReference);
 
         return $this;
@@ -809,11 +809,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the seller/supplier party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentSellerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerName($newName);
 
         return $this;
@@ -823,11 +823,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the seller/supplier party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentSellerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerName($newName);
 
         return $this;
@@ -837,11 +837,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentSellerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerId($newId);
 
         return $this;
@@ -851,11 +851,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentSellerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerId($newId);
 
         return $this;
@@ -866,9 +866,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -880,9 +880,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -894,12 +894,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentSellerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -910,12 +910,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentSellerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -931,7 +931,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentSellerAddress(
         ?string $newAddressLine1 = null,
@@ -941,7 +941,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -957,7 +957,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentSellerAddress(
         ?string $newAddressLine1 = null,
@@ -967,7 +967,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -979,13 +979,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentSellerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -997,13 +997,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentSellerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1017,7 +1017,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentSellerContact(
         ?string $newPersonName = null,
@@ -1025,7 +1025,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1039,7 +1039,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentSellerContact(
         ?string $newPersonName = null,
@@ -1047,7 +1047,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1058,9 +1058,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerCommunication($newType, $newUri);
 
@@ -1072,9 +1072,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerCommunication($newType, $newUri);
 
@@ -1085,11 +1085,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerName($newName);
 
         return $this;
@@ -1099,11 +1099,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerName($newName);
 
         return $this;
@@ -1113,11 +1113,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerId($newId);
 
         return $this;
@@ -1127,11 +1127,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerId($newId);
 
         return $this;
@@ -1142,9 +1142,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -1156,9 +1156,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -1170,12 +1170,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1186,12 +1186,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1207,7 +1207,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerAddress(
         ?string $newAddressLine1 = null,
@@ -1217,7 +1217,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -1233,7 +1233,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerAddress(
         ?string $newAddressLine1 = null,
@@ -1243,7 +1243,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -1255,13 +1255,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1273,13 +1273,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1293,7 +1293,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber
      * @param  null|string $newFaxNumber
      * @param  null|string $newEmailAddress
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerContact(
         ?string $newPersonName = null,
@@ -1301,7 +1301,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1315,7 +1315,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerContact(
         ?string $newPersonName = null,
@@ -1323,7 +1323,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1334,9 +1334,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentBuyerCommunication($newType, $newUri);
 
@@ -1348,9 +1348,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentBuyerCommunication($newType, $newUri);
 
@@ -1361,11 +1361,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeName($newName);
 
         return $this;
@@ -1375,11 +1375,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeName($newName);
 
         return $this;
@@ -1389,11 +1389,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeId($newId);
 
         return $this;
@@ -1403,11 +1403,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeId($newId);
 
         return $this;
@@ -1418,12 +1418,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1434,12 +1434,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1450,12 +1450,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1466,12 +1466,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1487,7 +1487,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
@@ -1497,7 +1497,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -1513,7 +1513,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
@@ -1523,7 +1523,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -1535,13 +1535,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1553,13 +1553,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1573,7 +1573,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeContact(
         ?string $newPersonName = null,
@@ -1581,7 +1581,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1595,7 +1595,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeContact(
         ?string $newPersonName = null,
@@ -1603,7 +1603,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1614,9 +1614,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeCommunication($newType, $newUri);
 
@@ -1628,9 +1628,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeCommunication($newType, $newUri);
 
@@ -1641,11 +1641,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserName($newName);
 
         return $this;
@@ -1655,11 +1655,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserName($newName);
 
         return $this;
@@ -1669,11 +1669,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserId($newId);
 
         return $this;
@@ -1683,11 +1683,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserId($newId);
 
         return $this;
@@ -1698,12 +1698,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1714,12 +1714,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -1730,12 +1730,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1746,12 +1746,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -1767,7 +1767,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserAddress(
         ?string $newAddressLine1 = null,
@@ -1777,7 +1777,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -1793,7 +1793,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserAddress(
         ?string $newAddressLine1 = null,
@@ -1803,7 +1803,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -1815,13 +1815,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1833,13 +1833,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -1853,7 +1853,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserContact(
         ?string $newPersonName = null,
@@ -1861,7 +1861,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1875,7 +1875,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserContact(
         ?string $newPersonName = null,
@@ -1883,7 +1883,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -1894,9 +1894,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentProductEndUserCommunication($newType, $newUri);
 
@@ -1908,9 +1908,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentProductEndUserCommunication($newType, $newUri);
 
@@ -1921,11 +1921,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToName($newName);
 
         return $this;
@@ -1935,11 +1935,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToName($newName);
 
         return $this;
@@ -1949,11 +1949,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToId($newId);
 
         return $this;
@@ -1963,11 +1963,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToId($newId);
 
         return $this;
@@ -1978,9 +1978,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -1992,9 +1992,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -2006,12 +2006,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2022,12 +2022,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2043,7 +2043,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentShipToAddress(
         ?string $newAddressLine1 = null,
@@ -2053,7 +2053,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2069,7 +2069,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentShipToAddress(
         ?string $newAddressLine1 = null,
@@ -2079,7 +2079,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2091,13 +2091,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2109,13 +2109,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2129,7 +2129,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentShipToContact(
         ?string $newPersonName = null,
@@ -2137,7 +2137,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2151,7 +2151,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentShipToContact(
         ?string $newPersonName = null,
@@ -2159,7 +2159,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2170,9 +2170,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipToCommunication($newType, $newUri);
 
@@ -2184,9 +2184,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipToCommunication($newType, $newUri);
 
@@ -2197,11 +2197,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToName($newName);
 
         return $this;
@@ -2211,11 +2211,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToName($newName);
 
         return $this;
@@ -2225,11 +2225,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToId($newId);
 
         return $this;
@@ -2239,11 +2239,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToId($newId);
 
         return $this;
@@ -2254,12 +2254,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -2270,12 +2270,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
@@ -2286,12 +2286,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2302,12 +2302,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2323,7 +2323,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -2333,7 +2333,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2349,7 +2349,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -2359,7 +2359,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2371,13 +2371,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2389,13 +2389,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2409,7 +2409,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToContact(
         ?string $newPersonName = null,
@@ -2417,7 +2417,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2431,7 +2431,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToContact(
         ?string $newPersonName = null,
@@ -2439,7 +2439,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2450,9 +2450,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentUltimateShipToCommunication($newType, $newUri);
 
@@ -2464,9 +2464,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentUltimateShipToCommunication($newType, $newUri);
 
@@ -2477,11 +2477,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromName($newName);
 
         return $this;
@@ -2491,11 +2491,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromName($newName);
 
         return $this;
@@ -2505,11 +2505,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromId($newId);
 
         return $this;
@@ -2519,11 +2519,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromId($newId);
 
         return $this;
@@ -2534,9 +2534,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -2548,9 +2548,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -2562,12 +2562,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2578,12 +2578,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2599,7 +2599,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromAddress(
         ?string $newAddressLine1 = null,
@@ -2609,7 +2609,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2625,7 +2625,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromAddress(
         ?string $newAddressLine1 = null,
@@ -2635,7 +2635,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2647,13 +2647,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2665,13 +2665,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2685,7 +2685,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromContact(
         ?string $newPersonName = null,
@@ -2693,7 +2693,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2707,7 +2707,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromContact(
         ?string $newPersonName = null,
@@ -2715,7 +2715,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2726,9 +2726,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentShipFromCommunication($newType, $newUri);
 
@@ -2740,9 +2740,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentShipFromCommunication($newType, $newUri);
 
@@ -2753,11 +2753,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerName($newName);
 
         return $this;
@@ -2767,11 +2767,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerName($newName);
 
         return $this;
@@ -2781,11 +2781,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerId($newId);
 
         return $this;
@@ -2795,11 +2795,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerId($newId);
 
         return $this;
@@ -2810,9 +2810,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -2824,9 +2824,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -2838,12 +2838,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2854,12 +2854,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -2875,7 +2875,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerAddress(
         ?string $newAddressLine1 = null,
@@ -2885,7 +2885,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2901,7 +2901,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerAddress(
         ?string $newAddressLine1 = null,
@@ -2911,7 +2911,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -2923,13 +2923,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2941,13 +2941,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -2961,7 +2961,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerContact(
         ?string $newPersonName = null,
@@ -2969,7 +2969,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -2983,7 +2983,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerContact(
         ?string $newPersonName = null,
@@ -2991,7 +2991,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -3002,9 +3002,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoicerCommunication($newType, $newUri);
 
@@ -3016,9 +3016,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoicerCommunication($newType, $newUri);
 
@@ -3029,11 +3029,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeName($newName);
 
         return $this;
@@ -3043,11 +3043,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeName($newName);
 
         return $this;
@@ -3057,11 +3057,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeId($newId);
 
         return $this;
@@ -3071,11 +3071,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeId($newId);
 
         return $this;
@@ -3086,9 +3086,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -3100,9 +3100,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -3114,12 +3114,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3130,12 +3130,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3151,7 +3151,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeAddress(
         ?string $newAddressLine1 = null,
@@ -3161,7 +3161,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -3177,7 +3177,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeAddress(
         ?string $newAddressLine1 = null,
@@ -3187,7 +3187,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -3199,13 +3199,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3217,13 +3217,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3237,7 +3237,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeContact(
         ?string $newPersonName = null,
@@ -3245,7 +3245,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -3259,7 +3259,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeContact(
         ?string $newPersonName = null,
@@ -3267,7 +3267,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -3278,9 +3278,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentInvoiceeCommunication($newType, $newUri);
 
@@ -3292,9 +3292,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentInvoiceeCommunication($newType, $newUri);
 
@@ -3305,11 +3305,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeName($newName);
 
         return $this;
@@ -3319,11 +3319,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeName($newName);
 
         return $this;
@@ -3333,11 +3333,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeId($newId);
 
         return $this;
@@ -3347,11 +3347,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeId($newId);
 
         return $this;
@@ -3362,9 +3362,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -3376,9 +3376,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
 
@@ -3390,12 +3390,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3406,12 +3406,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
@@ -3427,7 +3427,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeAddress(
         ?string $newAddressLine1 = null,
@@ -3437,7 +3437,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -3453,7 +3453,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeAddress(
         ?string $newAddressLine1 = null,
@@ -3463,7 +3463,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
@@ -3475,13 +3475,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3493,13 +3493,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
@@ -3513,7 +3513,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeContact(
         ?string $newPersonName = null,
@@ -3521,7 +3521,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -3535,7 +3535,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeContact(
         ?string $newPersonName = null,
@@ -3543,7 +3543,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
@@ -3554,9 +3554,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPayeeCommunication($newType, $newUri);
 
@@ -3568,9 +3568,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPayeeCommunication($newType, $newUri);
 
@@ -3591,7 +3591,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMean(
         ?string $newTypeCode = null,
@@ -3605,7 +3605,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentMean(
             $newTypeCode,
             $newName,
@@ -3637,7 +3637,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMean(
         ?string $newTypeCode = null,
@@ -3651,7 +3651,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentMean(
             $newTypeCode,
             $newName,
@@ -3677,7 +3677,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsCreditTransferSepa(
         ?string $newPayeeIban = null,
@@ -3685,7 +3685,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentMeanAsCreditTransferSepa(
             $newPayeeIban,
             $newPayeeAccountName,
@@ -3705,7 +3705,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsCreditTransferSepa(
         ?string $newPayeeIban = null,
@@ -3713,7 +3713,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentMeanAsCreditTransferSepa(
             $newPayeeIban,
             $newPayeeAccountName,
@@ -3733,7 +3733,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsCreditTransferNoSepa(
         ?string $newPayeeIban = null,
@@ -3741,7 +3741,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentMeanAsCreditTransferNoSepa(
             $newPayeeIban,
             $newPayeeAccountName,
@@ -3761,7 +3761,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsCreditTransferNoSepa(
         ?string $newPayeeIban = null,
@@ -3769,7 +3769,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentMeanAsCreditTransferNoSepa(
             $newPayeeIban,
             $newPayeeAccountName,
@@ -3786,12 +3786,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsDirectDebitSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentMeanAsDirectDebitSepa(
             $newBuyerIban,
             $newMandate
@@ -3805,12 +3805,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsDirectDebitSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentMeanAsDirectDebitSepa(
             $newBuyerIban,
             $newMandate
@@ -3824,12 +3824,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsDirectDebitNoSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentMeanAsDirectDebitNoSepa(
             $newBuyerIban,
             $newMandate
@@ -3843,12 +3843,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsDirectDebitNoSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentMeanAsDirectDebitNoSepa(
             $newBuyerIban,
             $newMandate
@@ -3862,12 +3862,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newFinancialCardId     Primary account number (PAN) of the payment card
      * @param  null|string $newFinancialCardHolder Name of the payment card holder
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsPaymentCard(
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentMeanAsPaymentCard(
             $newFinancialCardId,
             $newFinancialCardHolder
@@ -3881,12 +3881,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newFinancialCardId     Primary account number (PAN) of the payment card
      * @param  null|string $newFinancialCardHolder Name of the payment card holder
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsPaymentCard(
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentMeanAsPaymentCard(
             $newFinancialCardId,
             $newFinancialCardHolder
@@ -3899,11 +3899,11 @@ class InvoiceSuiteDocumentBuilder
      * Set Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentCreditorReferenceID(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentCreditorReferenceID(
             $newId
         );
@@ -3915,11 +3915,11 @@ class InvoiceSuiteDocumentBuilder
      * Add Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentCreditorReferenceID(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentCreditorReferenceID(
             $newId
         );
@@ -3933,13 +3933,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
      * @param  null|string            $newMandate     Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentTerm(
         ?string $newDescription = null,
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentTerm(
             $newDescription,
             $newDueDate,
@@ -3955,13 +3955,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
      * @param  null|string            $newMandate     Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentTerm(
         ?string $newDescription = null,
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentTerm(
             $newDescription,
             $newDueDate,
@@ -3980,7 +3980,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentDiscountTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -3989,7 +3989,7 @@ class InvoiceSuiteDocumentBuilder
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentDiscountTermsInLastPaymentTerm(
             $newBaseAmount,
             $newDiscountAmount,
@@ -4011,7 +4011,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentDiscountTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -4020,7 +4020,7 @@ class InvoiceSuiteDocumentBuilder
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentDiscountTermsInLastPaymentTerm(
             $newBaseAmount,
             $newDiscountAmount,
@@ -4042,7 +4042,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentPenaltyTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -4051,7 +4051,7 @@ class InvoiceSuiteDocumentBuilder
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPaymentPenaltyTermsInLastPaymentTerm(
             $newBaseAmount,
             $newPenaltyAmount,
@@ -4073,7 +4073,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentPenaltyTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -4082,7 +4082,7 @@ class InvoiceSuiteDocumentBuilder
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPaymentPenaltyTermsInLastPaymentTerm(
             $newBaseAmount,
             $newPenaltyAmount,
@@ -4107,7 +4107,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      */
     public function setDocumentTax(
         ?string $newTaxCategory = null,
@@ -4119,7 +4119,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newExemptionReasonCode = null,
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTax(
             $newTaxCategory,
             $newTaxType,
@@ -4147,7 +4147,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      */
     public function addDocumentTax(
         ?string $newTaxCategory = null,
@@ -4159,7 +4159,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newExemptionReasonCode = null,
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTax(
             $newTaxCategory,
             $newTaxType,
@@ -4187,7 +4187,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function setDocumentAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -4199,7 +4199,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentAllowanceCharge(
             $newChargeIndicator,
             $newAllowanceChargeAmount,
@@ -4227,7 +4227,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function addDocumentAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -4239,7 +4239,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentAllowanceCharge(
             $newChargeIndicator,
             $newAllowanceChargeAmount,
@@ -4263,7 +4263,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      */
     public function setDocumentLogisticServiceCharge(
         ?float $newChargeAmount = null,
@@ -4271,7 +4271,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newTaxCategory = null,
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentLogisticServiceCharge(
             $newChargeAmount,
             $newDescription,
@@ -4291,7 +4291,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      */
     public function addDocumentLogisticServiceCharge(
         ?float $newChargeAmount = null,
@@ -4299,7 +4299,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newTaxCategory = null,
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentLogisticServiceCharge(
             $newChargeAmount,
             $newDescription,
@@ -4314,9 +4314,9 @@ class InvoiceSuiteDocumentBuilder
     /**
      * Prepare the document-level summation (Sets all values to zero)
      *
-     * @return self
+     * @return static
      */
-    public function prepareDocumentSummation(): self
+    public function prepareDocumentSummation(): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->prepareDocumentSummation();
 
@@ -4335,7 +4335,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float $newDueAmount           Payment amount due
      * @param  null|float $newPrepaidAmount       Prepayment amount
      * @param  null|float $newRoungingAmount      Rounding amount
-     * @return self
+     * @return static
      */
     public function setDocumentSummation(
         ?float $newNetAmount = null,
@@ -4348,7 +4348,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newDueAmount = null,
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSummation(
             $newNetAmount,
             $newChargeTotalAmount,
@@ -4372,14 +4372,14 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newParentPositionId     Identification of the parent position
      * @param  null|string $newLineStatusCode       Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
      * @param  null|string $newLineStatusReasonCode Type to specify whether the invoice line is
-     * @return self
+     * @return static
      */
     public function addDocumentPosition(
         ?string $newPositionId = null,
         ?string $newParentPositionId = null,
         ?string $newLineStatusCode = null,
         ?string $newLineStatusReasonCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPosition(
             $newPositionId,
             $newParentPositionId,
@@ -4396,13 +4396,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      */
     public function setDocumentPositionNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionNote(
             $newContent,
             $newContentCode,
@@ -4418,13 +4418,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      */
     public function addDocumentPositionNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionNote(
             $newContent,
             $newContentCode,
@@ -4450,7 +4450,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductBrandName          Brand name of the product
      * @param  null|string $newProductModelName          Model name of the product
      * @param  null|string $newProductOriginTradeCountry Code indicating the country the goods came from
-     * @return self
+     * @return static
      */
     public function setDocumentPositionProductDetails(
         ?string $newProductId = null,
@@ -4466,7 +4466,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newProductBrandName = null,
         ?string $newProductModelName = null,
         ?string $newProductOriginTradeCountry = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionProductDetails(
             $newProductId,
             $newProductName,
@@ -4494,7 +4494,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      */
     public function setDocumentPositionProductCharacteristic(
         ?string $newProductCharacteristicDescription = null,
@@ -4502,7 +4502,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newProductCharacteristicType = null,
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionProductCharacteristic(
             $newProductCharacteristicDescription,
             $newProductCharacteristicValue,
@@ -4522,7 +4522,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      */
     public function addDocumentPositionProductCharacteristic(
         ?string $newProductCharacteristicDescription = null,
@@ -4530,7 +4530,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newProductCharacteristicType = null,
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionProductCharacteristic(
             $newProductCharacteristicDescription,
             $newProductCharacteristicValue,
@@ -4549,14 +4549,14 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
     public function setDocumentPositionProductClassification(
         ?string $newProductClassificationCode = null,
         ?string $newProductClassificationListId = null,
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionProductClassification(
             $newProductClassificationCode,
             $newProductClassificationListId,
@@ -4574,14 +4574,14 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
     public function addDocumentPositionProductClassification(
         ?string $newProductClassificationCode = null,
         ?string $newProductClassificationListId = null,
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionProductClassification(
             $newProductClassificationCode,
             $newProductClassificationListId,
@@ -4605,7 +4605,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      */
     public function setDocumentPositionReferencedProduct(
         ?string $newProductId = null,
@@ -4618,7 +4618,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newProductIndustryId = null,
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionReferencedProduct(
             $newProductId,
             $newProductName,
@@ -4648,7 +4648,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      */
     public function addDocumentPositionReferencedProduct(
         ?string $newProductId = null,
@@ -4661,7 +4661,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newProductIndustryId = null,
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionReferencedProduct(
             $newProductId,
             $newProductName,
@@ -4684,13 +4684,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionSellerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4706,13 +4706,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionSellerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4728,13 +4728,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionBuyerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4750,13 +4750,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionBuyerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4772,13 +4772,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionQuotationReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionQuotationReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4794,13 +4794,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionQuotationReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionQuotationReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4816,13 +4816,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionContractReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionContractReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4838,13 +4838,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionContractReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionContractReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4864,7 +4864,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function setDocumentPositionAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -4874,7 +4874,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionAdditionalReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4898,7 +4898,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function addDocumentPositionAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -4908,7 +4908,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionAdditionalReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4928,13 +4928,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateCustomerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4950,13 +4950,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateCustomerOrderReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4972,13 +4972,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionDespatchAdviceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -4994,13 +4994,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionDespatchAdviceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5016,13 +5016,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionReceivingAdviceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5038,13 +5038,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionReceivingAdviceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5060,13 +5060,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionDeliveryNoteReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5082,13 +5082,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionDeliveryNoteReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5105,14 +5105,14 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function setDocumentPositionInvoiceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionInvoiceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5130,14 +5130,14 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function addDocumentPositionInvoiceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionInvoiceReference(
             $newReferenceNumber,
             $newReferenceLineNumber,
@@ -5154,13 +5154,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newGrossPrice                  Unit price excluding sales tax before deduction of the discount on the item price
      * @param  null|float  $newGrossPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     public function setDocumentPositionGrossPrice(
         ?float $newGrossPrice = null,
         ?float $newGrossPriceBasisQuantity = null,
         ?string $newGrossPriceBasisQuantityUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionGrossPrice(
             $newGrossPrice,
             $newGrossPriceBasisQuantity,
@@ -5179,7 +5179,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionGrossPriceAllowanceCharge(
         ?float $newGrossPriceAllowanceChargeAmount = null,
@@ -5188,7 +5188,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newGrossPriceAllowanceChargeBasisAmount = null,
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionGrossPriceAllowanceCharge(
             $newGrossPriceAllowanceChargeAmount,
             $newIsCharge,
@@ -5210,7 +5210,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      */
     public function addDocumentPositionGrossPriceAllowanceCharge(
         ?float $newGrossPriceAllowanceChargeAmount = null,
@@ -5219,7 +5219,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newGrossPriceAllowanceChargeBasisAmount = null,
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionGrossPriceAllowanceCharge(
             $newGrossPriceAllowanceChargeAmount,
             $newIsCharge,
@@ -5238,13 +5238,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newNetPrice                  Unit price excluding sales tax after deduction of the discount on the item price
      * @param  null|float  $newNetPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     public function setDocumentPositionNetPrice(
         ?float $newNetPrice = null,
         ?float $newNetPriceBasisQuantity = null,
         ?string $newNetPriceBasisQuantityUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionNetPrice(
             $newNetPrice,
             $newNetPriceBasisQuantity,
@@ -5263,7 +5263,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionNetPriceTax(
         ?string $newTaxCategory = null,
@@ -5272,7 +5272,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newTaxPercent = null,
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionNetPriceTax(
             $newTaxCategory,
             $newTaxType,
@@ -5294,7 +5294,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newChargeFreeQuantityUnit Charge Free quantity unit
      * @param  null|float  $newPackageQuantity        Package quantity
      * @param  null|string $newPackageQuantityUnit    Package quantity unit
-     * @return self
+     * @return static
      */
     public function setDocumentPositionQuantities(
         ?float $newQuantity = null,
@@ -5303,7 +5303,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newChargeFreeQuantityUnit = null,
         ?float $newPackageQuantity = null,
         ?string $newPackageQuantityUnit = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionQuantities(
             $newQuantity,
             $newQuantityUnit,
@@ -5320,11 +5320,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToName(
             $newName
         );
@@ -5336,11 +5336,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToName(
             $newName
         );
@@ -5352,11 +5352,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToId(
             $newId
         );
@@ -5368,11 +5368,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToId(
             $newId
         );
@@ -5385,12 +5385,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToGlobalId(
             $newGlobalId,
             $newGlobalIdType
@@ -5404,12 +5404,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToGlobalId(
             $newGlobalId,
             $newGlobalIdType
@@ -5423,12 +5423,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
@@ -5442,12 +5442,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
@@ -5466,7 +5466,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToAddress(
         ?string $newAddressLine1 = null,
@@ -5476,7 +5476,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -5500,7 +5500,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToAddress(
         ?string $newAddressLine1 = null,
@@ -5510,7 +5510,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -5530,13 +5530,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToLegalOrganisation(
             $newType,
             $newId,
@@ -5552,13 +5552,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToLegalOrganisation(
             $newType,
             $newId,
@@ -5576,7 +5576,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToContact(
         ?string $newPersonName = null,
@@ -5584,7 +5584,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -5604,7 +5604,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToContact(
         ?string $newPersonName = null,
@@ -5612,7 +5612,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -5629,12 +5629,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionShipToCommunication(
             $newType,
             $newUri
@@ -5648,12 +5648,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionShipToCommunication(
             $newType,
             $newUri
@@ -5666,11 +5666,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToName(
             $newName
         );
@@ -5682,11 +5682,11 @@ class InvoiceSuiteDocumentBuilder
      * Add a name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToName(
             $newName
         );
@@ -5698,11 +5698,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToId(
             $newId
         );
@@ -5714,11 +5714,11 @@ class InvoiceSuiteDocumentBuilder
      * Add an ID to the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToId(
             $newId
         );
@@ -5731,12 +5731,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToGlobalId(
             $newGlobalId,
             $newGlobalIdType
@@ -5750,12 +5750,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToGlobalId(
             $newGlobalId,
             $newGlobalIdType
@@ -5769,12 +5769,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
@@ -5788,12 +5788,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
@@ -5812,7 +5812,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -5822,7 +5822,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -5846,7 +5846,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -5856,7 +5856,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToAddress(
             $newAddressLine1,
             $newAddressLine2,
@@ -5876,13 +5876,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToLegalOrganisation(
             $newType,
             $newId,
@@ -5898,13 +5898,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToLegalOrganisation(
             $newType,
             $newId,
@@ -5922,7 +5922,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToContact(
         ?string $newPersonName = null,
@@ -5930,7 +5930,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -5950,7 +5950,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToContact(
         ?string $newPersonName = null,
@@ -5958,7 +5958,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToContact(
             $newPersonName,
             $newDepartmentName,
@@ -5975,12 +5975,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionUltimateShipToCommunication(
             $newType,
             $newUri
@@ -5994,12 +5994,12 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionUltimateShipToCommunication(
             $newType,
             $newUri
@@ -6012,11 +6012,11 @@ class InvoiceSuiteDocumentBuilder
      * Set the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate
-     * @return self
+     * @return static
      */
     public function setDocumentPositionSupplyChainEvent(
         ?DateTimeInterface $newDate = null
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionSupplyChainEvent(
             $newDate
         );
@@ -6030,13 +6030,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionBillingPeriod(
             $newStartDate,
             $newEndDate,
@@ -6052,13 +6052,13 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function addDocumentPositionBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionBillingPeriod(
             $newStartDate,
             $newEndDate,
@@ -6077,7 +6077,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionTax(
         ?string $newTaxCategory = null,
@@ -6086,7 +6086,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newTaxPercent = null,
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionTax(
             $newTaxCategory,
             $newTaxType,
@@ -6108,7 +6108,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function addDocumentPositionTax(
         ?string $newTaxCategory = null,
@@ -6117,7 +6117,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newTaxPercent = null,
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionTax(
             $newTaxCategory,
             $newTaxType,
@@ -6139,7 +6139,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function setDocumentPositionAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -6148,7 +6148,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionAllowanceCharge(
             $newChargeIndicator,
             $newAllowanceChargeAmount,
@@ -6170,7 +6170,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function addDocumentPositionAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -6179,7 +6179,7 @@ class InvoiceSuiteDocumentBuilder
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionAllowanceCharge(
             $newChargeIndicator,
             $newAllowanceChargeAmount,
@@ -6200,7 +6200,7 @@ class InvoiceSuiteDocumentBuilder
      * @param  null|float $newDiscountTotalAmount Sum of the discounts
      * @param  null|float $newTaxTotalAmount      Total amount of the line (in the invoice currency)
      * @param  null|float $newGrossAmount         Total invoice line amount including sales tax
-     * @return self
+     * @return static
      */
     public function setDocumentPositionSummation(
         ?float $newNetAmount = null,
@@ -6208,7 +6208,7 @@ class InvoiceSuiteDocumentBuilder
         ?float $newDiscountTotalAmount = null,
         ?float $newTaxTotalAmount = null,
         ?float $newGrossAmount = null,
-    ): self {
+    ): static {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionSummation(
             $newNetAmount,
             $newChargeTotalAmount,
@@ -6225,9 +6225,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentPositionPostingReference(
             $newType,
@@ -6242,9 +6242,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentPositionPostingReference(
             $newType,

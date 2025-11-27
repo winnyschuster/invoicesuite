@@ -131,9 +131,9 @@ class LineTradeDeliveryType
 
     /**
      * @param QuantityType|null $billedQuantity
-     * @return self
+     * @return static
      */
-    public function setBilledQuantity(?QuantityType $billedQuantity = null): self
+    public function setBilledQuantity(?QuantityType $billedQuantity = null): static
     {
         $this->billedQuantity = $billedQuantity;
 
@@ -141,9 +141,9 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBilledQuantity(): self
+    public function unsetBilledQuantity(): static
     {
         $this->billedQuantity = null;
 
@@ -170,9 +170,9 @@ class LineTradeDeliveryType
 
     /**
      * @param QuantityType|null $chargeFreeQuantity
-     * @return self
+     * @return static
      */
-    public function setChargeFreeQuantity(?QuantityType $chargeFreeQuantity = null): self
+    public function setChargeFreeQuantity(?QuantityType $chargeFreeQuantity = null): static
     {
         $this->chargeFreeQuantity = $chargeFreeQuantity;
 
@@ -180,9 +180,9 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeFreeQuantity(): self
+    public function unsetChargeFreeQuantity(): static
     {
         $this->chargeFreeQuantity = null;
 
@@ -209,9 +209,9 @@ class LineTradeDeliveryType
 
     /**
      * @param QuantityType|null $packageQuantity
-     * @return self
+     * @return static
      */
-    public function setPackageQuantity(?QuantityType $packageQuantity = null): self
+    public function setPackageQuantity(?QuantityType $packageQuantity = null): static
     {
         $this->packageQuantity = $packageQuantity;
 
@@ -219,9 +219,9 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackageQuantity(): self
+    public function unsetPackageQuantity(): static
     {
         $this->packageQuantity = null;
 
@@ -248,9 +248,9 @@ class LineTradeDeliveryType
 
     /**
      * @param TradePartyType|null $shipToTradeParty
-     * @return self
+     * @return static
      */
-    public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): self
+    public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): static
     {
         $this->shipToTradeParty = $shipToTradeParty;
 
@@ -258,9 +258,9 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipToTradeParty(): self
+    public function unsetShipToTradeParty(): static
     {
         $this->shipToTradeParty = null;
 
@@ -287,9 +287,9 @@ class LineTradeDeliveryType
 
     /**
      * @param TradePartyType|null $ultimateShipToTradeParty
-     * @return self
+     * @return static
      */
-    public function setUltimateShipToTradeParty(?TradePartyType $ultimateShipToTradeParty = null): self
+    public function setUltimateShipToTradeParty(?TradePartyType $ultimateShipToTradeParty = null): static
     {
         $this->ultimateShipToTradeParty = $ultimateShipToTradeParty;
 
@@ -297,9 +297,9 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUltimateShipToTradeParty(): self
+    public function unsetUltimateShipToTradeParty(): static
     {
         $this->ultimateShipToTradeParty = null;
 
@@ -326,20 +326,20 @@ class LineTradeDeliveryType
 
     /**
      * @param SupplyChainEventType|null $actualDeliverySupplyChainEvent
-     * @return self
+     * @return static
      */
     public function setActualDeliverySupplyChainEvent(
         ?SupplyChainEventType $actualDeliverySupplyChainEvent = null,
-    ): self {
+    ): static {
         $this->actualDeliverySupplyChainEvent = $actualDeliverySupplyChainEvent;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetActualDeliverySupplyChainEvent(): self
+    public function unsetActualDeliverySupplyChainEvent(): static
     {
         $this->actualDeliverySupplyChainEvent = null;
 
@@ -366,20 +366,20 @@ class LineTradeDeliveryType
 
     /**
      * @param ReferencedDocumentType|null $despatchAdviceReferencedDocument
-     * @return self
+     * @return static
      */
     public function setDespatchAdviceReferencedDocument(
         ?ReferencedDocumentType $despatchAdviceReferencedDocument = null,
-    ): self {
+    ): static {
         $this->despatchAdviceReferencedDocument = $despatchAdviceReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDespatchAdviceReferencedDocument(): self
+    public function unsetDespatchAdviceReferencedDocument(): static
     {
         $this->despatchAdviceReferencedDocument = null;
 
@@ -406,20 +406,20 @@ class LineTradeDeliveryType
 
     /**
      * @param ReferencedDocumentType|null $receivingAdviceReferencedDocument
-     * @return self
+     * @return static
      */
     public function setReceivingAdviceReferencedDocument(
         ?ReferencedDocumentType $receivingAdviceReferencedDocument = null,
-    ): self {
+    ): static {
         $this->receivingAdviceReferencedDocument = $receivingAdviceReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReceivingAdviceReferencedDocument(): self
+    public function unsetReceivingAdviceReferencedDocument(): static
     {
         $this->receivingAdviceReferencedDocument = null;
 
@@ -446,20 +446,20 @@ class LineTradeDeliveryType
 
     /**
      * @param ReferencedDocumentType|null $deliveryNoteReferencedDocument
-     * @return self
+     * @return static
      */
     public function setDeliveryNoteReferencedDocument(
         ?ReferencedDocumentType $deliveryNoteReferencedDocument = null,
-    ): self {
+    ): static {
         $this->deliveryNoteReferencedDocument = $deliveryNoteReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryNoteReferencedDocument(): self
+    public function unsetDeliveryNoteReferencedDocument(): static
     {
         $this->deliveryNoteReferencedDocument = null;
 

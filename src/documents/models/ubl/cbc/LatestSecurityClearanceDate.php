@@ -36,9 +36,9 @@ class LatestSecurityClearanceDate
 
     /**
      * @param DateTimeInterface|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?DateTimeInterface $value = null): self
+    public function setValue(?DateTimeInterface $value = null): static
     {
         $this->value = $value;
 
@@ -46,9 +46,9 @@ class LatestSecurityClearanceDate
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 

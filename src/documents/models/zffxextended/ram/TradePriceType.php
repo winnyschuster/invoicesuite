@@ -78,9 +78,9 @@ class TradePriceType
 
     /**
      * @param AmountType|null $chargeAmount
-     * @return self
+     * @return static
      */
-    public function setChargeAmount(?AmountType $chargeAmount = null): self
+    public function setChargeAmount(?AmountType $chargeAmount = null): static
     {
         $this->chargeAmount = $chargeAmount;
 
@@ -88,9 +88,9 @@ class TradePriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetChargeAmount(): self
+    public function unsetChargeAmount(): static
     {
         $this->chargeAmount = null;
 
@@ -117,9 +117,9 @@ class TradePriceType
 
     /**
      * @param QuantityType|null $basisQuantity
-     * @return self
+     * @return static
      */
-    public function setBasisQuantity(?QuantityType $basisQuantity = null): self
+    public function setBasisQuantity(?QuantityType $basisQuantity = null): static
     {
         $this->basisQuantity = $basisQuantity;
 
@@ -127,9 +127,9 @@ class TradePriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBasisQuantity(): self
+    public function unsetBasisQuantity(): static
     {
         $this->basisQuantity = null;
 
@@ -146,9 +146,9 @@ class TradePriceType
 
     /**
      * @param array<TradeAllowanceChargeType>|null $appliedTradeAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAppliedTradeAllowanceCharge(?array $appliedTradeAllowanceCharge = null): self
+    public function setAppliedTradeAllowanceCharge(?array $appliedTradeAllowanceCharge = null): static
     {
         $this->appliedTradeAllowanceCharge = $appliedTradeAllowanceCharge;
 
@@ -156,9 +156,9 @@ class TradePriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAppliedTradeAllowanceCharge(): self
+    public function unsetAppliedTradeAllowanceCharge(): static
     {
         $this->appliedTradeAllowanceCharge = null;
 
@@ -166,9 +166,9 @@ class TradePriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAppliedTradeAllowanceCharge(): self
+    public function clearAppliedTradeAllowanceCharge(): static
     {
         $this->appliedTradeAllowanceCharge = [];
 
@@ -177,9 +177,9 @@ class TradePriceType
 
     /**
      * @param TradeAllowanceChargeType $appliedTradeAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): self
+    public function addToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): static
     {
         $this->appliedTradeAllowanceCharge[] = $appliedTradeAllowanceCharge;
 
@@ -198,9 +198,9 @@ class TradePriceType
 
     /**
      * @param TradeAllowanceChargeType $appliedTradeAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): self
+    public function addOnceToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): static
     {
         if (!is_array($this->appliedTradeAllowanceCharge)) {
             $this->appliedTradeAllowanceCharge = [];
@@ -247,9 +247,9 @@ class TradePriceType
 
     /**
      * @param TradeTaxType|null $includedTradeTax
-     * @return self
+     * @return static
      */
-    public function setIncludedTradeTax(?TradeTaxType $includedTradeTax = null): self
+    public function setIncludedTradeTax(?TradeTaxType $includedTradeTax = null): static
     {
         $this->includedTradeTax = $includedTradeTax;
 
@@ -257,9 +257,9 @@ class TradePriceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedTradeTax(): self
+    public function unsetIncludedTradeTax(): static
     {
         $this->includedTradeTax = null;
 

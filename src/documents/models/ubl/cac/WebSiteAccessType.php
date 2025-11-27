@@ -67,9 +67,9 @@ class WebSiteAccessType
 
     /**
      * @param URI|null $uRI
-     * @return self
+     * @return static
      */
-    public function setURI(?URI $uRI = null): self
+    public function setURI(?URI $uRI = null): static
     {
         $this->uRI = $uRI;
 
@@ -77,9 +77,9 @@ class WebSiteAccessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetURI(): self
+    public function unsetURI(): static
     {
         $this->uRI = null;
 
@@ -106,9 +106,9 @@ class WebSiteAccessType
 
     /**
      * @param Password|null $password
-     * @return self
+     * @return static
      */
-    public function setPassword(?Password $password = null): self
+    public function setPassword(?Password $password = null): static
     {
         $this->password = $password;
 
@@ -116,9 +116,9 @@ class WebSiteAccessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPassword(): self
+    public function unsetPassword(): static
     {
         $this->password = null;
 
@@ -145,9 +145,9 @@ class WebSiteAccessType
 
     /**
      * @param Login|null $login
-     * @return self
+     * @return static
      */
-    public function setLogin(?Login $login = null): self
+    public function setLogin(?Login $login = null): static
     {
         $this->login = $login;
 
@@ -155,9 +155,9 @@ class WebSiteAccessType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLogin(): self
+    public function unsetLogin(): static
     {
         $this->login = null;
 

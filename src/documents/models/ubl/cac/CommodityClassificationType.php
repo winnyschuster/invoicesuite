@@ -79,9 +79,9 @@ class CommodityClassificationType
 
     /**
      * @param NatureCode|null $natureCode
-     * @return self
+     * @return static
      */
-    public function setNatureCode(?NatureCode $natureCode = null): self
+    public function setNatureCode(?NatureCode $natureCode = null): static
     {
         $this->natureCode = $natureCode;
 
@@ -89,9 +89,9 @@ class CommodityClassificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNatureCode(): self
+    public function unsetNatureCode(): static
     {
         $this->natureCode = null;
 
@@ -118,9 +118,9 @@ class CommodityClassificationType
 
     /**
      * @param CargoTypeCode|null $cargoTypeCode
-     * @return self
+     * @return static
      */
-    public function setCargoTypeCode(?CargoTypeCode $cargoTypeCode = null): self
+    public function setCargoTypeCode(?CargoTypeCode $cargoTypeCode = null): static
     {
         $this->cargoTypeCode = $cargoTypeCode;
 
@@ -128,9 +128,9 @@ class CommodityClassificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCargoTypeCode(): self
+    public function unsetCargoTypeCode(): static
     {
         $this->cargoTypeCode = null;
 
@@ -157,9 +157,9 @@ class CommodityClassificationType
 
     /**
      * @param CommodityCode|null $commodityCode
-     * @return self
+     * @return static
      */
-    public function setCommodityCode(?CommodityCode $commodityCode = null): self
+    public function setCommodityCode(?CommodityCode $commodityCode = null): static
     {
         $this->commodityCode = $commodityCode;
 
@@ -167,9 +167,9 @@ class CommodityClassificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCommodityCode(): self
+    public function unsetCommodityCode(): static
     {
         $this->commodityCode = null;
 
@@ -196,9 +196,9 @@ class CommodityClassificationType
 
     /**
      * @param ItemClassificationCode|null $itemClassificationCode
-     * @return self
+     * @return static
      */
-    public function setItemClassificationCode(?ItemClassificationCode $itemClassificationCode = null): self
+    public function setItemClassificationCode(?ItemClassificationCode $itemClassificationCode = null): static
     {
         $this->itemClassificationCode = $itemClassificationCode;
 
@@ -206,9 +206,9 @@ class CommodityClassificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItemClassificationCode(): self
+    public function unsetItemClassificationCode(): static
     {
         $this->itemClassificationCode = null;
 

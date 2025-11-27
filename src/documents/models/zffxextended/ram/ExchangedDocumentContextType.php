@@ -65,9 +65,9 @@ class ExchangedDocumentContextType
 
     /**
      * @param IndicatorType|null $testIndicator
-     * @return self
+     * @return static
      */
-    public function setTestIndicator(?IndicatorType $testIndicator = null): self
+    public function setTestIndicator(?IndicatorType $testIndicator = null): static
     {
         $this->testIndicator = $testIndicator;
 
@@ -75,9 +75,9 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTestIndicator(): self
+    public function unsetTestIndicator(): static
     {
         $this->testIndicator = null;
 
@@ -104,20 +104,20 @@ class ExchangedDocumentContextType
 
     /**
      * @param DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
-     * @return self
+     * @return static
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
         ?DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter = null,
-    ): self {
+    ): static {
         $this->businessProcessSpecifiedDocumentContextParameter = $businessProcessSpecifiedDocumentContextParameter;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBusinessProcessSpecifiedDocumentContextParameter(): self
+    public function unsetBusinessProcessSpecifiedDocumentContextParameter(): static
     {
         $this->businessProcessSpecifiedDocumentContextParameter = null;
 
@@ -144,20 +144,20 @@ class ExchangedDocumentContextType
 
     /**
      * @param DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
-     * @return self
+     * @return static
      */
     public function setGuidelineSpecifiedDocumentContextParameter(
         ?DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter = null,
-    ): self {
+    ): static {
         $this->guidelineSpecifiedDocumentContextParameter = $guidelineSpecifiedDocumentContextParameter;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGuidelineSpecifiedDocumentContextParameter(): self
+    public function unsetGuidelineSpecifiedDocumentContextParameter(): static
     {
         $this->guidelineSpecifiedDocumentContextParameter = null;
 

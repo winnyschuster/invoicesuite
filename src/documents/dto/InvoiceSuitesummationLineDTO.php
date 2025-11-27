@@ -93,9 +93,9 @@ class InvoiceSuitesummationLineDTO
      * Sets the sum of the net amounts of all invoice lines
      *
      * @param  null|float $netAmount The sum of the net amounts of all invoice lines
-     * @return self
+     * @return static
      */
-    public function setNetAmount(?float $netAmount): self
+    public function setNetAmount(?float $netAmount): static
     {
         $this->netAmount = $netAmount;
 
@@ -116,9 +116,9 @@ class InvoiceSuitesummationLineDTO
      * Sets the sum of the charges
      *
      * @param  null|float $chargeTotalAmount The sum of the charges
-     * @return self
+     * @return static
      */
-    public function setChargeTotalAmount(?float $chargeTotalAmount): self
+    public function setChargeTotalAmount(?float $chargeTotalAmount): static
     {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
@@ -139,9 +139,9 @@ class InvoiceSuitesummationLineDTO
      * Sets the sum of the discounts
      *
      * @param  null|float $discountTotalAmount The sum of the discounts
-     * @return self
+     * @return static
      */
-    public function setDiscountTotalAmount(?float $discountTotalAmount): self
+    public function setDiscountTotalAmount(?float $discountTotalAmount): static
     {
         $this->discountTotalAmount = $discountTotalAmount;
 
@@ -162,9 +162,9 @@ class InvoiceSuitesummationLineDTO
      * Sets the total amount of the invoice sales tax (in the invoice currency)
      *
      * @param  null|float $taxTotalAmount The total amount of the invoice sales tax (in the invoice currency)
-     * @return self
+     * @return static
      */
-    public function setTaxTotalAmount(?float $taxTotalAmount): self
+    public function setTaxTotalAmount(?float $taxTotalAmount): static
     {
         $this->taxTotalAmount = $taxTotalAmount;
 
@@ -185,9 +185,9 @@ class InvoiceSuitesummationLineDTO
      * Sets the total invoice amount including sales tax
      *
      * @param  null|float $grossAmount The total invoice amount including sales tax
-     * @return self
+     * @return static
      */
-    public function setGrossAmount(?float $grossAmount): self
+    public function setGrossAmount(?float $grossAmount): static
     {
         $this->grossAmount = $grossAmount;
 

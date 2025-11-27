@@ -43,9 +43,9 @@ class CreditAccountType
 
     /**
      * @param AccountID|null $accountID
-     * @return self
+     * @return static
      */
-    public function setAccountID(?AccountID $accountID = null): self
+    public function setAccountID(?AccountID $accountID = null): static
     {
         $this->accountID = $accountID;
 
@@ -53,9 +53,9 @@ class CreditAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountID(): self
+    public function unsetAccountID(): static
     {
         $this->accountID = null;
 

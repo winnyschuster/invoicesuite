@@ -98,9 +98,9 @@ class HeaderTradeAgreementType
 
     /**
      * @param TextType|null $buyerReference
-     * @return self
+     * @return static
      */
-    public function setBuyerReference(?TextType $buyerReference = null): self
+    public function setBuyerReference(?TextType $buyerReference = null): static
     {
         $this->buyerReference = $buyerReference;
 
@@ -108,9 +108,9 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerReference(): self
+    public function unsetBuyerReference(): static
     {
         $this->buyerReference = null;
 
@@ -137,9 +137,9 @@ class HeaderTradeAgreementType
 
     /**
      * @param TradePartyType|null $sellerTradeParty
-     * @return self
+     * @return static
      */
-    public function setSellerTradeParty(?TradePartyType $sellerTradeParty = null): self
+    public function setSellerTradeParty(?TradePartyType $sellerTradeParty = null): static
     {
         $this->sellerTradeParty = $sellerTradeParty;
 
@@ -147,9 +147,9 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerTradeParty(): self
+    public function unsetSellerTradeParty(): static
     {
         $this->sellerTradeParty = null;
 
@@ -176,9 +176,9 @@ class HeaderTradeAgreementType
 
     /**
      * @param TradePartyType|null $buyerTradeParty
-     * @return self
+     * @return static
      */
-    public function setBuyerTradeParty(?TradePartyType $buyerTradeParty = null): self
+    public function setBuyerTradeParty(?TradePartyType $buyerTradeParty = null): static
     {
         $this->buyerTradeParty = $buyerTradeParty;
 
@@ -186,9 +186,9 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerTradeParty(): self
+    public function unsetBuyerTradeParty(): static
     {
         $this->buyerTradeParty = null;
 
@@ -215,20 +215,20 @@ class HeaderTradeAgreementType
 
     /**
      * @param TradePartyType|null $sellerTaxRepresentativeTradeParty
-     * @return self
+     * @return static
      */
     public function setSellerTaxRepresentativeTradeParty(
         ?TradePartyType $sellerTaxRepresentativeTradeParty = null,
-    ): self {
+    ): static {
         $this->sellerTaxRepresentativeTradeParty = $sellerTaxRepresentativeTradeParty;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerTaxRepresentativeTradeParty(): self
+    public function unsetSellerTaxRepresentativeTradeParty(): static
     {
         $this->sellerTaxRepresentativeTradeParty = null;
 
@@ -255,20 +255,20 @@ class HeaderTradeAgreementType
 
     /**
      * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
-     * @return self
+     * @return static
      */
     public function setBuyerOrderReferencedDocument(
         ?ReferencedDocumentType $buyerOrderReferencedDocument = null,
-    ): self {
+    ): static {
         $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerOrderReferencedDocument(): self
+    public function unsetBuyerOrderReferencedDocument(): static
     {
         $this->buyerOrderReferencedDocument = null;
 
@@ -295,9 +295,9 @@ class HeaderTradeAgreementType
 
     /**
      * @param ReferencedDocumentType|null $contractReferencedDocument
-     * @return self
+     * @return static
      */
-    public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): self
+    public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): static
     {
         $this->contractReferencedDocument = $contractReferencedDocument;
 
@@ -305,9 +305,9 @@ class HeaderTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractReferencedDocument(): self
+    public function unsetContractReferencedDocument(): static
     {
         $this->contractReferencedDocument = null;
 

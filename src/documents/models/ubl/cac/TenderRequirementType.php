@@ -67,9 +67,9 @@ class TenderRequirementType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -77,9 +77,9 @@ class TenderRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -96,9 +96,9 @@ class TenderRequirementType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -106,9 +106,9 @@ class TenderRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -116,9 +116,9 @@ class TenderRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -157,9 +157,9 @@ class TenderRequirementType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -178,9 +178,9 @@ class TenderRequirementType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -227,9 +227,9 @@ class TenderRequirementType
 
     /**
      * @param TemplateDocumentReference|null $templateDocumentReference
-     * @return self
+     * @return static
      */
-    public function setTemplateDocumentReference(?TemplateDocumentReference $templateDocumentReference = null): self
+    public function setTemplateDocumentReference(?TemplateDocumentReference $templateDocumentReference = null): static
     {
         $this->templateDocumentReference = $templateDocumentReference;
 
@@ -237,9 +237,9 @@ class TenderRequirementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTemplateDocumentReference(): self
+    public function unsetTemplateDocumentReference(): static
     {
         $this->templateDocumentReference = null;
 

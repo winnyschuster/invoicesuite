@@ -128,20 +128,20 @@ class EvaluationCriterionType
 
     /**
      * @param EvaluationCriterionTypeCode|null $evaluationCriterionTypeCode
-     * @return self
+     * @return static
      */
     public function setEvaluationCriterionTypeCode(
         ?EvaluationCriterionTypeCode $evaluationCriterionTypeCode = null,
-    ): self {
+    ): static {
         $this->evaluationCriterionTypeCode = $evaluationCriterionTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEvaluationCriterionTypeCode(): self
+    public function unsetEvaluationCriterionTypeCode(): static
     {
         $this->evaluationCriterionTypeCode = null;
 
@@ -158,9 +158,9 @@ class EvaluationCriterionType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -168,9 +168,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -178,9 +178,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -219,9 +219,9 @@ class EvaluationCriterionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -240,9 +240,9 @@ class EvaluationCriterionType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -289,9 +289,9 @@ class EvaluationCriterionType
 
     /**
      * @param ThresholdAmount|null $thresholdAmount
-     * @return self
+     * @return static
      */
-    public function setThresholdAmount(?ThresholdAmount $thresholdAmount = null): self
+    public function setThresholdAmount(?ThresholdAmount $thresholdAmount = null): static
     {
         $this->thresholdAmount = $thresholdAmount;
 
@@ -299,9 +299,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetThresholdAmount(): self
+    public function unsetThresholdAmount(): static
     {
         $this->thresholdAmount = null;
 
@@ -328,9 +328,9 @@ class EvaluationCriterionType
 
     /**
      * @param ThresholdQuantity|null $thresholdQuantity
-     * @return self
+     * @return static
      */
-    public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): self
+    public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): static
     {
         $this->thresholdQuantity = $thresholdQuantity;
 
@@ -338,9 +338,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetThresholdQuantity(): self
+    public function unsetThresholdQuantity(): static
     {
         $this->thresholdQuantity = null;
 
@@ -367,9 +367,9 @@ class EvaluationCriterionType
 
     /**
      * @param ExpressionCode|null $expressionCode
-     * @return self
+     * @return static
      */
-    public function setExpressionCode(?ExpressionCode $expressionCode = null): self
+    public function setExpressionCode(?ExpressionCode $expressionCode = null): static
     {
         $this->expressionCode = $expressionCode;
 
@@ -377,9 +377,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpressionCode(): self
+    public function unsetExpressionCode(): static
     {
         $this->expressionCode = null;
 
@@ -396,9 +396,9 @@ class EvaluationCriterionType
 
     /**
      * @param array<Expression>|null $expression
-     * @return self
+     * @return static
      */
-    public function setExpression(?array $expression = null): self
+    public function setExpression(?array $expression = null): static
     {
         $this->expression = $expression;
 
@@ -406,9 +406,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExpression(): self
+    public function unsetExpression(): static
     {
         $this->expression = null;
 
@@ -416,9 +416,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearExpression(): self
+    public function clearExpression(): static
     {
         $this->expression = [];
 
@@ -457,9 +457,9 @@ class EvaluationCriterionType
 
     /**
      * @param Expression $expression
-     * @return self
+     * @return static
      */
-    public function addToExpression(Expression $expression): self
+    public function addToExpression(Expression $expression): static
     {
         $this->expression[] = $expression;
 
@@ -478,9 +478,9 @@ class EvaluationCriterionType
 
     /**
      * @param Expression $expression
-     * @return self
+     * @return static
      */
-    public function addOnceToExpression(Expression $expression): self
+    public function addOnceToExpression(Expression $expression): static
     {
         if (!is_array($this->expression)) {
             $this->expression = [];
@@ -527,9 +527,9 @@ class EvaluationCriterionType
 
     /**
      * @param DurationPeriod|null $durationPeriod
-     * @return self
+     * @return static
      */
-    public function setDurationPeriod(?DurationPeriod $durationPeriod = null): self
+    public function setDurationPeriod(?DurationPeriod $durationPeriod = null): static
     {
         $this->durationPeriod = $durationPeriod;
 
@@ -537,9 +537,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDurationPeriod(): self
+    public function unsetDurationPeriod(): static
     {
         $this->durationPeriod = null;
 
@@ -556,9 +556,9 @@ class EvaluationCriterionType
 
     /**
      * @param array<SuggestedEvidence>|null $suggestedEvidence
-     * @return self
+     * @return static
      */
-    public function setSuggestedEvidence(?array $suggestedEvidence = null): self
+    public function setSuggestedEvidence(?array $suggestedEvidence = null): static
     {
         $this->suggestedEvidence = $suggestedEvidence;
 
@@ -566,9 +566,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSuggestedEvidence(): self
+    public function unsetSuggestedEvidence(): static
     {
         $this->suggestedEvidence = null;
 
@@ -576,9 +576,9 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSuggestedEvidence(): self
+    public function clearSuggestedEvidence(): static
     {
         $this->suggestedEvidence = [];
 
@@ -617,9 +617,9 @@ class EvaluationCriterionType
 
     /**
      * @param SuggestedEvidence $suggestedEvidence
-     * @return self
+     * @return static
      */
-    public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
+    public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
     {
         $this->suggestedEvidence[] = $suggestedEvidence;
 
@@ -638,9 +638,9 @@ class EvaluationCriterionType
 
     /**
      * @param SuggestedEvidence $suggestedEvidence
-     * @return self
+     * @return static
      */
-    public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): self
+    public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
     {
         if (!is_array($this->suggestedEvidence)) {
             $this->suggestedEvidence = [];

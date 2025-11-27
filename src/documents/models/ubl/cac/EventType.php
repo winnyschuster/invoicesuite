@@ -137,9 +137,9 @@ class EventType
 
     /**
      * @param IdentificationID|null $identificationID
-     * @return self
+     * @return static
      */
-    public function setIdentificationID(?IdentificationID $identificationID = null): self
+    public function setIdentificationID(?IdentificationID $identificationID = null): static
     {
         $this->identificationID = $identificationID;
 
@@ -147,9 +147,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIdentificationID(): self
+    public function unsetIdentificationID(): static
     {
         $this->identificationID = null;
 
@@ -166,9 +166,9 @@ class EventType
 
     /**
      * @param DateTimeInterface|null $occurrenceDate
-     * @return self
+     * @return static
      */
-    public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): self
+    public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): static
     {
         $this->occurrenceDate = $occurrenceDate;
 
@@ -176,9 +176,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOccurrenceDate(): self
+    public function unsetOccurrenceDate(): static
     {
         $this->occurrenceDate = null;
 
@@ -195,9 +195,9 @@ class EventType
 
     /**
      * @param DateTimeInterface|null $occurrenceTime
-     * @return self
+     * @return static
      */
-    public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): self
+    public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): static
     {
         $this->occurrenceTime = $occurrenceTime;
 
@@ -205,9 +205,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOccurrenceTime(): self
+    public function unsetOccurrenceTime(): static
     {
         $this->occurrenceTime = null;
 
@@ -234,9 +234,9 @@ class EventType
 
     /**
      * @param TypeCode|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?TypeCode $typeCode = null): self
+    public function setTypeCode(?TypeCode $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -244,9 +244,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -263,9 +263,9 @@ class EventType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -273,9 +273,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -283,9 +283,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -324,9 +324,9 @@ class EventType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -345,9 +345,9 @@ class EventType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -384,9 +384,9 @@ class EventType
 
     /**
      * @param bool|null $completionIndicator
-     * @return self
+     * @return static
      */
-    public function setCompletionIndicator(?bool $completionIndicator = null): self
+    public function setCompletionIndicator(?bool $completionIndicator = null): static
     {
         $this->completionIndicator = $completionIndicator;
 
@@ -394,9 +394,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompletionIndicator(): self
+    public function unsetCompletionIndicator(): static
     {
         $this->completionIndicator = null;
 
@@ -413,9 +413,9 @@ class EventType
 
     /**
      * @param array<CurrentStatus>|null $currentStatus
-     * @return self
+     * @return static
      */
-    public function setCurrentStatus(?array $currentStatus = null): self
+    public function setCurrentStatus(?array $currentStatus = null): static
     {
         $this->currentStatus = $currentStatus;
 
@@ -423,9 +423,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrentStatus(): self
+    public function unsetCurrentStatus(): static
     {
         $this->currentStatus = null;
 
@@ -433,9 +433,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCurrentStatus(): self
+    public function clearCurrentStatus(): static
     {
         $this->currentStatus = [];
 
@@ -474,9 +474,9 @@ class EventType
 
     /**
      * @param CurrentStatus $currentStatus
-     * @return self
+     * @return static
      */
-    public function addToCurrentStatus(CurrentStatus $currentStatus): self
+    public function addToCurrentStatus(CurrentStatus $currentStatus): static
     {
         $this->currentStatus[] = $currentStatus;
 
@@ -495,9 +495,9 @@ class EventType
 
     /**
      * @param CurrentStatus $currentStatus
-     * @return self
+     * @return static
      */
-    public function addOnceToCurrentStatus(CurrentStatus $currentStatus): self
+    public function addOnceToCurrentStatus(CurrentStatus $currentStatus): static
     {
         if (!is_array($this->currentStatus)) {
             $this->currentStatus = [];
@@ -534,9 +534,9 @@ class EventType
 
     /**
      * @param array<Contact>|null $contact
-     * @return self
+     * @return static
      */
-    public function setContact(?array $contact = null): self
+    public function setContact(?array $contact = null): static
     {
         $this->contact = $contact;
 
@@ -544,9 +544,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContact(): self
+    public function unsetContact(): static
     {
         $this->contact = null;
 
@@ -554,9 +554,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearContact(): self
+    public function clearContact(): static
     {
         $this->contact = [];
 
@@ -595,9 +595,9 @@ class EventType
 
     /**
      * @param Contact $contact
-     * @return self
+     * @return static
      */
-    public function addToContact(Contact $contact): self
+    public function addToContact(Contact $contact): static
     {
         $this->contact[] = $contact;
 
@@ -616,9 +616,9 @@ class EventType
 
     /**
      * @param Contact $contact
-     * @return self
+     * @return static
      */
-    public function addOnceToContact(Contact $contact): self
+    public function addOnceToContact(Contact $contact): static
     {
         if (!is_array($this->contact)) {
             $this->contact = [];
@@ -665,9 +665,9 @@ class EventType
 
     /**
      * @param OccurenceLocation|null $occurenceLocation
-     * @return self
+     * @return static
      */
-    public function setOccurenceLocation(?OccurenceLocation $occurenceLocation = null): self
+    public function setOccurenceLocation(?OccurenceLocation $occurenceLocation = null): static
     {
         $this->occurenceLocation = $occurenceLocation;
 
@@ -675,9 +675,9 @@ class EventType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOccurenceLocation(): self
+    public function unsetOccurenceLocation(): static
     {
         $this->occurenceLocation = null;
 

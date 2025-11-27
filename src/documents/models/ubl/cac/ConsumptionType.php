@@ -111,9 +111,9 @@ class ConsumptionType
 
     /**
      * @param UtilityStatementTypeCode|null $utilityStatementTypeCode
-     * @return self
+     * @return static
      */
-    public function setUtilityStatementTypeCode(?UtilityStatementTypeCode $utilityStatementTypeCode = null): self
+    public function setUtilityStatementTypeCode(?UtilityStatementTypeCode $utilityStatementTypeCode = null): static
     {
         $this->utilityStatementTypeCode = $utilityStatementTypeCode;
 
@@ -121,9 +121,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUtilityStatementTypeCode(): self
+    public function unsetUtilityStatementTypeCode(): static
     {
         $this->utilityStatementTypeCode = null;
 
@@ -150,9 +150,9 @@ class ConsumptionType
 
     /**
      * @param MainPeriod|null $mainPeriod
-     * @return self
+     * @return static
      */
-    public function setMainPeriod(?MainPeriod $mainPeriod = null): self
+    public function setMainPeriod(?MainPeriod $mainPeriod = null): static
     {
         $this->mainPeriod = $mainPeriod;
 
@@ -160,9 +160,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMainPeriod(): self
+    public function unsetMainPeriod(): static
     {
         $this->mainPeriod = null;
 
@@ -179,9 +179,9 @@ class ConsumptionType
 
     /**
      * @param array<AllowanceCharge>|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): self
+    public function setAllowanceCharge(?array $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -189,9 +189,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 
@@ -199,9 +199,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAllowanceCharge(): self
+    public function clearAllowanceCharge(): static
     {
         $this->allowanceCharge = [];
 
@@ -240,9 +240,9 @@ class ConsumptionType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         $this->allowanceCharge[] = $allowanceCharge;
 
@@ -261,9 +261,9 @@ class ConsumptionType
 
     /**
      * @param AllowanceCharge $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): self
+    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
     {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
@@ -300,9 +300,9 @@ class ConsumptionType
 
     /**
      * @param array<TaxTotal>|null $taxTotal
-     * @return self
+     * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): self
+    public function setTaxTotal(?array $taxTotal = null): static
     {
         $this->taxTotal = $taxTotal;
 
@@ -310,9 +310,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTaxTotal(): self
+    public function unsetTaxTotal(): static
     {
         $this->taxTotal = null;
 
@@ -320,9 +320,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTaxTotal(): self
+    public function clearTaxTotal(): static
     {
         $this->taxTotal = [];
 
@@ -361,9 +361,9 @@ class ConsumptionType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): self
+    public function addToTaxTotal(TaxTotal $taxTotal): static
     {
         $this->taxTotal[] = $taxTotal;
 
@@ -382,9 +382,9 @@ class ConsumptionType
 
     /**
      * @param TaxTotal $taxTotal
-     * @return self
+     * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): self
+    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
     {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
@@ -431,9 +431,9 @@ class ConsumptionType
 
     /**
      * @param EnergyWaterSupply|null $energyWaterSupply
-     * @return self
+     * @return static
      */
-    public function setEnergyWaterSupply(?EnergyWaterSupply $energyWaterSupply = null): self
+    public function setEnergyWaterSupply(?EnergyWaterSupply $energyWaterSupply = null): static
     {
         $this->energyWaterSupply = $energyWaterSupply;
 
@@ -441,9 +441,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEnergyWaterSupply(): self
+    public function unsetEnergyWaterSupply(): static
     {
         $this->energyWaterSupply = null;
 
@@ -470,9 +470,9 @@ class ConsumptionType
 
     /**
      * @param TelecommunicationsSupply|null $telecommunicationsSupply
-     * @return self
+     * @return static
      */
-    public function setTelecommunicationsSupply(?TelecommunicationsSupply $telecommunicationsSupply = null): self
+    public function setTelecommunicationsSupply(?TelecommunicationsSupply $telecommunicationsSupply = null): static
     {
         $this->telecommunicationsSupply = $telecommunicationsSupply;
 
@@ -480,9 +480,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelecommunicationsSupply(): self
+    public function unsetTelecommunicationsSupply(): static
     {
         $this->telecommunicationsSupply = null;
 
@@ -509,9 +509,9 @@ class ConsumptionType
 
     /**
      * @param LegalMonetaryTotal|null $legalMonetaryTotal
-     * @return self
+     * @return static
      */
-    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): self
+    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
     {
         $this->legalMonetaryTotal = $legalMonetaryTotal;
 
@@ -519,9 +519,9 @@ class ConsumptionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLegalMonetaryTotal(): self
+    public function unsetLegalMonetaryTotal(): static
     {
         $this->legalMonetaryTotal = null;
 

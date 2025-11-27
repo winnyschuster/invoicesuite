@@ -214,9 +214,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?IDType $iD = null): self
+    public function setID(?IDType $iD = null): static
     {
         $this->iD = $iD;
 
@@ -224,9 +224,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -253,9 +253,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $globalID
-     * @return self
+     * @return static
      */
-    public function setGlobalID(?IDType $globalID = null): self
+    public function setGlobalID(?IDType $globalID = null): static
     {
         $this->globalID = $globalID;
 
@@ -263,9 +263,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGlobalID(): self
+    public function unsetGlobalID(): static
     {
         $this->globalID = null;
 
@@ -292,9 +292,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $sellerAssignedID
-     * @return self
+     * @return static
      */
-    public function setSellerAssignedID(?IDType $sellerAssignedID = null): self
+    public function setSellerAssignedID(?IDType $sellerAssignedID = null): static
     {
         $this->sellerAssignedID = $sellerAssignedID;
 
@@ -302,9 +302,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerAssignedID(): self
+    public function unsetSellerAssignedID(): static
     {
         $this->sellerAssignedID = null;
 
@@ -331,9 +331,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $buyerAssignedID
-     * @return self
+     * @return static
      */
-    public function setBuyerAssignedID(?IDType $buyerAssignedID = null): self
+    public function setBuyerAssignedID(?IDType $buyerAssignedID = null): static
     {
         $this->buyerAssignedID = $buyerAssignedID;
 
@@ -341,9 +341,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerAssignedID(): self
+    public function unsetBuyerAssignedID(): static
     {
         $this->buyerAssignedID = null;
 
@@ -370,9 +370,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $industryAssignedID
-     * @return self
+     * @return static
      */
-    public function setIndustryAssignedID(?IDType $industryAssignedID = null): self
+    public function setIndustryAssignedID(?IDType $industryAssignedID = null): static
     {
         $this->industryAssignedID = $industryAssignedID;
 
@@ -380,9 +380,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIndustryAssignedID(): self
+    public function unsetIndustryAssignedID(): static
     {
         $this->industryAssignedID = null;
 
@@ -409,9 +409,9 @@ class TradeProductType
 
     /**
      * @param IDType|null $modelID
-     * @return self
+     * @return static
      */
-    public function setModelID(?IDType $modelID = null): self
+    public function setModelID(?IDType $modelID = null): static
     {
         $this->modelID = $modelID;
 
@@ -419,9 +419,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetModelID(): self
+    public function unsetModelID(): static
     {
         $this->modelID = null;
 
@@ -448,9 +448,9 @@ class TradeProductType
 
     /**
      * @param TextType|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?TextType $name = null): self
+    public function setName(?TextType $name = null): static
     {
         $this->name = $name;
 
@@ -458,9 +458,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -487,9 +487,9 @@ class TradeProductType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -497,9 +497,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -516,9 +516,9 @@ class TradeProductType
 
     /**
      * @param array<IDType>|null $batchID
-     * @return self
+     * @return static
      */
-    public function setBatchID(?array $batchID = null): self
+    public function setBatchID(?array $batchID = null): static
     {
         $this->batchID = $batchID;
 
@@ -526,9 +526,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBatchID(): self
+    public function unsetBatchID(): static
     {
         $this->batchID = null;
 
@@ -536,9 +536,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearBatchID(): self
+    public function clearBatchID(): static
     {
         $this->batchID = [];
 
@@ -547,9 +547,9 @@ class TradeProductType
 
     /**
      * @param IDType $batchID
-     * @return self
+     * @return static
      */
-    public function addToBatchID(IDType $batchID): self
+    public function addToBatchID(IDType $batchID): static
     {
         $this->batchID[] = $batchID;
 
@@ -568,9 +568,9 @@ class TradeProductType
 
     /**
      * @param IDType $batchID
-     * @return self
+     * @return static
      */
-    public function addOnceToBatchID(IDType $batchID): self
+    public function addOnceToBatchID(IDType $batchID): static
     {
         if (!is_array($this->batchID)) {
             $this->batchID = [];
@@ -617,9 +617,9 @@ class TradeProductType
 
     /**
      * @param TextType|null $brandName
-     * @return self
+     * @return static
      */
-    public function setBrandName(?TextType $brandName = null): self
+    public function setBrandName(?TextType $brandName = null): static
     {
         $this->brandName = $brandName;
 
@@ -627,9 +627,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBrandName(): self
+    public function unsetBrandName(): static
     {
         $this->brandName = null;
 
@@ -656,9 +656,9 @@ class TradeProductType
 
     /**
      * @param TextType|null $modelName
-     * @return self
+     * @return static
      */
-    public function setModelName(?TextType $modelName = null): self
+    public function setModelName(?TextType $modelName = null): static
     {
         $this->modelName = $modelName;
 
@@ -666,9 +666,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetModelName(): self
+    public function unsetModelName(): static
     {
         $this->modelName = null;
 
@@ -685,9 +685,9 @@ class TradeProductType
 
     /**
      * @param array<ProductCharacteristicType>|null $applicableProductCharacteristic
-     * @return self
+     * @return static
      */
-    public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null): self
+    public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null): static
     {
         $this->applicableProductCharacteristic = $applicableProductCharacteristic;
 
@@ -695,9 +695,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableProductCharacteristic(): self
+    public function unsetApplicableProductCharacteristic(): static
     {
         $this->applicableProductCharacteristic = null;
 
@@ -705,9 +705,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearApplicableProductCharacteristic(): self
+    public function clearApplicableProductCharacteristic(): static
     {
         $this->applicableProductCharacteristic = [];
 
@@ -716,11 +716,11 @@ class TradeProductType
 
     /**
      * @param ProductCharacteristicType $applicableProductCharacteristic
-     * @return self
+     * @return static
      */
     public function addToApplicableProductCharacteristic(
         ProductCharacteristicType $applicableProductCharacteristic,
-    ): self {
+    ): static {
         $this->applicableProductCharacteristic[] = $applicableProductCharacteristic;
 
         return $this;
@@ -738,11 +738,11 @@ class TradeProductType
 
     /**
      * @param ProductCharacteristicType $applicableProductCharacteristic
-     * @return self
+     * @return static
      */
     public function addOnceToApplicableProductCharacteristic(
         ProductCharacteristicType $applicableProductCharacteristic,
-    ): self {
+    ): static {
         if (!is_array($this->applicableProductCharacteristic)) {
             $this->applicableProductCharacteristic = [];
         }
@@ -778,9 +778,9 @@ class TradeProductType
 
     /**
      * @param array<ProductClassificationType>|null $designatedProductClassification
-     * @return self
+     * @return static
      */
-    public function setDesignatedProductClassification(?array $designatedProductClassification = null): self
+    public function setDesignatedProductClassification(?array $designatedProductClassification = null): static
     {
         $this->designatedProductClassification = $designatedProductClassification;
 
@@ -788,9 +788,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDesignatedProductClassification(): self
+    public function unsetDesignatedProductClassification(): static
     {
         $this->designatedProductClassification = null;
 
@@ -798,9 +798,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDesignatedProductClassification(): self
+    public function clearDesignatedProductClassification(): static
     {
         $this->designatedProductClassification = [];
 
@@ -809,11 +809,11 @@ class TradeProductType
 
     /**
      * @param ProductClassificationType $designatedProductClassification
-     * @return self
+     * @return static
      */
     public function addToDesignatedProductClassification(
         ProductClassificationType $designatedProductClassification,
-    ): self {
+    ): static {
         $this->designatedProductClassification[] = $designatedProductClassification;
 
         return $this;
@@ -831,11 +831,11 @@ class TradeProductType
 
     /**
      * @param ProductClassificationType $designatedProductClassification
-     * @return self
+     * @return static
      */
     public function addOnceToDesignatedProductClassification(
         ProductClassificationType $designatedProductClassification,
-    ): self {
+    ): static {
         if (!is_array($this->designatedProductClassification)) {
             $this->designatedProductClassification = [];
         }
@@ -871,9 +871,9 @@ class TradeProductType
 
     /**
      * @param array<TradeProductInstanceType>|null $individualTradeProductInstance
-     * @return self
+     * @return static
      */
-    public function setIndividualTradeProductInstance(?array $individualTradeProductInstance = null): self
+    public function setIndividualTradeProductInstance(?array $individualTradeProductInstance = null): static
     {
         $this->individualTradeProductInstance = $individualTradeProductInstance;
 
@@ -881,9 +881,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIndividualTradeProductInstance(): self
+    public function unsetIndividualTradeProductInstance(): static
     {
         $this->individualTradeProductInstance = null;
 
@@ -891,9 +891,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIndividualTradeProductInstance(): self
+    public function clearIndividualTradeProductInstance(): static
     {
         $this->individualTradeProductInstance = [];
 
@@ -902,11 +902,11 @@ class TradeProductType
 
     /**
      * @param TradeProductInstanceType $individualTradeProductInstance
-     * @return self
+     * @return static
      */
     public function addToIndividualTradeProductInstance(
         TradeProductInstanceType $individualTradeProductInstance,
-    ): self {
+    ): static {
         $this->individualTradeProductInstance[] = $individualTradeProductInstance;
 
         return $this;
@@ -924,11 +924,11 @@ class TradeProductType
 
     /**
      * @param TradeProductInstanceType $individualTradeProductInstance
-     * @return self
+     * @return static
      */
     public function addOnceToIndividualTradeProductInstance(
         TradeProductInstanceType $individualTradeProductInstance,
-    ): self {
+    ): static {
         if (!is_array($this->individualTradeProductInstance)) {
             $this->individualTradeProductInstance = [];
         }
@@ -974,9 +974,9 @@ class TradeProductType
 
     /**
      * @param TradeCountryType|null $originTradeCountry
-     * @return self
+     * @return static
      */
-    public function setOriginTradeCountry(?TradeCountryType $originTradeCountry = null): self
+    public function setOriginTradeCountry(?TradeCountryType $originTradeCountry = null): static
     {
         $this->originTradeCountry = $originTradeCountry;
 
@@ -984,9 +984,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginTradeCountry(): self
+    public function unsetOriginTradeCountry(): static
     {
         $this->originTradeCountry = null;
 
@@ -1003,9 +1003,9 @@ class TradeProductType
 
     /**
      * @param array<ReferencedProductType>|null $includedReferencedProduct
-     * @return self
+     * @return static
      */
-    public function setIncludedReferencedProduct(?array $includedReferencedProduct = null): self
+    public function setIncludedReferencedProduct(?array $includedReferencedProduct = null): static
     {
         $this->includedReferencedProduct = $includedReferencedProduct;
 
@@ -1013,9 +1013,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedReferencedProduct(): self
+    public function unsetIncludedReferencedProduct(): static
     {
         $this->includedReferencedProduct = null;
 
@@ -1023,9 +1023,9 @@ class TradeProductType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIncludedReferencedProduct(): self
+    public function clearIncludedReferencedProduct(): static
     {
         $this->includedReferencedProduct = [];
 
@@ -1034,9 +1034,9 @@ class TradeProductType
 
     /**
      * @param ReferencedProductType $includedReferencedProduct
-     * @return self
+     * @return static
      */
-    public function addToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): self
+    public function addToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): static
     {
         $this->includedReferencedProduct[] = $includedReferencedProduct;
 
@@ -1055,9 +1055,9 @@ class TradeProductType
 
     /**
      * @param ReferencedProductType $includedReferencedProduct
-     * @return self
+     * @return static
      */
-    public function addOnceToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): self
+    public function addOnceToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): static
     {
         if (!is_array($this->includedReferencedProduct)) {
             $this->includedReferencedProduct = [];

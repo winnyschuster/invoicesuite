@@ -44,9 +44,9 @@ class IDType
 
     /**
      * @param string|null $value
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value = null): self
+    public function setValue(?string $value = null): static
     {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
@@ -54,9 +54,9 @@ class IDType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValue(): self
+    public function unsetValue(): static
     {
         $this->value = null;
 
@@ -73,9 +73,9 @@ class IDType
 
     /**
      * @param string|null $schemeID
-     * @return self
+     * @return static
      */
-    public function setSchemeID(?string $schemeID = null): self
+    public function setSchemeID(?string $schemeID = null): static
     {
         $this->schemeID = InvoiceSuiteStringUtils::asNullWhenEmpty($schemeID);
 
@@ -83,9 +83,9 @@ class IDType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSchemeID(): self
+    public function unsetSchemeID(): static
     {
         $this->schemeID = null;
 

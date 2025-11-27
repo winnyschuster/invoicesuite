@@ -43,9 +43,9 @@ class UniversalCommunicationType
 
     /**
      * @param IDType|null $uRIID
-     * @return self
+     * @return static
      */
-    public function setURIID(?IDType $uRIID = null): self
+    public function setURIID(?IDType $uRIID = null): static
     {
         $this->uRIID = $uRIID;
 
@@ -53,9 +53,9 @@ class UniversalCommunicationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetURIID(): self
+    public function unsetURIID(): static
     {
         $this->uRIID = null;
 

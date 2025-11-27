@@ -54,20 +54,20 @@ class PricingReferenceType
 
     /**
      * @param OriginalItemLocationQuantity|null $originalItemLocationQuantity
-     * @return self
+     * @return static
      */
     public function setOriginalItemLocationQuantity(
         ?OriginalItemLocationQuantity $originalItemLocationQuantity = null,
-    ): self {
+    ): static {
         $this->originalItemLocationQuantity = $originalItemLocationQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginalItemLocationQuantity(): self
+    public function unsetOriginalItemLocationQuantity(): static
     {
         $this->originalItemLocationQuantity = null;
 
@@ -84,9 +84,9 @@ class PricingReferenceType
 
     /**
      * @param array<AlternativeConditionPrice>|null $alternativeConditionPrice
-     * @return self
+     * @return static
      */
-    public function setAlternativeConditionPrice(?array $alternativeConditionPrice = null): self
+    public function setAlternativeConditionPrice(?array $alternativeConditionPrice = null): static
     {
         $this->alternativeConditionPrice = $alternativeConditionPrice;
 
@@ -94,9 +94,9 @@ class PricingReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAlternativeConditionPrice(): self
+    public function unsetAlternativeConditionPrice(): static
     {
         $this->alternativeConditionPrice = null;
 
@@ -104,9 +104,9 @@ class PricingReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAlternativeConditionPrice(): self
+    public function clearAlternativeConditionPrice(): static
     {
         $this->alternativeConditionPrice = [];
 
@@ -145,9 +145,9 @@ class PricingReferenceType
 
     /**
      * @param AlternativeConditionPrice $alternativeConditionPrice
-     * @return self
+     * @return static
      */
-    public function addToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): self
+    public function addToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): static
     {
         $this->alternativeConditionPrice[] = $alternativeConditionPrice;
 
@@ -166,9 +166,9 @@ class PricingReferenceType
 
     /**
      * @param AlternativeConditionPrice $alternativeConditionPrice
-     * @return self
+     * @return static
      */
-    public function addOnceToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): self
+    public function addOnceToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): static
     {
         if (!is_array($this->alternativeConditionPrice)) {
             $this->alternativeConditionPrice = [];

@@ -64,20 +64,20 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param HeaderTradeAgreementType|null $applicableHeaderTradeAgreement
-     * @return self
+     * @return static
      */
     public function setApplicableHeaderTradeAgreement(
         ?HeaderTradeAgreementType $applicableHeaderTradeAgreement = null,
-    ): self {
+    ): static {
         $this->applicableHeaderTradeAgreement = $applicableHeaderTradeAgreement;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableHeaderTradeAgreement(): self
+    public function unsetApplicableHeaderTradeAgreement(): static
     {
         $this->applicableHeaderTradeAgreement = null;
 
@@ -104,20 +104,20 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param HeaderTradeDeliveryType|null $applicableHeaderTradeDelivery
-     * @return self
+     * @return static
      */
     public function setApplicableHeaderTradeDelivery(
         ?HeaderTradeDeliveryType $applicableHeaderTradeDelivery = null,
-    ): self {
+    ): static {
         $this->applicableHeaderTradeDelivery = $applicableHeaderTradeDelivery;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableHeaderTradeDelivery(): self
+    public function unsetApplicableHeaderTradeDelivery(): static
     {
         $this->applicableHeaderTradeDelivery = null;
 
@@ -144,20 +144,20 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param HeaderTradeSettlementType|null $applicableHeaderTradeSettlement
-     * @return self
+     * @return static
      */
     public function setApplicableHeaderTradeSettlement(
         ?HeaderTradeSettlementType $applicableHeaderTradeSettlement = null,
-    ): self {
+    ): static {
         $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableHeaderTradeSettlement(): self
+    public function unsetApplicableHeaderTradeSettlement(): static
     {
         $this->applicableHeaderTradeSettlement = null;
 

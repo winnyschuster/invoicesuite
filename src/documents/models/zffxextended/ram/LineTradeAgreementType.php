@@ -121,20 +121,20 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType|null $sellerOrderReferencedDocument
-     * @return self
+     * @return static
      */
     public function setSellerOrderReferencedDocument(
         ?ReferencedDocumentType $sellerOrderReferencedDocument = null,
-    ): self {
+    ): static {
         $this->sellerOrderReferencedDocument = $sellerOrderReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerOrderReferencedDocument(): self
+    public function unsetSellerOrderReferencedDocument(): static
     {
         $this->sellerOrderReferencedDocument = null;
 
@@ -161,20 +161,20 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
-     * @return self
+     * @return static
      */
     public function setBuyerOrderReferencedDocument(
         ?ReferencedDocumentType $buyerOrderReferencedDocument = null,
-    ): self {
+    ): static {
         $this->buyerOrderReferencedDocument = $buyerOrderReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetBuyerOrderReferencedDocument(): self
+    public function unsetBuyerOrderReferencedDocument(): static
     {
         $this->buyerOrderReferencedDocument = null;
 
@@ -201,9 +201,9 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType|null $quotationReferencedDocument
-     * @return self
+     * @return static
      */
-    public function setQuotationReferencedDocument(?ReferencedDocumentType $quotationReferencedDocument = null): self
+    public function setQuotationReferencedDocument(?ReferencedDocumentType $quotationReferencedDocument = null): static
     {
         $this->quotationReferencedDocument = $quotationReferencedDocument;
 
@@ -211,9 +211,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuotationReferencedDocument(): self
+    public function unsetQuotationReferencedDocument(): static
     {
         $this->quotationReferencedDocument = null;
 
@@ -240,9 +240,9 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType|null $contractReferencedDocument
-     * @return self
+     * @return static
      */
-    public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): self
+    public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): static
     {
         $this->contractReferencedDocument = $contractReferencedDocument;
 
@@ -250,9 +250,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractReferencedDocument(): self
+    public function unsetContractReferencedDocument(): static
     {
         $this->contractReferencedDocument = null;
 
@@ -269,9 +269,9 @@ class LineTradeAgreementType
 
     /**
      * @param array<ReferencedDocumentType>|null $additionalReferencedDocument
-     * @return self
+     * @return static
      */
-    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): self
+    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): static
     {
         $this->additionalReferencedDocument = $additionalReferencedDocument;
 
@@ -279,9 +279,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAdditionalReferencedDocument(): self
+    public function unsetAdditionalReferencedDocument(): static
     {
         $this->additionalReferencedDocument = null;
 
@@ -289,9 +289,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAdditionalReferencedDocument(): self
+    public function clearAdditionalReferencedDocument(): static
     {
         $this->additionalReferencedDocument = [];
 
@@ -300,9 +300,9 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType $additionalReferencedDocument
-     * @return self
+     * @return static
      */
-    public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): self
+    public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
     {
         $this->additionalReferencedDocument[] = $additionalReferencedDocument;
 
@@ -321,9 +321,9 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType $additionalReferencedDocument
-     * @return self
+     * @return static
      */
-    public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): self
+    public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
     {
         if (!is_array($this->additionalReferencedDocument)) {
             $this->additionalReferencedDocument = [];
@@ -370,9 +370,9 @@ class LineTradeAgreementType
 
     /**
      * @param TradePriceType|null $grossPriceProductTradePrice
-     * @return self
+     * @return static
      */
-    public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): self
+    public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): static
     {
         $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
 
@@ -380,9 +380,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossPriceProductTradePrice(): self
+    public function unsetGrossPriceProductTradePrice(): static
     {
         $this->grossPriceProductTradePrice = null;
 
@@ -409,9 +409,9 @@ class LineTradeAgreementType
 
     /**
      * @param TradePriceType|null $netPriceProductTradePrice
-     * @return self
+     * @return static
      */
-    public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): self
+    public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): static
     {
         $this->netPriceProductTradePrice = $netPriceProductTradePrice;
 
@@ -419,9 +419,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetPriceProductTradePrice(): self
+    public function unsetNetPriceProductTradePrice(): static
     {
         $this->netPriceProductTradePrice = null;
 
@@ -438,20 +438,20 @@ class LineTradeAgreementType
 
     /**
      * @param array<ReferencedDocumentType>|null $ultimateCustomerOrderReferencedDocument
-     * @return self
+     * @return static
      */
     public function setUltimateCustomerOrderReferencedDocument(
         ?array $ultimateCustomerOrderReferencedDocument = null,
-    ): self {
+    ): static {
         $this->ultimateCustomerOrderReferencedDocument = $ultimateCustomerOrderReferencedDocument;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUltimateCustomerOrderReferencedDocument(): self
+    public function unsetUltimateCustomerOrderReferencedDocument(): static
     {
         $this->ultimateCustomerOrderReferencedDocument = null;
 
@@ -459,9 +459,9 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearUltimateCustomerOrderReferencedDocument(): self
+    public function clearUltimateCustomerOrderReferencedDocument(): static
     {
         $this->ultimateCustomerOrderReferencedDocument = [];
 
@@ -470,11 +470,11 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
-     * @return self
+     * @return static
      */
     public function addToUltimateCustomerOrderReferencedDocument(
         ReferencedDocumentType $ultimateCustomerOrderReferencedDocument,
-    ): self {
+    ): static {
         $this->ultimateCustomerOrderReferencedDocument[] = $ultimateCustomerOrderReferencedDocument;
 
         return $this;
@@ -492,11 +492,11 @@ class LineTradeAgreementType
 
     /**
      * @param ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
-     * @return self
+     * @return static
      */
     public function addOnceToUltimateCustomerOrderReferencedDocument(
         ReferencedDocumentType $ultimateCustomerOrderReferencedDocument,
-    ): self {
+    ): static {
         if (!is_array($this->ultimateCustomerOrderReferencedDocument)) {
             $this->ultimateCustomerOrderReferencedDocument = [];
         }

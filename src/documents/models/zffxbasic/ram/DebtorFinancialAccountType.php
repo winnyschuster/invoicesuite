@@ -43,9 +43,9 @@ class DebtorFinancialAccountType
 
     /**
      * @param IDType|null $iBANID
-     * @return self
+     * @return static
      */
-    public function setIBANID(?IDType $iBANID = null): self
+    public function setIBANID(?IDType $iBANID = null): static
     {
         $this->iBANID = $iBANID;
 
@@ -53,9 +53,9 @@ class DebtorFinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIBANID(): self
+    public function unsetIBANID(): static
     {
         $this->iBANID = null;
 

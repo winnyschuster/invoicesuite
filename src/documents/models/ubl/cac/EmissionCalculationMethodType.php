@@ -77,9 +77,9 @@ class EmissionCalculationMethodType
 
     /**
      * @param CalculationMethodCode|null $calculationMethodCode
-     * @return self
+     * @return static
      */
-    public function setCalculationMethodCode(?CalculationMethodCode $calculationMethodCode = null): self
+    public function setCalculationMethodCode(?CalculationMethodCode $calculationMethodCode = null): static
     {
         $this->calculationMethodCode = $calculationMethodCode;
 
@@ -87,9 +87,9 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCalculationMethodCode(): self
+    public function unsetCalculationMethodCode(): static
     {
         $this->calculationMethodCode = null;
 
@@ -116,9 +116,9 @@ class EmissionCalculationMethodType
 
     /**
      * @param FullnessIndicationCode|null $fullnessIndicationCode
-     * @return self
+     * @return static
      */
-    public function setFullnessIndicationCode(?FullnessIndicationCode $fullnessIndicationCode = null): self
+    public function setFullnessIndicationCode(?FullnessIndicationCode $fullnessIndicationCode = null): static
     {
         $this->fullnessIndicationCode = $fullnessIndicationCode;
 
@@ -126,9 +126,9 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFullnessIndicationCode(): self
+    public function unsetFullnessIndicationCode(): static
     {
         $this->fullnessIndicationCode = null;
 
@@ -155,9 +155,9 @@ class EmissionCalculationMethodType
 
     /**
      * @param MeasurementFromLocation|null $measurementFromLocation
-     * @return self
+     * @return static
      */
-    public function setMeasurementFromLocation(?MeasurementFromLocation $measurementFromLocation = null): self
+    public function setMeasurementFromLocation(?MeasurementFromLocation $measurementFromLocation = null): static
     {
         $this->measurementFromLocation = $measurementFromLocation;
 
@@ -165,9 +165,9 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementFromLocation(): self
+    public function unsetMeasurementFromLocation(): static
     {
         $this->measurementFromLocation = null;
 
@@ -194,9 +194,9 @@ class EmissionCalculationMethodType
 
     /**
      * @param MeasurementToLocation|null $measurementToLocation
-     * @return self
+     * @return static
      */
-    public function setMeasurementToLocation(?MeasurementToLocation $measurementToLocation = null): self
+    public function setMeasurementToLocation(?MeasurementToLocation $measurementToLocation = null): static
     {
         $this->measurementToLocation = $measurementToLocation;
 
@@ -204,9 +204,9 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMeasurementToLocation(): self
+    public function unsetMeasurementToLocation(): static
     {
         $this->measurementToLocation = null;
 

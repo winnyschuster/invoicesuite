@@ -66,9 +66,9 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param array<SupplyChainTradeLineItemType>|null $includedSupplyChainTradeLineItem
-     * @return self
+     * @return static
      */
-    public function setIncludedSupplyChainTradeLineItem(?array $includedSupplyChainTradeLineItem = null): self
+    public function setIncludedSupplyChainTradeLineItem(?array $includedSupplyChainTradeLineItem = null): static
     {
         $this->includedSupplyChainTradeLineItem = $includedSupplyChainTradeLineItem;
 
@@ -76,9 +76,9 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIncludedSupplyChainTradeLineItem(): self
+    public function unsetIncludedSupplyChainTradeLineItem(): static
     {
         $this->includedSupplyChainTradeLineItem = null;
 
@@ -86,9 +86,9 @@ class SupplyChainTradeTransactionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearIncludedSupplyChainTradeLineItem(): self
+    public function clearIncludedSupplyChainTradeLineItem(): static
     {
         $this->includedSupplyChainTradeLineItem = [];
 
@@ -97,11 +97,11 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem
-     * @return self
+     * @return static
      */
     public function addToIncludedSupplyChainTradeLineItem(
         SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem,
-    ): self {
+    ): static {
         $this->includedSupplyChainTradeLineItem[] = $includedSupplyChainTradeLineItem;
 
         return $this;
@@ -119,11 +119,11 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem
-     * @return self
+     * @return static
      */
     public function addOnceToIncludedSupplyChainTradeLineItem(
         SupplyChainTradeLineItemType $includedSupplyChainTradeLineItem,
-    ): self {
+    ): static {
         if (!is_array($this->includedSupplyChainTradeLineItem)) {
             $this->includedSupplyChainTradeLineItem = [];
         }
@@ -169,20 +169,20 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param HeaderTradeAgreementType|null $applicableHeaderTradeAgreement
-     * @return self
+     * @return static
      */
     public function setApplicableHeaderTradeAgreement(
         ?HeaderTradeAgreementType $applicableHeaderTradeAgreement = null,
-    ): self {
+    ): static {
         $this->applicableHeaderTradeAgreement = $applicableHeaderTradeAgreement;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableHeaderTradeAgreement(): self
+    public function unsetApplicableHeaderTradeAgreement(): static
     {
         $this->applicableHeaderTradeAgreement = null;
 
@@ -209,20 +209,20 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param HeaderTradeDeliveryType|null $applicableHeaderTradeDelivery
-     * @return self
+     * @return static
      */
     public function setApplicableHeaderTradeDelivery(
         ?HeaderTradeDeliveryType $applicableHeaderTradeDelivery = null,
-    ): self {
+    ): static {
         $this->applicableHeaderTradeDelivery = $applicableHeaderTradeDelivery;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableHeaderTradeDelivery(): self
+    public function unsetApplicableHeaderTradeDelivery(): static
     {
         $this->applicableHeaderTradeDelivery = null;
 
@@ -249,20 +249,20 @@ class SupplyChainTradeTransactionType
 
     /**
      * @param HeaderTradeSettlementType|null $applicableHeaderTradeSettlement
-     * @return self
+     * @return static
      */
     public function setApplicableHeaderTradeSettlement(
         ?HeaderTradeSettlementType $applicableHeaderTradeSettlement = null,
-    ): self {
+    ): static {
         $this->applicableHeaderTradeSettlement = $applicableHeaderTradeSettlement;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableHeaderTradeSettlement(): self
+    public function unsetApplicableHeaderTradeSettlement(): static
     {
         $this->applicableHeaderTradeSettlement = null;
 

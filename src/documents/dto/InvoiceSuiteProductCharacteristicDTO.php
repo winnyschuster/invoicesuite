@@ -83,9 +83,9 @@ class InvoiceSuiteProductCharacteristicDTO
      * Sets the name of the attribute or characteristic ("Colour")
      *
      * @param  null|string $description The name of the attribute or characteristic ("Colour")
-     * @return self
+     * @return static
      */
-    public function setDescription(?string $description): self
+    public function setDescription(?string $description): static
     {
         $this->description = $description;
 
@@ -106,9 +106,9 @@ class InvoiceSuiteProductCharacteristicDTO
      * Sets the value of the attribute or characteristic ("Red")
      *
      * @param  null|string $value The value of the attribute or characteristic ("Red")
-     * @return self
+     * @return static
      */
-    public function setValue(?string $value): self
+    public function setValue(?string $value): static
     {
         $this->value = $value;
 
@@ -129,9 +129,9 @@ class InvoiceSuiteProductCharacteristicDTO
      * Sets the type (Code) of product characteristic
      *
      * @param  null|string $type The type (Code) of product characteristic
-     * @return self
+     * @return static
      */
-    public function setType(?string $type): self
+    public function setType(?string $type): static
     {
         $this->type = $type;
 
@@ -152,9 +152,9 @@ class InvoiceSuiteProductCharacteristicDTO
      * Sets the value of the product property (numerical measured variable)
      *
      * @param  null|InvoiceSuiteMeasureDTO $valueMeasure The value of the product property (numerical measured variable)
-     * @return self
+     * @return static
      */
-    public function setValueMeasure(?InvoiceSuiteMeasureDTO $valueMeasure): self
+    public function setValueMeasure(?InvoiceSuiteMeasureDTO $valueMeasure): static
     {
         $this->valueMeasure = $valueMeasure;
 

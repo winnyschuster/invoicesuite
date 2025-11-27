@@ -54,9 +54,9 @@ class OrderedShipmentType
 
     /**
      * @param Shipment|null $shipment
-     * @return self
+     * @return static
      */
-    public function setShipment(?Shipment $shipment = null): self
+    public function setShipment(?Shipment $shipment = null): static
     {
         $this->shipment = $shipment;
 
@@ -64,9 +64,9 @@ class OrderedShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipment(): self
+    public function unsetShipment(): static
     {
         $this->shipment = null;
 
@@ -83,9 +83,9 @@ class OrderedShipmentType
 
     /**
      * @param array<Package>|null $package
-     * @return self
+     * @return static
      */
-    public function setPackage(?array $package = null): self
+    public function setPackage(?array $package = null): static
     {
         $this->package = $package;
 
@@ -93,9 +93,9 @@ class OrderedShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPackage(): self
+    public function unsetPackage(): static
     {
         $this->package = null;
 
@@ -103,9 +103,9 @@ class OrderedShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPackage(): self
+    public function clearPackage(): static
     {
         $this->package = [];
 
@@ -144,9 +144,9 @@ class OrderedShipmentType
 
     /**
      * @param Package $package
-     * @return self
+     * @return static
      */
-    public function addToPackage(Package $package): self
+    public function addToPackage(Package $package): static
     {
         $this->package[] = $package;
 
@@ -165,9 +165,9 @@ class OrderedShipmentType
 
     /**
      * @param Package $package
-     * @return self
+     * @return static
      */
-    public function addOnceToPackage(Package $package): self
+    public function addOnceToPackage(Package $package): static
     {
         if (!is_array($this->package)) {
             $this->package = [];

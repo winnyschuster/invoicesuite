@@ -54,9 +54,9 @@ class ShareholderPartyType
 
     /**
      * @param PartecipationPercent|null $partecipationPercent
-     * @return self
+     * @return static
      */
-    public function setPartecipationPercent(?PartecipationPercent $partecipationPercent = null): self
+    public function setPartecipationPercent(?PartecipationPercent $partecipationPercent = null): static
     {
         $this->partecipationPercent = $partecipationPercent;
 
@@ -64,9 +64,9 @@ class ShareholderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPartecipationPercent(): self
+    public function unsetPartecipationPercent(): static
     {
         $this->partecipationPercent = null;
 
@@ -93,9 +93,9 @@ class ShareholderPartyType
 
     /**
      * @param Party|null $party
-     * @return self
+     * @return static
      */
-    public function setParty(?Party $party = null): self
+    public function setParty(?Party $party = null): static
     {
         $this->party = $party;
 
@@ -103,9 +103,9 @@ class ShareholderPartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetParty(): self
+    public function unsetParty(): static
     {
         $this->party = null;
 

@@ -109,9 +109,9 @@ class AuctionTermsType
 
     /**
      * @param bool|null $auctionConstraintIndicator
-     * @return self
+     * @return static
      */
-    public function setAuctionConstraintIndicator(?bool $auctionConstraintIndicator = null): self
+    public function setAuctionConstraintIndicator(?bool $auctionConstraintIndicator = null): static
     {
         $this->auctionConstraintIndicator = $auctionConstraintIndicator;
 
@@ -119,9 +119,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAuctionConstraintIndicator(): self
+    public function unsetAuctionConstraintIndicator(): static
     {
         $this->auctionConstraintIndicator = null;
 
@@ -138,9 +138,9 @@ class AuctionTermsType
 
     /**
      * @param array<JustificationDescription>|null $justificationDescription
-     * @return self
+     * @return static
      */
-    public function setJustificationDescription(?array $justificationDescription = null): self
+    public function setJustificationDescription(?array $justificationDescription = null): static
     {
         $this->justificationDescription = $justificationDescription;
 
@@ -148,9 +148,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetJustificationDescription(): self
+    public function unsetJustificationDescription(): static
     {
         $this->justificationDescription = null;
 
@@ -158,9 +158,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearJustificationDescription(): self
+    public function clearJustificationDescription(): static
     {
         $this->justificationDescription = [];
 
@@ -199,9 +199,9 @@ class AuctionTermsType
 
     /**
      * @param JustificationDescription $justificationDescription
-     * @return self
+     * @return static
      */
-    public function addToJustificationDescription(JustificationDescription $justificationDescription): self
+    public function addToJustificationDescription(JustificationDescription $justificationDescription): static
     {
         $this->justificationDescription[] = $justificationDescription;
 
@@ -220,9 +220,9 @@ class AuctionTermsType
 
     /**
      * @param JustificationDescription $justificationDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToJustificationDescription(JustificationDescription $justificationDescription): self
+    public function addOnceToJustificationDescription(JustificationDescription $justificationDescription): static
     {
         if (!is_array($this->justificationDescription)) {
             $this->justificationDescription = [];
@@ -259,9 +259,9 @@ class AuctionTermsType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -269,9 +269,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -279,9 +279,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -320,9 +320,9 @@ class AuctionTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -341,9 +341,9 @@ class AuctionTermsType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -380,9 +380,9 @@ class AuctionTermsType
 
     /**
      * @param array<ProcessDescription>|null $processDescription
-     * @return self
+     * @return static
      */
-    public function setProcessDescription(?array $processDescription = null): self
+    public function setProcessDescription(?array $processDescription = null): static
     {
         $this->processDescription = $processDescription;
 
@@ -390,9 +390,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetProcessDescription(): self
+    public function unsetProcessDescription(): static
     {
         $this->processDescription = null;
 
@@ -400,9 +400,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearProcessDescription(): self
+    public function clearProcessDescription(): static
     {
         $this->processDescription = [];
 
@@ -441,9 +441,9 @@ class AuctionTermsType
 
     /**
      * @param ProcessDescription $processDescription
-     * @return self
+     * @return static
      */
-    public function addToProcessDescription(ProcessDescription $processDescription): self
+    public function addToProcessDescription(ProcessDescription $processDescription): static
     {
         $this->processDescription[] = $processDescription;
 
@@ -462,9 +462,9 @@ class AuctionTermsType
 
     /**
      * @param ProcessDescription $processDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToProcessDescription(ProcessDescription $processDescription): self
+    public function addOnceToProcessDescription(ProcessDescription $processDescription): static
     {
         if (!is_array($this->processDescription)) {
             $this->processDescription = [];
@@ -501,9 +501,9 @@ class AuctionTermsType
 
     /**
      * @param array<ConditionsDescription>|null $conditionsDescription
-     * @return self
+     * @return static
      */
-    public function setConditionsDescription(?array $conditionsDescription = null): self
+    public function setConditionsDescription(?array $conditionsDescription = null): static
     {
         $this->conditionsDescription = $conditionsDescription;
 
@@ -511,9 +511,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConditionsDescription(): self
+    public function unsetConditionsDescription(): static
     {
         $this->conditionsDescription = null;
 
@@ -521,9 +521,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearConditionsDescription(): self
+    public function clearConditionsDescription(): static
     {
         $this->conditionsDescription = [];
 
@@ -562,9 +562,9 @@ class AuctionTermsType
 
     /**
      * @param ConditionsDescription $conditionsDescription
-     * @return self
+     * @return static
      */
-    public function addToConditionsDescription(ConditionsDescription $conditionsDescription): self
+    public function addToConditionsDescription(ConditionsDescription $conditionsDescription): static
     {
         $this->conditionsDescription[] = $conditionsDescription;
 
@@ -583,9 +583,9 @@ class AuctionTermsType
 
     /**
      * @param ConditionsDescription $conditionsDescription
-     * @return self
+     * @return static
      */
-    public function addOnceToConditionsDescription(ConditionsDescription $conditionsDescription): self
+    public function addOnceToConditionsDescription(ConditionsDescription $conditionsDescription): static
     {
         if (!is_array($this->conditionsDescription)) {
             $this->conditionsDescription = [];
@@ -622,9 +622,9 @@ class AuctionTermsType
 
     /**
      * @param array<ElectronicDeviceDescription>|null $electronicDeviceDescription
-     * @return self
+     * @return static
      */
-    public function setElectronicDeviceDescription(?array $electronicDeviceDescription = null): self
+    public function setElectronicDeviceDescription(?array $electronicDeviceDescription = null): static
     {
         $this->electronicDeviceDescription = $electronicDeviceDescription;
 
@@ -632,9 +632,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetElectronicDeviceDescription(): self
+    public function unsetElectronicDeviceDescription(): static
     {
         $this->electronicDeviceDescription = null;
 
@@ -642,9 +642,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearElectronicDeviceDescription(): self
+    public function clearElectronicDeviceDescription(): static
     {
         $this->electronicDeviceDescription = [];
 
@@ -683,9 +683,9 @@ class AuctionTermsType
 
     /**
      * @param ElectronicDeviceDescription $electronicDeviceDescription
-     * @return self
+     * @return static
      */
-    public function addToElectronicDeviceDescription(ElectronicDeviceDescription $electronicDeviceDescription): self
+    public function addToElectronicDeviceDescription(ElectronicDeviceDescription $electronicDeviceDescription): static
     {
         $this->electronicDeviceDescription[] = $electronicDeviceDescription;
 
@@ -704,11 +704,11 @@ class AuctionTermsType
 
     /**
      * @param ElectronicDeviceDescription $electronicDeviceDescription
-     * @return self
+     * @return static
      */
     public function addOnceToElectronicDeviceDescription(
         ElectronicDeviceDescription $electronicDeviceDescription,
-    ): self {
+    ): static {
         if (!is_array($this->electronicDeviceDescription)) {
             $this->electronicDeviceDescription = [];
         }
@@ -754,9 +754,9 @@ class AuctionTermsType
 
     /**
      * @param AuctionURI|null $auctionURI
-     * @return self
+     * @return static
      */
-    public function setAuctionURI(?AuctionURI $auctionURI = null): self
+    public function setAuctionURI(?AuctionURI $auctionURI = null): static
     {
         $this->auctionURI = $auctionURI;
 
@@ -764,9 +764,9 @@ class AuctionTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAuctionURI(): self
+    public function unsetAuctionURI(): static
     {
         $this->auctionURI = null;
 

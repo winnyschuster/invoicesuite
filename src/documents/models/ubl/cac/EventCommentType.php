@@ -66,9 +66,9 @@ class EventCommentType
 
     /**
      * @param Comment|null $comment
-     * @return self
+     * @return static
      */
-    public function setComment(?Comment $comment = null): self
+    public function setComment(?Comment $comment = null): static
     {
         $this->comment = $comment;
 
@@ -76,9 +76,9 @@ class EventCommentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetComment(): self
+    public function unsetComment(): static
     {
         $this->comment = null;
 
@@ -95,9 +95,9 @@ class EventCommentType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -105,9 +105,9 @@ class EventCommentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -124,9 +124,9 @@ class EventCommentType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -134,9 +134,9 @@ class EventCommentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 

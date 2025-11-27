@@ -304,9 +304,9 @@ class TransportationServiceType
 
     /**
      * @param TransportServiceCode|null $transportServiceCode
-     * @return self
+     * @return static
      */
-    public function setTransportServiceCode(?TransportServiceCode $transportServiceCode = null): self
+    public function setTransportServiceCode(?TransportServiceCode $transportServiceCode = null): static
     {
         $this->transportServiceCode = $transportServiceCode;
 
@@ -314,9 +314,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportServiceCode(): self
+    public function unsetTransportServiceCode(): static
     {
         $this->transportServiceCode = null;
 
@@ -343,9 +343,9 @@ class TransportationServiceType
 
     /**
      * @param TariffClassCode|null $tariffClassCode
-     * @return self
+     * @return static
      */
-    public function setTariffClassCode(?TariffClassCode $tariffClassCode = null): self
+    public function setTariffClassCode(?TariffClassCode $tariffClassCode = null): static
     {
         $this->tariffClassCode = $tariffClassCode;
 
@@ -353,9 +353,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTariffClassCode(): self
+    public function unsetTariffClassCode(): static
     {
         $this->tariffClassCode = null;
 
@@ -382,9 +382,9 @@ class TransportationServiceType
 
     /**
      * @param Priority|null $priority
-     * @return self
+     * @return static
      */
-    public function setPriority(?Priority $priority = null): self
+    public function setPriority(?Priority $priority = null): static
     {
         $this->priority = $priority;
 
@@ -392,9 +392,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPriority(): self
+    public function unsetPriority(): static
     {
         $this->priority = null;
 
@@ -421,9 +421,9 @@ class TransportationServiceType
 
     /**
      * @param FreightRateClassCode|null $freightRateClassCode
-     * @return self
+     * @return static
      */
-    public function setFreightRateClassCode(?FreightRateClassCode $freightRateClassCode = null): self
+    public function setFreightRateClassCode(?FreightRateClassCode $freightRateClassCode = null): static
     {
         $this->freightRateClassCode = $freightRateClassCode;
 
@@ -431,9 +431,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightRateClassCode(): self
+    public function unsetFreightRateClassCode(): static
     {
         $this->freightRateClassCode = null;
 
@@ -450,9 +450,9 @@ class TransportationServiceType
 
     /**
      * @param array<TransportationServiceDescription>|null $transportationServiceDescription
-     * @return self
+     * @return static
      */
-    public function setTransportationServiceDescription(?array $transportationServiceDescription = null): self
+    public function setTransportationServiceDescription(?array $transportationServiceDescription = null): static
     {
         $this->transportationServiceDescription = $transportationServiceDescription;
 
@@ -460,9 +460,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportationServiceDescription(): self
+    public function unsetTransportationServiceDescription(): static
     {
         $this->transportationServiceDescription = null;
 
@@ -470,9 +470,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportationServiceDescription(): self
+    public function clearTransportationServiceDescription(): static
     {
         $this->transportationServiceDescription = [];
 
@@ -511,11 +511,11 @@ class TransportationServiceType
 
     /**
      * @param TransportationServiceDescription $transportationServiceDescription
-     * @return self
+     * @return static
      */
     public function addToTransportationServiceDescription(
         TransportationServiceDescription $transportationServiceDescription,
-    ): self {
+    ): static {
         $this->transportationServiceDescription[] = $transportationServiceDescription;
 
         return $this;
@@ -533,11 +533,11 @@ class TransportationServiceType
 
     /**
      * @param TransportationServiceDescription $transportationServiceDescription
-     * @return self
+     * @return static
      */
     public function addOnceToTransportationServiceDescription(
         TransportationServiceDescription $transportationServiceDescription,
-    ): self {
+    ): static {
         if (!is_array($this->transportationServiceDescription)) {
             $this->transportationServiceDescription = [];
         }
@@ -583,20 +583,20 @@ class TransportationServiceType
 
     /**
      * @param TransportationServiceDetailsURI|null $transportationServiceDetailsURI
-     * @return self
+     * @return static
      */
     public function setTransportationServiceDetailsURI(
         ?TransportationServiceDetailsURI $transportationServiceDetailsURI = null,
-    ): self {
+    ): static {
         $this->transportationServiceDetailsURI = $transportationServiceDetailsURI;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportationServiceDetailsURI(): self
+    public function unsetTransportationServiceDetailsURI(): static
     {
         $this->transportationServiceDetailsURI = null;
 
@@ -613,9 +613,9 @@ class TransportationServiceType
 
     /**
      * @param DateTimeInterface|null $nominationDate
-     * @return self
+     * @return static
      */
-    public function setNominationDate(?DateTimeInterface $nominationDate = null): self
+    public function setNominationDate(?DateTimeInterface $nominationDate = null): static
     {
         $this->nominationDate = $nominationDate;
 
@@ -623,9 +623,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNominationDate(): self
+    public function unsetNominationDate(): static
     {
         $this->nominationDate = null;
 
@@ -642,9 +642,9 @@ class TransportationServiceType
 
     /**
      * @param DateTimeInterface|null $nominationTime
-     * @return self
+     * @return static
      */
-    public function setNominationTime(?DateTimeInterface $nominationTime = null): self
+    public function setNominationTime(?DateTimeInterface $nominationTime = null): static
     {
         $this->nominationTime = $nominationTime;
 
@@ -652,9 +652,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNominationTime(): self
+    public function unsetNominationTime(): static
     {
         $this->nominationTime = null;
 
@@ -681,9 +681,9 @@ class TransportationServiceType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -691,9 +691,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -720,9 +720,9 @@ class TransportationServiceType
 
     /**
      * @param SequenceNumeric|null $sequenceNumeric
-     * @return self
+     * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
+    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
     {
         $this->sequenceNumeric = $sequenceNumeric;
 
@@ -730,9 +730,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceNumeric(): self
+    public function unsetSequenceNumeric(): static
     {
         $this->sequenceNumeric = null;
 
@@ -749,9 +749,9 @@ class TransportationServiceType
 
     /**
      * @param array<TransportEquipment>|null $transportEquipment
-     * @return self
+     * @return static
      */
-    public function setTransportEquipment(?array $transportEquipment = null): self
+    public function setTransportEquipment(?array $transportEquipment = null): static
     {
         $this->transportEquipment = $transportEquipment;
 
@@ -759,9 +759,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEquipment(): self
+    public function unsetTransportEquipment(): static
     {
         $this->transportEquipment = null;
 
@@ -769,9 +769,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportEquipment(): self
+    public function clearTransportEquipment(): static
     {
         $this->transportEquipment = [];
 
@@ -810,9 +810,9 @@ class TransportationServiceType
 
     /**
      * @param TransportEquipment $transportEquipment
-     * @return self
+     * @return static
      */
-    public function addToTransportEquipment(TransportEquipment $transportEquipment): self
+    public function addToTransportEquipment(TransportEquipment $transportEquipment): static
     {
         $this->transportEquipment[] = $transportEquipment;
 
@@ -831,9 +831,9 @@ class TransportationServiceType
 
     /**
      * @param TransportEquipment $transportEquipment
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): self
+    public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): static
     {
         if (!is_array($this->transportEquipment)) {
             $this->transportEquipment = [];
@@ -870,9 +870,9 @@ class TransportationServiceType
 
     /**
      * @param array<SupportedTransportEquipment>|null $supportedTransportEquipment
-     * @return self
+     * @return static
      */
-    public function setSupportedTransportEquipment(?array $supportedTransportEquipment = null): self
+    public function setSupportedTransportEquipment(?array $supportedTransportEquipment = null): static
     {
         $this->supportedTransportEquipment = $supportedTransportEquipment;
 
@@ -880,9 +880,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupportedTransportEquipment(): self
+    public function unsetSupportedTransportEquipment(): static
     {
         $this->supportedTransportEquipment = null;
 
@@ -890,9 +890,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSupportedTransportEquipment(): self
+    public function clearSupportedTransportEquipment(): static
     {
         $this->supportedTransportEquipment = [];
 
@@ -931,9 +931,9 @@ class TransportationServiceType
 
     /**
      * @param SupportedTransportEquipment $supportedTransportEquipment
-     * @return self
+     * @return static
      */
-    public function addToSupportedTransportEquipment(SupportedTransportEquipment $supportedTransportEquipment): self
+    public function addToSupportedTransportEquipment(SupportedTransportEquipment $supportedTransportEquipment): static
     {
         $this->supportedTransportEquipment[] = $supportedTransportEquipment;
 
@@ -952,11 +952,11 @@ class TransportationServiceType
 
     /**
      * @param SupportedTransportEquipment $supportedTransportEquipment
-     * @return self
+     * @return static
      */
     public function addOnceToSupportedTransportEquipment(
         SupportedTransportEquipment $supportedTransportEquipment,
-    ): self {
+    ): static {
         if (!is_array($this->supportedTransportEquipment)) {
             $this->supportedTransportEquipment = [];
         }
@@ -992,9 +992,9 @@ class TransportationServiceType
 
     /**
      * @param array<UnsupportedTransportEquipment>|null $unsupportedTransportEquipment
-     * @return self
+     * @return static
      */
-    public function setUnsupportedTransportEquipment(?array $unsupportedTransportEquipment = null): self
+    public function setUnsupportedTransportEquipment(?array $unsupportedTransportEquipment = null): static
     {
         $this->unsupportedTransportEquipment = $unsupportedTransportEquipment;
 
@@ -1002,9 +1002,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnsupportedTransportEquipment(): self
+    public function unsetUnsupportedTransportEquipment(): static
     {
         $this->unsupportedTransportEquipment = null;
 
@@ -1012,9 +1012,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearUnsupportedTransportEquipment(): self
+    public function clearUnsupportedTransportEquipment(): static
     {
         $this->unsupportedTransportEquipment = [];
 
@@ -1053,11 +1053,11 @@ class TransportationServiceType
 
     /**
      * @param UnsupportedTransportEquipment $unsupportedTransportEquipment
-     * @return self
+     * @return static
      */
     public function addToUnsupportedTransportEquipment(
         UnsupportedTransportEquipment $unsupportedTransportEquipment,
-    ): self {
+    ): static {
         $this->unsupportedTransportEquipment[] = $unsupportedTransportEquipment;
 
         return $this;
@@ -1075,11 +1075,11 @@ class TransportationServiceType
 
     /**
      * @param UnsupportedTransportEquipment $unsupportedTransportEquipment
-     * @return self
+     * @return static
      */
     public function addOnceToUnsupportedTransportEquipment(
         UnsupportedTransportEquipment $unsupportedTransportEquipment,
-    ): self {
+    ): static {
         if (!is_array($this->unsupportedTransportEquipment)) {
             $this->unsupportedTransportEquipment = [];
         }
@@ -1115,9 +1115,9 @@ class TransportationServiceType
 
     /**
      * @param array<CommodityClassification>|null $commodityClassification
-     * @return self
+     * @return static
      */
-    public function setCommodityClassification(?array $commodityClassification = null): self
+    public function setCommodityClassification(?array $commodityClassification = null): static
     {
         $this->commodityClassification = $commodityClassification;
 
@@ -1125,9 +1125,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCommodityClassification(): self
+    public function unsetCommodityClassification(): static
     {
         $this->commodityClassification = null;
 
@@ -1135,9 +1135,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearCommodityClassification(): self
+    public function clearCommodityClassification(): static
     {
         $this->commodityClassification = [];
 
@@ -1176,9 +1176,9 @@ class TransportationServiceType
 
     /**
      * @param CommodityClassification $commodityClassification
-     * @return self
+     * @return static
      */
-    public function addToCommodityClassification(CommodityClassification $commodityClassification): self
+    public function addToCommodityClassification(CommodityClassification $commodityClassification): static
     {
         $this->commodityClassification[] = $commodityClassification;
 
@@ -1197,9 +1197,9 @@ class TransportationServiceType
 
     /**
      * @param CommodityClassification $commodityClassification
-     * @return self
+     * @return static
      */
-    public function addOnceToCommodityClassification(CommodityClassification $commodityClassification): self
+    public function addOnceToCommodityClassification(CommodityClassification $commodityClassification): static
     {
         if (!is_array($this->commodityClassification)) {
             $this->commodityClassification = [];
@@ -1236,9 +1236,9 @@ class TransportationServiceType
 
     /**
      * @param array<SupportedCommodityClassification>|null $supportedCommodityClassification
-     * @return self
+     * @return static
      */
-    public function setSupportedCommodityClassification(?array $supportedCommodityClassification = null): self
+    public function setSupportedCommodityClassification(?array $supportedCommodityClassification = null): static
     {
         $this->supportedCommodityClassification = $supportedCommodityClassification;
 
@@ -1246,9 +1246,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSupportedCommodityClassification(): self
+    public function unsetSupportedCommodityClassification(): static
     {
         $this->supportedCommodityClassification = null;
 
@@ -1256,9 +1256,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSupportedCommodityClassification(): self
+    public function clearSupportedCommodityClassification(): static
     {
         $this->supportedCommodityClassification = [];
 
@@ -1297,11 +1297,11 @@ class TransportationServiceType
 
     /**
      * @param SupportedCommodityClassification $supportedCommodityClassification
-     * @return self
+     * @return static
      */
     public function addToSupportedCommodityClassification(
         SupportedCommodityClassification $supportedCommodityClassification,
-    ): self {
+    ): static {
         $this->supportedCommodityClassification[] = $supportedCommodityClassification;
 
         return $this;
@@ -1319,11 +1319,11 @@ class TransportationServiceType
 
     /**
      * @param SupportedCommodityClassification $supportedCommodityClassification
-     * @return self
+     * @return static
      */
     public function addOnceToSupportedCommodityClassification(
         SupportedCommodityClassification $supportedCommodityClassification,
-    ): self {
+    ): static {
         if (!is_array($this->supportedCommodityClassification)) {
             $this->supportedCommodityClassification = [];
         }
@@ -1359,9 +1359,9 @@ class TransportationServiceType
 
     /**
      * @param array<UnsupportedCommodityClassification>|null $unsupportedCommodityClassification
-     * @return self
+     * @return static
      */
-    public function setUnsupportedCommodityClassification(?array $unsupportedCommodityClassification = null): self
+    public function setUnsupportedCommodityClassification(?array $unsupportedCommodityClassification = null): static
     {
         $this->unsupportedCommodityClassification = $unsupportedCommodityClassification;
 
@@ -1369,9 +1369,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUnsupportedCommodityClassification(): self
+    public function unsetUnsupportedCommodityClassification(): static
     {
         $this->unsupportedCommodityClassification = null;
 
@@ -1379,9 +1379,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearUnsupportedCommodityClassification(): self
+    public function clearUnsupportedCommodityClassification(): static
     {
         $this->unsupportedCommodityClassification = [];
 
@@ -1420,11 +1420,11 @@ class TransportationServiceType
 
     /**
      * @param UnsupportedCommodityClassification $unsupportedCommodityClassification
-     * @return self
+     * @return static
      */
     public function addToUnsupportedCommodityClassification(
         UnsupportedCommodityClassification $unsupportedCommodityClassification,
-    ): self {
+    ): static {
         $this->unsupportedCommodityClassification[] = $unsupportedCommodityClassification;
 
         return $this;
@@ -1442,11 +1442,11 @@ class TransportationServiceType
 
     /**
      * @param UnsupportedCommodityClassification $unsupportedCommodityClassification
-     * @return self
+     * @return static
      */
     public function addOnceToUnsupportedCommodityClassification(
         UnsupportedCommodityClassification $unsupportedCommodityClassification,
-    ): self {
+    ): static {
         if (!is_array($this->unsupportedCommodityClassification)) {
             $this->unsupportedCommodityClassification = [];
         }
@@ -1492,9 +1492,9 @@ class TransportationServiceType
 
     /**
      * @param TotalCapacityDimension|null $totalCapacityDimension
-     * @return self
+     * @return static
      */
-    public function setTotalCapacityDimension(?TotalCapacityDimension $totalCapacityDimension = null): self
+    public function setTotalCapacityDimension(?TotalCapacityDimension $totalCapacityDimension = null): static
     {
         $this->totalCapacityDimension = $totalCapacityDimension;
 
@@ -1502,9 +1502,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalCapacityDimension(): self
+    public function unsetTotalCapacityDimension(): static
     {
         $this->totalCapacityDimension = null;
 
@@ -1521,9 +1521,9 @@ class TransportationServiceType
 
     /**
      * @param array<ShipmentStage>|null $shipmentStage
-     * @return self
+     * @return static
      */
-    public function setShipmentStage(?array $shipmentStage = null): self
+    public function setShipmentStage(?array $shipmentStage = null): static
     {
         $this->shipmentStage = $shipmentStage;
 
@@ -1531,9 +1531,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipmentStage(): self
+    public function unsetShipmentStage(): static
     {
         $this->shipmentStage = null;
 
@@ -1541,9 +1541,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipmentStage(): self
+    public function clearShipmentStage(): static
     {
         $this->shipmentStage = [];
 
@@ -1582,9 +1582,9 @@ class TransportationServiceType
 
     /**
      * @param ShipmentStage $shipmentStage
-     * @return self
+     * @return static
      */
-    public function addToShipmentStage(ShipmentStage $shipmentStage): self
+    public function addToShipmentStage(ShipmentStage $shipmentStage): static
     {
         $this->shipmentStage[] = $shipmentStage;
 
@@ -1603,9 +1603,9 @@ class TransportationServiceType
 
     /**
      * @param ShipmentStage $shipmentStage
-     * @return self
+     * @return static
      */
-    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): self
+    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
     {
         if (!is_array($this->shipmentStage)) {
             $this->shipmentStage = [];
@@ -1642,9 +1642,9 @@ class TransportationServiceType
 
     /**
      * @param array<TransportEvent>|null $transportEvent
-     * @return self
+     * @return static
      */
-    public function setTransportEvent(?array $transportEvent = null): self
+    public function setTransportEvent(?array $transportEvent = null): static
     {
         $this->transportEvent = $transportEvent;
 
@@ -1652,9 +1652,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportEvent(): self
+    public function unsetTransportEvent(): static
     {
         $this->transportEvent = null;
 
@@ -1662,9 +1662,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportEvent(): self
+    public function clearTransportEvent(): static
     {
         $this->transportEvent = [];
 
@@ -1703,9 +1703,9 @@ class TransportationServiceType
 
     /**
      * @param TransportEvent $transportEvent
-     * @return self
+     * @return static
      */
-    public function addToTransportEvent(TransportEvent $transportEvent): self
+    public function addToTransportEvent(TransportEvent $transportEvent): static
     {
         $this->transportEvent[] = $transportEvent;
 
@@ -1724,9 +1724,9 @@ class TransportationServiceType
 
     /**
      * @param TransportEvent $transportEvent
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportEvent(TransportEvent $transportEvent): self
+    public function addOnceToTransportEvent(TransportEvent $transportEvent): static
     {
         if (!is_array($this->transportEvent)) {
             $this->transportEvent = [];
@@ -1773,20 +1773,20 @@ class TransportationServiceType
 
     /**
      * @param ResponsibleTransportServiceProviderParty|null $responsibleTransportServiceProviderParty
-     * @return self
+     * @return static
      */
     public function setResponsibleTransportServiceProviderParty(
         ?ResponsibleTransportServiceProviderParty $responsibleTransportServiceProviderParty = null,
-    ): self {
+    ): static {
         $this->responsibleTransportServiceProviderParty = $responsibleTransportServiceProviderParty;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetResponsibleTransportServiceProviderParty(): self
+    public function unsetResponsibleTransportServiceProviderParty(): static
     {
         $this->responsibleTransportServiceProviderParty = null;
 
@@ -1803,9 +1803,9 @@ class TransportationServiceType
 
     /**
      * @param array<EnvironmentalEmission>|null $environmentalEmission
-     * @return self
+     * @return static
      */
-    public function setEnvironmentalEmission(?array $environmentalEmission = null): self
+    public function setEnvironmentalEmission(?array $environmentalEmission = null): static
     {
         $this->environmentalEmission = $environmentalEmission;
 
@@ -1813,9 +1813,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEnvironmentalEmission(): self
+    public function unsetEnvironmentalEmission(): static
     {
         $this->environmentalEmission = null;
 
@@ -1823,9 +1823,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEnvironmentalEmission(): self
+    public function clearEnvironmentalEmission(): static
     {
         $this->environmentalEmission = [];
 
@@ -1864,9 +1864,9 @@ class TransportationServiceType
 
     /**
      * @param EnvironmentalEmission $environmentalEmission
-     * @return self
+     * @return static
      */
-    public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): self
+    public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
     {
         $this->environmentalEmission[] = $environmentalEmission;
 
@@ -1885,9 +1885,9 @@ class TransportationServiceType
 
     /**
      * @param EnvironmentalEmission $environmentalEmission
-     * @return self
+     * @return static
      */
-    public function addOnceToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): self
+    public function addOnceToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
     {
         if (!is_array($this->environmentalEmission)) {
             $this->environmentalEmission = [];
@@ -1934,9 +1934,9 @@ class TransportationServiceType
 
     /**
      * @param EstimatedDurationPeriod|null $estimatedDurationPeriod
-     * @return self
+     * @return static
      */
-    public function setEstimatedDurationPeriod(?EstimatedDurationPeriod $estimatedDurationPeriod = null): self
+    public function setEstimatedDurationPeriod(?EstimatedDurationPeriod $estimatedDurationPeriod = null): static
     {
         $this->estimatedDurationPeriod = $estimatedDurationPeriod;
 
@@ -1944,9 +1944,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEstimatedDurationPeriod(): self
+    public function unsetEstimatedDurationPeriod(): static
     {
         $this->estimatedDurationPeriod = null;
 
@@ -1963,9 +1963,9 @@ class TransportationServiceType
 
     /**
      * @param array<ScheduledServiceFrequency>|null $scheduledServiceFrequency
-     * @return self
+     * @return static
      */
-    public function setScheduledServiceFrequency(?array $scheduledServiceFrequency = null): self
+    public function setScheduledServiceFrequency(?array $scheduledServiceFrequency = null): static
     {
         $this->scheduledServiceFrequency = $scheduledServiceFrequency;
 
@@ -1973,9 +1973,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetScheduledServiceFrequency(): self
+    public function unsetScheduledServiceFrequency(): static
     {
         $this->scheduledServiceFrequency = null;
 
@@ -1983,9 +1983,9 @@ class TransportationServiceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearScheduledServiceFrequency(): self
+    public function clearScheduledServiceFrequency(): static
     {
         $this->scheduledServiceFrequency = [];
 
@@ -2024,9 +2024,9 @@ class TransportationServiceType
 
     /**
      * @param ScheduledServiceFrequency $scheduledServiceFrequency
-     * @return self
+     * @return static
      */
-    public function addToScheduledServiceFrequency(ScheduledServiceFrequency $scheduledServiceFrequency): self
+    public function addToScheduledServiceFrequency(ScheduledServiceFrequency $scheduledServiceFrequency): static
     {
         $this->scheduledServiceFrequency[] = $scheduledServiceFrequency;
 
@@ -2045,9 +2045,9 @@ class TransportationServiceType
 
     /**
      * @param ScheduledServiceFrequency $scheduledServiceFrequency
-     * @return self
+     * @return static
      */
-    public function addOnceToScheduledServiceFrequency(ScheduledServiceFrequency $scheduledServiceFrequency): self
+    public function addOnceToScheduledServiceFrequency(ScheduledServiceFrequency $scheduledServiceFrequency): static
     {
         if (!is_array($this->scheduledServiceFrequency)) {
             $this->scheduledServiceFrequency = [];

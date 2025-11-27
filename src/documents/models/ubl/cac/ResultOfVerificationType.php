@@ -125,9 +125,9 @@ class ResultOfVerificationType
 
     /**
      * @param ValidatorID|null $validatorID
-     * @return self
+     * @return static
      */
-    public function setValidatorID(?ValidatorID $validatorID = null): self
+    public function setValidatorID(?ValidatorID $validatorID = null): static
     {
         $this->validatorID = $validatorID;
 
@@ -135,9 +135,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidatorID(): self
+    public function unsetValidatorID(): static
     {
         $this->validatorID = null;
 
@@ -164,9 +164,9 @@ class ResultOfVerificationType
 
     /**
      * @param ValidationResultCode|null $validationResultCode
-     * @return self
+     * @return static
      */
-    public function setValidationResultCode(?ValidationResultCode $validationResultCode = null): self
+    public function setValidationResultCode(?ValidationResultCode $validationResultCode = null): static
     {
         $this->validationResultCode = $validationResultCode;
 
@@ -174,9 +174,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidationResultCode(): self
+    public function unsetValidationResultCode(): static
     {
         $this->validationResultCode = null;
 
@@ -193,9 +193,9 @@ class ResultOfVerificationType
 
     /**
      * @param DateTimeInterface|null $validationDate
-     * @return self
+     * @return static
      */
-    public function setValidationDate(?DateTimeInterface $validationDate = null): self
+    public function setValidationDate(?DateTimeInterface $validationDate = null): static
     {
         $this->validationDate = $validationDate;
 
@@ -203,9 +203,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidationDate(): self
+    public function unsetValidationDate(): static
     {
         $this->validationDate = null;
 
@@ -222,9 +222,9 @@ class ResultOfVerificationType
 
     /**
      * @param DateTimeInterface|null $validationTime
-     * @return self
+     * @return static
      */
-    public function setValidationTime(?DateTimeInterface $validationTime = null): self
+    public function setValidationTime(?DateTimeInterface $validationTime = null): static
     {
         $this->validationTime = $validationTime;
 
@@ -232,9 +232,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidationTime(): self
+    public function unsetValidationTime(): static
     {
         $this->validationTime = null;
 
@@ -261,9 +261,9 @@ class ResultOfVerificationType
 
     /**
      * @param ValidateProcess|null $validateProcess
-     * @return self
+     * @return static
      */
-    public function setValidateProcess(?ValidateProcess $validateProcess = null): self
+    public function setValidateProcess(?ValidateProcess $validateProcess = null): static
     {
         $this->validateProcess = $validateProcess;
 
@@ -271,9 +271,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidateProcess(): self
+    public function unsetValidateProcess(): static
     {
         $this->validateProcess = null;
 
@@ -300,9 +300,9 @@ class ResultOfVerificationType
 
     /**
      * @param ValidateTool|null $validateTool
-     * @return self
+     * @return static
      */
-    public function setValidateTool(?ValidateTool $validateTool = null): self
+    public function setValidateTool(?ValidateTool $validateTool = null): static
     {
         $this->validateTool = $validateTool;
 
@@ -310,9 +310,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidateTool(): self
+    public function unsetValidateTool(): static
     {
         $this->validateTool = null;
 
@@ -339,9 +339,9 @@ class ResultOfVerificationType
 
     /**
      * @param ValidateToolVersion|null $validateToolVersion
-     * @return self
+     * @return static
      */
-    public function setValidateToolVersion(?ValidateToolVersion $validateToolVersion = null): self
+    public function setValidateToolVersion(?ValidateToolVersion $validateToolVersion = null): static
     {
         $this->validateToolVersion = $validateToolVersion;
 
@@ -349,9 +349,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidateToolVersion(): self
+    public function unsetValidateToolVersion(): static
     {
         $this->validateToolVersion = null;
 
@@ -378,9 +378,9 @@ class ResultOfVerificationType
 
     /**
      * @param SignatoryParty|null $signatoryParty
-     * @return self
+     * @return static
      */
-    public function setSignatoryParty(?SignatoryParty $signatoryParty = null): self
+    public function setSignatoryParty(?SignatoryParty $signatoryParty = null): static
     {
         $this->signatoryParty = $signatoryParty;
 
@@ -388,9 +388,9 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSignatoryParty(): self
+    public function unsetSignatoryParty(): static
     {
         $this->signatoryParty = null;
 

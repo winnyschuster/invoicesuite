@@ -165,9 +165,9 @@ class TendererQualificationRequestType
 
     /**
      * @param CompanyLegalFormCode|null $companyLegalFormCode
-     * @return self
+     * @return static
      */
-    public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): self
+    public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): static
     {
         $this->companyLegalFormCode = $companyLegalFormCode;
 
@@ -175,9 +175,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompanyLegalFormCode(): self
+    public function unsetCompanyLegalFormCode(): static
     {
         $this->companyLegalFormCode = null;
 
@@ -204,9 +204,9 @@ class TendererQualificationRequestType
 
     /**
      * @param CompanyLegalForm|null $companyLegalForm
-     * @return self
+     * @return static
      */
-    public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): self
+    public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): static
     {
         $this->companyLegalForm = $companyLegalForm;
 
@@ -214,9 +214,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompanyLegalForm(): self
+    public function unsetCompanyLegalForm(): static
     {
         $this->companyLegalForm = null;
 
@@ -233,9 +233,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<PersonalSituation>|null $personalSituation
-     * @return self
+     * @return static
      */
-    public function setPersonalSituation(?array $personalSituation = null): self
+    public function setPersonalSituation(?array $personalSituation = null): static
     {
         $this->personalSituation = $personalSituation;
 
@@ -243,9 +243,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPersonalSituation(): self
+    public function unsetPersonalSituation(): static
     {
         $this->personalSituation = null;
 
@@ -253,9 +253,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPersonalSituation(): self
+    public function clearPersonalSituation(): static
     {
         $this->personalSituation = [];
 
@@ -294,9 +294,9 @@ class TendererQualificationRequestType
 
     /**
      * @param PersonalSituation $personalSituation
-     * @return self
+     * @return static
      */
-    public function addToPersonalSituation(PersonalSituation $personalSituation): self
+    public function addToPersonalSituation(PersonalSituation $personalSituation): static
     {
         $this->personalSituation[] = $personalSituation;
 
@@ -315,9 +315,9 @@ class TendererQualificationRequestType
 
     /**
      * @param PersonalSituation $personalSituation
-     * @return self
+     * @return static
      */
-    public function addOnceToPersonalSituation(PersonalSituation $personalSituation): self
+    public function addOnceToPersonalSituation(PersonalSituation $personalSituation): static
     {
         if (!is_array($this->personalSituation)) {
             $this->personalSituation = [];
@@ -364,9 +364,9 @@ class TendererQualificationRequestType
 
     /**
      * @param OperatingYearsQuantity|null $operatingYearsQuantity
-     * @return self
+     * @return static
      */
-    public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): self
+    public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): static
     {
         $this->operatingYearsQuantity = $operatingYearsQuantity;
 
@@ -374,9 +374,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOperatingYearsQuantity(): self
+    public function unsetOperatingYearsQuantity(): static
     {
         $this->operatingYearsQuantity = null;
 
@@ -403,9 +403,9 @@ class TendererQualificationRequestType
 
     /**
      * @param EmployeeQuantity|null $employeeQuantity
-     * @return self
+     * @return static
      */
-    public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): self
+    public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): static
     {
         $this->employeeQuantity = $employeeQuantity;
 
@@ -413,9 +413,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEmployeeQuantity(): self
+    public function unsetEmployeeQuantity(): static
     {
         $this->employeeQuantity = null;
 
@@ -432,9 +432,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -442,9 +442,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -452,9 +452,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -493,9 +493,9 @@ class TendererQualificationRequestType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -514,9 +514,9 @@ class TendererQualificationRequestType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -553,9 +553,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<RequiredBusinessClassificationScheme>|null $requiredBusinessClassificationScheme
-     * @return self
+     * @return static
      */
-    public function setRequiredBusinessClassificationScheme(?array $requiredBusinessClassificationScheme = null): self
+    public function setRequiredBusinessClassificationScheme(?array $requiredBusinessClassificationScheme = null): static
     {
         $this->requiredBusinessClassificationScheme = $requiredBusinessClassificationScheme;
 
@@ -563,9 +563,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredBusinessClassificationScheme(): self
+    public function unsetRequiredBusinessClassificationScheme(): static
     {
         $this->requiredBusinessClassificationScheme = null;
 
@@ -573,9 +573,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRequiredBusinessClassificationScheme(): self
+    public function clearRequiredBusinessClassificationScheme(): static
     {
         $this->requiredBusinessClassificationScheme = [];
 
@@ -614,11 +614,11 @@ class TendererQualificationRequestType
 
     /**
      * @param RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
-     * @return self
+     * @return static
      */
     public function addToRequiredBusinessClassificationScheme(
         RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme,
-    ): self {
+    ): static {
         $this->requiredBusinessClassificationScheme[] = $requiredBusinessClassificationScheme;
 
         return $this;
@@ -636,11 +636,11 @@ class TendererQualificationRequestType
 
     /**
      * @param RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
-     * @return self
+     * @return static
      */
     public function addOnceToRequiredBusinessClassificationScheme(
         RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme,
-    ): self {
+    ): static {
         if (!is_array($this->requiredBusinessClassificationScheme)) {
             $this->requiredBusinessClassificationScheme = [];
         }
@@ -676,9 +676,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<TechnicalEvaluationCriterion>|null $technicalEvaluationCriterion
-     * @return self
+     * @return static
      */
-    public function setTechnicalEvaluationCriterion(?array $technicalEvaluationCriterion = null): self
+    public function setTechnicalEvaluationCriterion(?array $technicalEvaluationCriterion = null): static
     {
         $this->technicalEvaluationCriterion = $technicalEvaluationCriterion;
 
@@ -686,9 +686,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTechnicalEvaluationCriterion(): self
+    public function unsetTechnicalEvaluationCriterion(): static
     {
         $this->technicalEvaluationCriterion = null;
 
@@ -696,9 +696,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTechnicalEvaluationCriterion(): self
+    public function clearTechnicalEvaluationCriterion(): static
     {
         $this->technicalEvaluationCriterion = [];
 
@@ -737,11 +737,11 @@ class TendererQualificationRequestType
 
     /**
      * @param TechnicalEvaluationCriterion $technicalEvaluationCriterion
-     * @return self
+     * @return static
      */
     public function addToTechnicalEvaluationCriterion(
         TechnicalEvaluationCriterion $technicalEvaluationCriterion,
-    ): self {
+    ): static {
         $this->technicalEvaluationCriterion[] = $technicalEvaluationCriterion;
 
         return $this;
@@ -759,11 +759,11 @@ class TendererQualificationRequestType
 
     /**
      * @param TechnicalEvaluationCriterion $technicalEvaluationCriterion
-     * @return self
+     * @return static
      */
     public function addOnceToTechnicalEvaluationCriterion(
         TechnicalEvaluationCriterion $technicalEvaluationCriterion,
-    ): self {
+    ): static {
         if (!is_array($this->technicalEvaluationCriterion)) {
             $this->technicalEvaluationCriterion = [];
         }
@@ -799,9 +799,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<FinancialEvaluationCriterion>|null $financialEvaluationCriterion
-     * @return self
+     * @return static
      */
-    public function setFinancialEvaluationCriterion(?array $financialEvaluationCriterion = null): self
+    public function setFinancialEvaluationCriterion(?array $financialEvaluationCriterion = null): static
     {
         $this->financialEvaluationCriterion = $financialEvaluationCriterion;
 
@@ -809,9 +809,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancialEvaluationCriterion(): self
+    public function unsetFinancialEvaluationCriterion(): static
     {
         $this->financialEvaluationCriterion = null;
 
@@ -819,9 +819,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFinancialEvaluationCriterion(): self
+    public function clearFinancialEvaluationCriterion(): static
     {
         $this->financialEvaluationCriterion = [];
 
@@ -860,11 +860,11 @@ class TendererQualificationRequestType
 
     /**
      * @param FinancialEvaluationCriterion $financialEvaluationCriterion
-     * @return self
+     * @return static
      */
     public function addToFinancialEvaluationCriterion(
         FinancialEvaluationCriterion $financialEvaluationCriterion,
-    ): self {
+    ): static {
         $this->financialEvaluationCriterion[] = $financialEvaluationCriterion;
 
         return $this;
@@ -882,11 +882,11 @@ class TendererQualificationRequestType
 
     /**
      * @param FinancialEvaluationCriterion $financialEvaluationCriterion
-     * @return self
+     * @return static
      */
     public function addOnceToFinancialEvaluationCriterion(
         FinancialEvaluationCriterion $financialEvaluationCriterion,
-    ): self {
+    ): static {
         if (!is_array($this->financialEvaluationCriterion)) {
             $this->financialEvaluationCriterion = [];
         }
@@ -922,9 +922,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<SpecificTendererRequirement>|null $specificTendererRequirement
-     * @return self
+     * @return static
      */
-    public function setSpecificTendererRequirement(?array $specificTendererRequirement = null): self
+    public function setSpecificTendererRequirement(?array $specificTendererRequirement = null): static
     {
         $this->specificTendererRequirement = $specificTendererRequirement;
 
@@ -932,9 +932,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecificTendererRequirement(): self
+    public function unsetSpecificTendererRequirement(): static
     {
         $this->specificTendererRequirement = null;
 
@@ -942,9 +942,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecificTendererRequirement(): self
+    public function clearSpecificTendererRequirement(): static
     {
         $this->specificTendererRequirement = [];
 
@@ -983,9 +983,9 @@ class TendererQualificationRequestType
 
     /**
      * @param SpecificTendererRequirement $specificTendererRequirement
-     * @return self
+     * @return static
      */
-    public function addToSpecificTendererRequirement(SpecificTendererRequirement $specificTendererRequirement): self
+    public function addToSpecificTendererRequirement(SpecificTendererRequirement $specificTendererRequirement): static
     {
         $this->specificTendererRequirement[] = $specificTendererRequirement;
 
@@ -1004,11 +1004,11 @@ class TendererQualificationRequestType
 
     /**
      * @param SpecificTendererRequirement $specificTendererRequirement
-     * @return self
+     * @return static
      */
     public function addOnceToSpecificTendererRequirement(
         SpecificTendererRequirement $specificTendererRequirement,
-    ): self {
+    ): static {
         if (!is_array($this->specificTendererRequirement)) {
             $this->specificTendererRequirement = [];
         }
@@ -1044,9 +1044,9 @@ class TendererQualificationRequestType
 
     /**
      * @param array<EconomicOperatorRole>|null $economicOperatorRole
-     * @return self
+     * @return static
      */
-    public function setEconomicOperatorRole(?array $economicOperatorRole = null): self
+    public function setEconomicOperatorRole(?array $economicOperatorRole = null): static
     {
         $this->economicOperatorRole = $economicOperatorRole;
 
@@ -1054,9 +1054,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEconomicOperatorRole(): self
+    public function unsetEconomicOperatorRole(): static
     {
         $this->economicOperatorRole = null;
 
@@ -1064,9 +1064,9 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearEconomicOperatorRole(): self
+    public function clearEconomicOperatorRole(): static
     {
         $this->economicOperatorRole = [];
 
@@ -1105,9 +1105,9 @@ class TendererQualificationRequestType
 
     /**
      * @param EconomicOperatorRole $economicOperatorRole
-     * @return self
+     * @return static
      */
-    public function addToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): self
+    public function addToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): static
     {
         $this->economicOperatorRole[] = $economicOperatorRole;
 
@@ -1126,9 +1126,9 @@ class TendererQualificationRequestType
 
     /**
      * @param EconomicOperatorRole $economicOperatorRole
-     * @return self
+     * @return static
      */
-    public function addOnceToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): self
+    public function addOnceToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): static
     {
         if (!is_array($this->economicOperatorRole)) {
             $this->economicOperatorRole = [];

@@ -133,9 +133,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the switch that indicates whether the following data refer to an surcharge or a discount, true means that this an charge
      *
      * @param  null|bool $chargeIndicator The switch that indicates whether the following data refer to an surcharge or a discount, true means that this an charge
-     * @return self
+     * @return static
      */
-    public function setChargeIndicator(?bool $chargeIndicator): self
+    public function setChargeIndicator(?bool $chargeIndicator): static
     {
         $this->chargeIndicator = $chargeIndicator;
 
@@ -156,9 +156,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the amount of the surcharge or discount
      *
      * @param  null|float $amount The amount of the surcharge or discount
-     * @return self
+     * @return static
      */
-    public function setAmount(?float $amount): self
+    public function setAmount(?float $amount): static
     {
         $this->amount = $amount;
 
@@ -179,9 +179,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the base amount that may be used in conjunction with the percentage of the surcharge or discount
      *
      * @param  null|float $baseAmount The base amount that may be used in conjunction with the percentage of the surcharge or discount
-     * @return self
+     * @return static
      */
-    public function setBaseAmount(?float $baseAmount): self
+    public function setBaseAmount(?float $baseAmount): static
     {
         $this->baseAmount = $baseAmount;
 
@@ -202,9 +202,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
      *
      * @param  null|float $percent The Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
-    public function setPercent(?float $percent): self
+    public function setPercent(?float $percent): static
     {
         $this->percent = $percent;
 
@@ -225,9 +225,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the coded description of the tax category
      *
      * @param  null|string $taxCategory The coded description of the tax category
-     * @return self
+     * @return static
      */
-    public function setTaxCategory(?string $taxCategory): self
+    public function setTaxCategory(?string $taxCategory): static
     {
         $this->taxCategory = $taxCategory;
 
@@ -248,9 +248,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the coded description of the tax type
      *
      * @param  null|string $taxType The coded description of the tax type
-     * @return self
+     * @return static
      */
-    public function setTaxType(?string $taxType): self
+    public function setTaxType(?string $taxType): static
     {
         $this->taxType = $taxType;
 
@@ -271,9 +271,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the tax Rate (Percentage)
      *
      * @param  null|float $taxPercent The tax Rate (Percentage)
-     * @return self
+     * @return static
      */
-    public function setTaxPercent(?float $taxPercent): self
+    public function setTaxPercent(?float $taxPercent): static
     {
         $this->taxPercent = $taxPercent;
 
@@ -294,9 +294,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the reason given in text form for the surcharge or discount
      *
      * @param  null|string $reason The reason given in text form for the surcharge or discount
-     * @return self
+     * @return static
      */
-    public function setReason(?string $reason): self
+    public function setReason(?string $reason): static
     {
         $this->reason = $reason;
 
@@ -317,9 +317,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * Sets the Reason given as a code for the surcharge or discount
      *
      * @param  null|string $reasonCode The Reason given as a code for the surcharge or discount
-     * @return self
+     * @return static
      */
-    public function setReasonCode(?string $reasonCode): self
+    public function setReasonCode(?string $reasonCode): static
     {
         $this->reasonCode = $reasonCode;
 

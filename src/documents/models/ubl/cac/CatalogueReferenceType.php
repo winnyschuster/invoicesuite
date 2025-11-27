@@ -150,9 +150,9 @@ class CatalogueReferenceType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -160,9 +160,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -189,9 +189,9 @@ class CatalogueReferenceType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -199,9 +199,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -218,9 +218,9 @@ class CatalogueReferenceType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -228,9 +228,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -247,9 +247,9 @@ class CatalogueReferenceType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -257,9 +257,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 
@@ -276,9 +276,9 @@ class CatalogueReferenceType
 
     /**
      * @param DateTimeInterface|null $revisionDate
-     * @return self
+     * @return static
      */
-    public function setRevisionDate(?DateTimeInterface $revisionDate = null): self
+    public function setRevisionDate(?DateTimeInterface $revisionDate = null): static
     {
         $this->revisionDate = $revisionDate;
 
@@ -286,9 +286,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRevisionDate(): self
+    public function unsetRevisionDate(): static
     {
         $this->revisionDate = null;
 
@@ -305,9 +305,9 @@ class CatalogueReferenceType
 
     /**
      * @param DateTimeInterface|null $revisionTime
-     * @return self
+     * @return static
      */
-    public function setRevisionTime(?DateTimeInterface $revisionTime = null): self
+    public function setRevisionTime(?DateTimeInterface $revisionTime = null): static
     {
         $this->revisionTime = $revisionTime;
 
@@ -315,9 +315,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRevisionTime(): self
+    public function unsetRevisionTime(): static
     {
         $this->revisionTime = null;
 
@@ -334,9 +334,9 @@ class CatalogueReferenceType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -344,9 +344,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -354,9 +354,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -395,9 +395,9 @@ class CatalogueReferenceType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -416,9 +416,9 @@ class CatalogueReferenceType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -455,9 +455,9 @@ class CatalogueReferenceType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -465,9 +465,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -475,9 +475,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -516,9 +516,9 @@ class CatalogueReferenceType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -537,9 +537,9 @@ class CatalogueReferenceType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -586,9 +586,9 @@ class CatalogueReferenceType
 
     /**
      * @param VersionID|null $versionID
-     * @return self
+     * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): self
+    public function setVersionID(?VersionID $versionID = null): static
     {
         $this->versionID = $versionID;
 
@@ -596,9 +596,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetVersionID(): self
+    public function unsetVersionID(): static
     {
         $this->versionID = null;
 
@@ -625,9 +625,9 @@ class CatalogueReferenceType
 
     /**
      * @param PreviousVersionID|null $previousVersionID
-     * @return self
+     * @return static
      */
-    public function setPreviousVersionID(?PreviousVersionID $previousVersionID = null): self
+    public function setPreviousVersionID(?PreviousVersionID $previousVersionID = null): static
     {
         $this->previousVersionID = $previousVersionID;
 
@@ -635,9 +635,9 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousVersionID(): self
+    public function unsetPreviousVersionID(): static
     {
         $this->previousVersionID = null;
 

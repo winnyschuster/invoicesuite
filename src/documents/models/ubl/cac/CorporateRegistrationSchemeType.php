@@ -79,9 +79,9 @@ class CorporateRegistrationSchemeType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -89,9 +89,9 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -118,9 +118,9 @@ class CorporateRegistrationSchemeType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -128,9 +128,9 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -157,20 +157,20 @@ class CorporateRegistrationSchemeType
 
     /**
      * @param CorporateRegistrationTypeCode|null $corporateRegistrationTypeCode
-     * @return self
+     * @return static
      */
     public function setCorporateRegistrationTypeCode(
         ?CorporateRegistrationTypeCode $corporateRegistrationTypeCode = null,
-    ): self {
+    ): static {
         $this->corporateRegistrationTypeCode = $corporateRegistrationTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCorporateRegistrationTypeCode(): self
+    public function unsetCorporateRegistrationTypeCode(): static
     {
         $this->corporateRegistrationTypeCode = null;
 
@@ -187,9 +187,9 @@ class CorporateRegistrationSchemeType
 
     /**
      * @param array<JurisdictionRegionAddress>|null $jurisdictionRegionAddress
-     * @return self
+     * @return static
      */
-    public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): self
+    public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): static
     {
         $this->jurisdictionRegionAddress = $jurisdictionRegionAddress;
 
@@ -197,9 +197,9 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetJurisdictionRegionAddress(): self
+    public function unsetJurisdictionRegionAddress(): static
     {
         $this->jurisdictionRegionAddress = null;
 
@@ -207,9 +207,9 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearJurisdictionRegionAddress(): self
+    public function clearJurisdictionRegionAddress(): static
     {
         $this->jurisdictionRegionAddress = [];
 
@@ -248,9 +248,9 @@ class CorporateRegistrationSchemeType
 
     /**
      * @param JurisdictionRegionAddress $jurisdictionRegionAddress
-     * @return self
+     * @return static
      */
-    public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): self
+    public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
     {
         $this->jurisdictionRegionAddress[] = $jurisdictionRegionAddress;
 
@@ -269,9 +269,9 @@ class CorporateRegistrationSchemeType
 
     /**
      * @param JurisdictionRegionAddress $jurisdictionRegionAddress
-     * @return self
+     * @return static
      */
-    public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): self
+    public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
     {
         if (!is_array($this->jurisdictionRegionAddress)) {
             $this->jurisdictionRegionAddress = [];

@@ -138,9 +138,9 @@ class FinancialAccountType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -148,9 +148,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -177,9 +177,9 @@ class FinancialAccountType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -187,9 +187,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -216,9 +216,9 @@ class FinancialAccountType
 
     /**
      * @param AliasName|null $aliasName
-     * @return self
+     * @return static
      */
-    public function setAliasName(?AliasName $aliasName = null): self
+    public function setAliasName(?AliasName $aliasName = null): static
     {
         $this->aliasName = $aliasName;
 
@@ -226,9 +226,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAliasName(): self
+    public function unsetAliasName(): static
     {
         $this->aliasName = null;
 
@@ -255,9 +255,9 @@ class FinancialAccountType
 
     /**
      * @param AccountTypeCode|null $accountTypeCode
-     * @return self
+     * @return static
      */
-    public function setAccountTypeCode(?AccountTypeCode $accountTypeCode = null): self
+    public function setAccountTypeCode(?AccountTypeCode $accountTypeCode = null): static
     {
         $this->accountTypeCode = $accountTypeCode;
 
@@ -265,9 +265,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountTypeCode(): self
+    public function unsetAccountTypeCode(): static
     {
         $this->accountTypeCode = null;
 
@@ -294,9 +294,9 @@ class FinancialAccountType
 
     /**
      * @param AccountFormatCode|null $accountFormatCode
-     * @return self
+     * @return static
      */
-    public function setAccountFormatCode(?AccountFormatCode $accountFormatCode = null): self
+    public function setAccountFormatCode(?AccountFormatCode $accountFormatCode = null): static
     {
         $this->accountFormatCode = $accountFormatCode;
 
@@ -304,9 +304,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAccountFormatCode(): self
+    public function unsetAccountFormatCode(): static
     {
         $this->accountFormatCode = null;
 
@@ -333,9 +333,9 @@ class FinancialAccountType
 
     /**
      * @param CurrencyCode|null $currencyCode
-     * @return self
+     * @return static
      */
-    public function setCurrencyCode(?CurrencyCode $currencyCode = null): self
+    public function setCurrencyCode(?CurrencyCode $currencyCode = null): static
     {
         $this->currencyCode = $currencyCode;
 
@@ -343,9 +343,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCurrencyCode(): self
+    public function unsetCurrencyCode(): static
     {
         $this->currencyCode = null;
 
@@ -362,9 +362,9 @@ class FinancialAccountType
 
     /**
      * @param array<PaymentNote>|null $paymentNote
-     * @return self
+     * @return static
      */
-    public function setPaymentNote(?array $paymentNote = null): self
+    public function setPaymentNote(?array $paymentNote = null): static
     {
         $this->paymentNote = $paymentNote;
 
@@ -372,9 +372,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPaymentNote(): self
+    public function unsetPaymentNote(): static
     {
         $this->paymentNote = null;
 
@@ -382,9 +382,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearPaymentNote(): self
+    public function clearPaymentNote(): static
     {
         $this->paymentNote = [];
 
@@ -423,9 +423,9 @@ class FinancialAccountType
 
     /**
      * @param PaymentNote $paymentNote
-     * @return self
+     * @return static
      */
-    public function addToPaymentNote(PaymentNote $paymentNote): self
+    public function addToPaymentNote(PaymentNote $paymentNote): static
     {
         $this->paymentNote[] = $paymentNote;
 
@@ -444,9 +444,9 @@ class FinancialAccountType
 
     /**
      * @param PaymentNote $paymentNote
-     * @return self
+     * @return static
      */
-    public function addOnceToPaymentNote(PaymentNote $paymentNote): self
+    public function addOnceToPaymentNote(PaymentNote $paymentNote): static
     {
         if (!is_array($this->paymentNote)) {
             $this->paymentNote = [];
@@ -493,20 +493,20 @@ class FinancialAccountType
 
     /**
      * @param FinancialInstitutionBranch|null $financialInstitutionBranch
-     * @return self
+     * @return static
      */
     public function setFinancialInstitutionBranch(
         ?FinancialInstitutionBranch $financialInstitutionBranch = null,
-    ): self {
+    ): static {
         $this->financialInstitutionBranch = $financialInstitutionBranch;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFinancialInstitutionBranch(): self
+    public function unsetFinancialInstitutionBranch(): static
     {
         $this->financialInstitutionBranch = null;
 
@@ -533,9 +533,9 @@ class FinancialAccountType
 
     /**
      * @param Country|null $country
-     * @return self
+     * @return static
      */
-    public function setCountry(?Country $country = null): self
+    public function setCountry(?Country $country = null): static
     {
         $this->country = $country;
 
@@ -543,9 +543,9 @@ class FinancialAccountType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCountry(): self
+    public function unsetCountry(): static
     {
         $this->country = null;
 

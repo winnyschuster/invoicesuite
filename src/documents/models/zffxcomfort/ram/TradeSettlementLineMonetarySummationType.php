@@ -43,9 +43,9 @@ class TradeSettlementLineMonetarySummationType
 
     /**
      * @param AmountType|null $lineTotalAmount
-     * @return self
+     * @return static
      */
-    public function setLineTotalAmount(?AmountType $lineTotalAmount = null): self
+    public function setLineTotalAmount(?AmountType $lineTotalAmount = null): static
     {
         $this->lineTotalAmount = $lineTotalAmount;
 
@@ -53,9 +53,9 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineTotalAmount(): self
+    public function unsetLineTotalAmount(): static
     {
         $this->lineTotalAmount = null;
 

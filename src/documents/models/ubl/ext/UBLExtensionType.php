@@ -143,9 +143,9 @@ class UBLExtensionType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -153,9 +153,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -182,9 +182,9 @@ class UBLExtensionType
 
     /**
      * @param Name|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?Name $name = null): self
+    public function setName(?Name $name = null): static
     {
         $this->name = $name;
 
@@ -192,9 +192,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -221,9 +221,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionAgencyID|null $extensionAgencyID
-     * @return self
+     * @return static
      */
-    public function setExtensionAgencyID(?ExtensionAgencyID $extensionAgencyID = null): self
+    public function setExtensionAgencyID(?ExtensionAgencyID $extensionAgencyID = null): static
     {
         $this->extensionAgencyID = $extensionAgencyID;
 
@@ -231,9 +231,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionAgencyID(): self
+    public function unsetExtensionAgencyID(): static
     {
         $this->extensionAgencyID = null;
 
@@ -260,9 +260,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionAgencyName|null $extensionAgencyName
-     * @return self
+     * @return static
      */
-    public function setExtensionAgencyName(?ExtensionAgencyName $extensionAgencyName = null): self
+    public function setExtensionAgencyName(?ExtensionAgencyName $extensionAgencyName = null): static
     {
         $this->extensionAgencyName = $extensionAgencyName;
 
@@ -270,9 +270,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionAgencyName(): self
+    public function unsetExtensionAgencyName(): static
     {
         $this->extensionAgencyName = null;
 
@@ -299,9 +299,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionVersionID|null $extensionVersionID
-     * @return self
+     * @return static
      */
-    public function setExtensionVersionID(?ExtensionVersionID $extensionVersionID = null): self
+    public function setExtensionVersionID(?ExtensionVersionID $extensionVersionID = null): static
     {
         $this->extensionVersionID = $extensionVersionID;
 
@@ -309,9 +309,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionVersionID(): self
+    public function unsetExtensionVersionID(): static
     {
         $this->extensionVersionID = null;
 
@@ -338,9 +338,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionAgencyURI|null $extensionAgencyURI
-     * @return self
+     * @return static
      */
-    public function setExtensionAgencyURI(?ExtensionAgencyURI $extensionAgencyURI = null): self
+    public function setExtensionAgencyURI(?ExtensionAgencyURI $extensionAgencyURI = null): static
     {
         $this->extensionAgencyURI = $extensionAgencyURI;
 
@@ -348,9 +348,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionAgencyURI(): self
+    public function unsetExtensionAgencyURI(): static
     {
         $this->extensionAgencyURI = null;
 
@@ -377,9 +377,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionURI|null $extensionURI
-     * @return self
+     * @return static
      */
-    public function setExtensionURI(?ExtensionURI $extensionURI = null): self
+    public function setExtensionURI(?ExtensionURI $extensionURI = null): static
     {
         $this->extensionURI = $extensionURI;
 
@@ -387,9 +387,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionURI(): self
+    public function unsetExtensionURI(): static
     {
         $this->extensionURI = null;
 
@@ -416,9 +416,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionReasonCode|null $extensionReasonCode
-     * @return self
+     * @return static
      */
-    public function setExtensionReasonCode(?ExtensionReasonCode $extensionReasonCode = null): self
+    public function setExtensionReasonCode(?ExtensionReasonCode $extensionReasonCode = null): static
     {
         $this->extensionReasonCode = $extensionReasonCode;
 
@@ -426,9 +426,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionReasonCode(): self
+    public function unsetExtensionReasonCode(): static
     {
         $this->extensionReasonCode = null;
 
@@ -455,9 +455,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionReason|null $extensionReason
-     * @return self
+     * @return static
      */
-    public function setExtensionReason(?ExtensionReason $extensionReason = null): self
+    public function setExtensionReason(?ExtensionReason $extensionReason = null): static
     {
         $this->extensionReason = $extensionReason;
 
@@ -465,9 +465,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionReason(): self
+    public function unsetExtensionReason(): static
     {
         $this->extensionReason = null;
 
@@ -494,9 +494,9 @@ class UBLExtensionType
 
     /**
      * @param ExtensionContent|null $extensionContent
-     * @return self
+     * @return static
      */
-    public function setExtensionContent(?ExtensionContent $extensionContent = null): self
+    public function setExtensionContent(?ExtensionContent $extensionContent = null): static
     {
         $this->extensionContent = $extensionContent;
 
@@ -504,9 +504,9 @@ class UBLExtensionType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExtensionContent(): self
+    public function unsetExtensionContent(): static
     {
         $this->extensionContent = null;
 

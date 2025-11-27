@@ -77,9 +77,9 @@ class CataloguePricingUpdateLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -87,9 +87,9 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -116,9 +116,9 @@ class CataloguePricingUpdateLineType
 
     /**
      * @param ContractorCustomerParty|null $contractorCustomerParty
-     * @return self
+     * @return static
      */
-    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): self
+    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
     {
         $this->contractorCustomerParty = $contractorCustomerParty;
 
@@ -126,9 +126,9 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetContractorCustomerParty(): self
+    public function unsetContractorCustomerParty(): static
     {
         $this->contractorCustomerParty = null;
 
@@ -155,9 +155,9 @@ class CataloguePricingUpdateLineType
 
     /**
      * @param SellerSupplierParty|null $sellerSupplierParty
-     * @return self
+     * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): self
+    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
     {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
@@ -165,9 +165,9 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerSupplierParty(): self
+    public function unsetSellerSupplierParty(): static
     {
         $this->sellerSupplierParty = null;
 
@@ -184,9 +184,9 @@ class CataloguePricingUpdateLineType
 
     /**
      * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
-     * @return self
+     * @return static
      */
-    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): self
+    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
     {
         $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
 
@@ -194,9 +194,9 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequiredItemLocationQuantity(): self
+    public function unsetRequiredItemLocationQuantity(): static
     {
         $this->requiredItemLocationQuantity = null;
 
@@ -204,9 +204,9 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearRequiredItemLocationQuantity(): self
+    public function clearRequiredItemLocationQuantity(): static
     {
         $this->requiredItemLocationQuantity = [];
 
@@ -245,11 +245,11 @@ class CataloguePricingUpdateLineType
 
     /**
      * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
-     * @return self
+     * @return static
      */
     public function addToRequiredItemLocationQuantity(
         RequiredItemLocationQuantity $requiredItemLocationQuantity,
-    ): self {
+    ): static {
         $this->requiredItemLocationQuantity[] = $requiredItemLocationQuantity;
 
         return $this;
@@ -267,11 +267,11 @@ class CataloguePricingUpdateLineType
 
     /**
      * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
-     * @return self
+     * @return static
      */
     public function addOnceToRequiredItemLocationQuantity(
         RequiredItemLocationQuantity $requiredItemLocationQuantity,
-    ): self {
+    ): static {
         if (!is_array($this->requiredItemLocationQuantity)) {
             $this->requiredItemLocationQuantity = [];
         }

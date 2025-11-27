@@ -59,9 +59,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      * Sets the net price included tax
      *
      * @param  array<InvoiceSuiteTaxDTO> $taxes The net price included tax
-     * @return self
+     * @return static
      */
-    public function setTaxes(array $taxes): self
+    public function setTaxes(array $taxes): static
     {
         $this->taxes = $taxes;
 
@@ -72,9 +72,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      * Add single The net price included tax
      *
      * @param  InvoiceSuiteTaxDTO $tax The net price included tax
-     * @return self
+     * @return static
      */
-    public function addTax(InvoiceSuiteTaxDTO $tax): self
+    public function addTax(InvoiceSuiteTaxDTO $tax): static
     {
         $this->taxes[] = $tax;
 
@@ -86,9 +86,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function firstTax(callable $callback, ?callable $callbackElse = null): self
+    public function firstTax(callable $callback, ?callable $callbackElse = null): static
     {
         if (($tax = reset($this->taxes)) !== false) {
             $callback($tax);
@@ -104,9 +104,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function nextTax(callable $callback, ?callable $callbackElse = null): self
+    public function nextTax(callable $callback, ?callable $callbackElse = null): static
     {
         if (($tax = next($this->taxes)) !== false) {
             $callback($tax);
@@ -122,9 +122,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function previousTax(callable $callback, ?callable $callbackElse = null): self
+    public function previousTax(callable $callback, ?callable $callbackElse = null): static
     {
         if (($tax = prev($this->taxes)) !== false) {
             $callback($tax);
@@ -140,9 +140,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return self
+     * @return static
      */
-    public function lastTax(callable $callback, ?callable $callbackElse = null): self
+    public function lastTax(callable $callback, ?callable $callbackElse = null): static
     {
         if (($tax = end($this->taxes)) !== false) {
             $callback($tax);
@@ -159,9 +159,9 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
      * @param  callable      $callback     Callback to execute for each item
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @param  null|int      $limit        Maximum number of loops
-     * @return self
+     * @return static
      */
-    public function forEachTax(callable $callback, ?callable $callbackElse = null, ?int $limit = null): self
+    public function forEachTax(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
     {
         $count = 0;
 

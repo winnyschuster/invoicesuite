@@ -48,7 +48,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     /**
      * {@inheritDoc}
      */
-    public function initDocumentRootObject(): self
+    public function initDocumentRootObject(): static
     {
         $this->setContextParameter(
             $this->getCurrentDocumentFormatProviderParameterValue('CustomizationId', ''),
@@ -65,7 +65,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  string $newProfileId
      * @return static
      */
-    public function setContextParameter(string $newCustomizationId, string $newProfileId): self
+    public function setContextParameter(string $newCustomizationId, string $newProfileId): static
     {
         $this->getUblInvoiceRootObject()->getCustomizationIDWithCreate()->setValue($newCustomizationId);
         $this->getUblInvoiceRootObject()->getProfileIDWithCreate()->setValue($newProfileId);
@@ -77,11 +77,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Create a document by a DTO
      *
      * @param  InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
-     * @return self
+     * @return static
      */
     public function createFromDTO(
         InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
-    ): self {
+    ): static {
         // Document-Level General information
 
         $this->setDocumentNo($newDocumentDTO->getNumber());
@@ -703,7 +703,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      */
     public function setDocumentNo(
         ?string $newDocumentNo = null
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])) {
@@ -723,7 +723,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      */
     public function setDocumentType(
         ?string $newDocumentType = null
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetInvoiceTypeCode();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])) {
@@ -739,11 +739,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new document description
      *
      * @param  null|string $newDocumentDescription The documenttype as free text
-     * @return self
+     * @return static
      */
     public function setDocumentDescription(
         ?string $newDocumentDescription = null
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->getInvoiceTypeCode()?->unsetName();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentDescription])) {
@@ -759,11 +759,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new document language
      *
      * @param  null|string $newDocumentLanguage Language indicator. The language code in which the document was written
-     * @return self
+     * @return static
      */
     public function setDocumentLanguage(
         ?string $newDocumentLanguage = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -773,11 +773,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new document date (e.g. invoice date)
      *
      * @param  null|DateTimeInterface $newDocumentDate Date of the document. The date when the document was issued by the seller
-     * @return self
+     * @return static
      */
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetIssueDate();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
@@ -793,11 +793,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new document period
      *
      * @param  null|DateTimeInterface $newCompleteDate Contractual due date of the document
-     * @return self
+     * @return static
      */
     public function setDocumentCompleteDate(
         ?DateTimeInterface $newCompleteDate = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -807,11 +807,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new document currency
      *
      * @param  null|string $newDocumentCurrency Code for the invoice currency
-     * @return self
+     * @return static
      */
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetDocumentCurrencyCode();
         $this->updateCurrencies();
 
@@ -829,11 +829,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new document tax currency
      *
      * @param  null|string $newDocumentTaxCurrency Code for the tax currency
-     * @return self
+     * @return static
      */
     public function setDocumentTaxCurrency(
         ?string $newDocumentTaxCurrency = null
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetTaxCurrencyCode();
         $this->updateCurrencies();
 
@@ -851,11 +851,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new status of the copy indicator
      *
      * @param  null|bool $newDocumentIsCopy Indicates that the document is a copy
-     * @return self
+     * @return static
      */
     public function setDocumentIsCopy(
         ?bool $newDocumentIsCopy = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -865,11 +865,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Sets the new status of the test indicator
      *
      * @param  bool $newDocumentIsTest Indicates that the document is a test
-     * @return self
+     * @return static
      */
     public function setDocumentIsTest(
         ?bool $newDocumentIsTest = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -881,13 +881,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
     public function setDocumentNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetNote();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
@@ -905,13 +905,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newContent     Free text containing unstructured information that is relevant to the invoice as a whole
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
-     * @return self
+     * @return static
      */
     public function addDocumentNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
             return $this;
         }
@@ -927,13 +927,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function setDocumentBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         $this->getUblInvoiceRootObject()->unsetInvoicePeriod();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
@@ -955,13 +955,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function addDocumentBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
             return $this;
         }
@@ -990,9 +990,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -1015,9 +1015,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
             return $this;
@@ -1033,12 +1033,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getOrderReference()
@@ -1062,12 +1062,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Seller's order confirmation number
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1082,12 +1082,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Buyers's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getOrderReference()
@@ -1113,12 +1113,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Buyers's order number
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1133,12 +1133,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Quotation number
      * @param  null|DateTimeInterface $newReferenceDate   quotation date
-     * @return self
+     * @return static
      */
     public function setDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $additionalDocTypeCode = $this->getCurrentDocumentFormatProviderParameterValue('QuotationDocTypeCode', '');
         $additionalDocDescription = $this->getCurrentDocumentFormatProviderParameterValue('QuotationDocDescription', '');
 
@@ -1180,12 +1180,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber quotation number
      * @param  null|DateTimeInterface $newReferenceDate   quotation date
-     * @return self
+     * @return static
      */
     public function addDocumentQuotationReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1200,12 +1200,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  string                 $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      */
     public function setDocumentContractReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetContractDocumentReference();
@@ -1224,12 +1224,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  string                 $newReferenceNumber Contract number
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
-     * @return self
+     * @return static
      */
     public function addDocumentContractReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1253,7 +1253,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function setDocumentAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -1262,7 +1262,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetAdditionalDocumentReference();
@@ -1292,7 +1292,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function addDocumentAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -1301,7 +1301,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
             return $this;
         }
@@ -1354,13 +1354,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetBillingReference();
@@ -1384,13 +1384,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber Identification of an invoice previously sent
      * @param  null|DateTimeInterface $newReferenceDate   Date of the previous invoice
      * @param  null|string            $newTypeCode        Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1411,9 +1411,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      */
-    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): self
+    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -1433,9 +1433,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newReferenceNumber Project number
      * @param  null|string $newName            Project name
-     * @return self
+     * @return static
      */
-    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): self
+    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
@@ -1455,12 +1455,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber
      * @param  null|DateTimeInterface $newReferenceDate
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -1471,12 +1471,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber
      * @param  null|DateTimeInterface $newReferenceDate
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -1487,12 +1487,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      */
     public function setDocumentDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetDespatchDocumentReference();
@@ -1511,12 +1511,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Shipping notification number
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
-     * @return self
+     * @return static
      */
     public function addDocumentDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1536,12 +1536,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      */
     public function setDocumentReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetReceiptDocumentReference();
@@ -1560,12 +1560,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Receipt notification number
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
-     * @return self
+     * @return static
      */
     public function addDocumentReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
@@ -1585,12 +1585,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      */
     public function setDocumentDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -1601,12 +1601,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string            $newReferenceNumber Delivery slip number
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
-     * @return self
+     * @return static
      */
     public function addDocumentDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -1616,11 +1616,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate Actual delivery date
-     * @return self
+     * @return static
      */
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->firstDelivery()
@@ -1642,11 +1642,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the identifier assigned by the buyer and used for internal routing
      *
      * @param  null|string $newBuyerReference An identifier assigned by the buyer and used for internal routing
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerReference(
         ?string $newBuyerReference = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetBuyerReference();
@@ -1667,11 +1667,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the seller/supplier party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentSellerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingSupplierParty()
@@ -1698,11 +1698,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the seller/supplier party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentSellerName(
         ?string $newName = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -1716,11 +1716,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentSellerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $ids = array_filter(
             $this
                 ->getUblInvoiceRootObject()
@@ -1749,11 +1749,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the seller/supplier party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentSellerId(
         ?string $newId = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -1775,9 +1775,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $ids = array_filter(
             $this
@@ -1808,9 +1808,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -1834,12 +1834,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentSellerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingSupplierParty()
@@ -1860,12 +1860,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentSellerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
@@ -1898,7 +1898,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentSellerAddress(
         ?string $newAddressLine1 = null,
@@ -1908,7 +1908,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingSupplierParty()
@@ -1972,7 +1972,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentSellerAddress(
         ?string $newAddressLine1 = null,
@@ -1982,7 +1982,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2016,13 +2016,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentSellerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingSupplierParty()
@@ -2069,13 +2069,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentSellerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -2093,7 +2093,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentSellerContact(
         ?string $newPersonName = null,
@@ -2101,7 +2101,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingSupplierParty()
@@ -2157,7 +2157,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentSellerContact(
         ?string $newPersonName = null,
@@ -2165,7 +2165,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -2188,9 +2188,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -2218,9 +2218,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
@@ -2235,11 +2235,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the buyer/customer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingCustomerParty()
@@ -2266,11 +2266,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the buyer/customer party
      *
      * @param  null|string $newName __BT-44, From MINIMUM__ The full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerName(
         ?string $newName = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -2284,11 +2284,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerId(
         ?string $newId = null
-    ): self {
+    ): static {
         $ids = array_filter(
             $this
                 ->getUblInvoiceRootObject()
@@ -2317,11 +2317,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the buyer/customer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerId(
         ?string $newId = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -2343,9 +2343,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $ids = array_filter(
             $this
@@ -2376,9 +2376,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -2402,12 +2402,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingCustomerParty()
@@ -2428,12 +2428,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
@@ -2466,7 +2466,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerAddress(
         ?string $newAddressLine1 = null,
@@ -2476,7 +2476,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingCustomerParty()
@@ -2540,7 +2540,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerAddress(
         ?string $newAddressLine1 = null,
@@ -2550,7 +2550,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2584,13 +2584,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingCustomerParty()
@@ -2637,13 +2637,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -2661,7 +2661,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber
      * @param  null|string $newFaxNumber
      * @param  null|string $newEmailAddress
-     * @return self
+     * @return static
      */
     public function setDocumentBuyerContact(
         ?string $newPersonName = null,
@@ -2669,7 +2669,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getAccountingCustomerParty()
@@ -2725,7 +2725,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentBuyerContact(
         ?string $newPersonName = null,
@@ -2733,7 +2733,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -2756,9 +2756,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -2786,9 +2786,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
@@ -2803,11 +2803,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getTaxRepresentativeParty()
@@ -2831,11 +2831,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeName(
         ?string $newName = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -2849,11 +2849,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $ids = array_filter(
             $this
                 ->getUblInvoiceRootObject()
@@ -2880,11 +2880,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeId(
         ?string $newId = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -2905,12 +2905,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         $ids = array_filter(
             $this
                 ->getUblInvoiceRootObject()
@@ -2938,12 +2938,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
         }
@@ -2965,12 +2965,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getTaxRepresentativeParty()
@@ -2990,12 +2990,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
@@ -3027,7 +3027,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
@@ -3037,7 +3037,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getTaxRepresentativeParty()
@@ -3099,7 +3099,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
@@ -3109,7 +3109,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -3143,13 +3143,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getTaxRepresentativeParty()
@@ -3188,13 +3188,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -3212,7 +3212,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentTaxRepresentativeContact(
         ?string $newPersonName = null,
@@ -3220,7 +3220,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getTaxRepresentativeParty()
@@ -3274,7 +3274,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentTaxRepresentativeContact(
         ?string $newPersonName = null,
@@ -3282,7 +3282,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -3305,9 +3305,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -3333,9 +3333,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
@@ -3350,11 +3350,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3364,11 +3364,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3378,11 +3378,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3392,11 +3392,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the product end-user party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3407,12 +3407,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3423,12 +3423,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3439,12 +3439,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3455,12 +3455,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3476,7 +3476,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserAddress(
         ?string $newAddressLine1 = null,
@@ -3486,7 +3486,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3502,7 +3502,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserAddress(
         ?string $newAddressLine1 = null,
@@ -3512,7 +3512,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3524,13 +3524,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3542,13 +3542,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3562,7 +3562,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentProductEndUserContact(
         ?string $newPersonName = null,
@@ -3570,7 +3570,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3584,7 +3584,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentProductEndUserContact(
         ?string $newPersonName = null,
@@ -3592,7 +3592,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3603,9 +3603,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -3617,9 +3617,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -3630,11 +3630,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->firstDelivery()
@@ -3660,11 +3660,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -3678,11 +3678,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->firstDelivery()
@@ -3707,11 +3707,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -3726,9 +3726,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -3756,9 +3756,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -3774,12 +3774,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3790,12 +3790,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3811,7 +3811,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentShipToAddress(
         ?string $newAddressLine1 = null,
@@ -3821,7 +3821,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->firstDelivery()
@@ -3885,7 +3885,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentShipToAddress(
         ?string $newAddressLine1 = null,
@@ -3895,7 +3895,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -3929,13 +3929,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3947,13 +3947,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3967,7 +3967,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentShipToContact(
         ?string $newPersonName = null,
@@ -3975,7 +3975,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -3989,7 +3989,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentShipToContact(
         ?string $newPersonName = null,
@@ -3997,7 +3997,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4008,9 +4008,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4022,9 +4022,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4035,11 +4035,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4049,11 +4049,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4063,11 +4063,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4077,11 +4077,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4092,12 +4092,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4108,12 +4108,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4124,12 +4124,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4140,12 +4140,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4161,7 +4161,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -4171,7 +4171,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4187,7 +4187,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -4197,7 +4197,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4209,13 +4209,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4227,13 +4227,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4247,7 +4247,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentUltimateShipToContact(
         ?string $newPersonName = null,
@@ -4255,7 +4255,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4269,7 +4269,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentUltimateShipToContact(
         ?string $newPersonName = null,
@@ -4277,7 +4277,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4288,9 +4288,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4302,9 +4302,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4315,11 +4315,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4329,11 +4329,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the Ship-From party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4343,11 +4343,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4357,11 +4357,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the Ship-From party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4372,9 +4372,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         // Nothing here...
 
@@ -4386,9 +4386,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         // Nothing here...
 
@@ -4400,12 +4400,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4416,12 +4416,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4437,7 +4437,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromAddress(
         ?string $newAddressLine1 = null,
@@ -4447,7 +4447,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4463,7 +4463,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromAddress(
         ?string $newAddressLine1 = null,
@@ -4473,7 +4473,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4485,13 +4485,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4503,13 +4503,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4523,7 +4523,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentShipFromContact(
         ?string $newPersonName = null,
@@ -4531,7 +4531,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4545,7 +4545,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentShipFromContact(
         ?string $newPersonName = null,
@@ -4553,7 +4553,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4564,9 +4564,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4578,9 +4578,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4591,11 +4591,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4605,11 +4605,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the Invoicer party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4619,11 +4619,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4633,11 +4633,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the Invoicer party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4648,9 +4648,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         // Nothing here...
 
@@ -4662,9 +4662,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         // Nothing here...
 
@@ -4676,12 +4676,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4692,12 +4692,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4713,7 +4713,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerAddress(
         ?string $newAddressLine1 = null,
@@ -4723,7 +4723,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4739,7 +4739,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerAddress(
         ?string $newAddressLine1 = null,
@@ -4749,7 +4749,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4761,13 +4761,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4779,13 +4779,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4799,7 +4799,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentInvoicerContact(
         ?string $newPersonName = null,
@@ -4807,7 +4807,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4821,7 +4821,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentInvoicerContact(
         ?string $newPersonName = null,
@@ -4829,7 +4829,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4840,9 +4840,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4854,9 +4854,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -4867,11 +4867,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4881,11 +4881,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the Invoicee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4895,11 +4895,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4909,11 +4909,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the Invoicee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4924,9 +4924,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         // Nothing here...
 
@@ -4938,9 +4938,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         // Nothing here...
 
@@ -4952,12 +4952,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4968,12 +4968,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -4989,7 +4989,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeAddress(
         ?string $newAddressLine1 = null,
@@ -4999,7 +4999,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -5015,7 +5015,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeAddress(
         ?string $newAddressLine1 = null,
@@ -5025,7 +5025,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -5037,13 +5037,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -5055,13 +5055,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -5075,7 +5075,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentInvoiceeContact(
         ?string $newPersonName = null,
@@ -5083,7 +5083,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -5097,7 +5097,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentInvoiceeContact(
         ?string $newPersonName = null,
@@ -5105,7 +5105,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -5116,9 +5116,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -5130,9 +5130,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         // Nothing here...
 
@@ -5143,11 +5143,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeName(
         ?string $newName = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getPayeeParty()
@@ -5172,11 +5172,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the Payee party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeName(
         ?string $newName = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
             return $this;
         }
@@ -5190,11 +5190,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeId(
         ?string $newId = null
-    ): self {
+    ): static {
         $ids = array_filter(
             $this
                 ->getUblInvoiceRootObject()
@@ -5221,11 +5221,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the Payee party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeId(
         ?string $newId = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -5246,9 +5246,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $ids = array_filter(
             $this
@@ -5277,9 +5277,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
-    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): self
+    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
             return $this;
@@ -5302,12 +5302,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getPayeeParty()
@@ -5327,12 +5327,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
             return $this;
         }
@@ -5364,7 +5364,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeAddress(
         ?string $newAddressLine1 = null,
@@ -5374,7 +5374,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getPayeeParty()
@@ -5436,7 +5436,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeAddress(
         ?string $newAddressLine1 = null,
@@ -5446,7 +5446,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -5480,13 +5480,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getPayeeParty()
@@ -5525,13 +5525,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
             return $this;
         }
@@ -5549,7 +5549,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentPayeeContact(
         ?string $newPersonName = null,
@@ -5557,7 +5557,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getPayeeParty()
@@ -5611,7 +5611,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentPayeeContact(
         ?string $newPersonName = null,
@@ -5619,7 +5619,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -5642,9 +5642,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -5670,9 +5670,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
-    public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): self
+    public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
             return $this;
@@ -5697,7 +5697,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMean(
         ?string $newTypeCode = null,
@@ -5711,7 +5711,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetPaymentMeans();
@@ -5751,7 +5751,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeBic            Identifier of the payment service provider
      * @param  null|string $newPaymentReference    Text value used to link the payment to the invoice issued by the seller
      * @param  null|string $newMandate             Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMean(
         ?string $newTypeCode = null,
@@ -5765,7 +5765,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
             return $this;
         }
@@ -5848,7 +5848,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsCreditTransferSepa(
         ?string $newPayeeIban = null,
@@ -5856,7 +5856,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             newPayeeIban: $newPayeeIban,
@@ -5877,7 +5877,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsCreditTransferSepa(
         ?string $newPayeeIban = null,
@@ -5885,7 +5885,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             newPayeeIban: $newPayeeIban,
@@ -5906,7 +5906,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsCreditTransferNoSepa(
         ?string $newPayeeIban = null,
@@ -5914,7 +5914,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             newPayeeIban: $newPayeeIban,
@@ -5935,7 +5935,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPayeeProprietaryId National account number (not for SEPA)
      * @param  null|string $newPayeeBic           Identifier of the payment service provider
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsCreditTransferNoSepa(
         ?string $newPayeeIban = null,
@@ -5943,7 +5943,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPayeeProprietaryId = null,
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
-    ): self {
+    ): static {
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             newPayeeIban: $newPayeeIban,
@@ -5961,12 +5961,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsDirectDebitSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             newBuyerIban: $newBuyerIban,
@@ -5981,12 +5981,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsDirectDebitSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             newBuyerIban: $newBuyerIban,
@@ -6001,12 +6001,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsDirectDebitNoSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             newBuyerIban: $newBuyerIban,
@@ -6021,12 +6021,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newBuyerIban Identifier of the account to be debited
      * @param  null|string $newMandate   Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsDirectDebitNoSepa(
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
-    ): self {
+    ): static {
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             newBuyerIban: $newBuyerIban,
@@ -6041,12 +6041,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newFinancialCardId     Primary account number (PAN) of the payment card
      * @param  null|string $newFinancialCardHolder Name of the payment card holder
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentMeanAsPaymentCard(
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
-    ): self {
+    ): static {
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             newFinancialCardId: $newFinancialCardId,
@@ -6061,12 +6061,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newFinancialCardId     Primary account number (PAN) of the payment card
      * @param  null|string $newFinancialCardHolder Name of the payment card holder
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentMeanAsPaymentCard(
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
-    ): self {
+    ): static {
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             newFinancialCardId: $newFinancialCardId,
@@ -6080,11 +6080,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentCreditorReferenceID(
         ?string $newId = null
-    ): self {
+    ): static {
         $ids = $this
             ->getUblInvoiceRootObject()
             ->getAccountingSupplierParty()
@@ -6123,11 +6123,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add Unique bank details of the payee or the seller
      *
      * @param  null|string $newId Creditor identifier
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentCreditorReferenceID(
         ?string $newId = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
             return $this;
         }
@@ -6143,13 +6143,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
      * @param  null|string            $newMandate     Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentTerm(
         ?string $newDescription = null,
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetPaymentTerms();
@@ -6173,13 +6173,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
      * @param  null|string            $newMandate     Identification of the mandate reference
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentTerm(
         ?string $newDescription = null,
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
             return $this;
         }
@@ -6206,7 +6206,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentDiscountTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -6215,7 +6215,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -6230,7 +6230,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newBaseDate        Due date reference date
      * @param  null|float             $newBasePeriod      Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentDiscountTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -6239,7 +6239,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -6254,7 +6254,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function setDocumentPaymentPenaltyTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -6263,7 +6263,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -6278,7 +6278,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newBaseDate       Due date reference date
      * @param  null|float             $newBasePeriod     Maturity period (basis)
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
-     * @return self
+     * @return static
      */
     public function addDocumentPaymentPenaltyTermsInLastPaymentTerm(
         ?float $newBaseAmount = null,
@@ -6287,7 +6287,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?DateTimeInterface $newBaseDate = null,
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -6305,7 +6305,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      */
     public function setDocumentTax(
         ?string $newTaxCategory = null,
@@ -6317,7 +6317,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newExemptionReasonCode = null,
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->firstTaxTotal()
@@ -6357,7 +6357,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newExemptionReasonCode Reason for tax exemption (Code)
      * @param  null|DateTimeInterface $newTaxDueDate          Date on which tax is due
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
-     * @return self
+     * @return static
      */
     public function addDocumentTax(
         ?string $newTaxCategory = null,
@@ -6369,7 +6369,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newExemptionReasonCode = null,
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
@@ -6420,7 +6420,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function setDocumentAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -6432,7 +6432,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetAllowanceCharge();
@@ -6471,7 +6471,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function addDocumentAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -6483,7 +6483,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
@@ -6546,7 +6546,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      */
     public function setDocumentLogisticServiceCharge(
         ?float $newChargeAmount = null,
@@ -6554,7 +6554,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newTaxCategory = null,
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -6568,7 +6568,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newTaxCategory  Coded description of the tax category
      * @param  null|string $newTaxType      Coded description of the tax type
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
-     * @return self
+     * @return static
      */
     public function addDocumentLogisticServiceCharge(
         ?float $newChargeAmount = null,
@@ -6576,7 +6576,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newTaxCategory = null,
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -6585,9 +6585,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     /**
      * Prepare the document-level summation (Sets all values to zero)
      *
-     * @return self
+     * @return static
      */
-    public function prepareDocumentSummation(): self
+    public function prepareDocumentSummation(): static
     {
         // Nothing here...
 
@@ -6606,7 +6606,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float $newDueAmount           Payment amount due
      * @param  null|float $newPrepaidAmount       Prepayment amount
      * @param  null|float $newRoungingAmount      Rounding amount
-     * @return self
+     * @return static
      */
     public function setDocumentSummation(
         ?float $newNetAmount = null,
@@ -6619,7 +6619,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newDueAmount = null,
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->unsetLegalMonetaryTotal();
@@ -6681,14 +6681,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newParentPositionId     Identification of the parent position
      * @param  null|string $newLineStatusCode       Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
      * @param  null|string $newLineStatusReasonCode Type to specify whether the invoice line is
-     * @return self
+     * @return static
      */
     public function addDocumentPosition(
         ?string $newPositionId = null,
         ?string $newParentPositionId = null,
         ?string $newLineStatusCode = null,
         ?string $newLineStatusReasonCode = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])) {
             return $this;
         }
@@ -6708,13 +6708,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      */
     public function setDocumentPositionNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -6739,13 +6739,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newContent     Text that contains unstructured information that is relevant to the invoice item
      * @param  null|string $newContentCode Code to classify the content of the free text of the invoice
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
-     * @return self
+     * @return static
      */
     public function addDocumentPositionNote(
         ?string $newContent = null,
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
             return $this;
         }
@@ -6775,7 +6775,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductBrandName          Brand name of the product
      * @param  null|string $newProductModelName          Model name of the product
      * @param  null|string $newProductOriginTradeCountry Code indicating the country the goods came from
-     * @return self
+     * @return static
      */
     public function setDocumentPositionProductDetails(
         ?string $newProductId = null,
@@ -6791,7 +6791,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newProductBrandName = null,
         ?string $newProductModelName = null,
         ?string $newProductOriginTradeCountry = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -6839,7 +6839,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      */
     public function setDocumentPositionProductCharacteristic(
         ?string $newProductCharacteristicDescription = null,
@@ -6847,7 +6847,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newProductCharacteristicType = null,
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
-    ): self {
+    ): static {
         $positionProduct = $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -6882,7 +6882,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductCharacteristicType         Type (Code) of product characteristic
      * @param  null|float  $newProductCharacteristicMeasureValue Value of the characteristic (numerical measured)
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
-     * @return self
+     * @return static
      */
     public function addDocumentPositionProductCharacteristic(
         ?string $newProductCharacteristicDescription = null,
@@ -6890,7 +6890,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newProductCharacteristicType = null,
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
-    ): self {
+    ): static {
         $positionProduct = $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -6928,14 +6928,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
     public function setDocumentPositionProductClassification(
         ?string $newProductClassificationCode = null,
         ?string $newProductClassificationListId = null,
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
-    ): self {
+    ): static {
         $positionProduct = $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -6968,14 +6968,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductClassificationListId        Identifier for the identification scheme of the item classification
      * @param  null|string $newProductClassificationListVersionId Version of the identification scheme
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
-     * @return self
+     * @return static
      */
     public function addDocumentPositionProductClassification(
         ?string $newProductClassificationCode = null,
         ?string $newProductClassificationListId = null,
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
-    ): self {
+    ): static {
         $positionProduct = $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -7016,7 +7016,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      */
     public function setDocumentPositionReferencedProduct(
         ?string $newProductId = null,
@@ -7029,7 +7029,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newProductIndustryId = null,
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7048,7 +7048,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductIndustryId       Id assigned by the industry
      * @param  null|float  $newProductUnitQuantity     Quantity Quantity of the referenced product contained
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
-     * @return self
+     * @return static
      */
     public function addDocumentPositionReferencedProduct(
         ?string $newProductId = null,
@@ -7061,7 +7061,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newProductIndustryId = null,
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7073,13 +7073,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7091,13 +7091,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Seller's order confirmation number
      * @param  null|string            $newReferenceLineNumber Seller's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionSellerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7109,13 +7109,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -7140,13 +7140,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionBuyerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
             return $this;
         }
@@ -7167,13 +7167,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionQuotationReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7185,13 +7185,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionQuotationReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7203,13 +7203,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionContractReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7221,13 +7221,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Buyer's order confirmation number
      * @param  null|string            $newReferenceLineNumber Buyer's order confirmation line number
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionContractReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here...
 
         return $this;
@@ -7243,7 +7243,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function setDocumentPositionAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -7253,7 +7253,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7269,7 +7269,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string                 $newReferenceTypeCode      Additional document reference-type code
      * @param  null|string                 $newDescription            Additional document description
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
-     * @return self
+     * @return static
      */
     public function addDocumentPositionAdditionalReference(
         ?string $newReferenceNumber = null,
@@ -7279,7 +7279,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newReferenceTypeCode = null,
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7291,13 +7291,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7309,13 +7309,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Ultimate customer order number
      * @param  null|string            $newReferenceLineNumber Ultimate customer order line number
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateCustomerOrderReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7327,13 +7327,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7345,13 +7345,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Shipping notification number
      * @param  null|string            $newReferenceLineNumber Shipping notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionDespatchAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7363,13 +7363,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7381,13 +7381,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Receipt notification number
      * @param  null|string            $newReferenceLineNumber Receipt notification line number
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionReceivingAdviceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7399,13 +7399,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      */
     public function setDocumentPositionDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7417,13 +7417,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceNumber     Delivery slip number
      * @param  null|string            $newReferenceLineNumber Delivery slip line number
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
-     * @return self
+     * @return static
      */
     public function addDocumentPositionDeliveryNoteReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7436,14 +7436,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function setDocumentPositionInvoiceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7456,14 +7456,14 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string            $newReferenceLineNumber Identification of an invoice line previously sent
      * @param  null|DateTimeInterface $newReferenceDate       Date of the previous invoice
      * @param  null|string            $newTypeCode            Type code of previous invoice
-     * @return self
+     * @return static
      */
     public function addDocumentPositionInvoiceReference(
         ?string $newReferenceNumber = null,
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7475,13 +7475,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newGrossPrice                  Unit price excluding sales tax before deduction of the discount on the item price
      * @param  null|float  $newGrossPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     public function setDocumentPositionGrossPrice(
         ?float $newGrossPrice = null,
         ?float $newGrossPriceBasisQuantity = null,
         ?string $newGrossPriceBasisQuantityUnit = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7496,7 +7496,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionGrossPriceAllowanceCharge(
         ?float $newGrossPriceAllowanceChargeAmount = null,
@@ -7505,7 +7505,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newGrossPriceAllowanceChargeBasisAmount = null,
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7520,7 +7520,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newGrossPriceAllowanceChargeBasisAmount Base amount of the discount or charge
      * @param  null|string $newGrossPriceAllowanceChargeReason      Reason for discount or charge (free text)
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
-     * @return self
+     * @return static
      */
     public function addDocumentPositionGrossPriceAllowanceCharge(
         ?float $newGrossPriceAllowanceChargeAmount = null,
@@ -7529,7 +7529,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newGrossPriceAllowanceChargeBasisAmount = null,
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7541,13 +7541,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newNetPrice                  Unit price excluding sales tax after deduction of the discount on the item price
      * @param  null|float  $newNetPriceBasisQuantity     Number of item units for which the price applies
      * @param  null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
-     * @return self
+     * @return static
      */
     public function setDocumentPositionNetPrice(
         ?float $newNetPrice = null,
         ?float $newNetPriceBasisQuantity = null,
         ?string $newNetPriceBasisQuantityUnit = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -7586,7 +7586,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionNetPriceTax(
         ?string $newTaxCategory = null,
@@ -7595,7 +7595,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newTaxPercent = null,
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7610,7 +7610,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newChargeFreeQuantityUnit Charge Free quantity unit
      * @param  null|float  $newPackageQuantity        Package quantity
      * @param  null|string $newPackageQuantityUnit    Package quantity unit
-     * @return self
+     * @return static
      */
     public function setDocumentPositionQuantities(
         ?float $newQuantity = null,
@@ -7619,7 +7619,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newChargeFreeQuantityUnit = null,
         ?float $newPackageQuantity = null,
         ?string $newPackageQuantityUnit = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -7646,11 +7646,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7660,11 +7660,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7674,11 +7674,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7688,11 +7688,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7703,12 +7703,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7719,12 +7719,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7735,12 +7735,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7751,12 +7751,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7772,7 +7772,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToAddress(
         ?string $newAddressLine1 = null,
@@ -7782,7 +7782,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7798,7 +7798,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToAddress(
         ?string $newAddressLine1 = null,
@@ -7808,7 +7808,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7820,13 +7820,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7838,13 +7838,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7858,7 +7858,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToContact(
         ?string $newPersonName = null,
@@ -7866,7 +7866,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7880,7 +7880,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToContact(
         ?string $newPersonName = null,
@@ -7888,7 +7888,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7899,12 +7899,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function setDocumentPositionShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7915,12 +7915,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function addDocumentPositionShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7930,11 +7930,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7944,11 +7944,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add a name of the ultimate Ship-To party
      *
      * @param  null|string $newName the full formal name under which the party is registered
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToName(
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7958,11 +7958,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the ID of the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7972,11 +7972,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Add an ID to the ultimate Ship-To party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToId(
         ?string $newId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -7987,12 +7987,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8003,12 +8003,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8019,12 +8019,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8035,12 +8035,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8056,7 +8056,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -8066,7 +8066,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8082,7 +8082,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newCity         name of the city or municipality in which the party's address is located
      * @param  null|string $newCountryId    country in which the party's address is located
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToAddress(
         ?string $newAddressLine1 = null,
@@ -8092,7 +8092,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newCity = null,
         ?string $newCountryId = null,
         ?string $newSubDivision = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8104,13 +8104,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8122,13 +8122,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
      * @param  null|string $newName name by which the party is known, if different from the party's name
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8142,7 +8142,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToContact(
         ?string $newPersonName = null,
@@ -8150,7 +8150,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8164,7 +8164,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newPhoneNumber    telephone number for the contact point
      * @param  null|string $newFaxNumber      fax number of the contact point
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToContact(
         ?string $newPersonName = null,
@@ -8172,7 +8172,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8183,12 +8183,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function setDocumentPositionUltimateShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8199,12 +8199,12 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address
-     * @return self
+     * @return static
      */
     public function addDocumentPositionUltimateShipToCommunication(
         ?string $newType = null,
         ?string $newUri = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8214,11 +8214,11 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * Set the date of the delivery
      *
      * @param  null|DateTimeInterface $newDate
-     * @return self
+     * @return static
      */
     public function setDocumentPositionSupplyChainEvent(
         ?DateTimeInterface $newDate = null
-    ): self {
+    ): static {
         // Nothing here
 
         return $this;
@@ -8230,13 +8230,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -8257,13 +8257,13 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|DateTimeInterface $newStartDate   Start of the billing period
      * @param  null|DateTimeInterface $newEndDate     End of the billing period
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
-     * @return self
+     * @return static
      */
     public function addDocumentPositionBillingPeriod(
         ?DateTimeInterface $newStartDate = null,
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
             return $this;
         }
@@ -8292,7 +8292,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function setDocumentPositionTax(
         ?string $newTaxCategory = null,
@@ -8301,7 +8301,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newTaxPercent = null,
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -8336,7 +8336,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float  $newTaxPercent          Tax Rate (Percentage)
      * @param  null|string $newExemptionReason     Reason for tax exemption (free text)
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
-     * @return self
+     * @return static
      */
     public function addDocumentPositionTax(
         ?string $newTaxCategory = null,
@@ -8345,7 +8345,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newTaxPercent = null,
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
-    ): self {
+    ): static {
         if (
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent])
             || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
@@ -8383,7 +8383,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function setDocumentPositionAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -8392,7 +8392,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -8423,7 +8423,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|string $newAllowanceChargeReason     Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
-     * @return self
+     * @return static
      */
     public function addDocumentPositionAllowanceCharge(
         ?bool $newChargeIndicator = null,
@@ -8432,7 +8432,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?string $newAllowanceChargeReason = null,
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
-    ): self {
+    ): static {
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)) {
             return $this;
         }
@@ -8472,7 +8472,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      * @param  null|float $newDiscountTotalAmount Sum of the discounts
      * @param  null|float $newTaxTotalAmount      Total amount of the line (in the invoice currency)
      * @param  null|float $newGrossAmount         Total invoice line amount including sales tax
-     * @return self
+     * @return static
      */
     public function setDocumentPositionSummation(
         ?float $newNetAmount = null,
@@ -8480,7 +8480,7 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
         ?float $newDiscountTotalAmount = null,
         ?float $newTaxTotalAmount = null,
         ?float $newGrossAmount = null,
-    ): self {
+    ): static {
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLine()
@@ -8504,9 +8504,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this
             ->getUblInvoiceRootObject()
@@ -8531,9 +8531,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
      *
      * @param  null|string $newType      Type of the posting reference
      * @param  null|string $newAccountId Posting reference of the byuer
-     * @return self
+     * @return static
      */
-    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): self
+    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
             return $this;
@@ -8557,9 +8557,9 @@ class InvoiceSuiteUblInvoiceProviderBuilder extends InvoiceSuiteAbstractDocument
     /**
      * Internal helper method which updates currencies in several objects
      *
-     * @return self
+     * @return static
      */
-    protected function updateCurrencies(): self
+    protected function updateCurrencies(): static
     {
         $invoiceCurrencyCode = $this
             ->getUblInvoiceRootObject()

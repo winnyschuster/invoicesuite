@@ -115,9 +115,9 @@ class DeliveryTermsType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -125,9 +125,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -144,9 +144,9 @@ class DeliveryTermsType
 
     /**
      * @param array<SpecialTerms>|null $specialTerms
-     * @return self
+     * @return static
      */
-    public function setSpecialTerms(?array $specialTerms = null): self
+    public function setSpecialTerms(?array $specialTerms = null): static
     {
         $this->specialTerms = $specialTerms;
 
@@ -154,9 +154,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecialTerms(): self
+    public function unsetSpecialTerms(): static
     {
         $this->specialTerms = null;
 
@@ -164,9 +164,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecialTerms(): self
+    public function clearSpecialTerms(): static
     {
         $this->specialTerms = [];
 
@@ -205,9 +205,9 @@ class DeliveryTermsType
 
     /**
      * @param SpecialTerms $specialTerms
-     * @return self
+     * @return static
      */
-    public function addToSpecialTerms(SpecialTerms $specialTerms): self
+    public function addToSpecialTerms(SpecialTerms $specialTerms): static
     {
         $this->specialTerms[] = $specialTerms;
 
@@ -226,9 +226,9 @@ class DeliveryTermsType
 
     /**
      * @param SpecialTerms $specialTerms
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecialTerms(SpecialTerms $specialTerms): self
+    public function addOnceToSpecialTerms(SpecialTerms $specialTerms): static
     {
         if (!is_array($this->specialTerms)) {
             $this->specialTerms = [];
@@ -275,20 +275,20 @@ class DeliveryTermsType
 
     /**
      * @param LossRiskResponsibilityCode|null $lossRiskResponsibilityCode
-     * @return self
+     * @return static
      */
     public function setLossRiskResponsibilityCode(
         ?LossRiskResponsibilityCode $lossRiskResponsibilityCode = null,
-    ): self {
+    ): static {
         $this->lossRiskResponsibilityCode = $lossRiskResponsibilityCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLossRiskResponsibilityCode(): self
+    public function unsetLossRiskResponsibilityCode(): static
     {
         $this->lossRiskResponsibilityCode = null;
 
@@ -305,9 +305,9 @@ class DeliveryTermsType
 
     /**
      * @param array<LossRisk>|null $lossRisk
-     * @return self
+     * @return static
      */
-    public function setLossRisk(?array $lossRisk = null): self
+    public function setLossRisk(?array $lossRisk = null): static
     {
         $this->lossRisk = $lossRisk;
 
@@ -315,9 +315,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLossRisk(): self
+    public function unsetLossRisk(): static
     {
         $this->lossRisk = null;
 
@@ -325,9 +325,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearLossRisk(): self
+    public function clearLossRisk(): static
     {
         $this->lossRisk = [];
 
@@ -366,9 +366,9 @@ class DeliveryTermsType
 
     /**
      * @param LossRisk $lossRisk
-     * @return self
+     * @return static
      */
-    public function addToLossRisk(LossRisk $lossRisk): self
+    public function addToLossRisk(LossRisk $lossRisk): static
     {
         $this->lossRisk[] = $lossRisk;
 
@@ -387,9 +387,9 @@ class DeliveryTermsType
 
     /**
      * @param LossRisk $lossRisk
-     * @return self
+     * @return static
      */
-    public function addOnceToLossRisk(LossRisk $lossRisk): self
+    public function addOnceToLossRisk(LossRisk $lossRisk): static
     {
         if (!is_array($this->lossRisk)) {
             $this->lossRisk = [];
@@ -436,9 +436,9 @@ class DeliveryTermsType
 
     /**
      * @param Amount|null $amount
-     * @return self
+     * @return static
      */
-    public function setAmount(?Amount $amount = null): self
+    public function setAmount(?Amount $amount = null): static
     {
         $this->amount = $amount;
 
@@ -446,9 +446,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAmount(): self
+    public function unsetAmount(): static
     {
         $this->amount = null;
 
@@ -475,9 +475,9 @@ class DeliveryTermsType
 
     /**
      * @param DeliveryLocation|null $deliveryLocation
-     * @return self
+     * @return static
      */
-    public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): self
+    public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): static
     {
         $this->deliveryLocation = $deliveryLocation;
 
@@ -485,9 +485,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryLocation(): self
+    public function unsetDeliveryLocation(): static
     {
         $this->deliveryLocation = null;
 
@@ -514,9 +514,9 @@ class DeliveryTermsType
 
     /**
      * @param AllowanceCharge|null $allowanceCharge
-     * @return self
+     * @return static
      */
-    public function setAllowanceCharge(?AllowanceCharge $allowanceCharge = null): self
+    public function setAllowanceCharge(?AllowanceCharge $allowanceCharge = null): static
     {
         $this->allowanceCharge = $allowanceCharge;
 
@@ -524,9 +524,9 @@ class DeliveryTermsType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAllowanceCharge(): self
+    public function unsetAllowanceCharge(): static
     {
         $this->allowanceCharge = null;
 

@@ -77,9 +77,9 @@ class SpecifiedPeriodType
 
     /**
      * @param TextType|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?TextType $description = null): self
+    public function setDescription(?TextType $description = null): static
     {
         $this->description = $description;
 
@@ -87,9 +87,9 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -116,9 +116,9 @@ class SpecifiedPeriodType
 
     /**
      * @param DateTimeType|null $startDateTime
-     * @return self
+     * @return static
      */
-    public function setStartDateTime(?DateTimeType $startDateTime = null): self
+    public function setStartDateTime(?DateTimeType $startDateTime = null): static
     {
         $this->startDateTime = $startDateTime;
 
@@ -126,9 +126,9 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStartDateTime(): self
+    public function unsetStartDateTime(): static
     {
         $this->startDateTime = null;
 
@@ -155,9 +155,9 @@ class SpecifiedPeriodType
 
     /**
      * @param DateTimeType|null $endDateTime
-     * @return self
+     * @return static
      */
-    public function setEndDateTime(?DateTimeType $endDateTime = null): self
+    public function setEndDateTime(?DateTimeType $endDateTime = null): static
     {
         $this->endDateTime = $endDateTime;
 
@@ -165,9 +165,9 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetEndDateTime(): self
+    public function unsetEndDateTime(): static
     {
         $this->endDateTime = null;
 
@@ -194,9 +194,9 @@ class SpecifiedPeriodType
 
     /**
      * @param DateTimeType|null $completeDateTime
-     * @return self
+     * @return static
      */
-    public function setCompleteDateTime(?DateTimeType $completeDateTime = null): self
+    public function setCompleteDateTime(?DateTimeType $completeDateTime = null): static
     {
         $this->completeDateTime = $completeDateTime;
 
@@ -204,9 +204,9 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCompleteDateTime(): self
+    public function unsetCompleteDateTime(): static
     {
         $this->completeDateTime = null;
 

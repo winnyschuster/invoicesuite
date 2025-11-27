@@ -104,20 +104,20 @@ class TelecommunicationsSupplyType
 
     /**
      * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType|null $telecommunicationsSupplyType
-     * @return self
+     * @return static
      */
     public function setTelecommunicationsSupplyType(
         ?TelecommunicationsSupplyType1 $telecommunicationsSupplyType = null,
-    ): self {
+    ): static {
         $this->telecommunicationsSupplyType = $telecommunicationsSupplyType;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelecommunicationsSupplyType(): self
+    public function unsetTelecommunicationsSupplyType(): static
     {
         $this->telecommunicationsSupplyType = null;
 
@@ -144,20 +144,20 @@ class TelecommunicationsSupplyType
 
     /**
      * @param TelecommunicationsSupplyTypeCode|null $telecommunicationsSupplyTypeCode
-     * @return self
+     * @return static
      */
     public function setTelecommunicationsSupplyTypeCode(
         ?TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode = null,
-    ): self {
+    ): static {
         $this->telecommunicationsSupplyTypeCode = $telecommunicationsSupplyTypeCode;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelecommunicationsSupplyTypeCode(): self
+    public function unsetTelecommunicationsSupplyTypeCode(): static
     {
         $this->telecommunicationsSupplyTypeCode = null;
 
@@ -184,9 +184,9 @@ class TelecommunicationsSupplyType
 
     /**
      * @param PrivacyCode|null $privacyCode
-     * @return self
+     * @return static
      */
-    public function setPrivacyCode(?PrivacyCode $privacyCode = null): self
+    public function setPrivacyCode(?PrivacyCode $privacyCode = null): static
     {
         $this->privacyCode = $privacyCode;
 
@@ -194,9 +194,9 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPrivacyCode(): self
+    public function unsetPrivacyCode(): static
     {
         $this->privacyCode = null;
 
@@ -213,9 +213,9 @@ class TelecommunicationsSupplyType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -223,9 +223,9 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -233,9 +233,9 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -274,9 +274,9 @@ class TelecommunicationsSupplyType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -295,9 +295,9 @@ class TelecommunicationsSupplyType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -344,9 +344,9 @@ class TelecommunicationsSupplyType
 
     /**
      * @param TotalAmount|null $totalAmount
-     * @return self
+     * @return static
      */
-    public function setTotalAmount(?TotalAmount $totalAmount = null): self
+    public function setTotalAmount(?TotalAmount $totalAmount = null): static
     {
         $this->totalAmount = $totalAmount;
 
@@ -354,9 +354,9 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalAmount(): self
+    public function unsetTotalAmount(): static
     {
         $this->totalAmount = null;
 
@@ -373,9 +373,9 @@ class TelecommunicationsSupplyType
 
     /**
      * @param array<TelecommunicationsSupplyLine>|null $telecommunicationsSupplyLine
-     * @return self
+     * @return static
      */
-    public function setTelecommunicationsSupplyLine(?array $telecommunicationsSupplyLine = null): self
+    public function setTelecommunicationsSupplyLine(?array $telecommunicationsSupplyLine = null): static
     {
         $this->telecommunicationsSupplyLine = $telecommunicationsSupplyLine;
 
@@ -383,9 +383,9 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTelecommunicationsSupplyLine(): self
+    public function unsetTelecommunicationsSupplyLine(): static
     {
         $this->telecommunicationsSupplyLine = null;
 
@@ -393,9 +393,9 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTelecommunicationsSupplyLine(): self
+    public function clearTelecommunicationsSupplyLine(): static
     {
         $this->telecommunicationsSupplyLine = [];
 
@@ -434,11 +434,11 @@ class TelecommunicationsSupplyType
 
     /**
      * @param TelecommunicationsSupplyLine $telecommunicationsSupplyLine
-     * @return self
+     * @return static
      */
     public function addToTelecommunicationsSupplyLine(
         TelecommunicationsSupplyLine $telecommunicationsSupplyLine,
-    ): self {
+    ): static {
         $this->telecommunicationsSupplyLine[] = $telecommunicationsSupplyLine;
 
         return $this;
@@ -456,11 +456,11 @@ class TelecommunicationsSupplyType
 
     /**
      * @param TelecommunicationsSupplyLine $telecommunicationsSupplyLine
-     * @return self
+     * @return static
      */
     public function addOnceToTelecommunicationsSupplyLine(
         TelecommunicationsSupplyLine $telecommunicationsSupplyLine,
-    ): self {
+    ): static {
         if (!is_array($this->telecommunicationsSupplyLine)) {
             $this->telecommunicationsSupplyLine = [];
         }

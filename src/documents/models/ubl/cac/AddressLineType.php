@@ -43,9 +43,9 @@ class AddressLineType
 
     /**
      * @param Line|null $line
-     * @return self
+     * @return static
      */
-    public function setLine(?Line $line = null): self
+    public function setLine(?Line $line = null): static
     {
         $this->line = $line;
 
@@ -53,9 +53,9 @@ class AddressLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLine(): self
+    public function unsetLine(): static
     {
         $this->line = null;
 

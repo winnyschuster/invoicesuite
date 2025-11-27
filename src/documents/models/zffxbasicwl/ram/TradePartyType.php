@@ -103,9 +103,9 @@ class TradePartyType
 
     /**
      * @param array<IDType>|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?array $iD = null): self
+    public function setID(?array $iD = null): static
     {
         $this->iD = $iD;
 
@@ -113,9 +113,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -123,9 +123,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearID(): self
+    public function clearID(): static
     {
         $this->iD = [];
 
@@ -134,9 +134,9 @@ class TradePartyType
 
     /**
      * @param IDType $iD
-     * @return self
+     * @return static
      */
-    public function addToID(IDType $iD): self
+    public function addToID(IDType $iD): static
     {
         $this->iD[] = $iD;
 
@@ -155,9 +155,9 @@ class TradePartyType
 
     /**
      * @param IDType $iD
-     * @return self
+     * @return static
      */
-    public function addOnceToID(IDType $iD): self
+    public function addOnceToID(IDType $iD): static
     {
         if (!is_array($this->iD)) {
             $this->iD = [];
@@ -194,9 +194,9 @@ class TradePartyType
 
     /**
      * @param array<IDType>|null $globalID
-     * @return self
+     * @return static
      */
-    public function setGlobalID(?array $globalID = null): self
+    public function setGlobalID(?array $globalID = null): static
     {
         $this->globalID = $globalID;
 
@@ -204,9 +204,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGlobalID(): self
+    public function unsetGlobalID(): static
     {
         $this->globalID = null;
 
@@ -214,9 +214,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearGlobalID(): self
+    public function clearGlobalID(): static
     {
         $this->globalID = [];
 
@@ -225,9 +225,9 @@ class TradePartyType
 
     /**
      * @param IDType $globalID
-     * @return self
+     * @return static
      */
-    public function addToGlobalID(IDType $globalID): self
+    public function addToGlobalID(IDType $globalID): static
     {
         $this->globalID[] = $globalID;
 
@@ -246,9 +246,9 @@ class TradePartyType
 
     /**
      * @param IDType $globalID
-     * @return self
+     * @return static
      */
-    public function addOnceToGlobalID(IDType $globalID): self
+    public function addOnceToGlobalID(IDType $globalID): static
     {
         if (!is_array($this->globalID)) {
             $this->globalID = [];
@@ -295,9 +295,9 @@ class TradePartyType
 
     /**
      * @param TextType|null $name
-     * @return self
+     * @return static
      */
-    public function setName(?TextType $name = null): self
+    public function setName(?TextType $name = null): static
     {
         $this->name = $name;
 
@@ -305,9 +305,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetName(): self
+    public function unsetName(): static
     {
         $this->name = null;
 
@@ -334,9 +334,9 @@ class TradePartyType
 
     /**
      * @param LegalOrganizationType|null $specifiedLegalOrganization
-     * @return self
+     * @return static
      */
-    public function setSpecifiedLegalOrganization(?LegalOrganizationType $specifiedLegalOrganization = null): self
+    public function setSpecifiedLegalOrganization(?LegalOrganizationType $specifiedLegalOrganization = null): static
     {
         $this->specifiedLegalOrganization = $specifiedLegalOrganization;
 
@@ -344,9 +344,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedLegalOrganization(): self
+    public function unsetSpecifiedLegalOrganization(): static
     {
         $this->specifiedLegalOrganization = null;
 
@@ -373,9 +373,9 @@ class TradePartyType
 
     /**
      * @param TradeAddressType|null $postalTradeAddress
-     * @return self
+     * @return static
      */
-    public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): self
+    public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): static
     {
         $this->postalTradeAddress = $postalTradeAddress;
 
@@ -383,9 +383,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPostalTradeAddress(): self
+    public function unsetPostalTradeAddress(): static
     {
         $this->postalTradeAddress = null;
 
@@ -412,9 +412,9 @@ class TradePartyType
 
     /**
      * @param UniversalCommunicationType|null $uRIUniversalCommunication
-     * @return self
+     * @return static
      */
-    public function setURIUniversalCommunication(?UniversalCommunicationType $uRIUniversalCommunication = null): self
+    public function setURIUniversalCommunication(?UniversalCommunicationType $uRIUniversalCommunication = null): static
     {
         $this->uRIUniversalCommunication = $uRIUniversalCommunication;
 
@@ -422,9 +422,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetURIUniversalCommunication(): self
+    public function unsetURIUniversalCommunication(): static
     {
         $this->uRIUniversalCommunication = null;
 
@@ -441,9 +441,9 @@ class TradePartyType
 
     /**
      * @param array<TaxRegistrationType>|null $specifiedTaxRegistration
-     * @return self
+     * @return static
      */
-    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): self
+    public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): static
     {
         $this->specifiedTaxRegistration = $specifiedTaxRegistration;
 
@@ -451,9 +451,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecifiedTaxRegistration(): self
+    public function unsetSpecifiedTaxRegistration(): static
     {
         $this->specifiedTaxRegistration = null;
 
@@ -461,9 +461,9 @@ class TradePartyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecifiedTaxRegistration(): self
+    public function clearSpecifiedTaxRegistration(): static
     {
         $this->specifiedTaxRegistration = [];
 
@@ -472,9 +472,9 @@ class TradePartyType
 
     /**
      * @param TaxRegistrationType $specifiedTaxRegistration
-     * @return self
+     * @return static
      */
-    public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
+    public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): static
     {
         $this->specifiedTaxRegistration[] = $specifiedTaxRegistration;
 
@@ -493,9 +493,9 @@ class TradePartyType
 
     /**
      * @param TaxRegistrationType $specifiedTaxRegistration
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): self
+    public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): static
     {
         if (!is_array($this->specifiedTaxRegistration)) {
             $this->specifiedTaxRegistration = [];

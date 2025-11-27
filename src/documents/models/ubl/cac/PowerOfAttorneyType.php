@@ -125,9 +125,9 @@ class PowerOfAttorneyType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -135,9 +135,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -154,9 +154,9 @@ class PowerOfAttorneyType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -164,9 +164,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -183,9 +183,9 @@ class PowerOfAttorneyType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -193,9 +193,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 
@@ -212,9 +212,9 @@ class PowerOfAttorneyType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -222,9 +222,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -232,9 +232,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -273,9 +273,9 @@ class PowerOfAttorneyType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -294,9 +294,9 @@ class PowerOfAttorneyType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];
@@ -343,9 +343,9 @@ class PowerOfAttorneyType
 
     /**
      * @param NotaryParty|null $notaryParty
-     * @return self
+     * @return static
      */
-    public function setNotaryParty(?NotaryParty $notaryParty = null): self
+    public function setNotaryParty(?NotaryParty $notaryParty = null): static
     {
         $this->notaryParty = $notaryParty;
 
@@ -353,9 +353,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNotaryParty(): self
+    public function unsetNotaryParty(): static
     {
         $this->notaryParty = null;
 
@@ -382,9 +382,9 @@ class PowerOfAttorneyType
 
     /**
      * @param AgentParty|null $agentParty
-     * @return self
+     * @return static
      */
-    public function setAgentParty(?AgentParty $agentParty = null): self
+    public function setAgentParty(?AgentParty $agentParty = null): static
     {
         $this->agentParty = $agentParty;
 
@@ -392,9 +392,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAgentParty(): self
+    public function unsetAgentParty(): static
     {
         $this->agentParty = null;
 
@@ -411,9 +411,9 @@ class PowerOfAttorneyType
 
     /**
      * @param array<WitnessParty>|null $witnessParty
-     * @return self
+     * @return static
      */
-    public function setWitnessParty(?array $witnessParty = null): self
+    public function setWitnessParty(?array $witnessParty = null): static
     {
         $this->witnessParty = $witnessParty;
 
@@ -421,9 +421,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetWitnessParty(): self
+    public function unsetWitnessParty(): static
     {
         $this->witnessParty = null;
 
@@ -431,9 +431,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearWitnessParty(): self
+    public function clearWitnessParty(): static
     {
         $this->witnessParty = [];
 
@@ -472,9 +472,9 @@ class PowerOfAttorneyType
 
     /**
      * @param WitnessParty $witnessParty
-     * @return self
+     * @return static
      */
-    public function addToWitnessParty(WitnessParty $witnessParty): self
+    public function addToWitnessParty(WitnessParty $witnessParty): static
     {
         $this->witnessParty[] = $witnessParty;
 
@@ -493,9 +493,9 @@ class PowerOfAttorneyType
 
     /**
      * @param WitnessParty $witnessParty
-     * @return self
+     * @return static
      */
-    public function addOnceToWitnessParty(WitnessParty $witnessParty): self
+    public function addOnceToWitnessParty(WitnessParty $witnessParty): static
     {
         if (!is_array($this->witnessParty)) {
             $this->witnessParty = [];
@@ -532,9 +532,9 @@ class PowerOfAttorneyType
 
     /**
      * @param array<MandateDocumentReference>|null $mandateDocumentReference
-     * @return self
+     * @return static
      */
-    public function setMandateDocumentReference(?array $mandateDocumentReference = null): self
+    public function setMandateDocumentReference(?array $mandateDocumentReference = null): static
     {
         $this->mandateDocumentReference = $mandateDocumentReference;
 
@@ -542,9 +542,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetMandateDocumentReference(): self
+    public function unsetMandateDocumentReference(): static
     {
         $this->mandateDocumentReference = null;
 
@@ -552,9 +552,9 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearMandateDocumentReference(): self
+    public function clearMandateDocumentReference(): static
     {
         $this->mandateDocumentReference = [];
 
@@ -593,9 +593,9 @@ class PowerOfAttorneyType
 
     /**
      * @param MandateDocumentReference $mandateDocumentReference
-     * @return self
+     * @return static
      */
-    public function addToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): self
+    public function addToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): static
     {
         $this->mandateDocumentReference[] = $mandateDocumentReference;
 
@@ -614,9 +614,9 @@ class PowerOfAttorneyType
 
     /**
      * @param MandateDocumentReference $mandateDocumentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): self
+    public function addOnceToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): static
     {
         if (!is_array($this->mandateDocumentReference)) {
             $this->mandateDocumentReference = [];

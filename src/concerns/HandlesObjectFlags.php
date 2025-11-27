@@ -27,9 +27,9 @@ trait HandlesObjectFlags
      * Add a Flag identified by $flag
      *
      * @param  string $flag
-     * @return self
+     * @return static
      */
-    public function addToObjectFlags(string $flag): self
+    public function addToObjectFlags(string $flag): static
     {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($flag)) {
             return $this;
@@ -48,9 +48,9 @@ trait HandlesObjectFlags
      * Remove a Flag identified by $flag
      *
      * @param  string $flag
-     * @return self
+     * @return static
      */
-    public function removeFromObjectFlags(string $flag): self
+    public function removeFromObjectFlags(string $flag): static
     {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($flag)) {
             return $this;

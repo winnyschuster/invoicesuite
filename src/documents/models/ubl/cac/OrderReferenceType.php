@@ -136,9 +136,9 @@ class OrderReferenceType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -146,9 +146,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -175,9 +175,9 @@ class OrderReferenceType
 
     /**
      * @param SalesOrderID|null $salesOrderID
-     * @return self
+     * @return static
      */
-    public function setSalesOrderID(?SalesOrderID $salesOrderID = null): self
+    public function setSalesOrderID(?SalesOrderID $salesOrderID = null): static
     {
         $this->salesOrderID = $salesOrderID;
 
@@ -185,9 +185,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSalesOrderID(): self
+    public function unsetSalesOrderID(): static
     {
         $this->salesOrderID = null;
 
@@ -204,9 +204,9 @@ class OrderReferenceType
 
     /**
      * @param bool|null $copyIndicator
-     * @return self
+     * @return static
      */
-    public function setCopyIndicator(?bool $copyIndicator = null): self
+    public function setCopyIndicator(?bool $copyIndicator = null): static
     {
         $this->copyIndicator = $copyIndicator;
 
@@ -214,9 +214,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCopyIndicator(): self
+    public function unsetCopyIndicator(): static
     {
         $this->copyIndicator = null;
 
@@ -243,9 +243,9 @@ class OrderReferenceType
 
     /**
      * @param UUID|null $uUID
-     * @return self
+     * @return static
      */
-    public function setUUID(?UUID $uUID = null): self
+    public function setUUID(?UUID $uUID = null): static
     {
         $this->uUID = $uUID;
 
@@ -253,9 +253,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetUUID(): self
+    public function unsetUUID(): static
     {
         $this->uUID = null;
 
@@ -272,9 +272,9 @@ class OrderReferenceType
 
     /**
      * @param DateTimeInterface|null $issueDate
-     * @return self
+     * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): self
+    public function setIssueDate(?DateTimeInterface $issueDate = null): static
     {
         $this->issueDate = $issueDate;
 
@@ -282,9 +282,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueDate(): self
+    public function unsetIssueDate(): static
     {
         $this->issueDate = null;
 
@@ -301,9 +301,9 @@ class OrderReferenceType
 
     /**
      * @param DateTimeInterface|null $issueTime
-     * @return self
+     * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): self
+    public function setIssueTime(?DateTimeInterface $issueTime = null): static
     {
         $this->issueTime = $issueTime;
 
@@ -311,9 +311,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetIssueTime(): self
+    public function unsetIssueTime(): static
     {
         $this->issueTime = null;
 
@@ -340,9 +340,9 @@ class OrderReferenceType
 
     /**
      * @param CustomerReference|null $customerReference
-     * @return self
+     * @return static
      */
-    public function setCustomerReference(?CustomerReference $customerReference = null): self
+    public function setCustomerReference(?CustomerReference $customerReference = null): static
     {
         $this->customerReference = $customerReference;
 
@@ -350,9 +350,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetCustomerReference(): self
+    public function unsetCustomerReference(): static
     {
         $this->customerReference = null;
 
@@ -379,9 +379,9 @@ class OrderReferenceType
 
     /**
      * @param OrderTypeCode|null $orderTypeCode
-     * @return self
+     * @return static
      */
-    public function setOrderTypeCode(?OrderTypeCode $orderTypeCode = null): self
+    public function setOrderTypeCode(?OrderTypeCode $orderTypeCode = null): static
     {
         $this->orderTypeCode = $orderTypeCode;
 
@@ -389,9 +389,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOrderTypeCode(): self
+    public function unsetOrderTypeCode(): static
     {
         $this->orderTypeCode = null;
 
@@ -418,9 +418,9 @@ class OrderReferenceType
 
     /**
      * @param DocumentReference|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): self
+    public function setDocumentReference(?DocumentReference $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -428,9 +428,9 @@ class OrderReferenceType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 

@@ -78,9 +78,9 @@ class PriceListType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -88,9 +88,9 @@ class PriceListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -117,9 +117,9 @@ class PriceListType
 
     /**
      * @param StatusCode|null $statusCode
-     * @return self
+     * @return static
      */
-    public function setStatusCode(?StatusCode $statusCode = null): self
+    public function setStatusCode(?StatusCode $statusCode = null): static
     {
         $this->statusCode = $statusCode;
 
@@ -127,9 +127,9 @@ class PriceListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetStatusCode(): self
+    public function unsetStatusCode(): static
     {
         $this->statusCode = null;
 
@@ -146,9 +146,9 @@ class PriceListType
 
     /**
      * @param array<ValidityPeriod>|null $validityPeriod
-     * @return self
+     * @return static
      */
-    public function setValidityPeriod(?array $validityPeriod = null): self
+    public function setValidityPeriod(?array $validityPeriod = null): static
     {
         $this->validityPeriod = $validityPeriod;
 
@@ -156,9 +156,9 @@ class PriceListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetValidityPeriod(): self
+    public function unsetValidityPeriod(): static
     {
         $this->validityPeriod = null;
 
@@ -166,9 +166,9 @@ class PriceListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearValidityPeriod(): self
+    public function clearValidityPeriod(): static
     {
         $this->validityPeriod = [];
 
@@ -207,9 +207,9 @@ class PriceListType
 
     /**
      * @param ValidityPeriod $validityPeriod
-     * @return self
+     * @return static
      */
-    public function addToValidityPeriod(ValidityPeriod $validityPeriod): self
+    public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
     {
         $this->validityPeriod[] = $validityPeriod;
 
@@ -228,9 +228,9 @@ class PriceListType
 
     /**
      * @param ValidityPeriod $validityPeriod
-     * @return self
+     * @return static
      */
-    public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): self
+    public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
     {
         if (!is_array($this->validityPeriod)) {
             $this->validityPeriod = [];
@@ -277,9 +277,9 @@ class PriceListType
 
     /**
      * @param PreviousPriceList|null $previousPriceList
-     * @return self
+     * @return static
      */
-    public function setPreviousPriceList(?PreviousPriceList $previousPriceList = null): self
+    public function setPreviousPriceList(?PreviousPriceList $previousPriceList = null): static
     {
         $this->previousPriceList = $previousPriceList;
 
@@ -287,9 +287,9 @@ class PriceListType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPreviousPriceList(): self
+    public function unsetPreviousPriceList(): static
     {
         $this->previousPriceList = null;
 

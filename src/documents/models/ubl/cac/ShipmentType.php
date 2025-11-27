@@ -412,9 +412,9 @@ class ShipmentType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -422,9 +422,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -451,9 +451,9 @@ class ShipmentType
 
     /**
      * @param ShippingPriorityLevelCode|null $shippingPriorityLevelCode
-     * @return self
+     * @return static
      */
-    public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): self
+    public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): static
     {
         $this->shippingPriorityLevelCode = $shippingPriorityLevelCode;
 
@@ -461,9 +461,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShippingPriorityLevelCode(): self
+    public function unsetShippingPriorityLevelCode(): static
     {
         $this->shippingPriorityLevelCode = null;
 
@@ -490,9 +490,9 @@ class ShipmentType
 
     /**
      * @param HandlingCode|null $handlingCode
-     * @return self
+     * @return static
      */
-    public function setHandlingCode(?HandlingCode $handlingCode = null): self
+    public function setHandlingCode(?HandlingCode $handlingCode = null): static
     {
         $this->handlingCode = $handlingCode;
 
@@ -500,9 +500,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingCode(): self
+    public function unsetHandlingCode(): static
     {
         $this->handlingCode = null;
 
@@ -519,9 +519,9 @@ class ShipmentType
 
     /**
      * @param array<HandlingInstructions>|null $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function setHandlingInstructions(?array $handlingInstructions = null): self
+    public function setHandlingInstructions(?array $handlingInstructions = null): static
     {
         $this->handlingInstructions = $handlingInstructions;
 
@@ -529,9 +529,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetHandlingInstructions(): self
+    public function unsetHandlingInstructions(): static
     {
         $this->handlingInstructions = null;
 
@@ -539,9 +539,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearHandlingInstructions(): self
+    public function clearHandlingInstructions(): static
     {
         $this->handlingInstructions = [];
 
@@ -580,9 +580,9 @@ class ShipmentType
 
     /**
      * @param HandlingInstructions $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): self
+    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
     {
         $this->handlingInstructions[] = $handlingInstructions;
 
@@ -601,9 +601,9 @@ class ShipmentType
 
     /**
      * @param HandlingInstructions $handlingInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): self
+    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
     {
         if (!is_array($this->handlingInstructions)) {
             $this->handlingInstructions = [];
@@ -640,9 +640,9 @@ class ShipmentType
 
     /**
      * @param array<Information>|null $information
-     * @return self
+     * @return static
      */
-    public function setInformation(?array $information = null): self
+    public function setInformation(?array $information = null): static
     {
         $this->information = $information;
 
@@ -650,9 +650,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInformation(): self
+    public function unsetInformation(): static
     {
         $this->information = null;
 
@@ -660,9 +660,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearInformation(): self
+    public function clearInformation(): static
     {
         $this->information = [];
 
@@ -701,9 +701,9 @@ class ShipmentType
 
     /**
      * @param Information $information
-     * @return self
+     * @return static
      */
-    public function addToInformation(Information $information): self
+    public function addToInformation(Information $information): static
     {
         $this->information[] = $information;
 
@@ -722,9 +722,9 @@ class ShipmentType
 
     /**
      * @param Information $information
-     * @return self
+     * @return static
      */
-    public function addOnceToInformation(Information $information): self
+    public function addOnceToInformation(Information $information): static
     {
         if (!is_array($this->information)) {
             $this->information = [];
@@ -771,9 +771,9 @@ class ShipmentType
 
     /**
      * @param GrossWeightMeasure|null $grossWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): self
+    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
     {
         $this->grossWeightMeasure = $grossWeightMeasure;
 
@@ -781,9 +781,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossWeightMeasure(): self
+    public function unsetGrossWeightMeasure(): static
     {
         $this->grossWeightMeasure = null;
 
@@ -810,9 +810,9 @@ class ShipmentType
 
     /**
      * @param NetWeightMeasure|null $netWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): self
+    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
     {
         $this->netWeightMeasure = $netWeightMeasure;
 
@@ -820,9 +820,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetWeightMeasure(): self
+    public function unsetNetWeightMeasure(): static
     {
         $this->netWeightMeasure = null;
 
@@ -849,9 +849,9 @@ class ShipmentType
 
     /**
      * @param NetNetWeightMeasure|null $netNetWeightMeasure
-     * @return self
+     * @return static
      */
-    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): self
+    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
     {
         $this->netNetWeightMeasure = $netNetWeightMeasure;
 
@@ -859,9 +859,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetNetWeightMeasure(): self
+    public function unsetNetNetWeightMeasure(): static
     {
         $this->netNetWeightMeasure = null;
 
@@ -888,9 +888,9 @@ class ShipmentType
 
     /**
      * @param GrossVolumeMeasure|null $grossVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): self
+    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
     {
         $this->grossVolumeMeasure = $grossVolumeMeasure;
 
@@ -898,9 +898,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGrossVolumeMeasure(): self
+    public function unsetGrossVolumeMeasure(): static
     {
         $this->grossVolumeMeasure = null;
 
@@ -927,9 +927,9 @@ class ShipmentType
 
     /**
      * @param NetVolumeMeasure|null $netVolumeMeasure
-     * @return self
+     * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): self
+    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
     {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
@@ -937,9 +937,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNetVolumeMeasure(): self
+    public function unsetNetVolumeMeasure(): static
     {
         $this->netVolumeMeasure = null;
 
@@ -966,9 +966,9 @@ class ShipmentType
 
     /**
      * @param TotalGoodsItemQuantity|null $totalGoodsItemQuantity
-     * @return self
+     * @return static
      */
-    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): self
+    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
     {
         $this->totalGoodsItemQuantity = $totalGoodsItemQuantity;
 
@@ -976,9 +976,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalGoodsItemQuantity(): self
+    public function unsetTotalGoodsItemQuantity(): static
     {
         $this->totalGoodsItemQuantity = null;
 
@@ -1005,20 +1005,20 @@ class ShipmentType
 
     /**
      * @param TotalTransportHandlingUnitQuantity|null $totalTransportHandlingUnitQuantity
-     * @return self
+     * @return static
      */
     public function setTotalTransportHandlingUnitQuantity(
         ?TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity = null,
-    ): self {
+    ): static {
         $this->totalTransportHandlingUnitQuantity = $totalTransportHandlingUnitQuantity;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalTransportHandlingUnitQuantity(): self
+    public function unsetTotalTransportHandlingUnitQuantity(): static
     {
         $this->totalTransportHandlingUnitQuantity = null;
 
@@ -1045,9 +1045,9 @@ class ShipmentType
 
     /**
      * @param InsuranceValueAmount|null $insuranceValueAmount
-     * @return self
+     * @return static
      */
-    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): self
+    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
     {
         $this->insuranceValueAmount = $insuranceValueAmount;
 
@@ -1055,9 +1055,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInsuranceValueAmount(): self
+    public function unsetInsuranceValueAmount(): static
     {
         $this->insuranceValueAmount = null;
 
@@ -1084,20 +1084,20 @@ class ShipmentType
 
     /**
      * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredCustomsValueAmount(
         ?DeclaredCustomsValueAmount $declaredCustomsValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredCustomsValueAmount = $declaredCustomsValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredCustomsValueAmount(): self
+    public function unsetDeclaredCustomsValueAmount(): static
     {
         $this->declaredCustomsValueAmount = null;
 
@@ -1124,20 +1124,20 @@ class ShipmentType
 
     /**
      * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredForCarriageValueAmount(
         ?DeclaredForCarriageValueAmount $declaredForCarriageValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredForCarriageValueAmount = $declaredForCarriageValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredForCarriageValueAmount(): self
+    public function unsetDeclaredForCarriageValueAmount(): static
     {
         $this->declaredForCarriageValueAmount = null;
 
@@ -1164,20 +1164,20 @@ class ShipmentType
 
     /**
      * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
-     * @return self
+     * @return static
      */
     public function setDeclaredStatisticsValueAmount(
         ?DeclaredStatisticsValueAmount $declaredStatisticsValueAmount = null,
-    ): self {
+    ): static {
         $this->declaredStatisticsValueAmount = $declaredStatisticsValueAmount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeclaredStatisticsValueAmount(): self
+    public function unsetDeclaredStatisticsValueAmount(): static
     {
         $this->declaredStatisticsValueAmount = null;
 
@@ -1204,9 +1204,9 @@ class ShipmentType
 
     /**
      * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
-     * @return self
+     * @return static
      */
-    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): self
+    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
     {
         $this->freeOnBoardValueAmount = $freeOnBoardValueAmount;
 
@@ -1214,9 +1214,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreeOnBoardValueAmount(): self
+    public function unsetFreeOnBoardValueAmount(): static
     {
         $this->freeOnBoardValueAmount = null;
 
@@ -1233,9 +1233,9 @@ class ShipmentType
 
     /**
      * @param array<SpecialInstructions>|null $specialInstructions
-     * @return self
+     * @return static
      */
-    public function setSpecialInstructions(?array $specialInstructions = null): self
+    public function setSpecialInstructions(?array $specialInstructions = null): static
     {
         $this->specialInstructions = $specialInstructions;
 
@@ -1243,9 +1243,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSpecialInstructions(): self
+    public function unsetSpecialInstructions(): static
     {
         $this->specialInstructions = null;
 
@@ -1253,9 +1253,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSpecialInstructions(): self
+    public function clearSpecialInstructions(): static
     {
         $this->specialInstructions = [];
 
@@ -1294,9 +1294,9 @@ class ShipmentType
 
     /**
      * @param SpecialInstructions $specialInstructions
-     * @return self
+     * @return static
      */
-    public function addToSpecialInstructions(SpecialInstructions $specialInstructions): self
+    public function addToSpecialInstructions(SpecialInstructions $specialInstructions): static
     {
         $this->specialInstructions[] = $specialInstructions;
 
@@ -1315,9 +1315,9 @@ class ShipmentType
 
     /**
      * @param SpecialInstructions $specialInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): self
+    public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): static
     {
         if (!is_array($this->specialInstructions)) {
             $this->specialInstructions = [];
@@ -1354,9 +1354,9 @@ class ShipmentType
 
     /**
      * @param array<DeliveryInstructions>|null $deliveryInstructions
-     * @return self
+     * @return static
      */
-    public function setDeliveryInstructions(?array $deliveryInstructions = null): self
+    public function setDeliveryInstructions(?array $deliveryInstructions = null): static
     {
         $this->deliveryInstructions = $deliveryInstructions;
 
@@ -1364,9 +1364,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDeliveryInstructions(): self
+    public function unsetDeliveryInstructions(): static
     {
         $this->deliveryInstructions = null;
 
@@ -1374,9 +1374,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDeliveryInstructions(): self
+    public function clearDeliveryInstructions(): static
     {
         $this->deliveryInstructions = [];
 
@@ -1415,9 +1415,9 @@ class ShipmentType
 
     /**
      * @param DeliveryInstructions $deliveryInstructions
-     * @return self
+     * @return static
      */
-    public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): self
+    public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
     {
         $this->deliveryInstructions[] = $deliveryInstructions;
 
@@ -1436,9 +1436,9 @@ class ShipmentType
 
     /**
      * @param DeliveryInstructions $deliveryInstructions
-     * @return self
+     * @return static
      */
-    public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): self
+    public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
     {
         if (!is_array($this->deliveryInstructions)) {
             $this->deliveryInstructions = [];
@@ -1475,9 +1475,9 @@ class ShipmentType
 
     /**
      * @param bool|null $splitConsignmentIndicator
-     * @return self
+     * @return static
      */
-    public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): self
+    public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): static
     {
         $this->splitConsignmentIndicator = $splitConsignmentIndicator;
 
@@ -1485,9 +1485,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSplitConsignmentIndicator(): self
+    public function unsetSplitConsignmentIndicator(): static
     {
         $this->splitConsignmentIndicator = null;
 
@@ -1514,9 +1514,9 @@ class ShipmentType
 
     /**
      * @param ConsignmentQuantity|null $consignmentQuantity
-     * @return self
+     * @return static
      */
-    public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): self
+    public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): static
     {
         $this->consignmentQuantity = $consignmentQuantity;
 
@@ -1524,9 +1524,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsignmentQuantity(): self
+    public function unsetConsignmentQuantity(): static
     {
         $this->consignmentQuantity = null;
 
@@ -1543,9 +1543,9 @@ class ShipmentType
 
     /**
      * @param array<Consignment>|null $consignment
-     * @return self
+     * @return static
      */
-    public function setConsignment(?array $consignment = null): self
+    public function setConsignment(?array $consignment = null): static
     {
         $this->consignment = $consignment;
 
@@ -1553,9 +1553,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetConsignment(): self
+    public function unsetConsignment(): static
     {
         $this->consignment = null;
 
@@ -1563,9 +1563,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearConsignment(): self
+    public function clearConsignment(): static
     {
         $this->consignment = [];
 
@@ -1604,9 +1604,9 @@ class ShipmentType
 
     /**
      * @param Consignment $consignment
-     * @return self
+     * @return static
      */
-    public function addToConsignment(Consignment $consignment): self
+    public function addToConsignment(Consignment $consignment): static
     {
         $this->consignment[] = $consignment;
 
@@ -1625,9 +1625,9 @@ class ShipmentType
 
     /**
      * @param Consignment $consignment
-     * @return self
+     * @return static
      */
-    public function addOnceToConsignment(Consignment $consignment): self
+    public function addOnceToConsignment(Consignment $consignment): static
     {
         if (!is_array($this->consignment)) {
             $this->consignment = [];
@@ -1664,9 +1664,9 @@ class ShipmentType
 
     /**
      * @param array<GoodsItem>|null $goodsItem
-     * @return self
+     * @return static
      */
-    public function setGoodsItem(?array $goodsItem = null): self
+    public function setGoodsItem(?array $goodsItem = null): static
     {
         $this->goodsItem = $goodsItem;
 
@@ -1674,9 +1674,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetGoodsItem(): self
+    public function unsetGoodsItem(): static
     {
         $this->goodsItem = null;
 
@@ -1684,9 +1684,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearGoodsItem(): self
+    public function clearGoodsItem(): static
     {
         $this->goodsItem = [];
 
@@ -1725,9 +1725,9 @@ class ShipmentType
 
     /**
      * @param GoodsItem $goodsItem
-     * @return self
+     * @return static
      */
-    public function addToGoodsItem(GoodsItem $goodsItem): self
+    public function addToGoodsItem(GoodsItem $goodsItem): static
     {
         $this->goodsItem[] = $goodsItem;
 
@@ -1746,9 +1746,9 @@ class ShipmentType
 
     /**
      * @param GoodsItem $goodsItem
-     * @return self
+     * @return static
      */
-    public function addOnceToGoodsItem(GoodsItem $goodsItem): self
+    public function addOnceToGoodsItem(GoodsItem $goodsItem): static
     {
         if (!is_array($this->goodsItem)) {
             $this->goodsItem = [];
@@ -1785,9 +1785,9 @@ class ShipmentType
 
     /**
      * @param array<ShipmentStage>|null $shipmentStage
-     * @return self
+     * @return static
      */
-    public function setShipmentStage(?array $shipmentStage = null): self
+    public function setShipmentStage(?array $shipmentStage = null): static
     {
         $this->shipmentStage = $shipmentStage;
 
@@ -1795,9 +1795,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipmentStage(): self
+    public function unsetShipmentStage(): static
     {
         $this->shipmentStage = null;
 
@@ -1805,9 +1805,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipmentStage(): self
+    public function clearShipmentStage(): static
     {
         $this->shipmentStage = [];
 
@@ -1846,9 +1846,9 @@ class ShipmentType
 
     /**
      * @param ShipmentStage $shipmentStage
-     * @return self
+     * @return static
      */
-    public function addToShipmentStage(ShipmentStage $shipmentStage): self
+    public function addToShipmentStage(ShipmentStage $shipmentStage): static
     {
         $this->shipmentStage[] = $shipmentStage;
 
@@ -1867,9 +1867,9 @@ class ShipmentType
 
     /**
      * @param ShipmentStage $shipmentStage
-     * @return self
+     * @return static
      */
-    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): self
+    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
     {
         if (!is_array($this->shipmentStage)) {
             $this->shipmentStage = [];
@@ -1916,9 +1916,9 @@ class ShipmentType
 
     /**
      * @param Delivery|null $delivery
-     * @return self
+     * @return static
      */
-    public function setDelivery(?Delivery $delivery = null): self
+    public function setDelivery(?Delivery $delivery = null): static
     {
         $this->delivery = $delivery;
 
@@ -1926,9 +1926,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDelivery(): self
+    public function unsetDelivery(): static
     {
         $this->delivery = null;
 
@@ -1945,9 +1945,9 @@ class ShipmentType
 
     /**
      * @param array<TransportHandlingUnit>|null $transportHandlingUnit
-     * @return self
+     * @return static
      */
-    public function setTransportHandlingUnit(?array $transportHandlingUnit = null): self
+    public function setTransportHandlingUnit(?array $transportHandlingUnit = null): static
     {
         $this->transportHandlingUnit = $transportHandlingUnit;
 
@@ -1955,9 +1955,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportHandlingUnit(): self
+    public function unsetTransportHandlingUnit(): static
     {
         $this->transportHandlingUnit = null;
 
@@ -1965,9 +1965,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearTransportHandlingUnit(): self
+    public function clearTransportHandlingUnit(): static
     {
         $this->transportHandlingUnit = [];
 
@@ -2006,9 +2006,9 @@ class ShipmentType
 
     /**
      * @param TransportHandlingUnit $transportHandlingUnit
-     * @return self
+     * @return static
      */
-    public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): self
+    public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
     {
         $this->transportHandlingUnit[] = $transportHandlingUnit;
 
@@ -2027,9 +2027,9 @@ class ShipmentType
 
     /**
      * @param TransportHandlingUnit $transportHandlingUnit
-     * @return self
+     * @return static
      */
-    public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): self
+    public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
     {
         if (!is_array($this->transportHandlingUnit)) {
             $this->transportHandlingUnit = [];
@@ -2076,9 +2076,9 @@ class ShipmentType
 
     /**
      * @param ReturnAddress|null $returnAddress
-     * @return self
+     * @return static
      */
-    public function setReturnAddress(?ReturnAddress $returnAddress = null): self
+    public function setReturnAddress(?ReturnAddress $returnAddress = null): static
     {
         $this->returnAddress = $returnAddress;
 
@@ -2086,9 +2086,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReturnAddress(): self
+    public function unsetReturnAddress(): static
     {
         $this->returnAddress = null;
 
@@ -2115,9 +2115,9 @@ class ShipmentType
 
     /**
      * @param OriginAddress|null $originAddress
-     * @return self
+     * @return static
      */
-    public function setOriginAddress(?OriginAddress $originAddress = null): self
+    public function setOriginAddress(?OriginAddress $originAddress = null): static
     {
         $this->originAddress = $originAddress;
 
@@ -2125,9 +2125,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetOriginAddress(): self
+    public function unsetOriginAddress(): static
     {
         $this->originAddress = null;
 
@@ -2154,9 +2154,9 @@ class ShipmentType
 
     /**
      * @param FirstArrivalPortLocation|null $firstArrivalPortLocation
-     * @return self
+     * @return static
      */
-    public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): self
+    public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): static
     {
         $this->firstArrivalPortLocation = $firstArrivalPortLocation;
 
@@ -2164,9 +2164,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFirstArrivalPortLocation(): self
+    public function unsetFirstArrivalPortLocation(): static
     {
         $this->firstArrivalPortLocation = null;
 
@@ -2193,9 +2193,9 @@ class ShipmentType
 
     /**
      * @param LastExitPortLocation|null $lastExitPortLocation
-     * @return self
+     * @return static
      */
-    public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): self
+    public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): static
     {
         $this->lastExitPortLocation = $lastExitPortLocation;
 
@@ -2203,9 +2203,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLastExitPortLocation(): self
+    public function unsetLastExitPortLocation(): static
     {
         $this->lastExitPortLocation = null;
 
@@ -2232,9 +2232,9 @@ class ShipmentType
 
     /**
      * @param ExportCountry|null $exportCountry
-     * @return self
+     * @return static
      */
-    public function setExportCountry(?ExportCountry $exportCountry = null): self
+    public function setExportCountry(?ExportCountry $exportCountry = null): static
     {
         $this->exportCountry = $exportCountry;
 
@@ -2242,9 +2242,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetExportCountry(): self
+    public function unsetExportCountry(): static
     {
         $this->exportCountry = null;
 
@@ -2261,9 +2261,9 @@ class ShipmentType
 
     /**
      * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): self
+    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
     {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
@@ -2271,9 +2271,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetFreightAllowanceCharge(): self
+    public function unsetFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = null;
 
@@ -2281,9 +2281,9 @@ class ShipmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearFreightAllowanceCharge(): self
+    public function clearFreightAllowanceCharge(): static
     {
         $this->freightAllowanceCharge = [];
 
@@ -2322,9 +2322,9 @@ class ShipmentType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
@@ -2343,9 +2343,9 @@ class ShipmentType
 
     /**
      * @param FreightAllowanceCharge $freightAllowanceCharge
-     * @return self
+     * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): self
+    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
     {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];

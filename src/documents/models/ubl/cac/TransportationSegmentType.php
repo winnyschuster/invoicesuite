@@ -100,9 +100,9 @@ class TransportationSegmentType
 
     /**
      * @param SequenceNumeric|null $sequenceNumeric
-     * @return self
+     * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): self
+    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
     {
         $this->sequenceNumeric = $sequenceNumeric;
 
@@ -110,9 +110,9 @@ class TransportationSegmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSequenceNumeric(): self
+    public function unsetSequenceNumeric(): static
     {
         $this->sequenceNumeric = null;
 
@@ -139,20 +139,20 @@ class TransportationSegmentType
 
     /**
      * @param TransportExecutionPlanReferenceID|null $transportExecutionPlanReferenceID
-     * @return self
+     * @return static
      */
     public function setTransportExecutionPlanReferenceID(
         ?TransportExecutionPlanReferenceID $transportExecutionPlanReferenceID = null,
-    ): self {
+    ): static {
         $this->transportExecutionPlanReferenceID = $transportExecutionPlanReferenceID;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportExecutionPlanReferenceID(): self
+    public function unsetTransportExecutionPlanReferenceID(): static
     {
         $this->transportExecutionPlanReferenceID = null;
 
@@ -179,9 +179,9 @@ class TransportationSegmentType
 
     /**
      * @param TransportationService|null $transportationService
-     * @return self
+     * @return static
      */
-    public function setTransportationService(?TransportationService $transportationService = null): self
+    public function setTransportationService(?TransportationService $transportationService = null): static
     {
         $this->transportationService = $transportationService;
 
@@ -189,9 +189,9 @@ class TransportationSegmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportationService(): self
+    public function unsetTransportationService(): static
     {
         $this->transportationService = null;
 
@@ -218,20 +218,20 @@ class TransportationSegmentType
 
     /**
      * @param TransportServiceProviderParty|null $transportServiceProviderParty
-     * @return self
+     * @return static
      */
     public function setTransportServiceProviderParty(
         ?TransportServiceProviderParty $transportServiceProviderParty = null,
-    ): self {
+    ): static {
         $this->transportServiceProviderParty = $transportServiceProviderParty;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTransportServiceProviderParty(): self
+    public function unsetTransportServiceProviderParty(): static
     {
         $this->transportServiceProviderParty = null;
 
@@ -258,9 +258,9 @@ class TransportationSegmentType
 
     /**
      * @param ReferencedConsignment|null $referencedConsignment
-     * @return self
+     * @return static
      */
-    public function setReferencedConsignment(?ReferencedConsignment $referencedConsignment = null): self
+    public function setReferencedConsignment(?ReferencedConsignment $referencedConsignment = null): static
     {
         $this->referencedConsignment = $referencedConsignment;
 
@@ -268,9 +268,9 @@ class TransportationSegmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetReferencedConsignment(): self
+    public function unsetReferencedConsignment(): static
     {
         $this->referencedConsignment = null;
 
@@ -287,9 +287,9 @@ class TransportationSegmentType
 
     /**
      * @param array<ShipmentStage>|null $shipmentStage
-     * @return self
+     * @return static
      */
-    public function setShipmentStage(?array $shipmentStage = null): self
+    public function setShipmentStage(?array $shipmentStage = null): static
     {
         $this->shipmentStage = $shipmentStage;
 
@@ -297,9 +297,9 @@ class TransportationSegmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetShipmentStage(): self
+    public function unsetShipmentStage(): static
     {
         $this->shipmentStage = null;
 
@@ -307,9 +307,9 @@ class TransportationSegmentType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearShipmentStage(): self
+    public function clearShipmentStage(): static
     {
         $this->shipmentStage = [];
 
@@ -348,9 +348,9 @@ class TransportationSegmentType
 
     /**
      * @param ShipmentStage $shipmentStage
-     * @return self
+     * @return static
      */
-    public function addToShipmentStage(ShipmentStage $shipmentStage): self
+    public function addToShipmentStage(ShipmentStage $shipmentStage): static
     {
         $this->shipmentStage[] = $shipmentStage;
 
@@ -369,9 +369,9 @@ class TransportationSegmentType
 
     /**
      * @param ShipmentStage $shipmentStage
-     * @return self
+     * @return static
      */
-    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): self
+    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
     {
         if (!is_array($this->shipmentStage)) {
             $this->shipmentStage = [];

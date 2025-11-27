@@ -99,9 +99,9 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param PaymentMeansCodeType|null $typeCode
-     * @return self
+     * @return static
      */
-    public function setTypeCode(?PaymentMeansCodeType $typeCode = null): self
+    public function setTypeCode(?PaymentMeansCodeType $typeCode = null): static
     {
         $this->typeCode = $typeCode;
 
@@ -109,9 +109,9 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTypeCode(): self
+    public function unsetTypeCode(): static
     {
         $this->typeCode = null;
 
@@ -138,9 +138,9 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param TextType|null $information
-     * @return self
+     * @return static
      */
-    public function setInformation(?TextType $information = null): self
+    public function setInformation(?TextType $information = null): static
     {
         $this->information = $information;
 
@@ -148,9 +148,9 @@ class TradeSettlementPaymentMeansType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetInformation(): self
+    public function unsetInformation(): static
     {
         $this->information = null;
 
@@ -177,20 +177,20 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param TradeSettlementFinancialCardType|null $applicableTradeSettlementFinancialCard
-     * @return self
+     * @return static
      */
     public function setApplicableTradeSettlementFinancialCard(
         ?TradeSettlementFinancialCardType $applicableTradeSettlementFinancialCard = null,
-    ): self {
+    ): static {
         $this->applicableTradeSettlementFinancialCard = $applicableTradeSettlementFinancialCard;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetApplicableTradeSettlementFinancialCard(): self
+    public function unsetApplicableTradeSettlementFinancialCard(): static
     {
         $this->applicableTradeSettlementFinancialCard = null;
 
@@ -217,20 +217,20 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param DebtorFinancialAccountType|null $payerPartyDebtorFinancialAccount
-     * @return self
+     * @return static
      */
     public function setPayerPartyDebtorFinancialAccount(
         ?DebtorFinancialAccountType $payerPartyDebtorFinancialAccount = null,
-    ): self {
+    ): static {
         $this->payerPartyDebtorFinancialAccount = $payerPartyDebtorFinancialAccount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayerPartyDebtorFinancialAccount(): self
+    public function unsetPayerPartyDebtorFinancialAccount(): static
     {
         $this->payerPartyDebtorFinancialAccount = null;
 
@@ -257,20 +257,20 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param CreditorFinancialAccountType|null $payeePartyCreditorFinancialAccount
-     * @return self
+     * @return static
      */
     public function setPayeePartyCreditorFinancialAccount(
         ?CreditorFinancialAccountType $payeePartyCreditorFinancialAccount = null,
-    ): self {
+    ): static {
         $this->payeePartyCreditorFinancialAccount = $payeePartyCreditorFinancialAccount;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeePartyCreditorFinancialAccount(): self
+    public function unsetPayeePartyCreditorFinancialAccount(): static
     {
         $this->payeePartyCreditorFinancialAccount = null;
 
@@ -297,20 +297,20 @@ class TradeSettlementPaymentMeansType
 
     /**
      * @param CreditorFinancialInstitutionType|null $payeeSpecifiedCreditorFinancialInstitution
-     * @return self
+     * @return static
      */
     public function setPayeeSpecifiedCreditorFinancialInstitution(
         ?CreditorFinancialInstitutionType $payeeSpecifiedCreditorFinancialInstitution = null,
-    ): self {
+    ): static {
         $this->payeeSpecifiedCreditorFinancialInstitution = $payeeSpecifiedCreditorFinancialInstitution;
 
         return $this;
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPayeeSpecifiedCreditorFinancialInstitution(): self
+    public function unsetPayeeSpecifiedCreditorFinancialInstitution(): static
     {
         $this->payeeSpecifiedCreditorFinancialInstitution = null;
 

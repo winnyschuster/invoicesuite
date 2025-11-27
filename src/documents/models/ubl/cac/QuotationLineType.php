@@ -162,9 +162,9 @@ class QuotationLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -172,9 +172,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -191,9 +191,9 @@ class QuotationLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -201,9 +201,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -211,9 +211,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -252,9 +252,9 @@ class QuotationLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -273,9 +273,9 @@ class QuotationLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -322,9 +322,9 @@ class QuotationLineType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -332,9 +332,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -361,9 +361,9 @@ class QuotationLineType
 
     /**
      * @param LineExtensionAmount|null $lineExtensionAmount
-     * @return self
+     * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): self
+    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
     {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
@@ -371,9 +371,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineExtensionAmount(): self
+    public function unsetLineExtensionAmount(): static
     {
         $this->lineExtensionAmount = null;
 
@@ -400,9 +400,9 @@ class QuotationLineType
 
     /**
      * @param TotalTaxAmount|null $totalTaxAmount
-     * @return self
+     * @return static
      */
-    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): self
+    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
     {
         $this->totalTaxAmount = $totalTaxAmount;
 
@@ -410,9 +410,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetTotalTaxAmount(): self
+    public function unsetTotalTaxAmount(): static
     {
         $this->totalTaxAmount = null;
 
@@ -439,9 +439,9 @@ class QuotationLineType
 
     /**
      * @param RequestForQuotationLineID|null $requestForQuotationLineID
-     * @return self
+     * @return static
      */
-    public function setRequestForQuotationLineID(?RequestForQuotationLineID $requestForQuotationLineID = null): self
+    public function setRequestForQuotationLineID(?RequestForQuotationLineID $requestForQuotationLineID = null): static
     {
         $this->requestForQuotationLineID = $requestForQuotationLineID;
 
@@ -449,9 +449,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestForQuotationLineID(): self
+    public function unsetRequestForQuotationLineID(): static
     {
         $this->requestForQuotationLineID = null;
 
@@ -468,9 +468,9 @@ class QuotationLineType
 
     /**
      * @param array<DocumentReference>|null $documentReference
-     * @return self
+     * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): self
+    public function setDocumentReference(?array $documentReference = null): static
     {
         $this->documentReference = $documentReference;
 
@@ -478,9 +478,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDocumentReference(): self
+    public function unsetDocumentReference(): static
     {
         $this->documentReference = null;
 
@@ -488,9 +488,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDocumentReference(): self
+    public function clearDocumentReference(): static
     {
         $this->documentReference = [];
 
@@ -529,9 +529,9 @@ class QuotationLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): self
+    public function addToDocumentReference(DocumentReference $documentReference): static
     {
         $this->documentReference[] = $documentReference;
 
@@ -550,9 +550,9 @@ class QuotationLineType
 
     /**
      * @param DocumentReference $documentReference
-     * @return self
+     * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): self
+    public function addOnceToDocumentReference(DocumentReference $documentReference): static
     {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
@@ -599,9 +599,9 @@ class QuotationLineType
 
     /**
      * @param LineItem|null $lineItem
-     * @return self
+     * @return static
      */
-    public function setLineItem(?LineItem $lineItem = null): self
+    public function setLineItem(?LineItem $lineItem = null): static
     {
         $this->lineItem = $lineItem;
 
@@ -609,9 +609,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetLineItem(): self
+    public function unsetLineItem(): static
     {
         $this->lineItem = null;
 
@@ -628,9 +628,9 @@ class QuotationLineType
 
     /**
      * @param array<SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
-    public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): self
+    public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): static
     {
         $this->sellerProposedSubstituteLineItem = $sellerProposedSubstituteLineItem;
 
@@ -638,9 +638,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetSellerProposedSubstituteLineItem(): self
+    public function unsetSellerProposedSubstituteLineItem(): static
     {
         $this->sellerProposedSubstituteLineItem = null;
 
@@ -648,9 +648,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearSellerProposedSubstituteLineItem(): self
+    public function clearSellerProposedSubstituteLineItem(): static
     {
         $this->sellerProposedSubstituteLineItem = [];
 
@@ -689,11 +689,11 @@ class QuotationLineType
 
     /**
      * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
     public function addToSellerProposedSubstituteLineItem(
         SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem,
-    ): self {
+    ): static {
         $this->sellerProposedSubstituteLineItem[] = $sellerProposedSubstituteLineItem;
 
         return $this;
@@ -711,11 +711,11 @@ class QuotationLineType
 
     /**
      * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
-     * @return self
+     * @return static
      */
     public function addOnceToSellerProposedSubstituteLineItem(
         SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem,
-    ): self {
+    ): static {
         if (!is_array($this->sellerProposedSubstituteLineItem)) {
             $this->sellerProposedSubstituteLineItem = [];
         }
@@ -751,9 +751,9 @@ class QuotationLineType
 
     /**
      * @param array<AlternativeLineItem>|null $alternativeLineItem
-     * @return self
+     * @return static
      */
-    public function setAlternativeLineItem(?array $alternativeLineItem = null): self
+    public function setAlternativeLineItem(?array $alternativeLineItem = null): static
     {
         $this->alternativeLineItem = $alternativeLineItem;
 
@@ -761,9 +761,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAlternativeLineItem(): self
+    public function unsetAlternativeLineItem(): static
     {
         $this->alternativeLineItem = null;
 
@@ -771,9 +771,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearAlternativeLineItem(): self
+    public function clearAlternativeLineItem(): static
     {
         $this->alternativeLineItem = [];
 
@@ -812,9 +812,9 @@ class QuotationLineType
 
     /**
      * @param AlternativeLineItem $alternativeLineItem
-     * @return self
+     * @return static
      */
-    public function addToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): self
+    public function addToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): static
     {
         $this->alternativeLineItem[] = $alternativeLineItem;
 
@@ -833,9 +833,9 @@ class QuotationLineType
 
     /**
      * @param AlternativeLineItem $alternativeLineItem
-     * @return self
+     * @return static
      */
-    public function addOnceToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): self
+    public function addOnceToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): static
     {
         if (!is_array($this->alternativeLineItem)) {
             $this->alternativeLineItem = [];
@@ -882,9 +882,9 @@ class QuotationLineType
 
     /**
      * @param RequestLineReference|null $requestLineReference
-     * @return self
+     * @return static
      */
-    public function setRequestLineReference(?RequestLineReference $requestLineReference = null): self
+    public function setRequestLineReference(?RequestLineReference $requestLineReference = null): static
     {
         $this->requestLineReference = $requestLineReference;
 
@@ -892,9 +892,9 @@ class QuotationLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetRequestLineReference(): self
+    public function unsetRequestLineReference(): static
     {
         $this->requestLineReference = null;
 

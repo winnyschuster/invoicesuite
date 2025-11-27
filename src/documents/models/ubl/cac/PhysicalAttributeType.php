@@ -80,9 +80,9 @@ class PhysicalAttributeType
 
     /**
      * @param AttributeID|null $attributeID
-     * @return self
+     * @return static
      */
-    public function setAttributeID(?AttributeID $attributeID = null): self
+    public function setAttributeID(?AttributeID $attributeID = null): static
     {
         $this->attributeID = $attributeID;
 
@@ -90,9 +90,9 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetAttributeID(): self
+    public function unsetAttributeID(): static
     {
         $this->attributeID = null;
 
@@ -119,9 +119,9 @@ class PhysicalAttributeType
 
     /**
      * @param PositionCode|null $positionCode
-     * @return self
+     * @return static
      */
-    public function setPositionCode(?PositionCode $positionCode = null): self
+    public function setPositionCode(?PositionCode $positionCode = null): static
     {
         $this->positionCode = $positionCode;
 
@@ -129,9 +129,9 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetPositionCode(): self
+    public function unsetPositionCode(): static
     {
         $this->positionCode = null;
 
@@ -158,9 +158,9 @@ class PhysicalAttributeType
 
     /**
      * @param DescriptionCode|null $descriptionCode
-     * @return self
+     * @return static
      */
-    public function setDescriptionCode(?DescriptionCode $descriptionCode = null): self
+    public function setDescriptionCode(?DescriptionCode $descriptionCode = null): static
     {
         $this->descriptionCode = $descriptionCode;
 
@@ -168,9 +168,9 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescriptionCode(): self
+    public function unsetDescriptionCode(): static
     {
         $this->descriptionCode = null;
 
@@ -187,9 +187,9 @@ class PhysicalAttributeType
 
     /**
      * @param array<Description>|null $description
-     * @return self
+     * @return static
      */
-    public function setDescription(?array $description = null): self
+    public function setDescription(?array $description = null): static
     {
         $this->description = $description;
 
@@ -197,9 +197,9 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetDescription(): self
+    public function unsetDescription(): static
     {
         $this->description = null;
 
@@ -207,9 +207,9 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearDescription(): self
+    public function clearDescription(): static
     {
         $this->description = [];
 
@@ -248,9 +248,9 @@ class PhysicalAttributeType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addToDescription(Description $description): self
+    public function addToDescription(Description $description): static
     {
         $this->description[] = $description;
 
@@ -269,9 +269,9 @@ class PhysicalAttributeType
 
     /**
      * @param Description $description
-     * @return self
+     * @return static
      */
-    public function addOnceToDescription(Description $description): self
+    public function addOnceToDescription(Description $description): static
     {
         if (!is_array($this->description)) {
             $this->description = [];

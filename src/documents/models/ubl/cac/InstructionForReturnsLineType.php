@@ -90,9 +90,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param ID|null $iD
-     * @return self
+     * @return static
      */
-    public function setID(?ID $iD = null): self
+    public function setID(?ID $iD = null): static
     {
         $this->iD = $iD;
 
@@ -100,9 +100,9 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetID(): self
+    public function unsetID(): static
     {
         $this->iD = null;
 
@@ -119,9 +119,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param array<Note>|null $note
-     * @return self
+     * @return static
      */
-    public function setNote(?array $note = null): self
+    public function setNote(?array $note = null): static
     {
         $this->note = $note;
 
@@ -129,9 +129,9 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetNote(): self
+    public function unsetNote(): static
     {
         $this->note = null;
 
@@ -139,9 +139,9 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function clearNote(): self
+    public function clearNote(): static
     {
         $this->note = [];
 
@@ -180,9 +180,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addToNote(Note $note): self
+    public function addToNote(Note $note): static
     {
         $this->note[] = $note;
 
@@ -201,9 +201,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param Note $note
-     * @return self
+     * @return static
      */
-    public function addOnceToNote(Note $note): self
+    public function addOnceToNote(Note $note): static
     {
         if (!is_array($this->note)) {
             $this->note = [];
@@ -250,9 +250,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param Quantity|null $quantity
-     * @return self
+     * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): self
+    public function setQuantity(?Quantity $quantity = null): static
     {
         $this->quantity = $quantity;
 
@@ -260,9 +260,9 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetQuantity(): self
+    public function unsetQuantity(): static
     {
         $this->quantity = null;
 
@@ -289,9 +289,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param ManufacturerParty|null $manufacturerParty
-     * @return self
+     * @return static
      */
-    public function setManufacturerParty(?ManufacturerParty $manufacturerParty = null): self
+    public function setManufacturerParty(?ManufacturerParty $manufacturerParty = null): static
     {
         $this->manufacturerParty = $manufacturerParty;
 
@@ -299,9 +299,9 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetManufacturerParty(): self
+    public function unsetManufacturerParty(): static
     {
         $this->manufacturerParty = null;
 
@@ -328,9 +328,9 @@ class InstructionForReturnsLineType
 
     /**
      * @param Item|null $item
-     * @return self
+     * @return static
      */
-    public function setItem(?Item $item = null): self
+    public function setItem(?Item $item = null): static
     {
         $this->item = $item;
 
@@ -338,9 +338,9 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return self
+     * @return static
      */
-    public function unsetItem(): self
+    public function unsetItem(): static
     {
         $this->item = null;
 
